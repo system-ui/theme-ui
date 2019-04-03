@@ -1,0 +1,55 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# Layout Components
+
+Primitive page layout components **could be** provided by this library as well.
+
+```jsx
+// example
+<Layout>
+  <Header />
+  <Main>
+    <Sidebar />
+    <Container>
+      {props.children}
+    </Container>
+  </Main>
+  <Footer />
+</Layout>
+```
+
+Lower-level primitives like `Box` and `Flex` components could also be added.
+
+These page-level layout components could have corresponding themeable aspects,
+where an end user could customize styles without having to create custom components.
+
+For example, a `theme` object could have keys in the `theme.styles` object:
+
+```js
+// example only
+theme: {
+  styles: {
+    Header: {
+      color: 'tomato',
+    }
+  }
+}
+```
+
+Alternatively, only certain properties could be exposed. E.g. within the `theme.colors` object.
+
+```js
+// example only
+theme: {
+  colors: {
+    ...otherColors,
+    header: {
+      text: 'tomato',
+      background: 'black',
+      link: 'white',
+    }
+  }
+}
+```

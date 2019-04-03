@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "yarn workspace example start"
+  },
+  "workspaces": [
+    "theme-ui",
+    "example"
+  ]
+}
