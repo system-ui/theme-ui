@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "now-build": "gatsby build"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -20,7 +21,7 @@
     "lodash.merge": "^4.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "0.0.0-1",
+    "theme-ui": "0.0.0-2",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",
