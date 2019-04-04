@@ -3,7 +3,9 @@ import { ThemeProvider, Styled, css } from 'theme-ui'
 import merge from 'lodash.merge'
 
 import GoogleFonts from './google-fonts'
+import Page from './page'
 import Header from './header'
+import Main from './main'
 import Container from './container'
 import themes from './typography-themes'
 import createTypographyStyles from 'theme-ui/typography'
@@ -56,18 +58,22 @@ export default props => {
     <ThemeProvider theme={theme}>
       <GoogleFonts />
       <Styled.wrapper>
-        <Header>
-          <ThemeSelect
-            name='theme'
-            value={themeName}
-            onChange={e => {
-              setTheme(e.target.value)
-            }}
-          />
-        </Header>
-        <Container>
-          {props.children}
-        </Container>
+        <Page>
+          <Header>
+            <ThemeSelect
+              name='theme'
+              value={themeName}
+              onChange={e => {
+                setTheme(e.target.value)
+              }}
+            />
+          </Header>
+          <Main>
+            <Container>
+              {props.children}
+            </Container>
+          </Main>
+        </Page>
       </Styled.wrapper>
     </ThemeProvider>
   )

@@ -1,8 +1,13 @@
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
 
 # Layout Components
+
+<Note>
+  This only a proposal and not currently implemented
+</Note>
 
 Primitive page layout components **could be** provided by this library as well.
 
@@ -20,7 +25,18 @@ Primitive page layout components **could be** provided by this library as well.
 </Layout>
 ```
 
-Lower-level primitives like `Box` and `Flex` components could also be added.
+- `Layout` (name TBD) the root styled component for wrapping other layout components
+- `Header` section for top of the page
+- `Main` the center of the page
+- `Sidebar` a sidebar with, ideally, a mechanism for responsive layouts
+- `Container` a max-width, centered area
+- `Footer` section for the bottom of the page
+
+## Box/Flex
+
+Lower-level primitives like `Box` and `Flex` components could also be added. E.g. [Rebass Box](https://rebassjs.org/Box)
+
+## Theming
 
 These page-level layout components could have corresponding themeable aspects,
 where an end user could customize styles without having to create custom components.

@@ -9,6 +9,25 @@ It's not currently a 1:1 replacement for all styles provided by Typography.js,
 but is a demonstration of how it could fit in with the rest of Theme UI for users who
 want to take advantage of Typography.js.
 
+## Usage
+
+```js
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import createTypography from 'theme-ui/typography'
+import wp2016 from 'typography-theme-wordpress-2016'
+
+const typography = createTypography(wp2016)
+const theme = {
+  styles: typography.styles,
+}
+
+export default props =>
+  <ThemeProvider theme={theme}>
+    {props.children}
+  </ThemeProvider>
+```
+
 *Demo content below*
 
 ---

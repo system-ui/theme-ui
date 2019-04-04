@@ -21,10 +21,11 @@ export default props =>
 
 ## `css` prop
 
+The `css` utility is from [@styled-system/css](https://styled-system.com/css/).
+
 ```jsx
-// with css prop and @styled-system/css
 import React from 'react'
-import css from '@styled-system/css'
+import { css } from 'theme-ui'
 
 export default () =>
   <div
@@ -40,6 +41,7 @@ export default () =>
 ## MDX Components
 
 Use the `components` prop to add components to MDX scope.
+The `ThemeProvider` (name TBD) is a combination of `MDXProvider` and Emotion's `ThemeProvider` – see [emotion-mdx](https://github.com/jxnblk/emotion-mdx).
 
 ```jsx
 // with mdx components
@@ -67,16 +69,17 @@ import React from 'react'
 import { Styled } from 'theme-ui'
 
 export default props =>
-  <Styled.div>
+  <Styled.wrapper>
     <Styled.h1>
       Hello
     </Styled.h1>
-  </Styled.div>
+  </Styled.wrapper>
 ```
 
 ## `theme.styles`
 
 The MDX components can also be styled via the `theme.styles` object.
+This can be used as a mechanism to pass Typography.js-like styles to MDX content.
 
 ```js
 // example theme
@@ -94,10 +97,4 @@ export default {
   }
 }
 ```
-
-## Typography.js
-
-The output of Typography.js can be added to the `theme.styles` object to style MDX content.
-
-See the [Demo Page](/typography)
 

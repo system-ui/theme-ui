@@ -9,8 +9,7 @@ export default props =>
       alignItems: 'center',
     })}>
     <NavLink to='/'>Home</NavLink>
-    <NavLink to='/typography'>Typography</NavLink>
-    <NavLink to='/debug-theme'>Debug Theme</NavLink>
     <div css={{ margin: 'auto' }} />
+    <NavLink to='/typography'>Typography</NavLink>
     {props.children}
   </header>

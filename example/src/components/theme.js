@@ -11,6 +11,7 @@ export default {
     primary: '#33e',
     secondary: '#119',
     muted: '#f6f6f6',
+    highlight: '#ffffcc',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -32,7 +33,7 @@ export default {
     },
     h1: {
       ...heading,
-      fontSize: 5,
+      fontSize: 6,
     },
     pre: {
       fontFamily: 'monospace',

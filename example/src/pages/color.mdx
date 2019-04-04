@@ -1,0 +1,46 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# Color
+
+Color abstractions are *extremely* hard to get right and, by nature, very specific to a particular design.
+The proposal here is mostly meant as a starting point, but deviation from this is to be expected.
+
+## Core Colors
+
+These color names are meant to be generic and as widely applicable as possible.
+
+- `text`
+- `background`
+- `primary`
+- `secondary`
+- `muted`
+- `highlight`
+
+## Component Colors
+
+At a lower-level, component-specific colors could map core colors to specific elements.
+This could also be handled with or remapped to `theme.styles` at an even lower-level.
+
+The following is a list of examples, and not necessarily required for all themes.
+
+```
+colors: {
+  heading: 'text',
+  pre: {
+    text: 'secondary',
+    background: 'muted',
+  },
+  header: {
+    // e.g. reversed color scheme
+    text: 'background',
+    background: 'primary',
+  },
+  footer: {
+    text: 'text',
+    background: 'muted',
+  },
+}
+```
+

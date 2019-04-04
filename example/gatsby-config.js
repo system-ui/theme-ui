@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-mdx',
       options: {

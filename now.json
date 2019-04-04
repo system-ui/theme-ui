@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "theme-ui",
+  "alias": "theme-ui.now.sh",
+  "public": true,
+  "builds": [
+    {
+      "src": "example/package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/example/$1" }
+  ]
+}

@@ -7,7 +7,9 @@ export default props =>
   <div
     {...props}
     css={css({
+      width: '100%',
       maxWidth: 768,
+      minWidth: 0,
       mx: 'auto',
       p: 4,
     })}
