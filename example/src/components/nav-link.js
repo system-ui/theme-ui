@@ -7,7 +7,8 @@ export default props =>
     {...props}
     css={css({
       display: 'inline-block',
-      p: 2,
+      px: 2,
+      py: 3,
       color: 'inherit',
       textDecoration: 'none',
       fontWeight: 'bold',

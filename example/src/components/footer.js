@@ -11,8 +11,9 @@ export default props =>
       p: 3,
     })}>
     <NavLink to='/'>Home</NavLink>
+    <NavLink to='/Demo'>Demo</NavLink>
     <NavLink to='/typography'>Typography</NavLink>
+    <NavLink to='/color'>Color</NavLink>
     <NavLink to='/layout'>Layout</NavLink>
     <NavLink to='/components'>Components</NavLink>
-    <NavLink to='/notes'>Notes</NavLink>
   </footer>
