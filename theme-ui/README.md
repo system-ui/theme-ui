@@ -22,6 +22,7 @@ export default props =>
 ## `css` prop
 
 The `css` utility is from [@styled-system/css](https://styled-system.com/css/).
+This could potentially be handled with something like [Emotion plugins](https://github.com/emotion-js/emotion/pull/1299).
 
 ```jsx
 import React from 'react'
@@ -58,7 +59,8 @@ export default props =>
   </ThemeProvider>
 ```
 
-This will render child MDX components with the components provided via context.
+This will render child MDX documents with the components provided via context.
+For use outside of MDX (e.g. Remark Markdown) the styles could be applied with a wrapper component.
 
 ## Styled components
 
