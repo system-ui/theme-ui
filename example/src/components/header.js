@@ -1,11 +1,11 @@
 import React from 'react'
 import { css } from 'theme-ui'
+import { Header } from 'theme-ui/layout'
 import NavLink from './nav-link'
 
 export default props =>
-  <header
+  <Header
     css={css({
-      display: 'flex',
       alignItems: 'center',
       color: 'header.text',
       bg: 'header.background',
@@ -15,4 +15,4 @@ export default props =>
     <NavLink to='/demo'>Demo</NavLink>
     <NavLink to='/typography'>Typography</NavLink>
     {props.children}
-  </header>
+  </Header>

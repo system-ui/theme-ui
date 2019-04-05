@@ -1,10 +1,13 @@
 import React from 'react'
 import { Global } from '@emotion/core'
 import { Styled } from 'theme-ui'
-import Page from './page'
+import {
+  Layout,
+  Main,
+  Container,
+} from 'theme-ui/layout'
+
 import Header from './header'
-import Main from './main'
-import Container from './container'
 import Footer from './footer'
 
 export default props => {
@@ -21,7 +24,7 @@ export default props => {
         }}
       />
       <Styled.wrapper>
-        <Page>
+        <Layout>
           <Header />
           <Main>
             <Container>
@@ -29,7 +32,7 @@ export default props => {
             </Container>
           </Main>
           <Footer />
-        </Page>
+        </Layout>
       </Styled.wrapper>
     </>
   )

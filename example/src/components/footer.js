@@ -1,11 +1,11 @@
 import React from 'react'
 import { css } from 'theme-ui'
+import { Footer } from 'theme-ui/layout'
 import NavLink from './nav-link'
 
 export default props =>
-  <footer
+  <Footer
     css={css({
-      display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
       p: 3,
@@ -16,4 +16,4 @@ export default props =>
     <NavLink to='/color'>Color</NavLink>
     <NavLink to='/layout'>Layout</NavLink>
     <NavLink to='/components'>Components</NavLink>
-  </footer>
+  </Footer>
