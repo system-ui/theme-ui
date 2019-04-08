@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'theme-ui'
-import { Header } from 'theme-ui/layout'
+import { Header, Box } from 'theme-ui/layout'
 import NavLink from './nav-link'
 
 export default props =>
@@ -11,7 +11,7 @@ export default props =>
       bg: 'header.background',
     })}>
     <NavLink to='/'>Home</NavLink>
-    <div css={{ margin: 'auto' }} />
+    <Box mx='auto' />
     <NavLink to='/demo'>Demo</NavLink>
     <NavLink to='/typography'>Typography</NavLink>
     {props.children}

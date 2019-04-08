@@ -1,11 +1,11 @@
 import React from 'react'
 import { css } from './index'
 
-// todo...
+// todo
 export const Box = props =>
   <div
     {...props}
-    css={theme => css({
+    css={(theme) => css({
       boxSizing: 'border-box',
       minWidth: 0,
     })({ theme, ...props })}
