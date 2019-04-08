@@ -16,7 +16,7 @@ const parseSelectors = styles => {
       if (parent.type === 'universal') return
       if (parent.type !== 'tag') {
         // todo...
-        console.log('!TAG', selector, parent.type)
+        // console.log('!TAG', selector, parent.type)
         return
       }
 
