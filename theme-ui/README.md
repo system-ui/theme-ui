@@ -1,7 +1,7 @@
 
 # theme-ui
 
-Themeable UI components for themes
+**WIP** Themeable UI components for themes
 
 ```sh
 npm i theme-ui
@@ -98,5 +98,35 @@ export default {
     },
   }
 }
+```
+
+## Layout Components
+
+Page layout components are included in the `theme-ui/layout` module.
+
+```jsx
+import React from 'react'
+import {
+  Layout,
+  Header,
+  Main,
+  Container,
+  Footer
+} from 'theme-ui/layout'
+
+export default props =>
+  <Layout>
+    <Header>
+      Hello
+    </Header>
+    <Main>
+      <Container>
+        {props.children}
+      </Container>
+    </Main>
+    <Footer>
+      © 2019
+    </Footer>
+  </Layout>
 ```
 
