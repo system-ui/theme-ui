@@ -52,7 +52,7 @@ export const Container = props =>
       width: '100%',
       minWidth: 0,
       maxWidth: 1024,
-      m: 'auto',
+      mx: 'auto',
       p: 4,
     })}
   />
