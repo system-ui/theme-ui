@@ -2,8 +2,11 @@ import React from 'react'
 import { css } from './index'
 
 // todo
-export const Box = props =>
-  <div
+export const Box = ({
+  as: Tag = 'div',
+  ...props
+}) =>
+  <Tag
     {...props}
     css={(theme) => css({
       boxSizing: 'border-box',
@@ -13,7 +16,7 @@ export const Box = props =>
 
 // root/page layout
 export const Layout = props =>
-  <div
+  <Box
     {...props}
     css={css({
       fontFamily: 'body',
@@ -26,7 +29,8 @@ export const Layout = props =>
   />
 
 export const Header = props =>
-  <header
+  <Box
+    as='header'
     {...props}
     css={css({
       display: 'flex',
@@ -34,7 +38,7 @@ export const Header = props =>
   />
 
 export const Main = props =>
-  <div
+  <Box
     {...props}
     css={css({
       flex: '1 1 auto',
@@ -42,7 +46,7 @@ export const Main = props =>
   />
 
 export const Container = props =>
-  <div
+  <Box
     {...props}
     css={css({
       width: '100%',
@@ -54,7 +58,8 @@ export const Container = props =>
   />
 
 export const Footer = props =>
-  <footer
+  <Box
+    as='footer'
     {...props}
     css={css({
       display: 'flex',
