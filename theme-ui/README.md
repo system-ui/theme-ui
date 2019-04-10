@@ -42,7 +42,7 @@ export default () =>
 ## MDX Components
 
 Use the `components` prop to add components to MDX scope.
-The `ThemeProvider` (name TBD) is a combination of `MDXProvider` and Emotion's `ThemeProvider` – see [emotion-mdx](https://github.com/jxnblk/emotion-mdx).
+The `ThemeProvider` (name TBD) is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
 
 ```jsx
 // with mdx components
