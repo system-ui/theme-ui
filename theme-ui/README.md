@@ -134,3 +134,5 @@ export default props =>
 
 - [Live Demo](https://theme-ui.now.sh/demo)
 - [Typography.js Demo](https://theme-ui.now.sh/typography)
+
+MIT License
