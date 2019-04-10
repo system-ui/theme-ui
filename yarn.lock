@@ -1098,6 +1098,19 @@
     lodash.pickby "^4.6.0"
     styled-system "^4.1.0-0"
 
+"@styled-system/edit@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@styled-system/edit/-/edit-0.0.4.tgz#a02904fbd053bfb65a4914b236d36bc1bc936606"
+  integrity sha512-sPMce47jAY0lssWTqaus5tlN7g6IgD7qcTHbvMrJ9rC8/P6im4vJQr8TZmVziwX3d8rUoJiFxuxd7jQeB9vyzA==
+  dependencies:
+    "@emotion/core" "^10.0.10"
+    color "^3.1.0"
+    emotion-theming "^10.0.10"
+    lodash.get "^4.4.2"
+    lodash.merge "^4.6.1"
+    lodash.omit "^4.5.0"
+    lodash.set "^4.3.2"
+
 "@types/babel__core@^7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.0.tgz#710f2487dda4dcfd010ca6abb2b4dc7394365c51"
@@ -2748,7 +2761,7 @@ color-string@^1.5.2:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.0.0:
+color@^3.0.0, color@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.0.tgz#d8e9fb096732875774c84bf922815df0308d0ffc"
   integrity sha512-CwyopLkuRYO5ei2EpzpIh6LqJMt6Mt+jZhO5VI5f/wJLZriXQE32/SSqzmrh+QB+AZT81Cj8yv+7zwToW8ahZg==
@@ -7185,6 +7198,11 @@ lodash.reject@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.reject/-/lodash.reject-4.6.0.tgz#80d6492dc1470864bbf583533b651f42a9f52415"
   integrity sha1-gNZJLcFHCGS79YNTO2UfQqn1JBU=
+
+lodash.set@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
 lodash.some@^4.4.0:
   version "4.6.0"
