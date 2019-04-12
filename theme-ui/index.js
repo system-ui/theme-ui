@@ -49,7 +49,7 @@ const aliases = {
 
 const alias = n => aliases[n] || n
 
-const themed = key => theme => theme.css(get(theme, `styles.${key}`))(theme)
+const themed = key => theme => css(get(theme, `styles.${key}`))(theme)
 
 const styled = (tag, key) => ({ as = tag, ...props }) => jsx(alias(as), {
   ...props,
