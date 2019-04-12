@@ -1,9 +1,7 @@
 import React from 'react'
-import { Styled, css } from 'theme-ui'
+import { css } from 'theme-ui'
 import { Header, Box } from 'theme-ui/layout'
 import NavLink from './nav-link'
-
-import { Link } from 'gatsby'
 
 export default props =>
   <Header
