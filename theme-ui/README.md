@@ -64,7 +64,7 @@ For use outside of MDX (e.g. Remark Markdown) the styles could be applied with a
 
 ## Styled components
 
-These components can also be consumed *outside* of an MDX doc with the `Styled` component.
+These components' styles can also be consumed *outside* of an MDX doc with the `Styled` component.
 
 ```jsx
 import React from 'react'
