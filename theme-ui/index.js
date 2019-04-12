@@ -60,12 +60,15 @@ const components = {}
 
 export const Styled = React.forwardRef(({
   tag = 'div',
+  as,
   ...props
-}, ref) => {
-  const components = useComponents()
-  const type = components[tag] || 'div'
-  return jsx(type, { ...props, ref })
-})
+}, ref) =>
+  jsx(as || tag, {
+    ...props,
+    ref,
+    css: themed(tag)
+  })
+)
 
 const createStyled = tag => React.forwardRef((props, ref) =>
   jsx(Styled, { ref, tag, ...props })
@@ -80,7 +83,6 @@ const createComponents = (components = {}) => {
   const next = {}
   Object.keys(components).forEach(key => {
     next[key] = styled(components[key], key)
-    Styled[key] = createStyled(key)
   })
   return next
 }

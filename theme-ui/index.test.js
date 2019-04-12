@@ -86,7 +86,7 @@ test('styles React components', () => {
           }
         }
       }}>
-      <Styled tag='Beep' />
+      <Styled as={Beep} />
     </ComponentProvider>
   )
   expect(json.type).toBe('h2')
