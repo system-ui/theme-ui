@@ -10774,6 +10774,19 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+theme-ui@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.0.1.tgz#6f0fd2bba374a0ea4120f60f464934343d049341"
+  integrity sha512-iqvSbTSg4m7CLNrwLfIDbq0rE2ggSOOri0uv8NMsuc8dtkVug+WRbOczZInOZXMe8aTJXVqPNAWu0VpXGFtMwQ==
+  dependencies:
+    "@styled-system/css" "^1.0.3"
+    css-what "^2.1.3"
+    jest-emotion "^10.0.10"
+    lodash.get "^4.4.2"
+    lodash.merge "^4.6.1"
+    styled-system "^4.1.0"
+    typography "^0.16.19"
+
 throat@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
