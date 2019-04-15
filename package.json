@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "yarn workspace docs start"
+    "start": "yarn workspace docs start",
+    "test": "yarn workspace theme-ui test"
   },
   "workspaces": [
     "theme-ui",
