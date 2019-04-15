@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import { ThemeProvider as EmotionProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/react'
 import css from '@styled-system/css'
@@ -51,14 +52,6 @@ const alias = n => aliases[n] || n
 
 const themed = key => theme => css(get(theme, `styles.${key}`))(theme)
 
-const styled = (tag, key) => ({
-  as = tag,
-  ...props
-}) => jsx(alias(as), {
-  ...props,
-  css: themed(key)
-})
-
 export const Styled = React.forwardRef(({
   tag = 'div',  // tag is used as a key in theme.styles
   as,           // as replaces the rendered element type
@@ -73,7 +66,7 @@ export const Styled = React.forwardRef(({
 
 const components = {}
 tags.forEach(tag => {
-  components[tag] = styled(tag, tag)
+  components[tag] = styled(alias(tag))(props => themed(tag)(props.theme))
   Styled[tag] = React.forwardRef((props, ref) =>
     jsx(Styled, { ref, tag, ...props })
   )
@@ -87,7 +80,7 @@ export const Context = React.createContext({
 const createComponents = (components = {}) => {
   const next = {}
   Object.keys(components).forEach(key => {
-    next[key] = styled(components[key], key)
+    next[key] = styled(components[key])(props => themed(key)(props.theme))
   })
   return next
 }
