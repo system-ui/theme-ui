@@ -31,12 +31,6 @@ export default {
     heading: 1.25,
   },
   styles: {
-    wrapper: {
-      fontFamily: 'body',
-      lineHeight: 'body',
-      color: 'text',
-      bg: 'background',
-    },
     h1: {
       ...heading,
       fontSize: 6,

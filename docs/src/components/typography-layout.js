@@ -60,7 +60,7 @@ export default props => {
   return (
     <ThemeProvider theme={theme}>
       <GoogleFonts />
-      <Styled.wrapper>
+      <Styled.div>
         <Layout>
           <Header>
             <ThemeSelect
@@ -81,7 +81,7 @@ export default props => {
           </Main>
           <Footer />
         </Layout>
-      </Styled.wrapper>
+      </Styled.div>
     </ThemeProvider>
   )
 }

@@ -35,7 +35,6 @@ const tags = [
   'strong',
   'delete',
   // mdx
-  'wrapper',
   'inlineCode',
   'thematicBreak',
   // extras
@@ -45,7 +44,6 @@ const tags = [
 const aliases = {
   inlineCode: 'code',
   thematicBreak: 'hr',
-  wrapper: 'div',
 }
 
 const alias = n => aliases[n] || n

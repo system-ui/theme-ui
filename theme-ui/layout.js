@@ -25,6 +25,8 @@ export const Layout = props =>
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
+      color: 'text',
+      bg: 'background',
     })}
   />
 

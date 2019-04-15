@@ -23,17 +23,15 @@ export default props => {
           }
         }}
       />
-      <Styled.wrapper>
-        <Layout>
-          <Header />
-          <Main>
-            <Container>
-              {props.children}
-            </Container>
-          </Main>
-          <Footer />
-        </Layout>
-      </Styled.wrapper>
+      <Layout>
+        <Header />
+        <Main>
+          <Container>
+            {props.children}
+          </Container>
+        </Main>
+        <Footer />
+      </Layout>
     </>
   )
 }
