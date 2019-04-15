@@ -51,76 +51,72 @@ const alias = n => aliases[n] || n
 
 const themed = key => theme => css(get(theme, `styles.${key}`))(theme)
 
-const styled = (tag, key) => ({ as = tag, ...props }) => jsx(alias(as), {
+const styled = (tag, key) => ({
+  as = tag,
+  ...props
+}) => jsx(alias(as), {
   ...props,
   css: themed(key)
 })
 
-const components = {}
-
 export const Styled = React.forwardRef(({
-  tag = 'div',
+  tag = 'div',  // tag is used as a key in theme.styles
+  as,           // as replaces the rendered element type
   ...props
-}, ref) => {
-  const components = useComponents()
-  const type = components[tag] || 'div'
-  return jsx(type, { ...props, ref })
-})
-
-const createStyled = tag => React.forwardRef((props, ref) =>
-  jsx(Styled, { ref, tag, ...props })
+}, ref) =>
+  jsx(as || tag, {
+    ...props,
+    ref,
+    css: themed(tag)
+  })
 )
 
+const components = {}
 tags.forEach(tag => {
   components[tag] = styled(tag, tag)
-  Styled[tag] = createStyled(tag)
+  Styled[tag] = React.forwardRef((props, ref) =>
+    jsx(Styled, { ref, tag, ...props })
+  )
+})
+
+export const Context = React.createContext({
+  theme: {},
+  components,
 })
 
 const createComponents = (components = {}) => {
   const next = {}
   Object.keys(components).forEach(key => {
     next[key] = styled(components[key], key)
-    Styled[key] = createStyled(key)
   })
   return next
 }
 
-const noop = n => () => n
-
-const baseContext = {
-  theme: {
-    css: noop,
-  },
-  components,
-}
-
-export const Context = React.createContext(baseContext)
-
 export const ComponentProvider = ({
   theme,
   components,
-  transform,
   ...props
 }) => {
   const outer = useContext(Context)
   const context = merge({}, outer, {
-    theme: merge({}, theme, {
-      css: transform,
-    }),
+    theme,
     components: createComponents(components),
   })
 
   return (
-    <EmotionProvider theme={context.theme}>
-      <MDXProvider components={context.components}>
-        <Context.Provider value={context}>
-          {props.children}
-        </Context.Provider>
-      </MDXProvider>
-    </EmotionProvider>
+    jsx(EmotionProvider, { theme: context.theme },
+      jsx(MDXProvider, { components: context.components },
+        jsx(Context.Provider, {
+          value: context,
+          children: props.children
+        })
+      )
+    )
   )
 }
 
+////////
+// Potentially remove this
 export const useComponents = () => {
   const context = useContext(Context)
   return context.components
@@ -128,8 +124,4 @@ export const useComponents = () => {
 
 // This could be removed, but keeping the theme-ui API intact
 export const ThemeProvider = props =>
-  <ComponentProvider
-    {...props}
-    transform={css}
-  />
-
+  jsx(ComponentProvider, props)

@@ -73,11 +73,15 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
-  const Beep = props => <h2 {...props}>Boop</h2>
+  const Beep = props => <h2 {...props} />
+  const Inner = props => {
+    const Styled = useComponents()
+    return <Styled.Beep {...props} />
+  }
   const json = renderJSON(
     <ComponentProvider
       components={{
-        Beep: props => <h2 {...props}>Boop</h2>
+        Beep,
       }}
       theme={{
         styles: {
@@ -86,7 +90,7 @@ test('styles React components', () => {
           }
         }
       }}>
-      <Styled tag='Beep' />
+      <Inner />
     </ComponentProvider>
   )
   expect(json.type).toBe('h2')

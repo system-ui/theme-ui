@@ -62,22 +62,6 @@ export default props =>
 This will render child MDX documents with the components provided via context.
 For use outside of MDX (e.g. Remark Markdown) the styles could be applied with a wrapper component.
 
-## Styled components
-
-These components can also be consumed *outside* of an MDX doc with the `Styled` component.
-
-```jsx
-import React from 'react'
-import { Styled } from 'theme-ui'
-
-export default props =>
-  <Styled.wrapper>
-    <Styled.h1>
-      Hello
-    </Styled.h1>
-  </Styled.wrapper>
-```
-
 ## `theme.styles`
 
 The MDX components can also be styled via the `theme.styles` object.
@@ -98,6 +82,29 @@ export default {
     },
   }
 }
+```
+
+## Styled components
+
+These components' styles can also be consumed *outside* of an MDX doc with the `Styled` component.
+Note that these are only *styled* using the same `theme.styles` object and *not* the same components passed to the `ThemeProvider` context.
+
+```jsx
+import React from 'react'
+import { Styled } from 'theme-ui'
+
+export default props =>
+  <Styled.wrapper>
+    <Styled.h1>
+      Hello
+    </Styled.h1>
+  </Styled.wrapper>
+```
+
+To change the underlying component in `Styled`, use the `as` prop.
+
+```jsx
+<Styled.a as={Link} to='/'>Home</Styled.a>
 ```
 
 ## Layout Components
