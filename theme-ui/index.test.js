@@ -81,7 +81,7 @@ test('styles React components', () => {
   const json = renderJSON(
     <ComponentProvider
       components={{
-        Beep, // : props => <h2 {...props}>Boop</h2>
+        Beep,
       }}
       theme={{
         styles: {
