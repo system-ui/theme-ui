@@ -31,6 +31,13 @@ export default {
     heading: 1.25,
   },
   styles: {
+    root: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body',
+      color: 'text',
+      bg: 'background',
+    },
     h1: {
       ...heading,
       fontSize: 6,

@@ -60,7 +60,7 @@ export default props => {
   return (
     <ThemeProvider theme={theme}>
       <GoogleFonts />
-      <Styled.div>
+      <Styled.root>
         <Layout>
           <Header>
             <ThemeSelect
@@ -70,6 +70,13 @@ export default props => {
                 setTheme(e.target.value)
               }}
             />
+            <button
+              onClick={e => {
+                const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
+                setTheme(themeNames[i])
+              }}>
+              Next
+            </button>
           </Header>
           <Main>
             <Container
@@ -81,7 +88,7 @@ export default props => {
           </Main>
           <Footer />
         </Layout>
-      </Styled.div>
+      </Styled.root>
     </ThemeProvider>
   )
 }

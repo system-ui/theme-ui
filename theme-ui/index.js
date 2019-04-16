@@ -37,13 +37,16 @@ const tags = [
   // mdx
   'inlineCode',
   'thematicBreak',
-  // extras
+  // other
   'div',
+  // theme-ui
+  'root',
 ]
 
 const aliases = {
   inlineCode: 'code',
   thematicBreak: 'hr',
+  root: 'div',
 }
 
 const alias = n => aliases[n] || n
@@ -55,7 +58,7 @@ export const Styled = React.forwardRef(({
   as,           // as replaces the rendered element type
   ...props
 }, ref) =>
-  jsx(as || tag, {
+  jsx(as || alias(tag), {
     ...props,
     ref,
     css: themed(tag)
