@@ -32,7 +32,8 @@ const parseSelectors = styles => {
   }
   for (const key in parsed) {
     if (key === 'html' || key === 'body') {
-      parsed.wrapper = merge({}, parsed.wrapper, parsed[key])
+      // todo: what should this be named?
+      parsed.root = merge({}, parsed.root, parsed[key])
     }
   }
   return parsed

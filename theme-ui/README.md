@@ -94,11 +94,11 @@ import React from 'react'
 import { Styled } from 'theme-ui'
 
 export default props =>
-  <Styled.wrapper>
+  <Styled.div>
     <Styled.h1>
       Hello
     </Styled.h1>
-  </Styled.wrapper>
+  </Styled.div>
 ```
 
 To change the underlying component in `Styled`, use the `as` prop.

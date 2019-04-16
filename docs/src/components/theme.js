@@ -31,9 +31,10 @@ export default {
     heading: 1.25,
   },
   styles: {
-    wrapper: {
+    root: {
       fontFamily: 'body',
       lineHeight: 'body',
+      fontWeight: 'body',
       color: 'text',
       bg: 'background',
     },

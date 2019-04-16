@@ -12,7 +12,7 @@ import Footer from './footer'
 
 export default props => {
   return (
-    <>
+    <Styled.root>
       <Global
         styles={{
           '*': {
@@ -23,17 +23,15 @@ export default props => {
           }
         }}
       />
-      <Styled.wrapper>
-        <Layout>
-          <Header />
-          <Main>
-            <Container>
-              {props.children}
-            </Container>
-          </Main>
-          <Footer />
-        </Layout>
-      </Styled.wrapper>
-    </>
+      <Layout>
+        <Header />
+        <Main>
+          <Container>
+            {props.children}
+          </Container>
+        </Main>
+        <Footer />
+      </Layout>
+    </Styled.root>
   )
 }
