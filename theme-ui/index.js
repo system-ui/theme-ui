@@ -51,25 +51,18 @@ const aliases = {
 
 const alias = n => aliases[n] || n
 
-const themed = key => theme => css(get(theme, `styles.${key}`))(theme)
+const themed = key => props => css(get(props.theme, `styles.${key}`))(props.theme)
 
-export const Styled = React.forwardRef(({
-  tag = 'div',  // tag is used as a key in theme.styles
-  as,           // as replaces the rendered element type
-  ...props
-}, ref) =>
-  jsx(as || alias(tag), {
-    ...props,
-    ref,
-    css: themed(tag)
-  })
+export const Styled = styled('div')(
+  props => themed(props.tag)(props),
+  css()
 )
 
 const components = {}
 tags.forEach(tag => {
-  components[tag] = styled(alias(tag))(props => themed(tag)(props.theme))
+  components[tag] = styled(alias(tag))(themed(tag))
   Styled[tag] = React.forwardRef((props, ref) =>
-    jsx(Styled, { ref, tag, ...props })
+    jsx(Styled, { ref, as: alias(tag), tag, ...props })
   )
 })
 
@@ -81,7 +74,7 @@ export const Context = React.createContext({
 const createComponents = (components = {}) => {
   const next = {}
   Object.keys(components).forEach(key => {
-    next[key] = styled(components[key])(props => themed(key)(props.theme))
+    next[key] = styled(components[key])(themed(key))
   })
   return next
 }
