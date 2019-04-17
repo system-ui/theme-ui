@@ -18,7 +18,9 @@ export const Box = styled('div')(css({
   flex
 )
 
-export const Flex = styled(Box)(
+export const Flex = styled(Box)({
+  display: 'flex',
+},
   flexWrap,
   alignItems,
   justifyContent,
