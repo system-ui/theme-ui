@@ -137,6 +137,21 @@ export default props =>
   </Layout>
 ```
 
+## Box & Flex
+
+The `Box` & `Flex` layout components are similar to the ones found in [Rebass](https://rebassjs.org), but are built with Emotion and `@styled-system/css`.
+
+```jsx
+import React from 'react'
+import { Flex, Box } from 'theme-ui/layout'
+
+export default props =>
+  <Flex flexWrap='wrap'>
+    <Box width={[ 1, 1/2 ]} />
+    <Box width={[ 1, 1/2 ]} />
+  </Flex>
+```
+
 ## Experimental
 
 - [Live Demo](https://theme-ui.now.sh/demo)

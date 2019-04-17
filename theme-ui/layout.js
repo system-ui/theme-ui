@@ -1,17 +1,29 @@
 import React from 'react'
+import styled from '@emotion/styled'
+import {
+  width,
+  flex,
+  alignItems,
+  justifyContent,
+  flexWrap,
+  flexDirection
+} from 'styled-system'
 import { css } from './index'
 
-export const Box = ({
-  as: Tag = 'div',
-  ...props
-}) =>
-  <Tag
-    {...props}
-    css={(theme) => css({
-      boxSizing: 'border-box',
-      minWidth: 0,
-    })({ theme, ...props })}
-  />
+export const Box = styled('div')(css({
+  boxSizing: 'border-box',
+  minWidth: 0,
+}),
+  width,
+  flex
+)
+
+export const Flex = styled(Box)(
+  flexWrap,
+  alignItems,
+  justifyContent,
+  flexDirection,
+)
 
 // root/page layout
 export const Layout = props =>
