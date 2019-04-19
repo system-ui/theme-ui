@@ -111,9 +111,6 @@ export const ComponentProvider = ({
 
 export const Reset = props => React.createElement(Global, {
   styles: {
-    '*': {
-      boxSizing: 'border-box',
-    },
     body: {
       margin: 0,
     },
