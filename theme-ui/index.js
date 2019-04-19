@@ -6,11 +6,16 @@ import { MDXProvider } from '@mdx-js/react'
 import css from '@styled-system/css'
 import merge from 'lodash.merge'
 import get from 'lodash.get'
+import omit from 'lodash.omit'
 
 export { css } from '@styled-system/css'
 
 // custom pragma
 const spaceRegExp = /^[mp][trblxy]?$/
+const spaceProps = [
+  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
+  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
+]
 
 const getSpace = props => {
   if (!props) return undefined
@@ -44,7 +49,7 @@ const system = (type, props, ...children) =>
   React.createElement.apply(undefined, [
     type,
     {
-      ...props,
+      ...omit(props, spaceProps),
       css: getCSS(props)
     },
     ...children
@@ -111,7 +116,6 @@ export const Styled = React.forwardRef(({
   as,           // as replaces the rendered element type
   ...props
 }, ref) =>
-  // why doesn't jsx work here? function call?
   jsx(as || alias(tag), {
     ...props,
     ref,
