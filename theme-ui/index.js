@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { jsx } from '@emotion/core'
+import { jsx, Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import { ThemeProvider as EmotionProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/react'
@@ -108,6 +108,17 @@ export const ComponentProvider = ({
     )
   )
 }
+
+export const Reset = props => React.createElement(Global, {
+  styles: {
+    '*': {
+      boxSizing: 'border-box',
+    },
+    body: {
+      margin: 0,
+    },
+  }
+})
 
 ////////
 // Potentially remove this

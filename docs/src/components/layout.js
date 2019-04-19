@@ -1,6 +1,5 @@
 import React from 'react'
-import { Global } from '@emotion/core'
-import { Styled } from 'theme-ui'
+import { Styled, Reset } from 'theme-ui'
 import {
   Layout,
   Main,
@@ -13,16 +12,7 @@ import Footer from './footer'
 export default props => {
   return (
     <Styled.root>
-      <Global
-        styles={{
-          '*': {
-            boxSizing: 'border-box'
-          },
-          body: {
-            margin: 0,
-          }
-        }}
-      />
+      <Reset />
       <Layout>
         <Header />
         <Main>
