@@ -1,5 +1,5 @@
 // based on https://github.com/jxnblk/typography-mdx
-import Typography from 'typography'
+import Typography from '@jxnblk/typography'
 import merge from 'lodash.merge'
 import cssWhat from 'css-what'
 
@@ -42,10 +42,13 @@ const parseSelectors = styles => {
 export const toStyles = (theme) => {
   const typography = new Typography({
     ...theme,
+    output: 'components',
     rhythmUnit: 'px',
     includeNormalize: false,
   })
   const json = typography.toJSON()
+
+  // still need this for themes that add custom styles
   const styles = parseSelectors(json)
 
   typography.styles = styles

@@ -1042,6 +1042,19 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/yargs" "^12.0.9"
 
+"@jxnblk/typography@^2.0.0-alpha.0":
+  version "2.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@jxnblk/typography/-/typography-2.0.0-alpha.0.tgz#c39bf0fe84dd8348465f441629b76350b438b5cd"
+  integrity sha512-bpFImZ6k5wutDCie5fjhocFCX9YUiA5nYE4EnC4ASun4nTMzNnAG2IeGzjMvHP2310uDu/ShqEn8+FAq9pKwmQ==
+  dependencies:
+    compass-vertical-rhythm "^1.4.5"
+    decamelize "^1.2.0"
+    gray-percentage "^2.0.0"
+    lodash "^4.13.1"
+    modularscale "^1.0.2"
+    object-assign "^4.1.0"
+    typography-normalize "^1.0.0-alpha.0"
+
 "@mdx-js/mdx@^1.0.0-rc.0":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.0.5.tgz#380eb24d04c99f608b82cf4f4ef6bddca3342b45"
@@ -11039,6 +11052,11 @@ typography-normalize@^0.16.19:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
   integrity sha512-vtnSv/uGBZVbd4e/ZhZB9HKBgKKlWQUXw74+ADIHHxzKp27CEf8PSR8TX1zF2qSyQ9/qMdqLwXYz8yRQFq9JLQ==
+
+typography-normalize@^1.0.0-alpha.0:
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-1.0.0-alpha.0.tgz#b6d20c22c477faf7c0384bcdeb0a17342e18ca85"
+  integrity sha512-+3fQI75G+NIYYlWSAwIkHgLPcNJIjCKRdMlInDxKJhnp6VoOckSfGHAS1V+rgEwuFaiKB3S0qYfiyu21Thl3yg==
 
 typography-theme-alton@^0.16.19:
   version "0.16.19"

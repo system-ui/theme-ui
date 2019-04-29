@@ -87,6 +87,7 @@ export default props => {
             </Container>
           </Main>
           <Footer />
+          <pre children={JSON.stringify(theme.styles, null, 2)} />
         </Layout>
       </Styled.root>
     </ThemeProvider>
