@@ -7,7 +7,7 @@
 [![Version][version]][npm]
 
 [circleci]: https://circleci.com/gh/system-ui/theme-ui
-[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui.js
+[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
 
