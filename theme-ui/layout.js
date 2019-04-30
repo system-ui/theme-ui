@@ -2,6 +2,8 @@ import React from 'react'
 import styled from '@emotion/styled'
 import {
   width,
+  space,
+  color,
   flex,
   alignItems,
   justifyContent,
@@ -15,6 +17,8 @@ export const Box = styled('div')(css({
   minWidth: 0,
 }),
   width,
+  space,
+  color,
   flex
 )
 
