@@ -3,6 +3,14 @@
 
 **WIP** Themeable UI components for themes
 
+[![Build Status][circleci-badge]][circleci]
+[![Version][version]][npm]
+
+[circleci]: https://circleci.com/gh/system-ui/theme-ui
+[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui
+[version]: https://flat.badgen.net/npm/v/theme-ui
+[npm]: https://npmjs.com/package/theme-ui
+
 ```sh
 npm i theme-ui
 ```
