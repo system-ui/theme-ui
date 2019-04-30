@@ -6,16 +6,11 @@ import { MDXProvider } from '@mdx-js/react'
 import css from '@styled-system/css'
 import merge from 'lodash.merge'
 import get from 'lodash.get'
-import omit from 'lodash.omit'
 
 export { css } from '@styled-system/css'
 
 // custom pragma
 const spaceRegExp = /^[mp][trblxy]?$/
-const spaceProps = [
-  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
-  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
-]
 
 const getSpace = props => {
   if (!props) return undefined
@@ -38,19 +33,26 @@ const getCSS = props => {
   if (!props) return undefined
   if (!props.css && !hasSpace(props)) return undefined
   return theme => [
-    typeof props.css === 'function'
-      ? css(props.css(theme))(theme)
-      : css(props.css)(theme),
+    css(props.css)(theme),
     getSpace(props)(theme),
   ]
 }
 
-const system = (type, props, ...children) =>
+const system = (type, {
+  m, mt, mr, mb, ml, mx, my,
+  p, pt, pr, pb, pl, px, py,
+  css,
+  ...props
+} = {}, ...children) =>
   React.createElement.apply(undefined, [
     type,
     {
-      ...omit(props, spaceProps),
-      css: getCSS(props)
+      ...props,
+      css: getCSS({
+        m, mt, mr, mb, ml, mx, my,
+        p, pt, pr, pb, pl, px, py,
+        css,
+      })
     },
     ...children
   ])
