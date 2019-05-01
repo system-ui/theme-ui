@@ -6,7 +6,7 @@ import {
   ComponentProvider,
   Styled,
   useComponents,
-} from './index'
+} from '../src/index'
 
 expect.extend(matchers)
 
