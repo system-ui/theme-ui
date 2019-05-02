@@ -4,68 +4,22 @@ import styled from '@emotion/styled'
 import { ThemeProvider as EmotionProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/react'
 import css from '@styled-system/css'
+import { space } from 'styled-system'
 import merge from 'lodash.merge'
 import get from 'lodash.get'
-import omit from 'lodash.omit'
 
 export { css } from '@styled-system/css'
 
 // custom pragma
-const spaceRegExp = /^[mp][trblxy]?$/
-const spaceProps = [
-  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
-  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
-]
-
-const getSpace = props => {
-  if (!props) return undefined
-  const styles = {}
-  for (const key in props) {
-    if (!spaceRegExp.test(key)) continue
-    styles[key] = props[key]
-  }
-  return css(styles)
-}
-
-const hasSpace = props => {
-  for (const key in props) {
-    if (spaceRegExp.test(key)) return true
-  }
-  return false
-}
-
-const getCSS = props => {
-  if (!props) return undefined
-  if (!props.css && !hasSpace(props)) return undefined
-  return theme => [
-    typeof props.css === 'function'
-      ? css(props.css(theme))(theme)
-      : css(props.css)(theme),
-    getSpace(props)(theme),
-  ]
-}
-
-const system = (type, props, ...children) =>
-  React.createElement.apply(undefined, [
+export const jsx = (type, props, ...children) =>
+  emotion.apply(undefined, [
     type,
-    {
-      ...omit(props, spaceProps),
-      css: getCSS(props)
-    },
+    props ? ({
+      ...props,
+      css: css(props.css)
+    }) : null,
     ...children
   ])
-
-// compose createElement functions
-const compose = (...funcs) => (type, props, ...children) => {
-  return funcs.reduce((el, fn) => {
-    return fn.apply(undefined, [ el.type, el.props, ...children ])
-  }, React.createElement.apply(undefined, [ type, props, ...children ]))
-}
-
-export const jsx = compose(
-  system,
-  emotion
-)
 
 const tags = [
   'p',
@@ -111,11 +65,11 @@ const alias = n => aliases[n] || n
 
 const themed = key => props => css(get(props.theme, `styles.${key}`))(props.theme)
 
-export const Styled = styled('div')(themed('div'))
+export const Styled = styled('div')(themed('div'), space)
 
 const components = {}
 tags.forEach(tag => {
-  components[tag] = styled(alias(tag))(themed(tag))
+  components[tag] = styled(alias(tag))(themed(tag), space)
   Styled[tag] = components[tag]
 })
 

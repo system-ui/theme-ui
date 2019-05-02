@@ -119,9 +119,9 @@ test('components accept an `as` prop', () => {
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {
-      mx: 'auto',
-      p: 2,
       css: {
+        mx: 'auto',
+        p: 2,
         bg: 'tomato',
       }
     })
@@ -130,21 +130,4 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('margin-right', 'auto')
   expect(json).toHaveStyleRule('padding', '8px')
   expect(json).toHaveStyleRule('background-color', 'tomato')
-})
-
-test('custom pragma removes styled-system props', () => {
-  const json = renderJSON(
-    jsx('div', {
-      m: 0,
-      mx: 'auto',
-      mb: 4,
-      p: 2,
-      px: 5
-    })
-  )
-  expect(json.props.m).toBe(undefined)
-  expect(json.props.mx).toBe(undefined)
-  expect(json.props.mb).toBe(undefined)
-  expect(json.props.p).toBe(undefined)
-  expect(json.props.px).toBe(undefined)
 })
