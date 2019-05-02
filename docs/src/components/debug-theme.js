@@ -1,4 +1,6 @@
-import React, { useContext } from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { useContext } from 'react'
 import { Context } from 'theme-ui'
 
 export default props => {

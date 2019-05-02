@@ -1,7 +1,7 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import {
   Styled,
-  css,
 } from 'theme-ui'
 import { Helmet } from 'react-helmet'
 import {
@@ -35,7 +35,7 @@ export default props => {
       </Helmet>
       <Layout>
         <div
-          css={css({
+          css={{
             float: 'right',
             ml: 4,
             p: 2,
@@ -44,7 +44,7 @@ export default props => {
             fontSize: 12,
             color: 'black',
             bg: 'white',
-          })}>
+          }}>
           <FieldSet name='colors' type='color' />
           <FieldSet
             name='fonts'

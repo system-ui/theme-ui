@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from './index'
 import styled from '@emotion/styled'
 import {
   width,
@@ -35,49 +36,49 @@ export const Flex = styled(Box)({
 export const Layout = props =>
   <Box
     {...props}
-    css={css({
+    css={{
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-    })}
+    }}
   />
 
 export const Header = props =>
   <Box
     as='header'
     {...props}
-    css={css({
+    css={{
       display: 'flex',
-    })}
+    }}
   />
 
 export const Main = props =>
   <Box
     {...props}
-    css={css({
+    css={{
       flex: '1 1 auto',
-    })}
+    }}
   />
 
 export const Container = props =>
   <Box
     {...props}
-    css={css({
+    css={{
       width: '100%',
       minWidth: 0,
       maxWidth: 1024,
       mx: 'auto',
       p: 4,
-    })}
+    }}
   />
 
 export const Footer = props =>
   <Box
     as='footer'
     {...props}
-    css={css({
+    css={{
       display: 'flex',
-    })}
+    }}
   />
 
 // todo
