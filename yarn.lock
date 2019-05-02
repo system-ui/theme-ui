@@ -1095,10 +1095,10 @@
   resolved "https://registry.yarnpkg.com/@stefanprobst/lokijs/-/lokijs-1.5.6-b.tgz#6a36a86dbe132e702e6b15ffd3ce4139aebfe942"
   integrity sha512-MNodHp46og+Sdde/LCxTLrxcD5Dimu21R/Fer2raXMG1XtHSV2+vZnkIV87OPAxuf2NiDj1W5hN7Q2MYUfQQ8w==
 
-"@styled-system/css@^2.0.0-0":
-  version "2.0.0-0"
-  resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-2.0.0-0.tgz#f4cd62e3d86ef553a7ed34cffa031d559705d2c9"
-  integrity sha512-nVmeJxLqXH7tW8B+0V3IHkLNRET9y1tzIUXo5++HW6BJ8trUhH7V5711iyBBvKy8nK0DgyCZH/GbeHLVCfmOYA==
+"@styled-system/css@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-2.0.0.tgz#1cdb89182ddec16fab63d088093917df3745179b"
+  integrity sha512-lM1D6QEx40fH6sYPBWXGHK0qSjxwWM98dwsdwjE/M+K9GdTpKg2FAtprJOTl0RymtBJ5/qs4L34EGw4QBsbk4g==
   dependencies:
     lodash.get "^4.4.2"
 
