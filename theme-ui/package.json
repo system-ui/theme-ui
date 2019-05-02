@@ -14,6 +14,7 @@
     "jest-emotion": "^10.0.10",
     "lodash.get": "^4.4.2",
     "lodash.merge": "^4.6.1",
+    "lodash.omit": "^4.5.0",
     "styled-system": "^4.1.0",
     "typography": "^0.16.19"
   },

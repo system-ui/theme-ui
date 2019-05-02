@@ -47,6 +47,32 @@ export default () =>
   </div>
 ```
 
+## Custom Pragma (experimental)
+
+To avoid manually importing and calling the `css` prop, a custom pragma can be used instead.
+This custom pragma converts a Styled System-aware `css` prop into a styled object and passes it to the Emotion `jsx` pragma.
+This is a complete replacement for the Emotion custom pragma.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={{
+      color: 'white',
+      bg: 'primary',
+    }}
+  />
+```
+
+The custom pragma also accepts space props for margin and padding.
+
+```jsx
+<div mx='auto' p={4} />
+```
+
 ## MDX Components
 
 Use the `components` prop to add components to MDX scope.
