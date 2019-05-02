@@ -3,6 +3,14 @@
 
 **WIP** Themeable UI components for themes
 
+[![Build Status][circleci-badge]][circleci]
+[![Version][version]][npm]
+
+[circleci]: https://circleci.com/gh/system-ui/theme-ui
+[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui
+[version]: https://flat.badgen.net/npm/v/theme-ui
+[npm]: https://npmjs.com/package/theme-ui
+
 ```sh
 npm i theme-ui
 ```
@@ -37,6 +45,32 @@ export default () =>
     })}>
     Hello
   </div>
+```
+
+## Custom Pragma (experimental)
+
+To avoid manually importing and calling the `css` prop, a custom pragma can be used instead.
+This custom pragma converts a Styled System-aware `css` prop into a styled object and passes it to the Emotion `jsx` pragma.
+This is a complete replacement for the Emotion custom pragma.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={{
+      color: 'white',
+      bg: 'primary',
+    }}
+  />
+```
+
+The custom pragma also accepts space props for margin and padding.
+
+```jsx
+<div mx='auto' p={4} />
 ```
 
 ## MDX Components

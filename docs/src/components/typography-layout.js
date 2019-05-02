@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import { ThemeProvider, Styled, css } from 'theme-ui'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { useState } from 'react'
+import { ThemeProvider, Styled } from 'theme-ui'
 import {
   Layout,
   Main,
@@ -23,18 +25,18 @@ const ThemeSelect = props =>
       htmlFor={props.name}
       css={{
         fontSize: 16,
-        marginRight: 8,
+        mr: 2,
       }}>
       Theme
     </label>
     <select
       id={props.name}
       {...props}
-      css={css({
+      css={{
         fontFamily: 'system-ui, sans-serif',
         fontSize: 16,
         p: 2,
-      })}>
+      }}>
       {themeNames.map(name => (
         <option
           key={name}
