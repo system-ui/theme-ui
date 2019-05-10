@@ -44,7 +44,7 @@ export const Layout = props =>
 
 export const Header = props =>
   jsx(Box, {
-    as: 'header'
+    as: 'header',
     ...props,
     css: {
       display: 'flex',
@@ -73,7 +73,7 @@ export const Container = props =>
 
 export const Footer = props =>
   jsx(Box, {
-    as: 'footer'
+    as: 'footer',
     ...props,
     css: {
       display: 'flex',
