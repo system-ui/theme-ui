@@ -3,8 +3,10 @@
   "scripts": {
     "prepare": "yarn workspace theme-ui prepare",
     "start": "yarn workspace docs start",
+    "build": "yarn workspace docs build",
     "clean": "yarn workspace docs clean",
-    "test": "yarn workspace theme-ui test"
+    "test": "yarn workspace theme-ui test",
+    "now-build": "yarn build"
   },
   "workspaces": [
     "theme-ui",
