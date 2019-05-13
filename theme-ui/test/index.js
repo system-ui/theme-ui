@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import {
-  ComponentProvider,
+  ThemeProvider,
   Context,
   Styled,
   jsx,
@@ -16,16 +16,16 @@ const renderJSON = el => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
-    <ComponentProvider>
+    <ThemeProvider>
       <h1>Hello</h1>
-    </ComponentProvider>
+    </ThemeProvider>
   )
   expect(json).toMatchSnapshot()
 })
 
 test('renders with styles', () => {
   const json = renderJSON(
-    <ComponentProvider
+    <ThemeProvider
       theme={{
         styles: {
           h1: {
@@ -34,14 +34,14 @@ test('renders with styles', () => {
         }
       }}>
       <h1>Hello</h1>
-    </ComponentProvider>
+    </ThemeProvider>
   )
   expect(json).toMatchSnapshot()
 })
 
 test('creates non-standard components', () => {
   const json = renderJSON(
-    <ComponentProvider
+    <ThemeProvider
       components={{
         sup: 'sup',
       }}
@@ -53,7 +53,7 @@ test('creates non-standard components', () => {
         }
       }}>
       <sup>hey</sup>
-    </ComponentProvider>
+    </ThemeProvider>
   )
   expect(json).toMatchSnapshot()
   expect(json).toHaveStyleRule('color', 'tomato')
@@ -67,7 +67,7 @@ test('styles React components', () => {
   }
 
   const json = renderJSON(
-    <ComponentProvider
+    <ThemeProvider
       components={{
         Beep,
       }}
@@ -79,7 +79,7 @@ test('styles React components', () => {
         }
       }}>
       <Inner />
-    </ComponentProvider>
+    </ThemeProvider>
   )
   expect(json.type).toBe('h2')
   expect(json).toHaveStyleRule('color', 'tomato')
@@ -88,7 +88,7 @@ test('styles React components', () => {
 test('components accept an `as` prop', () => {
   const Beep = props => <h2 {...props} />
   const json = renderJSON(
-    <ComponentProvider
+    <ThemeProvider
       theme={{
         styles: {
           h1: {
@@ -97,7 +97,7 @@ test('components accept an `as` prop', () => {
         }
       }}>
       <Styled.h1 as={Beep}>Beep boop</Styled.h1>
-    </ComponentProvider>
+    </ThemeProvider>
   )
   expect(json.type).toBe('h2')
   expect(json).toHaveStyleRule('color', 'tomato')

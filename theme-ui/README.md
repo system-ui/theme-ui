@@ -76,7 +76,7 @@ The custom pragma also accepts space props for margin and padding.
 ## MDX Components
 
 Use the `components` prop to add components to MDX scope.
-The `ThemeProvider` (name TBD) is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
+The `ThemeProvider` is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
 
 ```jsx
 // with mdx components
