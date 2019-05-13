@@ -143,8 +143,6 @@ To change the underlying component in `Styled`, use the `as` prop.
 
 ## Layout Components
 
-Page layout components are included in the `theme-ui/layout` module.
-
 ```jsx
 import React from 'react'
 import {
@@ -153,7 +151,7 @@ import {
   Main,
   Container,
   Footer
-} from 'theme-ui/layout'
+} from 'theme-ui'
 
 export default props =>
   <Layout>
@@ -177,7 +175,7 @@ The `Box` & `Flex` layout components are similar to the ones found in [Rebass](h
 
 ```jsx
 import React from 'react'
-import { Flex, Box } from 'theme-ui/layout'
+import { Flex, Box } from 'theme-ui'
 
 export default props =>
   <Flex flexWrap='wrap'>

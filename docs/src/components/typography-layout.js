@@ -1,12 +1,13 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useState } from 'react'
-import { ThemeProvider, Styled } from 'theme-ui'
 import {
+  jsx,
+  ThemeProvider,
+  Styled,
   Layout,
   Main,
   Container,
-} from 'theme-ui/layout'
+} from 'theme-ui'
+import { useState } from 'react'
 import merge from 'lodash.merge'
 
 import GoogleFonts from './google-fonts'

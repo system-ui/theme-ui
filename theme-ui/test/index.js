@@ -1,11 +1,12 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
+import { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import {
   ComponentProvider,
+  Context,
   Styled,
-  useComponents,
   jsx,
 } from '../src/index'
 
@@ -38,21 +39,6 @@ test('renders with styles', () => {
   expect(json).toMatchSnapshot()
 })
 
-test('renders with useComponents', () => {
-  let components
-  const Beep = props => {
-    components = useComponents()
-    return false
-  }
-  const json = renderJSON(
-    <ComponentProvider>
-      <Beep />
-    </ComponentProvider>
-  )
-  expect(typeof components).toBe('object')
-  expect(components.h1).toBeTruthy()
-})
-
 test('creates non-standard components', () => {
   const json = renderJSON(
     <ComponentProvider
@@ -76,9 +62,10 @@ test('creates non-standard components', () => {
 test('styles React components', () => {
   const Beep = props => <h2 {...props} />
   const Inner = props => {
-    const Styled = useComponents()
-    return <Styled.Beep {...props} />
+    const context = useContext(Context)
+    return mdx(context.components.Beep, props)
   }
+
   const json = renderJSON(
     <ComponentProvider
       components={{

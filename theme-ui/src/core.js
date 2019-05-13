@@ -20,7 +20,7 @@ const createComponents = (components = {}) => {
   return next
 }
 
-export const ComponentProvider = ({
+export const ThemeProvider = ({
   theme,
   components,
   ...props
@@ -41,11 +41,4 @@ export const ComponentProvider = ({
       )
     )
   )
-}
-
-////////
-// Potentially remove this
-export const useComponents = () => {
-  const context = useContext(Context)
-  return context.components
 }

@@ -1,9 +1,6 @@
 export { css } from '@styled-system/css'
 export { jsx } from './jsx'
-export {
-  Context,
-  ComponentProvider,
-} from './core'
+export { Context, ThemeProvider } from './core'
 export { Styled } from './components'
 export {
   Box,
@@ -15,8 +12,5 @@ export {
   Footer,
 } from './layout'
 
-export {
-  // DEPRECATED
-  ComponentProvider as ThemeProvider,
-  useComponents,
-} from './core'
+// DEPRECATED
+export { ThemeProvider as ComponentProvider } from './core'

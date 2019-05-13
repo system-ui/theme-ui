@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Footer } from 'theme-ui/layout'
+import { jsx, Footer } from 'theme-ui'
 import NavLink from './nav-link'
 
 export default props =>

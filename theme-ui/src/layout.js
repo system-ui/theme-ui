@@ -79,6 +79,3 @@ export const Footer = props =>
       display: 'flex',
     }
   })
-
-// todo
-// export const Sidebar
