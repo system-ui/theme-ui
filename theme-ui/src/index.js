@@ -1,5 +1,6 @@
 export {
   css,
+  jsx,
   Styled,
   Context,
   ComponentProvider,

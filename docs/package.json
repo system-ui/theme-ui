@@ -8,6 +8,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "now-build": "gatsby build"
   },
   "dependencies": {
@@ -20,14 +21,13 @@
     "gatsby-mdx": "^0.5.6",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
-    "gatsby-plugin-emotion": "^4.0.6",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "theme-ui": "^0.0.8",
+    "theme-ui": "*",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",

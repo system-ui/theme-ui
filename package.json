@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "prepare": "yarn workspace theme-ui prepare",
     "start": "yarn workspace docs start",
     "test": "yarn workspace theme-ui test"
   },

@@ -6,6 +6,7 @@ import {
   ComponentProvider,
   Styled,
   useComponents,
+  jsx,
 } from '../src/index'
 
 expect.extend(matchers)
@@ -113,4 +114,20 @@ test('components accept an `as` prop', () => {
   )
   expect(json.type).toBe('h2')
   expect(json).toHaveStyleRule('color', 'tomato')
+})
+
+test('custom pragma adds styles', () => {
+  const json = renderJSON(
+    jsx('div', {
+      css: {
+        mx: 'auto',
+        p: 2,
+        bg: 'tomato',
+      }
+    })
+  )
+  expect(json).toHaveStyleRule('margin-left', 'auto')
+  expect(json).toHaveStyleRule('margin-right', 'auto')
+  expect(json).toHaveStyleRule('padding', '8px')
+  expect(json).toHaveStyleRule('background-color', 'tomato')
 })
