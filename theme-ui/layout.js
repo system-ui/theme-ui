@@ -1,2 +1,2 @@
 // shim for backwards compatibility
-module.exports = require('./dist')
+export * from './dist/index.esm'

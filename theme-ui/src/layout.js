@@ -1,4 +1,4 @@
-import { jsx } from './index'
+import jsx from './jsx'
 import styled from '@emotion/styled'
 import {
   width,
@@ -10,7 +10,7 @@ import {
   flexWrap,
   flexDirection
 } from 'styled-system'
-import { css } from './core'
+import css from '@styled-system/css'
 
 export const Box = styled('div')(css({
   boxSizing: 'border-box',

@@ -1,14 +1,10 @@
+export { css } from '@styled-system/css'
+export { jsx } from './jsx'
 export {
-  css,
-  jsx,
-  Styled,
   Context,
   ComponentProvider,
-  // deprecate
-  useComponents,
-  ThemeProvider
 } from './core'
-
+export { Styled } from './components'
 export {
   Box,
   Flex,
@@ -19,4 +15,8 @@ export {
   Footer,
 } from './layout'
 
-export { default as typography } from './typography'
+export {
+  // DEPRECATED
+  ComponentProvider as ThemeProvider,
+  useComponents,
+} from './core'
