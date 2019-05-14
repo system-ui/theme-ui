@@ -1,0 +1,35 @@
+
+# Color Modes
+
+WIP
+
+```jsx
+<ThemeProvider
+  theme={theme}
+  colorMode='dark'>
+  {props.children}
+</ThemeProvider>
+```
+
+```jsx
+import React from 'react'
+import { useColorMode } from 'theme-ui'
+
+export default props => {
+  const [ mode, setMode ] = useColorMode('light')
+
+  return (
+    <button
+      onClick={e => {
+        setMode(mode === 'dark' ? 'light' : 'dark')
+      }}>
+      Toggle color mode
+    </button>
+  )
+}
+```
+
+- `gatsby-theme-ui`
+  - uses `wrapRootElement` to provide context
+  - includes state for dark/color modes
+  - default location for config e.g. `src/gatsby-theme-ui/colors.js`

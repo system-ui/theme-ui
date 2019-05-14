@@ -12,6 +12,7 @@ export default {
     secondary: '#119',
     muted: '#f6f6f6',
     highlight: '#ffffcc',
+    gray: '#777',
     header: {
       text: 'inherit',
       background: 'inherit',
@@ -31,6 +32,18 @@ export default {
     heading: 1.25,
   },
   styles: {
+    Header: {
+      color: 'header.text',
+      bg: 'header.background',
+    },
+    Footer: {
+      color: 'header.text',
+      bg: 'header.background',
+    },
+    Container: {
+      p: 3,
+      maxWidth: 1280,
+    },
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
@@ -69,9 +82,11 @@ export default {
       }
     },
     pre: {
+      variant: 'prism',
       fontFamily: 'monospace',
       p: 3,
       bg: 'muted',
+      overflow: 'auto',
     },
     code: {
       fontFamily: 'monospace',
@@ -81,5 +96,19 @@ export default {
       fontFamily: 'monospace',
       bg: 'muted',
     },
+  },
+  prism: {
+    [[
+      '.comment',
+      '.prolog',
+      '.doctype',
+      '.cdata',
+      '.punctuation',
+    ]]: {
+      color: 'gray',
+    },
+    '.comment': {
+      fontStyle: 'italic',
+    }
   },
 }

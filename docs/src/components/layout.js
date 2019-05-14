@@ -4,14 +4,16 @@ import {
   Styled,
   Layout,
   Main,
+  Box,
   Container,
 } from 'theme-ui'
 import { Global } from '@emotion/core'
 
 import Header from './header'
 import Footer from './footer'
+import Sidebar from './sidebar'
 
-export default props => {
+export default ({ header, ...props }) => {
   return (
     <Styled.root>
       <Global
@@ -25,10 +27,18 @@ export default props => {
         }}
       />
       <Layout>
-        <Header />
+        <Header>
+          {header}
+        </Header>
         <Main>
-          <Container>
-            {props.children}
+          <Container
+            css={{
+              display: 'flex',
+            }}>
+            <Sidebar />
+            <Box>
+              {props.children}
+            </Box>
           </Container>
         </Main>
         <Footer />
