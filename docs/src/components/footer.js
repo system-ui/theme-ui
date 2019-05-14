@@ -10,11 +10,7 @@ export default props =>
         flexWrap: 'wrap',
         alignItems: 'center',
       }}>
-      <NavLink to='/'>Home</NavLink>
-      <NavLink to='/demo'>Demo</NavLink>
-      <NavLink to='/typography'>Typography</NavLink>
-      <NavLink to='/color'>Color</NavLink>
-      <NavLink to='/layout'>Layout</NavLink>
-      <NavLink to='/components'>Components</NavLink>
+      <NavLink to='/'>Theme UI</NavLink>
+      <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
     </Container>
   </Footer>

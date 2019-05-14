@@ -90,7 +90,7 @@ export default {
     },
     code: {
       fontFamily: 'monospace',
-      fontSize: 1,
+      fontSize: 'inherit',
     },
     inlineCode: {
       fontFamily: 'monospace',

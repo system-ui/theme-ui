@@ -26,12 +26,18 @@ export default props =>
       position: 'sticky',
       top: 0,
       minWidth: 0,
-      width: [ 128, 256 ],
+      width: [ '100%', 256 ],
       flex: 'none',
-      p: 0,
+      py: 3,
       maxHeight: '100vh',
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch',
+      '@media screen and (max-width: 39.99em)': {
+        bg: 'background',
+        marginLeft: '-100%',
+        transition: 'transform .2s ease-out',
+        transform: props.open ? 'translateX(100%)' : 'translateX(0)',
+      }
     }}>
     <ThemeProvider theme={theme}>
       <Content />
