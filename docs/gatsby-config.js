@@ -7,13 +7,5 @@ module.exports = {
         extensions: [ '.mdx', '.md' ],
       }
     },
-    {
-      resolve: 'gatsby-plugin-compile-es6-packages',
-      options: {
-        modules: [
-          'theme-ui',
-        ]
-      }
-    },
   ]
 }

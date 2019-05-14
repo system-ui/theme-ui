@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { ThemeProvider } from 'theme-ui'
+import { jsx, ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
 export default props => {

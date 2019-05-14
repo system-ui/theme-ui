@@ -7,7 +7,7 @@
 [![Version][version]][npm]
 
 [circleci]: https://circleci.com/gh/system-ui/theme-ui
-[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui
+[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
 
@@ -76,7 +76,7 @@ The custom pragma also accepts space props for margin and padding.
 ## MDX Components
 
 Use the `components` prop to add components to MDX scope.
-The `ThemeProvider` (name TBD) is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
+The `ThemeProvider` is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
 
 ```jsx
 // with mdx components
@@ -143,8 +143,6 @@ To change the underlying component in `Styled`, use the `as` prop.
 
 ## Layout Components
 
-Page layout components are included in the `theme-ui/layout` module.
-
 ```jsx
 import React from 'react'
 import {
@@ -153,7 +151,7 @@ import {
   Main,
   Container,
   Footer
-} from 'theme-ui/layout'
+} from 'theme-ui'
 
 export default props =>
   <Layout>
@@ -177,7 +175,7 @@ The `Box` & `Flex` layout components are similar to the ones found in [Rebass](h
 
 ```jsx
 import React from 'react'
-import { Flex, Box } from 'theme-ui/layout'
+import { Flex, Box } from 'theme-ui'
 
 export default props =>
   <Flex flexWrap='wrap'>

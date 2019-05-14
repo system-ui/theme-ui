@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Global } from '@emotion/core'
-import { Styled } from 'theme-ui'
 import {
+  jsx,
+  Styled,
   Layout,
   Main,
   Container,
-} from 'theme-ui/layout'
+} from 'theme-ui'
+import { Global } from '@emotion/core'
 
 import Header from './header'
 import Footer from './footer'
