@@ -7,6 +7,7 @@ import {
   useColorMode,
 } from 'theme-ui'
 import NavLink from './nav-link'
+import Button from './button'
 
 const modes = [
   'light',
@@ -33,11 +34,14 @@ export default props => {
         <Box mx='auto' />
         <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
         <NavLink to='/demo'>Demo</NavLink>
-        {props.children}
-        <button
+        <Button
+          css={{
+            ml: 2,
+          }}
           onClick={cycleMode}>
           {mode}
-        </button>
+        </Button>
+        {props.children}
       </Container>
     </Header>
   )

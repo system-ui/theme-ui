@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx, ThemeProvider } from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'

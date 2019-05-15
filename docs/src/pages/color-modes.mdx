@@ -1,30 +1,60 @@
+import Layout from '../components/layout'
+
+export default Layout
 
 # Color Modes
 
-**WIP – not yet implemented**
+Color modes can be used to create a user-configurable dark mode or any number of other color modes.
 
-```jsx
-<ThemeProvider
-  theme={theme}
-  colorMode='dark'>
-  {props.children}
-</ThemeProvider>
+## Defining colors
+
+In the `theme.colors` object, add a nested `modes` object that will contain keys for the non-default color palette mode.
+
+```js
+// example theme colors
+{
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+      }
+    }
+  }
+}
 ```
+
+## Setting the color mode
+
+Use the `useColorMode` hook in your application to change the color mode,
+passing the initial color mode as the first argument to the hook.
+This value will be stored in `localStorage` and used whenever the page is loaded.
 
 ```jsx
 import React from 'react'
 import { useColorMode } from 'theme-ui'
 
 export default props => {
-  const [ mode, setMode ] = useColorMode('light')
-
+  const [ colorMode, setColorMode ] = useColorMode('light')
   return (
-    <button
-      onClick={e => {
-        setMode(mode === 'dark' ? 'light' : 'dark')
-      }}>
-      Toggle color mode
-    </button>
+    <header>
+      <button
+        onClick={e => {
+          setColorMode(colorMode === 'light' ? 'dark' : 'light')
+        }}>
+        Toggle
+        {' '}
+        {colorMode === 'light' ? 'Dark' : 'Light'}
+      </button>
+    </header>
   )
 }
 ```
+
+## Caveats
+
+- This feature does not yet pick up values from the `(prefers-color-scheme: dark)` media query

@@ -8,6 +8,7 @@
   "repository": "system-ui/theme-ui",
   "scripts": {
     "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress",
     "test": "jest"
   },
   "dependencies": {
