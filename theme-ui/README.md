@@ -11,9 +11,23 @@
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
 
+- Uses [Emotion][] for isolated styles
+- Uses the [MDX][] component provider for content styles
+- Follows standard theming conventions for interoperable stylistic themes
+- Uses [@styled-system/css][] for using theme values in the `css` prop
+- Includes base page layout components
+
+[emotion]: https://emotion.sh
+[mdx]: https://mdxjs.com
+[@styled-system/css]: https://styled-system.com/css
+
+## Getting Started
+
 ```sh
 npm i theme-ui
 ```
+
+Wrap your application with the `ThemeProvider` component
 
 ```jsx
 // basic usage
@@ -29,6 +43,7 @@ export default props =>
 
 ## `css` prop
 
+Use the `css` prop in your application, along with the `css` utility to pick up values from the theme.
 The `css` utility is from [@styled-system/css](https://styled-system.com/css/).
 
 ```jsx
@@ -115,6 +130,14 @@ To change the underlying component in `Styled`, use the `as` prop.
 ```
 
 ## Layout Components
+
+Theme UI includes several components for creating page layouts.
+
+- `Layout`: sets a flex column with 100vh min-height
+- `Header`: flexbox row
+- `Footer`: flexbox row
+- `Main`: flex auto container for pushing the Footer to the bottom of the viewport
+- `Container`: max-width, centered container
 
 ```jsx
 import React from 'react'
