@@ -6,7 +6,7 @@ export const jsx = (type, props, ...children) =>
     type,
     props ? ({
       ...props,
-      css: css(props.css)
+      css: props.css ? css(props.css) : undefined
     }) : null,
     ...children
   ])

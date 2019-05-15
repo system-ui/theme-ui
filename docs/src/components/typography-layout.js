@@ -1,18 +1,11 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-  Styled,
-  Layout,
-  Main,
-  Container,
-} from 'theme-ui'
+import React from 'react'
+import { jsx, ThemeProvider } from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'
 
+import Layout from './layout'
 import GoogleFonts from './google-fonts'
-import Header from './header'
-import Footer from './footer'
 import themes from './typography-themes'
 import createTypographyStyles from 'theme-ui/typography'
 import typographyThemes from './typography-themes'
@@ -59,39 +52,35 @@ export default props => {
     styles: typography.styles,
     typography
   })
-
-  return (
+  const children = (
     <ThemeProvider theme={theme}>
       <GoogleFonts />
-      <Styled.root>
-        <Layout>
-          <Header>
-            <ThemeSelect
-              name='theme'
-              value={themeName}
-              onChange={e => {
-                setTheme(e.target.value)
-              }}
-            />
-            <button
-              onClick={e => {
-                const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
-                setTheme(themeNames[i])
-              }}>
-              Next
-            </button>
-          </Header>
-          <Main>
-            <Container
-              css={{
-                maxWidth: 768,
-              }}>
-              {props.children}
-            </Container>
-          </Main>
-          <Footer />
-        </Layout>
-      </Styled.root>
+      {props.children}
     </ThemeProvider>
+  )
+
+  return (
+    <Layout
+      {...props}
+      children={children}
+      header={(
+        <>
+          <ThemeSelect
+            name='theme'
+            value={themeName}
+            onChange={e => {
+              setTheme(e.target.value)
+            }}
+          />
+          <button
+            onClick={e => {
+              const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
+              setTheme(themeNames[i])
+            }}>
+            Next
+          </button>
+        </>
+      )}
+    />
   )
 }

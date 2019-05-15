@@ -12,6 +12,8 @@ export default {
     secondary: '#119',
     muted: '#f6f6f6',
     highlight: '#ffffcc',
+    gray: '#777',
+    purple: '#609',
     header: {
       text: 'inherit',
       background: 'inherit',
@@ -31,6 +33,18 @@ export default {
     heading: 1.25,
   },
   styles: {
+    Header: {
+      color: 'header.text',
+      bg: 'header.background',
+    },
+    Footer: {
+      color: 'header.text',
+      bg: 'header.background',
+    },
+    Container: {
+      p: 3,
+      maxWidth: 1280,
+    },
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
@@ -69,17 +83,102 @@ export default {
       }
     },
     pre: {
+      variant: 'prism',
       fontFamily: 'monospace',
       p: 3,
+      color: 'text',
       bg: 'muted',
+      overflow: 'auto',
+      'code': {
+        color: 'inherit',
+      }
     },
     code: {
       fontFamily: 'monospace',
-      fontSize: 1,
+      color: 'secondary',
+      fontSize: 'inherit',
     },
     inlineCode: {
       fontFamily: 'monospace',
+      color: 'secondary',
       bg: 'muted',
+    },
+    table: {
+      width: '100%',
+      my: 4,
+      borderCollapse: 'separate',
+      borderSpacing: 0,
+      [['th', 'td']]: {
+        textAlign: 'left',
+        py: '4px',
+        pr: '4px',
+        pl: 0,
+        borderColor: 'inherit',
+        borderBottomStyle: 'solid'
+      },
+    },
+    th: {
+      verticalAlign: 'bottom',
+      borderBottomWidth: '2px',
+    },
+    td: {
+      verticalAlign: 'top',
+      borderBottomWidth: '1px',
+    },
+    hr: {
+      border: 0,
+      borderBottom: '1px solid',
+      borderColor: 'muted',
+    }
+  },
+  prism: {
+    [[
+      '.comment',
+      '.prolog',
+      '.doctype',
+      '.cdata',
+      '.punctuation',
+      '.operator',
+      '.entity',
+      '.url',
+    ]]: {
+      color: 'gray',
+    },
+    '.comment': {
+      fontStyle: 'italic',
+    },
+    [[
+      '.property',
+      '.tag',
+      '.boolean',
+      '.number',
+      '.constant',
+      '.symbol',
+      '.deleted',
+      '.function',
+      '.class-name',
+      '.regex',
+      '.important',
+      '.variable',
+    ]]: {
+      color: 'purple',
+    },
+    [[
+      '.atrule',
+      '.attr-value',
+      '.keyword',
+    ]]: {
+      color: 'primary',
+    },
+    [[
+      '.selector',
+      '.attr-name',
+      '.string',
+      '.char',
+      '.builtin',
+      '.inserted',
+    ]]: {
+      color: 'secondary'
     },
   },
 }

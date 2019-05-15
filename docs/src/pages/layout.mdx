@@ -5,6 +5,8 @@ export default Layout
 
 # Layout Components
 
+Theme UI includes several components for creating page layouts.
+
 ```js
 import {
   Layout,
@@ -29,56 +31,59 @@ import {
 </Layout>
 ```
 
-- `Layout` ~~`Page`~~ (name TBD) the root styled component for wrapping other layout components
+- `Layout` (name TBD) the root styled component for wrapping other layout components
 - `Header` section for top of the page
 - `Main` the center of the page
 - `Container` a max-width, centered area
 - `Footer` section for the bottom of the page
-- `Sidebar` (not yet implemented) a sidebar with, ideally, a mechanism for responsive layouts
 
-## Box
+## Box & Flex
 
-A lower-level `Box` primitive component is included as well.
-This is similar to the [Rebass Box](https://rebassjs.org/Box) component, but built with Emotion and `@styled-system/css`
+The `Box` & `Flex` layout components are similar to the ones found in [Rebass](https://rebassjs.org), but are built with Emotion and `@styled-system/css`.
 
-```js
-import { Box } from 'theme-ui'
+```jsx
+import React from 'react'
+import { Flex, Box } from 'theme-ui'
+
+export default props =>
+  <Flex flexWrap='wrap'>
+    <Box width={[ 1, 1/2 ]} />
+    <Box width={[ 1, 1/2 ]} />
+  </Flex>
 ```
 
 ## Layout Theming
 
-<Note>
-  This is a proposal and not yet implemented
-</Note>
-
-These page-level layout components could have corresponding themeable aspects,
-where an end user could customize styles without having to create custom components.
-
-For example, a `theme` object could have keys in the `theme.styles` object:
+These page layout components can be styled with the `theme.styles` object, similar to how other MDX components.
 
 ```js
-// example only
 theme: {
   styles: {
     Header: {
-      color: 'tomato',
+      color: 'white',
+      bg: 'black',
     }
   }
 }
 ```
 
-Alternatively, only certain properties could be exposed. E.g. within the `theme.colors` object.
+The styles for the layout components can reference colors and other theme values using `@styled-system/css`. This can be used to theme specific aspects like colors independent from the component.
 
 ```js
-// example only
 theme: {
   colors: {
-    ...otherColors,
     header: {
-      text: 'tomato',
-      background: 'black',
-      link: 'white',
-    }
-  }
+      text: '#fff',
+      background: '#000',
+    },
+  },
+  styles: {
+    Header: {
+      // references values in `theme.colors`
+      color: 'header.text',
+      bg: 'header.background',
+    },
+  },
 }
 ```
+

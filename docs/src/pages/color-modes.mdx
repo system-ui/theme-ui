@@ -1,0 +1,30 @@
+
+# Color Modes
+
+**WIP – not yet implemented**
+
+```jsx
+<ThemeProvider
+  theme={theme}
+  colorMode='dark'>
+  {props.children}
+</ThemeProvider>
+```
+
+```jsx
+import React from 'react'
+import { useColorMode } from 'theme-ui'
+
+export default props => {
+  const [ mode, setMode ] = useColorMode('light')
+
+  return (
+    <button
+      onClick={e => {
+        setMode(mode === 'dark' ? 'light' : 'dark')
+      }}>
+      Toggle color mode
+    </button>
+  )
+}
+```

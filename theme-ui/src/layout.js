@@ -39,6 +39,7 @@ export const Layout = props =>
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
+      variant: 'styles.Layout',
     }
   })
 
@@ -48,6 +49,7 @@ export const Header = props =>
     ...props,
     css: {
       display: 'flex',
+      variant: 'styles.Header',
     }
   })
 
@@ -56,6 +58,7 @@ export const Main = props =>
     ...props,
     css: {
       flex: '1 1 auto',
+      variant: 'styles.Main',
     }
   })
 
@@ -68,6 +71,7 @@ export const Container = props =>
       maxWidth: 1024,
       mx: 'auto',
       p: 4,
+      variant: 'styles.Container',
     }
   })
 
@@ -77,5 +81,6 @@ export const Footer = props =>
     ...props,
     css: {
       display: 'flex',
+      variant: 'styles.Footer',
     }
   })

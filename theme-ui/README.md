@@ -11,9 +11,23 @@
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
 
+- Uses [Emotion][] for isolated styles
+- Uses the [MDX][] component provider for content styles
+- Follows standard theming conventions for interoperable stylistic themes
+- Uses [@styled-system/css][] for using theme values in the `css` prop
+- Includes base page layout components
+
+[emotion]: https://emotion.sh
+[mdx]: https://mdxjs.com
+[@styled-system/css]: https://styled-system.com/css
+
+## Getting Started
+
 ```sh
 npm i theme-ui
 ```
+
+Wrap your application with the `ThemeProvider` component
 
 ```jsx
 // basic usage
@@ -29,8 +43,8 @@ export default props =>
 
 ## `css` prop
 
+Use the `css` prop in your application, along with the `css` utility to pick up values from the theme.
 The `css` utility is from [@styled-system/css](https://styled-system.com/css/).
-This could potentially be handled with something like [Emotion plugins](https://github.com/emotion-js/emotion/pull/1299).
 
 ```jsx
 import React from 'react'
@@ -45,32 +59,6 @@ export default () =>
     })}>
     Hello
   </div>
-```
-
-## Custom Pragma (experimental)
-
-To avoid manually importing and calling the `css` prop, a custom pragma can be used instead.
-This custom pragma converts a Styled System-aware `css` prop into a styled object and passes it to the Emotion `jsx` pragma.
-This is a complete replacement for the Emotion custom pragma.
-
-```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
-export default props =>
-  <div
-    {...props}
-    css={{
-      color: 'white',
-      bg: 'primary',
-    }}
-  />
-```
-
-The custom pragma also accepts space props for margin and padding.
-
-```jsx
-<div mx='auto' p={4} />
 ```
 
 ## MDX Components
@@ -143,6 +131,14 @@ To change the underlying component in `Styled`, use the `as` prop.
 
 ## Layout Components
 
+Theme UI includes several components for creating page layouts.
+
+- `Layout`: sets a flex column with 100vh min-height
+- `Header`: flexbox row
+- `Footer`: flexbox row
+- `Main`: flex auto container for pushing the Footer to the bottom of the viewport
+- `Container`: max-width, centered container
+
 ```jsx
 import React from 'react'
 import {
@@ -184,9 +180,8 @@ export default props =>
   </Flex>
 ```
 
-## Experimental
-
-- [Live Demo](https://theme-ui.now.sh/demo)
-- [Typography.js Demo](https://theme-ui.now.sh/typography)
+[typography demo]: https://theme-ui.now.sh/typography
+[demo]: https://theme-ui.now.sh/demo
+[emotion plugins]: https://github.com/emotion-js/emotion/pull/1299
 
 MIT License
