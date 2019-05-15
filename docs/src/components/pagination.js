@@ -28,9 +28,19 @@ const Pagination = props => {
 
   return (
     <Flex py={4} mx={-2}>
-      {hasPagination && previous && <NavLink {...previous.props} />}
+      {hasPagination && previous && (
+        <NavLink
+          to={previous.props.href}
+          children={previous.props.children}
+        />
+      )}
       <Box mx='auto' />
-      {hasPagination && next && <NavLink {...next.props} />}
+      {hasPagination && next && (
+        <NavLink
+          to={next.props.href}
+          children={next.props.children}
+        />
+      )}
     </Flex>
   )
 }

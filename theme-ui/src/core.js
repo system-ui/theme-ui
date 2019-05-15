@@ -1,4 +1,10 @@
-import { createContext, useContext, useState } from 'react'
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useLayoutEffect
+} from 'react'
 import styled from '@emotion/styled'
 import { ThemeProvider as EmotionProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/react'
@@ -15,9 +21,23 @@ export const Context = createContext({
 
 export const useThemeUI = () => useContext(Context)
 
-export const useColorMode = () => {
+export const useColorMode = (initialMode) => {
   const { colorMode, setColorMode } = useThemeUI()
   return [ colorMode, setColorMode ]
+}
+
+const STORAGE_KEY = '__theme-ui-color-mode'
+const useColorModeState = (initialMode, args = []) => {
+  const [ colorMode, setColorMode ] = useState(initialMode)
+  useLayoutEffect(() => {
+    const storedMode = window.localStorage.getItem(STORAGE_KEY)
+    if (storedMode !== colorMode) setColorMode(storedMode)
+  }, [])
+  useEffect(() => {
+    window.localStorage.setItem(STORAGE_KEY, colorMode)
+  }, [colorMode])
+
+  return { colorMode, setColorMode }
 }
 
 const createComponents = (components = {}) => {
@@ -33,7 +53,7 @@ export const ThemeProvider = ({
   components,
   ...props
 }) => {
-  const [ colorMode, setColorMode ] = useState()
+  const { colorMode, setColorMode } = useColorModeState()
   const outer = useThemeUI()
   const context = merge({}, outer, {
     theme,
