@@ -11,7 +11,7 @@ const get = (init) => window.localStorage.getItem(STORAGE_KEY) || init
 const set = (value) => window.localStorage.setItem(STORAGE_KEY, value)
 
 export const useColorState = () => {
-  const [ mode, setMode ] = useState(get())
+  const [ mode, setMode ] = useState()
 
   useLayoutEffect(() => {
     const stored = get()
