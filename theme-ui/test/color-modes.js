@@ -133,6 +133,7 @@ test('initializes mode based on localStorage', () => {
       <Button />
     </ThemeProvider>
   )
-  console.log(window.localStorage.getItem(STORAGE_KEY))
   expect(mode).toBe('dark')
 })
+
+test.todo('inherits color mode state from parent context')
