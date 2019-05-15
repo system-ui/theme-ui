@@ -5569,7 +5569,7 @@ github-from-package@0.0.0:
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
   integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
 
-github-slugger@^1.2.1:
+github-slugger@^1.0.0, github-slugger@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.2.1.tgz#47e904e70bf2dccd0014748142d31126cfd49508"
   integrity sha512-SsZUjg/P03KPzQBt7OxJPasGw6NRO5uOgiZ5RGXVud5iSIZ0eNZeNp5rTwCxtavrRUa/A77j8mePVc5lEvk0KQ==
@@ -8106,7 +8106,7 @@ mdast-util-to-nlcst@^3.2.0:
     unist-util-position "^3.0.0"
     vfile-location "^2.0.0"
 
-mdast-util-to-string@^1.0.4, mdast-util-to-string@^1.0.5:
+mdast-util-to-string@^1.0.0, mdast-util-to-string@^1.0.4, mdast-util-to-string@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/mdast-util-to-string/-/mdast-util-to-string-1.0.5.tgz#3552b05428af22ceda34f156afe62ec8e6d731ca"
   integrity sha512-2qLt/DEOo5F6nc2VFScQiHPzQ0XXcabquRJxKMhKte8nt42o08HUxNDPk7tt0YPxnWjAT11I1SYi0X0iPnfI5A==
@@ -10830,6 +10830,15 @@ remark-retext@^3.1.2:
   integrity sha512-+48KzJdSXvsPupY5pj5AY7oBUSiDOqFPZBKebX5WemrMyIG+RImIt9hgeqelluVDd1kooHen33K/aybTPyoI9g==
   dependencies:
     mdast-util-to-nlcst "^3.2.0"
+
+remark-slug@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/remark-slug/-/remark-slug-5.1.1.tgz#eb5dba0cf779487ef7ddf65c735ba4d4ca017542"
+  integrity sha512-r591rdoDPJkSSAVvEaTVUkqbMp7c7AyZfif14V0Dp66GQkOHzaPAS6wyhawSbqpS0ZdTnfJS+TltFoxzi6bdIA==
+  dependencies:
+    github-slugger "^1.0.0"
+    mdast-util-to-string "^1.0.0"
+    unist-util-visit "^1.0.0"
 
 remark-squeeze-paragraphs@^3.0.1:
   version "3.0.3"
