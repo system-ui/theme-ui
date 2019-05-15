@@ -1,6 +1,11 @@
 export { css } from '@styled-system/css'
 export { jsx } from './jsx'
-export { Context, ThemeProvider } from './core'
+export {
+  Context,
+  ThemeProvider,
+  useThemeUI,
+  useColorMode,
+} from './core'
 export { Styled } from './components'
 export {
   Box,

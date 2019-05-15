@@ -1,18 +1,44 @@
 /** @jsx jsx */
-import { jsx, Header, Box, Container, } from 'theme-ui'
+import {
+  jsx,
+  Header,
+  Box,
+  Container,
+  useColorMode,
+} from 'theme-ui'
 import NavLink from './nav-link'
 
-export default props =>
-  <Header>
-    <Container
-      css={{
-        display: 'flex',
-        alignItems: 'center',
-      }}>
-      <NavLink to='/'>Theme UI</NavLink>
-      <Box mx='auto' />
-      <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
-      <NavLink to='/demo'>Demo</NavLink>
-      {props.children}
-    </Container>
-  </Header>
+const modes = [
+  'light',
+  'dark',
+]
+
+export default props => {
+  const [ mode, setMode ] = useColorMode('light')
+
+  const cycleMode = e => {
+    const i = modes.indexOf(mode)
+    const next = modes[(i + 1) % modes.length]
+    setMode(next)
+  }
+
+  return (
+    <Header>
+      <Container
+        css={{
+          display: 'flex',
+          alignItems: 'center',
+        }}>
+        <NavLink to='/'>Theme UI</NavLink>
+        <Box mx='auto' />
+        <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
+        <NavLink to='/demo'>Demo</NavLink>
+        {props.children}
+        <button
+          onClick={cycleMode}>
+          {mode}
+        </button>
+      </Container>
+    </Header>
+  )
+}
