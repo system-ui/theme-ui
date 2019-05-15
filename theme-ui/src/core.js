@@ -1,10 +1,3 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useLayoutEffect
-} from 'react'
 import styled from '@emotion/styled'
 import { ThemeProvider as EmotionProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/react'
