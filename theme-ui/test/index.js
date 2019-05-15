@@ -1,6 +1,6 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import {
@@ -8,6 +8,7 @@ import {
   Context,
   Styled,
   jsx,
+  useColorMode,
 } from '../src/index'
 
 expect.extend(matchers)

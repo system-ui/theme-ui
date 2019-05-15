@@ -21,18 +21,20 @@ export const ThemeProvider = ({
   components,
   ...props
 }) => {
-  const [ colorMode, setColorMode ] = useColorState()
   const outer = useThemeUI()
-  const context = merge({}, outer, {
-    theme,
-    components: createComponents(components),
+  const [ colorMode, setColorMode ] = useColorState(outer.colorMode)
+  const context = merge({
     colorMode,
     setColorMode,
+  }, outer, {
+    theme,
+    components: createComponents(components),
   })
 
   if (colorMode) {
+    const modes = get(context.theme, 'colors.modes', {})
     context.theme = merge({}, context.theme, {
-      colors: get(context.theme.colors.modes, colorMode, context.theme.colors)
+      colors: get(modes, colorMode, context.theme.colors)
     })
   }
 
