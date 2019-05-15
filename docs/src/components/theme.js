@@ -97,6 +97,33 @@ export default {
       fontFamily: 'monospace',
       bg: 'muted',
     },
+    table: {
+      width: '100%',
+      my: 4,
+      borderCollapse: 'separate',
+      borderSpacing: 0,
+      [['th', 'td']]: {
+        textAlign: 'left',
+        py: '4px',
+        pr: '4px',
+        pl: 0,
+        borderColor: 'inherit',
+        borderBottomStyle: 'solid'
+      },
+    },
+    th: {
+      verticalAlign: 'bottom',
+      borderBottomWidth: '2px',
+    },
+    td: {
+      verticalAlign: 'top',
+      borderBottomWidth: '1px',
+    },
+    hr: {
+      border: 0,
+      borderBottom: '1px solid',
+      borderColor: 'muted',
+    }
   },
   prism: {
     [[
