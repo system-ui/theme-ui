@@ -5,6 +5,8 @@ export default Layout
 
 # Layout Components
 
+Theme UI includes several components for creating page layouts.
+
 ```js
 import {
   Layout,
@@ -29,20 +31,25 @@ import {
 </Layout>
 ```
 
-- `Layout` ~~`Page`~~ (name TBD) the root styled component for wrapping other layout components
+- `Layout` (name TBD) the root styled component for wrapping other layout components
 - `Header` section for top of the page
 - `Main` the center of the page
 - `Container` a max-width, centered area
 - `Footer` section for the bottom of the page
-- `Sidebar` (not yet implemented) a sidebar with, ideally, a mechanism for responsive layouts
 
-## Box
+## Box & Flex
 
-A lower-level `Box` primitive component is included as well.
-This is similar to the [Rebass Box](https://rebassjs.org/Box) component, but built with Emotion and `@styled-system/css`
+The `Box` & `Flex` layout components are similar to the ones found in [Rebass](https://rebassjs.org), but are built with Emotion and `@styled-system/css`.
 
-```js
-import { Box } from 'theme-ui'
+```jsx
+import React from 'react'
+import { Flex, Box } from 'theme-ui'
+
+export default props =>
+  <Flex flexWrap='wrap'>
+    <Box width={[ 1, 1/2 ]} />
+    <Box width={[ 1, 1/2 ]} />
+  </Flex>
 ```
 
 ## Layout Theming

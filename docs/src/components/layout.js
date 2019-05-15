@@ -13,6 +13,7 @@ import { Global } from '@emotion/core'
 import Header from './header'
 import Footer from './footer'
 import Sidebar from './sidebar'
+import Pagination from './pagination'
 import MenuButton from './menu-button'
 
 export default ({ header, ...props }) => {
@@ -52,6 +53,7 @@ export default ({ header, ...props }) => {
             />
             <Box>
               {props.children}
+              <Pagination />
             </Box>
           </Container>
         </Main>
