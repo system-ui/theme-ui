@@ -1,18 +1,32 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
+import isAbsoluteURL from 'is-absolute-url'
 
 const styles = {
   display: 'inline-block',
   px: 2,
-  py: 3,
+  py: 2,
   color: 'inherit',
   textDecoration: 'none',
   fontWeight: 'bold',
+  '&.active': {
+    color: 'primary',
+  },
 }
 
-export default props => !!props.to ? (
-  <Link {...props} css={styles} />
-) : (
-  <a {...props} css={styles} />
-)
+export default ({ href, ...props }) => {
+  const isExternal = isAbsoluteURL(href || '')
+  if (isExternal) {
+    return <a {...props} href={href} css={styles} />
+  }
+  const to = props.to || href
+  return (
+    <Link
+      {...props}
+      to={to}
+      css={styles}
+      activeClassName='active'
+    />
+  )
+}

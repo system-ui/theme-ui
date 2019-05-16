@@ -26,7 +26,6 @@ export default props =>
       bg: 'transparent',
       p: 0,
       m: 0,
-      ml: 3,
       border: 0,
       appearance: 'none',
       ':focus': {
