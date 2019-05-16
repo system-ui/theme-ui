@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Box 1`] = `
+<div
+  className="css-1xi4blx"
+/>
+`;
+
+exports[`renders Container 1`] = `
+<div
+  className="css-1uc3ui9"
+/>
+`;
+
+exports[`renders Flex 1`] = `
+<div
+  className="css-80zs6q"
+/>
+`;
+
+exports[`renders Footer 1`] = `
+<footer
+  className="css-80zs6q"
+/>
+`;
+
+exports[`renders Header 1`] = `
+<header
+  className="css-80zs6q"
+/>
+`;
+
+exports[`renders Layout 1`] = `
+<div
+  className="css-1eiazfv"
+/>
+`;
+
+exports[`renders Main 1`] = `
+<div
+  className="css-3url3g"
+/>
+`;

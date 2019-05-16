@@ -1,16 +1,11 @@
-import { createContext, useContext } from 'react'
 import styled from '@emotion/styled'
 import { ThemeProvider as EmotionProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/react'
 import merge from 'lodash.merge'
+import get from 'lodash.get'
 import jsx from './jsx'
 import themed from './themed'
-import { components } from './components'
-
-export const Context = createContext({
-  theme: {},
-  components,
-})
+import { Context, useThemeUI } from './context'
 
 const createComponents = (components = {}) => {
   const next = {}
@@ -25,11 +20,18 @@ export const ThemeProvider = ({
   components,
   ...props
 }) => {
-  const outer = useContext(Context)
+  const outer = useThemeUI()
   const context = merge({}, outer, {
     theme,
     components: createComponents(components),
   })
+
+  if (context.colorMode) {
+    const modes = get(context.theme, 'colors.modes', {})
+    context.theme = merge({}, context.theme, {
+      colors: get(modes, context.colorMode, context.theme.colors)
+    })
+  }
 
   return (
     jsx(EmotionProvider, { theme: context.theme },

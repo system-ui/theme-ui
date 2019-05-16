@@ -18,6 +18,18 @@ export default {
       text: 'inherit',
       background: 'inherit',
     },
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#060606',
+        primary: '#3cf',
+        secondary: '#e0f',
+        muted: '#191919',
+        highlight: '#ffffcc',
+        gray: '#999',
+        purple: '#c0f',
+      }
+    },
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -113,7 +125,7 @@ export default {
         py: '4px',
         pr: '4px',
         pl: 0,
-        borderColor: 'inherit',
+        borderColor: 'muted',
         borderBottomStyle: 'solid'
       },
     },

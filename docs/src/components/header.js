@@ -1,6 +1,9 @@
 /** @jsx jsx */
-import { jsx, Header, Box, Container, } from 'theme-ui'
-import NavLink from './nav-link'
+import {
+  jsx,
+  Header,
+  Container,
+} from 'theme-ui'
 
 export default props =>
   <Header>
@@ -9,10 +12,6 @@ export default props =>
         display: 'flex',
         alignItems: 'center',
       }}>
-      <NavLink to='/'>Theme UI</NavLink>
-      <Box mx='auto' />
-      <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
-      <NavLink to='/demo'>Demo</NavLink>
       {props.children}
     </Container>
   </Header>

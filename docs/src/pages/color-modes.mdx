@@ -1,30 +1,124 @@
+import Layout from '../components/layout'
+
+export default Layout
 
 # Color Modes
 
-**WIP – not yet implemented**
+Color modes can be used to create a user-configurable dark mode or any number of other color modes.
+
+## Defining colors
+
+In the `theme.colors` object, add a nested `modes` object that will contain keys for the non-default color palette mode.
+
+```js
+// example theme colors
+{
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+      }
+    }
+  }
+}
+```
+
+## Color mode state
+
+To use color modes, import the `ColorModeProvider` component and wrap it around your outer most `ThemeProvider` component.
+Initialize the state with the `initialColorMode` prop.
 
 ```jsx
-<ThemeProvider
-  theme={theme}
-  colorMode='dark'>
-  {props.children}
-</ThemeProvider>
+import React from 'react'
+import {
+  ColorModeProvider,
+  ThemeProvider,
+} from 'theme-ui'
+import theme from './theme'
+
+export default props =>
+  <ColorModeProvider
+    initialColorMode='light'>
+    <ThemeProvider theme={theme}>
+      {props.children}
+    </ThemeProvider>
+  </ColorModeProvider>
 ```
+
+## Setting the color mode
+
+Use the `useColorMode` hook in your application to change the color mode.
+This value will be stored in `localStorage` and used whenever the page is loaded.
 
 ```jsx
 import React from 'react'
 import { useColorMode } from 'theme-ui'
 
 export default props => {
-  const [ mode, setMode ] = useColorMode('light')
-
+  const [ colorMode, setColorMode ] = useColorMode()
   return (
-    <button
-      onClick={e => {
-        setMode(mode === 'dark' ? 'light' : 'dark')
-      }}>
-      Toggle color mode
-    </button>
+    <header>
+      <button
+        onClick={e => {
+          setColorMode(colorMode === 'light' ? 'dark' : 'light')
+        }}>
+        Toggle
+        {' '}
+        {colorMode === 'light' ? 'Dark' : 'Light'}
+      </button>
+    </header>
   )
 }
 ```
+
+## Applying colors
+
+The previous steps will enable a color mode state and pass it through context.
+To use the color values, add them to a components styles or use the Emotion `Global` component.
+
+```jsx
+// example using color mode values
+import React from 'react'
+import { css } from 'theme-ui'
+
+export default props =>
+  <div
+    css={css({
+      color: 'text',
+      bg: 'background',
+    })}>
+    {props.children}
+  </div>
+```
+
+```jsx
+// example using Global
+import React from 'react'
+import { css } from 'theme-ui'
+import { Global } from '@emotion/core'
+
+export default props =>
+  <>
+    <Global
+      styles={css({
+        body: {
+          margin: 0,
+          color: 'text',
+          bg: 'background',
+        }
+      })}
+    />
+    {props.children}
+  </>
+```
+
+## `(prefers-color-scheme: dark)` media query
+
+This feature will detect the `(prefers-color-scheme: dark)` media query to initialize the state as `dark`.
+Currently it does *not* check for `(prefers-color-scheme: light)`.
+
