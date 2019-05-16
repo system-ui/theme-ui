@@ -5,8 +5,10 @@ import { render, fireEvent, cleanup, act } from 'react-testing-library'
 import { matchers } from 'jest-emotion'
 import {
   jsx,
+  ColorModeProvider,
   ThemeProvider,
   useColorMode,
+  useThemeUI,
 } from '../src/index'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
@@ -21,7 +23,7 @@ test('renders with color modes', () => {
   let json
   let mode
   const Mode = props => {
-    const [ colorMode ] = useColorMode('light')
+    const [ colorMode ] = useColorMode()
     mode = colorMode
     return (
       <div>
@@ -31,9 +33,11 @@ test('renders with color modes', () => {
   }
   renderer.act(() => {
     renderer.create(
-      <ThemeProvider>
-        <Mode />
-      </ThemeProvider>
+      <ColorModeProvider initialColorMode='light'>
+        <ThemeProvider>
+          <Mode />
+        </ThemeProvider>
+      </ColorModeProvider>
     )
   })
   expect(mode).toBe('light')
@@ -42,7 +46,7 @@ test('renders with color modes', () => {
 test('useColorMode updates color mode state', () => {
   let mode
   const Button = props => {
-    const [ colorMode, setMode ] = useColorMode('light')
+    const [ colorMode, setMode ] = useColorMode()
     mode = colorMode
     return (
       <button
@@ -54,9 +58,11 @@ test('useColorMode updates color mode state', () => {
     )
   }
   const tree = render(
-    <ThemeProvider>
-      <Button />
-    </ThemeProvider>
+    <ColorModeProvider initialColorMode='light'>
+      <ThemeProvider>
+        <Button />
+      </ThemeProvider>
+    </ColorModeProvider>
   )
   const button = tree.getByText('test')
   fireEvent.click(button)
@@ -66,7 +72,7 @@ test('useColorMode updates color mode state', () => {
 test('color mode is passed through theme context', () => {
   let mode
   const Button = props => {
-    const [ colorMode, setMode ] = useColorMode('light')
+    const [ colorMode, setMode ] = useColorMode()
     mode = colorMode
     return (
       <button
@@ -81,19 +87,21 @@ test('color mode is passed through theme context', () => {
     )
   }
   const tree = render(
-    <ThemeProvider
-      theme={{
-        colors: {
-          text: '#000',
-          modes: {
-            dark: {
-              text: 'cyan'
+    <ColorModeProvider initialColorMode='light'>
+      <ThemeProvider
+        theme={{
+          colors: {
+            text: '#000',
+            modes: {
+              dark: {
+                text: 'cyan'
+              }
             }
           }
-        }
-      }}>
-      <Button />
-    </ThemeProvider>
+        }}>
+        <Button />
+      </ThemeProvider>
+    </ColorModeProvider>
   )
   const button = tree.getByText('test')
   button.click()
@@ -111,9 +119,11 @@ test('does not initialize mode', () => {
     )
   }
   const tree = render(
-    <ThemeProvider>
-      <Button />
-    </ThemeProvider>
+    <ColorModeProvider>
+      <ThemeProvider>
+        <Button />
+      </ThemeProvider>
+    </ColorModeProvider>
   )
   expect(mode).toBe(undefined)
 })
@@ -129,11 +139,51 @@ test('initializes mode based on localStorage', () => {
     )
   }
   const tree = render(
-    <ThemeProvider>
-      <Button />
-    </ThemeProvider>
+    <ColorModeProvider>
+      <ThemeProvider>
+        <Button />
+      </ThemeProvider>
+    </ColorModeProvider>
   )
   expect(mode).toBe('dark')
 })
 
-test.todo('inherits color mode state from parent context')
+test('inherits color mode state from parent context', () => {
+  let mode
+  const Consumer = props => {
+    const [ colorMode ] = useColorMode()
+    mode = colorMode
+    return false
+  }
+  render(
+    <ColorModeProvider initialColorMode='outer'>
+      <ThemeProvider>
+        <ColorModeProvider initialColorMode='inner'>
+          <ThemeProvider>
+            <Consumer />
+          </ThemeProvider>
+        </ColorModeProvider>
+      </ThemeProvider>
+    </ColorModeProvider>
+  )
+  expect(mode).toBe('outer')
+})
+
+test('retains initial context', () => {
+  let context
+  const Consumer = props => {
+    context = useThemeUI()
+    return false
+  }
+  render(
+    <ColorModeProvider>
+      <ThemeProvider>
+        <Consumer />
+      </ThemeProvider>
+    </ColorModeProvider>
+  )
+  expect(typeof context.components).toBe('object')
+  expect(context.components.h1).toBeTruthy()
+  expect(context.components.pre).toBeTruthy()
+  expect(context.components.blockquote).toBeTruthy()
+})

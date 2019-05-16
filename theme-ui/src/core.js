@@ -32,7 +32,6 @@ export const ThemeProvider = ({
       colors: get(modes, context.colorMode, context.theme.colors)
     })
   }
-  console.log(outer, context.components, context.theme)
 
   return (
     jsx(EmotionProvider, { theme: context.theme },
