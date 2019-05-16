@@ -47,17 +47,6 @@ export default React.forwardRef((props, ref) =>
           listStyle: 'none',
           m: 0,
           p: 0,
-        },
-        __a: {
-          display: 'block',
-          px: 2,
-          py: 1,
-          fontWeight: 'bold',
-          color: 'inherit',
-          textDecoration: 'none',
-          '&.active': {
-            color: 'primary',
-          }
         }
       }}>
       <MDXProvider components={components}>
