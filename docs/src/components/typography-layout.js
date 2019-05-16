@@ -6,6 +6,7 @@ import merge from 'lodash.merge'
 
 import Layout from './layout'
 import GoogleFonts from './google-fonts'
+import Button from './button'
 import themes from './typography-themes'
 import createTypographyStyles from 'theme-ui/typography'
 import typographyThemes from './typography-themes'
@@ -55,7 +56,9 @@ export default props => {
 
   return (
     <Layout {...props}>
-      <Flex py={4}>
+      <Flex
+        py={4}
+        alignItems='center'>
         <ThemeSelect
           name='theme'
           value={themeName}
@@ -63,13 +66,16 @@ export default props => {
             setTheme(e.target.value)
           }}
         />
-        <button
+        <Button
+          css={{
+            ml: 2,
+          }}
           onClick={e => {
             const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
             setTheme(themeNames[i])
           }}>
           Next
-        </button>
+        </Button>
       </Flex>
       <ThemeProvider theme={theme}>
         <GoogleFonts />
