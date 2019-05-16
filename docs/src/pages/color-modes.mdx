@@ -52,8 +52,7 @@ export default props =>
 
 ## Setting the color mode
 
-Use the `useColorMode` hook in your application to change the color mode,
-passing the initial color mode as the first argument to the hook.
+Use the `useColorMode` hook in your application to change the color mode.
 This value will be stored in `localStorage` and used whenever the page is loaded.
 
 ```jsx
@@ -61,7 +60,7 @@ import React from 'react'
 import { useColorMode } from 'theme-ui'
 
 export default props => {
-  const [ colorMode, setColorMode ] = useColorMode('light')
+  const [ colorMode, setColorMode ] = useColorMode()
   return (
     <header>
       <button
@@ -75,6 +74,47 @@ export default props => {
     </header>
   )
 }
+```
+
+## Applying colors
+
+The previous steps will enable a color mode state and pass it through context.
+To use the color values, add them to a components styles or use the Emotion `Global` component.
+
+```jsx
+// example using color mode values
+import React from 'react'
+import { css } from 'theme-ui'
+
+export default props =>
+  <div
+    css={css({
+      color: 'text',
+      bg: 'background',
+    })}>
+    {props.children}
+  </div>
+```
+
+```jsx
+// example using Global
+import React from 'react'
+import { css } from 'theme-ui'
+import { Global } from '@emotion/core'
+
+export default props =>
+  <>
+    <Global
+      styles={css({
+        body: {
+          margin: 0,
+          color: 'text',
+          bg: 'background',
+        }
+      })}
+    />
+    {props.children}
+  </>
 ```
 
 ## Caveats

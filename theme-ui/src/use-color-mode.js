@@ -3,29 +3,13 @@ import React, {
   useEffect,
   useLayoutEffect,
 } from 'react'
+import merge from 'lodash.merge'
 import { Context, useThemeUI } from './context'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 const get = (init) => window.localStorage.getItem(STORAGE_KEY) || init
 const set = (value) => window.localStorage.setItem(STORAGE_KEY, value)
-
-export const ColorModeProvider = ({
-  initialColorMode,
-  children
-}) => {
-  const [ colorMode, setColorMode ] = useColorState(initialColorMode)
-  const context = {
-    colorMode,
-    setColorMode,
-  }
-  return (
-    <Context.Provider
-      value={context}
-      children={children}
-    />
-  )
-}
 
 export const useColorState = () => {
   const [ mode, setMode ] = useState()
@@ -42,6 +26,24 @@ export const useColorState = () => {
   }, [ mode ])
 
   return [ mode, setMode ]
+}
+
+export const ColorModeProvider = ({
+  initialColorMode,
+  children
+}) => {
+  const outer = useThemeUI()
+  const [ colorMode, setColorMode ] = useColorState(initialColorMode)
+  const context = merge({}, outer, {
+    colorMode,
+    setColorMode,
+  })
+  return (
+    <Context.Provider
+      value={context}
+      children={children}
+    />
+  )
 }
 
 export const useColorMode = (initialMode) => {

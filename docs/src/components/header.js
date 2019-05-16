@@ -15,7 +15,7 @@ const modes = [
 ]
 
 export default props => {
-  const [ mode, setMode ] = useColorMode('light')
+  const [ mode, setMode ] = useColorMode()
 
   const cycleMode = e => {
     const i = modes.indexOf(mode)
