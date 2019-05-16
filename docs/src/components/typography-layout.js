@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx, ThemeProvider } from 'theme-ui'
+import { jsx, ThemeProvider, Flex, } from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'
 
@@ -52,35 +52,29 @@ export default props => {
     styles: typography.styles,
     typography
   })
-  const children = (
-    <ThemeProvider theme={theme}>
-      <GoogleFonts />
-      {props.children}
-    </ThemeProvider>
-  )
 
   return (
-    <Layout
-      {...props}
-      children={children}
-      header={(
-        <>
-          <ThemeSelect
-            name='theme'
-            value={themeName}
-            onChange={e => {
-              setTheme(e.target.value)
-            }}
-          />
-          <button
-            onClick={e => {
-              const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
-              setTheme(themeNames[i])
-            }}>
-            Next
-          </button>
-        </>
-      )}
-    />
+    <Layout {...props}>
+      <Flex py={4}>
+        <ThemeSelect
+          name='theme'
+          value={themeName}
+          onChange={e => {
+            setTheme(e.target.value)
+          }}
+        />
+        <button
+          onClick={e => {
+            const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
+            setTheme(themeNames[i])
+          }}>
+          Next
+        </button>
+      </Flex>
+      <ThemeProvider theme={theme}>
+        <GoogleFonts />
+        {props.children}
+      </ThemeProvider>
+    </Layout>
   )
 }

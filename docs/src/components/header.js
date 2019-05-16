@@ -33,7 +33,6 @@ export default props => {
         <NavLink to='/'>Theme UI</NavLink>
         <Box mx='auto' />
         <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
-        <NavLink to='/demo'>Demo</NavLink>
         <Button
           css={{
             ml: 2,

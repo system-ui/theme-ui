@@ -47,18 +47,25 @@ export default ({ header, ...props }) => {
         <Main>
           <Container
             css={{
+              p: 0,
               display: 'flex',
             }}>
-            <Box id='content'>
-              {props.children}
-              <Pagination />
-            </Box>
             <Sidebar
               open={menuOpen}
+              onFocus={e => {
+                setMenuOpen(true)
+              }}
+              onBlur={e => {
+                setMenuOpen(false)
+              }}
               onClick={e => {
                 setMenuOpen(false)
               }}
             />
+            <Box id='content' px={3}>
+              {props.children}
+              <Pagination />
+            </Box>
           </Container>
         </Main>
         <Footer />
