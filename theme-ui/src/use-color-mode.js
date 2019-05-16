@@ -62,9 +62,8 @@ export const useColorMode = () => {
   const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
-    // todo
-    console.warn(
-      `useColorMode requires the ColorModeProvider`
+    throw new Error(
+      `[useColorMode] requires the ColorModeProvider component`
     )
     return []
   }
