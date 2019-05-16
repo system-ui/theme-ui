@@ -11,12 +11,24 @@ const STORAGE_KEY = 'theme-ui-color-mode'
 const get = (init) => window.localStorage.getItem(STORAGE_KEY) || init
 const set = (value) => window.localStorage.setItem(STORAGE_KEY, value)
 
+const getMediaQuery = () => {
+  const darkQuery = '(prefers-color-scheme: dark)'
+  const mql = window.matchMedia ? window.matchMedia(darkQuery) : {}
+  const dark = mql.media === darkQuery
+  return dark && mql.matches
+}
+
 export const useColorState = (initialMode) => {
   const [ mode, setMode ] = useState(initialMode)
 
   useLayoutEffect(() => {
     const stored = get()
-    if (!stored  || stored === mode) return
+    const dark = getMediaQuery()
+    if (dark) {
+      setMode('dark')
+      return
+    }
+    if (!stored || stored === mode) return
     setMode(stored)
   }, [])
 

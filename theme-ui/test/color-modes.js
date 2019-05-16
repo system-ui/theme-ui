@@ -187,3 +187,45 @@ test('retains initial context', () => {
   expect(context.components.pre).toBeTruthy()
   expect(context.components.blockquote).toBeTruthy()
 })
+
+test('initializes mode from prefers-color-scheme media query', () => {
+  window.matchMedia = jest.fn().mockImplementation(query => {
+    return {
+      matches: true,
+      media: query,
+    }
+  })
+  let mode
+  const Consumer = props => {
+    const [ colorMode ] = useColorMode()
+    mode = colorMode
+    return false
+  }
+  render(
+    <ColorModeProvider>
+      <Consumer />
+    </ColorModeProvider>
+  )
+  expect(mode).toBe('dark')
+})
+
+test('does not initialize mode from prefers-color-scheme media query', () => {
+  window.matchMedia = jest.fn().mockImplementation(query => {
+    return {
+      matches: false,
+      media: query,
+    }
+  })
+  let mode
+  const Consumer = props => {
+    const [ colorMode ] = useColorMode()
+    mode = colorMode
+    return false
+  }
+  render(
+    <ColorModeProvider>
+      <Consumer />
+    </ColorModeProvider>
+  )
+  expect(mode).toBe(undefined)
+})
