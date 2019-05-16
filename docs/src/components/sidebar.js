@@ -31,6 +31,7 @@ const theme = {
 export default props =>
   <Box {...props}
     css={{
+      order: -1,
       position: 'sticky',
       top: 0,
       minWidth: 0,

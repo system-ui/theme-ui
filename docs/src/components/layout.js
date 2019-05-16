@@ -10,6 +10,7 @@ import {
 import { useState } from 'react'
 import { Global } from '@emotion/core'
 
+import SkipLink from './skip-link'
 import Header from './header'
 import Footer from './footer'
 import Sidebar from './sidebar'
@@ -31,6 +32,9 @@ export default ({ header, ...props }) => {
           }
         }}
       />
+      <SkipLink>
+        Skip to content
+      </SkipLink>
       <Layout>
         <Header>
           {header}
@@ -45,16 +49,16 @@ export default ({ header, ...props }) => {
             css={{
               display: 'flex',
             }}>
+            <Box id='content'>
+              {props.children}
+              <Pagination />
+            </Box>
             <Sidebar
               open={menuOpen}
               onClick={e => {
                 setMenuOpen(false)
               }}
             />
-            <Box>
-              {props.children}
-              <Pagination />
-            </Box>
           </Container>
         </Main>
         <Footer />
