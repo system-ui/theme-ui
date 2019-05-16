@@ -21,12 +21,12 @@ export default {
     modes: {
       dark: {
         text: '#fff',
-        background: '#111',
-        primary: '#39f',
-        secondary: '#c0f',
+        background: '#060606',
+        primary: '#3cf',
+        secondary: '#e0f',
         muted: '#191919',
         highlight: '#ffffcc',
-        gray: '#777',
+        gray: '#999',
         purple: '#c0f',
       }
     },

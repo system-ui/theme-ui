@@ -117,6 +117,8 @@ export default props =>
   </>
 ```
 
-## Caveats
+## `(prefers-color-scheme: dark)` media query
 
-- This feature does not yet pick up values from the `(prefers-color-scheme: dark)` media query
+This feature will detect the `(prefers-color-scheme: dark)` media query to initialize the state as `dark`.
+Currently it does *not* check for `(prefers-color-scheme: light)`.
+
