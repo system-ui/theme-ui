@@ -17,6 +17,7 @@ const Burger = ({ size = '1em' }) =>
 
 export default props =>
   <button
+    title='Toggle Menu'
     {...props}
     css={{
       fontFamily: 'inherit',

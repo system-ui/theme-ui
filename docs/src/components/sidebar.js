@@ -1,6 +1,11 @@
 /** @jsx jsx */
 import { jsx, Box, ThemeProvider } from 'theme-ui'
+import { Link } from 'gatsby'
 import Content from '../sidebar.mdx'
+
+const components = {
+  a: ({ href, ...props }) => <Link {...props} to={href} activeClassName='active' />,
+}
 
 const theme = {
   styles: {
@@ -16,6 +21,9 @@ const theme = {
       fontWeight: 'bold',
       color: 'inherit',
       textDecoration: 'none',
+      '&.active': {
+        color: 'primary',
+      }
     }
   }
 }
@@ -39,7 +47,9 @@ export default props =>
         transform: props.open ? 'translateX(100%)' : 'translateX(0)',
       }
     }}>
-    <ThemeProvider theme={theme}>
+      <ThemeProvider
+        components={components}
+        theme={theme}>
       <Content />
     </ThemeProvider>
   </Box>
