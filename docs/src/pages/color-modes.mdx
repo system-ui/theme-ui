@@ -28,6 +28,28 @@ In the `theme.colors` object, add a nested `modes` object that will contain keys
 }
 ```
 
+## Color mode state
+
+To use color modes, import the `ColorModeProvider` component and wrap it around your outer most `ThemeProvider` component.
+Initialize the state with the `initialColorMode` prop.
+
+```jsx
+import React from 'react'
+import {
+  ColorModeProvider,
+  ThemeProvider,
+} from 'theme-ui'
+import theme from './theme'
+
+export default props =>
+  <ColorModeProvider
+    initialColorMode='light'>
+    <ThemeProvider theme={theme}>
+      {props.children}
+    </ThemeProvider>
+  </ColorModeProvider>
+```
+
 ## Setting the color mode
 
 Use the `useColorMode` hook in your application to change the color mode,
