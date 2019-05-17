@@ -23,6 +23,7 @@
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-remark-prismjs": "^3.2.9",
+    "gatsby-theme-ui": "0.0.14",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "prismjs": "^1.16.0",

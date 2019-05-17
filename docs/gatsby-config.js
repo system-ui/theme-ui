@@ -3,6 +3,9 @@ const remarkPlugins = [
 ]
 
 module.exports = {
+  __experimentalThemes: [
+    'gatsby-theme-ui',
+  ],
   plugins: [
     'gatsby-plugin-catch-links',
     {

@@ -1,0 +1,11 @@
+{
+  "name": "gatsby-theme-ui",
+  "version": "0.0.14",
+  "main": "gatsby-config.js",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby-plugin-compile-es6-packages": "^1.1.0",
+    "theme-ui": "0.0.14"
+  }
+}
