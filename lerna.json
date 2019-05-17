@@ -2,6 +2,7 @@
   "version": "0.0.14",
   "packages": [
     "theme-ui",
-    "gatsby-theme-ui"
+    "gatsby-theme-ui",
+    "gatsby-plugin-theme-ui"
   ]
 }
