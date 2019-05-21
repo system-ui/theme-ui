@@ -34,15 +34,6 @@ test('returns rhythm function', () => {
   expect(a).toEqual(b)
 })
 
-test('returns scale function', () => {
-  const theme = toTheme(themes.wp2016)
-  const values = [ -1/4, 0, 1/2, 1 ]
-  const a = values.map(theme.typography.scale).map(v => v.fontSize)
-  const b = values.map(typo.scale).map(v => toUnitless(v.fontSize))
-  expect(typeof theme.typography.scale).toBe('function')
-  expect(a).toEqual(b)
-})
-
 test('returns space scale', () => {
   const theme = toTheme(themes.wp2016)
   expect(Array.isArray(theme.space)).toBe(true)

@@ -145,7 +145,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -233,7 +233,6 @@ Object {
       "scaleRatio": 2,
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -383,7 +382,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -481,7 +480,6 @@ Object {
       "title": "Alton",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -631,7 +629,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -725,7 +723,6 @@ Object {
       "title": "Anonymous",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -875,7 +872,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -974,7 +971,6 @@ Object {
       "title": "Bootstrap",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -1124,7 +1120,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -1223,7 +1219,6 @@ Object {
       "title": "de Young",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -1373,7 +1368,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -1471,7 +1466,6 @@ Object {
       "title": "Doelger",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -1621,7 +1615,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -1719,7 +1713,6 @@ Object {
       "title": "Elk Glen",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -1869,7 +1862,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -1967,7 +1960,6 @@ Object {
       "title": "Fairy Gates",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -2117,7 +2109,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -2214,7 +2206,6 @@ Object {
       "title": "Funston",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -2364,7 +2355,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -2462,7 +2453,6 @@ Object {
       "title": "GitHub",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -2612,7 +2602,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -2710,7 +2700,6 @@ Object {
       "title": "Grand View",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -2860,7 +2849,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -2957,7 +2946,6 @@ Object {
       "title": "Irving",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -3107,7 +3095,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -3207,7 +3195,6 @@ Object {
       "title": "Judah",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -3357,7 +3344,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -3456,7 +3443,6 @@ Object {
       "title": "Kirkham",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -3606,7 +3592,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -3692,7 +3678,6 @@ Object {
       "title": "Wordpress Kubrick",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -3842,7 +3827,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -3940,7 +3925,6 @@ Object {
       "title": "Lawton",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -4090,7 +4074,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -4186,7 +4170,6 @@ Object {
       "title": "Legible",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -4336,7 +4319,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -4434,7 +4417,6 @@ Object {
       "title": "Lincoln",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -4584,7 +4566,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -4677,7 +4659,6 @@ Object {
       "title": "Moraga",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -4827,7 +4808,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -4915,7 +4896,6 @@ Object {
       "title": "Noriega",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -5065,7 +5045,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -5163,7 +5143,6 @@ Object {
       "title": "Ocean Beach",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -5313,7 +5292,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -5411,7 +5390,6 @@ Object {
       "title": "Parnassus",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -5561,7 +5539,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -5659,7 +5637,6 @@ Object {
       "title": "St. Annes",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -5809,7 +5786,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -5907,7 +5884,6 @@ Object {
       "title": "Stardust",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -6057,7 +6033,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -6148,7 +6124,6 @@ Object {
       "title": "Stern Grove",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -6298,7 +6273,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -6396,7 +6371,6 @@ Object {
       "title": "Stow Lake",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -6546,7 +6520,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -6645,7 +6619,6 @@ Object {
       "title": "Sutro",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -6795,7 +6768,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -6904,7 +6877,6 @@ Object {
       "title": "guoliim",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -7054,7 +7026,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -7152,7 +7124,6 @@ Object {
       "title": "Twin Peaks",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -7302,7 +7273,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -7400,7 +7371,6 @@ Object {
       "title": "US Web Design Standards",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -7550,7 +7520,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -7633,7 +7603,6 @@ Object {
       "title": "Wikipedia",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -7783,7 +7752,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -7873,7 +7842,6 @@ Object {
       "title": "Wordpress Theme 2010",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -8023,7 +7991,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -8120,7 +8088,6 @@ Object {
       "title": "Wordpress Theme 2011",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -8270,7 +8237,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -8361,7 +8328,6 @@ Object {
       "title": "Wordpress Theme 2012",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -8511,7 +8477,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -8609,7 +8575,6 @@ Object {
       "title": "Wordpress Theme 2013",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -8759,7 +8724,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -8852,7 +8817,6 @@ Object {
       "title": "Wordpress Theme 2014",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -9002,7 +8966,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -9092,7 +9056,6 @@ Object {
       "title": "Wordpress Theme 2015",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -9242,7 +9205,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -9344,7 +9307,6 @@ Object {
       "title": "Wordpress Theme 2016",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;
@@ -9494,7 +9456,7 @@ Object {
       "fontSize": "85%",
       "margin": 0,
       "marginBottom": 3,
-      "padding": 0,
+      "padding": 3,
     },
     "root": Object {
       "fontFamily": "body",
@@ -9598,7 +9560,6 @@ Object {
       "title": "ZackLive",
     },
     "rhythm": [Function],
-    "scale": [Function],
   },
 }
 `;

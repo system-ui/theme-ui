@@ -117,6 +117,7 @@ export const styles = {
   },
   pre: {
     fontSize: '85%',
+    padding: 3,
   },
   // a: {},
 }

@@ -6,7 +6,7 @@ import styles from './styles'
 
 // - uses unitless values
 // - creates base theme object
-// - creates theme.styles object for consumption in theme-ui
+// - uses a static theme.styles object for consumption in theme-ui
 // - ignores overrideThemeStyles
 // - does not include color styles
 // - should be mostly compatible with existing typography.js themes
@@ -38,35 +38,9 @@ const defaults = {
   blockMarginBottom: 1,
 }
 
-const REG = {
-  PX: /px$/,
-  EM: /r?em$/,
-  PC: /%$/,
-}
-export const toUnitless = val => {
-  // todo: create configs that use non-pixel units
-  // if (typeof val === 'number') return val
-  // if (!REG.PX.test(val)) return val
-  // if (REG.EM.test(val)) {
-  //   const em = parseFloat(val)
-  //   return em * 16
-  // }
-  // console.log('UNHANDLED UNIT', val)
+export const toUnitless = val => parseFloat(val)
 
-  return parseFloat(val)
-}
-
-export const getScale = opts => value => {
-  // todo: how is this used?
-  // 1. used to create h1-h6 styles
-  // 2. lineHeight is *not* used??
-  const fontSize = ms(value, opts.scaleRatio) * opts.baseFontSize
-  // const lineHeight = vr.rhythm(1, opts.baseFontSize)
-  return {
-    fontSize,
-    // lineHeight,
-  }
-}
+export const getScale = opts => value => ms(value, opts.scaleRatio) * opts.baseFontSize
 
 export const getSpace = (result, opts) => {
   const n = toUnitless(result.rhythm(opts.blockMarginBottom))
@@ -85,6 +59,7 @@ export const getFonts = (result, opts) => {
 }
 
 export const getFontSizes = (result, opts) => {
+  const scale = getScale(opts)
   return [
     -1.5 / 5,
     -1 / 5,
@@ -92,7 +67,7 @@ export const getFontSizes = (result, opts) => {
     2 / 5,
     3 / 5,
     1
-  ].map(result.scale).map(n => n.fontSize)
+  ].map(scale)
 }
 
 export const getLineHeights = (result, opts) => {
@@ -124,8 +99,6 @@ export const toTheme = (_opts = {}) => {
   const typo = verticalRhythm(opts)
   const theme = {}
   typo.options = opts
-
-  typo.scale = getScale(opts)
 
   theme.space = getSpace(typo, opts)
   theme.fonts = getFonts(typo, opts)

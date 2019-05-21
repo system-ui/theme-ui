@@ -88,6 +88,9 @@ export default props => {
         py={4}
         alignItems='center'>
         <Button
+          css={{
+            mr: 2,
+          }}
           onClick={cycleMethod}>
           {method}
         </Button>

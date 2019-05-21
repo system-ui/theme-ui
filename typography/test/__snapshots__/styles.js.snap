@@ -114,7 +114,7 @@ Object {
     "fontSize": "85%",
     "margin": 0,
     "marginBottom": 3,
-    "padding": 0,
+    "padding": 3,
   },
   "root": Object {
     "fontFamily": "body",
