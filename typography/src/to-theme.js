@@ -43,13 +43,15 @@ const REG = {
   PC: /%$/,
 }
 export const toUnitless = val => {
-  if (typeof val === 'number') return val
-  if (REG.PX.test(val)) return parseFloat(val)
-  if (REG.EM.test(val)) {
-    const em = parseFloat(val)
-    return em * 16
-  }
-  console.log('UNHANDLED UNIT', val)
+  // todo: create configs that use non-pixel units
+  // if (typeof val === 'number') return val
+  // if (!REG.PX.test(val)) return val
+  // if (REG.EM.test(val)) {
+  //   const em = parseFloat(val)
+  //   return em * 16
+  // }
+  // console.log('UNHANDLED UNIT', val)
+
   return parseFloat(val)
 }
 
@@ -70,7 +72,7 @@ export const getSpace = (result, opts) => {
   return [ 0, 1/4, 1/2, 1, 2, 4, 8 ].map(v => v * n)
 }
 
-const stackFonts = (fonts = []) => fonts.map(font => `"${font}"`).join(', ')
+const stackFonts = fonts => fonts.map(font => `"${font}"`).join(', ')
 
 export const getFonts = (result, opts) => {
   const body = stackFonts(opts.bodyFontFamily)

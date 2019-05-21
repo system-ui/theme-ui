@@ -19,6 +19,11 @@ test('converts typography.js theme to theme-ui', () => {
   expect(typeof theme.options).toBe('object')
 })
 
+test('includes default options', () => {
+  const theme = toTheme()
+  expect(theme).toMatchSnapshot()
+})
+
 test('returns rhythm function', () => {
   const theme = toTheme(themes.wp2016)
   const values = [ 0, 1/4, 1/2, 3/4, 1, 2 ]
@@ -72,4 +77,14 @@ test('returns line heights', () => {
   expect(typeof theme.lineHeights).toBe('object')
   expect(typeof theme.lineHeights.body).toBe('number')
   expect(typeof theme.lineHeights.heading).toBe('number')
+})
+
+const snapshots = Object.keys(themes).map(key => [
+  key,
+  themes[key]
+])
+
+test.each(snapshots)('snapshot %s', (name, config) => {
+  const theme = toTheme(config)
+  expect(theme).toMatchSnapshot()
 })
