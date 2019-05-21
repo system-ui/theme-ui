@@ -10,7 +10,6 @@
   },
   "workspaces": [
     "theme-ui",
-    "gatsby-theme-ui",
     "gatsby-plugin-theme-ui",
     "docs"
   ]

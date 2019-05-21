@@ -10,7 +10,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
-        theme: require.resolve('./src/components/theme')
+        // theme: require.resolve('./src/components/theme')
+        theme: './src/components/theme.js'
       }
     },
     'gatsby-plugin-catch-links',
@@ -24,5 +25,15 @@ module.exports = {
         ]
       }
     },
+    /*
+    {
+      resolve: 'gatsby-plugin-compile-es6-packages',
+      options: {
+        modules: [
+          'gatsby-plugin-theme-ui',
+        ]
+      }
+    }
+    */
   ]
 }
