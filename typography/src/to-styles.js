@@ -7,15 +7,12 @@ const isMedia = str => /^@/.test(str)
 const parseSelectors = styles => {
   const parsed = {}
   for (const key in styles) {
-    // todo: handle media queries
     if (isMedia(key)) continue
-    const selectors = key.split(',') //cssWhat(key)
+    const selectors = key.split(',')
     selectors.forEach(selector => {
       const [ parent, ...children ] = cssWhat(selector)[0]
       if (parent.type === 'universal') return
       if (parent.type !== 'tag') {
-        // todo...
-        // console.log('!TAG', selector, parent.type)
         return
       }
 
@@ -31,7 +28,6 @@ const parseSelectors = styles => {
   }
   for (const key in parsed) {
     if (key === 'html' || key === 'body') {
-      // todo: what should this be named?
       parsed.root = merge({}, parsed.root, parsed[key])
     }
   }
