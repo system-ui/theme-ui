@@ -16,7 +16,8 @@ const styles = typo.toJSON()
 test('converts typography.js theme to theme-ui', () => {
   const theme = toTheme(themes.wp2016)
   expect(typeof theme).toBe('object')
-  expect(typeof theme.options).toBe('object')
+  expect(typeof theme.typography).toBe('object')
+  expect(typeof theme.typography.options).toBe('object')
 })
 
 test('includes default options', () => {
@@ -27,18 +28,18 @@ test('includes default options', () => {
 test('returns rhythm function', () => {
   const theme = toTheme(themes.wp2016)
   const values = [ 0, 1/4, 1/2, 3/4, 1, 2 ]
-  const a = values.map(theme.rhythm)
+  const a = values.map(theme.typography.rhythm)
   const b = values.map(typo.rhythm)
-  expect(typeof theme.rhythm).toBe('function')
+  expect(typeof theme.typography.rhythm).toBe('function')
   expect(a).toEqual(b)
 })
 
 test('returns scale function', () => {
   const theme = toTheme(themes.wp2016)
   const values = [ -1/4, 0, 1/2, 1 ]
-  const a = values.map(theme.scale).map(v => v.fontSize)
+  const a = values.map(theme.typography.scale).map(v => v.fontSize)
   const b = values.map(typo.scale).map(v => toUnitless(v.fontSize))
-  expect(typeof theme.scale).toBe('function')
+  expect(typeof theme.typography.scale).toBe('function')
   expect(a).toEqual(b)
 })
 

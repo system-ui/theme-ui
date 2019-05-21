@@ -120,17 +120,22 @@ export const toTheme = (_opts = {}) => {
   opts.baseFontSize = toUnitless(opts.baseFontSize)
   opts.rhythmUnit = 'px'
 
-  const result = verticalRhythm(opts)
-  result.options = opts
+  const typo = verticalRhythm(opts)
+  const theme = {}
+  typo.options = opts
 
-  result.scale = getScale(opts)
-  result.space = getSpace(result, opts)
-  result.fonts = getFonts(result, opts)
-  result.fontSizes = getFontSizes(result, opts)
-  result.fontWeights = getFontWeights(result, opts)
-  result.lineHeights = getLineHeights(result, opts)
+  typo.scale = getScale(opts)
 
-  return result
+  theme.space = getSpace(typo, opts)
+  theme.fonts = getFonts(typo, opts)
+  theme.fontSizes = getFontSizes(typo, opts)
+  theme.fontWeights = getFontWeights(typo, opts)
+  theme.lineHeights = getLineHeights(typo, opts)
+
+  return {
+    ...theme,
+    typography: typo,
+  }
 }
 
 export default toTheme

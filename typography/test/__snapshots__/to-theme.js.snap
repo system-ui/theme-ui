@@ -2,8 +2,6 @@
 
 exports[`includes default options 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -25,39 +23,6 @@ Object {
     "body": 1.45,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.45,
-    "blockMarginBottom": 1,
-    "bodyFontFamily": Array [
-      "georgia",
-      "serif",
-    ],
-    "bodyWeight": "normal",
-    "boldWeight": "bold",
-    "googleFonts": Array [],
-    "headerFontFamily": Array [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Oxygen",
-      "Ubuntu",
-      "Cantarell",
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "bold",
-    "includeNormalize": true,
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     5.75,
@@ -67,13 +32,48 @@ Object {
     92,
     184,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.45,
+      "blockMarginBottom": 1,
+      "bodyFontFamily": Array [
+        "georgia",
+        "serif",
+      ],
+      "bodyWeight": "normal",
+      "boldWeight": "bold",
+      "googleFonts": Array [],
+      "headerFontFamily": Array [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "bold",
+      "includeNormalize": true,
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot alton 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.620543134412241,
     15.669910139330234,
@@ -95,49 +95,6 @@ Object {
     "body": 1.45,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.45,
-    "blockMarginBottom": 0.8,
-    "bodyColor": "black",
-    "bodyFontFamily": Array [
-      "Open Sans",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Domine",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Open Sans",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Domine",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Alton",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     5,
@@ -147,13 +104,58 @@ Object {
     80,
     160,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.45,
+      "blockMarginBottom": 0.8,
+      "bodyColor": "black",
+      "bodyFontFamily": Array [
+        "Open Sans",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Domine",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Open Sans",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Domine",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Alton",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot anonymous 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.154524686917982,
     13.32085131842997,
@@ -175,45 +177,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.9)",
-    "bodyFontFamily": Array [
-      "Anonymous Pro",
-      "Georgia",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Anonymous Pro",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Anonymous Pro",
-      "Georgia",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.5,
-    "title": "Anonymous",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6,
@@ -223,13 +186,54 @@ Object {
     96,
     192,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.9)",
+      "bodyFontFamily": Array [
+        "Anonymous Pro",
+        "Georgia",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Anonymous Pro",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Anonymous Pro",
+        "Georgia",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.5,
+      "title": "Anonymous",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot bootstrap 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.544842906929851,
     13.604528006675102,
@@ -251,50 +255,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyFontFamily": Array [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Oxygen",
-      "Ubuntu",
-      "Cantarell",
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": "bold",
-    "googleFonts": Array [],
-    "headerFontFamily": Array [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Oxygen",
-      "Ubuntu",
-      "Cantarell",
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 500,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.25,
-    "title": "Bootstrap",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6,
@@ -304,13 +264,59 @@ Object {
     96,
     192,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyFontFamily": Array [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": "bold",
+      "googleFonts": Array [],
+      "headerFontFamily": Array [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 500,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.25,
+      "title": "Bootstrap",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot deYoung 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     16.245047927124713,
     17.411011265922482,
@@ -332,50 +338,6 @@ Object {
     "body": 1.45,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 20,
-    "baseLineHeight": 1.45,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Alegreya",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Alegreya Sans",
-        "styles": Array [
-          "500",
-        ],
-      },
-      Object {
-        "name": "Alegreya",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Alegreya Sans",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 500,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "de Young",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.25,
@@ -385,13 +347,59 @@ Object {
     116,
     232,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 20,
+      "baseLineHeight": 1.45,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Alegreya",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Alegreya Sans",
+          "styles": Array [
+            "500",
+          ],
+        },
+        Object {
+          "name": "Alegreya",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Alegreya Sans",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 500,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "de Young",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot doelger 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     13.808290738056005,
     14.79935957603411,
@@ -413,49 +421,6 @@ Object {
     "body": 1.45,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 17,
-    "baseLineHeight": 1.45,
-    "blockMarginBottom": 0.8,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Cabin",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Arvo",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Cabin",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Arvo",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "700",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Doelger",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     4.75,
@@ -465,13 +430,58 @@ Object {
     76,
     152,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 17,
+      "baseLineHeight": 1.45,
+      "blockMarginBottom": 0.8,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Cabin",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Arvo",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Cabin",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Arvo",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "700",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Doelger",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot elkGlen 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     16.245047927124713,
     17.411011265922482,
@@ -493,49 +503,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 20,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "PT Sans",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Oswald",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "PT Sans",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Oswald",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "700",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Elk Glen",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -545,13 +512,58 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 20,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "PT Sans",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Oswald",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "PT Sans",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Oswald",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "700",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Elk Glen",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot fairyGates 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     16.245047927124713,
     17.411011265922482,
@@ -573,49 +585,6 @@ Object {
     "body": 1.45,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 20,
-    "baseLineHeight": 1.45,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Quattrocento Sans",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Work Sans",
-        "styles": Array [
-          "600",
-        ],
-      },
-      Object {
-        "name": "Quattrocento Sans",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Work Sans",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "600",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Fairy Gates",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.25,
@@ -625,13 +594,58 @@ Object {
     116,
     232,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 20,
+      "baseLineHeight": 1.45,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Quattrocento Sans",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Work Sans",
+          "styles": Array [
+            "600",
+          ],
+        },
+        Object {
+          "name": "Quattrocento Sans",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Work Sans",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "600",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Fairy Gates",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot funston 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     16.245047927124713,
     17.411011265922482,
@@ -653,48 +667,6 @@ Object {
     "body": 1.4,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 20,
-    "baseLineHeight": 1.4,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.87)",
-    "bodyFontFamily": Array [
-      "Cabin Condensed",
-      "georgia",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Patua One",
-        "styles": Array [
-          "400",
-        ],
-      },
-      Object {
-        "name": "Cabin Condensed",
-        "styles": Array [
-          "400",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Patua One",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "400",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Funston",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7,
@@ -704,13 +676,57 @@ Object {
     112,
     224,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 20,
+      "baseLineHeight": 1.4,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.87)",
+      "bodyFontFamily": Array [
+        "Cabin Condensed",
+        "georgia",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Patua One",
+          "styles": Array [
+            "400",
+          ],
+        },
+        Object {
+          "name": "Cabin Condensed",
+          "styles": Array [
+            "400",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Patua One",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "400",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Funston",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot github 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -732,49 +748,6 @@ Object {
     "body": 1.625,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.625,
-    "blockMarginBottom": 0.5,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Helvetica",
-      "Arial",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ],
-    "bodyWeight": "normal",
-    "boldWeight": 600,
-    "googleFonts": Array [],
-    "headerFontFamily": Array [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Helvetica",
-      "Arial",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 600,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "GitHub",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     3.25,
@@ -784,13 +757,58 @@ Object {
     52,
     104,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.625,
+      "blockMarginBottom": 0.5,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+      ],
+      "bodyWeight": "normal",
+      "boldWeight": 600,
+      "googleFonts": Array [],
+      "headerFontFamily": Array [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 600,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "GitHub",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot grandView 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -812,49 +830,6 @@ Object {
     "body": 1.6875,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.6875,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Arvo",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Montserrat",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Arvo",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Montserrat",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Grand View",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6.75,
@@ -864,13 +839,58 @@ Object {
     108,
     216,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.6875,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Arvo",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Montserrat",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Arvo",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Montserrat",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Grand View",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot irving 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     18.594817359206676,
     19.364266141116282,
@@ -892,48 +912,6 @@ Object {
     "body": 1.38,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 21,
-    "baseLineHeight": 1.38,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Yrsa",
-      "georgia",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Exo",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Yrsa",
-        "styles": Array [
-          "400",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Exo",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 1.5,
-    "title": "Irving",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7,
@@ -943,13 +921,57 @@ Object {
     112,
     224,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 21,
+      "baseLineHeight": 1.38,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Yrsa",
+        "georgia",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Exo",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Yrsa",
+          "styles": Array [
+            "400",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Exo",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 1.5,
+      "title": "Irving",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot judah 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.620543134412241,
     15.669910139330234,
@@ -971,51 +993,6 @@ Object {
     "body": 1.6666666666666667,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.6666666666666667,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Vollkorn",
-      "Georgia",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Roboto Condensed",
-        "styles": Array [
-          "400",
-          "400i",
-        ],
-      },
-      Object {
-        "name": "Vollkorn",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Roboto Condensed",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 400,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Judah",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -1025,13 +1002,60 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.6666666666666667,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Vollkorn",
+        "Georgia",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Roboto Condensed",
+          "styles": Array [
+            "400",
+            "400i",
+          ],
+        },
+        Object {
+          "name": "Vollkorn",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Roboto Condensed",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 400,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Judah",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot kirkham 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.306749304499707,
     15.444889770937406,
@@ -1053,50 +1077,6 @@ Object {
     "body": 1.44,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.44,
-    "blockMarginBottom": 0.75,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Fira Sans",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Playfair Display",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Fira Sans",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Playfair Display",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.15,
-    "title": "Kirkham",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     4.75,
@@ -1106,13 +1086,59 @@ Object {
     76,
     152,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.44,
+      "blockMarginBottom": 0.75,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Fira Sans",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Playfair Display",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Fira Sans",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Playfair Display",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.15,
+      "title": "Kirkham",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot kubrick 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     9.747028756274826,
     10.44660675955349,
@@ -1134,37 +1160,6 @@ Object {
     "body": 1.4,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 12,
-    "baseLineHeight": 1.4,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Lucida Grande",
-      "Verdana",
-      "Arial",
-      "Sans-Serif",
-    ],
-    "bodyWeight": "normal",
-    "boldWeight": "bold",
-    "googleFonts": Array [],
-    "headerFontFamily": Array [
-      "Lucida Grande",
-      "Verdana",
-      "Arial",
-      "Sans-Serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "bold",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Wordpress Kubrick",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     4,
@@ -1174,13 +1169,46 @@ Object {
     64,
     128,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 12,
+      "baseLineHeight": 1.4,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Lucida Grande",
+        "Verdana",
+        "Arial",
+        "Sans-Serif",
+      ],
+      "bodyWeight": "normal",
+      "boldWeight": "bold",
+      "googleFonts": Array [],
+      "headerFontFamily": Array [
+        "Lucida Grande",
+        "Verdana",
+        "Arial",
+        "Sans-Serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "bold",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Wordpress Kubrick",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot lawton 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -1202,49 +1230,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 0.6666666666666666,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Libre Baskerville",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Raleway",
-        "styles": Array [
-          "800",
-        ],
-      },
-      Object {
-        "name": "Libre Baskerville",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Raleway",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 800,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Lawton",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     4,
@@ -1254,13 +1239,58 @@ Object {
     64,
     128,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 0.6666666666666666,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Libre Baskerville",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Raleway",
+          "styles": Array [
+            "800",
+          ],
+        },
+        Object {
+          "name": "Libre Baskerville",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Raleway",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 800,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Lawton",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot legible 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.228414668833754,
     13.374783655057627,
@@ -1282,47 +1312,6 @@ Object {
     "body": 1.4,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.4,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0, 0%, 0%, 0.93)",
-    "bodyFontFamily": Array [
-      "Fira Sans",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 500,
-    "googleFonts": Array [
-      Object {
-        "name": "Fira Sans",
-        "styles": Array [
-          "400",
-          "500",
-        ],
-      },
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "900",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0, 0%, 0%, 0.86)",
-    "headerFontFamily": Array [
-      "Merriweather",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 900,
-    "includeNormalize": true,
-    "rhythmUnit": "px",
-    "scaleRatio": 2.45,
-    "title": "Legible",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     5.5,
@@ -1332,13 +1321,56 @@ Object {
     88,
     176,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.4,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0, 0%, 0%, 0.93)",
+      "bodyFontFamily": Array [
+        "Fira Sans",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 500,
+      "googleFonts": Array [
+        Object {
+          "name": "Fira Sans",
+          "styles": Array [
+            "400",
+            "500",
+          ],
+        },
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "900",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0, 0%, 0%, 0.86)",
+      "headerFontFamily": Array [
+        "Merriweather",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 900,
+      "includeNormalize": true,
+      "rhythmUnit": "px",
+      "scaleRatio": 2.45,
+      "title": "Legible",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot lincoln 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     15.432795530768477,
     16.54046070262636,
@@ -1360,49 +1392,6 @@ Object {
     "body": 1.58,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 19,
-    "baseLineHeight": 1.58,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.73)",
-    "bodyFontFamily": Array [
-      "Lora",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Varela Round",
-        "styles": Array [
-          "400",
-        ],
-      },
-      Object {
-        "name": "Lora",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Varela Round",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "400",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Lincoln",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -1412,13 +1401,58 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 19,
+      "baseLineHeight": 1.58,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.73)",
+      "bodyFontFamily": Array [
+        "Lora",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Varela Round",
+          "styles": Array [
+            "400",
+          ],
+        },
+        Object {
+          "name": "Lora",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Varela Round",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "400",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Lincoln",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot moraga 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     13.67384027278273,
     14.985957733233716,
@@ -1440,44 +1474,6 @@ Object {
     "body": 1.56,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.56,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.7)",
-    "bodyFontFamily": Array [
-      "Source Sans Pro",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Source Sans Pro",
-        "styles": Array [
-          "200",
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.85)",
-    "headerFontFamily": Array [
-      "Source Sans Pro",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "200",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.5,
-    "title": "Moraga",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7,
@@ -1487,13 +1483,53 @@ Object {
     112,
     224,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.56,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.7)",
+      "bodyFontFamily": Array [
+        "Source Sans Pro",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Source Sans Pro",
+          "styles": Array [
+            "200",
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.85)",
+      "headerFontFamily": Array [
+        "Source Sans Pro",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "200",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.5,
+      "title": "Moraga",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot noriega 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     15.580412437079403,
     16.348458215797965,
@@ -1515,39 +1551,6 @@ Object {
     "body": 1.61,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.61,
-    "blockMarginBottom": 1,
-    "bodyFontFamily": Array [
-      "Lato",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Lato",
-        "styles": Array [
-          "400",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Lato",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "rhythmUnit": "px",
-    "scaleRatio": 1.618,
-    "title": "Noriega",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7,
@@ -1557,13 +1560,48 @@ Object {
     112,
     224,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.61,
+      "blockMarginBottom": 1,
+      "bodyFontFamily": Array [
+        "Lato",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Lato",
+          "styles": Array [
+            "400",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Lato",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "rhythmUnit": "px",
+      "scaleRatio": 1.618,
+      "title": "Noriega",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot oceanBeach 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     15.432795530768477,
     16.54046070262636,
@@ -1585,49 +1623,6 @@ Object {
     "body": 1.58,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 19,
-    "baseLineHeight": 1.58,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.73)",
-    "bodyFontFamily": Array [
-      "Roboto",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Roboto Slab",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Roboto",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Roboto Slab",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Ocean Beach",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -1637,13 +1632,58 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 19,
+      "baseLineHeight": 1.58,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.73)",
+      "bodyFontFamily": Array [
+        "Roboto",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Roboto Slab",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Roboto",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Roboto Slab",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Ocean Beach",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot parnassus 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     13.328895588612967,
     14.454811007092296,
@@ -1665,49 +1705,6 @@ Object {
     "body": 1.82,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 17,
-    "baseLineHeight": 1.82,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Merriweather",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Merriweather Sans",
-        "styles": Array [
-          "800",
-        ],
-      },
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Merriweather Sans",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 800,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.25,
-    "title": "Parnassus",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -1717,13 +1714,58 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 17,
+      "baseLineHeight": 1.82,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Merriweather",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Merriweather Sans",
+          "styles": Array [
+            "800",
+          ],
+        },
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Merriweather Sans",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 800,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.25,
+      "title": "Parnassus",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot stAnnes 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -1745,49 +1787,6 @@ Object {
     "body": 1.5625,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5625,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Source Sans Pro",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Source Serif Pro",
-        "styles": Array [
-          "600",
-        ],
-      },
-      Object {
-        "name": "Source Sans Pro",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Source Serif Pro",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 600,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "St. Annes",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6.25,
@@ -1797,13 +1796,58 @@ Object {
     100,
     200,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5625,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Source Sans Pro",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Source Serif Pro",
+          "styles": Array [
+            "600",
+          ],
+        },
+        Object {
+          "name": "Source Sans Pro",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Source Serif Pro",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 600,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "St. Annes",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot stardust 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     17.369767322196868,
     18.2056420302608,
@@ -1825,49 +1869,6 @@ Object {
     "body": 1.6,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 20,
-    "baseLineHeight": 1.6,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0, 0%, 0%, 0.8)",
-    "bodyFontFamily": Array [
-      "Merriweather",
-      "serif",
-    ],
-    "bodyWeight": 300,
-    "boldWeight": 400,
-    "googleFonts": Array [
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "300",
-          "300i",
-          "400",
-        ],
-      },
-      Object {
-        "name": "Josefin Sans",
-        "styles": Array [
-          "400",
-          "600",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0, 0%, 0%, 0.9)",
-    "headerFontFamily": Array [
-      "Josefin Sans",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 600,
-    "includeNormalize": true,
-    "rhythmUnit": "px",
-    "scaleRatio": 1.6,
-    "title": "Stardust",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     8,
@@ -1877,13 +1878,58 @@ Object {
     128,
     256,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 20,
+      "baseLineHeight": 1.6,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0, 0%, 0%, 0.8)",
+      "bodyFontFamily": Array [
+        "Merriweather",
+        "serif",
+      ],
+      "bodyWeight": 300,
+      "boldWeight": 400,
+      "googleFonts": Array [
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "300",
+            "300i",
+            "400",
+          ],
+        },
+        Object {
+          "name": "Josefin Sans",
+          "styles": Array [
+            "400",
+            "600",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0, 0%, 0%, 0.9)",
+      "headerFontFamily": Array [
+        "Josefin Sans",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 600,
+      "includeNormalize": true,
+      "rhythmUnit": "px",
+      "scaleRatio": 1.6,
+      "title": "Stardust",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot sternGrove 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.620543134412241,
     15.669910139330234,
@@ -1905,42 +1951,6 @@ Object {
     "body": 1.6666666666666667,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.6666666666666667,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.87)",
-    "bodyFontFamily": Array [
-      "Georgia",
-      "Cambria",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Montserrat",
-        "styles": Array [
-          "400",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.5)",
-    "headerFontFamily": Array [
-      "Montserrat",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 400,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Stern Grove",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -1950,13 +1960,51 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.6666666666666667,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.87)",
+      "bodyFontFamily": Array [
+        "Georgia",
+        "Cambria",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Montserrat",
+          "styles": Array [
+            "400",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.5)",
+      "headerFontFamily": Array [
+        "Montserrat",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 400,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Stern Grove",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot stowLake 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.620543134412241,
     15.669910139330234,
@@ -1978,49 +2026,6 @@ Object {
     "body": 1.722,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.722,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Lato",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Neuton",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Lato",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Neuton",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Stow Lake",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.5,
@@ -2030,13 +2035,58 @@ Object {
     120,
     240,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.722,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Lato",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Neuton",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Lato",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Neuton",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Stow Lake",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot sutro 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.620543134412241,
     15.669910139330234,
@@ -2058,50 +2108,6 @@ Object {
     "body": 1.78,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 18,
-    "baseLineHeight": 1.78,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.9)",
-    "bodyFontFamily": Array [
-      "Merriweather",
-      "Georgia",
-      "serif",
-    ],
-    "bodyWeight": 300,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Open Sans",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "300",
-          "300i",
-          "700",
-          "700i",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Open Sans",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Sutro",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     8,
@@ -2111,13 +2117,59 @@ Object {
     128,
     256,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 18,
+      "baseLineHeight": 1.78,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.9)",
+      "bodyFontFamily": Array [
+        "Merriweather",
+        "Georgia",
+        "serif",
+      ],
+      "bodyWeight": 300,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Open Sans",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "300",
+            "300i",
+            "700",
+            "700i",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Open Sans",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Sutro",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot trajan 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     15.193155858647478,
     16.651064148037463,
@@ -2139,60 +2191,6 @@ Object {
     "body": 1.6,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 20,
-    "baseLineHeight": 1.6,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.9)",
-    "bodyFontFamily": Array [
-      "Merriweather Sans",
-      "Georgia",
-      "SourceHanSerifCN-Regular",
-      "san-serif",
-    ],
-    "bodyWeight": 200,
-    "boldWeight": 500,
-    "googleFonts": Array [
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-          "900",
-          "900i",
-        ],
-      },
-      Object {
-        "name": "Merriweather Sans",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-          "900",
-          "900i",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "TrajanPro-Bold",
-      "Georgia",
-      "SourceHanSerifCN-Regular",
-      "san-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.5,
-    "title": "guoliim",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     8,
@@ -2202,13 +2200,69 @@ Object {
     128,
     256,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 20,
+      "baseLineHeight": 1.6,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.9)",
+      "bodyFontFamily": Array [
+        "Merriweather Sans",
+        "Georgia",
+        "SourceHanSerifCN-Regular",
+        "san-serif",
+      ],
+      "bodyWeight": 200,
+      "boldWeight": 500,
+      "googleFonts": Array [
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+            "900",
+            "900i",
+          ],
+        },
+        Object {
+          "name": "Merriweather Sans",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+            "900",
+            "900i",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "TrajanPro-Bold",
+        "Georgia",
+        "SourceHanSerifCN-Regular",
+        "san-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.5,
+      "title": "guoliim",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot twinPeaks 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     17.05730032348095,
     18.281561829218607,
@@ -2230,49 +2284,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 21,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.73)",
-    "bodyFontFamily": Array [
-      "Crimson Text",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 600,
-    "googleFonts": Array [
-      Object {
-        "name": "Rosario",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Crimson Text",
-        "styles": Array [
-          "400",
-          "400i",
-          "600",
-        ],
-      },
-    ],
-    "headerColor": "hsla(0,0%,0%,0.9)",
-    "headerFontFamily": Array [
-      "Rosario",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "700",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Twin Peaks",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.75,
@@ -2282,13 +2293,58 @@ Object {
     124,
     248,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 21,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.73)",
+      "bodyFontFamily": Array [
+        "Crimson Text",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 600,
+      "googleFonts": Array [
+        Object {
+          "name": "Rosario",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Crimson Text",
+          "styles": Array [
+            "400",
+            "400i",
+            "600",
+          ],
+        },
+      ],
+      "headerColor": "hsla(0,0%,0%,0.9)",
+      "headerFontFamily": Array [
+        "Rosario",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "700",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Twin Peaks",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot usWebStandards 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     13.808290738056005,
     14.79935957603411,
@@ -2310,49 +2366,6 @@ Object {
     "body": 1.53,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 17,
-    "baseLineHeight": 1.53,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Source Sans Pro",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Source Sans Pro",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Merriweather",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scale": 2.35,
-    "scaleRatio": 2,
-    "title": "US Web Design Standards",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6.5,
@@ -2362,13 +2375,58 @@ Object {
     104,
     208,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 17,
+      "baseLineHeight": 1.53,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Source Sans Pro",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Source Sans Pro",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Merriweather",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scale": 2.35,
+      "scaleRatio": 2,
+      "title": "US Web Design Standards",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wikipedia 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     11.371533548987298,
     12.187707886145738,
@@ -2390,34 +2448,6 @@ Object {
     "body": 1.57,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 14,
-    "baseLineHeight": 1.57,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.85)",
-    "bodyFontFamily": Array [
-      "sans-serif",
-    ],
-    "bodyWeight": "normal",
-    "boldWeight": "bold",
-    "googleFonts": Array [],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Linux Libertine",
-      "Georgia",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "normal",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Wikipedia",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     5.25,
@@ -2427,13 +2457,43 @@ Object {
     84,
     168,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 14,
+      "baseLineHeight": 1.57,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.85)",
+      "bodyFontFamily": Array [
+        "sans-serif",
+      ],
+      "bodyWeight": "normal",
+      "boldWeight": "bold",
+      "googleFonts": Array [],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Linux Libertine",
+        "Georgia",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "normal",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Wikipedia",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2010 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     14.746541896366281,
     15.153052232314758,
@@ -2455,41 +2515,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "georgia",
-      "serif",
-    ],
-    "bodyWeight": "normal",
-    "boldWeight": "bold",
-    "googleFonts": Array [],
-    "headerColor": "hsla(0,0%,0%,1)",
-    "headerFontFamily": Array [
-      "Helvetica Neue",
-      "Helvetica",
-      "Segoe UI",
-      "Arial",
-      "freesans",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "bold",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 1.3125,
-    "title": "Wordpress Theme 2010",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6,
@@ -2499,13 +2524,50 @@ Object {
     96,
     192,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "georgia",
+        "serif",
+      ],
+      "bodyWeight": "normal",
+      "boldWeight": "bold",
+      "googleFonts": Array [],
+      "headerColor": "hsla(0,0%,0%,1)",
+      "headerFontFamily": Array [
+        "Helvetica Neue",
+        "Helvetica",
+        "Segoe UI",
+        "Arial",
+        "freesans",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "bold",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 1.3125,
+      "title": "Wordpress Theme 2010",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2011 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.718302138341958,
     13.437439182298888,
@@ -2527,48 +2589,6 @@ Object {
     "body": 1.6,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 15,
-    "baseLineHeight": 1.6,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.78)",
-    "bodyFontFamily": Array [
-      "Helvetica Neue",
-      "Helvetica",
-      "Segoe UI",
-      "Arial",
-      "freesans",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ],
-    "bodyWeight": 300,
-    "boldWeight": "bold",
-    "googleFonts": Array [],
-    "headerColor": "hsla(0,0%,0%,0.87)",
-    "headerFontFamily": Array [
-      "Helvetica Neue",
-      "Helvetica",
-      "Segoe UI",
-      "Arial",
-      "freesans",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "bold",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 1.7333,
-    "title": "Wordpress Theme 2011",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6,
@@ -2578,13 +2598,57 @@ Object {
     96,
     192,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 15,
+      "baseLineHeight": 1.6,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.78)",
+      "bodyFontFamily": Array [
+        "Helvetica Neue",
+        "Helvetica",
+        "Segoe UI",
+        "Arial",
+        "freesans",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+      ],
+      "bodyWeight": 300,
+      "boldWeight": "bold",
+      "googleFonts": Array [],
+      "headerColor": "hsla(0,0%,0%,0.87)",
+      "headerFontFamily": Array [
+        "Helvetica Neue",
+        "Helvetica",
+        "Segoe UI",
+        "Arial",
+        "freesans",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "bold",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 1.7333,
+      "title": "Wordpress Theme 2011",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2012 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.158837125537808,
     12.743949421182561,
@@ -2606,42 +2670,6 @@ Object {
     "body": 1.714,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 14,
-    "baseLineHeight": 1.714,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.73)",
-    "bodyFontFamily": Array [
-      "Open Sans",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Open Sans",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Open Sans",
-      "sans-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "700",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 1.6,
-    "title": "Wordpress Theme 2012",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     5.75,
@@ -2651,13 +2679,51 @@ Object {
     92,
     184,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 14,
+      "baseLineHeight": 1.714,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.73)",
+      "bodyFontFamily": Array [
+        "Open Sans",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Open Sans",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Open Sans",
+        "sans-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "700",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 1.6,
+      "title": "Wordpress Theme 2012",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2013 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -2679,49 +2745,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.93)",
-    "bodyFontFamily": Array [
-      "Source Sans Pro",
-      "sans-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Bitter",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Source Sans Pro",
-        "styles": Array [
-          "300i",
-          "400",
-          "400i",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Bitter",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "700",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Wordpress Theme 2013",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6,
@@ -2731,13 +2754,58 @@ Object {
     96,
     192,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.93)",
+      "bodyFontFamily": Array [
+        "Source Sans Pro",
+        "sans-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Bitter",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Source Sans Pro",
+          "styles": Array [
+            "300i",
+            "400",
+            "400i",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Bitter",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "700",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Wordpress Theme 2013",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2014 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.99603834169977,
     13.928809012737986,
@@ -2759,44 +2827,6 @@ Object {
     "body": 1.5,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.5,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.83)",
-    "bodyFontFamily": Array [
-      "Lato",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 600,
-    "googleFonts": Array [
-      Object {
-        "name": "Lato",
-        "styles": Array [
-          "300",
-          "300i",
-          "400",
-          "400i",
-          "600",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Lato",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 600,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Wordpress Theme 2014",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6,
@@ -2806,13 +2836,53 @@ Object {
     96,
     192,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.5,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.83)",
+      "bodyFontFamily": Array [
+        "Lato",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 600,
+      "googleFonts": Array [
+        Object {
+          "name": "Lato",
+          "styles": Array [
+            "300",
+            "300i",
+            "400",
+            "400i",
+            "600",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Lato",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 600,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Wordpress Theme 2014",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2015 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     15.432795530768477,
     16.54046070262636,
@@ -2834,41 +2904,6 @@ Object {
     "body": 1.68,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 19,
-    "baseLineHeight": 1.68,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.8)",
-    "bodyFontFamily": Array [
-      "Noto Serif",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Noto Serif",
-        "styles": Array [
-          "400",
-          "700",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Noto Serif",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": "700",
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2,
-    "title": "Wordpress Theme 2015",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7.75,
@@ -2878,13 +2913,50 @@ Object {
     124,
     248,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 19,
+      "baseLineHeight": 1.68,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.8)",
+      "bodyFontFamily": Array [
+        "Noto Serif",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Noto Serif",
+          "styles": Array [
+            "400",
+            "700",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Noto Serif",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": "700",
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2,
+      "title": "Wordpress Theme 2015",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot wp2016 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     12.154524686917982,
     13.32085131842997,
@@ -2906,53 +2978,6 @@ Object {
     "body": 1.75,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 16,
-    "baseLineHeight": 1.75,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.9)",
-    "bodyFontFamily": Array [
-      "Merriweather",
-      "Georgia",
-      "serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Montserrat",
-        "styles": Array [
-          "700",
-        ],
-      },
-      Object {
-        "name": "Merriweather",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-          "900",
-          "900i",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Merriweather",
-      "Georgia",
-      "serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 900,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scaleRatio": 2.5,
-    "title": "Wordpress Theme 2016",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     7,
@@ -2962,13 +2987,62 @@ Object {
     112,
     224,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 16,
+      "baseLineHeight": 1.75,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.9)",
+      "bodyFontFamily": Array [
+        "Merriweather",
+        "Georgia",
+        "serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Montserrat",
+          "styles": Array [
+            "700",
+          ],
+        },
+        Object {
+          "name": "Merriweather",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+            "900",
+            "900i",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Merriweather",
+        "Georgia",
+        "serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 900,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scaleRatio": 2.5,
+      "title": "Wordpress Theme 2016",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;
 
 exports[`snapshot zacklive 1`] = `
 Object {
-  "adjustFontSizeTo": [Function],
-  "establishBaseline": [Function],
   "fontSizes": Array [
     13.808290738056005,
     14.79935957603411,
@@ -2990,55 +3064,6 @@ Object {
     "body": 1.53,
     "heading": 1.1,
   },
-  "linesForFontSize": [Function],
-  "options": Object {
-    "baseFontSize": 17,
-    "baseLineHeight": 1.53,
-    "blockMarginBottom": 1,
-    "bodyColor": "hsla(0,0%,0%,0.7)",
-    "bodyFontFamily": Array [
-      "Roboto",
-      "Georgia",
-      "SourceHanSerifCN-Regular",
-      "san-serif",
-    ],
-    "bodyWeight": 400,
-    "boldWeight": 700,
-    "googleFonts": Array [
-      Object {
-        "name": "Raleway",
-        "styles": Array [
-          "700",
-          "700i",
-        ],
-      },
-      Object {
-        "name": "Roboto",
-        "styles": Array [
-          "400",
-          "400i",
-          "700",
-          "700i",
-        ],
-      },
-    ],
-    "headerFontFamily": Array [
-      "Raleway",
-      "Georgia",
-      "SourceHanSerifCN-Regular",
-      "san-serif",
-    ],
-    "headerLineHeight": 1.1,
-    "headerWeight": 700,
-    "includeNormalize": true,
-    "overrideStyles": [Function],
-    "rhythmUnit": "px",
-    "scale": 2.35,
-    "scaleRatio": 2,
-    "title": "ZackLive",
-  },
-  "rhythm": [Function],
-  "scale": [Function],
   "space": Array [
     0,
     6.5,
@@ -3048,5 +3073,58 @@ Object {
     104,
     208,
   ],
+  "typography": Object {
+    "adjustFontSizeTo": [Function],
+    "establishBaseline": [Function],
+    "linesForFontSize": [Function],
+    "options": Object {
+      "baseFontSize": 17,
+      "baseLineHeight": 1.53,
+      "blockMarginBottom": 1,
+      "bodyColor": "hsla(0,0%,0%,0.7)",
+      "bodyFontFamily": Array [
+        "Roboto",
+        "Georgia",
+        "SourceHanSerifCN-Regular",
+        "san-serif",
+      ],
+      "bodyWeight": 400,
+      "boldWeight": 700,
+      "googleFonts": Array [
+        Object {
+          "name": "Raleway",
+          "styles": Array [
+            "700",
+            "700i",
+          ],
+        },
+        Object {
+          "name": "Roboto",
+          "styles": Array [
+            "400",
+            "400i",
+            "700",
+            "700i",
+          ],
+        },
+      ],
+      "headerFontFamily": Array [
+        "Raleway",
+        "Georgia",
+        "SourceHanSerifCN-Regular",
+        "san-serif",
+      ],
+      "headerLineHeight": 1.1,
+      "headerWeight": 700,
+      "includeNormalize": true,
+      "overrideStyles": [Function],
+      "rhythmUnit": "px",
+      "scale": 2.35,
+      "scaleRatio": 2,
+      "title": "ZackLive",
+    },
+    "rhythm": [Function],
+    "scale": [Function],
+  },
 }
 `;

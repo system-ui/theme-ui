@@ -1,14 +1,24 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx, ThemeProvider, Flex, } from 'theme-ui'
+import {
+  jsx,
+  ThemeProvider,
+  Flex,
+  Styled
+} from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'
+
+import {
+  toStyles,
+  toTheme,
+  styles
+} from 'theme-ui-typography'
 
 import Layout from './layout'
 import GoogleFonts from './google-fonts'
 import Button from './button'
 import themes from './typography-themes'
-import createTypographyStyles from 'theme-ui-typography'
 import typographyThemes from './typography-themes'
 import baseTheme from './theme'
 
@@ -42,23 +52,48 @@ const ThemeSelect = props =>
     </select>
   </div>
 
+const createTheme = (typographyTheme, method) => {
+  switch (method) {
+    case 'styles':
+      const typography = toStyles(typographyTheme)
+      return merge({}, baseTheme, {
+        styles: typography.styles,
+        typography
+      })
+    case 'theme':
+    default:
+      return merge({}, toTheme(typographyTheme), {
+        styles,
+      })
+  }
+}
+
+const methods = [
+  'theme',
+  'styles',
+]
+
 export default props => {
-  // switch typography themes
   const [ themeName, setTheme ] = useState(themeNames[0])
+  const [ method, setMethod ] = useState('theme')
+
+  const cycleMethod = e => {
+    const i = methods.indexOf(method) + 1
+    setMethod(methods[i % methods.length])
+  }
 
   const typographyTheme = typographyThemes[themeName]
-  const typography = createTypographyStyles(typographyTheme)
-
-  const theme = merge({}, baseTheme, {
-    styles: typography.styles,
-    typography
-  })
+  const theme = createTheme(typographyTheme, method)
 
   return (
     <Layout {...props}>
       <Flex
         py={4}
         alignItems='center'>
+        <Button
+          onClick={cycleMethod}>
+          {method}
+        </Button>
         <ThemeSelect
           name='theme'
           value={themeName}
@@ -79,7 +114,12 @@ export default props => {
       </Flex>
       <ThemeProvider theme={theme}>
         <GoogleFonts />
-        {props.children}
+        <Styled.root>
+          {props.children}
+        </Styled.root>
+        <pre>
+          {JSON.stringify(theme, null, 2)}
+        </pre>
       </ThemeProvider>
     </Layout>
   )
