@@ -1,4 +1,5 @@
 // POC/custom implementation of typography.js for use in theme-ui
+// import assign from 'object-assign'
 import verticalRhythm from 'compass-vertical-rhythm'
 import ms from 'modularscale'
 
@@ -35,3 +36,99 @@ const defaults = {
   includeNormalize: true,
   blockMarginBottom: 1,
 }
+
+const REG = {
+  PX: /px$/,
+  EM: /r?em$/,
+  PC: /%$/,
+}
+export const toUnitless = val => {
+  if (typeof val === 'number') return val
+  if (REG.PX.test(val)) return parseFloat(val)
+  if (REG.EM.test(val)) {
+    const em = parseFloat(val)
+    return em * 16
+  }
+  console.log('UNHANDLED UNIT', val)
+  return parseFloat(val)
+}
+
+export const getScale = opts => value => {
+  // todo: how is this used?
+  // 1. used to create h1-h6 styles
+  // 2. lineHeight is *not* used??
+  const fontSize = ms(value, opts.scaleRatio) * opts.baseFontSize
+  // const lineHeight = vr.rhythm(1, opts.baseFontSize)
+  return {
+    fontSize,
+    // lineHeight,
+  }
+}
+
+export const getSpace = (result, opts) => {
+  const n = toUnitless(result.rhythm(opts.blockMarginBottom))
+  return [ 0, 1/4, 1/2, 1, 2, 4, 8 ].map(v => v * n)
+}
+
+const stackFonts = (fonts = []) => fonts.map(font => `"${font}"`).join(', ')
+
+export const getFonts = (result, opts) => {
+  const body = stackFonts(opts.bodyFontFamily)
+  const heading = stackFonts(opts.headerFontFamily)
+  return {
+    body,
+    heading,
+  }
+}
+
+export const getFontSizes = (result, opts) => {
+  return [
+    -1.5 / 5,
+    -1 / 5,
+    0,
+    2 / 5,
+    3 / 5,
+    1
+  ].map(result.scale).map(n => n.fontSize)
+}
+
+export const getLineHeights = (result, opts) => {
+  const body = opts.baseLineHeight
+  const heading = opts.headerLineHeight
+  return {
+    body,
+    heading,
+  }
+}
+
+export const getFontWeights = (result, opts) => {
+  const body = opts.bodyWeight
+  const bold = opts.boldWeight
+  const heading = opts.headerWeight
+  return {
+    body,
+    bold,
+    heading,
+  }
+}
+
+export const toTheme = (_opts = {}) => {
+  const opts = { ...defaults, ..._opts }
+  // enforce unitless values
+  opts.baseFontSize = toUnitless(opts.baseFontSize)
+  opts.rhythmUnit = 'px'
+
+  const result = verticalRhythm(opts)
+  result.options = opts
+
+  result.scale = getScale(opts)
+  result.space = getSpace(result, opts)
+  result.fonts = getFonts(result, opts)
+  result.fontSizes = getFontSizes(result, opts)
+  result.fontWeights = getFontWeights(result, opts)
+  result.lineHeights = getLineHeights(result, opts)
+
+  return result
+}
+
+export default toTheme
