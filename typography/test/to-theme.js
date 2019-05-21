@@ -11,7 +11,6 @@ const typo = new Typography({
   rhythmUnit: 'px',
 })
 const styles = typo.toJSON()
-// console.log(styles)
 
 test('converts typography.js theme to theme-ui', () => {
   const theme = toTheme(themes.wp2016)

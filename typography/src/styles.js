@@ -43,12 +43,12 @@ export const styles = {
   ul: {
     listStylePosition: 'outside',
     listStyleImage: 'none',
-    marginLeft: 3,
+    ml: 3,
   },
   ol: {
     listStylePosition: 'outside',
     listStyleImage: 'none',
-    marginLeft: 3,
+    ml: 3,
   },
   li: {
     mb: 2,
@@ -69,8 +69,6 @@ export const styles = {
   table: {
     borderCollapse: 'collapse',
     width: '100%',
-  },
-  thead: {
   },
   th: {
     textAlign: 'left',
@@ -103,8 +101,8 @@ export const styles = {
   hr: {
     border: 0,
     borderBottom: '1px solid',
-    marginTop: '-1px',
-    marginBottom: 3,
+    mt: '-1px',
+    mb: 3,
   },
   b: {
     fontWeight: 'bold',
@@ -119,7 +117,6 @@ export const styles = {
     fontSize: '85%',
     padding: 3,
   },
-  // a: {},
 }
 
 const headings = [

@@ -1,5 +1,4 @@
-// POC/custom implementation of typography.js for use in theme-ui
-// import assign from 'object-assign'
+// custom implementation of typography.js for use in theme-ui
 import verticalRhythm from 'compass-vertical-rhythm'
 import ms from 'modularscale'
 import styles from './styles'

@@ -19,19 +19,16 @@ npm i theme-ui-typography
 
 There are two methods for integrating Typography.js with Theme UI.
 
-1. The first method creates a base `theme` object based on Typography.js options or themes and uses a default, static `theme.styles` object to pick up values from the base theme.
-2. The other method adds hard-coded styles to the `theme.styles` object without affecting the base theme object.
+1. The first method uses the `toTheme` function to create a base `theme` object based on Typography.js options or themes and uses a default, static `theme.styles` object to pick up values from the base theme.
+2. The other method uses the `toStyles` function to add hard-coded styles to the `theme.styles` object without affecting the base theme object.
 
 ```js
 import React from 'react'
 import { ThemeProvider } from 'theme-ui'
-import { toTheme, styles } from 'theme-ui-typography'
+import { toTheme } from 'theme-ui-typography'
 import wp2016 from 'typography-theme-wordpress-2016'
 
-const theme = {
-  ...toTheme(wp2016),
-  styles: styles,
-}
+const theme = toTheme(wp2016)
 
 export default props =>
   <ThemeProvider theme={theme}>

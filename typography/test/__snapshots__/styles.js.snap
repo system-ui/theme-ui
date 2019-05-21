@@ -73,7 +73,8 @@ Object {
     "borderBottom": "1px solid",
     "margin": 0,
     "marginBottom": 3,
-    "marginTop": "-1px",
+    "mb": 3,
+    "mt": "-1px",
     "padding": 0,
   },
   "img": Object {
@@ -102,7 +103,7 @@ Object {
     "listStylePosition": "outside",
     "margin": 0,
     "marginBottom": 3,
-    "marginLeft": 3,
+    "ml": 3,
     "padding": 0,
   },
   "p": Object {
@@ -157,13 +158,12 @@ Object {
     "py": 1,
     "textAlign": "left",
   },
-  "thead": Object {},
   "ul": Object {
     "listStyleImage": "none",
     "listStylePosition": "outside",
     "margin": 0,
     "marginBottom": 3,
-    "marginLeft": 3,
+    "ml": 3,
     "padding": 0,
   },
 }
