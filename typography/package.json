@@ -2,24 +2,24 @@
   "name": "theme-ui-typography",
   "version": "0.0.14",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
+    "prepare": "babel src -d dist",
     "test": "jest"
   },
   "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "compass-vertical-rhythm": "^1.4.5",
     "css-what": "^2.1.3",
     "lodash.merge": "^4.6.1",
+    "modularscale": "^2.0.1",
     "typography": "^0.16.19"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "jest": "^24.8.0",
-    "microbundle": "^0.11.0",
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "jest": {

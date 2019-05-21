@@ -8,7 +8,7 @@ import Layout from './layout'
 import GoogleFonts from './google-fonts'
 import Button from './button'
 import themes from './typography-themes'
-import createTypographyStyles from 'theme-ui/typography'
+import createTypographyStyles from 'theme-ui-typography'
 import typographyThemes from './typography-themes'
 import baseTheme from './theme'
 
