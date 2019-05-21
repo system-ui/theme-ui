@@ -12,7 +12,6 @@ import merge from 'lodash.merge'
 import {
   toStyles,
   toTheme,
-  styles
 } from 'theme-ui-typography'
 
 import Layout from './layout'
@@ -62,9 +61,7 @@ const createTheme = (typographyTheme, method) => {
       })
     case 'theme':
     default:
-      return merge({}, toTheme(typographyTheme), {
-        styles,
-      })
+      return toTheme(typographyTheme)
   }
 }
 

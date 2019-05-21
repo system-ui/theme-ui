@@ -2,6 +2,7 @@
 // import assign from 'object-assign'
 import verticalRhythm from 'compass-vertical-rhythm'
 import ms from 'modularscale'
+import styles from './styles'
 
 // - uses unitless values
 // - creates base theme object
@@ -134,6 +135,7 @@ export const toTheme = (_opts = {}) => {
 
   return {
     ...theme,
+    styles,
     typography: typo,
   }
 }

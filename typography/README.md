@@ -3,24 +3,17 @@
 
 Utilities for integrating Typography.js themes with Theme UI
 
-<!--
+```js
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import { toTheme } from 'theme-ui-typography'
+import wordpress2016 from 'typography-theme-wordpress-2016'
 
-Notes
+const theme = toTheme(wordpress2016)
 
-Inputs:
-- typography.js options/themes
-- base theme-ui object
+export default props =>
+  <ThemeProvider theme={theme}>
+    {props.children}
+  </ThemeProvider>
+```
 
-Output:
-- theme-ui object
-- theme.styles object
-
-API:
-
-typography.toStyles(typographyTheme)
-typography.toTheme(typographyTheme)
-
-typography.toThemeStyles(themeUITheme)
-  (theme-ui theme to typography.js-like theme.styles object)
-
--->
