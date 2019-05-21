@@ -18,13 +18,16 @@ const createComponents = (components = {}) => {
 export const ThemeProvider = ({
   theme,
   components,
+  inherit,
   ...props
 }) => {
   const outer = useThemeUI()
   const context = merge({}, outer, {
     theme,
     components: createComponents(components),
-  })
+  },
+    inherit ? outer : null
+  )
 
   if (context.colorMode) {
     const modes = get(context.theme, 'colors.modes', {})

@@ -8,6 +8,7 @@ import {
   Context,
   Styled,
   jsx,
+  css,
   useColorMode,
 } from '../src/index'
 
@@ -118,4 +119,30 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('margin-right', 'auto')
   expect(json).toHaveStyleRule('padding', '8px')
   expect(json).toHaveStyleRule('background-color', 'tomato')
+})
+
+test('outer context overrides inner context with inherit prop', () => {
+  const json = renderJSON(
+    <ThemeProvider
+      theme={{
+        colors: {
+          primary: 'tomato'
+        }
+      }}>
+      <ThemeProvider
+        inherit
+        theme={{
+          colors: {
+            primary: 'blue'
+          }
+        }}>
+        {jsx('div', {
+          css: {
+            color: 'primary'
+          }
+        })}
+      </ThemeProvider>
+    </ThemeProvider>
+  )
+  expect(json).toHaveStyleRule('color', 'tomato')
 })
