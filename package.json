@@ -10,6 +10,7 @@
   },
   "workspaces": [
     "theme-ui",
-    "docs"
+    "docs",
+    "examples/*"
   ]
 }
