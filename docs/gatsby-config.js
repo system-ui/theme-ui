@@ -3,20 +3,17 @@ const remarkPlugins = [
 ]
 
 module.exports = {
-  __experimentalThemes: [
-    // 'gatsby-theme-ui',
-  ],
+  __experimentalThemes: [],
   plugins: [
     {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
-        // theme: require.resolve('./src/components/theme')
-        theme: './src/components/theme.js'
+        theme: require.resolve('./src/components/theme')
       }
     },
     'gatsby-plugin-catch-links',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: [ '.mdx', '.md' ],
         remarkPlugins,
@@ -25,15 +22,5 @@ module.exports = {
         ]
       }
     },
-    /*
-    {
-      resolve: 'gatsby-plugin-compile-es6-packages',
-      options: {
-        modules: [
-          'gatsby-plugin-theme-ui',
-        ]
-      }
-    }
-    */
   ]
 }

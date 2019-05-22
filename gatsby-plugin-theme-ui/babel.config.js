@@ -4,7 +4,5 @@ module.exports = {
       'babel-preset-gatsby-package',
       { browser: true }
     ]
-    // '@babel/preset-env',
-    // '@babel/preset-react',
   ]
 }

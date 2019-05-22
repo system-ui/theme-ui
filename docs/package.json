@@ -21,6 +21,7 @@
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
+    "gatsby-plugin-mdx": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-theme-ui": "0.0.14",
     "gatsby-remark-prismjs": "^3.2.9",

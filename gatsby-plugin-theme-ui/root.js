@@ -13,20 +13,8 @@ var _jsxFileName = "/Users/jxnblk/repos/theme-ui/gatsby-plugin-theme-ui/src/root
 var theme = {};
 
 try {
-  // console.log(
-  //   typeof GATSBY_THEME_UI_PATHS,
-  //   typeof BEEP
-  // )
-  // const paths = GATSBY_THEME_UI_PATHS
-  var themes = []; // paths.forEach(path => {
-  //   themes.push(
-  //     require(path)
-  //   )
-  // })
-
-  var t = require(THEME_UI_PATH);
-
-  console.log(themes);
+  theme = require(THEME_UI_PATH);
+  console.log(theme);
 } catch (e) {
   console.error(e);
 }
@@ -38,7 +26,7 @@ var wrapRootElement = function wrapRootElement(_ref) {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 14
     },
     __self: this
   }, element);
