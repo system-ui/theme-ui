@@ -9,15 +9,16 @@ var _react = _interopRequireDefault(require("react"));
 
 var _themeUi = require("theme-ui");
 
-var _jsxFileName = "/Users/jxnblk/repos/theme-ui/gatsby-plugin-theme-ui/src/root.js";
-var theme = {};
+var _lodash = _interopRequireDefault(require("lodash.merge"));
 
-try {
-  theme = require(THEME_UI_PATH);
-  console.log(theme);
-} catch (e) {
-  console.error(e);
-}
+var _themeLoader = require("./theme-loader.js");
+
+var _jsxFileName = "/Users/jxnblk/repos/theme-ui/gatsby-plugin-theme-ui/src/root.js";
+console.log('themes', _themeLoader.themes);
+
+var theme = _lodash.default.apply(void 0, [{}].concat(_themeLoader.themes));
+
+console.log('merged', theme);
 
 var wrapRootElement = function wrapRootElement(_ref) {
   var element = _ref.element,
@@ -26,7 +27,7 @@ var wrapRootElement = function wrapRootElement(_ref) {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
   }, element);

@@ -1,14 +1,9 @@
 import React from 'react'
 import { ThemeProvider } from 'theme-ui'
+import merge from 'lodash.merge'
+import { themes } from './theme-loader.js'
 
-let theme = {}
-
-try {
-  theme = require(THEME_UI_PATH)
-  console.log(theme)
-} catch (e) {
-  console.error(e)
-}
+const theme = merge({}, ...themes)
 
 export const wrapRootElement = ({ element, props }) =>
   <ThemeProvider theme={theme}>
