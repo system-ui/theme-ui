@@ -1,0 +1,7 @@
+{
+  "version": "0.0.15",
+  "packages": [
+    "theme-ui",
+    "typography"
+  ]
+}
