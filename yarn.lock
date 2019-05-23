@@ -6950,6 +6950,11 @@ gatsby-plugin-compile-es6-packages@^1.1.0:
     "@babel/runtime" "^7.0.0"
     regex-escape "^3.4.8"
 
+gatsby-plugin-google-fonts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.0.tgz#5edb46a7b58845ad1db9fcdeb8f9335170cd81c5"
+  integrity sha512-6EuRN4pLDrD4Ztug4Ia2IXch/cVJ76vywfLmIgxE77RV8VRxD0Bqx/mDN17XE+s67uqffkdlh/sl+GWIa/0MzQ==
+
 gatsby-plugin-mdx@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.4.tgz#b1f7c3d0a4bc28dd99cf2b4d0c563040aa23b431"
