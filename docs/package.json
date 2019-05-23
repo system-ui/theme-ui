@@ -32,7 +32,7 @@
     "react-helmet": "^5.2.0",
     "remark-slug": "^5.1.1",
     "theme-ui": "*",
-    "theme-ui-typography": "0.0.14",
+    "theme-ui-typography": "*",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",
