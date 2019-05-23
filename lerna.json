@@ -1,8 +1,8 @@
 {
-  "version": "0.0.14",
+  "version": "0.0.15",
   "packages": [
     "theme-ui",
-    "gatsby-theme-ui",
+    "typography",
     "gatsby-plugin-theme-ui"
   ]
 }

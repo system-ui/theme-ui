@@ -1,41 +1,29 @@
 {
-  "private": true,
-  "name": "docs",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "theme-ui-typography",
+  "version": "0.0.15",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "echo \"\"",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "now-build": "gatsby build"
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress",
+    "test": "jest"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.10",
-    "@mdx-js/mdx": "^1.0.0-rc.0",
-    "@mdx-js/react": "^1.0.0-rc.0",
-    "@styled-system/edit": "^0.0.5",
-    "gatsby": "^2.3.6",
-    "gatsby-mdx": "^0.6.3",
-    "gatsby-plugin-catch-links": "^2.0.13",
-    "gatsby-plugin-compile-es6-packages": "^1.1.0",
-    "gatsby-plugin-mdx": "^1.0.4",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-theme-ui": "*",
-    "gatsby-remark-prismjs": "^3.2.9",
-    "gatsby-theme-ui": "0.0.14",
+    "compass-vertical-rhythm": "^1.4.5",
+    "css-what": "^2.1.3",
     "lodash.merge": "^4.6.1",
-    "lodash.omit": "^4.5.0",
-    "prismjs": "^1.16.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0",
-    "remark-slug": "^5.1.1",
-    "theme-ui": "*",
-    "theme-ui-typography": "*",
+    "modularscale": "^2.0.1",
+    "object-assign": "^4.1.1",
+    "typography": "^0.16.19"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "jest": "^24.8.0",
+    "microbundle": "^0.11.0",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",
@@ -74,5 +62,24 @@
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
     "typography-theme-zacklive": "^1.0.2"
+  },
+  "jest": {
+    "testRegex": "./test/.*.js$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/fixtures/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   }
 }
