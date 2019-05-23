@@ -1,15 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "yarn workspace theme-ui prepare",
+    "prepare": "yarn workspaces run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "clean": "yarn workspace docs clean",
-    "test": "yarn workspace theme-ui test",
+    "test": "yarn workspace theme-ui test && yarn workspace theme-ui-typography test",
     "now-build": "yarn build"
   },
   "workspaces": [
     "theme-ui",
+    "typography",
     "docs"
   ]
 }
