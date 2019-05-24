@@ -7,11 +7,13 @@ const theme = merge({}, ...themes)
 
 export const wrapRootElement = ({ element, props }, opts) => {
   if (opts.colorMode) {
-    <ColorModeProvider initialColorMode={opts.colorMode}>
-      <ThemeProvider theme={theme}>
-        {element}
-      </ThemeProvider>
-    </ColorModeProvider>
+    return (
+      <ColorModeProvider initialColorMode={opts.colorMode}>
+        <ThemeProvider theme={theme}>
+          {element}
+        </ThemeProvider>
+      </ColorModeProvider>
+    )
   }
 
   return (

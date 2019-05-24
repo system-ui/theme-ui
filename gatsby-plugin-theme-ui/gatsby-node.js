@@ -3,7 +3,6 @@ const mkdirp = require('mkdirp')
 const path = require('path')
 
 exports.onCreateWebpackConfig = ({ actions, loaders, cache }) => {
-  console.log('add webpack loader')
   actions.setWebpackConfig({
     module: {
       rules: [
@@ -38,7 +37,6 @@ exports.onPostBootstrap = ({ cache }, opts) => {
   try {
     const themes = require(filename)
     themes.push(opts.theme)
-    console.log('added', themes)
     fs.writeFileSync(filename, JSON.stringify(themes))
   } catch (e) {
     console.error(e)
