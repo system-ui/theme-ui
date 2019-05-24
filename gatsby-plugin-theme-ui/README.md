@@ -16,6 +16,8 @@ module.exports = {
       options: {
         // required
         theme: require.resolve('./src/theme.js'),
+        // optional
+        components: require.resolve('./src/components.js'),
         // optional, initial color mode
         colorMode: 'light',
       }

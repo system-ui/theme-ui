@@ -1,24 +1,27 @@
 import React from 'react'
 import { ThemeProvider, ColorModeProvider } from 'theme-ui'
 import merge from 'lodash.merge'
-import { themes } from './theme-loader.js'
+import { themes, components } from './theme-loader.js'
 
 const theme = merge({}, ...themes)
+const comps = merge({}, ...components)
 
 export const wrapRootElement = ({ element, props }, opts) => {
-  if (opts.colorMode) {
-    return (
-      <ColorModeProvider initialColorMode={opts.colorMode}>
-        <ThemeProvider theme={theme}>
-          {element}
-        </ThemeProvider>
-      </ColorModeProvider>
-    )
+  const children = (
+    <ThemeProvider
+      components={comps}
+      theme={theme}>
+      {element}
+    </ThemeProvider>
+  )
+
+  if (!opts.colorMode) {
+    return children
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      {element}
-    </ThemeProvider>
+    <ColorModeProvider initialColorMode={opts.colorMode}>
+      {children}
+    </ColorModeProvider>
   )
 }
