@@ -1127,10 +1127,10 @@
   resolved "https://registry.yarnpkg.com/@stefanprobst/lokijs/-/lokijs-1.5.6-b.tgz#6a36a86dbe132e702e6b15ffd3ce4139aebfe942"
   integrity sha512-MNodHp46og+Sdde/LCxTLrxcD5Dimu21R/Fer2raXMG1XtHSV2+vZnkIV87OPAxuf2NiDj1W5hN7Q2MYUfQQ8w==
 
-"@styled-system/css@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-2.0.3.tgz#5a27a7bf997b767056e2dbb4c50f2b2c1c95f569"
-  integrity sha512-wTmdEwbotsgcdMm5YefgCTrU06xMihAcHIyAuA0tiJce8+j9TjKockK/BSYyGVThXjHNMZMtRf0gYr8y3EGzrw==
+"@styled-system/css@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-2.0.4.tgz#58c9043f48a6ff3a726820829407375a71d3ca0c"
+  integrity sha512-Y7D+rqEpQk4311GDrzRtO5yreILywX8JiFYWyXhB5eG8Qz7kF4KKhpta54e5GA/FGFcPF47HVKjcuATf3hqsMQ==
 
 "@styled-system/edit@^0.0.5":
   version "0.0.5"
@@ -7877,7 +7877,7 @@ lodash.foreach@^4.3.0, lodash.foreach@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
   integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
 
-lodash.get@^4.4.0, lodash.get@^4.4.2:
+lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
