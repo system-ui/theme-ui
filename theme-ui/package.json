@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
@@ -20,7 +20,7 @@
     "lodash.merge": "^4.6.0",
     "react": "^16.8.0",
     "styled-system": "^4.0.0",
-    "theme-ui-typography": "^0.0.15"
+    "theme-ui-typography": "^0.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
