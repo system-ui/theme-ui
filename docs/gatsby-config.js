@@ -8,6 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
+        colorMode: 'light',
         theme: require.resolve('./src/components/theme')
       }
     },
