@@ -19,7 +19,7 @@ module.exports = {
         // optional
         components: require.resolve('./src/components.js'),
         // optional, initial color mode
-        colorMode: 'light',
+        initialColorMode: 'light',
       }
     }
   ]

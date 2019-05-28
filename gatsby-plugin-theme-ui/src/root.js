@@ -15,12 +15,12 @@ export const wrapRootElement = ({ element, props }, opts) => {
     </ThemeProvider>
   )
 
-  if (!opts.colorMode) {
+  if (!opts.initialColorMode) {
     return children
   }
 
   return (
-    <ColorModeProvider initialColorMode={opts.colorMode}>
+    <ColorModeProvider initialColorMode={opts.initialColorMode}>
       {children}
     </ColorModeProvider>
   )
