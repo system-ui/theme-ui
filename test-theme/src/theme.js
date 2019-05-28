@@ -1,5 +1,7 @@
 export default {
   colors: {
-    text: 'magenta',
-  }
+    // will be overridden by site
+    text: '#334',
+    background: '#fff6f0',
+  },
 }
