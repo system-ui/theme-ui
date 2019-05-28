@@ -7,7 +7,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
-        colorMode: 'light',
+        initialColorMode: 'light',
         theme: require.resolve('./src/components/theme'),
         components: require.resolve('./src/components/mdx-components'),
       }
