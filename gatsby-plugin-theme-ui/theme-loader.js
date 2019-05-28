@@ -1,8 +1,8 @@
 const path = require('path')
 const { getOptions } = require('loader-utils')
+const pkg = require('./package.json')
 
 const themeModules = []
-const componentModules = []
 
 module.exports = function () {
   const opts = getOptions(this)
@@ -12,19 +12,18 @@ module.exports = function () {
     this.addDependency(opts.theme)
   }
 
-  if (opts.components) {
-    componentModules.push(opts.components)
-    this.addDependency(opts.components)
+  if (Array.isArray(opts.themes)) {
+    opts.themes.forEach(theme => {
+      themeModules.push(theme)
+      this.addDependency(theme)
+    })
   }
-
 
   return `
     export const themes = [
       ${themeModules.map(filename => `require('${filename}').default`)}
     ]
 
-    export const components = [
-      ${componentModules.map(filename => `require('${filename}').default`)}
-    ]
+    export const components = []
   `
 }

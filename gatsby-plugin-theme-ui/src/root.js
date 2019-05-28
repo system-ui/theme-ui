@@ -15,9 +15,8 @@ export const wrapRootElement = ({ element, props }, opts) => {
     </ThemeProvider>
   )
 
-  if (!opts.initialColorMode) {
-    return children
-  }
+  // todo: figure out how to enable and disable this
+  // if (!opts.initialColorMode) return children
 
   return (
     <ColorModeProvider initialColorMode={opts.initialColorMode}>

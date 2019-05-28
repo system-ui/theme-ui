@@ -12,6 +12,7 @@
     "theme-ui",
     "typography",
     "gatsby-plugin-theme-ui",
-    "docs"
+    "docs",
+    "test-theme"
   ]
 }

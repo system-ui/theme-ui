@@ -3,7 +3,12 @@ const remarkPlugins = [
 ]
 
 module.exports = {
+  __experimentalThemes: [
+    'test-theme',
+  ],
   plugins: [
+    'gatsby-plugin-theme-ui',
+    /*
     {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
@@ -12,6 +17,7 @@ module.exports = {
         components: require.resolve('./src/components/mdx-components'),
       }
     },
+    */
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',

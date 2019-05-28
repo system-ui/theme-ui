@@ -11,6 +11,29 @@ npm i gatsby-plugin-theme-ui
 // gatsby-config.js
 module.exports = {
   plugins: [
+    'gatsby-plugin-theme-ui',
+  ]
+}
+```
+
+Add a `src/theme.js` file to your site to add values to the theme context.
+
+```js
+// src/theme.js
+export default {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: 'tomato',
+  },
+}
+```
+
+<!--
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
     {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
@@ -25,3 +48,4 @@ module.exports = {
   ]
 }
 ```
+-->
