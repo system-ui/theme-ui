@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "loader-utils": "^1.2.3",
-    "mkdirp": "^0.5.1",
     "theme-ui": "^0.0.15"
   }
 }

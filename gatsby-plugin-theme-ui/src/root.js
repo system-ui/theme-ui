@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider, ColorModeProvider } from 'theme-ui'
 import merge from 'lodash.merge'
-import { themes, components } from './theme-loader.js'
+import { themes, components } from 'gatsby-plugin-theme-ui/theme-loader'
 
 const theme = merge({}, ...themes)
 const comps = merge({}, ...components)
