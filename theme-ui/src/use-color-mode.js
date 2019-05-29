@@ -82,9 +82,11 @@ export const useColorMode = () => {
   }, [])
 
   useEffect(() => {
+    const { colors } = theme
+    if (!colors) return
     const css = `.${CLASSNAME} {
-      color: ${theme.colors.text};
-      background-color: ${theme.colors.background};
+      color: ${colors.text};
+      background-color: ${colors.background};
     }`
     storage.setColors(css)
   }, [colorMode])
