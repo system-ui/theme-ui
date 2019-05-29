@@ -4,14 +4,22 @@ import React, {
   useLayoutEffect,
 } from 'react'
 import merge from 'lodash.merge'
+import { css } from '@styled-system/css'
+import { Global } from '@emotion/core'
 import { Context, useThemeUI } from './context'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
+const COLORS_KEY = 'theme-ui-colors'
 
-const get = (init) => window.localStorage.getItem(STORAGE_KEY) || init
-const set = (value) => window.localStorage.setItem(STORAGE_KEY, value)
+const storage = {
+  get: (init) => window.localStorage.getItem(STORAGE_KEY) || init,
+  set: (value) => window.localStorage.setItem(STORAGE_KEY, value),
+  setColors: (obj) => window.localStorage.setItem(COLORS_KEY,
+    JSON.stringify(obj)
+  ),
+}
 
-const getMediaQuery = () => {
+export const getMediaQuery = () => {
   const darkQuery = '(prefers-color-scheme: dark)'
   const mql = window.matchMedia ? window.matchMedia(darkQuery) : {}
   const dark = mql.media === darkQuery
@@ -22,7 +30,7 @@ export const useColorState = (initialMode) => {
   const [ mode, setMode ] = useState(initialMode)
 
   useLayoutEffect(() => {
-    const stored = get()
+    const stored = storage.get()
     const dark = getMediaQuery()
     if (dark) {
       setMode('dark')
@@ -34,7 +42,7 @@ export const useColorState = (initialMode) => {
 
   useEffect(() => {
     if (!mode) return
-    set(mode)
+    storage.set(mode)
   }, [ mode ])
 
   return [ mode, setMode ]
@@ -59,7 +67,7 @@ export const ColorModeProvider = ({
 }
 
 export const useColorMode = () => {
-  const { colorMode, setColorMode } = useThemeUI()
+  const { colorMode, setColorMode, theme } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
     throw new Error(
@@ -70,12 +78,30 @@ export const useColorMode = () => {
 
   // initialize
   useEffect(() => {
-    const init = get()
+    const init = storage.get()
     if (!init || init === colorMode) return
     setColorMode(init)
   }, [])
 
+  useEffect(() => {
+    storage.setColors(theme.colors)
+  }, [colorMode])
+
   return [ colorMode, setColorMode ]
 }
+
+export const CLASSNAME = 'theme-ui-color-mode'
+
+export const ColorMode = ({
+  className = CLASSNAME,
+}) =>
+  <Global
+    styles={css({
+      [`.${className}`]: {
+        color: 'text',
+        bg: 'background',
+      }
+    })}
+  />
 
 export default useColorMode

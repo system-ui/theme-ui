@@ -2,7 +2,11 @@ export { css } from '@styled-system/css'
 export { jsx } from './jsx'
 export { ThemeProvider } from './core'
 export { Context, useThemeUI } from './context'
-export { ColorModeProvider, useColorMode } from './use-color-mode'
+export {
+  ColorModeProvider,
+  ColorMode,
+  useColorMode,
+} from './use-color-mode'
 export { Styled } from './components'
 export {
   Box,
