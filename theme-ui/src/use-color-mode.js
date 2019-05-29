@@ -14,9 +14,7 @@ const COLORS_KEY = 'theme-ui-colors'
 const storage = {
   get: (init) => window.localStorage.getItem(STORAGE_KEY) || init,
   set: (value) => window.localStorage.setItem(STORAGE_KEY, value),
-  setColors: (obj) => window.localStorage.setItem(COLORS_KEY,
-    JSON.stringify(obj)
-  ),
+  setColors: (css) => window.localStorage.setItem(COLORS_KEY, css),
 }
 
 export const getMediaQuery = () => {
@@ -84,7 +82,11 @@ export const useColorMode = () => {
   }, [])
 
   useEffect(() => {
-    storage.setColors(theme.colors)
+    const css = `.${CLASSNAME} {
+      color: ${theme.colors.text};
+      background-color: ${theme.colors.background};
+    }`
+    storage.setColors(css)
   }, [colorMode])
 
   return [ colorMode, setColorMode ]
