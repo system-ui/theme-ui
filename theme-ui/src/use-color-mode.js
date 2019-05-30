@@ -9,12 +9,10 @@ import { Global } from '@emotion/core'
 import { Context, useThemeUI } from './context'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
-const COLORS_KEY = 'theme-ui-colors'
 
 const storage = {
   get: (init) => window.localStorage.getItem(STORAGE_KEY) || init,
   set: (value) => window.localStorage.setItem(STORAGE_KEY, value),
-  setColors: (css) => window.localStorage.setItem(COLORS_KEY, css),
 }
 
 export const getMediaQuery = () => {
@@ -81,30 +79,16 @@ export const useColorMode = () => {
     setColorMode(init)
   }, [])
 
-  useEffect(() => {
-    const { colors } = theme
-    if (!colors) return
-    const css = `.${CLASSNAME} {
-      color: ${colors.text};
-      background-color: ${colors.background};
-    }`
-    storage.setColors(css)
-  }, [colorMode])
-
   return [ colorMode, setColorMode ]
 }
 
-export const CLASSNAME = 'theme-ui-color-mode'
-
-export const ColorMode = ({
-  className = CLASSNAME,
-}) =>
+export const ColorMode = () =>
   <Global
     styles={css({
-      [`.${className}`]: {
-        color: 'text',
+      body: {
+        color: 'text,
         bg: 'background',
-      }
+      },
     })}
   />
 

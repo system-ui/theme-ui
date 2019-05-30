@@ -18,6 +18,7 @@
     "@mdx-js/mdx": "^1.0.0-rc.0",
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^0.0.5",
+    "emotion": "^10.0.9",
     "gatsby": "^2.3.6",
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-catch-links": "^2.0.13",
