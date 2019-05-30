@@ -3,7 +3,6 @@ export { jsx } from './jsx'
 export { ThemeProvider } from './core'
 export { Context, useThemeUI } from './context'
 export {
-  ColorModeProvider,
   ColorMode,
   useColorMode,
 } from './use-color-mode'
@@ -19,4 +18,7 @@ export {
 } from './layout'
 
 // DEPRECATED
-export { ThemeProvider as ComponentProvider } from './core'
+export {
+  ThemeProvider as ColorModeProvider,
+  ThemeProvider as ComponentProvider
+} from './core'

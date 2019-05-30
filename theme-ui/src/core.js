@@ -6,6 +6,7 @@ import merge from 'lodash.merge'
 import jsx from './jsx'
 import themed from './themed'
 import { Context, useThemeUI } from './context'
+import { useColorState } from './use-color-mode'
 
 const createComponents = (components = {}) => {
   const next = {}
@@ -18,10 +19,15 @@ const createComponents = (components = {}) => {
 export const ThemeProvider = ({
   theme,
   components,
+  initialColorMode,
   ...props
 }) => {
   const outer = useThemeUI()
-  const context = merge({}, outer, {
+  const [ colorMode, setColorMode ] = useColorState(initialColorMode || outer.colorMode)
+  const context = merge({}, {
+    colorMode,
+    setColorMode,
+  }, outer, {
     theme,
     components: createComponents(components),
   })
