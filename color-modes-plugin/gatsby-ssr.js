@@ -1,8 +1,5 @@
 const {
   jsx,
-  ColorModeProvider,
-  ColorMode,
-  ThemeProvider,
 } = require('theme-ui')
 
 const noflash = `
@@ -15,12 +12,6 @@ const noflash = `
   }
 })();
 `
-
-exports.wrapRootElement = ({ element }, opts) =>
-  jsx(ColorModeProvider, opts,
-    jsx(ColorMode),
-    element
-  )
 
 exports.onRenderBody = ({
   setPreBodyComponents,
