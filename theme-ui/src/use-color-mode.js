@@ -63,7 +63,7 @@ export const ColorModeProvider = ({
 }
 
 export const useColorMode = () => {
-  const { colorMode, setColorMode, theme } = useThemeUI()
+  const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
     throw new Error(
@@ -86,7 +86,7 @@ export const ColorMode = () =>
   <Global
     styles={css({
       body: {
-        color: 'text,
+        color: 'text',
         bg: 'background',
       },
     })}

@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "yarn workspace theme-ui prepare && yarn workspace theme-ui-typography prepare",
+    "prepare": "npx lerna run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "clean": "yarn workspace docs clean",
@@ -12,6 +12,7 @@
     "theme-ui",
     "typography",
     "docs",
+    "color-modes-plugin",
     "examples/*"
   ]
 }

@@ -28,6 +28,10 @@ export default {
         highlight: '#ffffcc',
         gray: '#999',
         purple: '#c0f',
+      },
+      purple: {
+        text: '#fff',
+        background: '#609',
       }
     },
   },

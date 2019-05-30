@@ -1,0 +1,10 @@
+{
+  "name": "@theme-ui/gatsby-plugin-color-modes",
+  "version": "0.0.16",
+  "main": "index.js",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "emotion": "^10.0.9"
+  }
+}
