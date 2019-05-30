@@ -51,7 +51,6 @@ export const useColorMode = (initialMode) => {
     throw new Error(
       `[useColorMode] requires the ThemeProvider component`
     )
-    return []
   }
 
   // initialize

@@ -5,7 +5,7 @@ export { Context, useThemeUI } from './context'
 export {
   ColorMode,
   useColorMode,
-} from './use-color-mode'
+} from './color-modes'
 export { Styled } from './components'
 export {
   Box,

@@ -36,6 +36,7 @@
     "testRegex": "./test/.*.js$",
     "coverageReporters": [
       "lcov",
+      "text",
       "html"
     ],
     "coverageThreshold": {

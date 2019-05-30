@@ -232,8 +232,8 @@ test('ColorMode component renders null', () => {
   expect(json).toBe(null)
 })
 
-test.skip('ColorMode component renders with colors', () => {
-  const json = renderer.create(
+test('ColorMode component renders with colors', () => {
+  const root = render(
     <ThemeProvider
       theme={{
         colors: {
@@ -249,7 +249,35 @@ test.skip('ColorMode component renders with colors', () => {
       }}>
       <ColorMode />
     </ThemeProvider>
-  ).toJSON()
-  console.log(json)
-  expect(json).toHaveStyleRule('color', 'tomato')
+  )
+  const styles = document.querySelector('style').innerHTML
+  expect(styles).toMatchSnapshot()
+})
+
+test('useColorMode initializes mode with argument', () => {
+  let mode
+  const Consumer = props => {
+    const [ colorMode ] = useColorMode('beep')
+    mode = colorMode
+    return false
+  }
+  render(
+    <ThemeProvider>
+      <Consumer />
+    </ThemeProvider>
+  )
+  expect(mode).toBe('beep')
+})
+
+test('useColorMode throws when there is no theme context', () => {
+  expect(() => {
+    const Consumer = props => {
+      const [ colorMode ] = useColorMode('beep')
+      mode = colorMode
+      return false
+    }
+    render(
+      <Consumer />
+    )
+  }).toThrow()
 })

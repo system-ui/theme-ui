@@ -6,7 +6,7 @@ import merge from 'lodash.merge'
 import jsx from './jsx'
 import themed from './themed'
 import { Context, useThemeUI } from './context'
-import { useColorState } from './use-color-mode'
+import { useColorState } from './color-modes'
 
 const createComponents = (components = {}) => {
   const next = {}
