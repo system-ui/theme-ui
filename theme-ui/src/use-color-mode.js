@@ -70,8 +70,9 @@ export const useColorMode = (initialMode) => {
   return [ colorMode, setColorMode ]
 }
 
-const bodyColor = theme => {
-  const { modes = {} } = theme.colors
+const bodyColor = (theme = {}) => {
+  if (!theme.colors || !theme.colors.modes) return
+  const { modes } = theme.colors
   const styles = {}
   Object.keys(modes).forEach(mode => {
     const colors = modes[mode]

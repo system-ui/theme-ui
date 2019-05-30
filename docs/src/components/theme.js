@@ -5,6 +5,7 @@ const heading = {
 }
 
 export default {
+  initialColorMode: 'light',
   colors: {
     text: '#000',
     background: '#fff',

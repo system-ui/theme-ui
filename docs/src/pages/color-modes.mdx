@@ -9,10 +9,12 @@ Color modes can be used to create a user-configurable dark mode or any number of
 ## Defining colors
 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for the non-default color palette mode.
+Add an `initialColorMode` value to the theme to initialize the default state.
 
 ```js
 // example theme colors
 {
+  initialColorMode: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -26,23 +28,6 @@ In the `theme.colors` object, add a nested `modes` object that will contain keys
     }
   }
 }
-```
-
-## Color mode state
-
-To use color modes, add an `initialColorMode` prop to the `ThemeProvider` component.
-
-```jsx
-import React from 'react'
-import { ThemeProvider } from 'theme-ui'
-import theme from './theme'
-
-export default props =>
-  <ThemeProvider
-    theme={theme}
-    initialColorMode='light'>
-    {props.children}
-  </ThemeProvider>
 ```
 
 ## Setting the color mode

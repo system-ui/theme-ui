@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorMode component renders 1`] = `null`;
+
+exports[`ColorMode component renders with colors 1`] = `null`;

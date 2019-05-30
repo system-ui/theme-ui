@@ -19,11 +19,10 @@ const createComponents = (components = {}) => {
 export const ThemeProvider = ({
   theme,
   components,
-  initialColorMode,
   ...props
 }) => {
   const outer = useThemeUI()
-  const [ colorMode, setColorMode ] = useColorState(initialColorMode || outer.colorMode)
+  const [ colorMode, setColorMode ] = useColorState(outer.colorMode || theme ? theme.initialColorMode : undefined)
   const context = merge({}, {
     colorMode,
     setColorMode,
