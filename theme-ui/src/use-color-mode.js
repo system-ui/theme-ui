@@ -76,6 +76,10 @@ export const useColorMode = () => {
   useEffect(() => {
     const init = storage.get()
     if (!init || init === colorMode) return
+    const ssrStyle = document.querySelector('[data-theme-ui]')
+    if (ssrStyle) {
+      ssrStyle.parentNode.removeChild(ssrStyle)
+    }
     setColorMode(init)
   }, [])
 

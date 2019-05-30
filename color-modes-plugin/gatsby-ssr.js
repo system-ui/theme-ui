@@ -23,8 +23,6 @@ exports.wrapPageElement = ({ element }) =>
     element
   )
 
-// const className = 'beep-boop'
-
 const createCSS = theme => {
   if (!theme || !theme.colors || !theme.colors.modes) return {}
   let styles = {}
@@ -32,7 +30,7 @@ const createCSS = theme => {
     const colors = theme.colors.modes[mode]
     if (typeof colors !== 'object') return
     Object.assign(styles, {
-      [`&.${mode}`]: {
+      [`&-${mode}`]: {
         color: colors.text,
         backgroundColor: colors.background,
       }
@@ -44,11 +42,12 @@ const createCSS = theme => {
   return { className, css }
 }
 
-const noflash = `
+const noflash = (className) => `
 (function() {
   try {
     var mode = localStorage.getItem('theme-ui-color-mode');
-    document.body.classList.add(mode);
+    if (!mode) return
+    document.body.classList.add('${className}-' + mode);
   } catch (e) {
   }
 })();
@@ -71,7 +70,7 @@ exports.onRenderBody = ({
   })
   const script = jsx('script', {
     dangerouslySetInnerHTML: {
-      __html: noflash
+      __html: noflash(className)
     }
   })
   setHeadComponents([ style ])
