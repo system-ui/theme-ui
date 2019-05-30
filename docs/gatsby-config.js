@@ -5,12 +5,15 @@ const remarkPlugins = [
 module.exports = {
   plugins: [
     'gatsby-plugin-catch-links',
+    /*
     {
       resolve: '@theme-ui/gatsby-plugin-color-modes',
       options: {
         initialColorMode: 'light',
       }
     },
+    */
+    '@theme-ui/gatsby-plugin-color-modes',
     {
       resolve: 'gatsby-mdx',
       options: {

@@ -4,7 +4,7 @@
     "prepare": "npx lerna run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
-    "serve": "yarn workspace docs serve",
+    "serve": "yarn && yarn build && yarn workspace docs serve",
     "clean": "yarn workspace docs clean",
     "test": "yarn workspace theme-ui test && yarn workspace theme-ui-typography test",
     "now-build": "yarn build"

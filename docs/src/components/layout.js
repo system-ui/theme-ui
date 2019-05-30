@@ -23,6 +23,7 @@ import Button from './button'
 const modes = [
   'light',
   'dark',
+  'purple',
 ]
 
 export default props => {

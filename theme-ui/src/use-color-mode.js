@@ -75,25 +75,37 @@ export const useColorMode = () => {
   // initialize
   useEffect(() => {
     const init = storage.get()
+    const bodyClassList = document.body.classList
+    document.body.classList.remove('theme-ui-' + colorMode)
     if (!init || init === colorMode) return
-    const ssrStyle = document.querySelector('[data-theme-ui]')
-    if (ssrStyle) {
-      ssrStyle.parentNode.removeChild(ssrStyle)
-    }
+    document.body.classList.remove('theme-ui-' + init)
     setColorMode(init)
   }, [])
 
   return [ colorMode, setColorMode ]
 }
 
+const bodyColor = theme => {
+  const { modes = {} } = theme.colors
+  const styles = {}
+  Object.keys(modes).forEach(mode => {
+    const colors = modes[mode]
+    styles[`&.theme-ui-${mode}`] = {
+      color: colors.text,
+      bg: colors.background,
+    }
+  })
+
+  return css({
+    body: {
+      ...styles,
+      color: 'text',
+      bg: 'background',
+    },
+  })(theme)
+}
+
 export const ColorMode = () =>
-  <Global
-    styles={css({
-      body: {
-        color: 'text',
-        bg: 'background',
-      },
-    })}
-  />
+  <Global styles={bodyColor} />
 
 export default useColorMode
