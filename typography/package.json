@@ -1,6 +1,6 @@
 {
   "name": "theme-ui-typography",
-  "version": "0.0.17-alpha.0",
+  "version": "0.0.17-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",

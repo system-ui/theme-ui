@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "typography-js-theme-ui-example",
-  "version": "0.0.17-alpha.0",
+  "version": "0.0.17-alpha.1",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -19,8 +19,8 @@
     "lodash.merge": "^4.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.0.17-alpha.0",
-    "theme-ui-typography": "^0.0.17-alpha.0",
+    "theme-ui": "^0.0.17-alpha.1",
+    "theme-ui-typography": "^0.0.17-alpha.1",
     "typography-theme-fairy-gates": "^0.16.19"
   }
 }
