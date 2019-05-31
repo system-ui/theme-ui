@@ -6,9 +6,9 @@
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "echo \"\"",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "serve": "gatsby serve",
     "clean": "gatsby clean",
     "now-build": "gatsby build"
   },
@@ -23,7 +23,7 @@
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
     "gatsby-plugin-mdx": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-theme-ui": "^0.0.16-4",
+    "gatsby-plugin-theme-ui": "*",
     "gatsby-remark-prismjs": "^3.2.9",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",

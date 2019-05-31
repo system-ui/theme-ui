@@ -1,6 +1,5 @@
 const path = require('path')
 const { getOptions } = require('loader-utils')
-const pkg = require('./package.json')
 
 const themeModules = []
 
@@ -20,10 +19,8 @@ module.exports = function () {
   }
 
   return `
-    export const themes = [
+    module.exports.themes = [
       ${themeModules.map(filename => `require('${filename}').default`)}
     ]
-
-    export const components = []
   `
 }

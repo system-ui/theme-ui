@@ -19,6 +19,6 @@
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "0.0.14"
+    "theme-ui": "*"
   }
 }

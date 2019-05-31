@@ -8,6 +8,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
   const { program, config, themes } = store.getState()
 
   const siteThemeFilename = path.join(program.directory, 'src', 'theme.js')
+  const siteThemeDirectory = path.join(program.directory, 'src', 'theme')
 
   if (Array.isArray(themes.themes)) {
     themes.themes.forEach(theme => {
@@ -26,6 +27,8 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
 
   if (fs.existsSync(siteThemeFilename)) {
     themeModules.push(siteThemeFilename)
+  } else if (fs.existsSync(siteThemeDirectory)) {
+    themeModules.push(siteThemeDirectory)
   }
 
   actions.setWebpackConfig({
@@ -33,16 +36,17 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
       rules: [
         {
           test: /\.js$/,
-          include: path.dirname(require.resolve('gatsby-plugin-theme-ui')) },
+          include: path.dirname(require.resolve('gatsby-plugin-theme-ui'))
+        },
         {
-          test: /gatsby-plugin-theme-ui\/theme-loader/,
+          test: /gatsby-plugin-theme-ui\/loader/,
+          include: path.dirname(require.resolve('gatsby-plugin-theme-ui')),
           use: [
             loaders.js(),
             {
-              loader: require.resolve('./theme-loader'),
+              loader: require.resolve('./loader'),
               options: {
                 ...opts,
-                config,
                 themes: themeModules,
               }
             }

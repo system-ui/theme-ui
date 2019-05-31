@@ -91,7 +91,10 @@ export default props => {
                 setMenuOpen(false)
               }}
             />
-            <Box id='content' px={3}>
+            <Box
+              id='content'
+              width={1}
+              px={3}>
               {props.children}
               <Pagination />
             </Box>

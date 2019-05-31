@@ -1,10 +1,10 @@
 
 # gatsby-plugin-theme-ui
 
-Adds the Theme UI ThemeProvider context to Gatsby themes and sites, deeply merging them into a single context.
+Automatically adds Theme UI context to a Gatsby site or theme
 
 ```sh
-npm i gatsby-plugin-theme-ui
+npm i theme-ui gatsby-plugin-theme-ui
 ```
 
 ```js
@@ -29,23 +29,23 @@ export default {
 }
 ```
 
-<!--
+## Color Modes
+
+To enable support for multiple color modes, add an `initialColorMode` field to your `theme.js` object.
+
 ```js
-// gatsby-config.js
-module.exports = {
-  plugins: [
-    {
-      resolve: 'gatsby-plugin-theme-ui',
-      options: {
-        // required
-        theme: require.resolve('./src/theme.js'),
-        // optional
-        components: require.resolve('./src/components.js'),
-        // optional, initial color mode
-        initialColorMode: 'light',
+// src/theme.js
+export default {
+  initialColorMode: 'light',
+  colors: {
+    text: '#000',
+    background: '#fff',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
       }
     }
-  ]
+  },
 }
 ```
--->

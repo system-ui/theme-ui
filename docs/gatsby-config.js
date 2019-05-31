@@ -3,21 +3,9 @@ const remarkPlugins = [
 ]
 
 module.exports = {
-  __experimentalThemes: [
-    'test-theme',
-  ],
+  __experimentalThemes: [],
   plugins: [
     'gatsby-plugin-theme-ui',
-    /*
-    {
-      resolve: 'gatsby-plugin-theme-ui',
-      options: {
-        initialColorMode: 'light',
-        theme: require.resolve('./src/components/theme'),
-        components: require.resolve('./src/components/mdx-components'),
-      }
-    },
-    */
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
