@@ -7,6 +7,7 @@
     "serve": "yarn && yarn build && yarn workspace docs serve",
     "clean": "lerna run clean",
     "test": "lerna run test",
+    "coverage": "lerna run test -- --coverage",
     "now-build": "yarn build"
   },
   "workspaces": [
