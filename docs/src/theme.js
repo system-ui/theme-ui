@@ -66,8 +66,6 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      // color: 'text',
-      // bg: 'background',
     },
     h1: {
       ...heading,
