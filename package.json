@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "yarn workspaces run prepare",
+    "prepare": "yarn workspace theme-ui prepare && yarn workspace theme-ui-typography prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "clean": "yarn workspace docs clean",
@@ -13,6 +13,6 @@
     "typography",
     "gatsby-plugin-theme-ui",
     "docs",
-    "test-theme"
+    "examples/*"
   ]
 }
