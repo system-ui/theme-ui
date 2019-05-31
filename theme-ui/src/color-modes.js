@@ -6,7 +6,7 @@ import React, {
 import merge from 'lodash.merge'
 import { css } from '@styled-system/css'
 import { Global } from '@emotion/core'
-import { Context, useThemeUI } from './context'
+import { useThemeUI } from './context'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -44,32 +44,13 @@ export const useColorState = (initialMode) => {
   return [ mode, setMode ]
 }
 
-export const ColorModeProvider = ({
-  initialColorMode,
-  children
-}) => {
-  const outer = useThemeUI()
-  const [ colorMode, setColorMode ] = useColorState(initialColorMode)
-  const context = merge({
-    colorMode,
-    setColorMode,
-  }, outer)
-  return (
-    <Context.Provider
-      value={context}
-      children={children}
-    />
-  )
-}
-
-export const useColorMode = () => {
+export const useColorMode = (initialMode) => {
   const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
     throw new Error(
-      `[useColorMode] requires the ColorModeProvider component`
+      `[useColorMode] requires the ThemeProvider component`
     )
-    return []
   }
 
   // initialize
@@ -77,16 +58,20 @@ export const useColorMode = () => {
     const init = storage.get()
     const bodyClassList = document.body.classList
     document.body.classList.remove('theme-ui-' + colorMode)
-    if (!init || init === colorMode) return
     document.body.classList.remove('theme-ui-' + init)
+    if (initialMode && !colorMode) {
+      setColorMode(initialMode)
+    }
+    if (!init || init === colorMode) return
     setColorMode(init)
   }, [])
 
   return [ colorMode, setColorMode ]
 }
 
-const bodyColor = theme => {
-  const { modes = {} } = theme.colors
+const bodyColor = (theme = {}) => {
+  if (!theme.colors || !theme.colors.modes) return
+  const { modes } = theme.colors
   const styles = {}
   Object.keys(modes).forEach(mode => {
     const colors = modes[mode]

@@ -1,6 +1,4 @@
-const {
-  jsx,
-} = require('theme-ui')
+const { jsx } = require('theme-ui')
 
 const noflash = `
 (function() {
