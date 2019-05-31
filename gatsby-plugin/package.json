@@ -4,8 +4,14 @@
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "prepare": "babel src -d ."
+  },
   "dependencies": {
     "loader-utils": "^1.2.3",
     "lodash.merge": "^4.6.1"
+  },
+  "devDependencies": {
+    "babel-preset-gatsby-package": "^0.1.4"
   }
 }

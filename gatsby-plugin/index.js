@@ -1,1 +1,2 @@
 // noop
+"use strict";

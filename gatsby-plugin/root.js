@@ -1,19 +1,30 @@
-const { jsx, ThemeProvider, ColorMode } = require('theme-ui')
-const merge = require('lodash.merge')
-const { themes } = require('gatsby-plugin-theme-ui/loader')
+"use strict";
 
-const theme = merge({}, ...themes)
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-console.log(themes, theme)
+exports.__esModule = true;
+exports.wrapRootElement = void 0;
 
-module.exports = ({ element }, opts) => {
-  return jsx(ThemeProvider, {
-    ...opts,
-    theme,
-  },
-    theme.initialColorMode && jsx(ColorMode, {
-      key: 'theme-ui-color-mode',
-    }),
-    element
-  )
-}
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _themeUi = require("theme-ui");
+
+var _lodash = _interopRequireDefault(require("lodash.merge"));
+
+var _loader = require("gatsby-plugin-theme-ui/loader");
+
+var theme = _lodash.default.apply(void 0, [{}].concat(_loader.themes));
+
+console.log(_loader.themes);
+
+var wrapRootElement = function wrapRootElement(_ref, opts) {
+  var element = _ref.element;
+  console.log('ThemeProvider', theme);
+  return (0, _themeUi.jsx)(_themeUi.ThemeProvider, (0, _extends2.default)({}, opts, {
+    theme: theme
+  }), theme.initialColorMode && (0, _themeUi.jsx)(_themeUi.ColorMode, {
+    key: 'theme-ui-color-mode'
+  }), element);
+};
+
+exports.wrapRootElement = wrapRootElement;

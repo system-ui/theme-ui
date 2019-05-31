@@ -2,6 +2,7 @@ const path = require('path')
 const { getOptions } = require('loader-utils')
 
 const themeModules = []
+console.log('loader')
 
 module.exports = function () {
   const opts = getOptions(this)

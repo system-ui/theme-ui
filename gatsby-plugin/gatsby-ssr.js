@@ -1,26 +1,24 @@
-const { jsx } = require('theme-ui')
+"use strict";
 
-exports.wrapRootElement = require('./root')
+exports.__esModule = true;
+exports.onRenderBody = exports.wrapRootElement = void 0;
 
+var _themeUi = require("theme-ui");
+
+var _root = require("./root");
+
+exports.wrapRootElement = _root.wrapRootElement;
 // prevent color mode flash
-const noflash = `
-(function() {
-  try {
-    var mode = localStorage.getItem('theme-ui-color-mode');
-    if (!mode) return
-    document.body.classList.add('theme-ui-' + mode);
-  } catch (e) {
-  }
-})();
-`
+var noflash = "\n(function() {\n  try {\n    var mode = localStorage.getItem('theme-ui-color-mode');\n    if (!mode) return\n    document.body.classList.add('theme-ui-' + mode);\n  } catch (e) {\n  }\n})();\n";
 
-exports.onRenderBody = ({
-  setPreBodyComponents,
-}) => {
-  const script = jsx('script', {
+var onRenderBody = function onRenderBody(_ref) {
+  var setPreBodyComponents = _ref.setPreBodyComponents;
+  var script = (0, _themeUi.jsx)('script', {
     dangerouslySetInnerHTML: {
       __html: noflash
     }
-  })
-  setPreBodyComponents([ script ])
-}
+  });
+  setPreBodyComponents([script]);
+};
+
+exports.onRenderBody = onRenderBody;
