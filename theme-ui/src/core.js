@@ -22,7 +22,8 @@ export const ThemeProvider = ({
   ...props
 }) => {
   const outer = useThemeUI()
-  const [ colorMode, setColorMode ] = useColorState(outer.colorMode || theme ? theme.initialColorMode : undefined)
+  const initialColorMode = outer.colorMode || (theme ? theme.initialColorMode : undefined)
+  const [ colorMode, setColorMode ] = useColorState(initialColorMode)
   const context = merge({}, {
     colorMode,
     setColorMode,
