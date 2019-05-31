@@ -1,12 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "npx lerna run prepare",
+    "prepare": "lerna run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "serve": "yarn && yarn build && yarn workspace docs serve",
     "clean": "yarn workspace docs clean",
-    "test": "yarn workspace theme-ui test && yarn workspace theme-ui-typography test",
+    "test": "lerna run test",
     "now-build": "yarn build"
   },
   "workspaces": [
@@ -15,5 +15,8 @@
     "docs",
     "gatsby-plugin-theme-ui",
     "examples/*"
-  ]
+  ],
+  "devDependencies": {
+    "lerna": "^3.14.1"
+  }
 }
