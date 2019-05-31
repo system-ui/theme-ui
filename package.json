@@ -11,10 +11,7 @@
     "now-build": "yarn build"
   },
   "workspaces": [
-    "theme-ui",
-    "typography",
-    "docs",
-    "gatsby-plugin-theme-ui",
+    "packages/*",
     "examples/*"
   ],
   "devDependencies": {

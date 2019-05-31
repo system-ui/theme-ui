@@ -1,1 +1,1 @@
-theme-ui/README.md
+packages/theme-ui/README.md
