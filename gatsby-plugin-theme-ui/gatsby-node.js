@@ -8,6 +8,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
   const { program, config, themes } = store.getState()
 
   const siteThemeFilename = path.join(program.directory, 'src', 'theme.js')
+  const siteThemeDirectory = path.join(program.directory, 'src', 'theme')
 
   if (Array.isArray(themes.themes)) {
     themes.themes.forEach(theme => {
@@ -26,6 +27,8 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
 
   if (fs.existsSync(siteThemeFilename)) {
     themeModules.push(siteThemeFilename)
+  } else if (fs.existsSync(siteThemeDirectory)) {
+    themeModules.push(siteThemeDirectory)
   }
 
   actions.setWebpackConfig({
@@ -43,6 +46,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
             {
               loader: require.resolve('./loader'),
               options: {
+                ...opts,
                 themes: themeModules,
               }
             }

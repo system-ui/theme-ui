@@ -30,10 +30,6 @@ export default {
         gray: '#999',
         purple: '#c0f',
       },
-      purple: {
-        text: '#fff',
-        background: '#609',
-      }
     },
   },
   fonts: {
