@@ -4,11 +4,14 @@ const pkg = require('./package.json')
 
 const themeModules = []
 
+const hasModule = dirname => {
+  return fs.existsSync(path.join(dirname, 'src', 'theme.js'))
+    || fs.existsSync(path.join(dirname, 'src', 'theme', 'index.js'))
+}
+
 exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
   const { program, config, themes } = store.getState()
-
-  const siteThemeFilename = path.join(program.directory, 'src', 'theme.js')
-  const siteThemeDirectory = path.join(program.directory, 'src', 'theme')
+  const siteThemeModule = path.join(program.directory, 'src', 'theme')
 
   if (Array.isArray(themes.themes)) {
     themes.themes.forEach(theme => {
@@ -18,17 +21,15 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
       }
       if (hasThemePlugin) {
         const filepath = path.join(theme.themeDir, 'src', 'theme.js')
-        if (fs.existsSync(filepath)) {
+        if (hasModule(theme.themeDir)) {
           themeModules.push(filepath)
         }
       }
     })
   }
 
-  if (fs.existsSync(siteThemeFilename)) {
-    themeModules.push(siteThemeFilename)
-  } else if (fs.existsSync(siteThemeDirectory)) {
-    themeModules.push(siteThemeDirectory)
+  if (hasModule(program.directory)) {
+    themeModules.push(siteThemeModule)
   }
 
   actions.setWebpackConfig({
