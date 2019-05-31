@@ -8,7 +8,7 @@
       "src": "package.json",
       "use": "@now/static-build",
       "config": {
-        "distDir": "docs/public"
+        "distDir": "packages/docs/public"
       }
     }
   ],
