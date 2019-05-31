@@ -1,5 +1,3 @@
-// import { jsx } from 'theme-ui'
-// export { wrapRootElement } from './root'
 const { jsx } = require('theme-ui')
 
 exports.wrapRootElement = require('./root')

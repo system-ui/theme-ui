@@ -13,8 +13,7 @@
     "theme-ui",
     "typography",
     "docs",
-    "gatsby-plugin",
-    "examples/*",
-    "test-theme"
+    "gatsby-plugin-theme-ui",
+    "examples/*"
   ]
 }

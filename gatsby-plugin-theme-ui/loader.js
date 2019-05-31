@@ -2,7 +2,6 @@ const path = require('path')
 const { getOptions } = require('loader-utils')
 
 const themeModules = []
-console.log('loader')
 
 module.exports = function () {
   const opts = getOptions(this)
@@ -18,7 +17,6 @@ module.exports = function () {
       this.addDependency(theme)
     })
   }
-  console.log('loader call', themeModules)
 
   return `
     module.exports.themes = [
