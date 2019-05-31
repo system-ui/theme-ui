@@ -1,7 +1,10 @@
 {
-  "version": "0.0.16",
+  "version": "0.0.17-alpha.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "packages": [
     "theme-ui",
-    "typography"
+    "typography",
+    "gatsby-plugin"
   ]
 }

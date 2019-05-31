@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup, act } from 'react-testing-library'
+import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import {
   jsx,
-  ColorModeProvider,
   ThemeProvider,
   useColorMode,
   useThemeUI,
+  ColorMode,
 } from '../src/index'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
@@ -33,11 +33,12 @@ test('renders with color modes', () => {
   }
   renderer.act(() => {
     renderer.create(
-      <ColorModeProvider initialColorMode='light'>
-        <ThemeProvider>
-          <Mode />
-        </ThemeProvider>
-      </ColorModeProvider>
+      <ThemeProvider
+        theme={{
+          initialColorMode: 'light',
+        }}>
+        <Mode />
+      </ThemeProvider>
     )
   })
   expect(mode).toBe('light')
@@ -58,11 +59,9 @@ test('useColorMode updates color mode state', () => {
     )
   }
   const tree = render(
-    <ColorModeProvider initialColorMode='light'>
-      <ThemeProvider>
-        <Button />
-      </ThemeProvider>
-    </ColorModeProvider>
+    <ThemeProvider>
+      <Button />
+    </ThemeProvider>
   )
   const button = tree.getByText('test')
   fireEvent.click(button)
@@ -87,21 +86,19 @@ test('color mode is passed through theme context', () => {
     )
   }
   const tree = render(
-    <ColorModeProvider initialColorMode='light'>
-      <ThemeProvider
-        theme={{
-          colors: {
-            text: '#000',
-            modes: {
-              dark: {
-                text: 'cyan'
-              }
+    <ThemeProvider
+      theme={{
+        colors: {
+          text: '#000',
+          modes: {
+            dark: {
+              text: 'cyan'
             }
           }
-        }}>
-        <Button />
-      </ThemeProvider>
-    </ColorModeProvider>
+        }
+      }}>
+      <Button />
+    </ThemeProvider>
   )
   const button = tree.getByText('test')
   button.click()
@@ -119,11 +116,9 @@ test('does not initialize mode', () => {
     )
   }
   const tree = render(
-    <ColorModeProvider>
-      <ThemeProvider>
-        <Button />
-      </ThemeProvider>
-    </ColorModeProvider>
+    <ThemeProvider>
+      <Button />
+    </ThemeProvider>
   )
   expect(mode).toBe(undefined)
 })
@@ -139,11 +134,9 @@ test('initializes mode based on localStorage', () => {
     )
   }
   const tree = render(
-    <ColorModeProvider>
-      <ThemeProvider>
-        <Button />
-      </ThemeProvider>
-    </ColorModeProvider>
+    <ThemeProvider>
+      <Button />
+    </ThemeProvider>
   )
   expect(mode).toBe('dark')
 })
@@ -156,15 +149,17 @@ test('inherits color mode state from parent context', () => {
     return false
   }
   render(
-    <ColorModeProvider initialColorMode='outer'>
-      <ThemeProvider>
-        <ColorModeProvider initialColorMode='inner'>
-          <ThemeProvider>
-            <Consumer />
-          </ThemeProvider>
-        </ColorModeProvider>
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'outer',
+      }}>
+      <ThemeProvider
+        theme={{
+          initialColorMode: 'inner',
+        }}>
+        <Consumer />
       </ThemeProvider>
-    </ColorModeProvider>
+    </ThemeProvider>
   )
   expect(mode).toBe('outer')
 })
@@ -176,11 +171,9 @@ test('retains initial context', () => {
     return false
   }
   render(
-    <ColorModeProvider>
-      <ThemeProvider>
-        <Consumer />
-      </ThemeProvider>
-    </ColorModeProvider>
+    <ThemeProvider>
+      <Consumer />
+    </ThemeProvider>
   )
   expect(typeof context.components).toBe('object')
   expect(context.components.h1).toBeTruthy()
@@ -202,9 +195,9 @@ test('initializes mode from prefers-color-scheme media query', () => {
     return false
   }
   render(
-    <ColorModeProvider>
+    <ThemeProvider>
       <Consumer />
-    </ColorModeProvider>
+    </ThemeProvider>
   )
   expect(mode).toBe('dark')
 })
@@ -223,9 +216,68 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
     return false
   }
   render(
-    <ColorModeProvider>
+    <ThemeProvider>
       <Consumer />
-    </ColorModeProvider>
+    </ThemeProvider>
   )
   expect(mode).toBe(undefined)
+})
+
+test('ColorMode component renders null', () => {
+  const json = renderer.create(
+    <ThemeProvider>
+      <ColorMode />
+    </ThemeProvider>
+  ).toJSON()
+  expect(json).toBe(null)
+})
+
+test('ColorMode component renders with colors', () => {
+  const root = render(
+    <ThemeProvider
+      theme={{
+        colors: {
+          text: 'tomato',
+          background: 'black',
+          modes: {
+            tomato: {
+              text: 'black',
+              background: 'tomato',
+            }
+          }
+        }
+      }}>
+      <ColorMode />
+    </ThemeProvider>
+  )
+  const styles = document.querySelector('style').innerHTML
+  expect(styles).toMatchSnapshot()
+})
+
+test('useColorMode initializes mode with argument', () => {
+  let mode
+  const Consumer = props => {
+    const [ colorMode ] = useColorMode('beep')
+    mode = colorMode
+    return false
+  }
+  render(
+    <ThemeProvider>
+      <Consumer />
+    </ThemeProvider>
+  )
+  expect(mode).toBe('beep')
+})
+
+test('useColorMode throws when there is no theme context', () => {
+  expect(() => {
+    const Consumer = props => {
+      const [ colorMode ] = useColorMode('beep')
+      mode = colorMode
+      return false
+    }
+    render(
+      <Consumer />
+    )
+  }).toThrow()
 })

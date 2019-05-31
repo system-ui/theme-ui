@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.0.16",
+  "version": "0.0.17-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
@@ -16,11 +16,12 @@
     "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.0.0",
     "@styled-system/css": "^2.0.4",
+    "@testing-library/react": "^8.0.1",
     "emotion-theming": "^10.0.0",
     "lodash.merge": "^4.6.0",
     "react": "^16.8.0",
     "styled-system": "^4.0.0",
-    "theme-ui-typography": "^0.0.16"
+    "theme-ui-typography": "^0.0.17-alpha.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -29,13 +30,13 @@
     "jest": "^24.7.0",
     "jest-emotion": "^10.0.10",
     "microbundle": "^0.11.0",
-    "react-test-renderer": "^16.8.6",
-    "react-testing-library": "^7.0.0"
+    "react-test-renderer": "^16.8.6"
   },
   "jest": {
     "testRegex": "./test/.*.js$",
     "coverageReporters": [
       "lcov",
+      "text",
       "html"
     ],
     "coverageThreshold": {

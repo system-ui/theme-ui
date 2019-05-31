@@ -1,8 +1,7 @@
 {
   "private": true,
   "name": "create-react-app-theme-ui-example",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.17-alpha.1",
   "dependencies": {
     "mdx.macro": "^0.2.8",
     "react": "^16.8.6",
@@ -12,7 +11,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

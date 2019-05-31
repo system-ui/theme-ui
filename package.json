@@ -1,17 +1,23 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "yarn workspace theme-ui prepare && yarn workspace theme-ui-typography prepare",
+    "prepare": "lerna run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
-    "clean": "yarn workspace docs clean",
-    "test": "yarn workspace theme-ui test && yarn workspace theme-ui-typography test",
+    "serve": "yarn && yarn build && yarn workspace docs serve",
+    "clean": "lerna run clean",
+    "test": "lerna run test",
+    "coverage": "lerna run test -- --coverage",
     "now-build": "yarn build"
   },
   "workspaces": [
     "theme-ui",
     "typography",
     "docs",
+    "gatsby-plugin-theme-ui",
     "examples/*"
-  ]
+  ],
+  "devDependencies": {
+    "lerna": "^3.14.1"
+  }
 }

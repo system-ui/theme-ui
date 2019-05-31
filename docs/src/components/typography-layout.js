@@ -19,7 +19,7 @@ import GoogleFonts from './google-fonts'
 import Button from './button'
 import themes from './typography-themes'
 import typographyThemes from './typography-themes'
-import baseTheme from './theme'
+import baseTheme from '../theme'
 
 const themeNames = Object.keys(themes)
 

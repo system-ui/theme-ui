@@ -5,6 +5,7 @@ const heading = {
 }
 
 export default {
+  initialColorMode: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -28,7 +29,7 @@ export default {
         highlight: '#ffffcc',
         gray: '#999',
         purple: '#c0f',
-      }
+      },
     },
   },
   fonts: {
@@ -61,8 +62,6 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      color: 'text',
-      bg: 'background',
     },
     h1: {
       ...heading,

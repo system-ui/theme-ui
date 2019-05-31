@@ -1,16 +1,8 @@
-/** @jsx jsx */
-import { jsx, ColorModeProvider, ThemeProvider } from 'theme-ui'
-import theme from './theme'
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
 import components from './mdx-components'
 
-export default props => {
-  return (
-    <ColorModeProvider initialColorMode='light'>
-      <ThemeProvider
-        components={components}
-        theme={theme}>
-        {props.children}
-      </ThemeProvider>
-    </ColorModeProvider>
-  )
-}
+export default props =>
+  <ThemeProvider components={components}>
+    {props.children}
+  </ThemeProvider>
