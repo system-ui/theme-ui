@@ -5,7 +5,7 @@
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "serve": "yarn && yarn build && yarn workspace docs serve",
-    "clean": "yarn workspace docs clean",
+    "clean": "lerna run clean",
     "test": "lerna run test",
     "now-build": "yarn build"
   },
