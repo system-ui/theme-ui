@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 import {
   Styled,
+  ColorMode,
 } from 'theme-ui'
 import { Helmet } from 'react-helmet'
 import {
@@ -33,6 +34,7 @@ export default props => {
           href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat:400,700,900|Poppins:400,700,900|Roboto:400,700,900|Roboto+Condensed:400,700'
         />
       </Helmet>
+      <ColorMode />
       <Layout>
         <div
           css={{
