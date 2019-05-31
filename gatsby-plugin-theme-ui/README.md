@@ -18,7 +18,7 @@ module.exports = {
 
 Add a `src/theme.js` file to your site to add values to the theme context.
 
- ```js
+```js
 // src/theme.js
 export default {
   colors: {
