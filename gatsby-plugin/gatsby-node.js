@@ -27,6 +27,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
   if (fs.existsSync(siteThemeFilename)) {
     themeModules.push(siteThemeFilename)
   }
+  console.log(themeModules)
 
   actions.setWebpackConfig({
     module: {
@@ -35,11 +36,11 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
           test: /\.js$/,
           include: path.dirname(require.resolve('gatsby-plugin-theme-ui')) },
         {
-          test: /gatsby-plugin-theme-ui\/theme-loader/,
+          test: /gatsby-plugin-theme-ui\/loader/,
           use: [
             loaders.js(),
             {
-              loader: require.resolve('./theme-loader'),
+              loader: require.resolve('./loader'),
               options: {
                 ...opts,
                 config,

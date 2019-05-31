@@ -5,7 +5,6 @@
   "packages": [
     "theme-ui",
     "typography",
-    "color-modes-plugin",
-    "gatsby-plugin-theme-ui"
+    "gatsby-plugin"
   ]
 }

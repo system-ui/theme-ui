@@ -13,9 +13,8 @@
     "theme-ui",
     "typography",
     "docs",
-    "color-modes-plugin",
+    "gatsby-plugin",
     "examples/*",
-    "gatsby-plugin-theme-ui",
     "test-theme"
   ]
 }

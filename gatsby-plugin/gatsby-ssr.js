@@ -1,5 +1,8 @@
 const { jsx } = require('theme-ui')
 
+exports.wrapRootElement = require('./root')
+
+// prevent color mode flash
 const noflash = `
 (function() {
   try {
