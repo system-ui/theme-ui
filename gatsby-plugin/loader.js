@@ -18,7 +18,7 @@ module.exports = function () {
       this.addDependency(theme)
     })
   }
-  console.log('loader', themeModules)
+  console.log('loader call', themeModules)
 
   return `
     module.exports.themes = [
