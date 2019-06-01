@@ -1,7 +1,7 @@
 
-# theme-ui
+# Theme UI
 
-**WIP** Themeable UI components for themes
+Build consistent, themeable UIs based on design system contraints and design tokens
 
 [![Build Status][circleci-badge]][circleci]
 [![Version][version]][npm]
@@ -11,15 +11,23 @@
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
 
-- Uses [Emotion][] for isolated styles
-- Uses the [MDX][] component provider for content styles
-- Follows standard theming conventions for interoperable stylistic themes
-- Uses [@styled-system/css][] for using theme values in the `css` prop
-- Includes base page layout components
+- Style your application consistently with a global theme object and customizable design tokens
+- Style [MDX][] content with themes
+- Follows the [Theme Specification][] for interoperability with other libraries
+- Style elements directly with the `css` prop and [@styled-system/css][]
+- Works with or without custom styled components and [Styled System][]
+- First-class support for [Typography.js][] themes
+- First-class support for dark mode and other color modes
+- Use contextual theming for nested stylistic changes
+- Primitive page layout components
+- Keep styles isolated with [Emotion][]
 
 [emotion]: https://emotion.sh
 [mdx]: https://mdxjs.com
+[styled system]: https://styled-system.com
 [@styled-system/css]: https://styled-system.com/css
+[theme specification]: https://system-ui.com/theme
+[typography.js]: https://github.com/KyleAMathews/typography.js
 
 ## Getting Started
 
@@ -27,7 +35,7 @@
 npm i theme-ui
 ```
 
-Wrap your application with the `ThemeProvider` component
+Wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
@@ -44,7 +52,8 @@ export default props =>
 ## `css` prop
 
 Use the `css` prop in your application, along with the `css` utility to pick up values from the theme.
-The `css` utility is from [@styled-system/css](https://styled-system.com/css/).
+Using the `css` utility means that
+color and other values can reference values defined in `theme` object.
 
 ```jsx
 import React from 'react'
@@ -53,18 +62,58 @@ import { css } from 'theme-ui'
 export default () =>
   <div
     css={css({
-      fontSize: 4,
       fontWeight: 'bold',
-      color: 'primary', // picks up values from theme
+      fontSize: 4,  // picks up value from `theme.fontSizes[4]`
+      color: 'primary', // picks up value from `theme.colors.primary`
     })}>
     Hello
   </div>
 ```
 
+Read more about the `css` utility in the [@styled-system/css](https://styled-system.com/css/) docs.
+
+## Responsive styles
+
+The `css` utility also supports using arrays as values to change properties responsively with a mobile-first approach.
+
+```jsx
+import React from 'react'
+import { css } from 'theme-ui'
+
+export default props =>
+  <div
+    css={css({
+      // applies width 100% to all viewport widths,
+      // width 50% above the first breakpoint,
+      // and 25% above the next breakpoint
+      width: [ '100%', '50%', '25%' ],
+    })}
+  />
+```
+
+## `jsx` pragma
+
+To use the `css` utility more seamlessly, use the custom `jsx` pragma, which will automatically convert Theme UI `css` prop values without the need for the `css` utility.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    css={{
+      fontSize: 4,
+      color: 'primary',
+      bg: 'lightgray',
+    }}
+  />
+```
+
 ## MDX Components
 
 Use the `components` prop to add components to MDX scope.
-The `ThemeProvider` is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
+This can be used to introduce new behavior to markdown elements in MDX, such as adding linked headings or live-editable code examples.
+Internally, the `ThemeProvider` is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
 
 ```jsx
 // with mdx components
@@ -81,13 +130,10 @@ export default props =>
   </ThemeProvider>
 ```
 
-This will render child MDX documents with the components provided via context.
-For use outside of MDX (e.g. Remark Markdown) the styles could be applied with a wrapper component.
-
 ## `theme.styles`
 
 The MDX components can also be styled via the `theme.styles` object.
-This can be used as a mechanism to pass Typography.js-like styles to MDX content.
+This can be used as a mechanism to pass in fully-baked themes and typographic styles to MDX content.
 
 ```js
 // example theme
@@ -179,6 +225,16 @@ export default props =>
     <Box width={[ 1, 1/2 ]} />
   </Flex>
 ```
+
+## More Documentation
+
+- [Theming](https://theme-ui.now.sh/theming)
+- [Layout](https://theme-ui.now.sh/layout)
+- [Color Modes](https://theme-ui.now.sh/color-modes)
+- [Gatsby Plugin](https://theme-ui.now.sh/gatsby-plugin)
+- [Custom Pragma](https://theme-ui.now.sh/custom-pragma)
+- [Typography.js](https://theme-ui.now.sh/typography)
+
 
 [typography demo]: https://theme-ui.now.sh/typography
 [demo]: https://theme-ui.now.sh/demo
