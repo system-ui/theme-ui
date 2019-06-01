@@ -4,6 +4,8 @@ import themed from './themed'
 
 const tags = [
   'p',
+  'b',
+  'i',
   'a',
   'h1',
   'h2',
