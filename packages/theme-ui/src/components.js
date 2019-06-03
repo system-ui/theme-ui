@@ -19,7 +19,6 @@ const tags = [
   'li',
   'blockquote',
   'hr',
-  'em',
   'table',
   'tr',
   'th',
