@@ -4,8 +4,6 @@ import themed from './themed'
 
 const tags = [
   'p',
-  'b',
-  'i',
   'a',
   'h1',
   'h2',
@@ -42,6 +40,8 @@ const aliases = {
   inlineCode: 'code',
   thematicBreak: 'hr',
   root: 'div',
+  strong: 'b',
+  em: 'i',
 }
 
 const alias = n => aliases[n] || n
