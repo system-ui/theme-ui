@@ -76,8 +76,12 @@ export default props =>
 
 ## Gatsby plugin
 
-For use with Gatsby, use the `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
+For use with Gatsby, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
 The plugin will also attempt to prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
+
+```sh
+npm i gatsby-plugin-theme-ui
+```
 
 This plugin will look for a `src/theme.js` file to import and pass to the ThemeProvider.
 

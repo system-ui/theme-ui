@@ -4,14 +4,14 @@ export default Layout
 
 # Theming
 
-Theming with theme-ui is based on the [System UI Theme Spec][] with an additional `theme.styles` object for styling markdown elements and other components.
+Theming with Theme UI is based on the [System UI Theme Spec][] with an additional `theme.styles` object for styling markdown elements and other components.
 
 [system ui theme spec]: https://system-ui.com/theme/
 
 ## Colors
 
 Add a `theme.colors` object to provide colors for a theme.
-In order to make themes and projects built with theme-ui as portable and interoperable as possible, the following base color abstraction should be used for defining a base set of colors:
+In order to make themes and projects built with Theme UI as portable and interoperable as possible, the following base color abstraction should be used for defining a base set of colors:
 
 Key           | Description
 --------------|------------
@@ -120,22 +120,30 @@ Styles within this object are processed with `@styled-system/css` and have acces
 
 ### Typography.js
 
-Since [Typography.js][] outputs a style object, this can be passed to the `theme.styles` object to style content in an MDX document.
-In order to fit the shape required in theme-ui, the `theme-ui/typography` module can be used in place of the core Typography.js module.
+To use [Typography.js][] themes with Theme UI, install the `theme-ui-typography` package and any Typography.js theme.
+
+```sh
+npm i theme-ui-typography typography-theme-wordpress-2016
+```
+
+Use the `toTheme` utility to convert the theme for use in Theme UI.
 
 ```js
-import Typography from 'theme-ui-typography'
+// example theme with Typography.js
+import { toTheme } from 'theme-ui-typography'
 import wordpress2016 from 'typography-theme-wordpress-2016'
 import merge from 'lodash.merge'
 
-const typography = Typography(wordpress2016)
+const typography = toTheme(wordpress2016)
 
-const theme = {
-  styles: merge(typography.styles, {
-    // ...additional styles
-  })
-}
+export default merge(typography, {
+  // optional style overrides go here
+})
 ```
+
+Content in MDX documents will be rendered with styles from the Typography.js theme.
+
+**Note:** Theme UI does not currently use colors from Typography.js
 
 **Note:** the Typography.js integration is still in progress and the API may change over time
 
@@ -143,7 +151,7 @@ const theme = {
 
 ### Layout
 
-The built in theme-ui layout components can also be styled with the `theme.styles` object.
+The built in Theme UI layout components can also be styled with the `theme.styles` object.
 
 For example, to change the max-width of the `Container` component, styles can be set in the theme:
 
@@ -160,65 +168,26 @@ For example, to change the max-width of the `Container` component, styles can be
 
 ### Syntax Highlighting
 
-When using syntax highlighting that produces spans with class names, colors and other styles can be added to `theme.styles.pre` using the `@styled-system/css` variant feature.
+When using syntax highlighting libraries, such as [Prismjs][], that produce spans with classnames, colors and other styles can be added to `theme.styles.pre` to target child elements with class selectors.
+
+[prismjs]: https://github.com/PrismJS/prism
 
 **Note:** this approach is in progress and the API may change
 
-First, create a `theme.prism` object for handling the syntax highlighting styles.
-
 ```js
 {
   colors: {
     gray: '#666',
-  },
-  prism: {
-    '.comment': {
-      // theme.colors and other values can be referenced
-      color: 'gray',
-    }
-  }
-}
-```
-
-Next, add a `theme.styles.pre` object that references the `prism` variant.
-
-```js
-{
-  colors: {
-    gray: '#666',
-  },
-  prism: {
-    '.comment': {
-      // theme.colors and other values can be referenced
-      color: 'gray',
-    }
   },
   styles: {
     pre: {
-      variant: 'prism',
-      // add other custom styles for the base pre tag
+      '.comment': {
+        // theme.colors and other values can be referenced
+        color: 'gray',
+      }
     }
   }
 }
-```
-
-Since theme-ui uses [Emotion][] for styling, multiple classNames can be targeted by using an array as a key.
-
-```js
-{
-  prism: {
-    [[
-      '.comment',
-      '.prolog',
-      '.doctype',
-      '.cdata'
-    ]]: {
-      color: 'gray',
-    },
-    '.comment': {
-      fontStyle: 'italic',
-    }
-  }
 }
 ```
 

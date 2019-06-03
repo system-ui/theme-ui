@@ -1,15 +1,24 @@
 
 # Theme UI
 
-Build consistent, themeable UIs based on design system contraints and design tokens
+Build consistent, themeable React UIs based on design system contraints and design tokens
 
+[![GitHub][github-badge]][github]
 [![Build Status][circleci-badge]][circleci]
 [![Version][version]][npm]
+![MIT License][license]
+[![system-ui/theme][system-ui-badge]](https://system-ui.com/theme)
+![][size]
 
+[github]: https://github.com/system-ui/theme-ui
+[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
 [circleci]: https://circleci.com/gh/system-ui/theme-ui
 [circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
+[license]: https://flat.badgen.net/badge/license/MIT/blue
+[system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
+[size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
 
 - Style your application consistently with a global theme object and customizable design tokens
 - Style [MDX][] content with themes
@@ -49,9 +58,28 @@ export default props =>
   </ThemeProvider>
 ```
 
+The `theme` object should follow the System UI [Theme Specification][],
+which lets you define custom color palettes, typographic scales, fonts, and more.
+
+```js
+// example theme.js
+export default {
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#33e',
+  },
+}
+```
+
 ## `css` prop
 
-Use the `css` prop in your application, along with the `css` utility to pick up values from the theme.
+Use the `css` prop throughout your application, along with the `css` utility to pick up values from the theme.
 Using the `css` utility means that
 color and other values can reference values defined in `theme` object.
 
@@ -93,7 +121,7 @@ export default props =>
 
 ## `jsx` pragma
 
-To use the `css` utility more seamlessly, use the custom `jsx` pragma, which will automatically convert Theme UI `css` prop values without the need for the `css` utility.
+To use values from the `theme` object without importing the `css` utility, use the custom `jsx` pragma, which will automatically convert Theme UI `css` prop values.
 
 ```jsx
 /** @jsx jsx */
@@ -108,6 +136,8 @@ export default props =>
     }}
   />
 ```
+
+Read more in the [custom pragma docs](https://theme-ui.now.sh/custom-pragma).
 
 ## MDX Components
 
