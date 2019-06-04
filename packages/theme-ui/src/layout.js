@@ -1,14 +1,10 @@
 import jsx from './jsx'
 import styled from '@emotion/styled'
 import {
-  width,
   space,
   color,
-  flex,
-  alignItems,
-  justifyContent,
-  flexWrap,
-  flexDirection
+  layout,
+  flexbox,
 } from 'styled-system'
 import css from '@styled-system/css'
 
@@ -16,20 +12,15 @@ export const Box = styled('div')(css({
   boxSizing: 'border-box',
   minWidth: 0,
 }),
-  width,
   space,
   color,
-  flex
+  layout,
+  flexbox
 )
 
 export const Flex = styled(Box)({
   display: 'flex',
-},
-  flexWrap,
-  alignItems,
-  justifyContent,
-  flexDirection,
-)
+})
 
 // root/page layout
 export const Layout = props =>

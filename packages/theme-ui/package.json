@@ -18,18 +18,18 @@
     "@mdx-js/react": "^1.0.0"
   },
   "dependencies": {
-    "@styled-system/css": "^2.0.4",
+    "@styled-system/css": "^5.0.5",
     "lodash.merge": "^4.6.0",
     "react": "^16.8.0",
-    "styled-system": "^4.0.0"
+    "styled-system": "^5.0.5"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
-    "@mdx-js/react": "^1.0.0",
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
     "@mdx-js/mdx": "^1.0.0",
+    "@mdx-js/react": "^1.0.0",
     "@testing-library/react": "^8.0.1",
     "jest": "^24.7.0",
     "jest-emotion": "^10.0.10",
