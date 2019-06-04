@@ -1,4 +1,6 @@
 
+<img src='https://raw.githubusercontent.com/system-ui/theme-ui/master/packages/docs/static/icon.png' width='64' heigh='64' />
+
 # Theme UI
 
 Build consistent, themeable React UIs based on design system constraints and design tokens
