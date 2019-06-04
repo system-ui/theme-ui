@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "create-react-app-theme-ui-example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "mdx.macro": "^0.2.8",
     "react": "^16.8.6",
