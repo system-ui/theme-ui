@@ -1,7 +1,7 @@
 
 # Theme UI
 
-Build consistent, themeable React UIs based on design system contraints and design tokens
+Build consistent, themeable React UIs based on design system constraints and design tokens
 
 
 [![GitHub][github-badge]][github]
