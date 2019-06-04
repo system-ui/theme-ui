@@ -254,21 +254,6 @@ test('ColorMode component renders with colors', () => {
   expect(styles).toMatchSnapshot()
 })
 
-test('useColorMode initializes mode with argument', () => {
-  let mode
-  const Consumer = props => {
-    const [ colorMode ] = useColorMode('beep')
-    mode = colorMode
-    return false
-  }
-  render(
-    <ThemeProvider>
-      <Consumer />
-    </ThemeProvider>
-  )
-  expect(mode).toBe('beep')
-})
-
 test('useColorMode throws when there is no theme context', () => {
   expect(() => {
     const Consumer = props => {
