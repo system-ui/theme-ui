@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ThemeProvider as EmotionProvider } from 'emotion-theming'
+import { ThemeContext as EmotionContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
 import merge from 'lodash.merge'
@@ -40,7 +40,7 @@ export const ThemeProvider = ({
   }
 
   return (
-    jsx(EmotionProvider, { theme: context.theme },
+    jsx(EmotionContext.Provider, { value: context.theme },
       jsx(MDXProvider, { components: context.components },
         jsx(Context.Provider, {
           value: context,
