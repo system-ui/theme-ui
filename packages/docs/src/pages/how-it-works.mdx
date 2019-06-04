@@ -1,0 +1,99 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# How it Works
+
+Theme UI combines several libraries together to form a mini-framework for styling applications.
+
+Theme UI is built with:
+
+- [Emotion][]: used to generate isolated CSS with theming context
+- [MDX][]: used to provide custom Emotion styled components to MDX documents, without polluting the global CSS scope
+- [Styled System][]: used to handling styling based on a global `theme` object
+- [Typography.js][]: optionally used for creating rich typographic styles with a simple, high-level API
+
+[emotion]: https://emotion.sh
+[mdx]: https://mdxjs.com
+[styled system]: https://styled-system.com
+[typography.js]: https://github.com/KyleAMathews/typography.js
+
+## ThemeProvider
+
+The Theme UI `ThemeProvider` component is a wrapper around MDX's `MDXProvider`, which adds custom React components to context, and Emotion's `ThemeProvider`, which adds the `theme` object to context for use with Emotion.
+
+The Theme UI `ThemeProvider` includes a default `components` object with Emotion styled components that pick up values from the `theme.styles` object.
+For example, `theme.styles.h1` will be used in its `components.h1` component and rendered in MDX documents.
+
+For illustrative purposes, the `ThemeProvider` renders something like the following:
+
+```jsx
+// for demonstration only – this does not reflect the actual source code
+import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
+import { ThemeProvider } from 'emotion-theming'
+import styled from '@emotion/styled'
+
+const themeUIComponents = {
+  h1: styled('h1')(props => props.theme.styles.h1),
+  h2: styled('h2')(props => props.theme.styles.h2),
+  // other MDX components
+}
+
+export default ({
+  components,
+  theme,
+  children
+}) =>
+  <ThemeProvider theme={theme}>
+    <MDXProvider components={merge(themeUIComponents, components)}>
+      {children}
+    </MDXProvider>
+  </ThemeProvider>
+```
+
+## Custom Components
+
+When using the `components` prop to add custom MDX components,
+each component is wrapped with `@emotion/styled` to allow the custom components to pick up values from the `theme.styles` object.
+
+## JSX Pragma
+
+The Theme UI JSX pragma wraps the Emotion JSX pragma, converting the `css` prop to a call to `@styled-system/css`. The two examples below yield the same results:
+
+```jsx
+// with Emotion's custom pragma
+// this is typically handled with the Emotion Babel preset
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { css } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={css({
+      color: 'white',
+      bg: 'primary',
+      fontSize: 4,
+    })}
+  />
+```
+
+```jsx
+// with Emotion's custom pragma
+// this is typically handled with the Emotion Babel preset
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={{
+      color: 'white',
+      bg: 'primary',
+      fontSize: 4,
+    }}
+  />
+```
+
+

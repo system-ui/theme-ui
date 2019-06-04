@@ -3,13 +3,12 @@ import Lorem from './lorem.mdx'
 
 export default TypographyLayout
 
-# Typography
+# Typography.js Demo
 
 This page uses themes from Typography.js to populate the `theme` object.
 It's not currently a 1:1 replacement for all styles provided by Typography.js,
 but is a demonstration of how it could fit in with the rest of Theme UI for users who
 want to take advantage of Typography.js.
-Typography style themes that are completely decoupled from Typography.js could also be supported in a similar way.
 
 ## Usage
 
@@ -17,10 +16,7 @@ Typography style themes that are completely decoupled from Typography.js could a
 npm i theme-ui-typography
 ```
 
-There are two methods for integrating Typography.js with Theme UI.
-
-1. The first method uses the `toTheme` function to create a base `theme` object based on Typography.js options or themes and uses a default, static `theme.styles` object to pick up values from the base theme.
-2. The other method uses the `toStyles` function to add hard-coded styles to the `theme.styles` object without affecting the base theme object.
+Use the `toTheme` function to create a base `theme` object based on Typography.js options or a preset Typography.js theme.
 
 ```js
 import React from 'react'
