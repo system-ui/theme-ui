@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "test": "jest"
+    "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
     "compass-vertical-rhythm": "^1.4.5",
@@ -19,11 +18,6 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "jest": "^24.8.0",
-    "microbundle": "^0.11.0",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",
