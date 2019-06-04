@@ -9,8 +9,8 @@ const IconSpan = props =>
   <span
     {...props}
     css={{
-      width: 24,
-      height: 24,
+      width: '50%',
+      height: '100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -24,18 +24,17 @@ export const Thumb = props =>
       width: 24,
       height: 24,
       borderRadius: 99999,
-      color: 'primary',
-      bg: 'background',
+      bg: 'white',
       border: '1px solid',
     }}
   />
 
 export const Switch = ({
   checked,
-  onClick,
   label,
   icons,
   thumb,
+  className,
   ...props
 }) =>
   <button
@@ -44,10 +43,13 @@ export const Switch = ({
     role='switch'
     aria-checked={checked}
     aria-label={label}
-    onClick={onClick}
+    className={[
+      className,
+      checked ? 'active' : ''
+    ].join(' ')}
     css={{
       appearance: 'none',
-      color: 'inherit',
+      color: 'primary',
       bg: checked ? 'primary': 'muted',
       p: 0,
       m: 0,
@@ -56,14 +58,14 @@ export const Switch = ({
       width: 48,
       height: 24,
       fontFamily: 'inherit',
-      fontSize: 0,
+      fontSize: 'inherit',
       borderRadius: 99999,
       border: 0,
       position: 'relative',
       ':focus': {
         outline: 'none',
         div: {
-          boxShadow: '0 0 4px',
+          boxShadow: '0 0 4px 1px',
         }
       }
     }}>

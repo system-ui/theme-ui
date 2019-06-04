@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React, { useState } from 'react'
 import Switch from '@theme-ui/switch'
 
@@ -52,25 +53,17 @@ export const IconSwitch = props => {
   return (
     <Switch
       {...props}
-      checked={checked}
-      onClick={e => {
-        setChecked(!checked)
-      }}
-    />
-  )
-  const [ checked, setChecked ] = useState(false)
-
-  return (
-    <Switch
-      {...props}
       label='Toggle dark mode'
       checked={checked}
       onClick={e => {
         setChecked(!checked)
       }}
       icons={{
-        checked: <MoonIcon />,
-        unchecked: <SunIcon />,
+        checked: <MoonIcon color='yellow' />,
+        unchecked: <SunIcon color='orange' />,
+      }}
+      css={{
+        bg: 'black',
       }}
     />
   )

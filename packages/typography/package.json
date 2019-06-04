@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "test": "jest"
+    "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
     "compass-vertical-rhythm": "^1.4.5",
@@ -22,7 +21,6 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "jest": "^24.8.0",
     "microbundle": "^0.11.0",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
@@ -62,24 +60,5 @@
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
     "typography-theme-zacklive": "^1.0.2"
-  },
-  "jest": {
-    "testRegex": "./test/.*.js$",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/fixtures/"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "html"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    }
   }
 }
