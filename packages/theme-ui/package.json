@@ -20,6 +20,7 @@
   "dependencies": {
     "@styled-system/css": "^2.0.4",
     "lodash.merge": "^4.6.0",
+    "react": "^16.8.0",
     "styled-system": "^4.0.0"
   },
   "devDependencies": {
@@ -33,7 +34,6 @@
     "jest": "^24.7.0",
     "jest-emotion": "^10.0.10",
     "microbundle": "^0.11.0",
-    "react": "^16.8.0",
     "react-test-renderer": "^16.8.6"
   },
   "jest": {
