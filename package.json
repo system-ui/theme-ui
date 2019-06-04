@@ -6,16 +6,42 @@
     "build": "yarn workspace docs build",
     "serve": "yarn && yarn build && yarn workspace docs serve",
     "clean": "lerna run clean",
-    "test": "lerna run test",
-    "coverage": "lerna run test -- --coverage",
-    "logo": "yarn workspace docs logo",
-    "now-build": "yarn build"
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "logo": "yarn workspace docs logo"
   },
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
   "devDependencies": {
-    "lerna": "^3.14.1"
+    "@testing-library/react": "^8.0.1",
+    "jest": "^24.8.0",
+    "jest-emotion": "^10.0.11",
+    "lerna": "^3.14.1",
+    "microbundle": "^0.11.0",
+    "react-test-renderer": "^16.8.6"
+  },
+  "jest": {
+    "testMatch": [
+      "**/packages/**/test/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/fixtures/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   }
 }
