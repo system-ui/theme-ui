@@ -1,7 +1,50 @@
 import Layout from '../components/layout'
-import Readme from 'theme-ui/README.md'
+import Banner from '../components/banner'
+import Tiles from '../components/tiles'
 
 export default Layout
 
-<Readme />
+export const fullwidth = true
 
+<Banner>
+
+# Theme UI
+
+Build consistent, themeable React UIs based on <br />
+design system contraints and design tokens
+
+MDX + Emotion + Styled System + Typography.js
+
+[Documentation](/getting-started)
+[GitHub](https://github.com/system-ui/theme-ui)
+
+![Build Status][circleci-badge]
+![Version][version]
+![MIT License][license]
+![system-ui/theme][system-ui-badge]
+![][size]
+
+</Banner>
+
+<Tiles>
+
+- ## Themeable
+  Built for whitelabels, themes, and other applications
+  where customizing colors, typography, and layout
+  are treated as first-class citizens
+- ## Interoperable
+  Based on the System UI Theme Specification, Theme UI is intended
+  to work in a variety of applications, libraries, and other UI components
+- ## Constraint-based
+  Colors, typography, and layout styles derived from customizable
+  design tokens and scales and rooted in constraint-based design principles
+
+</Tiles>
+
+[circleci]: https://circleci.com/gh/system-ui/theme-ui
+[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
+[version]: https://flat.badgen.net/npm/v/theme-ui
+[npm]: https://npmjs.com/package/theme-ui
+[license]: https://flat.badgen.net/badge/license/MIT/blue
+[system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
+[size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui

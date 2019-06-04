@@ -73,32 +73,36 @@ export default props => {
           </Button>
         </Header>
         <Main>
-          <Container
-            css={{
-              p: 0,
-              display: 'flex',
-            }}>
-            <Sidebar
-              ref={nav}
-              open={menuOpen}
-              onFocus={e => {
-                setMenuOpen(true)
-              }}
-              onBlur={e => {
-                setMenuOpen(false)
-              }}
-              onClick={e => {
-                setMenuOpen(false)
-              }}
-            />
-            <Box
-              id='content'
-              width={1}
-              px={3}>
-              {props.children}
-              <Pagination />
-            </Box>
-          </Container>
+          {props.fullwidth ? (
+            props.children
+          ) : (
+            <Container
+              css={{
+                p: 0,
+                display: 'flex',
+              }}>
+              <Sidebar
+                ref={nav}
+                open={menuOpen}
+                onFocus={e => {
+                  setMenuOpen(true)
+                }}
+                onBlur={e => {
+                  setMenuOpen(false)
+                }}
+                onClick={e => {
+                  setMenuOpen(false)
+                }}
+              />
+              <Box
+                id='content'
+                width={1}
+                px={3}>
+                {props.children}
+                <Pagination />
+              </Box>
+            </Container>
+          )}
         </Main>
         <Footer />
       </Layout>
