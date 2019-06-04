@@ -26,12 +26,14 @@ export const useColorState = (initialMode) => {
   const [ mode, setMode ] = useState(initialMode)
 
   useLayoutEffect(() => {
+    // initialize
     const stored = storage.get()
     const dark = getMediaQuery()
     if (dark) {
       setMode('dark')
       return
     }
+    document.body.classList.remove('theme-ui-' + stored)
     if (!stored || stored === mode) return
     setMode(stored)
   }, [])
@@ -52,19 +54,6 @@ export const useColorMode = (initialMode) => {
       `[useColorMode] requires the ThemeProvider component`
     )
   }
-
-  // initialize
-  useEffect(() => {
-    const init = storage.get()
-    const bodyClassList = document.body.classList
-    document.body.classList.remove('theme-ui-' + colorMode)
-    document.body.classList.remove('theme-ui-' + init)
-    if (initialMode && !colorMode) {
-      setColorMode(initialMode)
-    }
-    if (!init || init === colorMode) return
-    setColorMode(init)
-  }, [])
 
   return [ colorMode, setColorMode ]
 }

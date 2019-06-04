@@ -7,7 +7,6 @@
     "serve": "yarn && yarn build && yarn workspace docs serve",
     "clean": "lerna run clean",
     "test": "jest",
-    "coverage": "jest --coverage",
     "logo": "yarn workspace docs logo"
   },
   "workspaces": [
