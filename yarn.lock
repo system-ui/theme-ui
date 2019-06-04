@@ -1122,7 +1122,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
   integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
@@ -2206,6 +2206,13 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@material-ui/icons@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.0.1.tgz#f63990f731c6206c82023c96d510bd7bdda44250"
+  integrity sha512-03zUfksGXXbaWX2piB1LCmC28eydlT8ah8MbYT4n4mgiX9BTL4HH50lkFn9JIJJSk2oO5kRy4FvpXRGRBI+oxw==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+
 "@mdx-js/loader@^1.0.19":
   version "1.0.20"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.0.20.tgz#8472784c676fb64f5e0fcbd64a569a093f19e4ea"
@@ -2414,18 +2421,6 @@
     "@emotion/core" "^10.0.10"
     color "^3.1.0"
     emotion-theming "^10.0.10"
-    lodash.get "^4.4.2"
-    lodash.merge "^4.6.1"
-    lodash.omit "^4.5.0"
-    lodash.set "^4.3.2"
-
-"@styled-system/edit@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@styled-system/edit/-/edit-5.0.5.tgz#9ab7cfb0287d1c82fef372bb12f9c5bdfb2e8fd7"
-  integrity sha512-nzz3MLj9ouhLPrdlXjro3JjQBt8ruGc9JxeLP7BYlqN5vzLWYyJZ6M0A4nfk73D4QRROl9cpf2HKcZll65SARg==
-  dependencies:
-    "@emotion/core" "^10.0.10"
-    color "^3.1.0"
     lodash.get "^4.4.2"
     lodash.merge "^4.6.1"
     lodash.omit "^4.5.0"

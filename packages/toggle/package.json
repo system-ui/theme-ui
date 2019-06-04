@@ -1,0 +1,17 @@
+{
+  "name": "@theme-ui/toggle",
+  "version": "0.1.0",
+  "description": "UI component for toggle switch",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "theme-ui": "0.1.0"
+  }
+}
