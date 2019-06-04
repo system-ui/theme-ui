@@ -23,6 +23,8 @@ import Button from './button'
 const modes = [
   'light',
   'dark',
+  'deep',
+  'swiss',
 ]
 
 export default props => {
@@ -74,7 +76,9 @@ export default props => {
         </Header>
         <Main>
           {props.fullwidth ? (
-            props.children
+            <div id='content'>
+              {props.children}
+            </div>
           ) : (
             <Container
               css={{

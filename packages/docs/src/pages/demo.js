@@ -47,7 +47,11 @@ export default props => {
             color: 'black',
             bg: 'white',
           }}>
-          <FieldSet name='colors' type='color' />
+          <FieldSet
+            name='colors'
+            type='color'
+            ignore={[ 'modes' ]}
+          />
           <FieldSet
             name='fonts'
             type='select'
