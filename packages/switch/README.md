@@ -1,7 +1,7 @@
 
 # @theme-ui/switch
 
-Accessibly, controlled toggle switch UI component for Theme UI
+Accessible, controlled toggle switch UI component
 
 ```sh
 npm i @theme-ui/switch
