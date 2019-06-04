@@ -13,7 +13,7 @@ Build consistent, themeable React UIs based on design system constraints and des
 [![system-ui/theme][system-ui-badge]](https://system-ui.com/theme)
 ![][size]
 
-https://theme-ui.now.sh
+https://theme-ui.com
 
 [github]: https://github.com/system-ui/theme-ui
 [github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
@@ -148,7 +148,7 @@ export default props =>
   />
 ```
 
-Read more in the [custom pragma docs](https://theme-ui.now.sh/custom-pragma).
+Read more in the [custom pragma docs](https://theme-ui.com/custom-pragma).
 
 ## MDX Components
 
@@ -269,16 +269,16 @@ export default props =>
 
 ## More Documentation
 
-- [Theming](https://theme-ui.now.sh/theming)
-- [Layout](https://theme-ui.now.sh/layout)
-- [Color Modes](https://theme-ui.now.sh/color-modes)
-- [Gatsby Plugin](https://theme-ui.now.sh/gatsby-plugin)
-- [Custom Pragma](https://theme-ui.now.sh/custom-pragma)
-- [Typography.js](https://theme-ui.now.sh/typography)
+- [Theming](https://theme-ui.com/theming)
+- [Layout](https://theme-ui.com/layout)
+- [Color Modes](https://theme-ui.com/color-modes)
+- [Gatsby Plugin](https://theme-ui.com/gatsby-plugin)
+- [Custom Pragma](https://theme-ui.com/custom-pragma)
+- [Typography.js](https://theme-ui.com/typography)
 
 
-[typography demo]: https://theme-ui.now.sh/typography
-[demo]: https://theme-ui.now.sh/demo
+[typography demo]: https://theme-ui.com/typography
+[demo]: https://theme-ui.com/demo
 [emotion plugins]: https://github.com/emotion-js/emotion/pull/1299
 
 MIT License
