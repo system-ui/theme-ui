@@ -20,7 +20,7 @@
     "@mdx-js/mdx": "^1.0.0-rc.0",
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^0.0.5",
-    "@theme-ui/toggle": "0.1.0",
+    "@theme-ui/switch": "0.1.0",
     "gatsby": "^2.3.6",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",

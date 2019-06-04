@@ -1,7 +1,7 @@
 {
-  "name": "@theme-ui/toggle",
+  "name": "@theme-ui/switch",
   "version": "0.1.0",
-  "description": "UI component for toggle switch",
+  "description": "Toggle switch UI component",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
