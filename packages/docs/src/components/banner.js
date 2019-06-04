@@ -58,6 +58,7 @@ export default props =>
         }}>
         <Logo
           size='1em'
+          color='currentcolor'
           css={{
             fontSize: [ 96, 96, 160 ],
           }}

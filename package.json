@@ -8,6 +8,7 @@
     "clean": "lerna run clean",
     "test": "lerna run test",
     "coverage": "lerna run test -- --coverage",
+    "logo": "yarn workspace docs logo",
     "now-build": "yarn build"
   },
   "workspaces": [

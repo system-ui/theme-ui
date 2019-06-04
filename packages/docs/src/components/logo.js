@@ -1,7 +1,9 @@
 import React from 'react'
+import theme from '../theme'
 
 export default ({
-  size = 64,
+  size = 512,
+  color = theme.colors.primary,
   ...props
 }) =>
 <svg
@@ -12,7 +14,7 @@ export default ({
   overflow='visible'
 >
   <path
-    fill='currentcolor'
+    fill={color}
     d={`
       M 24 0
       A 24 24 0 0 0 24 48

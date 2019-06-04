@@ -10,6 +10,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "logo": "repng src/components/logo.js -d static -f icon.png",
     "now-build": "gatsby build"
   },
   "dependencies": {
@@ -73,5 +74,8 @@
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
     "typography-theme-zacklive": "^1.0.2"
+  },
+  "devDependencies": {
+    "repng": "^3.2.0"
   }
 }
