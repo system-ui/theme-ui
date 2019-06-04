@@ -1,5 +1,1 @@
-module.exports = {
-  presets: [
-    '@babel/env',
-  ],
-}
+module.exports = require('../../babel.config')

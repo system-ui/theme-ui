@@ -62,24 +62,5 @@
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
     "typography-theme-zacklive": "^1.0.2"
-  },
-  "jest": {
-    "testRegex": "./test/.*.js$",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/fixtures/"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "html"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    }
   }
 }
