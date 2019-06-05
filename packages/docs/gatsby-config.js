@@ -3,9 +3,11 @@ const remarkPlugins = [
 ]
 
 module.exports = {
-  __experimentalThemes: [],
+  __experimentalThemes: [
+    'gatsby-theme-ui',
+  ],
   plugins: [
-    'gatsby-plugin-theme-ui',
+    // 'gatsby-plugin-theme-ui',
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
