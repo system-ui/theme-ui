@@ -51,4 +51,25 @@ export default {
 }
 ```
 
+## Color Modes
+
+To enable support for multiple color modes, add an `initialColorMode` field to your `theme.js` object.
+
+```js
+// src/theme.js
+export default {
+  initialColorMode: 'light',
+  colors: {
+    text: '#000',
+    background: '#fff',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+      }
+    }
+  },
+}
+```
+
 MIT License

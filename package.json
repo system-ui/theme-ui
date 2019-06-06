@@ -34,6 +34,10 @@
       "text",
       "html"
     ],
+    "collectCoverageFrom": [
+      "packages/**/src/*.js",
+      "!packages/docs/**/*"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,

@@ -8,7 +8,6 @@ import theme from './index'
 import components from './components'
 
 export const wrapRootElement = ({ element }, opts) =>
-  console.log('gatsby-theme-ui root', theme) ||
   jsx(ThemeProvider, {
     theme,
     components,
