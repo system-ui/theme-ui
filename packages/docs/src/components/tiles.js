@@ -14,13 +14,17 @@ export default props =>
           listStyle: 'none',
           display: 'flex',
           flexWrap: 'wrap',
+          justifyContent: 'flex-start',
           p: 0,
           mx: -3,
+          '::after': {
+            content: '" "',
+            display: 'block',
+            flex: '1 1 420px',
+          }
         },
         li: {
           flex: '1 1 420px',
-          // fontWeight: 'bold',
-          // fontSize: 3,
           p: 3,
         }
       }

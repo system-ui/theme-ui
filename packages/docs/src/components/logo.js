@@ -1,5 +1,5 @@
 import React from 'react'
-import theme from '../theme'
+import theme from '../gatsby-theme-ui'
 
 export default ({
   size = 512,

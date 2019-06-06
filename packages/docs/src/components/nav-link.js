@@ -9,6 +9,7 @@ const styles = {
   py: 2,
   color: 'inherit',
   textDecoration: 'none',
+  fontSize: 1,
   fontWeight: 'bold',
   '&.active': {
     color: 'primary',
