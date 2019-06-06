@@ -8,7 +8,7 @@ module.exports = {
     'demo-theme',
   ],
   plugins: [
-    // 'gatsby-plugin-theme-ui',
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
