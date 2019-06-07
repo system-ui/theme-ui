@@ -14,6 +14,7 @@ export default props =>
       p: 0,
       overrflow: 'hidden',
       position: 'absolute',
+      top: -9999,
       ':focus': {
         p: 3,
         position: 'fixed',
