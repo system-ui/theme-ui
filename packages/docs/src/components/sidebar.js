@@ -10,19 +10,33 @@ const components = {
   a: NavLink,
 }
 
-export default React.forwardRef((props, ref) =>
+export default React.forwardRef((props, ref) => (
   <>
     {props.open && (
-      <Box
-        onClick={props.onClick}
-        css={{
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
-        }}
-      />
+      <>
+        <Global
+          styles={{
+            body: {
+              position: 'fixed',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              overflow: 'hidden',
+            }
+          }}
+        />
+        <Box
+          onClick={props.onClick}
+          css={{
+            position: 'fixed',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+          }}
+        />
+      </>
     )}
     <Box
       {...props}
@@ -56,4 +70,4 @@ export default React.forwardRef((props, ref) =>
       </MDXProvider>
     </Box>
   </>
-)
+))
