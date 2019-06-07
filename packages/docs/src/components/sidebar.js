@@ -29,6 +29,7 @@ export default React.forwardRef((props, ref) =>
       css={{
         position: 'sticky',
         top: 0,
+        zIndex: 1,
         minWidth: 0,
         width: 256,
         flex: 'none',
