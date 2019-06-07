@@ -37,7 +37,7 @@ export default React.forwardRef((props, ref) =>
         maxHeight: '100vh',
         overflow: 'auto',
         WebkitOverflowScrolling: 'touch',
-        '@media screen and (max-width: 39.99em)': {
+        [props.fullwidth ? '@media screen' : '@media screen and (max-width: 39.99em)']: {
           bg: 'background',
           marginLeft: -256,
           transition: 'transform .2s ease-out',
