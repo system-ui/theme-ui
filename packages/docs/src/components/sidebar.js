@@ -13,26 +13,16 @@ const components = {
 export default React.forwardRef((props, ref) =>
   <>
     {props.open && (
-      <>
-        <Global
-          styles={{
-            body: {
-              position: 'fixed',
-              overflow: 'hidden',
-            }
-          }}
-        />
-        <Box
-          onClick={props.onClick}
-          css={{
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-          }}
-        />
-      </>
+      <Box
+        onClick={props.onClick}
+        css={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        }}
+      />
     )}
     <Box
       {...props}
