@@ -1,0 +1,101 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# CSS Utility
+
+The `css` utility is intended for use with Emotion's `css` prop and allows you to seamlessly use values from your theme, use shortcuts for margin and padding, and add responsive styles with arrays.
+This utility comes from [`@styled-system/css`][styled-system/css], and you can find more information on the thinking behind this approach in [Styled System's docs](https://styled-system.com).
+
+## Usage
+
+If you're already using Emotion with the `css` prop in your application, you can import Theme UI's `css` utility and use it inline to use values from your theme.
+
+To set up an application to use Emotion's `css` prop, see the [Emotion docs](https://emotion.sh/docs/css-prop).
+
+```jsx
+// example with emotion css prop
+import React from 'react'
+import { css } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={css({
+      // values referencing scales defined in a theme
+      color: 'primary',
+      bg: 'lightgray',
+      fontFamily: 'body',
+      // raw CSS value
+      boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
+    })}
+  />
+```
+
+For a complete table of how CSS properties map to scales in your theme, see the [Styled System CSS docs](https://styled-system.com/css#theme-keys).
+
+## Custom Pragma
+
+If you're not currently using Emotion in your application, you can
+use the [custom pragma](/custom-pragma) to reference theme values directly
+in the `css` prop without the need to import the `css` utility.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={{
+      // values referencing scales defined in a theme
+      color: 'primary',
+      bg: 'lightgray',
+      fontFamily: 'body',
+      // raw CSS value
+      boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
+    }}
+  />
+```
+
+**Note:** This currently does **not** work with `babel-plugin-emotion`'s `cssPropOptimization` flag enabled.
+
+## Margin and Padding
+
+Margin and padding are treated as first-class citizens in Styled System,
+using values defined in the `theme.space` scale, and include an optional shorthand syntax for using negative space in your application.
+
+In addition to shorthands for applying margin and padding on the x- and y-axes, a terse naming convention can be used to quickly edit styles.
+
+```jsx
+// example of using margin and padding shorthand syntax
+<div
+  css={{
+    px: 3, // padding-left & padding-right
+    py: 4, // padding-top & padding-bottom
+    mb: 3, // margin-bottom
+  }}
+/>
+```
+
+## Responsive Values
+
+Styled System includes a shorthand syntax for writing mobile-first responsive styles using arrays as values.
+This is useful when you want to change a single property across multiple breakpoints without needing to write verbose media query syntax.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    {...props}
+    css={{
+      width: [ '100%', '50%', '25%' ],
+    }}
+  />
+```
+
+Read more in the [Styled System docs](https://styled-system.com/responsive-styles)
+
+[styled-system/css]: https://styled-system.com/css
