@@ -1,0 +1,270 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# Theme Specification
+
+Theme UI is based on the [System UI Theme Specification][], with a few **optional** additions.
+The keys used for each scale come from this specification, and naming conventions for colors and typography are included
+to help ensure deeper interoperability with components and modules from various other libraries and to help ensure that themes created with Theme UI are suitable for white-label-like applications.
+
+## Theme Scales
+
+The Theme UI `theme` object is made up of the following scales of values for use when styling UI.
+
+Theme Key | CSS Properties
+---|---
+`colors` | `color`, `background-color`, `border-color`
+`fonts` | `font-family`
+`fontSizes` | `font-size`
+`fontWeights`    | `font-weight`
+`lineHeights` | `line-height`
+| `space`          | `margin`, `margin-top`, `margin-right`, `margin-bottom`, `margin-left`, `padding`, `padding-top`, `padding-right`, `padding-bottom`, `padding-left`, `grid-gap`, `grid-column-gap`, `grid-row-gap` |
+| `letterSpacings` | `letter-spacing`
+| `sizes`          | `width`, `height`, `min-width`, `max-width`, `min-height`, `max-height`
+| `borders`        | `border`, `border-top`, `border-right`, `border-bottom`, `border-left`
+| `borderWidths`   | `border-width`
+| `borderStyles`   | `border-style`
+| `radii`          | `border-radius`
+| `shadows`        | `box-shadow`, `text-shadow`
+| `zIndices`       | `z-index`
+
+**Note:** A theme does not require that all these fields be present and can include additional values when needed.
+
+```js
+// example theme
+{
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#05a',
+    muted: '#f6f6f6f',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+}
+```
+
+## Color
+
+The `theme.colors` scale (i.e. color palette) should be an object literal with the following keys.
+
+Key | Description
+---|---
+`text`        | Body foreground color
+`background`  | Body background color
+`primary`     | Primary brand color for links, buttons, etc.
+`secondary`   | A secondary brand color for alternative styling
+`muted`       | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
+
+Any other color key may also be included, and raw color values can be included and aliased for the values above.
+
+## Color Modes
+
+In order to use Theme UI color modes, color scales should include *at least* a `text` and `background` color. This is used in the `ColorMode` component to set body foreground and background colors.
+Color modes should be defined as nested scales within a `theme.colors.modes` object.
+Each key in this object should correspond to a color mode name.
+Color mode names may be anything, but typically `light` and `dark` should be used for applications that use a dark mode.
+The `initialColorMode` key is required to enable color modes and will be used as the name for the root color palette.
+
+The root color object is used as the default color mode, and other modes can use partial objects with the default modes colors used as fallback values.
+
+```js
+// example color scale with modes
+{
+  initialColorMode: 'light',
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#05a',
+    muted: '#f6f6f6f',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+        secondary: '#09c',
+        muted: '#111',
+      },
+      papaya: {
+        // this color mode will fallback to the root color object
+        // for values not defined here
+        text: '#433',
+        background: 'papayawhip',
+      },
+    },
+  },
+}
+```
+
+## Typography
+
+To ensure that themes built for Theme UI are as portable and interoperable as possible, the following keys should be defined within each theme scale.
+Additional keys can be included for more complex styling.
+
+- `fonts`
+  - `body`: default body font family
+  - `heading`: default heading font family
+  - `monospace`: default monospace font family for `<pre>`, `<code>`, etc.
+- `fontWeights`
+  - `body`: body font weight
+  - `heading`: default heading font weight
+  - `bold`: default bold font weight
+- `lineHeights`
+  - `body`: body line height
+  - `heading`: default heading line height
+
+## Font Sizes (Typographic Scale)
+
+Font sizes are typically defined as an array, from smallest to largest.
+
+**Note:** This is *not* required, and plain objects will work as well.
+
+```js
+// example fontSizes scale
+{
+  fontSizes: [
+    12, 14, 16, 20, 24, 32, 48, 64,
+  ],
+}
+```
+
+Typically, these values should roughly map to heading levels, but is not required.
+
+Index | Heading-Level Equivalent
+---|---
+0 | `h6`
+1 | `h5`
+2 | `h4`
+3 | `h3`
+4 | `h2`
+5 | `h1`
+
+## Variants
+
+Theme UI currently does *not* have standards for defining combinations of typographic styles, but *variants* can be used for situations where it is useful to reuse combinations of these primitive values.
+
+```js
+// example typographic style variants
+{
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  // variants can use custom, user-defined names
+  textStyles: {
+    heading: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+    },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.1em',
+    },
+  },
+}
+```
+
+## Styles
+
+The Theme UI `styles` object is primarily used as a mechanism to style MDX content
+and helps avoid the need to use global CSS.
+The styles defined within this object can also be used with the [`Styled`](/styled) component.
+
+The `theme.styles` object may include the following keys:
+
+- `p` (paragraph)
+- `a` (anchor link)
+- `h1` (heading)
+- `h2`
+- `h3`
+- `h4`
+- `h5`
+- `h6`
+- `img`
+- `pre`
+- `code`
+- `ol` (ordered list)
+- `ul` (unordered list)
+- `li` (list item)
+- `blockquote`
+- `hr` (horizontal rule)
+- `em` (emphasis)
+- `table`
+- `tr` (table row)
+- `th` (table header)
+- `td` (table data)
+- `strong`
+- `delete`
+- `b` (bold)
+- `i` (italic)
+- `inlineCode` (MDX-specific key for `<code>` that is not a child of `<pre>`
+- `thematicBreak` (MDX-specific key for `<hr>`)
+- `div` (not rendered in MDX)
+- `root` (internal theme-ui)
+
+Objects within `theme.styles` can reference other values in the `theme` object.
+For example, headings can be defined with values from the typographic scales.
+
+```js
+// example heading styles
+{
+  styles: {
+    h1: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      fontSize: 5,
+    },
+  },
+}
+```
+
+Variants can also used within the `theme.styles` object.
+
+```js
+// example heading using text styles variant
+{
+  // ...base theme object
+  textStyles: {
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    }
+  },
+  styles: {
+    h1: {
+      variant: 'textStyles.heading',
+      fontSize: 5,
+    }
+  }
+}
+```
+
+[System UI Theme Specification]: https://system-ui.com/theme
