@@ -5,12 +5,14 @@ export default Layout
 # Theme Specification
 
 Theme UI is based on the [System UI Theme Specification][], with a few **optional** additions.
-The keys used for each scale come from this specification, and naming conventions for colors and typography are included
-to help ensure deeper interoperability with components and modules from various other libraries and to help ensure that themes created with Theme UI are suitable for white-label-like applications.
+The keys used in the `theme` object come from this specification.
+Additionally, naming conventions for colors and typography are included
+to help ensure deeper interoperability with components from various other libraries.
+This is also intended to help ensure that themes created for Theme UI are suitable for white-label-like applications.
 
 ## Theme Scales
 
-The Theme UI `theme` object is made up of the following scales of values for use when styling UI.
+The `theme` object is made up of the following scales (i.e. property-specific objects) for use in CSS styles.
 
 Theme Key | CSS Properties
 ---|---
@@ -39,6 +41,7 @@ Theme Key | CSS Properties
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
+    accent: '#609',
     muted: '#f6f6f6f',
   },
   fonts: {
@@ -68,9 +71,16 @@ Key | Description
 `background`  | Body background color
 `primary`     | Primary brand color for links, buttons, etc.
 `secondary`   | A secondary brand color for alternative styling
+`accent`      | A contrast color for emphasizing UI
 `muted`       | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
 
 Any other color key may also be included, and raw color values can be included and aliased for the values above.
+
+<!--
+## Aliasing Colors
+
+TK
+-->
 
 ## Color Modes
 
@@ -143,7 +153,8 @@ Font sizes are typically defined as an array, from smallest to largest.
 }
 ```
 
-Typically, these values should roughly map to heading levels, but is not required.
+The index values of the array can be thought of as mapping to heading levels.
+This does not mean that these values are in any way tied to specific heading levels or HTML elements, but is meant for illustration purposes only.
 
 Index | Heading-Level Equivalent
 ---|---
