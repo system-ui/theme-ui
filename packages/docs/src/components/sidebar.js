@@ -11,34 +11,25 @@ const components = {
 }
 
 export default React.forwardRef((props, ref) => (
-  <>
+  <React.Fragment>
     {props.open && (
-      <>
-        {/* todo: this is still buggy
-          <Global
-            styles={{
-              body: {
-                position: 'fixed',
-                // top: 0,
-                right: 0,
-                // bottom: 0,
-                left: 0,
-                overflow: 'hidden',
-              }
-            }}
-          />
-        */}
-        <Box
-          onClick={props.onClick}
-          css={{
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
+      <Box
+        onClick={props.onClick}
+        css={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        }}>
+        <Global
+          styles={{
+            body: {
+              overflow: 'hidden',
+            }
           }}
         />
-      </>
+      </Box>
     )}
     <Box
       {...props}
@@ -71,5 +62,5 @@ export default React.forwardRef((props, ref) => (
         <Content />
       </MDXProvider>
     </Box>
-  </>
+  </React.Fragment>
 ))
