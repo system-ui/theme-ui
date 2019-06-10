@@ -3,7 +3,6 @@ import React, {
   useEffect,
   useLayoutEffect,
 } from 'react'
-import merge from 'lodash.merge'
 import { css } from '@styled-system/css'
 import { Global } from '@emotion/core'
 import { useThemeUI } from './context'

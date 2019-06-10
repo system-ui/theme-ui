@@ -8,7 +8,7 @@ exports[`renders Box 1`] = `
 
 exports[`renders Container 1`] = `
 <div
-  className="css-1uc3ui9"
+  className="css-19qqkc9-Container"
 />
 `;
 
@@ -20,24 +20,24 @@ exports[`renders Flex 1`] = `
 
 exports[`renders Footer 1`] = `
 <footer
-  className="css-80zs6q"
+  className="css-1d8xoy2-Footer"
 />
 `;
 
 exports[`renders Header 1`] = `
 <header
-  className="css-80zs6q"
+  className="css-wt9q2b-Header"
 />
 `;
 
 exports[`renders Layout 1`] = `
 <div
-  className="css-1eiazfv"
+  className="css-bybl85-Layout"
 />
 `;
 
 exports[`renders Main 1`] = `
 <div
-  className="css-3url3g"
+  className="css-6mqgjm-Main"
 />
 `;
