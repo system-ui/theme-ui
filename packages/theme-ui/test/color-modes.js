@@ -75,7 +75,7 @@ test('color mode is passed through theme context', () => {
     mode = colorMode
     return (
       <button
-        css={{
+        scss={{
           color: 'text'
         }}
         onClick={e => {

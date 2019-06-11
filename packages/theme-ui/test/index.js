@@ -1,6 +1,6 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import {
@@ -104,18 +104,3 @@ test('components accept an `as` prop', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('custom pragma adds styles', () => {
-  const json = renderJSON(
-    jsx('div', {
-      css: {
-        mx: 'auto',
-        p: 2,
-        bg: 'tomato',
-      }
-    })
-  )
-  expect(json).toHaveStyleRule('margin-left', 'auto')
-  expect(json).toHaveStyleRule('margin-right', 'auto')
-  expect(json).toHaveStyleRule('padding', '8px')
-  expect(json).toHaveStyleRule('background-color', 'tomato')
-})
