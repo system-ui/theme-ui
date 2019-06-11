@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { space } from 'styled-system'
+import space from '@styled-system/space'
 import themed from './themed'
 
 const tags = [

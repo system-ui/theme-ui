@@ -17,15 +17,16 @@
     "@mdx-js/react": "^1.0.0"
   },
   "dependencies": {
+    "@styled-system/color": "^5.0.5",
+    "@styled-system/core": "^5.0.5",
     "@styled-system/css": "^5.0.5",
+    "@styled-system/space": "^5.0.6",
     "deepmerge": "^3.2.0",
-    "react": "^16.8.0",
-    "styled-system": "^5.0.5"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",
-    "@mdx-js/react": "^1.0.0",
-    "babel-plugin-emotion": "10.0.9"
+    "@mdx-js/react": "^1.0.0"
   }
 }
