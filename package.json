@@ -45,6 +45,9 @@
         "lines": 90,
         "statements": 90
       }
-    }
+    },
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
   }
 }
