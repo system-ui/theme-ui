@@ -19,11 +19,10 @@ exports.onCreateWebpackConfig = ({ actions, loaders, store }, opts) => {
       if (theme.themeConfig && theme.themeConfig.plugins) {
         hasThemePlugin = theme.themeConfig.plugins.includes(pkg.name)
       }
-      if (hasThemePlugin) {
-        const filepath = path.join(theme.themeDir, 'src', 'theme.js')
-        if (hasModule(theme.themeDir)) {
-          themeModules.push(filepath)
-        }
+      if (hasThemePlugin && hasModule(theme.themeDir)) {
+        themeModules.push(
+          path.join(theme.themeDir, 'src', 'theme')
+        )
       }
     })
   }

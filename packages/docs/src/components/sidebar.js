@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, Box } from 'theme-ui'
+import { Global } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import NavLink from './nav-link'
 import Content from '../sidebar.mdx'
@@ -9,8 +10,8 @@ const components = {
   a: NavLink,
 }
 
-export default React.forwardRef((props, ref) =>
-  <>
+export default React.forwardRef((props, ref) => (
+  <React.Fragment>
     {props.open && (
       <Box
         onClick={props.onClick}
@@ -20,8 +21,15 @@ export default React.forwardRef((props, ref) =>
           right: 0,
           bottom: 0,
           left: 0,
-        }}
-      />
+        }}>
+        <Global
+          styles={{
+            body: {
+              overflow: 'hidden',
+            }
+          }}
+        />
+      </Box>
     )}
     <Box
       {...props}
@@ -29,15 +37,16 @@ export default React.forwardRef((props, ref) =>
       css={{
         position: 'sticky',
         top: 0,
+        zIndex: 1,
         minWidth: 0,
         width: 256,
         flex: 'none',
         px: 3,
         py: 3,
-        maxHeight: '100vh',
+        maxHeight: 'calc(100vh - 64px)',
         overflow: 'auto',
         WebkitOverflowScrolling: 'touch',
-        '@media screen and (max-width: 39.99em)': {
+        [props.fullwidth ? '@media screen' : '@media screen and (max-width: 39.99em)']: {
           bg: 'background',
           marginLeft: -256,
           transition: 'transform .2s ease-out',
@@ -53,5 +62,5 @@ export default React.forwardRef((props, ref) =>
         <Content />
       </MDXProvider>
     </Box>
-  </>
-)
+  </React.Fragment>
+))

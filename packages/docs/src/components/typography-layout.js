@@ -16,7 +16,7 @@ import GoogleFonts from './google-fonts'
 import Button from './button'
 import themes from './typography-themes'
 import typographyThemes from './typography-themes'
-import baseTheme from '../theme'
+import baseTheme from '../gatsby-theme-ui'
 
 const themeNames = Object.keys(themes)
 

@@ -36,6 +36,10 @@
       "text",
       "html"
     ],
+    "collectCoverageFrom": [
+      "packages/**/src/*.js",
+      "!packages/docs/**/*"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,
@@ -43,6 +47,9 @@
         "lines": 90,
         "statements": 90
       }
-    }
+    },
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
   }
 }

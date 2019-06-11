@@ -1,3 +1,7 @@
+// other themes can be imported to use as an extension
+// import baseTheme from 'demo-theme/src/gatsby-theme-ui'
+// console.log('base theme', typeof baseTheme, baseTheme)
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
@@ -63,6 +67,9 @@ export default {
     body: 1.5,
     heading: 1.25,
   },
+  textStyles: {
+    heading,
+  },
   styles: {
     Header: {
       color: 'header.text',
@@ -82,27 +89,27 @@ export default {
       fontWeight: 'body',
     },
     h1: {
-      ...heading,
+      variant: 'textStyles.heading',
       fontSize: 6,
     },
     h2: {
-      ...heading,
+      variant: 'textStyles.heading',
       fontSize: 5,
     },
     h3: {
-      ...heading,
+      variant: 'textStyles.heading',
       fontSize: 4,
     },
     h4: {
-      ...heading,
+      variant: 'textStyles.heading',
       fontSize: 3,
     },
     h5: {
-      ...heading,
+      variant: 'textStyles.heading',
       fontSize: 2,
     },
     h6: {
-      ...heading,
+      variant: 'textStyles.heading',
       fontSize: 1,
     },
     a: {
