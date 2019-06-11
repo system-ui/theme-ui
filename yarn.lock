@@ -14347,6 +14347,13 @@ react-ssr-prepass@1.0.2:
   dependencies:
     object-is "^1.0.1"
 
+react-switch@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-switch/-/react-switch-5.0.0.tgz#ecbb666f8789cb8138b3ba1160bc3745390ab502"
+  integrity sha512-+zxY9xj9dMc8Y4gv/kkqQrirfEiIQ+SlQfJDW1Wi81L3xoh1fcbBYyJyh0TnhM/U/b6HxuBmkmU4Ooxgtuoavw==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-test-renderer@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.8.6.tgz#188d8029b8c39c786f998aa3efd3ffe7642d5ba1"
@@ -16526,6 +16533,16 @@ tfunk@^3.0.1:
   dependencies:
     chalk "^1.1.1"
     object-path "^0.9.0"
+
+theme-ui@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.1.0.tgz#a58893c065bd5fac6ad66b250d1e4f8afcd5a067"
+  integrity sha512-5QEhNAai8qXFXxQMBfZt6dlwxNE9D8oTRBbQbZxSRRjn7ZrR7kBLnJIA+5bgzeq1XDIxYWbs4sYcFzf6IfnLJw==
+  dependencies:
+    "@styled-system/css" "^5.0.5"
+    lodash.merge "^4.6.0"
+    react "^16.8.0"
+    styled-system "^5.0.5"
 
 throat@^3.0.0:
   version "3.2.0"

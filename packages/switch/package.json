@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/switch",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Toggle switch UI component",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "react": "^16.8.6",
+    "react-switch": "^5.0.0",
     "theme-ui": "0.1.0"
   }
 }

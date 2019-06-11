@@ -1,7 +1,7 @@
 
 # @theme-ui/switch
 
-Accessible, controlled toggle switch UI component
+Accessible, controlled toggle switch UI component built with [react-switch][]
 
 ```sh
 npm i @theme-ui/switch
@@ -16,9 +16,9 @@ export default props => {
 
   return (
     <Switch
-      label='Toggle dark mode'
+      aria-label='Toggle dark mode'
       checked={checked}
-      onClick={e => {
+      onChange={e => {
         setChecked(!checked)
       }}
     />
@@ -31,49 +31,31 @@ export default props => {
 ```jsx
 // custom icons
 <Switch
-  icons={{
-    checked: <OnIcon />,
-    unchecked: <OffIcon />,
-  }}
-/>
-```
-
-```jsx
-// custom thumb
-<Switch
-  thumb={<Thumb />}
+  checkedIcon={<OnIcon />}
+  uncheckedIcon={<OffIcon />}
 />
 ```
 
 ```jsx
 // custom styles with css prop
 <Switch
-  thumb={(
-    <Thumb
-      css={{
-        bg: 'tomato',
-      }}
-    />
-  )}
   css={{
     bg: 'black',
-    '&.active': {
-      bg: 'primary',
-    }
   }}
 />
 ```
 
 ## Props
 
-- `checked` (boolean) checked state
-- `onClick` (function) click handler
-- `label` (string) ARIA label
-- `icons` (object) custom icons
-  - `icons.checked` (element) left icon
-  - `icons.unchecked` (element) right icon
-- `thumb` (element) optional custom thumb element
+The Switch component accepts the same props as [react-switch](https://github.com/markusenglund/react-switch#api), including:
 
-All other props are passed directly to the root `<button>` element.
+- `checked` (boolean) checked state
+- `onChange` (function) change handler
+- `checkedIcon` (element or boolean) left icon
+- `uncheckedIcon` (element or boolean) right icon
+
+All props are passed directly to the react-switch component.
 
 MIT License
+
+[react-switch]: https://github.com/markusenglund/react-switch
