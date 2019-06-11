@@ -1,43 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Box 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
 <div
-  className="css-1xi4blx"
+  className="emotion-0"
 />
 `;
 
 exports[`renders Container 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+}
+
 <div
-  className="css-1uc3ui9"
+  className="emotion-0"
 />
 `;
 
 exports[`renders Flex 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="css-80zs6q"
+  className="emotion-0"
 />
 `;
 
 exports[`renders Footer 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <footer
-  className="css-80zs6q"
+  className="emotion-0"
 />
 `;
 
 exports[`renders Header 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <header
-  className="css-80zs6q"
+  className="emotion-0"
 />
 `;
 
 exports[`renders Layout 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 <div
-  className="css-1eiazfv"
+  className="emotion-0"
 />
 `;
 
 exports[`renders Main 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  min-width: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
 <main
-  className="css-3url3g"
+  className="emotion-0"
 />
 `;
