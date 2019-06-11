@@ -67,7 +67,7 @@ export default props => {
           <Box mx='auto' />
           <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
           <Button
-            css={{
+            scss={{
               ml: 2,
             }}
             onClick={cycleMode}>
@@ -76,7 +76,7 @@ export default props => {
         </Header>
         <Main>
           <Container
-            css={{
+            scss={{
               p: 0,
               display: 'flex',
               maxWidth: props.fullwidth ? 'none' : '',

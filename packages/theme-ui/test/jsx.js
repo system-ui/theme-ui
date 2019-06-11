@@ -47,3 +47,10 @@ test('scss and css prop can be used together', () => {
   expect(json).toHaveStyleRule('background-color', 'tomato')
   expect(json).toHaveStyleRule('margin', '0')
 })
+
+test('custom pragma handles null props', () => {
+  const json = renderJSON(
+    jsx('h1', null, 'hello')
+  )
+  expect(json).toMatchSnapshot()
+})

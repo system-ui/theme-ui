@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 const heading = Tag => props => !!props.id ? (
   <Tag {...props}>
     <a href={`#${props.id}`}
-      css={{
+      scss={{
         color: 'inherit',
         textDecoration: 'none',
         ':hover': {

@@ -15,7 +15,7 @@ export default React.forwardRef((props, ref) => (
     {props.open && (
       <Box
         onClick={props.onClick}
-        css={{
+        scss={{
           position: 'fixed',
           top: 0,
           right: 0,
@@ -34,7 +34,7 @@ export default React.forwardRef((props, ref) => (
     <Box
       {...props}
       ref={ref}
-      css={{
+      scss={{
         position: 'sticky',
         top: 0,
         zIndex: 1,

@@ -50,7 +50,7 @@ export default props =>
       color='background'
       bg='primary'>
       <Container
-        css={{
+        scss={{
           display: 'flex',
           flexDirection: [ 'column', 'column', 'row' ],
           alignItems: [ 'flex-start', 'flex-start', 'center' ],
@@ -59,7 +59,7 @@ export default props =>
         <Logo
           size='1em'
           color='currentcolor'
-          css={{
+          scss={{
             fontSize: [ 96, 96, 160 ],
           }}
         />

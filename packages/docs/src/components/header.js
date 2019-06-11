@@ -8,7 +8,7 @@ import {
 export default props =>
   <Header>
     <Container
-      css={{
+      scss={{
         display: 'flex',
         alignItems: 'center',
       }}>

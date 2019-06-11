@@ -21,7 +21,7 @@ const PaginationLink = ({ label, ...props }) =>
   <NavLink {...props}>
     <div>{label}</div>
     <div
-      css={{
+      scss={{
         fontSize: 3,
       }}>
       {props.children}

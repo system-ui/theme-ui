@@ -38,7 +38,7 @@ For a complete table of how CSS properties map to scales in your theme, see the 
 
 If you're not currently using Emotion in your application, you can
 use the [custom pragma](/custom-pragma) to reference theme values directly
-in the `css` prop without the need to import the `css` utility.
+in the `scss` (System CSS) prop without the need to import the `css` utility.
 
 ```jsx
 /** @jsx jsx */
@@ -47,7 +47,7 @@ import { jsx } from 'theme-ui'
 export default props =>
   <div
     {...props}
-    css={{
+    scss={{
       // values referencing scales defined in a theme
       color: 'primary',
       bg: 'lightgray',
@@ -57,8 +57,6 @@ export default props =>
     }}
   />
 ```
-
-**Note:** This currently does **not** work with `babel-plugin-emotion`'s `cssPropOptimization` flag enabled.
 
 ## Margin and Padding
 
@@ -70,7 +68,7 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 ```jsx
 // example of using margin and padding shorthand syntax
 <div
-  css={{
+  scss={{
     px: 3, // padding-left & padding-right
     py: 4, // padding-top & padding-bottom
     mb: 3, // margin-bottom
@@ -90,7 +88,7 @@ import { jsx } from 'theme-ui'
 export default props =>
   <div
     {...props}
-    css={{
+    scss={{
       width: [ '100%', '50%', '25%' ],
     }}
   />

@@ -24,7 +24,7 @@ const ThemeSelect = props =>
   <div>
     <label
       htmlFor={props.name}
-      css={{
+      scss={{
         fontSize: 16,
         mr: 2,
       }}>
@@ -33,7 +33,7 @@ const ThemeSelect = props =>
     <select
       id={props.name}
       {...props}
-      css={{
+      scss={{
         fontFamily: 'system-ui, sans-serif',
         fontSize: 16,
         p: 2,
@@ -67,7 +67,7 @@ export default props => {
           }}
         />
         <Button
-          css={{
+          scss={{
             ml: 2,
           }}
           onClick={e => {

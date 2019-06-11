@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 export default props =>
   <button
     {...props}
-    css={{
+    scss={{
       appearance: 'none',
       fontFamily: 'inherit',
       fontSize: 1,

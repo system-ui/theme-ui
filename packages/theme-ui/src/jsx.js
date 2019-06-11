@@ -1,17 +1,11 @@
 import { jsx as emotion } from '@emotion/core'
 import css from '@styled-system/css'
 
-// todo:
-// - handle functions or objects
-// - handle multiple arguments (arrays)
-const handleFunction = css => theme => typeof css === 'function'
-  ? css(theme)
-  : css
-
-const getCSS = props => theme => props.scss ? [
-  css(props.scss)(theme),
-  handleFunction(props.css)(theme),
-] : props.css
+const getCSS = props => theme => {
+  const styles = css(props.scss)(theme)
+  const raw = typeof props.css === 'function' ? props.css(theme) : props.css
+  return [ styles, raw ]
+}
 
 export const jsx = (type, props, ...children) =>
   emotion.apply(undefined, [
