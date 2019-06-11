@@ -46,6 +46,7 @@ export const Header = props =>
 
 export const Main = props =>
   jsx(Box, {
+    as: 'main',
     ...props,
     css: {
       flex: '1 1 auto',
