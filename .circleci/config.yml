@@ -15,4 +15,4 @@ jobs:
           paths:
             - node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
-      - run: NODE_ENV=development yarn test --coverage
+      - run: NODE_ENV=development yarn list --pattern emotion && yarn test --coverage
