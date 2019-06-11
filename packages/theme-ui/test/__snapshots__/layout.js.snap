@@ -37,7 +37,7 @@ exports[`renders Layout 1`] = `
 `;
 
 exports[`renders Main 1`] = `
-<div
+<main
   className="css-3url3g"
 />
 `;
