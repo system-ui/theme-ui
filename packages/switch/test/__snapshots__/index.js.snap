@@ -1,84 +1,302 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-<button
-  aria-label="Toggle"
-  className="  css-1veo4a4"
-  role="switch"
-  type="button"
+.emotion-0 {
+  background-color: primary;
+}
+
+<div
+  className="emotion-0"
+  style={
+    Object {
+      "MozTransition": "opacity 0.25s",
+      "MozUserSelect": "none",
+      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+      "WebkitTransition": "opacity 0.25s",
+      "WebkitUserSelect": "none",
+      "borderRadius": 12,
+      "direction": "ltr",
+      "display": "inline-block",
+      "msUserSelect": "none",
+      "opacity": 1,
+      "position": "relative",
+      "textAlign": "left",
+      "touchAction": "none",
+      "transition": "opacity 0.25s",
+      "userSelect": "none",
+    }
+  }
 >
   <div
-    className="css-vvwdnd"
+    className="react-switch-bg"
+    onClick={[Function]}
+    onMouseDown={[Function]}
     style={
       Object {
-        "left": 0,
-        "position": "absolute",
-        "top": 0,
-        "transform": "translateX(0)",
-        "transitionDuration": "0.1s",
-        "transitionProperty": "transform",
-        "transitionTimingFunction": "ease-out",
+        "MozTransition": "background 0.25s",
+        "WebkitTransition": "background 0.25s",
+        "background": "#NaNNaNNaN",
+        "borderRadius": 12,
+        "cursor": "pointer",
+        "height": 24,
+        "margin": 0,
+        "position": "relative",
+        "transition": "background 0.25s",
+        "width": 48,
       }
     }
   />
-</button>
+  <div
+    className="react-switch-handle"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "MozTransition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "WebkitTransition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "background": "#ffffff",
+        "border": 0,
+        "borderRadius": "50%",
+        "boxShadow": null,
+        "cursor": "pointer",
+        "display": "inline-block",
+        "height": 24,
+        "outline": 0,
+        "position": "absolute",
+        "top": 0,
+        "transform": "translateX(0px)",
+        "transition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "width": 24,
+      }
+    }
+  />
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyUp={[Function]}
+    role="switch"
+    style={
+      Object {
+        "border": 0,
+        "clip": "rect(0 0 0 0)",
+        "height": 1,
+        "margin": -1,
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "absolute",
+        "width": 1,
+      }
+    }
+    type="checkbox"
+  />
+</div>
 `;
 
 exports[`renders checked 1`] = `
-<button
-  aria-checked={true}
-  aria-label="Toggle"
-  className=" active css-1lodfny"
-  role="switch"
-  type="button"
+.emotion-0 {
+  background-color: primary;
+}
+
+<div
+  className="emotion-0"
+  style={
+    Object {
+      "MozTransition": "opacity 0.25s",
+      "MozUserSelect": "none",
+      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+      "WebkitTransition": "opacity 0.25s",
+      "WebkitUserSelect": "none",
+      "borderRadius": 12,
+      "direction": "ltr",
+      "display": "inline-block",
+      "msUserSelect": "none",
+      "opacity": 1,
+      "position": "relative",
+      "textAlign": "left",
+      "touchAction": "none",
+      "transition": "opacity 0.25s",
+      "userSelect": "none",
+    }
+  }
 >
   <div
-    className="css-vvwdnd"
+    className="react-switch-bg"
+    onClick={[Function]}
+    onMouseDown={[Function]}
     style={
       Object {
-        "left": 0,
-        "position": "absolute",
-        "top": 0,
-        "transform": "translateX(100%)",
-        "transitionDuration": "0.1s",
-        "transitionProperty": "transform",
-        "transitionTimingFunction": "ease-out",
+        "MozTransition": "background 0.25s",
+        "WebkitTransition": "background 0.25s",
+        "background": "#NaNNaNNaN",
+        "borderRadius": 12,
+        "cursor": "pointer",
+        "height": 24,
+        "margin": 0,
+        "position": "relative",
+        "transition": "background 0.25s",
+        "width": 48,
       }
     }
   />
-</button>
+  <div
+    className="react-switch-handle"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "MozTransition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "WebkitTransition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "background": "#ffffff",
+        "border": 0,
+        "borderRadius": "50%",
+        "boxShadow": null,
+        "cursor": "pointer",
+        "display": "inline-block",
+        "height": 24,
+        "outline": 0,
+        "position": "absolute",
+        "top": 0,
+        "transform": "translateX(24px)",
+        "transition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "width": 24,
+      }
+    }
+  />
+  <input
+    checked={true}
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyUp={[Function]}
+    role="switch"
+    style={
+      Object {
+        "border": 0,
+        "clip": "rect(0 0 0 0)",
+        "height": 1,
+        "margin": -1,
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "absolute",
+        "width": 1,
+      }
+    }
+    type="checkbox"
+  />
+</div>
 `;
 
 exports[`renders with icons 1`] = `
-<button
-  aria-label="Toggle"
-  className="  css-1veo4a4"
-  role="switch"
-  type="button"
+.emotion-0 {
+  background-color: primary;
+}
+
+<div
+  className="emotion-0"
+  style={
+    Object {
+      "MozTransition": "opacity 0.25s",
+      "MozUserSelect": "none",
+      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+      "WebkitTransition": "opacity 0.25s",
+      "WebkitUserSelect": "none",
+      "borderRadius": 12,
+      "direction": "ltr",
+      "display": "inline-block",
+      "msUserSelect": "none",
+      "opacity": 1,
+      "position": "relative",
+      "textAlign": "left",
+      "touchAction": "none",
+      "transition": "opacity 0.25s",
+      "userSelect": "none",
+    }
+  }
 >
-  <span
-    className="css-1n11h4v"
-  >
-    on
-  </span>
-  <span
-    className="css-1n11h4v"
-  >
-    off
-  </span>
   <div
-    className="css-vvwdnd"
+    className="react-switch-bg"
+    onClick={[Function]}
+    onMouseDown={[Function]}
     style={
       Object {
-        "left": 0,
-        "position": "absolute",
-        "top": 0,
-        "transform": "translateX(0)",
-        "transitionDuration": "0.1s",
-        "transitionProperty": "transform",
-        "transitionTimingFunction": "ease-out",
+        "MozTransition": "background 0.25s",
+        "WebkitTransition": "background 0.25s",
+        "background": "#NaNNaNNaN",
+        "borderRadius": 12,
+        "cursor": "pointer",
+        "height": 24,
+        "margin": 0,
+        "position": "relative",
+        "transition": "background 0.25s",
+        "width": 48,
       }
     }
   />
-</button>
+  <div
+    className="react-switch-handle"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "MozTransition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "WebkitTransition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "background": "#ffffff",
+        "border": 0,
+        "borderRadius": "50%",
+        "boxShadow": null,
+        "cursor": "pointer",
+        "display": "inline-block",
+        "height": 24,
+        "outline": 0,
+        "position": "absolute",
+        "top": 0,
+        "transform": "translateX(0px)",
+        "transition": "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+        "width": 24,
+      }
+    }
+  />
+  <input
+    disabled={false}
+    icons={
+      Object {
+        "checked": "on",
+        "unchecked": "off",
+      }
+    }
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyUp={[Function]}
+    role="switch"
+    style={
+      Object {
+        "border": 0,
+        "clip": "rect(0 0 0 0)",
+        "height": 1,
+        "margin": -1,
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "absolute",
+        "width": 1,
+      }
+    }
+    type="checkbox"
+  />
+</div>
 `;
