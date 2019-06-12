@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<style>
+body {
+  --text: black;
+  --background: white;
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+}
+pre {
+  font-family: Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --text: white;
+    --background: black;
+  }
+}
+</style>
+
+<h1>theme-ui</h1>
+<div id=root></div>
+<script src='panel.js'></script>

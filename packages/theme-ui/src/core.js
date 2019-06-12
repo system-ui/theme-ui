@@ -8,6 +8,12 @@ import themed from './themed'
 import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 
+const devtool = process.env.NODE_ENV !== 'production' && typeof window !== 'undefined'
+if (devtool) {
+  // experimental: for devtools
+  window.__THEME_UI__ = {}
+}
+
 const createComponents = (components = {}) => {
   const next = {}
   Object.keys(components).forEach(key => {
@@ -37,6 +43,11 @@ export const ThemeProvider = ({
     context.theme = merge({}, context.theme, {
       colors: get(modes, context.colorMode, context.theme.colors)
     })
+  }
+
+  if (devtool) {
+    window.__THEME_UI__ = context
+    window.BEEP = 'BEEP'
   }
 
   return (
