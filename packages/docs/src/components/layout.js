@@ -29,7 +29,7 @@ const modes = [
 
 export default props => {
   const [ menuOpen, setMenuOpen ] = useState(false)
-  const [ mode, setMode ] = useColorMode()
+  const [ mode, setMode ] = {} // useColorMode()
   const nav = useRef(null)
 
   const cycleMode = e => {

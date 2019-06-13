@@ -1,4 +1,3 @@
-export { css } from '@styled-system/css'
 export { jsx } from './jsx'
 export { ThemeProvider } from './core'
 export { Context, useThemeUI } from './context'
@@ -17,8 +16,12 @@ export {
   Footer,
 } from './layout'
 
+// EXPERIMENTAL
+export { ThemeProvider as AltProvider } from './next-provider'
+
 // DEPRECATED
 export {
   ThemeProvider as ColorModeProvider,
   ThemeProvider as ComponentProvider
 } from './core'
+export { css } from '@styled-system/css'

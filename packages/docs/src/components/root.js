@@ -1,11 +1,13 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { ThemeProvider } from 'theme-ui'
+import { AltProvider as ThemeProvider, ColorMode } from 'theme-ui'
 import pkg from 'theme-ui/package.json'
-import components from './mdx-components'
+// import components from './mdx-components'
+
+import theme from '../gatsby-theme-ui'
 
 export default props =>
-  <ThemeProvider components={components}>
+  <ThemeProvider theme={theme}>
     <Helmet>
       <title>Theme UI</title>
       <meta name='description' content={pkg.description} />
@@ -17,5 +19,6 @@ export default props =>
       <meta name='twitter:title' content='Theme UI' />
       <meta name='twitter:description' content={pkg.description} />
     </Helmet>
+    <ColorMode />
     {props.children}
   </ThemeProvider>
