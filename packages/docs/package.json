@@ -19,6 +19,8 @@
     "@mdx-js/mdx": "^1.0.0-rc.0",
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^0.0.5",
+    "@theme-ui/presets": "0.1.5",
+    "@theme-ui/style-guide": "0.1.5",
     "demo-theme": "^0.1.5",
     "gatsby": "^2.3.6",
     "gatsby-plugin-catch-links": "^2.0.13",
