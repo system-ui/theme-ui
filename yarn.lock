@@ -2378,13 +2378,14 @@
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-5.0.5.tgz#b393528dda0d81a5cb5a2bbd69e8295eaea45124"
 
-"@styled-system/edit@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@styled-system/edit/-/edit-5.0.5.tgz#9ab7cfb0287d1c82fef372bb12f9c5bdfb2e8fd7"
-  integrity sha512-nzz3MLj9ouhLPrdlXjro3JjQBt8ruGc9JxeLP7BYlqN5vzLWYyJZ6M0A4nfk73D4QRROl9cpf2HKcZll65SARg==
+"@styled-system/edit@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@styled-system/edit/-/edit-0.0.5.tgz#38f48d921bb576265bb8fa67a1421fa4ce3f2be3"
+  integrity sha512-OInm/QeZwgcmn1L8BvoFjOtSd4AoaqAlLoW/PHvBsCUTrBnssMs7FRJEEw2K+sQ6JdO3gWmCuLKpUFps81SKnw==
   dependencies:
     "@emotion/core" "^10.0.10"
     color "^3.1.0"
+    emotion-theming "^10.0.10"
     lodash.get "^4.4.2"
     lodash.merge "^4.6.1"
     lodash.omit "^4.5.0"
@@ -7253,6 +7254,15 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
+
+emotion-theming@^10.0.10:
+  version "10.0.10"
+  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.10.tgz#efe8751119751bdc70fdc1795fe4cde0fb0cf14c"
+  integrity sha512-E4SQ3Y91avxxydDgubi/po/GaC5MM1XHm8kcClKg1PA/TeOye0PiLBzAzlgt9dBzDRV9+qHDunsayPvzVYIYng==
+  dependencies:
+    "@emotion/weak-memoize" "0.2.2"
+    hoist-non-react-statics "^3.3.0"
+    object-assign "^4.1.1"
 
 encodeurl@~1.0.1, encodeurl@~1.0.2:
   version "1.0.2"

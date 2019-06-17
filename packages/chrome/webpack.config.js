@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'panel'),
+    path: path.resolve(__dirname, 'bundle'),
     filename: 'index.js',
   },
   module: {

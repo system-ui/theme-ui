@@ -15,14 +15,16 @@ const mergeReducer = (state, next) => typeof next === 'function' ? Object.assign
 
 const App = props => {
   const [ state, setState ] = useReducer(mergeReducer, {
-    hook: null,
     theme: null,
     selected: null,
   })
 
   useEffect(() => {
+    /* this would depend on the react-devtools extension
+     * being installed as well
+     */
+    /*
     chrome.devtools.inspectedWindow.eval('window.__REACT_DEVTOOLS_GLOBAL_HOOK__.$0 = $0')
-
     chrome.devtools.inspectedWindow.eval(
       'window.__REACT_DEVTOOLS_GLOBAL_HOOK__', {},
       function (hook, e) {
@@ -31,9 +33,11 @@ const App = props => {
         setState({ hook })
       }
     )
+    */
 
     chrome.devtools.inspectedWindow.eval(
-      'window.__THEME_UI__.theme',
+      // 'window.__THEME_UI__.theme',
+      'window.__THEME_UI__',
       // { useContentScriptContextOptional: true, },
       function (theme, e) {
         if (e) return console.error(e)
@@ -46,10 +50,6 @@ const App = props => {
   return (
     <div>
       theme-ui
-      <pre>
-        {typeof state.hook}
-        {Object.keys(state.hook || {})}
-      </pre>
       <pre>{JSON.stringify(state.theme, null, 2)}</pre>
     </div>
   )
