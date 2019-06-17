@@ -10,6 +10,14 @@ const toHex = raw => {
   }
 }
 
+const Label = props =>
+  <label
+    {...props}
+    style={{
+      display: 'block'
+    }}
+  />
+
 export default ({
   theme = {},
   setTheme,
@@ -29,7 +37,7 @@ export default ({
             return false
           }
           return (
-            <label key={key}>
+            <Label key={key}>
               {key}
               <input
                 type='color'
@@ -42,9 +50,74 @@ export default ({
                   })
                 }}
               />
-            </label>
+            </Label>
           )
         })}
+      </div>
+    )}
+    {theme.fonts && (
+      <div>
+        <h2>Fonts</h2>
+        {Object.keys(theme.fonts).map(key => (
+          <Label key={key}>
+            {key}
+            <input
+              type='text'
+              value={theme.fonts[key]}
+              onChange={e => {
+                setTheme({
+                  fonts: {
+                    [key]: e.target.value
+                  }
+                })
+              }}
+            />
+          </Label>
+        ))}
+      </div>
+    )}
+    {theme.fontSizes && (
+      <div>
+        <h2>Font Sizes</h2>
+          {Array.isArray(theme.fontSizes) ? (
+            theme.fontSizes.map((n, i) => (
+              <Label key={i}>
+                <input
+                  type='number'
+                  value={n}
+                  onChange={e => {
+                    const n = parseInt(e.target.value)
+                    setTheme({
+                      fontSizes: [
+                        ...theme.fontSizes.slice(0, i),
+                        n,
+                        ...theme.fontSizes.slice(i + 1),
+                      ]
+                    })
+                  }}
+                />
+                (Array)
+              </Label>
+            ))
+          ): (
+            Object.keys(theme.fontSizes).map(key => (
+              <Label key={key}>
+                font size {key}
+                <input
+                  type='number'
+                  value={theme.fontSizes[key]}
+                  onChange={e => {
+                    const n = parseInt(e.target.value)
+                    setTheme({
+                      fontSizes: {
+                        [key]: n
+                      }
+                    })
+                  }}
+                />
+              </Label>
+            ))
+          )}
       </div>
     )}
   </form>

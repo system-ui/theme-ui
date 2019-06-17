@@ -18,7 +18,7 @@ export const Context = createContext({
 
 export const useThemeUI = () => useContext(Context)
 
-const merger = (state, next) => merge({}, state, next)
+const mergeState = (state, next) => merge({}, state, next)
 
 const createComponents = (components = {}) => {
   const next = {}
@@ -38,7 +38,7 @@ const applyColorMode = (theme, mode) => {
 
 export const useTheme = (opts) => {
   const outer = useContext(Context)
-  const [ theme, setTheme ] = useReducer(merger, opts.theme || {})
+  const [ theme, setTheme ] = useReducer(mergeState, opts.theme || {})
   const [ colorMode, setColorMode ] = useColorState(outer.colorMode || (opts.theme ? opts.theme.initialColorMode : undefined))
 
   const context = merge({}, {
@@ -53,7 +53,7 @@ export const useTheme = (opts) => {
   useEffect(() => {
     // todo: handle multiple instances
     // window.__THEME_UI__ = window.__THEME_UI__ || context
-    console.log('update global')
+    console.log('update global', theme, context.theme)
     window.__THEME_UI__ = context
   }, [context.theme])
 
