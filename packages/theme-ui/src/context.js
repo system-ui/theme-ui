@@ -1,7 +1,8 @@
 import {
   createContext,
   useContext,
-  useReducer
+  useReducer,
+  useEffect,
 } from 'react'
 import merge from 'lodash.merge'
 import { get } from '@styled-system/css'
@@ -48,6 +49,11 @@ export const useTheme = (opts) => {
     setTheme,
     components: createComponents(opts.components)
   })
+
+  useEffect(() => {
+    // todo: handle multiple instances
+    window.__THEME_UI__ = window.__THEME_UI__ || context
+  }, [opts.theme])
 
   return context
 }

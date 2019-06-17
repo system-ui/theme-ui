@@ -7,52 +7,66 @@ import { render } from 'react-dom'
 const div = document.getElementById('root')
 
 if (chrome.devtools.panels.themeName === 'dark') {
-  console.log('dark devtools')
   document.body.style = '--text:white;--background:black;'
 }
 
 const mergeReducer = (state, next) => typeof next === 'function' ? Object.assign({}, state, next(state)) : Object.assign({}, state, next)
 
+const runScript = (script) => {
+  return new Promise((resolve, reject) => {
+    chrome.devtools.inspectedWindow.eval(
+      script,
+      (result, err) => {
+        if (err) {
+          console.error(err)
+          reject(err)
+        }
+        resolve(result)
+      }
+    )
+  })
+}
+
 const App = props => {
   const [ state, setState ] = useReducer(mergeReducer, {
     theme: null,
-    selected: null,
   })
 
-  useEffect(() => {
-    /* this would depend on the react-devtools extension
-     * being installed as well
-     */
-    /*
-    chrome.devtools.inspectedWindow.eval('window.__REACT_DEVTOOLS_GLOBAL_HOOK__.$0 = $0')
-    chrome.devtools.inspectedWindow.eval(
-      'window.__REACT_DEVTOOLS_GLOBAL_HOOK__', {},
-      function (hook, e) {
-        if (e) return console.error(e)
-        console.log('hook', hook)
-        setState({ hook })
-      }
-    )
-    */
-
-    chrome.devtools.inspectedWindow.eval(
-      // 'window.__THEME_UI__.theme',
-      'window.__THEME_UI__',
-      // { useContentScriptContextOptional: true, },
-      function (theme, e) {
-        if (e) return console.error(e)
+  const getTheme = () => {
+    runScript(`window.__THEME_UI__.theme`)
+      .then(theme => {
+        if (!theme) return console.log('no theme!!', theme)
         setState({ theme })
-      }
-    )
-  }, [])
+      })
+  }
 
+  const setTheme = (next) => {
+    const json = JSON.stringify(next)
+    runScript(`window.__THEME_UI__.setTheme(${json})`)
+      .then(getTheme)
+  }
+
+  useEffect(() => {
+    getTheme()
+  }, [])
 
   return (
     <div>
-      theme-ui
+      <pre>theme-ui</pre>
+      <button
+        onClick={e => {
+          setTheme({ colors: { background: 'tomato' } })
+        }}>
+        Tomato
+      </button>
       <pre>{JSON.stringify(state.theme, null, 2)}</pre>
     </div>
   )
 }
 
 render(<App />, div)
+
+// Notes
+//
+// callback for when element selection changes
+// chrome.devtools.panels.elements.onSelectionChanged.addListener(updateSelection)
