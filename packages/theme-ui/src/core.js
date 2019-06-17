@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useReducer } from 'react'
 import { ThemeContext as EmotionContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
@@ -15,35 +14,6 @@ const createComponents = (components = {}) => {
     next[key] = styled(components[key])(themed(key))
   })
   return next
-}
-
-export const BaseProvider = ({
-  context,
-  children,
-}) =>
-  jsx(EmotionContext.Provider, { value: context.theme },
-    jsx(MDXProvider, { components: context.components },
-      jsx(Context.Provider, {
-        value: context,
-        children,
-      })
-    )
-  )
-
-// todo: consider ditching props.components API
-export const useThemeContext = (propsTheme) => {
-  const outer = useThemeUI()
-  const initialColorMode = outer.colorMode || (theme ? theme.initialColorMode : undefined)
-  const mergeReducer = (state, next) => Object.assign({}, state, next)
-  const [ theme, setTheme ] = useReducer(mergeReducer, merge({}, outer, propsTheme))
-  const [ colorMode, setColorMode ] = useColorState(initialColorMode)
-  const context = {
-    colorMode,
-    setColorMode,
-    theme,
-    setTheme,
-  }
-  return context
 }
 
 export const ThemeProvider = ({
@@ -70,7 +40,13 @@ export const ThemeProvider = ({
   }
 
   return (
-    jsx(BaseProvider, { context }, props.children)
+    jsx(EmotionContext.Provider, { value: context.theme },
+      jsx(MDXProvider, { components: context.components },
+        jsx(Context.Provider, {
+          value: context,
+          children: props.children
+        })
+      )
+    )
   )
 }
-

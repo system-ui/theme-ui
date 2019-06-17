@@ -2,9 +2,8 @@
   "name": "theme-ui",
   "version": "0.1.5",
   "description": "Build consistent, themeable React UIs based on design system constraints and design tokens",
-  "__main": "dist/index.js",
-  "__module": "dist/index.esm.js",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
@@ -19,9 +18,7 @@
   },
   "dependencies": {
     "@styled-system/css": "^5.0.5",
-    "lodash.get": "^4.4.2",
     "lodash.merge": "^4.6.0",
-    "object-assign": "^4.1.1",
     "react": "^16.8.0",
     "styled-system": "^5.0.5"
   },
