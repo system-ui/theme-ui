@@ -52,8 +52,10 @@ export const useTheme = (opts) => {
 
   useEffect(() => {
     // todo: handle multiple instances
-    window.__THEME_UI__ = window.__THEME_UI__ || context
-  }, [opts.theme])
+    // window.__THEME_UI__ = window.__THEME_UI__ || context
+    console.log('update global')
+    window.__THEME_UI__ = context
+  }, [context.theme])
 
   return context
 }
