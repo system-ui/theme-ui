@@ -223,7 +223,7 @@ import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
 export default props => {
-  const { theme } = useTheme
+  const { theme } = useThemeUI()
   ...
 }
 ``
