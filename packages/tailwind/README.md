@@ -19,7 +19,7 @@ yarn add theme-ui-tailwind
 
 ```js
 // tailwind.config.js
-const toTailwind = require('theme-ui-tailwind')
+const toTailwind = require('@theme-ui/tailwind')
 
 const theme = {}
 
