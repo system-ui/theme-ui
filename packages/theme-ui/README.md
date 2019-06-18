@@ -224,7 +224,7 @@ import { useThemeUI } from 'theme-ui'
 
 export default props => {
   const { theme } = useThemeUI()
-  ...
+  // ...
 }
 ``
 
