@@ -233,7 +233,7 @@ export default props => {
 
   return <pre>{JSON.stringify(theme, null, 2)}</pre>
 }
-``
+```
 
 ## Layout Components
 
