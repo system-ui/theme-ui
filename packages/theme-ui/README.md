@@ -229,8 +229,9 @@ import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
 export default props => {
-  const { theme } = useTheme
-  ...
+  const { theme } = useThemeUI()
+
+  return <pre>{JSON.stringify(theme, null, 2)}</pre>
 }
 ``
 
