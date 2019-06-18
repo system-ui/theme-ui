@@ -216,6 +216,24 @@ To change the underlying component in `Styled`, use the `as` prop.
 <Styled.a as={Link} to='/'>Home</Styled.a>
 ```
 
+## Hooks
+
+If you are interested in learning more about how React Hooks work please see the official React docs [here](https://reactjs.org/docs/hooks-intro.html). 
+
+### `useThemeUI`
+
+To access the `theme` object directly in a component, you can use the `useThemeUI` hook.
+
+```jsx
+import React from 'react'
+import { useThemeUI } from 'theme-ui'
+
+export default props => {
+  const { theme } = useTheme
+  ...
+}
+``
+
 ## Layout Components
 
 Theme UI includes several components for creating page layouts.
