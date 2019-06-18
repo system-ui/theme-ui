@@ -1,0 +1,20 @@
+{
+  "name": "@theme-ui/figma",
+  "description": "Generate Theme UI JSON from the Figma API",
+  "version": "0.1.5",
+  "main": "index.js",
+  "bin": {
+    "theme-ui-figma": "./cli.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "chroma-js": "^2.0.4",
+    "dot-prop": "^5.1.0",
+    "figma-js": "^1.7.0",
+    "meow": "^5.0.0",
+    "pkg-conf": "^3.1.0",
+    "superstruct": "^0.6.1",
+    "update-notifier": "^3.0.0"
+  }
+}
