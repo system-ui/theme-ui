@@ -1,0 +1,19 @@
+{
+  "name": "@theme-ui/tailwind",
+  "description": "Generate static CSS for use outside of React with Theme UI and Tailwind.css",
+  "version": "0.1.3",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "John Otander <johnotander@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "execa": "^1.0.0",
+    "tailwindcss": "^1.0.4"
+  }
+}
