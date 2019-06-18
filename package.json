@@ -27,7 +27,8 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/fixtures/"
+      "/fixtures/",
+      "tailwind.config.js"
     ],
     "coverageReporters": [
       "lcov",
