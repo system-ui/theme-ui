@@ -17,6 +17,8 @@ yarn add theme-ui-tailwind
 
 ## Usage
 
+Transform your Theme UI compliant theme config with the library:
+
 ```js
 // tailwind.config.js
 const toTailwind = require('@theme-ui/tailwind')
@@ -24,4 +26,10 @@ const toTailwind = require('@theme-ui/tailwind')
 const theme = {}
 
 module.exports = toTailwind(theme)
+```
+
+Then, use the Tailwind CLI:
+
+```sh
+tailwind build input.css -o output.css
 ```
