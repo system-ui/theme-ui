@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/switch",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Toggle switch UI component",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
