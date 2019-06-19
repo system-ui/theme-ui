@@ -7,10 +7,6 @@ import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 import { createComponents } from './components'
 
-/*
- * - todo: nested provider does not accept components
- */
-
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
@@ -19,7 +15,16 @@ const applyColorMode = (theme, mode) => {
   })
 }
 
-export const RootProvider = ({
+const BaseProvider = ({ context, components, children }) => {
+  const theme = applyColorMode(context.theme, context.colorMode)
+  return jsx(EmotionContext.Provider, { value: theme },
+    jsx(MDXProvider, { components },
+      jsx(Context.Provider, { value: context, children })
+    )
+  )
+}
+
+const RootProvider = ({
   theme = {},
   components,
   children,
@@ -29,29 +34,20 @@ export const RootProvider = ({
   const [ colorMode, setColorMode ] = useColorState(theme.initialColorMode)
 
   const context = {
-    ...outer,
     colorMode,
     setColorMode,
-    components: {
-      ...outer.components,
-      ...createComponents(components)
-    },
-    theme: applyColorMode(theme, colorMode),
+    components: { ...outer.components, ...createComponents(components) },
+    theme
   }
 
-  return (
-    jsx(EmotionContext.Provider, { value: context.theme },
-      jsx(MDXProvider, { components: context.components },
-        jsx(Context.Provider, {
-          value: context,
-          children,
-        })
-      )
-    )
-  )
+  return jsx(BaseProvider, {
+    context,
+    components: context.components,
+    children
+  })
 }
 
-export const NestedProvider = ({
+const NestedProvider = ({
   theme,
   components,
   children
@@ -59,25 +55,11 @@ export const NestedProvider = ({
   const outer = useThemeUI()
   const context = merge({}, outer, { theme })
 
-  if (!components) {
-    return jsx(EmotionContext.Provider, { value: context.theme },
-      jsx(Context.Provider, {
-        value: context,
-        children
-      })
-    )
-  }
-
-  return jsx(EmotionContext.Provider, { value: context.theme },
-    jsx(MDXProvider, {
-      components: createComponents(components)
-    },
-      jsx(Context.Provider, {
-        value: context,
-        children
-      })
-    )
-  )
+  return jsx(BaseProvider, {
+    context,
+    components: createComponents(components),
+    children,
+  })
 }
 
 export const ThemeProvider = props => {
