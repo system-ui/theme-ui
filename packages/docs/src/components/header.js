@@ -9,8 +9,9 @@ export default props =>
   <Header>
     <Container
       css={{
-        display: 'flex',
-        alignItems: 'center',
+        display: 'grid',
+        gridAutoFlow: 'column',
+        justifyContent: 'space-between',
       }}>
       {props.children}
     </Container>

@@ -12,21 +12,20 @@ export default props =>
       styles: {
         ul: {
           listStyle: 'none',
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'flex-start',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridGap: 16,
           p: 0,
-          mx: -3,
-          '::after': {
-            content: '" "',
-            display: 'block',
-            flex: '1 1 420px',
-          }
+          // '::after': {
+          //   content: '" "',
+          //   display: 'block',
+          //   flex: '1 1 420px',
+          // }
         },
-        li: {
-          flex: '1 1 420px',
-          p: 3,
-        }
+        // li: {
+        //   flex: '1 1 420px',
+        //   p: 3,
+        // }
       }
     }}>
     <Container

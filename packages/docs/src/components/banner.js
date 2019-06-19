@@ -51,10 +51,9 @@ export default props =>
       bg='primary'>
       <Container
         css={{
-          display: 'flex',
-          flexDirection: [ 'column', 'column', 'row' ],
+          display: 'grid',
+          gridAutoFlow: [ 'row', 'column', 'column' ],
           alignItems: [ 'flex-start', 'flex-start', 'center' ],
-          justifyContent: 'space-between',
         }}>
         <Logo
           size='1em'
