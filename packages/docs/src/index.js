@@ -1,7 +1,4 @@
-import React from 'react'
-import Root from './components/root'
+import React from "react"
+import Root from "./components/root"
 
-export const wrapRootElement = ({ element }) =>
-  <Root>
-    {element}
-  </Root>
+export const wrapRootElement = ({ element }) => <Root>{element}</Root>

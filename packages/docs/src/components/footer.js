@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Footer, Container, Flex } from "theme-ui";
-import NavLink from "./nav-link";
+import { jsx, Footer, Container, Flex } from 'theme-ui'
+import NavLink from './nav-link'
 
 export default props => (
   <Footer
@@ -15,4 +15,4 @@ export default props => (
       </Flex>
     </Container>
   </Footer>
-);
+)

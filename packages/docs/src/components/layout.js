@@ -7,19 +7,19 @@ import {
   Box,
   Container,
   useColorMode
-} from "theme-ui"
-import { useState, useRef } from "react"
-import { Global } from "@emotion/core"
-import { Helmet } from "react-helmet"
-import pkg from "theme-ui/package.json"
+} from 'theme-ui'
+import { useState, useRef } from 'react'
+import { Global } from '@emotion/core'
+import { Helmet } from 'react-helmet'
+import pkg from 'theme-ui/package.json'
 
-import SkipLink from "./skip-link"
-import Header from "./header"
-import Footer from "./footer"
-import Sidebar from "./sidebar"
-import Pagination from "./pagination"
+import SkipLink from './skip-link'
+import Header from './header'
+import Footer from './footer'
+import Sidebar from './sidebar'
+import Pagination from './pagination'
 
-const modes = ["light", "dark", "deep", "swiss"]
+const modes = ['light', 'dark', 'deep', 'swiss']
 
 export default props => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -34,10 +34,10 @@ export default props => {
 
   const title = [
     props._frontmatter ? props._frontmatter.title : false,
-    "Theme UI"
+    'Theme UI'
   ]
     .filter(Boolean)
-    .join(" — ")
+    .join(' — ')
 
   return (
     <Styled.root>
@@ -54,8 +54,8 @@ export default props => {
       </Helmet>
       <Global
         styles={{
-          "*": {
-            boxSizing: "border-box"
+          '*': {
+            boxSizing: 'border-box'
           },
           body: {
             margin: 0
@@ -76,16 +76,16 @@ export default props => {
             css={{
               py: 0,
               px: props.fullwidth ? 0 : 3,
-              maxWidth: props.fullwidth ? "none" : ""
+              maxWidth: props.fullwidth ? 'none' : ''
             }}
           >
             <div
               css={{
-                display: ["block", "grid"],
+                display: ['block', 'grid'],
                 gridGap: 24,
                 gridTemplateColumns: [
-                  "auto",
-                  props.fullwidth ? "1fr" : "256px 1fr"
+                  'auto',
+                  props.fullwidth ? '1fr' : '256px 1fr'
                 ]
               }}
             >

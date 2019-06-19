@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Header, Container, Flex } from "theme-ui"
-import MenuButton from "./menu-button"
-import NavLink from "./nav-link"
-import Button from "./button"
+import { jsx, Header, Container, Flex } from 'theme-ui'
+import MenuButton from './menu-button'
+import NavLink from './nav-link'
+import Button from './button'
 
 export default ({ cycleMode, mode, menuOpen, setMenuOpen, nav }) => (
   <Header>
@@ -13,7 +13,7 @@ export default ({ cycleMode, mode, menuOpen, setMenuOpen, nav }) => (
             onClick={e => {
               setMenuOpen(!menuOpen)
               if (!nav.current) return
-              const navLink = nav.current.querySelector("a")
+              const navLink = nav.current.querySelector('a')
               if (navLink) navLink.focus()
             }}
           />
