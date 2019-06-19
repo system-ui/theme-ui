@@ -7,7 +7,7 @@ import NavLink from './nav-link'
 import Content from '../sidebar.mdx'
 
 const components = {
-  a: NavLink,
+  a: NavLink
 }
 
 export default React.forwardRef((props, ref) => (
@@ -55,7 +55,7 @@ export default React.forwardRef((props, ref) => (
           px: 2,
           bg: 'background',
           transition: 'transform .2s ease-out',
-          transform: props.open ? 'translateX(0)' : 'translateX(-100%)',
+          transform: props.open ? 'translateX(0)' : 'translateX(-100%)'
         },
         ul: {
           listStyle: 'none',
