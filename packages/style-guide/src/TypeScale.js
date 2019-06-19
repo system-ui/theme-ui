@@ -1,29 +1,41 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { useTheme } from './context'
-import TypeSpecimen from './TypeSpecimen'
+import TypeStyle from './TypeStyle'
+
+const getValue = (fontSizes, key) => {
+  const raw = fontSizes[key]
+  if (typeof raw !== 'number') return raw
+  return raw + 'px'
+}
 
 export const TypeScale = ({
   reverse = true,
-  style,
   ...props
 }) => {
-  const { fontSizes } = useTheme()
+  const { fontSizes = [] } = useTheme()
 
   return (
     <div
-      style={{
+      css={{
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'baseline',
-        ...style,
       }}>
-      {fontSizes.map((n, i) => (
-        <TypeSpecimen
-          {...props}
-          key={i}
-          fontSize={reverse ? (fontSizes.length - 1 - i) : i}
-        />
-      ))}
+      {fontSizes.map((n, i) => {
+        const key = reverse ? (fontSizes.length - 1 - i) : i
+        return (
+          <TypeStyle
+            key={i}
+            fontSize={key}
+            css={{
+              mr: 3,
+            }}
+            children={getValue(fontSizes, key)}
+            {...props}
+          />
+        )
+      })}
     </div>
   )
 }

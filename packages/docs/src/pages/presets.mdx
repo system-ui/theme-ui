@@ -1,0 +1,26 @@
+import Layout from '../components/layout'
+import Demo from './presets'
+
+export default Layout
+
+# Presets
+
+Theme UI includes optional presets that can be used as examples or as a starting point for extending your own themes.
+
+```sh
+npm i @theme-ui/presets
+```
+
+```jsx
+// example theme
+import { funk } from '@theme-ui/presets'
+
+export default {
+  ...funk,
+  styles: {
+    ...funk,
+  }
+}
+```
+
+<Demo />

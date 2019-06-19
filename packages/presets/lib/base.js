@@ -29,6 +29,8 @@ export const base = {
     text: '#000',
     background: '#fff',
     primary: '#07c',
+    secondary: '#30c',
+    muted: '#f6f6f6',
   },
   styles: {
     root: {

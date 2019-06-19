@@ -1,6 +1,7 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { useTheme } from './context'
-import ColorChip from './ColorChip'
+import ColorSwatch from './ColorSwatch'
 
 const join = (...args) => args
   .filter(Boolean)
@@ -9,44 +10,38 @@ const join = (...args) => args
 export const ColorRow = ({
   colors,
   name,
-  omit = [],
+  omit = [ 'modes' ],
   ...props
 }) => {
-  const {
-    components: {
-      Card,
-    }
-  } = useTheme()
-
   return (
     <div>
-      {name && <Card>{name}</Card>}
       <div
-        style={{
-          fontSize: 12,
+        css={{
+          fontSize: 0,
           display: 'flex',
           flexWrap: 'wrap',
         }}>
         {Object.keys(colors).map(key => {
           const color = colors[key]
           if (!color || omit.includes(key)) return false
+          const id = join(name, key)
           if (typeof color === 'object') {
             return (
               <ColorRow
                 {...props}
                 key={key}
-                name={join(name, key)}
+                name={id}
                 colors={color}
                 omit={omit}
               />
             )
           }
           return (
-            <ColorChip
-              name={key}
-              color={join(name, key)}
-              style={{
-                margin: 8,
+            <ColorSwatch
+              name={id}
+              color={id}
+              css={{
+                m: 2,
                 flexBasis: 128,
               }}
             />
@@ -61,7 +56,8 @@ export const ColorPalette = ({
   omit = [],
   ...props
 }) => {
-  const { colors } = useTheme()
+  const { colors = {} } = useTheme()
+
   return (
     <div
       style={{

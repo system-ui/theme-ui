@@ -1,4 +1,4 @@
-export { css } from '@styled-system/css'
+export { css, get } from '@styled-system/css'
 export { jsx } from './jsx'
 export { ThemeProvider } from './core'
 export { Context, useThemeUI } from './context'
