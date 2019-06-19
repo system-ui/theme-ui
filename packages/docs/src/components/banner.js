@@ -40,31 +40,37 @@ export default props => (
       }
     }}
   >
-    <Box py={[5, 6]} color="background" bg="primary">
+    <Box color="background" bg="primary">
       <Container
         css={{
-          py: 0,
-          display: 'grid',
-          gridTemplateColumns: ['1f', 'repeat(3, 1fr)'],
-          gridGap: 24,
-          gridAutoFlow: ['row', 'column', 'column'],
-          alignItems: ['flex-start', 'flex-start', 'center']
+          py: [5, 6]
         }}
       >
-        <Logo
-          size="1em"
-          color="currentcolor"
-          css={{
-            fontSize: [96, 96, 160]
-          }}
-        />
         <Box
-          py={3}
           css={{
-            gridColumn: ['auto', '2 / 4']
+            display: 'grid',
+            gridTemplateColumns: ['1f', 'repeat(3, 1fr)'],
+            gridGap: 24,
+            gridAutoFlow: ['row', 'column', 'column'],
+            alignItems: ['flex-start', 'flex-start', 'center']
           }}
         >
-          {props.children}
+          <Logo
+            size="1em"
+            color="currentcolor"
+            css={{
+              fontSize: [96, 96, 160]
+            }}
+          />
+          <Box
+            css={{
+              py: 3,
+              gridColumn: ['auto', '2 / 4'],
+              px: [0, 2]
+            }}
+          >
+            {props.children}
+          </Box>
         </Box>
       </Container>
     </Box>
