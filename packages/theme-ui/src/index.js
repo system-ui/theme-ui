@@ -1,6 +1,6 @@
 export { css } from '@styled-system/css'
 export { jsx } from './jsx'
-export { ThemeProvider } from './core'
+export { ThemeProvider } from './provider'
 export { Context, useThemeUI } from './context'
 export {
   ColorMode,
@@ -16,9 +16,3 @@ export {
   Container,
   Footer,
 } from './layout'
-
-// DEPRECATED
-export {
-  ThemeProvider as ColorModeProvider,
-  ThemeProvider as ComponentProvider
-} from './core'
