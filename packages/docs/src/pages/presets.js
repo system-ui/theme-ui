@@ -4,8 +4,10 @@ import {
   ThemeProvider,
   Styled,
   ColorMode,
+  components,
 } from 'theme-ui'
 import { ThemeContext } from '@emotion/core'
+import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import * as presets from '@theme-ui/presets'
@@ -17,6 +19,7 @@ import {
   FontFamily,
 } from '@theme-ui/style-guide'
 import Select from '../components/select'
+import Lorem from './lorem.mdx'
 
 export default props => {
   const [ theme, setTheme ] = useState('base')
@@ -69,6 +72,9 @@ export default props => {
           </HeadingStyle>
           <Styled.h2>Type Scale</Styled.h2>
           <TypeScale />
+          <MDXProvider components={components}>
+            <Lorem />
+          </MDXProvider>
           <Styled.h2>Raw JSON</Styled.h2>
           <textarea
             value={JSON.stringify(preset, null, 2)}

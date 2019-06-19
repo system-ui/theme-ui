@@ -6,7 +6,7 @@ export {
   ColorMode,
   useColorMode,
 } from './color-modes'
-export { Styled } from './components'
+export { Styled, components } from './components'
 export {
   Box,
   Flex,
