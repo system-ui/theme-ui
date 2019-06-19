@@ -8,9 +8,6 @@ import { useColorState } from './color-modes'
 import { createComponents } from './components'
 
 /*
- * changes
- * - ~~ThemeProvider no longer merges outer context~~
- * - ~~New NestedThemeProvider component (name tbd)~~
  * - todo: nested provider does not accept components
  */
 
@@ -29,12 +26,6 @@ export const RootProvider = ({
 }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
-  if (outer.colorMode) {
-    throw new Error(`
-      [ThemeProvider]: only one ThemeProvider component can be used at a time.
-    `)
-  }
-
   const [ colorMode, setColorMode ] = useColorState(theme.initialColorMode)
 
   const context = {
@@ -60,16 +51,32 @@ export const RootProvider = ({
   )
 }
 
-// todo: should this provide components too?
-export const NestedProvider = ({ theme, children }) => {
+export const NestedProvider = ({
+  theme,
+  components,
+  children
+}) => {
   const outer = useThemeUI()
   const context = merge({}, outer, { theme })
 
+  if (!components) {
+    return jsx(EmotionContext.Provider, { value: context.theme },
+      jsx(Context.Provider, {
+        value: context,
+        children
+      })
+    )
+  }
+
   return jsx(EmotionContext.Provider, { value: context.theme },
-    jsx(Context.Provider, {
-      value: context,
-      children
-    })
+    jsx(MDXProvider, {
+      components: createComponents(components)
+    },
+      jsx(Context.Provider, {
+        value: context,
+        children
+      })
+    )
   )
 }
 
