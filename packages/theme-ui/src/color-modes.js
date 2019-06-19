@@ -1,8 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useLayoutEffect,
-} from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import merge from 'lodash.merge'
 import { css } from '@styled-system/css'
 import { Global } from '@emotion/core'
@@ -11,8 +7,8 @@ import { useThemeUI } from './context'
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 const storage = {
-  get: (init) => window.localStorage.getItem(STORAGE_KEY) || init,
-  set: (value) => window.localStorage.setItem(STORAGE_KEY, value),
+  get: init => window.localStorage.getItem(STORAGE_KEY) || init,
+  set: value => window.localStorage.setItem(STORAGE_KEY, value),
 }
 
 export const getMediaQuery = () => {
@@ -22,8 +18,8 @@ export const getMediaQuery = () => {
   return dark && mql.matches
 }
 
-export const useColorState = (initialMode) => {
-  const [ mode, setMode ] = useState(initialMode)
+export const useColorState = initialMode => {
+  const [mode, setMode] = useState(initialMode)
 
   useLayoutEffect(() => {
     // initialize
@@ -41,21 +37,19 @@ export const useColorState = (initialMode) => {
   useEffect(() => {
     if (!mode) return
     storage.set(mode)
-  }, [ mode ])
+  }, [mode])
 
-  return [ mode, setMode ]
+  return [mode, setMode]
 }
 
-export const useColorMode = (initialMode) => {
+export const useColorMode = initialMode => {
   const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
-    throw new Error(
-      `[useColorMode] requires the ThemeProvider component`
-    )
+    throw new Error(`[useColorMode] requires the ThemeProvider component`)
   }
 
-  return [ colorMode, setColorMode ]
+  return [colorMode, setColorMode]
 }
 
 const bodyColor = (theme = {}) => {
@@ -79,7 +73,6 @@ const bodyColor = (theme = {}) => {
   })(theme)
 }
 
-export const ColorMode = () =>
-  <Global styles={bodyColor} />
+export const ColorMode = () => <Global styles={bodyColor} />
 
 export default useColorMode

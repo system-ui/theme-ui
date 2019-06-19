@@ -6,5 +6,5 @@ export default {
     primary: 'rebeccapurple',
     muted: 'peachpuff',
     modes: {},
-  }
+  },
 }

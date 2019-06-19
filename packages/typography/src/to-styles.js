@@ -10,7 +10,7 @@ const parseSelectors = styles => {
     if (isMedia(key)) continue
     const selectors = key.split(',')
     selectors.forEach(selector => {
-      const [ parent, ...children ] = cssWhat(selector)[0]
+      const [parent, ...children] = cssWhat(selector)[0]
       if (parent.type === 'universal') return
       if (parent.type !== 'tag') {
         return
@@ -19,7 +19,7 @@ const parseSelectors = styles => {
       if (children.length) {
         const sub = selector.replace(parent.name, '&')
         parsed[parent.name] = merge({}, parsed[parent.name], {
-          [sub]: styles[key]
+          [sub]: styles[key],
         })
       } else {
         parsed[parent.name] = merge({}, parsed[parent.name], styles[key])
@@ -34,7 +34,7 @@ const parseSelectors = styles => {
   return parsed
 }
 
-export const toStyles = (theme) => {
+export const toStyles = theme => {
   const typography = new Typography({
     ...theme,
     rhythmUnit: 'px',

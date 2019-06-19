@@ -3,10 +3,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        gatsbyRemarkPlugins: [
-          'gatsby-remark-prismjs',
-        ]
-      }
+        gatsbyRemarkPlugins: ['gatsby-remark-prismjs'],
+      },
     },
-  ]
+  ],
 }

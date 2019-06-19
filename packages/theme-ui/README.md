@@ -1,10 +1,8 @@
-
 <img src='https://raw.githubusercontent.com/system-ui/theme-ui/master/packages/docs/static/icon.png' width='64' heigh='64' />
 
 # Theme UI
 
 Build consistent, themeable React UIs based on design system constraints and design tokens
-
 
 [![GitHub][github-badge]][github]
 [![Build Status][circleci-badge]][circleci]
@@ -57,10 +55,9 @@ import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
-export default props =>
-  <ThemeProvider theme={theme}>
-    {props.children}
-  </ThemeProvider>
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
 ```
 
 The `theme` object should follow the System UI [Theme Specification][],
@@ -92,15 +89,17 @@ color and other values can reference values defined in `theme` object.
 import React from 'react'
 import { css } from 'theme-ui'
 
-export default () =>
+export default () => (
   <div
     css={css({
       fontWeight: 'bold',
-      fontSize: 4,  // picks up value from `theme.fontSizes[4]`
+      fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    })}>
+    })}
+  >
     Hello
   </div>
+)
 ```
 
 Read more about the `css` utility in the [@styled-system/css](https://styled-system.com/css/) docs.
@@ -113,15 +112,16 @@ The `css` utility also supports using arrays as values to change properties resp
 import React from 'react'
 import { css } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     css={css({
       // applies width 100% to all viewport widths,
       // width 50% above the first breakpoint,
       // and 25% above the next breakpoint
-      width: [ '100%', '50%', '25%' ],
+      width: ['100%', '50%', '25%'],
     })}
   />
+)
 ```
 
 ## `jsx` pragma
@@ -132,7 +132,7 @@ To use values from the `theme` object without importing the `css` utility, use t
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     css={{
       fontSize: 4,
@@ -140,6 +140,7 @@ export default props =>
       bg: 'lightgray',
     }}
   />
+)
 ```
 
 Read more in the [custom pragma docs](https://theme-ui.com/custom-pragma).
@@ -157,12 +158,11 @@ import { ThemeProvider } from 'theme-ui'
 import mdxComponents from './mdx-components'
 import theme from './theme'
 
-export default props =>
-  <ThemeProvider
-    components={mdxComponents}
-    theme={theme}>
+export default props => (
+  <ThemeProvider components={mdxComponents} theme={theme}>
     {props.children}
   </ThemeProvider>
+)
 ```
 
 ## `theme.styles`
@@ -183,31 +183,32 @@ export default {
       // this value comes from the `color` object
       color: 'primary',
     },
-  }
+  },
 }
 ```
 
 ## Styled components
 
-These components' styles can also be consumed *outside* of an MDX doc with the `Styled` component.
-Note that these are only *styled* using the same `theme.styles` object and *not* the same components passed to the `ThemeProvider` context.
+These components' styles can also be consumed _outside_ of an MDX doc with the `Styled` component.
+Note that these are only _styled_ using the same `theme.styles` object and _not_ the same components passed to the `ThemeProvider` context.
 
 ```jsx
 import React from 'react'
 import { Styled } from 'theme-ui'
 
-export default props =>
+export default props => (
   <Styled.div>
-    <Styled.h1>
-      Hello
-    </Styled.h1>
+    <Styled.h1>Hello</Styled.h1>
   </Styled.div>
+)
 ```
 
 To change the underlying component in `Styled`, use the `as` prop.
 
 ```jsx
-<Styled.a as={Link} to='/'>Home</Styled.a>
+<Styled.a as={Link} to="/">
+  Home
+</Styled.a>
 ```
 
 ## Layout Components
@@ -222,28 +223,17 @@ Theme UI includes several components for creating page layouts.
 
 ```jsx
 import React from 'react'
-import {
-  Layout,
-  Header,
-  Main,
-  Container,
-  Footer
-} from 'theme-ui'
+import { Layout, Header, Main, Container, Footer } from 'theme-ui'
 
-export default props =>
+export default props => (
   <Layout>
-    <Header>
-      Hello
-    </Header>
+    <Header>Hello</Header>
     <Main>
-      <Container>
-        {props.children}
-      </Container>
+      <Container>{props.children}</Container>
     </Main>
-    <Footer>
-      © 2019
-    </Footer>
+    <Footer>© 2019</Footer>
   </Layout>
+)
 ```
 
 ## Box & Flex
@@ -254,11 +244,12 @@ The `Box` & `Flex` layout components are similar to the ones found in [Rebass](h
 import React from 'react'
 import { Flex, Box } from 'theme-ui'
 
-export default props =>
-  <Flex flexWrap='wrap'>
-    <Box width={[ 1, 1/2 ]} />
-    <Box width={[ 1, 1/2 ]} />
+export default props => (
+  <Flex flexWrap="wrap">
+    <Box width={[1, 1 / 2]} />
+    <Box width={[1, 1 / 2]} />
   </Flex>
+)
 ```
 
 ## More Documentation
@@ -269,7 +260,6 @@ export default props =>
 - [Gatsby Plugin](https://theme-ui.com/gatsby-plugin)
 - [Custom Pragma](https://theme-ui.com/custom-pragma)
 - [Typography.js](https://theme-ui.com/typography)
-
 
 [typography demo]: https://theme-ui.com/typography
 [demo]: https://theme-ui.com/demo
