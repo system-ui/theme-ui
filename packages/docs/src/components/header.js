@@ -36,7 +36,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
             </NavLink>
             <Button
               css={{
-                ml: 2
+                ml: 2,
               }}
               onClick={cycleMode}
             >

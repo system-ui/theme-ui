@@ -11,13 +11,13 @@ export default props => (
           gridTemplateColumns: ['auto', 'repeat(3, 1fr)'],
           gridGap: 24,
           p: 0,
-          m: 0
+          m: 0,
         },
         li: {
           py: 3,
-          px: [0, 2]
-        }
-      }
+          px: [0, 2],
+        },
+      },
     }}
   >
     <Container {...props} py={4} />

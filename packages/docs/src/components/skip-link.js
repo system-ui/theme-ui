@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <a
-    children='Skip to content'
+    children="Skip to content"
     {...props}
-    href='#content'
+    href="#content"
     css={{
       clip: 'rect(0 0 0 0)',
       height: 1,
@@ -28,6 +28,7 @@ export default props =>
         width: 'auto',
         height: 'auto',
         clip: 'auto',
-      }
+      },
     }}
   />
+)

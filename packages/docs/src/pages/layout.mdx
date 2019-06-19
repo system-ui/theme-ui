@@ -12,13 +12,7 @@ export default Layout
 Theme UI includes several components for creating page layouts.
 
 ```js
-import {
-  Layout,
-  Header,
-  Main,
-  Container,
-  Footer
-} from 'theme-ui'
+import { Layout, Header, Main, Container, Footer } from 'theme-ui'
 ```
 
 ```jsx
@@ -27,9 +21,7 @@ import {
   <Header />
   <Main>
     <Sidebar />
-    <Container>
-      {props.children}
-    </Container>
+    <Container>{props.children}</Container>
   </Main>
   <Footer />
 </Layout>
@@ -49,11 +41,12 @@ The `Box` & `Flex` layout components are similar to the ones found in [Rebass](h
 import React from 'react'
 import { Flex, Box } from 'theme-ui'
 
-export default props =>
-  <Flex flexWrap='wrap'>
-    <Box width={[ 1, 1/2 ]} />
-    <Box width={[ 1, 1/2 ]} />
+export default props => (
+  <Flex flexWrap="wrap">
+    <Box width={[1, 1 / 2]} />
+    <Box width={[1, 1 / 2]} />
   </Flex>
+)
 ```
 
 ## Layout Theming
@@ -90,4 +83,3 @@ theme: {
   },
 }
 ```
-

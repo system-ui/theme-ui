@@ -20,11 +20,11 @@ export default props => {
       <Global
         styles={{
           '*': {
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
           },
           body: {
-            margin: 0
-          }
+            margin: 0,
+          },
         }}
       />
       <SkipLink>Skip to content</SkipLink>
@@ -35,7 +35,7 @@ export default props => {
             css={{
               py: 0,
               px: props.fullwidth ? 0 : 3,
-              maxWidth: props.fullwidth ? 'none' : ''
+              maxWidth: props.fullwidth ? 'none' : '',
             }}
           >
             <div
@@ -44,8 +44,8 @@ export default props => {
                 gridGap: 24,
                 gridTemplateColumns: [
                   'auto',
-                  props.fullwidth ? '1fr' : '256px 1fr'
-                ]
+                  props.fullwidth ? '1fr' : '256px 1fr',
+                ],
               }}
             >
               <Sidebar

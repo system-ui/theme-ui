@@ -5,7 +5,7 @@ import NavLink from './nav-link'
 export default props => (
   <Footer
     css={{
-      pt: 4
+      pt: 4,
     }}
   >
     <Container>

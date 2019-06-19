@@ -44,16 +44,13 @@ const themeUIComponents = {
   // other MDX components
 }
 
-export default ({
-  components,
-  theme,
-  children
-}) =>
+export default ({ components, theme, children }) => (
   <ThemeProvider theme={theme}>
     <MDXProvider components={merge(themeUIComponents, components)}>
       {children}
     </MDXProvider>
   </ThemeProvider>
+)
 ```
 
 ## Custom Components
@@ -72,7 +69,7 @@ The Theme UI JSX pragma wraps the Emotion JSX pragma, converting the `css` prop 
 import { jsx } from '@emotion/core'
 import { css } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={css({
@@ -81,6 +78,7 @@ export default props =>
       fontSize: 4,
     })}
   />
+)
 ```
 
 ```jsx
@@ -89,7 +87,7 @@ export default props =>
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={{
@@ -98,6 +96,5 @@ export default props =>
       fontSize: 4,
     }}
   />
+)
 ```
-
-

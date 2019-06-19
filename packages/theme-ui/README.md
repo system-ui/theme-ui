@@ -44,7 +44,13 @@ https://theme-ui.com
 ## Getting Started
 
 ```sh
-npm i theme-ui @emotion/core @emotion/styled @mdx-js/react
+npm i theme-ui
+```
+
+Theme UI also requires the following dependencies
+
+```sh
+npm i @emotion/core @emotion/styled @mdx-js/react
 ```
 
 Wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
@@ -69,13 +75,13 @@ export default {
   fonts: {
     body: 'system-ui, sans-serif',
     heading: '"Avenir Next", sans-serif',
-    monospace: 'Menlo, monospace'
+    monospace: 'Menlo, monospace',
   },
   colors: {
     text: '#000',
     background: '#fff',
-    primary: '#33e'
-  }
+    primary: '#33e',
+  },
 }
 ```
 
@@ -94,7 +100,7 @@ export default () => (
     css={css({
       fontWeight: 'bold',
       fontSize: 4, // picks up value from `theme.fontSizes[4]`
-      color: 'primary' // picks up value from `theme.colors.primary`
+      color: 'primary', // picks up value from `theme.colors.primary`
     })}
   >
     Hello
@@ -118,7 +124,7 @@ export default props => (
       // applies width 100% to all viewport widths,
       // width 50% above the first breakpoint,
       // and 25% above the next breakpoint
-      width: ['100%', '50%', '25%']
+      width: ['100%', '50%', '25%'],
     })}
   />
 )
@@ -137,7 +143,7 @@ export default props => (
     css={{
       fontSize: 4,
       color: 'primary',
-      bg: 'lightgray'
+      bg: 'lightgray',
     }}
   />
 )
@@ -174,16 +180,16 @@ This can be used as a mechanism to pass in fully-baked themes and typographic st
 // example theme
 export default {
   colors: {
-    primary: '#33e'
+    primary: '#33e',
   },
   styles: {
     // this styles child MDX `<h1>` components
     h1: {
       fontSize: 32,
       // this value comes from the `color` object
-      color: 'primary'
-    }
-  }
+      color: 'primary',
+    },
+  },
 }
 ```
 
@@ -211,25 +217,6 @@ To change the underlying component in `Styled`, use the `as` prop.
 </Styled.a>
 ```
 
-## Hooks
-
-If you are interested in learning more about how React Hooks work please see the official React docs [here](https://reactjs.org/docs/hooks-intro.html).
-
-### `useThemeUI`
-
-To access the `theme` object directly in a component, you can use the `useThemeUI` hook.
-
-````jsx
-import React from 'react'
-import { useThemeUI } from 'theme-ui'
-
-export default props => {
-  const { theme } = useThemeUI()
-
-  return <pre>{JSON.stringify(theme, null, 2)}</pre>
-}
-```
-
 ## Layout Components
 
 Theme UI includes several components for creating page layouts.
@@ -242,29 +229,18 @@ Theme UI includes several components for creating page layouts.
 
 ```jsx
 import React from 'react'
-import {
-  Layout,
-  Header,
-  Main,
-  Container,
-  Footer
-} from 'theme-ui'
+import { Layout, Header, Main, Container, Footer } from 'theme-ui'
 
-export default props =>
+export default props => (
   <Layout>
-    <Header>
-      Hello
-    </Header>
+    <Header>Hello</Header>
     <Main>
-      <Container>
-        {props.children}
-      </Container>
+      <Container>{props.children}</Container>
     </Main>
-    <Footer>
-      © 2019
-    </Footer>
+    <Footer>© 2019</Footer>
   </Layout>
-````
+)
+```
 
 ## Box & Flex
 

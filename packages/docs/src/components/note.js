@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={{
@@ -11,3 +11,4 @@ export default props =>
       bg: 'highlight',
     }}
   />
+)

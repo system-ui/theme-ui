@@ -16,8 +16,8 @@ const noflash = `
 export const onRenderBody = ({ setPreBodyComponents }) => {
   const script = jsx('script', {
     dangerouslySetInnerHTML: {
-      __html: noflash
-    }
+      __html: noflash,
+    },
   })
-  setPreBodyComponents([ script ])
+  setPreBodyComponents([script])
 }

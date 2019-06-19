@@ -22,7 +22,7 @@ To set up an application to use Emotion's `css` prop, see the [Emotion docs](htt
 import React from 'react'
 import { css } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={css({
@@ -34,6 +34,7 @@ export default props =>
       boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
     })}
   />
+)
 ```
 
 For a complete table of how CSS properties map to scales in your theme, see the [Styled System CSS docs](https://styled-system.com/css#theme-keys).
@@ -48,7 +49,7 @@ in the `css` prop without the need to import the `css` utility.
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={{
@@ -60,6 +61,7 @@ export default props =>
       boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
     }}
   />
+)
 ```
 
 **Note:** This currently does **not** work with `babel-plugin-emotion`'s `cssPropOptimization` flag enabled.
@@ -91,13 +93,14 @@ This is useful when you want to change a single property across multiple breakpo
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={{
-      width: [ '100%', '50%', '25%' ],
+      width: ['100%', '50%', '25%'],
     }}
   />
+)
 ```
 
 Read more in the [Styled System docs](https://styled-system.com/responsive-styles)

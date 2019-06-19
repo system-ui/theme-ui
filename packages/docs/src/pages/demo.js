@@ -1,14 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import {
-  Styled,
-  ColorMode,
-} from 'theme-ui'
+import { Styled, ColorMode } from 'theme-ui'
 import { Helmet } from 'react-helmet'
-import {
-  EditProvider,
-  FieldSet,
-} from '@styled-system/edit'
+import { EditProvider, FieldSet } from '@styled-system/edit'
 import Layout from '../components/layout'
 import Lorem from './lorem.mdx'
 
@@ -30,8 +24,8 @@ export default props => {
     <EditProvider>
       <Helmet>
         <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat:400,700,900|Poppins:400,700,900|Roboto:400,700,900|Roboto+Condensed:400,700'
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat:400,700,900|Poppins:400,700,900|Roboto:400,700,900|Roboto+Condensed:400,700"
         />
       </Helmet>
       <ColorMode />
@@ -48,35 +42,29 @@ export default props => {
             fontSize: 12,
             color: 'black',
             bg: 'white',
-          }}>
+          }}
+        >
+          <FieldSet name="colors" type="color" ignore={['modes']} />
+          <FieldSet name="fonts" type="select" options={demoFonts} />
           <FieldSet
-            name='colors'
-            type='color'
-            ignore={[ 'modes' ]}
+            name="fontWeights"
+            type="number"
+            step="100"
+            min="100"
+            max="900"
           />
           <FieldSet
-            name='fonts'
-            type='select'
-            options={demoFonts}
-          />
-          <FieldSet
-            name='fontWeights'
-            type='number'
-            step='100'
-            min='100'
-            max='900'
-          />
-          <FieldSet
-            name='lineHeights'
-            type='number'
-            step={1/16}
+            name="lineHeights"
+            type="number"
+            step={1 / 16}
             min={1}
             max={2}
           />
         </div>
         <Styled.h1>Demo page</Styled.h1>
         <Styled.p>
-          Use the control panel on the right to change some aspects of the theme in real-time.
+          Use the control panel on the right to change some aspects of the theme
+          in real-time.
         </Styled.p>
         <Lorem />
       </Layout>

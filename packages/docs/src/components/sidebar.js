@@ -7,7 +7,7 @@ import NavLink from './nav-link'
 import Content from '../sidebar.mdx'
 
 const components = {
-  a: NavLink
+  a: NavLink,
 }
 
 export default React.forwardRef((props, ref) => (
@@ -20,14 +20,14 @@ export default React.forwardRef((props, ref) => (
           top: 0,
           right: 0,
           bottom: 0,
-          left: 0
+          left: 0,
         }}
       >
         <Global
           styles={{
             body: {
-              overflow: 'hidden'
-            }
+              overflow: 'hidden',
+            },
           }}
         />
       </Box>
@@ -55,13 +55,13 @@ export default React.forwardRef((props, ref) => (
           px: 2,
           bg: 'background',
           transition: 'transform .2s ease-out',
-          transform: props.open ? 'translateX(0)' : 'translateX(-100%)'
+          transform: props.open ? 'translateX(0)' : 'translateX(-100%)',
         },
         ul: {
           listStyle: 'none',
           m: 0,
-          p: 0
-        }
+          p: 0,
+        },
       }}
     >
       <MDXProvider components={components}>
