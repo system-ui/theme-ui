@@ -44,8 +44,6 @@ export const colors = {
   textMuted: baseColors.gray[6],
 }
 
-// colors.link = colors.primary
-
 export const space = [
   0,
   0.25,
@@ -79,8 +77,8 @@ fontWeights.normal = fontWeights.body
 fontWeights.display = fontWeights.light
 
 export const fontSizes = [
-  '80%',
-  null,
+  '0.75rem',  // '80%',
+  '0.875rem',
   '1rem',
   '1.25rem',
   '1.5rem',
@@ -124,10 +122,26 @@ const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
+  mt: 0,
   mb: 2,
+}
+const display = {
+  fontWeight: 'display',
+  lineHeight: 'heading',
+}
+
+// variants
+const typeStyles = {
+  heading,
+  display,
 }
 
 export const styles = {
+  root: {
+    fontFamily: 'body',
+    lineHeight: 'body',
+    fontWeight: 'body',
+  },
   a: {
     color: 'primary',
     textDecoration: 'none',
@@ -137,6 +151,7 @@ export const styles = {
   },
   p: {
     mb: 3,
+    lineHeight: 'body',
   },
   h1: {
     ...heading,
@@ -164,6 +179,7 @@ export const styles = {
   },
   blockquote: {
     fontSize: 3,
+    mb: 3,
   },
   table: {
     // todo
@@ -182,6 +198,7 @@ export const bootstrap = {
   sizes,
   shadows,
   radii,
+  typeStyles,
   styles,
 }
 
