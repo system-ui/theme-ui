@@ -17,33 +17,34 @@ const defaults = {
   scaleRatio: 2,
   googleFonts: [],
   headerFontFamily: [
-    "-apple-system",
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "Roboto",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    "sans-serif",
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    'sans-serif',
   ],
-  bodyFontFamily: ["georgia", "serif"],
-  headerWeight: "bold",
-  bodyWeight: "normal",
-  boldWeight: "bold",
+  bodyFontFamily: ['georgia', 'serif'],
+  headerWeight: 'bold',
+  bodyWeight: 'normal',
+  boldWeight: 'bold',
   includeNormalize: true,
   blockMarginBottom: 1,
 }
 
 export const toUnitless = val => parseFloat(val)
 
-export const getScale = opts => value => ms(value, opts.scaleRatio) * opts.baseFontSize
+export const getScale = opts => value =>
+  ms(value, opts.scaleRatio) * opts.baseFontSize
 
 export const getSpace = (result, opts) => {
   const n = toUnitless(result.rhythm(opts.blockMarginBottom))
-  return [ 0, 1/4, 1/2, 1, 2, 4, 8 ].map(v => v * n)
+  return [0, 1 / 4, 1 / 2, 1, 2, 4, 8].map(v => v * n)
 }
 
 const stackFonts = fonts => fonts.map(font => `"${font}"`).join(', ')
@@ -59,14 +60,7 @@ export const getFonts = (result, opts) => {
 
 export const getFontSizes = (result, opts) => {
   const scale = getScale(opts)
-  return [
-    -1.5 / 5,
-    -1 / 5,
-    0,
-    2 / 5,
-    3 / 5,
-    1
-  ].map(scale)
+  return [-1.5 / 5, -1 / 5, 0, 2 / 5, 3 / 5, 1].map(scale)
 }
 
 export const getLineHeights = (result, opts) => {

@@ -22,12 +22,5 @@ export default ({ href, ...props }) => {
     return <a {...props} href={href} css={styles} />
   }
   const to = props.to || href
-  return (
-    <Link
-      {...props}
-      to={to}
-      css={styles}
-      activeClassName='active'
-    />
-  )
+  return <Link {...props} to={to} css={styles} activeClassName="active" />
 }
