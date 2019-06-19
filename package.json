@@ -16,9 +16,11 @@
   ],
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
+    "husky": ">=1",
     "jest": "^24.8.0",
     "jest-emotion": "^10.0.11",
     "lerna": "^3.14.1",
+    "lint-staged": ">=8",
     "microbundle": "^0.11.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
@@ -52,5 +54,10 @@
     "snapshotSerializers": [
       "jest-emotion"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
