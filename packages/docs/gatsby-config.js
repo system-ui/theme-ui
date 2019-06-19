@@ -5,7 +5,7 @@ const remarkPlugins = [
 module.exports = {
   __experimentalThemes: [
     'gatsby-theme-ui',
-    'demo-theme',
+    // 'demo-theme',
   ],
   plugins: [
     'gatsby-plugin-react-helmet',

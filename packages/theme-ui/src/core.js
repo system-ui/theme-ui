@@ -9,18 +9,20 @@ import { createComponents } from './components'
 
 /*
  * changes
- * - ThemeProvider no longer merges outer context
- * - New NestedThemeProvider component (name tbd)
+ * - ~~ThemeProvider no longer merges outer context~~
+ * - ~~New NestedThemeProvider component (name tbd)~~
+ * - todo: nested provider does not accept components
  */
 
 const applyColorMode = (theme, mode) => {
+  if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
   return merge({}, theme, {
     colors: get(modes, mode, {})
   })
 }
 
-export const ThemeProvider = ({
+export const RootProvider = ({
   theme = {},
   components,
   children,
@@ -39,7 +41,10 @@ export const ThemeProvider = ({
     ...outer,
     colorMode,
     setColorMode,
-    components: merge(outer.components, createComponents(components)),
+    components: {
+      ...outer.components,
+      ...createComponents(components)
+    },
     theme: applyColorMode(theme, colorMode),
   }
 
@@ -55,8 +60,8 @@ export const ThemeProvider = ({
   )
 }
 
-// todo: rename this
-export const NestedThemeProvider = ({ theme, children }) => {
+// todo: should this provide components too?
+export const NestedProvider = ({ theme, children }) => {
   const outer = useThemeUI()
   const context = merge({}, outer, { theme })
 
@@ -66,4 +71,12 @@ export const NestedThemeProvider = ({ theme, children }) => {
       children
     })
   )
+}
+
+export const ThemeProvider = props => {
+  const outer = useThemeUI()
+  if (outer.colorMode) {
+    return jsx(NestedProvider, props)
+  }
+  return jsx(RootProvider, props)
 }

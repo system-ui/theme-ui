@@ -40,8 +40,7 @@ test('renders with styles', () => {
   expect(json).toMatchSnapshot()
 })
 
-// todo: nested provider tests
-test.skip('creates non-standard components', () => {
+test('creates non-standard components', () => {
   const json = renderJSON(
     <ThemeProvider
       components={{
@@ -61,8 +60,7 @@ test.skip('creates non-standard components', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-// todo: add test with MDXProvider
-test.skip('styles React components', () => {
+test('styles React components', () => {
   const Beep = props => <h2 {...props} />
   const Inner = props => {
     const context = useContext(Context)
