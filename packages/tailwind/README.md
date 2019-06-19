@@ -11,8 +11,8 @@ best of both worlds.
 
 ## Installation
 
-```
-yarn add theme-ui-tailwind
+```sh
+yarn add @theme-ui/tailwind
 ```
 
 ## Usage
@@ -22,8 +22,7 @@ Transform your Theme UI compliant theme config with the library:
 ```js
 // tailwind.config.js
 const toTailwind = require('@theme-ui/tailwind')
-
-const theme = {}
+const theme = require('./theme') // Path to Theme UI config
 
 module.exports = toTailwind(theme)
 ```
