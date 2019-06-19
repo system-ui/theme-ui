@@ -22,6 +22,7 @@ Transform your Theme UI compliant theme config with the library:
 ```js
 // scripts/generate-tachyons-css.js
 const toTachyons = require('@theme-ui/tachyons')
+const tachyonsGenerator = require('tachyons-generator')
 const theme = require('../theme')
 
 module.exports = async () => {
