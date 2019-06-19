@@ -15,5 +15,8 @@
     "babel-polyfill": "^6.26.0",
     "execa": "^1.0.0",
     "tailwindcss": "^1.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
