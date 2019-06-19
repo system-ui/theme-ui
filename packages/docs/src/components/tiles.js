@@ -1,35 +1,24 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-  Box,
-  Container,
-} from 'theme-ui'
+import { jsx, ThemeProvider, Box, Container } from "theme-ui"
 
-export default props =>
+export default props => (
   <ThemeProvider
     theme={{
       styles: {
         ul: {
-          listStyle: 'none',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gridGap: 16,
-          p: 0,
-          // '::after': {
-          //   content: '" "',
-          //   display: 'block',
-          //   flex: '1 1 420px',
-          // }
+          listStyle: "none",
+          display: ["block", "grid"],
+          gridTemplateColumns: ["auto", "repeat(3, 1fr)"],
+          gridGap: 24,
+          p: 0
         },
-        // li: {
-        //   flex: '1 1 420px',
-        //   p: 3,
-        // }
+        li: {
+          py: 3,
+          px: [0, 2]
+        }
       }
-    }}>
-    <Container
-      {...props}
-      py={4}
-    />
+    }}
+  >
+    <Container {...props} py={4} />
   </ThemeProvider>
+)

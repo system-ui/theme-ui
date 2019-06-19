@@ -1,46 +1,56 @@
 /** @jsx jsx */
-import { jsx, Styled, Layout, Main, Box, Container, useColorMode } from "theme-ui";
-import { useState, useRef } from "react";
-import { Global } from "@emotion/core";
-import { Helmet } from 'react-helmet'
-import pkg from 'theme-ui/package.json'
+import {
+  jsx,
+  Styled,
+  Layout,
+  Main,
+  Box,
+  Container,
+  useColorMode
+} from "theme-ui"
+import { useState, useRef } from "react"
+import { Global } from "@emotion/core"
+import { Helmet } from "react-helmet"
+import pkg from "theme-ui/package.json"
 
-import SkipLink from "./skip-link";
-import Header from "./header";
-import Footer from "./footer";
-import Sidebar from "./sidebar";
-import Pagination from "./pagination";
-import MenuButton from "./menu-button";
-import NavLink from "./nav-link";
-import Button from "./button";
+import SkipLink from "./skip-link"
+import Header from "./header"
+import Footer from "./footer"
+import Sidebar from "./sidebar"
+import Pagination from "./pagination"
 
-const modes = ["light", "dark", "deep", "swiss"];
+const modes = ["light", "dark", "deep", "swiss"]
 
 export default props => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [mode, setMode] = useColorMode();
-  const nav = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [mode, setMode] = useColorMode()
+  const nav = useRef(null)
 
   const cycleMode = e => {
-    const i = modes.indexOf(mode);
-    const next = modes[(i + 1) % modes.length];
-    setMode(next);
-  };
+    const i = modes.indexOf(mode)
+    const next = modes[(i + 1) % modes.length]
+    setMode(next)
+  }
 
-  const title = [props._frontmatter ? props._frontmatter.title : false, 'Theme UI'].filter(Boolean).join(' — ');
+  const title = [
+    props._frontmatter ? props._frontmatter.title : false,
+    "Theme UI"
+  ]
+    .filter(Boolean)
+    .join(" — ")
 
   return (
     <Styled.root>
       <Helmet>
         <title>{title}</title>
-        <meta name='description' content={pkg.description} />
-        <link rel='icon' type='image/png' href='/icon.png' />
-        <link rel='apple-touch-icon' type='image/png' href='/icon.png' />
-        <meta name='twitter:card' content='summary' />
-        <meta name='twitter:site' content='@jxnblk' />
-        <meta name='twitter:image' content='https://theme-ui.com/icon.png' />
-        <meta name='twitter:title' content={title} />
-        <meta name='twitter:description' content={pkg.description} />
+        <meta name="description" content={pkg.description} />
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@jxnblk" />
+        <meta name="twitter:image" content="https://theme-ui.com/icon.png" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={pkg.description} />
       </Helmet>
       <Global
         styles={{
@@ -54,33 +64,13 @@ export default props => {
       />
       <SkipLink>Skip to content</SkipLink>
       <Layout>
-        <Header>
-        <div css={{
-          display: 'grid',
-          gridAutoFlow: 'column',
-        }}>
-          <MenuButton
-            onClick={e => {
-              setMenuOpen(!menuOpen);
-              if (!nav.current) return;
-              const navLink = nav.current.querySelector("a");
-              if (navLink) navLink.focus();
-            }}
-          />
-          <NavLink to="/">Theme UI</NavLink>
-          </div>
-          <div>
-          <NavLink href="https://github.com/system-ui/theme-ui">GitHub</NavLink>
-          <Button
-            css={{
-              ml: 2
-            }}
-            onClick={cycleMode}
-          >
-            {mode}
-          </Button>
-          </div>
-        </Header>
+        <Header
+          cycleMode={cycleMode}
+          mode={mode}
+          nav={nav}
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
         <Main>
           <Container
             css={{
@@ -89,34 +79,39 @@ export default props => {
               maxWidth: props.fullwidth ? "none" : ""
             }}
           >
-            <div css={{
-              display: "grid",
-              gridGap: 32,
-              gridTemplateColumns: props.fullwidth ? '1fr' : '256px 1fr',
-            }}>
-            <Sidebar
-              ref={nav}
-              open={menuOpen}
-              fullwidth={props.fullwidth}
-              onFocus={e => {
-                setMenuOpen(true);
+            <div
+              css={{
+                display: ["block", "grid"],
+                gridGap: 24,
+                gridTemplateColumns: [
+                  "auto",
+                  props.fullwidth ? "1fr" : "256px 1fr"
+                ]
               }}
-              onBlur={e => {
-                setMenuOpen(false);
-              }}
-              onClick={e => {
-                setMenuOpen(false);
-              }}
-            />
-            <Box id="content" width={1}>
-              {props.children}
-              <Pagination />
-            </Box>
+            >
+              <Sidebar
+                ref={nav}
+                open={menuOpen}
+                fullwidth={props.fullwidth}
+                onFocus={e => {
+                  setMenuOpen(true)
+                }}
+                onBlur={e => {
+                  setMenuOpen(false)
+                }}
+                onClick={e => {
+                  setMenuOpen(false)
+                }}
+              />
+              <Box id="content" width={1}>
+                {props.children}
+                {!props.fullwidth && <Pagination />}
+              </Box>
             </div>
           </Container>
         </Main>
         <Footer />
       </Layout>
     </Styled.root>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Link } from "gatsby";
-import isAbsoluteURL from "is-absolute-url";
+import { jsx } from "theme-ui"
+import { Link } from "gatsby"
+import isAbsoluteURL from "is-absolute-url"
 
 const styles = {
   display: "inline-block",
@@ -14,13 +14,13 @@ const styles = {
   "&.active": {
     color: "primary"
   }
-};
+}
 
 export default ({ href, ...props }) => {
-  const isExternal = isAbsoluteURL(href || "");
+  const isExternal = isAbsoluteURL(href || "")
   if (isExternal) {
-    return <a {...props} href={href} css={styles} />;
+    return <a {...props} href={href} css={styles} />
   }
-  const to = props.to || href;
-  return <Link {...props} to={to} css={styles} activeClassName="active" />;
-};
+  const to = props.to || href
+  return <Link {...props} to={to} css={styles} activeClassName="active" />
+}

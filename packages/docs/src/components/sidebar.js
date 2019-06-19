@@ -41,6 +41,7 @@ export default React.forwardRef((props, ref) => (
         minWidth: 0,
         maxHeight: 'calc(100vh - 64px)',
         overflow: 'auto',
+        py: 3,
         WebkitOverflowScrolling: 'touch',
         display: props.fullwidth ? 'none' : 'block',
         '@media screen and (max-width: 39.99em)': {
