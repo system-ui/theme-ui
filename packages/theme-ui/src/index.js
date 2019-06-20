@@ -10,4 +10,4 @@ export { Box, Flex, Layout, Header, Main, Container, Footer } from './layout'
 export {
   ThemeProvider as ColorModeProvider,
   ThemeProvider as ComponentProvider,
-} from './core'
+} from './provider'
