@@ -8,6 +8,9 @@ import {
 } from 'styled-system'
 import css from '@styled-system/css'
 
+// fallback for missing emotion pragma or for use in MDX
+const cssProp = props => css(props.css)(props.theme)
+
 export const Box = styled('div')(css({
   boxSizing: 'border-box',
   minWidth: 0,
@@ -15,7 +18,8 @@ export const Box = styled('div')(css({
   space,
   color,
   layout,
-  flexbox
+  flexbox,
+  cssProp
 )
 
 export const Flex = styled(Box)({

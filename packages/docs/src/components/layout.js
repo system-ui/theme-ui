@@ -19,6 +19,7 @@ import Pagination from './pagination'
 import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
+import EditLink from './edit-link'
 
 const modes = [
   'light',
@@ -100,6 +101,7 @@ export default props => {
               width={1}
               px={props.fullwidth ? 0 : 3}>
               {props.children}
+              <EditLink />
               <Pagination />
             </Box>
           </Container>

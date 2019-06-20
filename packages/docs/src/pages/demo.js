@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import {
   Styled,
   ColorMode,
+  Box,
 } from 'theme-ui'
 import { Helmet } from 'react-helmet'
 import {

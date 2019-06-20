@@ -4,7 +4,7 @@ export default Layout
 
 # Hooks
 
-If you are interested in learning more about how React Hooks work please see the official React docs [here](https://reactjs.org/docs/hooks-intro.html). 
+If you are interested in learning more about how React Hooks work please see the official React docs [here](https://reactjs.org/docs/hooks-intro.html).
 
 ## `useThemeUI`
 
@@ -21,3 +21,27 @@ export default props => {
 }
 ```
 
+## `useColorMode`
+
+To change the color mode state in your application, use the `useColorMode` hook.
+
+```jsx
+import React from 'react'
+import { useColorMode } from 'theme-ui'
+
+export default props => {
+  const [ colorMode, setColorMode ] = useColorMode()
+  return (
+    <button
+      onClick={e => {
+        setColorMode(colorMode === 'light' ? 'dark' : 'light')
+      }}>
+      Toggle
+      {' '}
+      {colorMode === 'light' ? 'Dark' : 'Light'}
+    </button>
+  )
+}
+```
+
+Read more about [color modes in Theme UI](/color-modes).

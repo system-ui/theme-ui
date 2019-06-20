@@ -65,13 +65,8 @@ Prop | Type | Description
 
 The `useThemeUI` hook returns the full Theme UI context object, which includes `theme`, `components`, and color mode.
 
-**Usage**
-
-```jsx
-export default props => {
-  const context = useThemeUI()
-  return <pre>{JSON.stringify(context.theme, null, 2)}</pre>
-}
+```js
+const context = useThemeUI()
 ```
 
 ### `ColorMode`
@@ -90,15 +85,73 @@ It is also used in `gatsby-theme-ui` for helping reduce flashes of style changes
 
 ### `useColorMode`
 
-The `useColorMode` hook is used to change the current color mode state.
+The `useColorMode` hook returns an array with two values: the current color mode state and an updater function.
+The color mode state can be any string and should match the name of a color mode defined in `theme.colors.modes` or be a name for the default color mode.
+
+```js
+const [ colorMode, setColorMode ] = useColorMode()
+```
 
 ### `Styled`
+
+The [`Styled`](/styled) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
+Each component will pick up styles from its corresponding theme object.
+These are primarily meant to be used as a mechanism to use styles defined in a `theme` object outside of MDX.
+
+```jsx
+// picks up styles from `theme.styles.h1`
+<Styled.h1 />
+```
+
+The `Styled` components include the same props as components created with [`@emotion/styled`](https://emotion.sh/docs/styled).
+
+Prop | Type | Description
+---|---|---
+`as` | String or Component | Changes the underlying rendered element
+
 ### `Box`
+
+The `Box` component is a primitive layout component with Styled System props, similar to [Rebass's `Box` component](https://rebassjs.org/Box/) .
+
+The `Box` component includes all [Styled System space props](https://styled-system.com/api#space), as well as the following.
+
+Prop | Type | Description
+---|---|---
+`color` | String | Foreground (text) color
+`bg`, `backgroundColor` | String | Background color
+`css` | Object | Style object
+
+<!-- todo: note about deprecating other style props -->
+
 ### `Flex`
+
+The `Flex` component is an extension of the `Box` component with `display: 'flex'` applied.
+
 ### `Layout`
+
+The `Layout` component is an extension of the `Box` component with flexbox styles applied.
+It is intended for use at the root-level of a page layout.
+
+See the [layout components docs](/layout) for more info.
+
 ### `Header`
+
+The `Header` component is an extension of the `Box` component, intended for use as a page header.
+
 ### `Main`
+
+The `Main` component is an extension of the `Box` component, intended for use as a wrapper around the main page area.
+It includes flexbox styles to wrap the `Container` component and optional sidebar elements.
+
 ### `Container`
+
+The `Container` component is an extension of the `Box` component with a max-width and `marginX: 'auto'` for horizontal centering.
+
 ### `Footer`
+
+The `Footer` component is an extension of the `Box` component, intended for use as a page footer.
+
+## `gatsby-theme-ui`
+## `gatsby-theme-ui`
 
 [styled-system/css]: https://styled-system.com/css
