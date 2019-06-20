@@ -1,12 +1,7 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-  Box,
-  Container,
-} from 'theme-ui'
+import { jsx, ThemeProvider, Box, Container } from 'theme-ui'
 
-export default props =>
+export default props => (
   <ThemeProvider
     theme={{
       styles: {
@@ -21,16 +16,15 @@ export default props =>
             content: '" "',
             display: 'block',
             flex: '1 1 420px',
-          }
+          },
         },
         li: {
           flex: '1 1 420px',
           p: 3,
-        }
-      }
-    }}>
-    <Container
-      {...props}
-      py={4}
-    />
+        },
+      },
+    }}
+  >
+    <Container {...props} py={4} />
   </ThemeProvider>
+)

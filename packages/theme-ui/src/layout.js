@@ -1,20 +1,16 @@
 import jsx from './jsx'
 import styled from '@emotion/styled'
-import {
-  space,
-  color,
-  layout,
-  flexbox,
-} from 'styled-system'
+import { space, color, layout, flexbox } from 'styled-system'
 import css from '@styled-system/css'
 
 // fallback for missing emotion pragma or for use in MDX
 const cssProp = props => css(props.css)(props.theme)
 
-export const Box = styled('div')(css({
-  boxSizing: 'border-box',
-  minWidth: 0,
-}),
+export const Box = styled('div')(
+  css({
+    boxSizing: 'border-box',
+    minWidth: 0,
+  }),
   space,
   color,
   layout,
@@ -35,7 +31,7 @@ export const Layout = props =>
       display: 'flex',
       flexDirection: 'column',
       variant: 'styles.Layout',
-    }
+    },
   })
 
 export const Header = props =>
@@ -45,7 +41,7 @@ export const Header = props =>
     css: {
       display: 'flex',
       variant: 'styles.Header',
-    }
+    },
   })
 
 export const Main = props =>
@@ -55,7 +51,7 @@ export const Main = props =>
     css: {
       flex: '1 1 auto',
       variant: 'styles.Main',
-    }
+    },
   })
 
 export const Container = props =>
@@ -68,7 +64,7 @@ export const Container = props =>
       mx: 'auto',
       p: 4,
       variant: 'styles.Container',
-    }
+    },
   })
 
 export const Footer = props =>
@@ -78,5 +74,5 @@ export const Footer = props =>
     css: {
       display: 'flex',
       variant: 'styles.Footer',
-    }
+    },
   })
