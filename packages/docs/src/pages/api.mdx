@@ -25,10 +25,10 @@ css(styleObject)(theme)
 <div css={css(styles)} />
 ```
 
-Argument | Type | Description
----|---|---
-`styleObject` | Object | a theme-aware style object with support for responsive array values and Styled System prop shortcuts
-`theme` | Object | the Emotion theming context object
+| Argument      | Type   | Description                                                                                          |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------- |
+| `styleObject` | Object | a theme-aware style object with support for responsive array values and Styled System prop shortcuts |
+| `theme`       | Object | the Emotion theming context object                                                                   |
 
 ### `jsx`
 
@@ -40,13 +40,14 @@ The `jsx` export is a React create element function intended for use as a custom
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={{
       color: 'primary',
     }}
   />
+)
 ```
 
 ### `ThemeProvider`
@@ -55,11 +56,11 @@ The `ThemeProvider` component is a wrapper around Emotion's `ThemeProvider` and 
 It provides default styled components to MDX content that pick up values from `theme.styles`.
 It also handles color mode state.
 
-Prop | Type | Description
----|---|---
-`theme` | Object | Theming context object
-`components` | Object | Optional custom MDX components
-`children` | Node | React children
+| Prop         | Type   | Description                    |
+| ------------ | ------ | ------------------------------ |
+| `theme`      | Object | Theming context object         |
+| `components` | Object | Optional custom MDX components |
+| `children`   | Node   | React children                 |
 
 ### `useThemeUI`
 
@@ -89,7 +90,7 @@ The `useColorMode` hook returns an array with two values: the current color mode
 The color mode state can be any string and should match the name of a color mode defined in `theme.colors.modes` or be a name for the default color mode.
 
 ```js
-const [ colorMode, setColorMode ] = useColorMode()
+const [colorMode, setColorMode] = useColorMode()
 ```
 
 ### `Styled`
@@ -105,9 +106,9 @@ These are primarily meant to be used as a mechanism to use styles defined in a `
 
 The `Styled` components include the same props as components created with [`@emotion/styled`](https://emotion.sh/docs/styled).
 
-Prop | Type | Description
----|---|---
-`as` | String or Component | Changes the underlying rendered element
+| Prop | Type                | Description                             |
+| ---- | ------------------- | --------------------------------------- |
+| `as` | String or Component | Changes the underlying rendered element |
 
 ### `Box`
 
@@ -115,11 +116,11 @@ The `Box` component is a primitive layout component with Styled System props, si
 
 The `Box` component includes all [Styled System space props](https://styled-system.com/api#space), as well as the following.
 
-Prop | Type | Description
----|---|---
-`color` | String | Foreground (text) color
-`bg`, `backgroundColor` | String | Background color
-`css` | Object | Style object
+| Prop                    | Type   | Description             |
+| ----------------------- | ------ | ----------------------- |
+| `color`                 | String | Foreground (text) color |
+| `bg`, `backgroundColor` | String | Background color        |
+| `css`                   | Object | Style object            |
 
 <!-- todo: note about deprecating other style props -->
 
@@ -152,6 +153,7 @@ The `Container` component is an extension of the `Box` component with a max-widt
 The `Footer` component is an extension of the `Box` component, intended for use as a page footer.
 
 ## `gatsby-theme-ui`
+
 ## `gatsby-theme-ui`
 
 [styled-system/css]: https://styled-system.com/css

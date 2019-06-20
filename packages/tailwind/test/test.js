@@ -30,7 +30,7 @@ const theme = {
     heading: 1.125,
   },
   space: [0, 2, 3, 4, 5, 6],
-  size: ['10em', '20em', '30em', '40em']
+  size: ['10em', '20em', '30em', '40em'],
 }
 
 const toJS = theme => `
