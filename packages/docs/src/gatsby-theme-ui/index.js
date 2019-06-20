@@ -116,7 +116,7 @@ export default {
       color: 'primary',
       '&:hover': {
         color: 'secondary',
-      }
+      },
     },
     pre: {
       variant: 'prism',
@@ -125,9 +125,9 @@ export default {
       color: 'text',
       bg: 'muted',
       overflow: 'auto',
-      'code': {
+      code: {
         color: 'inherit',
-      }
+      },
     },
     code: {
       fontFamily: 'monospace',
@@ -150,7 +150,7 @@ export default {
         pr: '4px',
         pl: 0,
         borderColor: 'muted',
-        borderBottomStyle: 'solid'
+        borderBottomStyle: 'solid',
       },
     },
     th: {
@@ -165,7 +165,7 @@ export default {
       border: 0,
       borderBottom: '1px solid',
       borderColor: 'muted',
-    }
+    },
   },
   prism: {
     [[
@@ -199,11 +199,7 @@ export default {
     ]]: {
       color: 'purple',
     },
-    [[
-      '.atrule',
-      '.attr-value',
-      '.keyword',
-    ]]: {
+    [['.atrule', '.attr-value', '.keyword']]: {
       color: 'primary',
     },
     [[
@@ -214,7 +210,7 @@ export default {
       '.builtin',
       '.inserted',
     ]]: {
-      color: 'secondary'
+      color: 'secondary',
     },
   },
 }

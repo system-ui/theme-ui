@@ -7,20 +7,18 @@ import {
   Main,
   Container,
   Header,
-  Footer
+  Footer,
 } from '../src/layout'
 
 test.each([
-  [ 'Box', Box ],
-  [ 'Flex', Flex ],
-  [ 'Layout', Layout ],
-  [ 'Main', Main ],
-  [ 'Container', Container ],
-  [ 'Header', Header ],
-  [ 'Footer', Footer ],
+  ['Box', Box],
+  ['Flex', Flex],
+  ['Layout', Layout],
+  ['Main', Main],
+  ['Container', Container],
+  ['Header', Header],
+  ['Footer', Footer],
 ])('renders %s', (a, Component) => {
-  const json = renderer.create(
-    <Component />
-  ).toJSON()
+  const json = renderer.create(<Component />).toJSON()
   expect(json).toMatchSnapshot()
 })

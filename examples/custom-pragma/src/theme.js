@@ -26,10 +26,10 @@ export default {
       ':hover': {
         color: 'secondary',
         textDecoration: 'underline',
-      }
+      },
     },
     code: {
       fontFamily: 'monospace',
-    }
-  }
+    },
+  },
 }

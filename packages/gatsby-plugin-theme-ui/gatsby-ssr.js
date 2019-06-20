@@ -14,13 +14,11 @@ const noflash = `
 })();
 `
 
-exports.onRenderBody = ({
-  setPreBodyComponents,
-}) => {
+exports.onRenderBody = ({ setPreBodyComponents }) => {
   const script = jsx('script', {
     dangerouslySetInnerHTML: {
-      __html: noflash
-    }
+      __html: noflash,
+    },
   })
-  setPreBodyComponents([ script ])
+  setPreBodyComponents([script])
 }
