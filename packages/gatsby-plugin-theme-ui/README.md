@@ -1,4 +1,3 @@
-
 # gatsby-plugin-theme-ui
 
 Automatically adds Theme UI context to a Gatsby site or theme
@@ -10,9 +9,7 @@ npm i theme-ui gatsby-plugin-theme-ui
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: [
-    'gatsby-plugin-theme-ui',
-  ]
+  plugins: ['gatsby-plugin-theme-ui'],
 }
 ```
 
@@ -44,8 +41,8 @@ export default {
       dark: {
         text: '#fff',
         background: '#000',
-      }
-    }
+      },
+    },
   },
 }
 ```

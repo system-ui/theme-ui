@@ -10,12 +10,11 @@ This is a complete replacement for the Emotion custom pragma.
 
 **Note:** Due to how the Emotion Babel preset works, this is not recommended for use in situations where the Emotion preset will be enabled.
 
-
 ```jsx
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     scss={{
@@ -23,6 +22,7 @@ export default props =>
       bg: 'primary',
     }}
   />
+)
 ```
 
 To opt-out of using Styled System CSS, use the `css` prop to render raw CSS values.
@@ -31,7 +31,7 @@ To opt-out of using Styled System CSS, use the `css` prop to render raw CSS valu
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     {...props}
     css={{
@@ -40,5 +40,5 @@ export default props =>
       fontSize: 24,
     }}
   />
+)
 ```
-

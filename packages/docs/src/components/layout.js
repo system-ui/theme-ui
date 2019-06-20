@@ -20,16 +20,11 @@ import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
 
-const modes = [
-  'light',
-  'dark',
-  'deep',
-  'swiss',
-]
+const modes = ['light', 'dark', 'deep', 'swiss']
 
 export default props => {
-  const [ menuOpen, setMenuOpen ] = useState(false)
-  const [ mode, setMode ] = useColorMode()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [mode, setMode] = useColorMode()
   const nav = useRef(null)
 
   const cycleMode = e => {
@@ -43,16 +38,14 @@ export default props => {
       <Global
         styles={{
           '*': {
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
           },
           body: {
             margin: 0,
-          }
+          },
         }}
       />
-      <SkipLink>
-        Skip to content
-      </SkipLink>
+      <SkipLink>Skip to content</SkipLink>
       <Layout>
         <Header>
           <MenuButton
@@ -63,14 +56,15 @@ export default props => {
               if (navLink) navLink.focus()
             }}
           />
-          <NavLink to='/'>Theme UI</NavLink>
-          <Box mx='auto' />
-          <NavLink href='https://github.com/system-ui/theme-ui'>GitHub</NavLink>
+          <NavLink to="/">Theme UI</NavLink>
+          <Box mx="auto" />
+          <NavLink href="https://github.com/system-ui/theme-ui">GitHub</NavLink>
           <Button
             scss={{
               ml: 2,
             }}
-            onClick={cycleMode}>
+            onClick={cycleMode}
+          >
             {mode}
           </Button>
         </Header>
@@ -80,7 +74,8 @@ export default props => {
               p: 0,
               display: 'flex',
               maxWidth: props.fullwidth ? 'none' : '',
-            }}>
+            }}
+          >
             <Sidebar
               ref={nav}
               open={menuOpen}
@@ -95,10 +90,7 @@ export default props => {
                 setMenuOpen(false)
               }}
             />
-            <Box
-              id='content'
-              width={1}
-              px={props.fullwidth ? 0 : 3}>
+            <Box id="content" width={1} px={props.fullwidth ? 0 : 3}>
               {props.children}
               <Pagination />
             </Box>

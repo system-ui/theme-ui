@@ -13,20 +13,22 @@ const flattenLinks = children =>
     if (!child.props || !child.props.children) return acc
     return React.Children.toArray([
       ...acc,
-      ...flattenLinks(child.props.children)
+      ...flattenLinks(child.props.children),
     ])
   }, [])
 
-const PaginationLink = ({ label, ...props }) =>
+const PaginationLink = ({ label, ...props }) => (
   <NavLink {...props}>
     <div>{label}</div>
     <div
       scss={{
         fontSize: 3,
-      }}>
+      }}
+    >
       {props.children}
     </div>
   </NavLink>
+)
 
 const Pagination = props => {
   const links = flattenLinks(props.children)
@@ -40,11 +42,11 @@ const Pagination = props => {
   return (
     <Flex py={4} mx={-2}>
       {hasPagination && previous && (
-        <PaginationLink {...previous.props} label='Previous:' />
+        <PaginationLink {...previous.props} label="Previous:" />
       )}
-      <Box mx='auto' />
+      <Box mx="auto" />
       {hasPagination && next && (
-        <PaginationLink {...next.props} label='Next:' />
+        <PaginationLink {...next.props} label="Next:" />
       )}
     </Flex>
   )
@@ -52,14 +54,15 @@ const Pagination = props => {
 
 const removeSlash = str => (str.length > 1 ? str.replace(/\/$/, '') : str)
 
-export default props =>
+export default props => (
   <Location>
     {({ location }) => (
       <Sidebar
         location={location}
         components={{
-          wrapper: Pagination
+          wrapper: Pagination,
         }}
       />
     )}
   </Location>
+)

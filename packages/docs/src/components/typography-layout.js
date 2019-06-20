@@ -1,11 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import {
-  jsx,
-  ThemeProvider,
-  Flex,
-  Styled
-} from 'theme-ui'
+import { jsx, ThemeProvider, Flex, Styled } from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'
 
@@ -20,14 +15,15 @@ import baseTheme from '../gatsby-theme-ui'
 
 const themeNames = Object.keys(themes)
 
-const ThemeSelect = props =>
+const ThemeSelect = props => (
   <div>
     <label
       htmlFor={props.name}
       scss={{
         fontSize: 16,
         mr: 2,
-      }}>
+      }}
+    >
       Theme
     </label>
     <select
@@ -37,30 +33,26 @@ const ThemeSelect = props =>
         fontFamily: 'system-ui, sans-serif',
         fontSize: 16,
         p: 2,
-      }}>
+      }}
+    >
       {themeNames.map(name => (
-        <option
-          key={name}
-          label={name}
-          value={name}
-        />
+        <option key={name} label={name} value={name} />
       ))}
     </select>
   </div>
+)
 
 export default props => {
-  const [ themeName, setTheme ] = useState(themeNames[0])
+  const [themeName, setTheme] = useState(themeNames[0])
 
   const typographyTheme = typographyThemes[themeName]
   const theme = toTheme(typographyTheme)
 
   return (
     <Layout {...props}>
-      <Flex
-        py={4}
-        alignItems='center'>
+      <Flex py={4} alignItems="center">
         <ThemeSelect
-          name='theme'
+          name="theme"
           value={themeName}
           onChange={e => {
             setTheme(e.target.value)
@@ -73,15 +65,14 @@ export default props => {
           onClick={e => {
             const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
             setTheme(themeNames[i])
-          }}>
+          }}
+        >
           Next
         </Button>
       </Flex>
       <ThemeProvider theme={theme}>
         <GoogleFonts />
-        <Styled.root>
-          {props.children}
-        </Styled.root>
+        <Styled.root>{props.children}</Styled.root>
       </ThemeProvider>
     </Layout>
   )

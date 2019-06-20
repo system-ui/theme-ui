@@ -21,12 +21,13 @@ export default React.forwardRef((props, ref) => (
           right: 0,
           bottom: 0,
           left: 0,
-        }}>
+        }}
+      >
         <Global
           styles={{
             body: {
               overflow: 'hidden',
-            }
+            },
           }}
         />
       </Box>
@@ -46,7 +47,9 @@ export default React.forwardRef((props, ref) => (
         maxHeight: 'calc(100vh - 64px)',
         overflow: 'auto',
         WebkitOverflowScrolling: 'touch',
-        [props.fullwidth ? '@media screen' : '@media screen and (max-width: 39.99em)']: {
+        [props.fullwidth
+          ? '@media screen'
+          : '@media screen and (max-width: 39.99em)']: {
           bg: 'background',
           marginLeft: -256,
           transition: 'transform .2s ease-out',
@@ -56,8 +59,9 @@ export default React.forwardRef((props, ref) => (
           listStyle: 'none',
           m: 0,
           p: 0,
-        }
-      }}>
+        },
+      }}
+    >
       <MDXProvider components={components}>
         <Content />
       </MDXProvider>

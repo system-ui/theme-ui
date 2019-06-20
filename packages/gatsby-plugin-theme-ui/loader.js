@@ -3,7 +3,7 @@ const { getOptions } = require('loader-utils')
 
 const themeModules = []
 
-module.exports = function () {
+module.exports = function() {
   const opts = getOptions(this)
 
   if (opts.theme) {

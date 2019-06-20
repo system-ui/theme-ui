@@ -11,7 +11,7 @@ export default {
   },
   styles: {
     h1: {
-      fontSize: [ 4, 5, 6 ],
+      fontSize: [4, 5, 6],
       color: 'primary',
     },
     a: {
@@ -20,7 +20,7 @@ export default {
       ':hover': {
         color: 'secondary',
         textDecoration: 'underline',
-      }
-    }
-  }
+      },
+    },
+  },
 }
