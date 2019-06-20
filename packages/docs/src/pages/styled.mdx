@@ -4,7 +4,7 @@ export default Layout
 
 # Styled component
 
-The `Styled` component can be used to render UI with styles from the [`theme.styles` object](/theming#styles) *outside* of MDX.
+The `Styled` component can be used to render UI with styles from the [`theme.styles` object](/theming#styles) _outside_ of MDX.
 For example, if you'd like to reuse heading styles in a React component,
 you can use the `Styled.h1` component to render an `<h1>` element with styles from `theme.styles.h1`.
 
@@ -13,12 +13,11 @@ you can use the `Styled.h1` component to render an `<h1>` element with styles fr
 import React from 'react'
 import { Styled } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div>
-    <Styled.h1>
-      Hello, styled heading!
-    </Styled.h1>
+    <Styled.h1>Hello, styled heading!</Styled.h1>
   </div>
+)
 ```
 
 For a full list of keys available, see the [Theme Specification docs](/theme-spec#styles).
@@ -33,9 +32,5 @@ The following example renders a `<div>` that is styled like an `<h2>` element.
 
 ```jsx
 // example
-<Styled.h2 as='div'>
-  Hello!
-</Styled.h2>
+<Styled.h2 as="div">Hello!</Styled.h2>
 ```
-
-

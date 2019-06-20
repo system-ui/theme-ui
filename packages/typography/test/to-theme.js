@@ -1,7 +1,4 @@
-import {
-  toTheme,
-  toUnitless,
-} from '../src/to-theme'
+import { toTheme, toUnitless } from '../src/to-theme'
 import themes from './fixtures/themes'
 import Typography from 'typography'
 
@@ -26,7 +23,7 @@ test('includes default options', () => {
 
 test('returns rhythm function', () => {
   const theme = toTheme(themes.wp2016)
-  const values = [ 0, 1/4, 1/2, 3/4, 1, 2 ]
+  const values = [0, 1 / 4, 1 / 2, 3 / 4, 1, 2]
   const a = values.map(theme.typography.rhythm)
   const b = values.map(typo.rhythm)
   expect(typeof theme.typography.rhythm).toBe('function')
@@ -70,10 +67,7 @@ test('returns line heights', () => {
   expect(typeof theme.lineHeights.heading).toBe('number')
 })
 
-const snapshots = Object.keys(themes).map(key => [
-  key,
-  themes[key]
-])
+const snapshots = Object.keys(themes).map(key => [key, themes[key]])
 
 test.each(snapshots)('snapshot %s', (name, config) => {
   const theme = toTheme(config)

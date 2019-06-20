@@ -1,24 +1,17 @@
-const remarkPlugins = [
-  require('remark-slug'),
-]
+const remarkPlugins = [require('remark-slug')]
 
 module.exports = {
-  __experimentalThemes: [
-    'gatsby-theme-ui',
-    // 'demo-theme',
-  ],
+  __experimentalThemes: ['gatsby-theme-ui'],
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [ '.mdx', '.md' ],
+        extensions: ['.mdx', '.md'],
         remarkPlugins,
-        gatsbyRemarkPlugins: [
-          'gatsby-remark-prismjs',
-        ]
-      }
+        gatsbyRemarkPlugins: ['gatsby-remark-prismjs'],
+      },
     },
-  ]
+  ],
 }

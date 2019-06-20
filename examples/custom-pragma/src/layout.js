@@ -1,21 +1,13 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Layout,
-  Header,
-  Main,
-  Container,
-} from 'theme-ui'
+import { jsx, Layout, Header, Main, Container } from 'theme-ui'
 
-export default props =>
+export default props => (
   <Layout>
     <Header>
       <h2>Theme UI Gatsby Example</h2>
     </Header>
     <Main>
-      <Container>
-        {props.children}
-      </Container>
+      <Container>{props.children}</Container>
     </Main>
   </Layout>
-
+)

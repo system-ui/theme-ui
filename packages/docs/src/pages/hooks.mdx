@@ -1,0 +1,22 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# Hooks
+
+If you are interested in learning more about how React Hooks work please see the official React docs [here](https://reactjs.org/docs/hooks-intro.html).
+
+## `useThemeUI`
+
+To access the `theme` object directly in a component, you can use the `useThemeUI` hook.
+
+```jsx
+import React from 'react'
+import { useThemeUI } from 'theme-ui'
+
+export default props => {
+  const { theme } = useThemeUI()
+
+  return <pre>{JSON.stringify(theme, null, 2)}</pre>
+}
+```

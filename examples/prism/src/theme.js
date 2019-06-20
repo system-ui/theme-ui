@@ -4,7 +4,7 @@ export default {
     background: '#fff',
     primary: '#07c',
     secondary: '#609',
-    lightgray: '#fafafa'
+    lightgray: '#fafafa',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -38,8 +38,8 @@ export default {
       ':hover': {
         color: 'secondary',
         textDecoration: 'underline',
-      }
-    }
+      },
+    },
   },
   prism: {
     [[
@@ -73,11 +73,7 @@ export default {
     ]]: {
       color: 'purple',
     },
-    [[
-      '.atrule',
-      '.attr-value',
-      '.keyword',
-    ]]: {
+    [['.atrule', '.attr-value', '.keyword']]: {
       color: 'primary',
     },
     [[
@@ -88,7 +84,7 @@ export default {
       '.builtin',
       '.inserted',
     ]]: {
-      color: 'secondary'
+      color: 'secondary',
     },
-  }
+  },
 }

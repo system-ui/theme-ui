@@ -1,12 +1,12 @@
 {
   "private": true,
   "name": "demo-theme",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "gatsby-config.js",
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "gatsby-theme-ui": "^0.1.5",
-    "theme-ui": "^0.1.5"
+    "gatsby-theme-ui": "^0.1.6",
+    "theme-ui": "^0.1.6"
   }
 }

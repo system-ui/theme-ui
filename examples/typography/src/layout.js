@@ -1,17 +1,10 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Layout,
-  Main,
-  Container,
-} from 'theme-ui'
+import { jsx, Layout, Main, Container } from 'theme-ui'
 
-export default props =>
+export default props => (
   <Layout>
     <Main>
-      <Container>
-        {props.children}
-      </Container>
+      <Container>{props.children}</Container>
     </Main>
   </Layout>
-
+)

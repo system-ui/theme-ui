@@ -1,0 +1,23 @@
+{
+  "name": "@theme-ui/tachyons",
+  "description": "Generate static CSS for use outside of React with Theme UI and Tachyons",
+  "version": "0.1.6",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "John Otander <johnotander@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "execa": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "tachyons-generator": "^0.23.0"
+  }
+}

@@ -14,22 +14,22 @@ This is also intended to help ensure that themes created for Theme UI are suitab
 
 The `theme` object is made up of the following scales (i.e. property-specific objects) for use in CSS styles.
 
-Theme Key | CSS Properties
----|---
-`colors` | `color`, `background-color`, `border-color`
-`fonts` | `font-family`
-`fontSizes` | `font-size`
-`fontWeights`    | `font-weight`
-`lineHeights` | `line-height`
+| Theme Key        | CSS Properties                                                                                                                                                                                     |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `colors`         | `color`, `background-color`, `border-color`                                                                                                                                                        |
+| `fonts`          | `font-family`                                                                                                                                                                                      |
+| `fontSizes`      | `font-size`                                                                                                                                                                                        |
+| `fontWeights`    | `font-weight`                                                                                                                                                                                      |
+| `lineHeights`    | `line-height`                                                                                                                                                                                      |
 | `space`          | `margin`, `margin-top`, `margin-right`, `margin-bottom`, `margin-left`, `padding`, `padding-top`, `padding-right`, `padding-bottom`, `padding-left`, `grid-gap`, `grid-column-gap`, `grid-row-gap` |
-| `letterSpacings` | `letter-spacing`
-| `sizes`          | `width`, `height`, `min-width`, `max-width`, `min-height`, `max-height`
-| `borders`        | `border`, `border-top`, `border-right`, `border-bottom`, `border-left`
-| `borderWidths`   | `border-width`
-| `borderStyles`   | `border-style`
-| `radii`          | `border-radius`
-| `shadows`        | `box-shadow`, `text-shadow`
-| `zIndices`       | `z-index`
+| `letterSpacings` | `letter-spacing`                                                                                                                                                                                   |
+| `sizes`          | `width`, `height`, `min-width`, `max-width`, `min-height`, `max-height`                                                                                                                            |
+| `borders`        | `border`, `border-top`, `border-right`, `border-bottom`, `border-left`                                                                                                                             |
+| `borderWidths`   | `border-width`                                                                                                                                                                                     |
+| `borderStyles`   | `border-style`                                                                                                                                                                                     |
+| `radii`          | `border-radius`                                                                                                                                                                                    |
+| `shadows`        | `box-shadow`, `text-shadow`                                                                                                                                                                        |
+| `zIndices`       | `z-index`                                                                                                                                                                                          |
 
 **Note:** A theme does not require that all these fields be present and can include additional values when needed.
 
@@ -65,14 +65,14 @@ Theme Key | CSS Properties
 
 The `theme.colors` scale (i.e. color palette) should be an object literal with the following keys.
 
-Key | Description
----|---
-`text`        | Body foreground color
-`background`  | Body background color
-`primary`     | Primary brand color for links, buttons, etc.
-`secondary`   | A secondary brand color for alternative styling
-`accent`      | A contrast color for emphasizing UI
-`muted`       | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
+| Key          | Description                                                                                                     |
+| ------------ | --------------------------------------------------------------------------------------------------------------- |
+| `text`       | Body foreground color                                                                                           |
+| `background` | Body background color                                                                                           |
+| `primary`    | Primary brand color for links, buttons, etc.                                                                    |
+| `secondary`  | A secondary brand color for alternative styling                                                                 |
+| `accent`     | A contrast color for emphasizing UI                                                                             |
+| `muted`      | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
 
 Any other color key may also be included, and raw color values can be included and aliased for the values above.
 
@@ -84,7 +84,7 @@ TK
 
 ## Color Modes
 
-In order to use Theme UI color modes, color scales should include *at least* a `text` and `background` color. This is used in the `ColorMode` component to set body foreground and background colors.
+In order to use Theme UI color modes, color scales should include _at least_ a `text` and `background` color. This is used in the `ColorMode` component to set body foreground and background colors.
 Color modes should be defined as nested scales within a `theme.colors.modes` object.
 Each key in this object should correspond to a color mode name.
 Color mode names may be anything, but typically `light` and `dark` should be used for applications that use a dark mode.
@@ -142,7 +142,7 @@ Additional keys can be included for more complex styling.
 
 Font sizes are typically defined as an array, from smallest to largest.
 
-**Note:** This is *not* required, and plain objects will work as well.
+**Note:** This is _not_ required, and plain objects will work as well.
 
 ```js
 // example fontSizes scale
@@ -156,18 +156,18 @@ Font sizes are typically defined as an array, from smallest to largest.
 The index values of the array can be thought of as mapping to heading levels.
 This does not mean that these values are in any way tied to specific heading levels or HTML elements, but is meant for illustration purposes only.
 
-Index | Heading-Level Equivalent
----|---
-0 | `h6`
-1 | `h5`
-2 | `h4`
-3 | `h3`
-4 | `h2`
-5 | `h1`
+| Index | Heading-Level Equivalent |
+| ----- | ------------------------ |
+| 0     | `h6`                     |
+| 1     | `h5`                     |
+| 2     | `h4`                     |
+| 3     | `h3`                     |
+| 4     | `h2`                     |
+| 5     | `h1`                     |
 
 ## Variants
 
-Theme UI currently does *not* have standards for defining combinations of typographic styles, but *variants* can be used for situations where it is useful to reuse combinations of these primitive values.
+Theme UI currently does _not_ have standards for defining combinations of typographic styles, but _variants_ can be used for situations where it is useful to reuse combinations of these primitive values.
 
 ```js
 // example typographic style variants
@@ -278,4 +278,4 @@ Variants can also used within the `theme.styles` object.
 }
 ```
 
-[System UI Theme Specification]: https://system-ui.com/theme
+[system ui theme specification]: https://system-ui.com/theme
