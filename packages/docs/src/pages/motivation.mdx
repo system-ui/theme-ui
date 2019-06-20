@@ -18,7 +18,7 @@ While some of the ideas encapsulated within this library may seem familiar, the 
 MDX has, in my opinion, quickly become one of the best ways to render Markdown in React.
 The ability to render custom React components for any Markdown element with the `MDXProvider` is a very powerful API and has the potential to open up how Markdown is leveraged in ways I think we'll continue to see evolve over the coming years.
 
-While the final rendered HTML *can* be styled using global CSS or a wrapping element with child selectors, there are certainly drawbacks to this approach,
+While the final rendered HTML _can_ be styled using global CSS or a wrapping element with child selectors, there are certainly drawbacks to this approach,
 and they can lead to unexpected styling bugs when composing themes together.
 Using the `MDXProvider` to render custom styled components in MDX is a great way to avoid this, but the overhead for applying styles in this way can be a lot of work, even with UI component libraries like Rebass or Material UI.
 Theme UI includes the `theme.styles` API as a light abstraction on top of this, that hopefully feels familiar to people from diverse backgrounds, even those with little or no experience using MDX.

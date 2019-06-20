@@ -16,37 +16,41 @@ const createComponents = (components = {}) => {
   return next
 }
 
-export const ThemeProvider = ({
-  theme = {},
-  components = {},
-  ...props
-}) => {
+export const ThemeProvider = ({ theme = {}, components = {}, ...props }) => {
   const outer = useThemeUI()
-  const initialColorMode = outer.colorMode || (theme ? theme.initialColorMode : undefined)
-  const [ colorMode, setColorMode ] = useColorState(initialColorMode)
-  const context = merge.all({}, {
-    colorMode,
-    setColorMode,
-  }, outer, {
-    theme,
-    components: createComponents(components),
-  })
+  const initialColorMode =
+    outer.colorMode || (theme ? theme.initialColorMode : undefined)
+  const [colorMode, setColorMode] = useColorState(initialColorMode)
+  const context = merge.all(
+    {},
+    {
+      colorMode,
+      setColorMode,
+    },
+    outer,
+    {
+      theme,
+      components: createComponents(components),
+    }
+  )
 
   if (context.colorMode) {
     const modes = get(context.theme, 'colors.modes', {})
     context.theme = merge.all({}, context.theme, {
-      colors: get(modes, context.colorMode, context.theme.colors)
+      colors: get(modes, context.colorMode, context.theme.colors),
     })
   }
 
-  return (
-    jsx(EmotionContext.Provider, { value: context.theme },
-      jsx(MDXProvider, { components: context.components },
-        jsx(Context.Provider, {
-          value: context,
-          children: props.children
-        })
-      )
+  return jsx(
+    EmotionContext.Provider,
+    { value: context.theme },
+    jsx(
+      MDXProvider,
+      { components: context.components },
+      jsx(Context.Provider, {
+        value: context,
+        children: props.children,
+      })
     )
   )
 }

@@ -1,9 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-  Styled,
-} from 'theme-ui'
+import { jsx, ThemeProvider, Styled } from 'theme-ui'
 import theme from './theme'
 
 // does not currently work with MDX v1
@@ -18,11 +14,12 @@ function App() {
           fontFamily: 'body',
           color: 'text',
           bg: 'background',
-        }}>
+        }}
+      >
         <Styled.h1>Theme UI + Create React App</Styled.h1>
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

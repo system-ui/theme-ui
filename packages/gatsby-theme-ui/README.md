@@ -1,18 +1,15 @@
-
 # gatsby-theme-ui
 
 Gatsby (theme) plugin for adding theme-ui context
 
 ```sh
-npm i theme-ui gatsby-theme-ui
+npm i theme-ui gatsby-theme-ui @emotion/core @emotion/styled @mdx-js/react
 ```
 
 ```js
 // gatsby-config.js
 module.exports = {
-  __experimentalThemes: [
-    'gatsby-theme-ui',
-  ],
+  __experimentalThemes: ['gatsby-theme-ui'],
   plugins: [],
 }
 ```
@@ -47,7 +44,7 @@ export default {
     ...baseTheme.colors,
     text: '#111',
     background: '#fff',
-  }
+  },
 }
 ```
 
@@ -66,8 +63,8 @@ export default {
       dark: {
         text: '#fff',
         background: '#000',
-      }
-    }
+      },
+    },
   },
 }
 ```

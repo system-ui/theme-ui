@@ -10,8 +10,8 @@ export default {
         background: '#222',
         primary: '#0cf',
         secondary: '#90c',
-      }
-    }
+      },
+    },
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -34,7 +34,7 @@ export default {
       ':hover': {
         color: 'secondary',
         textDecoration: 'underline',
-      }
-    }
-  }
+      },
+    },
+  },
 }

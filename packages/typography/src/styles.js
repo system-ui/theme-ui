@@ -22,24 +22,42 @@ export const styles = {
   img: {
     maxWidth: '100%',
   },
-  h1: assign({
-    fontSize: 5,
-  }, heading),
-  h2: assign({
-    fontSize: 4,
-  }, heading),
-  h3: assign({
-    fontSize: 3,
-  }, heading),
-  h4: assign({
-    fontSize: 2,
-  }, heading),
-  h5: assign({
-    fontSize: 1,
-  }, heading),
-  h6: assign({
-    fontSize: 0
-  }, heading),
+  h1: assign(
+    {
+      fontSize: 5,
+    },
+    heading
+  ),
+  h2: assign(
+    {
+      fontSize: 4,
+    },
+    heading
+  ),
+  h3: assign(
+    {
+      fontSize: 3,
+    },
+    heading
+  ),
+  h4: assign(
+    {
+      fontSize: 2,
+    },
+    heading
+  ),
+  h5: assign(
+    {
+      fontSize: 1,
+    },
+    heading
+  ),
+  h6: assign(
+    {
+      fontSize: 0,
+    },
+    heading
+  ),
   ul: {
     listStylePosition: 'outside',
     listStyleImage: 'none',
@@ -76,10 +94,10 @@ export const styles = {
     px: 2,
     py: 1,
     ':first-child': {
-      pl: 0
+      pl: 0,
     },
     ':last-child': {
-      pr: 0
+      pr: 0,
     },
   },
   td: {
@@ -89,10 +107,10 @@ export const styles = {
     py: 1,
     mt: '-1px',
     ':first-child': {
-      pl: 0
+      pl: 0,
     },
     ':last-child': {
-      pr: 0
+      pr: 0,
     },
   },
   blockquote: {
@@ -119,14 +137,7 @@ export const styles = {
   },
 }
 
-const headings = [
-  'h6',
-  'h5',
-  'h4',
-  'h3',
-  'h2',
-  'h1'
-]
+const headings = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1']
 const blockElements = [
   ...headings,
   'ul',
@@ -141,11 +152,14 @@ const blockElements = [
 
 blockElements.forEach(tag => {
   assign(styles, {
-    [tag]: assign({
-      padding: 0,
-      margin: 0,
-      marginBottom: 3,
-    }, styles[tag])
+    [tag]: assign(
+      {
+        padding: 0,
+        margin: 0,
+        marginBottom: 3,
+      },
+      styles[tag]
+    ),
   })
 })
 

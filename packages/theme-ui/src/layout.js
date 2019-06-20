@@ -5,13 +5,14 @@ import space from '@styled-system/space'
 import color from '@styled-system/color'
 import css from '@styled-system/css'
 
-export const Box = styled('div')(css({
-  boxSizing: 'border-box',
-  minWidth: 0,
-}),
+export const Box = styled('div')(
+  css({
+    boxSizing: 'border-box',
+    minWidth: 0,
+  }),
   compose(
     space,
-    color,
+    color
   )
 )
 
@@ -28,7 +29,7 @@ export const Layout = props =>
       display: 'flex',
       flexDirection: 'column',
       variant: 'styles.Layout',
-    }
+    },
   })
 
 export const Header = props =>
@@ -38,7 +39,7 @@ export const Header = props =>
     css: {
       display: 'flex',
       variant: 'styles.Header',
-    }
+    },
   })
 
 export const Main = props =>
@@ -48,7 +49,7 @@ export const Main = props =>
     css: {
       flex: '1 1 auto',
       variant: 'styles.Main',
-    }
+    },
   })
 
 export const Container = props =>
@@ -61,7 +62,7 @@ export const Container = props =>
       mx: 'auto',
       p: 4,
       variant: 'styles.Container',
-    }
+    },
   })
 
 export const Footer = props =>
@@ -71,5 +72,5 @@ export const Footer = props =>
     css: {
       display: 'flex',
       variant: 'styles.Footer',
-    }
+    },
   })

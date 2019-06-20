@@ -6,9 +6,11 @@ const parseTypographyGoogleFonts = typography => {
   const { googleFonts } = typography.options
   if (!googleFonts) return null
   // Merriweather:400,400i,700,700i,900,900i|Montserrat
-  const families = googleFonts.map(({ name, styles }) =>
-    `${name.split(' ').join('+')}:${styles.join(',')}`
-  ).join('|')
+  const families = googleFonts
+    .map(
+      ({ name, styles }) => `${name.split(' ').join('+')}:${styles.join(',')}`
+    )
+    .join('|')
   const href = `https://fonts.googleapis.com/css?family=${families}`
   return href
 }
@@ -23,7 +25,7 @@ export default props => {
     link.rel = 'stylesheet'
     link.href = href
     document.head.appendChild(link)
-  }, [ theme.typography ])
+  }, [theme.typography])
 
   return false
 }
