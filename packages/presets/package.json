@@ -1,7 +1,12 @@
 {
   "name": "@theme-ui/presets",
   "version": "0.1.6",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "author": "Brent Jackson",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  }
 }

@@ -1,3 +1,4 @@
+// default/base theme
 const heading = {
   fontFamily: 'heading',
   lineHeight: 'heading',

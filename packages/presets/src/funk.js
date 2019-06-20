@@ -7,6 +7,8 @@ export const funk = {
     heading: 'Poppins, sans-serif',
     monospace: 'Menlo, monospace',
   },
+  lineHeights: {
+  },
   colors: {
     ...base.colors,
     primary: '#609',

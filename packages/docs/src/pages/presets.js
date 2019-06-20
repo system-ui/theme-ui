@@ -39,9 +39,12 @@ export default props => {
           }
         }}>
         <ColorMode />
-        <Styled.h2>Demo</Styled.h2>
-        <label>
-          Preset:
+        <label
+          css={{
+            display: 'block',
+            mb: 4,
+          }}>
+          Preset:{' '}
           <Select
             value={theme}
             onChange={e => {
@@ -56,38 +59,40 @@ export default props => {
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
-          <Styled.h2>Colors</Styled.h2>
-          <ColorPalette omit={[ 'modes', 'header' ]} />
-          <Styled.h2>Typography</Styled.h2>
-          <TypeStyle
-            fontSize={7}>
-            Body: <FontFamily name='body' />
-          </TypeStyle>
-          <HeadingStyle
-            fontFamily='heading'
-            fontWeight='heading'
-            lineHeight='heading'
-            fontSize={7}>
-            Heading: <FontFamily name='heading' />
-          </HeadingStyle>
-          <Styled.h2>Type Scale</Styled.h2>
-          <TypeScale />
-          <MDXProvider components={components}>
-            <Lorem />
-          </MDXProvider>
-          <Styled.h2>Raw JSON</Styled.h2>
-          <textarea
-            value={JSON.stringify(preset, null, 2)}
-            rows={16}
-            readOnly
-            css={{
-              width: '100%',
-              fontFamily: 'monospace',
-              bg: 'muted',
-              border: 0,
-              borderRadius: 4,
-            }}
-          />
+          <Styled.root>
+            <Styled.h2>Colors</Styled.h2>
+            <ColorPalette omit={[ 'modes', 'header' ]} />
+            <Styled.h2>Typography</Styled.h2>
+            <TypeStyle
+              fontSize={7}>
+              Body: <FontFamily name='body' />
+            </TypeStyle>
+            <HeadingStyle
+              fontFamily='heading'
+              fontWeight='heading'
+              lineHeight='heading'
+              fontSize={7}>
+              Heading: <FontFamily name='heading' />
+            </HeadingStyle>
+            <Styled.h2>Type Scale</Styled.h2>
+            <TypeScale />
+            <MDXProvider components={components}>
+              <Lorem />
+            </MDXProvider>
+            <Styled.h2>Raw JSON</Styled.h2>
+            <textarea
+              value={JSON.stringify(preset, null, 2)}
+              rows={16}
+              readOnly
+              css={{
+                width: '100%',
+                fontFamily: 'monospace',
+                bg: 'muted',
+                border: 0,
+                borderRadius: 4,
+              }}
+            />
+          </Styled.root>
         </ThemeContext.Provider>
       </div>
     </div>

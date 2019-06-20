@@ -21,7 +21,7 @@ export const TypeStyle = ({
         lineHeight,
         fontWeight,
         ...(truncate ? ({
-          overflow: 'hidden',
+          overflowX: 'hidden',
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
         }) : {})
