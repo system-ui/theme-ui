@@ -1,13 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Styled,
-  Layout,
-  Main,
-  Box,
-  Container,
-  useColorMode
-} from 'theme-ui'
+import { jsx, Styled, Layout, Main, Box, Container } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Global } from '@emotion/core'
 import { Helmet } from 'react-helmet'
@@ -19,18 +11,9 @@ import Footer from './footer'
 import Sidebar from './sidebar'
 import Pagination from './pagination'
 
-const modes = ['light', 'dark', 'deep', 'swiss']
-
 export default props => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [mode, setMode] = useColorMode()
   const nav = useRef(null)
-
-  const cycleMode = e => {
-    const i = modes.indexOf(mode)
-    const next = modes[(i + 1) % modes.length]
-    setMode(next)
-  }
 
   const title = [
     props._frontmatter ? props._frontmatter.title : false,
@@ -64,13 +47,7 @@ export default props => {
       />
       <SkipLink>Skip to content</SkipLink>
       <Layout>
-        <Header
-          cycleMode={cycleMode}
-          mode={mode}
-          nav={nav}
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-        />
+        <Header nav={nav} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Main>
           <Container
             css={{
