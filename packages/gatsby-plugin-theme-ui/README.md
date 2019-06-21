@@ -1,5 +1,9 @@
 # gatsby-plugin-theme-ui
 
+**EXPERIMENTAL**
+
+See [gatsby-theme-ui](https://github.com/system-ui/theme-ui/tree/master/packages/gatsby-theme-ui) for the currently recommended package.
+
 Automatically adds Theme UI context to a Gatsby site or theme
 
 ```sh
