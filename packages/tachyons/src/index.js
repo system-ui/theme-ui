@@ -10,7 +10,7 @@ const KEY_MAPPING = {
   lineHeights: 'lineHeight',
   letterSpacings: 'letterSpacing',
   size: ['heights', 'maxHeights', 'widths', 'maxWidths'],
-  zIndices: 'zIndex'
+  zIndices: 'zIndex',
 }
 
 export default theme => {
@@ -18,7 +18,7 @@ export default theme => {
     if (!KEY_MAPPING[key]) {
       return {
         ...acc,
-        [key]: value
+        [key]: value,
       }
     } else if (Array.isArray(KEY_MAPPING[key])) {
       KEY_MAPPING[key].forEach(tachyonsKey => {
@@ -29,7 +29,7 @@ export default theme => {
     } else {
       return {
         ...acc,
-        [KEY_MAPPING[key]]: value
+        [KEY_MAPPING[key]]: value,
       }
     }
   }, {})

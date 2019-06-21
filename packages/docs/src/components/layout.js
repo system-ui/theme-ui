@@ -8,6 +8,7 @@ import Header from './header'
 import Footer from './footer'
 import Sidebar from './sidebar'
 import Pagination from './pagination'
+import EditLink from './edit-link'
 import Head from './head'
 
 export default props => {
@@ -64,6 +65,7 @@ export default props => {
               />
               <Box id="content" width={1}>
                 {props.children}
+                <EditLink />
                 {!props.fullwidth && <Pagination />}
               </Box>
             </div>
