@@ -1,4 +1,3 @@
-
 # Contributing
 
 Hi! We're looking for some help, and we're excited that you're interested!
@@ -42,4 +41,3 @@ yarn test --watch
 [yarn workspaces]: https://yarnpkg.com/en/docs/workspaces
 [lerna]: https://github.com/lerna/lerna
 [jest]: https://jestjs.io/
-
