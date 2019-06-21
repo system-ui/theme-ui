@@ -1,11 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-  Styled,
-  ColorMode,
-  components,
-} from 'theme-ui'
+import { jsx, ThemeProvider, Styled, ColorMode, components } from 'theme-ui'
 import { ThemeContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
@@ -22,57 +16,57 @@ import Select from '../components/select'
 import Lorem from './lorem.mdx'
 
 export default props => {
-  const [ theme, setTheme ] = useState('base')
+  const [theme, setTheme] = useState('base')
   const preset = presets[theme]
   return (
     <div>
       <Helmet>
         <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat:400,700,900|Poppins:400,700,900|Roboto:400,700,900|Roboto+Condensed:400,700'
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600"
         />
       </Helmet>
       <div
         css={{
           '*': {
             transition: 'all .2s ease-out',
-          }
-        }}>
+          },
+        }}
+      >
         <ColorMode />
         <label
           css={{
             display: 'block',
             mb: 4,
-          }}>
+          }}
+        >
           Preset:{' '}
           <Select
             value={theme}
             onChange={e => {
               setTheme(e.target.value)
-            }}>
+            }}
+          >
             {Object.keys(presets).map(key => (
-              <option
-                key={key}
-                children={key}
-              />
+              <option key={key} children={key} />
             ))}
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
           <Styled.root>
             <Styled.h2>Colors</Styled.h2>
-            <ColorPalette omit={[ 'modes', 'header' ]} />
+            <ColorPalette omit={['modes', 'header']} />
             <Styled.h2>Typography</Styled.h2>
-            <TypeStyle
-              fontSize={7}>
-              Body: <FontFamily name='body' />
+            <TypeStyle fontSize={7}>
+              Body: <FontFamily name="body" />
             </TypeStyle>
             <HeadingStyle
-              fontFamily='heading'
-              fontWeight='heading'
-              lineHeight='heading'
-              fontSize={7}>
-              Heading: <FontFamily name='heading' />
+              fontFamily="heading"
+              fontWeight="heading"
+              lineHeight="heading"
+              fontSize={7}
+            >
+              Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Styled.h2>Type Scale</Styled.h2>
             <TypeScale />

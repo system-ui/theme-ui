@@ -8,6 +8,13 @@ export const funk = {
     monospace: 'Menlo, monospace',
   },
   lineHeights: {
+    body: 1.625,
+    heading: 1.25,
+  },
+  fontWeights: {
+    body: 400,
+    heading: 900,
+    bold: 700,
   },
   colors: {
     ...base.colors,

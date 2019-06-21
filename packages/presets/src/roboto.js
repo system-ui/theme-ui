@@ -15,7 +15,9 @@ export const roboto = {
     monospace: '"Roboto Mono", monospace',
   },
   fontWeights: {
+    body: 400,
     heading: 600,
+    bold: 600,
   },
 }
 
