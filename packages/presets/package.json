@@ -8,5 +8,8 @@
   "scripts": {
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

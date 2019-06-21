@@ -16,5 +16,8 @@
     "lodash.get": "^4.4.2",
     "react": "^16.8.6",
     "theme-ui": "^0.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
