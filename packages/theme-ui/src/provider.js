@@ -1,7 +1,7 @@
 import { ThemeContext as EmotionContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
-import merge from 'lodash.merge'
+import merge from './merge'
 import jsx from './jsx'
 import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
