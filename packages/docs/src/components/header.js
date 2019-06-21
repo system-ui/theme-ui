@@ -18,7 +18,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
   return (
     <Header>
       <Container>
-        <Flex justifyContent="space-between">
+        <Flex sx={{ justifyContent: 'space-between' }}>
           <Flex>
             <MenuButton
               onClick={e => {

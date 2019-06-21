@@ -46,7 +46,7 @@ test('merges multiple objects', () => {
 })
 
 test('does not attempt to merge React components', () => {
-  const h1 = React.forwardRef(props => <h1 {...props} />)
+  const h1 = React.forwardRef((props, ref) => <h1 ref={ref} {...props} />)
   const result = merge(
     {
       h1: props => <h1 {...props} />,

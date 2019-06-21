@@ -50,7 +50,12 @@ export default props => {
 
   return (
     <Layout {...props}>
-      <Flex py={4} alignItems="center">
+      <Flex
+        sx={{
+          alignItems: 'center',
+          py: 4,
+        }}
+      >
         <ThemeSelect
           name="theme"
           value={themeName}
