@@ -43,10 +43,12 @@ export default props => (
     <Box py={[5, 6]} color="background" bg="primary">
       <Container
         css={{
-          display: 'flex',
-          flexDirection: ['column', 'column', 'row'],
+          py: 0,
+          display: 'grid',
+          gridTemplateColumns: ['1f', 'repeat(3, 1fr)'],
+          gridGap: 24,
+          gridAutoFlow: ['row', 'column', 'column'],
           alignItems: ['flex-start', 'flex-start', 'center'],
-          justifyContent: 'space-between',
         }}
       >
         <Logo
@@ -56,7 +58,12 @@ export default props => (
             fontSize: [96, 96, 160],
           }}
         />
-        <Box py={3} width={['auto', 'auto', '66.666%']}>
+        <Box
+          py={3}
+          css={{
+            gridColumn: ['auto', '2 / 4'],
+          }}
+        >
           {props.children}
         </Box>
       </Container>
