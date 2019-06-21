@@ -1,4 +1,3 @@
-import space from '@styled-system/space'
 import styled from './styled'
 import themed from './themed'
 
@@ -46,12 +45,12 @@ const aliases = {
 
 const alias = n => aliases[n] || n
 
-export const Styled = styled('div')(themed('div'), space)
+export const Styled = styled('div')(themed('div'))
 
 export const components = {}
 
 tags.forEach(tag => {
-  components[tag] = styled(alias(tag))(themed(tag), space)
+  components[tag] = styled(alias(tag))(themed(tag))
   Styled[tag] = components[tag]
 })
 

@@ -1,19 +1,12 @@
 import jsx from './jsx'
 import styled from './styled'
-import { compose } from '@styled-system/core'
-import space from '@styled-system/space'
-import color from '@styled-system/color'
 import css from '@styled-system/css'
 
 export const Box = styled('div')(
   css({
     boxSizing: 'border-box',
     minWidth: 0,
-  }),
-  compose(
-    space,
-    color
-  )
+  })
 )
 
 export const Flex = styled(Box)({

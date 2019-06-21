@@ -2444,20 +2444,6 @@
   resolved "https://registry.yarnpkg.com/@stefanprobst/lokijs/-/lokijs-1.5.6-b.tgz#6a36a86dbe132e702e6b15ffd3ce4139aebfe942"
   integrity sha512-MNodHp46og+Sdde/LCxTLrxcD5Dimu21R/Fer2raXMG1XtHSV2+vZnkIV87OPAxuf2NiDj1W5hN7Q2MYUfQQ8w==
 
-"@styled-system/color@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@styled-system/color/-/color-5.0.5.tgz#5fe267ea6b93ecb0ec942c4a1995c9ed64ac2f55"
-  integrity sha512-vpEBhbOEargvz5iNqg/Y/UGuhvK0wF3rVGdcEtvl6aIchzMuh72HzRpBZ04o7EnSJT1kqU9TAyF8RfhUG3p3Jg==
-  dependencies:
-    "@styled-system/core" "^5.0.5"
-
-"@styled-system/core@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@styled-system/core/-/core-5.0.5.tgz#ac3d769f8fc2ae54f7cfada6d22c8c26d195cc03"
-  integrity sha512-FeP2Swis9anzW8fpU4wmBYqHBoPeYp7htcq0JAIi0+4LT3CkQNl3rFGa7IW9VZDnXPYC6Elvh/vdCJVPUyke/Q==
-  dependencies:
-    object-assign "^4.1.1"
-
 "@styled-system/css@^5.0.5":
   version "5.0.10"
   resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-5.0.10.tgz#c5f59d6752a59a53e49cbce00d85a98fbe7d157b"
@@ -2474,13 +2460,6 @@
     lodash.merge "^4.6.1"
     lodash.omit "^4.5.0"
     lodash.set "^4.3.2"
-
-"@styled-system/space@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@styled-system/space/-/space-5.0.6.tgz#f7145637eb98d082d8d1d2b836df60860f15dfc1"
-  integrity sha512-LrZ3QVwIBgoOl3gz7Sg0XEt91EAP6BmT4DR5NXOf6qpQAeVR1QYqvyfAevp/+XV7D6dfZgfANeycU+QQVuJi6Q==
-  dependencies:
-    "@styled-system/core" "^5.0.5"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"

@@ -5,7 +5,6 @@ import { Context } from 'theme-ui'
 const parseTypographyGoogleFonts = typography => {
   const { googleFonts } = typography.options
   if (!googleFonts) return null
-  // Merriweather:400,400i,700,700i,900,900i|Montserrat
   const families = googleFonts
     .map(
       ({ name, styles }) => `${name.split(' ').join('+')}:${styles.join(',')}`
