@@ -49,7 +49,7 @@ const RootProvider = ({ theme = {}, components, children }) => {
 
 const NestedProvider = ({ theme, components, children }) => {
   const outer = useThemeUI()
-  const context = merge({}, outer, { theme })
+  const context = merge(outer, { theme })
 
   return jsx(BaseProvider, {
     context,
