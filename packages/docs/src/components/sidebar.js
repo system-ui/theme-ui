@@ -10,7 +10,7 @@ const components = {
   a: NavLink,
 }
 
-export default React.forwardRef((props, ref) => (
+export default React.forwardRef(({ fullwidth, ...props }, ref) => (
   <React.Fragment>
     {props.open && (
       <Box
@@ -44,7 +44,7 @@ export default React.forwardRef((props, ref) => (
         overflow: 'auto',
         py: 3,
         WebkitOverflowScrolling: 'touch',
-        display: props.fullwidth ? 'none' : 'block',
+        display: fullwidth ? 'none' : 'block',
         '@media screen and (max-width: 39.99em)': {
           display: 'block',
           position: 'fixed',

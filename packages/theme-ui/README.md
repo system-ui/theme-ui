@@ -44,7 +44,7 @@ https://theme-ui.com
 ## Getting Started
 
 ```sh
-npm i theme-ui @emotion/core @emotion/styled @mdx-js/react
+npm i theme-ui @emotion/core @mdx-js/react
 ```
 
 Wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.

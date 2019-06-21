@@ -1236,7 +1236,7 @@
     "@emotion/serialize" "^0.11.7"
     "@emotion/utils" "0.11.1"
 
-"@emotion/styled@^10.0.0", "@emotion/styled@^10.0.10":
+"@emotion/styled@^10.0.10":
   version "10.0.12"
   resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-10.0.12.tgz#923531b3baa2ad670f821c6ca724caab26b08aad"
   integrity sha512-oxvSoLi3AbI5bEfqkFE1hLTC3eMpifwj6klJ4bvzgE6EDqj4w859KQyZR7ekGRAcfGNFyEYhw67bm8FlMBlX7Q==

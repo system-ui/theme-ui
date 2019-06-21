@@ -1,5 +1,5 @@
 import jsx from './jsx'
-import styled from '@emotion/styled'
+import styled from './styled'
 import { compose } from '@styled-system/core'
 import space from '@styled-system/space'
 import color from '@styled-system/color'

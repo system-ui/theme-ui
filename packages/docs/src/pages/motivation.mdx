@@ -63,7 +63,8 @@ For Theme UI, the decision was primarily based on these factors:
 - Emotion's implementation of the `css` prop and the custom JSX pragma allows for potentially better integrations with `@styled-system/css`
 - The Emotion API includes more lower-level utilities, like `createEmotion` that could be leveraged when considering how multiple themes could be composed together
 - Emotion's theming context is directly available in `@emotion/core`, allowing this library to leverage React's context API in different ways
-- In the case of Theme UI internals, the `styled` higher-order component utility is not necessarily the best API for creating components, and the ability to remove `@emotion/styled` from the core package in the future could help reduce bundle size – i.e. most of the same things can be achieved with the `css` prop
+- In the case of Theme UI internals, the `styled` higher-order component utility is not necessarily the best API for creating components,
+  and by not including `@emotion/styled` in the core package the bundle size is kept to a minimum – i.e. most of the same things can be achieved with the `css` prop
 
 ## How is this different from Styled System
 

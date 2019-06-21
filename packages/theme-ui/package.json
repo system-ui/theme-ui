@@ -13,7 +13,6 @@
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   },
   "dependencies": {
@@ -26,7 +25,6 @@
   },
   "devDependencies": {
     "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   }
 }
