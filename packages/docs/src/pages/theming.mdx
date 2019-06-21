@@ -1,3 +1,7 @@
+---
+title: 'Theming'
+---
+
 import Layout from '../components/layout'
 
 export default Layout
@@ -13,13 +17,13 @@ Theming with Theme UI is based on the [System UI Theme Spec][] with an additiona
 Add a `theme.colors` object to provide colors for a theme.
 In order to make themes and projects built with Theme UI as portable and interoperable as possible, the following base color abstraction should be used for defining a base set of colors:
 
-Key           | Description
---------------|------------
-`text`        | body color
-`background`  | body background color
-`primary`     | primary button and link color
-`secondary`   | secondary color - can be used for hover states
-`muted`       | a gray or subdued color for decorative purposes
+| Key          | Description                                     |
+| ------------ | ----------------------------------------------- |
+| `text`       | body color                                      |
+| `background` | body background color                           |
+| `primary`    | primary button and link color                   |
+| `secondary`  | secondary color - can be used for hover states  |
+| `muted`      | a gray or subdued color for decorative purposes |
 
 Beyond these base colors, any additional values can be added to a theme to augment the base color palette.
 
@@ -191,7 +195,6 @@ When using syntax highlighting libraries, such as [Prismjs][], that produce span
 
 For an example theme, see the [Base Preset][example].
 For more information on the Theme UI `theme` object, see the [Theme Specification docs](/theme-spec).
-
 
 [example]: https://github.com/system-ui/theme-ui/blob/master/packages/presets/src/base.js
 [emotion]: https://emotion.sh

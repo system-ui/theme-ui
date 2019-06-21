@@ -22,7 +22,7 @@ export default merge(typography, {
       ':hover': {
         color: 'secondary',
         textDecoration: 'underline',
-      }
-    }
-  }
+      },
+    },
+  },
 })

@@ -1,3 +1,7 @@
+---
+title: 'Typography.js'
+---
+
 import TypographyLayout from '../components/typography-layout'
 import Lorem from './lorem.mdx'
 
@@ -26,13 +30,12 @@ import wp2016 from 'typography-theme-wordpress-2016'
 
 const theme = toTheme(wp2016)
 
-export default props =>
-  <ThemeProvider theme={theme}>
-    {props.children}
-  </ThemeProvider>
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
 ```
 
-*Demo content below*
+_Demo content below_
 
 ---
 

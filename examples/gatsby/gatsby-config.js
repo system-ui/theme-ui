@@ -1,5 +1,3 @@
 module.exports = {
-  plugins: [
-    'gatsby-plugin-mdx',
-  ]
+  plugins: ['gatsby-plugin-mdx'],
 }

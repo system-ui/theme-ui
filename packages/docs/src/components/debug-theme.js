@@ -4,9 +4,5 @@ import { useContext } from 'react'
 
 export default props => {
   const theme = useContext(Context)
-  return (
-    <pre
-      children={JSON.stringify(theme, null, 2)}
-    />
-  )
+  return <pre children={JSON.stringify(theme, null, 2)} />
 }

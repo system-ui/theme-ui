@@ -1,3 +1,7 @@
+---
+title: 'Getting Started'
+---
+
 import Layout from '../components/layout'
 
 export default Layout
@@ -16,10 +20,9 @@ import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
-export default props =>
-  <ThemeProvider theme={theme}>
-    {props.children}
-  </ThemeProvider>
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
 ```
 
 The `theme` object should follow the System UI [Theme Specification][],
@@ -51,15 +54,17 @@ color and other values can reference values defined in `theme` object.
 import React from 'react'
 import { css } from 'theme-ui'
 
-export default () =>
+export default () => (
   <div
     css={css({
       fontWeight: 'bold',
-      fontSize: 4,  // picks up value from `theme.fontSizes[4]`
+      fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    })}>
+    })}
+  >
     Hello
   </div>
+)
 ```
 
 Read more about the `css` utility in the [@styled-system/css](https://styled-system.com/css/) docs.
@@ -72,15 +77,16 @@ The `css` utility also supports using arrays as values to change properties resp
 import React from 'react'
 import { css } from 'theme-ui'
 
-export default props =>
+export default props => (
   <div
     css={css({
       // applies width 100% to all viewport widths,
       // width 50% above the first breakpoint,
       // and 25% above the next breakpoint
-      width: [ '100%', '50%', '25%' ],
+      width: ['100%', '50%', '25%'],
     })}
   />
+)
 ```
 
 [theme specification]: https://system-ui.com/theme

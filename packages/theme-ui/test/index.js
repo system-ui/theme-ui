@@ -3,13 +3,7 @@ import { mdx } from '@mdx-js/react'
 import React, { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
-import {
-  ThemeProvider,
-  Context,
-  Styled,
-  jsx,
-  useColorMode,
-} from '../src/index'
+import { ThemeProvider, Context, Styled, jsx, useColorMode } from '../src/index'
 
 expect.extend(matchers)
 
@@ -30,10 +24,11 @@ test('renders with styles', () => {
       theme={{
         styles: {
           h1: {
-            color: 'tomato'
-          }
-        }
-      }}>
+            color: 'tomato',
+          },
+        },
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -49,10 +44,11 @@ test('creates non-standard components', () => {
       theme={{
         styles: {
           sup: {
-            color: 'tomato'
-          }
-        }
-      }}>
+            color: 'tomato',
+          },
+        },
+      }}
+    >
       <sup>hey</sup>
     </ThemeProvider>
   )
@@ -75,10 +71,11 @@ test('styles React components', () => {
       theme={{
         styles: {
           Beep: {
-            color: 'tomato'
-          }
-        }
-      }}>
+            color: 'tomato',
+          },
+        },
+      }}
+    >
       <Inner />
     </ThemeProvider>
   )
@@ -94,9 +91,10 @@ test('components accept an `as` prop', () => {
         styles: {
           h1: {
             color: 'tomato',
-          }
-        }
-      }}>
+          },
+        },
+      }}
+    >
       <Styled.h1 as={Beep}>Beep boop</Styled.h1>
     </ThemeProvider>
   )
@@ -111,7 +109,7 @@ test('custom pragma adds styles', () => {
         mx: 'auto',
         p: 2,
         bg: 'tomato',
-      }
+      },
     })
   )
   expect(json).toHaveStyleRule('margin-left', 'auto')

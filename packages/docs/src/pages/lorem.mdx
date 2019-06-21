@@ -1,6 +1,10 @@
+---
+title: 'Lorem'
+---
+
 **Demo Content**
 
-*From https://jxnblk.com/blog/interoperability*
+_From https://jxnblk.com/blog/interoperability_
 
 # Interoperability
 
@@ -29,7 +33,7 @@ Essentially, HTML templates written with either of these libraries isn't as port
 Today's tools would make this a lot easier, using type checking, unit tests, and perhaps even AST parsing, but it would still create a barrier.
 
 The **interopability** between these two libraries suffered because
-*what* they did, was different from *how* they did it.
+_what_ they did, was different from _how_ they did it.
 
 Around the same time, Etsy adopted a similar approach with slightly different naming conventions, and as the years passed,
 so did BuzzFeed Solid, GitHub Primer, and Bootstrap – and now there are other open source libraries doing the same thing with, again, new naming conventions.
@@ -56,7 +60,7 @@ This is great thing, and it allows developers to start thinking at a higher leve
 Styled System is one small attempt at a higher level of abstraction on top of the current CSS-in-JS libraries.
 It's completely decoupled from Styled Components, Emotion, and even React itself.
 For the most part, Styled System uses CSS property names as React component props,
-which is something that other libraries do as well and doesn't require much additional learning if you already know *some* CSS.
+which is something that other libraries do as well and doesn't require much additional learning if you already know _some_ CSS.
 I think this is great.
 Some libraries have even re-implemented the core of Styled System for various reasons,
 which I think is fine and helps encourage exploration.
@@ -69,9 +73,9 @@ but all of them seem to be doing the same thing, in a slightly different way.
 ## Design System Tokens
 
 I suspect a lot of the tooling for styling applications would benefit from having a standard theming format for storing these values.
-Jina Anne pioneered the concept of *design system tokens* [^1] years ago,
+Jina Anne pioneered the concept of _design system tokens_ [^1] years ago,
 and a lot of teams have successfully adopted approaches like this, which I think is fantastic.
-If you're already familiar with the idea of *design system tokens*, you're one step closer to seeing the value in a standard theming format.
+If you're already familiar with the idea of _design system tokens_, you're one step closer to seeing the value in a standard theming format.
 
 Design system tokens are meant to be flexible and work cross-platform, which means different teams,
 different implementations, and different libraries will name things differently.
@@ -101,9 +105,11 @@ but this seemed like a logical place to start this discussion.
 Let me know what you think on [Twitter](https://mobile.twitter.com/jxnblk/status/1107726037805424641)
 or by [opening an issue](https://github.com/styled-system/styled-system/issues).
 
-[^1]: Design system tokens are a fantastic abstraction. They try to solve the problem of sharing a brand's core style values cross-platform,
-    whereas this specification is (initially) primarily focused on CSS/JS development – i.e. a potential *output* from design tokens.
-    Design system tokens and this theme specification should be completely compatible with each other and decoupled from one another.
+[^1]:
+
+  Design system tokens are a fantastic abstraction. They try to solve the problem of sharing a brand's core style values cross-platform,
+  whereas this specification is (initially) primarily focused on CSS/JS development – i.e. a potential _output_ from design tokens.
+  Design system tokens and this theme specification should be completely compatible with each other and decoupled from one another.
 
 [basscss]: https://github.com/basscss/basscss
 [tachyons]: https://tachyons.io/
