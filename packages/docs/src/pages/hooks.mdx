@@ -24,3 +24,27 @@ export default props => {
   return <pre>{JSON.stringify(theme, null, 2)}</pre>
 }
 ```
+
+## `useColorMode`
+
+To change the color mode state in your application, use the `useColorMode` hook.
+
+```jsx
+import React from 'react'
+import { useColorMode } from 'theme-ui'
+
+export default props => {
+  const [colorMode, setColorMode] = useColorMode()
+  return (
+    <button
+      onClick={e => {
+        setColorMode(colorMode === 'light' ? 'dark' : 'light')
+      }}
+    >
+      Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+    </button>
+  )
+}
+```
+
+Read more about [color modes in Theme UI](/color-modes).
