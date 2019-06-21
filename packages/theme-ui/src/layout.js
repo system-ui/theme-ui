@@ -5,9 +5,6 @@ import space from '@styled-system/space'
 import color from '@styled-system/color'
 import css from '@styled-system/css'
 
-// fallback for missing pragma or for use in MDX
-const sxProp = props => css(props.sx)(props.theme)
-
 export const Box = styled('div')(
   css({
     boxSizing: 'border-box',
@@ -16,8 +13,7 @@ export const Box = styled('div')(
   compose(
     space,
     color
-  ),
-  sxProp
+  )
 )
 
 export const Flex = styled(Box)({
