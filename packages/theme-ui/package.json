@@ -16,6 +16,7 @@
     "@mdx-js/react": "^1.0.0"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^0.8.1",
     "@styled-system/color": "^5.0.5",
     "@styled-system/core": "^5.0.5",
     "@styled-system/css": "^5.0.5",

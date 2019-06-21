@@ -17,7 +17,13 @@ const flattenLinks = children =>
     ])
   }, [])
 
-const PaginationLink = ({ label, ...props }) => (
+const PaginationLink = ({
+  label,
+  mdxType,
+  originalType,
+  parentName,
+  ...props
+}) => (
   <NavLink {...props}>
     <div>{label}</div>
     <div
