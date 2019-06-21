@@ -8,16 +8,18 @@ const getCSS = props => theme => {
   return [styles, raw]
 }
 
+const parseProps = props => {
+  if (!props) return null
+  const next = {}
+  for (let key in props) {
+    if (key === 'sx') continue
+    next[key] = props[key]
+  }
+  next.css = getCSS(props)
+  return next
+}
+
 export const jsx = (type, props, ...children) =>
-  emotion.apply(undefined, [
-    type,
-    props
-      ? {
-          ...props,
-          css: getCSS(props),
-        }
-      : null,
-    ...children,
-  ])
+  emotion.apply(undefined, [type, parseProps(props), ...children])
 
 export default jsx
