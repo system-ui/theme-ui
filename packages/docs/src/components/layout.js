@@ -40,7 +40,7 @@ export default props => {
             }}
           >
             <div
-              css={{
+              sx={{
                 display: ['block', 'grid'],
                 gridGap: 24,
                 gridTemplateColumns: [

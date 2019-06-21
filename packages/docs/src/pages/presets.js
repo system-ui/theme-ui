@@ -27,7 +27,7 @@ export default props => {
         />
       </Helmet>
       <div
-        css={{
+        sx={{
           '*': {
             transition: 'all .2s ease-out',
           },
@@ -35,7 +35,7 @@ export default props => {
       >
         <ColorMode />
         <label
-          css={{
+          sx={{
             display: 'block',
             mb: 4,
           }}
@@ -78,7 +78,7 @@ export default props => {
               value={JSON.stringify(preset, null, 2)}
               rows={16}
               readOnly
-              css={{
+              sx={{
                 width: '100%',
                 fontFamily: 'monospace',
                 bg: 'muted',

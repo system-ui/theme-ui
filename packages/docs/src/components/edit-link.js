@@ -16,7 +16,7 @@ export const EditLink = ({ base, children, ...props }) => (
         <a
           {...props}
           href={href}
-          css={{
+          sx={{
             display: 'inline-block',
             color: 'inherit',
             fontSize: 1,
