@@ -1,0 +1,23 @@
+{
+  "name": "@theme-ui/style-guide",
+  "version": "0.1.6",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@theme-ui/presets": "0.1.6",
+    "color": "^3.1.2",
+    "lodash.get": "^4.4.2",
+    "react": "^16.8.6",
+    "theme-ui": "^0.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

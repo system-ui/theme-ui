@@ -41,7 +41,9 @@
     ],
     "collectCoverageFrom": [
       "packages/**/src/*.js",
-      "!packages/docs/**/*"
+      "!packages/docs/**/*",
+      "!packages/presets/**/*",
+      "!packages/style-guide/**/*"
     ],
     "coverageThreshold": {
       "global": {
