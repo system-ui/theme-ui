@@ -49,8 +49,10 @@ export default React.forwardRef((props, ref) => (
           display: 'block',
           position: 'fixed',
           top: 64,
+          left: 0,
           bottom: 0,
           width: 256,
+          px: 2,
           bg: 'background',
           transition: 'transform .2s ease-out',
           transform: props.open ? 'translateX(0)' : 'translateX(-100%)'
