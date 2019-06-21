@@ -5,7 +5,7 @@ export default props => (
   <select
     id={props.name}
     {...props}
-    css={{
+    sx={{
       fontFamily: 'system-ui, sans-serif',
       fontSize: 16,
       p: 2,
