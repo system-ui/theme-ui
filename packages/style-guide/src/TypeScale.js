@@ -14,7 +14,7 @@ export const TypeScale = ({ reverse = true, ...props }) => {
 
   return (
     <div
-      css={{
+      sx={{
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'baseline',
@@ -26,7 +26,7 @@ export const TypeScale = ({ reverse = true, ...props }) => {
           <TypeStyle
             key={i}
             fontSize={key}
-            css={{
+            sx={{
               mr: 3,
             }}
             children={getValue(fontSizes, key)}

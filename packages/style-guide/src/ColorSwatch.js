@@ -9,13 +9,13 @@ export const ColorSwatch = ({ color, name, ...props }) => {
   return (
     <div {...props} title={`${toHex(value)}`}>
       <div
-        css={{
+        sx={{
           p: 64,
           bg: color,
         }}
       />
       <div
-        css={{
+        sx={{
           py: 2,
         }}
       >

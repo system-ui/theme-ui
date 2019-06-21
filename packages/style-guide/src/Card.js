@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 export const Card = props => (
   <div
     {...props}
-    css={{
+    sx={{
       variant: 'styles.Card',
     }}
   />

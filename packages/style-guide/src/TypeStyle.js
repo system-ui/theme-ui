@@ -15,7 +15,7 @@ export const TypeStyle = ({
     <Card
       {...props}
       children={children}
-      css={{
+      sx={{
         fontFamily,
         fontSize,
         lineHeight,
