@@ -32,6 +32,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/fixtures/",
+      "/presets/",
+      "/style-guide/",
       "tailwind.config.js"
     ],
     "coverageReporters": [
