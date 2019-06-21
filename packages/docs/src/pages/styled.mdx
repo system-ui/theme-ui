@@ -38,3 +38,40 @@ The following example renders a `<div>` that is styled like an `<h2>` element.
 // example
 <Styled.h2 as="div">Hello!</Styled.h2>
 ```
+
+## `Styled.root`
+
+To apply root-level typographic styles, the `Styled.root` component can be used to wrap any page layout or MDX document.
+A `theme` object may define a `theme.styles.root` style object to use typographic values from the theme.
+By default, Theme UI does _not_ apply any global styles for typography.
+
+```js
+// example theme.js
+export default {
+  fonts: {
+    body: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  styles: {
+    root: {
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+    },
+  },
+}
+```
+
+```jsx
+<Styled.root>
+  <MyMDXDocument />
+</Styled.root>
+```

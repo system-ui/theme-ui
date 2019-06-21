@@ -1,0 +1,42 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+# Presets
+
+Theme UI includes optional presets that can be used as examples or as a starting point for extending your own themes.
+
+```sh
+npm i @theme-ui/presets
+```
+
+```jsx
+// example theme
+import { funk } from '@theme-ui/presets'
+
+export default {
+  ...funk,
+  styles: {
+    ...funk,
+  },
+}
+```
+
+To view an example of the built-in presets, see the [Demo](/demo).
+
+Currently, the following presets are available for use:
+
+- `base`
+- `funk`
+- `future`
+- `roboto`
+- `bootstrap`
+- `bulma` (WIP)
+
+## Contributing
+
+We'd love to have more presets added to the Theme UI project.
+If you'd like to add a new preset or improve upon the existing ones, please open an [issue][] or [pull request][].
+
+[issue]: https://github.com/system-ui/theme-ui/issues
+[pull request]: https://github.com/system-ui/theme-ui/pulls
