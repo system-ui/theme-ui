@@ -42,9 +42,13 @@ import React from 'react'
 import { Flex, Box } from 'theme-ui'
 
 export default props => (
-  <Flex flexWrap="wrap">
-    <Box width={[1, 1 / 2]} />
-    <Box width={[1, 1 / 2]} />
+  <Flex
+    sx={{
+      flexWrap: 'wrap',
+    }}
+  >
+    <Box sx={{ width: ['100%', '50%'] }} />
+    <Box sx={{ width: ['100%', '50%'] }} />
   </Flex>
 )
 ```

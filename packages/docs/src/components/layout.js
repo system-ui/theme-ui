@@ -32,7 +32,7 @@ export default props => {
         <Header nav={nav} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Main>
           <Container
-            css={{
+            sx={{
               py: 0,
               px: props.fullwidth ? 0 : 3,
               maxWidth: props.fullwidth ? 'none' : '',

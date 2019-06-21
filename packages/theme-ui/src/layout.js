@@ -24,7 +24,7 @@ export const Flex = styled(Box)({
 export const Layout = props =>
   jsx(Box, {
     ...props,
-    css: {
+    sx: {
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -36,7 +36,7 @@ export const Header = props =>
   jsx(Box, {
     as: 'header',
     ...props,
-    css: {
+    sx: {
       display: 'flex',
       variant: 'styles.Header',
     },
@@ -46,7 +46,7 @@ export const Main = props =>
   jsx(Box, {
     as: 'main',
     ...props,
-    css: {
+    sx: {
       flex: '1 1 auto',
       variant: 'styles.Main',
     },
@@ -55,7 +55,7 @@ export const Main = props =>
 export const Container = props =>
   jsx(Box, {
     ...props,
-    css: {
+    sx: {
       width: '100%',
       minWidth: 0,
       maxWidth: 1024,
@@ -69,7 +69,7 @@ export const Footer = props =>
   jsx(Box, {
     as: 'footer',
     ...props,
-    css: {
+    sx: {
       display: 'flex',
       variant: 'styles.Footer',
     },

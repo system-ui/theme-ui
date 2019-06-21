@@ -1,6 +1,6 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import { ThemeProvider, Context, Styled, jsx, useColorMode } from '../src/index'
@@ -105,7 +105,7 @@ test('components accept an `as` prop', () => {
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {
-      css: {
+      sx: {
         mx: 'auto',
         p: 2,
         bg: 'tomato',

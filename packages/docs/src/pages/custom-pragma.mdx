@@ -6,13 +6,28 @@ import Layout from '../components/layout'
 
 export default Layout
 
-# Custom Pragma (experimental)
+# Custom Pragma
 
-To avoid manually importing and calling the `css` prop, a custom pragma can be used instead.
-This custom pragma converts a Styled System-aware `css` prop into a styled object and passes it to the Emotion `jsx` pragma.
-This is a complete replacement for the Emotion custom pragma.
+To avoid manually importing and calling the `css` utility, a custom pragma can be used instead.
+Under the hood, this custom pragma converts a Styled System-aware `sx` prop into a style object and passes it to the Emotion `jsx` pragma.
+This is intended as a complete replacement for the Emotion custom pragma.
 
-**Note:** Due to how the Emotion Babel preset works, this is not recommended for use in situations where the Emotion preset will be enabled.
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      color: 'white',
+      bg: 'primary',
+    }}
+  />
+)
+```
+
+To opt-out of using Styled System CSS, use the `css` prop to render raw CSS values.
 
 ```jsx
 /** @jsx jsx */
@@ -22,8 +37,9 @@ export default props => (
   <div
     {...props}
     css={{
-      color: 'white',
-      bg: 'primary',
+      // raw values
+      color: 'tomato',
+      fontSize: 24,
     }}
   />
 )

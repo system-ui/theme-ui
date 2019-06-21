@@ -42,7 +42,7 @@ export default props => (
   >
     <Box py={[5, 6]} color="background" bg="primary">
       <Container
-        css={{
+        sx={{
           py: 0,
           display: 'grid',
           gridTemplateColumns: ['1f', 'repeat(3, 1fr)'],
@@ -54,7 +54,7 @@ export default props => (
         <Logo
           size="1em"
           color="currentcolor"
-          css={{
+          sx={{
             fontSize: [96, 96, 160],
           }}
         />

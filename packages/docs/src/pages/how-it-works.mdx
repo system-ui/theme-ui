@@ -82,15 +82,14 @@ export default props => (
 ```
 
 ```jsx
-// with Emotion's custom pragma
-// this is typically handled with the Emotion Babel preset
+// with Theme UI's custom pragma
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 export default props => (
   <div
     {...props}
-    css={{
+    sx={{
       color: 'white',
       bg: 'primary',
       fontSize: 4,

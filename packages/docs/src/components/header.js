@@ -35,7 +35,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
               GitHub
             </NavLink>
             <Button
-              css={{
+              sx={{
                 ml: 2,
               }}
               onClick={cycleMode}

@@ -11,47 +11,43 @@ const applyColorMode = (theme, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
   return merge({}, theme, {
-    colors: get(modes, mode, {})
+    colors: get(modes, mode, {}),
   })
 }
 
 const BaseProvider = ({ context, components, children }) => {
   const theme = applyColorMode(context.theme, context.colorMode)
-  return jsx(EmotionContext.Provider, { value: theme },
-    jsx(MDXProvider, { components },
+  return jsx(
+    EmotionContext.Provider,
+    { value: theme },
+    jsx(
+      MDXProvider,
+      { components },
       jsx(Context.Provider, { value: context, children })
     )
   )
 }
 
-const RootProvider = ({
-  theme = {},
-  components,
-  children,
-}) => {
+const RootProvider = ({ theme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
-  const [ colorMode, setColorMode ] = useColorState(theme.initialColorMode)
+  const [colorMode, setColorMode] = useColorState(theme.initialColorMode)
 
   const context = {
     colorMode,
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
-    theme
+    theme,
   }
 
   return jsx(BaseProvider, {
     context,
     components: context.components,
-    children
+    children,
   })
 }
 
-const NestedProvider = ({
-  theme,
-  components,
-  children
-}) => {
+const NestedProvider = ({ theme, components, children }) => {
   const outer = useThemeUI()
   const context = merge({}, outer, { theme })
 

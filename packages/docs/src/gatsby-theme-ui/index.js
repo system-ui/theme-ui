@@ -121,6 +121,7 @@ export default {
     pre: {
       variant: 'prism',
       fontFamily: 'monospace',
+      fontSize: 1,
       p: 3,
       color: 'text',
       bg: 'muted',

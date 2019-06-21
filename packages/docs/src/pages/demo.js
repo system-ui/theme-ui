@@ -35,7 +35,7 @@ export default props => {
         }}
       >
         <div
-          css={{
+          sx={{
             float: 'right',
             ml: 4,
             p: 2,
