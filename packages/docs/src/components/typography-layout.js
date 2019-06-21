@@ -4,7 +4,7 @@ import { jsx, ThemeProvider, Flex, Styled } from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'
 
-import { toTheme } from 'theme-ui-typography'
+import { toTheme } from '@theme-ui/typography'
 
 import Layout from './layout'
 import GoogleFonts from './google-fonts'

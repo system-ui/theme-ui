@@ -124,17 +124,17 @@ Styles within this object are processed with `@styled-system/css` and have acces
 
 ### Typography.js
 
-To use [Typography.js][] themes with Theme UI, install the `theme-ui-typography` package and any Typography.js theme.
+To use [Typography.js][] themes with Theme UI, install the `@theme-ui/typography` package and any Typography.js theme.
 
 ```sh
-npm i theme-ui-typography typography-theme-wordpress-2016
+npm i @theme-ui/typography typography-theme-wordpress-2016
 ```
 
 Use the `toTheme` utility to convert the theme for use in Theme UI.
 
 ```js
 // example theme with Typography.js
-import { toTheme } from 'theme-ui-typography'
+import { toTheme } from '@theme-ui/typography'
 import wordpress2016 from 'typography-theme-wordpress-2016'
 import merge from 'lodash.merge'
 
