@@ -1,22 +1,25 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-const heading = Tag => props => !!props.id ? (
-  <Tag {...props}>
-    <a href={`#${props.id}`}
-      scss={{
-        color: 'inherit',
-        textDecoration: 'none',
-        ':hover': {
-          textDecoration: 'underline',
-        }
-      }}>
-      {props.children}
-    </a>
-  </Tag>
-) : (
-  <Tag {...props} />
-)
+const heading = Tag => props =>
+  !!props.id ? (
+    <Tag {...props}>
+      <a
+        href={`#${props.id}`}
+        sx={{
+          color: 'inherit',
+          textDecoration: 'none',
+          ':hover': {
+            textDecoration: 'underline',
+          },
+        }}
+      >
+        {props.children}
+      </a>
+    </Tag>
+  ) : (
+    <Tag {...props} />
+  )
 
 export default {
   h2: heading('h2'),

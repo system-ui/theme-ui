@@ -31,7 +31,7 @@ export default props => {
       <ColorMode />
       <Layout>
         <div
-          scss={{
+          sx={{
             float: 'right',
             ml: 4,
             p: 2,

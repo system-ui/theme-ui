@@ -21,8 +21,9 @@ export default props => (
 )
 ```
 
-The `theme` object should follow the System UI [Theme Specification][],
+The `theme` object follows the System UI [Theme Specification][],
 which lets you define custom color palettes, typographic scales, fonts, and more.
+Read more about [theming](/theming).
 
 ```js
 // example theme.js
@@ -40,49 +41,54 @@ export default {
 }
 ```
 
-## `css` prop
+## `sx` prop
 
-Use the `css` prop throughout your application, along with the `css` utility to pick up values from the theme.
-Using the `css` utility means that
-color and other values can reference values defined in `theme` object.
+The `sx` prop works similarly to Emotion's `css` prop, accepting style objects to add CSS directly to an element in JSX, but includes extra theme-aware functionality.
+Using the `sx` prop for styles means that certain properties can reference values defined in your `theme` object.
+This is intended to make keeping styles consistent throughout your app the easy thing to do.
+
+The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
+This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 
 ```jsx
-import React from 'react'
-import { css } from 'theme-ui'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 
-export default () => (
+export default props => (
   <div
-    css={css({
+    sx={{
       fontWeight: 'bold',
       fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    })}
+    }}
   >
     Hello
   </div>
 )
 ```
 
-Read more about the `css` utility in the [@styled-system/css](https://styled-system.com/css/) docs.
+Under the hood, this uses the [`@styled-system/css`](https://styled-system.com/css) utility and Emotion's custom JSX pragma implementation.
 
 ## Responsive styles
 
-The `css` utility also supports using arrays as values to change properties responsively with a mobile-first approach.
+The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
+This API originated in [Styled System][] and is intended as a terser syntax for applying responsive styles across a singular dimension.
 
 ```jsx
-import React from 'react'
-import { css } from 'theme-ui'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 
 export default props => (
   <div
-    css={css({
+    sx={{
       // applies width 100% to all viewport widths,
       // width 50% above the first breakpoint,
       // and 25% above the next breakpoint
       width: ['100%', '50%', '25%'],
-    })}
+    }}
   />
 )
 ```
 
 [theme specification]: https://system-ui.com/theme
+[styled system]: https://styled-system.com

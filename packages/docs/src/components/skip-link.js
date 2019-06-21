@@ -6,7 +6,7 @@ export default props => (
     children="Skip to content"
     {...props}
     href="#content"
-    scss={{
+    sx={{
       clip: 'rect(0 0 0 0)',
       height: 1,
       width: 1,

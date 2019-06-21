@@ -19,15 +19,8 @@ const styles = {
 export default ({ href, ...props }) => {
   const isExternal = isAbsoluteURL(href || '')
   if (isExternal) {
-    return <a {...props} href={href} scss={styles} />
+    return <a {...props} href={href} sx={styles} />
   }
   const to = props.to || href
-  return (
-    <Link
-      {...props}
-      to={to}
-      scss={styles}
-      activeClassName='active'
-    />
-  )
+  return <Link {...props} to={to} sx={styles} activeClassName="active" />
 }

@@ -42,7 +42,7 @@ export default props => (
   >
     <Box py={[5, 6]} color="background" bg="primary">
       <Container
-        scss={{
+        sx={{
           display: 'flex',
           flexDirection: ['column', 'column', 'row'],
           alignItems: ['flex-start', 'flex-start', 'center'],
@@ -52,7 +52,7 @@ export default props => (
         <Logo
           size="1em"
           color="currentcolor"
-          scss={{
+          sx={{
             fontSize: [96, 96, 160],
           }}
         />

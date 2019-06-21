@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {

@@ -37,9 +37,9 @@ For a complete table of how CSS properties map to scales in your theme, see the 
 
 ## Custom Pragma
 
-If you're not currently using Emotion in your application, you can
-use the [custom pragma](/custom-pragma) to reference theme values directly
-in the `scss` (System CSS) prop without the need to import the `css` utility.
+Alternatively, to avoid the need to wrap styles with the `css` utiilty,
+you can use the [custom pragma](/custom-pragma) to reference theme values directly
+in the `sx` (system styles) prop without the need to import the `css` utility.
 
 ```jsx
 /** @jsx jsx */
@@ -48,7 +48,7 @@ import { jsx } from 'theme-ui'
 export default props => (
   <div
     {...props}
-    scss={{
+    sx={{
       // values referencing scales defined in a theme
       color: 'primary',
       bg: 'lightgray',
@@ -70,7 +70,7 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 ```jsx
 // example of using margin and padding shorthand syntax
 <div
-  scss={{
+  sx={{
     px: 3, // padding-left & padding-right
     py: 4, // padding-top & padding-bottom
     mb: 3, // margin-bottom
@@ -90,8 +90,27 @@ import { jsx } from 'theme-ui'
 export default props => (
   <div
     {...props}
-    scss={{
+    sx={{
       width: ['100%', '50%', '25%'],
+    }}
+  />
+)
+```
+
+## Functional Values
+
+For shorthand CSS properties or ones that are not automatically mapped to values in the theme,
+a function can be used to use values from the `theme` object.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      boxShadow: theme => `0 0 4px ${theme.colors.primary}`,
     }}
   />
 )

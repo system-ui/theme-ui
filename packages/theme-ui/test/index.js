@@ -105,7 +105,7 @@ test('components accept an `as` prop', () => {
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {
-      scss: {
+      sx: {
         mx: 'auto',
         p: 2,
         bg: 'tomato',

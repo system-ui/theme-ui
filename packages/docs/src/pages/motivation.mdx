@@ -29,12 +29,15 @@ For examples of previous explorations into this idea, see [Rebass MDX][], [MDX S
 [mdx style]: https://github.com/jxnblk/mdx-style
 [mdx blocks]: https://github.com/jxnblk/mdx-blocks
 
-## The `css` Prop
+## The `css` and `sx` Props
 
 The `css` prop is a powerful pattern for styling UI in React.
 It works like the built-in `style` prop, but it includes some of the best parts of the CSS language, including media queries and pseudo-classes, and can be authored in native JavaScript object literal syntax.
 The `css` prop can be leveraged in a similar way to the `styled` higher-order component, but also offers more flexibility when making one-off, context-specific stylistic changes.
 The `css` prop also avoids some of the [pitfalls of mixing CSS properties with HTML attributes](https://github.com/styled-components/styled-components/issues/439).
+
+The `sx` prop is a light abstraction on top of the `css` prop that can serve as a complete replacement and makes it easier to
+ensure you use values from your global `theme` object.
 
 ## Why Object Literal Syntax
 

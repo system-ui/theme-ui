@@ -4,7 +4,7 @@ import { jsx, Header, Container } from 'theme-ui'
 export default props => (
   <Header>
     <Container
-      scss={{
+      sx={{
         display: 'flex',
         alignItems: 'center',
       }}

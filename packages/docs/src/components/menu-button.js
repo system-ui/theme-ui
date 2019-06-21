@@ -8,7 +8,7 @@ const Burger = ({ size = '1em' }) => (
     height={size}
     fill="currentcolor"
     viewBox="0 0 24 24"
-    scss={{
+    sx={{
       display: 'block',
       margin: 0,
     }}
@@ -21,7 +21,7 @@ export default props => (
   <button
     title="Toggle Menu"
     {...props}
-    scss={{
+    sx={{
       fontFamily: 'inherit',
       fontSize: 24,
       color: 'inherit',
