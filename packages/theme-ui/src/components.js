@@ -54,3 +54,11 @@ tags.forEach(tag => {
   components[tag] = styled(alias(tag))(themed(tag), space)
   Styled[tag] = components[tag]
 })
+
+export const createComponents = (components = {}) => {
+  const next = {}
+  Object.keys(components).forEach(key => {
+    next[key] = styled(components[key])(themed(key))
+  })
+  return next
+}
