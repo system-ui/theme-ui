@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import React from 'react'
-import { jsx, Flex, Box } from 'theme-ui'
-import { Location } from '@reach/router'
-import NavLink from './nav-link'
-import Sidebar from '../sidebar.mdx'
+import React from "react"
+import { jsx, Flex, Box } from "theme-ui"
+import { Location } from "@reach/router"
+import NavLink from "./nav-link"
+import Sidebar from "../sidebar.mdx"
 
 const flattenLinks = children =>
   React.Children.toArray(children).reduce((acc, child) => {
-    if (child.props && child.props.mdxType === 'a') {
+    if (child.props && child.props.mdxType === "a") {
       return [...acc, child]
     }
     if (!child.props || !child.props.children) return acc
     return React.Children.toArray([
       ...acc,
-      ...flattenLinks(child.props.children),
+      ...flattenLinks(child.props.children)
     ])
   }, [])
 
@@ -22,7 +22,7 @@ const PaginationLink = ({ label, ...props }) => (
     <div>{label}</div>
     <div
       css={{
-        fontSize: 3,
+        fontSize: 3
       }}
     >
       {props.children}
@@ -52,7 +52,7 @@ const Pagination = props => {
   )
 }
 
-const removeSlash = str => (str.length > 1 ? str.replace(/\/$/, '') : str)
+const removeSlash = str => (str.length > 1 ? str.replace(/\/$/, "") : str)
 
 export default props => (
   <Location>
@@ -60,7 +60,7 @@ export default props => (
       <Sidebar
         location={location}
         components={{
-          wrapper: Pagination,
+          wrapper: Pagination
         }}
       />
     )}

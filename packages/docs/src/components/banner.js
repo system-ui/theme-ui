@@ -11,15 +11,15 @@ export default props => (
           fontWeight: 900,
           letterSpacing: '0.05em',
           mt: 0,
-          mb: 4,
+          mb: 4
         },
         p: {
           fontWeight: 'bold',
           mt: 0,
           mb: 3,
           ':first-of-type': {
-            fontSize: [2, 3, 4],
-          },
+            fontSize: [2, 3, 4]
+          }
         },
         a: {
           display: 'inline-block',
@@ -34,29 +34,36 @@ export default props => (
           borderRadius: 6,
           ':hover': {
             color: 'background',
-            bg: 'text',
-          },
-        },
-      },
+            bg: 'text'
+          }
+        }
+      }
     }}
   >
     <Box py={[5, 6]} color="background" bg="primary">
       <Container
         css={{
-          display: 'flex',
-          flexDirection: ['column', 'column', 'row'],
-          alignItems: ['flex-start', 'flex-start', 'center'],
-          justifyContent: 'space-between',
+          py: 0,
+          display: 'grid',
+          gridTemplateColumns: ['1f', 'repeat(3, 1fr)'],
+          gridGap: 24,
+          gridAutoFlow: ['row', 'column', 'column'],
+          alignItems: ['flex-start', 'flex-start', 'center']
         }}
       >
         <Logo
           size="1em"
           color="currentcolor"
           css={{
-            fontSize: [96, 96, 160],
+            fontSize: [96, 96, 160]
           }}
         />
-        <Box py={3} width={['auto', 'auto', '66.666%']}>
+        <Box
+          py={3}
+          css={{
+            gridColumn: ['auto', '2 / 4']
+          }}
+        >
           {props.children}
         </Box>
       </Container>
