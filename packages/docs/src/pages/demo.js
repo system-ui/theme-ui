@@ -29,7 +29,11 @@ export default props => {
         />
       </Helmet>
       <ColorMode />
-      <Layout>
+      <Layout
+        _frontmatter={{
+          title: 'Demo',
+        }}
+      >
         <div
           sx={{
             float: 'right',

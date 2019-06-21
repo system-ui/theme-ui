@@ -3,9 +3,13 @@ import { jsx, Footer, Container, Flex } from 'theme-ui'
 import NavLink from './nav-link'
 
 export default props => (
-  <Footer>
+  <Footer
+    css={{
+      pt: 4,
+    }}
+  >
     <Container>
-      <Flex mx={-2}>
+      <Flex>
         <NavLink to="/">Theme UI</NavLink>
         <NavLink href="https://github.com/system-ui/theme-ui">GitHub</NavLink>
       </Flex>
