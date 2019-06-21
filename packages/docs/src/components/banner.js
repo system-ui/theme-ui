@@ -60,7 +60,7 @@ export default props => (
         />
         <Box
           py={3}
-          css={{
+          sx={{
             gridColumn: ['auto', '2 / 4'],
           }}
         >

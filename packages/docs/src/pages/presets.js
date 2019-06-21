@@ -27,7 +27,7 @@ export default props => {
         />
       </Helmet>
       <div
-        css={{
+        sx={{
           '*': {
             transition: 'all .2s ease-out',
           },
