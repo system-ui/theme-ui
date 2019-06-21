@@ -9,7 +9,7 @@ const KEY_MAPPING = {
   lineHeights: 'lineHeight',
   letterSpacings: 'letterSpacing',
   size: ['height', 'maxHeight', 'width', 'maxWidth'],
-  zIndices: 'zIndex'
+  zIndices: 'zIndex',
 }
 
 export default (theme, config = {}) => {
@@ -17,7 +17,7 @@ export default (theme, config = {}) => {
     if (!KEY_MAPPING[key]) {
       return {
         ...acc,
-        [key]: value
+        [key]: value,
       }
     } else if (Array.isArray(KEY_MAPPING[key])) {
       KEY_MAPPING[key].forEach(twKey => {
@@ -28,13 +28,13 @@ export default (theme, config = {}) => {
     } else {
       return {
         ...acc,
-        [KEY_MAPPING[key]]: value
+        [KEY_MAPPING[key]]: value,
       }
     }
   }, {})
 
   return {
     ...config,
-    theme: transformedTheme
+    theme: transformedTheme,
   }
 }

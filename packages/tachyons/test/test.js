@@ -24,7 +24,7 @@ const theme = {
   },
   lineHeights: [1.5, 1.125],
   space: [0, 2, 3, 4, 5, 6],
-  size: ['10em', '20em', '30em', '40em']
+  size: ['10em', '20em', '30em', '40em'],
 }
 
 it('transforms a theme config to a Tachyons config', () => {

@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { ThemeContext as EmotionContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
-import merge from 'lodash.merge'
+import merge from './merge'
 import jsx from './jsx'
 import themed from './themed'
 import { Context, useThemeUI } from './context'
@@ -16,12 +16,12 @@ const createComponents = (components = {}) => {
   return next
 }
 
-export const ThemeProvider = ({ theme, components, ...props }) => {
+export const ThemeProvider = ({ theme = {}, components = {}, ...props }) => {
   const outer = useThemeUI()
   const initialColorMode =
     outer.colorMode || (theme ? theme.initialColorMode : undefined)
   const [colorMode, setColorMode] = useColorState(initialColorMode)
-  const context = merge(
+  const context = merge.all(
     {},
     {
       colorMode,
@@ -36,7 +36,7 @@ export const ThemeProvider = ({ theme, components, ...props }) => {
 
   if (context.colorMode) {
     const modes = get(context.theme, 'colors.modes', {})
-    context.theme = merge({}, context.theme, {
+    context.theme = merge.all({}, context.theme, {
       colors: get(modes, context.colorMode, context.theme.colors),
     })
   }
