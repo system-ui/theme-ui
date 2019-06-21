@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
-    "@theme-ui/presets": "0.1.6",
+    "@theme-ui/presets": "^0.1.7",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2",
     "react": "^16.8.6",
-    "theme-ui": "^0.1.6"
+    "theme-ui": "^0.1.7"
   },
   "publishConfig": {
     "access": "public"
