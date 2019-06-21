@@ -32,6 +32,7 @@ export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
           }
           return (
             <ColorSwatch
+              key={key}
               name={id}
               color={id}
               sx={{
