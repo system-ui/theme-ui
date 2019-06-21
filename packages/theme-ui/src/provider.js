@@ -10,7 +10,7 @@ import { createComponents } from './components'
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
-  return merge({}, theme, {
+  return merge.all({}, theme, {
     colors: get(modes, mode, {}),
   })
 }
@@ -49,7 +49,7 @@ const RootProvider = ({ theme = {}, components, children }) => {
 
 const NestedProvider = ({ theme, components, children }) => {
   const outer = useThemeUI()
-  const context = merge(outer, { theme })
+  const context = merge.all({}, outer, { theme })
 
   return jsx(BaseProvider, {
     context,
