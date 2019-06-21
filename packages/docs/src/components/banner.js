@@ -40,7 +40,13 @@ export default props => (
       },
     }}
   >
-    <Box py={[5, 6]} color="background" bg="primary">
+    <Box
+      sx={{
+        py: [5, 6],
+        color: 'background',
+        bg: 'primary',
+      }}
+    >
       <Container
         sx={{
           py: 0,
@@ -59,8 +65,8 @@ export default props => (
           }}
         />
         <Box
-          py={3}
           sx={{
+            py: 3,
             gridColumn: ['auto', '2 / 4'],
           }}
         >
