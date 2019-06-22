@@ -4,7 +4,16 @@ export { ThemeProvider } from './core'
 export { Context, useThemeUI } from './context'
 export { ColorMode, useColorMode } from './color-modes'
 export { Styled, components } from './components'
-export { Box, Flex, Layout, Header, Main, Container, Footer } from './layout'
+export {
+  Box,
+  Flex,
+  Grid,
+  Layout,
+  Header,
+  Main,
+  Container,
+  Footer,
+} from './layout'
 
 // DEPRECATED
 export {
