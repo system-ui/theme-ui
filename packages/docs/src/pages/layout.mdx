@@ -49,6 +49,23 @@ export default props => (
 )
 ```
 
+## Grid
+
+The `Grid` layout component is similar to the `Flex` component but uses CSS Grid instead of flexbox.
+
+```jsx
+import React from 'react'
+import { Box, Grid } from 'theme-ui'
+
+export default props => (
+  <Grid p="2" gridTemplateColumns="repeat(3, 1fr)" gridGap="2">
+    <Box />
+    <Box />
+    <Box />
+  </Grid>
+)
+```
+
 ## Layout Theming
 
 These page layout components can be styled with the `theme.styles` object, similar to how other MDX components can be styled.
