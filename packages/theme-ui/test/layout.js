@@ -13,6 +13,7 @@ import {
 test.each([
   ['Box', Box],
   ['Flex', Flex],
+  ['Grid', Grid],
   ['Layout', Layout],
   ['Main', Main],
   ['Container', Container],
