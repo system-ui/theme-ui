@@ -1,6 +1,6 @@
 import jsx from './jsx'
 import styled from '@emotion/styled'
-import { space, color, layout, flexbox } from 'styled-system'
+import { space, color, layout, flexbox, grid } from 'styled-system'
 import css from '@styled-system/css'
 
 // fallback for missing emotion pragma or for use in MDX
@@ -21,6 +21,17 @@ export const Box = styled('div')(
 export const Flex = styled(Box)({
   display: 'flex',
 })
+
+export const Grid = styled('div')(
+  css({
+    display: 'grid',
+  }),
+  space,
+  color,
+  layout,
+  grid,
+  cssProp
+)
 
 // root/page layout
 export const Layout = props =>
