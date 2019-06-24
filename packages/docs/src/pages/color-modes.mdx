@@ -8,11 +8,11 @@ export default Layout
 
 # Color Modes
 
-Color modes can be used to create a user-configurable dark mode or any number of other color modes.
+Color modes can be used to create a user-configurable _dark mode_ or any number of other color modes.
 
 ## Defining colors
 
-In the `theme.colors` object, add a nested `modes` object that will contain keys for the non-default color palette mode.
+In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
 Add an `initialColorMode` value to the theme to initialize the default state.
 
 ```js
@@ -64,6 +64,8 @@ export default props => {
 The previous steps will enable a color mode state and pass it through context.
 To apply the color mode values to the `<body>` element, render the `ColorMode` component in your application.
 
+If you're using Gatsby to build your app, follow the [instructions below](#gatsby-plugin).
+
 ```jsx
 import React from 'react'
 import { ThemeProvider, ColorMode } from 'theme-ui'
@@ -79,19 +81,19 @@ export default props => (
 
 ## Gatsby plugin
 
-For use with Gatsby, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
+For use with Gatsby, install and use `gatsby-theme-ui` to add the ThemeProvider to the root of your application.
 The plugin will also attempt to prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
 
 ```sh
-npm i gatsby-plugin-theme-ui
+npm i gatsby-theme-ui
 ```
 
-This plugin will look for a `src/theme.js` file to import and pass to the ThemeProvider.
+This plugin will look for a `src/gatsby-theme-ui/index.js` file to import and pass to the ThemeProvider.
 
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: ['gatsby-plugin-theme-ui'],
+  __experimentalThemes: ['gatsby-theme-ui'],
 }
 ```
 

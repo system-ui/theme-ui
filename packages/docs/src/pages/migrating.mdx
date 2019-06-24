@@ -1,0 +1,26 @@
+import Layout from '../components/layout'
+
+export default Layout
+export const title = 'Migrating'
+
+# Migration Guides
+
+## v0.2
+
+### JSX Pragma
+
+If you were using the Theme UI custom JSX pragma, rename the `css` prop to `sx`. This does not apply if you were importing and using the `css` utility function manually.
+
+### `theme-ui-typography`
+
+If you were using the `theme-ui-typography` package, install the new package named `@theme-ui/typography` instead.
+The `toStyle` API is no longer included. Use the `toTheme` API instead, see the [Typography.js docs](/theming/#typographyjs) for how to use this utility.
+
+### `Box` and layout component
+
+If you were using Styled System style props on the `Box` component or any other layout component, replace these props with either the [`sx` prop](/sx-prop) or by using the `css` utility.
+
+### Other
+
+- Replace `ColorModeProvider` and `ComponentProvider` with the `ThemeProvider` component.
+- The `@emotion/styled` package is no longer required for Theme UI. If you are not using it directly in your application, you can remove it from your dependencies.

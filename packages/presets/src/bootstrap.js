@@ -1,4 +1,3 @@
-
 export const baseColors = {
   white: '#fff',
   black: '#000',
@@ -14,16 +13,16 @@ export const baseColors = {
     '#343a40',
     '#212529',
   ],
-  blue:    '#007bff',
-  indigo:  '#6610f2',
-  purple:  '#6f42c1',
-  pink:    '#e83e8c',
-  red:     '#dc3545',
-  orange:  '#fd7e14',
-  yellow:  '#ffc107',
-  green:   '#28a745',
-  teal:    '#20c997',
-  cyan:    '#17a2b8',
+  blue: '#007bff',
+  indigo: '#6610f2',
+  purple: '#6f42c1',
+  pink: '#e83e8c',
+  red: '#dc3545',
+  orange: '#fd7e14',
+  yellow: '#ffc107',
+  green: '#28a745',
+  teal: '#20c997',
+  cyan: '#17a2b8',
   // gray: gray[6],
 }
 
@@ -44,26 +43,16 @@ export const colors = {
   textMuted: baseColors.gray[6],
 }
 
-export const space = [
-  0,
-  0.25,
-  0.5,
-  1,
-  1.5,
-  3,
-].map(n => n + 'rem')
+export const space = [0, 0.25, 0.5, 1, 1.5, 3].map(n => n + 'rem')
 
-export const breakpoints = [
-  576,
-  768,
-  992,
-  1200,
-]
+export const breakpoints = [576, 768, 992, 1200]
 
 export const fonts = {
-  body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  body:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   heading: 'inherit',
-  monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  monospace:
+    'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 }
 fonts.sans = fonts.body
 
@@ -77,7 +66,7 @@ fontWeights.normal = fontWeights.body
 fontWeights.display = fontWeights.light
 
 export const fontSizes = [
-  '0.75rem',  // '80%',
+  '0.75rem', // '80%',
   '0.875rem',
   '1rem',
   '1.25rem',
@@ -147,7 +136,7 @@ export const styles = {
     textDecoration: 'none',
     ':hover': {
       textDecoration: 'underline',
-    }
+    },
   },
   p: {
     mb: 3,
@@ -185,7 +174,6 @@ export const styles = {
     // todo
   },
 }
-
 
 export const bootstrap = {
   breakpoints,

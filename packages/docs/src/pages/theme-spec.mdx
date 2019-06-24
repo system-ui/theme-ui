@@ -12,7 +12,7 @@ Theme UI is based on the [System UI Theme Specification][], with a few **optiona
 The keys used in the `theme` object come from this specification.
 Additionally, naming conventions for colors and typography are included
 to help ensure deeper interoperability with components from various other libraries.
-This is also intended to help ensure that themes created for Theme UI are suitable for white-label-like applications.
+This is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose themes.
 
 ## Theme Scales
 
@@ -78,7 +78,7 @@ The `theme.colors` scale (i.e. color palette) should be an object literal with t
 | `accent`     | A contrast color for emphasizing UI                                                                             |
 | `muted`      | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
 
-Any other color key may also be included, and raw color values can be included and aliased for the values above.
+Other color keys can be added, including raw color values for aliasing the values above.
 
 <!--
 ## Aliasing Colors
@@ -91,7 +91,7 @@ TK
 In order to use Theme UI color modes, color scales should include _at least_ a `text` and `background` color. This is used in the `ColorMode` component to set body foreground and background colors.
 Color modes should be defined as nested scales within a `theme.colors.modes` object.
 Each key in this object should correspond to a color mode name.
-Color mode names may be anything, but typically `light` and `dark` should be used for applications that use a dark mode.
+Color mode names may be anything, but typically `light` and `dark` should be used for applications with a dark mode.
 The `initialColorMode` key is required to enable color modes and will be used as the name for the root color palette.
 
 The root color object is used as the default color mode, and other modes can use partial objects with the default modes colors used as fallback values.
@@ -157,8 +157,8 @@ Font sizes are typically defined as an array, from smallest to largest.
 }
 ```
 
-The index values of the array can be thought of as mapping to heading levels.
-This does not mean that these values are in any way tied to specific heading levels or HTML elements, but is meant for illustration purposes only.
+For illustration purposes, the index values of the array can be thought of as loosely mapping to heading levels.
+This does not mean that these values are in any way tied to specific heading levels or HTML elements.
 
 | Index | Heading-Level Equivalent |
 | ----- | ------------------------ |
@@ -205,6 +205,17 @@ Theme UI currently does _not_ have standards for defining combinations of typogr
 }
 ```
 
+User-defined variants can then be referenced in the `sx` prop or in `theme.styles`.
+
+```js
+// example using variant
+<h1
+  sx={{
+    variant: 'textStyles.heading',
+  }}
+/>
+```
+
 ## Styles
 
 The Theme UI `styles` object is primarily used as a mechanism to style MDX content
@@ -241,7 +252,7 @@ The `theme.styles` object may include the following keys:
 - `inlineCode` (MDX-specific key for `<code>` that is not a child of `<pre>`
 - `thematicBreak` (MDX-specific key for `<hr>`)
 - `div` (not rendered in MDX)
-- `root` (internal theme-ui)
+- `root` (theme-ui-specific)
 
 Objects within `theme.styles` can reference other values in the `theme` object.
 For example, headings can be defined with values from the typographic scales.

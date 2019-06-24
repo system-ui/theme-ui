@@ -18,7 +18,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
   return (
     <Header>
       <Container>
-        <Flex justifyContent="space-between">
+        <Flex sx={{ justifyContent: 'space-between' }}>
           <Flex>
             <MenuButton
               onClick={e => {
@@ -35,7 +35,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
               GitHub
             </NavLink>
             <Button
-              css={{
+              sx={{
                 ml: 2,
               }}
               onClick={cycleMode}

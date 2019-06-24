@@ -17,8 +17,8 @@ export const future = {
         secondary: '#0cf',
         highlight: '#f0c',
         muted: '#011',
-      }
-    }
+      },
+    },
   },
   fonts: {
     body: '"Avenir Next", system-ui, sans-serif',

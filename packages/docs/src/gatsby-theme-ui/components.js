@@ -6,7 +6,7 @@ const heading = Tag => props =>
     <Tag {...props}>
       <a
         href={`#${props.id}`}
-        css={{
+        sx={{
           color: 'inherit',
           textDecoration: 'none',
           ':hover': {

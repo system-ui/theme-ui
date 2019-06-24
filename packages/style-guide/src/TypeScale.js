@@ -9,26 +9,24 @@ const getValue = (fontSizes, key) => {
   return raw + 'px'
 }
 
-export const TypeScale = ({
-  reverse = true,
-  ...props
-}) => {
+export const TypeScale = ({ reverse = true, ...props }) => {
   const { fontSizes = [] } = useTheme()
 
   return (
     <div
-      css={{
+      sx={{
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'baseline',
-      }}>
+      }}
+    >
       {fontSizes.map((n, i) => {
-        const key = reverse ? (fontSizes.length - 1 - i) : i
+        const key = reverse ? fontSizes.length - 1 - i : i
         return (
           <TypeStyle
             key={i}
             fontSize={key}
-            css={{
+            sx={{
               mr: 3,
             }}
             children={getValue(fontSizes, key)}

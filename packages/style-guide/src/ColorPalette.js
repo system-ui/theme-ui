@@ -3,24 +3,18 @@ import { jsx } from 'theme-ui'
 import { useTheme } from './context'
 import ColorSwatch from './ColorSwatch'
 
-const join = (...args) => args
-  .filter(Boolean)
-  .join('.')
+const join = (...args) => args.filter(Boolean).join('.')
 
-export const ColorRow = ({
-  colors,
-  name,
-  omit = [ 'modes' ],
-  ...props
-}) => {
+export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
   return (
     <div>
       <div
-        css={{
+        sx={{
           fontSize: 0,
           display: 'flex',
           flexWrap: 'wrap',
-        }}>
+        }}
+      >
         {Object.keys(colors).map(key => {
           const color = colors[key]
           if (!color || omit.includes(key)) return false
@@ -38,9 +32,10 @@ export const ColorRow = ({
           }
           return (
             <ColorSwatch
+              key={key}
               name={id}
               color={id}
-              css={{
+              sx={{
                 m: 2,
                 flexBasis: 128,
               }}
@@ -52,10 +47,7 @@ export const ColorRow = ({
   )
 }
 
-export const ColorPalette = ({
-  omit = [],
-  ...props
-}) => {
+export const ColorPalette = ({ omit = [], ...props }) => {
   const { colors = {} } = useTheme()
 
   return (
@@ -63,11 +55,9 @@ export const ColorPalette = ({
       style={{
         marginLeft: -8,
         marginRight: -8,
-      }}>
-      <ColorRow
-        omit={omit}
-        colors={colors}
-      />
+      }}
+    >
+      <ColorRow omit={omit} colors={colors} />
     </div>
   )
 }

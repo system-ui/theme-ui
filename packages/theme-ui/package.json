@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.1.7",
+  "version": "0.2.0-alpha.0",
   "description": "Build consistent, themeable React UIs based on design system constraints and design tokens",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,18 +13,16 @@
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^0.8.1",
     "@styled-system/css": "^5.0.5",
-    "lodash.merge": "^4.6.0",
-    "react": "^16.8.0",
-    "styled-system": "^5.0.5"
+    "deepmerge": "^3.2.0",
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   }
 }

@@ -33,12 +33,15 @@ For examples of previous explorations into this idea, see [Rebass MDX][], [MDX S
 [mdx style]: https://github.com/jxnblk/mdx-style
 [mdx blocks]: https://github.com/jxnblk/mdx-blocks
 
-## The `css` Prop
+## The `css` and `sx` Props
 
 The `css` prop is a powerful pattern for styling UI in React.
 It works like the built-in `style` prop, but it includes some of the best parts of the CSS language, including media queries and pseudo-classes, and can be authored in native JavaScript object literal syntax.
 The `css` prop can be leveraged in a similar way to the `styled` higher-order component, but also offers more flexibility when making one-off, context-specific stylistic changes.
 The `css` prop also avoids some of the [pitfalls of mixing CSS properties with HTML attributes](https://github.com/styled-components/styled-components/issues/439).
+
+The `sx` prop is a light abstraction on top of the `css` prop that can serve as a complete replacement and makes it easier to
+ensure you use values from your global `theme` object.
 
 ## Why Object Literal Syntax
 
@@ -57,10 +60,11 @@ If you're building a custom component library, either Styled Components or Emoti
 
 For Theme UI, the decision was primarily based on these factors:
 
-- Emotion's implementation of the `css` prop and the custom JSX pragma allows for potentially better integrations with `@styled-system/css`
+- Emotion's implementation of the `css` prop and the custom JSX pragma allows for better integration with `@styled-system/css`
 - The Emotion API includes more lower-level utilities, like `createEmotion` that could be leveraged when considering how multiple themes could be composed together
 - Emotion's theming context is directly available in `@emotion/core`, allowing this library to leverage React's context API in different ways
-- In the case of Theme UI internals, the `styled` higher-order component utility is not necessarily the best API for creating components, and the ability to remove `@emotion/styled` from the core package in the future could help reduce bundle size – i.e. most of the same things can be achieved with the `css` prop
+- In the case of Theme UI internals, the `styled` higher-order component utility is not necessarily the best API for creating components,
+  and by not including `@emotion/styled` in the core package the bundle size is kept to a minimum – i.e. most of the same things can be achieved with the `css` prop
 
 ## How is this different from Styled System
 
