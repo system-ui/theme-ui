@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { css } from '@styled-system/css'
 import { Global } from '@emotion/core'
 import { useThemeUI } from './context'
@@ -20,14 +20,11 @@ export const getMediaQuery = () => {
 export const useColorState = initialMode => {
   const [mode, setMode] = useState(initialMode)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // initialize
     const stored = storage.get()
     const dark = getMediaQuery()
-    if (dark) {
-      setMode('dark')
-      return
-    }
+    if (dark) setMode('dark')
     document.body.classList.remove('theme-ui-' + stored)
     if (!stored || stored === mode) return
     setMode(stored)
