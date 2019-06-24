@@ -22,7 +22,6 @@
     "@theme-ui/presets": "^0.1.8",
     "@theme-ui/style-guide": "^0.1.8",
     "@theme-ui/typography": "^0.2.0-alpha.0",
-    "demo-theme": "^0.1.7",
     "gatsby": "^2.3.6",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
