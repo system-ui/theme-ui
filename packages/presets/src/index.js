@@ -5,3 +5,4 @@ export { roboto } from './roboto'
 
 export { bootstrap } from './bootstrap'
 export { bulma } from './bulma'
+export { tailwind } from './tailwind'
