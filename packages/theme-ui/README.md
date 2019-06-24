@@ -26,14 +26,13 @@ https://theme-ui.com
 [size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
 
 Built for white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
-Interoperable,
 and based on the System UI [Theme Specification][],
 Theme UI is intended to work in a variety of applications, libraries, and other UI components.
 Colors, typography, and layout styles derived from customizable scales and design tokens,
 help you build UI rooted in constraint-based design principles.
 
 - Styled system without creating components
-- First class support for the css prop
+- First class support for the `css` prop
 - Style [MDX][] content with a simple, expressive API
 - Use [Typography.js][] themes
 - Works with virtually any UI component library
@@ -41,7 +40,7 @@ help you build UI rooted in constraint-based design principles.
 - Quick mobile-first responsive styles
 - Built-in support for dark modes
 - Primitive page layout components
-- Plugin for use in Gatsby sites and themes
+- Plugin for use in [Gatsby][] sites and themes
 - Define your own design tokens
 - Built with the System UI [Theme Specification][] for interoperability
 - Keep styles isolated with [Emotion][]
@@ -49,6 +48,7 @@ help you build UI rooted in constraint-based design principles.
 [emotion]: https://emotion.sh
 [mdx]: https://mdxjs.com
 [styled system]: https://styled-system.com
+[gatsby]: https://gatsbyjs.org
 [@styled-system/css]: https://styled-system.com/css
 [theme specification]: https://system-ui.com/theme
 [typography.js]: https://github.com/KyleAMathews/typography.js
