@@ -8,18 +8,20 @@ export default Layout
 
 # Hooks
 
-If you are interested in learning more about how React Hooks work please see the official React docs [here](https://reactjs.org/docs/hooks-intro.html).
+Theme UI includes hooks for changing the color mode state and for using the Theme UI context directly.
+If you are interested in learning more about how React Hooks work please see the [official React docs](https://reactjs.org/docs/hooks-intro.html).
 
 ## `useThemeUI`
 
-To access the `theme` object directly in a component, you can use the `useThemeUI` hook.
+To access the `context` object directly in a component, use the `useThemeUI` hook.
 
 ```jsx
 import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
 export default props => {
-  const { theme } = useThemeUI()
+  const context = useThemeUI()
+  const { theme, components, colorMode, setColorMode } = useThemeUI()
 
   return <pre>{JSON.stringify(theme, null, 2)}</pre>
 }

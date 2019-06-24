@@ -12,7 +12,9 @@ export default Layout
 npm i theme-ui @emotion/core @mdx-js/react
 ```
 
-Wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
+Any styles in your app can reference values from the global `theme` object.
+To provide the theme in context,
+wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
@@ -25,7 +27,7 @@ export default props => (
 )
 ```
 
-The `theme` object follows the System UI [Theme Specification][],
+The `theme` object follows the System UI [Theme Specification](/theme-spec),
 which lets you define custom color palettes, typographic scales, fonts, and more.
 Read more about [theming](/theming).
 
@@ -72,6 +74,7 @@ export default props => (
 ```
 
 Under the hood, this uses the [`@styled-system/css`](https://styled-system.com/css) utility and Emotion's custom JSX pragma implementation.
+Read more about [how the custom pragma works](/how-it-works/#jsx-pragma).
 
 ## Responsive styles
 
@@ -94,5 +97,4 @@ export default props => (
 )
 ```
 
-[theme specification]: https://system-ui.com/theme
 [styled system]: https://styled-system.com

@@ -1,49 +1,19 @@
 ---
-title: 'CSS'
+title: 'The `sx` Prop'
 ---
 
 import Layout from '../components/layout'
 
 export default Layout
 
-# CSS Utility
+# The `sx` Prop
 
-The `css` utility is intended for use with Emotion's `css` prop and allows you to seamlessly use values from your theme, use shortcuts for margin and padding, and add responsive styles with arrays.
-This utility comes from [`@styled-system/css`][styled-system/css], and you can find more information on the thinking behind this approach in [Styled System's docs](https://styled-system.com).
+Theme UI's `sx` prop is an alternative to Emotion's `css` prop,
+which allows you to seamlessly use values from your theme, use shortcuts for margin and padding, and add mobile-first responsive styles using arrays.
+Under the hood, it uses a custom pragma that converts a Styled System-aware `sx` prop into a style object and passes it to the Emotion's `jsx` function.
+This is intended as a complete replacement for the Emotion custom pragma.
 
-## Usage
-
-If you're already using Emotion with the `css` prop in your application, you can import Theme UI's `css` utility and use it inline to use values from your theme.
-
-To set up an application to use Emotion's `css` prop, see the [Emotion docs](https://emotion.sh/docs/css-prop).
-
-```jsx
-// example with emotion css prop
-import React from 'react'
-import { css } from 'theme-ui'
-
-export default props => (
-  <div
-    {...props}
-    css={css({
-      // values referencing scales defined in a theme
-      color: 'primary',
-      bg: 'lightgray',
-      fontFamily: 'body',
-      // raw CSS value
-      boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
-    })}
-  />
-)
-```
-
-For a complete table of how CSS properties map to scales in your theme, see the [Styled System CSS docs](https://styled-system.com/css#theme-keys).
-
-## Custom Pragma
-
-Alternatively, to avoid the need to wrap styles with the `css` utiilty,
-you can use the [custom pragma](/custom-pragma) to reference theme values directly
-in the `sx` (system styles) prop without the need to import the `css` utility.
+To use the `sx` prop, add the custom pragma comment to the top of your module and import the `jsx` function.
 
 ```jsx
 /** @jsx jsx */
@@ -64,6 +34,9 @@ export default props => (
 )
 ```
 
+To read more about how the values are converted and a reference of supported CSS properties, see the
+[`@styled-system/css` docs](https://styled-system.com/css).
+
 ## Margin and Padding
 
 Margin and padding are treated as first-class citizens in Styled System,
@@ -76,6 +49,7 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 <div
   sx={{
     px: 3, // padding-left & padding-right
+    // paddingX: 3 will also work
     py: 4, // padding-top & padding-bottom
     mb: 3, // margin-bottom
   }}
@@ -104,7 +78,7 @@ export default props => (
 ## Functional Values
 
 For shorthand CSS properties or ones that are not automatically mapped to values in the theme,
-a function can be used to use values from the `theme` object.
+use an inline function to reference values from the `theme` object.
 
 ```jsx
 /** @jsx jsx */
@@ -120,6 +94,44 @@ export default props => (
 )
 ```
 
-Read more in the [Styled System docs](https://styled-system.com/responsive-styles)
+## Raw CSS
 
-[styled-system/css]: https://styled-system.com/css
+To opt-out of using theme-based CSS, use the `css` prop to render raw CSS values.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    css={{
+      // raw values
+      color: 'tomato',
+      fontSize: 24,
+    }}
+  />
+)
+```
+
+## Without Using the Custom Pragma
+
+If you prefer, the `css` _function_ can be imported directly and passed to the `css` _prop_, providing a similar API to the above.
+
+**Note:** this requires Emotion's `css` prop.
+To set up an application to use Emotion's `css` prop, see the [Emotion docs](https://emotion.sh/docs/css-prop).
+
+```jsx
+import React from 'react'
+import { css } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    css={css({
+      color: 'primary',
+      mb: 4,
+    })}
+  />
+)
+```

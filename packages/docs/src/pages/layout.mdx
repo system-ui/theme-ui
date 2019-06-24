@@ -55,7 +55,7 @@ export default props => (
 
 ## Layout Theming
 
-These page layout components can be styled with the `theme.styles` object, similar to how other MDX components can be styled.
+The page layout components can be styled with the `theme.styles` object, similar to how other MDX components can be styled.
 
 ```js
 theme: {
@@ -68,7 +68,8 @@ theme: {
 }
 ```
 
-The styles for the layout components can reference colors and other theme values using `@styled-system/css`. This can be used to theme specific aspects like colors independent from the component.
+The styles for the layout components can reference colors and other values from the `theme`.
+This can be used to style specific properties, like colors, from the global theme.
 
 ```js
 theme: {
