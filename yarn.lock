@@ -6190,15 +6190,7 @@ color@^0.7.3:
     color-convert "0.5.x"
     color-string "0.2.x"
 
-color@^3.0.0, color@^3.1.0:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/color/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
-  integrity sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
-  dependencies:
-    color-convert "^1.9.1"
-    color-string "^1.5.2"
-
-color@^3.1.2:
+color@^3.0.0, color@^3.1.0, color@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
   integrity sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
@@ -16569,6 +16561,30 @@ pretty-hrtime@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
+
+primer-colors@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/primer-colors/-/primer-colors-1.0.1.tgz#9bc2dbfefeba3ec987eb7d71c6a3d14c67ae9c35"
+  integrity sha512-bxo3OPoIO1F/C07RpKbLjPzuSsTkOMzo9Yl9OJFHGD7/UxA+JvNdZK0GbJzWtz5Y8H6KabbHadxwVWRp1xl08A==
+
+primer-primitives@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/primer-primitives/-/primer-primitives-1.0.2.tgz#dd1b1eb7bd898762e9d55f386494974960089a16"
+  integrity sha512-sNFMhp8OLiqGgI3MXBz2oJnUdMCYTca7Eir7FPHVf7NgOaklRys8lj+1gdcaOLZ0jtqQT5pMgM9MOcXV2DETtg==
+  dependencies:
+    primer-colors "^1.0.1"
+    primer-spacing "^1.0.2"
+    primer-typography "^1.0.1"
+
+primer-spacing@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/primer-spacing/-/primer-spacing-1.0.2.tgz#dfef4dfa843e8cf0c1ce54bd0a7e3e4bf0137cc1"
+  integrity sha512-LBORWyjNYd8Zl1LmALzz+Yexi1rT/2Edl2irXOeGevMHjQ2MNePZN3fo5jliep+4tSFXqSa6uiRzxxSVScnrzw==
+
+primer-typography@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/primer-typography/-/primer-typography-1.0.1.tgz#559c03e0d2470fa2d48a4166a63091f4b1162759"
+  integrity sha512-9f1MNOMYOWemosmJIG8FToqZoL7YKQW3KHNsMS3DddTUzJefnVzeqmiiTBPc2ok0yE7fE2PgobG9iRY+itgdVg==
 
 prismjs@^1.16.0:
   version "1.16.0"

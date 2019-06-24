@@ -11,5 +11,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "primer-primitives": "^1.0.2"
   }
 }
