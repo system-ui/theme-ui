@@ -4,6 +4,8 @@
 
 Build consistent, themeable React UIs based on design system constraints and design tokens
 
+Emotion + Styled System + MDX + Typography.js
+
 [![GitHub][github-badge]][github]
 [![Build Status][circleci-badge]][circleci]
 [![Version][version]][npm]
@@ -23,15 +25,25 @@ https://theme-ui.com
 [system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
 [size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
 
-- Style your application consistently with a global theme object and customizable design tokens
-- Style [MDX][] content with themes
-- Follows the [Theme Specification][] for interoperability with other libraries
-- Style elements directly with the `css` prop and [@styled-system/css][]
-- Works with or without custom styled components and [Styled System][]
-- First-class support for [Typography.js][] themes
-- First-class support for dark mode and other color modes
-- Use contextual theming for nested stylistic changes
+Built for white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
+Interoperable,
+and based on the System UI [Theme Specification][],
+Theme UI is intended to work in a variety of applications, libraries, and other UI components.
+Colors, typography, and layout styles derived from customizable scales and design tokens,
+help you build UI rooted in constraint-based design principles.
+
+- Styled system without creating components
+- First class support for the css prop
+- Style [MDX][] content with a simple, expressive API
+- Use [Typography.js][] themes
+- Works with virtually any UI component library
+- Works with existing [Styled System][] components
+- Quick mobile-first responsive styles
+- Built-in support for dark modes
 - Primitive page layout components
+- Plugin for use in Gatsby sites and themes
+- Define your own design tokens
+- Built with the System UI [Theme Specification][] for interoperability
 - Keep styles isolated with [Emotion][]
 
 [emotion]: https://emotion.sh
@@ -47,7 +59,9 @@ https://theme-ui.com
 npm i theme-ui @emotion/core @mdx-js/react
 ```
 
-Wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
+Any styles in your app can reference values from the global `theme` object.
+To provide the theme in context,
+wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
@@ -60,8 +74,9 @@ export default props => (
 )
 ```
 
-The `theme` object should follow the System UI [Theme Specification][],
+The `theme` object follows the System UI [Theme Specification](/theme-spec),
 which lets you define custom color palettes, typographic scales, fonts, and more.
+Read more about [theming](/theming).
 
 ```js
 // example theme.js
@@ -79,54 +94,14 @@ export default {
 }
 ```
 
-## `css` prop
+## `sx` prop
 
-Use the `css` prop throughout your application, along with the `css` utility to pick up values from the theme.
-Using the `css` utility means that
-color and other values can reference values defined in `theme` object.
+The `sx` prop works similarly to Emotion's `css` prop, accepting style objects to add CSS directly to an element in JSX, but includes extra theme-aware functionality.
+Using the `sx` prop for styles means that certain properties can reference values defined in your `theme` object.
+This is intended to make keeping styles consistent throughout your app the easy thing to do.
 
-```jsx
-import React from 'react'
-import { css } from 'theme-ui'
-
-export default () => (
-  <div
-    css={css({
-      fontWeight: 'bold',
-      fontSize: 4, // picks up value from `theme.fontSizes[4]`
-      color: 'primary', // picks up value from `theme.colors.primary`
-    })}
-  >
-    Hello
-  </div>
-)
-```
-
-Read more about the `css` utility in the [@styled-system/css](https://styled-system.com/css/) docs.
-
-## Responsive styles
-
-The `css` utility also supports using arrays as values to change properties responsively with a mobile-first approach.
-
-```jsx
-import React from 'react'
-import { css } from 'theme-ui'
-
-export default props => (
-  <div
-    css={css({
-      // applies width 100% to all viewport widths,
-      // width 50% above the first breakpoint,
-      // and 25% above the next breakpoint
-      width: ['100%', '50%', '25%'],
-    })}
-  />
-)
-```
-
-## `jsx` pragma
-
-To use values from the `theme` object without importing the `css` utility, use the custom `jsx` pragma, which will automatically convert Theme UI `css` prop values.
+The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
+This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 
 ```jsx
 /** @jsx jsx */
@@ -134,135 +109,53 @@ import { jsx } from 'theme-ui'
 
 export default props => (
   <div
-    css={{
-      fontSize: 4,
-      color: 'primary',
-      bg: 'lightgray',
+    sx={{
+      fontWeight: 'bold',
+      fontSize: 4, // picks up value from `theme.fontSizes[4]`
+      color: 'primary', // picks up value from `theme.colors.primary`
+    }}
+  >
+    Hello
+  </div>
+)
+```
+
+Under the hood, this uses the [`@styled-system/css`](https://styled-system.com/css) utility and Emotion's custom JSX pragma implementation.
+Read more about [how the custom pragma works](/how-it-works/#jsx-pragma).
+
+## Responsive styles
+
+The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
+This API originated in [Styled System][] and is intended as a terser syntax for applying responsive styles across a singular dimension.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    sx={{
+      // applies width 100% to all viewport widths,
+      // width 50% above the first breakpoint,
+      // and 25% above the next breakpoint
+      width: ['100%', '50%', '25%'],
     }}
   />
 )
 ```
 
-Read more in the [custom pragma docs](https://theme-ui.com/custom-pragma).
+---
 
-## MDX Components
-
-Use the `components` prop to add components to MDX scope.
-This can be used to introduce new behavior to markdown elements in MDX, such as adding linked headings or live-editable code examples.
-Internally, the `ThemeProvider` is a combination of `MDXProvider` and Emotion's `ThemeProvider`.
-
-```jsx
-// with mdx components
-import React from 'react'
-import { ThemeProvider } from 'theme-ui'
-import mdxComponents from './mdx-components'
-import theme from './theme'
-
-export default props => (
-  <ThemeProvider components={mdxComponents} theme={theme}>
-    {props.children}
-  </ThemeProvider>
-)
-```
-
-## `theme.styles`
-
-The MDX components can also be styled via the `theme.styles` object.
-This can be used as a mechanism to pass in fully-baked themes and typographic styles to MDX content.
-
-```js
-// example theme
-export default {
-  colors: {
-    primary: '#33e',
-  },
-  styles: {
-    // this styles child MDX `<h1>` components
-    h1: {
-      fontSize: 32,
-      // this value comes from the `color` object
-      color: 'primary',
-    },
-  },
-}
-```
-
-## Styled components
-
-These components' styles can also be consumed _outside_ of an MDX doc with the `Styled` component.
-Note that these are only _styled_ using the same `theme.styles` object and _not_ the same components passed to the `ThemeProvider` context.
-
-```jsx
-import React from 'react'
-import { Styled } from 'theme-ui'
-
-export default props => (
-  <Styled.div>
-    <Styled.h1>Hello</Styled.h1>
-  </Styled.div>
-)
-```
-
-To change the underlying component in `Styled`, use the `as` prop.
-
-```jsx
-<Styled.a as={Link} to="/">
-  Home
-</Styled.a>
-```
-
-## Layout Components
-
-Theme UI includes several components for creating page layouts.
-
-- `Layout`: sets a flex column with 100vh min-height
-- `Header`: flexbox row
-- `Footer`: flexbox row
-- `Main`: flex auto container for pushing the Footer to the bottom of the viewport
-- `Container`: max-width, centered container
-
-```jsx
-import React from 'react'
-import { Layout, Header, Main, Container, Footer } from 'theme-ui'
-
-export default props => (
-  <Layout>
-    <Header>Hello</Header>
-    <Main>
-      <Container>{props.children}</Container>
-    </Main>
-    <Footer>© 2019</Footer>
-  </Layout>
-)
-```
-
-## Box & Flex
-
-The `Box` & `Flex` layout components are similar to the ones found in [Rebass](https://rebassjs.org), but are built with Emotion and `@styled-system/css`.
-
-```jsx
-import React from 'react'
-import { Flex, Box } from 'theme-ui'
-
-export default props => (
-  <Flex flexWrap="wrap">
-    <Box width={[1, 1 / 2]} />
-    <Box width={[1, 1 / 2]} />
-  </Flex>
-)
-```
-
-## More Documentation
+## Documentation
 
 - [Theming](https://theme-ui.com/theming)
+- [The `sx` Prop](https://theme-ui.com/sx-prop)
 - [Layout](https://theme-ui.com/layout)
 - [Color Modes](https://theme-ui.com/color-modes)
+- [Styled](https://theme-ui.com/styled)
+- [MDX Components](https://theme-ui.com/mdx-components)
+- [Theme Spec](https://theme-ui.com/theme-spec)
 - [Gatsby Plugin](https://theme-ui.com/gatsby-plugin)
-- [Custom Pragma](https://theme-ui.com/custom-pragma)
-- [Typography.js](https://theme-ui.com/typography)
-
-[typography demo]: https://theme-ui.com/typography
-[demo]: https://theme-ui.com/demo
-[emotion plugins]: https://github.com/emotion-js/emotion/pull/1299
+- [API](https://theme-ui.com/api)
 
 MIT License
