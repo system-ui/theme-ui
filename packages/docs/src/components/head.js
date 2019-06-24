@@ -4,6 +4,7 @@ import pkg from 'theme-ui/package.json'
 
 export default props => {
   const title = [
+    props.title,
     props._frontmatter ? props._frontmatter.title : false,
     'Theme UI',
   ]
