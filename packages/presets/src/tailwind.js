@@ -1,6 +1,6 @@
 // Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 
-export const breakpoints = ["40rem", "48rem", "64rem", "80rem"];
+export const breakpoints = ["40rem", "48rem", "64rem", "80rem"]
 
 export const baseColors = {
   transparent: "transparent",
@@ -116,38 +116,38 @@ export const baseColors = {
     800: "#97266d",
     900: "#702459"
   }
-};
+}
 
 export const colors = {
   ...baseColors,
   grayDark: baseColors.gray[8],
-  text: baseColors.gray[9],
+  text: baseColors.gray[8],
   background: baseColors.white,
-  primary: baseColors.cyan[3],
+  primary: baseColors.blue[3],
   secondary: baseColors.gray[6],
   muted: baseColors.gray[3],
   success: baseColors.green[3],
-  info: baseColors.cyan[4],
+  info: baseColors.blue[4],
   warning: baseColors.yellow[3],
   danger: baseColors.red[3],
   light: baseColors.gray[1],
   dark: baseColors.gray[8],
   textMuted: baseColors.gray[6]
-};
+}
 
 export const baseFonts = {
   sans:
     '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   serif: 'Georgia, Cambria, "Times New Roman", Times, serif',
   mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace'
-};
+}
 
 export const fonts = {
   ...baseFonts,
   body: baseFonts.sans,
   heading: "inherit",
   monospace: baseFonts.mono
-};
+}
 
 export const fontSizes = [
   "0.875rem",
@@ -159,7 +159,7 @@ export const fontSizes = [
   "3rem",
   "4rem",
   "4.5rem"
-];
+]
 
 export const baseFontWeights = {
   hairline: "100",
@@ -171,26 +171,26 @@ export const baseFontWeights = {
   bold: "700",
   extrabold: "800",
   black: "900"
-};
+}
 
 export const fontWeights = {
   ...baseFontWeights,
   body: baseFontWeights.normal,
   heading: baseFontWeights.bold
-};
+}
 
 export const baseLineHeights = {
   none: "1",
   tight: "1.25",
   relaxed: "1.625",
   loose: "2"
-};
+}
 
 export const lineHeights = {
   ...baseLineHeights,
   body: baseLineHeights.relaxed,
   heading: baseLineHeights.tight
-};
+}
 
 export const space = [
   0,
@@ -202,7 +202,7 @@ export const space = [
   "8rem",
   "16rem",
   "32rem"
-];
+]
 
 export const letterSpacings = {
   tight: "-0.025em",
@@ -210,7 +210,7 @@ export const letterSpacings = {
   wide: "0.025em",
   wider: "0.05em",
   widest: "0.1em"
-};
+}
 
 export const sizes = {
   px: "1px",
@@ -242,7 +242,7 @@ export const sizes = {
   "4xl": "56rem",
   "5xl": "64rem",
   "6xl": "72rem"
-};
+}
 
 export const borderWidths = {
   px: "1px",
@@ -250,7 +250,7 @@ export const borderWidths = {
   "2": "2px",
   "4": "4px",
   "8": "8px"
-};
+}
 
 export const radii = {
   none: "0",
@@ -258,7 +258,7 @@ export const radii = {
   default: "0.25rem",
   lg: "0.5rem",
   full: "9999px"
-};
+}
 
 export const shadows = {
   default: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
@@ -270,7 +270,7 @@ export const shadows = {
   inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
   outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
   none: "none"
-};
+}
 
 export const zIndices = {
   auto: "auto",
@@ -280,7 +280,7 @@ export const zIndices = {
   "30": "30",
   "40": "40",
   "50": "50"
-};
+}
 
 const heading = {
   fontFamily: "heading",
@@ -288,9 +288,9 @@ const heading = {
   lineHeight: "heading",
   m: 0,
   mb: 1
-};
+}
 
-// needs works
+
 export const styles = {
   root: {
     fontFamily: "body",
@@ -340,7 +340,7 @@ export const styles = {
     height: "1px",
     m: 3
   }
-};
+}
 
 export const tailwind = {
   breakpoints,
@@ -357,6 +357,6 @@ export const tailwind = {
   shadows,
   zIndices,
   styles
-};
+}
 
-export default tailwind;
+export default tailwind
