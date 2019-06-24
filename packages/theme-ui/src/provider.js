@@ -34,6 +34,7 @@ const RootProvider = ({ theme = {}, components, children }) => {
   const [colorMode, setColorMode] = useColorState(theme.initialColorMode)
 
   const context = {
+    __THEME_UI__: true,
     colorMode,
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
@@ -60,7 +61,7 @@ const NestedProvider = ({ theme, components, children }) => {
 
 export const ThemeProvider = props => {
   const outer = useThemeUI()
-  if (outer.colorMode) {
+  if (outer.__THEME_UI__) {
     return jsx(NestedProvider, props)
   }
   return jsx(RootProvider, props)
