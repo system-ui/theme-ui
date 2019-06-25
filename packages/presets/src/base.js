@@ -1,7 +1,8 @@
 // default/base theme
 const heading = {
+  color: 'text',
   fontFamily: 'heading',
-  lineHeight: 'heading',
+  lineHeight: '1.2',
   fontWeight: 'heading',
 }
 
@@ -58,6 +59,15 @@ export const base = {
     h6: {
       ...heading,
       fontSize: 0,
+    },
+    p: {
+      color: 'text',
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+    },
+    a: {
+      color: 'primary',
     },
     pre: {
       fontFamily: 'monospace',
