@@ -37,7 +37,9 @@ const ThemeSelect = props => (
       }}
     >
       {themeNames.map(name => (
-        <option key={name} label={name} value={name} />
+        <option key={name} label={name} value={name}>
+          {name}
+        </option>
       ))}
     </select>
   </div>
