@@ -1,5 +1,4 @@
-import styled from '@emotion/styled'
-import { space } from 'styled-system'
+import styled from './styled'
 import themed from './themed'
 
 const tags = [
@@ -46,11 +45,19 @@ const aliases = {
 
 const alias = n => aliases[n] || n
 
-export const Styled = styled('div')(themed('div'), space)
+export const Styled = styled('div')(themed('div'))
 
 export const components = {}
 
 tags.forEach(tag => {
-  components[tag] = styled(alias(tag))(themed(tag), space)
+  components[tag] = styled(alias(tag))(themed(tag))
   Styled[tag] = components[tag]
 })
+
+export const createComponents = (components = {}) => {
+  const next = {}
+  Object.keys(components).forEach(key => {
+    next[key] = styled(components[key])(themed(key))
+  })
+  return next
+}

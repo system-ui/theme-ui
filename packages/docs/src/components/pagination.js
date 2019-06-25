@@ -17,11 +17,17 @@ const flattenLinks = children =>
     ])
   }, [])
 
-const PaginationLink = ({ label, ...props }) => (
+const PaginationLink = ({
+  label,
+  parentName,
+  mdxType,
+  originalType,
+  ...props
+}) => (
   <NavLink {...props}>
     <div>{label}</div>
     <div
-      css={{
+      sx={{
         fontSize: 3,
       }}
     >
@@ -40,11 +46,11 @@ const Pagination = props => {
   const next = links[index + 1]
 
   return (
-    <Flex py={4} mx={-2}>
+    <Flex sx={{ py: 4, mx: -2 }}>
       {hasPagination && previous && (
         <PaginationLink {...previous.props} label="Previous:" />
       )}
-      <Box mx="auto" />
+      <Box sx={{ mx: 'auto' }} />
       {hasPagination && next && (
         <PaginationLink {...next.props} label="Next:" />
       )}

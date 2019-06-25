@@ -1,0 +1,23 @@
+import Layout from '../components/layout'
+
+export default Layout
+export const title = 'MDX Components'
+
+# MDX Components
+
+To provide custom components to MDX context, but still apply styles from your theme, pass an object of custom components to the `ThemeProvider` component.
+
+**Note:** If you do not need to reuse theme styles in your application, the [official `MDXProvider` component](https://mdxjs.com/advanced/components#mdxprovider) can be used instead.
+
+```jsx
+/** @jsx jsx */
+import { jsx, ThemeProvider } from 'theme-ui'
+import theme from './theme'
+import components from './components'
+
+export default props => (
+  <ThemeProvider theme={theme} components={components}>
+    {props.children}
+  </ThemeProvider>
+)
+```

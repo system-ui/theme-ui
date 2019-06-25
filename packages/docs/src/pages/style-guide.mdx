@@ -1,9 +1,5 @@
 import Layout from '../components/layout'
-import {
-  TypeScale,
-  TypeStyle,
-  ColorPalette,
-} from '@theme-ui/style-guide'
+import { TypeScale, TypeStyle, ColorPalette } from '@theme-ui/style-guide'
 
 export default Layout
 
@@ -21,9 +17,7 @@ npm i @theme-ui/style-guide
 <ThemeProvider theme={theme}>
   <ColorPalette />
   <TypeScale />
-  <TypeStyle
-    fontFamily='monospace'
-  />
+  <TypeStyle fontFamily="monospace" />
 </ThemeProvider>
 ```
 
@@ -47,14 +41,8 @@ npm i @theme-ui/style-guide
 
 ### Type Scale
 
-<TypeScale
-  fontWeight='heading'
-/>
+<TypeScale fontWeight="heading" />
 
 ### Color Palette
 
-<ColorPalette
-  omit={[ 'modes', 'header' ]}
-/>
-
-
+<ColorPalette omit={['modes', 'header']} />

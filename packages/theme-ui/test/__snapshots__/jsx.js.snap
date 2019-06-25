@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom pragma handles null props 1`] = `
+<h1>
+  hello
+</h1>
+`;

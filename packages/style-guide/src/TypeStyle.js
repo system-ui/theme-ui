@@ -15,16 +15,18 @@ export const TypeStyle = ({
     <Card
       {...props}
       children={children}
-      css={{
+      sx={{
         fontFamily,
         fontSize,
         lineHeight,
         fontWeight,
-        ...(truncate ? ({
-          overflowX: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
-        }) : {})
+        ...(truncate
+          ? {
+              overflowX: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }
+          : {}),
       }}
     />
   )

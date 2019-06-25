@@ -56,7 +56,7 @@ export default ({ components, theme, children }) => (
 ## Custom Components
 
 When using the `components` prop to add custom MDX components,
-each component is wrapped with `@emotion/styled` to allow the custom components to pick up values from the `theme.styles` object.
+each component is wrapped with the `sx` prop to allow the component to pick up values from the `theme.styles` object.
 
 ## JSX Pragma
 
@@ -82,15 +82,14 @@ export default props => (
 ```
 
 ```jsx
-// with Emotion's custom pragma
-// this is typically handled with the Emotion Babel preset
+// with Theme UI's custom pragma
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
 export default props => (
   <div
     {...props}
-    css={{
+    sx={{
       color: 'white',
       bg: 'primary',
       fontSize: 4,

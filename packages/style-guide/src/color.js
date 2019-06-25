@@ -10,7 +10,9 @@ export const toHex = raw => {
 
 export const toRGB = raw => {
   try {
-    return Color(raw).rgb().string()
+    return Color(raw)
+      .rgb()
+      .string()
   } catch (e) {
     return
   }
@@ -18,7 +20,9 @@ export const toRGB = raw => {
 
 export const toHSL = raw => {
   try {
-    return Color(raw).hsl().string()
+    return Color(raw)
+      .hsl()
+      .string()
   } catch (e) {
     return
   }

@@ -8,7 +8,8 @@ export default Layout
 
 # Theming
 
-Theming with Theme UI is based on the [System UI Theme Spec][] with an additional `theme.styles` object for styling markdown elements and other components.
+Theming with Theme UI is based on the [System UI Theme Spec][] with an additional `theme.styles` object for styling MDX elements and other components.
+By adhering to a standard Theme Specification, Theme UI is designed to be interoperable with as many other libraries as possible.
 
 [system ui theme spec]: https://system-ui.com/theme/
 
@@ -23,16 +24,17 @@ In order to make themes and projects built with Theme UI as portable and interop
 | `background` | body background color                           |
 | `primary`    | primary button and link color                   |
 | `secondary`  | secondary color - can be used for hover states  |
+| `accent`     | a contrast color for emphasizing UI             |
 | `muted`      | a gray or subdued color for decorative purposes |
 
 Beyond these base colors, any additional values can be added to a theme to augment the base color palette.
 
 ### Color Modes
 
-Color modes, such as dark and light modes, can be handled with a nested `modes` object that matches the shape of the default colors.
+Multiple color modes, i.e. _dark mode_, can be handled with a nested `modes` object that matches the shape of the default colors.
 
 ```js
-// example colors with modes
+// example colors with dark mode
 colors: {
   text: '#000',
   background: '#fff',
@@ -124,17 +126,17 @@ Styles within this object are processed with `@styled-system/css` and have acces
 
 ### Typography.js
 
-To use [Typography.js][] themes with Theme UI, install the `theme-ui-typography` package and any Typography.js theme.
+To use [Typography.js][] themes with Theme UI, install the `@theme-ui/typography` package and any Typography.js theme.
 
 ```sh
-npm i theme-ui-typography typography-theme-wordpress-2016
+npm i @theme-ui/typography typography-theme-wordpress-2016
 ```
 
 Use the `toTheme` utility to convert the theme for use in Theme UI.
 
 ```js
 // example theme with Typography.js
-import { toTheme } from 'theme-ui-typography'
+import { toTheme } from '@theme-ui/typography'
 import wordpress2016 from 'typography-theme-wordpress-2016'
 import merge from 'lodash.merge'
 
@@ -147,14 +149,16 @@ export default merge(typography, {
 
 Content in MDX documents will be rendered with styles from the Typography.js theme.
 
-**Note:** Theme UI does not currently use colors from Typography.js. The Typography.js integration is still in progress and the API may change over time
+The `toTheme` function accepts the same [Typography.js configuration options](https://github.com/KyleAMathews/typography.js#configuration) as the core library,
+allowing you to create custom themes with this approach as well.
+
+**Note:** Theme UI does not currently use colors from Typography.js. This integration is still a work-in-progress and the API may change over time.
 
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
 ### Layout
 
 The built in Theme UI layout components can also be styled with the `theme.styles` object.
-
 For example, to change the max-width of the `Container` component, styles can be set in the theme:
 
 ```js
@@ -170,9 +174,11 @@ For example, to change the max-width of the `Container` component, styles can be
 
 ### Syntax Highlighting
 
-When using syntax highlighting libraries, such as [Prismjs][], that produce spans with classnames, colors and other styles can be added to `theme.styles.pre` to target child elements with class selectors.
+To support syntax highlighting libraries like [Prism.js][],
+colors and other styles can be added to `theme.styles.pre` to target child elements with class selectors.
+Prism.js adds `<span>` elements with class names that can be used as child selectors.
 
-[prismjs]: https://github.com/PrismJS/prism
+[prism.js]: https://github.com/PrismJS/prism
 
 ```js
 {
@@ -192,6 +198,96 @@ When using syntax highlighting libraries, such as [Prismjs][], that produce span
 ```
 
 ## Example
+
+```js
+// example base theme from @theme-ui/presets
+const heading = {
+  fontFamily: 'heading',
+  lineHeight: 'heading',
+  fontWeight: 'heading',
+}
+
+export const base = {
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monspace',
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#30c',
+    muted: '#f6f6f6',
+  },
+  styles: {
+    root: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body',
+    },
+    h1: {
+      ...heading,
+      fontSize: 5,
+    },
+    h2: {
+      ...heading,
+      fontSize: 4,
+    },
+    h3: {
+      ...heading,
+      fontSize: 3,
+    },
+    h4: {
+      ...heading,
+      fontSize: 2,
+    },
+    h5: {
+      ...heading,
+      fontSize: 1,
+    },
+    h6: {
+      ...heading,
+      fontSize: 0,
+    },
+    pre: {
+      fontFamily: 'monospace',
+      overflowX: 'auto',
+      code: {
+        color: 'inherit',
+      },
+    },
+    code: {
+      fontFamily: 'monospace',
+      fontSize: 'inherit',
+    },
+    table: {
+      width: '100%',
+      borderCollapse: 'separate',
+      borderSpacing: 0,
+    },
+    th: {
+      textAlign: 'left',
+      borderBottomStyle: 'solid',
+    },
+    td: {
+      textAlign: 'left',
+      borderBottomStyle: 'solid',
+    },
+  },
+}
+```
 
 For an example theme, see the [Base Preset][example].
 For more information on the Theme UI `theme` object, see the [Theme Specification docs](/theme-spec).

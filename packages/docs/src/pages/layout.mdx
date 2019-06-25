@@ -42,16 +42,20 @@ import React from 'react'
 import { Flex, Box } from 'theme-ui'
 
 export default props => (
-  <Flex flexWrap="wrap">
-    <Box width={[1, 1 / 2]} />
-    <Box width={[1, 1 / 2]} />
+  <Flex
+    sx={{
+      flexWrap: 'wrap',
+    }}
+  >
+    <Box sx={{ width: ['100%', '50%'] }} />
+    <Box sx={{ width: ['100%', '50%'] }} />
   </Flex>
 )
 ```
 
 ## Layout Theming
 
-These page layout components can be styled with the `theme.styles` object, similar to how other MDX components can be styled.
+The page layout components can be styled with the `theme.styles` object, similar to how other MDX components can be styled.
 
 ```js
 theme: {
@@ -64,7 +68,8 @@ theme: {
 }
 ```
 
-The styles for the layout components can reference colors and other theme values using `@styled-system/css`. This can be used to theme specific aspects like colors independent from the component.
+The styles for the layout components can reference colors and other values from the `theme`.
+This can be used to style specific properties, like colors, from the global theme.
 
 ```js
 theme: {

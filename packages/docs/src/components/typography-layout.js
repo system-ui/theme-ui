@@ -4,7 +4,7 @@ import { jsx, ThemeProvider, Flex, Styled } from 'theme-ui'
 import { useState } from 'react'
 import merge from 'lodash.merge'
 
-import { toTheme } from 'theme-ui-typography'
+import { toTheme } from '@theme-ui/typography'
 
 import Layout from './layout'
 import GoogleFonts from './google-fonts'
@@ -20,7 +20,7 @@ const ThemeSelect = props => (
   <div>
     <label
       htmlFor={props.name}
-      css={{
+      sx={{
         fontSize: 16,
         mr: 2,
       }}
@@ -30,14 +30,16 @@ const ThemeSelect = props => (
     <select
       id={props.name}
       {...props}
-      css={{
+      sx={{
         fontFamily: 'system-ui, sans-serif',
         fontSize: 16,
         p: 2,
       }}
     >
       {themeNames.map(name => (
-        <option key={name} label={name} value={name} />
+        <option key={name} label={name} value={name}>
+          {name}
+        </option>
       ))}
     </select>
   </div>
@@ -51,7 +53,12 @@ export default props => {
 
   return (
     <Layout {...props}>
-      <Flex py={4} alignItems="center">
+      <Flex
+        sx={{
+          alignItems: 'center',
+          py: 4,
+        }}
+      >
         <ThemeSelect
           name="theme"
           value={themeName}
@@ -60,7 +67,7 @@ export default props => {
           }}
         />
         <Button
-          css={{
+          sx={{
             ml: 2,
           }}
           onClick={e => {
