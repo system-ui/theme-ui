@@ -1,22 +1,19 @@
 // default/base theme
 const heading = {
+  color: 'text',
   fontFamily: 'heading',
-  lineHeight: 'heading',
+  lineHeight: '1.2',
   fontWeight: 'heading',
 }
 
 export const base = {
-  space: [
-    0, 4, 8, 16, 32, 64, 128, 256, 512,
-  ],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'system-ui, sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monspace',
   },
-  fontSizes: [
-    12, 14, 16, 20, 24, 32, 48, 64, 96,
-  ],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -63,12 +60,21 @@ export const base = {
       ...heading,
       fontSize: 0,
     },
+    p: {
+      color: 'text',
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+    },
+    a: {
+      color: 'primary',
+    },
     pre: {
       fontFamily: 'monospace',
       overflowX: 'auto',
       code: {
         color: 'inherit',
-      }
+      },
     },
     code: {
       fontFamily: 'monospace',
@@ -81,12 +87,12 @@ export const base = {
     },
     th: {
       textAlign: 'left',
-      borderBottomStyle: 'solid'
+      borderBottomStyle: 'solid',
     },
     td: {
       textAlign: 'left',
-      borderBottomStyle: 'solid'
-    }
+      borderBottomStyle: 'solid',
+    },
   },
 }
 
