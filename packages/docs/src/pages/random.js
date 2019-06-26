@@ -57,13 +57,16 @@ export default () => {
           <Styled.root>
             <Styled.a
               css={{
-                bg: 'primary',
+                backgroundColor: 'black',
                 color: 'white',
-                px: 4,
-                py: 3,
+                fontSize: 14,
+                padding: '10px 20px',
                 cursor: 'pointer',
                 borderRadius: 3,
                 lineHeight: 1,
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+                fontWeight: 600,
               }}
               onClick={fetchTheme}
             >
