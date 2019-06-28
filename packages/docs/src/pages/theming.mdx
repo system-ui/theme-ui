@@ -197,6 +197,21 @@ Prism.js adds `<span>` elements with class names that can be used as child selec
 }
 ```
 
+## Breakpoints
+
+To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
+Each breakpoint should be a string with a CSS length unit included.
+These values will be used to generate mobile-first (i.e. `min-width`) media queries.
+
+```js
+// example custom breakpoints
+{
+  breakpoints: [
+    '40em', '56em', '64em',
+  ],
+}
+```
+
 ## Example
 
 ```js
@@ -208,6 +223,7 @@ const heading = {
 }
 
 export const base = {
+  breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'system-ui, sans-serif',
