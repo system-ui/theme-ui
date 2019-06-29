@@ -14,6 +14,8 @@ const Panel = ({ state, setColorMode, setTheme }) => {
   useEffect(() => {
     if (window.chrome.devtools.panels.themeName === 'dark') {
       setPanelColorMode('dark')
+    } else {
+      setPanelColorMode('light')
     }
   }, [])
 
