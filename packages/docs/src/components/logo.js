@@ -1,5 +1,5 @@
 import React from 'react'
-import theme from '../gatsby-theme-ui'
+import theme from '../gatsby-plugin-theme-ui'
 
 export default ({ size = 512, color = theme.colors.primary, ...props }) => (
   <svg

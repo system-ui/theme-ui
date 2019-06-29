@@ -12,7 +12,7 @@ import Button from './button'
 import Select from './select'
 import themes from './typography-themes'
 import typographyThemes from './typography-themes'
-import baseTheme from '../gatsby-theme-ui'
+import baseTheme from '../gatsby-plugin-theme-ui'
 
 const themeNames = Object.keys(themes)
 
