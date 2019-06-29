@@ -35,10 +35,7 @@ const ColorPicker = ({ label, ...props }) => {
           }}
         />
         {isEditing && (
-          <div
-            ref={ref}
-            sx={{ position: 'absolute', left: '100%', top: 0, marginLeft: 1 }}
-          >
+          <div ref={ref} sx={{ position: 'absolute', right: 24, top: 0 }}>
             <ChromePicker {...props} />
           </div>
         )}
