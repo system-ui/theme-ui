@@ -4,7 +4,7 @@ import Field from './Field'
 
 const Select = ({ label, options, ...props }) => {
   return (
-    <Field label={label} {...props}>
+    <Field label={label}>
       <select {...props} sx={{ width: '100%' }}>
         {options.map(option => (
           <option key={option} value={option}>
