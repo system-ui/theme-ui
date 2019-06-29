@@ -18,11 +18,11 @@ const Panel = ({ state, setColorMode, setTheme }) => {
   }, [])
 
   return (
-    <div css={{ p: 4, maxWidth: 400 }}>
+    <div sx={{ p: 4, maxWidth: 400 }}>
       <header>
         <Heading
           level={1}
-          css={{
+          sx={{
             fontSize: 5,
             mt: 0,
             mb: 4,

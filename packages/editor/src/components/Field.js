@@ -3,12 +3,12 @@ import { jsx } from 'theme-ui'
 
 const Field = ({ children, label }) => (
   <div
-    css={{
+    sx={{
       my: 3,
     }}
   >
     <label
-      css={{
+      sx={{
         display: 'block',
         fontSize: 'inherit',
         mb: 1,

@@ -5,7 +5,7 @@ const Button = ({ ...props }) => {
   return (
     <button
       {...props}
-      css={{
+      sx={{
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',

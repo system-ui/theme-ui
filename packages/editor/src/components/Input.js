@@ -8,7 +8,7 @@ const Input = ({ label, ...props }) => {
     <Field label={label}>
       <input
         {...props}
-        css={{
+        sx={{
           appearance: 'none',
           bg: colorMode === 'dark' ? 'color' : 'background',
           color: colorMode === 'dark' ? 'background' : 'color',

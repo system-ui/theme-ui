@@ -12,7 +12,7 @@ const ColorPicker = ({ label, ...props }) => {
 
   return (
     <div
-      css={{
+      sx={{
         width: '100%',
         display: 'grid',
         gridAutoFlow: 'column',
@@ -22,10 +22,10 @@ const ColorPicker = ({ label, ...props }) => {
       }}
     >
       <span>{label}</span>
-      <div css={{ position: 'relative ' }}>
+      <div sx={{ position: 'relative ' }}>
         <div
           onClick={() => setIsEditing(true)}
-          css={{
+          sx={{
             width: 20,
             height: 20,
             backgroundColor: props.color,
@@ -37,7 +37,7 @@ const ColorPicker = ({ label, ...props }) => {
         {isEditing && (
           <div
             ref={ref}
-            css={{ position: 'absolute', left: '100%', top: 0, marginLeft: 1 }}
+            sx={{ position: 'absolute', left: '100%', top: 0, marginLeft: 1 }}
           >
             <ChromePicker {...props} />
           </div>
