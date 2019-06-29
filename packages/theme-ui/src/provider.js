@@ -8,9 +8,7 @@ import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 import { createComponents } from './components'
 
-const mergeState = (state, next) => {
-  return merge.all({}, state, next)
-}
+const mergeState = (state, next) => merge.all({}, state, next)
 
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
