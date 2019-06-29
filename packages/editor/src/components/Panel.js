@@ -30,7 +30,7 @@ const Panel = ({ state, setColorMode, setTheme }) => {
             mb: 4,
           }}
         >
-          Theme UI Editor
+          Theme UI Devtools
         </Heading>
       </header>
       <main>
