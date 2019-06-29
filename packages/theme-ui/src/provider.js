@@ -1,3 +1,4 @@
+import { useEffect, useReducer } from 'react'
 import { ThemeContext as EmotionContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
@@ -6,6 +7,10 @@ import jsx from './jsx'
 import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 import { createComponents } from './components'
+
+const mergeState = (state, next) => {
+  return merge.all({}, state, next)
+}
 
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
@@ -32,14 +37,21 @@ const RootProvider = ({ theme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorState(theme.initialColorMode)
+  const [themeState, setThemeState] = useReducer(mergeState, theme)
 
   const context = {
     __THEME_UI__: true,
     colorMode,
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
-    theme,
+    theme: themeState,
+    setTheme: setThemeState,
   }
+
+  useEffect(() => {
+    // TODO: handle multiple instances
+    window.__THEME_UI__ = context
+  }, [context.theme])
 
   return jsx(BaseProvider, {
     context,
