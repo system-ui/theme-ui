@@ -51,7 +51,7 @@ const RootProvider = ({ theme = {}, components, children }) => {
   useEffect(() => {
     // TODO: handle multiple instances
     window.__THEME_UI__ = context
-  }, [context.theme])
+  }, [context.theme, context.colorMode])
 
   return jsx(BaseProvider, {
     context,
