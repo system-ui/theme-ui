@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useTheme } from './context'
+import { useThemeUI } from './context'
 import TypeStyle from './TypeStyle'
 
 const getValue = (fontSizes, key) => {

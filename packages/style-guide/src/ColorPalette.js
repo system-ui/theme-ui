@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useTheme } from './context'
+import { useThemeUI } from './context'
 import ColorSwatch from './ColorSwatch'
 
 const join = (...args) => args.filter(Boolean).join('.')
