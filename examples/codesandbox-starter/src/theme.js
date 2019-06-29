@@ -2,13 +2,13 @@
 
 import { Global } from '@emotion/core'
 import React, { memo } from 'react'
-import { jsx, useThemeUI, ThemeProvider as TP, Styled } from 'theme-ui'
+import { jsx, useThemeUI, ThemeProvider, Styled } from 'theme-ui'
 import { base } from '@theme-ui/presets'
 
-const ThemeProvider = memo(({ children, ...props }) => (
-  <TP theme={base} {...props}>
+const CustomThemeProvider = memo(({ children, ...props }) => (
+  <ThemeProvider theme={base} {...props}>
     <Styled.root>{children}</Styled.root>
-  </TP>
+  </ThemeProvider>
 ))
 
 const Reset = () =>
@@ -17,22 +17,7 @@ const Reset = () =>
       body: {
         margin: '0',
       },
-      'h1, h2, h3, h4, h5, h6': {
-        margin: 0,
-      },
-      small: {
-        fontSize: '100%',
-      },
-      a: {
-        textDecoration: 'none',
-      },
-      button: {
-        border: 0,
-        padding: 0,
-        fontSize: '100%',
-        backgroundColor: 'transparent',
-      },
     },
   })
 
-export { useThemeUI as useTheme, Reset, ThemeProvider as default }
+export { useThemeUI as useTheme, Reset, CustomThemeProvider as default }

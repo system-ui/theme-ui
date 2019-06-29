@@ -1,5 +1,6 @@
 {
   "name": "theme-ui-starter",
+  "private": "true",
   "version": "1.0.0",
   "description": "A sandbox configured with Theme UI, including the `base` theme.",
   "main": "index.html",
