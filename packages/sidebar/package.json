@@ -1,0 +1,17 @@
+{
+  "name": "@theme-ui/sidebar",
+  "version": "0.2.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "watch": "babel src --watch -d dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "deepmerge": "^3.3.0",
+    "theme-ui": "0.2.0"
+  }
+}

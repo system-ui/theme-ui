@@ -19,7 +19,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
     <Header>
       <Container>
         <Flex sx={{ justifyContent: 'space-between' }}>
-          <Flex>
+          <Flex sx={{ alignItems: 'center' }}>
             <MenuButton
               onClick={e => {
                 setMenuOpen(!menuOpen)

@@ -20,6 +20,7 @@
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^0.0.5",
     "@theme-ui/presets": "^0.1.8",
+    "@theme-ui/sidebar": "0.2.0",
     "@theme-ui/style-guide": "^0.1.8",
     "@theme-ui/typography": "^0.2.0",
     "gatsby": "^2.3.6",

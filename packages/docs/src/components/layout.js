@@ -52,7 +52,9 @@ export default props => {
               <Sidebar
                 ref={nav}
                 open={menuOpen}
-                fullwidth={props.fullwidth}
+                sx={{
+                  display: [null, props.fullwidth ? 'none' : 'block'],
+                }}
                 onFocus={e => {
                   setMenuOpen(true)
                 }}
