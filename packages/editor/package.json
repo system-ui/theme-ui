@@ -1,0 +1,30 @@
+{
+  "name": "@theme-ui/editor",
+  "version": "0.1.5",
+  "main": "bundle/index.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "babel src --out-dir bundle",
+    "dev": "babel src --out-dir bundle --watch"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "color": "^3.1.2",
+    "copy-to-clipboard": "^3.2.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.merge": "^4.6.1",
+    "lodash.set": "^4.3.2",
+    "react-color": "^2.17.3",
+    "theme-ui": "^0.1.7"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10.0.10",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

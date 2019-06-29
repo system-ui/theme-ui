@@ -1,0 +1,26 @@
+{
+  "name": "@theme-ui/chrome",
+  "version": "0.1.5",
+  "main": "index.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "webpack",
+    "dev": "webpack --watch"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@theme-ui/editor": "0.1.5",
+    "babel-loader": "^8.0.6",
+    "color": "^3.1.2",
+    "lodash.debounce": "^4.0.8",
+    "lodash.merge": "^4.6.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.4"
+  }
+}
