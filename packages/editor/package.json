@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "bundle/index.js",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "lodash.merge": "^4.6.1",
     "lodash.set": "^4.3.2",
     "react-color": "^2.17.3",
-    "theme-ui": "^0.1.7"
+    "theme-ui": "^0.2.0"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.10",
