@@ -5,14 +5,16 @@ import NavLink from './nav-link'
 export default props => (
   <Footer
     sx={{
-      pt: 4,
+      py: 3,
+      bg: 'muted',
     }}
   >
     <Container>
-      <Flex>
+      <div sx={{ display: 'flex' }}>
+        <div sx={{ mx: 'auto' }} />
         <NavLink to="/">Theme UI</NavLink>
         <NavLink href="https://github.com/system-ui/theme-ui">GitHub</NavLink>
-      </Flex>
+      </div>
     </Container>
   </Footer>
 )

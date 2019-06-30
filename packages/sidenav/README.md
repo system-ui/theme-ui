@@ -1,7 +1,7 @@
-# @theme-ui/sidebar
+# @theme-ui/sidenav
 
 MDX-based sidebar navigation component
 
 ```sh
-npm i @theme-ui/sidebar
+npm i @theme-ui/sidenav
 ```

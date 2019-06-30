@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { jsx, css, ThemeProvider } from 'theme-ui'
 import { MDXProvider } from '@mdx-js/react'
 import React from 'react'
 import { Global } from '@emotion/core'
@@ -18,16 +18,16 @@ const Overlay = ({ onClick }) => (
       }}
     />
     <Global
-      styles={{
+      styles={css({
         body: {
-          overflow: 'hidden',
+          overflow: ['hidden', 'auto'],
         },
-      }}
+      })}
     />
   </React.Fragment>
 )
 
-export const Sidebar = React.forwardRef(
+export const Sidenav = React.forwardRef(
   ({ open, styles = {}, components, ...props }, ref) => {
     return (
       <ThemeProvider
@@ -86,4 +86,57 @@ export const Sidebar = React.forwardRef(
   }
 )
 
-export const Pagination = props => <div />
+const flattenLinks = children =>
+  React.Children.toArray(children).reduce((acc, child) => {
+    if (child.props && child.props.mdxType === 'a') {
+      return [...acc, child]
+    }
+    if (!child.props || !child.props.children) return acc
+    return React.Children.toArray([
+      ...acc,
+      ...flattenLinks(child.props.children),
+    ])
+  }, [])
+
+const removeSlash = str => (str.length > 1 ? str.replace(/\/$/, '') : str)
+
+const PaginationLink = ({ label, children, ...props }) => (
+  <a
+    {...props}
+    sx={{
+      color: 'inherit',
+      textDecoration: 'none',
+      fontWeight: 'bold',
+    }}
+  >
+    <div>{label}</div>
+    <div>{children}</div>
+  </a>
+)
+
+export const Pagination = ({ location = {}, children, ...props }) => {
+  const links = flattenLinks(children)
+  const index = links.findIndex(
+    link => link.props.href === removeSlash(location.pathname)
+  )
+  const hasPagination = index > -1
+  const previous = links[index - 1]
+  const next = links[index + 1]
+
+  return (
+    <div
+      {...props}
+      sx={{
+        display: 'flex',
+      }}
+    >
+      {hasPagination && previous && (
+        <PaginationLink {...previous.props} label="Previous:" />
+      )}
+      <div sx={{ mx: 'auto' }} />
+      {hasPagination && next && (
+        <PaginationLink {...next.props} label="Next:" />
+      )}
+    </div>
+  )
+}

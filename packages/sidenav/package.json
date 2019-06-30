@@ -1,5 +1,5 @@
 {
-  "name": "@theme-ui/sidebar",
+  "name": "@theme-ui/sidenav",
   "version": "0.2.0",
   "main": "dist/index.js",
   "license": "MIT",

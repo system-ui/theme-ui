@@ -82,7 +82,7 @@ export default {
     },
     Container: {
       p: 3,
-      maxWidth: 1280,
+      maxWidth: 1024,
     },
     root: {
       fontFamily: 'body',
