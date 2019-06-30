@@ -2,7 +2,6 @@
 import { useEffect } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
 
-import { Heading } from './Typography'
 import Colors from './Panel/Colors'
 import Modes from './Panel/Modes'
 import Typography from './Panel/Typography'
@@ -18,8 +17,7 @@ const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {
   return (
     <div sx={{ p: 4, maxWidth: 400 }}>
       <header>
-        <Heading
-          level={1}
+        <h1
           sx={{
             fontSize: 5,
             mt: 0,
@@ -27,7 +25,7 @@ const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {
           }}
         >
           Theme UI Devtools
-        </Heading>
+        </h1>
       </header>
       <main>
         <Colors theme={state.theme} setTheme={setTheme} />
