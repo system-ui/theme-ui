@@ -19,6 +19,7 @@
     "@mdx-js/mdx": "^1.0.0-rc.0",
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^0.0.5",
+    "@theme-ui/custom-properties": "0.2.1",
     "@theme-ui/presets": "^0.1.8",
     "@theme-ui/style-guide": "^0.1.8",
     "@theme-ui/typography": "^0.2.1",

@@ -1,0 +1,19 @@
+{
+  "name": "@theme-ui/custom-properties",
+  "version": "0.2.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "react": "^16.8.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
