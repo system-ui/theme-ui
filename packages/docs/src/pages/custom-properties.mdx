@@ -1,0 +1,16 @@
+import { CustomPropertiesProvider } from '@theme-ui/custom-properties'
+import theme from '../gatsby-plugin-theme-ui'
+import Button from '../components/button'
+
+export default props => {
+  return (
+    <CustomPropertiesProvider theme={theme}>
+      <Button>mode</Button>
+      {props.children}
+    </CustomPropertiesProvider>
+  )
+}
+
+# Custom Properties
+
+[Home](/getting-started)
