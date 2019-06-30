@@ -8,15 +8,11 @@ import Modes from './Panel/Modes'
 import Typography from './Panel/Typography'
 import CopyThemeToClipboard from './CopyThemeToClipboard'
 
-const Panel = ({ state, setColorMode, setTheme }) => {
-  const [panelColorMode, setPanelColorMode] = useColorMode()
+const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {
+  const setPanelColorMode = useColorMode()[1]
 
   useEffect(() => {
-    if (window.chrome.devtools.panels.themeName === 'dark') {
-      setPanelColorMode('dark')
-    } else {
-      setPanelColorMode('light')
-    }
+    setPanelColorMode(panelColorMode)
   }, [])
 
   return (

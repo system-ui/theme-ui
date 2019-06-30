@@ -5,7 +5,7 @@ import Panel from './components/Panel'
 import editorTheme from './theme'
 import { runScript, mergeState } from './utils'
 
-const Editor = () => {
+const Editor = ({ panelColorMode }) => {
   const [state, setState] = useReducer(mergeState, {
     theme: null,
     colorMode: null,
@@ -51,6 +51,7 @@ const Editor = () => {
         />
         {state.theme && (
           <Panel
+            panelColorMode={panelColorMode}
             state={state}
             setTheme={setTheme}
             setColorMode={setColorMode}

@@ -2,7 +2,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Editor } from '@theme-ui/editor'
 
-render(<Editor />, document.getElementById('root'))
+const Chrome = () => {
+  const panelColorMode =
+    window.chrome.devtools.panels.themeName === 'dark' ? 'dark' : 'light'
+
+  return <Editor panelColorMode={panelColorMode} />
+}
+
+render(<Chrome />, document.getElementById('root'))
 
 // Notes
 // callback for when element selection changes
