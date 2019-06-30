@@ -1,13 +1,9 @@
 # gatsby-plugin-theme-ui
 
-**EXPERIMENTAL**
-
-See [gatsby-theme-ui](https://github.com/system-ui/theme-ui/tree/master/packages/gatsby-theme-ui) for the currently recommended package.
-
-Automatically adds Theme UI context to a Gatsby site or theme
+Gatsby plugin for adding theme-ui context
 
 ```sh
-npm i theme-ui gatsby-plugin-theme-ui
+npm i theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react
 ```
 
 ```js
@@ -17,15 +13,36 @@ module.exports = {
 }
 ```
 
-Add a `src/theme.js` file to your site to add values to the theme context.
+## Customizing the theme
+
+To customize the theme used in your Gatsby site, shadow files in a `src/gatsby-plugin-theme-ui/` directory.
+The `src/gatsby-plugin-theme-ui/index.js` module is the main export for themes.
 
 ```js
-// src/theme.js
+// example src/gatsby-plugin-theme-ui/index.js
 export default {
   colors: {
-    text: '#000',
+    text: '#111',
     background: '#fff',
-    primary: 'tomato',
+  },
+}
+```
+
+## Extending a theme
+
+To extend an existing theme, import the module and merge, assign or override properties in your shadowing `src/gatsby-plugin-theme-ui/index.js` file.
+
+```js
+// example with extending
+import baseTheme from 'gatsby-plugin-theme-ui'
+
+export default {
+  ...baseTheme,
+  // extending the colors only
+  colors: {
+    ...baseTheme.colors,
+    text: '#111',
+    background: '#fff',
   },
 }
 ```
@@ -50,3 +67,5 @@ export default {
   },
 }
 ```
+
+MIT License

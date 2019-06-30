@@ -1,7 +1,3 @@
-// other themes can be imported to use as an extension
-// import baseTheme from 'demo-theme/src/gatsby-theme-ui'
-// console.log('base theme', typeof baseTheme, baseTheme)
-
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',

@@ -1,8 +1,7 @@
-const { jsx } = require('theme-ui')
+import { jsx } from 'theme-ui'
 
-exports.wrapRootElement = require('./root')
+export { wrapRootElement } from './src/provider'
 
-// prevent color mode flash
 const noflash = `
 (function() {
   try {
@@ -14,7 +13,7 @@ const noflash = `
 })();
 `
 
-exports.onRenderBody = ({ setPreBodyComponents }) => {
+export const onRenderBody = ({ setPreBodyComponents }) => {
   const script = jsx('script', {
     dangerouslySetInnerHTML: {
       __html: noflash,
