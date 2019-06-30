@@ -10,7 +10,3 @@ const Chrome = () => {
 }
 
 render(<Chrome />, document.getElementById('root'))
-
-// Notes
-// callback for when element selection changes
-// chrome.devtools.panels.elements.onSelectionChanged.addListener(updateSelection)
