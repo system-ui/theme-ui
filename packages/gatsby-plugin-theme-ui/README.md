@@ -52,7 +52,7 @@ export default {
 To enable support for multiple color modes, add an `initialColorMode` field to your `theme.js` object.
 
 ```js
-// src/theme.js
+// src/gatsby-plugin-theme-ui/index.js
 export default {
   initialColorMode: 'light',
   colors: {
