@@ -6,7 +6,6 @@ export default props => (
   <Footer
     sx={{
       py: 3,
-      bg: 'muted',
     }}
   >
     <Container>

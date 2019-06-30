@@ -104,13 +104,20 @@ const PaginationLink = ({ label, children, ...props }) => (
   <a
     {...props}
     sx={{
+      fontSize: 1,
       color: 'inherit',
       textDecoration: 'none',
       fontWeight: 'bold',
     }}
   >
     <div>{label}</div>
-    <div>{children}</div>
+    <div
+      sx={{
+        fontSize: 3,
+      }}
+    >
+      {children}
+    </div>
   </a>
 )
 

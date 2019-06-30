@@ -5,3 +5,50 @@ MDX-based sidebar navigation component
 ```sh
 npm i @theme-ui/sidenav
 ```
+
+Given an MDX document like this:
+
+```md
+- [Home](/)
+- [About](/about)
+- [Guides](/guides)
+  - [Getting Started](/guides/getting-started)
+  - [Gatsby](/guides/gatsby)
+```
+
+The MDX document can be styled as a sidebar navigation component.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Sidenav } from '@theme-ui/sidenav'
+import Links from './links.mdx'
+
+export default props => (
+  <Sidenav {...props}>
+    <Links />
+  </Sidenav>
+)
+```
+
+The same MDX document can be used to create pagination links.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Pagination } from '@theme-ui/sidenav'
+import { Location } from '@reach/router'
+import Links from './links.mdx'
+
+export default props =>
+  <Location
+    children={({ location }) => (
+      <Links
+        location={location}
+        components={{
+          wrapper: Pagination
+        }}
+      />
+    ))}
+  />
+```

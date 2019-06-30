@@ -2,16 +2,20 @@
   "name": "@theme-ui/sidenav",
   "version": "0.2.0",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "license": "MIT",
   "scripts": {
-    "prepare": "babel src -d dist",
-    "watch": "babel src --watch -d dist"
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@mdx-js/react": "^1.0.21",
     "deepmerge": "^3.3.0",
+    "react": "^16.8.6",
     "theme-ui": "0.2.0"
   }
 }
