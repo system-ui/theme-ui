@@ -7,16 +7,7 @@ const Field = ({ children, label }) => (
       my: 3,
     }}
   >
-    <label
-      sx={{
-        display: 'block',
-        fontSize: 'inherit',
-        mb: 1,
-      }}
-    >
-      {label}
-    </label>
-    <div>{children}</div>
+    {children}
   </div>
 )
 

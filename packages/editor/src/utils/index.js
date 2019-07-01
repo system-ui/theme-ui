@@ -36,3 +36,10 @@ export const runScript = script => {
 }
 
 export const mergeState = (state, next) => merge({}, state, next)
+
+export const makeHtmlSafeLabel = (text = '') => {
+  return text
+    .split('_')
+    .map(w => w.replace(/./, m => m.toUpperCase()))
+    .join('')
+}
