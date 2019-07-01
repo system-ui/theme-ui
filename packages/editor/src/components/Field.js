@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-const Field = ({ children, label }) => (
+const Field = ({ children }) => (
   <div
     sx={{
       my: 3,

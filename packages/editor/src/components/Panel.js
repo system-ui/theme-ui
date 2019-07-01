@@ -2,9 +2,9 @@
 import { useEffect } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
 
-import Colors from './Panel/Colors'
-import Modes from './Panel/Modes'
-import Typography from './Panel/Typography'
+import Colors from './Colors'
+import Modes from './Modes'
+import Typography from './Typography'
 import CopyThemeToClipboard from './CopyThemeToClipboard'
 
 const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {

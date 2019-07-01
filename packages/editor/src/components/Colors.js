@@ -3,8 +3,8 @@ import set from 'lodash.set'
 import Color from 'color'
 
 import Section from './Section'
-import ColorPicker from '../ColorPicker'
-import { flattenObject } from '../../utils'
+import ColorPicker from './ColorPicker'
+import { flattenObject } from '../utils'
 
 const toHex = raw => {
   try {

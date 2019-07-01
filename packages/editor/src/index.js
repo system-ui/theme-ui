@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
 import { Global } from '@emotion/core'
 import { ThemeProvider, Styled, ColorMode } from 'theme-ui'
-import Panel from './components/Panel'
+import Panel from './Panel'
 import editorTheme from './theme'
 import { runScript, mergeState } from './utils'
 
