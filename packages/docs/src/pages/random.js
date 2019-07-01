@@ -19,7 +19,7 @@ export default () => {
   const [theme, setTheme] = useState(null)
 
   const fetchTheme = async () => {
-    const res = await fetch('https://beta.components.ai/api/generate/theme')
+    const res = await fetch('https://components.ai/api/generate/theme')
     const data = await res.json()
     setTheme({ ...base, ...data })
   }
@@ -84,19 +84,19 @@ export default () => {
             <Styled.h2>Colors</Styled.h2>
             <ColorPalette omit={['modes', 'header']} />
             <Styled.h2>Typography</Styled.h2>
-            <TypeStyle fontSize={7}>
+            <TypeStyle fontSize={3}>
               Body: <FontFamily name="body" />
             </TypeStyle>
             <HeadingStyle
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}
+              fontSize={3}
             >
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Styled.h2>Type Scale</Styled.h2>
-            <TypeScale />
+            <TypeScale text="Aa" />
             <MDXProvider components={components}>
               <Lorem />
             </MDXProvider>
