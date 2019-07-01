@@ -1,12 +1,11 @@
 import React from 'react'
 import Section from './Section'
-import { Heading } from './Typography'
 import Input from './Input'
 
 const Typography = ({ theme, setTheme }) => {
   return (
     <Section heading="Typography">
-      <Heading level={3}>Fonts</Heading>
+      <h3>Fonts</h3>
       {Object.keys(theme.fonts || {}).map(key => (
         <Input
           key={key}
@@ -21,7 +20,7 @@ const Typography = ({ theme, setTheme }) => {
           }}
         />
       ))}
-      <Heading level={3}>Font Sizes</Heading>
+      <h3>Font Sizes</h3>
       {Array.isArray(theme.fontSizes)
         ? theme.fontSizes.map((n, i) => (
             <Input
