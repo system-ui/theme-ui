@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Section from './Section'
-import Select from '../Select'
+import Select from './Select'
 
 const Modes = ({ colorMode, theme, setColorMode }) => {
   const [value, setValue] = useState(colorMode)

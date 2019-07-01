@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from './Section'
-import { Heading } from '../Typography'
-import Input from '../Input'
+import { Heading } from './Typography'
+import Input from './Input'
 
 const Typography = ({ theme, setTheme }) => {
   return (
