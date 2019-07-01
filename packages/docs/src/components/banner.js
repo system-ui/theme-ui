@@ -6,20 +6,20 @@ export default props => (
   <ThemeProvider
     theme={{
       styles: {
-        h1: {
-          fontSize: [5, 6, 7],
-          fontWeight: 900,
-          letterSpacing: '0.05em',
-          mt: 0,
-          mb: 4,
-        },
         p: {
+          ':first-of-type': {
+            fontSize: [5, 6, 7],
+            fontWeight: 900,
+            letterSpacing: '0.05em',
+          },
           fontWeight: 'bold',
           mt: 0,
           mb: 3,
-          ':first-of-type': {
-            fontSize: [2, 3, 4],
-          },
+        },
+        h1: {
+          fontSize: [2, 3, 4],
+          mt: 0,
+          mb: 4,
         },
         a: {
           display: 'inline-block',
