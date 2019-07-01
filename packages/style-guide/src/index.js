@@ -1,4 +1,4 @@
-export { useThemeUI } from './context'
+export { useTheme } from './context'
 export { TypeStyle } from './TypeStyle'
 export { TypeScale } from './TypeScale'
 export { HeadingStyle } from './HeadingStyle'

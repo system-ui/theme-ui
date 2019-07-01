@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, get } from 'theme-ui'
 import { toHex, toHSL } from './color'
-import { useThemeUI } from './context'
+import { useTheme } from './context'
 
 export const ColorSwatch = ({ color, name, ...props }) => {
   const { colors } = useTheme()

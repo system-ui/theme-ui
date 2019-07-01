@@ -1,5 +1,5 @@
 import { get } from 'theme-ui'
-import { useThemeUI } from './context'
+import { useTheme } from './context'
 
 export const FontFamily = ({ name }) => {
   const { fonts } = useTheme()
