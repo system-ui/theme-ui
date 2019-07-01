@@ -23,9 +23,10 @@ const ColorPicker = ({ label, ...props }) => {
     >
       <span>{label}</span>
       <div sx={{ position: 'relative ' }}>
-        <div
+        <button
           onClick={() => setIsEditing(true)}
           sx={{
+            appearance: 'none',
             width: 20,
             height: 20,
             backgroundColor: props.color,
