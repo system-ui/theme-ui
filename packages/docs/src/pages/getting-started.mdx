@@ -12,8 +12,8 @@ export default Layout
 npm i theme-ui @emotion/core @mdx-js/react
 ```
 
-Any styles in your app can reference values from the global `theme` object.
-To provide the theme in context,
+The `global` theme object should be provided in context for use anywhere in your application.
+To add the theme,
 wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
 
 ```jsx
@@ -29,7 +29,7 @@ export default props => (
 
 The `theme` object follows the System UI [Theme Specification](/theme-spec),
 which lets you define custom color palettes, typographic scales, fonts, and more.
-Read more about [theming](/theming).
+Read more in the [theming docs](/theming).
 
 ```js
 // example theme.js
