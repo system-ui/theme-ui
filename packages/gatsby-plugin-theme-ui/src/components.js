@@ -1,2 +1,8 @@
-// add custom MDX components here
-export default {}
+import React from 'react'
+
+import CodeBlock from './code-block'
+
+export default {
+  pre: ({ children }) => <>{children}</>,
+  code: CodeBlock,
+}

@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+import components from 'gatsby-plugin-theme-ui/src/components'
+
 const heading = Tag => props =>
   !!props.id ? (
     <Tag {...props}>
@@ -22,6 +24,7 @@ const heading = Tag => props =>
   )
 
 export default {
+  ...components,
   h2: heading('h2'),
   h3: heading('h3'),
   h4: heading('h4'),

@@ -1,3 +1,5 @@
+import prism from '../components/prism'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
@@ -127,6 +129,7 @@ export default {
         color: 'inherit',
       },
     },
+    prism,
     code: {
       fontFamily: 'monospace',
       color: 'secondary',
