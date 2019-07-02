@@ -3,7 +3,7 @@
 Gatsby plugin for adding theme-ui context
 
 ```sh
-npm i theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react
+npm i theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react @theme-ui/presets
 ```
 
 ```js
@@ -34,10 +34,10 @@ To extend an existing theme, import the module and merge, assign or override pro
 
 ```js
 // example with extending
-import baseTheme from 'gatsby-plugin-theme-ui'
+import { base } from "@theme-ui/presets";
 
 export default {
-  ...baseTheme,
+  ...base,
   // extending the colors only
   colors: {
     ...baseTheme.colors,
