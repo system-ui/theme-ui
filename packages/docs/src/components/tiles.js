@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Box, Container } from 'theme-ui'
+import { jsx, ThemeProvider, Container } from 'theme-ui'
 
 export default props => (
   <ThemeProvider
@@ -18,8 +18,7 @@ export default props => (
           px: [0, 2],
         },
       },
-    }}
-  >
+    }}>
     <Container {...props} py={4} />
   </ThemeProvider>
 )

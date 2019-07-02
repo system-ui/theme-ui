@@ -5,6 +5,7 @@
 Build consistent, themeable React UIs based on design system constraints and design tokens | Built with Emotion + Styled System + MDX + Typography.js
 
 [![GitHub][github-badge]][github]
+[![Stars][stars]][github]
 [![Build Status][circleci-badge]][circleci]
 [![Version][version]][npm]
 ![MIT License][license]
@@ -15,6 +16,7 @@ https://theme-ui.com
 
 [github]: https://github.com/system-ui/theme-ui
 [github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
+[stars]: https://flat.badgen.net/github/stars/system-ui/theme-ui
 [circleci]: https://circleci.com/gh/system-ui/theme-ui
 [circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
 [version]: https://flat.badgen.net/npm/v/theme-ui
@@ -111,8 +113,7 @@ export default props => (
       fontWeight: 'bold',
       fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    }}
-  >
+    }}>
     Hello
   </div>
 )
