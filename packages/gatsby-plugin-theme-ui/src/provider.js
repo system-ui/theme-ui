@@ -4,7 +4,7 @@ import React from 'react'
 import theme from './index'
 import components from './components'
 
-export const wrapRootElement = ({ element }, _opts) =>
+export const wrapRootElement = ({ element }) =>
   jsx(
     ThemeProvider,
     {
