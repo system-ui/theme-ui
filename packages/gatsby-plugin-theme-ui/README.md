@@ -40,7 +40,7 @@ export default {
   ...base,
   // extending the colors only
   colors: {
-    ...baseTheme.colors,
+    ...base.colors,
     text: '#111',
     background: '#fff',
   },
