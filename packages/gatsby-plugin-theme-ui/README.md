@@ -34,11 +34,27 @@ To extend an existing theme, import the module and merge, assign or override pro
 
 ```js
 // example with extending
-import baseTheme from 'gatsby-plugin-theme-ui'
+import baseTheme from './custom-base-theme'
 
 export default {
   ...baseTheme,
   // extending the colors only
+  colors: {
+    ...baseTheme.colors,
+    text: '#111',
+    background: '#fff',
+  },
+}
+```
+
+To extend a theme in another Gatsby theme built with Theme UI, this same approach will work.
+
+```js
+// example extending from a Gatsby theme
+import baseTheme from 'gatsby-theme-blog/src/gatsby-plugin-theme-ui'
+
+export default {
+  ...baseTheme,
   colors: {
     ...baseTheme.colors,
     text: '#111',
