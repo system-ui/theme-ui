@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v0.2.2 2019-07-02
 
 - Add `key` prop to element in gatsby-plugin-theme-ui #145
 - Update docs
