@@ -3,7 +3,7 @@
 Gatsby plugin for adding theme-ui context
 
 ```sh
-npm i theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react
+npm i theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react @theme-ui/presets
 ```
 
 ```js
