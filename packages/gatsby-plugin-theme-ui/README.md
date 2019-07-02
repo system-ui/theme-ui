@@ -30,17 +30,33 @@ export default {
 
 ## Extending a theme
 
-To extend an existing theme, import the [presets](https://theme-ui.com/presets) module by running `npm i @theme-ui/presets` then merge, assign or override properties in your shadowing src/gatsby-plugin-theme-ui/index.js file.
+To extend an existing theme, import the [presets](https://theme-ui.com/presets) module by running `npm i @theme-ui/presets` then merge, assign or override properties in your shadowing `src/gatsby-plugin-theme-ui/index.js` file.
 
 ```js
 // example with extending
-import { base } from "@theme-ui/presets";
+import { base } from '@theme-ui/presets'
 
 export default {
   ...base,
   // extending the colors only
   colors: {
     ...base.colors,
+    text: '#111',
+    background: '#fff',
+  },
+}
+```
+
+To extend a theme in another Gatsby theme built with Theme UI, this same approach will work.
+
+```js
+// example extending from a Gatsby theme
+import baseTheme from 'gatsby-theme-blog/src/gatsby-plugin-theme-ui'
+
+export default {
+  ...baseTheme,
+  colors: {
+    ...baseTheme.colors,
     text: '#111',
     background: '#fff',
   },
@@ -65,6 +81,21 @@ export default {
       },
     },
   },
+}
+```
+
+## Components
+
+Custom MDX components that will receive styles from the theme can be included by adding a `src/gatsby-plugin-theme-ui/components.js` module.
+
+```js
+// example src/gatsby-plugin-theme-ui/components.js
+export default {
+  h1: props => (
+    <h1 {...props}>
+      <a href={`#${props.id}`}>{props.children}</a>
+    </h1>
+  ),
 }
 ```
 

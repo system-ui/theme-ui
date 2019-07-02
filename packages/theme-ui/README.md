@@ -1,4 +1,4 @@
-<img src='https://contrast.now.sh/cff/40f?size=192&fontSize=1.5&baseline=0&fontWeight=900&baseline=1&font=Roboto%20Mono&text=tui&radius=32' width='96' heigh='96' />
+<img src='https://contrast.now.sh/cff/40f?size=192&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' width='96' heigh='96' />
 
 # Theme UI
 
