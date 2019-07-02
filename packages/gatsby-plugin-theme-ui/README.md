@@ -30,17 +30,17 @@ export default {
 
 ## Extending a theme
 
-To extend an existing theme, import the module and merge, assign or override properties in your shadowing `src/gatsby-plugin-theme-ui/index.js` file.
+To extend an existing theme, import the [presets](https://theme-ui.com/presets) module by running `npm i @theme-ui/presets` then merge, assign or override properties in your shadowing src/gatsby-plugin-theme-ui/index.js file.
 
 ```js
 // example with extending
-import baseTheme from 'gatsby-plugin-theme-ui'
+import { base } from "@theme-ui/presets";
 
 export default {
-  ...baseTheme,
+  ...base,
   // extending the colors only
   colors: {
-    ...baseTheme.colors,
+    ...base.colors,
     text: '#111',
     background: '#fff',
   },
