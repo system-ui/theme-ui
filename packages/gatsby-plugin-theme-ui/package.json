@@ -6,8 +6,5 @@
   "license": "MIT",
   "peerDependencies": {
     "theme-ui": "^0.1.2"
-  },
-  "dependencies": {
-    "prism-react-renderer": "^0.1.7"
   }
 }

@@ -1,0 +1,41 @@
+# @theme-ui/prism
+
+A syntax highlighting component based on
+[prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
+that works seamlessly with [Theme UI](https://theme-ui.com).
+
+## Installation
+
+```
+yarn add @theme-ui/prism
+```
+
+## Usage
+
+The syntax highlighting component needs to be passed to Theme UI
+context via the `ThemeProvider`.
+
+```js
+// src/components/layout.js
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import CodeBlock from '@theme-ui/prism'
+
+import theme from './theme'
+
+const components = {
+  pre: ({ children }) => <>{children}</>,
+  code: CodeBlock
+}
+
+export default ({ children }) => (
+  <ThemeProvider theme={theme} components={components}>
+    {children}
+  </ThemeProvider>
+)
+```
+
+Then, all code blocks in MDX documents wrapped by Layout will be
+syntax highlighted.
+
+TODO: Document usage with theme.js

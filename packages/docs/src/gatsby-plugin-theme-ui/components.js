@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import components from 'gatsby-plugin-theme-ui/src/components'
+import CodeBlock from '@theme-ui/prism'
 
 const heading = Tag => props =>
   !!props.id ? (
@@ -24,7 +24,8 @@ const heading = Tag => props =>
   )
 
 export default {
-  ...components,
+  code: CodeBlock,
+  pre: ({ children }) => <div>{children}</div>,
   h2: heading('h2'),
   h3: heading('h3'),
   h4: heading('h4'),

@@ -1,8 +1,7 @@
 import React from 'react'
-
-import CodeBlock from './code-block'
+import PrismCodeBlock from '@theme-ui/prism'
 
 export default {
   pre: ({ children }) => <>{children}</>,
-  code: CodeBlock,
+  code: PrismCodeBlock
 }

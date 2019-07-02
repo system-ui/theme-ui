@@ -21,6 +21,7 @@
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^0.0.5",
     "@theme-ui/presets": "^0.2.2",
+    "@theme-ui/prism": "^0.2.1",
     "@theme-ui/style-guide": "^0.2.2",
     "@theme-ui/typography": "*",
     "gatsby": "^2.3.6",
