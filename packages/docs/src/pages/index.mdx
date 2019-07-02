@@ -8,10 +8,9 @@ export const fullwidth = true
 
 <Banner>
 
-# Theme UI
+Theme UI
 
-Build consistent, themeable React UIs based on <br />
-design system constraints and design tokens
+# Build consistent, themeable React apps based on constraint-based design principles
 
 Emotion + Styled System + MDX + Typography.js
 
@@ -44,20 +43,27 @@ Emotion + Styled System + MDX + Typography.js
 <Tiles
   sx={{
     fontWeight: 'bold',
+    a: {
+      color: 'inherit',
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      }
+    }
   }}>
 
-- Styled system without creating components
-- First class support for the `css` prop
-- Style MDX content with a simple, expressive API
-- Use Typography.js themes
+- [Styled system without creating components](/getting-started/#sx-prop)
+- [Theme-aware `sx` prop for styling](/getting-started/#sx-prop)
+- [Style MDX content with a simple, expressive API](/theming/#styles)
+- [Use Typography.js themes](/theming/#typographyjs)
 - Works with virtually any UI component library
 - Works with existing Styled System components
-- Quick mobile-first responsive styles
-- Built-in support for dark modes
-- Primitive page layout components
-- Plugin for use in Gatsby sites and themes
-- Define your own design tokens
-- Built with the System UI Theme Specification
+- [Quick mobile-first responsive styles](/getting-started/#responsive-styles)
+- [Built-in support for dark modes](/color-modes)
+- [Primitive page layout components](/layout)
+- [Plugin for use in Gatsby sites and themes](/gatsby-plugin)
+- [Define your own design tokens](/theming)
+- [Built with the System UI Theme Specification](/theme-spec)
 
 </Tiles>
 

@@ -10,7 +10,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "logo": "repng src/components/logo.js -d static -f icon.png",
+    "logo": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=32&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=32 --height=32 --overwrite static/icon.png",
+    "card": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?width=1280&height=720&fontWeight=900&fontSize=0.75&text=Theme+UI' --width=1280 --height=720 --overwrite static/card.png",
     "now-build": "gatsby build"
   },
   "dependencies": {
