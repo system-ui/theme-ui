@@ -2,7 +2,7 @@
   "name": "@theme-ui/prism",
   "version": "0.2.1",
   "main": "index.js",
-  "author": "John",
+  "author": "John Otander",
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress -o dist",
