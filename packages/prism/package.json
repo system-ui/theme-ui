@@ -1,0 +1,21 @@
+{
+  "name": "@theme-ui/prism",
+  "version": "0.2.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "John Otander",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress -o dist",
+    "watch": "microbundle watch --no-compress -o dist"
+  },
+  "dependencies": {
+    "prism-react-renderer": "^0.1.7"
+  },
+  "peerDependencies": {
+    "theme-ui": "^0.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

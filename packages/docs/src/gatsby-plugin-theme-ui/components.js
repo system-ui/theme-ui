@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+import CodeBlock from '@theme-ui/prism'
+
 const heading = Tag => props =>
   !!props.id ? (
     <Tag {...props}>
@@ -22,6 +24,8 @@ const heading = Tag => props =>
   )
 
 export default {
+  code: CodeBlock,
+  pre: ({ children }) => <div>{children}</div>,
   h2: heading('h2'),
   h3: heading('h3'),
   h4: heading('h4'),

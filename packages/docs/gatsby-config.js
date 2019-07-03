@@ -10,7 +10,6 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         remarkPlugins,
-        gatsbyRemarkPlugins: ['gatsby-remark-prismjs'],
       },
     },
   ],
