@@ -1,0 +1,72 @@
+import Layout from '../components/layout'
+
+export default Layout
+export const title = 'Object Styles'
+
+# Object Styles
+
+Authoring CSS in JavaScript object literal syntax can be a great way to catch syntax errors before committing code and use other features of JS syntax in styles.
+If you're not used to writing styles in object literal syntax though, there are a few key differences to using native CSS syntax.
+
+## Camel Case
+
+All CSS properties should be written in camel case instead of using the hyphenated form.
+For example, the CSS `background-color` property should be written as `backgroundColor`.
+
+## Values
+
+Strings in JS must be surrounded by either a single quote, double quote or backticks (`'`, `"`, <code>`</code>).
+
+```js
+{
+  backgroundColor: 'tomato',
+}
+```
+
+## Numbers
+
+Numbers should be written without quotes to use the native JS number type.
+Numbers will generally be converted to pixel values by Emotion.
+
+```js
+{
+  fontSize: 32,
+}
+```
+
+This also means that you can use JS math expressions to derive values.
+
+```js
+{
+  width: (100 / 3) + '%',
+}
+```
+
+## Commas
+
+All properties should be separated by commas, not semicolons.
+
+```js
+{
+  fontSize: 32,
+  backgroundColor: 'tomato',
+}
+```
+
+## Pseudo Elements
+
+To use the `content` property in a pseudo-element with `::before` or `::after`, be sure to wrap the string value with quotes in order for it to be parsed correctly as CSS.
+
+```js
+{
+  "::before": {
+    content: '""',
+    display: 'block',
+    width: 32,
+    height: 32,
+    backgroundColor: 'tomato',
+  }
+}
+```
+
+For more on using objects in JS, see [MDN's guide on Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).

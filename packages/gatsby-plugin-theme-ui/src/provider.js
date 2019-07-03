@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, ColorMode } from 'theme-ui'
+import React from 'react'
 import theme from './index'
 import components from './components'
 
-export const wrapRootElement = ({ element }, opts) =>
+export const wrapRootElement = ({ element }) =>
   jsx(
     ThemeProvider,
     {
@@ -14,5 +15,5 @@ export const wrapRootElement = ({ element }, opts) =>
       jsx(ColorMode, {
         key: 'theme-ui-color-mode',
       }),
-    element
+    React.cloneElement(element, { key: 'element' })
   )

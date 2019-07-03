@@ -12,7 +12,7 @@ import Button from './button'
 import Select from './select'
 import themes from './typography-themes'
 import typographyThemes from './typography-themes'
-import baseTheme from '../gatsby-theme-ui'
+import baseTheme from '../gatsby-plugin-theme-ui'
 
 const themeNames = Object.keys(themes)
 
@@ -23,8 +23,7 @@ const ThemeSelect = props => (
       sx={{
         fontSize: 16,
         mr: 2,
-      }}
-    >
+      }}>
       Theme
     </label>
     <select
@@ -34,8 +33,7 @@ const ThemeSelect = props => (
         fontFamily: 'system-ui, sans-serif',
         fontSize: 16,
         p: 2,
-      }}
-    >
+      }}>
       {themeNames.map(name => (
         <option key={name} label={name} value={name}>
           {name}
@@ -57,8 +55,7 @@ export default props => {
         sx={{
           alignItems: 'center',
           py: 4,
-        }}
-      >
+        }}>
         <ThemeSelect
           name="theme"
           value={themeName}
@@ -73,8 +70,7 @@ export default props => {
           onClick={e => {
             const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
             setTheme(themeNames[i])
-          }}
-        >
+          }}>
           Next
         </Button>
       </Flex>

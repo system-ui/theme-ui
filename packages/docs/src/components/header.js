@@ -38,8 +38,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
               sx={{
                 ml: 2,
               }}
-              onClick={cycleMode}
-            >
+              onClick={cycleMode}>
               {mode}
             </Button>
           </Flex>

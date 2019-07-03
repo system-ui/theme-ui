@@ -1,6 +1,16 @@
 # Changelog
 
-## Unreleased
+## v0.2.2 2019-07-02
+
+- Add `key` prop to element in gatsby-plugin-theme-ui #145
+- Update docs
+
+## v0.2.1 2019-06-30
+
+- Rename `gatsby-plugin-theme-ui` #137
+- Update docs
+
+## v0.2.0 2019-06-24
 
 - Replaced `lodash.merge` with `deepmerge`
 - Updated to use smaller Styled System v5 packages

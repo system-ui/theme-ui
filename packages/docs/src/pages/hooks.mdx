@@ -9,7 +9,7 @@ export default Layout
 # Hooks
 
 Theme UI includes hooks for changing the color mode state and for using the Theme UI context directly.
-If you are interested in learning more about how React Hooks work please see the [official React docs](https://reactjs.org/docs/hooks-intro.html).
+To learn more about how React Hooks work, please see the [official React docs](https://reactjs.org/docs/hooks-intro.html).
 
 ## `useThemeUI`
 
@@ -21,7 +21,7 @@ import { useThemeUI } from 'theme-ui'
 
 export default props => {
   const context = useThemeUI()
-  const { theme, components, colorMode, setColorMode } = useThemeUI()
+  const { theme, components, colorMode, setColorMode } = context
 
   return <pre>{JSON.stringify(theme, null, 2)}</pre>
 }
@@ -41,8 +41,7 @@ export default props => {
     <button
       onClick={e => {
         setColorMode(colorMode === 'light' ? 'dark' : 'light')
-      }}
-    >
+      }}>
       Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
     </button>
   )
