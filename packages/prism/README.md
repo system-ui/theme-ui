@@ -25,7 +25,7 @@ import theme from './theme'
 
 const components = {
   pre: ({ children }) => <>{children}</>,
-  code: CodeBlock
+  code: CodeBlock,
 }
 
 export default ({ children }) => (
@@ -38,4 +38,5 @@ export default ({ children }) => (
 Then, all code blocks in MDX documents wrapped by Layout will be
 syntax highlighted.
 
-TODO: Document usage with theme.js
+For further reading on theming your syntax highlighting
+[see the Theme UI docs](https://theme-ui.com/theming/#syntax-highlighting).
