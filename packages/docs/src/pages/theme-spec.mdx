@@ -173,10 +173,17 @@ This does not mean that these values are in any way tied to specific heading lev
 ## Variants
 
 Theme UI currently does _not_ have standards for defining combinations of typographic styles, but _variants_ can be used for situations where it is useful to reuse combinations of these primitive values.
+Another common practice is to have a `buttons` object with variants like primary and secondary:
 
 ```js
 // example typographic style variants
 {
+  colos: {
+    white: #FFFFFF,
+    primary: #663399,
+    text: #393939,
+    secondary: #DAA520,
+  },
   fonts: {
     body: 'system-ui, sans-serif',
     heading: 'system-ui, sans-serif',
@@ -203,19 +210,37 @@ Theme UI currently does _not_ have standards for defining combinations of typogr
       letterSpacing: '0.1em',
     },
   },
+  // variants for buttons
+  buttons: {
+    primary: {
+      color: colors.white, // you can reference other values defined in the theme
+      backgroundColor: colors.primary,
+    },
+    secondary: {
+      color: colors.text,
+      backgroundColor: colors.secondary,
+    },
+  }
 }
 ```
 
 User-defined variants can then be referenced in the `sx` prop or in `theme.styles`.
 
 ```js
-// example using variant
+// example using variants
 <h1
   sx={{
     variant: 'textStyles.heading',
-  }}
-/>
+  }}>
+  <button
+    sx={{
+      variant: 'buttons.primary',
+    }}
+  />
+</h1>
 ```
+
+**Note**: Variants are implemented as a part of Styled System and are also covered in [its docs](https://styled-system.com/variants).
 
 ## Styles
 
@@ -223,7 +248,7 @@ The Theme UI `styles` object is primarily used as a mechanism to style MDX conte
 and helps avoid the need to use global CSS.
 The styles defined within this object can also be used with the [`Styled`](/styled) component.
 
-The `theme.styles` object may include the following keys:
+The `theme.styles` object may include the following keys, which map to elements that can be rendered by markdown:
 
 - `p` (paragraph)
 - `a` (anchor link)
@@ -254,6 +279,9 @@ The `theme.styles` object may include the following keys:
 - `thematicBreak` (MDX-specific key for `<hr>`)
 - `div` (not rendered in MDX)
 - `root` (theme-ui-specific)
+
+Elements like `button` are not rendered by markdown, so they aren't included in the styles object,
+consider using a [variant](/theme-spec#variants).
 
 Objects within `theme.styles` can reference other values in the `theme` object.
 For example, headings can be defined with values from the typographic scales.

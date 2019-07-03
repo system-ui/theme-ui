@@ -15,11 +15,21 @@ so please be patient if a particular feature takes longer to review than others.
 This repo uses [Yarn Workspaces][] and [Lerna][] to develop multiple packages together as a monorepo.
 Be sure to install [Yarn][] before setting up the development environment.
 
-Install dependencies and link local packages:
+Install dependencies and link local packages in the root directory:
 
 ```sh
 yarn
 ```
+
+After yarn has linked packages and installed dependences in the repo you can run the docs or an
+example site in the workspace with this command:
+
+```sh
+yarn start <name-of-package>
+```
+
+Where name of package is something like `docs` or `gatsby-theme-ui-example` (one of the packages
+listed by yarn when you run the `yarn workspaces info` command)
 
 ## Tests
 

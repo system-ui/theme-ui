@@ -1,4 +1,8 @@
-<img src='https://contrast.now.sh/cff/40f?size=192&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' width='96' heigh='96' />
+<img
+  src="https://contrast.now.sh/cff/40f?size=192&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
+  width="96"
+  heigh="96"
+/>
 
 # Theme UI
 
@@ -125,7 +129,7 @@ Read more about [how the custom pragma works](/how-it-works/#jsx-pragma).
 ## Responsive styles
 
 The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
-This API originated in [Styled System][] and is intended as a terser syntax for applying responsive styles across a singular dimension.
+This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
 
 ```jsx
 /** @jsx jsx */
