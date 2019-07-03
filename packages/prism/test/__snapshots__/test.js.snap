@@ -3,52 +3,41 @@
 exports[`renders a code block 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .emotion-7 {
-  background-color: #2a2734;
-  color: #9a86fd;
-}
-
-<body>
+  "baseElement": <body>
     <div>
       <pre
-        class="prism-code language-js emotion-7"
+        class="prism-code language-js css-0"
       >
         <div
-          class="token-line emotion-0"
-          style="color: rgb(154, 134, 253);"
+          class="token-line css-0"
         >
           <span
-            class="token console class-name emotion-0"
+            class="token console class-name css-0"
           >
             console
           </span>
           <span
-            class="token punctuation emotion-0"
-            style="color: rgb(108, 103, 131);"
+            class="token punctuation css-0"
           >
             .
           </span>
           <span
-            class="token method function property-access emotion-0"
-            style="color: rgb(154, 134, 253);"
+            class="token method function property-access css-0"
           >
             log
           </span>
           <span
-            class="token punctuation emotion-0"
-            style="color: rgb(108, 103, 131);"
+            class="token punctuation css-0"
           >
             (
           </span>
           <span
-            class="token string emotion-0"
-            style="color: rgb(255, 204, 153);"
+            class="token string css-0"
           >
             'hello, world!'
           </span>
           <span
-            class="token punctuation emotion-0"
-            style="color: rgb(108, 103, 131);"
+            class="token punctuation css-0"
           >
             )
           </span>
@@ -56,51 +45,40 @@ Object {
       </pre>
     </div>
   </body>,
-  "container": .emotion-7 {
-  background-color: #2a2734;
-  color: #9a86fd;
-}
-
-<div>
+  "container": <div>
     <pre
-      class="prism-code language-js emotion-7"
+      class="prism-code language-js css-0"
     >
       <div
-        class="token-line emotion-0"
-        style="color: rgb(154, 134, 253);"
+        class="token-line css-0"
       >
         <span
-          class="token console class-name emotion-0"
+          class="token console class-name css-0"
         >
           console
         </span>
         <span
-          class="token punctuation emotion-0"
-          style="color: rgb(108, 103, 131);"
+          class="token punctuation css-0"
         >
           .
         </span>
         <span
-          class="token method function property-access emotion-0"
-          style="color: rgb(154, 134, 253);"
+          class="token method function property-access css-0"
         >
           log
         </span>
         <span
-          class="token punctuation emotion-0"
-          style="color: rgb(108, 103, 131);"
+          class="token punctuation css-0"
         >
           (
         </span>
         <span
-          class="token string emotion-0"
-          style="color: rgb(255, 204, 153);"
+          class="token string css-0"
         >
           'hello, world!'
         </span>
         <span
-          class="token punctuation emotion-0"
-          style="color: rgb(108, 103, 131);"
+          class="token punctuation css-0"
         >
           )
         </span>

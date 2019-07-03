@@ -2,12 +2,9 @@
 /* eslint react/jsx-key: 0 */
 
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 
 export default ({ children, className, title }) => {
-  const { theme = {} } = useThemeUI()
-  const { styles: { pre = {} } = {} } = theme
-
   const [language] = className.replace(/language-/, '').split(' ')
 
   return (
@@ -18,7 +15,7 @@ export default ({ children, className, title }) => {
       theme={undefined}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} sx={{ ...style, ...pre }}>
+        <Styled.pre className={className} sx={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -26,7 +23,7 @@ export default ({ children, className, title }) => {
               ))}
             </div>
           ))}
-        </pre>
+        </Styled.pre>
       )}
     </Highlight>
   )
