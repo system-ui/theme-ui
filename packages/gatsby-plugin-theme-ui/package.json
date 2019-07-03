@@ -6,5 +6,6 @@
   "license": "MIT",
   "peerDependencies": {
     "theme-ui": "^0.1.2"
-  }
+  },
+  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
 }
