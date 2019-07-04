@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.6 2019-07-04
+
+- Adjust color mode initialization from media query #157
+
+## v0.2.5 2019-07-03
+
+- Fix publish
+
+## v0.2.4 2019-07-03
+
+- Adjust microbundle setup for @theme-ui/prism
+
+## v0.2.3 2019-07-02
+
+- Add @theme-ui/prism package
+
 ## v0.2.2 2019-07-02
 
 - Add `key` prop to element in gatsby-plugin-theme-ui #145
