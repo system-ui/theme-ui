@@ -178,7 +178,7 @@ Another common practice is to have a `buttons` object with variants like primary
 ```js
 // example typographic style variants
 {
-  colos: {
+  colors: {
     white: #FFFFFF,
     primary: #663399,
     text: #393939,
@@ -213,12 +213,13 @@ Another common practice is to have a `buttons` object with variants like primary
   // variants for buttons
   buttons: {
     primary: {
-      color: colors.white, // you can reference other values defined in the theme
-      backgroundColor: colors.primary,
+      // you can reference other values defined in the theme
+      color: 'white',
+      backgroundColor: 'primary',
     },
     secondary: {
-      color: colors.text,
-      backgroundColor: colors.secondary,
+      color: 'text',
+      backgroundColor: 'secondary',
     },
   }
 }
