@@ -23,9 +23,9 @@ export const useColorState = initialMode => {
   useEffect(() => {
     // initialize
     const stored = storage.get()
-    const dark = getMediaQuery()
-    if (dark) setMode('dark')
     document.body.classList.remove('theme-ui-' + stored)
+    const dark = getMediaQuery()
+    if (!stored && dark) return setMode('dark')
     if (!stored || stored === mode) return
     setMode(stored)
   }, [])

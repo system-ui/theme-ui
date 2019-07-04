@@ -15,9 +15,13 @@ Color modes can be used to create a user-configurable _dark mode_ or any number 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
 Add an `initialColorMode` value to the theme to initialize the default state.
 
+**Note:** This value is only used as the _name_ of the top-level colors and should not be used to initialize a color mode defined in the `modes` object.
+
 ```js
 // example theme colors
 {
+  // this enables the color modes feature
+  // and is used as the name for the top-level colors object
   initialColorMode: 'light',
   colors: {
     text: '#000',
@@ -50,8 +54,7 @@ export default props => {
       <button
         onClick={e => {
           setColorMode(colorMode === 'light' ? 'dark' : 'light')
-        }}
-      >
+        }}>
         Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
       </button>
     </header>
