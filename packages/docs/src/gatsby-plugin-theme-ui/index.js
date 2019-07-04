@@ -15,10 +15,6 @@ export default {
     highlight: '#ffffcc',
     gray: '#777',
     purple: '#609',
-    header: {
-      text: 'inherit',
-      background: 'inherit',
-    },
     modes: {
       dark: {
         text: '#fff',
@@ -68,14 +64,6 @@ export default {
     heading,
   },
   styles: {
-    Header: {
-      color: 'header.text',
-      bg: 'header.background',
-    },
-    Footer: {
-      color: 'header.text',
-      bg: 'header.background',
-    },
     Container: {
       p: 3,
       maxWidth: 1280,
