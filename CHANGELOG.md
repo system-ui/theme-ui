@@ -1,5 +1,7 @@
 # Changelog
 
+## Unreleased
+
 ## v0.2.6 2019-07-04
 
 - Adjust color mode initialization from media query #157

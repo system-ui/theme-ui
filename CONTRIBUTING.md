@@ -47,6 +47,11 @@ Running tests in watch mode:
 yarn test --watch
 ```
 
+## Pull Requests
+
+When opening a pull request, please be sure to update any relevant documentation in the READMEs or in the `packages/docs` directory.
+Also include a high-level list of changes in the [CHANGELOG.md](CHANGELOG.md) file at the top under the `## Unreleased` heading.
+
 [yarn]: https://yarnpkg.com
 [yarn workspaces]: https://yarnpkg.com/en/docs/workspaces
 [lerna]: https://github.com/lerna/lerna
