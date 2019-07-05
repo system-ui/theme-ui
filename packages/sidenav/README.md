@@ -32,6 +32,7 @@ export default props => (
 ```
 
 The same MDX document can be used to create pagination links.
+Pass in the current `pathname` to allow the `Pagination` component to determine the previous and next links.
 
 ```jsx
 /** @jsx jsx */
@@ -44,7 +45,7 @@ export default props =>
   <Location
     children={({ location }) => (
       <Links
-        location={location}
+        pathname={location.pathname}
         components={{
           wrapper: Pagination
         }}

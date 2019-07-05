@@ -8,7 +8,7 @@ export default props => (
   <Location>
     {({ location }) => (
       <Sidenav
-        location={location}
+        pathname={location.pathname}
         sx={{
           py: 4,
         }}

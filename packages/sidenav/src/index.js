@@ -125,10 +125,10 @@ const PaginationLink = ({
   </a>
 )
 
-export const Pagination = ({ location = {}, children, ...props }) => {
+export const Pagination = ({ pathname = '', children, ...props }) => {
   const links = flattenLinks(children)
   const index = links.findIndex(
-    link => link.props.href === removeSlash(location.pathname)
+    link => link.props.href === removeSlash(pathname)
   )
   const hasPagination = index > -1
   const previous = links[index - 1]
