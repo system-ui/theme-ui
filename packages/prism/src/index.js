@@ -12,10 +12,17 @@ export default ({ children, className, title }) => {
       {...defaultProps}
       code={children.trim()}
       language={language}
-      theme={undefined}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <Styled.pre className={className} sx={style}>
+      theme={undefined}>
+      {({
+        className: innerClassName,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
+      }) => (
+        <Styled.pre
+          className={[className, innerClassName].join(' ')}
+          sx={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
