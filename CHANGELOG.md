@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.7 2019-07-05
+
+- `@theme-ui/prism` pass outer className to element #163
+
 ## v0.2.6 2019-07-04
 
 - Adjust color mode initialization from media query #157
