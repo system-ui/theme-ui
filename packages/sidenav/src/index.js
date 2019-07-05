@@ -40,7 +40,7 @@ export const Sidenav = React.forwardRef(
                 m: 0,
                 ul: {
                   a: {
-                    pl: 3,
+                    pl: 4,
                   },
                 },
               },
