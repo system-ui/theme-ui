@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/prism` add `display: inline-block` to keep empty lines
+
 ## v0.2.7 2019-07-05
 
 - `@theme-ui/prism` pass outer className to element #163
