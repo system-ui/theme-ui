@@ -35,13 +35,6 @@ test('Sidenav renders open', () => {
 
 test('Pagination renders', () => {
   const json = renderer
-    .create(
-      <Pagination
-        location={{
-          pathname: '/',
-        }}
-        children={links}
-      />
-    )
+    .create(<Pagination pathname="/" children={links} />)
     .toJSON()
 })
