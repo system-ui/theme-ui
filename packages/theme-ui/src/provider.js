@@ -7,6 +7,39 @@ import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 import { createComponents } from './components'
 
+const colorModesToCSSProperties = modes => {
+  return Object.keys(modes).reduce((parsedModes, modeKey) => {
+    const colors = modes[modeKey]
+    return {
+      ...parsedModes,
+      [modeKey]: Object.keys(colors).reduce(
+        (parsedColors, colorKey) => ({
+          ...parsedColors,
+          [`--theme-ui-${colorKey}`]: colors[colorKey],
+        }),
+        {}
+      ),
+    }
+  }, {})
+}
+
+const applyCSSProperties = theme => {
+  const { colors } = theme
+  return {
+    ...theme,
+    colors: Object.keys(colors).reduce(
+      (parsedColors, key) => ({
+        ...parsedColors,
+        [key]:
+          key === 'modes'
+            ? colorModesToCSSProperties(colors[key])
+            : `var(--theme-ui-${key}, ${colors[key]})`,
+      }),
+      {}
+    ),
+  }
+}
+
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
@@ -19,7 +52,7 @@ const BaseProvider = ({ context, components, children }) => {
   const theme = applyColorMode(context.theme, context.colorMode)
   return jsx(
     EmotionContext.Provider,
-    { value: theme },
+    { value: theme.includeCSSProperties ? applyCSSProperties(theme) : theme },
     jsx(
       MDXProvider,
       { components },

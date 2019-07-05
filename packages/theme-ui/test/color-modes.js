@@ -32,8 +32,7 @@ test('renders with color modes', () => {
       <ThemeProvider
         theme={{
           initialColorMode: 'light',
-        }}
-      >
+        }}>
         <Mode />
       </ThemeProvider>
     )
@@ -93,8 +92,7 @@ test('color mode is passed through theme context', () => {
             },
           },
         },
-      }}
-    >
+      }}>
       <Button />
     </ThemeProvider>
   )
@@ -102,6 +100,32 @@ test('color mode is passed through theme context', () => {
   button.click()
   expect(mode).toBe('dark')
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
+})
+
+test('converts color modes to css properties', () => {
+  const Box = props => (
+    <div
+      sx={{
+        color: 'text',
+      }}
+      children="test"
+    />
+  )
+  const tree = render(
+    <ThemeProvider
+      theme={{
+        includeCSSProperties: true,
+        colors: {
+          text: '#000',
+        },
+      }}>
+      <Box />
+    </ThemeProvider>
+  )
+  expect(tree.getByText('test')).toHaveStyleRule(
+    'color',
+    'var(--theme-ui-text,#000)'
+  )
 })
 
 test('does not initialize mode', () => {
@@ -146,13 +170,11 @@ test('inherits color mode state from parent context', () => {
     <ThemeProvider
       theme={{
         initialColorMode: 'outer',
-      }}
-    >
+      }}>
       <ThemeProvider
         theme={{
           initialColorMode: 'inner',
-        }}
-      >
+        }}>
         <Consumer />
       </ThemeProvider>
     </ThemeProvider>
@@ -244,8 +266,7 @@ test('ColorMode component renders with colors', () => {
             },
           },
         },
-      }}
-    >
+      }}>
       <ColorMode />
     </ThemeProvider>
   )
