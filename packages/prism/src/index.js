@@ -14,7 +14,7 @@ export default ({ children, className: outerClassName, title }) => {
       language={language}
       theme={undefined}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <Styled.pre className={`${outerClassName} ${className}`} sx={style}>
+        <Styled.pre className={`${outerClassName} ${className}`} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
