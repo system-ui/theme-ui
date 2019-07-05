@@ -24,9 +24,11 @@ Theme UI is built with:
 
 ## ThemeProvider
 
-The Theme UI `ThemeProvider` component is a wrapper around MDX's `MDXProvider`, which adds custom React components to context, and Emotion's `ThemeProvider`, which adds the `theme` object to context for use with Emotion.
+The Theme UI `ThemeProvider` component is a wrapper around MDX's `MDXProvider`,
+which adds custom React components to context,
+and Emotion's `ThemeProvider`, which adds the `theme` object to context for use with Emotion.
 
-The Theme UI `ThemeProvider` includes a default `components` object with Emotion styled components that pick up values from the `theme.styles` object.
+The Theme UI `ThemeProvider` includes a default `components` object with styled components that pick up values from the `theme.styles` object.
 For example, `theme.styles.h1` will be used in its `components.h1` component and rendered in MDX documents.
 
 For illustrative purposes, the `ThemeProvider` renders something like the following:
@@ -60,7 +62,7 @@ each component is wrapped with the `sx` prop to allow the component to pick up v
 
 ## JSX Pragma
 
-The Theme UI JSX pragma wraps the Emotion JSX pragma, converting the `css` prop to a call to `@styled-system/css`. The two examples below yield the same results:
+The Theme UI JSX pragma wraps the Emotion JSX pragma, converting the `sx` prop to a call to `@styled-system/css`. The two examples below yield the same results:
 
 ```jsx
 // with Emotion's custom pragma

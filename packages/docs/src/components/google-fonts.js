@@ -18,13 +18,13 @@ export default props => {
   const { theme } = useContext(Context)
   if (!theme.typography) return false
   const href = parseTypographyGoogleFonts(theme.typography)
-  if (!href) return false
   useEffect(() => {
+    if (!href) return false
     const link = document.createElement('link')
     link.rel = 'stylesheet'
     link.href = href
     document.head.appendChild(link)
-  }, [theme.typography])
+  }, [theme.typography, href])
 
   return false
 }

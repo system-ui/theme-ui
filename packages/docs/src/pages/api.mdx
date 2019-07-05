@@ -32,7 +32,8 @@ css(styleObject)(theme)
 
 ### `jsx`
 
-The `jsx` export is a React create element function intended for use as a custom pragma. It uses Emotion's create element function under the hood and parses style objects with the Theme UI `css` utility.
+The `jsx` export is a React create element function intended for use as a custom pragma.
+It adds support for the `sx` prop, which uses Emotion's create element function internally and parses style objects with the Theme UI `css` utility.
 
 **Usage:**
 
@@ -43,7 +44,7 @@ import { jsx } from 'theme-ui'
 export default props => (
   <div
     {...props}
-    css={{
+    sx={{
       color: 'primary',
     }}
   />
@@ -73,7 +74,7 @@ const context = useThemeUI()
 ### `ColorMode`
 
 The `ColorMode` component applies foreground and background color to the `<body>` element, based on the color modes defined in a theme.
-It is also used in `gatsby-theme-ui` for helping reduce flashes of style changes on page load.
+It is also used in `gatsby-plugin-theme-ui` for helping reduce flashes of style changes on page load.
 
 **Usage**
 
@@ -108,46 +109,34 @@ These are primarily meant to be used as a mechanism to use styles defined in a `
 | ---- | ------------------- | --------------------------------------- |
 | `as` | String or Component | Changes the underlying rendered element |
 
+<!-- under consideration for deprecation
 ### `Box`
-
-The `Box` component is a primitive layout component with Styled System props, similar to [Rebass's `Box` component](https://rebassjs.org/Box/) .
-
-The `Box` component includes all [Styled System space props](https://styled-system.com/api#space), as well as the following.
-
-| Prop                    | Type   | Description             |
-| ----------------------- | ------ | ----------------------- |
-| `color`                 | String | Foreground (text) color |
-| `bg`, `backgroundColor` | String | Background color        |
-| `css`                   | Object | Style object            |
-
-<!-- todo: note about deprecating other style props -->
-
 ### `Flex`
 
 The `Flex` component is an extension of the `Box` component with `display: 'flex'` applied.
+-->
 
 ### `Layout`
 
-The `Layout` component is an extension of the `Box` component with flexbox styles applied.
-It is intended for use at the root-level of a page layout.
+The `Layout` component is the root-level page layout component, with flexbox styles applied.
 
 See the [layout components docs](/layout) for more info.
 
 ### `Header`
 
-The `Header` component is an extension of the `Box` component, intended for use as a page header.
+The `Header` component is intended for use as a page header.
 
 ### `Main`
 
-The `Main` component is an extension of the `Box` component, intended for use as a wrapper around the main page area.
+The `Main` component is intended for use as a wrapper around the main page area.
 It includes flexbox styles to wrap the `Container` component and optional sidebar elements.
 
 ### `Container`
 
-The `Container` component is an extension of the `Box` component with a max-width and `marginX: 'auto'` for horizontal centering.
+The `Container` component includes a max-width and `marginX: 'auto'` for horizontal centering.
 
 ### `Footer`
 
-The `Footer` component is an extension of the `Box` component, intended for use as a page footer.
+The `Footer` component is intended for use as a page footer.
 
 [styled-system/css]: https://styled-system.com/css

@@ -13,8 +13,7 @@ export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
           fontSize: 0,
           display: 'flex',
           flexWrap: 'wrap',
-        }}
-      >
+        }}>
         {Object.entries(colors)
           .sort(([_, colorA]) => (typeof colorA === 'string' ? -1 : 1))
           .map(([key, color]) => {
@@ -55,8 +54,7 @@ export const ColorPalette = ({ omit = [], ...props }) => {
       style={{
         marginLeft: -8,
         marginRight: -8,
-      }}
-    >
+      }}>
       <ColorRow omit={omit} colors={colors} />
     </div>
   )

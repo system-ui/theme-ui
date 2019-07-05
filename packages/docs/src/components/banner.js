@@ -1,25 +1,30 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Box, Container } from 'theme-ui'
+import { jsx, ThemeProvider, Container } from 'theme-ui'
 import Logo from './logo'
+
+const gradient = `linear-gradient(120deg,
+  rgba(230, 59, 25, .5),
+  rgba(51, 51, 238, 0),
+  rgba(51, 51, 238, .25))`
 
 export default props => (
   <ThemeProvider
     theme={{
       styles: {
-        h1: {
-          fontSize: [5, 6, 7],
-          fontWeight: 900,
-          letterSpacing: '0.05em',
-          mt: 0,
-          mb: 4,
-        },
         p: {
+          ':first-of-type': {
+            fontSize: [6, 7, 7],
+            fontWeight: 900,
+            letterSpacing: '0.05em',
+          },
           fontWeight: 'bold',
           mt: 0,
           mb: 3,
-          ':first-of-type': {
-            fontSize: [2, 3, 4],
-          },
+        },
+        h1: {
+          fontSize: [3, 3, 4],
+          mt: 0,
+          mb: 4,
         },
         a: {
           display: 'inline-block',
@@ -38,41 +43,23 @@ export default props => (
           },
         },
       },
-    }}
-  >
-    <Box
+    }}>
+    <div
       sx={{
         py: [5, 6],
         color: 'background',
         bg: 'primary',
-      }}
-    >
-      <Container
-        sx={{
-          py: 0,
-          display: 'grid',
-          gridTemplateColumns: ['1f', 'repeat(3, 1fr)'],
-          gridGap: 24,
-          gridAutoFlow: ['row', 'column', 'column'],
-          alignItems: ['flex-start', 'flex-start', 'center'],
-        }}
-      >
-        <Logo
-          size="1em"
-          color="currentcolor"
+        backgroundImage: gradient,
+      }}>
+      <Container>
+        <div
           sx={{
-            fontSize: [96, 96, 160],
-          }}
-        />
-        <Box
-          sx={{
-            py: 3,
-            gridColumn: ['auto', '2 / 4'],
-          }}
-        >
+            maxWidth: 512,
+            mx: 'auto',
+          }}>
           {props.children}
-        </Box>
+        </div>
       </Container>
-    </Box>
+    </div>
   </ThemeProvider>
 )

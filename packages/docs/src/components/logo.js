@@ -1,5 +1,5 @@
 import React from 'react'
-import theme from '../gatsby-theme-ui'
+import theme from '../gatsby-plugin-theme-ui'
 
 export default ({ size = 512, color = theme.colors.primary, ...props }) => (
   <svg
@@ -7,8 +7,7 @@ export default ({ size = 512, color = theme.colors.primary, ...props }) => (
     viewBox="0 0 48 48"
     width={size}
     height={size}
-    overflow="visible"
-  >
+    overflow="visible">
     <path
       fill={color}
       d={`

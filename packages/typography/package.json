@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/typography",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
@@ -57,5 +57,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
 }

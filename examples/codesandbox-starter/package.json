@@ -1,0 +1,29 @@
+{
+  "name": "theme-ui-starter",
+  "private": "true",
+  "version": "0.2.6",
+  "description": "A sandbox configured with Theme UI, including the `base` theme.",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@emotion/core": "10.0.14",
+    "@mdx-js/react": "1.0.21",
+    "@theme-ui/presets": "^0.2.5",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "theme-ui": "^0.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": [
+    "react",
+    "theme-ui",
+    "starter",
+    "styled-system"
+  ]
+}

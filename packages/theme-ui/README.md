@@ -1,10 +1,15 @@
-<img src='https://raw.githubusercontent.com/system-ui/theme-ui/master/packages/docs/static/icon.png' width='64' heigh='64' />
+<img
+  src="https://contrast.now.sh/cff/40f?size=192&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
+  width="96"
+  heigh="96"
+/>
 
 # Theme UI
 
 Build consistent, themeable React UIs based on design system constraints and design tokens | Built with Emotion + Styled System + MDX + Typography.js
 
 [![GitHub][github-badge]][github]
+[![Stars][stars]][github]
 [![Build Status][circleci-badge]][circleci]
 [![Version][version]][npm]
 ![MIT License][license]
@@ -15,6 +20,7 @@ https://theme-ui.com
 
 [github]: https://github.com/system-ui/theme-ui
 [github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
+[stars]: https://flat.badgen.net/github/stars/system-ui/theme-ui
 [circleci]: https://circleci.com/gh/system-ui/theme-ui
 [circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
 [version]: https://flat.badgen.net/npm/v/theme-ui
@@ -111,8 +117,7 @@ export default props => (
       fontWeight: 'bold',
       fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    }}
-  >
+    }}>
     Hello
   </div>
 )
@@ -124,7 +129,7 @@ Read more about [how the custom pragma works](/how-it-works/#jsx-pragma).
 ## Responsive styles
 
 The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
-This API originated in [Styled System][] and is intended as a terser syntax for applying responsive styles across a singular dimension.
+This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
 
 ```jsx
 /** @jsx jsx */
