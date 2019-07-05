@@ -56,8 +56,7 @@ export const Sidenav = React.forwardRef(
             },
             styles
           ),
-        }}
-      >
+        }}>
         {open && <Overlay {...props} />}
         <MDXProvider components={components}>
           <div
@@ -70,7 +69,7 @@ export const Sidenav = React.forwardRef(
               bottom: [0, 'auto'],
               zIndex: 1,
               minWidth: 0,
-              width: [256, 'auto'],
+              width: 256,
               maxHeight: '100vh',
               overflowX: 'visible',
               overflowY: 'auto',
@@ -100,7 +99,14 @@ const flattenLinks = children =>
 
 const removeSlash = str => (str.length > 1 ? str.replace(/\/$/, '') : str)
 
-const PaginationLink = ({ label, children, ...props }) => (
+const PaginationLink = ({
+  label,
+  children,
+  mdxType,
+  originalType,
+  parentName,
+  ...props
+}) => (
   <a
     {...props}
     sx={{
@@ -108,14 +114,12 @@ const PaginationLink = ({ label, children, ...props }) => (
       color: 'inherit',
       textDecoration: 'none',
       fontWeight: 'bold',
-    }}
-  >
+    }}>
     <div>{label}</div>
     <div
       sx={{
         fontSize: 3,
-      }}
-    >
+      }}>
       {children}
     </div>
   </a>
@@ -135,8 +139,7 @@ export const Pagination = ({ location = {}, children, ...props }) => {
       {...props}
       sx={{
         display: 'flex',
-      }}
-    >
+      }}>
       {hasPagination && previous && (
         <PaginationLink {...previous.props} label="Previous:" />
       )}
