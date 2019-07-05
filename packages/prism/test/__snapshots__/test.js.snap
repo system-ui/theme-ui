@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <pre
-        class="prism-code language-js css-0"
+        class="language-js prism-code language-js css-0"
       >
         <div
           class="token-line css-0"
@@ -47,7 +47,7 @@ Object {
   </body>,
   "container": <div>
     <pre
-      class="prism-code language-js css-0"
+      class="language-js prism-code language-js css-0"
     >
       <div
         class="token-line css-0"
