@@ -18,7 +18,10 @@ export default ({ children, className: outerClassName, title }) => {
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
+                <span
+                  {...getTokenProps({ token, key })}
+                  sx={{ display: 'inline-block' }}
+                />
               ))}
             </div>
           ))}

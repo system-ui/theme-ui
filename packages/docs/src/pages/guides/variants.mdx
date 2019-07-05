@@ -1,0 +1,187 @@
+import Layout from '../../components/layout'
+
+export default Layout
+export const title = 'Variants'
+
+# Variants
+
+To add groups of styles based on theme values,
+you can take advantage of the _Variants_ feature in [Styled System CSS][].
+Variants allow you to define the styles used across multiple buttons, typographic elements, or any element in your `theme` object.
+
+For example, you can define `primary` and `secondary` variants for buttons and use colors from the theme.
+
+```js
+// example theme with variants
+{
+  colors: {
+    primary: '#07c',
+    secondary: '#639',
+  },
+  buttons: {
+    primary: {
+      color: 'white',
+      bg: 'primary',
+    },
+    secondary: {
+      color: 'white',
+      bg: 'secondary',
+    },
+  },
+}
+```
+
+With the `theme` object above, the `buttons` variants can be referenced in the `sx` prop.
+
+```jsx
+<button sx={{ variant: 'buttons.primary' }} />
+```
+
+Variants can be any name you choose, and deeply nested objects can be accessed with dot notation.
+
+## Color Modes
+
+Variants will also work with [color modes](/color-modes).
+With the example below, the primary button will adapt its colors based on the current color mode.
+
+```js
+// example theme with button variants and color modes
+{
+  initialColorMode: 'light',
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#0c7',
+    modes: {
+      dark: {
+        text: '#000',
+        background: '#fff',
+        primary: '#0c7',
+      },
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'background', // use the page background color for an inverted effect
+      bg: 'primary',
+    },
+  }
+}
+```
+
+## Typography
+
+Variants can also be used to create type styles,
+similar to how graphics applications store text styles.
+This allows you to define core typographic values and use them as complete styles,
+but still override individual values when needed.
+
+```js
+// example theme with typographic variants
+{
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Poppins, sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  fontWeights: {
+    body: 400,
+    heading: 900,
+    bold: 700,
+  },
+  letterSpacings: {
+    heading: '-0.05em',
+    caps: '0.1em',
+  },
+  textStyles: {
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      letterSpacing: 'heading',
+    },
+    display: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      letterSpacing: 'heading',
+      fontSize: [ 5, 6, 7 ],
+    },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: 'caps',
+    },
+  },
+}
+```
+
+These variants can then be used in the `theme.styles` object or in the `sx` prop.
+
+```jsx
+// example usage of typographic variants
+<h1 sx={{ variant: 'textStyles.display' }} />
+<p sx={{ variant: 'textStyles.caps' }} />
+<h2
+  sx={{
+    variant: 'textStyles.heading',
+    // overriding the default styles
+    fontWeight: 'body',
+  }}
+/>
+```
+
+## Themeable Layout Components
+
+Variants can also be used to create themeable layout components.
+This is especially useful when creating [Gatsby themes][],
+where you'd like certain parts of your page layout to be customizable.
+
+Using the `variant` key in the `sx` prop allows you to define styles for a component that can optionally be overridden from the `theme` object.
+When the variant is undefined in the `theme`, no additional styles are applied to the element.
+
+The following example is for a header component that includes default styles.
+
+```jsx
+/** @jsx jsx */
+// example header component
+import { jsx } from 'theme-ui'
+
+// passing props through allows `props.className` to be applied
+// which means the `sx` prop can be used on this component
+export default props => (
+  <header
+    {...props}
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      px: 3,
+      py: 2,
+      // if this variant is defined in the theme,
+      // it can override the default styles above
+      variant: 'layout.header',
+    }}>
+    {props.children}
+  </header>
+)
+```
+
+This component can now be customized by adding a `theme.layout.header` object to the `theme` object.
+
+```js
+// example theme
+{
+  layout: {
+    header: {
+      color: 'white',
+      bg: 'black',
+    }
+  },
+}
+```
+
+[styled system css]: https://styled-system/css
+[gatsby themes]: https://www.gatsbyjs.org/docs/themes/

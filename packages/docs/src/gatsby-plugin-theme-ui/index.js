@@ -62,6 +62,11 @@ export default {
   },
   textStyles: {
     heading,
+    display: {
+      variant: 'textStyles.heading',
+      fontSize: [5, 6, 7],
+      mt: 3,
+    },
   },
   styles: {
     Container: {
@@ -74,8 +79,7 @@ export default {
       fontWeight: 'body',
     },
     h1: {
-      variant: 'textStyles.heading',
-      fontSize: 6,
+      variant: 'textStyles.display',
     },
     h2: {
       variant: 'textStyles.heading',
