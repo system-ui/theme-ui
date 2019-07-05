@@ -22,11 +22,14 @@ export default ({ children, className, title }) => {
       }) => (
         <Styled.pre
           className={[className, innerClassName].join(' ')}
-          sx={style}>
+          style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
+                <span
+                  {...getTokenProps({ token, key })}
+                  sx={{ display: 'inline-block' }}
+                />
               ))}
             </div>
           ))}
