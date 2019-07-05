@@ -122,7 +122,7 @@ export default {
     code: {
       fontFamily: 'monospace',
       color: 'secondary',
-      fontSize: 'inherit',
+      fontSize: 1,
     },
     inlineCode: {
       fontFamily: 'monospace',
