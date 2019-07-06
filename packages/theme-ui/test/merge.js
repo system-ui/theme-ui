@@ -57,3 +57,17 @@ test('does not attempt to merge React components', () => {
   )
   expect(result).toEqual({ h1 })
 })
+
+test('primitive types override arrays', () => {
+  const result = merge(
+    {
+      fontSize: [3, 4, 5],
+    },
+    {
+      fontSize: 4,
+    }
+  )
+  expect(result).toEqual({
+    fontSize: 4,
+  })
+})
