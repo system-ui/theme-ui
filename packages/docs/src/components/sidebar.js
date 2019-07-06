@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx, Box, ThemeProvider } from 'theme-ui'
-import { Global } from '@emotion/core'
+import { jsx } from 'theme-ui'
 import { Sidenav } from '@theme-ui/sidenav'
 import NavLink from './nav-link'
 import Content from '../sidebar.mdx'
@@ -22,8 +21,7 @@ export default React.forwardRef((props, ref) => (
       pt: 3,
       pb: 4,
       mt: [64, 0],
-    }}
-  >
+    }}>
     <Content />
   </Sidenav>
 ))
