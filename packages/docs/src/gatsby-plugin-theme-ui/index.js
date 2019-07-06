@@ -101,7 +101,6 @@ export default {
       variant: 'textStyles.heading',
       fontSize: 1,
     },
-    p: {},
     a: {
       color: 'primary',
       '&:hover': {
