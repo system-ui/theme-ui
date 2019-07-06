@@ -1,0 +1,122 @@
+import Layout from '../../components/layout'
+
+export default Layout
+export const title = 'Responsive Typography'
+
+# Responsive Typography
+
+While there are many different approaches to styling responsive typography on the web,
+the [`theme.styles`][] API can be used to create rich, responsive typography in MDX documents, with full control over the end result.
+Used in combination with [responsive array values][] and [variants][], you can create reusable typographic styles that don't pollute the global CSS scope.
+
+[`theme.styles`]: /theming/#styles
+[responsive array values]: /sx-prop/#responsive-values
+[variants]: /guides/variants
+
+```js
+// example theme with responsive typography styles
+{
+  fontSizes: [
+    12, 14, 16, 18, 24, 32, 48, 64, 72,
+  ],
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Poppins, sans-serif',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 900,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  textStyles: {
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+  },
+  styles: {
+    root: {
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+    },
+    p: {
+      fontSize: [2, 3],
+    },
+    h1: {
+      variant: 'textStyles.heading',
+      fontSize: [5, 6, 7],
+    },
+    h2: {
+      variant: 'textStyles.heading',
+      fontSize: [4, 5],
+    },
+  },
+}
+```
+
+## Caveats
+
+Due to how CSS specificity works, if you've defined responsive styles in `theme.styles`,
+overriding styles with the `sx` prop requires also including styles for the breakpoints set in the theme.
+For example, with the following, the `fontSize` style will only apply at the smallest breakpoint, and the `theme.styles.h1` responsive styles will apply at other breakpoints.
+
+```js
+// example theme
+{
+  styles: {
+    h1: {
+      fontSize: [ 4, 5, 6 ],
+    }
+  }
+}
+```
+
+```jsx
+<Styled.h1
+  sx={{
+    // styles for larger breakpoints will still apply
+    // due to CSS specificity in media queries
+    fontSize: 3,
+  }}
+/>
+```
+
+## Non-MDX content
+
+The [`Styled`][] components can be used to pick up responsive styles outside of MDX,
+but if you'd like to apply styles to other markdown or user generated content,
+you can use the `sx` prop with a variant to style child elements.
+What this does is take the entire `theme.styles` object, adds a scoped classname to the `<div>`,
+and injects CSS with child selectors based on the keys in `theme.styles`.
+
+```jsx
+export default props => (
+  <div
+    sx={{
+      variant: 'styles',
+    }}>
+    {props.children}
+  </div>
+)
+```
+
+Optionally, the `Styled.root` component can be used to set base styles within the `<div>`.
+
+```jsx
+export default props => (
+  <div
+    sx={{
+      variant: 'styles',
+    }}>
+    <Styled.root>{props.children}</Styled.root>
+  </div>
+)
+```
+
+[`styled`]: /styled
