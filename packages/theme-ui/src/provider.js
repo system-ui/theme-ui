@@ -52,7 +52,7 @@ const BaseProvider = ({ context, components, children }) => {
   const theme = applyColorMode(context.theme, context.colorMode)
   return jsx(
     EmotionContext.Provider,
-    { value: theme.includeCSSProperties ? applyCSSProperties(theme) : theme },
+    { value: theme.useCustomProperties ? applyCSSProperties(theme) : theme },
     jsx(
       MDXProvider,
       { components },

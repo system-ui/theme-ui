@@ -114,7 +114,7 @@ test('converts color modes to css properties', () => {
   const tree = render(
     <ThemeProvider
       theme={{
-        includeCSSProperties: true,
+        useCustomProperties: true,
         colors: {
           text: '#000',
         },

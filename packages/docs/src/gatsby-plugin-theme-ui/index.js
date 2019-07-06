@@ -5,7 +5,7 @@ const heading = {
 }
 
 export default {
-  includeCSSProperties: true,
+  useCustomProperties: true,
   initialColorMode: 'light',
   colors: {
     text: '#000',
