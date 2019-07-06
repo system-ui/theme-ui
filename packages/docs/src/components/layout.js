@@ -41,18 +41,16 @@ export default props => {
           >
             <div
               sx={{
-                display: ['block', 'grid'],
-                gridGap: 24,
-                gridTemplateColumns: [
-                  'auto',
-                  props.fullwidth ? '1fr' : '256px 1fr',
-                ],
+                display: ['block', 'flex'],
+                mx: props.fullwidth ? 0 : -3,
               }}
             >
               <Sidebar
                 ref={nav}
                 open={menuOpen}
-                fullwidth={props.fullwidth}
+                sx={{
+                  display: [null, props.fullwidth ? 'none' : 'block'],
+                }}
                 onFocus={e => {
                   setMenuOpen(true)
                 }}
@@ -63,11 +61,18 @@ export default props => {
                   setMenuOpen(false)
                 }}
               />
-              <Box id="content" width={1}>
+              <div
+                id="content"
+                sx={{
+                  width: '100%',
+                  minWidth: 0,
+                  px: props.fullwidth ? 0 : 3,
+                }}
+              >
                 {props.children}
                 <EditLink />
                 {!props.fullwidth && <Pagination />}
-              </Box>
+              </div>
             </div>
           </Container>
         </Main>

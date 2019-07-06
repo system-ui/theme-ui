@@ -22,6 +22,7 @@
     "@styled-system/edit": "^0.0.5",
     "@theme-ui/presets": "^0.2.5",
     "@theme-ui/prism": "^0.2.7",
+    "@theme-ui/sidenav": "^0.2.7",
     "@theme-ui/style-guide": "^0.2.6",
     "@theme-ui/typography": "^0.2.5",
     "gatsby": "^2.3.6",

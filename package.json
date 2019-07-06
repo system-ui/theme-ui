@@ -15,6 +15,10 @@
     "examples/*"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "@testing-library/react": "^8.0.1",
     "husky": ">=1",
     "jest": "^24.8.0",

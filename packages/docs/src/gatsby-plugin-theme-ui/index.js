@@ -71,7 +71,7 @@ export default {
   styles: {
     Container: {
       p: 3,
-      maxWidth: 1280,
+      maxWidth: 1024,
     },
     root: {
       fontFamily: 'body',
@@ -122,7 +122,7 @@ export default {
     code: {
       fontFamily: 'monospace',
       color: 'secondary',
-      fontSize: 'inherit',
+      fontSize: 1,
     },
     inlineCode: {
       fontFamily: 'monospace',

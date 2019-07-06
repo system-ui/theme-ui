@@ -7,8 +7,7 @@ export default ({ size = 512, color = theme.colors.primary, ...props }) => (
     viewBox="0 0 48 48"
     width={size}
     height={size}
-    overflow="visible"
-  >
+    overflow="visible">
     <path
       fill={color}
       d={`

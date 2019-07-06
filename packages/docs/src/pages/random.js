@@ -50,8 +50,7 @@ export default () => {
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}
-      >
+        }}>
         <ColorMode />
         <ThemeContext.Provider value={theme}>
           <Styled.root>
@@ -68,8 +67,7 @@ export default () => {
                 letterSpacing: 1,
                 fontWeight: 600,
               }}
-              onClick={fetchTheme}
-            >
+              onClick={fetchTheme}>
               Generate new theme
             </Styled.a>
             <Styled.h2>Random Theme</Styled.h2>
@@ -91,8 +89,7 @@ export default () => {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={3}
-            >
+              fontSize={3}>
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Styled.h2>Type Scale</Styled.h2>

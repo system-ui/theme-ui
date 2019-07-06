@@ -14,8 +14,7 @@ const heading = Tag => props =>
           ':hover': {
             textDecoration: 'underline',
           },
-        }}
-      >
+        }}>
         {props.children}
       </a>
     </Tag>
