@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## v0.2.8 2019-07-06
+
+- `@theme-ui/sidenav` initial publish
 - `@theme-ui/prism` add `display: inline-block` to keep empty lines
 
 ## v0.2.7 2019-07-05
