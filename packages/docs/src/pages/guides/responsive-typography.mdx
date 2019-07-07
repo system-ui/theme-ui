@@ -63,7 +63,7 @@ Used in combination with [responsive array values][] and [variants][], you can c
 ## Caveats
 
 Due to how CSS specificity works, if you've defined responsive styles in `theme.styles`,
-overriding styles with the `sx` prop requires also including styles for the breakpoints set in the theme.
+overriding styles with the `sx` prop requires also including styles for the [`breakpoints`] set in the theme.
 For example, with the following, the `fontSize` style will only apply at the smallest breakpoint, and the `theme.styles.h1` responsive styles will apply at other breakpoints.
 
 ```js
@@ -86,6 +86,7 @@ For example, with the following, the `fontSize` style will only apply at the sma
   }}
 />
 ```
+[`breakpoints`]: /theming/#breakpoints
 
 ## Non-MDX content
 
