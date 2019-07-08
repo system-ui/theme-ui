@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.10 2019-07-08
+
+- Fix keys in tailwind preset #171
+
 ## v0.2.9 2019-07-08
 
 - Add optional support for CSS custom properties #166
