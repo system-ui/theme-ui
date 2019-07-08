@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.9 2019-07-08
+
+- Add optional support for CSS custom properties #166
+
 ## v0.2.8 2019-07-06
 
 - `@theme-ui/sidenav` initial publish
