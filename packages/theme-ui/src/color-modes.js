@@ -54,10 +54,9 @@ const bodyColor = (theme = {}) => {
   const styles = {}
   Object.keys(modes).forEach(mode => {
     const colors = modes[mode]
-    styles[`&.theme-ui-${mode}`] = {
-      color: colors.text,
-      bg: colors.background,
-    }
+    styles[`&.theme-ui-${mode}`] = theme.useCustomProperties
+      ? colors
+      : { color: colors.text, bg: colors.background }
   })
 
   return css({
