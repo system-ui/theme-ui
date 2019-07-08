@@ -117,6 +117,11 @@ test('converts color modes to css properties', () => {
         useCustomProperties: true,
         colors: {
           text: '#000',
+          modes: {
+            dark: {
+              text: '#fff',
+            },
+          },
         },
       }}>
       <Box />
