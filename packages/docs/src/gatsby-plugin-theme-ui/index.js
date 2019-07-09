@@ -5,6 +5,7 @@ const heading = {
 }
 
 export default {
+  useCustomProperties: true,
   initialColorMode: 'light',
   colors: {
     text: '#000',
@@ -15,10 +16,6 @@ export default {
     highlight: '#ffffcc',
     gray: '#777',
     purple: '#609',
-    header: {
-      text: 'inherit',
-      background: 'inherit',
-    },
     modes: {
       dark: {
         text: '#fff',
@@ -66,19 +63,16 @@ export default {
   },
   textStyles: {
     heading,
+    display: {
+      variant: 'textStyles.heading',
+      fontSize: [5, 6, 7],
+      mt: 3,
+    },
   },
   styles: {
-    Header: {
-      color: 'header.text',
-      bg: 'header.background',
-    },
-    Footer: {
-      color: 'header.text',
-      bg: 'header.background',
-    },
     Container: {
       p: 3,
-      maxWidth: 1280,
+      maxWidth: 1024,
     },
     root: {
       fontFamily: 'body',
@@ -86,8 +80,7 @@ export default {
       fontWeight: 'body',
     },
     h1: {
-      variant: 'textStyles.heading',
-      fontSize: 6,
+      variant: 'textStyles.display',
     },
     h2: {
       variant: 'textStyles.heading',
@@ -130,7 +123,7 @@ export default {
     code: {
       fontFamily: 'monospace',
       color: 'secondary',
-      fontSize: 'inherit',
+      fontSize: 1,
     },
     inlineCode: {
       fontFamily: 'monospace',

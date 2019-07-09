@@ -1,0 +1,59 @@
+import Layout from '../../components/layout'
+
+export default Layout
+export const title = 'Styled Components'
+
+# Styled Components
+
+If you're already using the `styled` API from the [@emotion/styled][] package, those components should have access to the same theming context that Theme UI uses.
+Instead of using the `ThemeProvider` component from `emotion-theming`, you can import and use the Theme UI provider.
+
+```jsx
+/** @jsx jsx */
+import { jsx, ThemeProvider } from 'theme-ui'
+import theme from './theme'
+import SomeComponent from './SomeComponent'
+
+export default props => (
+  <ThemeProvider theme={theme}>
+    <SomeComponent />
+  </ThemeProvider>
+)
+```
+
+If you're using the [Styled Components][] library, we're looking into integrations for existing components, but these can usually be converted to use Emotion with a single line change to the `import` statement.
+
+```js
+// before
+import styled from 'styled-components'
+```
+
+```js
+// after
+import styled from '@emotion/styled'
+```
+
+## Using the `sx` prop
+
+The end-user API of using one of the libraries above can also be achieved using the Theme UI `sx` prop.
+This avoids the need to install additional packages and can help keep the overall bundle size down.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default ({ width, color, bg, ...props }) => (
+  <div
+    {...props}
+    sx={{
+      width,
+      color,
+      bg,
+      // additional styles...
+    }}
+  />
+)
+```
+
+[@emotion/styled]: https://emotion.sh/docs/styled
+[styled components]: https://styled-components.com

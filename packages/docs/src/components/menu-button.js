@@ -11,8 +11,7 @@ const Burger = ({ size = '1em' }) => (
     sx={{
       display: 'block',
       margin: 0,
-    }}
-  >
+    }}>
     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
   </svg>
 )
@@ -26,7 +25,9 @@ export default props => (
       fontSize: 24,
       color: 'inherit',
       bg: 'transparent',
-      p: 0,
+      width: 32,
+      height: 32,
+      p: 1,
       m: 0,
       border: 0,
       appearance: 'none',
@@ -36,8 +37,7 @@ export default props => (
       '@media screen and (min-width: 40em)': {
         display: 'none',
       },
-    }}
-  >
+    }}>
     <Burger />
   </button>
 )

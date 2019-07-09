@@ -4,8 +4,8 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { jsx, Styled } from 'theme-ui'
 
-export default ({ children, className, title }) => {
-  const [language] = className.replace(/language-/, '').split(' ')
+export default ({ children, className: outerClassName, title }) => {
+  const [language] = outerClassName.replace(/language-/, '').split(' ')
 
   return (
     <Highlight
@@ -14,11 +14,14 @@ export default ({ children, className, title }) => {
       language={language}
       theme={undefined}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <Styled.pre className={className} sx={style}>
+        <Styled.pre className={`${outerClassName} ${className}`} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
+                <span
+                  {...getTokenProps({ token, key })}
+                  sx={{ display: 'inline-block' }}
+                />
               ))}
             </div>
           ))}

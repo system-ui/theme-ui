@@ -1,0 +1,74 @@
+import Layout from '../../components/layout'
+
+export default Layout
+export const title = 'MDX Layout Components'
+
+# MDX Layout Components
+
+The `ThemeProvider` component can be nested within a parent `ThemeProvider`,
+allowing you to contextually adjust styles in certain parts of a UI.
+This functionality can be leveraged to create custom layout components that
+take MDX content as children to create uniquely styled blocks of content.
+For example this site's [landing page](/) uses this approach to style its content,
+which is written in MDX.
+
+As an example, create a new component with the `ThemeProvider` and a wrapping `<div>`.
+
+```jsx
+/** @jsx jsx */
+import { jsx, ThemeProvider } from 'theme-ui'
+
+export default props => (
+  <ThemeProvider>
+    <div {...props} />
+  </ThemeProvider>
+)
+```
+
+To add styles to this component, add a `theme` prop to the `ThemeProvider` and an `sx` prop to the `div`.
+
+```jsx
+/** @jsx jsx */
+import { jsx, ThemeProvider } from 'theme-ui'
+
+export default props => (
+  <ThemeProvider
+    theme={{
+      styles: {
+        // style child elements
+        h1: {
+          fontSize: [5, 6, 7],
+        },
+      },
+    }}>
+    <div
+      {...props}
+      sx={{
+        // swap colors for an inverted effect
+        color: 'background',
+        bg: 'primary',
+        px: 3,
+        py: 4,
+      }}
+    />
+  </ThemeProvider>
+)
+```
+
+The component above can then be imported and used within an MDX document.
+
+```md
+<!-- example mdx file -->
+
+import MyLayout from './MyLayout'
+
+<MyLayout>
+
+# Hello
+
+This section has custom styles
+
+</MyLayout>
+
+This part of the document uses default styles
+```

@@ -3,41 +3,45 @@
 exports[`renders a code block 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": <body>
+  "baseElement": .emotion-0 {
+  display: inline-block;
+}
+
+<body>
     <div>
       <pre
-        class="prism-code language-js css-0"
+        class="language-js prism-code language-js emotion-6"
       >
         <div
-          class="token-line css-0"
+          class="token-line emotion-6"
         >
           <span
-            class="token console class-name css-0"
+            class="token console class-name emotion-0"
           >
             console
           </span>
           <span
-            class="token punctuation css-0"
+            class="token punctuation emotion-0"
           >
             .
           </span>
           <span
-            class="token method function property-access css-0"
+            class="token method function property-access emotion-0"
           >
             log
           </span>
           <span
-            class="token punctuation css-0"
+            class="token punctuation emotion-0"
           >
             (
           </span>
           <span
-            class="token string css-0"
+            class="token string emotion-0"
           >
             'hello, world!'
           </span>
           <span
-            class="token punctuation css-0"
+            class="token punctuation emotion-0"
           >
             )
           </span>
@@ -45,40 +49,44 @@ Object {
       </pre>
     </div>
   </body>,
-  "container": <div>
+  "container": .emotion-0 {
+  display: inline-block;
+}
+
+<div>
     <pre
-      class="prism-code language-js css-0"
+      class="language-js prism-code language-js emotion-6"
     >
       <div
-        class="token-line css-0"
+        class="token-line emotion-6"
       >
         <span
-          class="token console class-name css-0"
+          class="token console class-name emotion-0"
         >
           console
         </span>
         <span
-          class="token punctuation css-0"
+          class="token punctuation emotion-0"
         >
           .
         </span>
         <span
-          class="token method function property-access css-0"
+          class="token method function property-access emotion-0"
         >
           log
         </span>
         <span
-          class="token punctuation css-0"
+          class="token punctuation emotion-0"
         >
           (
         </span>
         <span
-          class="token string css-0"
+          class="token string emotion-0"
         >
           'hello, world!'
         </span>
         <span
-          class="token punctuation css-0"
+          class="token punctuation emotion-0"
         >
           )
         </span>

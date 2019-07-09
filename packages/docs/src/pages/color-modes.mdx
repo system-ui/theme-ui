@@ -13,12 +13,18 @@ Color modes can be used to create a user-configurable _dark mode_ or any number 
 ## Defining colors
 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
-Add an `initialColorMode` value to the theme to initialize the default state.
+Add an `initialColorMode` value to the theme to initialize the default state. You can also set the `useCustomProperties` option to `true` to help prevent flash of colors, please ensure you can [support CSS properties](https://caniuse.com/#feat=css-variables) before setting this option.
+
+**Note:** The `initialColorMode` value is only used as the _name_ of the top-level colors and should not be used to initialize a color mode defined in the `modes` object.
 
 ```js
 // example theme colors
 {
+  // this enables the color modes feature
+  // and is used as the name for the top-level colors object
   initialColorMode: 'light',
+  // use CSS custom properties to help avoid flash of colors on initial page load
+  useCustomProperties: true,
   colors: {
     text: '#000',
     background: '#fff',
@@ -82,6 +88,7 @@ export default props => (
 
 For use with Gatsby, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
 The plugin will also attempt to prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
+If you support CSS custom properties, we recommend setting `useCustomProperties` in your theme as seen above in [defining colors](#defining-colors).
 
 ```sh
 npm i gatsby-plugin-theme-ui

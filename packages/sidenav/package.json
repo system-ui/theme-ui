@@ -1,9 +1,8 @@
 {
-  "name": "@theme-ui/presets",
+  "name": "@theme-ui/sidenav",
   "version": "0.2.10",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
@@ -12,5 +11,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@mdx-js/react": "^1.0.21",
+    "deepmerge": "^3.3.0",
+    "react": "^16.8.6",
+    "theme-ui": "^0.2.10"
+  }
 }

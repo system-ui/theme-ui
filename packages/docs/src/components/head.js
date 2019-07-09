@@ -12,7 +12,7 @@ export default props => {
     .join(' — ')
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: 'en-US' }}>
       <title>{title}</title>
       <meta name="description" content={pkg.description} />
       <link rel="icon" type="image/png" href="/icon.png" />
