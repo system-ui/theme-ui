@@ -40,7 +40,7 @@ const applyCSSProperties = theme => {
   }
 }
 
-const applyColorMode = (theme, mode) => {
+const applyColorMode = (theme = {}, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
   return merge.all({}, theme, {
