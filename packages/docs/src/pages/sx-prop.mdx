@@ -34,6 +34,36 @@ export default props => (
 To read more about how the values are converted and for a reference of supported CSS properties, see the
 [`@styled-system/css` docs](https://styled-system.com/css).
 
+## Composition
+
+Styles can be composed by using an array of style objects in the `sx` prop.
+This works the same way as [Emotion](https://emotion.sh/docs/composition).
+
+```jsx
+import React from 'react'
+import { css } from 'theme-ui'
+
+const base {
+  backgroundColor: 'background',
+  color: 'primary'
+}
+
+const danger = {
+  color: 'red'
+}
+
+export default props => (
+  <div>
+    <div sx={base}>This will be the primary color</div>
+    <div sx={[danger, base]}>
+      This will be also be primary since the base styles
+      overwrite the danger styles.
+    </div>
+    <div sx={[base, danger]}>This will be red</div>
+  </div>
+)
+```
+
 ## Margin and Padding
 
 Margin and padding are treated as first-class citizens in Styled System,

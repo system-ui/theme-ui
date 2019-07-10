@@ -22,6 +22,28 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('background-color', 'tomato')
 })
 
+test('accepts array in sx prop', () => {
+  const json = renderJSON(
+    jsx('div', {
+      sx: [
+        {
+          mx: 2,
+          p: 2,
+          bg: 'tomato',
+        },
+        {
+          mx: 'auto',
+          position: 'absolute',
+        },
+      ],
+    })
+  )
+  expect(json).toHaveStyleRule('margin-left', 'auto')
+  expect(json).toHaveStyleRule('padding', '8px')
+  expect(json).toHaveStyleRule('background-color', 'tomato')
+  expect(json).toHaveStyleRule('position', 'absolute')
+})
+
 test('adds raw values with css prop', () => {
   const json = renderJSON(
     jsx('div', {

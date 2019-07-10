@@ -3,7 +3,8 @@ import css from '@styled-system/css'
 
 const getCSS = props => theme => {
   if (!props.sx && !props.css) return undefined
-  const styles = css(props.sx)(theme)
+  const sx = Array.isArray(props.sx) ? props.sx : [props.sx]
+  const styles = sx.map(s => css(s)(theme))
   const raw = typeof props.css === 'function' ? props.css(theme) : props.css
   return [styles, raw]
 }
