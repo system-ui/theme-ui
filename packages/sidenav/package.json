@@ -17,5 +17,6 @@
     "deepmerge": "^3.3.0",
     "react": "^16.8.6",
     "theme-ui": "^0.2.11"
-  }
+  },
+  "gitHead": "8e3087cc6b114dc13a054427f6de3c054b8091da"
 }
