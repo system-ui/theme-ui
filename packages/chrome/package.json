@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@theme-ui/chrome",
   "version": "0.2.12",
   "main": "index.js",
@@ -20,5 +21,5 @@
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.4"
   },
-  "gitHead": "8e3087cc6b114dc13a054427f6de3c054b8091da"
+  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }
