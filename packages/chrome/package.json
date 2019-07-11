@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/chrome",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "main": "index.js",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@theme-ui/editor": "^0.2.11",
+    "@theme-ui/editor": "^0.2.12",
     "babel-loader": "^8.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
