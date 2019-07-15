@@ -13,7 +13,7 @@ Object {
         class="language-js prism-code language-js emotion-6"
       >
         <div
-          class="token-line emotion-6"
+          class="token-line"
         >
           <span
             class="token console class-name emotion-0"
@@ -58,7 +58,7 @@ Object {
       class="language-js prism-code language-js emotion-6"
     >
       <div
-        class="token-line emotion-6"
+        class="token-line"
       >
         <span
           class="token console class-name emotion-0"

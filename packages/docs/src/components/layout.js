@@ -37,14 +37,12 @@ export default props => {
               py: 0,
               px: props.fullwidth ? 0 : 3,
               maxWidth: props.fullwidth ? 'none' : '',
-            }}
-          >
+            }}>
             <div
               sx={{
                 display: ['block', 'flex'],
                 mx: props.fullwidth ? 0 : -3,
-              }}
-            >
+              }}>
               <Sidebar
                 ref={nav}
                 open={menuOpen}
@@ -67,8 +65,7 @@ export default props => {
                   width: '100%',
                   minWidth: 0,
                   px: props.fullwidth ? 0 : 3,
-                }}
-              >
+                }}>
                 {props.children}
                 <EditLink />
                 {!props.fullwidth && <Pagination />}

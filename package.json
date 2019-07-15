@@ -8,7 +8,9 @@
     "clean": "lerna run clean",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
-    "logo": "yarn workspace docs logo"
+    "logo": "yarn workspace docs logo",
+    "dev:chrome": "yarn workspace @theme-ui/chrome dev",
+    "dev:editor": "yarn workspace @theme-ui/editor dev"
   },
   "workspaces": [
     "packages/*",
@@ -49,7 +51,9 @@
       "packages/**/src/*.js",
       "!packages/docs/**/*",
       "!packages/presets/**/*",
-      "!packages/style-guide/**/*"
+      "!packages/style-guide/**/*",
+      "!packages/chrome/**/*",
+      "!packages/editor/**/*"
     ],
     "coverageThreshold": {
       "global": {

@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.2.10",
+  "version": "0.2.13",
   "description": "Build consistent, themeable React UIs based on design system constraints and design tokens",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -25,5 +25,5 @@
     "@emotion/core": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   },
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }

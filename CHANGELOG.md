@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## v0.2.13 2019-07-11
+
+## v0.2.12 2019-07-11
+
+- Fix bad publish
+
+## v0.2.11 2019-07-11
+
+- Adds Chrome extension package #136
+
 ## v0.2.10 2019-07-08
 
 - Fix keys in tailwind preset #171
