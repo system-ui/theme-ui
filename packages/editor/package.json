@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "main": "bundle/index.js",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "lodash.set": "^4.3.2",
     "microbundle": "^0.11.0",
     "react-color": "^2.17.3",
-    "theme-ui": "^0.2.13"
+    "theme-ui": "^0.2.14"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.10",
