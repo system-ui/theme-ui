@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.14 2019-07-15
+
+- Only pass `css` prop through when needed in `jsx` #182
+
 ## v0.2.13 2019-07-11
 
 ## v0.2.12 2019-07-11
