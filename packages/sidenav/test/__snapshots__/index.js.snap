@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidenav renders 1`] = `
-.emotion-3 {
+.emotion-0 {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@ exports[`Sidenav renders 1`] = `
 }
 
 @media screen and (min-width:40em) {
-  .emotion-3 {
+  .emotion-0 {
     position: -webkit-sticky;
     position: sticky;
     bottom: auto;
@@ -35,12 +35,11 @@ exports[`Sidenav renders 1`] = `
 }
 
 <div
-  className="emotion-3"
+  className="emotion-0"
 >
   <ul>
     <li>
       <a
-        className="emotion-0"
         href="/"
         mdxType="a"
       >
@@ -49,7 +48,6 @@ exports[`Sidenav renders 1`] = `
     </li>
     <li>
       <a
-        className="emotion-0"
         href="/boop"
         mdxType="a"
       >
@@ -58,7 +56,6 @@ exports[`Sidenav renders 1`] = `
     </li>
     <li>
       <a
-        className="emotion-0"
         href="/bop"
         mdxType="a"
       >
@@ -82,7 +79,7 @@ Array [
 <div
     className="emotion-0"
   />,
-  .emotion-3 {
+  .emotion-0 {
   position: fixed;
   top: 0;
   left: 0;
@@ -104,7 +101,7 @@ Array [
 }
 
 @media screen and (min-width:40em) {
-  .emotion-3 {
+  .emotion-0 {
     position: -webkit-sticky;
     position: sticky;
     bottom: auto;
@@ -116,12 +113,11 @@ Array [
 }
 
 <div
-    className="emotion-3"
+    className="emotion-0"
   >
     <ul>
       <li>
         <a
-          className="emotion-0"
           href="/"
           mdxType="a"
         >
@@ -130,7 +126,6 @@ Array [
       </li>
       <li>
         <a
-          className="emotion-0"
           href="/boop"
           mdxType="a"
         >
@@ -139,7 +134,6 @@ Array [
       </li>
       <li>
         <a
-          className="emotion-0"
           href="/bop"
           mdxType="a"
         >
