@@ -45,7 +45,7 @@ export const colors = {
 
 export const space = [0, 0.25, 0.5, 1, 1.5, 3].map(n => n + 'rem')
 
-export const breakpoints = [576, 768, 992, 1200]
+export const breakpoints = ['576px', '768px', '992px', '1200px']
 
 export const fonts = {
   body:
