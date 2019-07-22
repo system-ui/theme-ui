@@ -1,0 +1,100 @@
+import Layout from '../components/layout'
+
+export default Layout
+export const title = 'Styling MDX Content'
+
+# Styling MDX Content
+
+The `theme.styles` object is the primary way to style content in MDX documents.
+This allows you to add typographic styles to markdown without the need to add global styles.
+Styles within this object have access to other values in the theme object.
+
+```js
+// example theme styles
+{
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Georgia, serif',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  styles: {
+    h1: {
+      fontSize: 32,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      color: 'primary',
+      mt: 4,
+      mb: 2,
+    },
+  }
+}
+```
+
+Any MDX document rendered as a child of the `ThemeProvider` will pick up the styles defined in the theme.
+
+**Note:** these styles will **not** apply to HTML elements used outside of MDX. To reuse these styles outside of MDX, see the [Styled component](/styled) docs.
+
+## Typography.js
+
+To use [Typography.js][] themes with Theme UI, install the `@theme-ui/typography` package and any Typography.js theme.
+
+```sh
+npm i @theme-ui/typography typography-theme-wordpress-2016
+```
+
+Use the `toTheme` utility to convert the theme for use in Theme UI.
+
+```js
+// example theme with Typography.js
+import { toTheme } from '@theme-ui/typography'
+import wordpress2016 from 'typography-theme-wordpress-2016'
+import merge from 'lodash.merge'
+
+const typography = toTheme(wordpress2016)
+
+export default merge(typography, {
+  // optional style overrides go here
+})
+```
+
+Content in MDX documents will be rendered with styles from the Typography.js theme.
+
+The `toTheme` function accepts the same [Typography.js configuration options](https://github.com/KyleAMathews/typography.js#configuration) as the core library,
+allowing you to create custom themes with this approach as well.
+
+**Note:** Theme UI does not currently use colors from Typography.js.
+
+[typography.js]: https://github.com/KyleAMathews/typography.js
+
+## Syntax Highlighting
+
+To support syntax highlighting libraries like [Prism.js][],
+colors and other styles can be added to `theme.styles.pre` to target child elements with class selectors.
+Prism.js adds `<span>` elements with class names that can be used as child selectors.
+
+[prism.js]: https://github.com/PrismJS/prism
+
+```js
+{
+  colors: {
+    gray: '#666',
+  },
+  styles: {
+    pre: {
+      '.comment': {
+        // theme.colors and other values can be referenced
+        color: 'gray',
+      }
+    }
+  }
+}
+}
+```
