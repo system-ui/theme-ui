@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
 import Banner from '../components/banner'
 import Tiles from '../components/tiles'
+import Testimonials from './testimonials'
 
 export default Layout
 
@@ -25,6 +26,43 @@ Emotion + Styled System + MDX + Typography.js
 
 </Banner>
 
+<Tiles columns={2}>
+
+1. ## Create your theme
+
+```js
+export default {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: 'tomato',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+  },
+}
+```
+
+2. ## Style your UI
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <h1
+    sx={{
+      color: 'primary',
+      fontFamily: 'heading',
+    }}>
+    Hello
+  </h1>
+)
+```
+
+</Tiles>
+
 <Tiles>
 
 - ## Themeable
@@ -40,10 +78,13 @@ Emotion + Styled System + MDX + Typography.js
 
 </Tiles>
 
+<Testimonials />
+
 <Tiles
   sx={{
     fontWeight: 'bold',
     a: {
+      display: 'block',
       color: 'inherit',
       textDecoration: 'none',
       ':hover': {
