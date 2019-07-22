@@ -54,8 +54,9 @@ export default {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
-    body: '400',
-    heading: '700',
+    body: 400,
+    heading: 700,
+    display: 900,
   },
   lineHeights: {
     body: 1.5,
@@ -65,7 +66,9 @@ export default {
     heading,
     display: {
       variant: 'textStyles.heading',
-      fontSize: [5, 6, 7],
+      fontSize: [5, 6],
+      fontWeight: 'display',
+      letterSpacing: '-0.03em',
       mt: 3,
     },
   },
