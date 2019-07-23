@@ -93,6 +93,9 @@ export const base = {
       textAlign: 'left',
       borderBottomStyle: 'solid',
     },
+    img: {
+      maxWidth: '100%',
+    },
   },
 }
 
