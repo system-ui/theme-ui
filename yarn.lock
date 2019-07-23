@@ -20595,9 +20595,9 @@ tachyons-generator@^0.23.0:
     tachyons-build-css "^1.5.1"
 
 tailwindcss@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.4.tgz#98f186c8142bfb292bcbfcb53b84df369f11ef91"
-  integrity sha512-+1NNPW+U83k6DV/uUOnsfmX86Cfb8N87fiuN0cX0mEi2sZUpglLzZqlXtP8FD9Hlne5H1UhlS8tajz+F9SSxjA==
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.5.tgz#5145fd61f251be06a77748819e12fb126914095d"
+  integrity sha512-e5edrSKqNOvWAVEutXN5czeJSXjQQxO7zNN4RDd5vQF/JTxnKdndcMFIC6p6YkRvcGFKPCZ/0rY1zZvPeq9V4A==
   dependencies:
     autoprefixer "^9.4.5"
     bytes "^3.0.0"
