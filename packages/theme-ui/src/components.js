@@ -33,6 +33,9 @@ const tags = [
   'thematicBreak',
   // other
   'div',
+  'form',
+  'label',
+  'input',
   // theme-ui
   'root',
 ]
