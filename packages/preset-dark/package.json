@@ -1,0 +1,15 @@
+{
+  "name": "@theme-ui/preset-dark",
+  "version": "0.2.15",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

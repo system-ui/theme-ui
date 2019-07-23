@@ -1,4 +1,3 @@
-// default/base theme
 const heading = {
   color: 'text',
   fontFamily: 'heading',

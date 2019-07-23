@@ -9,6 +9,17 @@
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
+  "dependencies": {
+    "@theme-ui/preset-base": "^0.2.15",
+    "@theme-ui/preset-bootstrap": "^0.2.15",
+    "@theme-ui/preset-bulma": "^0.2.15",
+    "@theme-ui/preset-dark": "^0.2.15",
+    "@theme-ui/preset-funk": "^0.2.15",
+    "@theme-ui/preset-future": "^0.2.15",
+    "@theme-ui/preset-roboto": "^0.2.15",
+    "@theme-ui/preset-swiss": "^0.2.15",
+    "@theme-ui/preset-tailwind": "^0.2.15"
+  },
   "publishConfig": {
     "access": "public"
   },
