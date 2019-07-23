@@ -1,10 +1,8 @@
----
-title: 'Theme Spec'
----
-
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
+export const title = 'Theme Spec'
 
 # Theme Specification
 
@@ -12,7 +10,7 @@ Theme UI is based on the [System UI Theme Specification][], with a few **optiona
 The top-level naming convention used in the `theme` object come from this specification.
 Additionally, naming conventions for colors and typography are included
 to help ensure deeper interoperability with components from various other libraries.
-This is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose themes.
+This is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose theming.
 
 ## Theme Scales
 
@@ -35,7 +33,11 @@ The `theme` object is made up of the following scales (i.e. property-specific ob
 | `shadows`        | `box-shadow`, `text-shadow`                                                                                                                                                                        |
 | `zIndices`       | `z-index`                                                                                                                                                                                          |
 
-**Note:** A theme does not require that all these fields be present and can include additional values when needed.
+<Note>
+
+A theme does not require that all these fields be present and can include additional values as needed.
+
+</Note>
 
 ```js
 // example theme
@@ -82,20 +84,17 @@ Other color keys can be added, including raw color values for aliasing the value
 
 <!--
 ## Aliasing Colors
-
 TK
 -->
 
 ## Color Modes
 
-In order to use Theme UI color modes, color scales should include _at least_ a `text` and `background` color.
-This is used in the `ColorMode` component to set body foreground and background colors.
+To use Theme UI color modes, color scales should include _at least_ a `text` and `background` color.
+These values are used in the `ColorMode` component to set body foreground and background colors.
 Color modes should be defined as nested objects within a `theme.colors.modes` object.
 Each key in this object should correspond to a color mode name,
-where the name may be anything, but typically `light` and `dark` should be used for applications with a dark mode.
+where the name can be anything, but typically `light` and `dark` are used for applications with a dark mode.
 The `initialColorMode` key is required to enable color modes and will be used as the name for the root color palette.
-
-The root color object is used as the default color mode, and other modes can use partial objects with the default modes colors used as fallback values.
 
 ```js
 // example color scale with modes
@@ -126,6 +125,13 @@ The root color object is used as the default color mode, and other modes can use
 }
 ```
 
+<Note>
+
+Any undefined color keys in the nested color modes objects will fallback to values in the base colors object.
+
+</Note>
+
+
 ## Typography
 
 To ensure that themes built for Theme UI are as portable and interoperable as possible, the following keys should be defined within each theme scale.
@@ -147,8 +153,6 @@ Additional keys can be included for more complex styling.
 
 Font sizes are typically defined as an array, from smallest to largest.
 
-**Note:** This is _not_ required, and plain objects will work as well.
-
 ```js
 // example fontSizes scale
 {
@@ -158,8 +162,15 @@ Font sizes are typically defined as an array, from smallest to largest.
 }
 ```
 
-For illustration purposes, the index values of the array can be thought of as loosely mapping to heading levels.
-This does not mean that these values are in any way tied to specific heading levels or HTML elements.
+<Note>
+
+Arrays are _not_ required, and plain objects will work as well.
+
+</Note>
+
+
+For illustration purposes, the index values of the array can be thought of as loosely mapping to heading levels,
+but these values are *not* in any way tied to HTML elements.
 
 | Index | Heading-Level Equivalent |
 | ----- | ------------------------ |
@@ -172,8 +183,8 @@ This does not mean that these values are in any way tied to specific heading lev
 
 ## Variants
 
-Theme UI currently does _not_ have standards for defining combinations of typographic styles, but _variants_ can be used for situations where it is useful to reuse combinations of these primitive values.
-Another common practice is to have a `buttons` object with variants like primary and secondary:
+Use variants to define custom groups of styles.
+These are commonly used for typographic styles, buttons, and themeable layout components.
 
 ```js
 // example typographic style variants
@@ -215,11 +226,11 @@ Another common practice is to have a `buttons` object with variants like primary
     primary: {
       // you can reference other values defined in the theme
       color: 'white',
-      backgroundColor: 'primary',
+      bg: 'primary',
     },
     secondary: {
       color: 'text',
-      backgroundColor: 'secondary',
+      bg: 'secondary',
     },
   }
 }
@@ -233,24 +244,19 @@ User-defined variants can then be referenced in the `sx` prop or in `theme.style
   sx={{
     variant: 'textStyles.heading',
   }}>
-  <button
-    sx={{
-      variant: 'buttons.primary',
-    }}
-  />
+  Hello
 </h1>
+<button
+  sx={{
+    variant: 'buttons.primary',
+  }}>
+  Beep
+</button>
 ```
-
-<!--
-TODO: @styled-system/css variants are a slightly different implementation what the core
-library does.
-
-**Note**: Variants are implemented as a part of Styled System and are also covered in [its docs](https://styled-system.com/variants).
--->
 
 ## Styles
 
-The Theme UI `styles` object is primarily used as a mechanism to style MDX content
+The Theme UI `styles` object is primarily used as a way to style MDX content
 and helps avoid the need to use global CSS.
 The styles defined within this object can also be used with the [`Styled`](/styled) component.
 
@@ -286,8 +292,14 @@ The `theme.styles` object may include the following keys, which map to elements 
 - `div` (not rendered in MDX)
 - `root` (theme-ui-specific)
 
-Elements like `button` are not rendered by markdown, so they aren't included in the styles object,
-consider using a [variant](/theme-spec#variants).
+<Note>
+
+Not all HTML elements are available with the dot notation syntax.
+For example `button` is not rendered by markdown,
+and not included.
+See [variants](#variants) for an alternative way to style elements.
+
+</Note>
 
 Objects within `theme.styles` can reference other values in the `theme` object.
 For example, headings can be defined with values from the typographic scales.

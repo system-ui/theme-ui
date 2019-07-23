@@ -16,7 +16,7 @@ By adhering to a standard Theme Specification, Theme UI is designed to be intero
 ## Colors
 
 Add a `theme.colors` object to provide colors for a theme.
-In order to make themes and projects built with Theme UI as portable and interoperable as possible, the following base color abstraction should be used for defining a base set of colors:
+In order to make color palettes as portable and interoperable as possible, the following color keys should be used for defining a base set of colors:
 
 | Key          | Description                                     |
 | ------------ | ----------------------------------------------- |
@@ -49,7 +49,7 @@ colors: {
 }
 ```
 
-See the [color mode docs](/color-modes) for more information.
+Learn more in the [color mode docs](/color-modes).
 
 ## Typography
 
@@ -93,7 +93,7 @@ Core typographic values can be stored in the following theme keys:
 
 Styles for elements rendered in MDX can be added to the `theme.styles` object.
 This is the primary API for applying typographic styles in markdown content.
-Styles within this object are processed with `@styled-system/css` and have access to base theme values like colors, fonts, etc.
+Styles within this object have access to other values in the theme object, such as colors, fonts, and space.
 
 ```js
 // example theme styles
@@ -124,87 +124,11 @@ Styles within this object are processed with `@styled-system/css` and have acces
 }
 ```
 
-### Typography.js
-
-To use [Typography.js][] themes with Theme UI, install the `@theme-ui/typography` package and any Typography.js theme.
-
-```sh
-npm i @theme-ui/typography typography-theme-wordpress-2016
-```
-
-Use the `toTheme` utility to convert the theme for use in Theme UI.
-
-```js
-// example theme with Typography.js
-import { toTheme } from '@theme-ui/typography'
-import wordpress2016 from 'typography-theme-wordpress-2016'
-import merge from 'lodash.merge'
-
-const typography = toTheme(wordpress2016)
-
-export default merge(typography, {
-  // optional style overrides go here
-})
-```
-
-Content in MDX documents will be rendered with styles from the Typography.js theme.
-
-The `toTheme` function accepts the same [Typography.js configuration options](https://github.com/KyleAMathews/typography.js#configuration) as the core library,
-allowing you to create custom themes with this approach as well.
-
-**Note:** Theme UI does not currently use colors from Typography.js.
-
-[typography.js]: https://github.com/KyleAMathews/typography.js
-
-<!--
-### Layout
-
-The built in Theme UI layout components can also be styled with the `theme.styles` object.
-For example, to change the max-width of the `Container` component, styles can be set in the theme:
-
-```js
-// example theme with Container styles
-{
-  styles: {
-    Container: {
-      maxWidth: 768
-    },
-  }
-}
-```
-
--->
-
-### Syntax Highlighting
-
-To support syntax highlighting libraries like [Prism.js][],
-colors and other styles can be added to `theme.styles.pre` to target child elements with class selectors.
-Prism.js adds `<span>` elements with class names that can be used as child selectors.
-
-[prism.js]: https://github.com/PrismJS/prism
-
-```js
-{
-  colors: {
-    gray: '#666',
-  },
-  styles: {
-    pre: {
-      '.comment': {
-        // theme.colors and other values can be referenced
-        color: 'gray',
-      }
-    }
-  }
-}
-}
-```
-
 ## Breakpoints
 
 To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
 Each breakpoint should be a string with a CSS length unit included.
-These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/getting-started/#responsive-styles).
+These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/sx-prop/#responsive-values).
 
 ```js
 // example custom breakpoints

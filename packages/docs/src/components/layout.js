@@ -34,7 +34,8 @@ export default props => {
         <Main>
           <Container
             sx={{
-              py: 0,
+              pt: 0,
+              pb: 5,
               px: props.fullwidth ? 0 : 3,
               maxWidth: props.fullwidth ? 'none' : '',
             }}>
@@ -73,7 +74,7 @@ export default props => {
             </div>
           </Container>
         </Main>
-        <Footer />
+        {props.fullwidth && <Footer />}
       </Layout>
     </Styled.root>
   )

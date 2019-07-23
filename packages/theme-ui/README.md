@@ -124,7 +124,7 @@ export default props => (
 ```
 
 Under the hood, this uses the [`@styled-system/css`](https://styled-system.com/css) utility and Emotion's custom JSX pragma implementation.
-Read more about [how the custom pragma works](/how-it-works/#jsx-pragma).
+Read more about [how the custom pragma works](https://theme-ui.com/how-it-works/#jsx-pragma).
 
 ## Responsive styles
 

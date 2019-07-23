@@ -1,4 +1,5 @@
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
 export const title = 'MDX Components'
@@ -7,8 +8,6 @@ export const title = 'MDX Components'
 
 To provide custom components to MDX context, but still apply styles from your theme, pass an object of custom components to the `ThemeProvider` component.
 For a list of keys that can be used in the `components` object, see the [MDX docs for components](https://mdxjs.com/getting-started/#table-of-components).
-
-**Note:** If you do not need to reuse theme styles in your application, the [official `MDXProvider` component](https://mdxjs.com/advanced/components#mdxprovider) can be used instead.
 
 ```jsx
 /** @jsx jsx */
@@ -22,3 +21,9 @@ export default props => (
   </ThemeProvider>
 )
 ```
+
+<Note>
+
+If you do not need to reuse theme styles in your application, the official [`MDXProvider`](https://mdxjs.com/advanced/components#mdxprovider) component can be used instead.
+
+</Note>

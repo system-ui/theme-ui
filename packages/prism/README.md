@@ -2,12 +2,12 @@
 
 A syntax highlighting component based on
 [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
-that works seamlessly with [Theme UI](https://theme-ui.com).
+that works seamlessly with Theme UI.
 
 ## Installation
 
 ```
-yarn add @theme-ui/prism
+npm i @theme-ui/prism
 ```
 
 ## Usage

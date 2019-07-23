@@ -13,9 +13,8 @@ export default props => (
       styles: {
         p: {
           ':first-of-type': {
+            variant: 'textStyles.display',
             fontSize: [6, 7, 7],
-            fontWeight: 900,
-            letterSpacing: '0.05em',
           },
           fontWeight: 'bold',
           mt: 0,
@@ -23,6 +22,8 @@ export default props => (
         },
         h1: {
           fontSize: [3, 3, 4],
+          fontWeight: 'heading',
+          letterSpacing: 'initial',
           mt: 0,
           mb: 4,
         },
@@ -51,15 +52,7 @@ export default props => (
         bg: 'primary',
         backgroundImage: gradient,
       }}>
-      <Container>
-        <div
-          sx={{
-            maxWidth: 512,
-            mx: 'auto',
-          }}>
-          {props.children}
-        </div>
-      </Container>
+      <Container>{props.children}</Container>
     </div>
   </ThemeProvider>
 )

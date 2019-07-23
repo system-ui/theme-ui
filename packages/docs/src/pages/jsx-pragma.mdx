@@ -1,0 +1,61 @@
+import Layout from '../components/layout'
+
+export default Layout
+
+export const title = 'JSX Pragma'
+
+# JSX Pragma
+
+Theme UI uses a custom create element function and JSX pragma comments to allow you to style elements with values from your theme using the [`sx` prop][].
+
+## What is JSX
+
+JSX is an XML-like syntax extension to JavaScript.
+It's a syntax sugar usually used for React's `createElement` function.
+You don't need to write JSX to use React, but it's meant to make code more readable, especially for tree structures with attributes.
+
+Given the following JSX:
+
+```jsx
+// example JSX
+<div>
+  <Button onClick={handleClick}>Hello</Button>
+</div>
+```
+
+The above JSX syntax compiles to the following:
+
+```js
+React.createElement(
+  'div',
+  null,
+  React.createElement(
+    Button,
+    {
+      onClick: handleClick,
+    },
+    'Hello'
+  )
+)
+```
+
+Most apps use Babel to compile JSX syntax for use with React or other similar libraries.
+JSX can be compiled to _any_ function call. By default the Babel plugin will convert JSX into `React.createElement`, but libraries like Preact, MDX, Emotion, and Vuejs use custom create elements functions with JSX.
+
+To change the underlying create element function, you can either add an option to the Babel plugin or you can set a _pragma comment_ at the beginning of a module.
+Changing the function in the Babel plugin will transform all JSX in an application into the same function.
+Using a pragma comment limits the change to only the modules that it's added to.
+This lets you default to the `React.createElement` function in most places and use the custom function only where you need it,
+giving the author more control over where it's used.
+
+Theme UI uses a custom create element function to add the `sx` and `css` props in React.
+The preferred way of using this function is by adding the custom pragma comment to the top of your file and importing the `jsx` function from Theme UI.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+```
+
+See the [`sx` prop][] docs to learn more.
+
+[`sx` prop]: /sx-prop

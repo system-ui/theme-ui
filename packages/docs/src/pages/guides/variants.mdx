@@ -1,4 +1,5 @@
 import Layout from '../../components/layout'
+import Note from '../../components/note'
 
 export default Layout
 export const title = 'Variants'
@@ -37,7 +38,11 @@ With the `theme` object above, the `buttons` variants can be referenced in the `
 <button sx={{ variant: 'buttons.primary' }} />
 ```
 
-Variants can be any name you choose, and deeply nested objects can be accessed with dot notation.
+<Note>
+
+Variants can use any name you choose, and deeply nested objects can be accessed with dot notation.
+
+</Note>
 
 ## Color Modes
 
@@ -183,5 +188,5 @@ This component can now be customized by adding a `theme.layout.header` object to
 }
 ```
 
-[styled system css]: https://styled-system/css
+[styled system css]: https://styled-system.com/css
 [gatsby themes]: https://www.gatsbyjs.org/docs/themes/
