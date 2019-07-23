@@ -16,7 +16,7 @@ By adhering to a standard Theme Specification, Theme UI is designed to be intero
 ## Colors
 
 Add a `theme.colors` object to provide colors for a theme.
-In order to make themes and projects built with Theme UI as portable and interoperable as possible, the following base color abstraction should be used for defining a base set of colors:
+In order to make color palettes as portable and interoperable as possible, the following color keys should be used for defining a base set of colors:
 
 | Key          | Description                                     |
 | ------------ | ----------------------------------------------- |
@@ -49,7 +49,7 @@ colors: {
 }
 ```
 
-See the [color mode docs](/color-modes) for more information.
+Learn more in the [color mode docs](/color-modes).
 
 ## Typography
 
@@ -93,7 +93,7 @@ Core typographic values can be stored in the following theme keys:
 
 Styles for elements rendered in MDX can be added to the `theme.styles` object.
 This is the primary API for applying typographic styles in markdown content.
-Styles within this object are processed with `@styled-system/css` and have access to base theme values like colors, fonts, etc.
+Styles within this object have access to other values in the theme object, such as colors, fonts, and space.
 
 ```js
 // example theme styles
@@ -128,7 +128,7 @@ Styles within this object are processed with `@styled-system/css` and have acces
 
 To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
 Each breakpoint should be a string with a CSS length unit included.
-These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/getting-started/#responsive-styles).
+These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/sx-prop/#responsive-values).
 
 ```js
 // example custom breakpoints

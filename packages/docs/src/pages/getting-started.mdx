@@ -3,33 +3,19 @@ title: 'Getting Started'
 ---
 
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
 
 # Getting Started
 
+Install Theme UI and its peer dependencies.
+
 ```sh
 npm i theme-ui @emotion/core @mdx-js/react
 ```
 
-The `global` theme object should be provided in context for use anywhere in your application.
-To add the theme,
-wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
-
-```jsx
-// basic usage
-import React from 'react'
-import { ThemeProvider } from 'theme-ui'
-import theme from './theme'
-
-export default props => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-)
-```
-
-The `theme` object follows the System UI [Theme Specification](/theme-spec),
-which lets you define custom color palettes, typographic scales, fonts, and more.
-Read more in the [theming docs](/theming).
+Create a theme object to include custom color, typography, and layout values.
 
 ```js
 // example theme.js
@@ -47,14 +33,24 @@ export default {
 }
 ```
 
+Add the theme to your application with the `ThemeProvider`, passing in the `theme` object as a prop.
+
+```jsx
+// basic usage
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import theme from './theme'
+
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
+```
+
 ## `sx` prop
 
-The `sx` prop works similarly to Emotion's `css` prop, accepting style objects to add CSS directly to an element in JSX, but includes extra theme-aware functionality.
-Using the `sx` prop for styles means that certain properties can reference values defined in your `theme` object.
-This is intended to make keeping styles consistent throughout your app the easy thing to do.
+Use the `sx` prop throughout your application to add styles based on your theme to any component.
+Enable the `sx` prop by adding the `/** @jsx jsx */` comment to the top of your file and importing `jsx` from Theme UI.
 
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
-This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 
 ```jsx
 /** @jsx jsx */
@@ -72,14 +68,9 @@ export default props => (
 )
 ```
 
-Under the hood, this uses the [`@styled-system/css`](https://styled-system.com/css) utility with Emotion.
-Read more about [how the custom pragma works](/how-it-works/#jsx-pragma).
-
 ## Responsive styles
 
 The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
-This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
-The values used for media queries can be defined in a [`theme.breakpoints`](/theming/#breakpoints) array.
 
 ```jsx
 /** @jsx jsx */
@@ -96,5 +87,12 @@ export default props => (
   />
 )
 ```
+
+<Note>
+
+This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
+The values used for media queries can be defined in a [`theme.breakpoints`](/theming/#breakpoints) array.
+
+</Note>
 
 [styled system]: https://styled-system.com

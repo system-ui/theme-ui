@@ -1,4 +1,5 @@
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
 export const title = 'Styling MDX Content'
@@ -40,7 +41,11 @@ Styles within this object have access to other values in the theme object.
 
 Any MDX document rendered as a child of the `ThemeProvider` will pick up the styles defined in the theme.
 
-**Note:** these styles will **not** apply to HTML elements used outside of MDX. To reuse these styles outside of MDX, see the [Styled component](/styled) docs.
+<Note>
+
+These styles will **not** apply to HTML elements used outside of MDX. To reuse these styles outside of MDX, see the [Styled component](/styled) docs.
+
+</Note>
 
 ## Typography.js
 
@@ -66,11 +71,14 @@ export default merge(typography, {
 ```
 
 Content in MDX documents will be rendered with styles from the Typography.js theme.
-
 The `toTheme` function accepts the same [Typography.js configuration options](https://github.com/KyleAMathews/typography.js#configuration) as the core library,
 allowing you to create custom themes with this approach as well.
 
-**Note:** Theme UI does not currently use colors from Typography.js.
+<Note>
+
+Theme UI does not currently use colors from Typography.js.
+
+</Note>
 
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
