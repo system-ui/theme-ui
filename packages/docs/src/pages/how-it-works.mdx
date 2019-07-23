@@ -62,10 +62,11 @@ each component is wrapped with the `sx` prop to allow the component to pick up v
 
 ## JSX Pragma
 
-The Theme UI JSX pragma wraps the Emotion JSX pragma, converting the `sx` prop to a call to `@styled-system/css`. The two examples below yield the same results:
+The Theme UI JSX function wraps the Emotion JSX function, converting the `sx` prop to a call to `@styled-system/css`.
+The two examples below yield the same results:
 
 ```jsx
-// with Emotion's custom pragma
+// with Emotion's JSX function
 // this is typically handled with the Emotion Babel preset
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
@@ -84,7 +85,7 @@ export default props => (
 ```
 
 ```jsx
-// with Theme UI's custom pragma
+// with Theme UI's JSX function
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 

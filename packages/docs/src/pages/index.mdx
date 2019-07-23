@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
 import Banner from '../components/banner'
 import Tiles from '../components/tiles'
+import Testimonials from './testimonials'
 
 export default Layout
 
@@ -25,25 +26,64 @@ Emotion + Styled System + MDX + Typography.js
 
 </Banner>
 
-<Tiles>
+<Tiles columns={2}>
 
-- ## Themeable
-  Built for white-labels, themes, and other applications
-  where customizing colors, typography, and layout
-  are treated as first-class citizens
-- ## Interoperable
-  Based on the System UI Theme Specification, Theme UI is intended
-  to work in a variety of applications, libraries, and other UI components
-- ## Constraint-based
-  Colors, typography, and layout styles derived from customizable
-  design tokens and scales and rooted in constraint-based design principles
+1. ## Create your theme
+
+  ```js
+  export default {
+    colors: {
+      text: '#000',
+      background: '#fff',
+      primary: 'tomato',
+    },
+    fonts: {
+      body: 'system-ui, sans-serif',
+      heading: '"Avenir Next", sans-serif',
+    },
+  }
+  ```
+
+2. ## Style your UI
+
+  ```jsx
+  /** @jsx jsx */
+  import { jsx } from 'theme-ui'
+  export default props => (
+    <h1
+      sx={{
+        color: 'primary',
+        fontFamily: 'heading',
+      }}>
+      Hello
+    </h1>
+  )
+  ```
 
 </Tiles>
+
+<Tiles>
+
+- ## Ergonomic
+  Best-in-class developer ergonomics let you style
+  your application quickly and consistently
+  based on your theme
+- ## Themeable
+  Quickly and easily reference values from your theme
+  throughout your entire application, on any component
+- ## Constraint-based
+  Use color, typography, and layout scales
+  rooted in constraint-based design principles
+
+</Tiles>
+
+<Testimonials />
 
 <Tiles
   sx={{
     fontWeight: 'bold',
     a: {
+      display: 'block',
       color: 'inherit',
       textDecoration: 'none',
       ':hover': {
@@ -52,18 +92,17 @@ Emotion + Styled System + MDX + Typography.js
     }
   }}>
 
-- [Styled system without creating components](/getting-started/#sx-prop)
-- [Theme-aware `sx` prop for styling](/getting-started/#sx-prop)
-- [Style MDX content with a simple, expressive API](/theming/#styles)
-- [Use Typography.js themes](/theming/#typographyjs)
-- Works with virtually any UI component library
-- Works with existing Styled System components
-- [Quick mobile-first responsive styles](/getting-started/#responsive-styles)
-- [Built-in support for dark modes](/color-modes)
-- [Primitive page layout components](/layout)
-- [Plugin for use in Gatsby sites and themes](/gatsby-plugin)
-- [Define your own design tokens](/theming)
-- [Built with the System UI Theme Specification](/theme-spec)
+- [Style without creating components](/getting-started/#sx-prop)
+- [Theme-aware `sx` prop for CSS](/getting-started/#sx-prop)
+- [Simple, expressive MDX styling](/styling-mdx)
+- [Use Typography.js themes](/styling-mdx/#typographyjs)
+- Use virtually any UI component library
+- Works with Styled System
+- [Easy, mobile-first responsive styles](/getting-started/#responsive-styles)
+- [Built-in dark mode](/color-modes)
+- [Plugin for Gatsby sites and themes](/gatsby-plugin)
+- [Robust theming API](/theming)
+- [Interoperable with the Theme Specification](/theme-spec)
 
 </Tiles>
 

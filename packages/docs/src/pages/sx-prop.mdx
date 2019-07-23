@@ -1,16 +1,13 @@
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
 export const title = 'The `sx` Prop'
 
 # The `sx` Prop
 
-Theme UI's `sx` (system) prop is an alternative to Emotion's `css` prop,
-which allows you to seamlessly use values from your theme, use shortcuts for margin and padding, and add mobile-first responsive styles using arrays.
-Under the hood, it uses a [custom pragma](/jsx-pragma) that converts a Styled System-aware `sx` prop into a style object and passes it to the Emotion's `jsx` function.
-This is intended as a complete replacement for the Emotion custom pragma.
-
-To use the `sx` prop, add the custom pragma comment to the top of your module and import the `jsx` function.
+The `sx` prop lets you style elements inline, using values from your theme.
+To use the `sx` prop, add the custom `/** @jsx jsx */` pragma comment to the top of your module and import the `jsx` function.
 
 ```jsx
 /** @jsx jsx */
@@ -34,24 +31,14 @@ export default props => (
 To read more about how the values are converted and for a reference of supported CSS properties, see the
 [`@styled-system/css` docs](https://styled-system.com/css).
 
-## Margin and Padding
+<Note>
 
-Margin and padding are treated as first-class citizens in Styled System,
-using values defined in the `theme.space` scale, and include an optional shorthand syntax for using negative space in your application.
+Under the hood, Theme UI uses a [custom pragma comment](/jsx-pragma) that converts a Styled System-aware `sx` prop into a style object and passes it to the Emotion's `jsx` function.
+The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
+This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
+This is intended as a complete replacement for the Emotion custom JSX pragma.
 
-In addition to shorthands for applying margin and padding on the x- and y-axes, a terse naming convention can be used to quickly edit styles.
-
-```jsx
-// example of using margin and padding shorthand syntax
-<div
-  sx={{
-    px: 3, // padding-left & padding-right
-    // paddingX: 3 will also work
-    py: 4, // padding-top & padding-bottom
-    mb: 3, // margin-bottom
-  }}
-/>
-```
+</Note>
 
 ## Responsive Values
 
@@ -71,6 +58,26 @@ export default props => (
   />
 )
 ```
+
+## Margin and Padding
+
+Margin and padding are treated as first-class citizens in Styled System,
+using values defined in the `theme.space` scale, and include an optional shorthand syntax for using negative space in your application.
+
+In addition to shorthands for applying margin and padding on the x- and y-axes, a terse naming convention can be used to quickly edit styles.
+
+```jsx
+// example of using margin and padding shorthand syntax
+<div
+  sx={{
+    px: 3, // padding-left & padding-right
+    // paddingX: 3 will also work
+    py: 4, // padding-top & padding-bottom
+    mb: 3, // margin-bottom
+  }}
+/>
+```
+
 
 ## Functional Values
 
@@ -107,29 +114,6 @@ export default props => (
       color: 'tomato',
       fontSize: 24,
     }}
-  />
-)
-```
-
-## Without Using the Custom Pragma
-
-If you prefer, the `css` _function_ can be imported directly and passed to the `css` _prop_, providing a similar API to the above.
-
-**Note:** this requires Emotion's `css` prop.
-To set up an application to use Emotion's `css` prop, see the [Emotion docs](https://emotion.sh/docs/css-prop).
-To use the `css` prop with a Gatsby site, add `gatsby-plugin-emotion` to your `gatsby-config.js`.
-
-```jsx
-import React from 'react'
-import { css } from 'theme-ui'
-
-export default props => (
-  <div
-    {...props}
-    css={css({
-      color: 'primary',
-      mb: 4,
-    })}
   />
 )
 ```

@@ -1,21 +1,25 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, Container } from 'theme-ui'
 
-export default props => (
+export default ({ columns = 3, ...props }) => (
   <ThemeProvider
     theme={{
       styles: {
-        ul: {
+        ol: {
           listStyle: 'none',
-          display: ['block', 'grid'],
-          gridTemplateColumns: ['auto', 'repeat(3, 1fr)'],
+          display: 'grid',
+          gridTemplateColumns: ['auto', `repeat(${columns}, 1fr)`],
           gridGap: 24,
           p: 0,
           m: 0,
         },
-        li: {
-          py: 3,
-          px: [0, 2],
+        ul: {
+          listStyle: 'none',
+          display: 'grid',
+          gridTemplateColumns: ['auto', 'repeat(3, 1fr)'],
+          gridGap: 24,
+          p: 0,
+          m: 0,
         },
       },
     }}>

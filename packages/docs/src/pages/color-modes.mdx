@@ -1,10 +1,8 @@
----
-title: 'Color Modes'
----
-
 import Layout from '../components/layout'
+import Note from '../components/note'
 
 export default Layout
+export const title = 'Color Modes'
 
 # Color Modes
 
@@ -13,9 +11,11 @@ Color modes can be used to create a user-configurable _dark mode_ or any number 
 ## Defining colors
 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
-Add an `initialColorMode` value to the theme to initialize the default state. You can also set the `useCustomProperties` option to `true` to help prevent flash of colors, please ensure you can [support CSS properties](https://caniuse.com/#feat=css-variables) before setting this option.
+Add an `initialColorMode` value to the theme to initialize the default state.
 
-**Note:** The `initialColorMode` value is only used as the _name_ of the top-level colors and should not be used to initialize a color mode defined in the `modes` object.
+<!--
+You can also set the `useCustomProperties` option to `true` to help prevent flash of colors, please ensure you can [support CSS properties](https://caniuse.com/#feat=css-variables) before setting this option.
+-->
 
 ```js
 // example theme colors
@@ -23,7 +23,8 @@ Add an `initialColorMode` value to the theme to initialize the default state. Yo
   // this enables the color modes feature
   // and is used as the name for the top-level colors object
   initialColorMode: 'light',
-  // use CSS custom properties to help avoid flash of colors on initial page load
+  // optionally enable custom properties
+  // to help avoid a flash of colors on page load
   useCustomProperties: true,
   colors: {
     text: '#000',
@@ -39,6 +40,13 @@ Add an `initialColorMode` value to the theme to initialize the default state. Yo
   }
 }
 ```
+
+<Note>
+
+The `initialColorMode` value is only used as the _name_ of the top-level colors and should not be used to initialize a color mode defined in the `modes` object.
+
+</Note>
+
 
 ## Setting the color mode
 
@@ -86,9 +94,9 @@ export default props => (
 
 ## Gatsby plugin
 
-For use with Gatsby, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
-The plugin will also attempt to prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
-If you support CSS custom properties, we recommend setting `useCustomProperties` in your theme as seen above in [defining colors](#defining-colors).
+For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
+The plugin will help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
+If you support CSS custom properties, we recommend setting `useCustomProperties` in your theme.
 
 ```sh
 npm i gatsby-plugin-theme-ui
@@ -105,5 +113,9 @@ module.exports = {
 
 See the [Gatsby plugin docs](/gatsby-plugin) for more info.
 
-**Note:** This feature will detect the `(prefers-color-scheme: dark)` media query to initialize the state as `dark`.
+<Note>
+
+This feature will detect the `(prefers-color-scheme: dark)` media query to initialize the state as `dark`.
 Currently it does _not_ check for `(prefers-color-scheme: light)`.
+
+</Note>

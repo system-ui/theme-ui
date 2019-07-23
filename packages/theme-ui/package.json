@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.1",
-    "@styled-system/css": "^5.0.5",
+    "@styled-system/css": "^5.0.16",
     "deepmerge": "^3.2.0",
     "react": "^16.8.0"
   },

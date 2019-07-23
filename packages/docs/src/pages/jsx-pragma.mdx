@@ -39,7 +39,7 @@ React.createElement(
 )
 ```
 
-Most apps use Babel to use JSX syntax with React or other similar libraries.
+Most apps use Babel to compile JSX syntax for use with React or other similar libraries.
 JSX can be compiled to _any_ function call. By default the Babel plugin will convert JSX into `React.createElement`, but libraries like Preact, MDX, Emotion, and Vuejs use custom create elements functions with JSX.
 
 To change the underlying create element function, you can either add an option to the Babel plugin or you can set a _pragma comment_ at the beginning of a module.
