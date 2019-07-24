@@ -117,3 +117,21 @@ export default props => (
   />
 )
 ```
+
+## Using the `sx` Prop in MDX
+
+In order to render your Markdown components, MDX uses its own
+custom pragma. Eventually we'd like to make it more seamless to
+use `sx` in MDX files, but for now you'll have to move all components
+that accept the prop to their own file.
+
+```js
+// src/my-sx-components.js
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export const Div = props => <Div {...props} />
+```
+
+This will allow you to import and use the `Div` component
+in MDX files with the `sx` prop.
