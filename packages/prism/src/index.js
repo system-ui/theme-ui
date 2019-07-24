@@ -4,12 +4,15 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { jsx, Styled } from 'theme-ui'
 
-export default ({ children, className: outerClassName, title }) => {
+import Prism from 'prismjs/components/prism-core'
+
+export default ({ children, className: outerClassName, title, prism }) => {
   const [language] = outerClassName.replace(/language-/, '').split(' ')
 
   return (
     <Highlight
       {...defaultProps}
+      Prism={prism || Prism}
       code={children.trim()}
       language={language}
       theme={undefined}>
