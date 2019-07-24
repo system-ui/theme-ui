@@ -12,7 +12,7 @@ export default ({ children, className: outerClassName, title, prism }) => {
   return (
     <Highlight
       {...defaultProps}
-      Prism={Prism || prism}
+      Prism={prism || Prism}
       code={children.trim()}
       language={language}
       theme={undefined}>
