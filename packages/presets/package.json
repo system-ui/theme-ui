@@ -14,6 +14,7 @@
     "@theme-ui/preset-bootstrap": "^0.2.15",
     "@theme-ui/preset-bulma": "^0.2.15",
     "@theme-ui/preset-dark": "^0.2.15",
+    "@theme-ui/preset-deep": "^0.2.15",
     "@theme-ui/preset-funk": "^0.2.15",
     "@theme-ui/preset-future": "^0.2.15",
     "@theme-ui/preset-roboto": "^0.2.15",

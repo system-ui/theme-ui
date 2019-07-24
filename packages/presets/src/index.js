@@ -1,5 +1,6 @@
 export { default as base } from '@theme-ui/preset-base'
 export { default as dark } from '@theme-ui/preset-dark'
+export { default as deep } from '@theme-ui/preset-deep'
 export { default as funk } from '@theme-ui/preset-funk'
 export { default as future } from '@theme-ui/preset-future'
 export { default as roboto } from '@theme-ui/preset-roboto'
