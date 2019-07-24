@@ -10,40 +10,15 @@ Object {
 <body>
     <div>
       <pre
-        class="language-js prism-code language-js emotion-6"
+        class="language-js prism-code language-js emotion-1"
       >
         <div
           class="token-line"
         >
           <span
-            class="token console class-name emotion-0"
+            class="token plain emotion-0"
           >
-            console
-          </span>
-          <span
-            class="token punctuation emotion-0"
-          >
-            .
-          </span>
-          <span
-            class="token method function property-access emotion-0"
-          >
-            log
-          </span>
-          <span
-            class="token punctuation emotion-0"
-          >
-            (
-          </span>
-          <span
-            class="token string emotion-0"
-          >
-            'hello, world!'
-          </span>
-          <span
-            class="token punctuation emotion-0"
-          >
-            )
+            console.log('hello, world!')
           </span>
         </div>
       </pre>
@@ -55,40 +30,15 @@ Object {
 
 <div>
     <pre
-      class="language-js prism-code language-js emotion-6"
+      class="language-js prism-code language-js emotion-1"
     >
       <div
         class="token-line"
       >
         <span
-          class="token console class-name emotion-0"
+          class="token plain emotion-0"
         >
-          console
-        </span>
-        <span
-          class="token punctuation emotion-0"
-        >
-          .
-        </span>
-        <span
-          class="token method function property-access emotion-0"
-        >
-          log
-        </span>
-        <span
-          class="token punctuation emotion-0"
-        >
-          (
-        </span>
-        <span
-          class="token string emotion-0"
-        >
-          'hello, world!'
-        </span>
-        <span
-          class="token punctuation emotion-0"
-        >
-          )
+          console.log('hello, world!')
         </span>
       </div>
     </pre>
