@@ -128,11 +128,10 @@ that accept the prop to their own file.
 ```js
 // src/my-sx-components.js
 /** @jsx jsx */
-import { jsx, Box as BaseBox, Flex as BaseFlex } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
-export const Box = props => <BaseBox {...props} />
-export const Flex = props => <BaseFlex {...props} />
+export const Div = props => <Div {...props} />
 ```
 
-This will allow you to import and use the Box and Flex components
+This will allow you to import and use the Div component
 in MDX files with the `sx` prop.
