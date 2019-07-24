@@ -10,7 +10,8 @@
     "watch": "microbundle watch --no-compress -o dist"
   },
   "dependencies": {
-    "prism-react-renderer": "^0.1.7"
+    "prism-react-renderer": "^0.1.7",
+    "prismjs": "^1.17.1"
   },
   "peerDependencies": {
     "theme-ui": "^0.2.0"
