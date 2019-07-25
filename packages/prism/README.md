@@ -38,5 +38,17 @@ export default ({ children }) => (
 Then, all code blocks in MDX documents wrapped by Layout will be
 syntax highlighted.
 
+Please note that `@theme-ui/prism` uses [`prism-react-renderer`](https://github.com/FormidableLabs/prism-react-renderer), [which does not include all languages supported by Prism](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js) by default. So, if you happen to use one of the missing languages, your code block simply won't show up as highlighted.
+
+However, we have created a workaround. Say that you want to add support for the `R` language. Then you can do that as follows:
+	
+```js
+import CodeBlock from '@theme-ui/prism'
+import Prism from 'prismjs/components/prism-core'
+import 'prismjs/components/prism-r'
+
+<CodeBlock Prism={Prism} ... />
+```
+
 For further reading on theming your syntax highlighting
 [see the Theme UI docs](https://theme-ui.com/theming/#syntax-highlighting).
