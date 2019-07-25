@@ -10,6 +10,7 @@
     "watch": "microbundle watch --no-compress -o dist"
   },
   "dependencies": {
+    "gatsby-design-tokens": "^1.0.0",
     "prism-react-renderer": "^0.1.7",
     "prismjs": "^1.17.1"
   },
