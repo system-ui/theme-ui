@@ -40,7 +40,7 @@ syntax highlighted.
 
 Please note that `@theme-ui/prism` uses [`prism-react-renderer`](https://github.com/FormidableLabs/prism-react-renderer), [which does not include all languages supported by Prism](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js) by default. So, if you happen to use one of the missing languages, your code block simply won't show up as highlighted.
 
-However, we have created a workaround. Say that you want to add support for the `R` language. Then you can do that as follows:
+For example, to add support for the `R` language, import the language and pass a custom `Prism` instance to the `CodeBlock` component:
 	
 ```js
 import CodeBlock from '@theme-ui/prism'
