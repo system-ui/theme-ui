@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix array merging #230
+
 ## v0.2.20 2019-07-26
 
 - Fix for color mode in context #226
