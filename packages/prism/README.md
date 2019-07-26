@@ -124,4 +124,21 @@ export default {
 }
 ```
 
+## Additional Languages
+
+The `prism-react-renderer` library only supports a [subset of the languages](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js) that the Prism supports.
+To enable support for other packages, pass a custom `Prism` instance to the Theme UI component.
+
+```js
+// src/gatsby-plugin-theme-ui/components.js
+import React from 'react'
+import ThemeUIPrism from '@theme-ui/prism'
+import PrismCore from 'prismjs/components/prism-core'
+
+export default {
+  pre: props => props.children,
+  code: props => <ThemeUIPrism {...props} Prism={PrismCore} />,
+}
+```
+
 See the [Theme UI docs](https://theme-ui.com/theming/#syntax-highlighting) for more.
