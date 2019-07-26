@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "next-theme-ui-example",
-  "version": "0.2.20",
+  "version": "0.2.21",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -16,6 +16,6 @@
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.2.20"
+    "theme-ui": "^0.2.21"
   }
 }
