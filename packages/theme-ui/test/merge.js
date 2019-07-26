@@ -71,3 +71,31 @@ test('primitive types override arrays', () => {
     fontSize: 4,
   })
 })
+
+test('arrays override arrays', () => {
+  const result = merge(
+    {
+      fontSize: [3, 4, 5],
+    },
+    {
+      fontSize: [6, 7],
+    }
+  )
+  expect(result).toEqual({
+    fontSize: [6, 7],
+  })
+})
+
+test('arrays override primitive types', () => {
+  const result = merge(
+    {
+      fontSize: 5,
+    },
+    {
+      fontSize: [6, 7],
+    }
+  )
+  expect(result).toEqual({
+    fontSize: [6, 7],
+  })
+})
