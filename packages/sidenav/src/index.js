@@ -76,7 +76,7 @@ export const Sidenav = React.forwardRef(
               WebkitOverflowScrolling: 'touch',
               transition: 'transform .2s ease-out',
               transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
-              bg: ['background', 'transparent'],
+              backgroundColor: ['background', 'transparent'],
             }}
           />
         </MDXProvider>
