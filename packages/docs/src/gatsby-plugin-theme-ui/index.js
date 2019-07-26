@@ -1,3 +1,5 @@
+import prism from '@theme-ui/prism/presets/theme-ui'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
@@ -15,7 +17,7 @@ export default {
     muted: '#f6f6f6',
     highlight: '#efeffe', // '#ffffcc',
     gray: '#777',
-    purple: '#609',
+    accent: '#609',
     modes: {
       dark: {
         text: '#fff',
@@ -25,7 +27,7 @@ export default {
         muted: '#191919',
         highlight: '#29112c',
         gray: '#999',
-        purple: '#c0f',
+        accent: '#c0f',
       },
       deep: {
         text: 'hsl(210, 50%, 96%)',
@@ -33,7 +35,7 @@ export default {
         primary: 'hsl(260, 100%, 80%)',
         secondary: 'hsl(290, 100%, 80%)',
         highlight: 'hsl(260, 20%, 40%)',
-        purple: 'hsl(290, 100%, 80%)',
+        accent: 'hsl(290, 100%, 80%)',
         muted: 'hsla(230, 20%, 0%, 20%)',
         gray: 'hsl(210, 50%, 60%)',
       },
@@ -43,7 +45,7 @@ export default {
         primary: 'hsl(10, 80%, 50%)',
         secondary: 'hsl(10, 60%, 50%)',
         highlight: 'hsl(10, 40%, 90%)',
-        purple: 'hsl(250, 60%, 30%)',
+        accent: 'hsl(250, 60%, 30%)',
         muted: 'hsl(10, 20%, 94%)',
         gray: 'hsl(10, 20%, 50%)',
       },
@@ -114,7 +116,6 @@ export default {
       },
     },
     pre: {
-      variant: 'prism',
       fontFamily: 'monospace',
       fontSize: 1,
       p: 3,
@@ -124,10 +125,10 @@ export default {
       code: {
         color: 'inherit',
       },
+      variant: 'prism',
     },
     code: {
       fontFamily: 'monospace',
-      color: 'secondary',
       fontSize: 1,
     },
     inlineCode: {
@@ -163,7 +164,8 @@ export default {
       borderColor: 'muted',
     },
   },
-  prism: {
+  prism,
+  ___prism: {
     [[
       '.comment',
       '.prolog',

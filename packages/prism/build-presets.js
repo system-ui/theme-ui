@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const postcss = require('postcss')
 const postcssJS = require('postcss-js')
+const hyphenate = require('lodash.kebabcase')
 
 const dir = {
   prismjs: path.join(path.dirname(require.resolve('prismjs')), 'themes'),
@@ -70,7 +71,7 @@ const reactPrism = [
   const raw = require('prism-react-renderer/themes/' + name)
   const styles = prismReactToStyles(raw)
   return {
-    name,
+    name: hyphenate(name),
     raw,
     styles,
   }
