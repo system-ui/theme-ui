@@ -1,0 +1,80 @@
+{
+  ".token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+    "color": "hsl(0, 0%, 47%)"
+  },
+  ".token.punctuation": {
+    "opacity": ".7"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".token.tag,\n.token.boolean,\n.token.number,\n.token.deleted": {
+    "color": "hsl(14, 58%, 55%)"
+  },
+  ".token.keyword,\n.token.property,\n.token.selector,\n.token.constant,\n.token.symbol,\n.token.builtin": {
+    "color": "hsl(53, 89%, 79%)"
+  },
+  ".token.attr-name,\n.token.attr-value,\n.token.string,\n.token.char,\n.token.operator,\n.token.entity,\n.token.url,\n.language-css .token.string,\n.style .token.string,\n.token.variable,\n.token.inserted": {
+    "color": "hsl(76, 21%, 52%)"
+  },
+  ".token.atrule": {
+    "color": "hsl(218, 22%, 55%)"
+  },
+  ".token.regex,\n.token.important": {
+    "color": "hsl(42, 75%, 65%)"
+  },
+  ".token.important,\n.token.bold": {
+    "fontWeight": "bold"
+  },
+  ".token.italic": {
+    "fontStyle": "italic"
+  },
+  ".token.entity": {
+    "cursor": "help"
+  },
+  ".language-markup .token.tag,\n.language-markup .token.attr-name,\n.language-markup .token.punctuation": {
+    "color": "hsl(33, 33%, 52%)"
+  },
+  ".token": {
+    "position": "relative",
+    "zIndex": "1"
+  },
+  ".line-highlight": {
+    "background": [
+      "hsla(0, 0%, 33%, 0.25)",
+      "linear-gradient(to right, hsla(0, 0%, 33%, .1) 70%, hsla(0, 0%, 33%, 0))"
+    ],
+    "borderBottom": "1px dashed hsl(0, 0%, 33%)",
+    "borderTop": "1px dashed hsl(0, 0%, 33%)",
+    "left": "0",
+    "lineHeight": "inherit",
+    "marginTop": "0.75em",
+    "padding": "inherit 0",
+    "pointerEvents": "none",
+    "position": "absolute",
+    "right": "0",
+    "whiteSpace": "pre",
+    "zIndex": "0"
+  },
+  ".line-highlight:before,\n.line-highlight[data-end]:after": {
+    "backgroundColor": "hsl(215, 15%, 59%)",
+    "borderRadius": "999px",
+    "boxShadow": "0 1px white",
+    "color": "hsl(24, 20%, 95%)",
+    "content": "attr(data-start)",
+    "font": "bold 65%/1.5 sans-serif",
+    "left": ".6em",
+    "minWidth": "1em",
+    "padding": "0 .5em",
+    "position": "absolute",
+    "textAlign": "center",
+    "textShadow": "none",
+    "top": ".4em",
+    "verticalAlign": ".3em"
+  },
+  ".line-highlight[data-end]:after": {
+    "bottom": ".4em",
+    "content": "attr(data-end)",
+    "top": "auto"
+  }
+}

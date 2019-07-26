@@ -1,0 +1,37 @@
+{
+  ".token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+    "color": "#93a1a1"
+  },
+  ".token.punctuation": {
+    "color": "#586e75"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".token.property,\n.token.tag,\n.token.boolean,\n.token.number,\n.token.constant,\n.token.symbol,\n.token.deleted": {
+    "color": "#268bd2"
+  },
+  ".token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.builtin,\n.token.url,\n.token.inserted": {
+    "color": "#2aa198"
+  },
+  ".token.entity": {
+    "color": "#657b83",
+    "background": "#eee8d5",
+    "cursor": "help"
+  },
+  ".token.atrule,\n.token.attr-value,\n.token.keyword": {
+    "color": "#859900"
+  },
+  ".token.function,\n.token.class-name": {
+    "color": "#b58900"
+  },
+  ".token.regex,\n.token.important,\n.token.variable": {
+    "color": "#cb4b16"
+  },
+  ".token.important,\n.token.bold": {
+    "fontWeight": "bold"
+  },
+  ".token.italic": {
+    "fontStyle": "italic"
+  }
+}

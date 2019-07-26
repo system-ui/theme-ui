@@ -1,0 +1,38 @@
+{
+  ".token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+    "color": "hsl(30, 20%, 50%)"
+  },
+  ".token.punctuation": {
+    "opacity": ".7"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".token.property,\n.token.tag,\n.token.boolean,\n.token.number,\n.token.constant,\n.token.symbol": {
+    "color": "hsl(350, 40%, 70%)"
+  },
+  ".token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.builtin,\n.token.inserted": {
+    "color": "hsl(75, 70%, 60%)"
+  },
+  ".token.operator,\n.token.entity,\n.token.url,\n.language-css .token.string,\n.style .token.string,\n.token.variable": {
+    "color": "hsl(40, 90%, 60%)"
+  },
+  ".token.atrule,\n.token.attr-value,\n.token.keyword": {
+    "color": "hsl(350, 40%, 70%)"
+  },
+  ".token.regex,\n.token.important": {
+    "color": "#e90"
+  },
+  ".token.important,\n.token.bold": {
+    "fontWeight": "bold"
+  },
+  ".token.italic": {
+    "fontStyle": "italic"
+  },
+  ".token.entity": {
+    "cursor": "help"
+  },
+  ".token.deleted": {
+    "color": "red"
+  }
+}

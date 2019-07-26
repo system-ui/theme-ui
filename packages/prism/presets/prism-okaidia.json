@@ -1,0 +1,41 @@
+{
+  ".token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+    "color": "slategray"
+  },
+  ".token.punctuation": {
+    "color": "#f8f8f2"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".token.property,\n.token.tag,\n.token.constant,\n.token.symbol,\n.token.deleted": {
+    "color": "#f92672"
+  },
+  ".token.boolean,\n.token.number": {
+    "color": "#ae81ff"
+  },
+  ".token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.builtin,\n.token.inserted": {
+    "color": "#a6e22e"
+  },
+  ".token.operator,\n.token.entity,\n.token.url,\n.language-css .token.string,\n.style .token.string,\n.token.variable": {
+    "color": "#f8f8f2"
+  },
+  ".token.atrule,\n.token.attr-value,\n.token.function,\n.token.class-name": {
+    "color": "#e6db74"
+  },
+  ".token.keyword": {
+    "color": "#66d9ef"
+  },
+  ".token.regex,\n.token.important": {
+    "color": "#fd971f"
+  },
+  ".token.important,\n.token.bold": {
+    "fontWeight": "bold"
+  },
+  ".token.italic": {
+    "fontStyle": "italic"
+  },
+  ".token.entity": {
+    "cursor": "help"
+  }
+}

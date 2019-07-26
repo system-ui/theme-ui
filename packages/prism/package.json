@@ -6,8 +6,9 @@
   "author": "John Otander",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress -o dist",
-    "watch": "microbundle watch --no-compress -o dist"
+    "prepare": "microbundle --no-compress -o dist && yarn build-presets",
+    "watch": "microbundle watch --no-compress -o dist",
+    "build-presets": "node build-presets.js"
   },
   "dependencies": {
     "prism-react-renderer": "^0.1.7",
@@ -19,5 +20,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c",
+  "devDependencies": {
+    "postcss": "^7.0.17",
+    "postcss-js": "^2.0.2"
+  }
 }

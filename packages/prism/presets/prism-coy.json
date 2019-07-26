@@ -1,0 +1,46 @@
+{
+  ".token.comment,\n.token.block-comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+    "color": "#7D8B99"
+  },
+  ".token.punctuation": {
+    "color": "#5F6364"
+  },
+  ".token.property,\n.token.tag,\n.token.boolean,\n.token.number,\n.token.function-name,\n.token.constant,\n.token.symbol,\n.token.deleted": {
+    "color": "#c92c2c"
+  },
+  ".token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.function,\n.token.builtin,\n.token.inserted": {
+    "color": "#2f9c0a"
+  },
+  ".token.operator,\n.token.entity,\n.token.url,\n.token.variable": {
+    "color": "#a67f59",
+    "background": "rgba(255, 255, 255, 0.5)"
+  },
+  ".token.atrule,\n.token.attr-value,\n.token.keyword,\n.token.class-name": {
+    "color": "#1990b8"
+  },
+  ".token.regex,\n.token.important": {
+    "color": "#e90"
+  },
+  ".language-css .token.string,\n.style .token.string": {
+    "color": "#a67f59",
+    "background": "rgba(255, 255, 255, 0.5)"
+  },
+  ".token.important": {
+    "fontWeight": "normal"
+  },
+  ".token.bold": {
+    "fontWeight": "bold"
+  },
+  ".token.italic": {
+    "fontStyle": "italic"
+  },
+  ".token.entity": {
+    "cursor": "help"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".token.tab:not(:empty):before,\n.token.cr:before,\n.token.lf:before": {
+    "color": "#e0d7d1"
+  }
+}
