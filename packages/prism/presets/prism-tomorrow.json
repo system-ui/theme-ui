@@ -1,41 +1,41 @@
 {
-  ".token.comment,\n.token.block-comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+  ".comment,.block-comment,.prolog,.doctype,.cdata": {
     "color": "#999"
   },
-  ".token.punctuation": {
+  ".punctuation": {
     "color": "#ccc"
   },
-  ".token.tag,\n.token.attr-name,\n.token.namespace,\n.token.deleted": {
+  ".tag,.attr-name,.namespace,.deleted": {
     "color": "#e2777a"
   },
-  ".token.function-name": {
+  ".function-name": {
     "color": "#6196cc"
   },
-  ".token.boolean,\n.token.number,\n.token.function": {
+  ".boolean,.number,.function": {
     "color": "#f08d49"
   },
-  ".token.property,\n.token.class-name,\n.token.constant,\n.token.symbol": {
+  ".property,.class-name,.constant,.symbol": {
     "color": "#f8c555"
   },
-  ".token.selector,\n.token.important,\n.token.atrule,\n.token.keyword,\n.token.builtin": {
+  ".selector,.important,.atrule,.keyword,.builtin": {
     "color": "#cc99cd"
   },
-  ".token.string,\n.token.char,\n.token.attr-value,\n.token.regex,\n.token.variable": {
+  ".string,.char,.attr-value,.regex,.variable": {
     "color": "#7ec699"
   },
-  ".token.operator,\n.token.entity,\n.token.url": {
+  ".operator,.entity,.url": {
     "color": "#67cdcc"
   },
-  ".token.important,\n.token.bold": {
+  ".important,.bold": {
     "fontWeight": "bold"
   },
-  ".token.italic": {
+  ".italic": {
     "fontStyle": "italic"
   },
-  ".token.entity": {
+  ".entity": {
     "cursor": "help"
   },
-  ".token.inserted": {
+  ".inserted": {
     "color": "green"
   }
 }

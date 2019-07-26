@@ -1,41 +1,41 @@
 {
-  ".token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+  ".comment,.prolog,.doctype,.cdata": {
     "color": "slategray"
   },
-  ".token.punctuation": {
+  ".punctuation": {
     "color": "#f8f8f2"
   },
   ".namespace": {
     "opacity": ".7"
   },
-  ".token.property,\n.token.tag,\n.token.constant,\n.token.symbol,\n.token.deleted": {
+  ".property,.tag,.constant,.symbol,.deleted": {
     "color": "#f92672"
   },
-  ".token.boolean,\n.token.number": {
+  ".boolean,.number": {
     "color": "#ae81ff"
   },
-  ".token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.builtin,\n.token.inserted": {
+  ".selector,.attr-name,.string,.char,.builtin,.inserted": {
     "color": "#a6e22e"
   },
-  ".token.operator,\n.token.entity,\n.token.url,\n.language-css .token.string,\n.style .token.string,\n.token.variable": {
+  ".operator,.entity,.url,.language-css .string,.style .string,.variable": {
     "color": "#f8f8f2"
   },
-  ".token.atrule,\n.token.attr-value,\n.token.function,\n.token.class-name": {
+  ".atrule,.attr-value,.function,.class-name": {
     "color": "#e6db74"
   },
-  ".token.keyword": {
+  ".keyword": {
     "color": "#66d9ef"
   },
-  ".token.regex,\n.token.important": {
+  ".regex,.important": {
     "color": "#fd971f"
   },
-  ".token.important,\n.token.bold": {
+  ".important,.bold": {
     "fontWeight": "bold"
   },
-  ".token.italic": {
+  ".italic": {
     "fontStyle": "italic"
   },
-  ".token.entity": {
+  ".entity": {
     "cursor": "help"
   }
 }

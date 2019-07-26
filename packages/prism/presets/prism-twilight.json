@@ -1,41 +1,41 @@
 {
-  ".token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata": {
+  ".comment,.prolog,.doctype,.cdata": {
     "color": "hsl(0, 0%, 47%)"
   },
-  ".token.punctuation": {
+  ".punctuation": {
     "opacity": ".7"
   },
   ".namespace": {
     "opacity": ".7"
   },
-  ".token.tag,\n.token.boolean,\n.token.number,\n.token.deleted": {
+  ".tag,.boolean,.number,.deleted": {
     "color": "hsl(14, 58%, 55%)"
   },
-  ".token.keyword,\n.token.property,\n.token.selector,\n.token.constant,\n.token.symbol,\n.token.builtin": {
+  ".keyword,.property,.selector,.constant,.symbol,.builtin": {
     "color": "hsl(53, 89%, 79%)"
   },
-  ".token.attr-name,\n.token.attr-value,\n.token.string,\n.token.char,\n.token.operator,\n.token.entity,\n.token.url,\n.language-css .token.string,\n.style .token.string,\n.token.variable,\n.token.inserted": {
+  ".attr-name,.attr-value,.string,.char,.operator,.entity,.url,.language-css .string,.style .string,.variable,.inserted": {
     "color": "hsl(76, 21%, 52%)"
   },
-  ".token.atrule": {
+  ".atrule": {
     "color": "hsl(218, 22%, 55%)"
   },
-  ".token.regex,\n.token.important": {
+  ".regex,.important": {
     "color": "hsl(42, 75%, 65%)"
   },
-  ".token.important,\n.token.bold": {
+  ".important,.bold": {
     "fontWeight": "bold"
   },
-  ".token.italic": {
+  ".italic": {
     "fontStyle": "italic"
   },
-  ".token.entity": {
+  ".entity": {
     "cursor": "help"
   },
-  ".language-markup .token.tag,\n.language-markup .token.attr-name,\n.language-markup .token.punctuation": {
+  ".language-markup .tag,.language-markup .attr-name,.language-markup .punctuation": {
     "color": "hsl(33, 33%, 52%)"
   },
-  ".token": {
+  "": {
     "position": "relative",
     "zIndex": "1"
   },
@@ -56,7 +56,7 @@
     "whiteSpace": "pre",
     "zIndex": "0"
   },
-  ".line-highlight:before,\n.line-highlight[data-end]:after": {
+  ".line-highlight:before,.line-highlight[data-end]:after": {
     "backgroundColor": "hsl(215, 15%, 59%)",
     "borderRadius": "999px",
     "boxShadow": "0 1px white",
