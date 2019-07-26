@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Add presets to `@theme-ui/prism` #231
 - Fix array merging #230
 
 ## v0.2.20 2019-07-26
