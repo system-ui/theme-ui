@@ -52,7 +52,7 @@ const applyColorMode = (theme, mode) => {
 }
 
 const BaseProvider = ({ context, components, children }) => {
-  const theme = applyColorMode(context.theme, context.colorMode)
+  const theme = context.theme
   return jsx(
     EmotionContext.Provider,
     { value: theme.useCustomProperties ? applyCSSProperties(theme) : theme },
@@ -64,18 +64,19 @@ const BaseProvider = ({ context, components, children }) => {
   )
 }
 
-const RootProvider = ({ theme = {}, components, children }) => {
+const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorState(theme.initialColorMode)
-  const [themeState, setThemeState] = useReducer(mergeState, theme)
+  const [colorMode, setColorMode] = useColorState(propsTheme.initialColorMode)
+  const [themeState, setThemeState] = useReducer(mergeState, propsTheme)
+  const theme = applyColorMode(themeState, colorMode)
 
   const context = {
     __THEME_UI__: true,
     colorMode,
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
-    theme: themeState,
+    theme,
     setTheme: setThemeState,
   }
 

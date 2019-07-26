@@ -289,3 +289,33 @@ test('useColorMode throws when there is no theme context', () => {
     render(<Consumer />)
   }).toThrow()
 })
+
+test('useThemeUI returns current color mode colors', () => {
+  window.localStorage.setItem(STORAGE_KEY, 'tomato')
+  let colors
+  const GetColors = () => {
+    const { theme } = useThemeUI()
+    colors = theme.colors
+    return false
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'light',
+        colors: {
+          text: 'tomato',
+          background: 'black',
+          modes: {
+            tomato: {
+              text: 'black',
+              background: 'tomato',
+            },
+          },
+        },
+      }}>
+      <GetColors />
+    </ThemeProvider>
+  )
+  expect(colors.text).toBe('black')
+  expect(colors.background).toBe('tomato')
+})
