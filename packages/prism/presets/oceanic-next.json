@@ -1,0 +1,55 @@
+{
+  "backgroundColor": "#282c34",
+  "color": "#ffffff",
+  ".attr-name": {
+    "color": "#c5a5c5"
+  },
+  ".attr-value": {
+    "color": "#8dc891"
+  },
+  ".comment,.block-comment,.prolog,.doctype,.cdata": {
+    "color": "#999999"
+  },
+  ".property,.number,.function-name,.constant,.symbol,.deleted": {
+    "color": "#5a9bcf"
+  },
+  ".boolean": {
+    "color": "#ff8b50"
+  },
+  ".tag": {
+    "color": "#fc929e"
+  },
+  ".string": {
+    "color": "#8dc891"
+  },
+  ".punctuation": {
+    "color": "#8dc891"
+  },
+  ".selector,.char,.builtin,.inserted": {
+    "color": "#D8DEE9"
+  },
+  ".function": {
+    "color": "#79b6f2"
+  },
+  ".operator,.entity,.url,.variable": {
+    "color": "#d7deea"
+  },
+  ".keyword": {
+    "color": "#c5a5c5"
+  },
+  ".at-rule,.class-name": {
+    "color": "#FAC863"
+  },
+  ".important": {
+    "fontWeight": "400"
+  },
+  ".bold": {
+    "fontWeight": "bold"
+  },
+  ".italic": {
+    "fontStyle": "italic"
+  },
+  ".namespace": {
+    "opacity": 0.7
+  }
+}

@@ -1,0 +1,38 @@
+{
+  ".comment,.prolog,.doctype,.cdata": {
+    "color": "hsl(30, 20%, 50%)"
+  },
+  ".punctuation": {
+    "opacity": ".7"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".property,.tag,.boolean,.number,.constant,.symbol": {
+    "color": "hsl(350, 40%, 70%)"
+  },
+  ".selector,.attr-name,.string,.char,.builtin,.inserted": {
+    "color": "hsl(75, 70%, 60%)"
+  },
+  ".operator,.entity,.url,.language-css .string,.style .string,.variable": {
+    "color": "hsl(40, 90%, 60%)"
+  },
+  ".atrule,.attr-value,.keyword": {
+    "color": "hsl(350, 40%, 70%)"
+  },
+  ".regex,.important": {
+    "color": "#e90"
+  },
+  ".important,.bold": {
+    "fontWeight": "bold"
+  },
+  ".italic": {
+    "fontStyle": "italic"
+  },
+  ".entity": {
+    "cursor": "help"
+  },
+  ".deleted": {
+    "color": "red"
+  }
+}

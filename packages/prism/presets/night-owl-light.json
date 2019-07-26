@@ -1,0 +1,48 @@
+{
+  "color": "#403f53",
+  "backgroundColor": "#FBFBFB",
+  ".changed": {
+    "color": "rgb(162, 191, 252)",
+    "fontStyle": "italic"
+  },
+  ".deleted": {
+    "color": "rgba(239, 83, 80, 0.56)",
+    "fontStyle": "italic"
+  },
+  ".inserted,.attr-name": {
+    "color": "rgb(72, 118, 214)",
+    "fontStyle": "italic"
+  },
+  ".comment": {
+    "color": "rgb(152, 159, 177)",
+    "fontStyle": "italic"
+  },
+  ".string,.builtin,.char,.constant,.url": {
+    "color": "rgb(72, 118, 214)"
+  },
+  ".variable": {
+    "color": "rgb(201, 103, 101)"
+  },
+  ".number": {
+    "color": "rgb(170, 9, 130)"
+  },
+  ".punctuation": {
+    "color": "rgb(153, 76, 195)"
+  },
+  ".function,.selector,.doctype": {
+    "color": "rgb(153, 76, 195)",
+    "fontStyle": "italic"
+  },
+  ".class-name": {
+    "color": "rgb(17, 17, 17)"
+  },
+  ".tag": {
+    "color": "rgb(153, 76, 195)"
+  },
+  ".operator,.property,.keyword,.namespace": {
+    "color": "rgb(12, 150, 155)"
+  },
+  ".boolean": {
+    "color": "rgb(188, 84, 84)"
+  }
+}

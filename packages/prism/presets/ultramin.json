@@ -1,0 +1,13 @@
+{
+  "color": "#282a2e",
+  "backgroundColor": "#ffffff",
+  ".comment": {
+    "color": "rgb(197, 200, 198)"
+  },
+  ".string,.number,.builtin,.variable": {
+    "color": "rgb(150, 152, 150)"
+  },
+  ".class-name,.function,.tag,.attr-name": {
+    "color": "rgb(40, 42, 46)"
+  }
+}

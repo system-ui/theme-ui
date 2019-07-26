@@ -1,0 +1,38 @@
+{
+  ".comment,.prolog,.doctype,.cdata": {
+    "color": "#aaa"
+  },
+  ".punctuation": {
+    "color": "#999"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".property,.tag,.boolean,.number,.constant,.symbol": {
+    "color": "#0cf"
+  },
+  ".selector,.attr-name,.string,.char,.builtin": {
+    "color": "yellow"
+  },
+  ".operator,.entity,.url,.language-css .string,.variable,.inserted": {
+    "color": "yellowgreen"
+  },
+  ".atrule,.attr-value,.keyword": {
+    "color": "deeppink"
+  },
+  ".regex,.important": {
+    "color": "orange"
+  },
+  ".important,.bold": {
+    "fontWeight": "bold"
+  },
+  ".italic": {
+    "fontStyle": "italic"
+  },
+  ".entity": {
+    "cursor": "help"
+  },
+  ".deleted": {
+    "color": "red"
+  }
+}
