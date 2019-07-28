@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transforms a theme config to css variables 1`] = `
+"--colors-text: #000;
+--colors-background: #fff;
+--colors-primary: #07c;
+--colors-secondary: #05a;
+--colors-accent: #609;
+--colors-muted: #f6f6f6;
+--fonts-body: system-ui, sans-serif;
+--fonts-heading: system-ui, sans-serif;
+--fonts-monospace: Menlo, monospace;
+--fontweights-body: 400;
+--fontweights-heading: 700;
+--fontweights-bold: 700;
+--lineheights-0: 1.5;
+--lineheights-1: 1.125;
+--space-0: 0;
+--space-1: 2;
+--space-2: 3;
+--space-3: 4;
+--space-4: 5;
+--space-5: 6;
+--size-0: 10em;
+--size-1: 20em;
+--size-2: 30em;
+--size-3: 40em;"
+`;

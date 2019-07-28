@@ -1,0 +1,19 @@
+{
+  "name": "@theme-ui/css-variables",
+  "description": "Generate CSS variables for use with Theme UI",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Alex Page <alex@alexpage.com.au>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
