@@ -17,8 +17,8 @@ Transform your Theme UI compliant theme config with the library:
 const toCssVariables = require('@theme-ui/tachyons')
 const theme = require('../theme');
 
-module.exports = async () => {
-  const cssVariables = await toCssVariables(theme)
+module.exports = () => {
+  const cssVariables = toCssVariables(theme)
 
   return cssVariables
 }
