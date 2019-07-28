@@ -6,7 +6,13 @@ import { jsx, Styled } from 'theme-ui'
 
 import Prism from 'prismjs/components/prism-core'
 
-export default ({ children, className: outerClassName, title = ``, prism }) => {
+export default ({
+  children,
+  className: outerClassName,
+  title = ``,
+  copy = false,
+  prism,
+}) => {
   const [language] = outerClassName.replace(/language-/, '').split(' ')
 
   return (
@@ -19,6 +25,15 @@ export default ({ children, className: outerClassName, title = ``, prism }) => {
       {title && <div sx={{ variant: 'prism.codeTitle' }}>{title}</div>}
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Styled.pre className={`${outerClassName} ${className}`} style={style}>
+          {copy && (
+            <Copy
+              fileName={title}
+              sx={{
+                variant: 'prism.copy',
+              }}
+              content={children.trim()}
+            />
+          )}
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
