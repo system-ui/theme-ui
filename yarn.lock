@@ -9892,9 +9892,9 @@ gatsby-react-router-scroll@^2.1.1:
     warning "^3.0.0"
 
 gatsby-remark-prismjs@^3.2.9:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.1.tgz#012ed64d577b9c9a1dce209ddc8cceb58ed09de9"
-  integrity sha512-V0rzHqmVgzJX6WSse4d29wfSv4Y8zm1Qfl3xwbMngiSENZ8gLvCiMDKZGrV8QcwJNyUyDsBDCNakGKyCvTu5EA==
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.3.tgz#9bbe4650bf466e708d98b20a269c9b322ae50e5b"
+  integrity sha512-IQOv7b7w6c3+KsWju76Iezwme7o40Bov01czhSROcj41RkGSKDE38IAly2tZxTfpKNH1Hw8yDu6CivfEQiWzDg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     parse-numeric-range "^0.0.2"
