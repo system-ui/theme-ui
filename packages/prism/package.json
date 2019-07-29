@@ -19,6 +19,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": "system-ui/theme-ui",
+  "keywords": [
+    "theme-ui",
+    "prism",
+    "prismjs",
+    "emotion",
+    "css",
+    "css-in-js",
+    "style"
+  ],
   "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c",
   "devDependencies": {
     "lodash.kebabcase": "^4.1.1",

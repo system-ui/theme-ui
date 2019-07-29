@@ -25,5 +25,13 @@
     "@emotion/core": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   },
+  "keywords": [
+    "theme-ui",
+    "emotion",
+    "mdx",
+    "css",
+    "styles",
+    "css-in-js"
+  ],
   "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }
