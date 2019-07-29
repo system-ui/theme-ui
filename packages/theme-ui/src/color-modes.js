@@ -17,7 +17,7 @@ export const getMediaQuery = () => {
   return dark && mql.matches
 }
 
-export const useColorState = initialMode => {
+export const useColorState = (initialMode, theme) => {
   const [mode, setMode] = useState(initialMode)
 
   useEffect(() => {
@@ -34,6 +34,19 @@ export const useColorState = initialMode => {
     if (!mode) return
     storage.set(mode)
   }, [mode])
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (
+      theme.colors &&
+      theme.colors.modes &&
+      Object.keys(theme.colors.modes).includes(initialMode)
+    ) {
+      console.warn(
+        'The `initialColorMode` value should be a unique name' +
+          'and cannot reference a key in `theme.colors.modes`.'
+      )
+    }
+  }
 
   return [mode, setMode]
 }
