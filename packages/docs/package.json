@@ -27,7 +27,7 @@
     "@theme-ui/typography": "^0.2.5",
     "gatsby": "^2.3.6",
     "gatsby-plugin-catch-links": "^2.0.13",
-    "gatsby-plugin-compile-es6-packages": "^1.1.0",
+    "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-mdx": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-theme-ui": "^0.2.18",
