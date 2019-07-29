@@ -1,7 +1,5 @@
-import Layout from '../../components/layout'
 import Note from '../../components/note'
 
-export default Layout
 export const title = 'Variants'
 
 # Variants
@@ -148,45 +146,7 @@ where you'd like certain parts of your page layout to be customizable.
 Using the `variant` key in the `sx` prop allows you to define styles for a component that can optionally be overridden from the `theme` object.
 When the variant is undefined in the `theme`, no additional styles are applied to the element.
 
-The following example is for a header component that includes default styles.
-
-```jsx
-/** @jsx jsx */
-// example header component
-import { jsx } from 'theme-ui'
-
-// passing props through allows `props.className` to be applied
-// which means the `sx` prop can be used on this component
-export default props => (
-  <header
-    {...props}
-    sx={{
-      display: 'flex',
-      alignItems: 'center',
-      px: 3,
-      py: 2,
-      // if this variant is defined in the theme,
-      // it can override the default styles above
-      variant: 'layout.header',
-    }}>
-    {props.children}
-  </header>
-)
-```
-
-This component can now be customized by adding a `theme.layout.header` object to the `theme` object.
-
-```js
-// example theme
-{
-  layout: {
-    header: {
-      color: 'white',
-      bg: 'black',
-    }
-  },
-}
-```
+Read the [Layouts Guide](/guides/layouts) to learn more.
 
 [styled system css]: https://styled-system.com/css
 [gatsby themes]: https://www.gatsbyjs.org/docs/themes/

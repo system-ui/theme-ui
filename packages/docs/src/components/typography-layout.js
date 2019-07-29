@@ -6,7 +6,6 @@ import merge from 'lodash.merge'
 
 import { toTheme } from '@theme-ui/typography'
 
-import Layout from './layout'
 import GoogleFonts from './google-fonts'
 import Button from './button'
 import Select from './select'
@@ -50,7 +49,7 @@ export default props => {
   const theme = toTheme(typographyTheme)
 
   return (
-    <Layout {...props}>
+    <div>
       <Flex
         sx={{
           alignItems: 'center',
@@ -78,6 +77,6 @@ export default props => {
         <GoogleFonts />
         <Styled.root>{props.children}</Styled.root>
       </ThemeProvider>
-    </Layout>
+    </div>
   )
 }
