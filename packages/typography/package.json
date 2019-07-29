@@ -58,5 +58,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "typography",
+    "css"
+  ],
+  "repository": "system-ui/theme-ui",
   "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
 }

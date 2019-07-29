@@ -18,5 +18,14 @@
     "react": "^16.8.6",
     "theme-ui": "^0.2.21"
   },
+  "keywords": [
+    "theme-ui",
+    "mdx",
+    "emotion",
+    "css",
+    "css-in-js",
+    "style"
+  ],
+  "repository": "system-ui/theme-ui",
   "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }

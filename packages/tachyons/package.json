@@ -20,5 +20,14 @@
   "dependencies": {
     "tachyons-generator": "^0.23.0"
   },
+  "keywords": [
+    "theme-ui",
+    "tachyons",
+    "css",
+    "emotion",
+    "css-in-js",
+    "style"
+  ],
+  "repository": "system-ui/theme-ui",
   "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }
