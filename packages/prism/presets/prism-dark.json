@@ -1,4 +1,6 @@
 {
+  "color": "white",
+  "backgroundColor": "hsl(30, 20%, 25%)",
   ".comment,.prolog,.doctype,.cdata": {
     "color": "hsl(30, 20%, 50%)"
   },
