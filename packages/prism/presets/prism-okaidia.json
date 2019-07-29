@@ -1,0 +1,41 @@
+{
+  ".comment,.prolog,.doctype,.cdata": {
+    "color": "slategray"
+  },
+  ".punctuation": {
+    "color": "#f8f8f2"
+  },
+  ".namespace": {
+    "opacity": ".7"
+  },
+  ".property,.tag,.constant,.symbol,.deleted": {
+    "color": "#f92672"
+  },
+  ".boolean,.number": {
+    "color": "#ae81ff"
+  },
+  ".selector,.attr-name,.string,.char,.builtin,.inserted": {
+    "color": "#a6e22e"
+  },
+  ".operator,.entity,.url,.language-css .string,.style .string,.variable": {
+    "color": "#f8f8f2"
+  },
+  ".atrule,.attr-value,.function,.class-name": {
+    "color": "#e6db74"
+  },
+  ".keyword": {
+    "color": "#66d9ef"
+  },
+  ".regex,.important": {
+    "color": "#fd971f"
+  },
+  ".important,.bold": {
+    "fontWeight": "bold"
+  },
+  ".italic": {
+    "fontStyle": "italic"
+  },
+  ".entity": {
+    "cursor": "help"
+  }
+}

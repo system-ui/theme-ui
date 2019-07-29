@@ -14,11 +14,11 @@ const isMergeableObject = n => {
   )
 }
 
-export const merge = (a, b) =>
-  deepmerge(a, b, {
-    isMergeableObject,
-  })
+const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 
-merge.all = (...args) => deepmerge.all(args, { isMergeableObject })
+export const merge = (a, b) =>
+  deepmerge(a, b, { isMergeableObject, arrayMerge })
+
+merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
 
 export default merge

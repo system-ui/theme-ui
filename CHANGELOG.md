@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+## v0.2.21 2019-07-26
+
+- Add presets to `@theme-ui/prism` #231
+- Fix array merging #230
+
+## v0.2.20 2019-07-26
+
+- Fix for color mode in context #226
+
+## v0.2.19 2019-07-24
+
+- Fix for unsupported Prism languages #218
+- Update dependencies
+
+## v0.2.18 2019-07-23
+
+- Update docs
+- Update dependencies
+
 ## v0.2.16 2019-07-22
 
 - Forward all props to functional components #197
