@@ -6,7 +6,7 @@
   "author": "John Otander",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress -o dist && yarn build-presets",
+    "prepare": "microbundle --no-compress -o dist",
     "watch": "microbundle watch --no-compress -o dist",
     "build-presets": "node build-presets.js"
   },
