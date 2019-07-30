@@ -10,9 +10,7 @@
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
-  "devDependencies": {
-    "babel-polyfill": "^6.26.0"
-  },
+  "devDependencies": {},
   "publishConfig": {
     "access": "public"
   },

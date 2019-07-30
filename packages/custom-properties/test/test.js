@@ -1,5 +1,3 @@
-import 'babel-polyfill'
-
 import toCustomProperties from '../src'
 
 const theme = {
@@ -12,12 +10,12 @@ const theme = {
     muted: '#f6f6f6',
     dark: {
       foreground: {
-        text: '#000'
+        text: '#000',
       },
       background: {
-        surface: '#fff'
-      }
-    }
+        surface: '#fff',
+      },
+    },
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -35,13 +33,13 @@ const theme = {
 }
 
 it('transforms a theme config to css variables', () => {
-  const result = toCustomProperties(theme);
+  const result = toCustomProperties(theme)
 
-  expect(result).toMatchSnapshot();
+  expect(result).toMatchSnapshot()
 })
 
 it('transforms a theme config to css variables with prefix', () => {
-  const result = toCustomProperties(theme, '🍭');
+  const result = toCustomProperties(theme, '🍭')
 
-  expect(result).toMatchSnapshot();
+  expect(result).toMatchSnapshot()
 })
