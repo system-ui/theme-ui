@@ -19,6 +19,7 @@
     "@theme-ui/preset-future": "^0.2.15",
     "@theme-ui/preset-roboto": "^0.2.15",
     "@theme-ui/preset-swiss": "^0.2.15",
+    "@theme-ui/preset-system": "^0.2.15",
     "@theme-ui/preset-tailwind": "^0.2.15"
   },
   "publishConfig": {

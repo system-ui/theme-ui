@@ -5,6 +5,7 @@ export { default as funk } from '@theme-ui/preset-funk'
 export { default as future } from '@theme-ui/preset-future'
 export { default as roboto } from '@theme-ui/preset-roboto'
 export { default as swiss } from '@theme-ui/preset-swiss'
+export { default as system } from '@theme-ui/preset-system'
 
 export { default as bootstrap } from '@theme-ui/preset-bootstrap'
 export { default as bulma } from '@theme-ui/preset-bulma'
