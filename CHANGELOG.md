@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.24 2019-07-29
+
+- Adds preset packages #210
+
 ## v0.2.23 2019-07-29
 
 - Add base colors to prism presets #249
