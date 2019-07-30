@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-deep",
-  "version": "0.2.15",
+  "version": "0.2.24",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
