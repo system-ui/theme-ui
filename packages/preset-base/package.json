@@ -1,0 +1,16 @@
+{
+  "name": "@theme-ui/preset-base",
+  "version": "0.2.15",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "repository": "system-ui/theme-ui",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,4 +1,3 @@
-// default/base theme
 const heading = {
   color: 'text',
   fontFamily: 'heading',
@@ -92,6 +91,9 @@ export const base = {
     td: {
       textAlign: 'left',
       borderBottomStyle: 'solid',
+    },
+    img: {
+      maxWidth: '100%',
     },
   },
 }
