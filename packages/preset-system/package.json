@@ -11,8 +11,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@theme-ui/prism": "0.2.23"
   }
 }

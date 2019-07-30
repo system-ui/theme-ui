@@ -2,8 +2,6 @@
 import { jsx, Styled, ColorMode, components } from 'theme-ui'
 import { ThemeContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
-import { useState } from 'react'
-import { Helmet } from 'react-helmet'
 import * as presets from '@theme-ui/presets'
 import {
   TypeScale,
@@ -12,46 +10,20 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Select from '../components/select'
 import Lorem from './lorem.mdx'
 
-export default () => {
-  const [theme, setTheme] = useState('base')
-  const preset = presets[theme]
+export default ({ preset: presetName }) => {
+  const preset = presets[presetName]
+
   return (
     <div>
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600"
-        />
-      </Helmet>
       <div
         sx={{
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}
-      >
+        }}>
         <ColorMode />
-        <label
-          sx={{
-            display: 'block',
-            mb: 4,
-          }}
-        >
-          Preset:{' '}
-          <Select
-            value={theme}
-            onChange={e => {
-              setTheme(e.target.value)
-            }}
-          >
-            {Object.keys(presets).map(key => (
-              <option key={key} children={key} />
-            ))}
-          </Select>
-        </label>
         <ThemeContext.Provider value={preset}>
           <Styled.root>
             <Styled.h2>Colors</Styled.h2>
@@ -64,8 +36,7 @@ export default () => {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}
-            >
+              fontSize={7}>
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Styled.h2>Type Scale</Styled.h2>

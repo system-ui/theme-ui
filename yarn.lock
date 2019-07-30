@@ -2970,13 +2970,6 @@
     "@babel/runtime" "^7.5.4"
     "@testing-library/dom" "^5.5.4"
 
-"@theme-ui/prism@0.2.23":
-  version "0.2.23"
-  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.2.23.tgz#afadccc2c830fa6fbe78739590034d94b7ca67af"
-  integrity sha512-+YpfzeHZhNMVTr4esgJWyDonCK2bTZjlNYyMV+Snim9KAwZ3JPE3W8OcHnagjMTWrE8etapwveauaLFBE3+RLw==
-  dependencies:
-    prism-react-renderer "^0.1.7"
-
 "@types/babel__core@^7.1.0":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.2.tgz#608c74f55928033fce18b99b213c16be4b3d114f"

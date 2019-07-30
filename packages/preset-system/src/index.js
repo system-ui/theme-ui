@@ -1,5 +1,3 @@
-import prism from '@theme-ui/prism/presets/theme-ui'
-
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
@@ -163,5 +161,4 @@ export default {
       borderColor: 'muted',
     },
   },
-  prism,
 }
