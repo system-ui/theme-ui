@@ -359,3 +359,44 @@ test('dot notation works with color modes', () => {
   button.click()
   expect(button).toHaveStyleRule('color', 'tomato')
 })
+
+test('dot notation works with color modes and custom properties', () => {
+  const Button = props => {
+    const [colorMode, setMode] = useColorMode()
+    return (
+      <button
+        sx={{
+          color: 'header.title',
+        }}
+        onClick={e => {
+          setMode('dark')
+        }}
+        children="test"
+      />
+    )
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'light',
+        useCustomProperties: true,
+        colors: {
+          header: {
+            title: 'blue',
+          },
+          modes: {
+            dark: {
+              header: {
+                title: 'tomato',
+              },
+            },
+          },
+        },
+      }}>
+      <Button />
+    </ThemeProvider>
+  )
+  const button = root.getByText('test')
+  button.click()
+  expect(button).toHaveStyleRule('color', 'tomato')
+})
