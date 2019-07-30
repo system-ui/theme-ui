@@ -1,5 +1,5 @@
 {
-  "name": "@theme-ui/css-variables",
+  "name": "@theme-ui/custom-properties",
   "description": "Generate CSS variables for use with Theme UI",
   "version": "0.0.0",
   "main": "dist/index.js",
@@ -15,5 +15,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "pluralize": "^8.0.0"
   }
 }
