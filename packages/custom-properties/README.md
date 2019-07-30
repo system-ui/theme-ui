@@ -9,6 +9,7 @@ Generate CSS variables for use with Theme UI.
 yarn add @theme-ui/custom-properties
 ```
 
+
 ## Usage
 
 Transform your Theme UI compliant theme config with the library:
@@ -24,11 +25,14 @@ module.exports = () => {
 }
 ```
 
+
 ## Parameters
 
 The @theme-ui/custom-properties function takes two parameters:
 
-feColor( $theme, $prefix );
+```js
+toCustomProperties( $theme, $prefix );
+```
 
 1. theme - The theme ui specification object
 1. prefix - An optional prefix for the css variables _optional_
