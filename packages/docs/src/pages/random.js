@@ -12,7 +12,7 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Lorem from './lorem.mdx'
+import Lorem from '../components/lorem.mdx'
 
 export default () => {
   const [theme, setTheme] = useState(null)

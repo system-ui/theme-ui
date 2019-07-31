@@ -53,7 +53,8 @@
       "!packages/presets/**/*",
       "!packages/style-guide/**/*",
       "!packages/chrome/**/*",
-      "!packages/editor/**/*"
+      "!packages/editor/**/*",
+      "!packages/preset-*/**/*"
     ],
     "coverageThreshold": {
       "global": {

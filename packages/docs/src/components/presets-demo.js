@@ -12,12 +12,13 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Select from '../components/select'
+import Select from './select'
 import Lorem from './lorem.mdx'
 
 export default () => {
   const [theme, setTheme] = useState('base')
   const preset = presets[theme]
+
   return (
     <div>
       <Helmet>

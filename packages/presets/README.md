@@ -24,13 +24,17 @@ To view an example of the built-in presets, see the [Demo][].
 
 Currently, the following presets are available for use:
 
-- `base`
-- `funk`
-- `future`
-- `roboto`
-- `bootstrap`
-- `tailwind`
-- `bulma` (WIP)
+- [`base`](https://theme-ui.com/presets/base)
+- [`system`](https://theme-ui.com/presets/system)
+- [`funk`](https://theme-ui.com/presets/funk)
+- [`future`](https://theme-ui.com/presets/future)
+- [`roboto`](https://theme-ui.com/presets/roboto)
+- [`dark`](https://theme-ui.com/presets/dark)
+- [`deep`](https://theme-ui.com/presets/deep)
+- [`swiss`](https://theme-ui.com/presets/swiss)
+- [`bootstrap`](https://theme-ui.com/presets/bootstrap)
+- [`tailwind`](https://theme-ui.com/presets/tailwind)
+- [`bulma`](https://theme-ui.com/presets/bulma) (WIP)
 
 ## Contributing
 
