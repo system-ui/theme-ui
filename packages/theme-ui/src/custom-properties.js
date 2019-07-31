@@ -1,29 +1,5 @@
-import { css } from '@styled-system/css'
-
 // convert theme and style objects to CSS custom properties
-//
-// theme {
-//   colors: {
-//     text: 'var(--theme-ui-colors-text, #000)',
-//     modes: {
-//       dark: {
-//         text: 'var(--theme-ui-colors-modes-dark-text, #fff)',
-//       }
-//     }
-//   }
-// }
-//
-// body {
-//   color: theme.colors.text,
-//   backgroundColor: theme.colors.text,
-//
-//   '--theme-ui-colors-text': '#000',
-//
-//   &.dark {
-//     '--theme-ui-colors-text': '#fff',
-//     '--theme-ui-colors-nested-value-name': '#f00',
-//   }
-// }
+import { css } from '@styled-system/css'
 
 const toVarName = key => `--theme-ui-${key}`
 const toVarValue = (key, value) => `var(${toVarName(key)}, ${value})`
@@ -34,6 +10,11 @@ const numberScales = {
   fontWeights: true,
   lineHeights: true,
 }
+const reservedKeys = {
+  useCustomProperties: true,
+  initialColorMode: true,
+}
+
 const toPixel = (key, value) => {
   if (typeof value !== 'number') return value
   if (numberScales[key]) return value
@@ -42,7 +23,8 @@ const toPixel = (key, value) => {
 
 // convert theme values to custom properties
 export const toCustomProperties = (obj, parent, themeKey) => {
-  const next = {}
+  const next = Array.isArray(obj) ? [] : {}
+
   for (let key in obj) {
     const value = obj[key]
     const name = join(parent, key)
@@ -50,16 +32,22 @@ export const toCustomProperties = (obj, parent, themeKey) => {
       next[key] = toCustomProperties(value, name, key)
       continue
     }
+    if (reservedKeys[key]) {
+      next[key] = value
+      continue
+    }
     const val = toPixel(themeKey || key, value)
     next[key] = toVarValue(name, val)
   }
+
   return next
 }
 
 export const objectToVars = (parent, obj) => {
   let vars = {}
   for (let key in obj) {
-    const name = toVarName(join(parent, key))
+    if (key === 'modes') continue
+    const name = join(parent, key)
     const value = obj[key]
     if (value && typeof value === 'object') {
       vars = {
@@ -67,27 +55,43 @@ export const objectToVars = (parent, obj) => {
         ...objectToVars(name, value),
       }
     } else {
-      vars[name] = value
+      vars[toVarName(name)] = value
     }
   }
   return vars
 }
 
 // create body styles for color modes
-export const createBodyStyles = theme => {
+export const createColorStyles = theme => {
   if (!theme.colors || !theme.colors.modes) return {}
   const { modes } = theme.colors
-  const styles = {}
+  const styles = theme.useCustomProperties
+    ? objectToVars('colors', theme.colors)
+    : {}
+
   Object.keys(modes).forEach(mode => {
     const key = `&.theme-ui-${mode}`
-    styles[key] = objectToVars('colors', modes[mode])
+    if (!theme.useCustomProperties) {
+      styles[key] = {
+        color: modes[mode].text,
+        bg: modes[mode].background,
+      }
+    } else {
+      styles[key] = objectToVars('colors', modes[mode])
+    }
   })
 
-  return css({
-    body: {
+  if (!theme.useCustomProperties) {
+    return css({
       ...styles,
       color: 'text',
       bg: 'background',
-    },
+    })(theme)
+  }
+
+  return css({
+    ...styles,
+    color: t => `var(--theme-ui-colors-text, ${t.colors.text})`,
+    bg: t => `var(--theme-ui-colors-background, ${t.colors.background})`,
   })(theme)
 }

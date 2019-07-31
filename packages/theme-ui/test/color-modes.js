@@ -129,7 +129,7 @@ test('converts color modes to css properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-text,#000)'
+    'var(--theme-ui-colors-text,#000)'
   )
 })
 
@@ -398,5 +398,8 @@ test('dot notation works with color modes and custom properties', () => {
   )
   const button = root.getByText('test')
   button.click()
-  expect(button).toHaveStyleRule('color', 'tomato')
+  expect(button).toHaveStyleRule(
+    'color',
+    'var(--theme-ui-colors-header-title,tomato)'
+  )
 })
