@@ -1,0 +1,60 @@
+export const title = 'Linked Headings'
+
+# Linked Headings
+
+Create anchor-linked headings in MDX.
+
+Use `remark-slug` with MDX to create IDs based on the heading's content.
+If you're using Gatsby, add this to your `gatsby-plugin-mdx` options.
+
+```js
+// gatsby-config.js
+const remarkSlug = require('remark-slug')
+
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        remarkPlugins: [
+          remarkSlug,
+        ]
+      }
+    }
+  ]
+}
+```
+
+Next create a components module to pass to MDX context.
+If you're using `gatsby-plugin-theme-ui`, add a `src/gatsby-plugin-theme-ui/components.js` file.
+If you're not using Gatsby, pass these components to the [`MDXProvider` component](https://mdxjs.com/getting-started#mdxprovider).
+
+```jsx
+// src/gatsby-plugin-theme-ui/components.js
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+const heading = Tag => props => {
+  if (!props.id) return <Tag {...props} />
+
+  return (
+    <Tag {...props}>
+      <a
+        href={`#${props.id}`}>
+        {props.children}
+      </a>
+    </Tag>
+  )
+}
+
+const components = {
+  h1: heading('h1'),
+  h2: heading('h2'),
+  h3: heading('h3'),
+  h4: heading('h4'),
+  h5: heading('h5'),
+  h6: heading('h6'),
+}
+
+export default components
+```

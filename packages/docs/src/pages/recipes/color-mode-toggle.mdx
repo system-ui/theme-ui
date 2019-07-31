@@ -1,0 +1,24 @@
+export const title = 'Color Mode Toggle'
+
+# Color Mode Toggle
+
+Create a button to toggle between light and dark [color modes](/color-modes).
+
+```jsx
+/** @jsx jsx */
+import { jsx, useColorMode } from 'theme-ui'
+
+export default props => {
+  const [ mode, setMode ] = useColorMode()
+
+  return (
+    <button
+      {...props}
+      onClick={e => {
+        const next = mode === 'dark' ? 'light' : 'dark'
+        setMode(next)
+      }}
+    />
+  )
+}
+```

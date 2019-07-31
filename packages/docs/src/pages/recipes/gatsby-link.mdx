@@ -1,0 +1,23 @@
+export const title = 'Gatsby Link'
+
+# Gatsby Link
+
+Add an active style to Gatsby Link or other React router link components.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
+
+export default props =>
+  <Link
+    {...props}
+    activeClassName='active'
+    sx={{
+      color: 'primary',
+      '&.active': {
+        color: 'secondary',
+      }
+    }}
+  />
+```
