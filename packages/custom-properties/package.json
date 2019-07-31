@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/custom-properties",
   "description": "Generate CSS custom properties for use with Theme UI",
-  "version": "0.0.0",
+  "version": "0.2.25",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Alex Page <alex@alexpage.com.au>",
@@ -10,7 +10,6 @@
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
-  "devDependencies": {},
   "publishConfig": {
     "access": "public"
   },
