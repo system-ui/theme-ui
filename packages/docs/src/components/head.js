@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { useThemeUI } from 'theme-ui'
 import pkg from 'theme-ui/package.json'
 
 export default props => {
@@ -10,6 +11,8 @@ export default props => {
   ]
     .filter(Boolean)
     .join(' — ')
+
+  const { theme } = useThemeUI()
 
   return (
     <Helmet htmlAttributes={{ lang: 'en-US' }}>
@@ -22,6 +25,7 @@ export default props => {
       <meta name="twitter:image" content="https://theme-ui.com/card.png" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={pkg.description} />
+      <meta name="theme-color" content={theme.colors.background} />
     </Helmet>
   )
 }
