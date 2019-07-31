@@ -5,6 +5,7 @@ import theme from './index'
 import components from './components'
 
 export const wrapRootElement = ({ element }) =>
+  console.log('wrap root', theme) ||
   jsx(
     ThemeProvider,
     {

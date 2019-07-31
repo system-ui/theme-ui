@@ -12,5 +12,7 @@ module.exports = {
         remarkPlugins,
       },
     },
+    'gatsby-theme-mono',
+    // '@theme-ui/preset-system',
   ],
 }
