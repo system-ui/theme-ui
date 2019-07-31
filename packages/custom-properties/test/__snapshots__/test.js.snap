@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`transforms a theme config to css variables 1`] = `
+exports[`transforms a theme config to CSS custom properties 1`] = `
 Object {
   "--color-accent": "#609",
   "--color-background": "#fff",
@@ -31,7 +31,7 @@ Object {
 }
 `;
 
-exports[`transforms a theme config to css variables with prefix 1`] = `
+exports[`transforms a theme config to CSS custom properties with prefix 1`] = `
 Object {
   "--🍭-color-accent": "#609",
   "--🍭-color-background": "#fff",

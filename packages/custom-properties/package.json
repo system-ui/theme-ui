@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/custom-properties",
-  "description": "Generate CSS variables for use with Theme UI",
+  "description": "Generate CSS custom properties for use with Theme UI",
   "version": "0.0.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

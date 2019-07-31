@@ -1,6 +1,6 @@
 # @theme-ui/custom-properties
 
-Generate CSS variables for use with Theme UI.
+Generate CSS custom properties for use with Theme UI.
 
 
 ## Installation
@@ -35,5 +35,5 @@ toCustomProperties( $theme, $prefix );
 ```
 
 1. theme - The theme ui specification object
-1. prefix - An optional prefix for the css variables _optional_
+1. prefix - An optional prefix for the css custom property _optional_
 

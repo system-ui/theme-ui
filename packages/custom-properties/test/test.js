@@ -32,13 +32,13 @@ const theme = {
   size: ['10em', '20em', '30em', '40em'],
 }
 
-it('transforms a theme config to css variables', () => {
+it('transforms a theme config to CSS custom properties', () => {
   const result = toCustomProperties(theme)
 
   expect(result).toMatchSnapshot()
 })
 
-it('transforms a theme config to css variables with prefix', () => {
+it('transforms a theme config to CSS custom properties with prefix', () => {
   const result = toCustomProperties(theme, '🍭')
 
   expect(result).toMatchSnapshot()
