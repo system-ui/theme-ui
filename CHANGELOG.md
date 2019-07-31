@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.25 2019-07-31
+
+- Add `@theme-ui/custom-properties` package #235
+
 ## v0.2.24 2019-07-29
 
 - Adds preset packages #210
