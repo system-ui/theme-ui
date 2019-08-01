@@ -23,6 +23,7 @@ export const styled = tag => (...args) => {
 
     return jsx(as || tag, {
       ...nextProps,
+      ref,
       css: styles,
     })
   })
