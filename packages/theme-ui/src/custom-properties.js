@@ -64,30 +64,19 @@ export const objectToVars = (parent, obj) => {
 // create body styles for color modes
 export const createColorStyles = theme => {
   if (!theme.colors || !theme.colors.modes) return {}
-  const { modes } = theme.colors
-  const styles = theme.useCustomProperties
-    ? objectToVars('colors', theme.colors)
-    : {}
-
-  Object.keys(modes).forEach(mode => {
-    const key = `&.theme-ui-${mode}`
-    if (!theme.useCustomProperties) {
-      styles[key] = {
-        color: modes[mode].text,
-        bg: modes[mode].background,
-      }
-    } else {
-      styles[key] = objectToVars('colors', modes[mode])
-    }
-  })
-
   if (!theme.useCustomProperties) {
     return css({
-      ...styles,
       color: 'text',
       bg: 'background',
     })(theme)
   }
+  const { modes } = theme.colors
+  const styles = objectToVars('colors', theme.colors)
+
+  Object.keys(modes).forEach(mode => {
+    const key = `&.theme-ui-${mode}`
+    styles[key] = objectToVars('colors', modes[mode])
+  })
 
   return css({
     ...styles,
