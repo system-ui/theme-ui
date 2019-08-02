@@ -35,10 +35,7 @@ const BaseProvider = ({ context, components, children }) => {
 const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorState(
-    propsTheme.initialColorMode,
-    propsTheme
-  )
+  const [colorMode, setColorMode] = useColorState(propsTheme)
   const [themeState, setThemeState] = useReducer(mergeState, propsTheme)
 
   const theme = applyColorMode(themeState, colorMode)
