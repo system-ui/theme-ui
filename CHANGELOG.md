@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.2.26 2019-08-02
+
+- Fix for CSS custom properties when using nested color objects #259
+- Add warning when `initialColorMode` matches a color mode name #245
+- Fix for forwarding refs #261
+- Fix peer dependency version #263
+
 ## v0.2.25 2019-07-31
 
 - Add `@theme-ui/custom-properties` package #235
