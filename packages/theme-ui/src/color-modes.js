@@ -40,7 +40,7 @@ export const useColorState = theme => {
     if (
       theme.colors &&
       theme.colors.modes &&
-      Object.keys(theme.colors.modes).includes(theme.initialColorMode)
+      Object.keys(theme.colors.modes).indexOf(theme.initialColorMode) > -1
     ) {
       console.warn(
         'The `initialColorMode` value should be a unique name' +
