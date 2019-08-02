@@ -129,7 +129,7 @@ test('converts color modes to css properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-text,#000)'
+    'var(--theme-ui-colors-text,#000)'
   )
 })
 
@@ -318,4 +318,88 @@ test('useThemeUI returns current color mode colors', () => {
   )
   expect(colors.text).toBe('black')
   expect(colors.background).toBe('tomato')
+})
+
+test('dot notation works with color modes', () => {
+  const Button = props => {
+    const [colorMode, setMode] = useColorMode()
+    return (
+      <button
+        sx={{
+          color: 'header.title',
+        }}
+        onClick={e => {
+          setMode('dark')
+        }}
+        children="test"
+      />
+    )
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'light',
+        colors: {
+          header: {
+            title: 'blue',
+          },
+          modes: {
+            dark: {
+              header: {
+                title: 'tomato',
+              },
+            },
+          },
+        },
+      }}>
+      <Button />
+    </ThemeProvider>
+  )
+  const button = root.getByText('test')
+  button.click()
+  expect(button).toHaveStyleRule('color', 'tomato')
+})
+
+test('dot notation works with color modes and custom properties', () => {
+  const Button = props => {
+    const [colorMode, setMode] = useColorMode()
+    return (
+      <button
+        sx={{
+          color: 'header.title',
+        }}
+        onClick={e => {
+          setMode('dark')
+        }}
+        children="test"
+      />
+    )
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'light',
+        useCustomProperties: true,
+        colors: {
+          header: {
+            title: 'blue',
+          },
+          modes: {
+            dark: {
+              header: {
+                title: 'tomato',
+              },
+            },
+          },
+        },
+      }}>
+      <Button />
+    </ThemeProvider>
+  )
+  const button = root.getByText('test')
+  button.click()
+  expect(button).toHaveStyleRule(
+    'color',
+    'var(--theme-ui-colors-header-title,tomato)'
+  )
 })
