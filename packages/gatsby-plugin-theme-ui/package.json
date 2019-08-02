@@ -5,7 +5,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "peerDependencies": {
-    "theme-ui": "^0.1.2"
+    "theme-ui": "^0.2.0"
   },
   "keywords": [
     "gatsby",
