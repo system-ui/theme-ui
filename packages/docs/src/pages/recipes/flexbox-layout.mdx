@@ -1,0 +1,184 @@
+export const title = 'Flexbox Layout'
+
+# Flexbox Layout
+
+A simple page layout component with header and footer.
+
+Flexbox styles are used to ensure the footer always renders at the bottom of the page, even when there isn't enough content to fill the viewport.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    }}>
+    <header
+      sx={{
+        width: '100%',
+      }}>
+      Header
+    </header>
+    <main
+      sx={{
+        width: '100%',
+        flex: '1 1 auto',
+      }}>
+      {props.children}
+    </main>
+    <footer
+      sx={{
+        width: '100%',
+      }}>
+      Footer
+    </footer>
+  </div>
+```
+
+## Centered Containers
+
+Centered, max-width containers can be added to the layout.
+
+First, add a `container` size to your theme.
+This will be used for the max-width of the content.
+
+```js
+// example theme
+export default {
+  sizes: {
+    container: 768,
+  }
+}
+```
+
+Next create a `Container` component and use it within the layout.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+const Container = props =>
+  <div
+    {...props}
+    sx={{
+      maxWidth: 'container',
+      mx: 'auto',
+      px: 3,
+    }}
+  />
+
+export default props =>
+  <div
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    }}>
+    <header
+      sx={{
+        width: '100%',
+      }}>
+      <Container>
+        Header
+      </Container>
+    </header>
+    <main
+      sx={{
+        width: '100%',
+        flex: '1 1 auto',
+      }}>
+      <Container>
+        {props.children}
+      </Container>
+    </main>
+    <footer
+      sx={{
+        width: '100%',
+      }}>
+      <Container>
+        Footer
+      </Container>
+    </footer>
+  </div>
+```
+
+## Make it Themeable
+
+Add `variant` keys to the layout components to allow the styles to be customized in the theme object.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+const Container = props =>
+  <div
+    {...props}
+    sx={{
+      maxWidth: 'container',
+      mx: 'auto',
+      px: 3,
+    }}
+  />
+
+export default props =>
+  <div
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      variant: 'layout.root',
+    }}>
+    <header
+      sx={{
+        width: '100%',
+        variant: 'layout.header',
+      }}>
+      <Container>
+        Header
+      </Container>
+    </header>
+    <main
+      sx={{
+        width: '100%',
+        flex: '1 1 auto',
+        variant: 'layout.main',
+      }}>
+      <Container>
+        {props.children}
+      </Container>
+    </main>
+    <footer
+      sx={{
+        width: '100%',
+        variant: 'layout.footer',
+      }}>
+      <Container>
+        Footer
+      </Container>
+    </footer>
+  </div>
+```
+
+With the `variant` keys added above, you can adjust the layout styles at the theme level.
+
+```js
+// example theme
+export default {
+  sizes: {
+    container: 768,
+  },
+  layout: {
+    header: {
+      color: 'white',
+      bg: 'black',
+    },
+    footer: {
+      bg: 'gray',
+    },
+  },
+}
+```

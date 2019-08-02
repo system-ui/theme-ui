@@ -1,0 +1,129 @@
+export const title = 'Layouts'
+
+# Layouts
+
+By leveraging the [variants](/guides/variants) feature, you can create custom themeable layout components.
+The components can include some default styles,
+but still allow users to override styles such as colors or typography, by changing values in the theme object.
+
+To start, create a layout component that will wrap pages in your application.
+Feel free to customize the content and default styles however you like.
+
+```js
+// example src/layout.js
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    }}>
+    <header
+      sx={{
+        width: '100%',
+        diplay: 'flex',
+        alignItems: 'center',
+      }}>
+      Header content
+    </header>
+    <main
+      sx={{
+        width: '100%',
+        flex: '1 1 auto',
+      }}>
+      <div
+        sx={{
+          maxWidth: 768,
+          mx: 'auto',
+          px: 3,
+        }}>
+        {props.children}
+      </div>
+    </main>
+    <footer
+      sx={{
+        width: '100%',
+      }}>
+      Footer content
+    </footer>
+  </div>
+```
+
+Next use the `variant` property to name parts of the layout.
+
+```js
+// example src/layout.js
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      variant: 'layout.root',
+    }}>
+    <header
+      sx={{
+        width: '100%',
+        diplay: 'flex',
+        alignItems: 'center',
+        variant: 'layout.header',
+      }}>
+      Header content
+    </header>
+    <main
+      sx={{
+        width: '100%',
+        flex: '1 1 auto',
+        variant: 'layout.main',
+      }}>
+      <div
+        sx={{
+          maxWidth: 768,
+          mx: 'auto',
+          px: 3,
+          variant: 'layout.container',
+        }}>
+        {props.children}
+      </div>
+    </main>
+    <footer
+      sx={{
+        width: '100%',
+        variant: 'layout.footer',
+      }}>
+      Footer content
+    </footer>
+  </div>
+```
+
+The `variant` properties above will look for styles in `theme.layout`.
+If no styles are defined in the theme, the default styles will remain unchanged.
+
+If a user wants to customize the layout styles, they can add overrides to their theme object.
+For example, the following will add custom colors to the header and footer.
+
+```js
+// example user theme
+import colors from './colors'
+
+export default {
+  colors,
+  layout: {
+    header: {
+      color: 'white',
+      backgroundColor: 'black',
+    },
+    footer: {
+      color: 'white',
+      backgroundColor: 'black',
+    },
+  }
+}
+```
+

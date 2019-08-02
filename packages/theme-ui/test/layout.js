@@ -1,5 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
+import { render, cleanup } from '@testing-library/react'
 import {
   Box,
   Flex,
@@ -9,6 +10,8 @@ import {
   Header,
   Footer,
 } from '../src/layout'
+
+afterEach(cleanup)
 
 test.each([
   ['Box', Box],
@@ -21,4 +24,10 @@ test.each([
 ])('renders %s', (a, Component) => {
   const json = renderer.create(<Component />).toJSON()
   expect(json).toMatchSnapshot()
+})
+
+test('forwards ref to div', () => {
+  const ref = React.createRef(null)
+  const tree = render(<Box ref={ref} />)
+  expect(ref.current.tagName).toBe('DIV')
 })

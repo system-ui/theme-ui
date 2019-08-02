@@ -7,41 +7,9 @@ import jsx from './jsx'
 import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 import { createComponents } from './components'
+import { toCustomProperties } from './custom-properties'
 
 const mergeState = (state, next) => merge.all({}, state, next)
-
-const colorModesToCSSProperties = modes => {
-  return Object.keys(modes).reduce((parsedModes, modeKey) => {
-    const colors = modes[modeKey]
-    return {
-      ...parsedModes,
-      [modeKey]: Object.keys(colors).reduce(
-        (parsedColors, colorKey) => ({
-          ...parsedColors,
-          [`--theme-ui-${colorKey}`]: colors[colorKey],
-        }),
-        {}
-      ),
-    }
-  }, {})
-}
-
-const applyCSSProperties = theme => {
-  const { colors } = theme
-  return {
-    ...theme,
-    colors: Object.keys(colors).reduce(
-      (parsedColors, key) => ({
-        ...parsedColors,
-        [key]:
-          key === 'modes'
-            ? colorModesToCSSProperties(colors[key])
-            : `var(--theme-ui-${key}, ${colors[key]})`,
-      }),
-      {}
-    ),
-  }
-}
 
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
@@ -55,7 +23,7 @@ const BaseProvider = ({ context, components, children }) => {
   const theme = context.theme
   return jsx(
     EmotionContext.Provider,
-    { value: theme.useCustomProperties ? applyCSSProperties(theme) : theme },
+    { value: theme },
     jsx(
       MDXProvider,
       { components },
@@ -72,7 +40,11 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
     propsTheme
   )
   const [themeState, setThemeState] = useReducer(mergeState, propsTheme)
+
   const theme = applyColorMode(themeState, colorMode)
+  if (theme.useCustomProperties) {
+    theme.colors = toCustomProperties(theme.colors, 'colors')
+  }
 
   const context = {
     __THEME_UI__: true,

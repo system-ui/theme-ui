@@ -1,0 +1,40 @@
+export const title = 'Syntax Highlighting'
+
+# Syntax Highlighting
+
+Add syntax highlighting to code fences in MDX.
+
+Install the Theme UI Prism component.
+
+```sh
+npm i @theme-ui/prism
+```
+
+If you're using Gatsby and `gatsby-plugin-theme-ui`,
+add the component to `src/gatsby-plugin-theme-ui/components.js`.
+
+```jsx
+import Prism from '@theme-ui/prism'
+
+const components = {
+  pre: props => props.children,
+  code: Prism,
+}
+
+export default components
+```
+
+Import and add a syntax theme from the Prism component to your theme object.
+
+```js
+// src/gatsby-plugin-theme-ui/index.js
+import nightOwl from '@theme-ui/prism/presets/night-owl'
+
+export default {
+  styles: {
+    pre: {
+      ...nightOwl,
+    },
+  }
+}
+```

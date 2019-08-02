@@ -8,13 +8,50 @@ const dir = {
   prismjs: path.join(path.dirname(require.resolve('prismjs')), 'themes'),
 }
 
-const ignore = /^(pre|code|@media|\:not)/
-const cleanObject = obj => {
-  let next = {}
-  Object.entries(obj).forEach(([key, value]) => {
-    if (ignore.test(key)) return
-    const cleanKey = key.replace(/\n/g, '').replace(/\.token/g, '')
+const RE = {
+  ignore: /^(pre|code|@media|\:not)/,
+}
 
+// hard-coded because prismjs css selectors
+const baseStyles = {
+  'prism-coy.css': {
+    color: 'black',
+    backgroundColor: '#fdfdfd',
+  },
+  'prism-dark.css': {
+    color: 'white',
+    backgroundColor: 'hsl(30, 20%, 25%)',
+  },
+  'prism-funky.css': {
+    color: 'white',
+    backgroundColor: 'black',
+  },
+  'prism-okaidia.css': {
+    color: '#f8f8f2',
+    backgroundColor: '#272822',
+  },
+  'prism-solarizedlight.css': {
+    color: '#657b83',
+    backgroundColor: '#073642',
+  },
+  'prism-tomorrow.css': {
+    color: '#ccc',
+    backgroundColor: '#2d2d2d',
+  },
+  'prism-twilight.css': {
+    color: 'white',
+    backgroundColor: 'hsl(0, 0%, 8%)',
+  },
+  'prism.css': {
+    color: 'black',
+    backgroundColor: '#f5f2f0',
+  },
+}
+const createStyles = (name, obj) => {
+  let next = baseStyles[name] || {}
+  Object.entries(obj).forEach(([key, value]) => {
+    if (RE.ignore.test(key)) return
+    const cleanKey = key.replace(/\n/g, '').replace(/\.token/g, '')
     next[cleanKey] = value
   })
   return next
@@ -36,7 +73,7 @@ const prism = [
   const content = fs.readFileSync(filename, 'utf8')
   const tree = postcss.parse(content)
   const raw = postcssJS.objectify(tree)
-  const styles = cleanObject(raw)
+  const styles = createStyles(name, raw)
   return {
     name: cleanName(name),
     filename,

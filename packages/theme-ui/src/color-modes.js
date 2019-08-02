@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { css } from '@styled-system/css'
 import { Global } from '@emotion/core'
 import { useThemeUI } from './context'
+import { createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -61,25 +62,9 @@ export const useColorMode = initialMode => {
   return [colorMode, setColorMode]
 }
 
-const bodyColor = (theme = {}) => {
-  if (!theme.colors || !theme.colors.modes) return
-  const { modes } = theme.colors
-  const styles = {}
-  Object.keys(modes).forEach(mode => {
-    const colors = modes[mode]
-    styles[`&.theme-ui-${mode}`] = theme.useCustomProperties
-      ? colors
-      : { color: colors.text, bg: colors.background }
-  })
-
-  return css({
-    body: {
-      ...styles,
-      color: 'text',
-      bg: 'background',
-    },
-  })(theme)
-}
+const bodyColor = theme => ({
+  body: createColorStyles(theme),
+})
 
 export const ColorMode = () => <Global styles={bodyColor} />
 

@@ -1,4 +1,4 @@
-import base from './base'
+import base from '@theme-ui/preset-base'
 
 export const funk = {
   ...base,
