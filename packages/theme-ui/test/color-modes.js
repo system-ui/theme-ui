@@ -320,6 +320,28 @@ test('useThemeUI returns current color mode colors', () => {
   expect(colors.background).toBe('tomato')
 })
 
+test('warns when initialColorMode matches a key in theme.colors.modes', () => {
+  jest.spyOn(global.console, 'warn')
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'dark',
+        colors: {
+          text: '#000',
+          background: '#fff',
+          modes: {
+            dark: {
+              text: '#fff',
+              background: '#000',
+            },
+          },
+        },
+      }}
+    />
+  )
+  expect(console.warn).toBeCalled()
+})
+
 test('dot notation works with color modes', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
