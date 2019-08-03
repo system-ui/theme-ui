@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.2.27",
+  "version": "0.2.28",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -21,7 +21,7 @@
     "@theme-ui/preset-swiss": "^0.2.25",
     "@theme-ui/preset-system": "^0.2.25",
     "@theme-ui/preset-tailwind": "^0.2.25",
-    "@theme-ui/preset-tosh": "^0.2.27"
+    "@theme-ui/preset-tosh": "^0.2.28"
   },
   "publishConfig": {
     "access": "public"

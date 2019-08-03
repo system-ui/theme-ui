@@ -1,7 +1,7 @@
 {
   "name": "theme-ui-starter",
   "private": "true",
-  "version": "0.2.27",
+  "version": "0.2.28",
   "description": "A sandbox configured with Theme UI, including the `base` theme.",
   "main": "index.html",
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "@emotion/core": "10.0.14",
     "@mdx-js/react": "1.0.21",
-    "@theme-ui/presets": "^0.2.27",
+    "@theme-ui/presets": "^0.2.28",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "theme-ui": "^0.2.26"
