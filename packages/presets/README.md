@@ -32,9 +32,10 @@ Currently, the following presets are available for use:
 - [`dark`](https://theme-ui.com/presets/dark)
 - [`deep`](https://theme-ui.com/presets/deep)
 - [`swiss`](https://theme-ui.com/presets/swiss)
+- [`tosh`](https://theme-ui.com/presets/tosh)
 - [`bootstrap`](https://theme-ui.com/presets/bootstrap)
-- [`tailwind`](https://theme-ui.com/presets/tailwind)
 - [`bulma`](https://theme-ui.com/presets/bulma) (WIP)
+- [`tailwind`](https://theme-ui.com/presets/tailwind)
 
 ## Contributing
 

@@ -20,7 +20,8 @@
     "@theme-ui/preset-roboto": "^0.2.25",
     "@theme-ui/preset-swiss": "^0.2.25",
     "@theme-ui/preset-system": "^0.2.25",
-    "@theme-ui/preset-tailwind": "^0.2.25"
+    "@theme-ui/preset-tailwind": "^0.2.25",
+    "@theme-ui/preset-tosh": "^0.2.25"
   },
   "publishConfig": {
     "access": "public"
