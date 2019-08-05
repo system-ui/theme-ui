@@ -9,7 +9,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@emotion/core": "10.0.14",
+    "@emotion/core": "10.0.15",
     "@mdx-js/react": "1.0.21",
     "@theme-ui/presets": "^0.2.28",
     "react": "16.8.6",
