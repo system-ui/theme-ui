@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-tosh",
-  "version": "0.2.28",
+  "version": "0.2.29",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "John Otander",
