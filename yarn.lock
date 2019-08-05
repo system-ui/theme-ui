@@ -2685,10 +2685,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@next/mdx@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-8.1.0.tgz#ca465cf90913d76d9167821869a3416da8f9b163"
-  integrity sha512-qUt3Vln9PecnG3xFUUGwgmkXJ6sxcF2dk9vBpm2DDZ4UOu0aSNd3VsB+XTeNopX1dSfzIvdYIuIZT1JcK/zRrw==
+"@next/mdx@^9.0.3":
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.0.3.tgz#94b8a93085c2a06e2267fb8bf7f086539fee7acd"
+  integrity sha512-VGz7G/olo1a9y5vpVZg2ET6wc2IEvxDVnWZGYomzwZyJWXxyFYUz+sww1gxFwqsejtUkFDzb7QJIZ5vs+vf+Sw==
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
