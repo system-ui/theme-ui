@@ -425,3 +425,30 @@ test('dot notation works with color modes and custom properties', () => {
     'var(--theme-ui-colors-header-title,tomato)'
   )
 })
+
+test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
+  let color
+  const Grabber = props => {
+    const context = useThemeUI()
+    color = context.theme.colors.primary
+    return false
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useCustomProperties: true,
+        initialColorMode: 'light',
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <Grabber />
+    </ThemeProvider>
+  )
+  expect(color).toBe('tomato')
+})
