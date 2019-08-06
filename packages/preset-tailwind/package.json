@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-tailwind",
-  "version": "0.2.29",
+  "version": "0.2.30",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
