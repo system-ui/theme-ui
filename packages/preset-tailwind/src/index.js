@@ -1,6 +1,14 @@
 // Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 
-export const breakpoints = ['40rem', '48rem', '64rem', '80rem']
+export const borderWidths = {
+  px: '1px',
+  '0': '0',
+  '2': '2px',
+  '4': '4px',
+  '8': '8px',
+}
+
+export const breakpoints = ['640px', '758px', '1024px', '1280px']
 
 export const baseColors = {
   transparent: 'transparent',
@@ -189,9 +197,20 @@ export const fontWeights = {
   heading: baseFontWeights.bold,
 }
 
+export const letterSpacings = {
+  tighter: '-0.05em',
+  tight: '-0.025em',
+  normal: '0',
+  wide: '0.025em',
+  wider: '0.05em',
+  widest: '0.1em',
+}
+
 export const baseLineHeights = {
   none: '1',
   tight: '1.25',
+  snug: '1.375',
+  normal: '1.5',
   relaxed: '1.625',
   loose: '2',
 }
@@ -202,24 +221,12 @@ export const lineHeights = {
   heading: baseLineHeights.tight,
 }
 
-export const space = [
-  0,
-  '0.25rem',
-  '0.5rem',
-  '1rem',
-  '2rem',
-  '4rem',
-  '8rem',
-  '16rem',
-  '32rem',
-]
-
-export const letterSpacings = {
-  tight: '-0.025em',
-  normal: '0',
-  wide: '0.025em',
-  wider: '0.05em',
-  widest: '0.1em',
+export const radii = {
+  none: '0',
+  sm: '0.125rem',
+  default: '0.25rem',
+  lg: '0.5rem',
+  full: '9999px',
 }
 
 export const sizes = {
@@ -252,22 +259,35 @@ export const sizes = {
   '4xl': '56rem',
   '5xl': '64rem',
   '6xl': '72rem',
-}
-
-export const borderWidths = {
-  px: '1px',
-  '0': '0',
-  '2': '2px',
-  '4': '4px',
-  '8': '8px',
-}
-
-export const radii = {
-  none: '0',
-  sm: '0.125rem',
-  default: '0.25rem',
-  lg: '0.5rem',
-  full: '9999px',
+  '1/2': '50%',
+  '1/3': '33.333333%',
+  '2/3': '66.666667%',
+  '1/4': '25%',
+  '2/4': '50%',
+  '3/4': '75%',
+  '1/5': '20%',
+  '2/5': '40%',
+  '3/5': '60%',
+  '4/5': '80%',
+  '1/6': '16.666667%',
+  '2/6': '33.333333%',
+  '3/6': '50%',
+  '4/6': '66.666667%',
+  '5/6': '83.333333%',
+  '1/12': '8.333333%',
+  '2/12': '16.666667%',
+  '3/12': '25%',
+  '4/12': '33.333333%',
+  '5/12': '41.666667%',
+  '6/12': '50%',
+  '7/12': '58.333333%',
+  '8/12': '66.666667%',
+  '9/12': '75%',
+  '10/12': '83.333333%',
+  '11/12': '91.666667%',
+  full: '100%',
+  screenHeight: '100vh',
+  screenWidth: '100vw',
 }
 
 export const shadows = {
@@ -281,6 +301,18 @@ export const shadows = {
   outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
   none: 'none',
 }
+
+export const space = [
+  0,
+  '0.25rem',
+  '0.5rem',
+  '1rem',
+  '2rem',
+  '4rem',
+  '8rem',
+  '16rem',
+  '32rem',
+]
 
 export const zIndices = {
   auto: 'auto',
@@ -352,18 +384,18 @@ export const styles = {
 }
 
 export const tailwind = {
+  borderWidths,
   breakpoints,
   colors,
   fonts,
   fontSizes,
   fontWeights,
-  lineHeights,
-  space,
   letterSpacings,
+  lineHeights,
   sizes,
-  borderWidths,
-  radii,
   shadows,
+  space,
+  radii,
   zIndices,
   styles,
 }
