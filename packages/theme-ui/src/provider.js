@@ -20,7 +20,10 @@ const applyColorMode = (theme, mode) => {
 }
 
 const BaseProvider = ({ context, components, children }) => {
-  const theme = context.theme
+  const theme = { ...context.theme }
+  if (theme.useCustomProperties) {
+    theme.colors = toCustomProperties(theme.colors, 'colors')
+  }
   return jsx(
     EmotionContext.Provider,
     { value: theme },
@@ -39,9 +42,6 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   const [themeState, setThemeState] = useReducer(mergeState, propsTheme)
 
   const theme = applyColorMode(themeState, colorMode)
-  if (theme.useCustomProperties) {
-    theme.colors = toCustomProperties(theme.colors, 'colors')
-  }
 
   const context = {
     __THEME_UI__: true,
