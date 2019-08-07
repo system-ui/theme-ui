@@ -1,6 +1,8 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { ThemeProvider, Styled } from 'theme-ui'
+import { ThemeProvider, Styled, ColorMode } from 'theme-ui'
+
+import Header from '../components/Header'
 import theme from '../src/theme'
 
 class MyApp extends App {
@@ -20,6 +22,8 @@ class MyApp extends App {
     return (
       <Container>
         <ThemeProvider theme={theme}>
+          <ColorMode />
+          <Header />
           <Styled.root>
             <Component {...pageProps} />
           </Styled.root>
