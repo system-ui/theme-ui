@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+## v0.2.31 2019-08-07
+
+- Maintain raw color values in Theme UI context when `useCustomProperties` is enabled #274
+
+## v0.2.30 2019-08-06
+
+- Updates for tailwind preset #272
+
+## v0.2.29 2019-08-05
+
+- Update dependencies
+
+## v0.2.28 2019-08-03
+
+- Add tosh preset #264
+
+## v0.2.27 2019-08-03
+
+- Bad lerna publish
+
 ## v0.2.26 2019-08-02
 
 - Fix for CSS custom properties when using nested color objects #259
