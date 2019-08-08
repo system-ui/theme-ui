@@ -133,8 +133,6 @@ export const AccordionButton = props => {
         bg: 'transparent',
         ':hover,:focus': {
           color: 'primary',
-          outline: 'none',
-          boxShadow: t => `0 0 2px ${t.colors.primary}`,
         },
       }}>
       <svg viewBox="0 0 16 16" width="16" height="16">
@@ -157,7 +155,7 @@ export const AccordionButton = props => {
 }
 
 export const AccordionNav = React.forwardRef(
-  ({ open, children, components, className, ...props }, ref) => {
+  ({ open, children, components = {}, className, ...props }, ref) => {
     const links = createNestedLinks(children)
     const [expanded, setExpanded] = useState({})
     const Link = components.a || 'a'
