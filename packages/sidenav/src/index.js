@@ -161,6 +161,7 @@ export const AccordionNav = React.forwardRef(
     const Link = components.a || 'a'
 
     const toggle = i => e => {
+      e.stopPropagation()
       setExpanded({
         ...expanded,
         [i]: !expanded[i],
