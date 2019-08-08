@@ -1,37 +1,18 @@
-import { Tiles } from '../..'
+import { Cards } from '../..'
 export const title = 'Recipes'
 
 # Recipes
 
 Quick code examples for common use cases.
 
-<Tiles
-  width={320}
-  sx={{
-    h1: {
-      mb: 0,
-    },
-    p: {
-      m: 0,
-    },
-    a: {
-      variant: 'text.heading',
-      display: 'block',
-      fontWeight: 'bold',
-      fontSize: 3,
-      color: 'inherit',
-      textDecoration: 'none',
-      ':hover,:focus': {
-        color: 'primary',
-      }
-    }
-  }}
->
+<Cards width={320}>
 
 - [Gatsby Link](/recipes/gatsby-link)
   Add an active style to Gatsby Link
 - [Flexbox Layout](/recipes/flexbox-layout)
   Create a simple flexbox page layout
+- [CSS Grid](/recipes/css-grid)
+  Use CSS Grid for complex layouts
 - [Button](/recipes/button)
   Create a simple button component with variants
 - [Global](/recipes/global)
@@ -45,4 +26,4 @@ Quick code examples for common use cases.
 - [Syntax Highlighting](/recipes/syntax-highlighting)
   Add syntax highlighting to code fences in MDX
 
-</Tiles>
+</Cards>
