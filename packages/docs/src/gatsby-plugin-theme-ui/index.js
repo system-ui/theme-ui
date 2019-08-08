@@ -84,6 +84,10 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
     },
+    img: {
+      maxWidth: '100%',
+      height: 'auto',
+    },
     h1: {
       variant: 'text.display',
     },
