@@ -1,0 +1,44 @@
+export const title = 'Flexbox Sidebar'
+
+# Flexbox Sidebar
+
+Create a sidebar layout with flexbox that automatically stacks when the container is narrow.
+
+<!-- todo: update styled-system/css
+```js
+// example theme
+export default {
+  sizes: {
+    sidebar: 256,
+  },
+}
+```
+-->
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props =>
+  <div
+    sx={{
+      display: 'flex',
+      flexWrap: 'wrap',
+    }}>
+    <div
+      sx={{
+        flexGrow: 1,
+        flexBasis: 256,
+      }}>
+      Sidebar
+    </div>
+    <div
+      sx={{
+        flexGrow: 99999,
+        flexBasis: 0,
+        minWidth: 320,
+      }}>
+      {props.children}
+    </div>
+  </div>
+```

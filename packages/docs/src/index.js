@@ -9,3 +9,7 @@ export const wrapPageElement = ({ element, props }) => (
     children={element}
   />
 )
+
+export { default as Banner } from './components/banner'
+export { default as Tiles } from './components/tiles'
+export { default as Cards } from './components/cards'
