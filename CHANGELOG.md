@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.2.32 2019-08-08
+
+- Add accordion sidenav #279
+
 ## v0.2.31 2019-08-07
 
 - Maintain raw color values in Theme UI context when `useCustomProperties` is enabled #274
