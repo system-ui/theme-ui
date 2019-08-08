@@ -44,12 +44,8 @@ export default props => {
                 display: ['block', 'flex'],
                 mx: props.fullwidth ? 0 : -3,
               }}>
-              <Sidebar
+              <div
                 ref={nav}
-                open={menuOpen}
-                sx={{
-                  display: [null, props.fullwidth ? 'none' : 'block'],
-                }}
                 onFocus={e => {
                   setMenuOpen(true)
                 }}
@@ -58,8 +54,14 @@ export default props => {
                 }}
                 onClick={e => {
                   setMenuOpen(false)
-                }}
-              />
+                }}>
+                <Sidebar
+                  open={menuOpen}
+                  sx={{
+                    display: [null, props.fullwidth ? 'none' : 'block'],
+                  }}
+                />
+              </div>
               <div
                 id="content"
                 sx={{
