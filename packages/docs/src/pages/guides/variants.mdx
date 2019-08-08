@@ -100,7 +100,7 @@ but still override individual values when needed.
     heading: '-0.05em',
     caps: '0.1em',
   },
-  textStyles: {
+  text: {
     heading: {
       fontFamily: 'heading',
       fontWeight: 'heading',
@@ -126,11 +126,11 @@ These variants can then be used in the `theme.styles` object or in the `sx` prop
 
 ```jsx
 // example usage of typographic variants
-<h1 sx={{ variant: 'textStyles.display' }} />
-<p sx={{ variant: 'textStyles.caps' }} />
+<h1 sx={{ variant: 'text.display' }} />
+<p sx={{ variant: 'text.caps' }} />
 <h2
   sx={{
-    variant: 'textStyles.heading',
+    variant: 'text.heading',
     // overriding the default styles
     fontWeight: 'body',
   }}

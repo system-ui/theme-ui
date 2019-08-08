@@ -1,14 +1,48 @@
+import { Tiles } from '../..'
 export const title = 'Recipes'
 
 # Recipes
 
 Quick code examples for common use cases.
 
+<Tiles
+  width={320}
+  sx={{
+    h1: {
+      mb: 0,
+    },
+    p: {
+      m: 0,
+    },
+    a: {
+      variant: 'text.heading',
+      display: 'block',
+      fontWeight: 'bold',
+      fontSize: 3,
+      color: 'inherit',
+      textDecoration: 'none',
+      ':hover,:focus': {
+        color: 'primary',
+      }
+    }
+  }}
+>
+
 - [Gatsby Link](/recipes/gatsby-link)
+  Add an active style to Gatsby Link
 - [Flexbox Layout](/recipes/flexbox-layout)
+  Create a simple flexbox page layout
 - [Button](/recipes/button)
+  Create a simple button component with variants
 - [Global](/recipes/global)
+  Add global styles using Emotion
 - [Color Mode Toggle](/recipes/color-mode-toggle)
+  Create a button to toggle between light and dark color modes
 - [Color Mode Switcher](/recipes/color-mode-switcher)
+  Create a button to cycle through color modes
 - [Linked Headings](/recipes/linked-headings)
+  Create anchor-linked headings in MDX
 - [Syntax Highlighting](/recipes/syntax-highlighting)
+  Add syntax highlighting to code fences in MDX
+
+</Tiles>
