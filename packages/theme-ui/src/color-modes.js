@@ -68,14 +68,19 @@ const bodyColor = theme => ({
 
 export const ColorMode = () => <Global styles={bodyColor} />
 
-export const applyColorModeFromLocalStorage = `
-  (function() {
+export const ApplyColorModeFromLocalStorage = () => (
+  <script
+    key="theme-ui-noscript"
+    dangerouslySetInnerHTML={{
+      __html: `(function() {
     try {
       var mode = localStorage.getItem('theme-ui-color-mode');
       if (!mode) return
       document.body.classList.add('theme-ui-' + mode);
     } catch (e) {}
-  })();
-`
+  })();`,
+    }}
+  />
+)
 
 export default useColorMode

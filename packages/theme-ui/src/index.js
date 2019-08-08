@@ -4,7 +4,7 @@ export { Context, useThemeUI } from './context'
 export {
   ColorMode,
   useColorMode,
-  applyColorModeFromLocalStorage,
+  ApplyColorModeFromLocalStorage,
 } from './color-modes'
 export { Styled, components } from './components'
 export { Box, Flex, Layout, Header, Main, Container, Footer } from './layout'
