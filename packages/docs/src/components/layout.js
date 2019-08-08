@@ -44,22 +44,23 @@ export default props => {
                 display: ['block', 'flex'],
                 mx: props.fullwidth ? 0 : -3,
               }}>
-              <Sidebar
-                ref={nav}
-                open={menuOpen}
-                sx={{
-                  display: [null, props.fullwidth ? 'none' : 'block'],
-                }}
-                onFocus={e => {
-                  setMenuOpen(true)
-                }}
-                onBlur={e => {
-                  setMenuOpen(false)
-                }}
-                onClick={e => {
-                  setMenuOpen(false)
-                }}
-              />
+              <div ref={nav}>
+                <Sidebar
+                  open={menuOpen}
+                  sx={{
+                    display: [null, props.fullwidth ? 'none' : 'block'],
+                  }}
+                  onFocus={e => {
+                    setMenuOpen(true)
+                  }}
+                  onBlur={e => {
+                    setMenuOpen(false)
+                  }}
+                  onClick={e => {
+                    setMenuOpen(false)
+                  }}
+                />
+              </div>
               <div
                 id="content"
                 sx={{

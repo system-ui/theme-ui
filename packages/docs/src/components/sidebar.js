@@ -1,19 +1,19 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx } from 'theme-ui'
-import { Sidenav } from '@theme-ui/sidenav'
+import { AccordionNav } from '@theme-ui/sidenav'
 import NavLink from './nav-link'
-import Content from '../sidebar.mdx'
+import Sidebar from '../sidebar.mdx'
 
 const components = {
+  wrapper: AccordionNav,
   a: NavLink,
 }
 
-export default React.forwardRef((props, ref) => (
-  <Sidenav
+export default props => (
+  <Sidebar
     {...props}
     components={components}
-    ref={ref}
     sx={{
       width: 256,
       flex: 'none',
@@ -21,7 +21,6 @@ export default React.forwardRef((props, ref) => (
       pt: 3,
       pb: 4,
       mt: [64, 0],
-    }}>
-    <Content />
-  </Sidenav>
-))
+    }}
+  />
+)
