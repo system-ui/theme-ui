@@ -70,7 +70,7 @@ export const ColorMode = () => <Global styles={bodyColor} />
 
 export const ApplyColorModeFromLocalStorage = () => (
   <script
-    key="theme-ui-noscript"
+    key="theme-ui-no-flash"
     dangerouslySetInnerHTML={{
       __html: `(function() { try {
         var mode = localStorage.getItem('theme-ui-color-mode');
