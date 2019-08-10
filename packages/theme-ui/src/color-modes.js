@@ -68,7 +68,7 @@ const bodyColor = theme => ({
 
 export const ColorMode = () => <Global styles={bodyColor} />
 
-export const ApplyColorModeFromLocalStorage = () => (
+export const InitializeColorMode = () => (
   <script
     key="theme-ui-noscript"
     dangerouslySetInnerHTML={{

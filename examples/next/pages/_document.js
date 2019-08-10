@@ -1,6 +1,6 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ApplyColorModeFromLocalStorage } from 'theme-ui'
+import { InitializeColorMode } from 'theme-ui'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -13,7 +13,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <ApplyColorModeFromLocalStorage />
+          <InitializeColorMode />
           <Main />
           <NextScript />
         </body>
