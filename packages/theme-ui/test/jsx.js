@@ -79,3 +79,9 @@ test('sx prop supports dot notation', () => {
   expect(json).toHaveStyleRule('background-color', 'cyan')
   expect(json).toHaveStyleRule('color', '#07c')
 })
+
+test('throws when element type is undefined', () => {
+  expect(() => {
+    const json = renderJSON(jsx(undefined))
+  }).toThrow()
+})
