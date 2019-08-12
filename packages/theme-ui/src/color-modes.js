@@ -68,4 +68,17 @@ const bodyColor = theme => ({
 
 export const ColorMode = () => <Global styles={bodyColor} />
 
+export const InitializeColorMode = () => (
+  <script
+    key="theme-ui-no-flash"
+    dangerouslySetInnerHTML={{
+      __html: `(function() { try {
+        var mode = localStorage.getItem('theme-ui-color-mode');
+        if (!mode) return
+        document.body.classList.add('theme-ui-' + mode);
+      } catch (e) {} })();`,
+    }}
+  />
+)
+
 export default useColorMode

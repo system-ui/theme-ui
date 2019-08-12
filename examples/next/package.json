@@ -11,6 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.15",
     "@mdx-js/loader": "^1.0.19",
     "@next/mdx": "^9.0.3",
     "next": "^9.0.2",
