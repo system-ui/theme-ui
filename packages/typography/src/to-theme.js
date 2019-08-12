@@ -59,6 +59,7 @@ const genericFontFamilies = [
   'fantasy',
   'cursive',
   '-apple-system',
+  'system-ui',
 ]
 
 const wrapFontFamily = fontFamily =>
