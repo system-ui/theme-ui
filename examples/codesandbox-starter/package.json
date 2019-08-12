@@ -1,7 +1,7 @@
 {
   "name": "theme-ui-starter",
   "private": "true",
-  "version": "0.2.31",
+  "version": "0.2.33",
   "description": "A sandbox configured with Theme UI, including the `base` theme.",
   "main": "index.html",
   "scripts": {
@@ -14,7 +14,7 @@
     "@theme-ui/presets": "^0.2.30",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "theme-ui": "^0.2.31"
+    "theme-ui": "^0.2.33"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
