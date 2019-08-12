@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## v0.2.33 2019-08-12
+
+- Add support for FOUC fix in Next.js #277
+- Update dependencies
+
 ## v0.2.32 2019-08-08
 
 - Add accordion sidenav #279

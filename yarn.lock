@@ -1482,7 +1482,7 @@
     "@emotion/utils" "0.11.2"
     "@emotion/weak-memoize" "0.2.3"
 
-"@emotion/core@10.0.15", "@emotion/core@^10.0.0", "@emotion/core@^10.0.10", "@emotion/core@^10.0.14":
+"@emotion/core@10.0.15", "@emotion/core@^10.0.0", "@emotion/core@^10.0.10", "@emotion/core@^10.0.14", "@emotion/core@^10.0.15":
   version "10.0.15"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.15.tgz#b8489d85d64b45bd03abdb8a3d9639ba8a0328d0"
   integrity sha512-VHwwl3k/ddMfQOHYgOJryXOs2rGJ5AfKLQGm5AVolNonnr6tkmDI4nzIMNaPpveoXVs7sP0OrF24UunIPxveQw==
