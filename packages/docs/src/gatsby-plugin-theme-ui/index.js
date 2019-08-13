@@ -165,6 +165,20 @@ export default {
       borderBottom: '1px solid',
       borderColor: 'muted',
     },
+    xray: {
+      '*': {
+        outline: '1px solid rgba(0, 192, 255, .25)',
+      },
+    },
+    navlink: {
+      display: 'inline-block',
+      fontWeight: 'bold',
+      color: 'inherit',
+      textDecoration: 'none',
+      ':hover,:focus': {
+        color: 'primary',
+      },
+    },
   },
   prism,
 }
