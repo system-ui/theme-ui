@@ -27,6 +27,15 @@ const LiveCode = ({ children, xray }) => {
           border: t => `1px solid ${t.colors.muted}`,
         }}>
         <LivePreview />
+        <LiveError
+          sx={{
+            p: 3,
+            fontFamily: 'monospace',
+            fontSize: 0,
+            color: 'secondary',
+            bg: 'highlight',
+          }}
+        />
       </div>
       <Styled.pre
         sx={{
@@ -34,7 +43,6 @@ const LiveCode = ({ children, xray }) => {
         }}>
         <LiveEditor padding={0} />
       </Styled.pre>
-      <LiveError />
     </LiveProvider>
   )
 }
