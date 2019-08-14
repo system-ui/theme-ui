@@ -1,8 +1,7 @@
-import React from 'react'
-import { InitializeColorMode } from 'theme-ui'
+import { jsx, InitializeColorMode } from 'theme-ui'
 
 export { wrapRootElement } from './src/provider'
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents([<InitializeColorMode />])
+  setPreBodyComponents([jsx(InitializeColorMode, { key: 'theme-ui-no-flash' })])
 }
