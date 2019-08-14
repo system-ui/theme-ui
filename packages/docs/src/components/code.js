@@ -3,10 +3,43 @@ import { jsx, Styled } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 
+const posts = [
+  {
+    title: 'A Conceptual Look at Theming',
+    id: '/a-conceptual-look-at-theming',
+    slug: '/a-conceptual-look-at-theming',
+    excerpt:
+      'The word theme can mean a lot of different things and invoke a lot of different interpretations, which can be both a blessing and a curse.',
+    date: '2019-08-10',
+  },
+  {
+    title: 'Code Literacy',
+    id: '/code-literacy',
+    slug: '/code-literacy',
+    excerpt: `Ah yes, everyone's favorite question: should designers code? As much as I'd love to pontificate on the matter, I think the framing of this question is fundamentally wrong.`,
+    date: '2019-07-25',
+  },
+  {
+    title: 'Portability',
+    id: '/portability',
+    slug: '/portability',
+    excerpt: `In software development, formats help ensure that content and data are portable and can be used in many different applications.`,
+    date: '2019-07-23',
+  },
+  {
+    title: 'Themeability',
+    id: '/themeability',
+    slug: '/themeability',
+    excerpt: `I've been interested in the idea of constraint-based design for a while. By constraining the solution space for a particular problem, new and novel ideas can emerge beyond the initial problem's scope.`,
+    date: '2019-07-21',
+  },
+]
+
 const scope = {
   jsx,
   Styled,
   Link: props => <a {...props} href="#!" />,
+  posts,
 }
 
 const transformCode = src => `/** @jsx jsx */\n${src}`
