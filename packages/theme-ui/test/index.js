@@ -27,8 +27,7 @@ test('renders with styles', () => {
             color: 'tomato',
           },
         },
-      }}
-    >
+      }}>
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -47,8 +46,7 @@ test('creates non-standard components', () => {
             color: 'tomato',
           },
         },
-      }}
-    >
+      }}>
       <sup>hey</sup>
     </ThemeProvider>
   )
@@ -74,8 +72,7 @@ test('styles React components', () => {
             color: 'tomato',
           },
         },
-      }}
-    >
+      }}>
       <Inner />
     </ThemeProvider>
   )
@@ -93,8 +90,7 @@ test('components accept an `as` prop', () => {
             color: 'tomato',
           },
         },
-      }}
-    >
+      }}>
       <Styled.h1 as={Beep}>Beep boop</Styled.h1>
     </ThemeProvider>
   )
@@ -116,4 +112,17 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('margin-right', 'auto')
   expect(json).toHaveStyleRule('padding', '8px')
   expect(json).toHaveStyleRule('background-color', 'tomato')
+})
+
+test('warns when multiple versions of emotion are installed', () => {
+  jest.spyOn(global.console, 'warn')
+  const json = renderJSON(
+    <Context.Provider
+      value={{
+        emotionVersion: '9.0.0',
+      }}>
+      <ThemeProvider>Conflicting versions</ThemeProvider>
+    </Context.Provider>
+  )
+  expect(console.warn).toBeCalled()
 })
