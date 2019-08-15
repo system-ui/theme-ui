@@ -52,6 +52,7 @@
       "!packages/docs/**/*",
       "!packages/presets/**/*",
       "!packages/style-guide/**/*",
+      "!packages/gatsby-theme-style-guide/**/*",
       "!packages/chrome/**/*",
       "!packages/editor/**/*",
       "!packages/preset-*/**/*"
