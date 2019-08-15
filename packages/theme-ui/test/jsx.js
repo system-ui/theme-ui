@@ -1,4 +1,5 @@
 import { jsx, ThemeProvider } from '../src'
+import { Fragment } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 
@@ -78,4 +79,11 @@ test('sx prop supports dot notation', () => {
   )
   expect(json).toHaveStyleRule('background-color', 'cyan')
   expect(json).toHaveStyleRule('color', '#07c')
+})
+
+test('does not add css prop when not provided', () => {
+  jest.spyOn(global.console, 'warn')
+  const json = renderJSON(jsx(Fragment, null, 'hi'))
+  expect(json.props).toEqual(undefined)
+  expect(console.warn).not.toBeCalled()
 })

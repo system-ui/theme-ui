@@ -17,7 +17,8 @@ const parseProps = props => {
     if (key === 'sx') continue
     next[key] = props[key]
   }
-  next.css = getCSS(props)
+  const css = getCSS(props)
+  if (css) next.css = css
   return next
 }
 
