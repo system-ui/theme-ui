@@ -12,5 +12,11 @@ module.exports = {
         remarkPlugins,
       },
     },
+    {
+      resolve: 'gatsby-theme-style-guide',
+      options: {
+        basePath: '/style-guide-demo',
+      },
+    },
   ],
 }

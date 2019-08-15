@@ -46,7 +46,7 @@ export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
   )
 }
 
-export const ColorPalette = ({ omit = [], ...props }) => {
+export const ColorPalette = ({ omit, ...props }) => {
   const { colors = {} } = useTheme()
 
   return (
