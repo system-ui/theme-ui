@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## v0.2.35 2019-08-15
+
+- Adds `gatsby-theme-style-guide` package #301
+- Fix for `jsx` create element function #302
+
 ## v0.2.34 2019-08-15
 
 - `gatsby-plugin-theme-ui` remove JSX syntax from gatsby-ssr in Gatsby plugin #299
