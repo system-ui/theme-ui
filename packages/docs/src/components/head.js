@@ -6,11 +6,12 @@ import pkg from 'theme-ui/package.json'
 export default props => {
   const title = [
     props.title,
+    props.pageContext.frontmatter ? props.pageContext.frontmatter.title : false,
     props._frontmatter ? props._frontmatter.title : false,
     'Theme UI',
   ]
     .filter(Boolean)
-    .join(' — ')
+    .join(' – ')
 
   const { theme } = useThemeUI()
 

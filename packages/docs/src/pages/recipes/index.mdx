@@ -1,5 +1,8 @@
-import { Cards } from '../..'
-export const title = 'Recipes'
+---
+title: 'Recipes'
+---
+
+import { Cards, Tiles } from '../..'
 
 # Recipes
 
@@ -35,3 +38,24 @@ Quick code examples for common use cases.
   Add syntax highlighting to code fences in MDX
 
 </Cards>
+
+## Components
+
+<Tiles columns={2}>
+
+- ### Header
+  - [Header A1](/recipes/header-a1)
+  - [Header A2](/recipes/header-a2)
+  - [Header A3](/recipes/header-a3)
+  - [Header A4](/recipes/header-a4)
+  - [Header A5](/recipes/header-a5)
+- ### Footer
+  - [Footer A1](/recipes/footer-a1)
+  - [Footer A2](/recipes/footer-a2)
+  - [Footer A3](/recipes/footer-a3)
+  - [Footer A4](/recipes/footer-a4)
+- ### PostList
+  - [PostList A1](/recipes/post-list-a1)
+  - [PostList A2](/recipes/post-list-a2)
+
+</Tiles>
