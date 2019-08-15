@@ -1,4 +1,5 @@
 // Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+// and https://tailwindcss.com/components
 
 export const borderWidths = {
   px: '1px',
@@ -136,12 +137,113 @@ export const baseColors = {
   ],
 }
 
+const commonButtonStyles = {
+  py: 2,
+  px: 3,
+  cursor: `pointer`,
+  fontSize: `100%`,
+  lineHeight: `inherit`,
+}
+
+export const buttons = {
+  simple: {
+    ...commonButtonStyles,
+    backgroundColor: `primary`,
+    border: `none`,
+    color: `white`,
+    fontWeight: `bold`,
+    borderRadius: `default`,
+    '&:hover': {
+      backgroundColor: `primaryHover`,
+    },
+  },
+  pill: {
+    ...commonButtonStyles,
+    backgroundColor: `primary`,
+    border: `none`,
+    color: `white`,
+    fontWeight: `bold`,
+    borderRadius: `full`,
+    '&:hover': {
+      backgroundColor: `primaryHover`,
+    },
+  },
+  outline: {
+    ...commonButtonStyles,
+    backgroundColor: `transparent`,
+    borderWidth: `1px`,
+    borderStyle: `solid`,
+    borderColor: `primary`,
+    color: `primary`,
+    fontWeight: `semibold`,
+    borderRadius: `default`,
+    '&:hover': {
+      backgroundColor: `primary`,
+      color: `white`,
+      borderColor: `transparent`,
+    },
+  },
+  bordered: {
+    ...commonButtonStyles,
+    backgroundColor: `primary`,
+    borderWidth: `1px`,
+    borderStyle: `solid`,
+    borderColor: `primaryHover`,
+    color: `white`,
+    fontWeight: `bold`,
+    borderRadius: `default`,
+    '&:hover': {
+      backgroundColor: `primaryHover`,
+    },
+  },
+  disabled: {
+    ...commonButtonStyles,
+    backgroundColor: `primary`,
+    border: `none`,
+    opacity: 0.5,
+    cursor: `not-allowed`,
+    color: `white`,
+    fontWeight: `bold`,
+    borderRadius: `default`,
+  },
+  '3D': {
+    ...commonButtonStyles,
+    backgroundColor: `primary`,
+    border: `none`,
+    borderBottomWidth: `4px`,
+    borderBottomStyle: `solid`,
+    borderBottomColor: `primaryHover`,
+    color: `white`,
+    fontWeight: `bold`,
+    borderRadius: `default`,
+    transition: `transform 0.3s ease-in-out`,
+    '&:hover': {
+      transform: `translateY(-1px)`,
+    },
+  },
+  elevated: {
+    ...commonButtonStyles,
+    backgroundColor: `white`,
+    borderWidth: `1px`,
+    borderStyle: `solid`,
+    borderColor: `gray.4`,
+    color: `text`,
+    fontWeight: `bold`,
+    borderRadius: `default`,
+    boxShadow: `default`,
+    '&:hover': {
+      backgroundColor: `gray.1`,
+    },
+  },
+}
+
 export const colors = {
   ...baseColors,
   grayDark: baseColors.gray[8],
   text: baseColors.gray[8],
   background: baseColors.white,
-  primary: baseColors.blue[3],
+  primary: baseColors.blue[7],
+  primaryHover: baseColors.blue[8],
   secondary: baseColors.gray[6],
   muted: baseColors.gray[3],
   success: baseColors.green[3],
@@ -195,6 +297,56 @@ export const fontWeights = {
   ...baseFontWeights,
   body: baseFontWeights.normal,
   heading: baseFontWeights.bold,
+}
+
+const commonInputStyles = {
+  py: 2,
+  px: 3,
+  fontSize: `100%`,
+  borderRadius: `default`,
+  appearance: `none`,
+  lineHeight: `tight`,
+}
+
+export const inputs = {
+  shadow: {
+    ...commonInputStyles,
+    border: `none`,
+    color: `gray.7`,
+    boxShadow: `default`,
+    '&:focus': {
+      outline: `none`,
+      boxShadow: `outline`,
+    },
+  },
+  inline: {
+    ...commonInputStyles,
+    backgroundColor: `gray.2`,
+    borderWidth: `2px`,
+    borderStyle: `solid`,
+    borderColor: `gray.2`,
+    color: `gray.7`,
+    '&:focus': {
+      outline: `none`,
+      borderColor: `primary`,
+      backgroundColor: `white`,
+    },
+  },
+  underline: {
+    ...commonInputStyles,
+    backgroundColor: `transparent`,
+    border: `none`,
+    borderBottomWidth: `2px`,
+    borderBottomStyle: `solid`,
+    borderBottomColor: `primary`,
+    borderRadius: `0px`,
+    color: `gray.7`,
+    '&:focus': {
+      outline: `none`,
+      borderColor: `primary`,
+      backgroundColor: `white`,
+    },
+  },
 }
 
 export const letterSpacings = {
@@ -398,6 +550,8 @@ export const tailwind = {
   radii,
   zIndices,
   styles,
+  buttons,
+  inputs,
 }
 
 export default tailwind

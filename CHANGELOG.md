@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## v0.2.34 2019-08-15
+
+- `gatsby-plugin-theme-ui` remove JSX syntax from gatsby-ssr in Gatsby plugin #299
+- `@theme-ui/typography` fix for CSS font-family keywords #285
+- `@theme-ui/preset-tailwind` add button and input variants #291
+
+## v0.2.33 2019-08-12
+
+- Add support for FOUC fix in Next.js #277
+- Update dependencies
+
 ## v0.2.32 2019-08-08
 
 - Add accordion sidenav #279
