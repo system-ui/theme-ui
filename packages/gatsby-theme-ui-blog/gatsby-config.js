@@ -1,4 +1,4 @@
-const config = options => ({
+module.exports = options => ({
   plugins: [
     {
       resolve: 'gatsby-theme-blog-core',
@@ -8,5 +8,3 @@ const config = options => ({
     'gatsby-plugin-theme-ui',
   ],
 })
-const isLocal = __dirname === process.cwd()
-module.exports = isLocal ? config({}) : config
