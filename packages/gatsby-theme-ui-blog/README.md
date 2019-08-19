@@ -1,7 +1,8 @@
 
 # gatsby-theme-ui-blog
 
-Minimal Gatsby MDX blog theme built with Theme UI
+Minimal Gatsby MDX blog theme built with Theme UI.
+Use this as a starting point for building custom blog themes with Theme UI.
 
 ```sh
 npm i gatsby-theme-ui-blog
