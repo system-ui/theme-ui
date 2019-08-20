@@ -12,6 +12,7 @@ export default {
     highlight: '#efeffe', // '#ffffcc',
     gray: '#777',
     accent: '#609',
+    darken: 'rgba(0, 0, 0, .25)',
     modes: {
       dark: {
         text: '#fff',
@@ -61,6 +62,9 @@ export default {
     body: 1.5,
     heading: 1.25,
   },
+  sizes: {
+    sidebar: 256,
+  },
   text: {
     heading: {
       fontFamily: 'heading',
@@ -73,6 +77,12 @@ export default {
       fontWeight: 'display',
       letterSpacing: '-0.03em',
       mt: 3,
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
     },
   },
   styles: {

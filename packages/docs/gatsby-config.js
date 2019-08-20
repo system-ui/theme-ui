@@ -22,6 +22,7 @@ module.exports = {
       resolve: 'gatsby-theme-code-recipes',
       options: {
         path: 'src/recipes',
+        basePath: '/recipes',
       },
     },
   ],

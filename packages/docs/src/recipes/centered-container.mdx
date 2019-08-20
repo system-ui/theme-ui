@@ -1,10 +1,22 @@
 ---
-title: 'Centered Container'
+name: 'Centered Container'
 ---
 
 # Centered Container
 
 Create a centered, max-width container for reuse in multiple layouts.
+
+```jsx live
+<div
+  sx={{
+    maxWidth: 512,
+    mx: 'auto',
+    px: 3,
+    py: 4,
+  }}>
+  Centered
+</div>
+```
 
 First, add a `container` size to your theme,
 then use the size in your component definition.

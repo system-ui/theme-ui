@@ -1,8 +1,31 @@
 ---
-title: 'Color Mode Switcher'
+title: Color Mode Toggles
 ---
 
-# Color Mode Switcher
+# Color Mode Toggles
+
+Create a button to toggle between light and dark [color modes](/color-modes).
+
+```jsx
+/** @jsx jsx */
+import { jsx, useColorMode } from 'theme-ui'
+
+export default props => {
+  const [ mode, setMode ] = useColorMode()
+
+  return (
+    <button
+      {...props}
+      onClick={e => {
+        const next = mode === 'dark' ? 'light' : 'dark'
+        setMode(next)
+      }}
+    />
+  )
+}
+```
+
+## Cycling through multiple modes
 
 Create a button to cycle through multiple [color modes](/color-modes).
 

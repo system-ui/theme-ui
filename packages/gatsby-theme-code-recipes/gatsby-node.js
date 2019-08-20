@@ -1,6 +1,6 @@
-const qs = require('querystring')
 const visit = require('unist-util-visit')
 const { createFilePath } = require('gatsby-source-filesystem')
+const { urlResolve } = require('gatsby-core-utils')
 
 const mdxResolverPassthrough = fieldName => async (
   source,
@@ -19,6 +19,18 @@ const mdxResolverPassthrough = fieldName => async (
   return result
 }
 
+const parseProps = meta => {
+  return meta.split(' ').reduce((a, prop) => {
+    if (prop.split('=').length > 1) {
+      const [key, value] = prop.split('=')
+      a[key] = value
+      return a
+    }
+    a[prop] = true
+    return a
+  }, {})
+}
+
 const resolveSnippets = async (source, args, context, info) => {
   const type = info.schema.getType('Mdx')
   const node = context.nodeModel.getNodeById({
@@ -30,7 +42,7 @@ const resolveSnippets = async (source, args, context, info) => {
   })
   const snippets = []
   visit(ast, 'code', ({ lang, value, meta }) => {
-    const props = qs.parse(meta || '')
+    const props = parseProps(meta || '')
 
     snippets.push({
       lang,
@@ -44,15 +56,18 @@ const resolveSnippets = async (source, args, context, info) => {
 }
 
 let source = 'src/recipes'
+let basePath = '/recipes'
 
 exports.onPreBootstrap = ({}, opts = {}) => {
   if (opts.path) source = opts.path
+  if (opts.basePath) basePath = opts.basePath
 }
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   actions.createTypes(`interface Recipe @nodeInterface {
     id: ID!
     name: String!
+    slug: String!
     body: String!
     snippets: [JSON]!
   }`)
@@ -63,6 +78,9 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: {
         id: { type: 'ID!' },
         name: {
+          type: 'String!',
+        },
+        slug: {
           type: 'String!',
         },
         snippets: {
@@ -101,10 +119,12 @@ exports.onCreateNode = async ({
     getNode,
     basePath: source,
   })
+  const slug = urlResolve(basePath, filepath)
 
   await actions.createNode({
-    name: node.frontmatter.name || filepath,
     id,
+    name: node.frontmatter.name || filepath,
+    slug,
     parent: node.id,
     children: [],
     internal: {
@@ -118,5 +138,35 @@ exports.onCreateNode = async ({
   actions.createParentChildLink({
     parent: node,
     child: getNode(id),
+  })
+}
+
+exports.createPages = async ({ actions, graphql, reporter }, opts) => {
+  if (!opts.basePath) return
+  const result = await graphql(`
+    {
+      allMdxRecipe(sort: { fields: [name], order: DESC }) {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) reporter.panic(result.errors)
+
+  const recipes = result.data.allMdxRecipe.edges.map(e => e.node)
+
+  recipes.forEach(r => {
+    actions.createPage({
+      path: r.slug,
+      component: require.resolve('./src/query'),
+      context: {
+        id: r.id,
+      },
+    })
   })
 }

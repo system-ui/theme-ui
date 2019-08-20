@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
+import { Link } from 'gatsby'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 
@@ -38,7 +39,10 @@ const posts = [
 const scope = {
   jsx,
   Styled,
-  Link: props => <a {...props} href="#!" />,
+  Link: props => {
+    if (props.activeClassName) return <Link {...props} />
+    return <a {...props} href="#!" />
+  },
   posts,
 }
 
@@ -46,7 +50,19 @@ const transformCode = src => `/** @jsx jsx */\n${src}`
 
 const liveTheme = { styles: [] }
 
-const LiveCode = ({ children, xray }) => {
+export const LiveCode = ({ children, preview, xray }) => {
+  if (preview) {
+    return (
+      <LiveProvider
+        theme={liveTheme}
+        code={children}
+        scope={scope}
+        transformCode={transformCode}>
+        <LivePreview />
+      </LiveProvider>
+    )
+  }
+
   return (
     <LiveProvider
       theme={liveTheme}
@@ -55,8 +71,8 @@ const LiveCode = ({ children, xray }) => {
       transformCode={transformCode}>
       <div
         sx={{
+          p: 3,
           variant: xray ? 'styles.xray' : null,
-          // p: 3,
           border: t => `1px solid ${t.colors.muted}`,
         }}>
         <LivePreview />
