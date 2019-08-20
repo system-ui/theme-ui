@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
-import { Link } from 'gatsby'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 
@@ -40,8 +39,9 @@ const scope = {
   jsx,
   Styled,
   Link: props => {
-    if (props.activeClassName) return <Link {...props} />
-    return <a {...props} href="#!" />
+    if (props.activeClassName)
+      return <span className={props.activeClassName} {...props} />
+    return <span {...props} sx={{ cursor: 'pointer' }} />
   },
   posts,
 }
