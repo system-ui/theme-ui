@@ -1,11 +1,25 @@
-import React from 'react'
-import { Styled, useThemeUI } from 'theme-ui'
+/** @jsx jsx */
+import { jsx, Styled, useThemeUI } from 'theme-ui'
 import {
   FontFamily,
   HeadingStyle,
   TypeScale,
   TypeStyle,
 } from '@theme-ui/style-guide'
+
+const Row = props => (
+  <div
+    {...props}
+    sx={{
+      display: 'flex',
+      alignItems: 'baseline',
+      flexWrap: 'wrap',
+      '& > div + div': {
+        ml: 3,
+      },
+    }}
+  />
+)
 
 export default props => {
   const { theme } = useThemeUI()
@@ -17,35 +31,50 @@ export default props => {
       {fonts && (
         <div>
           <Styled.h3>Font Families</Styled.h3>
-          {Object.keys(fonts).map(name => (
-            <TypeStyle key={name} fontFamily={name}>
-              {name}: {fonts[name]}
-            </TypeStyle>
-          ))}
+          <Row>
+            {Object.keys(fonts).map(name => (
+              <div key={name}>
+                <TypeStyle fontFamily={name} fontSize={6}>
+                  Aa
+                </TypeStyle>
+                <Styled.code title={fonts[name]}>{name}</Styled.code>
+              </div>
+            ))}
+          </Row>
         </div>
       )}
+      <Styled.h3>Font Sizes</Styled.h3>
+      <TypeScale />
       {fontWeights && (
         <div>
           <Styled.h3>Font Weights</Styled.h3>
-          {Object.keys(fontWeights).map(name => (
-            <TypeStyle key={name} fontSize={2} fontWeight={name}>
-              {name}: {fontWeights[name]}
-            </TypeStyle>
-          ))}
+          <Row>
+            {Object.keys(fontWeights).map(name => (
+              <div key={name}>
+                <TypeStyle fontSize={6} fontWeight={name}>
+                  {fontWeights[name]}
+                </TypeStyle>
+                <Styled.code>{name}</Styled.code>
+              </div>
+            ))}
+          </Row>
         </div>
       )}
       {lineHeights && (
         <div>
           <Styled.h3>Line Heights</Styled.h3>
-          {Object.keys(lineHeights).map(name => (
-            <TypeStyle key={name} fontSize={2} lineHeight={name}>
-              {name}: {lineHeights[name]}
-            </TypeStyle>
-          ))}
+          <Row>
+            {Object.keys(lineHeights).map(name => (
+              <div key={name}>
+                <TypeStyle fontSize={6} lineHeight={name}>
+                  {lineHeights[name]}
+                </TypeStyle>
+                <Styled.code>{name}</Styled.code>
+              </div>
+            ))}
+          </Row>
         </div>
       )}
-      <Styled.h3>Font Sizes</Styled.h3>
-      <TypeScale />
     </section>
   )
 }
