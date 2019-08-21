@@ -1,0 +1,7 @@
+{
+  "name": "gatsby-theme-ui-layout",
+  "version": "0.2.35",
+  "main": "index.js",
+  "repository": "system-ui/theme-ui",
+  "license": "MIT"
+}
