@@ -14,8 +14,9 @@ const Row = props => (
       display: 'flex',
       alignItems: 'baseline',
       flexWrap: 'wrap',
-      '& > div + div': {
-        ml: 3,
+      mx: -3,
+      '& > div': {
+        px: 3,
       },
     }}
   />
