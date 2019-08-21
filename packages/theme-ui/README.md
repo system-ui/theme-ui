@@ -6,7 +6,7 @@
 
 # Theme UI
 
-Build consistent, themeable React UIs based on design system constraints and design tokens | Built with Emotion + Styled System + MDX + Typography.js
+Build consistent, themeable React apps based on constraint-based design principles | Built with Emotion + Styled System + MDX + Typography.js
 
 [![GitHub][github-badge]][github]
 [![Stars][stars]][github]
