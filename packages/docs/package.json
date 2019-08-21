@@ -31,6 +31,7 @@
     "gatsby-plugin-mdx": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-theme-ui": "^0.2.34",
+    "gatsby-theme-code-recipes": "0.2.35",
     "gatsby-theme-style-guide": "^0.2.35",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",

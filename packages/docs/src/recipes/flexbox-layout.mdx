@@ -1,10 +1,40 @@
 ---
-title: 'Flexbox Layout'
+name: 'Flexbox Layout'
 ---
 
 # Flexbox Layout
 
 Create a simple page layout component with header and footer.
+
+```jsx live=true xray=true
+<div
+  sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    // set this to `minHeight: '100vh'` for full viewport height
+    minHeight: 256,
+  }}>
+  <header
+    sx={{
+      width: '100%',
+    }}>
+    Header
+  </header>
+  <main
+    sx={{
+      width: '100%',
+      flex: '1 1 auto',
+    }}>
+    Main
+  </main>
+  <footer
+    sx={{
+      width: '100%',
+    }}>
+    Footer
+  </footer>
+</div>
+```
 
 Flexbox styles are used to ensure the footer always renders at the bottom of the page, even when there isn't enough content to fill the viewport.
 

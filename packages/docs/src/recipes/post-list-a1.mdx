@@ -1,17 +1,14 @@
 ---
-title: PostList A2
+name: PostList A1
 component: post-list
 ---
 
-# PostList A2
+# PostList A1
 
 ```jsx live
 <ul
   sx={{
     listStyle: 'none',
-    display: 'grid',
-    gridGap: 3,
-    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
     m: 0,
     px: 3,
     py: 4,
@@ -19,6 +16,7 @@ component: post-list
   {posts.map(post => (
     <li key={post.id}
       sx={{
+        mb: 4,
       }}>
       <Styled.h2
         sx={{
@@ -37,10 +35,7 @@ component: post-list
         </Link>
       </Styled.h2>
       <small sx={{ fontWeight: 'bold' }}>{post.date}</small>
-      <Styled.p
-        sx={{
-          m: 0,
-        }}>
+      <Styled.p>
         {post.excerpt}
       </Styled.p>
     </li>

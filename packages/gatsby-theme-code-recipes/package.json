@@ -1,0 +1,10 @@
+{
+  "name": "gatsby-theme-code-recipes",
+  "version": "0.2.35",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby-source-filesystem": "^2.1.9",
+    "unist-util-visit": "^2.0.0"
+  }
+}
