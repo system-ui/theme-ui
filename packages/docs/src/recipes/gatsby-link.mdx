@@ -1,0 +1,39 @@
+---
+name: 'Gatsby Link'
+---
+
+# Gatsby Link
+
+Add an active style to Gatsby Link or other React router link components.
+
+```jsx live
+<Link
+  to='/recipes/gatsby-link/'
+  activeClassName='active'
+  sx={{
+    color: 'inherit',
+    '&.active': {
+      color: 'primary',
+    }
+  }}>
+  Link
+</Link>
+```
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
+
+export default props =>
+  <Link
+    {...props}
+    activeClassName='active'
+    sx={{
+      color: 'inherit',
+      '&.active': {
+        color: 'primary',
+      }
+    }}
+  />
+```
