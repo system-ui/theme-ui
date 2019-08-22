@@ -14,33 +14,32 @@ export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
           display: 'flex',
           flexWrap: 'wrap',
         }}>
-        {Object.entries(colors)
-          .sort(([_, colorA]) => (typeof colorA === 'string' ? -1 : 1))
-          .map(([key, color]) => {
-            if (!color || omit.includes(key)) return false
-            const id = join(name, key)
-            if (typeof color === 'object') {
-              return (
-                <ColorRow
-                  {...props}
-                  key={key}
-                  name={id}
-                  colors={color}
-                  omit={omit}
-                />
-              )
-            }
+        {Object.keys(colors).map(key => {
+          const color = colors[key]
+          if (!color || omit.includes(key)) return false
+          const id = join(name, key)
+          if (typeof color === 'object') {
             return (
-              <ColorSwatch
+              <ColorRow
+                {...props}
+                key={key}
                 name={id}
-                color={id}
-                sx={{
-                  m: 2,
-                  flexBasis: 128,
-                }}
+                colors={color}
+                omit={omit}
               />
             )
-          })}
+          }
+          return (
+            <ColorSwatch
+              name={id}
+              color={id}
+              sx={{
+                m: 2,
+                flexBasis: 128,
+              }}
+            />
+          )
+        })}
       </div>
     </div>
   )
