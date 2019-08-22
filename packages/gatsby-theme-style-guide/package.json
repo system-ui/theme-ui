@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-style-guide",
-  "version": "0.2.35",
+  "version": "0.2.36",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -9,7 +9,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@theme-ui/style-guide": "^0.2.35",
-    "theme-ui": "^0.2.35"
+    "@theme-ui/style-guide": "^0.2.36",
+    "theme-ui": "^0.2.36"
   }
 }
