@@ -2,8 +2,11 @@
 
 ## Unreleased
 
+## v0.2.36 2019-08-22
+
 - Added `gatsby-theme-ui-blog` package #311
 - Added `gatsby-theme-code-recipe` package #313
+- Updated styles in `gatsby-theme-style-guide` #315
 
 ## v0.2.35 2019-08-15
 
