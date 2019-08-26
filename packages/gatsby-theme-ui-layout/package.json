@@ -3,5 +3,10 @@
   "version": "0.2.36",
   "main": "index.js",
   "repository": "system-ui/theme-ui",
+  "peerDependencies": {
+    "gatsby": "^2.13.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
   "license": "MIT"
 }
