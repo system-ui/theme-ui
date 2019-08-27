@@ -1,0 +1,25 @@
+---
+title: Color Picker
+---
+
+import ColorPicker from '@theme-ui/color-picker'
+import { useState } from 'react'
+
+export const State = props => {
+  const [color, setColor] = useState(props.value)
+  return props.render([ color, setColor])
+}
+
+# Color Picker
+
+<State value='#f00'
+  render={([color, setColor]) => (
+  <>
+    <pre>{color}</pre>
+    <ColorPicker
+      color={color}
+      onChange={v => setColor(v.hex)}
+    />
+  </>
+  )}
+/>
