@@ -1,8 +1,28 @@
 /** @jsx jsx */
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { jsx } from 'theme-ui'
 import { ChromePicker } from 'react-color'
-import { useOnClickOutside } from '../hooks'
+
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = event => {
+      // Do nothing if clicking ref's element or descendent elements
+      if (!ref.current || ref.current.contains(event.target)) {
+        return
+      }
+
+      handler(event)
+    }
+
+    document.addEventListener('mousedown', listener)
+    document.addEventListener('touchstart', listener)
+
+    return () => {
+      document.removeEventListener('mousedown', listener)
+      document.removeEventListener('touchstart', listener)
+    }
+  }, [ref, handler])
+}
 
 const ColorPicker = ({ label, ...props }) => {
   const ref = useRef()
@@ -19,8 +39,7 @@ const ColorPicker = ({ label, ...props }) => {
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: 1,
-      }}
-    >
+      }}>
       <span>{label}</span>
       <div sx={{ position: 'relative ' }}>
         <button
