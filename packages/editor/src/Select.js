@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Field from './Field'
 import Label from './Label'
-import { makeHtmlSafeLabel } from '../utils'
+import { makeHtmlSafeLabel } from './utils'
 
 const Select = ({ label, options, ...props }) => {
   const id = makeHtmlSafeLabel(label)

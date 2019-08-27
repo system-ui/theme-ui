@@ -4,7 +4,22 @@ import Color from 'color'
 
 import Section from './Section'
 import ColorPicker from './ColorPicker'
-import { flattenObject } from '../utils'
+
+const flattenObject = object => {
+  const result = {}
+  function flatten(obj, prefix = '') {
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      if (typeof value === 'object') {
+        flatten(value, `${prefix}${key}.`)
+      } else {
+        result[`${prefix}${key}`] = value
+      }
+    })
+  }
+  flatten(object)
+  return result
+}
 
 const toHex = raw => {
   try {

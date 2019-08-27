@@ -1,14 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-const Field = ({ children }) => (
+export default props => (
   <div
+    {...props}
     sx={{
       my: 3,
     }}
-  >
-    {children}
-  </div>
+  />
 )
-
-export default Field

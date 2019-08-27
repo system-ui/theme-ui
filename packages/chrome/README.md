@@ -9,3 +9,5 @@ Chrome devtools extension for editing Theme UI styles in the browser.
 3. Enable "Developer mode"
 4. Click "LOAD UNPACKED"
 5. Select extracted downloaded extension folder
+
+## Local Development

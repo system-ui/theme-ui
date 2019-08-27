@@ -7,7 +7,7 @@ import Modes from './Modes'
 import Typography from './Typography'
 import CopyThemeToClipboard from './CopyThemeToClipboard'
 
-const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {
+export const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {
   const setPanelColorMode = useColorMode()[1]
 
   useEffect(() => {
@@ -22,8 +22,7 @@ const Panel = ({ state, setColorMode, setTheme, panelColorMode }) => {
             fontSize: 5,
             mt: 0,
             mb: 4,
-          }}
-        >
+          }}>
           Theme UI Devtools
         </h1>
       </header>

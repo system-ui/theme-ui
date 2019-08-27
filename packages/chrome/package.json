@@ -6,8 +6,8 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepare": "webpack",
-    "dev": "webpack --watch"
+    "prepare": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development"
   },
   "dependencies": {
     "@babel/cli": "^7.4.4",

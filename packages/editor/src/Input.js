@@ -2,7 +2,7 @@
 import { jsx, useColorMode } from 'theme-ui'
 import Field from './Field'
 import Label from './Label'
-import { makeHtmlSafeLabel } from '../utils'
+import { makeHtmlSafeLabel } from './utils'
 
 const Input = ({ label, ...props }) => {
   const [colorMode] = useColorMode()
