@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import Color from 'color'
 import ColorPicker from './ColorPicker'
 
@@ -37,7 +38,6 @@ const Colors = ({ theme, setTheme }) => {
         return (
           <ColorPicker
             key={key}
-            label={key}
             color={toHex(value)}
             onChange={({ hex }) => {
               setTheme({
@@ -45,8 +45,43 @@ const Colors = ({ theme, setTheme }) => {
                   [key]: hex,
                 },
               })
-            }}
-          />
+            }}>
+            <button
+              key={key}
+              title="Edit color"
+              sx={{
+                appearance: 'none',
+                fontFamily: 'inherit',
+                fontSize: 'inherit',
+                px: 0,
+                m: 0,
+                py: 1,
+                color: 'inherit',
+                bg: 'transparent',
+                border: 0,
+                display: 'flex',
+                alignItems: 'center',
+                cursor: 'pointer',
+              }}>
+              <div
+                sx={{
+                  width: 24,
+                  height: 24,
+                  mr: 2,
+                  bg: key,
+                  borderRadius: 9999,
+                  border: '1px solid',
+                  borderColor: 'muted',
+                }}
+              />
+              <div
+                sx={{
+                  fontSize: 0,
+                }}>
+                {key}
+              </div>
+            </button>
+          </ColorPicker>
         )
       })}
     </section>
