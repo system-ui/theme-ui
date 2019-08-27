@@ -1,7 +1,5 @@
 import React from 'react'
 import Color from 'color'
-
-import Section from './Section'
 import ColorPicker from './ColorPicker'
 
 const flattenObject = object => {
@@ -30,8 +28,10 @@ const toHex = raw => {
 
 const Colors = ({ theme, setTheme }) => {
   const colors = flattenObject(theme.colors)
+
   return (
-    <Section heading="Colors">
+    <section>
+      <h2>Colors</h2>
       {Object.keys(colors).map(key => {
         const value = colors[key]
         return (
@@ -49,7 +49,7 @@ const Colors = ({ theme, setTheme }) => {
           />
         )
       })}
-    </Section>
+    </section>
   )
 }
 

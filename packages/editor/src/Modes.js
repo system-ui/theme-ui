@@ -1,6 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import Section from './Section'
-import Select from './Select'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { useState, useEffect } from 'react'
+import Label from './Label'
+
+const Select = props => (
+  <select
+    {...props}
+    sx={{
+      width: '100%',
+    }}
+  />
+)
 
 const Modes = ({ colorMode, theme, setColorMode }) => {
   const [value, setValue] = useState(colorMode)
@@ -13,13 +23,19 @@ const Modes = ({ colorMode, theme, setColorMode }) => {
   }, [value])
 
   return (
-    <Section heading="Modes">
+    <section>
+      <h2>Color Modes</h2>
+      <label htmlFor="colormode">Color Mode</label>
       <Select
+        id="colormode"
+        name="colormode"
         value={value}
-        onChange={e => setValue(e.target.value)}
-        options={modes}
-      />
-    </Section>
+        onChange={e => setValue(e.target.value)}>
+        {modes.map(mode => (
+          <option key={mode}>{mode}</option>
+        ))}
+      </Select>
+    </section>
   )
 }
 

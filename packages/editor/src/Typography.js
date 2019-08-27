@@ -1,15 +1,40 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React from 'react'
-import Section from './Section'
-import Input from './Input'
+import Label from './Label'
 
-const Typography = ({ theme, setTheme }) => {
-  return (
-    <Section heading="Typography">
-      <h3>Fonts</h3>
-      {Object.keys(theme.fonts || {}).map(key => (
+const Input = props => (
+  <input
+    {...props}
+    sx={{
+      appearance: 'none',
+      color: 'inherit',
+      bg: 'transparent',
+      border: '1px solid',
+      borderRadius: 2,
+      display: 'block',
+      fontSize: 'inherit',
+      fontFamily: 'inherit',
+      p: 1,
+      width: '100%',
+    }}
+  />
+)
+
+const Typography = ({ theme, setTheme }) => (
+  <section>
+    <h2>Typography</h2>
+    <h3>Fonts</h3>
+    {Object.keys(theme.fonts || {}).map(key => (
+      <div
+        key={key}
+        sx={{
+          mb: 2,
+        }}>
+        <Label htmlFor={key}>{key}</Label>
         <Input
-          key={key}
-          label={key}
+          id={key}
+          name={key}
           value={theme.fonts[key]}
           onChange={e => {
             setTheme({
@@ -19,13 +44,17 @@ const Typography = ({ theme, setTheme }) => {
             })
           }}
         />
-      ))}
-      <h3>Font Sizes</h3>
-      {Array.isArray(theme.fontSizes)
-        ? theme.fontSizes.map((n, i) => (
+      </div>
+    ))}
+    <h3>Font Sizes</h3>
+    {Array.isArray(theme.fontSizes)
+      ? theme.fontSizes.map((n, i) => (
+          <div key={i} sx={{ mb: 2 }}>
+            <Label htmlFor={`fontsize-${i}`}>Font Size {i}</Label>
             <Input
               key={i}
-              label={`theme.fontSizes[${i}]`}
+              id={`fontsize-${i}`}
+              name={`fontsize-${i}`}
               type="number"
               value={n}
               onChange={e => {
@@ -39,11 +68,14 @@ const Typography = ({ theme, setTheme }) => {
                 })
               }}
             />
-          ))
-        : Object.keys(theme.fontSizes).map(key => (
+          </div>
+        ))
+      : Object.keys(theme.fontSizes).map(key => (
+          <div key={key} sx={{ mb: 2 }}>
+            <Label htmlFor={`fontSizes.${key}`}>fontSizes.{key}</Label>
             <Input
-              key={key}
-              label={`theme.fontSizes.${key}`}
+              id={`fontSizes.${key}`}
+              name={`fontSizes.${key}`}
               type="number"
               value={theme.fontSizes[key]}
               onChange={e => {
@@ -55,9 +87,9 @@ const Typography = ({ theme, setTheme }) => {
                 })
               }}
             />
-          ))}
-    </Section>
-  )
-}
+          </div>
+        ))}
+  </section>
+)
 
 export default Typography
