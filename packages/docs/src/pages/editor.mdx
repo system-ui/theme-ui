@@ -1,8 +1,8 @@
 ---
-title: Color Picker
+title: Editor
 ---
 
-import ColorPicker from '@theme-ui/color-picker'
+import { ColorPicker } from '@theme-ui/editor'
 import { useState } from 'react'
 
 export const State = props => {
@@ -10,9 +10,14 @@ export const State = props => {
   return props.render([ color, setColor])
 }
 
-# Color Picker
+# @theme-ui/editor
 
-<State value='#f00'
+Components for editing Theme UI theme objects.
+
+## ColorPicker
+
+<State
+  value='#f00'
   render={([color, setColor]) => (
   <>
     <pre>{color}</pre>
@@ -24,7 +29,8 @@ export const State = props => {
   )}
 />
 
-<State value='#0cf'
+<State
+  value='#0cf'
   render={([color, setColor]) => (
   <>
     <pre>{color}</pre>

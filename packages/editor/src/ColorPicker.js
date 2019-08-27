@@ -82,14 +82,14 @@ const Label = ({ width = '100%', flex = 1, ...props }) => (
   />
 )
 
-export const Picker = CustomPicker(props => {
+export const Picker = CustomPicker(({ size = 256, ...props }) => {
   return (
     <div
       sx={{
         display: 'grid',
         p: 2,
         gridGap: 2,
-        width: 256,
+        width: size,
         borderRadius: 4,
         bg: 'white',
         boxShadow: '0 2px 8px 1px rgba(0,0,0,.125)',
@@ -98,7 +98,8 @@ export const Picker = CustomPicker(props => {
         sx={{
           position: 'relative',
           width: '100%',
-          height: 256,
+          height: 0,
+          paddingBottom: '75%',
         }}>
         <Saturation {...props} pointer={Lens} />
       </div>
