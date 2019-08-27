@@ -41,9 +41,13 @@ const Handle = props => (
   />
 )
 
+/** placeholder is used because react-color does not pass
+ * HTML attributes to the element
+ */
 const Input = props => (
   <EditableInput
     {...props}
+    placeholder={props.name}
     style={{
       input: {
         width: '100%',
@@ -115,6 +119,7 @@ export const Picker = CustomPicker(props => {
           <Input
             {...props}
             value={props.hex}
+            name="hex"
             label="hex"
             onChange={val => {
               props.onChange(val)
@@ -126,6 +131,7 @@ export const Picker = CustomPicker(props => {
           <Input
             {...props}
             value={round(props.hsl.h)}
+            name="hue"
             label="h"
             onChange={val => {
               props.onChange({ ...props.hsl, ...val })
@@ -137,6 +143,7 @@ export const Picker = CustomPicker(props => {
           <Input
             {...props}
             value={round(props.hsl.s * 100)}
+            name="saturation"
             label="s"
             onChange={({ s }) => {
               props.onChange({ ...props.hsl, s: s / 100 })
@@ -148,6 +155,7 @@ export const Picker = CustomPicker(props => {
           <Input
             {...props}
             value={round(props.hsl.l * 100)}
+            name="lightness"
             label="l"
             onChange={({ l }) => {
               props.onChange({ ...props.hsl, l: l / 100 })
