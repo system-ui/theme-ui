@@ -2712,7 +2712,7 @@
     unified "^6.1.6"
     unist-util-visit "^1.3.0"
 
-"@mdx-js/mdx@^1.0.0-rc.0", "@mdx-js/mdx@^1.0.19", "@mdx-js/mdx@^1.2.2", "@mdx-js/mdx@^1.3.0", "@mdx-js/mdx@^1.4.0":
+"@mdx-js/mdx@^1.0.0-rc.0", "@mdx-js/mdx@^1.0.19", "@mdx-js/mdx@^1.3.0", "@mdx-js/mdx@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.4.0.tgz#465218fd9d2479b745eeccb4875601b4f0537cb6"
   integrity sha512-JV7lBmc4GXu/g6ATIjBBe9iovLnMFP6Ka6ZAIeiZHBRrhec1oj9iYTTShmRY+w2MsMfk0vBIxJxQSiorf4pGYw==
@@ -2741,7 +2741,7 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.3.1.tgz#5694f1af2d8423f19710db0c8dcef51316f073fc"
   integrity sha512-HwpA0r4XiydiUXceAtzguLs3FH8Jbfpgoff3L+pejemiqyxol/FYMxwMu0WcBxti5eJYBqZEwL+C5od6OsS7Gw==
 
-"@mdx-js/react@^1.0.0", "@mdx-js/react@^1.0.0-rc.0", "@mdx-js/react@^1.0.16", "@mdx-js/react@^1.0.21", "@mdx-js/react@^1.2.2", "@mdx-js/react@^1.4.0":
+"@mdx-js/react@^1.0.0", "@mdx-js/react@^1.0.0-rc.0", "@mdx-js/react@^1.0.16", "@mdx-js/react@^1.0.21", "@mdx-js/react@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.4.0.tgz#b389684b4b5fbfb6770a6cc0d620fca82b8a8549"
   integrity sha512-UHPG74qvLM8wO+evIKzNQqSw3PzgPei4oEFPuFGee15rK0cYNDKL+utzQLM1Ngv2gmjU/WN9BYrpJxyFh8xOCg==
@@ -5344,6 +5344,11 @@ body-parser@1.19.0:
     qs "6.7.0"
     raw-body "2.4.0"
     type-is "~1.6.17"
+
+body-scroll-lock@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.6.4.tgz#567abc60ef4d656a79156781771398ef40462e94"
+  integrity sha512-NP08WsovlmxEoZP9pdlqrE+AhNaivlTrz9a0FF37BQsnOrpN48eNqivKkE7SYpM9N+YIPjsdVzfLAUQDBm6OQw==
 
 bonjour@^3.5.0:
   version "3.5.0"
@@ -10025,7 +10030,7 @@ gatsby-page-utils@^0.0.12:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-catch-links@^2.0.13, gatsby-plugin-catch-links@^2.1.2:
+gatsby-plugin-catch-links@^2.0.13:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.5.tgz#de84abd4a1dc60958ef9fa9e64438bbaea65b8a0"
   integrity sha512-YL4heo4WtELBRDGejERNfDOSNZzXFnjQAbEwYk09vkTczWd0NO3BUeVpfK3bJY0Md+5ELiCxQSV0xDBle8ddeQ==
@@ -10045,47 +10050,6 @@ gatsby-plugin-google-fonts@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
   integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
-
-gatsby-plugin-mdx@^1.0.23, gatsby-plugin-mdx@^1.0.4:
-  version "1.0.33"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.33.tgz#a0046b17aa1174bcaf0c140e60b35573f523061c"
-  integrity sha512-b7eKMIRqFIBZR9OTCzwKgsBiDAkyTP1cjQyCwQqIdXB4V+d/3rKO1sXNDzGUswKLDURtOgwnV63wNUjE/FuIyg==
-  dependencies:
-    "@babel/core" "^7.5.5"
-    "@babel/generator" "^7.5.5"
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/plugin-proposal-object-rest-spread" "^7.5.5"
-    "@babel/preset-env" "^7.5.5"
-    "@babel/preset-react" "^7.0.0"
-    "@babel/types" "^7.5.5"
-    camelcase-css "^2.0.1"
-    change-case "^3.1.0"
-    core-js "2"
-    dataloader "^1.4.0"
-    debug "^4.1.1"
-    escape-string-regexp "^1.0.5"
-    eval "^0.1.4"
-    fs-extra "^8.1.0"
-    gray-matter "^4.0.2"
-    json5 "^2.1.0"
-    loader-utils "^1.2.3"
-    lodash "^4.17.15"
-    mdast-util-to-string "^1.0.6"
-    mdast-util-toc "^3.1.0"
-    mime "^2.4.4"
-    p-queue "^5.0.0"
-    pretty-bytes "^5.3.0"
-    remark "^10.0.1"
-    remark-retext "^3.1.3"
-    retext-english "^3.0.3"
-    slash "^3.0.0"
-    static-site-generator-webpack-plugin "^3.4.2"
-    style-to-object "^0.2.3"
-    underscore.string "^3.3.5"
-    unified "^8.3.2"
-    unist-util-map "^1.0.5"
-    unist-util-remove "^1.0.3"
-    unist-util-visit "^1.4.1"
 
 gatsby-plugin-mdx@^1.0.24:
   version "1.0.24"
@@ -10128,7 +10092,48 @@ gatsby-plugin-mdx@^1.0.24:
     unist-util-remove "^1.0.1"
     unist-util-visit "^1.4.0"
 
-gatsby-plugin-page-creator@^2.1.12, gatsby-plugin-page-creator@^2.1.5:
+gatsby-plugin-mdx@^1.0.4:
+  version "1.0.33"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.33.tgz#a0046b17aa1174bcaf0c140e60b35573f523061c"
+  integrity sha512-b7eKMIRqFIBZR9OTCzwKgsBiDAkyTP1cjQyCwQqIdXB4V+d/3rKO1sXNDzGUswKLDURtOgwnV63wNUjE/FuIyg==
+  dependencies:
+    "@babel/core" "^7.5.5"
+    "@babel/generator" "^7.5.5"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.5.5"
+    "@babel/preset-env" "^7.5.5"
+    "@babel/preset-react" "^7.0.0"
+    "@babel/types" "^7.5.5"
+    camelcase-css "^2.0.1"
+    change-case "^3.1.0"
+    core-js "2"
+    dataloader "^1.4.0"
+    debug "^4.1.1"
+    escape-string-regexp "^1.0.5"
+    eval "^0.1.4"
+    fs-extra "^8.1.0"
+    gray-matter "^4.0.2"
+    json5 "^2.1.0"
+    loader-utils "^1.2.3"
+    lodash "^4.17.15"
+    mdast-util-to-string "^1.0.6"
+    mdast-util-toc "^3.1.0"
+    mime "^2.4.4"
+    p-queue "^5.0.0"
+    pretty-bytes "^5.3.0"
+    remark "^10.0.1"
+    remark-retext "^3.1.3"
+    retext-english "^3.0.3"
+    slash "^3.0.0"
+    static-site-generator-webpack-plugin "^3.4.2"
+    style-to-object "^0.2.3"
+    underscore.string "^3.3.5"
+    unified "^8.3.2"
+    unist-util-map "^1.0.5"
+    unist-util-remove "^1.0.3"
+    unist-util-visit "^1.4.1"
+
+gatsby-plugin-page-creator@^2.1.12:
   version "2.1.12"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.12.tgz#b6f719378736dd79c510a2e8a9543b3ff922f931"
   integrity sha512-J0qr4Jljhqy2rCWOLXXh1CRYh9QOw3EeEFtnlyYgm0ywFBndLvaxId8sVYlju/eG0rp73bL/btNYY85lrCuybw==
@@ -10324,7 +10329,7 @@ gatsby-transformer-sharp@^2.2.6:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@^2.13.57, gatsby@^2.13.64, gatsby@^2.13.73, gatsby@^2.3.6, gatsby@^2.6.3:
+gatsby@^2.13.64, gatsby@^2.13.73, gatsby@^2.3.6, gatsby@^2.6.3:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.14.0.tgz#ff5e19e6d8dfedbd1c3e41fc10e2f55bd8372ede"
   integrity sha512-nZTXaC8HvfQTs9vOh1iVtY07c4AD6zrwtqIxttsyDfGVIRas47rvPCyPisUEVX6Hzk0W+cabEJ1T5cnZvi4ANA==
@@ -11067,28 +11072,6 @@ gud@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
   integrity sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw==
-
-gx@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/gx/-/gx-2.0.0.tgz#af71e17c4723e41e7f0be6f8ca670308cbf3bf83"
-  integrity sha512-ZLtFVOqD7Bhns/q4jfH4ZCXYpbMjyEn3IL6rrn8NbpvPjJ0zXP7tnkyrggF5J98dRyo5dRIUSufsH89GqkhsRg==
-  dependencies:
-    "@mdx-js/mdx" "^1.2.2"
-    "@mdx-js/react" "^1.2.2"
-    chalk "^2.4.2"
-    execa "^2.0.3"
-    fs-extra "^8.1.0"
-    gatsby "^2.13.57"
-    gatsby-plugin-catch-links "^2.1.2"
-    gatsby-plugin-compile-es6-packages "^2.1.0"
-    gatsby-plugin-mdx "^1.0.23"
-    gatsby-plugin-page-creator "^2.1.5"
-    gatsby-source-filesystem "^2.1.9"
-    meow "^5.0.0"
-    pkg-conf "^3.0.0"
-    pkg-up "^3.0.1"
-    react "^16.9.0"
-    react-dom "^16.9.0"
 
 gzip-size@3.0.0, gzip-size@^3.0.0:
   version "3.0.0"
@@ -13718,7 +13701,7 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-load-json-file@^5.2.0, load-json-file@^5.3.0:
+load-json-file@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-5.3.0.tgz#4d3c1e01fa1c03ea78a60ac7af932c9ce53403f3"
   integrity sha512-cJGP40Jc/VXUsp8/OrnyKyTZ1y6v/dphm3bioS+RrKXjK2BB6wHUd6JptZEFDGgGahMT+InnZO5i1Ei9mpC8Bw==
@@ -16593,14 +16576,6 @@ pixelmatch@^4.0.2:
   dependencies:
     pngjs "^3.0.0"
 
-pkg-conf@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/pkg-conf/-/pkg-conf-3.1.0.tgz#d9f9c75ea1bae0e77938cde045b276dac7cc69ae"
-  integrity sha512-m0OTbR/5VPNPqO1ph6Fqbj7Hv6QU7gR/tQW40ZqrL1rjgCU85W6C1bJn0BItuJqnR98PWzw7Z8hHeChD1WrgdQ==
-  dependencies:
-    find-up "^3.0.0"
-    load-json-file "^5.2.0"
-
 pkg-dir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-1.0.0.tgz#7a4b508a8d5bb2d629d447056ff4e9c9314cf3d4"
@@ -16628,13 +16603,6 @@ pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
-
-pkg-up@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/pkg-up/-/pkg-up-3.1.0.tgz#100ec235cc150e4fd42519412596a28512a0def5"
-  integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
-  dependencies:
-    find-up "^3.0.0"
 
 please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   version "3.2.0"
@@ -16674,6 +16642,11 @@ pnp-webpack-plugin@^1.5.0:
   integrity sha512-jd9olUr9D7do+RN8Wspzhpxhgp1n6Vd0NtQ4SFkmIACZoEL1nkyAdW9Ygrinjec0vgDcWjscFQQ1gDW8rsfKTg==
   dependencies:
     ts-pnp "^1.1.2"
+
+popper.js@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
+  integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
 
 portfinder@^1.0.21:
   version "1.0.23"
@@ -18422,6 +18395,26 @@ readline2@^1.0.1:
     code-point-at "^1.0.0"
     is-fullwidth-code-point "^1.0.0"
     mute-stream "0.0.5"
+
+reakit-system@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/reakit-system/-/reakit-system-0.6.3.tgz#42ac3e2ed7192dbd295745ba298fab58258f7f09"
+  integrity sha512-adlxkBhC+huwxRbskf+cUKwnWf5jfxLuS+1J1g9x1JQLVdahTNHMWYYZ3DzTOdfD5ROLl3vrsrtpc1cv7PKg+w==
+
+reakit-utils@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/reakit-utils/-/reakit-utils-0.6.3.tgz#936a92df5e9e5153138b77f33f74222b9655c740"
+  integrity sha512-+71mhRmk+I+q0ytVnfLI9b0z/HhlJW8hCSvJfBBxzsXTv+2WNRUQVELxOtRlHjh3gOUpStdh2lqOy1Fv+V1isw==
+
+reakit@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.0.0-beta.6.tgz#de4169975370501748822a505d0645664a1388eb"
+  integrity sha512-phxKl5/yjG/uppeM6rhXNQRdRbVnyojnTQNWYcpb9tjr4KvQUkJJ05B6QpTnG39eaaW96Y/W7Vj2N+kmvVHkKg==
+  dependencies:
+    body-scroll-lock "^2.6.4"
+    popper.js "^1.15.0"
+    reakit-system "^0.6.3"
+    reakit-utils "^0.6.3"
 
 realpath-native@^1.1.0:
   version "1.1.0"
