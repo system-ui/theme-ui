@@ -5,9 +5,12 @@ Chrome devtools extension for editing Theme UI styles in the browser.
 ## Installation
 
 1. [Download extension](https://github.com/system-ui/theme-ui/tree/master/packages/chrome/public)
-2. Navigate to chrome://extensions/
-3. Enable "Developer mode"
-4. Click "LOAD UNPACKED"
-5. Select extracted downloaded extension folder
+1. Navigate to chrome://extensions/
+1. Enable "Developer mode"
+1. Click "LOAD UNPACKED"
+1. Select extracted downloaded extension folder
 
 ## Local Development
+
+1. Run `yarn prepare`
+1. Load unpacked extension from the `public/` directory
