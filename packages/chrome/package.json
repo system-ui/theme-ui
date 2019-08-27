@@ -7,17 +7,22 @@
   "license": "MIT",
   "scripts": {
     "prepare": "webpack --mode=production",
-    "watch": "webpack --watch --mode=development"
+    "watch": "webpack --watch --mode=production"
   },
   "dependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@emotion/core": "^10.0.16",
     "@theme-ui/editor": "^0.2.36",
     "babel-loader": "^8.0.6",
+    "copy-to-clipboard": "^3.2.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.merge": "^4.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "theme-ui": "^0.2.36",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.4"
   },

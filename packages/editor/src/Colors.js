@@ -1,5 +1,4 @@
 import React from 'react'
-import set from 'lodash.set'
 import Color from 'color'
 
 import Section from './Section'
@@ -42,7 +41,9 @@ const Colors = ({ theme, setTheme }) => {
             color={toHex(value)}
             onChange={({ hex }) => {
               setTheme({
-                colors: set({}, key, hex),
+                colors: {
+                  [key]: hex,
+                },
               })
             }}
           />

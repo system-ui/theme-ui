@@ -1,2 +1,3 @@
-export { Panel } from './Panel'
-export { default as theme } from './theme'
+export { default as Colors } from './Colors'
+export { default as Modes } from './Modes'
+export { default as Typography } from './Typography'

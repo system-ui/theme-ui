@@ -1,13 +1,17 @@
-import React, { useReducer, useEffect } from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import React, { useReducer, useEffect, useRef, useState } from 'react'
 import { Global } from '@emotion/core'
 import { render } from 'react-dom'
 import merge from 'lodash.merge'
 import debounce from 'lodash.debounce'
-import { ThemeProvider, Styled, ColorMode } from 'theme-ui'
-import { theme, Panel } from '@theme-ui/editor'
+import copyToClipboard from 'copy-to-clipboard'
+import { ThemeProvider, Styled, ColorMode, useColorMode } from 'theme-ui'
+import theme from './theme'
+import { Colors, Modes, Typography } from '@theme-ui/editor'
 
-const runScript = script => {
-  return new Promise((resolve, reject) => {
+const runScript = script =>
+  new Promise((resolve, reject) => {
     debounce(window.chrome.devtools.inspectedWindow.eval, 100)(
       script,
       (result, err) => {
@@ -19,12 +23,56 @@ const runScript = script => {
       }
     )
   })
-}
 
 const mergeState = (state, next) => merge({}, state, next)
 
+const CopyTheme = ({ theme }) => {
+  const [copied, setCopied] = useState(false)
+  const timer = useRef(false)
+
+  const handleClick = () => {
+    setCopied(true)
+    copyToClipboard(JSON.stringify(theme))
+    clearInterval(timer.current)
+    timer.current = setInterval(() => setCopied(false), 1000)
+  }
+
+  return (
+    <button onClick={handleClick}>{copied ? 'Copied!' : 'Copy theme'}</button>
+  )
+}
+
+const Panel = ({ state, setColorMode, setTheme }) => (
+  <div sx={{ p: 4, maxWidth: 400 }}>
+    <header>
+      <h1
+        sx={{
+          fontSize: 5,
+          mt: 0,
+          mb: 4,
+        }}>
+        Theme UI Devtools
+      </h1>
+    </header>
+    <main>
+      <Colors theme={state.theme} setTheme={setTheme} />
+      {state.colorMode && (
+        <Modes
+          theme={state.theme}
+          colorMode={state.colorMode}
+          setColorMode={setColorMode}
+        />
+      )}
+      <Typography theme={state.theme} setTheme={setTheme} />
+    </main>
+    <footer>
+      <CopyTheme theme={state.theme} />
+    </footer>
+  </div>
+)
+
 const Editor = () => {
-  const panelColorMode =
+  theme.colorMode =
     window.chrome.devtools.panels.themeName === 'dark' ? 'dark' : 'light'
 
   const [state, setState] = useReducer(mergeState, {
@@ -65,14 +113,13 @@ const Editor = () => {
         <ColorMode />
         <Global
           styles={{
-            'html,body': {
+            body: {
               margin: 0,
             },
           }}
         />
         {state.theme && (
           <Panel
-            panelColorMode={panelColorMode}
             state={state}
             setTheme={setTheme}
             setColorMode={setColorMode}
