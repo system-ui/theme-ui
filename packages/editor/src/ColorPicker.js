@@ -176,21 +176,13 @@ export const ColorPicker = ({ children, ...props }) => {
     return <Picker {...props} />
   }
 
-  const [child] = React.Children.toArray(children)
-
   return (
     <React.Fragment>
       <PopoverDisclosure
         {...popover}
-        children={disclosure => React.cloneElement(child, disclosure)}
+        children={disclosure => <div {...disclosure}>{children}</div>}
       />
-      <Popover
-        {...popover}
-        aria-label="Edit color"
-        sx={{
-          outline: 'none',
-          width: 256,
-        }}>
+      <Popover {...popover} aria-label="Edit color">
         <Picker {...props} />
       </Popover>
     </React.Fragment>

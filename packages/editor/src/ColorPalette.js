@@ -9,15 +9,17 @@ export default props => {
   return (
     <ColorPalette
       {...props}
-      render={({ swatch, color }) => (
-        <ColorPicker
-          value={color}
-          onChange={val => {
-            console.log(val)
-          }}>
-          {swatch}
-        </ColorPicker>
-      )}
+      render={({ swatch, color, ...rest }) =>
+        console.log({ color, rest }) || (
+          <ColorPicker
+            color={color}
+            onChange={val => {
+              console.log(val)
+            }}>
+            {swatch}
+          </ColorPicker>
+        )
+      }
     />
   )
 }
