@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added new `ColorPicker` component to `@theme-ui/editor` #327
+
 ## v0.2.36 2019-08-22
 
 - Added `gatsby-theme-ui-blog` package #311
