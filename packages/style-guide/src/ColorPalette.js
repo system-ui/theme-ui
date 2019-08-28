@@ -5,7 +5,14 @@ import ColorSwatch from './ColorSwatch'
 
 const join = (...args) => args.filter(Boolean).join('.')
 
-export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
+export const ColorRow = ({
+  colors,
+  name,
+  omit = ['modes'],
+  render,
+  size,
+  ...props
+}) => {
   return (
     <div>
       <div
@@ -29,24 +36,37 @@ export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
               />
             )
           }
-          return (
+          const swatch = (
             <ColorSwatch
               name={id}
               color={id}
+              size={size}
               sx={{
                 m: 2,
-                flexBasis: 128,
               }}
             />
           )
+          if (typeof render === 'function') {
+            return render({
+              swatch,
+              color,
+              key,
+              name: id,
+            })
+          }
+          return swatch
         })}
       </div>
     </div>
   )
 }
 
-export const ColorPalette = ({ omit, ...props }) => {
-  const { colors = {} } = useTheme()
+export const ColorPalette = ({ omit, mode, ...props }) => {
+  let { colors = {} } = useTheme()
+
+  if (mode && colors.modes) {
+    colors = colors.modes[mode] || colors
+  }
 
   return (
     <div
@@ -54,7 +74,7 @@ export const ColorPalette = ({ omit, ...props }) => {
         marginLeft: -8,
         marginRight: -8,
       }}>
-      <ColorRow omit={omit} colors={colors} />
+      <ColorRow {...props} omit={omit} colors={colors} />
     </div>
   )
 }

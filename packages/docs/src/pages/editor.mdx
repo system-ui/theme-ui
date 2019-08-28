@@ -1,0 +1,47 @@
+---
+title: Editor
+---
+
+import {
+  ColorPalette,
+  ColorPicker,
+} from '@theme-ui/editor'
+import { useState } from 'react'
+
+export const State = props => {
+  const [color, setColor] = useState(props.value)
+  return props.render([ color, setColor])
+}
+
+# @theme-ui/editor
+
+Components for editing Theme UI theme objects.
+
+## ColorPalette
+
+<div style={{ position: 'relative', zIndex: 1 }}>
+  <ColorPalette size={64} />
+</div>
+
+## ColorPicker
+
+<State
+  value='#f00'
+  render={([color, setColor]) => (
+  <>
+    <div
+      style={{
+        width: 128,
+        height: 32,
+        backgroundColor: color
+      }}>
+      <pre>{color}</pre>
+    </div>
+    <ColorPicker
+      color={color}
+      onChange={v => setColor(v.hex)}
+    />
+  </>
+  )}
+/>
+
