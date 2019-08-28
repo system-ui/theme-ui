@@ -1,5 +1,6 @@
 import { useEffect, useReducer } from 'react'
 import { ThemeContext as EmotionContext } from '@emotion/core'
+import { version as emotionVersion } from '@emotion/core/package.json'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
 import merge from './merge'
@@ -79,6 +80,17 @@ const NestedProvider = ({ theme, components, children }) => {
 
 export const ThemeProvider = props => {
   const outer = useThemeUI()
+
+  if (process.env !== 'production') {
+    if (outer.emotionVersion !== emotionVersion) {
+      console.warn(
+        'Multiple versions of Emotion detected,',
+        'and theming might not work as expected.',
+        'Please ensure there is only one copy of @emotion/core installed in your application.'
+      )
+    }
+  }
+
   if (outer.__THEME_UI__) {
     return jsx(NestedProvider, props)
   }
