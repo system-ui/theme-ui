@@ -17,19 +17,26 @@ export const State = props => {
 
 Components for editing Theme UI theme objects.
 
-## ColorPicker
+## ColorPalette
 
-<div style={{ display: 'flex', flexWrap: 'wrap' }}>
-  <ColorPicker color='black'>
-    <div>Black</div>
-  </ColorPicker>
+<div style={{ position: 'relative', zIndex: 1 }}>
+  <ColorPalette size={64} />
 </div>
+
+## ColorPicker
 
 <State
   value='#f00'
   render={([color, setColor]) => (
   <>
-    <pre>{color}</pre>
+    <div
+      style={{
+        width: 128,
+        height: 32,
+        backgroundColor: color
+      }}>
+      <pre>{color}</pre>
+    </div>
     <ColorPicker
       color={color}
       onChange={v => setColor(v.hex)}
@@ -38,26 +45,3 @@ Components for editing Theme UI theme objects.
   )}
 />
 
-<State
-  value='#0cf'
-  render={([color, setColor]) => (
-  <>
-    <pre>{color}</pre>
-    <ColorPicker
-      color={color}
-      onChange={v => setColor(v.hex)}>
-      <div
-        style={{
-          width: 128,
-          height: 128,
-          backgroundColor: color
-        }}
-      />
-    </ColorPicker>
-  </>
-  )}
-/>
-
-## ColorPalette
-
-<ColorPalette />

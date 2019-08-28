@@ -182,7 +182,12 @@ export const ColorPicker = ({ children, ...props }) => {
         {...popover}
         children={disclosure => <div {...disclosure}>{children}</div>}
       />
-      <Popover {...popover} aria-label="Edit color">
+      <Popover
+        {...popover}
+        aria-label="Edit color"
+        sx={{
+          outline: 'none',
+        }}>
         <Picker {...props} />
       </Popover>
     </React.Fragment>

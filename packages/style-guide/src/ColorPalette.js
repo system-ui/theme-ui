@@ -10,6 +10,7 @@ export const ColorRow = ({
   name,
   omit = ['modes'],
   render,
+  size,
   ...props
 }) => {
   return (
@@ -39,9 +40,9 @@ export const ColorRow = ({
             <ColorSwatch
               name={id}
               color={id}
+              size={size}
               sx={{
                 m: 2,
-                flexBasis: 128,
               }}
             />
           )
@@ -60,8 +61,12 @@ export const ColorRow = ({
   )
 }
 
-export const ColorPalette = ({ omit, ...props }) => {
-  const { colors = {} } = useTheme()
+export const ColorPalette = ({ omit, mode, ...props }) => {
+  let { colors = {} } = useTheme()
+
+  if (mode && colors.modes) {
+    colors = colors.modes[mode] || colors
+  }
 
   return (
     <div
