@@ -1,8 +1,7 @@
 // fonts input
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
-import Downshift from 'downshift'
-// import leven from 'leven'
+import Combobox from './Combobox'
 
 const defaultFonts = [
   'system-ui, sans-serif',
@@ -15,55 +14,8 @@ const defaultFonts = [
   'Menlo, monospace',
   '"Roboto Condensed", sans-serif',
   '"Roboto Mono", monospace',
+  'Inter, sans-serif',
 ]
-
-export const FontField = ({
-  fonts = defaultFonts,
-  label = 'Font Family',
-  name,
-  onChange,
-  value,
-  defaultValue,
-  ...props
-}) => (
-  <Downshift
-    {...props}
-    initialInputValue={defaultValue}
-    inputValue={value}
-    onInputValueChange={onChange}
-    children={({
-      getLabelProps,
-      getInputProps,
-      getMenuProps,
-      getItemProps,
-      isOpen,
-      highlightedIndex,
-      selectedItem,
-      inputValue,
-    }) => (
-      <div>
-        <label {...getLabelProps()}>{label}</label>
-        <input {...getInputProps()} />
-        <ul {...getMenuProps()}>
-          {isOpen &&
-            fonts.map((font, index) => (
-              <li
-                {...getItemProps({
-                  key: font,
-                  index,
-                  item: font,
-                  style: {
-                    backgroundColor: highlightedIndex === index ? 'cyan' : null,
-                  },
-                })}>
-                {font}
-              </li>
-            ))}
-        </ul>
-      </div>
-    )}
-  />
-)
 
 export default props => {
   const context = useThemeUI()
@@ -78,14 +30,25 @@ export default props => {
   }
 
   return (
-    <div>
+    <div
+      sx={{
+        fontFamily: 'system-ui, sans-serif',
+      }}>
       {Object.keys(fonts).map(key => (
-        <FontField
+        <div
           key={key}
-          label={key}
-          value={fonts[key]}
-          onChange={onChange(key)}
-        />
+          sx={{
+            mb: 2,
+          }}>
+          <Combobox
+            label={key}
+            name={key}
+            value={fonts[key]}
+            onChange={onChange(key)}
+            options={defaultFonts}
+            preview={val => <span sx={{ fontFamily: val }}>Aa</span>}
+          />
+        </div>
       ))}
     </div>
   )
