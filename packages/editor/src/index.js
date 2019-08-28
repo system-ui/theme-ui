@@ -1,5 +1,6 @@
 export { default as ColorPicker } from './ColorPicker'
 export { default as ColorPalette } from './ColorPalette'
+export { default as Fonts } from './Fonts'
 
 export { default as Colors } from './Colors'
 export { default as Modes } from './Modes'

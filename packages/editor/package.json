@@ -12,6 +12,8 @@
   "dependencies": {
     "@theme-ui/style-guide": "0.2.37",
     "color": "^3.1.2",
+    "downshift": "^3.2.12",
+    "leven": "^3.1.0",
     "react-color": "^2.17.3",
     "reakit": "^1.0.0-beta.6"
   },
