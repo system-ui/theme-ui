@@ -54,12 +54,15 @@ export default ({
   }, [root.current])
 
   useEffect(() => {
-    const i = options.indexOf(value)
-    if (i < 0) return
-    setIndex(i)
-  }, [])
+    resetIndex()
+  }, [value])
 
   const popup = name + '-popup'
+
+  const resetIndex = () => {
+    const i = options.indexOf(value)
+    setIndex(i)
+  }
 
   const handleKeyDown = e => {
     if (e.shiftKey || e.metaKey || e.ctrlKey || e.altKey) return
@@ -74,13 +77,15 @@ export default ({
         setIndex((index + 1) % options.length)
         break
       case 'return':
+        if (!open) return
         const val = options[index]
+        console.log({ index, val })
         if (val) onChange(val)
         setOpen(false)
         break
       case 'escape':
         setOpen(false)
-        setIndex(-1)
+        resetIndex()
         break
     }
   }
@@ -89,14 +94,24 @@ export default ({
     onChange(e.target.value)
   }
 
+  const handleBlur = e => {
+    requestAnimationFrame(() => {
+      if (root.current.contains(document.activeElement)) return
+      setOpen(false)
+    })
+  }
+
   const toggleOpen = e => {
     setOpen(!open)
     if (input.current) input.current.focus()
   }
+
   const handleItemClick = i => e => {
     const val = options[i]
+    console.log({ i, val })
     if (val) onChange(val)
     setOpen(false)
+    input.current.select()
   }
 
   return (
@@ -123,6 +138,7 @@ export default ({
           value={value}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
+          onBlur={handleBlur}
           aria-autocomplete="none"
           aria-haspopup="true"
           aria-owns={popup}

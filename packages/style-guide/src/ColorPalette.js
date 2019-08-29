@@ -38,6 +38,7 @@ export const ColorRow = ({
           }
           const swatch = (
             <ColorSwatch
+              {...props}
               name={id}
               color={id}
               size={size}

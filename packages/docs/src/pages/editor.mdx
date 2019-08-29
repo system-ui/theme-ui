@@ -2,6 +2,7 @@
 title: Editor
 ---
 
+import { Styled } from 'theme-ui'
 import {
   ColorPalette,
   ColorPicker,
@@ -9,6 +10,7 @@ import {
   FontWeights,
   LineHeights,
   FontSizes,
+  Editor,
   Row,
 } from '@theme-ui/editor'
 import {
@@ -58,17 +60,16 @@ Components for editing Theme UI theme objects.
 ## ColorPicker
 
 <State
-  value='#f00'
+  value='#07c'
   render={([color, setColor]) => (
   <>
-    <div
+    <Styled.pre
       style={{
-        width: 128,
-        height: 32,
-        backgroundColor: color
+        color: 'white',
+        backgroundColor: color,
       }}>
-      <pre>{color}</pre>
-    </div>
+      {color}
+    </Styled.pre>
     <ColorPicker
       color={color}
       onChange={v => setColor(v.hex)}
@@ -76,4 +77,26 @@ Components for editing Theme UI theme objects.
   </>
   )}
 />
+
+## Compact Layout
+
+<Editor fontSize={12}>
+  <Fonts />
+  <Row>
+    <FontSizes />
+  </Row>
+  <b>Font Weights</b>
+  <Row>
+    <FontWeights />
+  </Row>
+  <b>Line Heights</b>
+  <Row>
+    <LineHeights />
+  </Row>
+  <b>Colors</b>
+  <ColorPalette
+    size={32}
+    label={false}
+  />
+</Editor>
 

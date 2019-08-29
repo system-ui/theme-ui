@@ -1,15 +1,28 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, ThemeProvider } from 'theme-ui'
 
-export default props => {
+const theme = {
+  '@theme-ui/editor': {
+    input: {
+      borderColor: 'rgba(0, 0, 0, .125)',
+    },
+  },
+}
+
+export default ({ fontSize = 16, color, bg, ...props }) => {
   return (
-    <div
-      sx={{
-        fontFamily: 'system-ui, sans-serif',
-        fontSize: 16,
-        lineHeight: 1.5,
-      }}>
-      {props.children}
-    </div>
+    <ThemeProvider theme={theme}>
+      <div
+        {...props}
+        sx={{
+          fontFamily: 'system-ui, sans-serif',
+          fontSize,
+          lineHeight: 1.5,
+          fontWeight: 400,
+          color,
+          bg,
+        }}
+      />
+    </ThemeProvider>
   )
 }

@@ -11,7 +11,7 @@ export default forwardRef((props, ref) => (
       width: '100%',
       height: 32,
       fontFamily: 'inherit',
-      fontSize: 16,
+      fontSize: 'inherit',
       p: 1,
       m: 0,
       border: '1px solid',
@@ -20,6 +20,7 @@ export default forwardRef((props, ref) => (
         borderColor: 'primary',
         outline: 'none',
       },
+      variant: '@theme-ui/editor.input',
       ...props.sx,
     }}
   />
