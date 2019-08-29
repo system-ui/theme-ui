@@ -1,0 +1,18 @@
+{
+  "name": "@theme-ui/color",
+  "version": "0.2.37",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@styled-system/css": "^5.0.23",
+    "polished": "^3.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}
