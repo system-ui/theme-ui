@@ -55,11 +55,10 @@ export default ({
 
   const handleKeyDown = e => {
     if (e.shiftKey || e.metaKey || e.ctrlKey || e.altKey) return
-    // console.log(e.keyCode)
     switch (keys[e.keyCode]) {
       case 'up':
-        if (index < 0) return
-        setIndex(index - 1)
+        if (index < 0) setIndex(options.length - 1)
+        else setIndex(index - 1)
         break
       case 'down':
         if (!open) setOpen(true)
@@ -100,7 +99,15 @@ export default ({
       sx={{
         zIndex: 2,
       }}>
-      <label htmlFor={name}>{label}</label>
+      <label
+        htmlFor={name}
+        sx={{
+          display: 'block',
+          fontWeight: 'bold',
+          fontSize: 0,
+        }}>
+        {label}
+      </label>
       <div
         sx={{
           display: 'flex',
@@ -129,12 +136,26 @@ export default ({
             p: 1,
             m: 0,
             border: '1px solid',
+            borderColor: 'gray',
+            ':focus': {
+              borderColor: 'primary',
+              outline: 'none',
+            },
           }}
         />
         <button
           tabindex="-1"
           aria-label={open ? 'Close' : 'Open'}
-          onClick={toggleOpen}>
+          onClick={toggleOpen}
+          sx={{
+            appearance: 'none',
+            width: 32,
+            height: 32,
+            color: 'inherit',
+            bg: 'transparent',
+            border: 0,
+            ml: -32,
+          }}>
           <Chevron />
         </button>
       </div>
@@ -152,6 +173,8 @@ export default ({
           p: 0,
           m: 0,
           bg: 'background',
+          border: '1px solid',
+          borderColor: 'gray',
         }}>
         {open &&
           options.map((option, i) => (
@@ -161,7 +184,9 @@ export default ({
               aria-selected={i === index}
               onClick={handleItemClick(i)}
               sx={{
+                p: 1,
                 bg: index === i ? 'highlight' : null,
+                userSelect: 'none',
                 ':hover': {
                   bg: 'highlight',
                 },
