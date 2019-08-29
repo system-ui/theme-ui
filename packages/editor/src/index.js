@@ -6,6 +6,8 @@ export { default as FontWeights } from './FontWeights'
 export { default as LineHeights } from './LineHeights'
 export { default as FontSizes } from './FontSizes'
 
+export { default as Row } from './Row'
+
 export { default as Colors } from './Colors'
 export { default as Modes } from './Modes'
 export { default as Typography } from './Typography'

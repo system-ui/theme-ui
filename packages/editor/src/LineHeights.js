@@ -15,32 +15,18 @@ export default props => {
     })
   }
 
-  return (
-    <div
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        mx: -1,
-      }}>
-      {Object.keys(lineHeights).map(key => (
-        <div
-          key={key}
-          sx={{
-            flex: '1 1 96px',
-            px: 1,
-          }}>
-          <Field
-            type="number"
-            label={key}
-            name={'lineHeights.' + key}
-            value={lineHeights[key]}
-            onChange={onChange(key)}
-            min={1}
-            max={3}
-            step={1 / 64}
-          />
-        </div>
-      ))}
+  return Object.keys(lineHeights).map(key => (
+    <div key={key}>
+      <Field
+        type="number"
+        label={key}
+        name={'lineHeights.' + key}
+        value={lineHeights[key]}
+        onChange={onChange(key)}
+        min={1}
+        max={3}
+        step={1 / 64}
+      />
     </div>
-  )
+  ))
 }

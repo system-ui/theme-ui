@@ -28,26 +28,15 @@ export default ({ options = defaultFonts, ...props }) => {
     })
   }
 
-  return (
-    <div
-      sx={{
-        fontFamily: 'system-ui, sans-serif',
-      }}>
-      {Object.keys(fonts).map(key => (
-        <div
-          key={key}
-          sx={{
-            mb: 2,
-          }}>
-          <Combobox
-            label={key}
-            name={'fonts.' + key}
-            value={fonts[key]}
-            onChange={onChange(key)}
-            options={options}
-          />
-        </div>
-      ))}
+  return Object.keys(fonts).map(key => (
+    <div key={key}>
+      <Combobox
+        label={key}
+        name={'fonts.' + key}
+        value={fonts[key]}
+        onChange={onChange(key)}
+        options={options}
+      />
     </div>
-  )
+  ))
 }

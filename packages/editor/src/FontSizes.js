@@ -22,30 +22,16 @@ export default props => {
     }
   }
 
-  return (
-    <div
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        mx: -1,
-      }}>
-      {Object.keys(fontSizes).map(key => (
-        <div
-          key={key}
-          sx={{
-            flex: '1 1 96px',
-            px: 1,
-          }}>
-          <Field
-            type="number"
-            key={key}
-            label={key}
-            name={'fontSizes.' + key}
-            value={fontSizes[key]}
-            onChange={onChange(key)}
-          />
-        </div>
-      ))}
+  return Object.keys(fontSizes).map(key => (
+    <div key={key}>
+      <Field
+        type="number"
+        key={key}
+        label={key}
+        name={'fontSizes.' + key}
+        value={fontSizes[key]}
+        onChange={onChange(key)}
+      />
     </div>
-  )
+  ))
 }

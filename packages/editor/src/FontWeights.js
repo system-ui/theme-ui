@@ -17,29 +17,15 @@ export default props => {
   }
   const keys = Object.keys(fontWeights)
 
-  return (
-    <div
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        mx: -1,
-      }}>
-      {keys.map(key => (
-        <div
-          key={key}
-          sx={{
-            flex: `1 1 96px`,
-            px: 1,
-          }}>
-          <Combobox
-            label={key}
-            name={'fontWeights.' + key}
-            value={fontWeights[key]}
-            onChange={onChange(key)}
-            options={weights}
-          />
-        </div>
-      ))}
+  return Object.keys(fontWeights).map(key => (
+    <div key={key}>
+      <Combobox
+        label={key}
+        name={'fontWeights.' + key}
+        value={fontWeights[key]}
+        onChange={onChange(key)}
+        options={weights}
+      />
     </div>
-  )
+  ))
 }
