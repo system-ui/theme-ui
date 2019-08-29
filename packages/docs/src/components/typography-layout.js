@@ -47,6 +47,9 @@ export default props => {
 
   const typographyTheme = typographyThemes[themeName]
   const theme = toTheme(typographyTheme)
+  theme.styles.h1 = {
+    fontSize: [5, 5],
+  }
 
   return (
     <div>
