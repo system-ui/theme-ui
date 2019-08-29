@@ -1,151 +1,175 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Downshift from 'downshift'
-import Chevron from './Chevron'
-import Label from './Label'
+import { useState, useRef, useEffect } from 'react'
 
-export const Combobox = ({
-  options = [],
-  label,
-  name,
-  onChange,
-  value,
-  defaultValue,
-  preview,
-  ...props
-}) => {
-  const hasPreview = typeof preview === 'function'
-  return (
-    <Downshift
-      {...props}
-      initialInputValue={defaultValue}
-      inputValue={value}
-      onInputValueChange={onChange}
-      children={({
-        getRootProps,
-        getLabelProps,
-        getInputProps,
-        getMenuProps,
-        getItemProps,
-        getToggleButtonProps,
-        isOpen,
-        highlightedIndex,
-        selectedItem,
-        inputValue,
-      }) => (
-        <div
-          {...getRootProps({
-            sx: {
-              position: 'relative',
-              zIndex: isOpen ? 2 : 0,
-            },
-          })}>
-          <Label {...getLabelProps()}>{label}</Label>
-          <div
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-            }}>
-            {hasPreview && (
-              <div
-                sx={{
-                  textAlign: 'center',
-                  width: 32,
-                  mr: -32,
-                }}>
-                {preview(value)}
-              </div>
-            )}
-            <input
-              {...getInputProps()}
-              sx={{
-                appearance: 'none',
-                fontFamily: 'inherit',
-                fontSize: 16,
-                width: '100%',
-                height: 32,
-                p: 0,
-                pl: hasPreview ? 40 : 2,
-                m: 0,
-                border: '1px solid',
-                borderColor: 'gray',
-                color: 'inherit',
-                bg: 'transparent',
-                ':focus': {
-                  borderColor: 'primary',
-                  outline: '1px solid',
-                },
-              }}
-            />
-            <button
-              {...getToggleButtonProps({
-                sx: {
-                  width: 32,
-                  height: 32,
-                  ml: -32,
-                  p: 2,
-                  appearance: 'none',
-                  color: 'inherit',
-                  bg: 'transparent',
-                  border: '1px solid transparent',
-                  backgroundClip: 'padding-box',
-                  ':focus': {
-                    outline: 'none',
-                    color: 'primary',
-                    bg: 'highlight',
-                  },
-                },
-              })}>
-              <Chevron size={16} />
-            </button>
-          </div>
-          {isOpen && (
-            <ul
-              {...getMenuProps({
-                sx: {
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  top: '100%',
-                  listStyle: 'none',
-                  p: 0,
-                  m: 0,
-                  mt: '-1px',
-                  maxHeight: 512,
-                  overflowY: 'auto',
-                  bg: 'background',
-                  border: '1px solid',
-                  borderColor: 'gray',
-                  boxShadow: '0 0 2px rgba(0,0,0,.25)',
-                },
-              })}>
-              {options.map((opt, index) => (
-                <li
-                  {...getItemProps({
-                    key: opt,
-                    index,
-                    item: opt,
-                    sx: {
-                      display: 'flex',
-                      alignItems: 'center',
-                      height: 32,
-                      bg: highlightedIndex === index ? 'highlight' : null,
-                    },
-                  })}>
-                  {hasPreview && (
-                    <div sx={{ width: 32, textAlign: 'center' }}>
-                      {preview(opt)}
-                    </div>
-                  )}
-                  <div sx={{ px: 2 }}>{opt}</div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-    />
-  )
+const keys = {
+  38: 'up',
+  40: 'down',
+  27: 'escape',
+  13: 'return',
 }
 
-export default Combobox
+const Chevron = props => (
+  <svg
+    viewBox="0 0 16 16"
+    width="16"
+    height="16"
+    sx={{
+      pointerEvents: 'none',
+    }}>
+    <path
+      stroke="currentcolor"
+      strokeWidth="2"
+      fill="none"
+      d="M14 6 L8 12 L2 6"
+    />
+  </svg>
+)
+
+export default ({
+  type = 'text',
+  name,
+  label,
+  value,
+  onChange,
+  options = [],
+  ...props
+}) => {
+  const [open, setOpen] = useState(false)
+  const [index, setIndex] = useState(-1)
+  const root = useRef(null)
+  const input = useRef(null)
+
+  useEffect(() => {
+    const handleOutsideClick = e => {
+      if (root.current && root.current.contains(e.target)) return
+      setOpen(false)
+    }
+    document.addEventListener('click', handleOutsideClick)
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [root.current])
+
+  const popup = name + '-popup'
+
+  const handleKeyDown = e => {
+    if (e.shiftKey || e.metaKey || e.ctrlKey || e.altKey) return
+    // console.log(e.keyCode)
+    switch (keys[e.keyCode]) {
+      case 'up':
+        if (index < 0) return
+        setIndex(index - 1)
+        break
+      case 'down':
+        if (!open) setOpen(true)
+        setIndex((index + 1) % options.length)
+        break
+      case 'return':
+        const val = options[index]
+        if (val) onChange(val)
+        setOpen(false)
+        break
+      case 'escape':
+        setOpen(false)
+        setIndex(-1)
+        break
+    }
+  }
+
+  const handleChange = e => {
+    onChange(e.target.value)
+  }
+
+  const toggleOpen = e => {
+    setOpen(!open)
+    if (input.current) input.current.focus()
+  }
+  const handleItemClick = i => e => {
+    const val = options[i]
+    if (val) onChange(val)
+    setOpen(false)
+  }
+
+  return (
+    <div
+      ref={root}
+      style={{
+        position: open ? 'relative' : 'static',
+      }}
+      sx={{
+        zIndex: 2,
+      }}>
+      <label htmlFor={name}>{label}</label>
+      <div
+        sx={{
+          display: 'flex',
+        }}>
+        <input
+          {...props}
+          ref={input}
+          role="combobox"
+          type={type}
+          id={name}
+          name={name}
+          value={value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          aria-autocomplete="none"
+          aria-haspopup="true"
+          aria-owns={popup}
+          aria-expanded={open}
+          aria-activedescendant={name + index}
+          sx={{
+            appearance: 'none',
+            width: '100%',
+            height: 32,
+            fontFamily: 'inherit',
+            fontSize: 16,
+            p: 1,
+            m: 0,
+            border: '1px solid',
+          }}
+        />
+        <button
+          tabindex="-1"
+          aria-label={open ? 'Close' : 'Open'}
+          onClick={toggleOpen}>
+          <Chevron />
+        </button>
+      </div>
+      <ul
+        id={popup}
+        role="listbox"
+        aria-label={name}
+        tabindex="-1"
+        sx={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: '100%',
+          listStyle: 'none',
+          p: 0,
+          m: 0,
+          bg: 'background',
+        }}>
+        {open &&
+          options.map((option, i) => (
+            <li
+              key={option}
+              role="option"
+              aria-selected={i === index}
+              onClick={handleItemClick(i)}
+              sx={{
+                bg: index === i ? 'highlight' : null,
+                ':hover': {
+                  bg: 'highlight',
+                },
+              }}>
+              {option}
+            </li>
+          ))}
+      </ul>
+    </div>
+  )
+}

@@ -46,7 +46,6 @@ export default props => {
             value={fonts[key]}
             onChange={onChange(key)}
             options={defaultFonts}
-            preview={val => <span sx={{ fontFamily: val }}>Aa</span>}
           />
         </div>
       ))}
