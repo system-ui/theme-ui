@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## v0.2.38 2019-08-29
+
 - Added new `ColorPicker` component to `@theme-ui/editor` #327
 - Added warning for conflicting versions of Emotion #297
 - Added color utility package #331
+
+## v0.2.37 2019-08-26
+
+- Update dependencies
 
 ## v0.2.36 2019-08-22
 
