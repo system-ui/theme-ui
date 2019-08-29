@@ -164,16 +164,22 @@ export default ({
         role="listbox"
         aria-label={name}
         tabindex="-1"
+        style={{
+          visibility: open ? 'visible' : 'hidden',
+          position: open ? 'absolute' : 'static',
+        }}
         sx={{
-          position: 'absolute',
           left: 0,
           right: 0,
           top: '100%',
           listStyle: 'none',
           p: 0,
           m: 0,
+          maxHeight: 512,
+          overflowY: 'auto',
           bg: 'background',
           border: '1px solid',
+          borderTop: 0,
           borderColor: 'gray',
         }}>
         {open &&
@@ -185,9 +191,8 @@ export default ({
               onClick={handleItemClick(i)}
               sx={{
                 p: 1,
-                bg: index === i ? 'highlight' : null,
                 userSelect: 'none',
-                ':hover': {
+                '&[aria-selected=true],:hover': {
                   bg: 'highlight',
                 },
               }}>
