@@ -51,13 +51,20 @@ export default ({
     }
   }, [root.current])
 
+  useEffect(() => {
+    const i = options.indexOf(value)
+    if (i < 0) return
+    setIndex(i)
+  }, [])
+
   const popup = name + '-popup'
 
   const handleKeyDown = e => {
     if (e.shiftKey || e.metaKey || e.ctrlKey || e.altKey) return
     switch (keys[e.keyCode]) {
       case 'up':
-        if (index < 0) setIndex(options.length - 1)
+        if (!open) setOpen(true)
+        if (index < 1) setIndex(options.length - 1)
         else setIndex(index - 1)
         break
       case 'down':

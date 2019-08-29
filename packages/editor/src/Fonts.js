@@ -42,7 +42,7 @@ export default props => {
           }}>
           <Combobox
             label={key}
-            name={key}
+            name={'fonts.' + key}
             value={fonts[key]}
             onChange={onChange(key)}
             options={defaultFonts}
