@@ -1,0 +1,17 @@
+{
+  "name": "@theme-ui/color",
+  "version": "0.2.37",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@styled-system/css": "^5.0.23",
+    "polished": "^3.4.1"
+  }
+}
