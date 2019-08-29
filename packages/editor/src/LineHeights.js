@@ -1,21 +1,19 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
-import Combobox from './Combobox'
-
-const weights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
+import Field from './Field'
 
 export default props => {
   const context = useThemeUI()
-  const { fontWeights = {} } = context.theme
+  const { lineHeights = {} } = context.theme
 
   const onChange = key => val => {
+    const n = parseFloat(val)
     context.setTheme({
-      fontWeights: {
-        [key]: val,
+      lineHeights: {
+        [key]: n,
       },
     })
   }
-  const keys = Object.keys(fontWeights)
 
   return (
     <div
@@ -24,19 +22,22 @@ export default props => {
         flexWrap: 'wrap',
         mx: -1,
       }}>
-      {keys.map(key => (
+      {Object.keys(lineHeights).map(key => (
         <div
           key={key}
           sx={{
-            flex: `1 1 96px`,
+            flex: '1 1 96px',
             px: 1,
           }}>
-          <Combobox
+          <Field
+            type="number"
             label={key}
-            name={'fontWeights.' + key}
-            value={fontWeights[key]}
+            name={'lineHeights.' + key}
+            value={lineHeights[key]}
             onChange={onChange(key)}
-            options={weights}
+            min={1}
+            max={3}
+            step={1 / 64}
           />
         </div>
       ))}

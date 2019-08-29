@@ -1,7 +1,10 @@
+export { default as Editor } from './Editor'
 export { default as ColorPicker } from './ColorPicker'
 export { default as ColorPalette } from './ColorPalette'
 export { default as Fonts } from './Fonts'
 export { default as FontWeights } from './FontWeights'
+export { default as LineHeights } from './LineHeights'
+export { default as FontSizes } from './FontSizes'
 
 export { default as Colors } from './Colors'
 export { default as Modes } from './Modes'

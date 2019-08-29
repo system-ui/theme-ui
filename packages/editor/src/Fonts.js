@@ -1,4 +1,3 @@
-// fonts input
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
 import Combobox from './Combobox'
@@ -8,16 +7,16 @@ const defaultFonts = [
   '"Helvetica Neue", Helvetica, Arial, sans-serif',
   '"Avenir Next", Helvetica, Arial, sans-serif',
   'Verdana, sans-serif',
-  'Georgia, serif',
-  'Roboto, sans-serif',
-  '"Open Sans", sans-serif',
-  'Menlo, monospace',
-  '"Roboto Condensed", sans-serif',
-  '"Roboto Mono", monospace',
   'Inter, sans-serif',
+  'Roboto, sans-serif',
+  '"Roboto Condensed", sans-serif',
+  '"Open Sans", sans-serif',
+  'Georgia, serif',
+  'Menlo, monospace',
+  '"Roboto Mono", monospace',
 ]
 
-export default props => {
+export default ({ options = defaultFonts, ...props }) => {
   const context = useThemeUI()
   const { fonts = {} } = context.theme
 
@@ -45,7 +44,7 @@ export default props => {
             name={'fonts.' + key}
             value={fonts[key]}
             onChange={onChange(key)}
-            options={defaultFonts}
+            options={options}
           />
         </div>
       ))}

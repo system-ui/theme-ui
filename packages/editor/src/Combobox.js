@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
+import Label from './Label'
+import Input from './Input'
 
 const keys = {
   38: 'up',
@@ -106,20 +108,12 @@ export default ({
       sx={{
         zIndex: 2,
       }}>
-      <label
-        htmlFor={name}
-        sx={{
-          display: 'block',
-          fontWeight: 'bold',
-          fontSize: 0,
-        }}>
-        {label}
-      </label>
+      <Label htmlFor={name}>{label || name}</Label>
       <div
         sx={{
           display: 'flex',
         }}>
-        <input
+        <Input
           {...props}
           ref={input}
           role="combobox"
@@ -134,21 +128,6 @@ export default ({
           aria-owns={popup}
           aria-expanded={open}
           aria-activedescendant={name + index}
-          sx={{
-            appearance: 'none',
-            width: '100%',
-            height: 32,
-            fontFamily: 'inherit',
-            fontSize: 16,
-            p: 1,
-            m: 0,
-            border: '1px solid',
-            borderColor: 'gray',
-            ':focus': {
-              borderColor: 'primary',
-              outline: 'none',
-            },
-          }}
         />
         <button
           tabindex="-1"
