@@ -45,6 +45,7 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   const theme = applyColorMode(themeState, colorMode)
 
   const context = {
+    ...outer,
     __THEME_UI__: true,
     colorMode,
     setColorMode,
