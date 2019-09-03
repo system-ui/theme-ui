@@ -63,7 +63,6 @@ export default ({
       case 'return':
         if (!open) return
         const val = options[index]
-        console.log({ index, val })
         if (val) onChange(val)
         setOpen(false)
         break
@@ -92,7 +91,6 @@ export default ({
 
   const handleItemClick = i => e => {
     const val = options[i]
-    console.log({ i, val })
     if (val) onChange(val)
     setOpen(false)
     input.current.select()

@@ -2,33 +2,39 @@
 import { jsx, useThemeUI } from 'theme-ui'
 import Field from './Field'
 
+const defaultSpace = [ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]
+
 export default props => {
   const context = useThemeUI()
-  const { fontSizes = [] } = context.theme
+  const { space = defaultSpace } = context.theme
 
   const onChange = key => val => {
     const n = parseFloat(val)
-    if (Array.isArray(fontSizes)) {
+    if (Array.isArray(space)) {
       const i = parseInt(key)
       context.setTheme({
-        fontSizes: [...fontSizes.slice(0, i), n, ...fontSizes.slice(i + 1)],
+        space: [
+          ...space.slice(0, i),
+          n,
+          ...space.slice(i + 1)
+        ]
       })
     } else {
       context.setTheme({
-        fontSizes: {
-          [key]: n,
-        },
+        space: {
+          [key]: n
+        }
       })
     }
   }
 
-  return Object.keys(fontSizes).map(key => (
+  return Object.keys(space).map(key => (
     <div key={key}>
       <Field
-        type="number"
+        type='number'
         label={key}
-        name={'fontSizes.' + key}
-        value={fontSizes[key]}
+        name={'space.' + key}
+        value={space[key]}
         onChange={onChange(key)}
       />
     </div>
