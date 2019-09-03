@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx } from 'theme-ui'
+import { useEditor } from './context'
 import Field from './Field'
 
 const defaultSpace = [ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]
 
 export default props => {
-  const context = useThemeUI()
+  const context = useEditor()
   const { space = defaultSpace } = context.theme
 
   const onChange = key => val => {

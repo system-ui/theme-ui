@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { ColorPalette } from '@theme-ui/style-guide'
+import { useEditor } from './context'
 import ColorPicker from './ColorPicker'
 
 export default props => {
-  const context = useThemeUI()
+  const context = useEditor()
   const mode = context.colorMode
   const { colors = {} } = context.theme
 

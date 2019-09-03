@@ -16,5 +16,5 @@ export { default as Typography } from './Typography'
 
 export {
   EditorContext,
-  useEditorContext,
+  useEditor,
 } from './context'

@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx } from 'theme-ui'
+import { useEditor } from './context'
 import Label from './Label'
 import Select from './Select'
 
 export default props => {
-  const context = useThemeUI()
+  const context = useEditor()
   const {
     theme,
     colorMode,
