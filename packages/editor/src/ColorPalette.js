@@ -10,7 +10,7 @@ export default props => {
 
   const onChange = key => val => {
     let next = {}
-    if (mode && colors[mode] && mode !== context.theme.initialColorMode) {
+    if (mode && colors.modes && colors.modes[mode] && mode !== context.theme.initialColorMode) {
       next = {
         colors: {
           modes: {

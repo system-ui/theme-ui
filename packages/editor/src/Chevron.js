@@ -1,17 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default ({ size = 24, ...props }) => (
-  <svg {...props} viewBox="0 0 32 32" width={size} height={size}>
+export default ({ size = 16, ...props }) => (
+  <svg
+    {...props}
+    viewBox="0 0 16 16"
+    width={size}
+    height={size}
+    sx={{
+      pointerEvents: 'none',
+    }}>
     <path
-      fill="none"
       stroke="currentcolor"
       strokeWidth="2"
-      d={`
-        M4 12
-        L16 24
-        L28 12
-      `}
+      fill="none"
+      d="M14 6 L8 12 L2 6"
     />
   </svg>
 )

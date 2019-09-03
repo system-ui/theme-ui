@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
 import Label from './Label'
 import Input from './Input'
+import Chevron from './Chevron'
 
 const keys = {
   38: 'up',
@@ -10,23 +11,6 @@ const keys = {
   27: 'escape',
   13: 'return',
 }
-
-const Chevron = props => (
-  <svg
-    viewBox="0 0 16 16"
-    width="16"
-    height="16"
-    sx={{
-      pointerEvents: 'none',
-    }}>
-    <path
-      stroke="currentcolor"
-      strokeWidth="2"
-      fill="none"
-      d="M14 6 L8 12 L2 6"
-    />
-  </svg>
-)
 
 export default ({
   type = 'text',
