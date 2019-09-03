@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.2.40 2019-09-03
+
 - Pass outer context through RootProvider #340
 - Update dependencies
 
