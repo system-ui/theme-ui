@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Pass outer context through RootProvider #340
+- Update dependencies
+
 ## v0.2.38 2019-08-29
 
 - Added new `ColorPicker` component to `@theme-ui/editor` #327
