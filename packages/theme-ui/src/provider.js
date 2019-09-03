@@ -61,6 +61,7 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
     window.__THEME_UI__ = context
   }, [context.theme, context.colorMode])
 
+  console.log('render')
   return jsx(BaseProvider, {
     context,
     components: context.components,

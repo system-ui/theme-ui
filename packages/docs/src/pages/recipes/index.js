@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, ThemeProvider } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import { LiveCode } from '../../components/code'
 
@@ -60,10 +60,6 @@ const Card = ({ name, slug, snippets }) => {
       </div>
     </Link>
   )
-}
-
-const components = {
-  a: 'span',
 }
 
 export default props => {

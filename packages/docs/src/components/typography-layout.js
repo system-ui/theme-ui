@@ -1,17 +1,11 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx, ThemeProvider, Flex, Styled } from 'theme-ui'
 import { useState } from 'react'
-import merge from 'lodash.merge'
-
 import { toTheme } from '@theme-ui/typography'
-
 import GoogleFonts from './google-fonts'
 import Button from './button'
-import Select from './select'
 import themes from './typography-themes'
 import typographyThemes from './typography-themes'
-import baseTheme from '../gatsby-plugin-theme-ui'
 
 const themeNames = Object.keys(themes)
 

@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from 'theme-ui'
 import {
-  FontFamily,
-  HeadingStyle,
   TypeScale,
   TypeStyle,
 } from '@theme-ui/style-guide'

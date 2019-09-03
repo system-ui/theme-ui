@@ -146,7 +146,7 @@ export default ({
           aria-activedescendant={name + index}
         />
         <button
-          tabindex="-1"
+          tabIndex="-1"
           aria-label={open ? 'Close' : 'Open'}
           onClick={toggleOpen}
           sx={{
@@ -165,7 +165,7 @@ export default ({
         id={popup}
         role="listbox"
         aria-label={name}
-        tabindex="-1"
+        tabIndex="-1"
         style={{
           visibility: open ? 'visible' : 'hidden',
           position: open ? 'absolute' : 'static',
