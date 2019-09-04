@@ -34,6 +34,7 @@ export default props => {
   return (
     <ColorPalette
       {...props}
+      colors={colors}
       mode={mode}
       render={({ swatch, color, key, ...rest }) => (
         <ColorPicker key={key} color={color} onChange={onChange(key)}>

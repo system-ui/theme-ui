@@ -25,7 +25,7 @@ export default ({
 
   return (
     <EditorContext.Provider value={context}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider scoped theme={theme}>
         <div
           {...props}
           sx={{

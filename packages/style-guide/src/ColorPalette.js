@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, ThemeProvider } from 'theme-ui'
 import { useTheme } from './context'
 import ColorSwatch from './ColorSwatch'
 
@@ -62,21 +62,29 @@ export const ColorRow = ({
   )
 }
 
-export const ColorPalette = ({ omit, mode, ...props }) => {
-  let { colors = {} } = useTheme()
+export const ColorPalette = ({
+  omit,
+  mode,
+  colors,
+  ...props
+}) => {
+  const theme = useTheme()
+  colors = colors || theme.colors
 
   if (mode && colors.modes) {
     colors = colors.modes[mode] || colors
   }
 
   return (
-    <div
-      style={{
-        marginLeft: -8,
-        marginRight: -8,
-      }}>
-      <ColorRow {...props} omit={omit} colors={colors} />
-    </div>
+    <ThemeProvider theme={{ colors }}>
+      <div
+        style={{
+          marginLeft: -8,
+          marginRight: -8,
+        }}>
+        <ColorRow {...props} omit={omit} colors={colors} />
+      </div>
+    </ThemeProvider>
   )
 }
 

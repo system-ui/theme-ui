@@ -89,7 +89,7 @@ export const ThemeProvider = props => {
     }
   }
 
-  if (outer.__THEME_UI__) {
+  if (!props.scoped && outer.__THEME_UI__) {
     return jsx(NestedProvider, props)
   }
   return jsx(RootProvider, props)
