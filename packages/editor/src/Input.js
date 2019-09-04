@@ -14,8 +14,10 @@ export default forwardRef((props, ref) => (
       fontSize: 'inherit',
       p: 1,
       m: 0,
+      color: 'black',
+      bg: 'white',
       border: '1px solid',
-      borderColor: 'gray',
+      borderColor: 'lightgray',
       ':focus': {
         borderColor: 'primary',
         outline: 'none',

@@ -161,10 +161,10 @@ export default ({
           m: 0,
           maxHeight: 512,
           overflowY: 'auto',
-          bg: 'background',
+          bg: 'white',
           border: '1px solid',
           borderTop: 0,
-          borderColor: 'gray',
+          borderColor: 'lightgray',
         }}>
         {open &&
           options.map((option, i) => (

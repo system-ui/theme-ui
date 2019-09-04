@@ -21,7 +21,7 @@ export default props =>
         color: 'black',
         bg: 'white',
         border: '1px solid',
-        borderColor: 'gray',
+        borderColor: 'lightgray',
         ':focus': {
           borderColor: 'primary',
           outline: 'none',

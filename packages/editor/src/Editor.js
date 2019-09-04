@@ -3,13 +3,13 @@ import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
 import { EditorContext } from './context'
 
 const theme = {
+  colors: {
+    primary: 'hsl(210, 100%, 40%)',
+    highlight: 'hsl(210, 50%, 95%)',
+  },
   '@theme-ui/editor': {
-    input: {
-      borderColor: 'rgba(0, 0, 0, .125)',
-    },
-    select: {
-      borderColor: 'rgba(0, 0, 0, .125)',
-    },
+    input: {},
+    select: {},
   },
 }
 
