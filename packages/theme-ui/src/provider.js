@@ -10,7 +10,7 @@ import { useColorState } from './color-modes'
 import { createComponents } from './components'
 import { toCustomProperties } from './custom-properties'
 
-const mergeState = (state, next) => merge.all({}, state, next)
+const mergeState = (state = {}, next) => merge.all({}, state, next)
 
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
@@ -40,12 +40,10 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorState(propsTheme)
-  const [themeState, setThemeState] = useReducer(mergeState, propsTheme)
-  useEffect(() => {
-    setThemeState(propsTheme)
-  }, [propsTheme])
+  const [state, setTheme] = useReducer(mergeState)
 
-  const theme = applyColorMode(themeState, colorMode)
+  const theme = applyColorMode(state || propsTheme, colorMode)
+  const editTheme = () => setTheme(propsTheme || {})
 
   const context = {
     ...outer,
@@ -54,7 +52,8 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
     theme,
-    setTheme: setThemeState,
+    setTheme,
+    editTheme,
   }
 
   useEffect(() => {

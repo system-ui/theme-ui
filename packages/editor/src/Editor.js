@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
+import { useEffect } from 'react'
 import { EditorContext } from './context'
 
 const theme = {
@@ -22,6 +23,9 @@ export default ({
 }) => {
   const outer = useThemeUI()
   context = context || outer
+  useEffect(() => {
+    context.editTheme && context.editTheme()
+  }, [])
 
   return (
     <EditorContext.Provider value={context}>
