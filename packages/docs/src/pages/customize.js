@@ -48,6 +48,9 @@ export default props => {
           <div
             sx={{
               my: 4,
+              fontFamily: 'body',
+              lineHeight: 'body',
+              fontWeight: 'body',
               color: 'text',
               bg: 'background',
             }}>
