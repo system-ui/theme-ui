@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/tailwind",
   "description": "Generate static CSS for use outside of React with Theme UI and Tailwind.css",
-  "version": "0.2.40",
+  "version": "0.2.41",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "John Otander <johnotander@gmail.com>",

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-ui-blog",
-  "version": "0.2.40",
+  "version": "0.2.41",
   "main": "index.js",
   "scripts": {
     "avatar": "npx capture-website-cli \"https://contrast.now.sh/fff/33e?text=UI&size=48&fontSize=1.5&radius=32&baseline=1\" content/assets/avatar.png --width=48 --height=48 --overwrite"
@@ -20,11 +20,11 @@
     "@mdx-js/react": "^1.0.0",
     "@theme-ui/preset-base": "^0.2.40",
     "gatsby-plugin-react-helmet": "^3.1.3",
-    "gatsby-plugin-theme-ui": "^0.2.40",
+    "gatsby-plugin-theme-ui": "^0.2.41",
     "gatsby-theme-blog-core": "^1.0.2",
     "gatsby-theme-ui-layout": "^0.2.40",
     "react-helmet": "^5.2.1",
-    "theme-ui": "^0.2.40"
+    "theme-ui": "^0.2.41"
   },
   "repository": "system-ui/theme-ui",
   "license": "MIT"

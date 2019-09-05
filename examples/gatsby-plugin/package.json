@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "gatsby-plugin-theme-ui-example",
-  "version": "0.2.40",
+  "version": "0.2.41",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "@mdx-js/react": "^1.0.16",
     "gatsby": "^2.6.3",
     "gatsby-plugin-mdx": "^1.0.4",
-    "gatsby-plugin-theme-ui": "^0.2.40",
+    "gatsby-plugin-theme-ui": "^0.2.41",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.2.40"
+    "theme-ui": "^0.2.41"
   },
   "devDependencies": {
     "@testing-library/react": "^9.1.3",

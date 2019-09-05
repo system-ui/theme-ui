@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "custom-pragma-example",
-  "version": "0.2.40",
+  "version": "0.2.41",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -17,6 +17,6 @@
     "gatsby-plugin-mdx": "^1.0.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.2.40"
+    "theme-ui": "^0.2.41"
   }
 }
