@@ -29,58 +29,23 @@ export const State = props => {
 
 Components for editing Theme UI theme objects.
 
-## Fonts
+```sh
+npm i @theme-ui/editor
+```
 
-<Fonts />
+```js
+import {
+  Editor,
+  ColorPalette,
+  Fonts,
+  FontWeights,
+  LineHeights,
+  FontSizes,
+  Space,
+  ColorMode,
+} from '@theme-ui/editor'
+```
 
-## Font Sizes
-
-<TypeScale />
-
-<Row>
-  <FontSizes />
-</Row>
-
-## Font Weights
-
-<Row>
-  <FontWeights />
-</Row>
-
-## Line Heights
-
-<Row>
-  <LineHeights />
-</Row>
-
-## ColorPalette
-
-<div style={{ position: 'relative', zIndex: 1 }}>
-  <ColorPalette size={64} />
-</div>
-
-## ColorPicker
-
-<State
-  value='#07c'
-  render={([color, setColor]) => (
-  <>
-    <Styled.pre
-      style={{
-        color: 'white',
-        backgroundColor: color,
-      }}>
-      {color}
-    </Styled.pre>
-    <ColorPicker
-      color={color}
-      onChange={v => setColor(v.hex)}
-    />
-  </>
-  )}
-/>
-
-## Compact Layout
 
 <Editor fontSize={12}>
   <Fonts />
