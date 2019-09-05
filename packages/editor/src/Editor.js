@@ -23,9 +23,6 @@ export default ({
 }) => {
   const outer = useThemeUI()
   context = context || outer
-  useEffect(() => {
-    context.editTheme && context.editTheme()
-  }, [])
 
   return (
     <EditorContext.Provider value={context}>

@@ -4,7 +4,7 @@ import { version as emotionVersion } from '@emotion/core/package.json'
 
 export const Context = createContext({
   emotionVersion,
-  theme: {},
+  theme: null,
   components,
 })
 

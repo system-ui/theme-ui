@@ -1,5 +1,5 @@
 export { jsx } from './jsx'
-export { ThemeProvider } from './provider'
+export { ThemeProvider, ThemeStateProvider } from './provider'
 export { Context, useThemeUI } from './context'
 export { ColorMode, useColorMode, InitializeColorMode } from './color-modes'
 export { Styled, components } from './components'

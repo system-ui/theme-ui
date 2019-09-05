@@ -39,11 +39,9 @@ const BaseProvider = ({ context, components, children }) => {
 const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorState(propsTheme)
-  const [state, setTheme] = useReducer(mergeState)
+  const [colorMode, setColorMode] = useColorState(outer.theme || propsTheme)
 
-  const theme = applyColorMode(state || propsTheme, colorMode)
-  const editTheme = () => setTheme(propsTheme || {})
+  const theme = applyColorMode(outer.theme || propsTheme, colorMode)
 
   const context = {
     ...outer,
@@ -52,8 +50,6 @@ const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
     theme,
-    setTheme,
-    editTheme,
   }
 
   useEffect(() => {
@@ -95,4 +91,22 @@ export const ThemeProvider = props => {
     return jsx(NestedProvider, props)
   }
   return jsx(RootProvider, props)
+}
+
+export const ThemeStateProvider = ({
+  theme,
+  children
+}) => {
+  const outer = useThemeUI()
+  const [state, setTheme] = useReducer(mergeState, theme)
+  const context = {
+    ...outer,
+    theme: state,
+    setTheme,
+  }
+
+  return jsx(Context.Provider, {
+    value: context,
+    children
+  })
 }
