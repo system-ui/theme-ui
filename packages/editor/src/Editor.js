@@ -8,10 +8,6 @@ const theme = {
     primary: 'hsl(210, 100%, 40%)',
     highlight: 'hsl(210, 50%, 95%)',
   },
-  '@theme-ui/editor': {
-    input: {},
-    select: {},
-  },
 }
 
 export default ({
