@@ -2,10 +2,22 @@
 title: Editor
 ---
 
+import { Styled } from 'theme-ui'
 import {
   ColorPalette,
   ColorPicker,
+  Fonts,
+  FontWeights,
+  LineHeights,
+  FontSizes,
+  ColorMode,
+  Space,
+  Editor,
+  Row,
 } from '@theme-ui/editor'
+import {
+  TypeScale,
+} from '@theme-ui/style-guide'
 import { useState } from 'react'
 
 export const State = props => {
@@ -17,31 +29,46 @@ export const State = props => {
 
 Components for editing Theme UI theme objects.
 
-## ColorPalette
+```sh
+npm i @theme-ui/editor
+```
 
-<div style={{ position: 'relative', zIndex: 1 }}>
-  <ColorPalette size={64} />
-</div>
+```js
+import {
+  Editor,
+  ColorPalette,
+  Fonts,
+  FontWeights,
+  LineHeights,
+  FontSizes,
+  Space,
+  ColorMode,
+} from '@theme-ui/editor'
+```
 
-## ColorPicker
 
-<State
-  value='#f00'
-  render={([color, setColor]) => (
-  <>
-    <div
-      style={{
-        width: 128,
-        height: 32,
-        backgroundColor: color
-      }}>
-      <pre>{color}</pre>
-    </div>
-    <ColorPicker
-      color={color}
-      onChange={v => setColor(v.hex)}
-    />
-  </>
-  )}
-/>
+<Editor fontSize={12}>
+  <Fonts />
+  <Row>
+    <FontSizes />
+  </Row>
+  <b>Font Weights</b>
+  <Row>
+    <FontWeights />
+  </Row>
+  <b>Line Heights</b>
+  <Row>
+    <LineHeights />
+  </Row>
+  <b>Colors</b>
+  <ColorMode />
+  <ColorPalette
+    size={32}
+    label={false}
+  />
+  <b>Space</b>
+  <Row>
+    <Space />
+  </Row>
+</Editor>
 

@@ -6,8 +6,8 @@ const Label = props => (
     {...props}
     sx={{
       display: 'block',
-      fontSize: 'inherit',
-      mb: 1,
+      fontSize: 0,
+      fontWeight: 'bold',
     }}
   />
 )

@@ -37,6 +37,8 @@ const toJS = theme => `
 module.exports = ${JSON.stringify(theme, null, 2)}
 `
 
+jest.setTimeout(10000)
+
 it('transforms a theme config to a Tailwind config', () => {
   const result = toTailwind(theme)
 
@@ -44,6 +46,7 @@ it('transforms a theme config to a Tailwind config', () => {
 })
 
 it('does not error when using the Tailwind CLI', async () => {
+  expect.assertions(1)
   const filePath = path.join(__dirname, 'tailwind.config.js')
   fs.writeFileSync(filePath, toJS(toTailwind(theme)))
 

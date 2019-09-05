@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, Container } from 'theme-ui'
-import Logo from './logo'
 
 const gradient = `linear-gradient(120deg,
   rgba(230, 59, 25, .5),

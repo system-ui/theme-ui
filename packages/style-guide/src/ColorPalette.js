@@ -38,6 +38,7 @@ export const ColorRow = ({
           }
           const swatch = (
             <ColorSwatch
+              {...props}
               name={id}
               color={id}
               size={size}
@@ -61,8 +62,13 @@ export const ColorRow = ({
   )
 }
 
-export const ColorPalette = ({ omit, mode, ...props }) => {
-  let { colors = {} } = useTheme()
+export const ColorPalette = ({
+  omit,
+  mode,
+  ...props
+}) => {
+  const theme = useTheme()
+  let colors = theme.colors
 
   if (mode && colors.modes) {
     colors = colors.modes[mode] || colors
