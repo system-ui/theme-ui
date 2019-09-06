@@ -12,5 +12,5 @@ Chrome devtools extension for editing Theme UI styles in the browser.
 
 ## Local Development
 
-1. Run `yarn prepare`
+1. Run `yarn prepare` (or `yarn watch`)
 1. Load unpacked extension from the `public/` directory

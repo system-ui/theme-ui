@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React, { useReducer, useEffect, useRef, useState } from 'react'
-import { Global } from '@emotion/core'
 import { render } from 'react-dom'
-import merge from 'lodash.merge'
 import debounce from 'lodash.debounce'
 import copyToClipboard from 'copy-to-clipboard'
 import {
@@ -32,7 +30,7 @@ const runScript = script =>
     )
   })
 
-const mergeState = (state, next) => merge({}, state, next)
+const mergeState = (state, next) => ({ ...state, ...next })
 
 const CopyTheme = ({ theme }) => {
   const [copied, setCopied] = useState(false)
@@ -79,15 +77,17 @@ const App = () => {
   }
 
   const setColorMode = nextMode => {
-    console.log({ nextMode })
     setState({ colorMode: nextMode })
     runScript(`window.__THEME_UI__.setColorMode('${nextMode}')`)
   }
 
   useEffect(() => {
-    getTheme()
     getColorMode()
   }, [])
+
+  useEffect(() => {
+    getTheme()
+  }, [state.colorMode])
 
   const context = {
     ...state,
@@ -95,7 +95,7 @@ const App = () => {
     setColorMode,
   }
 
-  if (!context.theme) return <pre>loading...</pre>
+  if (!context.theme) return false
 
   return (
     <Editor
@@ -105,16 +105,6 @@ const App = () => {
         py: 4,
         fontSize: 12,
       }}>
-      <Global
-        styles={{
-          '*': {
-            boxSizing: 'border-box',
-          },
-          body: {
-            margin: 0,
-          },
-        }}
-      />
       <ColorPalette
         size={64}
       />
