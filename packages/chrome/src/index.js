@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React, { useReducer, useEffect, useRef, useState } from 'react'
-import { Global } from '@emotion/core'
 import { render } from 'react-dom'
-import merge from 'lodash.merge'
 import debounce from 'lodash.debounce'
 import copyToClipboard from 'copy-to-clipboard'
-import { ThemeProvider, Styled, ColorMode, useColorMode } from 'theme-ui'
-import theme from './theme'
-import { Colors, Modes, Typography } from '@theme-ui/editor'
+import {
+  Editor,
+  Row,
+  ColorPalette,
+  ColorMode,
+  Fonts,
+  FontWeights,
+  LineHeights,
+  FontSizes,
+  Space,
+} from '@theme-ui/editor'
 
 const runScript = script =>
   new Promise((resolve, reject) => {
@@ -24,7 +30,7 @@ const runScript = script =>
     )
   })
 
-const mergeState = (state, next) => merge({}, state, next)
+const mergeState = (state, next) => ({ ...state, ...next })
 
 const CopyTheme = ({ theme }) => {
   const [copied, setCopied] = useState(false)
@@ -42,38 +48,10 @@ const CopyTheme = ({ theme }) => {
   )
 }
 
-const Panel = ({ state, setColorMode, setTheme }) => (
-  <div sx={{ p: 4, maxWidth: 400 }}>
-    <header>
-      <h1
-        sx={{
-          fontSize: 5,
-          mt: 0,
-          mb: 4,
-        }}>
-        Theme UI Devtools
-      </h1>
-    </header>
-    <main>
-      <Colors theme={state.theme} setTheme={setTheme} />
-      {state.colorMode && (
-        <Modes
-          theme={state.theme}
-          colorMode={state.colorMode}
-          setColorMode={setColorMode}
-        />
-      )}
-      <Typography theme={state.theme} setTheme={setTheme} />
-    </main>
-    <footer>
-      <CopyTheme theme={state.theme} />
-    </footer>
-  </div>
-)
+const Spacer = () => <div sx={{ my: 2 }} />
 
-const Editor = () => {
-  theme.colorMode =
-    window.chrome.devtools.panels.themeName === 'dark' ? 'dark' : 'light'
+const App = () => {
+  // theme.colorMode = window.chrome.devtools.panels.themeName === 'dark' ? 'dark' : 'light'
 
   const [state, setState] = useReducer(mergeState, {
     theme: null,
@@ -99,35 +77,69 @@ const Editor = () => {
   }
 
   const setColorMode = nextMode => {
+    setState({ colorMode: nextMode })
     runScript(`window.__THEME_UI__.setColorMode('${nextMode}')`)
   }
 
   useEffect(() => {
-    getTheme()
     getColorMode()
   }, [])
 
+  useEffect(() => {
+    getTheme()
+  }, [state.colorMode])
+
+  const context = {
+    ...state,
+    setTheme,
+    setColorMode,
+  }
+
+  if (!context.theme) return false
+
   return (
-    <ThemeProvider theme={theme}>
-      <Styled.root>
+    <Editor
+      context={context}
+      sx={{
+        px: 2,
+        py: 4,
+        fontSize: 12,
+      }}>
+      <ColorPalette
+        size={64}
+      />
+      {context.colorMode && (
         <ColorMode />
-        <Global
-          styles={{
-            body: {
-              margin: 0,
-            },
-          }}
-        />
-        {state.theme && (
-          <Panel
-            state={state}
-            setTheme={setTheme}
-            setColorMode={setColorMode}
-          />
-        )}
-      </Styled.root>
-    </ThemeProvider>
+      )}
+      <Spacer />
+      <b>Fonts</b>
+      <Row width={192}>
+        <Fonts />
+      </Row>
+      <Spacer />
+      <b>Font Weights</b>
+      <Row>
+        <FontWeights />
+      </Row>
+      <Spacer />
+      <b>Line Heights</b>
+      <Row>
+        <LineHeights />
+      </Row>
+      <Spacer />
+      <b>Font Sizes</b>
+      <Row>
+        <FontSizes />
+      </Row>
+      <Spacer />
+      <b>Space</b>
+      <Row>
+        <Space />
+      </Row>
+      <Spacer />
+      <CopyTheme theme={state.theme} />
+    </Editor>
   )
 }
 
-render(<Editor />, document.getElementById('root'))
+render(<App />, document.getElementById('root'))
