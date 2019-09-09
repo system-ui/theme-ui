@@ -9,7 +9,7 @@ export const borderWidths = {
   '8': '8px',
 }
 
-export const breakpoints = ['640px', '758px', '1024px', '1280px']
+export const breakpoints = ['640px', '768px', '1024px', '1280px']
 
 export const baseColors = {
   transparent: 'transparent',
