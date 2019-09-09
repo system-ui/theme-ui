@@ -4,6 +4,7 @@
 
 - Updated UI in chrome extension
 - Fix typo in tailwind preset #346
+- Fix state bug in chrome extension
 
 ## v0.2.41 2019-09-05
 
