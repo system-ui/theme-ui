@@ -104,6 +104,7 @@ export default ({
       }}
       sx={{
         zIndex: 2,
+        color: 'black',
       }}>
       <Label htmlFor={name}>{label || name}</Label>
       <div
