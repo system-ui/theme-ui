@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import React, { useReducer, useEffect, useRef, useState } from 'react'
 import { render } from 'react-dom'
 import debounce from 'lodash.debounce'
+import merge from 'lodash.merge'
 import copyToClipboard from 'copy-to-clipboard'
 import {
   Editor,
@@ -30,7 +31,7 @@ const runScript = script =>
     )
   })
 
-const mergeState = (state, next) => ({ ...state, ...next })
+const mergeState = (state, next) => merge({}, state, next)
 
 const CopyTheme = ({ theme }) => {
   const [copied, setCopied] = useState(false)
@@ -51,7 +52,7 @@ const CopyTheme = ({ theme }) => {
 const Spacer = () => <div sx={{ my: 2 }} />
 
 const App = () => {
-  // theme.colorMode = window.chrome.devtools.panels.themeName === 'dark' ? 'dark' : 'light'
+  const dark = window.chrome.devtools.panels.themeName === 'dark'
 
   const [state, setState] = useReducer(mergeState, {
     theme: null,
@@ -104,13 +105,10 @@ const App = () => {
         px: 2,
         py: 4,
         fontSize: 12,
+        color: dark ? 'white' : 'black',
       }}>
-      <ColorPalette
-        size={64}
-      />
-      {context.colorMode && (
-        <ColorMode />
-      )}
+      <ColorPalette size={64} />
+      {context.colorMode && <ColorMode />}
       <Spacer />
       <b>Fonts</b>
       <Row width={192}>
