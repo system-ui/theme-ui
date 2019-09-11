@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## v0.2.42 2019-09-11
+
 - Updated UI in chrome extension
 - Fix typo in tailwind preset #346
 - Fix state bug in chrome extension
+- Move React to peer dependencies
 
 ## v0.2.41 2019-09-05
 
