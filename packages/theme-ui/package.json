@@ -13,13 +13,13 @@
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.0",
-    "@mdx-js/react": "^1.0.0"
+    "@mdx-js/react": "^1.0.0",
+    "react": "^16.8.0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.1",
     "@styled-system/css": "^5.0.16",
-    "deepmerge": "^4.0.0",
-    "react": "^16.8.0"
+    "deepmerge": "^4.0.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.0",
