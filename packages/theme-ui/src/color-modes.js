@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { css } from '@styled-system/css'
+import { css, get } from '@styled-system/css'
 import { Global } from '@emotion/core'
+import { jsx } from './jsx'
+import { ThemeProvider } from './provider'
 import { useThemeUI } from './context'
 import { createColorStyles } from './custom-properties'
+import merge from './merge'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -81,4 +84,31 @@ export const InitializeColorMode = () => (
   />
 )
 
+export const applyColorMode = (theme, mode) => {
+  if (!mode) return theme
+  const modes = get(theme, 'colors.modes', {})
+  return merge.all({}, theme, {
+    colors: get(modes, mode, {}),
+  })
+}
+
+export const Color = ({ mode, ...props }) => {
+  const context = useThemeUI()
+  const theme = applyColorMode(context.theme, mode)
+
+  return jsx(ThemeProvider, {
+    theme,
+  },
+    jsx('div', {
+      ...props,
+      sx: {
+        color: 'text',
+        bg: 'background',
+        ...props.sx,
+      },
+    })
+  )
+}
+
 export default useColorMode
+

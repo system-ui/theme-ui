@@ -3,6 +3,7 @@ title: Color Modes
 ---
 
 import Note from '../components/note'
+import { Color } from 'theme-ui'
 
 # Color Modes
 
@@ -92,6 +93,12 @@ export default props => (
 )
 ```
 
+<Color
+  mode='dark'
+  sx={{
+    p: 3,
+  }}>
+
 ## Gatsby plugin
 
 For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
@@ -101,6 +108,8 @@ If you support CSS custom properties, we recommend setting `useCustomProperties`
 ```sh
 npm i gatsby-plugin-theme-ui
 ```
+
+</Color>
 
 This plugin will look for a `src/gatsby-plugin-theme-ui/index.js` file to import and pass to the ThemeProvider.
 

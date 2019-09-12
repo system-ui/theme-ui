@@ -2,23 +2,14 @@ import { useEffect, useReducer } from 'react'
 import { ThemeContext as EmotionContext } from '@emotion/core'
 import { version as emotionVersion } from '@emotion/core/package.json'
 import { MDXProvider } from '@mdx-js/react'
-import { get } from '@styled-system/css'
 import merge from './merge'
 import jsx from './jsx'
 import { Context, useThemeUI } from './context'
-import { useColorState } from './color-modes'
+import { useColorState, applyColorMode } from './color-modes'
 import { createComponents } from './components'
 import { toCustomProperties } from './custom-properties'
 
 const mergeState = (state = {}, next) => merge.all({}, state, next)
-
-const applyColorMode = (theme, mode) => {
-  if (!mode) return theme
-  const modes = get(theme, 'colors.modes', {})
-  return merge.all({}, theme, {
-    colors: get(modes, mode, {}),
-  })
-}
 
 const BaseProvider = ({ context, components, children }) => {
   const theme = { ...context.theme }
