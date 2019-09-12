@@ -1,11 +1,5 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 
-const heading = {
-  fontFamily: 'heading',
-  fontWeight: 'heading',
-  lineHeight: 'heading',
-}
-
 export default {
   useCustomProperties: true,
   initialColorMode: 'light',
@@ -18,6 +12,7 @@ export default {
     highlight: '#efeffe', // '#ffffcc',
     gray: '#777',
     accent: '#609',
+    darken: 'rgba(0, 0, 0, .25)',
     modes: {
       dark: {
         text: '#fff',
@@ -59,21 +54,35 @@ export default {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
     body: 400,
-    heading: 700,
-    display: 900,
+    heading: 800,
+    bold: 700,
+    display: 800,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.25,
   },
-  textStyles: {
-    heading,
+  sizes: {
+    sidebar: 256,
+  },
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
     display: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: [5, 6],
       fontWeight: 'display',
       letterSpacing: '-0.03em',
       mt: 3,
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
     },
   },
   styles: {
@@ -86,27 +95,31 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
     },
+    img: {
+      maxWidth: '100%',
+      height: 'auto',
+    },
     h1: {
-      variant: 'textStyles.display',
+      variant: 'text.display',
     },
     h2: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 5,
     },
     h3: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 4,
     },
     h4: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 3,
     },
     h5: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 2,
     },
     h6: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 1,
     },
     a: {
@@ -162,6 +175,20 @@ export default {
       border: 0,
       borderBottom: '1px solid',
       borderColor: 'muted',
+    },
+    xray: {
+      '*': {
+        outline: '1px solid rgba(0, 192, 255, .25)',
+      },
+    },
+    navlink: {
+      display: 'inline-block',
+      fontWeight: 'bold',
+      color: 'inherit',
+      textDecoration: 'none',
+      ':hover,:focus': {
+        color: 'primary',
+      },
     },
   },
   prism,

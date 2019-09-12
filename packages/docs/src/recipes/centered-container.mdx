@@ -1,0 +1,47 @@
+---
+name: 'Centered Container'
+---
+
+# Centered Container
+
+Create a centered, max-width container for reuse in multiple layouts.
+
+```jsx live
+<div
+  sx={{
+    maxWidth: 512,
+    mx: 'auto',
+    px: 3,
+    py: 4,
+  }}>
+  Centered
+</div>
+```
+
+First, add a `container` size to your theme,
+then use the size in your component definition.
+
+```js
+// example theme
+export default {
+  sizes: {
+    container: 768,
+  }
+}
+```
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+// example Container component
+export default props =>
+  <div
+    {...props}
+    sx={{
+      maxWidth: 'container',
+      mx: 'auto',
+      px: 3,
+    }}
+  />
+```

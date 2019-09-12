@@ -1,0 +1,40 @@
+---
+name: 'Tiled Layout'
+---
+
+# Tiled Layout
+
+Create a responsive auto-sized tiled layout using CSS Grid.
+
+```jsx live xray
+<div
+  sx={{
+    display: 'grid',
+    gridGap: 3,
+    gridTemplateColumns: `repeat(auto-fit, minmax(128px, 1fr))`,
+  }}>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+</div>
+```
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default ({
+  gap = 3,
+  width = 128,
+  ...props
+}) =>
+  <div
+    {...props}
+    sx={{
+      display: 'grid',
+      gridGap: gap,
+      gridTemplateColumns: `repeat(auto-fit, minmax(${width}px, 1fr))`,
+    }}
+  />
+```

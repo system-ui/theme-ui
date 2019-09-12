@@ -1,7 +1,7 @@
 {
   "name": "Theme UI Devtools",
-  "description": "Build consistent, themeable React UIs based on design system constraints and design tokens",
-  "version": "0.1.5",
+  "description": "Edit colors, typography, and other styles for sites built with Theme UI",
+  "version": "0.2.41",
   "manifest_version": 2,
   "minimum_chrome_version": "10.0",
   "devtools_page": "devtools.html",

@@ -1,9 +1,18 @@
 export default {
+  useCustomProperties: true,
   colors: {
     text: '#000',
     background: '#fff',
     primary: '#07c',
     secondary: '#609',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#222',
+        primary: '#0cf',
+        secondary: '#90c',
+      },
+    },
   },
   fonts: {
     body: 'system-ui, sans-serif',

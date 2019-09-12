@@ -31,6 +31,24 @@ export default props => (
 )
 ```
 
+Alternatively, an accordion style sidenav can be rendered using the `AccordionNav` component.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { AccordionNav } from '@theme-ui/sidenav'
+import Links from './links.mdx'
+
+export default props => (
+  <Links
+    {...props}
+    components={{
+      wrapper: AccordionNav,
+    }}
+  />
+)
+```
+
 The same MDX document can be used to create pagination links.
 Pass in the current `pathname` to allow the `Pagination` component to determine the previous and next links.
 

@@ -5,7 +5,14 @@ import ColorSwatch from './ColorSwatch'
 
 const join = (...args) => args.filter(Boolean).join('.')
 
-export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
+export const ColorRow = ({
+  colors,
+  name,
+  omit = ['modes'],
+  render,
+  size,
+  ...props
+}) => {
   return (
     <div>
       <div
@@ -14,40 +21,58 @@ export const ColorRow = ({ colors, name, omit = ['modes'], ...props }) => {
           display: 'flex',
           flexWrap: 'wrap',
         }}>
-        {Object.entries(colors)
-          .sort(([_, colorA]) => (typeof colorA === 'string' ? -1 : 1))
-          .map(([key, color]) => {
-            if (!color || omit.includes(key)) return false
-            const id = join(name, key)
-            if (typeof color === 'object') {
-              return (
-                <ColorRow
-                  {...props}
-                  key={key}
-                  name={id}
-                  colors={color}
-                  omit={omit}
-                />
-              )
-            }
+        {Object.keys(colors).map(key => {
+          const color = colors[key]
+          if (!color || omit.includes(key)) return false
+          const id = join(name, key)
+          if (typeof color === 'object') {
             return (
-              <ColorSwatch
+              <ColorRow
+                {...props}
+                key={key}
                 name={id}
-                color={id}
-                sx={{
-                  m: 2,
-                  flexBasis: 128,
-                }}
+                colors={color}
+                omit={omit}
               />
             )
-          })}
+          }
+          const swatch = (
+            <ColorSwatch
+              {...props}
+              name={id}
+              color={id}
+              size={size}
+              sx={{
+                m: 2,
+              }}
+            />
+          )
+          if (typeof render === 'function') {
+            return render({
+              swatch,
+              color,
+              key,
+              name: id,
+            })
+          }
+          return swatch
+        })}
       </div>
     </div>
   )
 }
 
-export const ColorPalette = ({ omit = [], ...props }) => {
-  const { colors = {} } = useTheme()
+export const ColorPalette = ({
+  omit,
+  mode,
+  ...props
+}) => {
+  const theme = useTheme()
+  let colors = theme.colors
+
+  if (mode && colors.modes) {
+    colors = colors.modes[mode] || colors
+  }
 
   return (
     <div
@@ -55,7 +80,7 @@ export const ColorPalette = ({ omit = [], ...props }) => {
         marginLeft: -8,
         marginRight: -8,
       }}>
-      <ColorRow omit={omit} colors={colors} />
+      <ColorRow {...props} omit={omit} colors={colors} />
     </div>
   )
 }

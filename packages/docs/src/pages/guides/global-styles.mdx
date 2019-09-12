@@ -1,0 +1,29 @@
+---
+title: 'Global Styles'
+---
+
+import Note from '../../components/note'
+
+# Global Styles
+
+Use the Emotion `Global` component to add global CSS with theme-based values.
+
+<Note>
+Generally, you should try to avoid adding CSS to global scope.
+Many styles can be safely encapsulated into a component without the need for global styles.
+</Note>
+
+```jsx
+import React from 'react'
+import { Global } from '@emotion/core'
+
+export default props =>
+  <Global
+    styles={theme => ({
+      body: {
+        color: theme.colors.text,
+        backgroundColor: theme.colors.background,
+      }
+    })}
+  />
+```

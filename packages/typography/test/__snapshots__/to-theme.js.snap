@@ -16,8 +16,8 @@ Object {
     "heading": "bold",
   },
   "fonts": Object {
-    "body": "\\"georgia\\", \\"serif\\"",
-    "heading": "\\"-apple-system\\", \\"BlinkMacSystemFont\\", \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"sans-serif\\"",
+    "body": "'georgia', serif",
+    "heading": "-apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.45,
@@ -253,8 +253,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Open Sans\\", \\"sans-serif\\"",
-    "heading": "\\"Domine\\", \\"sans-serif\\"",
+    "body": "'Open Sans', sans-serif",
+    "heading": "'Domine', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.45,
@@ -500,8 +500,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Anonymous Pro\\", \\"Georgia\\", \\"serif\\"",
-    "heading": "\\"Anonymous Pro\\", \\"Georgia\\", \\"serif\\"",
+    "body": "'Anonymous Pro', 'Georgia', serif",
+    "heading": "'Anonymous Pro', 'Georgia', serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -743,8 +743,8 @@ Object {
     "heading": 500,
   },
   "fonts": Object {
-    "body": "\\"-apple-system\\", \\"BlinkMacSystemFont\\", \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"sans-serif\\"",
-    "heading": "\\"-apple-system\\", \\"BlinkMacSystemFont\\", \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"sans-serif\\"",
+    "body": "-apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+    "heading": "-apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -991,8 +991,8 @@ Object {
     "heading": 500,
   },
   "fonts": Object {
-    "body": "\\"Alegreya\\", \\"sans-serif\\"",
-    "heading": "\\"Alegreya Sans\\", \\"sans-serif\\"",
+    "body": "'Alegreya', sans-serif",
+    "heading": "'Alegreya Sans', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.45,
@@ -1239,8 +1239,8 @@ Object {
     "heading": "700",
   },
   "fonts": Object {
-    "body": "\\"Cabin\\", \\"serif\\"",
-    "heading": "\\"Arvo\\", \\"sans-serif\\"",
+    "body": "'Cabin', serif",
+    "heading": "'Arvo', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.45,
@@ -1486,8 +1486,8 @@ Object {
     "heading": "700",
   },
   "fonts": Object {
-    "body": "\\"PT Sans\\", \\"sans-serif\\"",
-    "heading": "\\"Oswald\\", \\"sans-serif\\"",
+    "body": "'PT Sans', sans-serif",
+    "heading": "'Oswald', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -1733,8 +1733,8 @@ Object {
     "heading": "600",
   },
   "fonts": Object {
-    "body": "\\"Quattrocento Sans\\", \\"sans-serif\\"",
-    "heading": "\\"Work Sans\\", \\"sans-serif\\"",
+    "body": "'Quattrocento Sans', sans-serif",
+    "heading": "'Work Sans', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.45,
@@ -1980,8 +1980,8 @@ Object {
     "heading": "400",
   },
   "fonts": Object {
-    "body": "\\"Cabin Condensed\\", \\"georgia\\", \\"sans-serif\\"",
-    "heading": "\\"Patua One\\", \\"sans-serif\\"",
+    "body": "'Cabin Condensed', 'georgia', sans-serif",
+    "heading": "'Patua One', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.4,
@@ -2226,8 +2226,8 @@ Object {
     "heading": 600,
   },
   "fonts": Object {
-    "body": "\\"-apple-system\\", \\"BlinkMacSystemFont\\", \\"Segoe UI\\", \\"Roboto\\", \\"Helvetica\\", \\"Arial\\", \\"sans-serif\\", \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
-    "heading": "\\"-apple-system\\", \\"BlinkMacSystemFont\\", \\"Segoe UI\\", \\"Roboto\\", \\"Helvetica\\", \\"Arial\\", \\"sans-serif\\", \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+    "body": "-apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "heading": "-apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   },
   "lineHeights": Object {
     "body": 1.625,
@@ -2473,8 +2473,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Arvo\\", \\"sans-serif\\"",
-    "heading": "\\"Montserrat\\", \\"sans-serif\\"",
+    "body": "'Arvo', sans-serif",
+    "heading": "'Montserrat', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.6875,
@@ -2720,8 +2720,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Yrsa\\", \\"georgia\\", \\"sans-serif\\"",
-    "heading": "\\"Exo\\", \\"sans-serif\\"",
+    "body": "'Yrsa', 'georgia', sans-serif",
+    "heading": "'Exo', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.38,
@@ -2966,8 +2966,8 @@ Object {
     "heading": 400,
   },
   "fonts": Object {
-    "body": "\\"Vollkorn\\", \\"Georgia\\", \\"serif\\"",
-    "heading": "\\"Roboto Condensed\\", \\"sans-serif\\"",
+    "body": "'Vollkorn', 'Georgia', serif",
+    "heading": "'Roboto Condensed', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.6666666666666667,
@@ -3215,8 +3215,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Fira Sans\\", \\"sans-serif\\"",
-    "heading": "\\"Playfair Display\\", \\"serif\\"",
+    "body": "'Fira Sans', sans-serif",
+    "heading": "'Playfair Display', serif",
   },
   "lineHeights": Object {
     "body": 1.44,
@@ -3463,8 +3463,8 @@ Object {
     "heading": "bold",
   },
   "fonts": Object {
-    "body": "\\"Lucida Grande\\", \\"Verdana\\", \\"Arial\\", \\"Sans-Serif\\"",
-    "heading": "\\"Lucida Grande\\", \\"Verdana\\", \\"Arial\\", \\"Sans-Serif\\"",
+    "body": "'Lucida Grande', 'Verdana', 'Arial', 'Sans-Serif'",
+    "heading": "'Lucida Grande', 'Verdana', 'Arial', 'Sans-Serif'",
   },
   "lineHeights": Object {
     "body": 1.4,
@@ -3698,8 +3698,8 @@ Object {
     "heading": 800,
   },
   "fonts": Object {
-    "body": "\\"Libre Baskerville\\", \\"serif\\"",
-    "heading": "\\"Raleway\\", \\"sans-serif\\"",
+    "body": "'Libre Baskerville', serif",
+    "heading": "'Raleway', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -3945,8 +3945,8 @@ Object {
     "heading": 900,
   },
   "fonts": Object {
-    "body": "\\"Fira Sans\\", \\"sans-serif\\"",
-    "heading": "\\"Merriweather\\", \\"serif\\"",
+    "body": "'Fira Sans', sans-serif",
+    "heading": "'Merriweather', serif",
   },
   "lineHeights": Object {
     "body": 1.4,
@@ -4190,8 +4190,8 @@ Object {
     "heading": "400",
   },
   "fonts": Object {
-    "body": "\\"Lora\\", \\"serif\\"",
-    "heading": "\\"Varela Round\\", \\"sans-serif\\"",
+    "body": "'Lora', serif",
+    "heading": "'Varela Round', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.58,
@@ -4437,8 +4437,8 @@ Object {
     "heading": "200",
   },
   "fonts": Object {
-    "body": "\\"Source Sans Pro\\", \\"sans-serif\\"",
-    "heading": "\\"Source Sans Pro\\", \\"sans-serif\\"",
+    "body": "'Source Sans Pro', sans-serif",
+    "heading": "'Source Sans Pro', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.56,
@@ -4679,8 +4679,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Lato\\", \\"sans-serif\\"",
-    "heading": "\\"Lato\\", \\"sans-serif\\"",
+    "body": "'Lato', sans-serif",
+    "heading": "'Lato', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.61,
@@ -4916,8 +4916,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Roboto\\", \\"serif\\"",
-    "heading": "\\"Roboto Slab\\", \\"sans-serif\\"",
+    "body": "'Roboto', serif",
+    "heading": "'Roboto Slab', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.58,
@@ -5163,8 +5163,8 @@ Object {
     "heading": 800,
   },
   "fonts": Object {
-    "body": "\\"Merriweather\\", \\"sans-serif\\"",
-    "heading": "\\"Merriweather Sans\\", \\"sans-serif\\"",
+    "body": "'Merriweather', sans-serif",
+    "heading": "'Merriweather Sans', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.82,
@@ -5410,8 +5410,8 @@ Object {
     "heading": 600,
   },
   "fonts": Object {
-    "body": "\\"Source Sans Pro\\", \\"sans-serif\\"",
-    "heading": "\\"Source Serif Pro\\", \\"sans-serif\\"",
+    "body": "'Source Sans Pro', sans-serif",
+    "heading": "'Source Serif Pro', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.5625,
@@ -5657,8 +5657,8 @@ Object {
     "heading": 600,
   },
   "fonts": Object {
-    "body": "\\"Merriweather\\", \\"serif\\"",
-    "heading": "\\"Josefin Sans\\", \\"sans-serif\\"",
+    "body": "'Merriweather', serif",
+    "heading": "'Josefin Sans', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.6,
@@ -5904,8 +5904,8 @@ Object {
     "heading": 400,
   },
   "fonts": Object {
-    "body": "\\"Georgia\\", \\"Cambria\\", \\"serif\\"",
-    "heading": "\\"Montserrat\\", \\"sans-serif\\"",
+    "body": "'Georgia', 'Cambria', serif",
+    "heading": "'Montserrat', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.6666666666666667,
@@ -6144,8 +6144,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Lato\\", \\"sans-serif\\"",
-    "heading": "\\"Neuton\\", \\"sans-serif\\"",
+    "body": "'Lato', sans-serif",
+    "heading": "'Neuton', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.722,
@@ -6391,8 +6391,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Merriweather\\", \\"Georgia\\", \\"serif\\"",
-    "heading": "\\"Open Sans\\", \\"sans-serif\\"",
+    "body": "'Merriweather', 'Georgia', serif",
+    "heading": "'Open Sans', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.78,
@@ -6639,8 +6639,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Merriweather Sans\\", \\"Georgia\\", \\"SourceHanSerifCN-Regular\\", \\"san-serif\\"",
-    "heading": "\\"TrajanPro-Bold\\", \\"Georgia\\", \\"SourceHanSerifCN-Regular\\", \\"san-serif\\"",
+    "body": "'Merriweather Sans', 'Georgia', 'SourceHanSerifCN-Regular', 'san-serif'",
+    "heading": "'TrajanPro-Bold', 'Georgia', 'SourceHanSerifCN-Regular', 'san-serif'",
   },
   "lineHeights": Object {
     "body": 1.6,
@@ -6897,8 +6897,8 @@ Object {
     "heading": "700",
   },
   "fonts": Object {
-    "body": "\\"Crimson Text\\", \\"serif\\"",
-    "heading": "\\"Rosario\\", \\"sans-serif\\"",
+    "body": "'Crimson Text', serif",
+    "heading": "'Rosario', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -7144,8 +7144,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Source Sans Pro\\", \\"sans-serif\\"",
-    "heading": "\\"Merriweather\\", \\"serif\\"",
+    "body": "'Source Sans Pro', sans-serif",
+    "heading": "'Merriweather', serif",
   },
   "lineHeights": Object {
     "body": 1.53,
@@ -7391,8 +7391,8 @@ Object {
     "heading": "normal",
   },
   "fonts": Object {
-    "body": "\\"sans-serif\\"",
-    "heading": "\\"Linux Libertine\\", \\"Georgia\\", \\"serif\\"",
+    "body": "sans-serif",
+    "heading": "'Linux Libertine', 'Georgia', serif",
   },
   "lineHeights": Object {
     "body": 1.57,
@@ -7623,8 +7623,8 @@ Object {
     "heading": "bold",
   },
   "fonts": Object {
-    "body": "\\"georgia\\", \\"serif\\"",
-    "heading": "\\"Helvetica Neue\\", \\"Helvetica\\", \\"Segoe UI\\", \\"Arial\\", \\"freesans\\", \\"sans-serif\\", \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+    "body": "'georgia', serif",
+    "heading": "'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', 'freesans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -7862,8 +7862,8 @@ Object {
     "heading": "bold",
   },
   "fonts": Object {
-    "body": "\\"Helvetica Neue\\", \\"Helvetica\\", \\"Segoe UI\\", \\"Arial\\", \\"freesans\\", \\"sans-serif\\", \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
-    "heading": "\\"Helvetica Neue\\", \\"Helvetica\\", \\"Segoe UI\\", \\"Arial\\", \\"freesans\\", \\"sans-serif\\", \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+    "body": "'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', 'freesans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "heading": "'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', 'freesans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   },
   "lineHeights": Object {
     "body": 1.6,
@@ -8108,8 +8108,8 @@ Object {
     "heading": "700",
   },
   "fonts": Object {
-    "body": "\\"Open Sans\\", \\"sans-serif\\"",
-    "heading": "\\"Open Sans\\", \\"sans-serif\\"",
+    "body": "'Open Sans', sans-serif",
+    "heading": "'Open Sans', sans-serif",
   },
   "lineHeights": Object {
     "body": 1.714,
@@ -8348,8 +8348,8 @@ Object {
     "heading": "700",
   },
   "fonts": Object {
-    "body": "\\"Source Sans Pro\\", \\"sans-serif\\"",
-    "heading": "\\"Bitter\\", \\"serif\\"",
+    "body": "'Source Sans Pro', sans-serif",
+    "heading": "'Bitter', serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -8595,8 +8595,8 @@ Object {
     "heading": 600,
   },
   "fonts": Object {
-    "body": "\\"Lato\\", \\"serif\\"",
-    "heading": "\\"Lato\\", \\"serif\\"",
+    "body": "'Lato', serif",
+    "heading": "'Lato', serif",
   },
   "lineHeights": Object {
     "body": 1.5,
@@ -8837,8 +8837,8 @@ Object {
     "heading": "700",
   },
   "fonts": Object {
-    "body": "\\"Noto Serif\\", \\"serif\\"",
-    "heading": "\\"Noto Serif\\", \\"serif\\"",
+    "body": "'Noto Serif', serif",
+    "heading": "'Noto Serif', serif",
   },
   "lineHeights": Object {
     "body": 1.68,
@@ -9076,8 +9076,8 @@ Object {
     "heading": 900,
   },
   "fonts": Object {
-    "body": "\\"Merriweather\\", \\"Georgia\\", \\"serif\\"",
-    "heading": "\\"Merriweather\\", \\"Georgia\\", \\"serif\\"",
+    "body": "'Merriweather', 'Georgia', serif",
+    "heading": "'Merriweather', 'Georgia', serif",
   },
   "lineHeights": Object {
     "body": 1.75,
@@ -9327,8 +9327,8 @@ Object {
     "heading": 700,
   },
   "fonts": Object {
-    "body": "\\"Roboto\\", \\"Georgia\\", \\"SourceHanSerifCN-Regular\\", \\"san-serif\\"",
-    "heading": "\\"Raleway\\", \\"Georgia\\", \\"SourceHanSerifCN-Regular\\", \\"san-serif\\"",
+    "body": "'Roboto', 'Georgia', 'SourceHanSerifCN-Regular', 'san-serif'",
+    "heading": "'Raleway', 'Georgia', 'SourceHanSerifCN-Regular', 'san-serif'",
   },
   "lineHeights": Object {
     "body": 1.53,

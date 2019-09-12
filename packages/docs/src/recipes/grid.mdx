@@ -1,0 +1,21 @@
+---
+name: CSS Grid Debugging
+---
+
+```jsx live xray
+<div
+  sx={{
+    display: 'grid',
+    gridGap: 3,
+    gridTemplateColumns: 'repeat(2, 1fr)',
+  }}>
+  <div
+    sx={{
+      gridColumnStart: '1',
+      gridColumnEnd: '3',
+    }}
+  >A</div>
+  <div>B</div>
+  <div>C</div>
+</div>
+```

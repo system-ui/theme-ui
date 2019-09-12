@@ -1,0 +1,23 @@
+---
+title: 'Theme Color Meta Tag'
+---
+
+# Theme Color Meta Tag
+
+```jsx
+// example Head component
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useThemeUI } from 'theme-ui'
+
+export default props => {
+  const { theme } = useThemeUI()
+
+  return (
+    <Helmet>
+      <meta name='theme-color' content={theme.colors.background} />
+    </Helmet>
+  )
+}
+```
+

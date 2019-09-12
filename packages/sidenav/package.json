@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.2.21",
+  "version": "0.2.42",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "license": "MIT",
@@ -14,9 +14,18 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.0.21",
-    "deepmerge": "^3.3.0",
+    "deepmerge": "^4.0.0",
     "react": "^16.8.6",
-    "theme-ui": "^0.2.21"
+    "theme-ui": "^0.2.42"
   },
+  "keywords": [
+    "theme-ui",
+    "mdx",
+    "emotion",
+    "css",
+    "css-in-js",
+    "style"
+  ],
+  "repository": "system-ui/theme-ui",
   "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }

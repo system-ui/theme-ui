@@ -1,0 +1,90 @@
+---
+name: 'Button'
+---
+
+# Button
+
+Create a simple button component with variants.
+
+```jsx live
+<button
+  sx={{
+    appearance: 'none',
+    display: 'inline-block',
+    textAlign: 'center',
+    lineHeight: 'inherit',
+    textDecoration: 'none',
+    fontSize: 'inherit',
+    fontWeight: 'bold',
+    m: 0,
+    px: 3,
+    py: 2,
+    border: 0,
+    borderRadius: 4,
+    variant: 'buttons.primary',
+  }}>
+  Button
+</button>
+```
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+const Button = ({
+  variant = 'primary',
+  ...props
+}) =>
+  <button
+    {...props}
+    sx={{
+      appearance: 'none',
+      display: 'inline-block',
+      textAlign: 'center',
+      lineHeight: 'inherit',
+      textDecoration: 'none',
+      fontSize: 'inherit',
+      fontWeight: 'bold',
+      m: 0,
+      px: 3,
+      py: 2,
+      border: 0,
+      borderRadius: 4,
+      // pass variant prop to sx
+      variant: `buttons.${variant}`,
+    }}
+  />
+
+export default Button
+```
+
+With the above component, button variants can be defined in `theme.buttons`.
+
+```js
+// example theme
+export default {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#639',
+    gray: '#555',
+  },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
+    gray: {
+      color: 'background',
+      bg: 'gray',
+    },
+  },
+}
+```
+
+

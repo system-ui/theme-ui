@@ -2,6 +2,105 @@
 
 ## Unreleased
 
+## v0.2.42 2019-09-11
+
+- Updated UI in chrome extension
+- Fix typo in tailwind preset #346
+- Fix state bug in chrome extension
+- Move React to peer dependencies
+
+## v0.2.41 2019-09-05
+
+- Updated `@theme-ui/editor` package
+- New [Customize page](https://theme-ui.com/customize)
+
+## v0.2.40 2019-09-03
+
+- Pass outer context through RootProvider #340
+- Update dependencies
+
+## v0.2.38 2019-08-29
+
+- Added new `ColorPicker` component to `@theme-ui/editor` #327
+- Added warning for conflicting versions of Emotion #297
+- Added color utility package #331
+
+## v0.2.37 2019-08-26
+
+- Update dependencies
+
+## v0.2.36 2019-08-22
+
+- Added `gatsby-theme-ui-blog` package #311
+- Added `gatsby-theme-code-recipe` package #313
+- Updated styles in `gatsby-theme-style-guide` #315
+
+## v0.2.35 2019-08-15
+
+- Adds `gatsby-theme-style-guide` package #301
+- Fix for `jsx` create element function #302
+
+## v0.2.34 2019-08-15
+
+- `gatsby-plugin-theme-ui` remove JSX syntax from gatsby-ssr in Gatsby plugin #299
+- `@theme-ui/typography` fix for CSS font-family keywords #285
+- `@theme-ui/preset-tailwind` add button and input variants #291
+
+## v0.2.33 2019-08-12
+
+- Add support for FOUC fix in Next.js #277
+- Update dependencies
+
+## v0.2.32 2019-08-08
+
+- Add accordion sidenav #279
+
+## v0.2.31 2019-08-07
+
+- Maintain raw color values in Theme UI context when `useCustomProperties` is enabled #274
+
+## v0.2.30 2019-08-06
+
+- Updates for tailwind preset #272
+
+## v0.2.29 2019-08-05
+
+- Update dependencies
+
+## v0.2.28 2019-08-03
+
+- Add tosh preset #264
+
+## v0.2.27 2019-08-03
+
+- Bad lerna publish
+
+## v0.2.26 2019-08-02
+
+- Fix for CSS custom properties when using nested color objects #259
+- Add warning when `initialColorMode` matches a color mode name #245
+- Fix for forwarding refs #261
+- Fix peer dependency version #263
+
+## v0.2.25 2019-07-31
+
+- Add `@theme-ui/custom-properties` package #235
+
+## v0.2.24 2019-07-29
+
+- Adds preset packages #210
+
+## v0.2.23 2019-07-29
+
+- Add base colors to prism presets #249
+- Add key to element in gatsby-plugin-theme-ui #248
+- Add metadata to packages #244
+- Update docs
+
+## v0.2.22 2019-07-29
+
+- Update dependencies
+
 ## v0.2.21 2019-07-26
 
 - Add presets to `@theme-ui/prism` #231

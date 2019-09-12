@@ -12,8 +12,7 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Layout from '../components/layout'
-import Lorem from './lorem.mdx'
+import Lorem from '../components/lorem.mdx'
 
 export default () => {
   const [theme, setTheme] = useState(null)
@@ -29,17 +28,13 @@ export default () => {
   }, [])
 
   if (!theme) {
-    return (
-      <Layout>
-        <Styled.h1>Fetching theme...</Styled.h1>
-      </Layout>
-    )
+    return <Styled.h1>Fetching theme...</Styled.h1>
   }
 
   const { metadata } = theme
 
   return (
-    <Layout>
+    <div>
       <Helmet>
         {metadata.fontLinkHref ? (
           <link rel="stylesheet" href={metadata.fontLinkHref} />
@@ -113,6 +108,6 @@ export default () => {
           </Styled.root>
         </ThemeContext.Provider>
       </div>
-    </Layout>
+    </div>
   )
 }

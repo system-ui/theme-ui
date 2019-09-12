@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { css } from '@styled-system/css'
 import { Global } from '@emotion/core'
 import { useThemeUI } from './context'
+import { createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -17,8 +18,8 @@ export const getMediaQuery = () => {
   return dark && mql.matches
 }
 
-export const useColorState = initialMode => {
-  const [mode, setMode] = useState(initialMode)
+export const useColorState = theme => {
+  const [mode, setMode] = useState(theme.initialColorMode)
 
   useEffect(() => {
     // initialize
@@ -35,6 +36,19 @@ export const useColorState = initialMode => {
     storage.set(mode)
   }, [mode])
 
+  if (process.env.NODE_ENV !== 'production') {
+    if (
+      theme.colors &&
+      theme.colors.modes &&
+      Object.keys(theme.colors.modes).indexOf(theme.initialColorMode) > -1
+    ) {
+      console.warn(
+        'The `initialColorMode` value should be a unique name' +
+          'and cannot reference a key in `theme.colors.modes`.'
+      )
+    }
+  }
+
   return [mode, setMode]
 }
 
@@ -48,26 +62,23 @@ export const useColorMode = initialMode => {
   return [colorMode, setColorMode]
 }
 
-const bodyColor = (theme = {}) => {
-  if (!theme.colors || !theme.colors.modes) return
-  const { modes } = theme.colors
-  const styles = {}
-  Object.keys(modes).forEach(mode => {
-    const colors = modes[mode]
-    styles[`&.theme-ui-${mode}`] = theme.useCustomProperties
-      ? colors
-      : { color: colors.text, bg: colors.background }
-  })
-
-  return css({
-    body: {
-      ...styles,
-      color: 'text',
-      bg: 'background',
-    },
-  })(theme)
-}
+const bodyColor = theme => ({
+  body: createColorStyles(theme),
+})
 
 export const ColorMode = () => <Global styles={bodyColor} />
+
+export const InitializeColorMode = () => (
+  <script
+    key="theme-ui-no-flash"
+    dangerouslySetInnerHTML={{
+      __html: `(function() { try {
+        var mode = localStorage.getItem('theme-ui-color-mode');
+        if (!mode) return
+        document.body.classList.add('theme-ui-' + mode);
+      } catch (e) {} })();`,
+    }}
+  />
+)
 
 export default useColorMode
