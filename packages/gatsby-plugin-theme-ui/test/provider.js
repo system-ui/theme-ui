@@ -3,6 +3,7 @@ import { render, cleanup } from '@testing-library/react'
 import { useThemeUI } from 'theme-ui'
 import { wrapRootElement } from '../src/provider'
 import theme from '../src/index'
+import renderer from 'react-test-renderer'
 
 afterEach(cleanup)
 afterEach(() => {
@@ -24,11 +25,16 @@ test('renders with theme context', () => {
 })
 
 test('renders with ColorMode component', () => {
-  theme.initialColorMode = 'light'
+  // theme.initialColorMode = 'light'
   theme.colors = {
     primary: 'tomato',
+    modes: {
+      dark: {
+        primary: 'magenta',
+      }
+    }
   }
-  const root = render(
+  const root = renderer.create(
     wrapRootElement(
       {
         element: <Consumer />,
@@ -36,10 +42,8 @@ test('renders with ColorMode component', () => {
       {}
     )
   )
-  expect(context.theme).toEqual({
-    initialColorMode: 'light',
-    colors: {
-      primary: 'tomato',
-    },
-  })
+  expect(context.theme.colors.primary).toEqual('tomato')
+  const tree = root.toTree()
+  const { children } = tree.props.children.props
+  expect(children[0].key).toEqual('theme-ui-color-mode')
 })

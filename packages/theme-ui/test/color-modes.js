@@ -272,7 +272,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
       <Consumer />
     </ThemeProvider>
   )
-  expect(mode).toBe(undefined)
+  expect(mode).toBe('default')
 })
 
 test('ColorMode component renders null', () => {
@@ -290,6 +290,7 @@ test('ColorMode component renders with colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
+        useCustomProperties: false,
         colors: {
           text: 'tomato',
           background: 'black',
@@ -388,6 +389,7 @@ test('dot notation works with color modes', () => {
   const root = render(
     <ThemeProvider
       theme={{
+        useCustomProperties: false,
         colors: {
           header: {
             title: 'blue',
