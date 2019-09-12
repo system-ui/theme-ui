@@ -5,14 +5,14 @@ import { wrapRootElement } from '../src/provider'
 import theme from '../src/index'
 import renderer from 'react-test-renderer'
 
-afterEach(cleanup)
+let context
+
 afterEach(() => {
+  cleanup()
   context = null
   delete theme.initialColorMode
   delete theme.colors
 })
-
-let context
 
 const Consumer = props => {
   context = useThemeUI()
@@ -21,7 +21,9 @@ const Consumer = props => {
 
 test('renders with theme context', () => {
   const root = render(wrapRootElement({ element: <Consumer /> }, {}))
-  expect(context.theme).toEqual({})
+  expect(context.theme).toEqual({
+    colors: {},
+  })
 })
 
 test('renders with ColorMode component', () => {
