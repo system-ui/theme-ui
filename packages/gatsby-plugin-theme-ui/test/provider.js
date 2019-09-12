@@ -27,7 +27,6 @@ test('renders with theme context', () => {
 })
 
 test('renders with ColorMode component', () => {
-  // theme.initialColorMode = 'light'
   theme.colors = {
     primary: 'tomato',
     modes: {

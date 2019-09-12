@@ -143,7 +143,6 @@ test('converts color modes to css properties', () => {
   const tree = render(
     <ThemeProvider
       theme={{
-        // useCustomProperties: true,
         colors: {
           text: '#000',
           modes: {
@@ -429,8 +428,6 @@ test('dot notation works with color modes and custom properties', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorMode: 'light',
-        // useCustomProperties: true,
         colors: {
           header: {
             title: 'blue',
@@ -465,8 +462,6 @@ test('raw color values are passed to theme-ui context when custom properties are
   const root = render(
     <ThemeProvider
       theme={{
-        // useCustomProperties: true,
-        initialColorMode: 'light',
         colors: {
           primary: 'tomato',
           modes: {
