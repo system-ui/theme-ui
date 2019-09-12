@@ -22,7 +22,7 @@ const applyColorMode = (theme, mode) => {
 
 const BaseProvider = ({ context, components, children }) => {
   const theme = { ...context.theme }
-  if (theme.useCustomProperties) {
+  if (theme.useCustomProperties !== false) {
     theme.colors = toCustomProperties(theme.colors, 'colors')
   }
   return jsx(
