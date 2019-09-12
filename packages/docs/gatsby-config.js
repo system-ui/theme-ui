@@ -12,5 +12,18 @@ module.exports = {
         remarkPlugins,
       },
     },
+    {
+      resolve: 'gatsby-theme-style-guide',
+      options: {
+        basePath: '/style-guide-demo',
+      },
+    },
+    {
+      resolve: 'gatsby-theme-code-recipes',
+      options: {
+        path: 'src/recipes',
+        basePath: '/recipes',
+      },
+    },
   ],
 }

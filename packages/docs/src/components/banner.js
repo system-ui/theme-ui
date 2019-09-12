@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, Container } from 'theme-ui'
-import Logo from './logo'
 
 const gradient = `linear-gradient(120deg,
   rgba(230, 59, 25, .5),
@@ -13,7 +12,7 @@ export default props => (
       styles: {
         p: {
           ':first-of-type': {
-            variant: 'textStyles.display',
+            variant: 'text.display',
             fontSize: [6, 7, 7],
           },
           fontWeight: 'bold',

@@ -129,7 +129,7 @@ test('converts color modes to css properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-text,#000)'
+    'var(--theme-ui-colors-text,#000)'
   )
 })
 
@@ -318,4 +318,137 @@ test('useThemeUI returns current color mode colors', () => {
   )
   expect(colors.text).toBe('black')
   expect(colors.background).toBe('tomato')
+})
+
+test('warns when initialColorMode matches a key in theme.colors.modes', () => {
+  jest.spyOn(global.console, 'warn')
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'dark',
+        colors: {
+          text: '#000',
+          background: '#fff',
+          modes: {
+            dark: {
+              text: '#fff',
+              background: '#000',
+            },
+          },
+        },
+      }}
+    />
+  )
+  expect(console.warn).toBeCalled()
+})
+
+test('dot notation works with color modes', () => {
+  const Button = props => {
+    const [colorMode, setMode] = useColorMode()
+    return (
+      <button
+        sx={{
+          color: 'header.title',
+        }}
+        onClick={e => {
+          setMode('dark')
+        }}
+        children="test"
+      />
+    )
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'light',
+        colors: {
+          header: {
+            title: 'blue',
+          },
+          modes: {
+            dark: {
+              header: {
+                title: 'tomato',
+              },
+            },
+          },
+        },
+      }}>
+      <Button />
+    </ThemeProvider>
+  )
+  const button = root.getByText('test')
+  button.click()
+  expect(button).toHaveStyleRule('color', 'tomato')
+})
+
+test('dot notation works with color modes and custom properties', () => {
+  const Button = props => {
+    const [colorMode, setMode] = useColorMode()
+    return (
+      <button
+        sx={{
+          color: 'header.title',
+        }}
+        onClick={e => {
+          setMode('dark')
+        }}
+        children="test"
+      />
+    )
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorMode: 'light',
+        useCustomProperties: true,
+        colors: {
+          header: {
+            title: 'blue',
+          },
+          modes: {
+            dark: {
+              header: {
+                title: 'tomato',
+              },
+            },
+          },
+        },
+      }}>
+      <Button />
+    </ThemeProvider>
+  )
+  const button = root.getByText('test')
+  button.click()
+  expect(button).toHaveStyleRule(
+    'color',
+    'var(--theme-ui-colors-header-title,tomato)'
+  )
+})
+
+test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
+  let color
+  const Grabber = props => {
+    const context = useThemeUI()
+    color = context.theme.colors.primary
+    return false
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useCustomProperties: true,
+        initialColorMode: 'light',
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <Grabber />
+    </ThemeProvider>
+  )
+  expect(color).toBe('tomato')
 })

@@ -1,0 +1,15 @@
+{
+  "name": "gatsby-theme-code-recipes",
+  "version": "0.2.40",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.13.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {
+    "gatsby-source-filesystem": "^2.1.11",
+    "unist-util-visit": "^2.0.0"
+  }
+}

@@ -6,7 +6,7 @@
 
 # Theme UI
 
-Build consistent, themeable React UIs based on design system constraints and design tokens | Built with Emotion + Styled System + MDX + Typography.js
+Build consistent, themeable React apps based on constraint-based design principles | Built with Emotion + Styled System + MDX + Typography.js
 
 [![GitHub][github-badge]][github]
 [![Stars][stars]][github]
@@ -80,7 +80,7 @@ export default props => (
 
 The `theme` object follows the System UI [Theme Specification](/theme-spec),
 which lets you define custom color palettes, typographic scales, fonts, and more.
-Read more about [theming](/theming).
+Read more about [theming](https://theme-ui.com/theming).
 
 ```js
 // example theme.js

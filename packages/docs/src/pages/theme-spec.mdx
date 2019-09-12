@@ -1,8 +1,8 @@
-import Layout from '../components/layout'
-import Note from '../components/note'
+---
+title: Theme Spec
+---
 
-export default Layout
-export const title = 'Theme Spec'
+import Note from '../components/note'
 
 # Theme Specification
 
@@ -210,7 +210,7 @@ These are commonly used for typographic styles, buttons, and themeable layout co
     heading: 1.125,
   },
   // variants can use custom, user-defined names
-  textStyles: {
+  text: {
     heading: {
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -242,7 +242,7 @@ User-defined variants can then be referenced in the `sx` prop or in `theme.style
 // example using variants
 <h1
   sx={{
-    variant: 'textStyles.heading',
+    variant: 'text.heading',
   }}>
   Hello
 </h1>
@@ -324,7 +324,7 @@ Variants can also be used within the `theme.styles` object.
 // example heading using text styles variant
 {
   // ...base theme object
-  textStyles: {
+  text: {
     heading: {
       fontFamily: 'heading',
       fontWeight: 'heading',
@@ -333,7 +333,7 @@ Variants can also be used within the `theme.styles` object.
   },
   styles: {
     h1: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 5,
     }
   }

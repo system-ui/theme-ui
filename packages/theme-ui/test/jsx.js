@@ -1,4 +1,5 @@
-import { jsx } from '../src/jsx'
+import { jsx, ThemeProvider } from '../src'
+import { Fragment } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 
@@ -51,4 +52,38 @@ test('sx and css prop can be used together', () => {
 test('custom pragma handles null props', () => {
   const json = renderJSON(jsx('h1', null, 'hello'))
   expect(json).toMatchSnapshot()
+})
+
+test('sx prop supports dot notation', () => {
+  const json = renderJSON(
+    jsx(
+      ThemeProvider,
+      {
+        theme: {
+          colors: {
+            text: 'black',
+            base: {
+              blue: ['#07c'],
+              primary: 'cyan',
+            },
+          },
+        },
+      },
+      jsx('div', {
+        sx: {
+          color: 'base.blue.0',
+          backgroundColor: 'base.primary',
+        },
+      })
+    )
+  )
+  expect(json).toHaveStyleRule('background-color', 'cyan')
+  expect(json).toHaveStyleRule('color', '#07c')
+})
+
+test('does not add css prop when not provided', () => {
+  jest.spyOn(global.console, 'warn')
+  const json = renderJSON(jsx(Fragment, null, 'hi'))
+  expect(json.props).toEqual(undefined)
+  expect(console.warn).not.toBeCalled()
 })

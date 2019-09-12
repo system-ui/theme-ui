@@ -1,7 +1,6 @@
-import Layout from '../../components/layout'
-
-export default Layout
-export const title = 'Responsive Typography'
+---
+title: 'Responsive Typography'
+---
 
 # Responsive Typography
 
@@ -32,7 +31,7 @@ Used in combination with [responsive array values][] and [variants][], you can c
     body: 1.5,
     heading: 1.125,
   },
-  textStyles: {
+  text: {
     heading: {
       fontFamily: 'heading',
       fontWeight: 'heading',
@@ -49,11 +48,11 @@ Used in combination with [responsive array values][] and [variants][], you can c
       fontSize: [2, 3],
     },
     h1: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: [5, 6, 7],
     },
     h2: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: [4, 5],
     },
   },

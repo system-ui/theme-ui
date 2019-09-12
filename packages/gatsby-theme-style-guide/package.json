@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-theme-style-guide",
+  "version": "0.2.42",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.13.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.64",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "@theme-ui/style-guide": "^0.2.42",
+    "theme-ui": "^0.2.42"
+  }
+}

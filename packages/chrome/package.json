@@ -1,23 +1,33 @@
 {
   "private": true,
   "name": "@theme-ui/chrome",
-  "version": "0.2.21",
+  "version": "0.2.42",
   "main": "index.js",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepare": "webpack",
-    "dev": "webpack --watch"
+    "prepare": "webpack --mode=production",
+    "watch": "webpack --watch --mode=production",
+    "icon:128": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=128&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=128 --height=128 --overwrite public/icons/128.png",
+    "icon:48": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=48&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=48 --height=48 --overwrite public/icons/48.png",
+    "icon:16": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=16&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=16 --height=16 --overwrite public/icons/16.png",
+    "icons": "yarn icon:128 && yarn icon:48 && yarn icon:16"
   },
   "dependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@theme-ui/editor": "^0.2.21",
+    "@emotion/core": "^10.0.16",
+    "@theme-ui/editor": "^0.2.42",
     "babel-loader": "^8.0.6",
+    "copy-to-clipboard": "^3.2.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.merge": "^4.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "stringify-object": "^3.3.0",
+    "theme-ui": "^0.2.42",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.4"
   },

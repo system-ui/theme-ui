@@ -1,4 +1,6 @@
 {
+  "color": "#657b83",
+  "backgroundColor": "#073642",
   ".comment,.prolog,.doctype,.cdata": {
     "color": "#93a1a1"
   },
