@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix Reakit for ColorPicker test #357
+
 ## v0.2.42 2019-09-11
 
 - Updated UI in chrome extension
