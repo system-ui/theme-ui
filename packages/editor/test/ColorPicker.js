@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, act, fireEvent, cleanup } from '@testing-library/react'
+import { Provider } from 'reakit/Provider'
 import { ColorPicker } from '../src'
 
 afterEach(cleanup)
@@ -21,20 +22,20 @@ test('renders with styles', () => {
   expect(json).toMatchSnapshot()
 })
 
-/*
-
-// Reakit Popover is not idempotent
-test.skip('snapshot renders as a popover', () => {
+test('snapshot renders as a popover', () => {
   const json = renderer
     .create(
-      <ColorPicker color="#f00">
-        <button>Edit color</button>
-      </ColorPicker>
+      <Provider>
+        <ColorPicker color="#f00">
+          <button>Edit color</button>
+        </ColorPicker>
+      </Provider>
     )
     .toJSON()
   expect(json).toMatchSnapshot()
 })
 
+/*
 test('renders with children', () => {
   const tree = render(
     <ColorPicker color="#f00">
