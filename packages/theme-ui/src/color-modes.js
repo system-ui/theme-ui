@@ -28,7 +28,7 @@ export const useColorState = theme => {
     const stored = storage.get()
     document.body.classList.remove('theme-ui-' + stored)
     const dark = getMediaQuery()
-    if (!stored && dark) return setMode('dark')
+    if (!stored && dark && theme.useColorSchemeMediaQuery) return setMode('dark')
     if (!stored || stored === mode) return
     setMode(stored)
   }, [])

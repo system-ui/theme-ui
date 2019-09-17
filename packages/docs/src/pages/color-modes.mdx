@@ -2,7 +2,6 @@
 title: Color Modes
 ---
 
-import Note from '../components/note'
 
 # Color Modes
 
@@ -101,13 +100,6 @@ module.exports = {
 
 See the [Gatsby plugin docs](/gatsby-plugin) for more info.
 
-<Note>
-
-This feature will detect the `(prefers-color-scheme: dark)` media query to initialize the state as `dark`.
-Currently it does _not_ check for `(prefers-color-scheme: light)`.
-
-</Note>
-
 ## Advanced
 
 There are a few advanced usages of color modes when you need more
@@ -159,6 +151,28 @@ is named `default`. If you'd like to customize it you can do so by setting
         text: '#fff',
         background: '#000',
         primary: '#0cf',
+      }
+    }
+  }
+}
+```
+
+### Initialize dark mode with `prefers-color-scheme: dark`
+
+To initialize a dark color mode based on the `prefers-color-scheme: dark` media query, add the `useColorSchemeMediaQuery` flag to your theme.
+This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches.
+If you do not have a color mode named `dark`, this will have no effect.
+
+```js
+{
+  useColorSchemeMediaQuery: true,
+  colors: {
+    text: '#000',
+    background: '#fff',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
       }
     }
   }
