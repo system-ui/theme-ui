@@ -4,6 +4,7 @@
 
 - Fix Reakit for ColorPicker test #357
 - Simplify color mode API and disable `prefers-color-scheme` media query behavior by default #246
+- Add BaseStyles component #369
 
 ## v0.2.42 2019-09-11
 
