@@ -17,6 +17,7 @@ export const saturate = (c, n) => t => P.saturate(n, g(t, c))
 export const shade = (c, n) => t => P.shade(n, g(t, c))
 export const tint = (c, n) => t => P.tint(n, g(t, c))
 
+export const transparentize = (c, n) => t => P.transparentize(n, g(t, c))
 // maybe not from polished? opacify??
 // export const alpha = (c, n) => t =>
 
