@@ -60,6 +60,7 @@ test('sx prop supports dot notation', () => {
       ThemeProvider,
       {
         theme: {
+          useCustomProperties: false,
           colors: {
             text: 'black',
             base: {

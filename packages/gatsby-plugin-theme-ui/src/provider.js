@@ -9,12 +9,14 @@ import React from 'react'
 import theme from './index'
 import components from './components'
 
+const hasColorModes = t => t.colors && t.colors.modes && Object.keys(t.colors.modes).length
+
 export const wrapRootElement = ({ element }) =>
   jsx(ThemeStateProvider, { theme },
     jsx(ThemeProvider, {
         components,
       },
-      theme.initialColorMode &&
+      hasColorModes(theme) &&
         jsx(ColorMode, {
           key: 'theme-ui-color-mode',
         }),

@@ -2,7 +2,6 @@
 title: Color Modes
 ---
 
-import Note from '../components/note'
 
 # Color Modes
 
@@ -11,21 +10,11 @@ Color modes can be used to create a user-configurable _dark mode_ or any number 
 ## Defining colors
 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
-Add an `initialColorMode` value to the theme to initialize the default state.
-
-<!--
-You can also set the `useCustomProperties` option to `true` to help prevent flash of colors, please ensure you can [support CSS properties](https://caniuse.com/#feat=css-variables) before setting this option.
--->
+The name for the base color mode is `default`.
 
 ```js
 // example theme colors
 {
-  // this enables the color modes feature
-  // and is used as the name for the top-level colors object
-  initialColorMode: 'light',
-  // optionally enable custom properties
-  // to help avoid a flash of colors on page load
-  useCustomProperties: true,
   colors: {
     text: '#000',
     background: '#fff',
@@ -41,12 +30,11 @@ You can also set the `useCustomProperties` option to `true` to help prevent flas
 }
 ```
 
-<Note>
+The colors defined at the root of the `colors` object will be accessible as `default`. All colors
+found in `colors.modes` will be referenced by their key. The above example will have two modes:
 
-The `initialColorMode` value is only used as the _name_ of the top-level colors and should not be used to initialize a color mode defined in the `modes` object.
-
-</Note>
-
+- `default`
+- `dark`
 
 ## Setting the color mode
 
@@ -63,9 +51,9 @@ export default props => {
     <header>
       <button
         onClick={e => {
-          setColorMode(colorMode === 'light' ? 'dark' : 'light')
+          setColorMode(colorMode === 'default' ? 'dark' : 'default')
         }}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
       </button>
     </header>
   )
@@ -96,7 +84,6 @@ export default props => (
 
 For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
 The plugin will help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
-If you support CSS custom properties, we recommend setting `useCustomProperties` in your theme.
 
 ```sh
 npm i gatsby-plugin-theme-ui
@@ -113,9 +100,81 @@ module.exports = {
 
 See the [Gatsby plugin docs](/gatsby-plugin) for more info.
 
-<Note>
+## Advanced
 
-This feature will detect the `(prefers-color-scheme: dark)` media query to initialize the state as `dark`.
-Currently it does _not_ check for `(prefers-color-scheme: light)`.
+There are a few advanced usages of color modes when you need more
+flexibility. For most usecases, you won't need to reference this
+section.
 
-</Note>
+### Turn off custom properties
+
+The default implementation of Theme UI color modes uses
+[CSS custom properties](https://caniuse.com/#feat=css-variables).
+If you're supporting browsers that don't support custom properties you can
+turn off this setting. This will cause the colors to flash on initial page
+load.
+
+```js
+// example theme colors
+{
+  useCustomProperties: false,
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+      }
+    }
+  }
+}
+```
+
+### Renaming the default color mode
+
+The colors you define at the root level, outside of `theme.colors.modes`
+is named `default`. If you'd like to customize it you can do so by setting
+`initialColorModeName`:
+
+```js
+{
+  initialColorModeName: 'light',
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+      }
+    }
+  }
+}
+```
+
+### Initialize dark mode with `prefers-color-scheme: dark`
+
+To initialize a dark color mode based on the `prefers-color-scheme: dark` media query, add the `useColorSchemeMediaQuery` flag to your theme.
+This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches.
+If you do not have a color mode named `dark`, this will have no effect.
+
+```js
+{
+  useColorSchemeMediaQuery: true,
+  colors: {
+    text: '#000',
+    background: '#fff',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+      }
+    }
+  }
+}
+```

@@ -18,15 +18,17 @@ export const getMediaQuery = () => {
   return dark && mql.matches
 }
 
+const getName = (theme) => theme.initialColorModeName || theme.initialColorMode || 'default'
+
 export const useColorState = theme => {
-  const [mode, setMode] = useState(theme.initialColorMode)
+  const [mode, setMode] = useState(getName(theme))
 
   useEffect(() => {
     // initialize
     const stored = storage.get()
     document.body.classList.remove('theme-ui-' + stored)
     const dark = getMediaQuery()
-    if (!stored && dark) return setMode('dark')
+    if (!stored && dark && theme.useColorSchemeMediaQuery) return setMode('dark')
     if (!stored || stored === mode) return
     setMode(stored)
   }, [])
@@ -40,7 +42,7 @@ export const useColorState = theme => {
     if (
       theme.colors &&
       theme.colors.modes &&
-      Object.keys(theme.colors.modes).indexOf(theme.initialColorMode) > -1
+      Object.keys(theme.colors.modes).indexOf(getName(theme)) > -1
     ) {
       console.warn(
         'The `initialColorMode` value should be a unique name' +
