@@ -161,7 +161,7 @@ test('converts color modes to css properties', () => {
   )
 })
 
-test('initializes mode', () => {
+test('uses default mode', () => {
   let mode
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
