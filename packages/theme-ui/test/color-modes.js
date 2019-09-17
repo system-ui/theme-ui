@@ -246,7 +246,10 @@ test('initializes mode from prefers-color-scheme media query', () => {
     return false
   }
   render(
-    <ThemeProvider>
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: true,
+      }}>
       <Consumer />
     </ThemeProvider>
   )
@@ -257,6 +260,30 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
       matches: false,
+      media: query,
+    }
+  })
+  let mode
+  const Consumer = props => {
+    const [colorMode] = useColorMode()
+    mode = colorMode
+    return false
+  }
+  render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: true,
+      }}>
+      <Consumer />
+    </ThemeProvider>
+  )
+  expect(mode).toBe('default')
+})
+
+test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
+  window.matchMedia = jest.fn().mockImplementation(query => {
+    return {
+      matches: true,
       media: query,
     }
   })
