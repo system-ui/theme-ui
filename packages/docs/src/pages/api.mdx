@@ -109,6 +109,16 @@ These are primarily meant to be used as a mechanism to use styles defined in a `
 | ---- | ------------------- | --------------------------------------- |
 | `as` | String or Component | Changes the underlying rendered element |
 
+### `BaseStyles`
+
+The `BaseStyles` component can be used to style child content that isn't generated from MDX. Note that this will increase the CSS specificity of child elements, and you may run into issues with the cascade (i.e. specificity) when using this component.
+
+```jsx
+<BaseStyles>
+  <h1>Styled based on <code>theme.styles</code></h1>
+</BaseStyles>
+```
+
 <!-- under consideration for deprecation
 ### `Box`
 ### `Flex`
