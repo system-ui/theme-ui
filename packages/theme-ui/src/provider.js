@@ -1,4 +1,5 @@
-import { useEffect, useReducer } from 'react'
+/** @jsx jsx */
+import React, { useEffect, useReducer, useState } from 'react'
 import { ThemeContext as EmotionContext } from '@emotion/core'
 import { version as emotionVersion } from '@emotion/core/package.json'
 import { MDXProvider } from '@mdx-js/react'
@@ -93,20 +94,72 @@ export const ThemeProvider = props => {
   return jsx(RootProvider, props)
 }
 
-export const ThemeStateProvider = ({
-  theme,
-  children
-}) => {
+let useDevEditor = () => {}
+
+if (process.env.NODE_ENV !== 'production') {
+  const { createPortal } = require('react-dom')
+
+  useDevEditor = context => {
+    const [div, setDiv] = useState(null)
+    const { editor } = context
+    useEffect(() => {
+      const el = document.body.appendChild(document.createElement('div'))
+      console.log('el', el)
+      setDiv(el)
+    }, [])
+    if (!div) return
+    console.log('render portal', editor)
+    const selected = editor && editor.elements[editor.selected]
+    return createPortal(
+      <div
+        sx={{
+          position: 'fixed',
+          right: 0,
+          bottom: 0,
+          margin: 1,
+          p: 1,
+          color: 'white',
+          bg: 'black',
+        }}>
+        <pre>hello {JSON.stringify(selected)}</pre>
+      </div>,
+      div
+    )
+  }
+}
+
+export const ThemeStateProvider = ({ theme, children }) => {
   const outer = useThemeUI()
   const [state, setTheme] = useReducer(mergeState, theme)
+  const [selected, select] = useState(null)
+  const [elements, setElements] = useState({})
+  const register = (id, data) => {
+    setElements({
+      ...elements,
+      [id]: data,
+    })
+  }
+
   const context = {
     ...outer,
     theme: state,
     setTheme,
+    editor: {
+      selected,
+      select,
+      elements,
+      register,
+    },
   }
+  const editor = useDevEditor(context)
+  console.log('editor', context.editor.selected, context.editor.elements)
 
-  return jsx(Context.Provider, {
-    value: context,
-    children
-  })
+  return jsx(
+    Context.Provider,
+    {
+      value: context,
+    },
+    ...React.Children.toArray(children),
+    editor
+  )
 }
