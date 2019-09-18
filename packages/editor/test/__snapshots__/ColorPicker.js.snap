@@ -503,6 +503,7 @@ Array [
     style={
       Object {
         "display": "none",
+        "zIndex": null,
       }
     }
     tabIndex={-1}

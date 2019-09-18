@@ -106,40 +106,6 @@ exports[`AccordionNav renders open 1`] = `
   left: 0;
 }
 
-.emotion-7 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  min-width: 0;
-  width: 256px;
-  max-height: 100vh;
-  overflow-x: visible;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-transition: -webkit-transform .2s ease-out;
-  -webkit-transition: transform .2s ease-out;
-  transition: transform .2s ease-out;
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  background-color: background;
-}
-
-@media screen and (min-width:40em) {
-  .emotion-7 {
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: auto;
-    max-height: none;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    background-color: transparent;
-  }
-}
-
 .emotion-6 {
   list-style: none;
   padding: 0;
@@ -190,6 +156,40 @@ exports[`AccordionNav renders open 1`] = `
   -webkit-transition: -webkit-transform .1s ease-out;
   -webkit-transition: transform .1s ease-out;
   transition: transform .1s ease-out;
+}
+
+.emotion-7 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  min-width: 0;
+  width: 256px;
+  max-height: 100vh;
+  overflow-x: visible;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  -webkit-transition: transform .2s ease-out;
+  transition: transform .2s ease-out;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  background-color: background;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-7 {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: auto;
+    max-height: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    background-color: transparent;
+  }
 }
 
 <div>
@@ -492,6 +492,7 @@ exports[`Sidenav renders 1`] = `
     position: -webkit-sticky;
     position: sticky;
     bottom: auto;
+    z-index: 0;
     max-height: none;
     -webkit-transform: none;
     -ms-transform: none;
@@ -571,6 +572,7 @@ Array [
     position: -webkit-sticky;
     position: sticky;
     bottom: auto;
+    z-index: 0;
     max-height: none;
     -webkit-transform: none;
     -ms-transform: none;
