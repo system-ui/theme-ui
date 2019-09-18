@@ -1,0 +1,11 @@
+{
+  "name": "gatsby-plugin-theme-editor",
+  "version": "0.2.43",
+  "main": "index.js",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "@theme-ui/editor": "0.2.43",
+    "ky": "^0.14.0"
+  }
+}

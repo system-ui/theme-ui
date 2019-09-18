@@ -3,6 +3,7 @@ const remarkPlugins = [require('remark-slug')]
 module.exports = {
   plugins: [
     'gatsby-plugin-theme-ui',
+    'gatsby-plugin-theme-editor',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     {

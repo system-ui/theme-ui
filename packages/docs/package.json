@@ -33,6 +33,7 @@
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-mdx": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-theme-editor": "^0.2.43",
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-theme-code-recipes": "^0.2.40",
     "gatsby-theme-style-guide": "^0.2.43",

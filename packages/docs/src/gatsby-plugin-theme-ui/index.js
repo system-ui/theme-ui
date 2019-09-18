@@ -1,3 +1,8 @@
+import theme from './theme.json'
+
+export default theme
+
+/*
 import prism from '@theme-ui/prism/presets/theme-ui'
 
 export default {
@@ -193,3 +198,4 @@ export default {
   },
   prism,
 }
+*/
