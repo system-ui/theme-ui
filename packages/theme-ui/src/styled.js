@@ -8,9 +8,7 @@ import { useEditor } from './use-editor'
 export const styled = tag => (...args) => {
   const shouldForwardProps = typeof tag === 'function'
   const Styled = forwardRef(({ as, ..._props }, ref) => {
-    const props = useEditor(_props, {
-      tag,
-    })
+    const props = useEditor(_props, { tag })
     const theme = useContext(ThemeContext)
     let nextProps = shouldForwardProps ? props : {}
     let styles = {}

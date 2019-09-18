@@ -105,6 +105,7 @@ export const ThemeStateProvider = ({ theme, children }) => {
     setTheme,
     editor,
   }
+  console.log(editor)
 
   return jsx(Context.Provider, {
     value: context,

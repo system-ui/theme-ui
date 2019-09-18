@@ -2,7 +2,9 @@
 import { jsx } from 'theme-ui'
 import Layout from './components/layout'
 
-export const wrapPageElement = ({ element, props }) => (
+export const wrapPageElement = ({ element, props }) => element
+
+export const xwrapPageElement = ({ element, props }) => (
   <Layout
     {...props}
     fullwidth={props.location.pathname === '/'}
