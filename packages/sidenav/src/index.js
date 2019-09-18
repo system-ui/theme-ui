@@ -96,7 +96,7 @@ export const Sidenav = React.forwardRef(
               top: 0,
               left: 0,
               bottom: [0, 'auto'],
-              zIndex: 1,
+              zIndex: [1, 0],
               minWidth: 0,
               width: 256,
               maxHeight: ['100vh', 'none'],

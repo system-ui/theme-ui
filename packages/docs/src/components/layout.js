@@ -65,8 +65,6 @@ export default props => {
               <div
                 id="content"
                 sx={{
-                  position: 'relative',
-                  zIndex: 1,
                   width: '100%',
                   minWidth: 0,
                   px: props.fullwidth ? 0 : 3,

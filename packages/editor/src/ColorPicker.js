@@ -185,6 +185,9 @@ export const ColorPicker = ({ children, ...props }) => {
       <Popover
         {...popover}
         aria-label="Edit color"
+        style={{
+          zIndex: popover.visible ? 1 : null,
+        }}
         sx={{
           outline: 'none',
         }}>
