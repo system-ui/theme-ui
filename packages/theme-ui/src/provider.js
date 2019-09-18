@@ -9,6 +9,8 @@ import { Context, useThemeUI } from './context'
 import { useColorState } from './color-modes'
 import { createComponents } from './components'
 import { toCustomProperties } from './custom-properties'
+// experimental editor
+import { useEditorState } from './use-editor'
 
 const mergeState = (state = {}, next) => merge.all({}, state, next)
 
@@ -93,20 +95,19 @@ export const ThemeProvider = props => {
   return jsx(RootProvider, props)
 }
 
-export const ThemeStateProvider = ({
-  theme,
-  children
-}) => {
+export const ThemeStateProvider = ({ theme, children }) => {
   const outer = useThemeUI()
   const [state, setTheme] = useReducer(mergeState, theme)
+  const editor = useEditorState()
   const context = {
     ...outer,
     theme: state,
     setTheme,
+    editor,
   }
 
   return jsx(Context.Provider, {
     value: context,
-    children
+    children,
   })
 }
