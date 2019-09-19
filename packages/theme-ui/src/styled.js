@@ -6,7 +6,12 @@ import jsx from './jsx'
 export const styled = tag => (...args) => {
   const Styled = forwardRef(({ as, ...props }, ref) => {
     const shouldForwardProps =
-      typeof tag === 'function' || typeof as === 'function'
+      typeof tag !== 'string' || (as && typeof as !== 'string')
+    console.log({
+      as,
+      shouldForwardProps,
+      props,
+    })
     const theme = useContext(ThemeContext)
     let nextProps = shouldForwardProps ? props : {}
     let styles = {}
