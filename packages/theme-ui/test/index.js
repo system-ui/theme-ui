@@ -98,6 +98,13 @@ test('components accept an `as` prop', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
+test('components with `as` prop receive all props', () => {
+  const Beep = props => <div {...props} />
+  const json = renderJSON(<Styled.a as={Beep} activeClassName="active" />)
+  expect(json.type).toBe('div')
+  expect(json.props.activeClassName).toBe('active')
+})
+
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {
