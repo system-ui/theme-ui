@@ -4,8 +4,9 @@ import isPropValid from '@emotion/is-prop-valid'
 import jsx from './jsx'
 
 export const styled = tag => (...args) => {
-  const shouldForwardProps = typeof tag === 'function'
   const Styled = forwardRef(({ as, ...props }, ref) => {
+    const shouldForwardProps =
+      typeof tag !== 'string' || (as && typeof as !== 'string')
     const theme = useContext(ThemeContext)
     let nextProps = shouldForwardProps ? props : {}
     let styles = {}
