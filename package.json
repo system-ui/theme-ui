@@ -55,6 +55,7 @@
       "!packages/gatsby-theme-style-guide/**/*",
       "!packages/chrome/**/*",
       "!packages/editor/**/*",
+      "!packages/gatsby-theme-*/**/*",
       "!packages/preset-*/**/*"
     ],
     "coverageThreshold": {

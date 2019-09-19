@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-ui-layout",
-  "version": "0.2.36",
+  "version": "0.2.40",
   "main": "index.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {

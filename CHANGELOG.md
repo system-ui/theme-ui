@@ -2,6 +2,39 @@
 
 ## Unreleased
 
+## v0.2.43 2019-09-17
+
+- Fix Reakit for ColorPicker test #357
+- Simplify color mode API and disable `prefers-color-scheme` media query behavior by default #246
+- Add BaseStyles component #369
+
+## v0.2.42 2019-09-11
+
+- Updated UI in chrome extension
+- Fix typo in tailwind preset #346
+- Fix state bug in chrome extension
+- Move React to peer dependencies
+
+## v0.2.41 2019-09-05
+
+- Updated `@theme-ui/editor` package
+- New [Customize page](https://theme-ui.com/customize)
+
+## v0.2.40 2019-09-03
+
+- Pass outer context through RootProvider #340
+- Update dependencies
+
+## v0.2.38 2019-08-29
+
+- Added new `ColorPicker` component to `@theme-ui/editor` #327
+- Added warning for conflicting versions of Emotion #297
+- Added color utility package #331
+
+## v0.2.37 2019-08-26
+
+- Update dependencies
+
 ## v0.2.36 2019-08-22
 
 - Added `gatsby-theme-ui-blog` package #311

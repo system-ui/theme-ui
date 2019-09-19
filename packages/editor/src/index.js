@@ -1,65 +1,20 @@
-import React, { useReducer, useEffect } from 'react'
-import { Global } from '@emotion/core'
-import { ThemeProvider, Styled, ColorMode } from 'theme-ui'
-import Panel from './components/Panel'
-import editorTheme from './theme'
-import { runScript, mergeState } from './utils'
+export { default as Editor } from './Editor'
+export { default as ColorPicker } from './ColorPicker'
+export { default as ColorPalette } from './ColorPalette'
+export { default as ColorMode } from './ColorMode'
+export { default as Space } from './Space'
+export { default as Fonts } from './Fonts'
+export { default as FontWeights } from './FontWeights'
+export { default as LineHeights } from './LineHeights'
+export { default as FontSizes } from './FontSizes'
 
-const Editor = ({ panelColorMode }) => {
-  const [state, setState] = useReducer(mergeState, {
-    theme: null,
-    colorMode: null,
-  })
+export { default as Row } from './Row'
 
-  const getTheme = () => {
-    runScript(`window.__THEME_UI__.theme`).then(theme => {
-      setState({ theme })
-    })
-  }
+export { default as Colors } from './Colors'
+export { default as Modes } from './Modes'
+export { default as Typography } from './Typography'
 
-  const getColorMode = () => {
-    runScript(`window.__THEME_UI__.colorMode`).then(colorMode => {
-      setState({ colorMode })
-    })
-  }
-
-  const setTheme = nextTheme => {
-    const json = JSON.stringify(nextTheme)
-    runScript(`window.__THEME_UI__.setTheme(${json})`)
-    setState({ theme: nextTheme })
-  }
-
-  const setColorMode = nextMode => {
-    runScript(`window.__THEME_UI__.setColorMode('${nextMode}')`)
-  }
-
-  useEffect(() => {
-    getTheme()
-    getColorMode()
-  }, [])
-
-  return (
-    <ThemeProvider theme={editorTheme}>
-      <Styled.root>
-        <ColorMode />
-        <Global
-          styles={{
-            'html,body': {
-              margin: 0,
-            },
-          }}
-        />
-        {state.theme && (
-          <Panel
-            panelColorMode={panelColorMode}
-            state={state}
-            setTheme={setTheme}
-            setColorMode={setColorMode}
-          />
-        )}
-      </Styled.root>
-    </ThemeProvider>
-  )
-}
-
-export { Editor }
+export {
+  EditorContext,
+  useEditor,
+} from './context'

@@ -31,7 +31,35 @@ test('renders with color modes', () => {
     renderer.create(
       <ThemeProvider
         theme={{
-          initialColorMode: 'light',
+          colors: {
+            text: 'black',
+            modes: {
+              dark: {
+                text: 'white',
+              }
+            }
+          }
+        }}>
+        <Mode />
+      </ThemeProvider>
+    )
+  })
+  expect(mode).toBe('default')
+})
+
+test('renders with initial color mode name', () => {
+  let json
+  let mode
+  const Mode = props => {
+    const [colorMode] = useColorMode()
+    mode = colorMode
+    return <div>Mode</div>
+  }
+  renderer.act(() => {
+    renderer.create(
+      <ThemeProvider
+        theme={{
+          initialColorModeName: 'light',
         }}>
         <Mode />
       </ThemeProvider>
@@ -84,6 +112,7 @@ test('color mode is passed through theme context', () => {
   const tree = render(
     <ThemeProvider
       theme={{
+        useCustomProperties: false,
         colors: {
           text: '#000',
           modes: {
@@ -114,7 +143,6 @@ test('converts color modes to css properties', () => {
   const tree = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: true,
         colors: {
           text: '#000',
           modes: {
@@ -133,7 +161,7 @@ test('converts color modes to css properties', () => {
   )
 })
 
-test('does not initialize mode', () => {
+test('uses default mode', () => {
   let mode
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
@@ -145,7 +173,7 @@ test('does not initialize mode', () => {
       <Button />
     </ThemeProvider>
   )
-  expect(mode).toBe(undefined)
+  expect(mode).toBe('default')
 })
 
 test('initializes mode based on localStorage', () => {
@@ -174,11 +202,11 @@ test('inherits color mode state from parent context', () => {
   render(
     <ThemeProvider
       theme={{
-        initialColorMode: 'outer',
+        initialColorModeName: 'outer',
       }}>
       <ThemeProvider
         theme={{
-          initialColorMode: 'inner',
+          initialColorModeName: 'inner',
         }}>
         <Consumer />
       </ThemeProvider>
@@ -218,7 +246,10 @@ test('initializes mode from prefers-color-scheme media query', () => {
     return false
   }
   render(
-    <ThemeProvider>
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: true,
+      }}>
       <Consumer />
     </ThemeProvider>
   )
@@ -239,11 +270,35 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
     return false
   }
   render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: true,
+      }}>
+      <Consumer />
+    </ThemeProvider>
+  )
+  expect(mode).toBe('default')
+})
+
+test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
+  window.matchMedia = jest.fn().mockImplementation(query => {
+    return {
+      matches: true,
+      media: query,
+    }
+  })
+  let mode
+  const Consumer = props => {
+    const [colorMode] = useColorMode()
+    mode = colorMode
+    return false
+  }
+  render(
     <ThemeProvider>
       <Consumer />
     </ThemeProvider>
   )
-  expect(mode).toBe(undefined)
+  expect(mode).toBe('default')
 })
 
 test('ColorMode component renders null', () => {
@@ -261,6 +316,7 @@ test('ColorMode component renders with colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
+        useCustomProperties: false,
         colors: {
           text: 'tomato',
           background: 'black',
@@ -301,7 +357,6 @@ test('useThemeUI returns current color mode colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorMode: 'light',
         colors: {
           text: 'tomato',
           background: 'black',
@@ -320,12 +375,12 @@ test('useThemeUI returns current color mode colors', () => {
   expect(colors.background).toBe('tomato')
 })
 
-test('warns when initialColorMode matches a key in theme.colors.modes', () => {
+test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
   jest.spyOn(global.console, 'warn')
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorMode: 'dark',
+        initialColorModeName: 'dark',
         colors: {
           text: '#000',
           background: '#fff',
@@ -360,7 +415,7 @@ test('dot notation works with color modes', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorMode: 'light',
+        useCustomProperties: false,
         colors: {
           header: {
             title: 'blue',
@@ -400,8 +455,6 @@ test('dot notation works with color modes and custom properties', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorMode: 'light',
-        useCustomProperties: true,
         colors: {
           header: {
             title: 'blue',
@@ -436,8 +489,6 @@ test('raw color values are passed to theme-ui context when custom properties are
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: true,
-        initialColorMode: 'light',
         colors: {
           primary: 'tomato',
           modes: {

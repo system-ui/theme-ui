@@ -1,8 +1,6 @@
 import { toCustomProperties, createColorStyles } from '../src/custom-properties'
 
 const theme = {
-  // todo: update with API changes
-  useCustomProperties: true,
   colors: {
     text: 'black',
     background: 'white',
@@ -28,7 +26,6 @@ const theme = {
 test('converts theme object', () => {
   const next = toCustomProperties(theme)
   expect(next).toEqual({
-    useCustomProperties: true,
     colors: {
       text: 'var(--theme-ui-colors-text, black)',
       background: 'var(--theme-ui-colors-background, white)',

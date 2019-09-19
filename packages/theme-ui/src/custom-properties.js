@@ -12,6 +12,7 @@ const numberScales = {
 }
 const reservedKeys = {
   useCustomProperties: true,
+  initialColorModeName: true,
   initialColorMode: true,
 }
 
@@ -64,7 +65,7 @@ export const objectToVars = (parent, obj) => {
 // create body styles for color modes
 export const createColorStyles = theme => {
   if (!theme.colors || !theme.colors.modes) return {}
-  if (!theme.useCustomProperties) {
+  if (theme.useCustomProperties === false) {
     return css({
       color: 'text',
       bg: 'background',

@@ -1,5 +1,6 @@
 import { useEffect, useReducer } from 'react'
 import { ThemeContext as EmotionContext } from '@emotion/core'
+import { version as emotionVersion } from '@emotion/core/package.json'
 import { MDXProvider } from '@mdx-js/react'
 import { get } from '@styled-system/css'
 import merge from './merge'
@@ -9,7 +10,7 @@ import { useColorState } from './color-modes'
 import { createComponents } from './components'
 import { toCustomProperties } from './custom-properties'
 
-const mergeState = (state, next) => merge.all({}, state, next)
+const mergeState = (state = {}, next) => merge.all({}, state, next)
 
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
@@ -21,7 +22,7 @@ const applyColorMode = (theme, mode) => {
 
 const BaseProvider = ({ context, components, children }) => {
   const theme = { ...context.theme }
-  if (theme.useCustomProperties) {
+  if (theme.useCustomProperties !== false) {
     theme.colors = toCustomProperties(theme.colors, 'colors')
   }
   return jsx(
@@ -38,18 +39,17 @@ const BaseProvider = ({ context, components, children }) => {
 const RootProvider = ({ theme: propsTheme = {}, components, children }) => {
   // components are provided in the default Context
   const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorState(propsTheme)
-  const [themeState, setThemeState] = useReducer(mergeState, propsTheme)
+  const [colorMode, setColorMode] = useColorState(outer.theme || propsTheme)
 
-  const theme = applyColorMode(themeState, colorMode)
+  const theme = applyColorMode(outer.theme || propsTheme, colorMode)
 
   const context = {
+    ...outer,
     __THEME_UI__: true,
     colorMode,
     setColorMode,
     components: { ...outer.components, ...createComponents(components) },
     theme,
-    setTheme: setThemeState,
   }
 
   useEffect(() => {
@@ -76,8 +76,37 @@ const NestedProvider = ({ theme, components, children }) => {
 
 export const ThemeProvider = props => {
   const outer = useThemeUI()
-  if (outer.__THEME_UI__) {
+
+  if (process.env !== 'production') {
+    if (outer.emotionVersion !== emotionVersion) {
+      console.warn(
+        'Multiple versions of Emotion detected,',
+        'and theming might not work as expected.',
+        'Please ensure there is only one copy of @emotion/core installed in your application.'
+      )
+    }
+  }
+
+  if (!props.scoped && outer.__THEME_UI__) {
     return jsx(NestedProvider, props)
   }
   return jsx(RootProvider, props)
+}
+
+export const ThemeStateProvider = ({
+  theme,
+  children
+}) => {
+  const outer = useThemeUI()
+  const [state, setTheme] = useReducer(mergeState, theme)
+  const context = {
+    ...outer,
+    theme: state,
+    setTheme,
+  }
+
+  return jsx(Context.Provider, {
+    value: context,
+    children
+  })
 }
