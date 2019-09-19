@@ -8,8 +8,8 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
-    "prepare": "yarn run microbundle --no-compress",
-    "watch": "yarn run microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
   },
   "publishConfig": {
     "access": "public"
