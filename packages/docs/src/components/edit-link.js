@@ -21,8 +21,7 @@ export const EditLink = ({ base, children, ...props }) => (
             color: 'inherit',
             fontSize: 1,
             my: 4,
-          }}
-        >
+          }}>
           {children}
         </a>
       )
@@ -32,7 +31,7 @@ export const EditLink = ({ base, children, ...props }) => (
 
 EditLink.defaultProps = {
   base:
-    'https://github.com/system-ui/theme-ui/edit/master/packages/docs/src/pages',
+    'https://github.com/system-ui/theme-ui/edit/master/packages/docs/src/recipes',
   children: 'Edit the page on GitHub',
 }
 
