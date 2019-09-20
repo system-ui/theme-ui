@@ -1,7 +1,7 @@
 import * as P from 'polished'
 import { get } from '@styled-system/css'
 
-const g = (t, c) => get(t, `colors.${c}`, c)
+const g = (t, c) => get(t, `colors.${c}`, c).replace(/^var\(--(\w+)(.*?), /,'').replace(/\)/,'')
 
 export const darken = (c, n) => t => P.darken(n, g(t, c))
 export const lighten = (c, n) => t => P.lighten(n, g(t, c))
