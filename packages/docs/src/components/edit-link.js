@@ -3,8 +3,19 @@ import { Location } from '@reach/router'
 import { jsx } from 'theme-ui'
 
 const getHREF = (base, location) => {
-  if (location.pathname === '/') return false
-  return base + location.pathname.replace(/\/+$/, '') + '.mdx'
+  if (location.pathname === '/') return
+
+  const sanitizedLocationPathname = location.pathname.replace(/\/+$/, '')
+  const basePagesHref = `${base}/pages` + sanitizedLocationPathname
+
+  if (location.pathname === '/recipes') return `${basePagesHref}/index.js`
+
+  if (location.pathname === '/guides') return `${basePagesHref}/index.mdx`
+
+  if (location.pathname.startsWith('/recipes/') === false)
+    return `${basePagesHref}.mdx`
+
+  return `${base}${sanitizedLocationPathname}.mdx`
 }
 
 export const EditLink = ({ base, children, ...props }) => (
@@ -12,6 +23,7 @@ export const EditLink = ({ base, children, ...props }) => (
     children={({ location }) => {
       const href = getHREF(base, location)
       if (!href) return false
+
       return (
         <a
           {...props}
@@ -30,8 +42,7 @@ export const EditLink = ({ base, children, ...props }) => (
 )
 
 EditLink.defaultProps = {
-  base:
-    'https://github.com/system-ui/theme-ui/edit/master/packages/docs/src/recipes',
+  base: 'https://github.com/system-ui/theme-ui/edit/master/packages/docs/src',
   children: 'Edit the page on GitHub',
 }
 
