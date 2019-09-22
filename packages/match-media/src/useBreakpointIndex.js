@@ -9,7 +9,8 @@ const useBreakpointIndex = () => {
   const getIndex = useCallback(
     () =>
       breakpoints.filter(
-        breakpoint => window.matchMedia(`(min-width: ${breakpoint})`).matches
+        breakpoint =>
+          window.matchMedia(`screen and (min-width: ${breakpoint})`).matches
       ).length,
     [breakpoints]
   )
