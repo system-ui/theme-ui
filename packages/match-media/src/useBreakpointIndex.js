@@ -6,15 +6,13 @@ const useBreakpointIndex = () => {
     theme: { breakpoints },
   } = useThemeUI()
 
-  const getIndex = useCallback(() => {
-    let index = breakpoints.findIndex(
-      breakpoint => window.matchMedia(`(max-width: ${breakpoint})`).matches
-    )
-    if (index === -1) {
-      index = breakpoints.length - 1
-    }
-    return index
-  }, [breakpoints])
+  const getIndex = useCallback(
+    () =>
+      breakpoints.filter(
+        breakpoint => window.matchMedia(`(min-width: ${breakpoint})`).matches
+      ).length,
+    [breakpoints]
+  )
 
   const [value, setValue] = useState(getIndex)
 
