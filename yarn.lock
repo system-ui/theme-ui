@@ -10021,11 +10021,11 @@ gatsby-page-utils@^0.0.12:
     slash "^3.0.0"
 
 gatsby-plugin-catch-links@^2.0.13:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.8.tgz#9cc26dc817d050e6656521dfc53bfd34b92e9ad0"
-  integrity sha512-jCwugtUcNWcLAG/PGNf7SPtoO1xJSyCaXHSxGqiJ+obPqKCRCftaXNvHPFwCUvEjYt0kTL8olXJ37jBlcY6NAg==
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.10.tgz#2100a84630191c219a44e0a85ed267e2b69bfcfe"
+  integrity sha512-PgssZHRzO0Eu0i+KltQNRXKOe21dDdVtJ3QxEG/CrnCL5LrVePcO048XwJOV2wCwGkpaeli4G7yVWIHlnxgjaw==
   dependencies:
-    "@babel/runtime" "^7.5.5"
+    "@babel/runtime" "^7.6.0"
     escape-string-regexp "^1.0.5"
 
 gatsby-plugin-compile-es6-packages@^2.1.0:
