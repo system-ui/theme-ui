@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import { jsx, Header, Container, Flex, useColorMode } from 'theme-ui'
+import { jsx, Flex, useColorMode } from 'theme-ui'
 import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
+import Logo from './logo'
 
 const modes = ['light', 'dark', 'deep', 'swiss']
 
@@ -16,34 +17,37 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
   }
 
   return (
-    <Header>
-      <Container>
-        <Flex sx={{ justifyContent: 'space-between' }}>
-          <Flex sx={{ alignItems: 'center' }}>
-            <MenuButton
-              onClick={e => {
-                setMenuOpen(!menuOpen)
-                if (!nav.current) return
-                const navLink = nav.current.querySelector('a')
-                if (navLink) navLink.focus()
-              }}
-            />
-            <NavLink to="/">Theme UI</NavLink>
-          </Flex>
-          <Flex>
-            <NavLink href="https://github.com/system-ui/theme-ui">
-              GitHub
-            </NavLink>
-            <Button
-              sx={{
-                ml: 2,
-              }}
-              onClick={cycleMode}>
-              {mode}
-            </Button>
-          </Flex>
+    <header>
+      <Flex
+        sx={{
+          p: 3,
+          justifyContent: 'space-between',
+        }}>
+        <Flex sx={{ alignItems: 'center' }}>
+          <MenuButton
+            onClick={e => {
+              setMenuOpen(!menuOpen)
+              if (!nav.current) return
+              const navLink = nav.current.querySelector('a')
+              if (navLink) navLink.focus()
+            }}
+          />
+          <NavLink to="/">
+            <Logo sx={{ mr: 2 }} />
+            Theme UI
+          </NavLink>
         </Flex>
-      </Container>
-    </Header>
+        <Flex>
+          <NavLink href="https://github.com/system-ui/theme-ui">GitHub</NavLink>
+          <Button
+            sx={{
+              ml: 2,
+            }}
+            onClick={cycleMode}>
+            {mode}
+          </Button>
+        </Flex>
+      </Flex>
+    </header>
   )
 }

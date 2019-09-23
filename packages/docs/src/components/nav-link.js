@@ -5,7 +5,8 @@ import { Link } from 'gatsby'
 import isAbsoluteURL from 'is-absolute-url'
 
 const styles = {
-  display: 'block',
+  display: 'flex',
+  alignItems: 'center',
   px: 2,
   py: 2,
   color: 'inherit',

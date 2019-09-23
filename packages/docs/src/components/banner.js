@@ -27,11 +27,7 @@ export default props => (
           mb: 4,
         },
         a: {
-          display: 'inline-block',
-          textDecoration: 'none',
-          fontWeight: 'bold',
-          fontSize: 2,
-          p: 3,
+          variant: 'styles.button',
           color: 'primary',
           bg: 'background',
           mr: 3,

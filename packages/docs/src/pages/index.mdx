@@ -1,6 +1,7 @@
 import { Banner, Tiles } from '..'
-import { Container } from 'theme-ui'
+import { Box, Container } from 'theme-ui'
 import Testimonials from './testimonials'
+import Footer from '../components/footer'
 
 <Banner>
 
@@ -102,6 +103,27 @@ Emotion + Styled System + MDX + Typography.js
 - [Interoperable with the Theme Specification](/theme-spec)
 
 </Tiles>
+
+<Box sx={{
+  py: 4,
+  'p > a': {
+    variant: 'styles.button',
+    color: 'background',
+    bg: 'primary',
+    ':hover': {
+      color: 'background',
+      bg: 'secondary',
+    }
+  },
+}}>
+
+## Learn More
+
+[Get Started](/getting-started)
+
+</Box>
+
+<Footer />
 
 </Container>
 

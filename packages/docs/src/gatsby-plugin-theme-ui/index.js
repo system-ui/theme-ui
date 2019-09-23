@@ -2,7 +2,7 @@ import prism from '@theme-ui/prism/presets/theme-ui'
 
 export default {
   useCustomProperties: true,
-  initialColorMode: 'light',
+  initialColorModeName: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -64,6 +64,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
+    container: 768,
   },
   text: {
     heading: {
@@ -189,6 +190,14 @@ export default {
       ':hover,:focus': {
         color: 'primary',
       },
+    },
+    button: {
+      display: 'inline-block',
+      textDecoration: 'none',
+      fontWeight: 'bold',
+      fontSize: 2,
+      p: 3,
+      borderRadius: 6,
     },
   },
   prism,

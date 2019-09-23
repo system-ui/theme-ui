@@ -1,30 +1,22 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React from 'react'
 import theme from '../gatsby-plugin-theme-ui'
 
-export default ({ size = 512, color = theme.colors.primary, ...props }) => (
-  <svg
+const image =
+  'https://contrast.now.sh/cff/40f?size=32&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI'
+
+export default ({ size = 32, ...props }) => (
+  <img
     {...props}
-    viewBox="0 0 48 48"
+    src={image}
     width={size}
     height={size}
-    overflow="visible">
-    <path
-      fill={color}
-      d={`
-      M 24 0
-      A 24 24 0 0 0 24 48
-      A 24 24 0 0 0 24 0
-      M 24 14
-      H 38
-      V 22
-      H 28
-      V 38
-      H 20
-      V 22
-      H 10
-      V 14
-      z
-    `}
-    />
-  </svg>
+    sx={{
+      display: 'inline-block',
+      width: size,
+      height: size,
+      ...props.sx,
+    }}
+  />
 )

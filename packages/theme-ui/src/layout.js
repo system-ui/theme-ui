@@ -1,10 +1,16 @@
 import jsx from './jsx'
 import styled from './styled'
+import css from '@styled-system/css'
 
-export const Box = styled('div')({
-  boxSizing: 'border-box',
-  minWidth: 0,
-})
+const sx = props => css(props.sx)(props.theme)
+
+export const Box = styled('div')(
+  {
+    boxSizing: 'border-box',
+    minWidth: 0,
+  },
+  sx
+)
 
 export const Flex = styled(Box)({
   display: 'flex',
