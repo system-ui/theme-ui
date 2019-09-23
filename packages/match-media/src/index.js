@@ -1,9 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useThemeUI } from 'theme-ui'
 
+// Shared with @styled-system/css
+const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
+
 export const useBreakpointIndex = () => {
   const {
-    theme: { breakpoints },
+    theme: { breakpoints = defaultBreakpoints },
   } = useThemeUI()
 
   const getIndex = useCallback(
