@@ -9,7 +9,7 @@ This package provides two React hooks (`useResponsiveValue` and `useBreakpointIn
 ## Installation
 
 ```sh
-yarn add @theme-ui/match-media
+npm i @theme-ui/match-media
 ```
 
 ## Usage
