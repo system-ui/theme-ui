@@ -11,12 +11,14 @@ import ThemeColorPicker from './ThemeColorPicker'
 // todo
 // - [ ] typography
 // - [ ] color
+// - [ ] color utils
+// - [ ] flatten colors
+// - [ ] to hex
 // - [ ] margin
 // - [ ] responsive arrays
 
 export default ({ tag = 'root' }) => {
   const context = useEditor()
-  // console.log(context)
   const {
     styles = {},
     colors = {},
@@ -85,11 +87,18 @@ export default ({ tag = 'root' }) => {
         <ThemeColorPicker
           value={style.color || ''}
           onChange={color => {
-            console.log({ color })
             setStyle({ color })
-          }}>
-          <div>Color</div>
-        </ThemeColorPicker>
+          }}
+        />
+      </div>
+      <div>
+        Background Color
+        <ThemeColorPicker
+          value={style.bg || ''}
+          onChange={bg => {
+            setStyle({ bg })
+          }}
+        />
       </div>
     </div>
   )
