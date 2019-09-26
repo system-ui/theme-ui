@@ -5,8 +5,15 @@ import Input from './Input'
 
 const noop = () => {}
 
-export default ({ type = 'text', label, name, onChange = noop, ...props }) => (
-  <div>
+export default ({
+  type = 'text',
+  label,
+  name,
+  onChange = noop,
+  className,
+  ...props
+}) => (
+  <div className={className}>
     <Label htmlFor={name}>{label || name}</Label>
     <Input
       {...props}
