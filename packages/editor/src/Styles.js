@@ -206,34 +206,41 @@ export default ({ tag = 'root' }) => {
         }}
         options={['inherit', ...Object.keys(fonts)]}
       />
-      <Field
-        name={`styles.${tag}.fontSize`}
-        label="Font Size"
-        value={style.fontSize || ''}
-        type="number"
-        onChange={val => {
-          const fontSize = Number(val)
-          setStyle({ fontSize })
-        }}
-      />
-      <Combobox
-        name={`styles.${tag}.fontWeight`}
-        label="Font Weight"
-        value={style.fontWeight || ''}
-        onChange={fontWeight => {
-          setStyle({ fontWeight })
-        }}
-        options={['inherit', ...Object.keys(fontWeights)]}
-      />
-      <Combobox
-        name={`styles.${tag}.lineHeight`}
-        label="Line Height"
-        value={style.lineHeight || ''}
-        onChange={lineHeight => {
-          setStyle({ lineHeight })
-        }}
-        options={['inherit', ...Object.keys(lineHeights)]}
-      />
+      <div
+        sx={{
+          display: 'grid',
+          gridGap: 2,
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        }}>
+        <Field
+          name={`styles.${tag}.fontSize`}
+          label="Font Size"
+          value={style.fontSize || ''}
+          type="number"
+          onChange={val => {
+            const fontSize = Number(val)
+            setStyle({ fontSize })
+          }}
+        />
+        <Combobox
+          name={`styles.${tag}.fontWeight`}
+          label="Font Weight"
+          value={style.fontWeight || ''}
+          onChange={fontWeight => {
+            setStyle({ fontWeight })
+          }}
+          options={['inherit', ...Object.keys(fontWeights)]}
+        />
+        <Combobox
+          name={`styles.${tag}.lineHeight`}
+          label="Line Height"
+          value={style.lineHeight || ''}
+          onChange={lineHeight => {
+            setStyle({ lineHeight })
+          }}
+          options={['inherit', ...Object.keys(lineHeights)]}
+        />
+      </div>
       <Margin
         {...style}
         onChange={next => {
