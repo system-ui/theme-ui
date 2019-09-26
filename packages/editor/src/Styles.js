@@ -4,6 +4,7 @@ import { useEditor } from './context'
 import Combobox from './Combobox'
 import Field from './Field'
 import { defaultSpace } from './defaults'
+import ThemeColorPicker from './ThemeColorPicker'
 //
 // import ColorPicker from './ColorPicker'
 
@@ -45,22 +46,51 @@ export default ({ tag = 'root' }) => {
       <Combobox
         name={`styles.${tag}.fontFamily`}
         label="Font Family"
-        value={style.fontFamily}
+        value={style.fontFamily || ''}
         onChange={fontFamily => {
           setStyle({ fontFamily })
         }}
         options={['inherit', ...Object.keys(fonts)]}
       />
-      <Combobox
+      <Field
         name={`styles.${tag}.fontSize`}
         label="Font Size"
-        value={style.fontSize}
-        type={typeof style.fontSize === 'number' ? 'number' : 'text'}
-        onChange={fontSize => {
+        value={style.fontSize || ''}
+        type="number"
+        onChange={val => {
+          const fontSize = Number(val)
           setStyle({ fontSize })
         }}
-        options={Object.keys(fontSizes)}
       />
+      <Combobox
+        name={`styles.${tag}.fontWeight`}
+        label="Font Weight"
+        value={style.fontWeight || ''}
+        onChange={fontWeight => {
+          setStyle({ fontWeight })
+        }}
+        options={['inherit', ...Object.keys(fontWeights)]}
+      />
+      <Combobox
+        name={`styles.${tag}.lineHeight`}
+        label="Line Height"
+        value={style.lineHeight || ''}
+        onChange={lineHeight => {
+          setStyle({ lineHeight })
+        }}
+        options={['inherit', ...Object.keys(lineHeights)]}
+      />
+      <div>
+        Color
+        <ThemeColorPicker
+          value={style.color || ''}
+          onChange={color => {
+            console.log({ color })
+            setStyle({ color })
+          }}>
+          <div>Color</div>
+        </ThemeColorPicker>
+      </div>
     </div>
   )
 }

@@ -73,7 +73,8 @@ export default {
     },
     display: {
       variant: 'text.heading',
-      fontSize: [5, 6],
+      // fontSize: [5, 6],
+      fontSize: 5,
       fontWeight: 'display',
       letterSpacing: '-0.03em',
       mt: 3,
