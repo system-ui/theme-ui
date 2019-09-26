@@ -48,7 +48,7 @@ export const ThemeColorPicker = ({ children, ...props }) => {
         <CompactPicker
           colors={options}
           {...props}
-          value={value}
+          color={value}
           onChange={onChange}
         />
       </Popover>
