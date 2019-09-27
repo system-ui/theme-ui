@@ -29,6 +29,7 @@ export default props => {
   const [status, setStatus] = useState()
 
   const save = async e => {
+    e.preventDefault()
     setStatus('saving')
     const theme = JSON.stringify(context.theme, null, 2)
     const res = await ky.post('/___theme', {
