@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useThemeUI } from 'theme-ui'
+import { useThemeUI } from '../../theme-ui/src'
+// import { useThemeUI } from 'theme-ui'
 
 // Shared with @styled-system/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
