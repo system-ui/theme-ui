@@ -4,11 +4,9 @@ import { jsx, ThemeProvider } from '../../theme-ui/src/index'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
 const mockMediaQueries = matches =>
-  jest.fn().mockImplementation(query => {
-    return {
-      matches: matches.includes(query),
-    }
-  })
+  jest.fn().mockImplementation(query => ({
+    matches: matches.includes(query),
+  }))
 
 afterEach(cleanup)
 
