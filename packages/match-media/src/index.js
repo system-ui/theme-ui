@@ -5,9 +5,9 @@ import { useThemeUI } from 'theme-ui'
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
 export const useBreakpointIndex = () => {
-  const {
-    theme: { breakpoints = defaultBreakpoints },
-  } = useThemeUI()
+  const context = useThemeUI()
+  const breakpoints =
+    (context.theme && context.theme.breakpoints) || defaultBreakpoints
 
   const getIndex = useCallback(
     () =>
