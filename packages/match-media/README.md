@@ -15,7 +15,7 @@ npm i @theme-ui/match-media
 ## Usage
 
 ```js
-import { useResponsiveValue, useResponsiveIndex } from '@theme-ui/match-media'
+import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media'
 
 const MyComponent = () => {
   // Return literal values:
@@ -26,8 +26,8 @@ const MyComponent = () => {
     theme.colors.green,
     theme.colors.blue,
   ])
-  // `useResponsiveIndex` returns the index of the currently matched media query:
-  const index = useResponsiveIndex()
+  // `useBreakpointIndex` returns the index of the currently matched media query:
+  const index = useBreakpointIndex()
 
   return (
     <div>
