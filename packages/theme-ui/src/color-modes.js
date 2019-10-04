@@ -46,7 +46,7 @@ export const useColorState = theme => {
     ) {
       console.warn(
         'The `initialColorMode` value should be a unique name' +
-          'and cannot reference a key in `theme.colors.modes`.'
+          ' and cannot reference a key in `theme.colors.modes`.'
       )
     }
   }
