@@ -133,3 +133,57 @@ test('warns when multiple versions of emotion are installed', () => {
   )
   expect(console.warn).toBeCalled()
 })
+
+test('functional themes receive outer theme', () => {
+  const outer = {
+    colors: {
+      text: 'tomato',
+    },
+  }
+  const theme = jest.fn()
+  const json = renderJSON(
+    jsx(
+      ThemeProvider,
+      { theme: outer },
+      jsx(
+        ThemeProvider,
+        { theme },
+        jsx('div', {
+          sx: {
+            color: 'text',
+          },
+        })
+      )
+    )
+  )
+  expect(theme).toHaveBeenCalledWith(outer)
+  expect(json).toHaveStyleRule('color', 'text')
+})
+
+test('functional themes can be used at the top level', () => {
+  const theme = jest.fn(() => ({
+    useCustomProperties: false,
+    colors: {
+      primary: 'tomato',
+    },
+  }))
+  let json
+  expect(() => {
+    json = renderJSON(
+      jsx(
+        ThemeProvider,
+        { theme },
+        jsx(
+          'div',
+          {
+            sx: {
+              color: 'primary',
+            },
+          },
+          'hi'
+        )
+      )
+    )
+  }).not.toThrow()
+  expect(json).toHaveStyleRule('color', 'tomato')
+})
