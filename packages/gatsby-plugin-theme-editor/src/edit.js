@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useState } from 'react'
-import { jsx, useThemeUI, Styled } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import ky from 'ky'
 import {
   Editor,
@@ -15,10 +15,10 @@ import {
 } from '@theme-ui/editor'
 
 const Subhead = props => (
-  <Styled.h3
-    as="h2"
+  <h2
     {...props}
     sx={{
+      fontSize: 16,
       mb: 0,
     }}
   />
@@ -45,7 +45,7 @@ export default props => {
   return (
     <div>
       <header>
-        <Styled.h1>Edit theme</Styled.h1>
+        <h1>Edit theme</h1>
         <button onClick={save}>Save</button>
         <pre>{status}</pre>
       </header>

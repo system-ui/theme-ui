@@ -8,15 +8,10 @@ const theme = {
     primary: 'hsl(210, 100%, 40%)',
     highlight: 'hsl(210, 50%, 95%)',
   },
+  styles: {},
 }
 
-export default ({
-  context,
-  fontSize = 16,
-  color,
-  bg,
-  ...props
-}) => {
+export default ({ context, fontSize = 16, color, bg, ...props }) => {
   const outer = useThemeUI()
   context = context || outer
 
