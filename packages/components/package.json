@@ -1,0 +1,8 @@
+{
+  "name": "@theme-ui/components",
+  "version": "0.2.43",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT"
+}
