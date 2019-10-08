@@ -52,6 +52,7 @@ export const ColorRow = ({
             return render({
               swatch,
               color,
+              key,
               name: id,
             })
           }
