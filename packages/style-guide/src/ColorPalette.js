@@ -39,6 +39,7 @@ export const ColorRow = ({
           const swatch = (
             <ColorSwatch
               {...props}
+              key={key}
               name={id}
               color={id}
               size={size}
@@ -51,7 +52,6 @@ export const ColorRow = ({
             return render({
               swatch,
               color,
-              key,
               name: id,
             })
           }
