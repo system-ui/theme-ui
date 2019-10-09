@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.2.44 2019-10-09
+
 - Fix prop forwarding in styled HOC #377
 - Add missing key #406
 - Add support for functional themes #400
