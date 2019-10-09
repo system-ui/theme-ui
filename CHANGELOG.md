@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Fix prop forwarding in styled HOC #377
+- Add missing key #406
 
 ## v0.2.43 2019-09-17
 
