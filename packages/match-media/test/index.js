@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { render, cleanup, act } from '@testing-library/react'
-import { jsx, ThemeProvider } from '../../theme-ui/src/index'
+import { jsx, ThemeProvider } from 'theme-ui'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
 const mockMediaQueries = matches =>
