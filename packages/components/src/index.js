@@ -7,5 +7,3 @@ export { Heading } from './heading'
 export { Image } from './image'
 export { Card } from './card'
 export { Grid } from './grid'
-
-// export { GatsbyLink } from './gatsby-link'

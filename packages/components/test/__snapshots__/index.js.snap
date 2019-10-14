@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 8px;
+}
+
+<div
+  className="emotion-0"
+>
+  Hello
+</div>
+`;
+
+exports[`Button renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: inherit;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: primary;
+  border: 0;
+  border-radius: 4px;
+  color: background;
+  background-color: primary;
+}
+
+<button
+  className="emotion-0"
+/>
+`;
+
+exports[`Card renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 16px;
+  background-color: muted;
+  border-radius: 4px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Flex renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2,1fr);
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with responsive columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2,1fr);
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with responsive width prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(auto-fit,minmax(512px,1fr));
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with width prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Heading renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: heading;
+  font-weight: heading;
+  line-height: heading;
+  font-size: 32px;
+}
+
+<h2
+  className="emotion-0"
+/>
+`;
+
+exports[`Image renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 99999px;
+}
+
+<img
+  className="emotion-0"
+/>
+`;
+
+exports[`Link renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+<a
+  className="emotion-0"
+/>
+`;
+
+exports[`Text renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+  className="emotion-0"
+/>
+`;

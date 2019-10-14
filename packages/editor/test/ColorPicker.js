@@ -1,8 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, act, fireEvent, cleanup } from '@testing-library/react'
+import { render, fireEvent, cleanup } from '@testing-library/react'
 import { Provider } from 'reakit/Provider'
 import { ColorPicker } from '../src'
+
+const { act } = renderer
 
 afterEach(cleanup)
 
