@@ -1,3 +1,4 @@
+import React from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import { ThemeProvider } from 'theme-ui'

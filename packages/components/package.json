@@ -4,8 +4,8 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --jsx React.createElement",
+    "watch": "microbundle watch --no-compress --jsx React.createElement"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.17",
@@ -13,6 +13,12 @@
     "@styled-system/css": "^5.0.23",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "optionalDependencies": {
+    "gatsby": "^2.13.1"
   },
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT"

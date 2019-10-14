@@ -45,10 +45,11 @@ const scope = {
     return <span {...props} sx={{ cursor: 'pointer' }} />
   },
   posts,
+  // todo: Link conflict
   ...components,
 }
 
-const transformCode = src => `/** @jsx jsx */\n${src}`
+const transformCode = src => `/** @jsx jsx */\n<>${src}</>`
 
 const liveTheme = { styles: [] }
 

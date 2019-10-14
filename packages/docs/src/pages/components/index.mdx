@@ -33,11 +33,18 @@ Name | Type | Description
 `variant` | String | Applies a theme [variant][] style
 `as` | String | Changes the underlying HTML element
 
+<Note>
+
+The `sx` prop on Theme UI components can be used *without* the `jsx` pragma comment and can be used in MDX files to apply theme-based styles.
+
+</Note>
+
 [variant]: /guides/variants
 
 ### Style Props
 
 Each Theme UI component includes shorthand props for applying margin, padding, and color styles.
+These props work the same as properties within the `sx` prop, but allow for a more terse syntax for readability.
 
 <Note>
 

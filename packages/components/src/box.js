@@ -56,3 +56,5 @@ export const Box = styled('div', {
   sx,
   props => props.css
 )
+
+export default Box

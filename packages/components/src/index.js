@@ -1,1 +1,6 @@
 export { Box } from './box'
+export { Flex } from './flex'
+export { Button } from './button'
+export { Link } from './link'
+export { Text } from './text'
+export { Heading } from './heading'

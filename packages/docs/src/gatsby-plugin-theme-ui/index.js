@@ -78,11 +78,21 @@ export default {
       letterSpacing: '-0.03em',
       mt: 3,
     },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
   },
   buttons: {
     primary: {
       color: 'background',
       bg: 'primary',
+      fontWeight: 'bold',
+    },
+    secondary: {
+      variant: 'buttons.primary',
+      color: 'background',
+      bg: 'secondary',
     },
   },
   styles: {
