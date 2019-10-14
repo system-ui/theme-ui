@@ -2,6 +2,7 @@
 import { jsx, Styled } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
+import * as components from '@theme-ui/components'
 
 const posts = [
   {
@@ -44,6 +45,7 @@ const scope = {
     return <span {...props} sx={{ cursor: 'pointer' }} />
   },
   posts,
+  ...components,
 }
 
 const transformCode = src => `/** @jsx jsx */\n${src}`

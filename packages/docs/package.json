@@ -21,6 +21,7 @@
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^5.0.15",
     "@theme-ui/color": "^0.2.44",
+    "@theme-ui/components": "0.2.44",
     "@theme-ui/editor": "^0.2.44",
     "@theme-ui/presets": "^0.2.44",
     "@theme-ui/prism": "^0.2.40",

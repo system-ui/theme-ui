@@ -1,9 +1,8 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React from 'react'
 import styled from '@emotion/styled'
 import css, { get } from '@styled-system/css'
 import shouldForwardProp from '@styled-system/should-forward-prop'
+import space from '@styled-system/space'
+import color from '@styled-system/color'
 
 // API
 // - as
@@ -13,8 +12,7 @@ import shouldForwardProp from '@styled-system/should-forward-prop'
 // - system props??
 // - margin/padding
 // - color props
-//
-// - should this use emotion/styled?
+// - use emotion/styled?
 //
 // theme variants
 // - text
@@ -38,19 +36,23 @@ import shouldForwardProp from '@styled-system/should-forward-prop'
 
 // const styleProps = ({ }) =>
 
-export const Box = React.forwardRef(
-  ({ sx, __base = {}, variant, ...props }, ref) => {
-    const style = css(
-      get(theme, __base.type + '.' + variant, get(theme, variant))
-    )
-    return (
-      <div
-        ref={ref}
-        {...props}
-        sx={{
-          ...sx,
-        }}
-      />
-    )
-  }
+const sx = props => css(props.sx)(props.theme)
+const base = props => css(props.__css)(props.theme)
+const variant = ({ theme, variant, __themeKey = 'variants' }) =>
+  css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
+
+export const Box = styled('div', {
+  shouldForwardProp,
+})(
+  {
+    boxSizing: 'border-box',
+    margin: 0,
+    minWidth: 0,
+  },
+  base,
+  variant,
+  space,
+  color,
+  sx,
+  props => props.css
 )
