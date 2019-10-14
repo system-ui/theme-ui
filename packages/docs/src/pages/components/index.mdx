@@ -17,10 +17,29 @@ npm i @theme-ui/components
 ```jsx live=true
 <Box
   p={4}
-  color='white'
-  bg='primary'>
-  Beep
+  bg='highlight'>
+  <Flex
+    sx={{
+      alignItems: 'center',
+    }}>
+    <Heading>
+      Components
+    </Heading>
+    <Button ml='auto'>
+      Beep
+    </Button>
+  </Flex>
 </Box>
+```
+
+## Variants
+
+Each component accepts a `variant` prop to quickly apply complex stylistic variations on a per-instance basis.
+
+```jsx live=true
+<Button variant='secondary'>
+  Secondary Button
+</Button>
 ```
 
 ## Props

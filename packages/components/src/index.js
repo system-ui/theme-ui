@@ -4,3 +4,8 @@ export { Button } from './button'
 export { Link } from './link'
 export { Text } from './text'
 export { Heading } from './heading'
+export { Image } from './image'
+export { Card } from './card'
+export { Grid } from './grid'
+
+// export { GatsbyLink } from './gatsby-link'

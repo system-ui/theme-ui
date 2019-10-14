@@ -7,3 +7,33 @@ title: Image
 ```js
 import { Image } from '@theme-ui/components'
 ```
+
+```jsx live=true
+<Image
+  src={images.flatiron}
+/>
+```
+
+```jsx live=true
+<Image
+  src={images.logo}
+  variant='avatar'
+/>
+```
+
+## Variants
+
+Image style variants can be defined in the `theme.images` object.
+
+```js
+// example theme variants
+{
+  images: {
+    avatar: {
+      width: 48,
+      height: 48,
+      borderRadius: 99999,
+    },
+  }
+}
+```

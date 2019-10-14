@@ -36,6 +36,15 @@ const posts = [
   },
 ]
 
+const images = {
+  nyc:
+    'https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
+  flatiron:
+    'https://images.unsplash.com/photo-1520222984843-df35ebc0f24d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
+  logo:
+    'https://contrast.now.sh/fff/000?text=UI&size=96&fontSize=1.5&baseline=1',
+}
+
 const scope = {
   jsx,
   Styled,
@@ -45,6 +54,7 @@ const scope = {
     return <span {...props} sx={{ cursor: 'pointer' }} />
   },
   posts,
+  images,
   // todo: Link conflict
   ...components,
 }

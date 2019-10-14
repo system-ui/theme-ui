@@ -8,6 +8,42 @@ title: Card
 import { Card } from '@theme-ui/components'
 ```
 
+```jsx live=true
+<Card
+  sx={{
+    maxWidth: 256,
+  }}>
+  <Image src={images.nyc} />
+  <Text>
+    Card
+  </Text>
+</Card>
+```
+
+## Variants
+
+Card style variants can be defined in the `theme.cards` object.
+By default the `Card` component uses the `theme.cards.primary` variant.
+
+```js
+// example theme variants
+{
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 2,
+      border: '1px solid',
+      borderColor: 'muted',
+    },
+  },
+}
+```
+
 <!--
 '@comp/ui'
 -->
