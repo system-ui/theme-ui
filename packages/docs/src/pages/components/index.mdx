@@ -34,7 +34,50 @@ npm i @theme-ui/components
 
 ## Variants
 
-Each component accepts a `variant` prop to quickly apply complex stylistic variations on a per-instance basis.
+Theme UI components can be customized by adding styles to your theme.
+Each component accepts a `variant` prop to quickly
+change custom stylistic variations that you define.
+
+```js
+// example theme
+{
+  // base theme...
+  buttons: {
+    primary: {
+      fontWeight: 'bold',
+      color: 'white',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'dark',
+      },
+    },
+  },
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+    display: {
+      // extends the text.heading styles
+      variant: 'text.heading',
+      fontSize: [6, 7, 8],
+      fontWeight: 'display',
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 4px 1px rgba(0, 0, 0, 0.5)',
+    },
+  },
+}
+```
 
 ```jsx live=true
 <Button variant='secondary'>

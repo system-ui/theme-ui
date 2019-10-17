@@ -28,7 +28,7 @@ export const Slider = React.forwardRef((props, ref) => (
       appearance: 'none',
       borderRadius: 9999,
       color: 'inherit',
-      bg: 'muted',
+      bg: 'gray',
       ':focus': {
         outline: 'none',
         color: 'primary',

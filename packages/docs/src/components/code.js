@@ -101,7 +101,8 @@ export const LiveCode = ({ children, preview, xray }) => {
       </div>
       <Styled.pre
         sx={{
-          my: 0,
+          mt: 0,
+          mb: 3,
         }}>
         <LiveEditor padding={0} />
       </Styled.pre>

@@ -2,7 +2,23 @@
 title: Forms
 ---
 
+import { Note } from '../..'
+
 # Forms
+
+Several primitive components are included for building accessible forms.
+
+```js
+import {
+  Label,
+  Input,
+  Select,
+  Textarea,
+  Radio,
+  Checkbox,
+  Slider,
+} from '@theme-ui/components'
+```
 
 ```jsx live=true
 <Box
@@ -58,3 +74,53 @@ title: Forms
 </Box>
 ```
 
+<Note>
+
+**Tip:**
+Each form field needs to include a `<label>` element with an `htmlFor` prop that matches its field.
+The entire form should be wrapped in a `<form>` element.
+
+</Note>
+
+## Theming
+
+Add styles for form elements in the `theme.forms` object.
+
+```js
+// example theme
+{
+  forms: {
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    input: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    select: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    textarea: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    slider: {
+      bg: 'muted',
+    },
+  },
+}
+```

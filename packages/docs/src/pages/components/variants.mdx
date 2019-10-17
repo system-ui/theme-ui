@@ -33,3 +33,56 @@ Component | Variant Group | Default Variant
 The `Link` component reuses the styles defined in `theme.styles.a` by default.
 
 </Note>
+
+Additional variants can be added to each group to create multiple styles for a single component.
+For example, a secondary button style can be added to `theme.buttons.secondary` then applied to any Button using the `variant` prop.
+
+```jsx
+// example using a variant
+<Button variant='secondary'>
+  Secondary
+</Button>
+```
+
+## Example Theme
+
+```js
+// example theme
+{
+  // base theme...
+  buttons: {
+    primary: {
+      fontWeight: 'bold',
+      color: 'white',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'dark',
+      },
+    },
+  },
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+    display: {
+      // extends the text.heading styles
+      variant: 'text.heading',
+      fontSize: [6, 7, 8],
+      fontWeight: 'display',
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 4px 1px rgba(0, 0, 0, 0.5)',
+    },
+  },
+}
+```
