@@ -283,6 +283,18 @@ describe('Select', () => {
     )
     expect(json).toMatchSnapshot()
   })
+
+  test('renders with style props', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Select
+          mb={3}
+          value='hello'
+        />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Textarea', () => {
