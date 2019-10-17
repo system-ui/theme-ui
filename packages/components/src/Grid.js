@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from './box'
+import Box from './Box'
 
 const px = n => (typeof n === 'number' ? n + 'px' : n)
 

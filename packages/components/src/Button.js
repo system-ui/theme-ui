@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from './box'
+import Box from './Box'
 
 export const Button = React.forwardRef((props, ref) => (
   <Box
