@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add `@theme-ui/match-media` package #375
+
 ## v0.2.44 2019-10-09
 
 - Fix prop forwarding in styled HOC #377
