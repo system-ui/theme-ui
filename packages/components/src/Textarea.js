@@ -16,7 +16,7 @@ export const Textarea = React.forwardRef((props, ref) => (
       fontSize: 'inherit',
       lineHeight: 'inherit',
       border: '1px solid',
-      borderRadius: 'default',
+      borderRadius: 4,
       color: 'inherit',
       bg: 'background',
     }}
