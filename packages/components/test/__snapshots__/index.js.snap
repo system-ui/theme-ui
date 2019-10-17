@@ -610,7 +610,7 @@ exports[`Slider renders 1`] = `
   appearance: none;
   border-radius: 9999px;
   color: inherit;
-  background-color: muted;
+  background-color: gray;
 }
 
 .emotion-0:focus {
