@@ -1,0 +1,25 @@
+{
+  "name": "@theme-ui/match-media",
+  "version": "0.2.43",
+  "description": "React hooks for theme-ui breakpoints",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT",
+  "repository": "system-ui/theme-ui",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "react": "^16.9.0",
+    "theme-ui": "^0.2.43"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "theme-ui": "^0.2.43"
+  }
+}
