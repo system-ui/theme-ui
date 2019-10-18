@@ -491,7 +491,6 @@ Array [
 
 <div
     aria-label="Edit color"
-    aria-modal={false}
     className="emotion-10"
     data-dialog={true}
     hidden={true}

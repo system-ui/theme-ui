@@ -1,0 +1,126 @@
+---
+title: Forms
+---
+
+import { Note } from '../..'
+
+# Forms
+
+Several primitive components are included for building accessible forms.
+
+```js
+import {
+  Label,
+  Input,
+  Select,
+  Textarea,
+  Radio,
+  Checkbox,
+  Slider,
+} from '@theme-ui/components'
+```
+
+```jsx live=true
+<Box
+  as='form'
+  onSubmit={e => e.preventDefault()}>
+  <Label htmlFor='username'>Username</Label>
+  <Input
+    name='username'
+    mb={3}
+  />
+  <Label htmlFor='password'>Password</Label>
+  <Input
+    type='password'
+    name='password'
+    mb={3}
+  />
+  <Box>
+    <Label mb={3}>
+      <Checkbox />
+      Remember me
+    </Label>
+  </Box>
+  <Label htmlFor='sound'>Sound</Label>
+  <Select name='sound' mb={3}>
+    <option>Beep</option>
+    <option>Boop</option>
+    <option>Blip</option>
+  </Select>
+  <Label htmlFor='comment'>Comment</Label>
+  <Textarea
+    name='comment'
+    rows='6'
+    mb={3}
+  />
+  <Flex mb={3}>
+    <Label>
+      <Radio name='letter' /> Alpha
+    </Label>
+    <Label>
+      <Radio name='letter' /> Bravo
+    </Label>
+    <Label>
+      <Radio name='letter' /> Charlie
+    </Label>
+  </Flex>
+  <Label>
+    Slider
+  </Label>
+  <Slider mb={3} />
+  <Button>
+    Submit
+  </Button>
+</Box>
+```
+
+<Note>
+
+**Tip:**
+Each form field needs to include a `<label>` element with an `htmlFor` prop that matches its field.
+The entire form should be wrapped in a `<form>` element.
+
+</Note>
+
+## Theming
+
+Add styles for form elements in the `theme.forms` object.
+
+```js
+// example theme
+{
+  forms: {
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    input: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    select: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    textarea: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    slider: {
+      bg: 'muted',
+    },
+  },
+}
+```

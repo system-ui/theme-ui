@@ -1,0 +1,38 @@
+---
+title: Heading
+---
+
+# Heading
+
+Primitive heading component, defaults to `<h2>`.
+
+```js
+import { Heading } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Heading>Hello</Heading>
+<Heading as='h3'>Subhead</Heading>
+```
+
+## Variants
+
+Text style variants can be defined in the `theme.text` object.
+The `Heading` component uses `theme.text.heading` as its default variant style.
+
+```js
+// example theme variants
+{
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+  }
+}
+```
