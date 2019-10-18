@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.2.45 2019-10-18
+
 - Add `@theme-ui/match-media` package #375
 - Add `@theme-ui/components` package #411
 
