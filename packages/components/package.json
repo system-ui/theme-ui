@@ -20,6 +20,9 @@
   "optionalDependencies": {
     "gatsby": "^2.13.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT"
 }
