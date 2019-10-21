@@ -84,7 +84,7 @@ const NestedProvider = ({ theme, components, children }) => {
 export const ThemeProvider = props => {
   const outer = useThemeUI()
 
-  if (process.env !== 'production') {
+  if (process.env.NODE_ENV !== 'production') {
     if (outer.emotionVersion !== emotionVersion) {
       console.warn(
         'Multiple versions of Emotion detected,',
