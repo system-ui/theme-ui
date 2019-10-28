@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Fix environment check #415
+- Update dependencies
+
 ## v0.2.45 2019-10-18
 
 - Add `@theme-ui/match-media` package #375
