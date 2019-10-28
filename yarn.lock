@@ -10361,9 +10361,9 @@ gatsby-plugin-google-fonts@^1.0.0:
   integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
 
 gatsby-plugin-mdx@^1.0.4, gatsby-plugin-mdx@^1.0.52:
-  version "1.0.52"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.52.tgz#d7f00dfde08005f1a60184130a7cbc5f8e2a9221"
-  integrity sha512-jz2vQ9EyrlxD6gOK1kwGWKUcwXWe3n5QuQpM2P/Yfkjy2PpWivknferTo3iVxk3vj3JD6BRCyg2/vDiRiVsvBA==
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.54.tgz#f582d9a8633427f44b2f11b9d1f3845b58331d0e"
+  integrity sha512-rIvbAV2R+FBVZEL7DqwKtGSO5+lHckR7SEQnxLX0syC5B09QOcQYdgpMEm3CDq+aWZB1dZS259KtrynKzoVROw==
   dependencies:
     "@babel/core" "^7.6.4"
     "@babel/generator" "^7.6.4"
@@ -10396,7 +10396,7 @@ gatsby-plugin-mdx@^1.0.4, gatsby-plugin-mdx@^1.0.52:
     static-site-generator-webpack-plugin "^3.4.2"
     style-to-object "^0.2.3"
     underscore.string "^3.3.5"
-    unified "^8.4.0"
+    unified "^8.4.1"
     unist-util-map "^1.0.5"
     unist-util-remove "^1.0.3"
     unist-util-visit "^1.4.1"
@@ -10577,7 +10577,7 @@ gatsby-transformer-sharp@^2.2.23:
     semver "^5.7.1"
     sharp "^0.23.1"
 
-gatsby@^2.13.1, gatsby@^2.13.64, gatsby@^2.13.73, gatsby@^2.3.6, gatsby@^2.6.3:
+gatsby@^2.13.64, gatsby@^2.13.73, gatsby@^2.3.6, gatsby@^2.6.3:
   version "2.16.5"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.16.5.tgz#155376fd8d797ba111772d168daecd4a5ba036ef"
   integrity sha512-ga7WX773yCouxVPTUgswkjnHkFMWsIuHyOfGzprqdI8EJ74oEkBfcDUZTntbXDuP20IUGomve6sUOJLwZMdReA==
@@ -23142,7 +23142,7 @@ unified@^7.0.0:
     vfile "^3.0.0"
     x-is-string "^0.1.0"
 
-unified@^8.4.0:
+unified@^8.4.1:
   version "8.4.1"
   resolved "https://registry.yarnpkg.com/unified/-/unified-8.4.1.tgz#99bd0393f58a139eaa51832cfbcc0e7f6573a1e1"
   integrity sha512-YPj/uIIZSO7mMIZQj/5Z3hDl4lshWYRQGs5TgUCjHTVdklUWH+O94mK5Cy77SEcmEUwGhnUcudMuH/zIwporqw==
