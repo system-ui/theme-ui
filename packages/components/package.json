@@ -17,9 +17,6 @@
   "peerDependencies": {
     "react": "^16.8.0"
   },
-  "optionalDependencies": {
-    "gatsby": "^2.13.1"
-  },
   "publishConfig": {
     "access": "public"
   },
