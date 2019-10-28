@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/match-media",
-  "version": "0.2.45",
+  "version": "0.2.46",
   "description": "React hooks for theme-ui breakpoints",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "react": "^16.9.0",
-    "theme-ui": "^0.2.43"
+    "theme-ui": "^0.2.46"
   },
   "peerDependencies": {
     "react": "^16.9.0",
