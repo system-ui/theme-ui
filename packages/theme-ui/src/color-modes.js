@@ -18,7 +18,8 @@ export const getMediaQuery = () => {
   return dark && mql.matches
 }
 
-const getName = (theme) => theme.initialColorModeName || theme.initialColorMode || 'default'
+const getName = theme =>
+  theme.initialColorModeName || theme.initialColorMode || 'default'
 
 export const useColorState = theme => {
   const [mode, setMode] = useState(getName(theme))
@@ -28,7 +29,8 @@ export const useColorState = theme => {
     const stored = storage.get()
     document.body.classList.remove('theme-ui-' + stored)
     const dark = getMediaQuery()
-    if (!stored && dark && theme.useColorSchemeMediaQuery) return setMode('dark')
+    if (!stored && dark && theme.useColorSchemeMediaQuery)
+      return setMode('dark')
     if (!stored || stored === mode) return
     setMode(stored)
   }, [])
@@ -46,7 +48,7 @@ export const useColorState = theme => {
     ) {
       console.warn(
         'The `initialColorMode` value should be a unique name' +
-          'and cannot reference a key in `theme.colors.modes`.'
+          ' and cannot reference a key in `theme.colors.modes`.'
       )
     }
   }
@@ -54,7 +56,7 @@ export const useColorState = theme => {
   return [mode, setMode]
 }
 
-export const useColorMode = initialMode => {
+export const useColorMode = () => {
   const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {

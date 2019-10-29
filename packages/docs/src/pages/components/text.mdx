@@ -1,0 +1,43 @@
+---
+title: Text
+---
+
+# Text
+
+Primitive typographic component.
+
+```js
+import { Text } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Text
+  sx={{
+    fontSize: 4,
+    fontWeight: 'bold',
+  }}>
+  Hello
+</Text>
+<Text variant='caps'>Hello</Text>
+```
+
+## Variants
+
+Text style variants can be defined in the `theme.text` object.
+
+```js
+// example theme variants
+{
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+  }
+}
+```

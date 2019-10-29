@@ -1,7 +1,7 @@
 const heading = {
   color: 'text',
   fontFamily: 'heading',
-  lineHeight: '1.2',
+  lineHeight: 'heading',
   fontWeight: 'heading',
 }
 

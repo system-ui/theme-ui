@@ -1,0 +1,694 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 8px;
+}
+
+<div
+  className="emotion-0"
+>
+  Hello
+</div>
+`;
+
+exports[`Button renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: inherit;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: primary;
+  border: 0;
+  border-radius: 4px;
+  color: background;
+  background-color: primary;
+}
+
+<button
+  className="emotion-0"
+/>
+`;
+
+exports[`Card renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 16px;
+  background-color: muted;
+  border-radius: 4px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Checkbox renders 1`] = `
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+}
+
+input:checked ~ .emotion-1 {
+  display: block;
+}
+
+input:checked ~ .emotion-1 {
+  color: primary;
+}
+
+input:focus ~ .emotion-1 {
+  color: primary;
+  background-color: highlight;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+}
+
+input:checked ~ .emotion-2 {
+  display: none;
+}
+
+input:checked ~ .emotion-2 {
+  color: primary;
+}
+
+input:focus ~ .emotion-2 {
+  color: primary;
+  background-color: highlight;
+}
+
+<div
+  className="emotion-3"
+>
+  <input
+    className="emotion-0"
+    type="checkbox"
+  />
+  <svg
+    aria-hidden="true"
+    className="emotion-1"
+    fill="currentcolor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="emotion-2"
+    fill="currentcolor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Flex renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2,1fr);
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with responsive columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2,1fr);
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with responsive width prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(auto-fit,minmax(512px,1fr));
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with width prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Heading renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: heading;
+  font-weight: heading;
+  line-height: heading;
+  font-size: 32px;
+}
+
+<h2
+  className="emotion-0"
+/>
+`;
+
+exports[`Image renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 99999px;
+}
+
+<img
+  className="emotion-0"
+/>
+`;
+
+exports[`Input renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: background;
+}
+
+<input
+  className="emotion-0"
+/>
+`;
+
+exports[`Label renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<label
+  className="emotion-0"
+/>
+`;
+
+exports[`Link renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+<a
+  className="emotion-0"
+/>
+`;
+
+exports[`Radio renders 1`] = `
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 9999px;
+  color: gray;
+}
+
+input:checked ~ .emotion-1 {
+  display: block;
+}
+
+input:checked ~ .emotion-1 {
+  color: primary;
+}
+
+input:focus ~ .emotion-1 {
+  background-color: highlight;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 9999px;
+  color: gray;
+}
+
+input:checked ~ .emotion-2 {
+  display: none;
+}
+
+input:checked ~ .emotion-2 {
+  color: primary;
+}
+
+input:focus ~ .emotion-2 {
+  background-color: highlight;
+}
+
+<div
+  className="emotion-3"
+>
+  <input
+    className="emotion-0"
+    type="radio"
+  />
+  <svg
+    aria-hidden="true"
+    className="emotion-1"
+    fill="currentcolor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="emotion-2"
+    fill="currentcolor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Select renders 1`] = `
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -28px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  pointer-events: none;
+}
+
+<div
+  className="emotion-2"
+>
+  <select
+    className="emotion-0"
+  />
+  <svg
+    className="emotion-1"
+    fill="currentcolor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Select renders with style props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -28px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  pointer-events: none;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="emotion-2"
+>
+  <select
+    className="emotion-0"
+    value="hello"
+  />
+  <svg
+    className="emotion-1"
+    fill="currentcolor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Slider renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 9999px;
+  color: inherit;
+  background-color: gray;
+}
+
+.emotion-0:focus {
+  outline: none;
+  color: primary;
+}
+
+.emotion-0::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 9999px;
+}
+
+.emotion-0::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 9999px;
+}
+
+.emotion-0::-ms-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 9999px;
+}
+
+<input
+  className="emotion-0"
+  type="range"
+/>
+`;
+
+exports[`Text renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Textarea renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: background;
+}
+
+<textarea
+  className="emotion-0"
+/>
+`;

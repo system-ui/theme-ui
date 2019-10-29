@@ -2,7 +2,21 @@
 
 ## Unreleased
 
+## v0.2.46 2019-10-28
+
+- Fix environment check #415
+- Update dependencies
+
+## v0.2.45 2019-10-18
+
+- Add `@theme-ui/match-media` package #375
+- Add `@theme-ui/components` package #411
+
+## v0.2.44 2019-10-09
+
 - Fix prop forwarding in styled HOC #377
+- Add missing key #406
+- Add support for functional themes #400
 
 ## v0.2.43 2019-09-17
 
