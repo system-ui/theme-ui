@@ -10,13 +10,14 @@ import ThemeColorPicker from './ThemeColorPicker'
 // import ColorPicker from './ColorPicker'
 
 // todo
-// - [ ] typography
+// - [x] typography
 // - [ ] color
 // - [ ] color utils
 // - [ ] flatten colors
 // - [ ] to hex
-// - [ ] margin
+// - [x] margin
 // - [ ] responsive arrays
+// - [ ] variants
 
 export const Margin = ({
   tag,
@@ -196,7 +197,7 @@ export default ({ tag = 'root' }) => {
 
   return (
     <div>
-      <b>{tag}</b>
+      <b>theme.styles.{tag}</b>
       <Combobox
         name={`styles.${tag}.fontFamily`}
         label="Font Family"
@@ -247,25 +248,40 @@ export default ({ tag = 'root' }) => {
           setStyle(next)
         }}
       />
-      <div>
-        Color
-        <ThemeColorPicker
-          value={style.color || ''}
-          onChange={color => {
-            setStyle({ color })
-          }}
-        />
+      <div
+        sx={{
+          display: 'grid',
+          gridGap: 2,
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          my: 3,
+        }}>
+        <div
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+          <ThemeColorPicker
+            value={style.color || ''}
+            onChange={color => {
+              setStyle({ color })
+            }}
+          />
+          <div sx={{ fontWeight: 'bold', ml: 2 }}>Color</div>
+        </div>
+        <div
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+          <ThemeColorPicker
+            value={style.bg || ''}
+            onChange={bg => {
+              setStyle({ bg })
+            }}
+          />
+          <div sx={{ fontWeight: 'bold', ml: 2 }}>Background Color</div>
+        </div>
       </div>
-      <div>
-        Background Color
-        <ThemeColorPicker
-          value={style.bg || ''}
-          onChange={bg => {
-            setStyle({ bg })
-          }}
-        />
-      </div>
-      <pre children={JSON.stringify(style, null, 2)} />
     </div>
   )
 }

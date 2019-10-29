@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
-import { CompactPicker } from 'react-color'
+import { GithubPicker } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 import { useEditor } from './context'
 
@@ -11,14 +11,20 @@ export const ThemeColorPicker = ({ children, ...props }) => {
   const { colors } = context.theme
   // todo: general flatten colors utils
   const value = colors[props.value] || props.value
-  const options = Object.keys(colors)
-    .map(key => colors[key])
-    .filter(color => typeof color === 'string')
-    .filter(color => /^#/.test(color))
+  const options = [
+    'transparent',
+    ...Object.keys(colors)
+      .map(key => colors[key])
+      .filter(color => typeof color === 'string')
+      .filter(color => /^#/.test(color)),
+  ]
   const onChange = color => {
     const c = Object.entries(colors).find(([k, v]) => v === color.hex)
     const key = c && c[0]
     props.onChange(key || color.hex || color)
+  }
+  const onChangeComplete = () => {
+    popover.hide()
   }
 
   return (
@@ -32,8 +38,10 @@ export const ThemeColorPicker = ({ children, ...props }) => {
               backgroundColor: value,
             }}
             sx={{
-              width: 24,
-              height: 24,
+              width: 32,
+              height: 32,
+              border: '1px solid',
+              borderColor: 'lightgray',
             }}>
             {children}
           </div>
@@ -45,11 +53,13 @@ export const ThemeColorPicker = ({ children, ...props }) => {
         style={{
           zIndex: popover.visible ? 1 : null,
         }}>
-        <CompactPicker
+        <GithubPicker
           colors={options}
+          triangle="hide"
           {...props}
           color={value}
           onChange={onChange}
+          onChangeComplete={onChangeComplete}
         />
       </Popover>
     </React.Fragment>
