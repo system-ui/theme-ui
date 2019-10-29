@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default ({ size = 16, ...props }) => (
+export default ({ size = 12, ...props }) => (
   <svg
     {...props}
     viewBox="0 0 16 16"

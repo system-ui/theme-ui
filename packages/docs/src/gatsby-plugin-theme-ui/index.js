@@ -1,6 +1,5 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 
-
 export default {
   useCustomProperties: true,
   initialColorMode: 'light',

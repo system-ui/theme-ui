@@ -14,7 +14,8 @@ export { default as Colors } from './Colors'
 export { default as Modes } from './Modes'
 export { default as Typography } from './Typography'
 
-export {
-  EditorContext,
-  useEditor,
-} from './context'
+// todo: figure out name
+export { default as StylesForm } from './StylesForm'
+export { default as ThemeColorPicker } from './ThemeColorPicker'
+
+export { EditorContext, useEditor } from './context'

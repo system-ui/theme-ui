@@ -7,12 +7,7 @@ import {
   Saturation,
   EditableInput,
 } from 'react-color/lib/components/common'
-import {
-  usePopoverState,
-  Popover,
-  PopoverDisclosure,
-  PopoverArrow,
-} from 'reakit/Popover'
+import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
 const round = (n, x = 0) => Math.floor(n * Math.pow(10, x)) / Math.pow(10, x)
 
