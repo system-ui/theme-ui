@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/editor` add `StylesForm` component
+
 ## v0.2.46 2019-10-28
 
 - Fix environment check #415
