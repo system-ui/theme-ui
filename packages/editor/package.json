@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.2.46",
+  "version": "0.2.47",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
