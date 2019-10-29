@@ -1,6 +1,5 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 
-
 export default {
   useCustomProperties: true,
   initialColorMode: 'light',
@@ -74,8 +73,7 @@ export default {
     },
     display: {
       variant: 'text.heading',
-      // fontSize: [5, 6],
-      fontSize: 5,
+      fontSize: [5, 6],
       fontWeight: 'display',
       letterSpacing: '-0.03em',
       mt: 3,

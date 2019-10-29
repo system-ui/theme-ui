@@ -9,7 +9,6 @@ export const ThemeColorPicker = ({ children, ...props }) => {
   const popover = usePopoverState()
   const context = useEditor()
   const { colors } = context.theme
-  // todo: general flatten colors utils
   const value = colors[props.value] || props.value
   const options = [
     'transparent',

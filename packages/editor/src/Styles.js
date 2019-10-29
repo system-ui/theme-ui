@@ -6,18 +6,6 @@ import Combobox from './Combobox'
 import Field from './Field'
 import { defaultSpace } from './defaults'
 import ThemeColorPicker from './ThemeColorPicker'
-//
-// import ColorPicker from './ColorPicker'
-
-// todo
-// - [x] typography
-// - [ ] color
-// - [ ] color utils
-// - [ ] flatten colors
-// - [ ] to hex
-// - [x] margin
-// - [ ] responsive arrays
-// - [ ] variants
 
 export const Margin = ({
   tag,
