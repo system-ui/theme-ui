@@ -18,4 +18,9 @@ export { default as Typography } from './Typography'
 export { default as StylesForm } from './StylesForm'
 export { default as ThemeColorPicker } from './ThemeColorPicker'
 
+// sx style object forms
+export { default as SxColors } from './SxColors'
+export { default as SxMargin } from './SxMargin'
+export { default as SxTypography } from './SxTypography'
+
 export { EditorContext, useEditor } from './context'
