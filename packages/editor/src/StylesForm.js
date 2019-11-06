@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
 import { useEditor } from './context'
 import SxColors from './SxColors'
-import SxMargin from './SxMargin'
+import SxMargin from './SxSpace'
 import SxTypography from './SxTypography'
 
 export default ({ tag = 'root' }) => {

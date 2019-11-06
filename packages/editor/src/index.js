@@ -20,7 +20,9 @@ export { default as ThemeColorPicker } from './ThemeColorPicker'
 
 // sx style object forms
 export { default as SxColors } from './SxColors'
+export { default as SxSpace } from './SxSpace'
 export { default as SxMargin } from './SxMargin'
+export { default as SxPadding } from './SxPadding'
 export { default as SxTypography } from './SxTypography'
 
 export { EditorContext, useEditor } from './context'

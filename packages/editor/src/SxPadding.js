@@ -2,10 +2,10 @@
 import { jsx } from 'theme-ui'
 import SxSpace from './SxSpace'
 
-export const SxMargin = props =>
+export const SxPadding = props =>
   <SxSpace
     {...props}
-    property='margin'
+    property='padding'
   />
 
-export default SxMargin
+export default SxPadding
