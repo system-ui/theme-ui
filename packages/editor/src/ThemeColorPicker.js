@@ -5,10 +5,14 @@ import { GithubPicker } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 import { useEditor } from './context'
 
-export const ThemeColorPicker = ({ children, ...props }) => {
+export const ThemeColorPicker = ({
+  children,
+  theme,
+  ...props
+}) => {
   const popover = usePopoverState()
   const context = useEditor()
-  const { colors } = context.theme
+  const { colors } = theme || context.theme
   const value = colors[props.value] || props.value
   const options = [
     'transparent',
@@ -18,8 +22,7 @@ export const ThemeColorPicker = ({ children, ...props }) => {
       .filter(color => /^#/.test(color)),
   ]
   const onChange = color => {
-    const c = Object.entries(colors).find(([k, v]) => v === color.hex)
-    const key = c && c[0]
+    const [ key ] = Object.entries(colors).find(([k, v]) => v === color.hex) || []
     props.onChange(key || color.hex || color)
   }
   const onChangeComplete = () => {
