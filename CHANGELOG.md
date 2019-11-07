@@ -2,8 +2,13 @@
 
 ## Unreleased
 
-- `@theme-ui/editor` add `StylesForm` component
+## v0.2.48 2019-11-07
+
 - `@theme-ui/editor` add components for editing `sx` styles
+
+## v0.2.47 2019-10-29
+
+- `@theme-ui/editor` add `StylesForm` component
 
 ## v0.2.46 2019-10-28
 
