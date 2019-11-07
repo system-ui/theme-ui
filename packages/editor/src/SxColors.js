@@ -7,9 +7,7 @@ export const SxColors = ({
     color,
     bg,
   } = {},
-  theme: {
-    colors = {},
-  } = {},
+  theme,
   onChange,
 }) => {
   return (
@@ -26,6 +24,7 @@ export const SxColors = ({
           alignItems: 'center',
         }}>
         <ThemeColorPicker
+          theme={theme}
           value={color || ''}
           onChange={color => {
             onChange({ color })
@@ -39,6 +38,7 @@ export const SxColors = ({
           alignItems: 'center',
         }}>
         <ThemeColorPicker
+          theme={theme}
           value={bg || ''}
           onChange={bg => {
             onChange({ bg })

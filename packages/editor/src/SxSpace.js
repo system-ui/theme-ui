@@ -10,22 +10,13 @@ export const SxSpace = ({
   onChange,
 }) => {
   const [lock, setLock] = useState({ x: false, y: false })
-  const key = property === 'margin' ? 'm' : p
+  const key = property === 'margin' ? 'm' : 'p'
   const x = value[key + 'x'] || value[property + 'X'] || ''
   const y = value[key + 'y'] || value[property + 'Y'] || ''
   const t = lock.y ? y : value[key + 't'] || value[property + 'Top'] || ''
   const b = lock.y ? y : value[key + 'b'] || value[property + 'Bottom'] || ''
   const l = lock.x ? x : value[key + 'l'] || value[property + 'Left'] || ''
   const r = lock.x ? x : value[key + 'r'] || value[property + 'Right'] || ''
-
-  /*
-  mx = mx || marginX || ''
-  my = my || marginY || ''
-  mt = lock.y ? my || marginY || '' : mt || marginTop || ''
-  mb = lock.y ? my || marginY || '' : mb || marginBottom || ''
-  ml = lock.x ? mx || marginX || '' : ml || marginLeft || ''
-  mr = lock.x ? mx || marginX || '' : mr || marginRight || ''
-  */
 
   useEffect(() => {
     if (typeof x === 'number') setLock(lock => ({ ...lock, x: true }))
