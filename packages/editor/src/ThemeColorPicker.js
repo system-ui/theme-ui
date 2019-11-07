@@ -22,7 +22,7 @@ export const ThemeColorPicker = ({
       .filter(color => /^#/.test(color)),
   ]
   const onChange = color => {
-    const [ key ] = Object.entries(colors).find(([k, v]) => v === color.hex)
+    const [ key ] = Object.entries(colors).find(([k, v]) => v === color.hex) || []
     props.onChange(key || color.hex || color)
   }
   const onChangeComplete = () => {
