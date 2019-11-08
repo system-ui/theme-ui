@@ -118,7 +118,7 @@ import { tint } from '@theme-ui/color'
 
 ### `alpha`
 
-Set the transparancy of a color to an amount 0-1
+Set the transparency of a color to an amount 0-1
 
 ```js
 
