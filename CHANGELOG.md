@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/color`: add `alpha` utility #441
+
 ## v0.2.48 2019-11-07
 
 - `@theme-ui/editor` add components for editing `sx` styles
