@@ -1,0 +1,36 @@
+---
+title: Slider
+---
+
+# Slider
+
+Range input element
+
+```js
+import { Slider } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Slider
+  defaultValue={25}
+/>
+```
+
+## Variants
+
+Slider variants can be defined in the `theme.forms` object.
+The `Slider` component uses `theme.forms.slider` as its default variant style.
+
+```js
+// example theme variants
+{
+  forms: {
+    slider: {
+      // adjust default styles here
+    },
+    redSlider: {
+      color: 'red',
+    },
+  },
+}
+```
