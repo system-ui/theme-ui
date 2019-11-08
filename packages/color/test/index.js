@@ -9,6 +9,7 @@ import {
   saturate,
   shade,
   tint,
+  alpha,
   mix,
   complement,
   invert,
@@ -70,6 +71,11 @@ test('shade', () => {
 test('tint', () => {
   const n = tint('primary', 0.25)(theme)
   expect(n).toBe('#3fd8ff')
+})
+
+test('alpha', () => {
+  const n = alpha('primary', 0.25)(theme)
+  expect(n).toBe('rgba(0,204,255,0.25)')
 })
 
 test('mix', () => {
@@ -147,6 +153,11 @@ test('shadeCustomProps', () => {
 test('tintCustomProps', () => {
   const n = tint('primary', 0.25)(themeCustomProps)
   expect(n).toBe('#3fd8ff')
+})
+
+test('alphaCustomProps', () => {
+  const n = alpha('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('rgba(0,204,255,0.25)')
 })
 
 test('mixCustomProps', () => {
