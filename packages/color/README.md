@@ -116,6 +116,16 @@ import { tint } from '@theme-ui/color'
 // tint('primary', amount)
 ```
 
+### `alpha`
+
+Set the transparancy of a color to an amount 0-1
+
+```js
+
+import { alpha } from '@theme-ui/color'
+// alpha('primary', amount)
+```
+
 ### `mix`
 
 Mix two colors by a specific ratio
