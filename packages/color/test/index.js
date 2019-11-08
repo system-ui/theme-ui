@@ -75,7 +75,7 @@ test('tint', () => {
 
 test('alpha', () => {
   const n = alpha('primary', 0.25)(theme)
-  expect(n).toBe('rgba(0,204,255,0.5)')
+  expect(n).toBe('rgba(0,204,255,0.25)')
 })
 
 test('mix', () => {
@@ -157,7 +157,7 @@ test('tintCustomProps', () => {
 
 test('alphaCustomProps', () => {
   const n = alpha('primary', 0.25)(themeCustomProps)
-  expect(n).toBe('rgba(0,204,255,0.5)')
+  expect(n).toBe('rgba(0,204,255,0.25)')
 })
 
 test('mixCustomProps', () => {
