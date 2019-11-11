@@ -19298,25 +19298,25 @@ readline2@^1.0.1:
     is-fullwidth-code-point "^1.0.0"
     mute-stream "0.0.5"
 
-reakit-system@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/reakit-system/-/reakit-system-0.6.6.tgz#0737af0239a125dd17b1475cd5d1cbb428daf4e1"
-  integrity sha512-EzhnYAuYTqRci7xkv68PiquHRJpRGDWGEJKTO+0s5cr1f4soooJ3ms0tE7/dQRSSseGon+79jJ4bvfVDvCNing==
+reakit-system@^0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/reakit-system/-/reakit-system-0.6.8.tgz#c01697f61652f8df1c8022ebfbbae33f5a172bf9"
+  integrity sha512-q0ppF9T/+s89IdUL+LKKdi/RrZojpcOOhiDnpNJ5GbcMbOwM/i7H6i8Zd+uqAUcZV90sd0aj8TqVrFa9m12VnQ==
 
-reakit-utils@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/reakit-utils/-/reakit-utils-0.6.6.tgz#c6bff99b8ce15339968ea65643468c9cd193e242"
-  integrity sha512-YbyHQ310biVmDkhl4wRhXMvn2cl4ooL2nlpfI753dwPJxEsSqvyayhqLth/j+a4+44J0YeqBCCH3LDoYBrGg2Q==
+reakit-utils@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/reakit-utils/-/reakit-utils-0.7.0.tgz#06af652edca1b1ae3fc93f07ac952db39f4be4c3"
+  integrity sha512-DU3I0QnqYo7ewbSGQhUl/vJjnJlHe8sZGEJpX60uLiBepkBbf63Ns5xxQz6FoOVN1WqxKH+bm6yQ3KpkhE4CTw==
 
 reakit@^1.0.0-beta.6:
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.0.0-beta.9.tgz#378baaf27fb33a2c71a3d87225e916a3418655ea"
-  integrity sha512-rWHW3QnuKDrxfgL3hv/ah/nqbhEozpApLWtrwNpWPMZOoRAuzydgKM2l6rsmxS1aCVR7SmOt6Bv4iwl651SuIg==
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.0.0-beta.11.tgz#cc881ffef5b802cd56cf0662605d4197125a79ac"
+  integrity sha512-v2Pr3IPav+YiPDv8bRvwMsq3317Fkm+q/5xnJsR/nasBDg6ZBiv6Fg4HfGPR6BmlQSn1Ieasbtt5HBNFObDTCw==
   dependencies:
     body-scroll-lock "^2.6.4"
     popper.js "^1.15.0"
-    reakit-system "^0.6.6"
-    reakit-utils "^0.6.6"
+    reakit-system "^0.6.8"
+    reakit-utils "^0.7.0"
 
 realpath-native@^1.1.0:
   version "1.1.0"
