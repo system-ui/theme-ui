@@ -1,0 +1,48 @@
+---
+title: Badge
+---
+
+# Badge
+
+```js
+import { Badge } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Badge>Badge</Badge>
+```
+
+```jsx live=true
+<Heading>
+  Components
+  <Badge variant='accent'>New</Badge>
+  <Badge variant='outline' ml={1}>Cool</Badge>
+</Heading>
+```
+
+```jsx live=true
+<Avatar src={images.logo} />
+<Badge variant='circle' ml={-3} mt={-3}>16</Badge>
+```
+
+## Variants
+
+Badge variants can be defined in `theme.badges`.
+The `Badge` component uses `theme.badges.primary` as its default variant.
+
+```js
+// example theme variants
+{
+  badges: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
+    },
+  },
+}
+```

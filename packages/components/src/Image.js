@@ -10,6 +10,7 @@ export const Image = React.forwardRef((props, ref) => (
     __css={{
       maxWidth: '100%',
       height: 'auto',
+      ...props.__css
     }}
   />
 ))

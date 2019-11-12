@@ -1,0 +1,33 @@
+---
+title: Close
+---
+
+# Close
+
+Button with close (×) icon.
+
+```js
+import { Close } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Close />
+```
+
+The `Close` component renders as a `<button>` element by default. Pass any button attributes as props to the component.
+
+## Variants
+
+Close component variants can be defined in the `theme.buttons` object.
+The `Close` component uses `theme.buttons.close` as its default variant style.
+
+```js
+// example theme variants
+{
+  buttons: {
+    close: {
+      color: 'primary',
+    }
+  }
+}
+```
