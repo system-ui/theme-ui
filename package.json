@@ -25,6 +25,7 @@
     "husky": ">=1",
     "jest": "^24.8.0",
     "jest-emotion": "^10.0.11",
+    "jest-mock-console": "^1.0.0",
     "lerna": "^3.14.1",
     "lint-staged": "9",
     "microbundle": "^0.11.0",

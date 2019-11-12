@@ -3,6 +3,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
+import mockConsole from 'jest-mock-console'
 import {
   jsx,
   ThemeProvider,
@@ -376,7 +377,8 @@ test('useThemeUI returns current color mode colors', () => {
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
-  jest.spyOn(global.console, 'warn')
+  const restore = mockConsole()
+  // jest.spyOn(global.console, 'warn')
   const root = render(
     <ThemeProvider
       theme={{
@@ -395,6 +397,7 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
     />
   )
   expect(console.warn).toBeCalled()
+  restore()
 })
 
 test('dot notation works with color modes', () => {
