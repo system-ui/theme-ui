@@ -173,6 +173,23 @@ export default {
       bg: 'muted',
     },
   },
+  alerts: {
+    primary: {
+      color: 'background',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary'
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent'
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight'
+    },
+  },
   styles: {
     Container: {
       p: 3,

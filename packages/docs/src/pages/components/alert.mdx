@@ -1,0 +1,45 @@
+---
+title: Alert
+---
+
+# Alert
+
+Component for displaying messages, notifications, or other application state.
+
+```js
+import { Alert } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Alert>
+  Beep boop, this is an alert!
+  <Close ml='auto' mr={-2} />
+</Alert>
+```
+
+```jsx live=true
+<Alert variant='secondary' mb={2}>Secondary</Alert>
+<Alert variant='accent' mb={2}>Accent</Alert>
+<Alert variant='highlight' mb={2}>Highlight</Alert>
+```
+
+## Variants
+
+Alert variants can be defined in `theme.alerts`.
+The `Alert` component uses `theme.alerts.primary` as its default variant.
+
+```js
+// example theme variants
+{
+  alerts: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+    },
+    muted: {
+      color: 'text',
+      bg: 'muted',
+    },
+  },
+}
+```
