@@ -1,0 +1,33 @@
+---
+title: Donut
+---
+
+# Donut
+
+Range input element
+
+```js
+import { Donut } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Donut
+  value={1/2}
+/>
+```
+
+## Variants
+
+Donut variants can be defined anywhere in the `theme` object.
+
+```js
+// example theme variants
+{
+  styles: {
+    donut: {
+      color: 'red',
+    },
+  },
+}
+// <Donut variant='styles.donut' />
+```
