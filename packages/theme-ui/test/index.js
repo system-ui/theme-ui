@@ -3,6 +3,7 @@ import { mdx } from '@mdx-js/react'
 import { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
+import mockConsole from 'jest-mock-console'
 import { ThemeProvider, Context, Styled, jsx, useColorMode } from '../src/index'
 
 expect.extend(matchers)
@@ -122,7 +123,7 @@ test('custom pragma adds styles', () => {
 })
 
 test('warns when multiple versions of emotion are installed', () => {
-  jest.spyOn(global.console, 'warn')
+  const restore = mockConsole()
   const json = renderJSON(
     <Context.Provider
       value={{
@@ -132,6 +133,7 @@ test('warns when multiple versions of emotion are installed', () => {
     </Context.Provider>
   )
   expect(console.warn).toBeCalled()
+  restore()
 })
 
 test('functional themes receive outer theme', () => {

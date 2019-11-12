@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 
 import tachyonsGenerator from 'tachyons-generator'
+import mockConsole from 'jest-mock-console'
 import toTachyons from '../src'
 
 const theme = {
@@ -34,7 +35,10 @@ it('transforms a theme config to a Tachyons config', () => {
 })
 
 it('generates the proper config for the Tachyons generator', async () => {
+  // ignore warnings
+  const restore = mockConsole()
   const { css: result } = await tachyonsGenerator(toTachyons(theme)).generate()
 
   expect(result).toMatchSnapshot()
+  restore()
 })
