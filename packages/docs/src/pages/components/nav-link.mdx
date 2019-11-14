@@ -1,0 +1,44 @@
+---
+title: NavLink
+---
+
+# NavLink
+
+Link component for use in navigation
+
+```js
+import { NavLink } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Flex as='nav'>
+  <NavLink href='#!' p={2}>
+    Home
+  </NavLink>
+  <NavLink href='#!' p={2}>
+    Blog
+  </NavLink>
+  <NavLink href='#!' p={2}>
+    About
+  </NavLink>
+</Flex>
+```
+
+## Variants
+
+NavLink variants can be defined in the `theme.links` object.
+By default the `NavLink` component will use styles defined in `theme.links.nav`.
+
+```js
+// example theme variants
+{
+  links: {
+    nav: {
+      px: 2,
+      py: 1,
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    }
+  }
+}
+```

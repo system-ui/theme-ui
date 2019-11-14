@@ -64,6 +64,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
+    container: 768,
   },
   text: {
     heading: {
