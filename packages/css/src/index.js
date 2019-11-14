@@ -8,7 +8,7 @@ export const get = (obj, key, def, p, undef) => {
 
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const defaultTheme = {
+const defaultTheme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 }
@@ -147,7 +147,7 @@ const transforms = [
   {}
 )
 
-export const responsive = styles => theme => {
+const responsive = styles => theme => {
   const next = {}
   const breakpoints = get(theme, 'breakpoints', defaultBreakpoints)
   const mediaQueries = [
@@ -219,5 +219,3 @@ export const css = args => (props = {}) => {
 
   return result
 }
-
-export default css

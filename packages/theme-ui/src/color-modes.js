@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { css } from '@styled-system/css'
+import { css } from '@theme-ui/css'
 import { Global } from '@emotion/core'
 import { useThemeUI } from './context'
 import { createColorStyles } from './custom-properties'
