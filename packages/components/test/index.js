@@ -19,6 +19,23 @@ import {
   Radio,
   Checkbox,
   Slider,
+  Field,
+  Progress,
+  Donut,
+  Spinner,
+  Avatar,
+  Badge,
+  Close,
+  Alert,
+  Divider,
+  Embed,
+  AspectRatio,
+  AspectImage,
+  Container,
+  NavLink,
+  Message,
+  IconButton,
+  MenuButton,
 } from '../src'
 
 expect.extend(matchers)
@@ -335,6 +352,193 @@ describe('Slider', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Slider />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Field', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Field />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Progress', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Progress />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Donut', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Donut />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Spinner', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Spinner />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Avatar', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Avatar />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Badge', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Badge />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Close', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Close />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Alert', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Alert />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Divider', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Divider />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Embed', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Embed />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('AspectRatio', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <AspectRatio />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('AspectImage', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <AspectImage />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Container', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Container />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('NavLink', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <NavLink />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Message', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Message />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('IconButton', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <IconButton />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('MenuButton', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <MenuButton />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
