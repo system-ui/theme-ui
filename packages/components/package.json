@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.2.46",
+  "version": "0.2.49",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
