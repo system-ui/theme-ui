@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## v0.2.49 2019-11-15
+
+- `@theme-ui/components`: add more components #458
 - `@theme-ui/color`: add `alpha` utility #441
 
 ## v0.2.48 2019-11-07
