@@ -4,19 +4,25 @@ import { useThemeUI } from 'theme-ui'
 // Shared with @styled-system/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const useBreakpointIndex = () => {
+export const useBreakpointIndex = defaultIndex => {
   const context = useThemeUI()
   const breakpoints =
     (context.theme && context.theme.breakpoints) || defaultBreakpoints
 
-  const getIndex = useCallback(
-    () =>
-      breakpoints.filter(
-        breakpoint =>
-          window.matchMedia(`screen and (min-width: ${breakpoint})`).matches
-      ).length,
-    [breakpoints]
-  )
+  const getIndex = useCallback(() => {
+    if (typeof window === 'undefined') {
+      if (typeof defaultIndex === 'number') return defaultIndex
+      throw new TypeError(
+        'To use @theme-ui/match-media hooks on the server, you must pass a default index. Got: ' +
+          defaultIndex
+      )
+    }
+
+    return breakpoints.filter(
+      breakpoint =>
+        window.matchMedia(`screen and (min-width: ${breakpoint})`).matches
+    ).length
+  }, [breakpoints, defaultIndex])
 
   const [value, setValue] = useState(getIndex)
 
@@ -34,9 +40,9 @@ export const useBreakpointIndex = () => {
   return value
 }
 
-export const useResponsiveValue = values => {
+export const useResponsiveValue = (values, defaultIndex) => {
   const { theme } = useThemeUI()
   const array = typeof values === 'function' ? values(theme) : values
-  const index = useBreakpointIndex()
+  const index = useBreakpointIndex(defaultIndex)
   return array[index >= array.length ? array.length - 1 : index]
 }
