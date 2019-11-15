@@ -17386,7 +17386,7 @@ polished@^3.4.1:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
-popper.js@^1.15.0:
+popper.js@^1.16.0:
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.0.tgz#2e1816bcbbaa518ea6c2e15a466f4cb9c6e2fbb3"
   integrity sha512-+G+EkOPoE5S/zChTpmBSSDYmhXJ5PsW8eMhH8cP/CQHMFPBG/kC9Y5IIw6qNYgdJ+/COf0ddY2li28iHaZRSjw==
@@ -19506,25 +19506,25 @@ readline2@^1.0.1:
     is-fullwidth-code-point "^1.0.0"
     mute-stream "0.0.5"
 
-reakit-system@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/reakit-system/-/reakit-system-0.6.6.tgz#0737af0239a125dd17b1475cd5d1cbb428daf4e1"
-  integrity sha512-EzhnYAuYTqRci7xkv68PiquHRJpRGDWGEJKTO+0s5cr1f4soooJ3ms0tE7/dQRSSseGon+79jJ4bvfVDvCNing==
+reakit-system@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/reakit-system/-/reakit-system-0.7.0.tgz#f630fe18af7a2a5a510035db36744c8d47798170"
+  integrity sha512-6MaQsoyIhU0b0RGfIfGSSGujCx0XVBtfJkRcn+TviiWwMXGS9liTCDBE1vn7fLnUYiR6kqll50Nmw//oIn97cg==
 
-reakit-utils@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/reakit-utils/-/reakit-utils-0.6.6.tgz#c6bff99b8ce15339968ea65643468c9cd193e242"
-  integrity sha512-YbyHQ310biVmDkhl4wRhXMvn2cl4ooL2nlpfI753dwPJxEsSqvyayhqLth/j+a4+44J0YeqBCCH3LDoYBrGg2Q==
+reakit-utils@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/reakit-utils/-/reakit-utils-0.7.1.tgz#f596327fcf66d6adf5c0dba2ca34b3e63994e1ec"
+  integrity sha512-xQJctof9V+wkC7OxSL7P14d5Se6l/apCfhY8liIfVihtakzXOkvKea4Ka/TbEfpoTKN7MRO4xNMxjfzuGFexHQ==
 
 reakit@^1.0.0-beta.6:
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.0.0-beta.9.tgz#378baaf27fb33a2c71a3d87225e916a3418655ea"
-  integrity sha512-rWHW3QnuKDrxfgL3hv/ah/nqbhEozpApLWtrwNpWPMZOoRAuzydgKM2l6rsmxS1aCVR7SmOt6Bv4iwl651SuIg==
+  version "1.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.0.0-beta.12.tgz#89ae018ecd8a8a7250b3bd1f374564a112c9270b"
+  integrity sha512-jf/0RWmJypG9wFbbCSj9mFxb474TCFnAweKnrh3yLJiMjKDEAFXic0cNyhqxSuOUUyZeT67bUFbu25DXBNfRmQ==
   dependencies:
     body-scroll-lock "^2.6.4"
-    popper.js "^1.15.0"
-    reakit-system "^0.6.6"
-    reakit-utils "^0.6.6"
+    popper.js "^1.16.0"
+    reakit-system "^0.7.0"
+    reakit-utils "^0.7.1"
 
 realpath-native@^1.1.0:
   version "1.1.0"
