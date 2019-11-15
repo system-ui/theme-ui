@@ -4,7 +4,8 @@ import Box from './Box'
 export const Progress = React.forwardRef((props, ref) => (
   <Box
     ref={ref}
-    as='progress'
+    as="progress"
+    variant="styles.progress"
     {...props}
     __css={{
       display: 'block',

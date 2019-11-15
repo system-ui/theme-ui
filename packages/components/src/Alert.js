@@ -4,9 +4,8 @@ import Box from './Box'
 export const Alert = React.forwardRef((props, ref) => (
   <Box
     ref={ref}
-    variant='primary'
     {...props}
-    __themeKey='alerts'
+    __themeKey="alerts"
     __css={{
       display: 'flex',
       alignItems: 'center',

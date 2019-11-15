@@ -4,8 +4,8 @@ import Box from './Box'
 export const Divider = React.forwardRef((props, ref) => (
   <Box
     ref={ref}
-    as='hr'
-    variant='__styles.hr'
+    as="hr"
+    variant="styles.hr"
     {...props}
     __css={{
       color: 'gray',
