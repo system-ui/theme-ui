@@ -64,6 +64,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
+    container: 768,
   },
   text: {
     heading: {
@@ -93,6 +94,31 @@ export default {
       variant: 'buttons.primary',
       color: 'background',
       bg: 'secondary',
+    },
+  },
+  badges: {
+    primary: {
+      color: 'background',
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight',
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
+    },
+    circle: {
+      height: 16,
+      minWidth: 16,
+      lineHeight: '16px',
+      textAlign: 'center',
+      borderRadius: 9999,
     },
   },
   images: {
@@ -146,6 +172,23 @@ export default {
     },
     slider: {
       bg: 'muted',
+    },
+  },
+  alerts: {
+    primary: {
+      color: 'background',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary'
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent'
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight'
     },
   },
   styles: {

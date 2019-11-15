@@ -1,0 +1,32 @@
+---
+title: Avatar
+---
+
+# Avatar
+
+```js
+import { Avatar } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Avatar
+  src={images.logo}
+/>
+```
+
+## Variants
+
+Avatar style variants can be defined in the `theme.images` object and uses `theme.images.avatar` by default.
+
+```js
+// example theme variants
+{
+  images: {
+    avatar: {
+      width: 48,
+      height: 48,
+      borderRadius: 99999,
+    },
+  }
+}
+```
