@@ -11,7 +11,14 @@ export const useBreakpointIndex = defaultIndex => {
 
   const getIndex = useCallback(() => {
     if (typeof window === 'undefined') {
-      if (typeof defaultIndex === 'number') return defaultIndex
+      if (typeof defaultIndex === 'number') {
+        if (0 < defaultIndex || defaultIndex > breakpoints.length - 1) {
+          throw new RangeError(
+            `Default breakpoint index out of range. Theme has ${breakpoints.length} breakpoints, got index ${defaultIndex}`
+          )
+        }
+        return defaultIndex
+      }
       throw new TypeError(
         'To use @theme-ui/match-media hooks on the server, you must pass a default index. Got: ' +
           defaultIndex

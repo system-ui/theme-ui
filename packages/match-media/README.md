@@ -37,6 +37,8 @@ const MyComponent = () => {
 }
 ```
 
+### Server side rendering
+
 Each hook also accepts a default breakpoint index to use when rendering on the server.
 
 ```js
