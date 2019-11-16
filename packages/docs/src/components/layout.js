@@ -16,7 +16,7 @@ import Button from './button'
 import Sidebar from '../sidebar.mdx'
 
 // replace with components package
-import { Header, Footer, Layout, Main, Container } from 'theme-ui'
+import { Header, Layout, Main, Container } from 'theme-ui'
 
 const modes = ['light', 'dark', 'deep', 'swiss']
 
@@ -53,6 +53,9 @@ export default props => {
       <Layout>
         <Header
           sx={{
+            height: 64,
+            px: 3,
+            alignItems: 'center',
             justifyContent: 'space-between',
           }}>
           <Flex sx={{ alignItems: 'center' }}>
@@ -83,7 +86,6 @@ export default props => {
           <div
             sx={{
               display: ['block', 'flex'],
-              mx: props.fullwidth ? 0 : -3,
             }}>
             <div
               ref={nav}
@@ -115,7 +117,7 @@ export default props => {
               sx={{
                 width: '100%',
                 minWidth: 0,
-                maxWidth: 768,
+                maxWidth: props.fullwidth ? 'none' : 768,
                 mx: 'auto',
                 px: props.fullwidth ? 0 : 3,
               }}>
@@ -125,15 +127,6 @@ export default props => {
             </div>
           </div>
         </Main>
-        {props.fullwidth && (
-          <Footer sx={{ py: 3 }}>
-            <div sx={{ mx: 'auto' }} />
-            <NavLink to="/">Theme UI</NavLink>
-            <NavLink href="https://github.com/system-ui/theme-ui">
-              GitHub
-            </NavLink>
-          </Footer>
-        )}
       </Layout>
     </Styled.root>
   )
