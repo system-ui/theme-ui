@@ -12,7 +12,7 @@ export const useBreakpointIndex = defaultIndex => {
   const getIndex = useCallback(() => {
     if (typeof window === 'undefined') {
       if (typeof defaultIndex === 'number') {
-        if (0 < defaultIndex || defaultIndex > breakpoints.length - 1) {
+        if (defaultIndex < 0 || defaultIndex > breakpoints.length - 1) {
           throw new RangeError(
             `Default breakpoint index out of range. Theme has ${breakpoints.length} breakpoints, got index ${defaultIndex}`
           )
