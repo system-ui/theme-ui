@@ -154,8 +154,46 @@ export const AccordionButton = props => {
   )
 }
 
-export const AccordionNav = React.forwardRef(
-  ({ open, children, components = {}, className, ...props }, ref) => {
+const NavLinks = ({
+  open,
+  pathname = '',
+  links,
+  href,
+  Link,
+  ...props
+}) => {
+  if (!links) return false
+  if (!open && !pathname.includes(href)) return false
+
+  return (
+    <ul
+      sx={{
+        listStyle: 'none',
+        m: 0,
+        p: 0,
+        pl: 3,
+      }}>
+      {links.map((link, j) => (
+        <li key={j}>
+          <Link
+            href={link.props.href}
+            children={link.props.children}
+            className={link.props.className}
+          />
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export const AccordionNav = React.forwardRef(({
+  open,
+  children,
+  components = {},
+  className,
+  pathname = '',
+  ...props
+}, ref) => {
     const links = createNestedLinks(children)
     const [expanded, setExpanded] = useState({})
     const Link = components.a || 'a'
@@ -218,25 +256,12 @@ export const AccordionNav = React.forwardRef(
                     />
                   )}
                 </div>
-                {expanded[i] && (
-                  <ul
-                    sx={{
-                      listStyle: 'none',
-                      m: 0,
-                      p: 0,
-                      pl: 3,
-                    }}>
-                    {link.props.links.map((l, j) => (
-                      <li key={j}>
-                        <Link
-                          href={l.props.href}
-                          children={l.props.children}
-                          className={l.props.className}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <NavLinks
+                  {...link.props}
+                  open={expanded[i]}
+                  pathname={pathname}
+                  Link={Link}
+                />
               </li>
             ))}
           </ul>

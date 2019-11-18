@@ -101,6 +101,7 @@ export default props => {
               <Sidebar
                 open={menuOpen}
                 components={sidebar}
+                pathname={props.location.pathname}
                 sx={{
                   display: [null, props.fullwidth ? 'none' : 'block'],
                   width: 256,
