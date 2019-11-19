@@ -23,6 +23,7 @@
     "@theme-ui/color": "^0.2.49",
     "@theme-ui/components": "^0.2.49",
     "@theme-ui/editor": "^0.2.49",
+    "@theme-ui/match-media": "^0.2.49",
     "@theme-ui/presets": "^0.2.44",
     "@theme-ui/prism": "^0.2.46",
     "@theme-ui/sidenav": "^0.2.49",
