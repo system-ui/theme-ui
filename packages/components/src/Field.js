@@ -13,7 +13,7 @@ export const Field = React.forwardRef(({
   return (
     <Box {...getMargin(props)}>
       <Label htmlFor={name}>
-        {name}
+        {label}
       </Label>
       <Control
         ref={ref}
