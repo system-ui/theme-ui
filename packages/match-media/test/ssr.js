@@ -7,7 +7,7 @@ import { Fragment } from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
-test('falls back to default index', () => {
+test("falls back to user's default index", () => {
   const Component = props => {
     const value = useResponsiveValue(['a', 'b'], 1)
     const index = useBreakpointIndex(2)
@@ -23,16 +23,18 @@ test('falls back to default index', () => {
   expect(root).toEqual('b 2')
 })
 
-test('requires a default index for SSR', () => {
+test('defaults to first breakpoint without user input', () => {
+  let value
+  let index
   const Component = props => {
-    const value = useResponsiveValue(['a', 'b'])
-    const index = useBreakpointIndex()
+    value = useResponsiveValue(['a', 'b'])
+    index = useBreakpointIndex()
     return null
   }
 
-  expect(() => ReactDOMServer.renderToStaticMarkup(<Component />)).toThrowError(
-    TypeError
-  )
+  ReactDOMServer.renderToStaticMarkup(<Component />)
+  expect(value).toEqual('a')
+  expect(index).toEqual(0)
 })
 
 test('requires default index be in range', () => {
@@ -51,4 +53,19 @@ test('requires default index be in range', () => {
       </ThemeProvider>
     )
   expect(Example).toThrowError(RangeError)
+})
+
+test('requires default index be a number', () => {
+  const Component = ({ index }) => {
+    const value = useResponsiveValue(['a', 'b'], index)
+    const themeIndex = useBreakpointIndex(index)
+    return null
+  }
+
+  const createRender = defaultIndex => () =>
+    ReactDOMServer.renderToStaticMarkup(<Component index={defaultIndex} />)
+
+  expect(createRender(() => 2)).toThrowError(TypeError)
+  expect(createRender('2')).toThrowError(TypeError)
+  expect(createRender({ index: 2 })).toThrowError(TypeError)
 })

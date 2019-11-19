@@ -4,7 +4,7 @@ import { useThemeUI } from 'theme-ui'
 // Shared with @styled-system/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const useBreakpointIndex = defaultIndex => {
+export const useBreakpointIndex = (defaultIndex = 0) => {
   const context = useThemeUI()
   const breakpoints =
     (context.theme && context.theme.breakpoints) || defaultBreakpoints
@@ -20,8 +20,7 @@ export const useBreakpointIndex = defaultIndex => {
         return defaultIndex
       }
       throw new TypeError(
-        'To use @theme-ui/match-media hooks on the server, you must pass a default index. Got: ' +
-          defaultIndex
+        `Default breakpoint index should be a number. Got: ${defaultIndex}, ${typeof defaultIndex}`
       )
     }
 
