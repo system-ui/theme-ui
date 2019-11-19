@@ -22,20 +22,9 @@ export default props => (
           mb: 4,
         },
         a: {
-          display: 'inline-block',
-          textDecoration: 'none',
-          fontWeight: 'bold',
-          fontSize: 2,
-          p: 3,
-          color: 'background',
-          bg: 'text',
+          variant: 'links.button',
           mr: 3,
           mb: 3,
-          borderRadius: 6,
-          '&:hover, &:focus': {
-            color: 'background',
-            bg: 'primary',
-          },
         },
       },
     }}>

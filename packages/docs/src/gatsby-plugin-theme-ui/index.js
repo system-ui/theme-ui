@@ -95,8 +95,30 @@ export default {
       color: 'background',
       bg: 'secondary',
     },
+    black: {
+      fontWeight: 'bold',
+      color: 'background',
+      bg: 'text',
+      '&:hover, &:focus': {
+        bg: 'primary',
+      },
+    },
   },
   links: {
+    button: {
+      display: 'inline-block',
+      textDecoration: 'none',
+      fontWeight: 'bold',
+      fontSize: 2,
+      p: 3,
+      color: 'background',
+      bg: 'text',
+      borderRadius: 6,
+      '&:hover, &:focus': {
+        color: 'background',
+        bg: 'primary',
+      },
+    },
     nav: {
       display: 'block',
       width: '100%',
