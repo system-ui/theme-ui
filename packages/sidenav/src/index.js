@@ -179,7 +179,6 @@ const NavLinks = ({
         listStyle: 'none',
         m: 0,
         p: 0,
-        pl: 3,
       }}>
       {links.map((link, j) => (
         <li key={j}>
@@ -187,6 +186,9 @@ const NavLinks = ({
             href={link.props.href}
             children={link.props.children}
             className={link.props.className}
+            sx={{
+              pl: 4
+            }}
           />
         </li>
       ))}

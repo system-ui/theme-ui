@@ -106,6 +106,14 @@ export default {
       textDecoration: 'none',
       fontSize: 1,
       fontWeight: 'bold',
+      bg: 'transparent',
+      transitionProperty: 'background-color',
+      transitionTimingFunction: 'ease-out',
+      transitionDuration: '.2s',
+      borderRadius: 2,
+      '&:hover': {
+        bg: 'highlight',
+      },
       '&.active': {
         color: 'primary',
         bg: 'highlight',
