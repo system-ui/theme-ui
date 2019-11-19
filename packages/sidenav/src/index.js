@@ -116,10 +116,12 @@ export const Sidenav = React.forwardRef(
 
 export const AccordionButton = props => {
   const transform = props.open ? 'rotate(-180 8 8)' : 'rotate(0 8 8)'
+  const disabled = props.pathname && props.pathname.includes(props.href)
 
   return (
     <button
       title="Expand Section"
+      disabled={disabled}
       {...props}
       sx={{
         appearance: 'none',
@@ -134,8 +136,14 @@ export const AccordionButton = props => {
         ':hover,:focus': {
           color: 'primary',
         },
+        '&:disabled': {
+          opacity: 0.25,
+        }
       }}>
-      <svg viewBox="0 0 16 16" width="16" height="16">
+      <svg
+        viewBox="0 0 16 16"
+        width="12"
+        height="12">
         <g
           sx={{
             transformOrigin: '8 8',
@@ -248,6 +256,8 @@ export const AccordionNav = React.forwardRef(({
                   />
                   {link.props.links && (
                     <AccordionButton
+                      href={link.props.href}
+                      pathname={pathname}
                       open={expanded[i]}
                       sx={{
                         ml: 'auto',
