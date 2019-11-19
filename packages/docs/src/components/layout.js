@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { Global } from '@emotion/core'
 import { Flex } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
+import { Link } from 'gatsby'
 
 import SkipLink from './skip-link'
 // import Sidebar from './sidebar'
@@ -67,7 +68,7 @@ export default props => {
                 if (navLink) navLink.focus()
               }}
             />
-            <NavLink to="/">Theme UI</NavLink>
+            <Link to="/" sx={{ variant: 'links.nav' }}>Theme UI</Link>
           </Flex>
           <Flex>
             <NavLink href="https://github.com/system-ui/theme-ui">

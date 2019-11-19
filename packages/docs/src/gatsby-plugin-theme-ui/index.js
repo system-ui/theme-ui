@@ -96,6 +96,22 @@ export default {
       bg: 'secondary',
     },
   },
+  links: {
+    nav: {
+      display: 'block',
+      width: '100%',
+      px: 2,
+      py: 2,
+      color: 'inherit',
+      textDecoration: 'none',
+      fontSize: 1,
+      fontWeight: 'bold',
+      '&.active': {
+        color: 'primary',
+        bg: 'highlight',
+      },
+    },
+  },
   badges: {
     primary: {
       color: 'background',
