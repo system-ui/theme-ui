@@ -2,7 +2,7 @@
 import { jsx, Styled, useColorMode } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Global } from '@emotion/core'
-import { Flex } from '@theme-ui/components'
+import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
 
@@ -15,9 +15,6 @@ import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
 import Sidebar from '../sidebar.mdx'
-
-// replace with components package
-import { Header, Layout, Main, Container } from 'theme-ui'
 
 const modes = ['light', 'dark', 'deep', 'swiss']
 
@@ -51,8 +48,13 @@ export default props => {
         }}
       />
       <SkipLink>Skip to content</SkipLink>
-      <Layout>
-        <Header
+      <Flex
+        sx={{
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}>
+        <Flex
+          as='header'
           sx={{
             height: 64,
             px: 3,
@@ -82,8 +84,11 @@ export default props => {
               {mode}
             </Button>
           </Flex>
-        </Header>
-        <Main>
+        </Flex>
+        <Box
+          sx={{
+            flex: '1 1 auto',
+          }}>
           <div
             sx={{
               display: ['block', 'flex'],
@@ -114,7 +119,7 @@ export default props => {
                 }}
               />
             </div>
-            <div
+            <main
               id="content"
               sx={{
                 width: '100%',
@@ -126,10 +131,10 @@ export default props => {
               {props.children}
               <EditLink />
               {!props.fullwidth && <Pagination />}
-            </div>
+            </main>
           </div>
-        </Main>
-      </Layout>
+        </Box>
+      </Flex>
     </Styled.root>
   )
 }
