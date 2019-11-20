@@ -33,6 +33,24 @@ export default props => (
 )
 ```
 
+## Extending the Typography.js theme
+
+Use a deep merge utility, like the `deepmerge` package, to extend or override the returned theme object.
+
+```js
+import { toTheme } from '@theme-ui/typography'
+import wp2016 from 'typography-theme-wordpress-2016'
+import merge from 'deepmerge'
+
+const theme = merge(toTheme(wp2016), {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+  },
+})
+```
+
 _Demo content below_
 
 ---
