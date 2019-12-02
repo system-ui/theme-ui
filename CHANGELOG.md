@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/components`: fix NavLink base styles #497
+
 ## v0.2.49 2019-11-15
 
 - `@theme-ui/components`: add more components #458
