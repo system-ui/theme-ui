@@ -17,7 +17,7 @@
     "theme-ui": "^0.2.49"
   },
   "devDependencies": {
-    "@babel/core": "7.6.0",
+    "@babel/core": "7.7.4",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": [
