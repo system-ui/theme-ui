@@ -6,7 +6,7 @@ export const NavLink = React.forwardRef((props, ref) => (
     ref={ref}
     variant='nav'
     {...props}
-    sx={{
+    __css={{
       color: 'inherit',
       textDecoration: 'none',
       fontWeight: 'bold',
@@ -14,7 +14,6 @@ export const NavLink = React.forwardRef((props, ref) => (
       '&:hover, &:focus, &.active': {
         color: 'primary',
       },
-      ...props.sx
     }}
   />
 ))

@@ -4,7 +4,6 @@ import { Image } from './Image'
 
 export const AspectImage = React.forwardRef(({
   ratio,
-  sx,
   ...props
 }, ref) => (
   <AspectRatio
@@ -12,9 +11,8 @@ export const AspectImage = React.forwardRef(({
     <Image
       ref={ref}
       {...props}
-      sx={{
+      __css={{
         objectFit: 'cover',
-        ...sx,
       }}
     />
   </AspectRatio>
