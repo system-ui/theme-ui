@@ -58,3 +58,22 @@ const MyComponent = () => {
 }
 ```
 
+Each hook uses `breakpoints[0]` by default, if not specified.
+
+```js
+import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media'
+
+const MyComponent = () => {
+  const color = useResponsiveValue(['red', 'green', 'blue'])
+  const index = useBreakpointIndex()
+
+  return (
+    <div>
+      The current color is: {color}, and the current index is: {index} 
+   // Gatsby will output: 
+   // The current color is: red, and the current index is: 0
+    </div>
+  )
+}
+```
+
