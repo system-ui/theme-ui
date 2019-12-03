@@ -48,7 +48,7 @@ const MyComponent = () => {
   const color = useResponsiveValue(['red', 'green', 'blue'], {
     defaultIndex: 1
   })
-  const index = useBreakpointIndex({ defaultIndex: 1 })
+  const index = useBreakpointIndex({ defaultIndex: 0 })
 
   return (
     <div>
