@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.2.51 2019-12-03
+
 - `@theme-ui/editor`: fix color picker #498
 
 ## v0.2.50 2019-12-02
