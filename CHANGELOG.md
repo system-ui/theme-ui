@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/editor`: fix color picker #498
+
 ## v0.2.50 2019-12-02
 
 - `@theme-ui/components`: fix NavLink base styles #497
