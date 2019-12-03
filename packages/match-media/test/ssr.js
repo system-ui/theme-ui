@@ -9,8 +9,8 @@ import { useResponsiveValue, useBreakpointIndex } from '../src'
 
 test("falls back to user's default index", () => {
   const Component = props => {
-    const value = useResponsiveValue(['a', 'b'], 1)
-    const index = useBreakpointIndex(2)
+    const value = useResponsiveValue(['a', 'b'], { defaultIndex: 1 })
+    const index = useBreakpointIndex({ defaultIndex: 2 })
     return (
       <Fragment>
         {value} {index}
@@ -39,8 +39,8 @@ test('defaults to first breakpoint without user input', () => {
 
 test('requires default index be in range', () => {
   const Component = props => {
-    const value = useResponsiveValue(['a', 'b'], 4)
-    const index = useBreakpointIndex(4)
+    const value = useResponsiveValue(['a', 'b'], { defaultIndex: 4 })
+    const index = useBreakpointIndex({ defaultIndex: 4 })
     return null
   }
   const Example = () =>
@@ -57,8 +57,8 @@ test('requires default index be in range', () => {
 
 test('requires default index be a number', () => {
   const Component = ({ index }) => {
-    const value = useResponsiveValue(['a', 'b'], index)
-    const themeIndex = useBreakpointIndex(index)
+    const value = useResponsiveValue(['a', 'b'], { defaultIndex: index })
+    const themeIndex = useBreakpointIndex({ defaultIndex: index })
     return null
   }
 

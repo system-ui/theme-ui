@@ -39,14 +39,16 @@ const MyComponent = () => {
 
 ### Server side rendering
 
-Each hook also accepts a default breakpoint index to use when rendering on the server.
+Each hook also accepts an options object, used to set a default breakpoint index when rendering on the server.
 
 ```js
 import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media'
 
 const MyComponent = () => {
-  const color = useResponsiveValue(['red', 'green', 'blue'], 1)
-  const index = useBreakpointIndex(0)
+  const color = useResponsiveValue(['red', 'green', 'blue'], {
+    defaultIndex: 1
+  })
+  const index = useBreakpointIndex({ defaultIndex: 1 })
 
   return (
     <div>
