@@ -1,15 +1,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
+import tinycolor from 'tinycolor2'
 import { GithubPicker } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 import { useEditor } from './context'
 
-export const ThemeColorPicker = ({
-  children,
-  theme,
-  ...props
-}) => {
+export const ThemeColorPicker = ({ children, theme, ...props }) => {
   const popover = usePopoverState()
   const context = useEditor()
   const { colors } = theme || context.theme
@@ -22,7 +19,11 @@ export const ThemeColorPicker = ({
       .filter(color => /^#/.test(color)),
   ]
   const onChange = color => {
-    const [ key ] = Object.entries(colors).find(([k, v]) => v === color.hex) || []
+    const [key] =
+      Object.entries(colors).find(
+        ([k, v]) => tinycolor(v).toHexString() === color.hex
+      ) || []
+
     props.onChange(key || color.hex || color)
   }
   const onChangeComplete = () => {
