@@ -47,9 +47,10 @@ export const useBreakpointIndex = (options = {}) => {
   return value
 }
 
-export const useResponsiveValue = (values, defaultIndex) => {
+export const useResponsiveValue = (values, options = {}) => {
   const { theme } = useThemeUI()
+  const { defaultIndex = 0 } = options
   const array = typeof values === 'function' ? values(theme) : values
-  const index = useBreakpointIndex(defaultIndex)
+  const index = useBreakpointIndex({ defaultIndex })
   return array[index >= array.length ? array.length - 1 : index]
 }
