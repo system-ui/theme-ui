@@ -57,6 +57,8 @@ export const objectToVars = (parent, obj) => {
       }
     } else {
       vars[toVarName(name)] = value
+        .replace(/^var\(--(\w+)(.*?), /, '')
+        .replace(/\)/, '')
     }
   }
   return vars
