@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/match-media`: add option for default index in hook #460
+
 ## v0.2.51 2019-12-03
 
 - `@theme-ui/editor`: fix color picker #498
