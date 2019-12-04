@@ -14,6 +14,7 @@
 
 - `@theme-ui/components`: add more components #458
 - `@theme-ui/color`: add `alpha` utility #441
+- `@theme-ui/match-media`: Add default breakpoint index argument for SSR
 
 ## v0.2.48 2019-11-07
 
