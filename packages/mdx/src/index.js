@@ -4,7 +4,7 @@
 
 import { jsx } from '@theme-ui/core'
 import { css, get } from '@theme-ui/css'
-import { forwardRef, useContext } from 'react'
+import React from 'react'
 import { ThemeContext } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
 import { MDXProvider as _MDXProvider } from '@mdx-js/react'
@@ -55,10 +55,10 @@ const aliases = {
 const alias = n => aliases[n] || n
 
 export const styled = tag => (...args) => {
-  const Styled = forwardRef(({ as, ...props }, ref) => {
+  const Styled = React.forwardRef(({ as, ...props }, ref) => {
     const shouldForwardProps =
       typeof tag !== 'string' || (as && typeof as !== 'string')
-    const theme = useContext(ThemeContext)
+    const theme = React.useContext(ThemeContext)
     let nextProps = shouldForwardProps ? props : {}
     let styles = {}
     args.forEach(arg => {

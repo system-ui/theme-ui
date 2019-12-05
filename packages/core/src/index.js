@@ -19,12 +19,7 @@ import {
   ThemeContext as EmotionContext,
 } from '@emotion/core'
 import { css, get } from '@theme-ui/css'
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-} from 'react'
+import React from 'react'
 import deepmerge from 'deepmerge'
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
 
@@ -52,12 +47,12 @@ const parseProps = props => {
 export const jsx = (type, props, ...children) =>
   emotion.apply(undefined, [type, parseProps(props), ...children])
 
-export const Context = createContext({
+export const Context = React.createContext({
   __EMOTION_VERSION__,
   theme: null,
 })
 
-export const useThemeUI = () => useContext(Context)
+export const useThemeUI = () => React.useContext(Context)
 
 const canUseSymbol = typeof Symbol === 'function' && Symbol.for
 
@@ -119,10 +114,10 @@ const storage = {
 }
 
 export const useColorState = theme => {
-  const [mode, setMode] = useState(theme.initialColorModeName || 'default')
+  const [mode, setMode] = React.useState(theme.initialColorModeName || 'default')
 
   // initialize state
-  useEffect(() => {
+  React.useEffect(() => {
     const stored = storage.get()
     document.body.classList.remove('theme-ui-' + stored)
     // consider prefers-color-scheme media query
@@ -130,7 +125,7 @@ export const useColorState = theme => {
     setMode(stored)
   }, [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!mode) return
     storage.set(mode)
   }, [mode])
