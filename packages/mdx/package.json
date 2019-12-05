@@ -1,0 +1,22 @@
+{
+  "name": "@theme-ui/mdx",
+  "version": "0.2.48",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^1.5.1"
+  },
+  "peerDependencies": {
+    "@theme-ui/core": "*"
+  },
+  "author": "Brent Jackson",
+  "repository": "system-ui/theme-ui",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
