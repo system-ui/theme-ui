@@ -40,11 +40,12 @@ export {
 } from '@theme-ui/css'
 export {
   jsx,
-  // ThemeProvider,
   Context,
+  merge,
   useThemeUI,
+  useColorMode,
 } from '@theme-ui/core'
-// @theme-ui/color-modes
+// consider @theme-ui/color-modes ???
 export {
   Styled,
   components,

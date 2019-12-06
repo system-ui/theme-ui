@@ -1,6 +1,6 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
@@ -57,10 +57,7 @@ test('creates non-standard components', () => {
 
 test('styles React components', () => {
   const Beep = props => <h2 {...props} />
-  const Inner = props => {
-    const context = useContext(Context)
-    return mdx(context.components.Beep, props)
-  }
+  const Inner = props => mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider

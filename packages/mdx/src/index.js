@@ -55,7 +55,7 @@ const aliases = {
 const alias = n => aliases[n] || n
 
 export const styled = tag => (...args) => {
-  const Styled = React.forwardRef(({ as, ...props }, ref) => {
+  const Component = React.forwardRef(({ as, ...props }, ref) => {
     const shouldForwardProps =
       typeof tag !== 'string' || (as && typeof as !== 'string')
     const theme = React.useContext(ThemeContext)
@@ -79,7 +79,7 @@ export const styled = tag => (...args) => {
       css: styles,
     })
   })
-  return Styled
+  return Component
 }
 
 export const themed = key => props =>
@@ -94,10 +94,10 @@ tags.forEach(tag => {
   Styled[tag] = components[tag]
 })
 
-const createComponents = () => {
-  const next = {}
-  Object.keys(components).forEach(key => {
-    next[key] = styled(components[key])(themed(key))
+const createComponents = (comps = {}) => {
+  const next = { ...components }
+  Object.keys(comps).forEach(key => {
+    next[key] = styled(comps[key])(themed(key))
   })
   return next
 }

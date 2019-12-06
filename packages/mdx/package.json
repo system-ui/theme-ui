@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
+    "@emotion/is-prop-valid": "^0.8.5",
     "@mdx-js/react": "^1.5.1"
   },
   "peerDependencies": {
-    "@theme-ui/core": "*"
+    "@theme-ui/core": "*",
+    "@theme-ui/css": "*",
+    "react": "^16.11.0"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",

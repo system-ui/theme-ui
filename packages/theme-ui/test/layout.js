@@ -26,7 +26,7 @@ test.each([
   expect(json).toMatchSnapshot()
 })
 
-test('forwards ref to div', () => {
+test.skip('forwards ref to div', () => {
   const ref = React.createRef(null)
   const tree = render(<Box ref={ref} />)
   expect(ref.current.tagName).toBe('DIV')

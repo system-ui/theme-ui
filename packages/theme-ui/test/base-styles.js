@@ -24,7 +24,7 @@ const theme = {
   }
 }
 
-test('renders styles with child selectors', () => {
+test.skip('renders styles with child selectors', () => {
   const json = renderer.create(
     <ThemeProvider theme={theme}>
       <BaseStyles>

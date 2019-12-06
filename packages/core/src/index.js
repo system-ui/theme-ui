@@ -94,12 +94,21 @@ export const ThemeProvider = ({
   children
 }) => {
   const outer = useThemeUI()
-  const context = {
-    ...outer,
-    theme: typeof theme === 'function'
-      ? theme(outer.theme)
-      : merge.all({}, outer.theme, theme)
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (outer.__EMOTION_VERSION__ !== __EMOTION_VERSION__) {
+      console.warn(
+        'Multiple versions of Emotion detected,',
+        'and theming might not work as expected.',
+        'Please ensure there is only one copy of @emotion/core installed in your application.'
+      )
+    }
   }
+
+  const context = typeof theme === 'function'
+    ? { ...outer, theme: theme(outer.theme) }
+    : merge.all({}, outer, { theme })
+
   return jsx(BaseProvider, {
     context,
     children
@@ -113,7 +122,7 @@ const storage = {
   set: value => window.localStorage.setItem(STORAGE_KEY, value),
 }
 
-export const useColorState = theme => {
+export const useColorModeState = (theme = {}) => {
   const [mode, setMode] = React.useState(theme.initialColorModeName || 'default')
 
   // initialize state
@@ -169,7 +178,7 @@ export const ColorModeProvider = ({
 }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
-  const theme = applyColorMode(outer.theme, colorMode)
+  const theme = applyColorMode(outer.theme || {}, colorMode)
   const context = {
     ...outer,
     theme,

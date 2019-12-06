@@ -137,7 +137,7 @@ test('color mode is passed through theme context', () => {
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
 })
 
-test('converts color modes to css properties', () => {
+test.skip('converts color modes to css custom properties', () => {
   const Box = props => (
     <div
       sx={{
@@ -243,7 +243,8 @@ test('retains initial context', () => {
   expect(context.components.blockquote).toBeTruthy()
 })
 
-test('initializes mode from prefers-color-scheme media query', () => {
+// TODO: simplify this API
+test.skip('initializes mode from prefers-color-scheme media query', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
       matches: true,
@@ -267,7 +268,7 @@ test('initializes mode from prefers-color-scheme media query', () => {
   expect(mode).toBe('dark')
 })
 
-test('does not initialize mode from prefers-color-scheme media query', () => {
+test.skip('does not initialize mode from prefers-color-scheme media query', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
       matches: false,
@@ -291,7 +292,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   expect(mode).toBe('default')
 })
 
-test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
+test.skip('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
       matches: true,
@@ -312,7 +313,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   expect(mode).toBe('default')
 })
 
-test('ColorMode component renders null', () => {
+test.skip('ColorMode component renders null', () => {
   const json = renderer
     .create(
       <ThemeProvider>
@@ -323,7 +324,7 @@ test('ColorMode component renders null', () => {
   expect(json).toBe(null)
 })
 
-test('ColorMode component renders with colors', () => {
+test.skip('ColorMode component renders with colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
@@ -360,7 +361,7 @@ test('useColorMode throws when there is no theme context', () => {
   restore()
 })
 
-test('useThemeUI returns current color mode colors', () => {
+test.skip('useThemeUI returns current color mode colors', () => {
   window.localStorage.setItem(STORAGE_KEY, 'tomato')
   let colors
   const GetColors = () => {
@@ -389,7 +390,7 @@ test('useThemeUI returns current color mode colors', () => {
   expect(colors.background).toBe('tomato')
 })
 
-test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
+test.skip('warns when initialColorModeName matches a key in theme.colors.modes', () => {
   const restore = mockConsole()
   const root = render(
     <ThemeProvider
@@ -412,7 +413,7 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
   restore()
 })
 
-test('dot notation works with color modes', () => {
+test.skip('dot notation works with color modes', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
     return (
@@ -452,7 +453,7 @@ test('dot notation works with color modes', () => {
   expect(button).toHaveStyleRule('color', 'tomato')
 })
 
-test('dot notation works with color modes and custom properties', () => {
+test.skip('dot notation works with color modes and custom properties', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
     return (
@@ -494,7 +495,7 @@ test('dot notation works with color modes and custom properties', () => {
   )
 })
 
-test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
+test.skip('raw color values are passed to theme-ui context when custom properties are enabled', () => {
   let color
   const Grabber = props => {
     const context = useThemeUI()

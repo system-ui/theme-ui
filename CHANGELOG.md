@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### v0.3
+- Split theme-ui package into `@theme-ui/core` and `@theme-ui/mdx`
+- Removes `context.components`
+- Separate `ColorModeProvider` component
+- Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
+- No longer initializes color mode based on `prefers-color-scheme` media query - TODO: provide alternative API
+
 - `@theme-ui/color`: add `alpha` utility #441
 
 ## v0.2.48 2019-11-07
