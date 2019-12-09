@@ -3,10 +3,13 @@ import {
   jsx,
   useThemeUI,
   merge,
-  BaseProvider,
+  Context,
 } from '@theme-ui/core'
 import { get } from '@theme-ui/css'
-import { Global } from '@emotion/core'
+import {
+  Global,
+  ThemeContext as EmotionContext
+} from '@emotion/core'
 import {
   toCustomProperties,
   createColorStyles,
@@ -76,7 +79,7 @@ const applyColorMode = (theme, mode) => {
   const modes = get(theme, 'colors.modes', {})
   // TODO: test for how this affects usage
   if (theme.useCustomProperties !== false) {
-    theme.colors = toCustomProperties(theme.colors, 'colors')
+    // theme.colors = toCustomProperties(theme.colors, 'colors')
   }
   return merge.all({}, theme, {
     colors: get(modes, mode, {}),
@@ -85,10 +88,22 @@ const applyColorMode = (theme, mode) => {
 
 export const ColorMode = () =>
   jsx(Global, {
-    styles: theme => ({
-      body: createColorStyles(theme)
-    })
+    styles: createColorStyles
   })
+
+const BaseProvider = ({ context, children }) => {
+  const theme = {...context.theme}
+  if (theme.useCustomProperties !== false) {
+    theme.colors = toCustomProperties(theme.colors, 'colors')
+  }
+  return jsx(
+    EmotionContext.Provider, { value: theme },
+    jsx(Context.Provider, {
+      value: context,
+      children
+    })
+  )
+}
 
 export const ColorModeProvider = ({
   children,

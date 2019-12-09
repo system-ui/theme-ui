@@ -66,8 +66,10 @@ export const createColorStyles = (theme = {}) => {
   if (!theme.colors || !theme.colors.modes) return {}
   if (theme.useCustomProperties === false) {
     return css({
-      color: 'text',
-      bg: 'background',
+      body: {
+        color: 'text',
+        bg: 'background',
+      },
     })(theme)
   }
   const { modes } = theme.colors
@@ -79,8 +81,10 @@ export const createColorStyles = (theme = {}) => {
   })
 
   return css({
-    ...styles,
-    color: t => `var(--theme-ui-colors-text, ${t.colors.text})`,
-    bg: t => `var(--theme-ui-colors-background, ${t.colors.background})`,
+    body: {
+      ...styles,
+      color: t => `var(--theme-ui-colors-text, ${t.colors.text})`,
+      bg: t => `var(--theme-ui-colors-background, ${t.colors.background})`,
+    }
   })(theme)
 }

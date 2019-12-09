@@ -9,6 +9,7 @@ import {
   ColorModeProvider,
   useColorMode,
   ColorMode,
+  InitializeColorMode,
 } from '../src'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
@@ -18,6 +19,8 @@ beforeEach(() => {
   localStorage.removeItem(STORAGE_KEY)
 })
 expect.extend(matchers)
+
+const renderJSON = el => renderer.create(el).toJSON()
 
 test('renders with color modes', () => {
   let json
@@ -412,7 +415,7 @@ test('useThemeUI returns current color mode colors', () => {
   expect(colors.background).toBe('tomato')
 })
 
-test.skip('warns when initialColorModeName matches a key in theme.colors.modes', () => {
+test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
   const restore = mockConsole()
   const root = render(
     <ThemeProvider
@@ -428,14 +431,15 @@ test.skip('warns when initialColorModeName matches a key in theme.colors.modes',
             },
           },
         },
-      }}
-    />
+      }}>
+      <ColorModeProvider />
+    </ThemeProvider>
   )
   expect(console.warn).toBeCalled()
   restore()
 })
 
-test.skip('dot notation works with color modes', () => {
+test('dot notation works with color modes', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
     return (
@@ -467,7 +471,9 @@ test.skip('dot notation works with color modes', () => {
           },
         },
       }}>
-      <Button />
+      <ColorModeProvider>
+        <Button />
+      </ColorModeProvider>
     </ThemeProvider>
   )
   const button = root.getByText('test')
@@ -475,7 +481,7 @@ test.skip('dot notation works with color modes', () => {
   expect(button).toHaveStyleRule('color', 'tomato')
 })
 
-test.skip('dot notation works with color modes and custom properties', () => {
+test('dot notation works with color modes and custom properties', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
     return (
@@ -506,7 +512,9 @@ test.skip('dot notation works with color modes and custom properties', () => {
           },
         },
       }}>
-      <Button />
+      <ColorModeProvider>
+        <Button />
+      </ColorModeProvider>
     </ThemeProvider>
   )
   const button = root.getByText('test')
@@ -517,7 +525,7 @@ test.skip('dot notation works with color modes and custom properties', () => {
   )
 })
 
-test.skip('raw color values are passed to theme-ui context when custom properties are enabled', () => {
+test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
   let color
   const Grabber = props => {
     const context = useThemeUI()
@@ -536,8 +544,17 @@ test.skip('raw color values are passed to theme-ui context when custom propertie
           },
         },
       }}>
-      <Grabber />
+      <ColorModeProvider>
+        <Grabber />
+      </ColorModeProvider>
     </ThemeProvider>
   )
   expect(color).toBe('tomato')
+})
+
+test('InitializeColorMode renders', () => {
+  const json = renderJSON(
+    <InitializeColorMode />
+  )
+  expect(json).toMatchSnapshot()
 })

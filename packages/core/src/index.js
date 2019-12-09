@@ -74,7 +74,7 @@ export const merge = (a, b) =>
 
 merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
 
-export const BaseProvider = ({ context, children }) =>
+const BaseProvider = ({ context, children }) =>
   jsx(
     EmotionContext.Provider, { value: context.theme },
     jsx(Context.Provider, {

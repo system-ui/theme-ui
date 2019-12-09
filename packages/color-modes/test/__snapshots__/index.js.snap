@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ColorModeProvider renders with global colors 1`] = `"body{color:tomato;background-color:black;}"`;
+
+exports[`InitializeColorMode renders 1`] = `
+<script
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "(function() { try {
+  var mode = localStorage.getItem('theme-ui-color-mode');
+  if (!mode) return
+  document.body.classList.add('theme-ui-' + mode);
+} catch (e) {} })();",
+    }
+  }
+/>
+`;
