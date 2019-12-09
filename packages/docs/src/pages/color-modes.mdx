@@ -62,19 +62,15 @@ export default props => {
 
 ## Applying colors
 
-The previous steps will enable a color mode state and pass it through context.
-To apply the color mode values to the `<body>` element, render the `ColorMode` component in your application.
-
-If you're using Gatsby to build your app, follow the [instructions below](#gatsby-plugin).
+The ThemeProvider component will automatically apply color mode styles to the `<body>` element.
 
 ```jsx
 import React from 'react'
-import { ThemeProvider, ColorMode } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
 export default props => (
   <ThemeProvider theme={theme}>
-    <ColorMode />
     {props.children}
   </ThemeProvider>
 )
@@ -157,6 +153,8 @@ is named `default`. If you'd like to customize it you can do so by setting
 }
 ```
 
+<!-- TODO
+
 ### Initialize dark mode with `prefers-color-scheme: dark`
 
 To initialize a dark color mode based on the `prefers-color-scheme: dark` media query, add the `useColorSchemeMediaQuery` flag to your theme.
@@ -178,3 +176,5 @@ If you do not have a color mode named `dark`, this will have no effect.
   }
 }
 ```
+
+-->
