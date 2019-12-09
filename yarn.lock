@@ -39,9 +39,9 @@
   integrity sha512-gACGfsVKinCy/977FSrlVgo6jxTZ0lcTCvCnRlNwvSOcxJVm+jJR3sP7/F43fpak9Gsq/EwFaatfnNMbunPc+w==
 
 "@babel/cli@^7.4.4":
-  version "7.7.4"
-  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.7.4.tgz#38804334c8db40209f88c69a5c90998e60cca18b"
-  integrity sha512-O7mmzaWdm+VabWQmxuM8hqNrWGGihN83KfhPUzp2lAW4kzIMwBxujXkZbD4fMwKMYY9FXTbDvXsJqU+5XHXi4A==
+  version "7.7.5"
+  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.7.5.tgz#25702cc65418efc06989af3727897b9f4c8690b6"
+  integrity sha512-y2YrMGXM3NUyu1Myg0pxg+Lx6g8XhEyvLHYNRwTBV6fDek3H7Io6b7N/LXscLs4HWn4HxMdy7f2rM1rTMp2mFg==
   dependencies:
     commander "^4.0.1"
     convert-source-map "^1.1.0"
@@ -1183,15 +1183,6 @@
     lodash "^4.17.13"
 
 "@babel/types@^7.0.0", "@babel/types@^7.3.0", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.6.0", "@babel/types@^7.6.3", "@babel/types@^7.7.0", "@babel/types@^7.7.1", "@babel/types@^7.7.2", "@babel/types@^7.7.4":
-  version "7.7.4"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.7.4.tgz#516570d539e44ddf308c07569c258ff94fde9193"
-  integrity sha512-cz5Ji23KCi4T+YIE/BolWosrJuSmoZeN1EFnRtBwF+KKLi8GG/Z2c2hOJJeCXPk4mwk4QFvTmwIodJowXgttRA==
-  dependencies:
-    esutils "^2.0.2"
-    lodash "^4.17.13"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.7.4.tgz#516570d539e44ddf308c07569c258ff94fde9193"
   integrity sha512-cz5Ji23KCi4T+YIE/BolWosrJuSmoZeN1EFnRtBwF+KKLi8GG/Z2c2hOJJeCXPk4mwk4QFvTmwIodJowXgttRA==
