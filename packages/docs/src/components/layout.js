@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Layout, Main, Container } from 'theme-ui'
+import { jsx, Styled, Container } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Global } from '@emotion/core'
 
@@ -29,9 +29,17 @@ export default props => {
         }}
       />
       <SkipLink>Skip to content</SkipLink>
-      <Layout>
+      <div
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}>
         <Header nav={nav} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Main>
+        <main
+          sx={{
+            flex: '1 1 auto',
+          }}>
           <Container
             sx={{
               pt: 0,
@@ -75,9 +83,9 @@ export default props => {
               </div>
             </div>
           </Container>
-        </Main>
+        </main>
         {props.fullwidth && <Footer />}
-      </Layout>
+      </div>
     </Styled.root>
   )
 }

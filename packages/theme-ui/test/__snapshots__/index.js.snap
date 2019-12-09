@@ -1,20 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BaseStyles renders 1`] = `
-Array [
-  <Global
-    styles={[Function]}
-  />,
-  .emotion-0 {
+.emotion-0 {
   font-family: system-ui,sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
 
 <div
-    className="emotion-0"
-  />,
-]
+  className="emotion-0"
+/>
 `;
 
 exports[`creates non-standard components 1`] = `

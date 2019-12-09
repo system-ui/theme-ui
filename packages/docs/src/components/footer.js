@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Footer, Container } from 'theme-ui'
+import { jsx, Container } from 'theme-ui'
 import NavLink from './nav-link'
 
 export default props => (
-  <Footer
+  <footer
     sx={{
       py: 3,
     }}>
@@ -14,5 +14,5 @@ export default props => (
         <NavLink href="https://github.com/system-ui/theme-ui">GitHub</NavLink>
       </div>
     </Container>
-  </Footer>
+  </footer>
 )

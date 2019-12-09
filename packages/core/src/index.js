@@ -1,8 +1,10 @@
 // todo/figure out
-// - [ ] color modes
-// - [ ] custom properties
+// - [x] color modes
+// - [x] custom properties
 // - [x] mdx components @theme-ui/mdx
+// - [ ] monkey test with docs
 // - [ ] better default color mode name API
+// - [ ] initialize color mode from media query
 
 // API
 //  <ThemeProvider theme={theme}>

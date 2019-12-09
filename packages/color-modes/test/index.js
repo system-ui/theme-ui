@@ -410,6 +410,33 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
   restore()
 })
 
+test('does not warn in production', () => {
+  const restore = mockConsole()
+  const init = process.env.NODE_ENV
+  process.env.NODE_ENV = 'production'
+  const root = render(
+    <ThemeProvider
+      theme={{
+        initialColorModeName: 'dark',
+        colors: {
+          text: '#000',
+          background: '#fff',
+          modes: {
+            dark: {
+              text: '#fff',
+              background: '#000',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider />
+    </ThemeProvider>
+  )
+  expect(console.warn).not.toBeCalled()
+  restore()
+  process.env.NODE_ENV = init
+})
+
 test('dot notation works with color modes', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()

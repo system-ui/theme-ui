@@ -83,6 +83,11 @@ test('mix', () => {
   expect(n).toBe('#4c59b2')
 })
 
+test('mix without third argument', () => {
+  const n = mix('primary', 'secondary')(theme)
+  expect(n).toBe('#337fcc')
+})
+
 test('complement', () => {
   const n = complement('secondary')(theme)
   expect(n).toBe('#693')

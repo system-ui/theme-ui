@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Header, Container, Flex, useColorMode } from 'theme-ui'
+import { jsx, Container, Flex, useColorMode } from 'theme-ui'
 import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
@@ -16,7 +16,7 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
   }
 
   return (
-    <Header>
+    <header>
       <Container>
         <Flex sx={{ justifyContent: 'space-between' }}>
           <Flex sx={{ alignItems: 'center' }}>
@@ -44,6 +44,6 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
           </Flex>
         </Flex>
       </Container>
-    </Header>
+    </header>
   )
 }

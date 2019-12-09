@@ -312,40 +312,6 @@ test.skip('does not initialize mode from prefers-color-scheme media query when u
   expect(mode).toBe('default')
 })
 
-test.skip('ColorMode component renders null', () => {
-  const json = renderer
-    .create(
-      <ThemeProvider>
-        <ColorMode />
-      </ThemeProvider>
-    )
-    .toJSON()
-  expect(json).toBe(null)
-})
-
-test.skip('ColorMode component renders with colors', () => {
-  const root = render(
-    <ThemeProvider
-      theme={{
-        useCustomProperties: false,
-        colors: {
-          text: 'tomato',
-          background: 'black',
-          modes: {
-            tomato: {
-              text: 'black',
-              background: 'tomato',
-            },
-          },
-        },
-      }}>
-      <ColorMode />
-    </ThemeProvider>
-  )
-  const styles = document.querySelector('style').innerHTML
-  expect(styles).toMatchSnapshot()
-})
-
 test('useColorMode throws when there is no theme context', () => {
   const restore = mockConsole()
   expect(() => {
@@ -360,7 +326,7 @@ test('useColorMode throws when there is no theme context', () => {
   restore()
 })
 
-test.skip('useThemeUI returns current color mode colors', () => {
+test('useThemeUI returns current color mode colors', () => {
   window.localStorage.setItem(STORAGE_KEY, 'tomato')
   let colors
   const GetColors = () => {
@@ -389,7 +355,7 @@ test.skip('useThemeUI returns current color mode colors', () => {
   expect(colors.background).toBe('tomato')
 })
 
-test.skip('warns when initialColorModeName matches a key in theme.colors.modes', () => {
+test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
   const restore = mockConsole()
   const root = render(
     <ThemeProvider
@@ -412,7 +378,7 @@ test.skip('warns when initialColorModeName matches a key in theme.colors.modes',
   restore()
 })
 
-test.skip('dot notation works with color modes', () => {
+test('dot notation works with color modes', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
     return (
@@ -452,7 +418,7 @@ test.skip('dot notation works with color modes', () => {
   expect(button).toHaveStyleRule('color', 'tomato')
 })
 
-test.skip('dot notation works with color modes and custom properties', () => {
+test('dot notation works with color modes and custom properties', () => {
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
     return (
@@ -494,7 +460,7 @@ test.skip('dot notation works with color modes and custom properties', () => {
   )
 })
 
-test.skip('raw color values are passed to theme-ui context when custom properties are enabled', () => {
+test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
   let color
   const Grabber = props => {
     const context = useThemeUI()
