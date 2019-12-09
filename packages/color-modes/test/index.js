@@ -360,8 +360,9 @@ test('ColorModeProvider renders with global colors', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  const styles = document.querySelector('style').innerHTML
-  expect(styles).toMatchSnapshot()
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.color).toBe('tomato')
+  expect(style.backgroundColor).toBe('black')
 })
 
 test('useColorMode throws when there is no theme context', () => {
