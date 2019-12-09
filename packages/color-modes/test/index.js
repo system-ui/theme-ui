@@ -214,35 +214,6 @@ test('initializes mode based on localStorage', () => {
   expect(mode).toBe('dark')
 })
 
-// from old implementation
-test.skip('inherits color mode state from parent context', () => {
-  let mode
-  const Consumer = props => {
-    const [colorMode] = useColorMode()
-    mode = colorMode
-    return false
-  }
-  render(
-    <ThemeProvider
-      theme={{
-        initialColorModeName: 'outer',
-        colors: {
-          modes: {
-            dark: {},
-          }
-        }
-      }}>
-      <ThemeProvider
-        theme={{
-          initialColorModeName: 'inner',
-        }}>
-        <Consumer />
-      </ThemeProvider>
-    </ThemeProvider>
-  )
-  expect(mode).toBe('outer')
-})
-
 test('retains initial context', () => {
   let context
   const Consumer = props => {

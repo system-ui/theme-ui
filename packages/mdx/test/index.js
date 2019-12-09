@@ -78,3 +78,16 @@ test('cleans up style props', () => {
   expect(json.props.id).toBe('test')
   expect(json.props.mx).not.toBeDefined()
 })
+
+test('styled cleans up non-HTML props', () => {
+  const Box = styled('div')()
+  const json = renderJSON(<Box beep="boop" />)
+  expect(json.props.beep).toBe(undefined)
+})
+
+test('styled does not clean props for components', () => {
+  const Base = props => <div {...props} />
+  const Box = styled(Base)()
+  const json = renderJSON(<Box x="hello" />)
+  expect(json.props.x).toBe('hello')
+})

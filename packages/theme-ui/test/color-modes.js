@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
+import { version as emotionVersion } from '@emotion/core/package.json'
 import {
   jsx,
   ThemeProvider,
@@ -137,7 +138,7 @@ test('color mode is passed through theme context', () => {
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
 })
 
-test.skip('converts color modes to css custom properties', () => {
+test('converts color modes to css custom properties', () => {
   const Box = props => (
     <div
       sx={{
@@ -237,10 +238,8 @@ test('retains initial context', () => {
       <Consumer />
     </ThemeProvider>
   )
-  expect(typeof context.components).toBe('object')
-  expect(context.components.h1).toBeTruthy()
-  expect(context.components.pre).toBeTruthy()
-  expect(context.components.blockquote).toBeTruthy()
+  expect(typeof context).toBe('object')
+  expect(context.__EMOTION_VERSION__).toBe(emotionVersion)
 })
 
 // TODO: simplify this API
