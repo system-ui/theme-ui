@@ -1,14 +1,13 @@
 // todo/figure out
 // - [ ] color modes
 // - [ ] custom properties
-// - [ ] mdx components @theme-ui/mdx
+// - [x] mdx components @theme-ui/mdx
 // - [ ] better default color mode name API
 
 // API
 //  <ThemeProvider theme={theme}>
 //    <ColorModeProvider>
 //      <MDXProvider>
-//        <ColorMode />
 //        <App />
 //      </MDXProvider>
 //    </ColorModeProvider>
@@ -75,7 +74,7 @@ export const merge = (a, b) =>
 
 merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
 
-const BaseProvider = ({ context, children }) =>
+export const BaseProvider = ({ context, children }) =>
   jsx(
     EmotionContext.Provider, { value: context.theme },
     jsx(Context.Provider, {
@@ -83,11 +82,6 @@ const BaseProvider = ({ context, children }) =>
       children
     })
   )
-
-// possible new api
-//  <ThemeProvider theme={theme}>
-//  <ColorModeProvider>
-//  <ComponentsProvider components={components}>
 
 export const ThemeProvider = ({
   theme,
@@ -114,83 +108,3 @@ export const ThemeProvider = ({
     children
   })
 }
-
-// color modes
-const STORAGE_KEY = 'theme-ui-color-mode'
-const storage = {
-  get: init => window.localStorage.getItem(STORAGE_KEY) || init,
-  set: value => window.localStorage.setItem(STORAGE_KEY, value),
-}
-
-export const useColorModeState = (theme = {}) => {
-  const [mode, setMode] = React.useState(theme.initialColorModeName || 'default')
-
-  // initialize state
-  React.useEffect(() => {
-    const stored = storage.get()
-    document.body.classList.remove('theme-ui-' + stored)
-    // consider prefers-color-scheme media query
-    if (!stored || stored === mode) return
-    setMode(stored)
-  }, [])
-
-  React.useEffect(() => {
-    if (!mode) return
-    storage.set(mode)
-  }, [mode])
-
-  if (process.env.NODE_ENV !== 'production') {
-    if (
-      theme.colors &&
-      theme.colors.modes &&
-      Object.keys(theme.colors.modes).indexOf(theme.initialColorModeName) > -1
-    ) {
-      console.warn(
-        'The `initialColorModeName` value should be a unique name' +
-          ' and cannot reference a key in `theme.colors.modes`.'
-      )
-    }
-  }
-
-  return [mode, setMode]
-}
-
-export const useColorMode = () => {
-  const { colorMode, setColorMode } = useThemeUI()
-
-  if (typeof setColorMode !== 'function') {
-    throw new Error(`[useColorMode] requires the ColorModeProvider component`)
-  }
-
-  return [colorMode, setColorMode]
-}
-
-const applyColorMode = (theme, mode) => {
-  if (!mode) return theme
-  const modes = get(theme, 'colors.modes', {})
-  return merge.all({}, theme, {
-    colors: get(modes, mode, {}),
-  })
-}
-
-export const ColorModeProvider = ({
-  children,
-}) => {
-  const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorModeState(outer.theme)
-  const theme = applyColorMode(outer.theme || {}, colorMode)
-  const context = {
-    ...outer,
-    theme,
-    colorMode,
-    setColorMode,
-  }
-
-  return jsx(BaseProvider, {
-    context,
-    children,
-  })
-}
-
-// export const ColorMode
-// export const InitializeColorMode

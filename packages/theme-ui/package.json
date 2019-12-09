@@ -20,6 +20,7 @@
     "@emotion/is-prop-valid": "^0.8.1",
     "@theme-ui/css": "^0.2.48",
     "@theme-ui/components": "^0.2.48",
+    "@theme-ui/color-modes": "^0.2.48",
     "@theme-ui/core": "^0.2.48",
     "@theme-ui/mdx": "^0.2.48",
     "deepmerge": "^4.0.0"

@@ -1,0 +1,28 @@
+{
+  "name": "@theme-ui/color-modes",
+  "version": "0.2.48",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "repository": "system-ui/theme-ui",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@theme-ui/core": "^0.2.48",
+    "@theme-ui/css": "^0.2.48",
+    "deepmerge": "^4.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  },
+  "devDependencies": {
+    "react": "^16.11.0"
+  }
+}

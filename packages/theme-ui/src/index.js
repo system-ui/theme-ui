@@ -2,8 +2,10 @@ import {
   jsx,
   useThemeUI,
   ThemeProvider as CoreProvider,
-  ColorModeProvider,
 } from '@theme-ui/core'
+import {
+  ColorModeProvider,
+} from '@theme-ui/color-modes'
 import {
   MDXProvider,
 } from '@theme-ui/mdx'
@@ -43,9 +45,10 @@ export {
   Context,
   merge,
   useThemeUI,
-  useColorMode,
 } from '@theme-ui/core'
-// consider @theme-ui/color-modes ???
+export {
+  useColorMode,
+} from '@theme-ui/color-modes'
 export {
   Styled,
   components,
