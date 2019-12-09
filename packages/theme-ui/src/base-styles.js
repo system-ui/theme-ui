@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import jsx from './jsx'
+import { jsx } from '@theme-ui/core'
 
 export const BaseStyles = props =>
   <div
