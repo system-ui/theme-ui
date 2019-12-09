@@ -50,13 +50,10 @@ export {
   Styled,
   components,
 } from '@theme-ui/mdx'
-// export {} from '@theme-ui/components'
+export * from '@theme-ui/components'
+
 /*
-export { jsx } from './jsx'
-export { ThemeProvider, ThemeStateProvider } from './provider'
-export { Context, useThemeUI } from './context'
 export { ColorMode, useColorMode, InitializeColorMode } from './color-modes'
-export { Styled, components } from './components'
 export { Box, Flex, Layout, Header, Main, Container, Footer } from './layout'
 export { BaseStyles } from './base-styles'
 export { css, get } from '@theme-ui/css'

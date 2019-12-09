@@ -78,7 +78,8 @@ test('styles React components', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('components accept an `as` prop', () => {
+// in theme-ui/mdx
+test.skip('components accept an `as` prop', () => {
   const Beep = props => <h2 {...props} />
   const json = renderJSON(
     <ThemeProvider
@@ -96,7 +97,8 @@ test('components accept an `as` prop', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('components with `as` prop receive all props', () => {
+// in theme-ui/mdx
+test.skip('components with `as` prop receive all props', () => {
   const Beep = props => <div {...props} />
   const json = renderJSON(<Styled.a as={Beep} activeClassName="active" />)
   expect(json.type).toBe('div')

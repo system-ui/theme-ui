@@ -8,6 +8,7 @@
 - Separate `ColorModeProvider` component
 - Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
 - No longer initializes color mode based on `prefers-color-scheme` media query - TODO: provide alternative API
+- Removes layout components (`Layout`, `Header`, `Main`, `Footer`)
 
 - `@theme-ui/color`: add `alpha` utility #441
 
