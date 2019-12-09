@@ -133,6 +133,25 @@ describe('jsx', () => {
     expect(json).toHaveStyleRule('margin', '4px')
   })
 
+  test('css prop accepts functions', () => {
+    const json = renderJSON(
+      jsx(ThemeProvider, {
+        theme: {
+          colors: {
+            primary: 'tomato',
+          }
+        }
+      },
+        jsx('div', {
+          css: t => ({
+            color: t.colors.primary,
+          }),
+        })
+      )
+    )
+    expect(json).toHaveStyleRule('color', 'tomato')
+  })
+
   test('sx and css prop can be used together', () => {
     const json = renderJSON(
       jsx('div', {
