@@ -7,7 +7,10 @@ import {
 } from '@theme-ui/core'
 import { get } from '@theme-ui/css'
 import { Global } from '@emotion/core'
-import { createColorStyles } from './custom-properties'
+import {
+  toCustomProperties,
+  createColorStyles,
+} from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 const storage = {
@@ -71,13 +74,17 @@ export const useColorMode = () => {
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
+  // TODO: test for how this affects usage
+  if (theme.useCustomProperties !== false) {
+    theme.colors = toCustomProperties(theme.colors, 'colors')
+  }
   return merge.all({}, theme, {
     colors: get(modes, mode, {}),
   })
 }
 
 export const ColorMode = () =>
-  jsx('Global', {
+  jsx(Global, {
     styles: theme => ({
       body: createColorStyles(theme)
     })

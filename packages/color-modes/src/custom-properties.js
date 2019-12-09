@@ -62,7 +62,7 @@ export const objectToVars = (parent, obj) => {
 }
 
 // create body styles for color modes
-export const createColorStyles = theme => {
+export const createColorStyles = (theme = {}) => {
   if (!theme.colors || !theme.colors.modes) return {}
   if (theme.useCustomProperties === false) {
     return css({

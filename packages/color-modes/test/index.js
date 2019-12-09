@@ -144,7 +144,7 @@ test('color mode is passed through theme context', () => {
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
 })
 
-test.skip('converts color modes to css custom properties', () => {
+test('converts color modes to css custom properties', () => {
   const Box = props => (
     <div
       sx={{
@@ -211,6 +211,7 @@ test('initializes mode based on localStorage', () => {
   expect(mode).toBe('dark')
 })
 
+// from old implementation
 test.skip('inherits color mode state from parent context', () => {
   let mode
   const Consumer = props => {
@@ -252,10 +253,9 @@ test('retains initial context', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(typeof context.components).toBe('object')
-  expect(context.components.h1).toBeTruthy()
-  expect(context.components.pre).toBeTruthy()
-  expect(context.components.blockquote).toBeTruthy()
+  expect(typeof context).toBe('object')
+  expect(typeof context.theme).toBe('object')
+  expect(typeof context.setColorMode).toBe('function')
 })
 
 // TODO: simplify this API
@@ -328,7 +328,7 @@ test.skip('does not initialize mode from prefers-color-scheme media query when u
   expect(mode).toBe('default')
 })
 
-test.skip('ColorMode component renders null', () => {
+test('ColorMode component renders null', () => {
   const json = renderer
     .create(
       <ThemeProvider>
@@ -339,7 +339,7 @@ test.skip('ColorMode component renders null', () => {
   expect(json).toBe(null)
 })
 
-test.skip('ColorMode component renders with colors', () => {
+test('ColorModeProvider renders with global colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
@@ -355,7 +355,9 @@ test.skip('ColorMode component renders with colors', () => {
           },
         },
       }}>
-      <ColorMode />
+      <ColorModeProvider>
+        <h1>Hello</h1>
+      </ColorModeProvider>
     </ThemeProvider>
   )
   const styles = document.querySelector('style').innerHTML
@@ -376,7 +378,7 @@ test('useColorMode throws when there is no theme context', () => {
   restore()
 })
 
-test.skip('useThemeUI returns current color mode colors', () => {
+test('useThemeUI returns current color mode colors', () => {
   window.localStorage.setItem(STORAGE_KEY, 'tomato')
   let colors
   const GetColors = () => {
@@ -387,6 +389,8 @@ test.skip('useThemeUI returns current color mode colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
+        // minor functional change
+        useCustomProperties: false,
         colors: {
           text: 'tomato',
           background: 'black',
