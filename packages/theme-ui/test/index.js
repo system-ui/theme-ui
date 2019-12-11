@@ -6,7 +6,9 @@ import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import {
   ThemeProvider, Context, Styled, jsx, useColorMode,
-  BaseStyles
+  BaseStyles,
+  Container,
+  Box,
 } from '../src/index'
 
 expect.extend(matchers)

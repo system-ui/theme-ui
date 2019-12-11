@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, ColorMode, components } from 'theme-ui'
+import { jsx, Styled, components } from 'theme-ui'
 import { ThemeContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import * as presets from '@theme-ui/presets'
@@ -17,7 +17,6 @@ export default ({ preset: presetName }) => {
 
   return (
     <div>
-      <ColorMode />
       <ThemeContext.Provider value={preset}>
         <Styled.root>
           <Styled.h2>Colors</Styled.h2>
