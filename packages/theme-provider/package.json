@@ -1,0 +1,21 @@
+{
+  "name": "@theme-ui/theme-provider",
+  "version": "0.2.48",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@theme-ui/core": "^0.2.48",
+    "@theme-ui/color-modes": "^0.2.48",
+    "@theme-ui/mdx": "^0.2.48"
+  },
+  "repository": "system-ui/theme-ui",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

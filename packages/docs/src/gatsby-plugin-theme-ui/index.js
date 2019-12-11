@@ -64,7 +64,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
-    container: 768,
+    container: 1024,
   },
   text: {
     heading: {
@@ -191,11 +191,13 @@ export default {
       bg: 'highlight'
     },
   },
-  styles: {
-    Container: {
+  layout: {
+    container: {
       p: 3,
-      maxWidth: 1024,
-    },
+      // maxWidth: 1024,
+    }
+  },
+  styles: {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',

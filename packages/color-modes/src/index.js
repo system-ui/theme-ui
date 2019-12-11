@@ -45,7 +45,6 @@ export const useColorModeState = (theme = {}) => {
 
   React.useEffect(() => {
     if (!mode) return
-    console.log('set mode', mode)
     storage.set(mode)
   }, [mode])
 
@@ -78,10 +77,6 @@ export const useColorMode = () => {
 const applyColorMode = (theme, mode) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
-  // TODO: test for how this affects usage
-  if (theme.useCustomProperties !== false) {
-    // theme.colors = toCustomProperties(theme.colors, 'colors')
-  }
   return merge.all({}, theme, {
     colors: get(modes, mode, {}),
   })
@@ -92,10 +87,11 @@ export const ColorMode = () =>
     styles: theme => createColorStyles(theme)
   })
 
+/*
 const BaseProvider = ({ context, children }) => {
   const theme = {...context.theme}
   if (theme.useCustomProperties !== false) {
-    // theme.colors = toCustomProperties(theme.colors, 'colors')
+    theme.colors = toCustomProperties(theme.colors, 'colors')
   }
   return jsx(
     EmotionContext.Provider, { value: theme },
@@ -105,6 +101,7 @@ const BaseProvider = ({ context, children }) => {
     })
   )
 }
+*/
 
 export const ColorModeProvider = ({
   children,
@@ -112,7 +109,6 @@ export const ColorModeProvider = ({
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
-  console.log('ColorModeProvider', colorMode, theme)
   const context = {
     ...outer,
     theme,
@@ -120,12 +116,17 @@ export const ColorModeProvider = ({
     setColorMode,
   }
 
-  return jsx(BaseProvider, {
-      context,
-    },
+  let emotionTheme = {...theme}
+  if (theme.useCustomProperties !== false) {
+    emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
+  }
+
+  return jsx(EmotionContext.Provider, { value: emotionTheme },
+    jsx(Context.Provider, { value: context },
       jsx(ColorMode, { key: 'color-mode' }),
       children
     )
+  )
 }
 
 const noflash = `(function() { try {

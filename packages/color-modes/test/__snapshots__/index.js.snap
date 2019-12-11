@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColorModeProvider renders with global colors 1`] = `"body{color:tomato;background-color:black;}"`;
-
 exports[`InitializeColorMode renders 1`] = `
 <script
   dangerouslySetInnerHTML={

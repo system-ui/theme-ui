@@ -23,6 +23,7 @@
     "@theme-ui/color-modes": "^0.2.48",
     "@theme-ui/core": "^0.2.48",
     "@theme-ui/mdx": "^0.2.48",
+    "@theme-ui/theme-provider": "^0.2.48",
     "deepmerge": "^4.0.0"
   },
   "devDependencies": {

@@ -1,44 +1,33 @@
-// TODO: rollup/microbundle screw this up
+import { jsx } from '@theme-ui/core'
 
-import {
+export {
   jsx,
   Context,
   merge,
   useThemeUI,
 } from '@theme-ui/core'
-import {
+export {
   useColorMode,
   InitializeColorMode,
   ColorMode,
 } from '@theme-ui/color-modes'
-import {
+export {
   Styled,
   components,
 } from '@theme-ui/mdx'
-
-import { ThemeProvider } from './provider'
-import { BaseStyles } from './base-styles'
-
-export {
-  jsx,
-  Context,
-  merge,
-  useThemeUI,
-  useColorMode,
-  InitializeColorMode,
-  ColorMode,
-  Styled,
-  components,
-}
-export {
-  ThemeProvider,
-  BaseStyles,
-}
+export { ThemeProvider } from '@theme-ui/theme-provider'
 export * from '@theme-ui/components'
+export { css } from '@theme-ui/css'
 
-/*
-export { ColorMode, useColorMode, InitializeColorMode } from './color-modes'
-export { Box, Flex, Layout, Header, Main, Container, Footer } from './layout'
-export { BaseStyles } from './base-styles'
-export { css, get } from '@theme-ui/css'
-*/
+// TODO: work this into root provider/global styles?
+export const BaseStyles = props =>
+  jsx('div', {
+    ...props,
+    sx: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body',
+      variant: 'styles',
+    },
+  })
+
