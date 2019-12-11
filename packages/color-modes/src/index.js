@@ -45,6 +45,7 @@ export const useColorModeState = (theme = {}) => {
 
   React.useEffect(() => {
     if (!mode) return
+    console.log('set mode', mode)
     storage.set(mode)
   }, [mode])
 
@@ -88,13 +89,13 @@ const applyColorMode = (theme, mode) => {
 
 export const ColorMode = () =>
   jsx(Global, {
-    styles: createColorStyles
+    styles: theme => createColorStyles(theme)
   })
 
 const BaseProvider = ({ context, children }) => {
   const theme = {...context.theme}
   if (theme.useCustomProperties !== false) {
-    theme.colors = toCustomProperties(theme.colors, 'colors')
+    // theme.colors = toCustomProperties(theme.colors, 'colors')
   }
   return jsx(
     EmotionContext.Provider, { value: theme },
@@ -111,6 +112,7 @@ export const ColorModeProvider = ({
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
+  console.log('ColorModeProvider', colorMode, theme)
   const context = {
     ...outer,
     theme,
@@ -118,13 +120,12 @@ export const ColorModeProvider = ({
     setColorMode,
   }
 
-  return jsx(React.Fragment, null,
-    jsx(ColorMode),
-    jsx(BaseProvider, {
+  return jsx(BaseProvider, {
       context,
-      children,
-    })
-  )
+    },
+      jsx(ColorMode, { key: 'color-mode' }),
+      children
+    )
 }
 
 const noflash = `(function() { try {

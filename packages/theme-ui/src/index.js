@@ -1,26 +1,39 @@
 // TODO: rollup/microbundle screw this up
 
-export { ThemeProvider } from './provider'
-export { BaseStyles } from './base-styles'
-export {
-  css,
-  get,
-} from '@theme-ui/css'
-export {
+import {
   jsx,
   Context,
   merge,
   useThemeUI,
 } from '@theme-ui/core'
-export {
+import {
   useColorMode,
   InitializeColorMode,
   ColorMode,
 } from '@theme-ui/color-modes'
-export {
+import {
   Styled,
   components,
 } from '@theme-ui/mdx'
+
+import { ThemeProvider } from './provider'
+import { BaseStyles } from './base-styles'
+
+export {
+  jsx,
+  Context,
+  merge,
+  useThemeUI,
+  useColorMode,
+  InitializeColorMode,
+  ColorMode,
+  Styled,
+  components,
+}
+export {
+  ThemeProvider,
+  BaseStyles,
+}
 export * from '@theme-ui/components'
 
 /*
