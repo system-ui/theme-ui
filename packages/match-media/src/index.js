@@ -4,19 +4,32 @@ import { useThemeUI } from 'theme-ui'
 // Shared with @styled-system/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const useBreakpointIndex = () => {
+export const useBreakpointIndex = (options = {}) => {
   const context = useThemeUI()
+  const { defaultIndex = 0 } = options
   const breakpoints =
     (context.theme && context.theme.breakpoints) || defaultBreakpoints
 
-  const getIndex = useCallback(
-    () =>
-      breakpoints.filter(
-        breakpoint =>
-          window.matchMedia(`screen and (min-width: ${breakpoint})`).matches
-      ).length,
-    [breakpoints]
-  )
+  const getIndex = useCallback(() => {
+    if (typeof window === 'undefined') {
+      if (typeof defaultIndex === 'number') {
+        if (defaultIndex < 0 || defaultIndex > breakpoints.length - 1) {
+          throw new RangeError(
+            `Default breakpoint index out of range. Theme has ${breakpoints.length} breakpoints, got index ${defaultIndex}`
+          )
+        }
+        return defaultIndex
+      }
+      throw new TypeError(
+        `Default breakpoint index should be a number. Got: ${defaultIndex}, ${typeof defaultIndex}`
+      )
+    }
+
+    return breakpoints.filter(
+      breakpoint =>
+        window.matchMedia(`screen and (min-width: ${breakpoint})`).matches
+    ).length
+  }, [breakpoints, defaultIndex])
 
   const [value, setValue] = useState(getIndex)
 
@@ -34,9 +47,9 @@ export const useBreakpointIndex = () => {
   return value
 }
 
-export const useResponsiveValue = values => {
+export const useResponsiveValue = (values, options) => {
   const { theme } = useThemeUI()
   const array = typeof values === 'function' ? values(theme) : values
-  const index = useBreakpointIndex()
+  const index = useBreakpointIndex(options)
   return array[index >= array.length ? array.length - 1 : index]
 }

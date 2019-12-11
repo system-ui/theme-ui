@@ -12,25 +12,45 @@ The following table lists each component's variant group and default variant nam
 
 Component | Variant Group | Default Variant
 ---|---|---
-`Box` | |
-`Flex` | |
 `Grid` | `grids` |
 `Button` | `buttons` | `primary`
+`Close` | `buttons` | `close`
+`IconButton` | `buttons` | `icon`
+`MenuButton` | `buttons` | `menu`
 `Text` | `text` |
 `Heading` | `text` | `heading`
 `Link` | `links` | `styles.a`
+`NavLink` | `links` | `nav`
 `Image` | `images` |
+`Avatar` | `images` | `avatar`
 `Card` | `cards` | `primary`
+`Container` | `layout` | `container`
 `Label` | `forms` | `label`
 `Input` | `forms` | `input`
 `Select` | `forms` | `select`
 `Textarea` | `forms` | `textarea`
 `Radio` | `forms` | `radio`
 `Checkbox` | `forms` | `checkbox`
+`Slider` | `forms` | `slider`
+`Badge` | `badges` |
+`Alert` | `alerts` |
+`Message` | `messages` |
+`Progress` |  | `styles.progress`
+`Divider` | | `styles.hr`
+
+The following components support the `variant` prop, but do not include default variant keys.
+
+- `Box`
+- `Flex`
+- `Donut`
+- `Spinner`
+- `Embed`
+- `AspectRatio`
+- `AspectImage`
 
 <Note>
 
-The `Link` component reuses the styles defined in `theme.styles.a` by default.
+Some components reuse styles defined in `theme.styles` for default variants.
 
 </Note>
 

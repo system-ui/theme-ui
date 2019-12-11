@@ -1,0 +1,33 @@
+---
+title: Field
+---
+
+# Field
+
+Wrapper around primitive form control components
+
+```js
+import { Field } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Field
+  label='Email'
+  name='email'
+  defaultValue=''
+/>
+```
+
+## Props
+
+Name | Type | Description
+---|---|---
+`as` | Component | form control to render, default `Input`
+`label` | String | Text for `Label` component
+`name` | String | Used for the `for`, `id`, and `name` attributes
+
+All other props are passed directly to the form control.
+
+## Variants
+
+The `Field` component uses the same variants as the other [form components](/components/forms) that it is composed of.

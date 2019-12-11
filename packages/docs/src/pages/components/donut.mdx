@@ -1,0 +1,49 @@
+---
+title: Donut
+---
+
+# Donut
+
+Single value SVG donut chart
+
+```js
+import { Donut } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Donut
+  value={1/2}
+/>
+```
+
+## Props
+
+Name | Type | Description
+---|---|---
+`value` | Number | Value to display in the chart
+`min` | Number | (default `0`) Minimum value
+`max` | Number | (default `1`) Maximum value
+`title` | String | Text for SVG `<title>` tag
+`size` | Number | (default `128`) chart diameter
+`strokeWidth` | Number | (default `2`) stroke width
+
+A `title` attribute should be provided to the component for accessibility purposes.
+By default `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` are set using the component's props.
+The element uses `role='img'` by default.
+Pass any overrides or additional attributes for the SVG element as props.
+
+## Variants
+
+Donut variants can be defined anywhere in the `theme` object.
+
+```js
+// example theme variants
+{
+  styles: {
+    donut: {
+      color: 'red',
+    },
+  },
+}
+// <Donut variant='styles.donut' />
+```
