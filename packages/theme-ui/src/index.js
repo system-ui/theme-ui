@@ -1,5 +1,7 @@
+// TODO: rollup/microbundle screw this up
+
 export { ThemeProvider } from './provider'
-// export { BaseStyles } from './base-styles'
+export { BaseStyles } from './base-styles'
 export {
   css,
   get,
