@@ -83,8 +83,10 @@ export const createColorStyles = (theme = {}) => {
   return css({
     body: {
       ...styles,
-      color: t => `var(--theme-ui-colors-text, ${t.colors.text})`,
-      bg: t => `var(--theme-ui-colors-background, ${t.colors.background})`,
+      color: 'text',
+      bg: 'background',
+      // color: t => `var(--theme-ui-colors-text, ${t.colors.text})`,
+      // bg: t => `var(--theme-ui-colors-background, ${t.colors.background})`,
     }
   })(theme)
 }
