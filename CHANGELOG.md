@@ -11,6 +11,7 @@
 - Removes layout components (`Layout`, `Header`, `Main`, `Footer`)
 
 - `@theme-ui/match-media`: add option for default index in hook #460
+- Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
 
 ## v0.2.51 2019-12-03
 

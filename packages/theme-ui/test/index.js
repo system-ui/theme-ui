@@ -115,6 +115,7 @@ test('warns when multiple versions of emotion are installed', () => {
 
 test('functional themes receive outer theme', () => {
   const outer = {
+    useCustomProperties: false,
     colors: {
       text: 'tomato',
     },

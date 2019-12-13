@@ -337,6 +337,7 @@ test('useThemeUI returns current color mode colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
+        useCustomProperties: false,
         colors: {
           text: 'tomato',
           background: 'black',
@@ -464,7 +465,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = props => {
     const context = useThemeUI()
-    color = context.theme.colors.primary
+    color = context.theme.rawColors.primary
     return false
   }
   const root = render(
