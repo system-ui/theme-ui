@@ -99,7 +99,7 @@ See the [Gatsby plugin docs](/gatsby-plugin) for more info.
 ## Advanced
 
 There are a few advanced usages of color modes when you need more
-flexibility. For most usecases, you won't need to reference this
+flexibility. For most use cases, you won't need to reference this
 section.
 
 ### Turn off custom properties
@@ -129,6 +129,7 @@ load.
 }
 ```
 
+<!--
 ### Renaming the default color mode
 
 The colors you define at the root level, outside of `theme.colors.modes`
@@ -152,14 +153,15 @@ is named `default`. If you'd like to customize it you can do so by setting
   }
 }
 ```
+-->
 
-<!-- TODO
 
-### Initialize dark mode with `prefers-color-scheme: dark`
+### Initialize mode with `prefers-color-scheme` media query
 
-To initialize a dark color mode based on the `prefers-color-scheme: dark` media query, add the `useColorSchemeMediaQuery` flag to your theme.
-This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches.
-If you do not have a color mode named `dark`, this will have no effect.
+To initialize a color mode based on the `prefers-color-scheme` media query, add the `useColorSchemeMediaQuery` flag to your theme.
+This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
+or `light` when `@media (prefers-color-scheme: light)` matches.
+If you do not have a color mode named `dark` or `light`, this will have no effect.
 
 ```js
 {
@@ -177,4 +179,3 @@ If you do not have a color mode named `dark`, this will have no effect.
 }
 ```
 
--->
