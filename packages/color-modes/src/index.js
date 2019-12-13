@@ -29,7 +29,7 @@ const getMediaQuery = () => {
   const lightMQL = window.matchMedia ? window.matchMedia(lightQuery) : {}
   const dark = darkMQL.media === darkQuery && darkMQL.matches
   if (dark) return 'dark'
-  const light = lightMQL === lightQuery && lightMQL.matches
+  const light = lightMQL.media === lightQuery && lightMQL.matches
   if (light) return 'light'
   return 'default'
 }

@@ -231,7 +231,6 @@ test('retains initial context', () => {
   expect(typeof context.setColorMode).toBe('function')
 })
 
-// TODO: simplify this API
 test('initializes mode from prefers-color-scheme media query', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
@@ -256,6 +255,32 @@ test('initializes mode from prefers-color-scheme media query', () => {
     </ThemeProvider>
   )
   expect(mode).toBe('dark')
+})
+
+test('initializes light mode from prefers-color-scheme media query', () => {
+  window.matchMedia = jest.fn().mockImplementation(query => {
+    return {
+      matches: query.includes('light'),
+      media: query,
+    }
+  })
+  let mode
+  const Consumer = props => {
+    const [colorMode] = useColorMode()
+    mode = colorMode
+    return false
+  }
+  render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: true,
+      }}>
+      <ColorModeProvider>
+        <Consumer />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(mode).toBe('light')
 })
 
 test('does not initialize mode from prefers-color-scheme media query', () => {
