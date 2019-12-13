@@ -109,6 +109,11 @@ export const ColorModeProvider = ({
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
+
+  if (typeof window === 'undefined' && theme.useCustomProperties !== false) {
+    theme.colors = toCustomProperties(theme.colors, 'colors')
+  }
+
   const context = {
     ...outer,
     theme,
@@ -116,12 +121,7 @@ export const ColorModeProvider = ({
     setColorMode,
   }
 
-  let emotionTheme = {...theme}
-  if (theme.useCustomProperties !== false) {
-    emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
-  }
-
-  return jsx(EmotionContext.Provider, { value: emotionTheme },
+  return jsx(EmotionContext.Provider, { value: theme },
     jsx(Context.Provider, { value: context },
       jsx(ColorMode, { key: 'color-mode' }),
       children
