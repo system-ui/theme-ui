@@ -8,7 +8,6 @@ import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
 import {
   ColorModeProvider,
   useColorMode,
-  ColorMode,
   InitializeColorMode,
 } from '../src'
 
@@ -302,7 +301,7 @@ test.skip('does not initialize mode from prefers-color-scheme media query when u
   expect(mode).toBe('default')
 })
 
-test('ColorMode component renders null', () => {
+test.skip('ColorMode component renders null', () => {
   const json = renderer
     .create(
       <ThemeProvider>
@@ -527,7 +526,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = props => {
     const context = useThemeUI()
-    color = context.theme.colors.primary
+    color = context.theme.rawColors.primary
     return false
   }
   const root = render(

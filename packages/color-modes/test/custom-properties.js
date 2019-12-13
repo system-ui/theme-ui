@@ -58,8 +58,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, tomato)',
-        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        color: 'tomato',
+        backgroundColor: 'white',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
         '&.theme-ui-dark': {
