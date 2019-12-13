@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<h1>
+  Hello
+</h1>
+`;
+
+exports[`renders with styles 1`] = `
+.emotion-0 {
+  color: tomato;
+}
+
+<h1
+  className="emotion-0"
+>
+  Hello
+</h1>
+`;

@@ -5,7 +5,11 @@ import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import {
-  ThemeProvider, Context, Styled, jsx, useColorMode,
+  ThemeProvider,
+  Context,
+  Styled,
+  jsx,
+  useColorMode,
   BaseStyles,
   Container,
   Box,
