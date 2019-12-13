@@ -32,6 +32,8 @@
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
   },
+  "resolutions": {
+  },
   "jest": {
     "testMatch": [
       "**/packages/**/test/*.js"
