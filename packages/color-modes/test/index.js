@@ -232,10 +232,10 @@ test('retains initial context', () => {
 })
 
 // TODO: simplify this API
-test.skip('initializes mode from prefers-color-scheme media query', () => {
+test('initializes mode from prefers-color-scheme media query', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
-      matches: true,
+      matches: query.includes('dark'),
       media: query,
     }
   })
@@ -250,13 +250,15 @@ test.skip('initializes mode from prefers-color-scheme media query', () => {
       theme={{
         useColorSchemeMediaQuery: true,
       }}>
-      <Consumer />
+      <ColorModeProvider>
+        <Consumer />
+      </ColorModeProvider>
     </ThemeProvider>
   )
   expect(mode).toBe('dark')
 })
 
-test.skip('does not initialize mode from prefers-color-scheme media query', () => {
+test('does not initialize mode from prefers-color-scheme media query', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
       matches: false,
@@ -274,13 +276,15 @@ test.skip('does not initialize mode from prefers-color-scheme media query', () =
       theme={{
         useColorSchemeMediaQuery: true,
       }}>
-      <Consumer />
+      <ColorModeProvider>
+        <Consumer />
+      </ColorModeProvider>
     </ThemeProvider>
   )
   expect(mode).toBe('default')
 })
 
-test.skip('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
+test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
   window.matchMedia = jest.fn().mockImplementation(query => {
     return {
       matches: true,
@@ -295,7 +299,9 @@ test.skip('does not initialize mode from prefers-color-scheme media query when u
   }
   render(
     <ThemeProvider>
-      <Consumer />
+      <ColorModeProvider>
+        <Consumer />
+      </ColorModeProvider>
     </ThemeProvider>
   )
   expect(mode).toBe('default')

@@ -22,14 +22,17 @@ const storage = {
 }
 
 // todo: update API
-/*
 const getMediaQuery = () => {
   const darkQuery = '(prefers-color-scheme: dark)'
-  const mql = window.matchMedia ? window.matchMedia(darkQuery) : {}
-  const dark = mql.media === darkQuery
-  return dark && mql.matches
+  const lightQuery = '(prefers-color-scheme: light)'
+  const darkMQL = window.matchMedia ? window.matchMedia(darkQuery) : {}
+  const lightMQL = window.matchMedia ? window.matchMedia(lightQuery) : {}
+  const dark = darkMQL.media === darkQuery && darkMQL.matches
+  if (dark) return 'dark'
+  const light = lightMQL === lightQuery && lightMQL.matches
+  if (light) return 'light'
+  return 'default'
 }
-*/
 
 export const useColorModeState = (theme = {}) => {
   const [mode, setMode] = React.useState(theme.initialColorModeName || 'default')
@@ -38,7 +41,11 @@ export const useColorModeState = (theme = {}) => {
   React.useEffect(() => {
     const stored = storage.get()
     document.body.classList.remove('theme-ui-' + stored)
-    // consider prefers-color-scheme media query
+    if (!stored && theme.useColorSchemeMediaQuery) {
+      const query = getMediaQuery()
+      setMode(query)
+      return
+    }
     if (!stored || stored === mode) return
     setMode(stored)
   }, [])
