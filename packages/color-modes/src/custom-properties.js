@@ -72,8 +72,9 @@ export const createColorStyles = (theme = {}) => {
       },
     })(theme)
   }
-  const { modes } = theme.colors
-  const styles = objectToVars('colors', theme.colors)
+  const colors = theme.rawColors || theme.colors
+  const { modes } = colors
+  const styles = objectToVars('colors', colors)
 
   Object.keys(modes).forEach(mode => {
     const key = `&.theme-ui-${mode}`
@@ -85,8 +86,6 @@ export const createColorStyles = (theme = {}) => {
       ...styles,
       color: 'text',
       bg: 'background',
-      // color: t => `var(--theme-ui-colors-text, ${t.colors.text})`,
-      // bg: t => `var(--theme-ui-colors-background, ${t.colors.background})`,
     }
   })(theme)
 }

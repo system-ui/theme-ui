@@ -82,26 +82,10 @@ const applyColorMode = (theme, mode) => {
   })
 }
 
-export const ColorMode = () =>
+const BodyStyles = () =>
   jsx(Global, {
     styles: theme => createColorStyles(theme)
   })
-
-/*
-const BaseProvider = ({ context, children }) => {
-  const theme = {...context.theme}
-  if (theme.useCustomProperties !== false) {
-    theme.colors = toCustomProperties(theme.colors, 'colors')
-  }
-  return jsx(
-    EmotionContext.Provider, { value: theme },
-    jsx(Context.Provider, {
-      value: context,
-      children
-    })
-  )
-}
-*/
 
 export const ColorModeProvider = ({
   children,
@@ -110,7 +94,8 @@ export const ColorModeProvider = ({
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
 
-  if (typeof window === 'undefined' && theme.useCustomProperties !== false) {
+  if (theme.useCustomProperties !== false) {
+    theme.rawColors = {...theme.colors}
     theme.colors = toCustomProperties(theme.colors, 'colors')
   }
 
@@ -123,7 +108,7 @@ export const ColorModeProvider = ({
 
   return jsx(EmotionContext.Provider, { value: theme },
     jsx(Context.Provider, { value: context },
-      jsx(ColorMode, { key: 'color-mode' }),
+      jsx(BodyStyles, { key: 'color-mode' }),
       children
     )
   )
