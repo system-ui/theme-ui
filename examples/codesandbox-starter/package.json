@@ -9,15 +9,15 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@emotion/core": "10.0.17",
-    "@mdx-js/react": "1.4.5",
+    "@emotion/core": "^10.0.17",
+    "@mdx-js/react": "^1.4.5",
     "@theme-ui/presets": "^0.2.44",
-    "react": "16.12.0",
-    "react-dom": "16.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.9.0",
     "theme-ui": "^0.2.49"
   },
   "devDependencies": {
-    "@babel/core": "7.7.4",
+    "@babel/core": "^7.7.4",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": [
