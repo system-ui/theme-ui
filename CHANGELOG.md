@@ -9,9 +9,13 @@
 - Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
 - No longer initializes color mode based on `prefers-color-scheme` media query - TODO: provide alternative API
 - Removes layout components (`Layout`, `Header`, `Main`, `Footer`)
-
-- `@theme-ui/match-media`: add option for default index in hook #460
 - Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
+
+## v0.2.52 2019-12-16
+
+- Fix for issues when `localStorage` is not available #514
+- `@theme-ui/match-media`: add option for default index in hook #460
+- `@theme-ui/editor`: Update Reakit #517
 
 ## v0.2.51 2019-12-03
 
