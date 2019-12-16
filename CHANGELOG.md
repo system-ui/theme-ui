@@ -2,7 +2,9 @@
 
 ## Unreleased
 
+- Fix for issues when `localStorage` is not available #514
 - `@theme-ui/match-media`: add option for default index in hook #460
+- `@theme-ui/editor`: Update Reakit #517
 
 ## v0.2.51 2019-12-03
 
