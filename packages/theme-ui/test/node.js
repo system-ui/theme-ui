@@ -8,7 +8,6 @@ import {
 } from '../src'
 
 test('does note initializes mode based on localStorage', () => {
-  // window.localStorage.setItem(STORAGE_KEY, 'dark')
   let mode
   const Button = props => {
     const [colorMode, setMode] = useColorMode()
