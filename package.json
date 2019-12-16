@@ -4,7 +4,7 @@
     "prepare": "lerna run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
-    "serve": "yarn && yarn build && yarn workspace docs serve",
+    "serve": "yarn workspace docs serve --port 8000",
     "clean": "lerna run clean",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
