@@ -4,6 +4,16 @@ title: Migrating
 
 # Migration Guides
 
+## v0.3
+
+- Theme UI context no longer provides `context.components`. If you're using this object from context, use the MDX hook instead. E.g. `import { useMDXComponents } from '@mdx-js/react'`
+- Color mode API:
+  - Default color mode name
+  - Manually enable `useColorSchemeMediaQuery`
+- Removes layout components (`Layout`, `Header`, `Main`, `Footer`). Use the `Box` and `Flex` layout primitives instead.
+- When CSS custom properties are enabled, raw color values are available in the `theme.rawColors` object
+- Theme context is now stateless. If you've made use of `context.setTheme`, this no longer works. An alternative approach will be introduced later.
+
 ## v0.2
 
 ### JSX Pragma
