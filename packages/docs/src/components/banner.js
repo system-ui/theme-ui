@@ -13,7 +13,7 @@ export default props => (
         p: {
           ':first-of-type': {
             variant: 'text.display',
-            fontSize: [6, 7, 7],
+            fontSize: [4, 5],
           },
           fontWeight: 'bold',
           mt: 0,

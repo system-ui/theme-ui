@@ -7,7 +7,10 @@ import { css, get } from '@theme-ui/css'
 import React from 'react'
 import { ThemeContext } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
-import { MDXProvider as _MDXProvider } from '@mdx-js/react'
+import {
+  MDXProvider as _MDXProvider,
+  useMDXComponents
+} from '@mdx-js/react'
 
 // mdx components
 const tags = [
@@ -106,8 +109,10 @@ export const MDXProvider = ({
   components,
   children,
 }) => {
+  const outer = useMDXComponents()
+
   return jsx(_MDXProvider, {
-    components: createComponents(components),
+    components: createComponents({ ...outer, ...components }),
     children,
   })
 }
