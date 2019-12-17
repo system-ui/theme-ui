@@ -6,10 +6,10 @@ import Note from '../components/note'
 
 # Getting Started
 
-Install Theme UI and its peer dependencies.
+Install Theme UI.
 
 ```sh
-npm i theme-ui @emotion/core @mdx-js/react
+npm i theme-ui
 ```
 
 Create a theme object to include custom color, typography, and layout values.
@@ -31,6 +31,12 @@ export default {
 ```
 
 Add the theme to your application with the `ThemeProvider`, passing in the `theme` object as a prop.
+
+<Note>
+
+If you're using Gatsby, use [`gatsby-plugin-theme-ui`](/gatsby-plugin) instead.
+
+</Note>
 
 ```jsx
 // basic usage

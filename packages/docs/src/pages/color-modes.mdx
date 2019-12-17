@@ -10,7 +10,6 @@ Color modes can be used to create a user-configurable _dark mode_ or any number 
 ## Defining colors
 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
-The name for the base color mode is `default`.
 
 ```js
 // example theme colors
@@ -31,10 +30,7 @@ The name for the base color mode is `default`.
 ```
 
 The colors defined at the root of the `colors` object will be accessible as `default`. All colors
-found in `colors.modes` will be referenced by their key. The above example will have two modes:
-
-- `default`
-- `dark`
+found in `colors.modes` will be referenced by their key. The above example will have two modes: `default` and `dark`.
 
 ## Setting the color mode
 
@@ -79,7 +75,7 @@ export default props => (
 ## Gatsby plugin
 
 For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
-The plugin will help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
+The plugin will also help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
 
 ```sh
 npm i gatsby-plugin-theme-ui
@@ -98,17 +94,15 @@ See the [Gatsby plugin docs](/gatsby-plugin) for more info.
 
 ## Advanced
 
-There are a few advanced usages of color modes when you need more
-flexibility. For most use cases, you won't need to reference this
-section.
+Theme UI includes a few advanced usage options for color modes.
 
 ### Turn off custom properties
 
-The default implementation of Theme UI color modes uses
-[CSS custom properties](https://caniuse.com/#feat=css-variables).
-If you're supporting browsers that don't support custom properties you can
-turn off this setting. This will cause the colors to flash on initial page
-load.
+Theme UI uses
+[CSS custom properties](https://caniuse.com/#feat=css-variables)
+under the hood to help prevent the flash of color on load.
+If you're targeting browsers that don't support custom properties you can turn off this setting.
+This will cause the colors to flash on initial page load.
 
 ```js
 // example theme colors
@@ -128,33 +122,6 @@ load.
   }
 }
 ```
-
-<!--
-### Renaming the default color mode
-
-The colors you define at the root level, outside of `theme.colors.modes`
-is named `default`. If you'd like to customize it you can do so by setting
-`initialColorModeName`:
-
-```js
-{
-  initialColorModeName: 'light',
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#07c',
-    modes: {
-      dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#0cf',
-      }
-    }
-  }
-}
-```
--->
-
 
 ### Initialize mode with `prefers-color-scheme` media query
 

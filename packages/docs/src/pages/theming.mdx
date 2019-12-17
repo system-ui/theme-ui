@@ -4,15 +4,15 @@ title: Theming
 
 # Theming
 
-Theming with Theme UI is based on the [System UI Theme Spec][] with an additional `theme.styles` object for styling MDX elements and other components.
+Theming with Theme UI is based on a [Theme Specification][] including a `theme.styles` object for styling MDX elements and other components.
 By adhering to a standard Theme Specification, Theme UI is designed to be interoperable with as many other libraries as possible.
 
-[system ui theme spec]: https://system-ui.com/theme/
+[theme specification]: /theme-spec
 
 ## Colors
 
 Add a `theme.colors` object to provide colors for a theme.
-In order to make color palettes as portable and interoperable as possible, the following color keys should be used for defining a base set of colors:
+In order to ensure color palettes are as interoperable as possible, the following color keys should be used for defining a base set of colors:
 
 | Key          | Description                                     |
 | ------------ | ----------------------------------------------- |
@@ -21,6 +21,7 @@ In order to make color palettes as portable and interoperable as possible, the f
 | `primary`    | primary button and link color                   |
 | `secondary`  | secondary color - can be used for hover states  |
 | `accent`     | a contrast color for emphasizing UI             |
+| `highlight`     | a background color for highlighting text
 | `muted`      | a gray or subdued color for decorative purposes |
 
 Beyond these base colors, any additional values can be added to a theme to augment the base color palette.
@@ -135,19 +136,13 @@ These values will be used to generate mobile-first (i.e. `min-width`) media quer
 }
 ```
 
-## Example
+## Example Theme
 
 The following example is from the [Base Preset][example].
 
 ```js
 // example base theme from @theme-ui/presets
-const heading = {
-  fontFamily: 'heading',
-  lineHeight: 'heading',
-  fontWeight: 'heading',
-}
-
-export const base = {
+export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
@@ -172,6 +167,13 @@ export const base = {
     secondary: '#30c',
     muted: '#f6f6f6',
   },
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+    },
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -179,27 +181,27 @@ export const base = {
       fontWeight: 'body',
     },
     h1: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 5,
     },
     h2: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 4,
     },
     h3: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 3,
     },
     h4: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 2,
     },
     h5: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 1,
     },
     h6: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 0,
     },
     pre: {
