@@ -7,7 +7,6 @@ import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
 
 import SkipLink from './skip-link'
-// import Sidebar from './sidebar'
 import Pagination from './pagination'
 import EditLink from './edit-link'
 import Head from './head'
