@@ -3,6 +3,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
+import mockConsole from 'jest-mock-console'
 import {
   jsx,
   ThemeProvider,
@@ -60,6 +61,11 @@ test('renders with initial color mode name', () => {
       <ThemeProvider
         theme={{
           initialColorModeName: 'light',
+          colors: {
+            modes: {
+              dark: {},
+            }
+          }
         }}>
         <Mode />
       </ThemeProvider>
@@ -203,6 +209,11 @@ test('inherits color mode state from parent context', () => {
     <ThemeProvider
       theme={{
         initialColorModeName: 'outer',
+        colors: {
+          modes: {
+            dark: {},
+          }
+        }
       }}>
       <ThemeProvider
         theme={{
@@ -336,6 +347,7 @@ test('ColorMode component renders with colors', () => {
 })
 
 test('useColorMode throws when there is no theme context', () => {
+  const restore = mockConsole()
   expect(() => {
     const Consumer = props => {
       const [colorMode] = useColorMode('beep')
@@ -344,6 +356,8 @@ test('useColorMode throws when there is no theme context', () => {
     }
     render(<Consumer />)
   }).toThrow()
+  expect(console.error).toHaveBeenCalled()
+  restore()
 })
 
 test('useThemeUI returns current color mode colors', () => {
@@ -376,7 +390,7 @@ test('useThemeUI returns current color mode colors', () => {
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
-  jest.spyOn(global.console, 'warn')
+  const restore = mockConsole()
   const root = render(
     <ThemeProvider
       theme={{
@@ -395,6 +409,7 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
     />
   )
   expect(console.warn).toBeCalled()
+  restore()
 })
 
 test('dot notation works with color modes', () => {

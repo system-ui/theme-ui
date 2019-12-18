@@ -1,0 +1,26 @@
+{
+  "name": "@theme-ui/components",
+  "version": "0.2.50",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "microbundle --no-compress --jsx React.createElement",
+    "watch": "microbundle watch --no-compress --jsx React.createElement"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
+    "@styled-system/color": "^5.1.2",
+    "@styled-system/css": "^5.0.23",
+    "@styled-system/should-forward-prop": "^5.1.2",
+    "@styled-system/space": "^5.1.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT"
+}

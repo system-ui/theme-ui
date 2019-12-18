@@ -1,0 +1,40 @@
+---
+title: Button
+---
+
+# Button
+
+Primitive button component with variants
+
+```js
+import { Button } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Button mr={2}>Beep</Button>
+<Button variant='secondary'>Boop</Button>
+```
+
+## Variants
+
+Button variants can be defined in the `theme.buttons` object.
+The Button component uses `theme.buttons.primary` as its default variant style.
+
+```js
+// example theme variants
+{
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'text',
+      }
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
+  },
+}
+```

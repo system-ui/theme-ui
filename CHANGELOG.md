@@ -2,6 +2,50 @@
 
 ## Unreleased
 
+## v0.2.52 2019-12-16
+
+- Fix for issues when `localStorage` is not available #514
+- `@theme-ui/match-media`: add option for default index in hook #460
+- `@theme-ui/editor`: Update Reakit #517
+
+## v0.2.51 2019-12-03
+
+- `@theme-ui/editor`: fix color picker #498
+
+## v0.2.50 2019-12-02
+
+- `@theme-ui/components`: fix NavLink base styles #497
+
+## v0.2.49 2019-11-15
+
+- `@theme-ui/components`: add more components #458
+- `@theme-ui/color`: add `alpha` utility #441
+- `@theme-ui/match-media`: Add default breakpoint index argument for SSR
+
+## v0.2.48 2019-11-07
+
+- `@theme-ui/editor` add components for editing `sx` styles
+
+## v0.2.47 2019-10-29
+
+- `@theme-ui/editor` add `StylesForm` component
+
+## v0.2.46 2019-10-28
+
+- Fix environment check #415
+- Update dependencies
+
+## v0.2.45 2019-10-18
+
+- Add `@theme-ui/match-media` package #375
+- Add `@theme-ui/components` package #411
+
+## v0.2.44 2019-10-09
+
+- Fix prop forwarding in styled HOC #377
+- Add missing key #406
+- Add support for functional themes #400
+
 ## v0.2.43 2019-09-17
 
 - Fix Reakit for ColorPicker test #357

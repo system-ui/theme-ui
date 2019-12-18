@@ -1,0 +1,40 @@
+---
+title: AspectRatio
+---
+
+# AspectRatio
+
+Component for maintaining a fluid-width aspect ratio
+
+```js
+import { AspectRatio } from '@theme-ui/components'
+```
+
+```jsx live=true
+<AspectRatio
+  ratio={16/9}
+  sx={{
+    p: 4,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'background',
+    bg: 'primary',
+  }}>
+  <Heading>
+    Aspect Ratio
+  </Heading>
+</AspectRatio>
+```
+
+```jsx live=true
+<AspectRatio ratio={16/9}>
+  <Image
+    src={images.flatiron}
+    sx={{
+      objectFit: 'cover',
+    }}
+  />
+</AspectRatio>
+```
+

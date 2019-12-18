@@ -1,8 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, act, fireEvent, cleanup } from '@testing-library/react'
+import { render, fireEvent, cleanup } from '@testing-library/react'
 import { Provider } from 'reakit/Provider'
+import mockConsole from 'jest-mock-console'
 import { ColorPicker } from '../src'
+
+const { act } = renderer
 
 afterEach(cleanup)
 
@@ -18,11 +21,16 @@ if (global.document) {
 }
 
 test('renders with styles', () => {
+  // ignore react-color dependency-related warning
+  const restore = mockConsole()
   const json = renderer.create(<ColorPicker color="#f00" />).toJSON()
   expect(json).toMatchSnapshot()
+  restore()
 })
 
 test('snapshot renders as a popover', () => {
+  // ignore react-color dependency-related warning
+  const restore = mockConsole()
   const json = renderer
     .create(
       <Provider>
@@ -33,6 +41,7 @@ test('snapshot renders as a popover', () => {
     )
     .toJSON()
   expect(json).toMatchSnapshot()
+  restore()
 })
 
 /*

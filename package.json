@@ -4,7 +4,7 @@
     "prepare": "lerna run prepare",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
-    "serve": "yarn && yarn build && yarn workspace docs serve",
+    "serve": "yarn workspace docs serve --port 8000",
     "clean": "lerna run clean",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
@@ -25,11 +25,14 @@
     "husky": ">=1",
     "jest": "^24.8.0",
     "jest-emotion": "^10.0.11",
+    "jest-mock-console": "^1.0.0",
     "lerna": "^3.14.1",
     "lint-staged": "9",
     "microbundle": "^0.11.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
+  },
+  "resolutions": {
   },
   "jest": {
     "testMatch": [

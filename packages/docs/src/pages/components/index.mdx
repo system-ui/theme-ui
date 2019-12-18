@@ -1,0 +1,138 @@
+---
+title: Components
+---
+
+import { Note } from '../..'
+
+# Components
+
+The optional `@theme-ui/components` package includes
+pre-built UI components to make styling a page with Theme UI quicker.
+This package includes components for layouts, grids, buttons, form elements, and more.
+
+```sh
+npm i @theme-ui/components
+```
+
+```jsx live=true
+<Box
+  p={4}
+  bg='highlight'>
+  <Flex
+    sx={{
+      alignItems: 'center',
+    }}>
+    <Heading>
+      Components
+    </Heading>
+    <Button ml='auto'>
+      Beep
+    </Button>
+  </Flex>
+</Box>
+```
+
+## Variants
+
+Theme UI components can be customized by adding styles to your theme.
+Each component accepts a `variant` prop to quickly
+change custom stylistic variations that you define.
+
+```js
+// example theme
+{
+  // base theme...
+  buttons: {
+    primary: {
+      fontWeight: 'bold',
+      color: 'white',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'dark',
+      },
+    },
+  },
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+    display: {
+      // extends the text.heading styles
+      variant: 'text.heading',
+      fontSize: [6, 7, 8],
+      fontWeight: 'display',
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 4px 1px rgba(0, 0, 0, 0.5)',
+    },
+  },
+}
+```
+
+```jsx live=true
+<Button variant='secondary'>
+  Secondary Button
+</Button>
+```
+
+## Props
+
+All Theme UI components include the following props.
+
+Name | Type | Description
+---|---|---
+`sx` | Object | [Theme-aware styles](/sx-prop)
+`variant` | String | Applies a theme [variant][] style
+`as` | String | Changes the underlying HTML element
+
+<Note>
+
+The `sx` prop on Theme UI components can be used *without* the `jsx` pragma comment and can be used in MDX files to apply theme-based styles.
+
+</Note>
+
+[variant]: /guides/variants
+
+### Style Props
+
+Each Theme UI component includes shorthand props for applying margin, padding, and color styles.
+These props work the same as properties within the `sx` prop, but allow for a more terse syntax for readability.
+
+<Note>
+
+If you've used [Styled System][] or [Rebass][] before,
+these props work the same way.
+
+</Note>
+
+Name | Description
+---|---
+`color` | Foreground color
+`bg` | Background color
+`margin`, `m`         | Margin
+`marginTop`, `mt`     | Margin Top
+`marginRight`, `mr`   | Margin Right
+`marginBottom`, `mb`  | Margin Bottom
+`marginLeft`, `ml`    | Margin Left
+`marginX`, `mx`       | Margin Left & Right
+`marginY`, `my`       | Margin Top & Bottom
+`padding`, `p`         | Padding
+`paddingTop`, `pt`     | Padding Top
+`paddingRight`, `pr`   | Padding Right
+`paddingBottom`, `pb`  | Padding Bottom
+`paddingLeft`, `pl`    | Padding Left
+`paddingX`, `px`       | Padding Left & Right
+`paddingY`, `py`       | Padding Top & Bottom
+
+[styled system]: https://styled-system.com
+[rebass]: https://rebassjs.org

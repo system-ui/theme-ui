@@ -13,6 +13,11 @@ module.exports = {
 }
 ```
 
+In addition to providing context, this plugin will also
+prevent a flash of unstyled colors when using color modes.
+
+It **does not** apply default typographic styles in your application. See the [`Styled.root` docs](https://theme-ui.com/styled#styledroot) for how to handle base typographic styles.
+
 ## Customizing the theme
 
 To customize the theme used in your Gatsby site,

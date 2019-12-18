@@ -1,6 +1,7 @@
 import { Banner, Tiles } from '..'
 import { Container } from 'theme-ui'
 import Testimonials from './testimonials'
+import { Box, Button } from '@theme-ui/components'
 
 <Banner>
 
@@ -8,11 +9,10 @@ Theme UI
 
 # Build consistent, themeable React apps based on constraint-based design principles
 
-Emotion + Styled System + MDX + Typography.js
-
 [Documentation](/getting-started)
 [GitHub](https://github.com/system-ui/theme-ui)
 
+![GitHub][stars]
 ![Build Status][circleci-badge]
 ![Version][version]
 ![MIT License][license]
@@ -103,6 +103,19 @@ Emotion + Styled System + MDX + Typography.js
 
 </Tiles>
 
+<Box py={6}>
+
+## Get Started
+
+<Button
+  as='a'
+  href='/getting-started'
+  variant='black'>
+  Explore the Docs
+</Button>
+
+</Box>
+
 </Container>
 
 [circleci]: https://circleci.com/gh/system-ui/theme-ui
@@ -112,3 +125,4 @@ Emotion + Styled System + MDX + Typography.js
 [license]: https://flat.badgen.net/badge/license/MIT/blue
 [system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
 [size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
+[stars]: https://flat.badgen.net/github/stars/system-ui/theme-ui

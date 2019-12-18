@@ -4,25 +4,25 @@ export default {
   useCustomProperties: true,
   initialColorMode: 'light',
   colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#33e',
-    secondary: '#119',
+    text: '#000000',
+    background: '#ffffff',
+    primary: '#3333ee',
+    secondary: '#111199',
     muted: '#f6f6f6',
     highlight: '#efeffe', // '#ffffcc',
-    gray: '#777',
-    accent: '#609',
+    gray: '#777777',
+    accent: '#660099',
     darken: 'rgba(0, 0, 0, .25)',
     modes: {
       dark: {
-        text: '#fff',
+        text: '#ffffff',
         background: '#060606',
-        primary: '#3cf',
-        secondary: '#e0f',
+        primary: '#33ccff',
+        secondary: '#ee00ff',
         muted: '#191919',
         highlight: '#29112c',
-        gray: '#999',
-        accent: '#c0f',
+        gray: '#999999',
+        accent: '#cc00ff',
       },
       deep: {
         text: 'hsl(210, 50%, 96%)',
@@ -64,6 +64,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
+    container: 768,
   },
   text: {
     heading: {
@@ -78,11 +79,162 @@ export default {
       letterSpacing: '-0.03em',
       mt: 3,
     },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
   },
   buttons: {
     primary: {
       color: 'background',
       bg: 'primary',
+      fontWeight: 'bold',
+    },
+    secondary: {
+      variant: 'buttons.primary',
+      color: 'background',
+      bg: 'secondary',
+    },
+    black: {
+      fontWeight: 'bold',
+      color: 'background',
+      bg: 'text',
+      '&:hover, &:focus': {
+        bg: 'primary',
+      },
+    },
+  },
+  links: {
+    button: {
+      display: 'inline-block',
+      textDecoration: 'none',
+      fontWeight: 'bold',
+      fontSize: 2,
+      p: 3,
+      color: 'background',
+      bg: 'text',
+      borderRadius: 6,
+      '&:hover, &:focus': {
+        color: 'background',
+        bg: 'primary',
+      },
+    },
+    nav: {
+      display: 'block',
+      width: '100%',
+      px: 2,
+      py: 2,
+      color: 'inherit',
+      textDecoration: 'none',
+      fontSize: 1,
+      fontWeight: 'bold',
+      bg: 'transparent',
+      transitionProperty: 'background-color',
+      transitionTimingFunction: 'ease-out',
+      transitionDuration: '.2s',
+      borderRadius: 2,
+      '&:hover': {
+        bg: 'highlight',
+      },
+      '&.active': {
+        color: 'primary',
+        bg: 'highlight',
+      },
+    },
+  },
+  badges: {
+    primary: {
+      color: 'background',
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight',
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
+    },
+    circle: {
+      height: 16,
+      minWidth: 16,
+      lineHeight: '16px',
+      textAlign: 'center',
+      borderRadius: 9999,
+    },
+  },
+  images: {
+    avatar: {
+      width: 48,
+      height: 48,
+      borderRadius: 9999,
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 2,
+      border: '1px solid',
+      borderColor: 'muted',
+    },
+  },
+  forms: {
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    input: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    select: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    textarea: {
+      borderColor: 'gray',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    slider: {
+      bg: 'muted',
+    },
+  },
+  alerts: {
+    primary: {
+      color: 'background',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary'
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent'
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight'
     },
   },
   styles: {

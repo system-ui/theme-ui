@@ -9,6 +9,7 @@ import {
   saturate,
   shade,
   tint,
+  alpha,
   mix,
   complement,
   invert,
@@ -72,6 +73,11 @@ test('tint', () => {
   expect(n).toBe('#3fd8ff')
 })
 
+test('alpha', () => {
+  const n = alpha('primary', 0.25)(theme)
+  expect(n).toBe('rgba(0,204,255,0.25)')
+})
+
 test('mix', () => {
   const n = mix('primary', 'secondary', 0.25)(theme)
   expect(n).toBe('#4c59b2')
@@ -90,4 +96,108 @@ test('invert', () => {
 test('grayscale', () => {
   const n = grayscale('primary')(theme)
   expect(n).toBe('#808080')
+})
+
+const themeCustomProps = {
+  colors: {
+    primary: 'var(--theme-ui-colors-primary, #0cf)',
+    secondary: 'var(--theme-ui-colors-primary, #639)',
+  },
+}
+
+test('desaturateCustomProps', () => {
+  const n = desaturate('primary', 0.5)(themeCustomProps)
+  expect(n).toBe('#40a6bf')
+})
+
+test('saturateCustomProps', () => {
+  const n = saturate('secondary', 1)(themeCustomProps)
+  expect(n).toBe('#60c')
+})
+
+test('darkenCustomProps', () => {
+  const n = darken('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('#006680')
+})
+
+test('lightenCustomProps', () => {
+  const n = lighten('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('#80e5ff')
+})
+
+test('rotateCustomProps', () => {
+  const n = rotate('primary', 30)(themeCustomProps)
+  expect(n).toBe('#004cff')
+})
+
+test('hueCustomProps', () => {
+  const n = hue('primary', 200)(themeCustomProps)
+  expect(n).toBe('#0af')
+})
+
+test('saturationCustomProps', () => {
+  const n = saturation('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('#60939f')
+})
+
+test('lightnessCustomProps', () => {
+  const n = lightness('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('#006680')
+})
+
+test('shadeCustomProps', () => {
+  const n = shade('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('#0099bf')
+})
+
+test('tintCustomProps', () => {
+  const n = tint('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('#3fd8ff')
+})
+
+test('alphaCustomProps', () => {
+  const n = alpha('primary', 0.25)(themeCustomProps)
+  expect(n).toBe('rgba(0,204,255,0.25)')
+})
+
+test('mixCustomProps', () => {
+  const n = mix('primary', 'secondary', 0.25)(themeCustomProps)
+  expect(n).toBe('#4c59b2')
+})
+
+test('complementCustomProps', () => {
+  const n = complement('secondary')(themeCustomProps)
+  expect(n).toBe('#693')
+})
+
+test('invertCustomProps', () => {
+  const n = invert('primary')(themeCustomProps)
+  expect(n).toBe('#f30')
+})
+
+test('grayscaleCustomProps', () => {
+  const n = grayscale('primary')(themeCustomProps)
+  expect(n).toBe('#808080')
+})
+
+const themeTomato = {
+  colors: {
+    primary: 'tomato',
+  },
+}
+
+test('darkenTomato', () => {
+  const n = darken('primary', 0.25)(themeTomato)
+  expect(n).toBe('#c61e00')
+})
+
+const themeTomatoCustomProps = {
+  colors: {
+    primary: 'var(--theme-ui-colors-primary, tomato)',
+  },
+}
+
+test('darkenTomatoCustomProps', () => {
+  const n = darken('primary', 0.25)(themeTomatoCustomProps)
+  expect(n).toBe('#c61e00')
 })

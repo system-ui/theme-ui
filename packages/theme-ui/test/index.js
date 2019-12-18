@@ -3,6 +3,7 @@ import { mdx } from '@mdx-js/react'
 import { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
+import mockConsole from 'jest-mock-console'
 import { ThemeProvider, Context, Styled, jsx, useColorMode } from '../src/index'
 
 expect.extend(matchers)
@@ -98,6 +99,13 @@ test('components accept an `as` prop', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
+test('components with `as` prop receive all props', () => {
+  const Beep = props => <div {...props} />
+  const json = renderJSON(<Styled.a as={Beep} activeClassName="active" />)
+  expect(json.type).toBe('div')
+  expect(json.props.activeClassName).toBe('active')
+})
+
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {
@@ -115,7 +123,7 @@ test('custom pragma adds styles', () => {
 })
 
 test('warns when multiple versions of emotion are installed', () => {
-  jest.spyOn(global.console, 'warn')
+  const restore = mockConsole()
   const json = renderJSON(
     <Context.Provider
       value={{
@@ -125,4 +133,59 @@ test('warns when multiple versions of emotion are installed', () => {
     </Context.Provider>
   )
   expect(console.warn).toBeCalled()
+  restore()
+})
+
+test('functional themes receive outer theme', () => {
+  const outer = {
+    colors: {
+      text: 'tomato',
+    },
+  }
+  const theme = jest.fn()
+  const json = renderJSON(
+    jsx(
+      ThemeProvider,
+      { theme: outer },
+      jsx(
+        ThemeProvider,
+        { theme },
+        jsx('div', {
+          sx: {
+            color: 'text',
+          },
+        })
+      )
+    )
+  )
+  expect(theme).toHaveBeenCalledWith(outer)
+  expect(json).toHaveStyleRule('color', 'text')
+})
+
+test('functional themes can be used at the top level', () => {
+  const theme = jest.fn(() => ({
+    useCustomProperties: false,
+    colors: {
+      primary: 'tomato',
+    },
+  }))
+  let json
+  expect(() => {
+    json = renderJSON(
+      jsx(
+        ThemeProvider,
+        { theme },
+        jsx(
+          'div',
+          {
+            sx: {
+              color: 'primary',
+            },
+          },
+          'hi'
+        )
+      )
+    )
+  }).not.toThrow()
+  expect(json).toHaveStyleRule('color', 'tomato')
 })

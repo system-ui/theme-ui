@@ -1,7 +1,7 @@
 {
   "name": "theme-ui-starter",
   "private": "true",
-  "version": "0.2.43",
+  "version": "0.2.52",
   "description": "A sandbox configured with Theme UI, including the `base` theme.",
   "main": "index.html",
   "scripts": {
@@ -9,15 +9,15 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@emotion/core": "10.0.17",
-    "@mdx-js/react": "1.4.5",
-    "@theme-ui/presets": "^0.2.42",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "theme-ui": "^0.2.43"
+    "@emotion/core": "^10.0.17",
+    "@mdx-js/react": "^1.4.5",
+    "@theme-ui/presets": "^0.2.44",
+    "react": "^16.12.0",
+    "react-dom": "^16.9.0",
+    "theme-ui": "^0.2.52"
   },
   "devDependencies": {
-    "@babel/core": "7.6.0",
+    "@babel/core": "^7.7.4",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": [
