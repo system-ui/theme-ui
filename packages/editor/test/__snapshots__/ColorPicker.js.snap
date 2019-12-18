@@ -409,14 +409,12 @@ exports[`renders with styles 1`] = `
 exports[`snapshot renders as a popover 1`] = `
 Array [
   <div
-    aria-controls="hidden-1"
+    aria-controls="id-1"
     aria-expanded={false}
     aria-haspopup="dialog"
     onClick={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
-    onMouseOver={[Function]}
-    tabIndex={0}
     type="button"
   >
     <button>
@@ -494,7 +492,7 @@ Array [
     className="emotion-10"
     data-dialog={true}
     hidden={true}
-    id="hidden-1"
+    id="id-1"
     onAnimationEnd={[Function]}
     onKeyDown={[Function]}
     onTransitionEnd={[Function]}

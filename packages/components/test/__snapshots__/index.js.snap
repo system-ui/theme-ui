@@ -763,6 +763,7 @@ exports[`Link renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
+  font-weight: normal;
 }
 
 <a
@@ -851,14 +852,15 @@ exports[`NavLink renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: inherit;
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  font-weight: normal;
 }
 
 .emotion-0:hover,

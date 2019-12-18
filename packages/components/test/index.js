@@ -78,6 +78,7 @@ const theme = {
     nav: {
       textDecoration: 'none',
       color: 'inherit',
+      fontWeight: 'normal',
     },
   },
 }

@@ -36,3 +36,46 @@ const MyComponent = () => {
   )
 }
 ```
+
+### Server side rendering
+
+Each hook also accepts an options object, used to set a default breakpoint index when rendering on the server.
+
+```js
+import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media'
+
+const MyComponent = () => {
+  const color = useResponsiveValue(['red', 'green', 'blue'], {
+    defaultIndex: 1
+  })
+  const index = useBreakpointIndex({ defaultIndex: 0 })
+
+  return (
+    <div>
+      The current color is: {color}, and the current index is: {index} 
+   // Gatsby will output: 
+   // The current color is: green, and the current index is: 0
+    </div>
+  )
+}
+```
+
+Each hook uses `breakpoints[0]` by default, if not specified.
+
+```js
+import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media'
+
+const MyComponent = () => {
+  const color = useResponsiveValue(['red', 'green', 'blue'])
+  const index = useBreakpointIndex()
+
+  return (
+    <div>
+      The current color is: {color}, and the current index is: {index} 
+   // Gatsby will output: 
+   // The current color is: red, and the current index is: 0
+    </div>
+  )
+}
+```
+
