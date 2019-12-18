@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/color`: add `transparentize` function #370
+
 ## v0.2.52 2019-12-16
 
 - Fix for issues when `localStorage` is not available #514
