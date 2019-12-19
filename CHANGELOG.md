@@ -3,6 +3,7 @@
 ## Unreleased
 
 - `@theme-ui/color`: add `transparentize` function #370
+- `@theme-ui/style-guide`: move context dependencies to peer dependencies #521
 
 ## v0.2.52 2019-12-16
 
