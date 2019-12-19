@@ -1,20 +1,3 @@
-// todo/figure out
-// - [x] color modes
-// - [x] custom properties
-// - [x] mdx components @theme-ui/mdx
-// - [ ] monkey test with docs
-// - [ ] better default color mode name API
-// - [ ] initialize color mode from media query
-
-// API
-//  <ThemeProvider theme={theme}>
-//    <ColorModeProvider>
-//      <MDXProvider>
-//        <App />
-//      </MDXProvider>
-//    </ColorModeProvider>
-//  </ThemeProvider>
-
 import {
   jsx as emotion,
   ThemeContext as EmotionContext,
