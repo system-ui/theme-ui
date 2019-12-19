@@ -12,6 +12,12 @@ Additionally, naming conventions for colors and typography are included
 to help ensure deeper interoperability with components from various other libraries.
 This is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose theming.
 
+The theme object is made up of the following data types:
+
+- *Scales:* plain objects or arrays of values for related CSS properties
+- *Variants:* partial style objects that can be used for stylistic component variants or making part of an application themeable
+- *Styles:* a collection of styles for MDX content
+
 ## Theme Scales
 
 The `theme` object is made up of the following scales (i.e. property-specific objects) for use in CSS styles.
@@ -90,16 +96,14 @@ TK
 ## Color Modes
 
 To use Theme UI color modes, color scales should include _at least_ a `text` and `background` color.
-These values are used in the `ColorMode` component to set body foreground and background colors.
+These values are used to set body foreground and background colors.
 Color modes should be defined as nested objects within a `theme.colors.modes` object.
 Each key in this object should correspond to a color mode name,
 where the name can be anything, but typically `light` and `dark` are used for applications with a dark mode.
-The `initialColorMode` key is required to enable color modes and will be used as the name for the root color palette.
 
 ```js
 // example color scale with modes
 {
-  initialColorMode: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -185,6 +189,7 @@ but these values are *not* in any way tied to HTML elements.
 
 Use variants to define custom groups of styles.
 These are commonly used for typographic styles, buttons, and themeable layout components.
+Variants are also used to style built-in [components](/components).
 
 ```js
 // example typographic style variants
@@ -253,6 +258,8 @@ User-defined variants can then be referenced in the `sx` prop or in `theme.style
   Beep
 </button>
 ```
+
+Variants support the same style objects as the `sx` prop, which means responsive array values, functional values, and extending other variants are supported.
 
 ## Styles
 

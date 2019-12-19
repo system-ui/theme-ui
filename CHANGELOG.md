@@ -13,6 +13,7 @@
 - Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
 - Updates CSS custom properties implementation for color modes
 - When using `useColorSchemeMediaQuery` flag, it will initialize the mode to `light` when `@media (prefers-color-scheme: light)` is enabled
+- Manually rendering the `ColorMode` component is no longer required
 
 ## v0.2.53 2019-12-19
 

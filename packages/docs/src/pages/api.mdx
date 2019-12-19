@@ -2,33 +2,13 @@
 title: API
 ---
 
+import Note from '../components/note'
+
 # API
 
 ## `theme-ui`
 
 The core `theme-ui` package exports the following modules.
-
-### `css`
-
-The `css` utility comes from the [`@styled-system/css`][styled-system/css] package and is intended for use with the Emotion `css` prop.
-It will attempt to use values from the `theme` object for many common CSS properties, and will fall back to raw values when there is no corresponding theme value.
-
-To see a list of supported CSS properties, see the [Styled System CSS docs](https://styled-system.com/css/#theme-keys).
-
-```js
-css(styleObject)(theme)
-```
-
-**Usage:**
-
-```jsx
-<div css={css(styles)} />
-```
-
-| Argument      | Type   | Description                                                                                          |
-| ------------- | ------ | ---------------------------------------------------------------------------------------------------- |
-| `styleObject` | Object | a theme-aware style object with support for responsive array values and Styled System prop shortcuts |
-| `theme`       | Object | the Emotion theming context object                                                                   |
 
 ### `jsx`
 
@@ -65,25 +45,15 @@ It also handles color mode state.
 
 ### `useThemeUI`
 
-The `useThemeUI` hook returns the full Theme UI context object, which includes `theme`, `components`, and color mode.
+The `useThemeUI` hook returns the full Theme UI context object, which includes `theme`, and color mode.
 
 ```js
 const context = useThemeUI()
 ```
 
-### `ColorMode`
+### `Context`
 
-The `ColorMode` component applies foreground and background color to the `<body>` element, based on the color modes defined in a theme.
-It is also used in `gatsby-plugin-theme-ui` for helping reduce flashes of style changes on page load.
-
-**Usage**
-
-```jsx
-<ThemeProvider theme={theme}>
-  <ColorMode />
-  {props.children}
-</ThemeProvider>
-```
+The React context used in Theme UI.
 
 ### `useColorMode`
 
@@ -111,13 +81,65 @@ These are primarily meant to be used as a mechanism to use styles defined in a `
 
 ### `BaseStyles`
 
-The `BaseStyles` component can be used to style child content that isn't generated from MDX. Note that this will increase the CSS specificity of child elements, and you may run into issues with the cascade (i.e. specificity) when using this component.
+The `BaseStyles` component can be used to style child content that isn't generated from MDX.
+
+<Note>
+
+Note that this will increase the CSS specificity of child elements, and you may run into issues with the cascade (i.e. specificity) when using this component.
+
+</Note>
 
 ```jsx
 <BaseStyles>
   <h1>Styled based on <code>theme.styles</code></h1>
 </BaseStyles>
 ```
+
+### `css`
+
+As an alternative to using the `sx` prop, the `css` utility is intended for use with the Emotion `css` prop.
+It will attempt to use values from the `theme` object for many common CSS properties, and will fall back to raw values when there is no corresponding theme value.
+
+To see a list of supported CSS properties, see the [`sx` prop docs](/sx-prop).
+
+```js
+css(styleObject)(theme)
+```
+
+**Usage:**
+
+```jsx
+<div css={css(styles)} />
+```
+
+| Argument      | Type   | Description                                                                                          |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------- |
+| `styleObject` | Object | a theme-aware style object with support for responsive array values and Styled System prop shortcuts |
+| `theme`       | Object | the Emotion theming context object                                                                   |
+
+### `get`
+
+An existential getter function used internally.
+
+### `merge`
+
+A deep object merge function used internally.
+
+### `InitializeColorMode`
+
+Used internally by [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin), this component can be rendered in HTML before the main application to help prevent the flash of colors that can occur during rehydration.
+
+**Usage**
+
+```jsx
+<InitializeColorMode />
+```
+
+### `components`
+
+An object of styled MDX components for use with `MDXProvider`.
+
+## Components
 
 For component API docs, see [Components](/components)
 
