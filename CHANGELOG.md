@@ -3,13 +3,15 @@
 ## Unreleased
 
 ### v0.3
-- Split theme-ui package into `@theme-ui/core` and `@theme-ui/mdx`
+- Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
 - Removes `context.components`
 - Separate `ColorModeProvider` component
 - Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
 - No longer initializes color mode based on `prefers-color-scheme` media query - TODO: provide alternative API
 - Removes layout components (`Layout`, `Header`, `Main`, `Footer`)
 - Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
+- Updates CSS custom properties implementation for color modes
+- When using `useColorSchemeMediaQuery` flag, it will initialize the mode to `light` when `@media (prefers-color-scheme: light)` is enabled
 
 ## v0.2.52 2019-12-16
 

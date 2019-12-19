@@ -3,6 +3,8 @@
 
 Adds support for user-controlled color modes
 
+**Note:** *This package is included in the main `theme-ui` package, and generally should not be used on its own.*
+
 ```sh
 npm i @theme-ui/color-modes
 ```
@@ -20,4 +22,9 @@ export default props =>
   </ThemeProvider>
 ```
 
-**Note:** *This package is included in the main `theme-ui` package.*
+## API
+
+- `useColorMode`
+- `ColorModeProvider`
+- `InitializeColorMode`
+

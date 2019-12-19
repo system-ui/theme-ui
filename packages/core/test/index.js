@@ -95,6 +95,30 @@ describe('ThemeProvider', () => {
     }).not.toThrow()
     expect(json).toHaveStyleRule('color', 'tomato')
   })
+
+  test('variants support functional values', () => {
+    const theme = {
+      colors: {
+        primary: 'tomato',
+      },
+      cards: {
+        default: {
+          border: t => `1px solid ${t.colors.primary}`,
+        }
+      }
+    }
+    const json = renderJSON(
+      jsx(ThemeProvider, { theme },
+        jsx('div', {
+          sx: {
+            variant: 'cards.default',
+          }
+        })
+      )
+    )
+    expect(json).toHaveStyleRule('border', '1px solid tomato')
+
+  })
 })
 
 describe('jsx', () => {
@@ -323,3 +347,4 @@ describe('useThemeUI', () => {
     expect(context.theme.colors.text).toBe('tomato')
   })
 })
+

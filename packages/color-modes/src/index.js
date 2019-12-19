@@ -36,7 +36,7 @@ const getMediaQuery = () => {
   return 'default'
 }
 
-export const useColorModeState = (theme = {}) => {
+const useColorModeState = (theme = {}) => {
   const [mode, setMode] = React.useState(theme.initialColorModeName || 'default')
 
   // initialize state
