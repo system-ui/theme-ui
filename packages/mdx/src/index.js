@@ -1,7 +1,3 @@
-// - [ ] ComponentProvider
-// - [ ] base markdown components
-// - [ ] consider switching back to @emotion/styled
-
 import { jsx } from '@theme-ui/core'
 import { css, get } from '@theme-ui/css'
 import React from 'react'

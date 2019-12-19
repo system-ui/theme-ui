@@ -23,7 +23,6 @@ const storage = {
   set: value => HAS_STORAGE && window.localStorage.setItem(STORAGE_KEY, value),
 }
 
-// todo: update API
 const getMediaQuery = () => {
   const darkQuery = '(prefers-color-scheme: dark)'
   const lightQuery = '(prefers-color-scheme: light)'
