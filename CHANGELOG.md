@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-### v0.3
+### v0.3.0
+
 - Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
 - Removes `context.components`
 - Separate `ColorModeProvider` component
@@ -12,6 +13,11 @@
 - Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
 - Updates CSS custom properties implementation for color modes
 - When using `useColorSchemeMediaQuery` flag, it will initialize the mode to `light` when `@media (prefers-color-scheme: light)` is enabled
+
+## v0.2.53 2019-12-19
+
+- `@theme-ui/color`: add `transparentize` function #370
+- `@theme-ui/style-guide`: move context dependencies to peer dependencies #521
 
 ## v0.2.52 2019-12-16
 

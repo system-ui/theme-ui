@@ -9,6 +9,7 @@ import {
   saturate,
   shade,
   tint,
+  transparentize,
   alpha,
   mix,
   complement,
@@ -71,6 +72,11 @@ test('shade', () => {
 test('tint', () => {
   const n = tint('primary', 0.25)(theme)
   expect(n).toBe('#3fd8ff')
+})
+
+test('transparentize', () => {
+  const n = transparentize('primary', 0.25)(theme)
+  expect(n).toBe('rgba(0,204,255,0.75)')
 })
 
 test('alpha', () => {
