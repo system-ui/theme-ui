@@ -2,17 +2,15 @@
 
 React hooks for referencing theme-ui breakpoints.
 
-## Overview
-
-This package provides two React hooks (`useResponsiveValue` and `useBreakpointIndex`) for referencing responsive values outside of the `sx` prop.
-
-## Installation
-
 ```sh
 npm i @theme-ui/match-media
 ```
 
 ## Usage
+
+This package provides two React hooks `useResponsiveValue` and `useBreakpointIndex` for referencing responsive values outside of the `sx` prop.
+Note that this is a client-side-only, JavaScript solution.
+
 
 ```js
 import { useResponsiveValue, useBreakpointIndex } from '@theme-ui/match-media'
@@ -52,8 +50,8 @@ const MyComponent = () => {
 
   return (
     <div>
-      The current color is: {color}, and the current index is: {index} 
-   // Gatsby will output: 
+      The current color is: {color}, and the current index is: {index}
+   // Gatsby will output:
    // The current color is: green, and the current index is: 0
     </div>
   )
@@ -71,8 +69,8 @@ const MyComponent = () => {
 
   return (
     <div>
-      The current color is: {color}, and the current index is: {index} 
-   // Gatsby will output: 
+      The current color is: {color}, and the current index is: {index}
+   // Gatsby will output:
    // The current color is: red, and the current index is: 0
     </div>
   )

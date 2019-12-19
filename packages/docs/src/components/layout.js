@@ -15,11 +15,26 @@ import NavLink from './nav-link'
 import Button from './button'
 import Sidebar from '../sidebar.mdx'
 
-const modes = ['light', 'dark', 'deep', 'swiss']
+const modes = ['default', 'dark', 'deep', 'swiss']
 
 const sidebar = {
   wrapper: AccordionNav,
   a: NavLink,
+}
+
+const getModeName = mode => {
+  switch (mode) {
+    case 'dark':
+      return 'Dark'
+    case 'deep':
+      return 'Deep'
+    case 'swiss':
+      return 'Swiss'
+    case 'default':
+      return 'Light'
+    default:
+      return mode
+  }
 }
 
 export default props => {
@@ -80,7 +95,7 @@ export default props => {
                 ml: 2,
               }}
               onClick={cycleMode}>
-              {mode}
+              {getModeName(mode)}
             </Button>
           </Flex>
         </Flex>

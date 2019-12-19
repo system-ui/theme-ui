@@ -56,7 +56,7 @@ If you're building a custom component library, either Styled Components or Emoti
 
 For Theme UI, the decision was primarily based on these factors:
 
-- Emotion's implementation of the `css` prop and the custom JSX pragma allows for better integration with `@styled-system/css`
+- Emotion's implementation of the `css` prop and the custom JSX pragma allows for better integration with Theme UI's `sx` prop
 - The Emotion API includes more lower-level utilities, like `createEmotion` that could be leveraged when considering how multiple themes could be composed together
 - Emotion's theming context is directly available in `@emotion/core`, allowing this library to leverage React's context API in different ways
 - In the case of Theme UI internals, the `styled` higher-order component utility is not necessarily the best API for creating components,
@@ -64,6 +64,6 @@ For Theme UI, the decision was primarily based on these factors:
 
 ## How is this different from Styled System
 
-Theme UI uses `@styled-system/css` and the same theme spec that Styled System adheres to. Styled System is a much lower-level API that is not in any way coupled to React or Emotion.
+Theme UI's `sx` prop was inspired by Styled System, and it uses the same theme spec that Styled System adheres to. Styled System is a much lower-level API that is not in any way coupled to React or Emotion.
 For example, Styled System works with Node.js, Vuejs, Svelte, and many other libraries.
 Theme UI is intended to be a higher-level abstraction specifically for use in React applications and includes features that will not likely be added to the core Styled System library.
