@@ -1,3 +1,4 @@
+export { EditorProvider } from './EditorProvider'
 export { default as Editor } from './Editor'
 export { default as ColorPicker } from './ColorPicker'
 export { default as ColorPalette } from './ColorPalette'

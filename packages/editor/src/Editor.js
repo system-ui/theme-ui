@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
-import { useEffect } from 'react'
+import { jsx, ThemeProvider, useThemeUI, merge } from 'theme-ui'
+import { useEffect, useReducer } from 'react'
+import { ThemeContext as Emotion } from '@emotion/core'
 import { EditorContext } from './context'
 
 const theme = {
@@ -9,6 +10,8 @@ const theme = {
     highlight: 'hsl(210, 50%, 95%)',
   },
 }
+
+const reducer = (state, next) => merge(state, next)
 
 export default ({
   context,
@@ -20,9 +23,13 @@ export default ({
   const outer = useThemeUI()
   context = context || outer
 
+  const [theme, setTheme] = useReducer(reducer, context.theme)
+  context.theme = theme
+  context.setTheme = setTheme
+
   return (
     <EditorContext.Provider value={context}>
-      <ThemeProvider scoped theme={theme}>
+      <Emotion.Provider context={theme}>
         <div
           {...props}
           sx={{
@@ -34,7 +41,7 @@ export default ({
             bg,
           }}
         />
-      </ThemeProvider>
+      </Emotion.Provider>
     </EditorContext.Provider>
   )
 }

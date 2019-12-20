@@ -4,6 +4,23 @@ Components for editing Theme UI context, themes, and elements
 
 ## Theme Context Editing
 
+Add the `EditorProvider` to the root of your application, inside Theme UI's `ThemeProvider`.
+
+```jsx
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import { EditorProvider } from '@theme-ui/editor'
+
+export default props =>
+  <ThemeProvider theme={theme}>
+    <EditorProvider>
+      {props.children}
+    </EditorProvider>
+  </ThemeProvider>
+```
+
+Anywhere inside your app, place editor form controls in the `Editor` component.
+
 ```jsx
 import React from 'react'
 import {
