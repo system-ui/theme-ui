@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@emotion/is-prop-valid": "^0.8.5",
+    "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.5.1"
   },
   "peerDependencies": {

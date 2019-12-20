@@ -2,7 +2,7 @@ import { jsx } from '@theme-ui/core'
 import { css, get } from '@theme-ui/css'
 import React from 'react'
 import { ThemeContext } from '@emotion/core'
-import isPropValid from '@emotion/is-prop-valid'
+import styled from '@emotion/styled'
 import {
   MDXProvider as _MDXProvider,
   useMDXComponents
@@ -52,34 +52,6 @@ const aliases = {
 }
 
 const alias = n => aliases[n] || n
-
-export const styled = tag => (...args) => {
-  const Component = React.forwardRef(({ as, ...props }, ref) => {
-    const shouldForwardProps =
-      typeof tag !== 'string' || (as && typeof as !== 'string')
-    const theme = React.useContext(ThemeContext)
-    let nextProps = shouldForwardProps ? props : {}
-    let styles = {}
-    args.forEach(arg => {
-      const style = typeof arg === 'function' ? arg({ theme, ...props }) : arg
-      Object.assign(styles, style)
-    })
-
-    if (!shouldForwardProps) {
-      for (let key in props) {
-        if (!isPropValid(key)) continue
-        nextProps[key] = props[key]
-      }
-    }
-
-    return jsx(as || tag, {
-      ...nextProps,
-      ref,
-      css: styles,
-    })
-  })
-  return Component
-}
 
 export const themed = key => props =>
   css(get(props.theme, `styles.${key}`))(props.theme)
