@@ -65,7 +65,7 @@ tags.forEach(tag => {
   Styled[tag] = components[tag]
 })
 
-const createComponents = (comps = {}) => {
+const createComponents = comps => {
   const next = { ...components }
   Object.keys(comps).forEach(key => {
     next[key] = styled(comps[key])(themed(key))
