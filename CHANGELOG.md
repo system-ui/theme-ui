@@ -5,15 +5,16 @@
 ### v0.3.0
 
 - Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
-- Removes `context.components`
-- Separate `ColorModeProvider` component
+- Removes `context.components` (still available through MDX context)
+- Adds separate `ColorModeProvider` component
 - Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
-- No longer initializes color mode based on `prefers-color-scheme` media query - TODO: provide alternative API
-- Removes layout components (`Layout`, `Header`, `Main`, `Footer`)
+- Removes layout components (`Layout`, `Header`, `Main`, `Footer`) - use `Box` and `Flex` instead
 - Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
 - Updates CSS custom properties implementation for color modes
 - When using `useColorSchemeMediaQuery` flag, it will initialize the mode to `light` when `@media (prefers-color-scheme: light)` is enabled
-- Manually rendering the `ColorMode` component is no longer required
+- Global color mode styles are automatically added to the body without needing to render the `ColorMode` component
+- Removes `ThemeStateProvider`
+- Adds global typographic styles, set `useBodyStyles: false` to disable
 
 ## v0.2.53 2019-12-19
 

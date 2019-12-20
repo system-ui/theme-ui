@@ -8,6 +8,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.0",
     "@theme-ui/core": "^0.2.48",
     "@theme-ui/color-modes": "^0.2.48",
     "@theme-ui/mdx": "^0.2.48"

@@ -3,10 +3,13 @@ import React from 'react'
 import { jsx } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
+import { render, cleanup } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import { ThemeProvider } from '../src'
 
 expect.extend(matchers)
+
+afterEach(cleanup)
 
 const renderJSON = el => renderer.create(el).toJSON()
 
@@ -100,3 +103,65 @@ test('renders with custom components', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
   expect(json.type).toBe('pre')
 })
+
+test('renders global styles', () => {
+  const root = render(
+    <ThemeProvider
+      theme={{
+        fonts: {
+          body: 'Georgia,serif',
+        },
+        lineHeights: {
+          body: 1.5,
+        },
+        fontWeights: {
+          body: 500,
+        },
+      }}>
+      <h1>Hello</h1>
+    </ThemeProvider>
+  )
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.fontFamily).toBe('Georgia,serif')
+  expect(style.fontWeight).toBe('500')
+  expect(style.lineHeight).toBe('1.5')
+})
+
+test('does not render invalid global styles', () => {
+  const root = render(
+    <ThemeProvider
+      theme={{
+      }}>
+      <h1>Hello</h1>
+    </ThemeProvider>
+  )
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.fontFamily).toBe('')
+  expect(style.fontWeight).toBe('')
+  expect(style.lineHeight).toBe('')
+})
+
+test('does not renders global styles', () => {
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useBodyStyles: false,
+        fonts: {
+          body: 'Georgia,serif',
+        },
+        lineHeights: {
+          body: 1.5,
+        },
+        fontWeights: {
+          body: 500,
+        },
+      }}>
+      <h1>Hello</h1>
+    </ThemeProvider>
+  )
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.fontFamily).toBe('')
+  expect(style.fontWeight).toBe('')
+  expect(style.lineHeight).toBe('')
+})
+
