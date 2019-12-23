@@ -2778,9 +2778,9 @@
     glob-to-regexp "^0.3.0"
 
 "@next/mdx@^9.0.3":
-  version "9.1.5"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.1.5.tgz#d3f4b3ce680608b4fcaf55889ff84f3f8efcb6b8"
-  integrity sha512-1Anml0XN1YwvylGI7hcVYNhvUCl6oB2t8goa2z1qzla1asmoHsiWRtP/AISK+lEi4gKJl4hVPkhMsN1j9CR01w==
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.1.6.tgz#34c40a60811b6ec5f13613e31e8fd5622d82b938"
+  integrity sha512-0wsmd1JOri51uZwpKDC0m7i4w/4DHlMveyxCJUBaP3dV3Qc3/FIHbfcOwFXTIy58rLzD1gI8PmYMZaefr7+O2Q==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
