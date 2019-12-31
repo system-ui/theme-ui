@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.2.49",
+  "version": "0.2.53",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {

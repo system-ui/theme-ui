@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## v0.2.53 2019-12-19
+
+- `@theme-ui/color`: add `transparentize` function #370
+- `@theme-ui/style-guide`: move context dependencies to peer dependencies #521
+
 ## v0.2.52 2019-12-16
 
 - Fix for issues when `localStorage` is not available #514
