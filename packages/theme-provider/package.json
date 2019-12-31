@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.2.48",
+  "version": "0.3.0-alpha.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/core": "^0.2.48",
-    "@theme-ui/color-modes": "^0.2.48",
-    "@theme-ui/mdx": "^0.2.48"
+    "@theme-ui/color-modes": "^0.3.0-alpha.0",
+    "@theme-ui/core": "^0.3.0-alpha.0",
+    "@theme-ui/mdx": "^0.3.0-alpha.0"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
