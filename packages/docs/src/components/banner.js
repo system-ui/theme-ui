@@ -8,7 +8,8 @@ export default props => (
         p: {
           ':first-of-type': {
             variant: 'text.display',
-            fontSize: [4, 5],
+            fontSize: [3, null, 4],
+            mt: 4,
           },
           fontWeight: 'bold',
           mt: 0,
@@ -30,7 +31,7 @@ export default props => (
     }}>
     <div
       sx={{
-        py: [5, 6],
+        pb: [5, 6],
       }}>
       <Container>{props.children}</Container>
     </div>
