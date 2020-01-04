@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
+
 ## v0.2.53 2019-12-19
 
 - `@theme-ui/color`: add `transparentize` function #370
