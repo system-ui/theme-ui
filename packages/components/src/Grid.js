@@ -9,7 +9,9 @@ const widthToColumns = width =>
     : !!width && `repeat(auto-fit, minmax(${px(width)}, 1fr))`
 
 const countToColumns = n =>
-  Array.isArray(n) ? n.map(countToColumns) : !!n && `repeat(${n}, 1fr)`
+  Array.isArray(n)
+    ? n.map(countToColumns)
+    : !!n && (typeof n === 'number' ? `repeat(${n}, 1fr)` : n)
 
 export const Grid = React.forwardRef(
   ({ width, columns, gap = 3, ...props }, ref) => {
