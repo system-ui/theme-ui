@@ -4,8 +4,10 @@ title: 'Theme Color Meta Tag'
 
 # Theme Color Meta Tag
 
+Use your framework’s method of adding a meta tag to `<head />`—[`react-helmet`](https://github.com/nfl/react-helmet) in Gatsby and [`next/head`](https://nextjs.org/docs/api-reference/next/head) in Next.js, for example.
+
 ```jsx
-// example Head component
+// example Head component with react-helmet
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useThemeUI } from 'theme-ui'
@@ -15,7 +17,7 @@ export default props => {
 
   return (
     <Helmet>
-      <meta name='theme-color' content={theme.colors.background} />
+      <meta name="theme-color" content={theme.colors.primary} />
     </Helmet>
   )
 }
