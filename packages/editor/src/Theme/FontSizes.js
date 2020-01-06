@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useEditor } from './context'
-import Field from './Field'
+import { jsx, useThemeUI } from 'theme-ui'
+import { Field } from '@theme-ui/components'
 
 export default props => {
-  const context = useEditor()
+  const context = useThemeUI()
   const { fontSizes = [] } = context.theme
 
   const onChange = key => val => {

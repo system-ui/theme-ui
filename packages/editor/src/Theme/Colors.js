@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import { ColorPalette } from '@theme-ui/style-guide'
-import { useEditor } from './context'
-import ColorPicker from './ColorPicker'
+import ColorPicker from '../ColorPicker'
 
 export default props => {
-  const context = useEditor()
+  const context = useThemeUI()
   const mode = context.colorMode
   const { colors = {} } = context.theme
 
@@ -32,16 +31,14 @@ export default props => {
   }
 
   return (
-    <ThemeProvider theme={{ colors }}>
-      <ColorPalette
-        {...props}
-        mode={mode}
-        render={({ swatch, color, key, ...rest }) => (
-          <ColorPicker key={key} color={color} onChange={onChange(key)}>
-            {swatch}
-          </ColorPicker>
-        )}
-      />
-    </ThemeProvider>
+    <ColorPalette
+      {...props}
+      mode={mode}
+      render={({ swatch, color, key, ...rest }) => (
+        <ColorPicker key={key} color={color} onChange={onChange(key)}>
+          {swatch}
+        </ColorPicker>
+      )}
+    />
   )
 }

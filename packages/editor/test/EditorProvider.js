@@ -54,7 +54,7 @@ test('setTheme updates theme context', () => {
     context = useThemeUI()
     return false
   }
-  renderer.act(() => {
+  act(() => {
     const tree = render(
       <ThemeProvider theme={theme}>
         <EditorProvider>
@@ -67,9 +67,9 @@ test('setTheme updates theme context', () => {
         text: 'tomato',
       }
     })
-    expect(context.theme.colors.text).toBe('tomato')
-    expect(context.theme.colors.background).toBe('white')
   })
+  expect(context.theme.colors.text).toBe('tomato')
+  expect(context.theme.colors.background).toBe('white')
 })
 
 // todo

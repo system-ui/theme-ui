@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useEditor } from './context'
-import Combobox from './Combobox'
+import { jsx, useThemeUI } from 'theme-ui'
+import Combobox from '../Combobox'
 
 const defaultFonts = [
   'system-ui, sans-serif',
@@ -27,7 +26,7 @@ const defaultFonts = [
 ]
 
 export default ({ options = defaultFonts, ...props }) => {
-  const context = useEditor()
+  const context = useThemeUI()
   const { fonts = {} } = context.theme
 
   const onChange = key => val => {

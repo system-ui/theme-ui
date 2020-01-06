@@ -1,13 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
-import { useEditor } from './context'
-import SxColors from './SxColors'
-import SxMargin from './SxSpace'
-import SxTypography from './SxTypography'
+import Sx from './Sx'
 
 export default ({ tag = 'root' }) => {
-  const context = useEditor()
+  const context = useThemeUI()
   const { styles = {} } = context.theme
 
   const style = styles[tag] || {}
@@ -26,16 +23,16 @@ export default ({ tag = 'root' }) => {
   return (
     <Fragment>
       <b>theme.styles.{tag}</b>
-      <SxTypography
+      <Sx.Typography
         value={style}
         onChange={setStyle}
         theme={context.theme}
       />
-      <SxMargin
+      <Sx.Margin
         value={style}
         onChange={setStyle}
       />
-      <SxColors
+      <Sx.Colors
         value={style}
         onChange={setStyle}
       />

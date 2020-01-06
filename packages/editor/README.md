@@ -155,4 +155,29 @@ export default props => {
 }
 ```
 
+---
 
+```jsx
+import {
+  EditorProvider,
+  Theme,
+  Styles,
+  Sx,
+} from '@theme-ui/editor'
+
+<EditorProvider>
+  <Theme.Colors />
+  <Theme.Fonts />
+  <Theme.FontSizes />
+  <Theme.FontWeights />
+  <Theme.Space />
+</EditorProvider>
+
+<Styles tag='h1' />
+
+<Sx.Padding />
+<Sx.Margin />
+<Sx.Space />
+<Sx.Typography />
+<Sx.Colors />
+```

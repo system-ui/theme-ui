@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
-import Label from './Label'
-import Input from './Input'
+import { Label, Input } from '@theme-ui/components'
 import Chevron from './Chevron'
 
 const keys = {

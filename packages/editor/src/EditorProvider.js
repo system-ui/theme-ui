@@ -8,9 +8,9 @@ export const EditorProvider = ({
   children,
   theme: propsTheme,
 }) => {
-  const outer = propsTheme || useThemeUI()
+  const outer = useThemeUI()
   const [theme, setTheme] = React.useReducer(reducer, {
-    ...outer.theme,
+    ...(propsTheme || outer.theme),
   })
   const context = {
     ...outer,

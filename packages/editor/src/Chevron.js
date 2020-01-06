@@ -1,6 +1,13 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+// from theme-ui/components
+const Chevron = props => (
+  <SVG {...props}>
+    <path d="M7 10l5 5 5-5z" />
+  </SVG>
+)
+
 export default ({ size = 12, ...props }) => (
   <svg
     {...props}

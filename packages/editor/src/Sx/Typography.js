@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
-import Combobox from './Combobox'
-import Field from './Field'
+import { Field } from '@theme-ui/components'
+import Combobox from '../Combobox'
 
 export const SxTypography = ({
   tag,

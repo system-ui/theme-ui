@@ -1,15 +1,14 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import React from 'react'
 import tinycolor from 'tinycolor2'
 import { GithubPicker } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
-import { useEditor } from './context'
 
 export const ThemeColorPicker = ({ children, theme, ...props }) => {
   const popover = usePopoverState()
-  const context = useEditor()
-  const { colors } = theme || context.theme
+  const context = useThemeUI()
+  const { colors } = theme || context.theme || {}
   const value = colors[props.value] || props.value
   const options = [
     'transparent',

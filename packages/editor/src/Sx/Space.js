@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useEffect } from 'react'
-import Field from './Field'
+import { Field } from '@theme-ui/components'
 
-export const SxSpace = ({
+export const Space = ({
   tag,
   property = 'margin',
   value = {},
@@ -133,4 +133,4 @@ export const SxSpace = ({
   )
 }
 
-export default SxSpace
+export default Space
