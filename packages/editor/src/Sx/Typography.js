@@ -44,8 +44,8 @@ export const SxTypography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={val => {
-            const fontSize = Number(val)
+          onChange={e => {
+            const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
         />

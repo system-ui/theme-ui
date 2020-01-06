@@ -2,9 +2,14 @@
 
 Components for editing Theme UI context, themes, and elements
 
+```sh
+npm i @theme-ui/editor
+```
+
 ## Theme Context Editing
 
 Add the `EditorProvider` to the root of your application, inside Theme UI's `ThemeProvider`.
+This creates a stateful theme context for the editor form controls to use.
 
 ```jsx
 import React from 'react'
@@ -19,45 +24,28 @@ export default props =>
   </ThemeProvider>
 ```
 
-Anywhere inside your app, place editor form controls in the `Editor` component.
+Anywhere inside your app, add theme editor form controls.
 
 ```jsx
 import React from 'react'
-import {
-  Editor,
-  Row,
-  Fonts,
-  FontSizes,
-  FontWeights,
-  LineHeights,
-  ColorMode,
-  ColorPalette,
-  Space,
-} from '@theme-ui/editor'
+import { Theme } from '@theme-ui/editor'
 
 export default props =>
-  <Editor>
-    <Fonts />
-    <Row>
-      <FontSizes />
-    </Row>
-    <Row>
-      <FontWeights />
-    </Row>
-    <Row>
-      <LineHeights />
-    </Row>
-    <ColorMode />
-    <ColorPalette />
-    <Row>
-      <Space />
-    </Row>
-  </Editor>
+  <div>
+    <Theme.Fonts />
+    <Theme.FontSizes />
+    <Theme.FontWeights />
+    <Theme.LineHeights />
+    <Theme.Colors />
+    <Theme.Space />
+  </div>
 ```
 
 ## Manually passing context
 
-Pass a Theme UI context manually to the `Editor` component when you don't want to edit the pages theming context.
+Alternatively, you can pass a theme object to the...
+
+Pass a theme object manually to the `EditorProvider` component when you don't want to edit the pages theming context.
 
 ```jsx
 import React from 'react'

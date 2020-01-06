@@ -6,8 +6,8 @@ export default props => {
   const context = useThemeUI()
   const { fontSizes = [] } = context.theme
 
-  const onChange = key => val => {
-    const n = parseFloat(val)
+  const onChange = key => e => {
+    const n = parseFloat(e.target.value)
     if (Array.isArray(fontSizes)) {
       const i = parseInt(key)
       context.setTheme({

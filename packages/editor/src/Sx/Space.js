@@ -23,7 +23,8 @@ export const Space = ({
     if (typeof y === 'number') setLock(lock => ({ ...lock, y: true }))
   }, [])
 
-  const handleChange = direction => n => {
+  const handleChange = direction => e => {
+    const n = e.target.value
     const val = n === '' ? undefined : parseInt(n)
     switch (direction) {
       case 't':

@@ -8,8 +8,8 @@ export default props => {
   const context = useThemeUI()
   const { space = defaultSpace } = context.theme
 
-  const onChange = key => val => {
-    const n = parseFloat(val)
+  const onChange = key => e => {
+    const n = parseFloat(e.target.value)
     if (Array.isArray(space)) {
       const i = parseInt(key)
       context.setTheme({
