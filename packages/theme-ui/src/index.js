@@ -9,7 +9,6 @@ export {
 export {
   useColorMode,
   InitializeColorMode,
-  ColorMode,
 } from '@theme-ui/color-modes'
 export {
   Styled,
