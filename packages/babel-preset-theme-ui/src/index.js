@@ -1,17 +1,18 @@
 module.exports = () => ({
   plugins: [
     [
-      '@wordpress/babel-plugin-import-jsx-pragma',
+      '@emotion/babel-plugin-jsx-pragmatic',
       {
-        source: 'theme-ui',
-        scopeVariable: 'jsx',
-        isDefault: false,
+        module: 'theme-ui',
+        import: 'jsx',
+        export: 'jsx',
       },
     ],
     [
       '@babel/plugin-transform-react-jsx',
       {
         pragma: 'jsx',
+        pragmaFrag: 'React.Fragment',
       },
     ],
   ],

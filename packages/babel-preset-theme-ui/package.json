@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-theme-ui",
-  "version": "0.2.49",
+  "version": "0.2.52",
   "description": "Babel preset to enable the theme-ui custom pragma by default.",
   "keywords": [
     "babel",
@@ -13,6 +13,6 @@
   "repository": "system-ui/theme-ui",
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.7.4",
-    "@wordpress/babel-plugin-import-jsx-pragma": "^2.3.0"
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5"
   }
 }
