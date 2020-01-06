@@ -41,6 +41,7 @@ export default props => {
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
   const [mode, setMode] = useColorMode()
+  const fullwidth = (props.pageContext.frontmatter && props.pageContext.frontmatter.fullwidth) || props.location.pathname === '/'
 
   const cycleMode = e => {
     const i = modes.indexOf(mode)
@@ -123,7 +124,7 @@ export default props => {
                 components={sidebar}
                 pathname={props.location.pathname}
                 sx={{
-                  display: [null, props.fullwidth ? 'none' : 'block'],
+                  display: [null, fullwidth ? 'none' : 'block'],
                   width: 256,
                   flex: 'none',
                   px: 3,
@@ -138,13 +139,13 @@ export default props => {
               sx={{
                 width: '100%',
                 minWidth: 0,
-                maxWidth: props.fullwidth ? 'none' : 768,
+                maxWidth: fullwidth ? 'none' : 768,
                 mx: 'auto',
-                px: props.fullwidth ? 0 : 3,
+                px: fullwidth ? 0 : 3,
               }}>
               {props.children}
               <EditLink />
-              {!props.fullwidth && <Pagination />}
+              {!fullwidth && <Pagination />}
             </main>
           </div>
         </Box>

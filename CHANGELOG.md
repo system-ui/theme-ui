@@ -15,6 +15,7 @@
 - Global color mode styles are automatically added to the body without needing to render the `ColorMode` component
 - Removes `ThemeStateProvider`
 - Adds global typographic styles, set `useBodyStyles: false` to disable
+- Fix issue where `<del>` tag was incorrectly specified as `delete`
 
 ## v0.2.53 2019-12-19
 

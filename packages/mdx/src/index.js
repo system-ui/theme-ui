@@ -35,7 +35,7 @@ const tags = [
   'td',
   'em',
   'strong',
-  'delete',
+  'del',
   // mdx
   'inlineCode',
   'thematicBreak',

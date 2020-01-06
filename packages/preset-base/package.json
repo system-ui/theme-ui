@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-base",
-  "version": "0.2.44",
+  "version": "0.3.0-alpha.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
