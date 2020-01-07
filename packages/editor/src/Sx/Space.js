@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useEffect } from 'react'
-import { Field } from '@theme-ui/components'
+import { Field, Checkbox } from '@theme-ui/components'
 
 export const Space = ({
   tag,
@@ -99,8 +99,7 @@ export const Space = ({
         />
         <div>
           <label>
-            <input
-              type="checkbox"
+            <Checkbox
               checked={lock.x}
               onChange={onChangeLock('x')}
             />

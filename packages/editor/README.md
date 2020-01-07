@@ -98,17 +98,13 @@ export default props =>
   </Editor>
 ```
 
-## `sx` editor
+## `sx` prop editor
 
-To edit arbitrary `sx` style objects, use the following forms:
+To edit arbitrary `sx` style objects, use the `Sx` components:
 
 ```jsx
 import React from 'react'
-import {
-  SxTypography,
-  SxMargin,
-  SxColors,
-} from '@theme-ui/editor'
+import { Sx } from '@theme-ui/editor'
 import { useReducer } from 'react'
 import merge from 'lodash.merge'
 import theme from './theme'
@@ -123,17 +119,17 @@ export default props => {
 
   return (
     <div>
-      <SxTypography
+      <Sx.Typography
         value={style}
         onChange={setStyle}
         theme={theme}
       />
-      <SxMargin
+      <Sx.Margin
         value={style}
         onChange={setStyle}
         theme={theme}
       />
-      <SxColors
+      <Sx.Colors
         value={style}
         onChange={setStyle}
         theme={theme}

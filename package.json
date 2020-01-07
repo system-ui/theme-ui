@@ -53,7 +53,7 @@
       "html"
     ],
     "collectCoverageFrom": [
-      "packages/**/src/*.js",
+      "packages/**/src/**/*.js",
       "!packages/docs/**/*",
       "!packages/presets/**/*",
       "!packages/style-guide/**/*",
