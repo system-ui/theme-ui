@@ -9,13 +9,25 @@ import { Sx } from '../src'
 
 afterEach(cleanup)
 
+if (global.document) {
+  document.createRange = () => ({
+    setStart: () => {},
+    setEnd: () => {},
+    commonAncestorContainer: {
+      nodeName: 'BODY',
+      ownerDocument: document,
+    },
+  })
+}
+
 const theme = {
   fonts: {
     body: 'system-ui, sans-serif',
   },
   fontSizes: [12, 14, 16, 20, 24, 32],
   colors: {
-    primary: 'tomato',
+    primary: '#07c',
+    secondary: '#0c7',
   },
 }
 
@@ -137,5 +149,68 @@ describe('Sx.Margin', () => {
       }
     })
     expect(onChange).toHaveBeenCalledWith({ mx: 3 })
+  })
+})
+
+describe('Sx.Padding', () => {
+  test('edits sx.pl', async () => {
+    const onChange = jest.fn()
+    const tree = render(
+      <Sx.Padding
+        theme={theme}
+        value={style}
+        onChange={onChange}
+      />
+    )
+    const input = await waitForElement(() => tree.findByLabelText('Padding Left'))
+    fireEvent.change(input, {
+      target: {
+        value: '4',
+      }
+    })
+    expect(onChange).toHaveBeenCalledWith({ pl: 4 })
+  })
+
+  test('edits sx.px', async () => {
+    const onChange = jest.fn()
+    const tree = render(
+      <Sx.Padding
+        theme={theme}
+        value={style}
+        onChange={onChange}
+      />
+    )
+    const checkbox = await waitForElement(() => tree.findByLabelText('Lock x-axis'))
+    const input = await waitForElement(() => tree.findByLabelText('Padding Right'))
+    fireEvent.click(checkbox)
+    fireEvent.change(input, {
+      target: {
+        value: '3',
+      }
+    })
+    expect(onChange).toHaveBeenCalledWith({ px: 3 })
+  })
+})
+
+describe('Sx.Colors', () => {
+  test('edits sx.color', async () => {
+    const onChange = jest.fn()
+    const tree = render(
+      <Sx.Colors
+        theme={theme}
+        value={style}
+        onChange={onChange}
+      />
+    )
+    const [ button ] = await waitForElement(() => tree.findAllByRole('button'))
+    fireEvent.click(button)
+    const dialog = await waitForElement(() => tree.findByRole('dialog'))
+    // not ideal labeling - only works with hex?
+    const [ swatch ] = await waitForElement(() => tree.findAllByTitle('#0c7'))
+    fireEvent.click(swatch)
+    expect(onChange).toHaveBeenCalledWith({ color: 'secondary' })
+  })
+
+  test.skip('edits sx.bg', async () => {
   })
 })
