@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useEffect } from 'react'
-import { Field, Checkbox } from '@theme-ui/components'
+import { Field, Label, Checkbox } from '@theme-ui/components'
 
 export const Space = ({
   tag,
@@ -98,21 +98,20 @@ export const Space = ({
           onChange={handleChange('t')}
         />
         <div>
-          <label>
+          <Label>
             <Checkbox
               checked={lock.x}
               onChange={onChangeLock('x')}
             />
             Lock x-axis
-          </label>
-          <label>
-            <input
-              type="checkbox"
+          </Label>
+          <Label>
+            <Checkbox
               checked={lock.y}
               onChange={onChangeLock('y')}
             />
             Lock y-axis
-          </label>
+          </Label>
         </div>
         <Field
           type="number"
