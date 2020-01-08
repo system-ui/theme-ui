@@ -584,6 +584,41 @@ exports[`Grid renders with columns prop 1`] = `
 />
 `;
 
+exports[`Grid renders with mixed columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 2fr;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with mixed columns prop 2`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
 exports[`Grid renders with responsive columns prop 1`] = `
 .emotion-0 {
   box-sizing: border-box;
