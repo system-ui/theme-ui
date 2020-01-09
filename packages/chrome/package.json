@@ -6,7 +6,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepare": "webpack --mode=production",
+    "__prepare": "webpack --mode=production",
     "watch": "webpack --watch --mode=production",
     "icon:128": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=128&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=128 --height=128 --overwrite public/icons/128.png",
     "icon:48": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=48&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=48 --height=48 --overwrite public/icons/48.png",
