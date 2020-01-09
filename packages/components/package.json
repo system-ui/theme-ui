@@ -3,6 +3,7 @@
   "version": "0.3.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress --jsx React.createElement",
     "watch": "microbundle watch --no-compress --jsx React.createElement"

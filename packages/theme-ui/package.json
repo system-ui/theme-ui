@@ -4,6 +4,7 @@
   "description": "Build consistent, themeable React UIs based on design system constraints",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "sideEffects": false,
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
