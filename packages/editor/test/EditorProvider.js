@@ -72,41 +72,4 @@ test('setTheme updates theme context', () => {
   expect(context.theme.colors.background).toBe('white')
 })
 
-// todo
-test.skip('Changes Emotion context', () => {
-  let context, div
-  const Beep = props => {
-    context = useThemeUI()
-    return jsx('div', {
-      ...props,
-      sx: {
-        color: 'text',
-        bg: 'background',
-      },
-      children: 'beep',
-      onClick: e => {
-        console.log('click')
-        context.setTheme({
-          colors: {
-            text: 'tomato',
-          }
-        })
-      }
-    })
-  }
-  act(() => {
-    const tree = render(
-      <ThemeProvider theme={theme}>
-        <EditorProvider>
-          <Beep />
-        </EditorProvider>
-      </ThemeProvider>
-    )
-    div = tree.getByText('beep')
-    fireEvent.click(div)
-  })
-  const style = getComputedStyle(div)
-  expect(style.color).toBe('tomato')
-})
-
 test.todo('works with custom properties')

@@ -16,6 +16,7 @@
 - Removes `ThemeStateProvider`
 - Adds global typographic styles, set `useBodyStyles: false` to disable
 - Fix issue where `<del>` tag was incorrectly specified as `delete`
+- The `@theme-ui/editor` API has changed significantly. See the README.md for more information.
 
 ## v0.2.53 2019-12-19
 
