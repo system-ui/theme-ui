@@ -30,6 +30,17 @@ import { Grid } from 'theme-ui'
 </Grid>
 ```
 
+```jsx live=true
+<Grid
+  gap={2}
+  columns={[2, '1fr 2fr']}>
+  <Box bg='primary'>Box</Box>
+  <Box bg='muted'>Box</Box>
+  <Box bg='primary'>Box</Box>
+  <Box bg='muted'>Box</Box>
+</Grid>
+```
+
 ## Props
 
 The `Grid` component includes custom props for adjusting the grid layout.
@@ -38,8 +49,8 @@ Each prop can use the [responsive array][] syntax for mobile-first responsive st
 Prop | Description
 ---|---
 `width` | Minimum width of child elements
-`columns` | Number of columns to use for the layout (cannot be used in conjunction with the `width` prop)
 `gap` | Space between child elements
+`columns` | Number of (equally-sized) columns, or string with [grid syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) for the layout (cannot be used in conjunction with the `width` prop)
 
 [responsive array]: /sx-prop#responsive-values
 
