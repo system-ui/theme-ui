@@ -160,5 +160,6 @@ export default props => (
 - [Theme Spec](https://theme-ui.com/theme-spec)
 - [Gatsby Plugin](https://theme-ui.com/gatsby-plugin)
 - [API](https://theme-ui.com/api)
+- [Community Discord](https://discord.gg/wAD6p8q)
 
 MIT License
