@@ -8,4 +8,3 @@ export { default as Sx } from './Sx'
 
 // extra components
 export { default as ColorPicker } from './ColorPicker'
-export { default as Row } from './Row'
