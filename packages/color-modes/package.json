@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color-modes",
-  "version": "0.3.0-alpha.0",
+  "version": "0.3.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/core": "^0.3.0-alpha.0",
-    "@theme-ui/css": "^0.3.0-alpha.0",
+    "@theme-ui/core": "^0.3.0-alpha.1",
+    "@theme-ui/css": "^0.3.0-alpha.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

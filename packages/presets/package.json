@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.3.0-alpha.0",
+  "version": "0.3.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -10,18 +10,18 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "^0.3.0-alpha.0",
-    "@theme-ui/preset-bootstrap": "^0.3.0-alpha.0",
-    "@theme-ui/preset-bulma": "^0.3.0-alpha.0",
-    "@theme-ui/preset-dark": "^0.3.0-alpha.0",
-    "@theme-ui/preset-deep": "^0.3.0-alpha.0",
-    "@theme-ui/preset-funk": "^0.3.0-alpha.0",
-    "@theme-ui/preset-future": "^0.3.0-alpha.0",
-    "@theme-ui/preset-roboto": "^0.3.0-alpha.0",
-    "@theme-ui/preset-swiss": "^0.3.0-alpha.0",
-    "@theme-ui/preset-system": "^0.3.0-alpha.0",
-    "@theme-ui/preset-tailwind": "^0.3.0-alpha.0",
-    "@theme-ui/preset-tosh": "^0.3.0-alpha.0"
+    "@theme-ui/preset-base": "^0.3.0-alpha.1",
+    "@theme-ui/preset-bootstrap": "^0.3.0-alpha.1",
+    "@theme-ui/preset-bulma": "^0.3.0-alpha.1",
+    "@theme-ui/preset-dark": "^0.3.0-alpha.1",
+    "@theme-ui/preset-deep": "^0.3.0-alpha.1",
+    "@theme-ui/preset-funk": "^0.3.0-alpha.1",
+    "@theme-ui/preset-future": "^0.3.0-alpha.1",
+    "@theme-ui/preset-roboto": "^0.3.0-alpha.1",
+    "@theme-ui/preset-swiss": "^0.3.0-alpha.1",
+    "@theme-ui/preset-system": "^0.3.0-alpha.1",
+    "@theme-ui/preset-tailwind": "^0.3.0-alpha.1",
+    "@theme-ui/preset-tosh": "^0.3.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"
