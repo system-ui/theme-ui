@@ -2,7 +2,23 @@
 import { jsx } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
 import { Label, Input } from '@theme-ui/components'
-import Chevron from './Chevron'
+
+const Chevron = () => (
+  <svg
+    viewBox="0 0 16 16"
+    width='12'
+    height='12'
+    sx={{
+      pointerEvents: 'none',
+    }}>
+    <path
+      stroke="currentcolor"
+      strokeWidth="2"
+      fill="none"
+      d="M14 6 L8 12 L2 6"
+    />
+  </svg>
+)
 
 const keys = {
   38: 'up',
@@ -105,10 +121,13 @@ export default ({
         zIndex: 2,
         color: 'black',
       }}>
-      <Label htmlFor={name}>{label || name}</Label>
+      <Label htmlFor={name}>
+        {label || name}
+      </Label>
       <div
         sx={{
           display: 'flex',
+          alignItems: 'center',
         }}>
         <Input
           {...props}
