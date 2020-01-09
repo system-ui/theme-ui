@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-swiss",
-  "version": "0.3.0-alpha.1",
+  "version": "0.3.0-alpha.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
