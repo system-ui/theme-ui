@@ -10,9 +10,10 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
+    "@theme-ui/components": "^0.3.0-alpha.0",
     "@theme-ui/style-guide": "^0.3.0-alpha.0",
     "color": "^3.1.2",
-    "react-color": "^2.17.3",
+    "react-color": "^2.18.0",
     "reakit": "^1.0.0-beta.6",
     "tinycolor2": "^1.4.1"
   },

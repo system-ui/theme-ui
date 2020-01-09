@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useEditor } from './context'
-import Combobox from './Combobox'
+import { jsx, useThemeUI } from 'theme-ui'
+import Combobox from '../Combobox'
 
 const weights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 export default props => {
-  const context = useEditor()
+  const context = useThemeUI()
   const { fontWeights = {} } = context.theme
 
   const onChange = key => val => {

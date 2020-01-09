@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import ThemeColorPicker from './ThemeColorPicker'
 
-export const SxColors = ({
+export const Colors = ({
   value: {
     color,
     bg,
@@ -50,4 +50,4 @@ export const SxColors = ({
   )
 }
 
-export default SxColors
+export default Colors

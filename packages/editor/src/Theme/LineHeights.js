@@ -1,14 +1,13 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useEditor } from './context'
-import Field from './Field'
+import { jsx, useThemeUI } from 'theme-ui'
+import { Field } from '@theme-ui/components'
 
 export default props => {
-  const context = useEditor()
+  const context = useThemeUI()
   const { lineHeights = {} } = context.theme
 
-  const onChange = key => val => {
-    const n = parseFloat(val)
+  const onChange = key => e => {
+    const n = parseFloat(e.target.value)
     context.setTheme({
       lineHeights: {
         [key]: n,

@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useEditor } from './context'
-import Field from './Field'
-import { defaultSpace } from './defaults'
+import { jsx, useThemeUI } from 'theme-ui'
+import { Field } from '@theme-ui/components'
+
+const defaultSpace = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 
 export default props => {
-  const context = useEditor()
+  const context = useThemeUI()
   const { space = defaultSpace } = context.theme
 
-  const onChange = key => val => {
-    const n = parseFloat(val)
+  const onChange = key => e => {
+    const n = parseFloat(e.target.value)
     if (Array.isArray(space)) {
       const i = parseInt(key)
       context.setTheme({

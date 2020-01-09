@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useEffect } from 'react'
-import Field from './Field'
+import { Field, Label, Checkbox } from '@theme-ui/components'
 
-export const SxSpace = ({
+export const Space = ({
   tag,
   property = 'margin',
   value = {},
@@ -23,7 +23,8 @@ export const SxSpace = ({
     if (typeof y === 'number') setLock(lock => ({ ...lock, y: true }))
   }, [])
 
-  const handleChange = direction => n => {
+  const handleChange = direction => e => {
+    const n = e.target.value
     const val = n === '' ? undefined : parseInt(n)
     switch (direction) {
       case 't':
@@ -51,17 +52,17 @@ export const SxSpace = ({
       setLock(lock => ({ ...lock, [dir]: true }))
       const val = isX ? (l || r) : (t || b)
       onChange({
-        [key + isX ? 'l' : 't']: undefined,
-        [key + isX ? 'r' : 'b']: undefined,
+        [key + (isX ? 'l' : 't')]: undefined,
+        [key + (isX ? 'r' : 'b')]: undefined,
         [key + dir]: val,
       })
     } else {
       setLock(lock => ({ ...lock, [dir]: false }))
       const val = dir === 'x' ? x : y
       onChange({
-        [key + isX ? 'l' : 't']: undefined,
-        [key + isX ? 'r' : 'b']: undefined,
-        [key + dir]: val,
+        [key + (isX ? 'l' : 't')]: val,
+        [key + (isX ? 'r' : 'b')]: val,
+        [key + dir]: undefined,
       })
     }
   }
@@ -97,22 +98,20 @@ export const SxSpace = ({
           onChange={handleChange('t')}
         />
         <div>
-          <label>
-            <input
-              type="checkbox"
+          <Label>
+            <Checkbox
               checked={lock.x}
               onChange={onChangeLock('x')}
             />
             Lock x-axis
-          </label>
-          <label>
-            <input
-              type="checkbox"
+          </Label>
+          <Label>
+            <Checkbox
               checked={lock.y}
               onChange={onChangeLock('y')}
             />
             Lock y-axis
-          </label>
+          </Label>
         </div>
         <Field
           type="number"
@@ -133,4 +132,4 @@ export const SxSpace = ({
   )
 }
 
-export default SxSpace
+export default Space
