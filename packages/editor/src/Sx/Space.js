@@ -52,17 +52,17 @@ export const Space = ({
       setLock(lock => ({ ...lock, [dir]: true }))
       const val = isX ? (l || r) : (t || b)
       onChange({
-        [key + isX ? 'l' : 't']: undefined,
-        [key + isX ? 'r' : 'b']: undefined,
+        [key + (isX ? 'l' : 't')]: undefined,
+        [key + (isX ? 'r' : 'b')]: undefined,
         [key + dir]: val,
       })
     } else {
       setLock(lock => ({ ...lock, [dir]: false }))
       const val = dir === 'x' ? x : y
       onChange({
-        [key + isX ? 'l' : 't']: undefined,
-        [key + isX ? 'r' : 'b']: undefined,
-        [key + dir]: val,
+        [key + (isX ? 'l' : 't')]: val,
+        [key + (isX ? 'r' : 'b')]: val,
+        [key + dir]: undefined,
       })
     }
   }

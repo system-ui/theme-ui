@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+// todo: replace with Grid?
 export default ({ width = 64, ...props }) => (
   <div
     {...props}

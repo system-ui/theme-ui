@@ -8,7 +8,10 @@ import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 export const ThemeColorPicker = ({ children, theme, ...props }) => {
   const popover = usePopoverState()
   const context = useThemeUI()
-  const { colors } = theme || context.theme || {}
+  // todo: look into supporting v0.2 functionality
+  // const { colors } = theme || context.theme || {}
+  const _theme = theme || context.theme || {}
+  const colors = _theme.rawColors || _theme.colors || {}
   const value = colors[props.value] || props.value
   const options = [
     'transparent',

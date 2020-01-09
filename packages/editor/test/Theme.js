@@ -49,8 +49,6 @@ const theme = {
   space: [0, 4, 8, 16, 32],
 }
 
-test.todo('add Theme tests')
-
 test('edits theme.colors', async () => {
   let context
   const GetContext = props => {
@@ -121,6 +119,53 @@ test('edits theme.fontSizes', async () => {
     }
   })
   expect(context.theme.fontSizes[0]).toBe(11)
+})
+
+test('supports non-array theme.fontSizes objects', async () => {
+  let context
+  const GetContext = props => {
+    context = useThemeUI()
+    return false
+  }
+  const tree = render(
+    <EditorProvider
+      theme={{
+        fontSizes: {
+          small: 12,
+          normal: 16,
+          large: 24,
+        }
+      }}>
+      <Theme.FontSizes />
+      <GetContext />
+    </EditorProvider>
+  )
+  const input = await waitForElement(() => tree.getByLabelText('small'))
+  fireEvent.change(input, {
+    target: {
+      value: '11'
+    }
+  })
+  expect(context.theme.fontSizes.small).toBe(11)
+})
+
+test('renders without a theme', () => {
+  let context
+  const GetContext = props => {
+    context = useThemeUI()
+    return false
+  }
+  const tree = render(
+    <EditorProvider>
+      <Theme.Fonts />
+      <Theme.FontSizes />
+      <Theme.FontWeights />
+      <Theme.LineHeights />
+      <Theme.Space />
+      <GetContext />
+    </EditorProvider>
+  )
+  expect(context.theme).toEqual({})
 })
 
 test('edits theme.fontWeights', async () => {
@@ -207,5 +252,33 @@ test('edits theme.space', async () => {
   })
   expect(context.theme.space[0]).toBe(2)
   expect(context.theme.space[1]).toBe(4)
+})
+
+test('supports non-array theme.space objects', async () => {
+  let context
+  const GetContext = props => {
+    context = useThemeUI()
+    return false
+  }
+  const tree = render(
+    <EditorProvider
+      theme={{
+        space: {
+          small: 4,
+          normal: 8,
+          large: 16,
+        }
+      }}>
+      <Theme.Space />
+      <GetContext />
+    </EditorProvider>
+  )
+  const input = await waitForElement(() => tree.getByLabelText('small'))
+  fireEvent.change(input, {
+    target: {
+      value: '3'
+    }
+  })
+  expect(context.theme.space.small).toBe(3)
 })
 

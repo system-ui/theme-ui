@@ -41,61 +41,23 @@ export default props =>
   </div>
 ```
 
-## Manually passing context
-
-Alternatively, you can pass a theme object to the...
-
-Pass a theme object manually to the `EditorProvider` component when you don't want to edit the pages theming context.
-
-```jsx
-import React from 'react'
-import {
-  Editor,
-  Fonts,
-} from '@theme-ui/editor'
-import merge from 'lodash.merge'
-
-const reducer = (state, next) => merge({}, state, next)
-const defaultTheme = {
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'Georgia, serif',
-  },
-}
-
-export default props => {
-  const [theme, setTheme] = useReducer(reducer, defaultTheme)
-  const context = {
-    theme,
-    setTheme,
-  }
-
-  return (
-    <Editor context={context}>
-      <Fonts />
-    </Editor>
-  )
-}
-```
+The `EditorProvider` component also accepts a `theme` prop for usage without the `ThemeProvider` component's context.
 
 ## `theme.styles`
 
-Use these components to edit an element in `theme.styles`
+Use the `Styles` components to edit an element in `theme.styles`
 
 ```jsx
 import React from 'react'
-import {
-  Editor,
-  StylesForm,
-} from '@theme-ui/editor'
+import { Styles } from '@theme-ui/editor'
 
 export default props =>
-  <Editor>
+  <>
     <code>theme.styles.h1</code>
-    <StylesForm tag='h1' />
+    <Styles tag='h1' />
     <code>theme.styles.h2</code>
-    <StylesForm tag='h2' />
-  </Editor>
+    <Styles tag='h2' />
+  </>
 ```
 
 ## `sx` prop editor
@@ -139,29 +101,3 @@ export default props => {
 }
 ```
 
----
-
-```jsx
-import {
-  EditorProvider,
-  Theme,
-  Styles,
-  Sx,
-} from '@theme-ui/editor'
-
-<EditorProvider>
-  <Theme.Colors />
-  <Theme.Fonts />
-  <Theme.FontSizes />
-  <Theme.FontWeights />
-  <Theme.Space />
-</EditorProvider>
-
-<Styles tag='h1' />
-
-<Sx.Padding />
-<Sx.Margin />
-<Sx.Space />
-<Sx.Typography />
-<Sx.Colors />
-```
