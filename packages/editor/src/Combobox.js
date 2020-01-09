@@ -78,7 +78,7 @@ export default ({
 
   const handleBlur = e => {
     requestAnimationFrame(() => {
-      if (root.current.contains(document.activeElement)) return
+      if (root.current && root.current.contains(document.activeElement)) return
       setOpen(false)
     })
   }
