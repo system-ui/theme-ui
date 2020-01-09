@@ -1,4 +1,3 @@
-
 # gatsby-theme-style-guide
 
 Automatically generate a style guide page based on your Theme UI configuration, built with [`@theme-ui/style-guide`](https://theme-ui.com/style-guide).
@@ -10,10 +9,7 @@ npm i gatsby-theme-style-guide
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: [
-    'gatsby-plugin-theme-ui',
-    'gatsby-theme-style-guide',
-  ]
+  plugins: ['gatsby-plugin-theme-ui', 'gatsby-theme-style-guide'],
 }
 ```
 
@@ -30,21 +26,22 @@ module.exports = {
       options: {
         // sets path for generated page
         basePath: '/design-system',
-      }
+      },
     },
-  ]
+  ],
 }
 ```
 
 ## Shadowing
 
-Shadow the following components to customize the layout and order of the page.
+You can customize the layout and order of the page by [shadowing](https://www.gatsbyjs.org/docs/themes/shadowing/) the theme.
 
-component | description
----|---
-`src/template.js` | the root component for the page
-`src/layout.js` | wrapper for adding a page layout
-`src/header.js` | header for the top of the page
-`src/typography.js` | section for typography styles
-`src/colors.js` | section for colors
+| component           | description                      |
+| ------------------- | -------------------------------- |
+| `src/template.js`   | the root component for the page  |
+| `src/layout.js`     | wrapper for adding a page layout |
+| `src/header.js`     | header for the top of the page   |
+| `src/typography.js` | section for typography styles    |
+| `src/colors.js`     | section for colors               |
 
+For example, to shadow the `template.js` file, you would create a file named `your-site/src/gatsby-theme-style-guide/template.js`
