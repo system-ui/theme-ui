@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.3.0-alpha.2",
+  "version": "0.3.0-alpha.3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -10,8 +10,8 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/components": "^0.3.0-alpha.2",
-    "@theme-ui/style-guide": "^0.3.0-alpha.2",
+    "@theme-ui/components": "^0.3.0-alpha.3",
+    "@theme-ui/style-guide": "^0.3.0-alpha.3",
     "color": "^3.1.2",
     "react-color": "^2.18.0",
     "reakit": "^1.0.0-beta.6",

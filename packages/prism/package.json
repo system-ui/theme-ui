@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.3.0-alpha.2",
+  "version": "0.3.0-alpha.3",
   "main": "dist/prism.js",
   "module": "dist/prism.esm.js",
   "author": "John Otander",
