@@ -29,25 +29,26 @@ https://theme-ui.com
 [system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
 [size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
 
-Built for white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
-and based on the System UI [Theme Specification][],
+Built for design systems, white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
+and based on a standard [Theme Specification][],
 Theme UI is intended to work in a variety of applications, libraries, and other UI components.
-Colors, typography, and layout styles derived from customizable scales and design tokens,
+Colors, typography, and layout styles derived from customizable theme-based design scales
 help you build UI rooted in constraint-based design principles.
 
-- Styled system without creating components
-- First class support for the `css` prop
+- The next evolution of Styled System
+- From the creators of utility-based, atomic CSS methodologies
+- Theme-based styling with the `sx` prop
 - Style [MDX][] content with a simple, expressive API
-- Use [Typography.js][] themes
-- Works with virtually any UI component library
+- Works with [Typography.js][] themes
+- Compatible with virtually any UI component library
 - Works with existing [Styled System][] components
 - Quick mobile-first responsive styles
 - Built-in support for dark modes
 - Primitive page layout components
 - Plugin for use in [Gatsby][] sites and themes
-- Define your own design tokens
-- Built with the System UI [Theme Specification][] for interoperability
-- Keep styles isolated with [Emotion][]
+- Completely customizable with robust theming
+- Built with a standard [Theme Specification][] for interoperability
+- Built with [Emotion][] for scoped styles
 
 [emotion]: https://emotion.sh
 [mdx]: https://mdxjs.com
@@ -59,7 +60,7 @@ help you build UI rooted in constraint-based design principles.
 ## Getting Started
 
 ```sh
-npm i theme-ui @emotion/core @mdx-js/react
+npm install theme-ui
 ```
 
 Any styles in your app can reference values from the global `theme` object.
@@ -122,7 +123,7 @@ export default props => (
 )
 ```
 
-Read more about [how the custom pragma works](https://theme-ui.com/how-it-works/#jsx-pragma).
+Read more about [how the custom pragma works](https://theme-ui.com/guides/how-it-works/#jsx-pragma).
 
 ## Responsive styles
 
