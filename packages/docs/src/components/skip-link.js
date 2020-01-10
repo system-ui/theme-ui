@@ -12,7 +12,7 @@ export default props => (
       width: 1,
       m: -1,
       p: 0,
-      overrflow: 'hidden',
+      overflow: 'hidden',
       position: 'absolute',
       top: -9999,
       ':focus': {
