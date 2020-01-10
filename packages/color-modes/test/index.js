@@ -332,17 +332,6 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   expect(mode).toBe('default')
 })
 
-test.skip('ColorMode component renders null', () => {
-  const json = renderer
-    .create(
-      <ThemeProvider>
-        <ColorMode />
-      </ThemeProvider>
-    )
-    .toJSON()
-  expect(json).toBe(null)
-})
-
 test('ColorModeProvider renders with global colors', () => {
   const root = render(
     <ThemeProvider
@@ -557,7 +546,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = props => {
     const context = useThemeUI()
-    color = context.theme.rawColors.primary
+    color = context.theme.colors.primary
     return false
   }
   const root = render(
