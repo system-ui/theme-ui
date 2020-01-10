@@ -3,6 +3,8 @@
 
 Core Emotion and JSX implementation for Theme UI
 
+https://theme-ui.com
+
 **Note:** *This package is included in the main `theme-ui` package, and generally should not be used on its own.*
 
 ```sh
