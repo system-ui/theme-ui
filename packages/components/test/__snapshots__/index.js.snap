@@ -524,7 +524,7 @@ exports[`Field renders 1`] = `
   border: 1px solid;
   border-radius: 4px;
   color: inherit;
-  background-color: background;
+  background-color: transparent;
 }
 
 <div
@@ -765,7 +765,7 @@ exports[`Input renders 1`] = `
   border: 1px solid;
   border-radius: 4px;
   color: inherit;
-  background-color: background;
+  background-color: transparent;
 }
 
 <input
@@ -1336,7 +1336,7 @@ exports[`Textarea renders 1`] = `
   border: 1px solid;
   border-radius: 4px;
   color: inherit;
-  background-color: background;
+  background-color: transparent;
 }
 
 <textarea
