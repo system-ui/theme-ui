@@ -9,7 +9,7 @@
 - Adds separate `ColorModeProvider` component
 - Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
 - Removes layout components (`Layout`, `Header`, `Main`, `Footer`) - use `Box` and `Flex` instead
-- Raw color values are now available as `theme.rawColors` in context when custom properties are enabled
+- ~~Raw color values are now available as `theme.rawColors` in context when custom properties are enabled~~
 - Updates CSS custom properties implementation for color modes
 - When using `useColorSchemeMediaQuery` flag, it will initialize the mode to `light` when `@media (prefers-color-scheme: light)` is enabled
 - Global color mode styles are automatically added to the body without needing to render the `ColorMode` component
