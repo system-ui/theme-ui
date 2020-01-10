@@ -121,6 +121,33 @@ Styles within this object have access to other values in the theme object, such 
 }
 ```
 
+## Body Styles
+
+To add base, top-level styles to the `<body>` element, use `theme.styles.root`.
+
+```js
+// example with root styles
+{
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Georgia, serif',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  styles: {
+    root: {
+      // uses the theme values provided above
+      fontFamily: 'body',
+      fontWeight: 'body',
+    },
+  },
+}
+```
+
+To disable applying styles to the `<body>` element, add the `useBodyStyles: false` flag to your theme.
+
 ## Breakpoints
 
 To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.

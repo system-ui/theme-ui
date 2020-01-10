@@ -22,17 +22,13 @@ import Button from '../components/button'
 const reducer = (state, next) => merge({}, state, next)
 
 export default props => {
-  // TODO
-  // const [ theme, setTheme ] = useReducer(reducer, {...presets.base})
-  // const context = { theme, setTheme, }
-  // const json = stringify(context.theme, { indent: '  ' })
+  const [theme, setTheme] = useReducer(reducer, { ...presets.base })
+  const json = stringify(theme, { indent: '  ' })
 
   return (
     <div>
-      <Styled.h1>
-        Create a Custom Theme
-      </Styled.h1>
-      <EditorProvider theme={presets.base}>
+      <Styled.h1>Create a Custom Theme</Styled.h1>
+      <EditorProvider theme={theme}>
         <b>Colors</b>
         <Theme.Colors size={64} />
         <div
@@ -45,48 +41,47 @@ export default props => {
             bg: 'background',
           }}>
           <TypeStyle
-            fontFamily='heading'
-            lineHeight='heading'
-            fontWeight='heading'
-            fontSize={[ 5, 6 ]}>
-            Aa <FontFamily name='heading' />
+            fontFamily="heading"
+            lineHeight="heading"
+            fontWeight="heading"
+            fontSize={[5, 6]}>
+            Aa <FontFamily name="heading" />
           </TypeStyle>
           <TypeStyle fontSize={3}>
-            Aa <FontFamily name='body' />
+            Aa <FontFamily name="body" />
           </TypeStyle>
         </div>
-        <Theme.Fonts />
+        <Grid columns={3}>
+          <Theme.Fonts />
+        </Grid>
         <div sx={{ my: 2 }}>
           <b>Font Sizes</b>
-          <Grid>
+          <Grid columns={9}>
             <Theme.FontSizes />
           </Grid>
         </div>
         <div sx={{ my: 2 }}>
           <div>
             <b>Font Weights</b>
-            <Grid>
+            <Grid columns={3}>
               <Theme.FontWeights />
             </Grid>
           </div>
           <div>
             <b>Line Heights</b>
-            <Grid>
+            <Grid columns={3}>
               <Theme.LineHeights />
             </Grid>
           </div>
         </div>
         <div sx={{ my: 2 }}>
           <b>Space</b>
-          <Grid>
+          <Grid columns={9}>
             <Theme.Space />
           </Grid>
         </div>
-        <p>
-          Note: some web fonts may not render unless installed locally.
-        </p>
+        <p>Note: some web fonts may not render unless installed locally.</p>
       </EditorProvider>
-      {/* TODO
       <Button
         onClick={e => {
           copy(json)
@@ -100,7 +95,6 @@ export default props => {
           overflowY: 'auto',
         }}
       />
-      */}
     </div>
   )
 }

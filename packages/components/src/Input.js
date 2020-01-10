@@ -18,7 +18,7 @@ export const Input = React.forwardRef((props, ref) => (
       border: '1px solid',
       borderRadius: 4,
       color: 'inherit',
-      bg: 'background',
+      bg: 'transparent',
     }}
   />
 ))
