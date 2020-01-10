@@ -1,54 +1,46 @@
-import {
-  jsx,
-  useThemeUI,
-  ThemeProvider as CoreProvider,
-} from '@theme-ui/core'
+import { jsx, useThemeUI, ThemeProvider as CoreProvider } from '@theme-ui/core'
+import { css } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
 import { MDXProvider } from '@theme-ui/mdx'
 import { Global } from '@emotion/core'
 
-const BodyStyles = ({ theme = {} }) => {
-  if (theme.useBodyStyles === false) return false
-
-  return jsx(Global, {
+const BodyStyles = () =>
+  jsx(Global, {
     styles: theme => {
-      const fontFamily = theme.fonts && theme.fonts.body
-      const fontWeight = theme.fontWeights && theme.fontWeights.body
-      const lineHeight = theme.lineHeights && theme.lineHeights.body
-
-      return {
+      if (theme.useBodyStyles === false || (theme.styles && !theme.styles.root))
+        return false
+      return css({
         body: {
-          fontFamily,
-          fontWeight,
-          lineHeight,
-        }
-      }
-    }
+          variant: 'styles.root',
+        },
+      })(theme)
+    },
   })
-}
 
-export const ThemeProvider = ({
-  theme,
-  components,
-  children
-}) => {
+export const ThemeProvider = ({ theme, components, children }) => {
   const outer = useThemeUI()
 
   if (typeof outer.setColorMode === 'function') {
-    return jsx(CoreProvider, { theme },
+    return jsx(
+      CoreProvider,
+      { theme },
       jsx(MDXProvider, {
         components,
-        children
+        children,
       })
     )
   }
 
-  return jsx(CoreProvider, { theme },
-    jsx(ColorModeProvider, null,
-      jsx(BodyStyles, { theme }),
+  return jsx(
+    CoreProvider,
+    { theme },
+    jsx(
+      ColorModeProvider,
+      null,
+      jsx(BodyStyles),
       jsx(MDXProvider, {
         components,
-        children
+        children,
       })
     )
   )

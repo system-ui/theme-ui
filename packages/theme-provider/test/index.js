@@ -28,8 +28,8 @@ test('renders with theme', () => {
       theme={{
         useCustomProperties: false,
         colors: {
-          primary: 'tomato'
-        }
+          primary: 'tomato',
+        },
       }}>
       <h1 sx={{ color: 'primary' }}>Hello</h1>
     </ThemeProvider>
@@ -71,8 +71,8 @@ test('renders with nested provider', () => {
           styles: {
             h1: {
               color: 'cyan',
-            }
-          }
+            },
+          },
         }}>
         {mdx('h1', null, 'Hello')}
       </ThemeProvider>
@@ -117,6 +117,13 @@ test('renders global styles', () => {
         fontWeights: {
           body: 500,
         },
+        styles: {
+          root: {
+            fontFamily: 'body',
+            fontWeight: 'body',
+            lineHeight: 'body',
+          },
+        },
       }}>
       <h1>Hello</h1>
     </ThemeProvider>
@@ -129,9 +136,7 @@ test('renders global styles', () => {
 
 test('does not render invalid global styles', () => {
   const root = render(
-    <ThemeProvider
-      theme={{
-      }}>
+    <ThemeProvider theme={{}}>
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -164,4 +169,3 @@ test('does not renders global styles', () => {
   expect(style.fontWeight).toBe('')
   expect(style.lineHeight).toBe('')
 })
-
