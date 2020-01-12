@@ -121,9 +121,17 @@ import { tint } from '@theme-ui/color'
 Set the transparency of a color to an amount 0-1
 
 ```js
-
 import { alpha } from '@theme-ui/color'
 // alpha('primary', amount)
+```
+
+### `transparentize`
+
+Similar to `alpha`, but decreases opacity by the given amount.
+
+```js
+import { transparentize } from '@theme-ui/color'
+// transparentize('primary', amount)
 ```
 
 ### `mix`

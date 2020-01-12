@@ -116,10 +116,12 @@ export const Sidenav = React.forwardRef(
 
 export const AccordionButton = props => {
   const transform = props.open ? 'rotate(-180 8 8)' : 'rotate(0 8 8)'
+  const disabled = props.pathname && props.pathname.includes(props.href)
 
   return (
     <button
       title="Expand Section"
+      disabled={disabled}
       {...props}
       sx={{
         appearance: 'none',
@@ -134,8 +136,14 @@ export const AccordionButton = props => {
         ':hover,:focus': {
           color: 'primary',
         },
+        '&:disabled': {
+          opacity: 0.25,
+        }
       }}>
-      <svg viewBox="0 0 16 16" width="16" height="16">
+      <svg
+        viewBox="0 0 16 16"
+        width="12"
+        height="12">
         <g
           sx={{
             transformOrigin: '8 8',
@@ -154,8 +162,48 @@ export const AccordionButton = props => {
   )
 }
 
-export const AccordionNav = React.forwardRef(
-  ({ open, children, components = {}, className, ...props }, ref) => {
+const NavLinks = ({
+  open,
+  pathname = '',
+  links,
+  href,
+  Link,
+  ...props
+}) => {
+  if (!links) return false
+  if (!open && !pathname.includes(href)) return false
+
+  return (
+    <ul
+      sx={{
+        listStyle: 'none',
+        m: 0,
+        p: 0,
+      }}>
+      {links.map((link, j) => (
+        <li key={j}>
+          <Link
+            href={link.props.href}
+            children={link.props.children}
+            className={link.props.className}
+            sx={{
+              pl: 4
+            }}
+          />
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export const AccordionNav = React.forwardRef(({
+  open,
+  children,
+  components = {},
+  className,
+  pathname = '',
+  ...props
+}, ref) => {
     const links = createNestedLinks(children)
     const [expanded, setExpanded] = useState({})
     const Link = components.a || 'a'
@@ -210,6 +258,8 @@ export const AccordionNav = React.forwardRef(
                   />
                   {link.props.links && (
                     <AccordionButton
+                      href={link.props.href}
+                      pathname={pathname}
                       open={expanded[i]}
                       sx={{
                         ml: 'auto',
@@ -218,25 +268,12 @@ export const AccordionNav = React.forwardRef(
                     />
                   )}
                 </div>
-                {expanded[i] && (
-                  <ul
-                    sx={{
-                      listStyle: 'none',
-                      m: 0,
-                      p: 0,
-                      pl: 3,
-                    }}>
-                    {link.props.links.map((l, j) => (
-                      <li key={j}>
-                        <Link
-                          href={l.props.href}
-                          children={l.props.children}
-                          className={l.props.className}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <NavLinks
+                  {...link.props}
+                  open={expanded[i]}
+                  pathname={pathname}
+                  Link={Link}
+                />
               </li>
             ))}
           </ul>

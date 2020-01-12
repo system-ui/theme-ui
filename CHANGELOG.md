@@ -2,7 +2,18 @@
 
 ## Unreleased
 
+- `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
+
+## v0.2.53 2019-12-19
+
+- `@theme-ui/color`: add `transparentize` function #370
+- `@theme-ui/style-guide`: move context dependencies to peer dependencies #521
+
+## v0.2.52 2019-12-16
+
+- Fix for issues when `localStorage` is not available #514
 - `@theme-ui/match-media`: add option for default index in hook #460
+- `@theme-ui/editor`: Update Reakit #517
 
 ## v0.2.51 2019-12-03
 

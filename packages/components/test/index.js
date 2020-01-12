@@ -220,8 +220,18 @@ describe('Grid', () => {
     expect(json).toMatchSnapshot()
   })
 
+  test('renders with mixed columns prop', () => {
+    const json = renderJSON(<Grid columns="1fr 2fr" />)
+    expect(json).toMatchSnapshot()
+  })
+
   test('renders with responsive columns prop', () => {
     const json = renderJSON(<Grid columns={[2, 3, 4]} />)
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with mixed columns prop', () => {
+    const json = renderJSON(<Grid columns={[null, '1fr 2fr']} />)
     expect(json).toMatchSnapshot()
   })
 })
@@ -305,10 +315,7 @@ describe('Select', () => {
   test('renders with style props', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Select
-          mb={3}
-          value='hello'
-        />
+        <Select mb={3} value="hello" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
