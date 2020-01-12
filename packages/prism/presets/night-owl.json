@@ -14,7 +14,7 @@
     "fontStyle": "italic"
   },
   ".comment": {
-    "color": "rgb(99, 119, 119)",
+    "color": "rgb(109, 131, 130)",
     "fontStyle": "italic"
   },
   ".string,.url": {

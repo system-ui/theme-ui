@@ -1,8 +1,8 @@
 {
   "backgroundColor": "#faf8f5",
-  "color": "#728fcb",
+  "color": "#4b70bd",
   ".comment,.prolog,.doctype,.cdata,.punctuation": {
-    "color": "#b6ad9a"
+    "color": "#7c715a"
   },
   ".namespace": {
     "opacity": 0.7
@@ -11,7 +11,7 @@
     "color": "#063289"
   },
   ".property,.function": {
-    "color": "#b29762"
+    "color": "#866f42"
   },
   ".tag-id,.selector,.atrule-id": {
     "color": "#2d2006"
@@ -20,10 +20,10 @@
     "color": "#896724"
   },
   ".boolean,.string,.entity,.url,.attr-value,.keyword,.control,.directive,.unit,.statement,.regex,.at-rule": {
-    "color": "#728fcb"
+    "color": "#4b70bc"
   },
   ".placeholder,.variable": {
-    "color": "#93abdc"
+    "color": "#4870c4"
   },
   ".deleted": {
     "textDecorationLine": "line-through"

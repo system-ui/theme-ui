@@ -24,7 +24,7 @@
     "fontStyle": "italic"
   },
   ".comment": {
-    "color": "rgb(98, 114, 164)"
+    "color": "rgb(130, 146, 182)"
   },
   ".attr-name": {
     "color": "rgb(241, 250, 140)"

@@ -14,11 +14,11 @@
     "fontStyle": "italic"
   },
   ".comment": {
-    "color": "rgb(152, 159, 177)",
+    "color": "rgb(106, 116, 141)",
     "fontStyle": "italic"
   },
   ".string,.builtin,.char,.constant,.url": {
-    "color": "rgb(72, 118, 214)"
+    "color": "rgb(65, 112, 213)"
   },
   ".variable": {
     "color": "rgb(201, 103, 101)"
@@ -40,7 +40,7 @@
     "color": "rgb(153, 76, 195)"
   },
   ".operator,.property,.keyword,.namespace": {
-    "color": "rgb(12, 150, 155)"
+    "color": "rgb(11, 128, 133)"
   },
   ".boolean": {
     "color": "rgb(188, 84, 84)"
