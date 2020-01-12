@@ -33,6 +33,7 @@ const tags = [
   'thematicBreak',
   // other
   'div',
+  'article',
   // theme-ui
   'root',
 ]
