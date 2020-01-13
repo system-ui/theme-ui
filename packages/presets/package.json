@@ -21,7 +21,8 @@
     "@theme-ui/preset-swiss": "^0.2.40",
     "@theme-ui/preset-system": "^0.2.40",
     "@theme-ui/preset-tailwind": "^0.2.42",
-    "@theme-ui/preset-tosh": "^0.2.40"
+    "@theme-ui/preset-tosh": "^0.2.40",
+    "@theme-ui/preset-polaris": "^0.1.0"
   },
   "publishConfig": {
     "access": "public"
