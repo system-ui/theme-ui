@@ -160,6 +160,11 @@ test('does not renders global styles', () => {
         fontWeights: {
           body: 500,
         },
+        styles: {
+          root: {
+            fontFamily: 'body',
+          },
+        },
       }}>
       <h1>Hello</h1>
     </ThemeProvider>
@@ -168,4 +173,29 @@ test('does not renders global styles', () => {
   expect(style.fontFamily).toBe('')
   expect(style.fontWeight).toBe('')
   expect(style.lineHeight).toBe('')
+})
+
+test('adds box-sizing: border-box', () => {
+  const root = render(
+    <ThemeProvider theme={{}}>
+      <h1>Hello</h1>
+    </ThemeProvider>
+  )
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.boxSizing).toBe('border-box')
+})
+
+test('does not add box-sizing: border-box', () => {
+  const styles = [].slice.call(document.querySelectorAll('style'))
+  styles.forEach(style => (style.innerHTML = ''))
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useBorderBox: false,
+      }}>
+      <h1>Hello</h1>
+    </ThemeProvider>
+  )
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.boxSizing).toBe('')
 })

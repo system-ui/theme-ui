@@ -9,7 +9,12 @@ const BodyStyles = () =>
     styles: theme => {
       if (theme.useBodyStyles === false || (theme.styles && !theme.styles.root))
         return false
+      const boxSizing = theme.useBorderBox === false ? null : 'border-box'
+
       return css({
+        '*': {
+          boxSizing,
+        },
         body: {
           variant: 'styles.root',
         },

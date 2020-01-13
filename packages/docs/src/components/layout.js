@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, useColorMode } from 'theme-ui'
 import { useState, useRef } from 'react'
-import { Global } from '@emotion/core'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
@@ -41,7 +40,10 @@ export default props => {
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
   const [mode, setMode] = useColorMode()
-  const fullwidth = (props.pageContext.frontmatter && props.pageContext.frontmatter.fullwidth) || props.location.pathname === '/'
+  const fullwidth =
+    (props.pageContext.frontmatter &&
+      props.pageContext.frontmatter.fullwidth) ||
+    props.location.pathname === '/'
 
   const cycleMode = e => {
     const i = modes.indexOf(mode)
@@ -52,16 +54,6 @@ export default props => {
   return (
     <Styled.root>
       <Head {...props} />
-      <Global
-        styles={{
-          '*': {
-            boxSizing: 'border-box',
-          },
-          body: {
-            margin: 0,
-          },
-        }}
-      />
       <SkipLink>Skip to content</SkipLink>
       <Flex
         sx={{
@@ -69,7 +61,7 @@ export default props => {
           minHeight: '100vh',
         }}>
         <Flex
-          as='header'
+          as="header"
           sx={{
             height: 64,
             px: 3,
@@ -85,7 +77,9 @@ export default props => {
                 if (navLink) navLink.focus()
               }}
             />
-            <Link to="/" sx={{ variant: 'links.nav' }}>Theme UI</Link>
+            <Link to="/" sx={{ variant: 'links.nav' }}>
+              Theme UI
+            </Link>
           </Flex>
           <Flex>
             <NavLink href="https://github.com/system-ui/theme-ui">
