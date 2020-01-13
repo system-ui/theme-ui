@@ -7,7 +7,7 @@ import { createColorStyles } from './custom-properties'
 const STORAGE_KEY = 'theme-ui-color-mode'
 const hasStorage = () => {
   try {
-    return typeof window.localStorage !== undefined
+    return typeof window.localStorage !== 'undefined'
   } catch (e) {
     return false
   }
