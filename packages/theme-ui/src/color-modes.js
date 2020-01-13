@@ -5,11 +5,18 @@ import { useThemeUI } from './context'
 import { createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
-const HAS_STORAGE = typeof Storage !== 'undefined'
+const hasStorage = () => {
+  try {
+    return typeof window.localStorage !== undefined
+  } catch (e) {
+    return false
+  }
+}
 
 const storage = {
-  get: init => HAS_STORAGE && window.localStorage.getItem(STORAGE_KEY) || init,
-  set: value => HAS_STORAGE && window.localStorage.setItem(STORAGE_KEY, value),
+  get: init =>
+    (hasStorage() && window.localStorage.getItem(STORAGE_KEY)) || init,
+  set: value => hasStorage() && window.localStorage.setItem(STORAGE_KEY, value),
 }
 
 export const getMediaQuery = () => {
