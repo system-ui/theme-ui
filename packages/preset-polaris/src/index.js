@@ -13,6 +13,16 @@ export const polaris = {
     gray: '#DFE3E8',
     accent: '#F49342',
     darken: '#00044C',
+    modes: {
+      dark: {
+        text: '#3E4155',
+        background: '#000639',
+        primary: '#9C6ADE',
+        secondary: '#B4E1FA',
+        highlight: '#B7ECEC',
+        muted: '#e6e6e6',
+      },
+    },
   },
   fonts: {
     body: text,
