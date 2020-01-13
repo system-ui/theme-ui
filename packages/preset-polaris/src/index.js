@@ -1,25 +1,27 @@
 import base from '@theme-ui/preset-base'
 
-const text = '"San Francisco", Roboto, "Segoe UI", "Helvetica Neue", sans-serif'
+const text =
+  'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
+
 export const polaris = {
   ...base,
   colors: {
     text: '#454f5b',
     background: '#fff',
-    primary: '#5C6AC4',
-    secondary: '#006FBB',
-    highlight: '#47C1BF',
+    primary: '#5c6ac4',
+    secondary: '#006fbb',
+    highlight: '#47c1bf',
     muted: '#e6e6e6',
-    gray: '#DFE3E8',
-    accent: '#F49342',
-    darken: '#00044C',
+    gray: '#dfe3e8',
+    accent: '#f49342',
+    darken: '#00044c',
     modes: {
       dark: {
-        text: '#3E4155',
+        text: '#3e4155',
         background: '#000639',
-        primary: '#9C6ADE',
-        secondary: '#B4E1FA',
-        highlight: '#B7ECEC',
+        primary: '#9c6ade',
+        secondary: '#b4e1fa',
+        highlight: '#b7ecec',
         muted: '#e6e6e6',
       },
     },
