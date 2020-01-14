@@ -263,6 +263,7 @@ test('skip breakpoints', () => {
   })(theme)
   expect(result).toEqual({
     width: '100%',
+    '@media screen and (min-width: 40em)': {},
     '@media screen and (min-width: 52em)': {
       width: '50%',
     },
@@ -415,13 +416,12 @@ test('returns correct media query order', () => {
   const keys = Object.keys(result)
   expect(keys).toEqual([
     'width',
-    'color',
     '@media screen and (min-width: 40em)',
     '@media screen and (min-width: 52em)',
+    'color',
   ])
   expect(result).toEqual({
     width: '100%',
-    color: 'red',
     '@media screen and (min-width: 40em)': {
       color: 'green',
     },
@@ -429,5 +429,6 @@ test('returns correct media query order', () => {
       width: '50%',
       color: 'blue',
     },
+    color: 'red',
   })
 })
