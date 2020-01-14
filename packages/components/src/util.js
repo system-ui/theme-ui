@@ -1,3 +1,4 @@
+
 export const getProps = test => props => {
   const next = {}
   for (const key in props) {
