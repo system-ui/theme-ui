@@ -45,7 +45,7 @@ const BoxFn = styled('div', {
 const ResizedBox = ({ children, ...props }) => {
   const el = useRef(null)
   const [boxEl, setBoxEl] = useState(el.current)
-  const breakpoints = [480, 640]
+  const { breakpoints = [] } = props
   const bk = useBreakpoint(boxEl, breakpoints)
 
   useEffect(() => setBoxEl(el.current), [el])
