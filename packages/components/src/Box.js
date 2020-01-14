@@ -1,3 +1,4 @@
+import React, { useRef, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import css, { get } from '@styled-system/css'
 import { createShouldForwardProp } from '@styled-system/should-forward-prop'
@@ -14,7 +15,32 @@ const base = props => css(props.__css)(props.theme)
 const variant = ({ theme, variant, __themeKey = 'variants' }) =>
   css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
 
-export const Box = styled('div', {
+const getLastIndex = (data, val) =>
+  data.length -
+  [0, ...data]
+    .slice()
+    .reverse()
+    .findIndex(v => v < val)
+
+const useBreakpoint = (el, breakpoints) => {
+  const [bk, setBk] = useState(0)
+  if (!el) {
+    return
+  }
+
+  const handler = entries => {
+    const entry = entries[0]
+    const { width } = entry.contentRect
+    const index = getLastIndex(breakpoints, width)
+    setBk(index)
+  }
+
+  const resizer = new ResizeObserver(handler)
+  resizer.observe(el)
+  return bk
+}
+
+const Box = styled('div', {
   shouldForwardProp,
 })(
   {
@@ -30,4 +56,21 @@ export const Box = styled('div', {
   props => props.css
 )
 
-export default Box
+const ResizedBox = ({ children, ...props }) => {
+  const el = useRef(null)
+  const [boxEl, setBoxEl] = useState(el.current)
+  const breakpoints = [480, 640]
+  const bk = useBreakpoint(boxEl, breakpoints)
+  console.log('bk', bk)
+
+  useEffect(() => setBoxEl(el.current), [el])
+
+  return (
+    <Box ref={el} {...props}>
+      {children}
+    </Box>
+  )
+}
+
+export { ResizedBox as Box }
+export default ResizedBox
