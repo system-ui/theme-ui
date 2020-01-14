@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
+import css, { get } from '@styled-system/css'
 import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
-import css, { get } from './util'
 
 const shouldForwardProp = createShouldForwardProp([
   ...space.propNames,
