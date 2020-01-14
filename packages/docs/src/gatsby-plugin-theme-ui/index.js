@@ -224,25 +224,26 @@ export default {
     },
     secondary: {
       color: 'background',
-      bg: 'secondary'
+      bg: 'secondary',
     },
     accent: {
       color: 'background',
-      bg: 'accent'
+      bg: 'accent',
     },
     highlight: {
       color: 'text',
-      bg: 'highlight'
+      bg: 'highlight',
     },
   },
   layout: {
     container: {
       p: 3,
       // maxWidth: 1024,
-    }
+    },
   },
   styles: {
     root: {
+      margin: 0,
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
