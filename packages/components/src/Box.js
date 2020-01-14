@@ -50,7 +50,8 @@ const ResizedBox = ({ children, ...props }) => {
 
   useEffect(() => setBoxEl(el.current), [el])
 
-  const sx = ({ sx, theme }) => css(sx)(theme)
+  // a proposal - pass bk as a second argument
+  const sx = ({ sx, theme }) => css(sx)(theme, bk)
   const base = ({ __css, theme }) => css(__css)(theme)
 
   const Box = BoxFn(
