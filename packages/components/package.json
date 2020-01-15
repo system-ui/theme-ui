@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.2.46",
+  "version": "0.2.50",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "watch": "microbundle watch --no-compress --jsx React.createElement"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.17",
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
     "@styled-system/color": "^5.1.2",
     "@styled-system/css": "^5.0.23",
     "@styled-system/should-forward-prop": "^5.1.2",

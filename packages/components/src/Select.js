@@ -1,17 +1,7 @@
 import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
-
-const MRE = /^m[trblxy]?$/
-const getProps = test => props => {
-  const next = {}
-  for (const key in props) {
-    if (test(key || '')) next[key] = props[key]
-  }
-  return next
-}
-const getMargin = getProps(k => MRE.test(k))
-const omitMargin = getProps(k => !MRE.test(k))
+import { getMargin, omitMargin } from './util'
 
 const DownArrow = props => (
   <SVG {...props}>

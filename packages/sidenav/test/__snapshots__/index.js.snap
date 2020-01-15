@@ -183,6 +183,10 @@ exports[`AccordionNav renders open 1`] = `
   color: primary;
 }
 
+.emotion-4:disabled {
+  opacity: 0.25;
+}
+
 .emotion-3 {
   -webkit-transform-origin: 8 8;
   -ms-transform-origin: 8 8;
@@ -235,13 +239,16 @@ exports[`AccordionNav renders open 1`] = `
           </a>
           <button
             className="emotion-4"
+            disabled=""
+            href="/bop"
             onClick={[Function]}
+            pathname=""
             title="Expand Section"
           >
             <svg
-              height="16"
+              height="12"
               viewBox="0 0 16 16"
-              width="16"
+              width="12"
             >
               <g
                 className="emotion-3"
@@ -341,6 +348,10 @@ exports[`AccordionNav renders with nested links 1`] = `
   color: primary;
 }
 
+.emotion-3:disabled {
+  opacity: 0.25;
+}
+
 .emotion-2 {
   -webkit-transform-origin: 8 8;
   -ms-transform-origin: 8 8;
@@ -390,13 +401,16 @@ exports[`AccordionNav renders with nested links 1`] = `
           </a>
           <button
             className="emotion-3"
+            disabled=""
+            href="/bop"
             onClick={[Function]}
+            pathname=""
             title="Expand Section"
           >
             <svg
-              height="16"
+              height="12"
               viewBox="0 0 16 16"
-              width="16"
+              width="12"
             >
               <g
                 className="emotion-2"

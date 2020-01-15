@@ -2,7 +2,34 @@
 
 ## Unreleased
 
+- `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
+- Adds `@theme-ui/preset-polaris` #567
+- Adjusts default font stack in presets #568
+
+## v0.2.53 2019-12-19
+
+- `@theme-ui/color`: add `transparentize` function #370
+- `@theme-ui/style-guide`: move context dependencies to peer dependencies #521
+
+## v0.2.52 2019-12-16
+
+- Fix for issues when `localStorage` is not available #514
+- `@theme-ui/match-media`: add option for default index in hook #460
+- `@theme-ui/editor`: Update Reakit #517
+
+## v0.2.51 2019-12-03
+
+- `@theme-ui/editor`: fix color picker #498
+
+## v0.2.50 2019-12-02
+
+- `@theme-ui/components`: fix NavLink base styles #497
+
+## v0.2.49 2019-11-15
+
+- `@theme-ui/components`: add more components #458
 - `@theme-ui/color`: add `alpha` utility #441
+- `@theme-ui/match-media`: Add default breakpoint index argument for SSR
 
 ## v0.2.48 2019-11-07
 

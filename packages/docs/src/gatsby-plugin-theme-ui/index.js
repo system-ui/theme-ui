@@ -47,7 +47,8 @@ export default {
     },
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -64,6 +65,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
+    container: 768,
   },
   text: {
     heading: {
@@ -93,6 +95,77 @@ export default {
       variant: 'buttons.primary',
       color: 'background',
       bg: 'secondary',
+    },
+    black: {
+      fontWeight: 'bold',
+      color: 'background',
+      bg: 'text',
+      '&:hover, &:focus': {
+        bg: 'primary',
+      },
+    },
+  },
+  links: {
+    button: {
+      display: 'inline-block',
+      textDecoration: 'none',
+      fontWeight: 'bold',
+      fontSize: 2,
+      p: 3,
+      color: 'background',
+      bg: 'text',
+      borderRadius: 6,
+      '&:hover, &:focus': {
+        color: 'background',
+        bg: 'primary',
+      },
+    },
+    nav: {
+      display: 'block',
+      width: '100%',
+      px: 2,
+      py: 2,
+      color: 'inherit',
+      textDecoration: 'none',
+      fontSize: 1,
+      fontWeight: 'bold',
+      bg: 'transparent',
+      transitionProperty: 'background-color',
+      transitionTimingFunction: 'ease-out',
+      transitionDuration: '.2s',
+      borderRadius: 2,
+      '&:hover': {
+        bg: 'highlight',
+      },
+      '&.active': {
+        color: 'primary',
+        bg: 'highlight',
+      },
+    },
+  },
+  badges: {
+    primary: {
+      color: 'background',
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight',
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
+    },
+    circle: {
+      height: 16,
+      minWidth: 16,
+      lineHeight: '16px',
+      textAlign: 'center',
+      borderRadius: 9999,
     },
   },
   images: {
@@ -146,6 +219,23 @@ export default {
     },
     slider: {
       bg: 'muted',
+    },
+  },
+  alerts: {
+    primary: {
+      color: 'background',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
+    accent: {
+      color: 'background',
+      bg: 'accent',
+    },
+    highlight: {
+      color: 'text',
+      bg: 'highlight',
     },
   },
   styles: {

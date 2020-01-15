@@ -1,0 +1,33 @@
+---
+title: Radio
+---
+
+# Radio
+
+Form radio input component
+
+```js
+import { Radio } from '@theme-ui/components'
+```
+
+```js live=true
+<Label>
+  <Radio
+    name='dark-mode'
+    value='true'
+    defaultChecked={true}
+  />
+  Dark Mode
+</Label>
+<Label>
+  <Radio
+    name='dark-mode'
+    value='false'
+  />
+  Light Mode
+</Label>
+```
+
+## Variants
+
+Radio variants can be defined in `theme.forms` and the component uses the `theme.forms.radio` variant by default.

@@ -1,0 +1,33 @@
+---
+title: Progress
+---
+
+# Progress
+
+Range input element
+
+```js
+import { Progress } from '@theme-ui/components'
+```
+
+```jsx live=true
+<Progress max={1} value={1/2}>
+  50%
+</Progress>
+```
+
+## Variants
+
+Progress variants can be defined anywhere in the `theme` object.
+
+```js
+// example theme variants
+{
+  styles: {
+    progress: {
+      color: 'red',
+    },
+  },
+}
+// <Progress variant='styles.progress' />
+```

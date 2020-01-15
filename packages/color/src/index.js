@@ -1,7 +1,10 @@
 import * as P from 'polished'
 import { get } from '@styled-system/css'
 
-const g = (t, c) => get(t, `colors.${c}`, c).replace(/^var\(--(\w+)(.*?), /,'').replace(/\)/,'')
+const g = (t, c) =>
+  get(t, `colors.${c}`, c)
+    .replace(/^var\(--(\w+)(.*?), /, '')
+    .replace(/\)/, '')
 
 export const darken = (c, n) => t => P.darken(n, g(t, c))
 export const lighten = (c, n) => t => P.lighten(n, g(t, c))
@@ -17,6 +20,7 @@ export const saturate = (c, n) => t => P.saturate(n, g(t, c))
 export const shade = (c, n) => t => P.shade(n, g(t, c))
 export const tint = (c, n) => t => P.tint(n, g(t, c))
 
+export const transparentize = (c, n) => t => P.transparentize(n, g(t, c))
 export const alpha = (c, n) => t => P.rgba(g(t, c), n)
 
 export const mix = (a, b, n = 0.5) => t => P.mix(n, g(t, a), g(t, b))
