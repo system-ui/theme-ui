@@ -75,7 +75,8 @@ const reducer = (state, next) => merge({}, state, next)
 
 export default props => {
   const [style, setStyle] = useReducer(reducer, {
-    fontFamily: 'system-ui, sans-serif',
+    fontFamily:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     color: 'tomato',
   })
 
@@ -100,4 +101,3 @@ export default props => {
   )
 }
 ```
-

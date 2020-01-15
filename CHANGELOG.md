@@ -18,6 +18,8 @@
 - The `@theme-ui/editor` API has changed significantly. See the README.md for more information.
 
 - `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
+- Adds `@theme-ui/preset-polaris` #567
+- Adjusts default font stack in presets #568
 
 ## v0.2.53 2019-12-19
 
