@@ -11,7 +11,11 @@ const storage = {
     try {
       return window.localStorage.getItem(STORAGE_KEY) || init
     } catch (e) {
-      console.warn(e)
+      console.warn(
+        'localStorage is disabled',
+        'and theming might not work as expected.',
+        'Please check your Site Settings.'
+      )
     }
   },
 
@@ -19,7 +23,11 @@ const storage = {
     try {
       window.localStorage.setItem(STORAGE_KEY, value)
     } catch (e) {
-      console.warn(e)
+      console.warn(
+        'localStorage is disabled',
+        'and theming might not work as expected.',
+        'Please check your Site Settings.'
+      )
     }
   },
 }
