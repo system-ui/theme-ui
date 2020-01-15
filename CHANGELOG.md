@@ -3,6 +3,7 @@
 ## Unreleased
 
 - `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
+- Adds `@theme-ui/preset-polaris` #567
 
 ## v0.2.53 2019-12-19
 
