@@ -4,7 +4,7 @@ import { useEditor } from './context'
 import Combobox from './Combobox'
 
 const defaultFonts = [
-  'system-ui, sans-serif',
+  'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
   '"Helvetica Neue", Helvetica, Arial, sans-serif',
   '"Avenir Next", Helvetica, Arial, sans-serif',
   'Verdana, sans-serif',
