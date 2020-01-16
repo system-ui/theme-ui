@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-system",
-  "version": "0.3.0-alpha.5",
+  "version": "0.3.0-alpha.6",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
