@@ -16,6 +16,7 @@ const BodyStyles = () =>
           boxSizing,
         },
         body: {
+          margin: 0,
           variant: 'styles.root',
         },
       })(theme)

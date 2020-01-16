@@ -134,6 +134,16 @@ test('renders global styles', () => {
   expect(style.lineHeight).toBe('1.5')
 })
 
+test('resets body margin', () => {
+  const root = render(
+    <ThemeProvider>
+      <h1>Hello</h1>
+    </ThemeProvider>
+  )
+  const style = window.getComputedStyle(root.baseElement)
+  expect(style.margin).toBe('0px')
+})
+
 test('does not render invalid global styles', () => {
   const root = render(
     <ThemeProvider theme={{}}>
