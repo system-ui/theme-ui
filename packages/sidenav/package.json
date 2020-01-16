@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.3.0-alpha.4",
+  "version": "0.3.0-alpha.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "@mdx-js/react": "^1.0.21",
     "deepmerge": "^4.0.0",
     "react": "^16.8.6",
-    "theme-ui": "^0.3.0-alpha.4"
+    "theme-ui": "^0.3.0-alpha.5"
   },
   "keywords": [
     "theme-ui",
