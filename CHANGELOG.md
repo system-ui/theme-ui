@@ -4,6 +4,7 @@
 
 - Adjust media query sort logic #600
 - Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
+- Adds support for combining multiple variants (pass `variants` an array in `sx` or as a prop on components)
 
 ## v0.3.0 2019-01-22
 
