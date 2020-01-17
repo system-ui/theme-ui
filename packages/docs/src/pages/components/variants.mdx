@@ -64,6 +64,17 @@ For example, a secondary button style can be added to `theme.buttons.secondary` 
 </Button>
 ```
 
+## Combining Multiple Variants
+
+If you want to combine multiple variants on the same element, pass an array of variants with the `variants` prop.
+If styles conflict, those of the variant passed later will render.
+
+```jsx live=true
+<Text variants={['caps', 'heading']}>
+  Title text
+</Text>
+```
+
 ## Example Theme
 
 ```js

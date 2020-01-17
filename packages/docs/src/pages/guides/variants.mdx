@@ -29,6 +29,9 @@ For example, you can define `primary` and `secondary` variants for buttons and u
       color: 'white',
       bg: 'secondary',
     },
+    small: {
+      fontSize: 1
+    }
   },
 }
 ```
@@ -50,6 +53,15 @@ When using the built-in [`Button` component](/components/button), you can set th
 Variants can use any name you choose, and deeply nested objects can be accessed with dot notation.
 
 </Note>
+
+## Combining Multiple Variants
+
+If you want to combine multiple variants on the same element, pass an array to `variants` in the `sx` prop.
+If styles conflict, those of the variant passed later will render.
+
+```jsx
+<button sx={{ variants: ['buttons.primary', 'buttons.small'] }} />
+```
 
 ## Color Modes
 
