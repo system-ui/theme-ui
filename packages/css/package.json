@@ -8,6 +8,9 @@
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
+  "dependencies": {
+    "deepmerge": "^4.2.2"
+  },
   "author": "Brent Jackson",
   "license": "MIT",
   "publishConfig": {

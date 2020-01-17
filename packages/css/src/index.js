@@ -1,3 +1,5 @@
+import { all } from 'deepmerge'
+
 export const get = (obj, key, def, p, undef) => {
   key = key && key.split ? key.split('.') : [key]
   for (p = 0; p < key.length; p++) {
@@ -188,6 +190,12 @@ export const css = args => (props = {}) => {
     if (key === 'variant') {
       const variant = css(get(theme, val))(theme)
       result = { ...result, ...variant }
+      continue
+    }
+
+    if (key === 'variants' && typeof val === 'array') {
+      const variants = css(all(val.map(v => get(theme, v))(theme)))
+      result = { ...result, ...variants }
       continue
     }
 

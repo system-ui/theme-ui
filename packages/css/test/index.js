@@ -230,6 +230,21 @@ test('handles responsive variants', () => {
   })
 })
 
+test('returns multiple variants from theme', () => {
+  const result = css({
+    variants: ['text.caps', 'text.title'],
+  })(theme)
+  expect(result).toEqual({
+    fontSize: 16,
+    letterSpacing: '-0.01em',
+    textTransform: 'uppercase',
+    '@media screen and (min-width: 40em)': {
+      fontSize: 16,
+      letterSpacing: '-0.02em',
+    },
+  })
+})
+
 test('handles negative margins from scale', () => {
   const result = css({
     mt: -3,
