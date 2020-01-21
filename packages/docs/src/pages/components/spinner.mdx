@@ -11,7 +11,55 @@ import { Spinner } from '@theme-ui/components'
 ```
 
 ```jsx live=true
-<Spinner />
+<Spinner variant='primary' />
+```
+
+```jsx live=true
+<Spinner
+  variant='dualring' 
+  duration={1200}
+  item={{
+    count: 4,
+    delay: -150
+  }}
+/>
+```
+
+```jsx live=true
+<Spinner
+  variant='facebook'
+  duration={1200}
+  item={{
+    count: 3,
+    delay: 120,
+    width: 12,
+    height: 16,
+    getX: (index, total, width) => (8 + 12) * index 
+  }}
+/>
+```
+
+```jsx live=true
+<Spinner
+  variant='roller'
+  duration={1200}
+  item={{
+    count: 12,
+    delay: 100,
+    width: 6,
+    height: 6,
+    getX: (index, total, width) => {
+      const r = width / 2;
+      const angle = (index / total) * Math.PI * 2
+      return r + r * Math.cos(angle)
+    },
+    getY: (index, total, height) => {
+      const r = height / 2;
+      const angle = (index / total) * Math.PI * 2
+      return r + r * Math.sin(angle)
+    }
+  }}
+/>
 ```
 
 ## Props

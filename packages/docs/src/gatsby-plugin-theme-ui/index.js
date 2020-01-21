@@ -168,6 +168,54 @@ export default {
       borderRadius: 9999,
     },
   },
+  spinners: {
+    primary: {
+      borderRadius: '50%',
+      borderWidth: 6,
+      borderStyle: 'solid',
+      borderColor: 'rgba(51, 51, 238, 0.1)',
+      '& > div': {
+        content: '" "',
+        borderRadius: '50%',
+        left: `-6px`,
+        top: `-6px`,
+        borderWidth: 6,
+        borderStyle: 'solid',
+        borderColor: `#3333ee transparent #3333ee transparent`,
+        animationTimingFunction: 'linear',
+      },
+    },
+    dualring: {
+      borderRadius: '50%',
+      borderWidth: 6,
+      borderStyle: 'solid',
+      borderColor: 'rgba(51, 51, 238, 0.1)',
+      '& > div': {
+        content: '" "',
+        borderRadius: '50%',
+        left: `-6px`,
+        top: `-6px`,
+        borderWidth: 6,
+        borderStyle: 'solid',
+        borderColor: `#3333ee transparent transparent transparent`,
+        animationTimingFunction: 'cubic-bezier(0.5, 0, 0.5, 1)',
+      },
+    },
+    facebook: {
+      '& > div': {
+        display: 'inline-block',
+        background: '#3333ee',
+        animationTimingFunction: 'cubic-bezier(0, 0.5, 0.5, 1)',
+      },
+    },
+    roller: {
+      '& > div': {
+        background: '#3333ee',
+        borderRadius: '50%',
+        animationTimingFunction: 'linear',
+      },
+    },
+  },
   images: {
     avatar: {
       width: 48,
