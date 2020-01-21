@@ -10888,9 +10888,9 @@ gatsby-telemetry@^1.1.44:
     uuid "3.3.3"
 
 gatsby-theme-blog-core@^1.0.2:
-  version "1.0.50"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-blog-core/-/gatsby-theme-blog-core-1.0.50.tgz#39542a11e1f9bdd56daa22f005ff5c622b9fa036"
-  integrity sha512-bnGuSjY8BkkwAKA6Lo3JbSxNF0yMkHlofswCYcgeqcrrCqKJpwK5F1DiFnhzvTV4/cbiJJoKdhX9VGZeApVQow==
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-blog-core/-/gatsby-theme-blog-core-1.0.54.tgz#e00def104fa74d7214b975c25170d382930f916f"
+  integrity sha512-h6cb2VArRLtw4Djz9V1kygWirNaUp9xFJEjKZ5gMRJtVusxbisNDBswldlvd/w4+VMw6R0nLZBpVPwcVodM0+w==
   dependencies:
     "@mdx-js/mdx" "^1.5.1"
     gatsby-core-utils "^1.0.26"
@@ -10900,13 +10900,13 @@ gatsby-theme-blog-core@^1.0.2:
     gatsby-remark-images "^3.1.42"
     gatsby-remark-smartypants "^2.1.20"
     gatsby-source-filesystem "^2.1.46"
-    gatsby-transformer-sharp "^2.3.12"
+    gatsby-transformer-sharp "^2.3.13"
     remark-slug "^5.1.2"
 
-gatsby-transformer-sharp@^2.3.12:
-  version "2.3.12"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.12.tgz#089650dc75d6f133d53a7403e76f6b37060a287f"
-  integrity sha512-Ot/BHucuuF7DuL58fHqvLbN1THw0f1NSY/SGpdjqOzPDDYMs4JUZbaj9iQFoaXLUD76Ubbcng6WxTeE4zLf2pA==
+gatsby-transformer-sharp@^2.3.13:
+  version "2.3.13"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.13.tgz#b2bd2967fee1c2511ad896645acab34954d52bc6"
+  integrity sha512-jof7b1btkABcsN6lP5qd7cBMffPFv09qTKs6ZTgRIRB9jQBiBizJydmyT97eCqqIl0dKIr8/5Bt/eC6jyxMj8A==
   dependencies:
     "@babel/runtime" "^7.7.6"
     bluebird "^3.7.2"
