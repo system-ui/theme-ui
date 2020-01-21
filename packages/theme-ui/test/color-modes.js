@@ -520,21 +520,10 @@ test('raw color values are passed to theme-ui context when custom properties are
 })
 
 test('warns when localStorage is disabled', () => {
-  const originalWindow = window
-
-  const mockWindow = new Proxy(window, {
-    get: (obj, prop) => {
-      if (prop === 'localStorage') {
-        throw 'SecurityError: The operation is insecure.'
-      } else {
-        return obj[prop]
-      }
-    },
-  })
-
-  Object.defineProperty(global, 'window', {
-    value: mockWindow,
-    writable: true,
+  Object.defineProperty(window, 'localStorage', {
+    get: jest.fn(() => {
+      throw 'SecurityError: The operation is insecure.'
+    }),
   })
 
   let mode
@@ -550,9 +539,4 @@ test('warns when localStorage is disabled', () => {
     </ThemeProvider>
   )
   expect(mode).toBe('default')
-
-  Object.defineProperty(global, 'window', {
-    value: originalWindow,
-    writable: true,
-  })
 })
