@@ -10,13 +10,7 @@ const theme = {
   },
 }
 
-export default ({
-  context,
-  fontSize = 16,
-  color,
-  bg,
-  ...props
-}) => {
+export default ({ context, fontSize = 16, color, bg, ...props }) => {
   const outer = useThemeUI()
   context = context || outer
 
@@ -26,7 +20,8 @@ export default ({
         <div
           {...props}
           sx={{
-            fontFamily: 'system-ui, sans-serif',
+            fontFamily:
+              'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
             fontSize,
             lineHeight: 1.5,
             fontWeight: 400,

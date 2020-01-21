@@ -47,7 +47,8 @@ export default {
     },
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -226,15 +227,15 @@ export default {
     },
     secondary: {
       color: 'background',
-      bg: 'secondary'
+      bg: 'secondary',
     },
     accent: {
       color: 'background',
-      bg: 'accent'
+      bg: 'accent',
     },
     highlight: {
       color: 'text',
-      bg: 'highlight'
+      bg: 'highlight',
     },
   },
   styles: {
