@@ -27,7 +27,7 @@
     "jest-emotion": "^10.0.11",
     "jest-mock-console": "^1.0.0",
     "lerna": "^3.14.1",
-    "lint-staged": "9",
+    "lint-staged": "10",
     "microbundle": "^0.11.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
