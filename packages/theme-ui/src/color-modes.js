@@ -1,22 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import { css } from '@styled-system/css'
+import { css } from '@theme-ui/css'
 import { Global } from '@emotion/core'
 import { useThemeUI } from './context'
 import { createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
-const hasStorage = () => {
-  try {
-    return typeof window.localStorage !== undefined
-  } catch (e) {
-    return false
-  }
-}
 
 const storage = {
-  get: init =>
-    (hasStorage() && window.localStorage.getItem(STORAGE_KEY)) || init,
-  set: value => hasStorage() && window.localStorage.setItem(STORAGE_KEY, value),
+  get: init => {
+    try {
+      return window.localStorage.getItem(STORAGE_KEY) || init
+    } catch (e) {
+      console.warn(
+        'localStorage is disabled and color mode might not work as expected.',
+        'Please check your Site Settings.',
+        e
+      )
+    }
+  },
+
+  set: value => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, value)
+    } catch (e) {
+      console.warn(
+        'localStorage is disabled and color mode might not work as expected.',
+        'Please check your Site Settings.',
+        e
+      )
+    }
+  },
 }
 
 export const getMediaQuery = () => {

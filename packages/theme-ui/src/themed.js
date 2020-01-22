@@ -1,4 +1,4 @@
-import { css, get } from '@styled-system/css'
+import { css, get } from '@theme-ui/css'
 
 export const themed = key => props =>
   css(get(props.theme, `styles.${key}`))(props.theme)
