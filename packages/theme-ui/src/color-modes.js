@@ -5,12 +5,31 @@ import { useThemeUI } from './context'
 import { createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
-const HAS_STORAGE = typeof Storage !== 'undefined'
 
 const storage = {
-  get: init =>
-    (HAS_STORAGE && window.localStorage.getItem(STORAGE_KEY)) || init,
-  set: value => HAS_STORAGE && window.localStorage.setItem(STORAGE_KEY, value),
+  get: init => {
+    try {
+      return window.localStorage.getItem(STORAGE_KEY) || init
+    } catch (e) {
+      console.warn(
+        'localStorage is disabled and color mode might not work as expected.',
+        'Please check your Site Settings.',
+        e
+      )
+    }
+  },
+
+  set: value => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, value)
+    } catch (e) {
+      console.warn(
+        'localStorage is disabled and color mode might not work as expected.',
+        'Please check your Site Settings.',
+        e
+      )
+    }
+  },
 }
 
 export const getMediaQuery = () => {
