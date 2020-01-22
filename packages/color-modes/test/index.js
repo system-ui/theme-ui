@@ -5,11 +5,7 @@ import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
-import {
-  ColorModeProvider,
-  useColorMode,
-  InitializeColorMode,
-} from '../src'
+import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -38,9 +34,9 @@ test('renders with color modes', () => {
             modes: {
               dark: {
                 text: 'white',
-              }
-            }
-          }
+              },
+            },
+          },
         }}>
         <ColorModeProvider>
           <Mode />
@@ -67,8 +63,8 @@ test('renders with initial color mode name', () => {
           colors: {
             modes: {
               dark: {},
-            }
-          }
+            },
+          },
         }}>
         <ColorModeProvider>
           <Mode />
@@ -570,8 +566,30 @@ test('raw color values are passed to theme-ui context when custom properties are
 })
 
 test('InitializeColorMode renders', () => {
-  const json = renderJSON(
-    <InitializeColorMode />
-  )
+  const json = renderJSON(<InitializeColorMode />)
   expect(json).toMatchSnapshot()
+})
+
+test('warns when localStorage is disabled', () => {
+  Object.defineProperty(window, 'localStorage', {
+    get: jest.fn(() => {
+      throw 'SecurityError: The operation is insecure.'
+    }),
+  })
+
+  let mode
+  const Consumer = props => {
+    const [colorMode] = useColorMode()
+    mode = colorMode
+    return false
+  }
+
+  render(
+    <ThemeProvider>
+      <ColorModeProvider>
+        <Consumer />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(mode).toBe('default')
 })

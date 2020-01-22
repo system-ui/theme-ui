@@ -1,26 +1,34 @@
 import React from 'react'
-import {
-  jsx,
-  useThemeUI,
-  merge,
-  Context,
-} from '@theme-ui/core'
+import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
 import { get } from '@theme-ui/css'
-import {
-  Global,
-  ThemeContext as EmotionContext
-} from '@emotion/core'
-import {
-  toCustomProperties,
-  createColorStyles,
-} from './custom-properties'
+import { Global, ThemeContext as EmotionContext } from '@emotion/core'
+import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
-const HAS_STORAGE = typeof Storage !== 'undefined'
 
 const storage = {
-  get: init => HAS_STORAGE && window.localStorage.getItem(STORAGE_KEY) || init,
-  set: value => HAS_STORAGE && window.localStorage.setItem(STORAGE_KEY, value),
+  get: init => {
+    try {
+      return window.localStorage.getItem(STORAGE_KEY) || init
+    } catch (e) {
+      console.warn(
+        'localStorage is disabled and color mode might not work as expected.',
+        'Please check your Site Settings.',
+        e
+      )
+    }
+  },
+  set: value => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, value)
+    } catch (e) {
+      console.warn(
+        'localStorage is disabled and color mode might not work as expected.',
+        'Please check your Site Settings.',
+        e
+      )
+    }
+  },
 }
 
 const getMediaQuery = () => {
@@ -36,7 +44,9 @@ const getMediaQuery = () => {
 }
 
 const useColorModeState = (theme = {}) => {
-  const [mode, setMode] = React.useState(theme.initialColorModeName || 'default')
+  const [mode, setMode] = React.useState(
+    theme.initialColorModeName || 'default'
+  )
 
   // initialize state
   React.useEffect(() => {
@@ -92,16 +102,14 @@ const applyColorMode = (theme, mode) => {
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: theme => createColorStyles(theme)
+    styles: theme => createColorStyles(theme),
   })
 
-export const ColorModeProvider = ({
-  children,
-}) => {
+export const ColorModeProvider = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
-  const emotionTheme = {...theme}
+  const emotionTheme = { ...theme }
 
   if (theme.useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
@@ -114,8 +122,12 @@ export const ColorModeProvider = ({
     setColorMode,
   }
 
-  return jsx(EmotionContext.Provider, { value: emotionTheme },
-    jsx(Context.Provider, { value: context },
+  return jsx(
+    EmotionContext.Provider,
+    { value: emotionTheme },
+    jsx(
+      Context.Provider,
+      { value: context },
       jsx(BodyStyles, { key: 'color-mode' }),
       children
     )
@@ -128,11 +140,10 @@ const noflash = `(function() { try {
   document.body.classList.add('theme-ui-' + mode);
 } catch (e) {} })();`
 
-export const InitializeColorMode = () => (
+export const InitializeColorMode = () =>
   jsx('script', {
     key: 'theme-ui-no-flash',
     dangerouslySetInnerHTML: {
       __html: noflash,
-    }
+    },
   })
-)

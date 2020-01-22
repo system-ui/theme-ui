@@ -5,13 +5,7 @@ import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import { version as emotionVersion } from '@emotion/core/package.json'
-import {
-  jsx,
-  ThemeProvider,
-  useColorMode,
-  useThemeUI,
-  ColorMode,
-} from '../src/index'
+import { jsx, ThemeProvider, useColorMode, useThemeUI } from '../src/index'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -38,9 +32,9 @@ test('renders with color modes', () => {
             modes: {
               dark: {
                 text: 'white',
-              }
-            }
-          }
+              },
+            },
+          },
         }}>
         <Mode />
       </ThemeProvider>
@@ -65,8 +59,8 @@ test('renders with initial color mode name', () => {
           colors: {
             modes: {
               dark: {},
-            }
-          }
+            },
+          },
         }}>
         <Mode />
       </ThemeProvider>
@@ -213,8 +207,8 @@ test('inherits color mode state from parent context', () => {
         colors: {
           modes: {
             dark: {},
-          }
-        }
+          },
+        },
       }}>
       <ThemeProvider
         theme={{
