@@ -4,7 +4,7 @@ import { IconButton } from './IconButton'
 
 export const MenuIcon = ({ size = 24 }) => (
   <Box
-    as='svg'
+    as="svg"
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
@@ -21,9 +21,9 @@ export const MenuIcon = ({ size = 24 }) => (
 export const MenuButton = React.forwardRef((props, ref) => (
   <IconButton
     ref={ref}
-    title='Menu'
-    aria-label='Toggle Menu'
-    variant='menu'
+    title="Menu"
+    aria-label="Toggle Menu"
+    variant="menu"
     {...props}>
     <MenuIcon />
   </IconButton>

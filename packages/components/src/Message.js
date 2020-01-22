@@ -5,7 +5,7 @@ export const Message = React.forwardRef((props, ref) => (
   <Box
     ref={ref}
     {...props}
-    __themeKey='messages'
+    __themeKey="messages"
     __css={{
       padding: 3,
       paddingLeft: t => t.space[3] - t.space[1],

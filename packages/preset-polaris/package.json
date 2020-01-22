@@ -1,18 +1,18 @@
 {
-  "name": "@theme-ui/color",
-  "version": "0.2.53",
+  "name": "@theme-ui/preset-polaris",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "author": "Yuraima Estevez",
+  "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/css": "^0.2.48",
-    "polished": "^3.4.1"
+    "@theme-ui/preset-base": "^0.2.44"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "license": "MIT"
+  }
 }

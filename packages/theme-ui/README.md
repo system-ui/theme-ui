@@ -53,7 +53,6 @@ help you build UI rooted in constraint-based design principles.
 [mdx]: https://mdxjs.com
 [styled system]: https://styled-system.com
 [gatsby]: https://gatsbyjs.org
-[@styled-system/css]: https://styled-system.com/css
 [theme specification]: https://system-ui.com/theme
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
@@ -86,7 +85,8 @@ Read more about [theming](https://theme-ui.com/theming).
 // example theme.js
 export default {
   fonts: {
-    body: 'system-ui, sans-serif',
+    body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: '"Avenir Next", sans-serif',
     monospace: 'Menlo, monospace',
   },
@@ -123,7 +123,6 @@ export default props => (
 )
 ```
 
-Under the hood, this uses the [`@styled-system/css`](https://styled-system.com/css) utility and Emotion's custom JSX pragma implementation.
 Read more about [how the custom pragma works](https://theme-ui.com/how-it-works/#jsx-pragma).
 
 ## Responsive styles

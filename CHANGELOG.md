@@ -3,6 +3,9 @@
 ## Unreleased
 
 - `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
+- `@theme-ui/gatsby-theme-style-guide`: add docs on shadowing #558
+- Adds `@theme-ui/preset-polaris` #567
+- Adjusts default font stack in presets #568
 
 ## v0.2.53 2019-12-19
 

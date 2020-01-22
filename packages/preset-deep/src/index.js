@@ -16,7 +16,8 @@ export default {
     gray: 'hsl(210, 50%, 60%)',
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },

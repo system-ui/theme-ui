@@ -138,12 +138,9 @@ export const AccordionButton = props => {
         },
         '&:disabled': {
           opacity: 0.25,
-        }
+        },
       }}>
-      <svg
-        viewBox="0 0 16 16"
-        width="12"
-        height="12">
+      <svg viewBox="0 0 16 16" width="12" height="12">
         <g
           sx={{
             transformOrigin: '8 8',
@@ -162,14 +159,7 @@ export const AccordionButton = props => {
   )
 }
 
-const NavLinks = ({
-  open,
-  pathname = '',
-  links,
-  href,
-  Link,
-  ...props
-}) => {
+const NavLinks = ({ open, pathname = '', links, href, Link, ...props }) => {
   if (!links) return false
   if (!open && !pathname.includes(href)) return false
 
@@ -187,7 +177,7 @@ const NavLinks = ({
             children={link.props.children}
             className={link.props.className}
             sx={{
-              pl: 4
+              pl: 4,
             }}
           />
         </li>
@@ -196,14 +186,11 @@ const NavLinks = ({
   )
 }
 
-export const AccordionNav = React.forwardRef(({
-  open,
-  children,
-  components = {},
-  className,
-  pathname = '',
-  ...props
-}, ref) => {
+export const AccordionNav = React.forwardRef(
+  (
+    { open, children, components = {}, className, pathname = '', ...props },
+    ref
+  ) => {
     const links = createNestedLinks(children)
     const [expanded, setExpanded] = useState({})
     const Link = components.a || 'a'
