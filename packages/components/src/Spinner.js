@@ -7,6 +7,7 @@ const range = n => {
   for (let i = 0; i < n; i++) {
     v.push(i)
   }
+  // TODO: change to [...Array(n).keys()]
   return v
 }
 
@@ -28,7 +29,7 @@ const roller = keyframes({
   },
 })
 
-const facebook = keyframes({
+const bar = keyframes({
   '0%': {
     top: '8px',
     height: '48px',
@@ -39,7 +40,7 @@ const facebook = keyframes({
   },
 })
 
-const animations = { spin, roller, facebook }
+const animations = { spin, roller, bar }
 
 export const Spinner = props => {
   const {
@@ -115,13 +116,13 @@ export const DualringSpinner = ({ duration }) => (
   />
 )
 
-export const FacebookSpinner = ({ duration, itemWidth, itemHeight }) => (
+export const BarSpinner = ({ duration, itemWidth, itemHeight }) => (
   <Spinner
     duration={duration}
     items={3}
     itemWidth={itemWidth}
     itemHeight={itemHeight}
-    animation="facebook"
+    animation="bar"
     delay={100}
     itemX={({ index, itemWidth }) => (8 + itemWidth) * index}
     __css={{
