@@ -168,24 +168,6 @@ export default {
       borderRadius: 9999,
     },
   },
-  spinners: {
-    primary: {
-      borderRadius: '50%',
-      borderWidth: 6,
-      borderStyle: 'solid',
-      borderColor: 'rgba(51, 51, 238, 0.1)',
-      '& > div': {
-        content: '" "',
-        borderRadius: '50%',
-        left: `-6px`,
-        top: `-6px`,
-        borderWidth: 6,
-        borderStyle: 'solid',
-        borderColor: `#3333ee transparent #3333ee transparent`,
-        animationTimingFunction: 'linear',
-      },
-    },
-  },
   images: {
     avatar: {
       width: 48,

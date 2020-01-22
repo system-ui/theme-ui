@@ -17,12 +17,7 @@ export { Slider } from './Slider'
 export { Field } from './Field'
 export { Progress } from './Progress'
 export { Donut } from './Donut'
-export {
-  Spinner,
-  RollerSpinner,
-  FacebookSpinner,
-  DualringSpinner,
-} from './Spinner'
+export { Spinner } from './Spinner'
 export { Avatar } from './Avatar'
 export { Badge } from './Badge'
 export { Close } from './Close'
