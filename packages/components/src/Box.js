@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import css, { get } from '@styled-system/css'
+import { css, get } from '@theme-ui/css'
 import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
