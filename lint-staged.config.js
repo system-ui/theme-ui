@@ -1,3 +1,3 @@
 module.exports = {
-  '*.{js,json}': ['prettier --write', 'git add'],
+  '*.{js,json}': ['prettier --write'],
 }

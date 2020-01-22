@@ -1,5 +1,5 @@
 import { jsx as emotion } from '@emotion/core'
-import css from '@styled-system/css'
+import { css } from '@theme-ui/css'
 
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined
