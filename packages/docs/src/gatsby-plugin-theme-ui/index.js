@@ -239,7 +239,6 @@ export default {
     },
   },
   spinners: {
-    // Probably most of this props should be inside <Spinner /> component implementation
     primary: {
       borderRadius: '50%',
       borderWidth: 6,
