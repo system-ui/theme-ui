@@ -162,15 +162,12 @@ const responsive = styles => theme => {
     }
     for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
       const media = mediaQueries[i]
-      if (value[i] == null) {
-        next[media] = {}
-        continue
-      }
       if (!media) {
         next[key] = value[i]
         continue
       }
       next[media] = next[media] || {}
+      if (value[i] == null) continue
       next[media][key] = value[i]
     }
   }
