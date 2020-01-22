@@ -2,12 +2,14 @@
 title: Flex
 ---
 
+import Note from '../../components/note'
+
 # Flex
 
 Use the `Flex` component to create flexbox layouts.
 
 ```js
-import { Flex } from '@theme-ui/components'
+import { Flex } from 'theme-ui'
 ```
 
 ```jsx live=true
@@ -20,3 +22,10 @@ import { Flex } from '@theme-ui/components'
   </Box>
 </Flex>
 ```
+
+<Note>
+
+The `Flex` component is identical to the `Box` component, but with `display: flex` set.
+If you need to alter the `display` property, use the `Box` component instead.
+
+</Note>

@@ -1,0 +1,23 @@
+{
+  "name": "@theme-ui/theme-provider",
+  "version": "0.3.0-alpha.6",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@theme-ui/color-modes": "^0.3.0-alpha.6",
+    "@theme-ui/core": "^0.3.0-alpha.6",
+    "@theme-ui/mdx": "^0.3.0-alpha.6"
+  },
+  "repository": "system-ui/theme-ui",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

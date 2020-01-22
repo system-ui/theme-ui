@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a code block 1`] = `
+.emotion-0 {
+  display: inline-block;
+}
+
+<pre
+  className="language-js prism-code language-javascript emotion-6"
+  style={Object {}}
+>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token console class-name emotion-0"
+    >
+      console
+    </span>
+    <span
+      className="token punctuation emotion-0"
+    >
+      .
+    </span>
+    <span
+      className="token method function property-access emotion-0"
+    >
+      log
+    </span>
+    <span
+      className="token punctuation emotion-0"
+    >
+      (
+    </span>
+    <span
+      className="token string emotion-0"
+    >
+      'hello, world!'
+    </span>
+    <span
+      className="token punctuation emotion-0"
+    >
+      )
+    </span>
+  </div>
+</pre>
+`;
+
+exports[`renders with other languages 1`] = `
+.emotion-0 {
+  display: inline-block;
+}
+
+<pre
+  className="language-php prism-code language-php emotion-8"
+  style={Object {}}
+>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token operator emotion-0"
+    >
+      &lt;
+    </span>
+    <span
+      className="token plain emotion-0"
+    >
+      h1
+    </span>
+    <span
+      className="token operator emotion-0"
+    >
+      &gt;
+    </span>
+    <span
+      className="token plain emotion-0"
+    >
+      Hello
+    </span>
+    <span
+      className="token operator emotion-0"
+    >
+      &lt;
+    </span>
+    <span
+      className="token operator emotion-0"
+    >
+      /
+    </span>
+    <span
+      className="token plain emotion-0"
+    >
+      h1
+    </span>
+    <span
+      className="token operator emotion-0"
+    >
+      &gt;
+    </span>
+  </div>
+</pre>
+`;

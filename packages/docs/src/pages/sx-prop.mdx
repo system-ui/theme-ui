@@ -29,21 +29,69 @@ export default props => (
 )
 ```
 
-To read more about how the values are converted and for a reference of supported CSS properties, see the
-[`@styled-system/css` docs](https://styled-system.com/css).
-
 <Note>
 
-Under the hood, Theme UI uses a [custom pragma comment](/guides/jsx-pragma) that converts a Styled System-aware `sx` prop into a style object and passes it to the Emotion's `jsx` function.
+Under the hood, Theme UI uses a [custom pragma comment](/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to the Emotion's `jsx` function.
 The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
 This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 This is intended as a complete replacement for the Emotion custom JSX pragma.
 
 </Note>
 
+## Theme-Aware Properties
+
+The following CSS properties will use values defined in the theme, when available.
+
+Property  | Theme Key
+---|---
+`fontFamily` | `fonts`
+`fontSize` | `fontSizes`
+`fontWeight` | `fontWeights`
+`lineHeight` | `lineHeights`
+`letterSpacing` | `letterSpacings`
+`color` | `colors`
+`backgroundColor`, `bg` | `colors`
+`margin`, `m` | `space`
+`marginTop`, `mt` | `space`
+`marginRight`, `mr` | `space`
+`marginBottom`, `mb` | `space`
+`marginLeft`, `ml` | `space`
+`marginX`, `mx` | `space`
+`marginY`, `my` | `space`
+`padding`, `p` | `space`
+`paddingTop`, `pt` | `space`
+`paddingRight`, `pr` | `space`
+`paddingBottom`, `pb` | `space`
+`paddingLeft`, `pl` | `space`
+`paddingX`, `px` | `space`
+`paddingY`, `py` | `space`
+`top` | `space`
+`bottom` | `space`
+`left` | `space`
+`right` | `space`
+`border` | `borders`
+`borderTop` | `borders`
+`borderRight` | `borders`
+`borderBottom` | `borders`
+`borderLeft` | `borders`
+`borderColor` | `colors`
+`borderWidth` | `borderWidths`
+`borderStyle` | `borderStyles`
+`borderRadius` | `radii`
+`boxShadow` | `shadows`
+`textShadow` | `shadows`
+`zIndex` | `zIndices`
+`width` | `sizes`
+`minWidth` | `sizes`
+`maxWidth` | `sizes`
+`height` | `sizes`
+`minHeight` | `sizes`
+`maxHeight` | `sizes`
+`size` | `sizes`
+
 ## Responsive Values
 
-Styled System includes a shorthand syntax for writing mobile-first responsive styles using arrays as values.
+Theme UI, like Styled System, includes a shorthand syntax for writing mobile-first responsive styles using arrays as values.
 This is useful when you want to change a single property across multiple breakpoints without needing to write verbose media query syntax.
 
 ```jsx
@@ -62,7 +110,7 @@ export default props => (
 
 ## Margin and Padding
 
-Margin and padding are treated as first-class citizens in Styled System,
+Margin and padding are treated as first-class citizens in Theme UI,
 using values defined in the `theme.space` scale, and include an optional shorthand syntax for using negative space in your application.
 
 In addition to shorthands for applying margin and padding on the x- and y-axes, a terse naming convention can be used to quickly edit styles.
@@ -78,7 +126,6 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
   }}
 />
 ```
-
 
 ## Functional Values
 
@@ -121,18 +168,23 @@ export default props => (
 
 ## Using the `sx` Prop in MDX
 
-In order to render your Markdown components, MDX uses its own
-custom pragma. Eventually we'd like to make it more seamless to
-use `sx` in MDX files, but for now you'll have to move all components
-that accept the prop to their own file.
+Because MDX uses its own custom pragma and `createElement` function, the Theme UI pragma will not work in MDX files.
+You can use any of the [Theme UI components](/components),
+which support the `sx` prop, in an MDX file as a workaround.
 
 ```js
-// src/my-sx-components.js
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+<!-- Example -->
 
-export const Div = props => <div {...props} />
+import { Box } from 'theme-ui'
+
+<Box
+  sx={{
+    padding: 3,
+    bg: 'highlight',
+  }}>
+
+# Hello
+
+</Box>
 ```
 
-This will allow you to import and use the `Div` component
-in MDX files with the `sx` prop.

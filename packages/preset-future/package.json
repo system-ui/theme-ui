@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-future",
-  "version": "0.2.44",
+  "version": "0.3.0-alpha.6",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -10,7 +10,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "^0.2.44"
+    "@theme-ui/preset-base": "^0.3.0-alpha.6"
   },
   "publishConfig": {
     "access": "public"

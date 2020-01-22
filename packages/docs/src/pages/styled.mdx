@@ -43,39 +43,9 @@ This can also be used to style components like the Gatsby `Link` component to ma
 </Styled.a>
 ```
 
-## `Styled.root`
+## Body Styles
 
-By default, Theme UI does _not_ apply any global styles for typography.
-To apply top-level typographic styles, the `Styled.root` component can be used to wrap any page layout or MDX document.
-By adding styles to `theme.styles.root`, this component will apply any base styles that you define.
+To add base typographic styles to the `<body>` element, add styles to `theme.styles.root`.
+Previous versions of Theme UI used the `Styled.root` component.
+See the [theming docs](/theming/#body-styles) for more information.
 
-```js
-// example theme.js
-export default {
-  fonts: {
-    body: 'system-ui, sans-serif',
-    monospace: 'Menlo, monospace',
-  },
-  fontWeights: {
-    body: 400,
-    heading: 700,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
-  styles: {
-    root: {
-      fontFamily: 'body',
-      fontWeight: 'body',
-      lineHeight: 'body',
-    },
-  },
-}
-```
-
-```jsx
-<Styled.root>
-  <MyMDXDocument />
-</Styled.root>
-```

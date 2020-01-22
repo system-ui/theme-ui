@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, ColorMode, components } from 'theme-ui'
+import { jsx, Styled, components } from 'theme-ui'
 import { ThemeContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { useState, useEffect } from 'react'
@@ -46,7 +46,6 @@ export default () => {
             transition: 'all .2s ease-out',
           },
         }}>
-        <ColorMode />
         <ThemeContext.Provider value={theme}>
           <Styled.root>
             <Styled.a

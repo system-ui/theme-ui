@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### v0.3.0
+
+- Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
+- Removes `context.components` (still available through MDX context)
+- Adds separate `ColorModeProvider` component
+- Removes support for `theme.initialColorMode` - use `initialColorModeName` instead
+- Removes layout components (`Layout`, `Header`, `Main`, `Footer`) - use `Box` and `Flex` instead
+- Updates CSS custom properties implementation for color modes
+- When using `useColorSchemeMediaQuery` flag, it will initialize the mode to `light` when `@media (prefers-color-scheme: light)` is enabled
+- Global color mode styles are automatically added to the body without needing to render the `ColorMode` component
+- Removes `ThemeStateProvider`
+- Adds global typographic styles, set `useBodyStyles: false` to disable
+- Fix issue where `<del>` tag was incorrectly specified as `delete`
+- The `@theme-ui/editor` API has changed significantly. See the README.md for more information.
+
 - `@theme-ui/components`: on Grid component, allow custom `columns` definitions via strings #541
 - `@theme-ui/gatsby-theme-style-guide`: add docs on shadowing #558
 - Adds `@theme-ui/preset-polaris` #567

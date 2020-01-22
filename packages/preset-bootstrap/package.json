@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-bootstrap",
-  "version": "0.2.40",
+  "version": "0.3.0-alpha.6",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",

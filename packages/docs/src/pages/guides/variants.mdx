@@ -8,7 +8,7 @@ import Note from '../../components/note'
 # Variants
 
 To add groups of styles based on theme values,
-you can take advantage of the _Variants_ feature in [Styled System CSS][].
+you can take advantage of the _Variants_ feature.
 Variants allow you to define the styles used across multiple buttons, typographic elements, or any element in your `theme` object.
 
 For example, you can define `primary` and `secondary` variants for buttons and use colors from the theme.
@@ -39,6 +39,12 @@ With the `theme` object above, the `buttons` variants can be referenced in the `
 <button sx={{ variant: 'buttons.primary' }} />
 ```
 
+When using the built-in [`Button` component](/components/button), you can set these styles with the `variant` prop.
+
+```jsx
+<Button variant='secondary' />
+```
+
 <Note>
 
 Variants can use any name you choose, and deeply nested objects can be accessed with dot notation.
@@ -53,7 +59,6 @@ With the example below, the primary button will adapt its colors based on the cu
 ```js
 // example theme with button variants and color modes
 {
-  initialColorMode: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -77,7 +82,7 @@ With the example below, the primary button will adapt its colors based on the cu
 
 ## Typography
 
-Variants can also be used to create type styles,
+Variants can also be used to create typographic styles,
 similar to how graphics applications store text styles.
 This allows you to define core typographic values and use them as complete styles,
 but still override individual values when needed.
@@ -125,7 +130,8 @@ but still override individual values when needed.
 }
 ```
 
-These variants can then be used in the `theme.styles` object or in the `sx` prop.
+These variants can then be used in the `theme.styles` object, with the `sx` prop, or with the
+[`Text`](/components/text) or [`Heading`](/components/heading) components.
 
 ```jsx
 // example usage of typographic variants
