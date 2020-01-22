@@ -4,7 +4,7 @@ import { Link } from './Link'
 export const NavLink = React.forwardRef((props, ref) => (
   <Link
     ref={ref}
-    variant='nav'
+    variant="nav"
     {...props}
     __css={{
       color: 'inherit',

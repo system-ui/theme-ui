@@ -8,7 +8,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@styled-system/css": "^5.0.23",
+    "@theme-ui/css": "^0.3.0-alpha.6",
     "polished": "^3.4.1"
   },
   "publishConfig": {

@@ -87,13 +87,9 @@ const scales = {
   borderTopWidth: 'borderWidths',
   borderTopColor: 'colors',
   borderTopStyle: 'borderStyles',
-  borderTopLeftRadius: 'radii',
-  borderTopRightRadius: 'radii',
   borderBottomWidth: 'borderWidths',
   borderBottomColor: 'colors',
   borderBottomStyle: 'borderStyles',
-  borderBottomLeftRadius: 'radii',
-  borderBottomRightRadius: 'radii',
   borderLeftWidth: 'borderWidths',
   borderLeftColor: 'colors',
   borderLeftStyle: 'borderStyles',
@@ -166,7 +162,10 @@ const responsive = styles => theme => {
     }
     for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
       const media = mediaQueries[i]
-      if (value[i] == null) continue
+      if (value[i] == null) {
+        next[media] = {}
+        continue
+      }
       if (!media) {
         next[key] = value[i]
         continue

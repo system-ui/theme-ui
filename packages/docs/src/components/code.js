@@ -93,7 +93,7 @@ export const LiveCode = ({ children, preview, xray }) => {
             fontSize: 0,
             color: 'secondary',
             bg: 'highlight',
-            overflow: 'auto'
+            overflow: 'auto',
           }}
         />
       </div>
