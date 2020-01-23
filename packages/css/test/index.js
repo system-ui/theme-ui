@@ -432,3 +432,27 @@ test('returns correct media query order', () => {
     color: 'red',
   })
 })
+
+test('returns correct media query order 2', () => {
+  const result = css({
+    flexDirection: 'column',
+    justifyContent: [null, 'flex-start', 'flex-end'],
+    color: 'background',
+    height: '100%',
+    px: [2, 3, 4],
+    py: 4,
+  })(theme)
+  const keys = Object.keys(result)
+  expect(keys).toEqual([
+    'flexDirection',
+    'justifyContent',
+    '@media screen and (min-width: 40em)',
+    '@media screen and (min-width: 52em)',
+    'color',
+    'height',
+    'paddingLeft',
+    'paddingRight',
+    'paddingTop',
+    'paddingBottom',
+  ])
+})
