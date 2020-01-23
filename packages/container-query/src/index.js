@@ -5,15 +5,14 @@ import { getBreakpointIndex, unit2px } from './utils'
 // Shared with @styled-system/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const useContainerQuery = (componentBreakpoints = []) => {
-  const context = useThemeUI()
+export const useContainerQuery = componentBreakpoints => {
+  const { theme = {} } = useThemeUI()
+
   const ref = useRef(null)
   const [index, setIndex] = useState(0)
 
   const breakpoints =
-    componentBreakpoints ||
-    (context.theme && context.theme.breakpoints) ||
-    defaultBreakpoints
+    componentBreakpoints || theme.breakpoints || defaultBreakpoints
 
   useEffect(() => {
     const el = ref.current

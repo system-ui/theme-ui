@@ -9,11 +9,9 @@ export const getBreakpointIndex = (ar = [], v) => {
 }
 
 export const em2px = (el, v) =>
-  parseFloat(getComputedStyle(el.parentNode).fontSize) * parseFloat(v)
+  parseFloat(getComputedStyle(el.parentNode).fontSize || 16) * parseFloat(v)
 
-export const rem2px = v =>
-  parseFloat(getComputedStyle(document.documentElement).fontSize) *
-  parseFloat(v)
+export const rem2px = v => em2px(document.documentElement, v)
 
 const supportedUnits = new Set(['em', 'rem', 'px'])
 

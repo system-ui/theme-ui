@@ -1,11 +1,20 @@
 /** @jsx jsx */
 import { render, cleanup, act } from '@testing-library/react'
-import { jsx } from 'theme-ui'
 import { useContainerQuery } from '../src'
+
+const { jsx } = jest.requireActual('theme-ui')
 
 afterEach(cleanup)
 
+const mockUseThemeUI = jest.fn().mockImplementation(() => ({}))
+
+jest.mock('theme-ui', () => ({
+  useThemeUI: () => mockUseThemeUI(),
+}))
+
 describe('useContainerQuery', () => {
+  window.getComputedStyle = jest.fn().mockImplementation(prop => prop)
+
   let handler
 
   window.ResizeObserver = class {
@@ -89,5 +98,89 @@ describe('useContainerQuery', () => {
     })
 
     expect(tree.getByText('green')).toBeTruthy()
+  })
+
+  test('with no breakpoints', () => {
+    const Component = () => {
+      const [ref, index] = useContainerQuery()
+      const bg = ['red', 'blue', 'green']
+
+      return (
+        <div ref={ref} style={{ backgroundColor: bg[index] }}>
+          Color is <span>{bg[index]}</span>
+        </div>
+      )
+    }
+    let tree = render(<Component />)
+
+    act(() => {
+      handler([
+        {
+          contentRect: {
+            width: 320,
+          },
+        },
+      ])
+    })
+
+    expect(tree.getByText('red')).toBeTruthy()
+  })
+
+  test('with theme breakpoints', () => {
+    mockUseThemeUI.mockImplementation(() => ({
+      theme: {
+        breakpoints: ['480px', '640px'],
+      },
+    }))
+
+    const Component = () => {
+      const [ref, index] = useContainerQuery()
+      const bg = ['red', 'blue', 'green']
+
+      return (
+        <div ref={ref} style={{ backgroundColor: bg[index] }}>
+          Color is <span>{bg[index]}</span>
+        </div>
+      )
+    }
+    let tree = render(<Component />)
+
+    act(() => {
+      handler([
+        {
+          contentRect: {
+            width: 540,
+          },
+        },
+      ])
+    })
+
+    expect(tree.getByText('blue')).toBeTruthy()
+  })
+
+  test('use a default breakpoint index if ref is not used', () => {
+    const Component = () => {
+      const [_, index] = useContainerQuery()
+      const bg = ['red', 'blue', 'green']
+
+      return (
+        <div style={{ backgroundColor: bg[index] }}>
+          Color is <span>{bg[index]}</span>
+        </div>
+      )
+    }
+    let tree = render(<Component />)
+
+    act(() => {
+      handler([
+        {
+          contentRect: {
+            width: 320,
+          },
+        },
+      ])
+    })
+
+    expect(tree.getByText('red')).toBeTruthy()
   })
 })
