@@ -147,6 +147,27 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('color', 'white')
   })
 
+  test('renders with variant and variants prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variant="text.heading" variants={['boxes.beep', 'boxes.boop']} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('font-size', '32px')
+    expect(json).toHaveStyleRule('padding', '32px')
+    expect(json).toHaveStyleRule('background-color', 'tomato')
+    expect(json).toHaveStyleRule('color', 'white')
+  })
+
+  test('renders with incorrect type of variants prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variants="boxes.beep" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box

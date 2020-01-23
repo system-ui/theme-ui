@@ -180,6 +180,18 @@ exports[`Box renders 1`] = `
 </div>
 `;
 
+exports[`Box renders with incorrect type of variants prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
 exports[`Button renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
