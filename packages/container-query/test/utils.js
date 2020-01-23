@@ -74,4 +74,13 @@ describe('unit2px', () => {
     expect(unit2px(null, '20rem')).toEqual(400)
     expect(unit2px(null, '40rem')).toEqual(800)
   })
+
+  test('test rem unit', () => {
+    expect(unit2px(null, '20rem')).toEqual(400)
+    expect(unit2px(null, '40rem')).toEqual(800)
+  })
+
+  test('test unknown unit', () => {
+    expect(unit2px(null, '10vh')).toEqual('10vh')
+  })
 })

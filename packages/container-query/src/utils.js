@@ -15,6 +15,8 @@ export const rem2px = v =>
   parseFloat(getComputedStyle(document.documentElement).fontSize) *
   parseFloat(v)
 
+const supportedUnits = new Set(['em', 'rem', 'px'])
+
 export const unit2px = (el, val) => {
   const m = {
     px: (_, v) => parseFloat(v),
@@ -24,6 +26,6 @@ export const unit2px = (el, val) => {
   }
 
   const match = val.match(/[a-z]+/i)
-  const unit = match ? match[0] : 'noop'
+  const unit = match && supportedUnits.has(match[0]) ? match[0] : 'noop'
   return m[unit](el, val)
 }
