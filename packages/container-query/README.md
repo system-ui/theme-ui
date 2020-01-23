@@ -19,18 +19,14 @@ import { useContainerQuery } from '@theme-ui/container-query'
 
 const ResponsiveText = props => {
   const [ref, index] = useContainerQuery(props.breakpoints)
-  const colors = ['red', 'blue', 'aqua']
-  const widths = ['98%', '50%', '25%']
-  const heights = ['20px', '40px', '60px']
 
   return (
     <Text
       {...props}
       ref={ref}
       __css={{
-        backgroundColor: colors[index],
-        height: heights[index],
-        width: '100%', //widths[index]
+        backgroundColor: props.bg[index],
+        width: '100%',
       }}>
       {props.children}
     </Text>
@@ -41,5 +37,7 @@ const ResponsiveText = props => {
 ## Usage
 
 ```js
-<ResponsiveText breakpoints={['32em', '48em']}>Hello</ResponsiveText>
+<ResponsiveText breakpoints={['32em', '48em']} bg={['red', 'blue', 'green']}>
+  Hello
+</ResponsiveText>
 ```

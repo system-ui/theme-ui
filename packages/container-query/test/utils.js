@@ -30,9 +30,9 @@ describe('getBreakpointIndex', () => {
   })
 })
 
-window.getComputedStyle = jest.fn().mockImplementation(prop => prop)
-
 describe('unit2px', () => {
+  window.getComputedStyle = jest.fn().mockImplementation(prop => prop)
+
   test('test em unit, default font-size', () => {
     const el = {
       parentNode: {
