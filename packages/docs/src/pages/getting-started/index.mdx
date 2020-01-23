@@ -2,8 +2,6 @@
 title: Getting Started
 ---
 
-import Note from '../components/note'
-
 # Getting Started
 
 Install Theme UI.
@@ -30,13 +28,13 @@ export default {
 }
 ```
 
-Add the theme to your application with the `ThemeProvider`, passing in the `theme` object as a prop.
-
 <Note>
 
-If you're using Gatsby, use [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin) instead.
+If you're using Gatsby, see the [Getting Started with Gatsby](/getting-started/gatsby) page.
 
 </Note>
+
+Add the theme to your application with the `ThemeProvider`, passing in the `theme` object as a prop.
 
 ```jsx
 // basic usage
@@ -97,5 +95,38 @@ This API originated in [Styled System][] and is intended as [a terser syntax for
 The values used for media queries can be defined in a [`theme.breakpoints`](/theming/#breakpoints) array.
 
 </Note>
+
+## Components
+
+Theme UI includes a library of primitive UI components, which can be completely customized with your theme and include support for [variants](/components/variants).
+Import and use these components to handle layout, images, forms, and more.
+
+```jsx
+/** @jsx jsx */
+import {
+  jsx,
+  Box,
+  Label,
+  Input,
+  Button,
+} from 'theme-ui'
+
+export default props =>
+  <Box sx={{ mb: 4 }}>
+    <Label htmlFor='search'>
+      Search
+    </Label>
+    <Input
+      id='search'
+      name='search'
+      {...props}
+    />
+    <Button>
+      Go
+    </Button>
+  </Box>
+```
+
+See the [Components](/components) documentation for more.
 
 [styled system]: https://styled-system.com
