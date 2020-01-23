@@ -25,8 +25,7 @@ The nested `ThemeProvider` component can use a functional theme to avoid deep me
 
 ## Gatsby themes
 
-When building a Gatsby theme, you should use [`gatsby-plugin-theme-ui`](/gatsby-plugin) for parts of your theme that should be overridden or merged with other themes.
+When building a Gatsby theme, you should use [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin) for parts of your theme that should be overridden or merged with other themes.
 If you need to specify a Gatsby theme-specific subtheme, use a nested Theme Provider in a layout component that only renders around pages that you control.
 This allows the end user to change their site-level theme without affecting custom styles you might need in your theme.
 The end user can still shadow any components in your theme if they need to.
-
