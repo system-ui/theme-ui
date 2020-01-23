@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "sideEffects": false,
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/color-modes": "^0.3.0",
-    "@theme-ui/core": "^0.3.0",
+    "@theme-ui/color-modes": "^0.3.1",
+    "@theme-ui/core": "^0.3.1",
     "@theme-ui/mdx": "^0.3.0"
   },
   "repository": "system-ui/theme-ui",
