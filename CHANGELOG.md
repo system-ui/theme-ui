@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
+
 ## v0.3.0 2019-01-22
 
 - Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
