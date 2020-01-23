@@ -1,4 +1,4 @@
-import { getBreakpointIndex, unit2px } from '../src/utils'
+import { getBreakpointIndex, unit2px, em2px, rem2px } from '../src/utils'
 
 describe('getBreakpointIndex', () => {
   test('width is less than the min breakpoint', () => {
@@ -33,6 +33,25 @@ describe('getBreakpointIndex', () => {
 describe('unit2px', () => {
   window.getComputedStyle = jest.fn().mockImplementation(prop => prop)
 
+  Object.defineProperty(document, 'documentElement', {
+    get: () => ({
+      fontSize: '20px',
+    }),
+  })
+
+  test('em2px helper', () => {
+    const el = {
+      parentNode: {
+        fontSize: '16px',
+      },
+    }
+    expect(em2px(el, '10em')).toEqual(160)
+  })
+
+  test('rem2px helper', () => {
+    expect(rem2px('10rem')).toEqual(200)
+  })
+
   test('test em unit, default font-size', () => {
     const el = {
       parentNode: {
@@ -52,12 +71,6 @@ describe('unit2px', () => {
   })
 
   test('test rem unit', () => {
-    Object.defineProperty(document, 'documentElement', {
-      get: () => ({
-        fontSize: '20px',
-      }),
-    })
-
     expect(unit2px(null, '20rem')).toEqual(400)
     expect(unit2px(null, '40rem')).toEqual(800)
   })
