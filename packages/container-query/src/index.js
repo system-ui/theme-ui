@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useThemeUI } from 'theme-ui'
-import { getLastIndex, unit2px } from './utils'
+import { getBreakpointIndex, unit2px } from './utils'
 
 // Shared with @styled-system/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
@@ -27,7 +27,7 @@ export const useContainerQuery = (componentBreakpoints = []) => {
     const handler = entries => {
       const entry = entries[0]
       const { width } = entry.contentRect
-      const index = getLastIndex(normalizedBreakpoints, width)
+      const index = getBreakpointIndex(normalizedBreakpoints, width)
       setIndex(index)
     }
 

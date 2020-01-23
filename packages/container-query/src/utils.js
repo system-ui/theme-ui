@@ -1,9 +1,12 @@
-export const getLastIndex = (data, val) =>
-  data.length -
-  [0, ...data]
-    .slice()
-    .reverse()
-    .findIndex(v => v < val)
+export const getBreakpointIndex = (ar = [], v) => {
+  const len = ar.length
+  for (let i = 0; i < len; i++) {
+    if (v <= ar[i]) {
+      return i
+    }
+  }
+  return len
+}
 
 const em2px = (el, v) =>
   parseFloat(getComputedStyle(el.parentNode).fontSize) * parseFloat(v)
