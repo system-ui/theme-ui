@@ -146,6 +146,32 @@ export default props => (
 )
 ```
 
+## Child Selectors
+
+In some cases you might want to apply styles to children of the current element.
+You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
+
+If you want to reference the current class of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      h1: {
+        backgroundColor: 'tomato'
+      },
+      '& > div': {
+        fontSize: [2, 3, 4]
+      }
+    }}
+  />
+)
+```
+
 ## Raw CSS
 
 To opt-out of using theme-based CSS, use the `css` prop to render raw CSS values.
