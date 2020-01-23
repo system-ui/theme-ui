@@ -193,8 +193,8 @@ export const css = args => (props = {}) => {
       continue
     }
 
-    if (key === 'variants' && typeof val === 'array') {
-      const variants = css(all(val.map(v => get(theme, v))(theme)))
+    if (key === 'variants') {
+      const variants = css(get(theme, val))(theme)
       result = { ...result, ...variants }
       continue
     }
