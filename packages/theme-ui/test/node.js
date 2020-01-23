@@ -1,11 +1,7 @@
 /** @jest-environment node */
 /** @jsx jsx */
 import { renderToString } from 'react-dom/server'
-import {
-  jsx,
-  ThemeProvider,
-  useColorMode,
-} from '../src'
+import { jsx, ThemeProvider, useColorMode } from '../src'
 
 test('does note initializes mode based on localStorage', () => {
   let mode

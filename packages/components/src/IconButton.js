@@ -1,16 +1,13 @@
 import React from 'react'
 import Box from './Box'
 
-export const IconButton = React.forwardRef(({
-  size = 32,
-  ...props
-}, ref) => (
+export const IconButton = React.forwardRef(({ size = 32, ...props }, ref) => (
   <Box
     ref={ref}
-    as='button'
-    variant='icon'
+    as="button"
+    variant="icon"
     {...props}
-    __themeKey='buttons'
+    __themeKey="buttons"
     __css={{
       appearance: 'none',
       display: 'inline-flex',

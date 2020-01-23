@@ -37,9 +37,9 @@ test('renders with color modes', () => {
             modes: {
               dark: {
                 text: 'white',
-              }
-            }
-          }
+              },
+            },
+          },
         }}>
         <Mode />
       </ThemeProvider>
@@ -64,8 +64,8 @@ test('renders with initial color mode name', () => {
           colors: {
             modes: {
               dark: {},
-            }
-          }
+            },
+          },
         }}>
         <Mode />
       </ThemeProvider>
@@ -212,8 +212,8 @@ test('inherits color mode state from parent context', () => {
         colors: {
           modes: {
             dark: {},
-          }
-        }
+          },
+        },
       }}>
       <ThemeProvider
         theme={{
@@ -517,4 +517,26 @@ test('raw color values are passed to theme-ui context when custom properties are
     </ThemeProvider>
   )
   expect(color).toBe('tomato')
+})
+
+test('warns when localStorage is disabled', () => {
+  Object.defineProperty(window, 'localStorage', {
+    get: jest.fn(() => {
+      throw 'SecurityError: The operation is insecure.'
+    }),
+  })
+
+  let mode
+  const Consumer = props => {
+    const [colorMode] = useColorMode()
+    mode = colorMode
+    return false
+  }
+
+  render(
+    <ThemeProvider>
+      <Consumer />
+    </ThemeProvider>
+  )
+  expect(mode).toBe('default')
 })
