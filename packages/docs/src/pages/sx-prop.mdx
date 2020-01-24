@@ -108,6 +108,24 @@ export default props => (
 )
 ```
 
+### Skipping Breakpoints
+
+If you want to skip a breakpoint, you can use the value `null`. This is useful if you want to set a value for only the largest breakpoint, for example.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      width: [null, null, '25%'],
+    }}
+  />
+)
+```
+
 ## Margin and Padding
 
 Margin and padding are treated as first-class citizens in Theme UI,
