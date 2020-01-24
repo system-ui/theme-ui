@@ -31,29 +31,37 @@ const roller = keyframes({
 
 const bar = keyframes({
   '0%': {
-    top: '8px',
-    height: '48px',
+    top: '12.5%',
+    height: '100%',
   },
   '50%, 100%': {
-    top: '24px',
-    height: '24px',
+    top: '50%',
+    height: '50%',
   },
 })
 
-const animations = { spin, roller, bar }
+const fade = keyframes({
+  from: {
+    opacity: 1,
+  },
+  to: {
+    opacity: 0,
+  },
+})
 
-export const Spinner = props => {
+const animations = { spin, roller, bar, fade }
+
+export const BasicSpinner = props => {
   const {
     animation = 'spin',
-    duration = 600,
-    width = 48,
-    height = 48,
+    duration = 1200,
+    size = 48,
     items = 1,
     delay,
-    itemX = () => 0,
-    itemY = () => 0,
+    getXY = () => [0, 0],
     itemWidth,
     itemHeight,
+    angle = 0,
   } = props
 
   return (
@@ -64,25 +72,27 @@ export const Spinner = props => {
       sx={{
         position: 'relative',
         display: 'inline-block',
-        width: `${width}px`,
-        height: `${height}px`,
+        width: `${size}px`,
+        height: `${size}px`,
       }}>
       {range(items).map(index => {
-        const cfg = { ...props, index, width, height }
+        const cfg = { ...props, index, size }
+        const pos = getXY(cfg)
         return (
           <Box
             key={index}
             sx={{
               position: 'absolute',
               display: 'block',
-              width: `${itemWidth || width}px`,
-              height: `${itemHeight || height}px`,
+              width: `${itemWidth || size}px`,
+              height: `${itemHeight || size}px`,
               animationIterationCount: 'infinite',
               animationName: animations[animation].toString(),
               animationDuration: `${duration}ms`,
               animationDelay: `${(delay || 0) * index}ms`,
-              top: `${itemY(cfg)}px`,
-              left: `${itemX(cfg)}px`,
+              left: `${pos[0]}px`,
+              top: `${pos[1]}px`,
+              transform: `rotate(${angle * index}deg)`,
             }}
           />
         )
@@ -91,23 +101,48 @@ export const Spinner = props => {
   )
 }
 
-export const DualringSpinner = ({ duration }) => (
-  <Spinner
+export const Spinner = ({ duration, strokeWidth = 4 }) => (
+  <BasicSpinner
+    animation="spin"
+    duration={duration}
+    delay={-150}
+    items={1}
+    __css={{
+      borderRadius: '50%',
+      borderWidth: strokeWidth,
+      borderStyle: 'solid',
+      borderColor: 'rgba(51, 51, 238, 0.1)',
+      '& > div': {
+        content: '" "',
+        borderRadius: '50%',
+        left: `-${strokeWidth}px`,
+        top: `-${strokeWidth}px`,
+        borderWidth: strokeWidth,
+        borderStyle: 'solid',
+        borderColor: `#3333ee transparent transparent transparent`,
+        animationTimingFunction: 'linear',
+      },
+    }}
+  />
+)
+
+export const DualringSpinner = ({ duration, strokeWidth = 4 }) => (
+  <BasicSpinner
     animation="spin"
     duration={duration}
     delay={-150}
     items={4}
     __css={{
       borderRadius: '50%',
-      borderWidth: 6,
+      borderWidth: strokeWidth,
       borderStyle: 'solid',
       borderColor: 'rgba(51, 51, 238, 0.1)',
       '& > div': {
         content: '" "',
         borderRadius: '50%',
-        left: `-6px`,
-        top: `-6px`,
-        borderWidth: 6,
+        left: `-${strokeWidth}px`,
+        top: `-${strokeWidth}px`,
+        borderWidth: strokeWidth,
         borderStyle: 'solid',
         borderColor: `#3333ee transparent transparent transparent`,
         animationTimingFunction: 'cubic-bezier(0.5, 0, 0.5, 1)',
@@ -116,15 +151,16 @@ export const DualringSpinner = ({ duration }) => (
   />
 )
 
-export const BarSpinner = ({ duration, itemWidth, itemHeight }) => (
-  <Spinner
+export const BarSpinner = ({ duration, size = 48 }) => (
+  <BasicSpinner
+    animation="bar"
     duration={duration}
     items={3}
-    itemWidth={itemWidth}
-    itemHeight={itemHeight}
-    animation="bar"
+    size={size}
+    itemWidth={size / 4}
+    itemHeight={size / 2}
     delay={100}
-    itemX={({ index, itemWidth }) => (8 + itemWidth) * index}
+    getXY={({ index, itemWidth }) => [(size / 6 + itemWidth) * index, 0]}
     __css={{
       '& > div': {
         display: 'inline-block',
@@ -135,24 +171,20 @@ export const BarSpinner = ({ duration, itemWidth, itemHeight }) => (
   />
 )
 
-export const RollerSpinner = ({ duration, items, itemWidth, itemHeight }) => (
-  <Spinner
+export const RollerSpinner = ({ duration = 1200, items = 12, size = 48 }) => (
+  <BasicSpinner
+    animation="roller"
     duration={duration}
     items={items}
-    animation="roller"
-    delay={100}
-    itemX={({ index, items, width }) => {
-      const r = width / 2
+    size={size}
+    delay={duration / items}
+    getXY={({ index, items, size }) => {
+      const r = size / 2
       const angle = (index / items) * Math.PI * 2
-      return r + r * Math.cos(angle)
+      return [Math.cos(angle), Math.sin(angle)].map(v => r + r * v)
     }}
-    itemY={({ index, items, height }) => {
-      const r = height / 2
-      const angle = (index / items) * Math.PI * 2
-      return r + r * Math.sin(angle)
-    }}
-    itemWidth={itemWidth}
-    itemHeight={itemHeight}
+    itemWidth={size / 8}
+    itemHeight={size / 8}
     __css={{
       '& > div': {
         background: '#3333ee',

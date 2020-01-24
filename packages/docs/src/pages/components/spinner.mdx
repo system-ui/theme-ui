@@ -7,21 +7,19 @@ title: Spinner
 Spinning SVG loading indicator
 
 ```jsx live=true
-// Currently, primary theme contains most of it's implementation,
-// probably it should be done the same way as for other spinners
-<Spinner variant='primary' />
+<Spinner duration={600} strokeWidth={6} />
 ```
 
 ```jsx live=true
-<DualringSpinner duration={1200} />
+<DualringSpinner />
 ```
 
 ```jsx live=true
-<BarSpinner duration={1200} itemWidth={12} itemHeight={16} />
+<BarSpinner size={36} />
 ```
 
 ```jsx live=true
-<RollerSpinner duration={1200} items={12} itemWidth={6} itemHeight={6} />
+<RollerSpinner items={12} size={64} />
 ```
 
 ## Props
