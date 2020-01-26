@@ -1238,7 +1238,847 @@ exports[`Slider renders 1`] = `
 />
 `;
 
-exports[`Spinner renders 1`] = `
+exports[`Spinner default BarSpinner 1`] = `
+@keyframes animation-0 {
+  0% {
+    top: 12.5%;
+    height: 100%;
+  }
+
+  50%, 100% {
+    top: 50%;
+    height: 50%;
+  }
+}
+
+@keyframes animation-0 {
+  0% {
+    top: 12.5%;
+    height: 100%;
+  }
+
+  50%, 100% {
+    top: 50%;
+    height: 50%;
+  }
+}
+
+@keyframes animation-0 {
+  0% {
+    top: 12.5%;
+    height: 100%;
+  }
+
+  50%, 100% {
+    top: 50%;
+    height: 50%;
+  }
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.emotion-3 > div {
+  display: inline-block;
+  background: #3333ee;
+  -webkit-animation-timing-function: cubic-bezier(0,0.5,0.5,1);
+  animation-timing-function: cubic-bezier(0,0.5,0.5,1);
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 24px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 24px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
+  left: 20px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 24px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+  left: 40px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+<div
+  className="emotion-3"
+  role="img"
+  size={48}
+>
+  <div
+    className="emotion-0"
+  />
+  <div
+    className="emotion-1"
+  />
+  <div
+    className="emotion-2"
+  />
+</div>
+`;
+
+exports[`Spinner default DualringSpinner 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  border-radius: 50%;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(51,51,238,0.1);
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.emotion-4 > div {
+  content: " ";
+  border-radius: 50%;
+  left: -4px;
+  top: -4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #3333ee transparent transparent transparent;
+  -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
+  animation-timing-function: cubic-bezier(0.5,0,0.5,1);
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: -150ms;
+  animation-delay: -150ms;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: -300ms;
+  animation-delay: -300ms;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: -450ms;
+  animation-delay: -450ms;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+<div
+  className="emotion-4"
+  role="img"
+>
+  <div
+    className="emotion-0"
+  />
+  <div
+    className="emotion-1"
+  />
+  <div
+    className="emotion-2"
+  />
+  <div
+    className="emotion-3"
+  />
+</div>
+`;
+
+exports[`Spinner default RollerSpinner 1`] = `
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes animation-0 {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+.emotion-12 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.emotion-12 > div {
+  background: #3333ee;
+  border-radius: 50%;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+  left: 48px;
+  top: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
+  left: 44.78460969082653px;
+  top: 36px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+  left: 36px;
+  top: 44.78460969082653px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
+  left: 24px;
+  top: 48px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+  left: 12.000000000000005px;
+  top: 44.78460969082653px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-5 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
+  left: 3.215390309173472px;
+  top: 36px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
+  left: 0px;
+  top: 24.000000000000004px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-7 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 700ms;
+  animation-delay: 700ms;
+  left: 3.215390309173472px;
+  top: 11.999999999999996px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-8 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 800ms;
+  animation-delay: 800ms;
+  left: 11.99999999999999px;
+  top: 3.2153903091734755px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-9 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 900ms;
+  animation-delay: 900ms;
+  left: 23.999999999999996px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-10 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 1000ms;
+  animation-delay: 1000ms;
+  left: 36px;
+  top: 3.215390309173472px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-11 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 1100ms;
+  animation-delay: 1100ms;
+  left: 44.78460969082652px;
+  top: 11.99999999999999px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+<div
+  className="emotion-12"
+  role="img"
+  size={48}
+>
+  <div
+    className="emotion-0"
+  />
+  <div
+    className="emotion-1"
+  />
+  <div
+    className="emotion-2"
+  />
+  <div
+    className="emotion-3"
+  />
+  <div
+    className="emotion-4"
+  />
+  <div
+    className="emotion-5"
+  />
+  <div
+    className="emotion-6"
+  />
+  <div
+    className="emotion-7"
+  />
+  <div
+    className="emotion-8"
+  />
+  <div
+    className="emotion-9"
+  />
+  <div
+    className="emotion-10"
+  />
+  <div
+    className="emotion-11"
+  />
+</div>
+`;
+
+exports[`Spinner default Spinner 1`] = `
 @keyframes animation-0 {
   from {
     -webkit-transform: rotate(0deg);
@@ -1257,55 +2097,59 @@ exports[`Spinner renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  color: primary;
-  overflow: visible;
+  border-radius: 50%;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(51,51,238,0.1);
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.emotion-1 > div {
+  content: " ";
+  border-radius: 50%;
+  left: -4px;
+  top: -4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #3333ee transparent transparent transparent;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -webkit-animation-name: animation-0;
-  animation-name: animation-0;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-duration: 500ms;
-  animation-duration: 500ms;
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
-<svg
+<div
   className="emotion-1"
-  fill="none"
-  height={48}
   role="img"
-  stroke="currentcolor"
-  strokeWidth={4}
-  viewBox="0 0 32 32"
-  width={48}
 >
-  <title>
-    Loading...
-  </title>
-  <circle
-    cx={16}
-    cy={16}
-    opacity={0.125}
-    r={12}
-  />
-  <circle
+  <div
     className="emotion-0"
-    cx={16}
-    cy={16}
-    r={12}
-    strokeDasharray={75.39822368615503}
-    strokeDashoffset={56.548667764616276}
   />
-</svg>
+</div>
 `;
 
 exports[`Text renders 1`] = `

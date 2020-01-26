@@ -23,6 +23,9 @@ import {
   Progress,
   Donut,
   Spinner,
+  RollerSpinner,
+  BarSpinner,
+  DualringSpinner,
   Avatar,
   Badge,
   Close,
@@ -400,10 +403,34 @@ describe('Donut', () => {
 })
 
 describe('Spinner', () => {
-  test('renders', () => {
+  test('default Spinner', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Spinner />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+  test('default RollerSpinner', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <RollerSpinner />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+  test('default BarSpinner', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <BarSpinner />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+  test('default DualringSpinner', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <DualringSpinner />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
