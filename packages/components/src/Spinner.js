@@ -58,7 +58,7 @@ export const BasicSpinner = props => {
     size = 48,
     items = 1,
     delay,
-    getXY = () => [0, 0],
+    getXY = () => ({ x: 0, y: 0 }),
     itemWidth,
     itemHeight,
     angle = 0,
@@ -77,7 +77,7 @@ export const BasicSpinner = props => {
       }}>
       {range(items).map(index => {
         const cfg = { ...props, index, size }
-        const pos = getXY(cfg)
+        const { x, y } = getXY(cfg)
         return (
           <Box
             key={index}
@@ -90,8 +90,8 @@ export const BasicSpinner = props => {
               animationName: animations[animation].toString(),
               animationDuration: `${duration}ms`,
               animationDelay: `${(delay || 0) * index}ms`,
-              left: `${pos[0]}px`,
-              top: `${pos[1]}px`,
+              left: `${x}px`,
+              top: `${y}px`,
               transform: `rotate(${angle * index}deg)`,
             }}
           />
@@ -160,7 +160,7 @@ export const BarSpinner = ({ duration, size = 48 }) => (
     itemWidth={size / 4}
     itemHeight={size / 2}
     delay={100}
-    getXY={({ index, itemWidth }) => [(size / 6 + itemWidth) * index, 0]}
+    getXY={({ index, itemWidth }) => ({ x: (size / 6 + itemWidth) * index })}
     __css={{
       '& > div': {
         display: 'inline-block',
@@ -181,7 +181,7 @@ export const RollerSpinner = ({ duration = 1200, items = 12, size = 48 }) => (
     getXY={({ index, items, size }) => {
       const r = size / 2
       const angle = (index / items) * Math.PI * 2
-      return [Math.cos(angle), Math.sin(angle)].map(v => r + r * v)
+      return { x: r + r * Math.cos(angle), y: r + r * Math.sin(angle) }
     }}
     itemWidth={size / 8}
     itemHeight={size / 8}
