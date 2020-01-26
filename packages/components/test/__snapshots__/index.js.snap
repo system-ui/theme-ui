@@ -1287,7 +1287,6 @@ exports[`Spinner default BarSpinner 1`] = `
 
 .emotion-3 > div {
   display: inline-block;
-  background: #3333ee;
   -webkit-animation-timing-function: cubic-bezier(0,0.5,0.5,1);
   animation-timing-function: cubic-bezier(0,0.5,0.5,1);
 }
@@ -1309,7 +1308,7 @@ exports[`Spinner default BarSpinner 1`] = `
   -webkit-animation-delay: 0ms;
   animation-delay: 0ms;
   left: 0px;
-  top: 0px;
+  top: undefinedpx;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -1332,7 +1331,7 @@ exports[`Spinner default BarSpinner 1`] = `
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms;
   left: 20px;
-  top: 0px;
+  top: undefinedpx;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -1355,7 +1354,7 @@ exports[`Spinner default BarSpinner 1`] = `
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
   left: 40px;
-  top: 0px;
+  top: undefinedpx;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -1465,7 +1464,6 @@ exports[`Spinner default DualringSpinner 1`] = `
   border-radius: 50%;
   border-width: 4px;
   border-style: solid;
-  border-color: rgba(51,51,238,0.1);
   position: relative;
   display: inline-block;
   width: 48px;
@@ -1479,7 +1477,6 @@ exports[`Spinner default DualringSpinner 1`] = `
   top: -4px;
   border-width: 4px;
   border-style: solid;
-  border-color: #3333ee transparent transparent transparent;
   -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
   animation-timing-function: cubic-bezier(0.5,0,0.5,1);
 }
@@ -1752,7 +1749,6 @@ exports[`Spinner default RollerSpinner 1`] = `
 }
 
 .emotion-12 > div {
-  background: #3333ee;
   border-radius: 50%;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
@@ -2100,7 +2096,6 @@ exports[`Spinner default Spinner 1`] = `
   border-radius: 50%;
   border-width: 4px;
   border-style: solid;
-  border-color: rgba(51,51,238,0.1);
   position: relative;
   display: inline-block;
   width: 48px;
@@ -2114,7 +2109,6 @@ exports[`Spinner default Spinner 1`] = `
   top: -4px;
   border-width: 4px;
   border-style: solid;
-  border-color: #3333ee transparent transparent transparent;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 }

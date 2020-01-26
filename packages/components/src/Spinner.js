@@ -62,12 +62,14 @@ export const BasicSpinner = props => {
     itemWidth,
     itemHeight,
     angle = 0,
+    variant = 'primary',
   } = props
 
   return (
     <Box
       role="img"
       {...props}
+      variant={variant}
       __themeKey="spinners"
       sx={{
         position: 'relative',
@@ -101,8 +103,9 @@ export const BasicSpinner = props => {
   )
 }
 
-export const Spinner = ({ duration, strokeWidth = 4 }) => (
+export const Spinner = ({ duration, strokeWidth = 4, variant = 'primary' }) => (
   <BasicSpinner
+    variant={'styles.spinner.' + variant}
     animation="spin"
     duration={duration}
     delay={-150}
@@ -111,7 +114,6 @@ export const Spinner = ({ duration, strokeWidth = 4 }) => (
       borderRadius: '50%',
       borderWidth: strokeWidth,
       borderStyle: 'solid',
-      borderColor: 'rgba(51, 51, 238, 0.1)',
       '& > div': {
         content: '" "',
         borderRadius: '50%',
@@ -119,15 +121,19 @@ export const Spinner = ({ duration, strokeWidth = 4 }) => (
         top: `-${strokeWidth}px`,
         borderWidth: strokeWidth,
         borderStyle: 'solid',
-        borderColor: `#3333ee transparent transparent transparent`,
         animationTimingFunction: 'linear',
       },
     }}
   />
 )
 
-export const DualringSpinner = ({ duration, strokeWidth = 4 }) => (
+export const DualringSpinner = ({
+  duration,
+  strokeWidth = 4,
+  variant = 'primary',
+}) => (
   <BasicSpinner
+    variant={'styles.spinner.' + variant}
     animation="spin"
     duration={duration}
     delay={-150}
@@ -136,7 +142,6 @@ export const DualringSpinner = ({ duration, strokeWidth = 4 }) => (
       borderRadius: '50%',
       borderWidth: strokeWidth,
       borderStyle: 'solid',
-      borderColor: 'rgba(51, 51, 238, 0.1)',
       '& > div': {
         content: '" "',
         borderRadius: '50%',
@@ -144,15 +149,15 @@ export const DualringSpinner = ({ duration, strokeWidth = 4 }) => (
         top: `-${strokeWidth}px`,
         borderWidth: strokeWidth,
         borderStyle: 'solid',
-        borderColor: `#3333ee transparent transparent transparent`,
         animationTimingFunction: 'cubic-bezier(0.5, 0, 0.5, 1)',
       },
     }}
   />
 )
 
-export const BarSpinner = ({ duration, size = 48 }) => (
+export const BarSpinner = ({ duration, size = 48, variant = 'primary' }) => (
   <BasicSpinner
+    variant={'styles.barSpinner.' + variant}
     animation="bar"
     duration={duration}
     items={3}
@@ -164,15 +169,20 @@ export const BarSpinner = ({ duration, size = 48 }) => (
     __css={{
       '& > div': {
         display: 'inline-block',
-        background: '#3333ee',
         animationTimingFunction: 'cubic-bezier(0, 0.5, 0.5, 1)',
       },
     }}
   />
 )
 
-export const RollerSpinner = ({ duration = 1200, items = 12, size = 48 }) => (
+export const RollerSpinner = ({
+  duration = 1200,
+  items = 12,
+  size = 48,
+  variant = 'primary',
+}) => (
   <BasicSpinner
+    variant={'styles.rollerSpinner.' + variant}
     animation="roller"
     duration={duration}
     items={items}
@@ -187,7 +197,6 @@ export const RollerSpinner = ({ duration = 1200, items = 12, size = 48 }) => (
     itemHeight={size / 8}
     __css={{
       '& > div': {
-        background: '#3333ee',
         borderRadius: '50%',
         animationTimingFunction: 'linear',
       },

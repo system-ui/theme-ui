@@ -239,6 +239,29 @@ export default {
     },
   },
   styles: {
+    spinner: {
+      primary: {
+        borderColor: 'background',
+        '& > div': {
+          borderColor: 'transparent',
+          borderTopColor: 'primary',
+        },
+      },
+    },
+    barSpinner: {
+      primary: {
+        '& > div': {
+          bg: 'primary',
+        },
+      },
+    },
+    rollerSpinner: {
+      primary: {
+        '& > div': {
+          bg: 'primary',
+        },
+      },
+    },
     Container: {
       p: 3,
       maxWidth: 1024,
