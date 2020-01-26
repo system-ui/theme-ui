@@ -54,7 +54,7 @@ help you build UI rooted in constraint-based design principles.
 [mdx]: https://mdxjs.com
 [styled system]: https://styled-system.com
 [gatsby]: https://gatsbyjs.org
-[theme specification]: https://system-ui.com/theme
+[theme specification]: https://system-ui.com/theme-spec
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
 ## Getting Started
