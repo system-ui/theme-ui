@@ -15,7 +15,7 @@ export const baseColors = {
   ],
   blue: '#007bff',
   indigo: '#6610f2',
-  purple: ['#593196', '#a991d4'],
+  purple: ['#593196', '#a991d4', '#00044c'],
   pink: '#e83e8c',
   red: '#fc3939',
   orange: '#efa31d',
@@ -38,6 +38,7 @@ export const colors = {
   danger: baseColors.red,
   light: baseColors.gray[1],
   dark: baseColors.gray[8],
+  darken: baseColors.purple[2],
   textMuted: baseColors.gray[6],
 }
 
