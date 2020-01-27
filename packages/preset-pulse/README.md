@@ -1,7 +1,7 @@
 # [@theme-ui/preset-pulse](https://theme-ui.com/presets/pulse)
 
 Theme UI includes `@theme-ui/preset-pulse` which can be used as an example or
-starting point for extending your own themes. `@theme-ui/preset-pulse` is a bootstrap based theme from (bootswatch)[https://jenil.github.io/bulmaswatch/].
+starting point for extending your own themes. `@theme-ui/preset-pulse` is a bootstrap based theme from (bootswatch)[https://bootswatch.com/].
 
 ```sh
 npm i @theme-ui/preset-pulse
