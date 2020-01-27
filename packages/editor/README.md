@@ -2,101 +2,71 @@
 
 Components for editing Theme UI context, themes, and elements
 
+```sh
+npm i @theme-ui/editor
+```
+
 ## Theme Context Editing
 
-```jsx
-import React from 'react'
-import {
-  Editor,
-  Row,
-  Fonts,
-  FontSizes,
-  FontWeights,
-  LineHeights,
-  ColorMode,
-  ColorPalette,
-  Space,
-} from '@theme-ui/editor'
-
-export default props => (
-  <Editor>
-    <Fonts />
-    <Row>
-      <FontSizes />
-    </Row>
-    <Row>
-      <FontWeights />
-    </Row>
-    <Row>
-      <LineHeights />
-    </Row>
-    <ColorMode />
-    <ColorPalette />
-    <Row>
-      <Space />
-    </Row>
-  </Editor>
-)
-```
-
-## Manually passing context
-
-Pass a Theme UI context manually to the `Editor` component when you don't want to edit the pages theming context.
+Add the `EditorProvider` to the root of your application, inside Theme UI's `ThemeProvider`.
+This creates a stateful theme context for the editor form controls to use.
 
 ```jsx
 import React from 'react'
-import { Editor, Fonts } from '@theme-ui/editor'
-import merge from 'lodash.merge'
+import { ThemeProvider } from 'theme-ui'
+import { EditorProvider } from '@theme-ui/editor'
 
-const reducer = (state, next) => merge({}, state, next)
-const defaultTheme = {
-  fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'Georgia, serif',
-  },
-}
-
-export default props => {
-  const [theme, setTheme] = useReducer(reducer, defaultTheme)
-  const context = {
-    theme,
-    setTheme,
-  }
-
-  return (
-    <Editor context={context}>
-      <Fonts />
-    </Editor>
-  )
-}
+export default props =>
+  <ThemeProvider theme={theme}>
+    <EditorProvider>
+      {props.children}
+    </EditorProvider>
+  </ThemeProvider>
 ```
+
+Anywhere inside your app, add theme editor form controls.
+
+```jsx
+import React from 'react'
+import { Theme } from '@theme-ui/editor'
+
+export default props =>
+  <div>
+    <Theme.Fonts />
+    <Theme.FontSizes />
+    <Theme.FontWeights />
+    <Theme.LineHeights />
+    <Theme.Colors />
+    <Theme.Space />
+  </div>
+```
+
+The `EditorProvider` component also accepts a `theme` prop for usage without the `ThemeProvider` component's context.
 
 ## `theme.styles`
 
-Use these components to edit an element in `theme.styles`
+Use the `Styles` components to edit an element in `theme.styles`
 
 ```jsx
 import React from 'react'
-import { Editor, StylesForm } from '@theme-ui/editor'
+import { Styles } from '@theme-ui/editor'
 
-export default props => (
-  <Editor>
+export default props =>
+  <>
     <code>theme.styles.h1</code>
-    <StylesForm tag="h1" />
+    <Styles tag='h1' />
     <code>theme.styles.h2</code>
-    <StylesForm tag="h2" />
-  </Editor>
-)
+    <Styles tag='h2' />
+  </>
 ```
 
-## `sx` editor
+## `sx` prop editor
 
-To edit arbitrary `sx` style objects, use the following forms:
+To edit arbitrary `sx` style objects, use the `Sx` components:
 
 ```jsx
 import React from 'react'
-import { SxTypography, SxMargin, SxColors } from '@theme-ui/editor'
+import { Sx } from '@theme-ui/editor'
 import { useReducer } from 'react'
 import merge from 'lodash.merge'
 import theme from './theme'
@@ -112,9 +82,21 @@ export default props => {
 
   return (
     <div>
-      <SxTypography value={style} onChange={setStyle} theme={theme} />
-      <SxMargin value={style} onChange={setStyle} theme={theme} />
-      <SxColors value={style} onChange={setStyle} theme={theme} />
+      <Sx.Typography
+        value={style}
+        onChange={setStyle}
+        theme={theme}
+      />
+      <Sx.Margin
+        value={style}
+        onChange={setStyle}
+        theme={theme}
+      />
+      <Sx.Colors
+        value={style}
+        onChange={setStyle}
+        theme={theme}
+      />
     </div>
   )
 }

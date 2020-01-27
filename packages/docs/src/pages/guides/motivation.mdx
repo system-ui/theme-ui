@@ -46,7 +46,7 @@ For many, the choice between using object literal syntax for styles versus tagge
 The `theme` object itself is an object, and keeping styles in a similar format helps reduce the API surface area.
 Using and parsing strings that represent embedded DSLs introduces overhead when mapping over key-value pairs.
 Theme UI avoids this overhead for reasons related to performance, testing, and overall bundle size.
-For some of the [same reasons](https://facebook.github.io/jsx/) that React itself uses JSX (i.e. function calls) instead of tagged template literals, Theme UI only included support for authoring CSS with object literal syntax.
+For some of the [same reasons](https://facebook.github.io/jsx/) that React itself uses JSX (i.e. function calls) instead of tagged template literals, Theme UI only includes support for authoring CSS with object literal syntax.
 Additionally, using native JavaScript types has many other benefits that are outside of the scope of this document.
 
 ## Why Emotion
@@ -56,7 +56,7 @@ If you're building a custom component library, either Styled Components or Emoti
 
 For Theme UI, the decision was primarily based on these factors:
 
-- Emotion's implementation of the `css` prop and the custom JSX pragma allows for better integration with `@styled-system/css`
+- Emotion's implementation of the `css` prop and the custom JSX pragma allows for better integration with Theme UI's `sx` prop
 - The Emotion API includes more lower-level utilities, like `createEmotion` that could be leveraged when considering how multiple themes could be composed together
 - Emotion's theming context is directly available in `@emotion/core`, allowing this library to leverage React's context API in different ways
 - In the case of Theme UI internals, the `styled` higher-order component utility is not necessarily the best API for creating components,
@@ -64,6 +64,6 @@ For Theme UI, the decision was primarily based on these factors:
 
 ## How is this different from Styled System
 
-Theme UI uses `@styled-system/css` and the same theme spec that Styled System adheres to. Styled System is a much lower-level API that is not in any way coupled to React or Emotion.
+Theme UI's `sx` prop was inspired by Styled System, and it uses the same theme spec that Styled System adheres to. Styled System is a much lower-level API that is not in any way coupled to React or Emotion.
 For example, Styled System works with Node.js, Vuejs, Svelte, and many other libraries.
 Theme UI is intended to be a higher-level abstraction specifically for use in React applications and includes features that will not likely be added to the core Styled System library.

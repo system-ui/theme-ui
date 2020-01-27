@@ -2,7 +2,7 @@
 import { jsx, Styled } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
-import * as components from '@theme-ui/components'
+import * as themeUI from 'theme-ui'
 
 const posts = [
   {
@@ -46,8 +46,7 @@ const images = {
 }
 
 const scope = {
-  jsx,
-  Styled,
+  ...themeUI,
   Link: props => {
     if (props.activeClassName)
       return <span className={props.activeClassName} {...props} />
@@ -55,8 +54,6 @@ const scope = {
   },
   posts,
   images,
-  // todo: Link conflict
-  ...components,
 }
 
 const transformCode = src => `/** @jsx jsx */\n<>${src}</>`

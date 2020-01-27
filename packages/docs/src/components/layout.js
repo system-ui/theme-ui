@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, useColorMode } from 'theme-ui'
 import { useState, useRef } from 'react'
-import { Global } from '@emotion/core'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
@@ -15,11 +14,26 @@ import NavLink from './nav-link'
 import Button from './button'
 import Sidebar from '../sidebar.mdx'
 
-const modes = ['light', 'dark', 'deep', 'swiss']
+const modes = ['default', 'dark', 'deep', 'swiss']
 
 const sidebar = {
   wrapper: AccordionNav,
   a: NavLink,
+}
+
+const getModeName = mode => {
+  switch (mode) {
+    case 'dark':
+      return 'Dark'
+    case 'deep':
+      return 'Deep'
+    case 'swiss':
+      return 'Swiss'
+    case 'default':
+      return 'Light'
+    default:
+      return mode
+  }
 }
 
 export default props => {
@@ -40,16 +54,6 @@ export default props => {
   return (
     <Styled.root>
       <Head {...props} />
-      <Global
-        styles={{
-          '*': {
-            boxSizing: 'border-box',
-          },
-          body: {
-            margin: 0,
-          },
-        }}
-      />
       <SkipLink>Skip to content</SkipLink>
       <Flex
         sx={{
@@ -86,7 +90,7 @@ export default props => {
                 ml: 2,
               }}
               onClick={cycleMode}>
-              {mode}
+              {getModeName(mode)}
             </Button>
           </Flex>
         </Flex>
