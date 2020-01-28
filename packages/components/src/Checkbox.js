@@ -39,7 +39,7 @@ const CheckboxIcon = props => (
 
 export const Checkbox = React.forwardRef(
   ({ className, sx, variant = 'checkbox', ...props }, ref) => (
-    <Box>
+    <Box sx={{ position: 'relative' }}>
       <Box
         ref={ref}
         as="input"

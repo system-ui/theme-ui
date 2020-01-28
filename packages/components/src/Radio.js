@@ -39,7 +39,7 @@ const RadioIcon = props => (
 
 export const Radio = React.forwardRef(
   ({ className, sx, variant = 'radio', ...props }, ref) => (
-    <Box>
+    <Box sx={{ position: 'relative' }}>
       <Box
         ref={ref}
         as="input"
