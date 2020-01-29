@@ -113,6 +113,21 @@ const scales = {
   stroke: 'colors',
 }
 
+const propertyGroups = {
+  font: true,
+  text: true,
+  background: true,
+  transtion: true,
+  border: true,
+  margin: true,
+  padding: true,
+  // for borders
+  top: true,
+  right: true,
+  bottom: true,
+  left: true,
+}
+
 const positiveOrNegative = (scale, value) => {
   if (typeof value !== 'number' || value >= 0) {
     return get(scale, value, value)
@@ -142,6 +157,25 @@ const transforms = [
   }),
   {}
 )
+
+const upperFirst = str => str.charAt(0).toUpperCase() + str.slice(1)
+
+const convertShorthands = styles => {
+  const next = {}
+  for (const key in styles) {
+    const value = styles[key]
+    if (typeof value !== 'object' || !propertyGroups[key]) {
+      next[key] = value
+      continue
+    }
+    const obj = convertShorthands(value)
+    for (const b in obj) {
+      const B = upperFirst(b)
+      next[key + B] = obj[b]
+    }
+  }
+  return next
+}
 
 const responsive = styles => theme => {
   const next = {}
@@ -179,7 +213,8 @@ export const css = args => (props = {}) => {
   const theme = { ...defaultTheme, ...(props.theme || props) }
   let result = {}
   const obj = typeof args === 'function' ? args(theme) : args
-  const styles = responsive(obj)(theme)
+  const obj2 = convertShorthands(obj)
+  const styles = responsive(obj2)(theme)
 
   for (const key in styles) {
     const x = styles[key]

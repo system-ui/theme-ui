@@ -456,3 +456,40 @@ test('returns correct media query order 2', () => {
     'paddingBottom',
   ])
 })
+
+test('converts nested shorthands to css properties', () => {
+  const result = css({
+    font: {
+      family: 'monospace',
+      size: 3,
+      weight: 'bold',
+    },
+    margin: {
+      bottom: 2,
+    },
+    border: {
+      bottom: {
+        style: 'solid',
+        width: 1,
+        color: 'primary',
+      },
+    },
+    ':hover': {
+      background: {
+        color: 'secondary',
+      },
+    },
+  })(theme)
+  expect(result).toEqual({
+    fontFamily: 'Menlo, monospace',
+    fontSize: 24,
+    fontWeight: 600,
+    marginBottom: 8,
+    borderBottomStyle: 'solid',
+    borderBottomWidth: 1,
+    borderBottomColor: 'tomato',
+    ':hover': {
+      backgroundColor: 'cyan',
+    },
+  })
+})
