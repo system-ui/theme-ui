@@ -132,6 +132,7 @@ export default {
       transitionTimingFunction: 'ease-out',
       transitionDuration: '.2s',
       borderRadius: 2,
+      outline: 'none',
       '&:hover': {
         bg: 'highlight',
       },
