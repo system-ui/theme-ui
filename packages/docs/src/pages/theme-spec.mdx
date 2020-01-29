@@ -3,6 +3,7 @@ title: Theme Spec
 ---
 
 import Note from '../components/note'
+import ThemeScales from '../components/theme-scales'
 
 # Theme Specification
 
@@ -22,22 +23,7 @@ The theme object is made up of the following data types:
 
 The `theme` object is made up of the following scales (i.e. property-specific objects) for use in CSS styles.
 
-| Theme Key        | CSS Properties                                                                                                                                                                                     |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `colors`         | `color`, `background-color`, `border-color`                                                                                                                                                        |
-| `fonts`          | `font-family`                                                                                                                                                                                      |
-| `fontSizes`      | `font-size`                                                                                                                                                                                        |
-| `fontWeights`    | `font-weight`                                                                                                                                                                                      |
-| `lineHeights`    | `line-height`                                                                                                                                                                                      |
-| `space`          | `margin`, `margin-top`, `margin-right`, `margin-bottom`, `margin-left`, `padding`, `padding-top`, `padding-right`, `padding-bottom`, `padding-left`, `grid-gap`, `grid-column-gap`, `grid-row-gap` |
-| `letterSpacings` | `letter-spacing`                                                                                                                                                                                   |
-| `sizes`          | `width`, `height`, `min-width`, `max-width`, `min-height`, `max-height`                                                                                                                            |
-| `borders`        | `border`, `border-top`, `border-right`, `border-bottom`, `border-left`                                                                                                                             |
-| `borderWidths`   | `border-width`                                                                                                                                                                                     |
-| `borderStyles`   | `border-style`                                                                                                                                                                                     |
-| `radii`          | `border-radius`                                                                                                                                                                                    |
-| `shadows`        | `box-shadow`, `text-shadow`                                                                                                                                                                        |
-| `zIndices`       | `z-index`                                                                                                                                                                                          |
+<ThemeScales />
 
 <Note>
 
