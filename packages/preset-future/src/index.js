@@ -23,7 +23,7 @@ export const future = {
   fonts: {
     body: '"Avenir Next", system-ui, sans-serif',
     heading: 'inherit',
-    moonospace: 'Menlo, monospace',
+    monospace: 'Menlo, monospace',
   },
   fontWeights: {
     body: 400,
