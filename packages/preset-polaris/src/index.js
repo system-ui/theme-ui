@@ -29,7 +29,7 @@ export const polaris = {
   fonts: {
     body: text,
     heading: text,
-    moonospace: 'Menlo, monospace',
+    monospace: 'Menlo, monospace',
   },
   fontWeights: {
     body: 400,
