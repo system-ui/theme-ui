@@ -106,6 +106,24 @@ export default props => (
 )
 ```
 
+### Skipping Breakpoints
+
+If you want to skip a breakpoint, you can use the value `null`. This is useful if you want to set a value for only the largest breakpoint, for example.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      width: [null, null, '25%'],
+    }}
+  />
+)
+```
+
 ## Margin and Padding
 
 Margin and padding are treated as first-class citizens in Theme UI,
@@ -139,6 +157,32 @@ export default props => (
     {...props}
     sx={{
       boxShadow: theme => `0 0 4px ${theme.colors.primary}`,
+    }}
+  />
+)
+```
+
+## Child Selectors
+
+In some cases you might want to apply styles to children of the current element.
+You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
+
+If you want to reference the current class of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      h1: {
+        backgroundColor: 'tomato'
+      },
+      '& > div': {
+        fontSize: [2, 3, 4]
+      }
     }}
   />
 )

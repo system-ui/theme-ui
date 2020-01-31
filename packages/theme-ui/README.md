@@ -158,7 +158,7 @@ export default props => (
 - [Styled](https://theme-ui.com/styled)
 - [MDX Components](https://theme-ui.com/mdx-components)
 - [Theme Spec](https://theme-ui.com/theme-spec)
-- [Gatsby Plugin](https://theme-ui.com/gatsby-plugin)
+- [Gatsby Plugin](https://theme-ui.com/packages/gatsby-plugin)
 - [API](https://theme-ui.com/api)
 
 MIT License

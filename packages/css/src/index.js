@@ -31,7 +31,7 @@ const aliases = {
   py: 'paddingY',
 }
 
-const multiples = {
+export const multiples = {
   marginX: ['marginLeft', 'marginRight'],
   marginY: ['marginTop', 'marginBottom'],
   paddingX: ['paddingLeft', 'paddingRight'],
@@ -39,7 +39,7 @@ const multiples = {
   size: ['width', 'height'],
 }
 
-const scales = {
+export const scales = {
   color: 'colors',
   backgroundColor: 'colors',
   borderColor: 'colors',
