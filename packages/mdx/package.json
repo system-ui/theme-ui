@@ -1,0 +1,27 @@
+{
+  "name": "@theme-ui/mdx",
+  "version": "0.3.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
+    "@mdx-js/react": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@theme-ui/core": "*",
+    "@theme-ui/css": "*",
+    "react": "^16.11.0"
+  },
+  "author": "Brent Jackson",
+  "repository": "system-ui/theme-ui",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

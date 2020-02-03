@@ -2,92 +2,11 @@
 title: Layout Components
 ---
 
-import Note from '../components/note'
-
 # Layout Components
 
 <Note>
 
-These components have been superseded by the [`@theme-ui/components`](/components) package and might be deprecated in a future version.
+Layout components have been deprecated. See [components](/components) instead.
 
 </Note>
 
-Theme UI includes several components for creating page layouts.
-
-```js
-import { Layout, Header, Main, Container, Footer } from 'theme-ui'
-```
-
-```jsx
-// example composition
-<Layout>
-  <Header />
-  <Main>
-    <Sidebar />
-    <Container>{props.children}</Container>
-  </Main>
-  <Footer />
-</Layout>
-```
-
-- `Layout` the root styled component for wrapping other layout components
-- `Header` section for top of the page
-- `Main` the center of the page
-- `Container` a max-width, centered area
-- `Footer` section for the bottom of the page
-
-## Box & Flex
-
-The `Box` & `Flex` layout components are similar to the ones found in [Rebass](https://rebassjs.org), but are built with Emotion and `@styled-system/css`.
-
-```jsx
-import React from 'react'
-import { Flex, Box } from 'theme-ui'
-
-export default props => (
-  <Flex
-    sx={{
-      flexWrap: 'wrap',
-    }}
-  >
-    <Box sx={{ width: ['100%', '50%'] }} />
-    <Box sx={{ width: ['100%', '50%'] }} />
-  </Flex>
-)
-```
-
-## Layout Theming
-
-The page layout components can be styled with the `theme.styles` object, similar to how other MDX components can be styled.
-
-```js
-theme: {
-  styles: {
-    Header: {
-      color: 'white',
-      bg: 'black',
-    }
-  }
-}
-```
-
-The styles for the layout components can reference colors and other values from the `theme`.
-This can be used to style specific properties, like colors, from the global theme.
-
-```js
-theme: {
-  colors: {
-    header: {
-      text: '#fff',
-      background: '#000',
-    },
-  },
-  styles: {
-    Header: {
-      // references values in `theme.colors`
-      color: 'header.text',
-      bg: 'header.background',
-    },
-  },
-}
-```

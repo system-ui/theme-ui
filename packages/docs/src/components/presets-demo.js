@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, ColorMode, components } from 'theme-ui'
+import { jsx, Styled, components } from 'theme-ui'
 import { ThemeContext } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
@@ -34,7 +34,6 @@ export default () => {
           },
         }}
       >
-        <ColorMode />
         <label
           sx={{
             display: 'block',

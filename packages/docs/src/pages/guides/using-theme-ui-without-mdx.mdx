@@ -1,0 +1,15 @@
+---
+title: Using Theme UI without MDX
+---
+
+# Using Theme UI without MDX
+
+The `theme-ui` package supports treeshaking, and can generally be used with or without MDX.
+If you'd like finer-grained control over your application's bundle and do not need to use MDX, you can install the `@theme-ui/core` package instead.
+
+```sh
+npm i @theme-ui/core
+```
+
+This package includes only a subset of the features of Theme UI and lacks support for MDX, color modes, and base global styles.
+Use the `jsx` function and `ThemeProvider` component from this package for a bare-bones Theme UI setup.

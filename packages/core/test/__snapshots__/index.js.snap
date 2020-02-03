@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeProvider renders 1`] = `
+<h1>
+  Hello
+</h1>
+`;
+
+exports[`jsx custom pragma handles null props 1`] = `
+<h1>
+  hello
+</h1>
+`;

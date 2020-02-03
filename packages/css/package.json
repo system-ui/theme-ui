@@ -1,8 +1,9 @@
 {
   "name": "@theme-ui/css",
-  "version": "0.2.48",
+  "version": "0.3.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
