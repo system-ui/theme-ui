@@ -4,15 +4,15 @@ title: Theming
 
 # Theming
 
-Theming with Theme UI is based on the [System UI Theme Spec][] with an additional `theme.styles` object for styling MDX elements and other components.
+Theming with Theme UI is based on a [Theme Specification][] including a `theme.styles` object for styling MDX elements and other components.
 By adhering to a standard Theme Specification, Theme UI is designed to be interoperable with as many other libraries as possible.
 
-[system ui theme spec]: https://system-ui.com/theme/
+[theme specification]: /theme-spec
 
 ## Colors
 
 Add a `theme.colors` object to provide colors for a theme.
-In order to make color palettes as portable and interoperable as possible, the following color keys should be used for defining a base set of colors:
+In order to ensure color palettes are as interoperable as possible, the following color keys should be used for defining a base set of colors:
 
 | Key          | Description                                     |
 | ------------ | ----------------------------------------------- |
@@ -21,6 +21,7 @@ In order to make color palettes as portable and interoperable as possible, the f
 | `primary`    | primary button and link color                   |
 | `secondary`  | secondary color - can be used for hover states  |
 | `accent`     | a contrast color for emphasizing UI             |
+| `highlight`     | a background color for highlighting text
 | `muted`      | a gray or subdued color for decorative purposes |
 
 Beyond these base colors, any additional values can be added to a theme to augment the base color palette.
@@ -120,6 +121,33 @@ Styles within this object have access to other values in the theme object, such 
 }
 ```
 
+## Body Styles
+
+To add base, top-level styles to the `<body>` element, use `theme.styles.root`.
+
+```js
+// example with root styles
+{
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Georgia, serif',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+  },
+  styles: {
+    root: {
+      // uses the theme values provided above
+      fontFamily: 'body',
+      fontWeight: 'body',
+    },
+  },
+}
+```
+
+To disable applying styles to the `<body>` element, add the `useBodyStyles: false` flag to your theme.
+
 ## Breakpoints
 
 To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
@@ -135,19 +163,25 @@ These values will be used to generate mobile-first (i.e. `min-width`) media quer
 }
 ```
 
-## Example
+## Configuration Flags
+
+The theme object can also include configuration options for Theme UI. The following keys can be used to enable and disable certain features.
+
+Flag | Default | Description
+---|---|---
+`useCustomProperties` | `true` | Enables CSS custom properties to help mitigate a flash of unstyled content during rehydration
+`useBodyStyles` | `true` | Adds styles defined in `theme.styles.root` to the `<body>` element along with `color` and `background-color`
+`initialColorModeName` | `'default'` | The key used for the top-level color palette in `theme.colors`
+`useColorSchemeMediaQuery` | `false` | Initializes the color mode based on the `prefers-color-scheme` media query
+`useBoxSizing` | `true` | Adds a global `box-sizing: border-box` style
+
+## Example Theme
 
 The following example is from the [Base Preset][example].
 
 ```js
 // example base theme from @theme-ui/presets
-const heading = {
-  fontFamily: 'heading',
-  lineHeight: 'heading',
-  fontWeight: 'heading',
-}
-
-export const base = {
+export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
@@ -172,6 +206,13 @@ export const base = {
     secondary: '#30c',
     muted: '#f6f6f6',
   },
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+    },
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -179,27 +220,27 @@ export const base = {
       fontWeight: 'body',
     },
     h1: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 5,
     },
     h2: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 4,
     },
     h3: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 3,
     },
     h4: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 2,
     },
     h5: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 1,
     },
     h6: {
-      ...heading,
+      variant: 'text.heading',
       fontSize: 0,
     },
     pre: {

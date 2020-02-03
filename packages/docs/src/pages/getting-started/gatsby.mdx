@@ -1,0 +1,40 @@
+---
+title: Getting Started with Gatsby
+---
+
+# Getting Started with Gatsby
+
+To use Theme UI with [Gatsby][], install and use [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin).
+
+```sh
+npm i gatsby-plugin-theme-ui
+```
+
+Add the plugin to your `gatsby-config.js`.
+
+```js
+module.exports = {
+  plugins: [
+    'gatsby-plugin-theme-ui',
+  ],
+}
+```
+
+Create a theme file located at `src/gatsby-plugin-theme-ui/index.js`.
+
+```js
+// example theme file
+export default {
+  colors: {
+    text: '#000',
+    background: '#fff',
+  },
+}
+```
+
+With `gatsby-plugin-theme-ui`, there is no need to manually use the `ThemeProvider` component.
+Use the [`sx` prop](/sx-prop), [color modes](/color-modes), and other features just as you would with any other application.
+
+For more information, see the documentation for [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin).
+
+[gatsby]: https://gatsbyjs.org

@@ -26,7 +26,7 @@ test('renders with theme context', () => {
   })
 })
 
-test('renders with ColorMode component', () => {
+test.skip('renders with ColorMode component', () => {
   theme.colors = {
     primary: 'tomato',
     modes: {

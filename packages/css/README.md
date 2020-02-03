@@ -7,3 +7,5 @@ This package powers the `sx` prop in Theme UI.
 ```sh
 npm i @theme-ui/css
 ```
+
+https://theme-ui.com
