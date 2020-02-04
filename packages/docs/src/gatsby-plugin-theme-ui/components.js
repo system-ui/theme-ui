@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import code from '../components/code'
+import Note from '../components/note'
 
 const heading = Tag => props =>
   !!props.id ? (
@@ -29,4 +30,6 @@ export default {
   h4: heading('h4'),
   h5: heading('h5'),
   h6: heading('h6'),
+  // "shortcodes"
+  Note,
 }
