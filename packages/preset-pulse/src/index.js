@@ -119,7 +119,7 @@ const display = {
 }
 
 // variants
-const typeStyles = {
+const textStyles = {
   heading,
   display,
 }
@@ -214,7 +214,7 @@ export const bootstrap = {
   sizes,
   shadows,
   radii,
-  typeStyles,
+  textStyles,
   styles,
 }
 
