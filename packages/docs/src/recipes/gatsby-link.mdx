@@ -4,7 +4,9 @@ name: 'Gatsby Link'
 
 # Gatsby Link
 
-Add an active style to Gatsby Link or other React router link components.
+Add an active style to [Gatsby Link] or other React router link components.
+Import the Theme UI [custom JSX pragma](/guides/jsx-pragma) for styling
+the router link components directly, without using wrapper components.
 
 ```jsx live
 <Link
@@ -19,6 +21,8 @@ Add an active style to Gatsby Link or other React router link components.
   Link
 </Link>
 ```
+
+Full code for this example:
 
 ```jsx
 /** @jsx jsx */
@@ -37,3 +41,5 @@ export default props =>
     }}
   />
 ```
+
+[Gatsby Link]: https://www.gatsbyjs.org/docs/linking-between-pages/
