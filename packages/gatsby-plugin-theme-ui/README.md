@@ -3,7 +3,7 @@
 Gatsby plugin for adding Theme UI context
 
 ```sh
-npm i theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react
+npm i theme-ui gatsby-plugin-theme-ui
 ```
 
 ```js
@@ -15,8 +15,6 @@ module.exports = {
 
 In addition to providing context, this plugin will also
 prevent a flash of unstyled colors when using color modes.
-
-It **does not** apply default typographic styles in your application. See the [`Styled.root` docs](https://theme-ui.com/styled#styledroot) for how to handle base typographic styles.
 
 ## Customizing the theme
 
@@ -55,12 +53,11 @@ You can also import and use presets from [@theme-ui/presets](https://theme-ui.co
 
 ## Color Modes
 
-To enable support for multiple color modes, add an `initialColorMode` field to your `theme.js` object.
+To enable support for multiple color modes, add a nested `modes` object to `theme.colors`.
 
 ```js
 // src/gatsby-plugin-theme-ui/index.js
 export default {
-  initialColorMode: 'light',
   colors: {
     text: '#000',
     background: '#fff',

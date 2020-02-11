@@ -4,13 +4,8 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
-import {
-  jsx,
-  ThemeProvider,
-  useColorMode,
-  useThemeUI,
-  ColorMode,
-} from '../src/index'
+import { version as emotionVersion } from '@emotion/core/package.json'
+import { jsx, ThemeProvider, useColorMode, useThemeUI } from '../src/index'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -137,7 +132,7 @@ test('color mode is passed through theme context', () => {
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
 })
 
-test('converts color modes to css properties', () => {
+test('converts color modes to css custom properties', () => {
   const Box = props => (
     <div
       sx={{
@@ -237,10 +232,8 @@ test('retains initial context', () => {
       <Consumer />
     </ThemeProvider>
   )
-  expect(typeof context.components).toBe('object')
-  expect(context.components.h1).toBeTruthy()
-  expect(context.components.pre).toBeTruthy()
-  expect(context.components.blockquote).toBeTruthy()
+  expect(typeof context).toBe('object')
+  expect(context.__EMOTION_VERSION__).toBe(emotionVersion)
 })
 
 test('initializes mode from prefers-color-scheme media query', () => {
@@ -312,40 +305,6 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   expect(mode).toBe('default')
 })
 
-test('ColorMode component renders null', () => {
-  const json = renderer
-    .create(
-      <ThemeProvider>
-        <ColorMode />
-      </ThemeProvider>
-    )
-    .toJSON()
-  expect(json).toBe(null)
-})
-
-test('ColorMode component renders with colors', () => {
-  const root = render(
-    <ThemeProvider
-      theme={{
-        useCustomProperties: false,
-        colors: {
-          text: 'tomato',
-          background: 'black',
-          modes: {
-            tomato: {
-              text: 'black',
-              background: 'tomato',
-            },
-          },
-        },
-      }}>
-      <ColorMode />
-    </ThemeProvider>
-  )
-  const styles = document.querySelector('style').innerHTML
-  expect(styles).toMatchSnapshot()
-})
-
 test('useColorMode throws when there is no theme context', () => {
   const restore = mockConsole()
   expect(() => {
@@ -371,6 +330,7 @@ test('useThemeUI returns current color mode colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
+        useCustomProperties: false,
         colors: {
           text: 'tomato',
           background: 'black',

@@ -10,7 +10,6 @@ Color modes can be used to create a user-configurable _dark mode_ or any number 
 ## Defining colors
 
 In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
-The name for the base color mode is `default`.
 
 ```js
 // example theme colors
@@ -31,10 +30,7 @@ The name for the base color mode is `default`.
 ```
 
 The colors defined at the root of the `colors` object will be accessible as `default`. All colors
-found in `colors.modes` will be referenced by their key. The above example will have two modes:
-
-- `default`
-- `dark`
+found in `colors.modes` will be referenced by their key. The above example will have two modes: `default` and `dark`.
 
 ## Setting the color mode
 
@@ -62,28 +58,26 @@ export default props => {
 
 ## Applying colors
 
-The previous steps will enable a color mode state and pass it through context.
-To apply the color mode values to the `<body>` element, render the `ColorMode` component in your application.
-
-If you're using Gatsby to build your app, follow the [instructions below](#gatsby-plugin).
+The ThemeProvider component will automatically apply color mode styles to the `<body>` element.
 
 ```jsx
 import React from 'react'
-import { ThemeProvider, ColorMode } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
 export default props => (
   <ThemeProvider theme={theme}>
-    <ColorMode />
     {props.children}
   </ThemeProvider>
 )
 ```
 
+To disable this behavior, add the `useBodyStyles: false` flag to your theme.
+
 ## Gatsby plugin
 
 For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
-The plugin will help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
+The plugin will also help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
 
 ```sh
 npm i gatsby-plugin-theme-ui
@@ -98,21 +92,19 @@ module.exports = {
 }
 ```
 
-See the [Gatsby plugin docs](/gatsby-plugin) for more info.
+See the [Gatsby plugin docs](/packages/gatsby-plugin) for more info.
 
 ## Advanced
 
-There are a few advanced usages of color modes when you need more
-flexibility. For most usecases, you won't need to reference this
-section.
+Theme UI includes a few advanced usage options for color modes.
 
 ### Turn off custom properties
 
-The default implementation of Theme UI color modes uses
-[CSS custom properties](https://caniuse.com/#feat=css-variables).
-If you're supporting browsers that don't support custom properties you can
-turn off this setting. This will cause the colors to flash on initial page
-load.
+Theme UI uses
+[CSS custom properties](https://caniuse.com/#feat=css-variables)
+under the hood to help prevent the flash of color on load.
+If you're targeting browsers that don't support custom properties you can turn off this setting.
+This will cause the colors to flash on initial page load.
 
 ```js
 // example theme colors
@@ -133,35 +125,12 @@ load.
 }
 ```
 
-### Renaming the default color mode
+### Initialize mode with `prefers-color-scheme` media query
 
-The colors you define at the root level, outside of `theme.colors.modes`
-is named `default`. If you'd like to customize it you can do so by setting
-`initialColorModeName`:
-
-```js
-{
-  initialColorModeName: 'light',
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#07c',
-    modes: {
-      dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#0cf',
-      }
-    }
-  }
-}
-```
-
-### Initialize dark mode with `prefers-color-scheme: dark`
-
-To initialize a dark color mode based on the `prefers-color-scheme: dark` media query, add the `useColorSchemeMediaQuery` flag to your theme.
-This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches.
-If you do not have a color mode named `dark`, this will have no effect.
+To initialize a color mode based on the `prefers-color-scheme` media query, add the `useColorSchemeMediaQuery` flag to your theme.
+This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
+or `light` when `@media (prefers-color-scheme: light)` matches.
+If you do not have a color mode named `dark` or `light`, this will have no effect.
 
 ```js
 {
@@ -178,3 +147,4 @@ If you do not have a color mode named `dark`, this will have no effect.
   }
 }
 ```
+

@@ -10,12 +10,10 @@ Theme UI is built with:
 
 - [Emotion][]: used to generate isolated CSS with theming context
 - [MDX][]: used to provide custom Emotion styled components to MDX documents, without polluting the global CSS scope
-- [Styled System][]: used to handle styling based on a global `theme` object
 - [Typography.js][]: optionally used for creating rich typographic styles with a simple, high-level API
 
 [emotion]: https://emotion.sh
 [mdx]: https://mdxjs.com
-[styled system]: https://styled-system.com
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
 ## ThemeProvider
@@ -58,7 +56,7 @@ each component is wrapped with the `sx` prop to allow the component to pick up v
 
 ## JSX Pragma
 
-The Theme UI JSX function wraps the Emotion JSX function, converting the `sx` prop to a call to `@styled-system/css`.
+The Theme UI JSX function wraps the Emotion JSX function, converting the `sx` prop to a call to `@theme-ui/css`.
 The two examples below yield the same results:
 
 ```jsx

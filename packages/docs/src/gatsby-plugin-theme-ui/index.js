@@ -1,8 +1,6 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 
 export default {
-  useCustomProperties: true,
-  initialColorMode: 'light',
   colors: {
     text: '#000000',
     background: '#ffffff',
@@ -65,7 +63,7 @@ export default {
   },
   sizes: {
     sidebar: 256,
-    container: 768,
+    container: 1024,
   },
   text: {
     heading: {
@@ -238,12 +236,15 @@ export default {
       bg: 'highlight',
     },
   },
-  styles: {
-    Container: {
+  layout: {
+    container: {
       p: 3,
-      maxWidth: 1024,
+      // maxWidth: 1024,
     },
+  },
+  styles: {
     root: {
+      margin: 0,
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
