@@ -120,7 +120,7 @@ const display = {
 }
 
 // variants
-const textStyles = {
+const text = {
   heading,
   display,
 }
@@ -215,7 +215,7 @@ export const bootstrap = {
   sizes,
   shadows,
   radii,
-  textStyles,
+  text,
   styles,
 }
 

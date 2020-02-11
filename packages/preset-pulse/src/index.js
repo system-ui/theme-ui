@@ -42,15 +42,13 @@ export const colors = {
   textMuted: baseColors.gray[6],
 }
 
-const text = 'Muli, "Helvetica Neue", Arial, sans-serif'
-
 export const space = [0, 0.25, 0.5, 1, 1.5, 3].map(n => n + 'rem')
 
 export const breakpoints = ['576px', '768px', '992px', '1200px']
 
 export const fonts = {
-  body: text,
-  heading: text,
+  body: 'Muli, "Helvetica Neue", Arial, sans-serif',
+  heading: 'Muli, "Helvetica Neue", Arial, sans-serif',
   monospace: 'Menlo, monospace',
 }
 fonts.sans = fonts.body
@@ -119,7 +117,7 @@ const display = {
 }
 
 // variants
-const textStyles = {
+const text = {
   heading,
   display,
 }
@@ -214,7 +212,7 @@ export const bootstrap = {
   sizes,
   shadows,
   radii,
-  textStyles,
+  text,
   styles,
 }
 
