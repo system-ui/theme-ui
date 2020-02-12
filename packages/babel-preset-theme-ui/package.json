@@ -1,6 +1,6 @@
 {
-  "name": "babel-preset-theme-ui",
-  "version": "0.2.52",
+  "name": "@theme-ui/babel-preset-sx-prop",
+  "version": "0.3.1",
   "description": "Babel preset to enable the theme-ui custom pragma by default.",
   "keywords": [
     "babel",
