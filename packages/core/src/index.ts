@@ -6,7 +6,6 @@ import {
 import { css } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
-// @ts-ignore
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
 import { Theme } from './theme'
 
