@@ -118,6 +118,21 @@ export interface Theme extends Omit<StyledSystemTheme, 'colors'> {
   initialColorModeName?: string
 
   /**
+   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
+   */
+  useBodyStyles?: boolean
+
+  /**
+   * Initializes the color mode based on the prefers-color-scheme media query
+   */
+  useColorSchemeMediaQuery?: boolean
+
+  /**
+   * Adds a global box-sizing: border-box style
+   */
+  useBoxSizing?: boolean
+
+  /**
    * Define the colors that are available through this theme
    */
   colors?: ColorMode & {
