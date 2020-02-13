@@ -33,10 +33,11 @@ const parseProps = props => {
 export const jsx: typeof React.createElement = (type, props, ...children) =>
   emotion.apply(undefined, [type, parseProps(props), ...children])
 
-export const Context = React.createContext<{
+export interface ContextValue {
   __EMOTION_VERSION__: string
   theme: Theme | null
-}>({
+}
+export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,
   theme: null,
 })
@@ -64,7 +65,10 @@ export const merge = (a, b) =>
 
 merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
 
-const BaseProvider = ({ context, children }) =>
+interface BaseProviderProps {
+  context: ContextValue
+}
+const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   jsx(
     EmotionContext.Provider,
     { value: context.theme },
@@ -97,8 +101,5 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
 
-  return jsx(BaseProvider, {
-    context,
-    children,
-  })
+  return jsx(BaseProvider, { context }, children)
 }
