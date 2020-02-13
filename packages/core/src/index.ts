@@ -3,11 +3,12 @@ import {
   ThemeContext as EmotionContext,
   InterpolationWithTheme,
 } from '@emotion/core'
-import { css, get } from '@theme-ui/css'
+import { css } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
 // @ts-ignore
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
+import { Theme } from './theme'
 
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined
@@ -30,10 +31,13 @@ const parseProps = props => {
   return next
 }
 
-export const jsx = (type, props, ...children) =>
+export const jsx: typeof React.createElement = (type, props, ...children) =>
   emotion.apply(undefined, [type, parseProps(props), ...children])
 
-export const Context = React.createContext({
+export const Context = React.createContext<{
+  __EMOTION_VERSION__: string
+  theme: Theme | null
+}>({
   __EMOTION_VERSION__,
   theme: null,
 })
@@ -71,7 +75,12 @@ const BaseProvider = ({ context, children }) =>
     })
   )
 
-export const ThemeProvider = ({ theme, children }) => {
+export interface ThemeProviderProps {
+  theme: Partial<Theme> | ((outerTheme: Theme) => Theme)
+  children?: React.ReactNode
+}
+
+export function ThemeProvider({ theme, children }: ThemeProviderProps) {
   const outer = useThemeUI()
 
   if (process.env.NODE_ENV !== 'production') {
