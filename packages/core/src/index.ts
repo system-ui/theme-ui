@@ -6,7 +6,6 @@ import {
 import { css } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
-// @ts-ignore
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
 import { Theme } from './theme'
 
@@ -34,10 +33,11 @@ const parseProps = props => {
 export const jsx: typeof React.createElement = (type, props, ...children) =>
   emotion.apply(undefined, [type, parseProps(props), ...children])
 
-export const Context = React.createContext<{
+export interface ContextValue {
   __EMOTION_VERSION__: string
   theme: Theme | null
-}>({
+}
+export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,
   theme: null,
 })
@@ -60,12 +60,16 @@ const isMergeableObject = n => {
 
 const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 
-export const merge = (a, b) =>
+export const merge = <T>(a: Partial<T>, b: Partial<T>): T =>
   deepmerge(a, b, { isMergeableObject, arrayMerge })
 
-merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
+merge.all = <T>(...args: Partial<T>[]) =>
+  deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
 
-const BaseProvider = ({ context, children }) =>
+interface BaseProviderProps {
+  context: ContextValue
+}
+const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   jsx(
     EmotionContext.Provider,
     { value: context.theme },
@@ -96,10 +100,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
   const context =
     typeof theme === 'function'
       ? { ...outer, theme: theme(outer.theme) }
-      : merge.all({}, outer, { theme })
+      : merge.all<ContextValue>({}, outer, { theme })
 
-  return jsx(BaseProvider, {
-    context,
-    children,
-  })
+  return jsx(BaseProvider, { context }, children)
 }
