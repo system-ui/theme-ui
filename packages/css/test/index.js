@@ -456,3 +456,26 @@ test('returns correct media query order 2', () => {
     'paddingBottom',
   ])
 })
+
+test('merges variants array', () => {
+  const result = css({
+    variants: ['buttons.large', 'buttons.primary'],
+  })({
+    buttons: {
+      large: {
+        p: 4,
+        fontSize: 3,
+      },
+      primary: {
+        color: 'white',
+        bg: 'blue',
+      },
+    },
+  })
+  expect(result).toEqual({
+    padding: 32,
+    fontSize: 20,
+    color: 'white',
+    backgroundColor: 'blue',
+  })
+})

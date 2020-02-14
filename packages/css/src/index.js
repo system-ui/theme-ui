@@ -156,7 +156,7 @@ const responsive = styles => theme => {
       typeof styles[key] === 'function' ? styles[key](theme) : styles[key]
 
     if (value == null) continue
-    if (!Array.isArray(value)) {
+    if (!Array.isArray(value) || key === 'variants') {
       next[key] = value
       continue
     }
@@ -188,6 +188,14 @@ export const css = args => (props = {}) => {
     if (key === 'variant') {
       const variant = css(get(theme, val))(theme)
       result = { ...result, ...variant }
+      continue
+    }
+
+    if (key === 'variants' && Array.isArray(val)) {
+      val.forEach(v => {
+        const variant = css(get(theme, v))(theme)
+        result = { ...result, ...variant }
+      })
       continue
     }
 
