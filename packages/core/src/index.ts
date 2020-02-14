@@ -60,10 +60,11 @@ const isMergeableObject = n => {
 
 const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 
-export const merge = (a, b) =>
+export const merge = <T>(a: Partial<T>, b: Partial<T>): T =>
   deepmerge(a, b, { isMergeableObject, arrayMerge })
 
-merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
+merge.all = <T>(...args: Partial<T>[]) =>
+  deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
 
 interface BaseProviderProps {
   context: ContextValue
@@ -99,7 +100,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
   const context =
     typeof theme === 'function'
       ? { ...outer, theme: theme(outer.theme) }
-      : merge.all({}, outer, { theme })
+      : merge.all<ContextValue>({}, outer, { theme })
 
   return jsx(BaseProvider, { context }, children)
 }
