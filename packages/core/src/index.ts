@@ -1,11 +1,13 @@
 import {
   jsx as emotion,
   ThemeContext as EmotionContext,
+  InterpolationWithTheme,
 } from '@emotion/core'
-import { css, get } from '@theme-ui/css'
+import { css } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
+import { Theme } from './theme'
 
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined
@@ -18,7 +20,7 @@ const getCSS = props => {
 
 const parseProps = props => {
   if (!props) return null
-  const next = {}
+  const next: typeof props & { css?: InterpolationWithTheme<any> } = {}
   for (let key in props) {
     if (key === 'sx') continue
     next[key] = props[key]
@@ -28,10 +30,14 @@ const parseProps = props => {
   return next
 }
 
-export const jsx = (type, props, ...children) =>
+export const jsx: typeof React.createElement = (type, props, ...children) =>
   emotion.apply(undefined, [type, parseProps(props), ...children])
 
-export const Context = React.createContext({
+export interface ContextValue {
+  __EMOTION_VERSION__: string
+  theme: Theme | null
+}
+export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,
   theme: null,
 })
@@ -54,24 +60,31 @@ const isMergeableObject = n => {
 
 const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 
-export const merge = (a, b) =>
+export const merge = <T>(a: Partial<T>, b: Partial<T>): T =>
   deepmerge(a, b, { isMergeableObject, arrayMerge })
 
-merge.all = (...args) => deepmerge.all(args, { isMergeableObject, arrayMerge })
+merge.all = <T>(...args: Partial<T>[]) =>
+  deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
 
-const BaseProvider = ({ context, children }) =>
+interface BaseProviderProps {
+  context: ContextValue
+}
+const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   jsx(
-    EmotionContext.Provider, { value: context.theme },
+    EmotionContext.Provider,
+    { value: context.theme },
     jsx(Context.Provider, {
       value: context,
-      children
+      children,
     })
   )
 
-export const ThemeProvider = ({
-  theme,
-  children
-}) => {
+export interface ThemeProviderProps {
+  theme: Partial<Theme> | ((outerTheme: Theme) => Theme)
+  children?: React.ReactNode
+}
+
+export function ThemeProvider({ theme, children }: ThemeProviderProps) {
   const outer = useThemeUI()
 
   if (process.env.NODE_ENV !== 'production') {
@@ -84,12 +97,10 @@ export const ThemeProvider = ({
     }
   }
 
-  const context = typeof theme === 'function'
-    ? { ...outer, theme: theme(outer.theme) }
-    : merge.all({}, outer, { theme })
+  const context =
+    typeof theme === 'function'
+      ? { ...outer, theme: theme(outer.theme) }
+      : merge.all<ContextValue>({}, outer, { theme })
 
-  return jsx(BaseProvider, {
-    context,
-    children
-  })
+  return jsx(BaseProvider, { context }, children)
 }
