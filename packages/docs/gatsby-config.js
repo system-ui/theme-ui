@@ -1,4 +1,5 @@
 const remarkPlugins = [require('remark-slug')]
+const path = require('path')
 
 module.exports = {
   plugins: [
@@ -23,6 +24,12 @@ module.exports = {
       options: {
         path: 'src/recipes',
         basePath: '/recipes',
+      },
+    },
+    {
+      resolve: '@pauliescanlon/gatsby-plugin-prop-shop',
+      options: {
+        source: [path.resolve(`${process.cwd()}/../components/src`)],
       },
     },
   ],

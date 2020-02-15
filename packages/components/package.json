@@ -14,7 +14,8 @@
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "^0.3.1"
+    "@theme-ui/css": "^0.3.1",
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": "^16.8.0"

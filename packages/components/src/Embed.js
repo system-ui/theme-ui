@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Box from './Box'
 
 export const Embed = React.forwardRef(
@@ -46,3 +48,20 @@ export const Embed = React.forwardRef(
     </Box>
   )
 )
+
+Embed.propTypes = {
+  /** The aspect ratio for the embed*/
+  ratio: PropTypes.number,
+  /** YouTube URL */
+  src: PropTypes.string.isRequired,
+  /** iframe frame-border attribute */
+  frameBorder: PropTypes.number,
+  /** iframe allow-fullscreen attribute */
+  allowFullScreen: PropTypes.bool,
+  /** The width of the iframe */
+  width: PropTypes.number,
+  /** The height of the iframe */
+  height: PropTypes.number,
+  /** tbc */
+  allow: PropTypes.any,
+}
