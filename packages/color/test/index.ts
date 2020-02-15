@@ -1,3 +1,5 @@
+import { Theme } from '@theme-ui/core'
+
 import {
   darken,
   lighten,
@@ -22,7 +24,7 @@ const theme = {
     primary: '#0cf',
     secondary: '#639',
   },
-}
+} as Theme
 
 test('desaturate', () => {
   const n = desaturate('primary', 0.5)(theme)
@@ -114,7 +116,7 @@ const themeCustomProps = {
     primary: 'var(--theme-ui-colors-primary, #0cf)',
     secondary: 'var(--theme-ui-colors-primary, #639)',
   },
-}
+} as Theme
 
 test('desaturateCustomProps', () => {
   const n = desaturate('primary', 0.5)(themeCustomProps)
@@ -195,7 +197,7 @@ const themeTomato = {
   colors: {
     primary: 'tomato',
   },
-}
+} as Theme
 
 test('darkenTomato', () => {
   const n = darken('primary', 0.25)(themeTomato)
@@ -206,7 +208,7 @@ const themeTomatoCustomProps = {
   colors: {
     primary: 'var(--theme-ui-colors-primary, tomato)',
   },
-}
+} as Theme
 
 test('darkenTomatoCustomProps', () => {
   const n = darken('primary', 0.25)(themeTomatoCustomProps)
