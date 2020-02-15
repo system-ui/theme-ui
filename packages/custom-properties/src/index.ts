@@ -1,9 +1,14 @@
 import pluralize from 'pluralize'
+import { Theme } from '@theme-ui/core/dist/theme'
 
-export default (theme, prefix) => {
-  const customProperties = {}
+interface CustomProperties {
+  [key: string]: string | number
+}
 
-  const generateProperties = (object, previousKey) => {
+export default (theme: Theme, prefix?: string) => {
+  const customProperties: CustomProperties = {}
+
+  const generateProperties = (object: object, previousKey?: string) => {
     Object.entries(object).forEach(([key, value]) => {
       let formattedKey = pluralize(key, 1)
 
