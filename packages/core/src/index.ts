@@ -9,6 +9,8 @@ import deepmerge from 'deepmerge'
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
 import { Theme } from './theme'
 
+export * from './theme'
+
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined
   return theme => {
