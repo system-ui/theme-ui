@@ -1,7 +1,13 @@
-export const get = (obj, key, def, p, undef) => {
-  key = key && key.split ? key.split('.') : [key]
-  for (p = 0; p < key.length; p++) {
-    obj = obj ? obj[key[p]] : undef
+export const get = (
+  obj: object,
+  key: string | number,
+  def?: unknown,
+  p: unknown,
+  undef: unknown
+) => {
+  const path = key && typeof key === 'string' ? key.split('.') : [key]
+  for (p = 0; p < path.length; p++) {
+    obj = obj ? obj[path[p]] : undef
   }
   return obj === undef ? def : obj
 }
