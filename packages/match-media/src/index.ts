@@ -4,9 +4,8 @@ import { useThemeUI } from 'theme-ui'
 // Shared with @theme-ui/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const useBreakpointIndex = (options = {}) => {
+export const useBreakpointIndex = ({ defaultIndex = 0 }) => {
   const context = useThemeUI()
-  const { defaultIndex = 0 } = options
   const breakpoints =
     (context.theme && context.theme.breakpoints) || defaultBreakpoints
 
