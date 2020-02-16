@@ -1,5 +1,5 @@
 import pluralize from 'pluralize'
-import { Theme } from '@theme-ui/core/dist/theme'
+import { Theme } from '@theme-ui/core'
 
 interface CustomProperties {
   [key: string]: string | number
