@@ -3,6 +3,7 @@ import {
   ThemeContext as EmotionContext,
   InterpolationWithTheme,
 } from '@emotion/core'
+// @ts-ignore
 import { css } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
