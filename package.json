@@ -47,7 +47,11 @@
         "tsConfig": {
           "module": "commonjs",
           "esModuleInterop": true,
-          "resolveJsonModule": true
+          "resolveJsonModule": true,
+          "jsx": "react",
+          "strictFunctionTypes": true,
+          "alwaysStrict": true,
+          "noImplicitThis": true
         }
       }
     },
