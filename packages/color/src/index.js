@@ -28,4 +28,4 @@ export const mix = (a, b, n = 0.5) => t => P.mix(n, g(t, a), g(t, b))
 export const complement = c => t => P.complement(g(t, c))
 export const invert = c => t => P.invert(g(t, c))
 
-export const grayscale = (c, n) => desaturate(c, 1)
+export const grayscale = c => desaturate(c, 1)
