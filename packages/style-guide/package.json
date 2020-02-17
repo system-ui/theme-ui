@@ -12,7 +12,7 @@
   "peerDependencies": {
     "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
-    "theme-ui": "^0.2.52"
+    "theme-ui": "^0.3.0"
   },
   "dependencies": {
     "@theme-ui/presets": "^0.3.0",
