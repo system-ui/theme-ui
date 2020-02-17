@@ -15,7 +15,8 @@
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "execa": "^4.0.0",
-    "tailwindcss": "^1.0.4"
+    "tailwindcss": "^1.0.4",
+    "@theme-ui/core": "^0.3.1"
   },
   "publishConfig": {
     "access": "public"
@@ -29,8 +30,5 @@
     "style"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c",
-  "dependencies": {
-    "@theme-ui/core": "^0.3.1"
-  }
+  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
 }
