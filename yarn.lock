@@ -1377,7 +1377,7 @@
     "@babel/parser" "^7.8.3"
     "@babel/types" "^7.8.3"
 
-"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.4.4", "@babel/traverse@^7.6.0", "@babel/traverse@^7.7.2", "@babel/traverse@^7.7.4", "@babel/traverse@^7.8.0", "@babel/traverse@^7.8.4":
+"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.4.4", "@babel/traverse@^7.6.0", "@babel/traverse@^7.7.2", "@babel/traverse@^7.7.4", "@babel/traverse@^7.8.0", "@babel/traverse@^7.8.3", "@babel/traverse@^7.8.4":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.8.4.tgz#f0845822365f9d5b0e312ed3959d3f827f869e3c"
   integrity sha512-NGLJPZwnVEyBPLI+bl9y9aSnxMhsKz42so7ApAv9D+b4vAFPpY013FTS9LdKxcABoIYFU52HcYga1pPlx454mg==
@@ -10783,9 +10783,9 @@ gatsby-page-utils@^0.0.35:
     micromatch "^3.1.10"
 
 gatsby-plugin-catch-links@^2.0.13:
-  version "2.1.24"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.24.tgz#fc936eeaffc078445ef358773a57b8110c916136"
-  integrity sha512-Wh9U46/2IGF59pJdzjHrXB/c6EjP/NmVoDgRyc+Zrjir26JX2MRewMtEPJl43k17iZ1mzSgXbN2BimI13rAZ7Q==
+  version "2.1.25"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.25.tgz#163332de7708317146239250f95dff16af748914"
+  integrity sha512-6B+oTJLrqY3gJOO3G3DdyazSemcl/CFe7XLuBQmB5OfiReUsulu/w6NbgWP5KRRhXYQHtNoL2z19Z1xbRHJNOg==
   dependencies:
     "@babel/runtime" "^7.7.6"
     escape-string-regexp "^1.0.5"
