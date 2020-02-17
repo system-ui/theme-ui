@@ -1377,7 +1377,7 @@
     "@babel/parser" "^7.8.3"
     "@babel/types" "^7.8.3"
 
-"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.4.4", "@babel/traverse@^7.6.0", "@babel/traverse@^7.7.2", "@babel/traverse@^7.7.4", "@babel/traverse@^7.8.0", "@babel/traverse@^7.8.4":
+"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.4.4", "@babel/traverse@^7.6.0", "@babel/traverse@^7.7.2", "@babel/traverse@^7.7.4", "@babel/traverse@^7.8.0", "@babel/traverse@^7.8.3", "@babel/traverse@^7.8.4":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.8.4.tgz#f0845822365f9d5b0e312ed3959d3f827f869e3c"
   integrity sha512-NGLJPZwnVEyBPLI+bl9y9aSnxMhsKz42so7ApAv9D+b4vAFPpY013FTS9LdKxcABoIYFU52HcYga1pPlx454mg==
@@ -7549,9 +7549,9 @@ copy-descriptor@^0.1.0:
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
 copy-to-clipboard@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.2.0.tgz#d2724a3ccbfed89706fac8a894872c979ac74467"
-  integrity sha512-eOZERzvCmxS8HWzugj4Uxl8OJxa7T2k1Gi0X5qavwydHIfuSHq2dTD09LOg/XyGq4Zpb5IsR/2OJ5lbOegz78w==
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.2.1.tgz#b1a1137100e5665d5a96015cb579e30e90e07c44"
+  integrity sha512-btru1Q6RD9wbonIvEU5EfnhIRGHLo//BGXQ1hNAD2avIs/nBZlpbOeKtv3mhoUByN4DB9Cb6/vXBymj1S43KmA==
   dependencies:
     toggle-selection "^1.0.6"
 
