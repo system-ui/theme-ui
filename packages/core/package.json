@@ -19,6 +19,8 @@
   "dependencies": {
     "@emotion/core": "^10.0.0",
     "@theme-ui/css": "^0.3.1",
+    "@types/styled-system": "^5.1.6",
+    "@types/styled-system__css": "^5.0.4",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

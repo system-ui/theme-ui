@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JSX accepts sx prop 1`] = `
+.emotion-0 {
+  margin-top: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
