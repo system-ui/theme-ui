@@ -35,7 +35,7 @@ const theme = {
   size: ['10em', '20em', '30em', '40em'],
 }
 
-const toJS = theme => `
+const toJS = (theme: { [Key: string]: unknown }) => `
 module.exports = ${JSON.stringify(theme, null, 2)}
 `
 
