@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { scales, multiples } from '../../../css/src'
+import { scales, multiples } from '@theme-ui/css'
 import { Styled } from 'theme-ui'
 
 const camelDash = string =>

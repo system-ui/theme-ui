@@ -1,4 +1,3 @@
-
 # @theme-ui/color
 
 Color manipulation utilities for Theme UI
@@ -14,14 +13,15 @@ Import utilities from the `@theme-ui/color` package and use them with colors in 
 import { jsx } from 'theme-ui'
 import { darken, lighten } from '@theme-ui/color'
 
-export default props =>
+export default props => (
   <div
     {...props}
     sx={{
-      color: darken('primary', .25),
-      bg: lighten('primary', .875),
+      color: darken('primary', 0.25),
+      bg: lighten('primary', 0.875),
     }}
   />
+)
 ```
 
 ## API
@@ -161,7 +161,15 @@ import { invert } from '@theme-ui/color'
 // invert('primary')
 ```
 
+### `grayscale`
+
+Desaturate the color to grayscale
+
+```js
+import { grayscale } from '@theme-ui/color'
+// grayscale('primary')
+```
+
 ### Related
 
 - [Polished](https://polished.js.org)
-

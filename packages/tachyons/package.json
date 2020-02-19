@@ -4,15 +4,18 @@
   "version": "0.3.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "author": "John Otander <johnotander@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
-    "execa": "^4.0.0"
+    "execa": "^4.0.0",
+    "@theme-ui/css": "^0.3.1"
   },
   "publishConfig": {
     "access": "public"

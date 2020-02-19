@@ -7,9 +7,11 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
   "publishConfig": {
     "access": "public"
   }

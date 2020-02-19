@@ -3,13 +3,15 @@ import {
   ThemeContext as EmotionContext,
   InterpolationWithTheme,
 } from '@emotion/core'
-import { css } from '@theme-ui/css'
+// @ts-ignore
+import { css, Theme } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
-import { Theme } from './theme'
 
-export * from './theme'
+import './react-jsx'
+
+export * from './types'
 
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined

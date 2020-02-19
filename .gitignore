@@ -6,3 +6,4 @@ dist
 coverage
 .DS_Store
 .rts2_cache*
+.idea
