@@ -10,7 +10,6 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/core": "^0.3.1",
     "@theme-ui/css": "^0.3.1",
     "polished": "^3.4.1"
   },

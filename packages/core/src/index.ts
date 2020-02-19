@@ -4,15 +4,14 @@ import {
   InterpolationWithTheme,
 } from '@emotion/core'
 // @ts-ignore
-import { css } from '@theme-ui/css'
+import { css, Theme } from '@theme-ui/css'
 import React from 'react'
 import deepmerge from 'deepmerge'
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
-import { Theme } from './theme'
 
 import './react-jsx'
 
-export * from './theme'
+export * from './types'
 
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined

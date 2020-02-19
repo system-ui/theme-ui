@@ -1,6 +1,5 @@
 import * as P from 'polished'
-import { get } from '@theme-ui/css'
-import { Theme } from '@theme-ui/core'
+import { get, Theme } from '@theme-ui/css'
 
 const g = (t: Theme, c: string) =>
   get(t, `colors.${c}`, c)
