@@ -53,6 +53,8 @@ export const fonts = {
   heading: 'inherit',
   monospace:
     'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  // NOTE(@mxstbr): TypeScript does not let us do the self-references below if we don't provide "default" values
+  sans: '',
 }
 fonts.sans = fonts.body
 
@@ -61,11 +63,16 @@ export const fontWeights = {
   heading: 500,
   bold: 700,
   light: 300,
+  // NOTE(@mxstbr): TypeScript does not let us do the self-references below if we don't provide "default" values
+  normal: 0,
+  display: 0,
 }
 fontWeights.normal = fontWeights.body
 fontWeights.display = fontWeights.light
 
-export const fontSizes = [
+export const fontSizes: Array<string> & {
+  lead?: string
+} = [
   '0.75rem', // '80%',
   '0.875rem',
   '1rem',
