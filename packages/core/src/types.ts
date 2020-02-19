@@ -1,4 +1,4 @@
-import { SystemStyleObject } from '@styled-system/css'
+import { SystemStyleObject } from '@theme-ui/css'
 
 /**
  * The `sx` prop accepts a `SxStyleProp` object and properties that are part of
