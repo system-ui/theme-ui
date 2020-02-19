@@ -81,7 +81,7 @@ test('returns system props styles', () => {
   const result = css({
     color: 'primary',
     fontSize: [2, 3, 4],
-  })({ theme: theme })
+  })({ theme })
   expect(result).toEqual({
     fontSize: 16,
     '@media screen and (min-width: 40em)': {
@@ -100,7 +100,7 @@ test('returns nested system props styles', () => {
     '&:hover': {
       color: 'secondary',
     },
-  })({ theme: theme })
+  })({ theme })
   expect(result).toEqual({
     color: 'tomato',
     '&:hover': {
@@ -115,7 +115,7 @@ test('returns nested responsive styles', () => {
     h1: {
       py: [3, 4],
     },
-  })({ theme: theme })
+  })({ theme })
   expect(result).toEqual({
     color: 'tomato',
     h1: {
@@ -142,7 +142,7 @@ test('handles all core styled system props', () => {
     bg: 'secondary',
     fontFamily: 'monospace',
     lineHeight: 'body',
-  })({ theme: theme })
+  })({ theme })
   expect(result).toEqual({
     margin: 0,
     marginBottom: 8,
