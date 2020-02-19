@@ -63,7 +63,8 @@
       "/fixtures/",
       "/presets/",
       "/style-guide/",
-      "tailwind.config.js"
+      "tailwind.config.js",
+      "/dist/"
     ],
     "coverageReporters": [
       "lcov",
