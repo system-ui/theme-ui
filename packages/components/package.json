@@ -1,12 +1,14 @@
 {
   "name": "@theme-ui/components",
   "version": "0.3.1",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress --jsx React.createElement",
-    "watch": "microbundle watch --no-compress --jsx React.createElement"
+    "prepare": "microbundle --no-compress --jsx React.createElement --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --jsx React.createElement --tsconfig tsconfig.json"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
