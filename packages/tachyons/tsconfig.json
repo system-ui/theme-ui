@@ -4,5 +4,6 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true
-  }
+  },
+  "exclude": ["dist"]
 }
