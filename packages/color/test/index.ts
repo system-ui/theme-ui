@@ -1,4 +1,4 @@
-import { Theme } from '@theme-ui/core'
+import { Theme } from '@theme-ui/css'
 
 import {
   darken,
