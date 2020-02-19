@@ -12,7 +12,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "^0.2.44"
+    "@theme-ui/preset-base": "^0.3.0"
   },
   "publishConfig": {
     "access": "public"
