@@ -1,4 +1,4 @@
-import { Theme } from '@theme-ui/core'
+import { Theme } from '@theme-ui/css'
 
 const KEY_MAPPING: {
   readonly [Key: string]: string | string[]
