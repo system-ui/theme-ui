@@ -1,6 +1,9 @@
-const KEY_MAPPING = {
+import { Theme } from '@theme-ui/core'
+
+const KEY_MAPPING: {
+  readonly [Key: string]: string | string[]
+} = {
   space: 'spacing',
-  radii: 'borderRadius',
   fonts: 'fontFamily',
   borderStyles: 'borderStyle',
   radii: 'borderRadius',
@@ -13,15 +16,18 @@ const KEY_MAPPING = {
   zIndices: 'zIndex',
 }
 
-export default theme => {
-  const transformedTheme = Object.entries(theme).reduce((acc, [key, value]) => {
-    if (!KEY_MAPPING[key]) {
+export default (theme: Theme) => {
+  const transformedTheme = Object.entries(theme).reduce<{
+    [Key: string]: unknown
+  }>((acc, [key, value]) => {
+    const matchingKey = KEY_MAPPING[key]
+    if (!matchingKey) {
       return {
         ...acc,
         [key]: value,
       }
-    } else if (Array.isArray(KEY_MAPPING[key])) {
-      KEY_MAPPING[key].forEach(tachyonsKey => {
+    } else if (Array.isArray(matchingKey)) {
+      matchingKey.forEach(tachyonsKey => {
         acc[tachyonsKey] = value
       })
 
@@ -29,7 +35,7 @@ export default theme => {
     } else {
       return {
         ...acc,
-        [KEY_MAPPING[key]]: value,
+        [matchingKey]: value,
       }
     }
   }, {})
