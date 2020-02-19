@@ -20,6 +20,7 @@
     "@mdx-js/mdx": "^1.0.0-rc.0",
     "@mdx-js/react": "^1.0.0-rc.0",
     "@styled-system/edit": "^5.0.15",
+    "@theme-ui/css": "^0.3.1",
     "@theme-ui/color": "^0.3.1",
     "@theme-ui/components": "^0.3.1",
     "@theme-ui/editor": "^0.3.1",
