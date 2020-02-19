@@ -1,4 +1,4 @@
-import { SxProps } from './theme'
+import { SxProps } from './types'
 
 declare module 'react' {
   // tslint:disable-next-line: no-empty-interface

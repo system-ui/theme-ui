@@ -1,9 +1,11 @@
-import { css } from '../src'
+import { css, Theme } from '../src'
 
-const theme = {
+const theme: Theme = {
   colors: {
     primary: 'tomato',
     secondary: 'cyan',
+    background: 'white',
+    text: 'black',
   },
   fontSizes: [12, 14, 16, 24, 36],
   fonts: {
