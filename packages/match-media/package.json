@@ -20,6 +20,6 @@
   },
   "peerDependencies": {
     "react": "^16.9.0",
-    "theme-ui": "^0.2.43"
+    "theme-ui": "^0.3.0"
   }
 }

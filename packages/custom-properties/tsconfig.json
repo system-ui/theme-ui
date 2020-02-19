@@ -3,7 +3,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "jsx": "react"
-  },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+    "strict": true
+  }
 }

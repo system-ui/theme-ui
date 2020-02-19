@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Removes overriding property on editor combobox
 - Adjust media query sort logic #600
 - Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
 

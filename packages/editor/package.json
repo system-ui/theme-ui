@@ -21,7 +21,7 @@
     "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.2.36"
+    "theme-ui": "^0.3.0"
   },
   "publishConfig": {
     "access": "public"

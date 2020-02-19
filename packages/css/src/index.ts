@@ -1,7 +1,19 @@
-export const get = (obj, key, def, p, undef) => {
-  key = key && key.split ? key.split('.') : [key]
-  for (p = 0; p < key.length; p++) {
-    obj = obj ? obj[key[p]] : undef
+import * as CSS from 'csstype'
+
+import { SystemStyleObject, UseThemeFunction, Theme } from './types'
+
+export * from './types'
+
+export function get(
+  obj: object,
+  key: string | number,
+  def?: unknown,
+  p?: number,
+  undef?: unknown
+): any {
+  const path = key && typeof key === 'string' ? key.split('.') : [key]
+  for (p = 0; p < path.length; p++) {
+    obj = obj ? (obj as any)[path[p]] : undef
   }
   return obj === undef ? def : obj
 }
@@ -29,7 +41,8 @@ const aliases = {
   pl: 'paddingLeft',
   px: 'paddingX',
   py: 'paddingY',
-}
+} as const
+type Aliases = typeof aliases
 
 export const multiples = {
   marginX: ['marginLeft', 'marginRight'],
@@ -111,16 +124,17 @@ export const scales = {
   // svg
   fill: 'colors',
   stroke: 'colors',
-}
+} as const
+type Scales = typeof scales
 
-const positiveOrNegative = (scale, value) => {
+const positiveOrNegative = (scale: object, value: string | number) => {
   if (typeof value !== 'number' || value >= 0) {
     return get(scale, value, value)
   }
   const absolute = Math.abs(value)
   const n = get(scale, absolute, absolute)
   if (typeof n === 'string') return '-' + n
-  return n * -1
+  return Number(n) * -1
 }
 
 const transforms = [
@@ -143,9 +157,12 @@ const transforms = [
   {}
 )
 
-const responsive = styles => theme => {
-  const next = {}
-  const breakpoints = get(theme, 'breakpoints', defaultBreakpoints)
+const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
+  theme?: Theme
+) => {
+  const next: Exclude<SystemStyleObject, UseThemeFunction> = {}
+  const breakpoints =
+    (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
     null,
     ...breakpoints.map(n => `@media screen and (min-width: ${n})`),
@@ -175,8 +192,15 @@ const responsive = styles => theme => {
   return next
 }
 
-export const css = args => (props = {}) => {
-  const theme = { ...defaultTheme, ...(props.theme || props) }
+type CssPropsArgument = { theme: Theme } | Theme
+
+export const css = (args: SystemStyleObject = {}) => (
+  props: CssPropsArgument = {}
+): CSS.Properties => {
+  const theme: Theme = {
+    ...defaultTheme,
+    ...('theme' in props ? props.theme : props),
+  }
   let result = {}
   const obj = typeof args === 'function' ? args(theme) : args
   const styles = responsive(obj)(theme)
@@ -196,10 +220,10 @@ export const css = args => (props = {}) => {
       continue
     }
 
-    const prop = get(aliases, key, key)
-    const scaleName = get(scales, prop)
-    const scale = get(theme, scaleName, get(theme, prop, {}))
-    const transform = get(transforms, prop, get)
+    const prop = key in aliases ? aliases[key as keyof Aliases] : key
+    const scaleName = prop in scales ? scales[prop as keyof Scales] : undefined
+    const scale = get(theme, scaleName as any, get(theme, prop, {}))
+    const transform: any = get(transforms, prop, get)
     const value = transform(scale, val, val)
 
     if (multiples[prop]) {
