@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/repo
+    steps:
+      - run: echo "Nope"
