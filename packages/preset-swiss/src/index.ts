@@ -107,7 +107,7 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
+      [['th', 'td'].toString()]: {
         textAlign: 'left',
         py: '4px',
         pr: '4px',
@@ -143,7 +143,7 @@ export default {
       '.operator',
       '.entity',
       '.url',
-    ]]: {
+    ].toString()]: {
       color: 'gray',
     },
     '.comment': {
@@ -162,10 +162,10 @@ export default {
       '.regex',
       '.important',
       '.variable',
-    ]]: {
+    ].toString()]: {
       color: 'purple',
     },
-    [['.atrule', '.attr-value', '.keyword']]: {
+    [['.atrule', '.attr-value', '.keyword'].toString()]: {
       color: 'primary',
     },
     [[
@@ -175,7 +175,7 @@ export default {
       '.char',
       '.builtin',
       '.inserted',
-    ]]: {
+    ].toString()]: {
       color: 'secondary',
     },
   },

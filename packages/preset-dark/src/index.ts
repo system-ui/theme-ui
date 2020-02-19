@@ -6,14 +6,14 @@ const heading = {
 
 export default {
   colors: {
-    text: 'hsl(210, 50%, 96%)',
-    background: 'hsl(230, 25%, 18%)',
-    primary: 'hsl(260, 100%, 80%)',
-    secondary: 'hsl(290, 100%, 80%)',
-    highlight: 'hsl(260, 20%, 40%)',
-    purple: 'hsl(290, 100%, 80%)',
-    muted: 'hsla(230, 20%, 0%, 20%)',
-    gray: 'hsl(210, 50%, 60%)',
+    text: '#fff',
+    background: '#060606',
+    primary: '#3cf',
+    secondary: '#e0f',
+    muted: '#191919',
+    highlight: '#29112c',
+    gray: '#999',
+    purple: '#c0f',
   },
   fonts: {
     body:
@@ -107,7 +107,7 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
+      [['th', 'td'].toString()]: {
         textAlign: 'left',
         py: '4px',
         pr: '4px',
@@ -143,7 +143,7 @@ export default {
       '.operator',
       '.entity',
       '.url',
-    ]]: {
+    ].toString()]: {
       color: 'gray',
     },
     '.comment': {
@@ -162,10 +162,10 @@ export default {
       '.regex',
       '.important',
       '.variable',
-    ]]: {
+    ].toString()]: {
       color: 'purple',
     },
-    [['.atrule', '.attr-value', '.keyword']]: {
+    [['.atrule', '.attr-value', '.keyword'].toString()]: {
       color: 'primary',
     },
     [[
@@ -175,7 +175,7 @@ export default {
       '.char',
       '.builtin',
       '.inserted',
-    ]]: {
+    ].toString()]: {
       color: 'secondary',
     },
   },
