@@ -131,7 +131,7 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td'].toString()]: {
+      'th,td': {
         textAlign: 'left',
         py: '4px',
         pr: '4px',
