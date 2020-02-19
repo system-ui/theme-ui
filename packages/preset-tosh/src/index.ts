@@ -5,21 +5,34 @@ const heading = {
 }
 
 export default {
+  useCustomProperties: true,
+  initialColorMode: 'light',
   colors: {
-    text: 'hsl(10, 20%, 20%)',
-    background: 'hsl(10, 10%, 98%)',
-    primary: 'hsl(10, 80%, 50%)',
-    secondary: 'hsl(10, 60%, 50%)',
-    highlight: 'hsl(10, 40%, 90%)',
-    purple: 'hsl(250, 60%, 30%)',
-    muted: 'hsl(10, 20%, 94%)',
-    gray: 'hsl(10, 20%, 50%)',
+    text: '#000',
+    background: '#fff',
+    primary: '#000',
+    secondary: '#3f3f3f',
+    muted: '#e0e0e0',
+    highlight: '#9f9f9f',
+    gray: '#6c6c6c',
+    accent: '#3f3f3f',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#060606',
+        primary: '#d2d2d2',
+        secondary: '#b2b2b2',
+        muted: '#191919',
+        highlight: '#3c3c3c',
+        gray: '#999',
+        accent: '#e0e0e0',
+      },
+    },
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace',
+    body: 'Silom, monospace',
+    heading: 'Silom, monospace',
+    monospace: 'Silom, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
@@ -74,6 +87,9 @@ export default {
       variant: 'textStyles.heading',
       fontSize: 1,
     },
+    p: {
+      fontSize: 2,
+    },
     a: {
       color: 'primary',
       '&:hover': {
@@ -81,12 +97,17 @@ export default {
       },
     },
     pre: {
-      variant: 'prism',
       fontFamily: 'monospace',
       fontSize: 1,
       p: 3,
       color: 'text',
       bg: 'muted',
+      borderColor: 'text',
+      borderStyle: 'solid',
+      borderTopWidth: 0,
+      borderLeftWidth: 0,
+      borderRightWidth: 8,
+      borderBottomWidth: 8,
       overflow: 'auto',
       code: {
         color: 'inherit',
@@ -94,89 +115,44 @@ export default {
     },
     code: {
       fontFamily: 'monospace',
-      color: 'secondary',
       fontSize: 1,
     },
     inlineCode: {
       fontFamily: 'monospace',
       color: 'secondary',
       bg: 'muted',
+      px: 2,
+    },
+    ul: {
+      listStyleType: 'square',
     },
     table: {
       width: '100%',
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
+      'th,td': {
         textAlign: 'left',
         py: '4px',
         pr: '4px',
         pl: 0,
-        borderColor: 'muted',
+        borderColor: 'text',
         borderBottomStyle: 'solid',
       },
     },
     th: {
+      backgroundColor: 'muted',
       verticalAlign: 'bottom',
-      borderBottomWidth: '2px',
+      borderBottomWidth: 8,
     },
     td: {
       verticalAlign: 'top',
-      borderBottomWidth: '1px',
+      borderBottomWidth: 4,
     },
     hr: {
       border: 0,
-      borderBottom: '1px solid',
-      borderColor: 'muted',
-    },
-    img: {
-      maxWidth: '100%',
-    },
-  },
-  prism: {
-    [[
-      '.comment',
-      '.prolog',
-      '.doctype',
-      '.cdata',
-      '.punctuation',
-      '.operator',
-      '.entity',
-      '.url',
-    ]]: {
-      color: 'gray',
-    },
-    '.comment': {
-      fontStyle: 'italic',
-    },
-    [[
-      '.property',
-      '.tag',
-      '.boolean',
-      '.number',
-      '.constant',
-      '.symbol',
-      '.deleted',
-      '.function',
-      '.class-name',
-      '.regex',
-      '.important',
-      '.variable',
-    ]]: {
-      color: 'purple',
-    },
-    [['.atrule', '.attr-value', '.keyword']]: {
-      color: 'primary',
-    },
-    [[
-      '.selector',
-      '.attr-name',
-      '.string',
-      '.char',
-      '.builtin',
-      '.inserted',
-    ]]: {
-      color: 'secondary',
+      borderBottom: '8px solid',
+      borderColor: 'text',
     },
   },
 }

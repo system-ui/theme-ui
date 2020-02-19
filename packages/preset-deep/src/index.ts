@@ -107,7 +107,7 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
+      'th,td': {
         textAlign: 'left',
         py: '4px',
         pr: '4px',
@@ -134,48 +134,19 @@ export default {
     },
   },
   prism: {
-    [[
-      '.comment',
-      '.prolog',
-      '.doctype',
-      '.cdata',
-      '.punctuation',
-      '.operator',
-      '.entity',
-      '.url',
-    ]]: {
+    '.comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url': {
       color: 'gray',
     },
     '.comment': {
       fontStyle: 'italic',
     },
-    [[
-      '.property',
-      '.tag',
-      '.boolean',
-      '.number',
-      '.constant',
-      '.symbol',
-      '.deleted',
-      '.function',
-      '.class-name',
-      '.regex',
-      '.important',
-      '.variable',
-    ]]: {
+    '.property,.tag,.boolean,.number,.constant,.symbol,.deleted,.function,.class-name,.regex,.important,.variable': {
       color: 'purple',
     },
-    [['.atrule', '.attr-value', '.keyword']]: {
+    '.atrule,.attr-value,.keyword': {
       color: 'primary',
     },
-    [[
-      '.selector',
-      '.attr-name',
-      '.string',
-      '.char',
-      '.builtin',
-      '.inserted',
-    ]]: {
+    '.selector,.attr-name,.string,.char,.bultin,.inserted': {
       color: 'secondary',
     },
   },

@@ -5,14 +5,4 @@ jobs:
       - image: circleci/node:lts
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v2-dependencies-{{ checksum "package.json" }}
-      - run: yarn test --coverage
+      - run: echo "Nope"

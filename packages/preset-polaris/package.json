@@ -3,6 +3,8 @@
   "version": "0.3.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "author": "Yuraima Estevez",
   "license": "MIT",
   "scripts": {
@@ -10,7 +12,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "^0.2.44"
+    "@theme-ui/preset-base": "^0.3.0"
   },
   "publishConfig": {
     "access": "public"
