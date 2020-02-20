@@ -1,9 +1,8 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "jsx": "react"
+    "jsx": "react",
+    "strict": false
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
