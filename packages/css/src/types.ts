@@ -511,7 +511,7 @@ export type ColorMode = {
 }
 
 export interface Theme {
-  breakpoints?: ObjectOrArray<number | string | symbol>
+  breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
   space?: ObjectOrArray<CSS.MarginProperty<number | string>>
   fontSizes?: ObjectOrArray<CSS.FontSizeProperty<number>>

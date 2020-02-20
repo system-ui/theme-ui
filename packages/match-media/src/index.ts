@@ -1,10 +1,15 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useThemeUI } from 'theme-ui'
+import { useThemeUI } from '@theme-ui/core'
+import { Theme } from '@theme-ui/css'
 
 // Shared with @theme-ui/css
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-export const useBreakpointIndex = (options = {}) => {
+type defaultOptions = {
+  defaultIndex?: number
+}
+
+export const useBreakpointIndex = (options: defaultOptions = {}) => {
   const context = useThemeUI()
   const { defaultIndex = 0 } = options
   const breakpoints =
@@ -47,7 +52,9 @@ export const useBreakpointIndex = (options = {}) => {
   return value
 }
 
-export const useResponsiveValue = (values, options) => {
+type Values = ((theme: Theme | null) => string[]) | string[]
+
+export const useResponsiveValue = (values: Values, options: defaultOptions = {}) => {
   const { theme } = useThemeUI()
   const array = typeof values === 'function' ? values(theme) : values
   const index = useBreakpointIndex(options)
