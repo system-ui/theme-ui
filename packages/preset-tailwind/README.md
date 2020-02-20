@@ -13,9 +13,10 @@ import theme from '@theme-ui/preset-tailwind'
 
 export default {
   ...theme,
-  styles: {
-    ...theme,
-  },
+  // You can extend the default theme like:
+  // styles: {
+  //   ...theme.presets,
+  //}
 }
 ```
 
