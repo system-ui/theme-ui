@@ -54,7 +54,7 @@ export const useBreakpointIndex = (options: defaultOptions = {}) => {
 
 type Values = ((theme: Theme | null) => string[]) | string[]
 
-export const useResponsiveValue = (values: Values, options: defaultOptions) => {
+export const useResponsiveValue = (values: Values, options: defaultOptions = {}) => {
   const { theme } = useThemeUI()
   const array = typeof values === 'function' ? values(theme) : values
   const index = useBreakpointIndex(options)
