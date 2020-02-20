@@ -1,13 +1,13 @@
 import React from 'react'
 import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
-import { get } from '@theme-ui/css'
+import { get, Theme } from '@theme-ui/css'
 import { Global, ThemeContext as EmotionContext } from '@emotion/core'
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 const storage = {
-  get: init => {
+  get: (init?: any) => {
     try {
       return window.localStorage.getItem(STORAGE_KEY) || init
     } catch (e) {
@@ -18,7 +18,7 @@ const storage = {
       )
     }
   },
-  set: value => {
+  set: (value: string) => {
     try {
       window.localStorage.setItem(STORAGE_KEY, value)
     } catch (e) {
@@ -34,8 +34,12 @@ const storage = {
 const getMediaQuery = () => {
   const darkQuery = '(prefers-color-scheme: dark)'
   const lightQuery = '(prefers-color-scheme: light)'
-  const darkMQL = window.matchMedia ? window.matchMedia(darkQuery) : {}
-  const lightMQL = window.matchMedia ? window.matchMedia(lightQuery) : {}
+  const darkMQL = window.matchMedia
+    ? window.matchMedia(darkQuery)
+    : { media: false }
+  const lightMQL = window.matchMedia
+    ? window.matchMedia(lightQuery)
+    : { media: false }
   const dark = darkMQL.media === darkQuery && darkMQL.matches
   if (dark) return 'dark'
   const light = lightMQL.media === lightQuery && lightMQL.matches
@@ -43,7 +47,7 @@ const getMediaQuery = () => {
   return 'default'
 }
 
-const useColorModeState = (theme = {}) => {
+const useColorModeState = (theme: Theme = {}) => {
   const [mode, setMode] = React.useState(
     theme.initialColorModeName || 'default'
   )
@@ -70,7 +74,9 @@ const useColorModeState = (theme = {}) => {
     if (
       theme.colors &&
       theme.colors.modes &&
-      Object.keys(theme.colors.modes).indexOf(theme.initialColorModeName) > -1
+      Object.keys(theme.colors.modes).indexOf(
+        theme.initialColorModeName || ''
+      ) > -1
     ) {
       console.warn(
         'The `initialColorModeName` value should be a unique name' +
@@ -92,7 +98,7 @@ export const useColorMode = () => {
   return [colorMode, setColorMode]
 }
 
-const applyColorMode = (theme, mode) => {
+const applyColorMode = (theme: Theme, mode: string) => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
   return merge.all({}, theme, {
@@ -105,7 +111,11 @@ const BodyStyles = () =>
     styles: theme => createColorStyles(theme),
   })
 
-export const ColorModeProvider = ({ children }) => {
+export const ColorModeProvider = ({
+  children,
+}: {
+  children: React.ReactChildren
+}) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)

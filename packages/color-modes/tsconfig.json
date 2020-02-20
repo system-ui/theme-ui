@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"]
+}
