@@ -1,21 +1,25 @@
 {
   "name": "@theme-ui/mdx",
   "version": "0.4.0-rc.1",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",
     "@mdx-js/react": "^1.0.0"
   },
+  "devDependencies": {
+    "@theme-ui/core": "^0.3.1",
+    "@theme-ui/css": "^0.3.1"
+  },
   "peerDependencies": {
-    "@theme-ui/core": "*",
-    "@theme-ui/css": "*",
     "react": "^16.11.0"
   },
   "author": "Brent Jackson",
