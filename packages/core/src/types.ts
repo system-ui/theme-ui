@@ -48,7 +48,7 @@ export interface IntrinsicSxElements {
   em: JSX.IntrinsicElements['em'] & SxProps
   strong: JSX.IntrinsicElements['strong'] & SxProps
   div: JSX.IntrinsicElements['div'] & SxProps
-  delete: JSX.IntrinsicElements['div'] & SxProps
+  del: JSX.IntrinsicElements['div'] & SxProps
   inlineCode: JSX.IntrinsicElements['div'] & SxProps
   thematicBreak: JSX.IntrinsicElements['div'] & SxProps
   root: JSX.IntrinsicElements['div'] & SxProps
