@@ -15,7 +15,7 @@ export default {
   ...theme,
   // You can extend the default theme like:
   // styles: {
-  //   ...theme.presets,
+  //   ...theme.styles,
   //}
 }
 ```
