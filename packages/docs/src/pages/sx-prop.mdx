@@ -143,6 +143,36 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 />
 ```
 
+## Composition
+
+Styles can be composed by using an array of style objects in the `sx` prop.
+This works the same way as [Emotion](https://emotion.sh/docs/composition).
+
+```jsx
+import React from 'react'
+import { css } from 'theme-ui'
+
+const base {
+  backgroundColor: 'background',
+  color: 'primary'
+}
+
+const danger = {
+  color: 'red'
+}
+
+export default props => (
+  <div>
+    <div sx={base}>This will be the primary color</div>
+    <div sx={[danger, base]}>
+      This will be also be primary since the base styles
+      overwrite the danger styles.
+    </div>
+    <div sx={[base, danger]}>This will be red</div>
+  </div>
+)
+```
+
 ## Functional Values
 
 For shorthand CSS properties or ones that are not automatically mapped to values in the theme,

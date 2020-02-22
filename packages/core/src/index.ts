@@ -16,9 +16,10 @@ export * from './types'
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined
   return theme => {
-    const styles = css(props.sx)(theme)
+    const sx = Array.isArray(props.sx) ? props.sx : [props.sx]
+    const styles = sx.map(s => css(s)(theme))
     const raw = typeof props.css === 'function' ? props.css(theme) : props.css
-    return [styles, raw]
+    return [...styles, raw]
   }
 }
 
