@@ -4,6 +4,15 @@
   "main": "index.js",
   "author": "Brent Jackson",
   "license": "MIT",
+  "files": [
+    "src/**/*.js",
+    "/*.js"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build || true",
+    "test": "tsc --noEmit"
+  },
   "peerDependencies": {
     "gatsby": "^2.13.1",
     "theme-ui": "^0.3.0"

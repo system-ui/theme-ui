@@ -1,27 +1,28 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { useThemeUI } from 'theme-ui'
-import { wrapRootElement } from '../src/provider'
-import theme from '../src/index'
+import { useThemeUI, ContextValue } from 'theme-ui'
 import renderer from 'react-test-renderer'
 
-let context
+import { wrapRootElement } from '../src/provider'
+import theme from '../src/index'
+
+let context: ContextValue | null = null
 
 afterEach(() => {
   cleanup()
   context = null
-  delete theme.initialColorMode
+  delete theme.initialColorModeName
   delete theme.colors
 })
 
-const Consumer = props => {
+const Consumer: React.FC = () => {
   context = useThemeUI()
-  return false
+  return null
 }
 
 test('renders with theme context', () => {
-  const root = render(wrapRootElement({ element: <Consumer /> }, {}))
-  expect(context.theme).toEqual({
+  const _root = render(wrapRootElement({ element: <Consumer /> }))
+  expect(context!.theme).toEqual({
     colors: {},
   })
 })
@@ -29,11 +30,15 @@ test('renders with theme context', () => {
 test.skip('renders with ColorMode component', () => {
   theme.colors = {
     primary: 'tomato',
+    background: 'white',
+    text: 'black',
     modes: {
       dark: {
         primary: 'magenta',
-      }
-    }
+        background: 'black',
+        text: 'white',
+      },
+    },
   }
   const root = renderer.create(
     wrapRootElement(
@@ -43,8 +48,8 @@ test.skip('renders with ColorMode component', () => {
       {}
     )
   )
-  expect(context.theme.colors.primary).toEqual('tomato')
+  expect(context!.theme!.colors?.primary).toEqual('tomato')
   const tree = root.toTree()
-  const { children } = tree.props.children.props
+  const { children } = tree?.props.children.props
   expect(children[0].key).toEqual('theme-ui-color-mode')
 })

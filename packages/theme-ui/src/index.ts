@@ -14,20 +14,7 @@ export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
 export { Styled, components } from '@theme-ui/mdx'
 export { ThemeProvider } from '@theme-ui/theme-provider'
 export * from '@theme-ui/components'
-export {
-  css,
-  get,
-  ColorMode,
-  CSSObject,
-  CSSProperties,
-  CSSPseudoSelectorProps,
-  ResponsiveStyleValue,
-  SystemCssProperties,
-  SystemStyleObject,
-  Theme,
-  TLengthStyledSystem,
-  UseThemeFunction,
-} from '@theme-ui/css'
+export { css, get } from '@theme-ui/css'
 
 // TODO: work this into root provider/global styles?
 export const BaseStyles = (props: Record<string, unknown>) =>
