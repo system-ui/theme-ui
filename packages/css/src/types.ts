@@ -556,7 +556,7 @@ export interface Theme {
   /**
    * Adds a global box-sizing: border-box style
    */
-  useBoxSizing?: boolean
+  useBorderBox?: boolean
 
   /**
    * Define the colors that are available through this theme
