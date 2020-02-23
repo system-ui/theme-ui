@@ -163,7 +163,7 @@ exports.createPages = async ({ actions, graphql, reporter }, opts) => {
   recipes.forEach(r => {
     actions.createPage({
       path: r.slug,
-      component: require.resolve('./src/query'),
+      component: require.resolve('./src/query.tsx'),
       context: {
         id: r.id,
       },

@@ -9,6 +9,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
+    "gatsby-plugin-typescript": "^2.1.27",
     "gatsby-source-filesystem": "^2.1.11",
     "unist-util-visit": "^2.0.0"
   }
