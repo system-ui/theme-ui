@@ -40,6 +40,8 @@ export const jsx: typeof React.createElement = (type, props, ...children) =>
 export interface ContextValue {
   __EMOTION_VERSION__: string
   theme: Theme | null
+  colorMode?: string
+  setColorMode?: () => void
 }
 export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,

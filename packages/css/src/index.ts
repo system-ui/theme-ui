@@ -1,6 +1,7 @@
 import * as CSS from 'csstype'
 
 import { SystemStyleObject, UseThemeFunction, Theme } from './types'
+import { SerializedStyles } from '@emotion/serialize'
 
 export * from './types'
 
@@ -256,7 +257,7 @@ type CssPropsArgument = { theme: Theme } | Theme
 
 export const css = (args: SystemStyleObject = {}) => (
   props: CssPropsArgument = {}
-): CSS.Properties => {
+) => {
   const theme: Theme = {
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
@@ -297,5 +298,5 @@ export const css = (args: SystemStyleObject = {}) => (
     }
   }
 
-  return result
+  return result as SerializedStyles
 }

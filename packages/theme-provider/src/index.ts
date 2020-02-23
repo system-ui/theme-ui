@@ -1,12 +1,17 @@
-import { jsx, useThemeUI, ThemeProvider as CoreProvider } from '@theme-ui/core'
-import { css } from '@theme-ui/css'
+import {
+  jsx,
+  useThemeUI,
+  ThemeProvider as CoreProvider,
+  IntrinsicSxElements,
+} from '@theme-ui/core'
+import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
 import { MDXProvider } from '@theme-ui/mdx'
 import { Global } from '@emotion/core'
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: theme => {
+    styles: (theme: Theme) => {
       if (theme.useBodyStyles === false || (theme.styles && !theme.styles.root))
         return false
       const boxSizing = theme.useBorderBox === false ? null : 'border-box'
@@ -23,7 +28,17 @@ const BodyStyles = () =>
     },
   })
 
-export const ThemeProvider = ({ theme, components, children }) => {
+interface ThemeProviderProps {
+  theme: Theme
+  children?: React.ReactNode
+  components?: { [key in keyof IntrinsicSxElements]?: React.ReactNode }
+}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  theme,
+  components,
+  children,
+}) => {
   const outer = useThemeUI()
 
   if (typeof outer.setColorMode === 'function') {
