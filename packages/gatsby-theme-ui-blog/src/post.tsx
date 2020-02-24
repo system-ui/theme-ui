@@ -1,8 +1,17 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from '@theme-ui/core'
+import { Styled } from '@theme-ui/mdx'
 import { Layout } from 'gatsby-theme-ui-layout'
 
-export default ({
+interface PostProps {
+  title?: string
+  date?: string
+  excerpt?: string
+  keywords?: string[]
+  tags?: string[]
+}
+
+const Post: React.FC<PostProps> = ({
   title,
   date,
   excerpt,
@@ -19,3 +28,5 @@ export default ({
     </Layout>
   </Styled.root>
 )
+
+export default Post

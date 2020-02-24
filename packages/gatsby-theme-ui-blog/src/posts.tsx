@@ -1,9 +1,15 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from '@theme-ui/core'
+import { Styled } from '@theme-ui/mdx'
 import { Link } from 'gatsby'
 import { Layout } from 'gatsby-theme-ui-layout'
+import { PostNode } from './gatsby-theme-blog-core/components/posts'
 
-export default ({ posts, ...props }) => (
+interface PostsProps {
+  posts: PostNode[]
+}
+
+const Posts: React.FC<PostsProps> = ({ posts, ...props }) => (
   <Styled.root>
     <Layout {...props}>
       <ul>
@@ -16,3 +22,5 @@ export default ({ posts, ...props }) => (
     </Layout>
   </Styled.root>
 )
+
+export default Posts

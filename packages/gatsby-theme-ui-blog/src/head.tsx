@@ -1,7 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-export default ({ lang = 'en-us', title, excerpt, ...props }) => (
+export interface HeadProps {
+  lang?: string
+  title?: string
+  excerpt?: string
+}
+
+const Head: React.FC<HeadProps> = ({
+  lang = 'en-us',
+  title,
+  excerpt,
+  ...props
+}) => (
   <Helmet
     {...props}
     htmlAttributes={{
@@ -11,3 +22,5 @@ export default ({ lang = 'en-us', title, excerpt, ...props }) => (
     {excerpt && <meta name="description" content={excerpt} />}
   </Helmet>
 )
+
+export default Head
