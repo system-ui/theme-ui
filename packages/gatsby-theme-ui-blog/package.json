@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "gatsby": "^2.13.73",
+    "gatsby-plugin-typescript": "^2.1.27",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
