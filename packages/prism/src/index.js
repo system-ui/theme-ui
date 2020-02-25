@@ -24,15 +24,12 @@ export default ({ children, className: outerClassName, title, ...props }) => {
         <Styled.pre className={`${outerClassName} ${className}`} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => {
-                const tokenProps = getTokenProps({ token, key })
-
-                if (line.length === 1 && !tokenProps.children) {
-                  tokenProps.sx = { display: 'inline-block' }
-                }
-
-                return <span {...tokenProps} />
-              })}
+              {line.map((token, key) => (
+                <span
+                  {...getTokenProps({ token, key })}
+                  sx={token.empty ? { display: 'inline-block' } : undefined}
+                />
+              ))}
             </div>
           ))}
         </Styled.pre>
