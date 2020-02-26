@@ -12,7 +12,9 @@
     "@emotion/core": "^10.0.0",
     "@theme-ui/color-modes": "^0.3.1",
     "@theme-ui/core": "^0.3.1",
-    "@theme-ui/mdx": "^0.3.0"
+    "@theme-ui/css": "^0.3.1",
+    "@theme-ui/mdx": "^0.3.0",
+    "react": "^16.12.0"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
