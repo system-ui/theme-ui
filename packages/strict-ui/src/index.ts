@@ -1,10 +1,15 @@
-import { jsx as themeuijsx } from 'theme-ui'
+import { jsx as themeuijsx, useThemeUI } from 'theme-ui'
+import { scales, transforms, aliases, get } from '@theme-ui/css'
 
 const filteredCSSProps = [
   // General
   'box-sizing',
   'float',
   'margin',
+  'margin-top',
+  'margin-left',
+  'margin-right',
+  'margin-bottom',
   'display', // TBD!
   // Flexbox
   'justify-content',
@@ -57,11 +62,32 @@ export const jsx = (type, props, ...children) => {
 
   if (process.env.NODE_ENV !== 'production' && props.sx) {
     for (const prop of Object.keys(props.sx)) {
+      const alias = prop in aliases ? aliases[prop] : prop
+
+      // Filter certain CSS properties like e.g. margin
       if (
-        filteredCSSProps.indexOf(prop) > -1 ||
-        filteredCSSProps.indexOf(dashize(prop)) > -1
+        filteredCSSProps.indexOf(dashize(prop)) > -1 ||
+        filteredCSSProps.indexOf(aliases[prop]) > -1
       )
         throw new Error(`Cannot specify CSS property "${prop}".`)
+
+      // Disallow non theme-based values for properties that are in the theme
+      if (scales[alias]) {
+        const value = props.sx[prop]
+        props.sx[prop] = theme => {
+          const scale = get(theme, scales[alias])
+          const transform = get(transforms, prop, get)
+          const transformedValue = transform(scale, value, value)
+
+          if (transformedValue === value) {
+            throw new Error(
+              `Cannot use a non-theme value "${value}" for "${prop}". Please either use a theme value or add a new value to the theme.`
+            )
+          }
+
+          return transformedValue
+        }
+      }
     }
   }
 

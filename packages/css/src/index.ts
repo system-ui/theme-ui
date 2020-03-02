@@ -25,7 +25,7 @@ const defaultTheme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 }
 
-const aliases = {
+export const aliases = {
   bg: 'backgroundColor',
   m: 'margin',
   mt: 'marginTop',
@@ -137,7 +137,7 @@ const positiveOrNegative = (scale: object, value: string | number) => {
   return Number(n) * -1
 }
 
-const transforms = [
+export const transforms = [
   'margin',
   'marginTop',
   'marginRight',
