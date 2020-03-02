@@ -1,5 +1,54 @@
 import { jsx as themeuijsx } from 'theme-ui'
-import { scales, transforms, aliases, get } from '@theme-ui/css'
+import { scales, get } from '@theme-ui/css'
+
+// COPIED FROM @theme-ui/css UNTIL EXPORTS ARE MERGED + PUBLISHED
+const aliases = {
+  bg: 'backgroundColor',
+  m: 'margin',
+  mt: 'marginTop',
+  mr: 'marginRight',
+  mb: 'marginBottom',
+  ml: 'marginLeft',
+  mx: 'marginX',
+  my: 'marginY',
+  p: 'padding',
+  pt: 'paddingTop',
+  pr: 'paddingRight',
+  pb: 'paddingBottom',
+  pl: 'paddingLeft',
+  px: 'paddingX',
+  py: 'paddingY',
+}
+
+const positiveOrNegative = (scale: object, value: string | number) => {
+  if (typeof value !== 'number' || value >= 0) {
+    return get(scale, value, value)
+  }
+  const absolute = Math.abs(value)
+  const n = get(scale, absolute, absolute)
+  if (typeof n === 'string') return '-' + n
+  return Number(n) * -1
+}
+
+const transforms = [
+  'margin',
+  'marginTop',
+  'marginRight',
+  'marginBottom',
+  'marginLeft',
+  'marginX',
+  'marginY',
+  'top',
+  'bottom',
+  'left',
+  'right',
+].reduce(
+  (acc, curr) => ({
+    ...acc,
+    [curr]: positiveOrNegative,
+  }),
+  {}
+)
 
 const filteredCSSProps = [
   // General

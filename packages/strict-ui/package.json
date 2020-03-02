@@ -1,13 +1,12 @@
 {
   "name": "strict-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
   "author": "Max Stoiber",
