@@ -1,4 +1,4 @@
-import { jsx as themeuijsx, useThemeUI } from 'theme-ui'
+import { jsx as themeuijsx } from 'theme-ui'
 import { scales, transforms, aliases, get } from '@theme-ui/css'
 
 const filteredCSSProps = [
