@@ -44,14 +44,23 @@ const filteredCSSProps = [
   'grid',
 ]
 
-export * from 'theme-ui'
+export { Grid } from 'theme-ui'
+
+function dashize(str: string) {
+  return str.replace(/(\w)([A-Z])/g, (word, first, second) => {
+    return `${first}-${second.toLowerCase()}`
+  })
+}
 
 export const jsx = (type, props, ...children) => {
   if (props.css) throw new Error('Using the `css` prop is disallowed.')
 
-  if (props.sx) {
+  if (process.env.NODE_ENV !== 'production' && props.sx) {
     for (const prop of Object.keys(props.sx)) {
-      if (filteredCSSProps.indexOf(prop) > -1)
+      if (
+        filteredCSSProps.indexOf(prop) > -1 ||
+        filteredCSSProps.indexOf(dashize(prop)) > -1
+      )
         throw new Error(`Cannot specify CSS property "${prop}".`)
     }
   }
