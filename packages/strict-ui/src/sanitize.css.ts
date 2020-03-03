@@ -200,4 +200,16 @@ export default css`
   th {
     text-align: left;
   }
+
+  /*
+  * Custom stuff
+  */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  img {
+    display: inline-block;
+  }
 `
