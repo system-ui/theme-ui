@@ -16,7 +16,8 @@
     "access": "public"
   },
   "dependencies": {
-    "theme-ui": "0.3.x",
-    "@theme-ui/css": "0.3.x"
+    "@emotion/core": "10.0.22",
+    "@theme-ui/css": "0.3.x",
+    "theme-ui": "0.3.x"
   }
 }
