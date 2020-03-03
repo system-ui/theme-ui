@@ -1,8 +1,8 @@
 import { jsx as themeuijsx } from 'theme-ui'
 import { get } from '@theme-ui/css'
-import { Global } from '@emotion/core'
 import { scales, aliases, transforms } from './css'
-import sanitize from './sanitize.css'
+// Always inject the CSS reset. You should not be able to use strict-ui without it.
+import './sanitize.css'
 
 export { Grid, Flex, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
 
@@ -59,8 +59,6 @@ function dashize(str: string) {
     return `${first}-${second.toLowerCase()}`
   })
 }
-
-export const CSSReset = () => jsx(Global, { styles: sanitize })
 
 export const jsx = (type, props, ...children) => {
   if (props.css) throw new Error('Using the `css` prop is disallowed.')

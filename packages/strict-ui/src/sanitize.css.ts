@@ -1,12 +1,11 @@
-import { css } from '@emotion/core'
+import { injectGlobal } from 'emotion'
 
-// Copied from https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css
-export default css`
-  /*!
+/*!
  * Sanitize 2.0.0 (http://git.io/sanitize)
  * Licensed under the MIT License.
  */
-
+// Copied from https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css
+injectGlobal`
   html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
