@@ -4,7 +4,7 @@ import { Global } from '@emotion/core'
 import { scales, aliases, transforms } from './css'
 import sanitize from './sanitize.css'
 
-export { Grid, ThemeProvider, useThemeUI } from 'theme-ui'
+export { Grid, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
 
 const filteredCSSProps = [
   // General
