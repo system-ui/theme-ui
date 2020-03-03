@@ -45,3 +45,21 @@ test('it allows theme values for padding', () => {
     })
   ).not.toThrowError()
 })
+
+test('it passes valid responsive values', () => {
+  expect(() =>
+    render({
+      padding: [1, 2, 3],
+    })
+  ).not.toThrowError()
+})
+
+test('it fails partially invalid responsive values', () => {
+  expect(() =>
+    render({
+      padding: [1, '3px', 3],
+    })
+  ).toThrowErrorMatchingInlineSnapshot(
+    `"Cannot use a non-theme value \\"3px\\" for \\"padding\\". Please either use a theme value or add a new value to the theme."`
+  )
+})
