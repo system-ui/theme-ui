@@ -14,7 +14,7 @@ test('it throws an error when an invalid CSS property is specified', () => {
       flex: 1,
     })
   ).toThrowErrorMatchingInlineSnapshot(
-    `"Cannot specify CSS property \\"flex\\"."`
+    `"Cannot specify disallowed CSS property \\"flex\\"."`
   )
 })
 
@@ -24,7 +24,7 @@ test('it handles camelCase', () => {
       justifyContent: 1,
     })
   ).toThrowErrorMatchingInlineSnapshot(
-    `"Cannot specify CSS property \\"justifyContent\\"."`
+    `"Cannot specify disallowed CSS property \\"justifyContent\\"."`
   )
 })
 
@@ -61,5 +61,25 @@ test('it fails partially invalid responsive values', () => {
     })
   ).toThrowErrorMatchingInlineSnapshot(
     `"Cannot use a non-theme value \\"3px\\" for \\"padding\\". Please either use a theme value or add a new value to the theme."`
+  )
+})
+
+test('it fails shorthands', () => {
+  expect(() =>
+    render({
+      mx: 2,
+    })
+  ).toThrowErrorMatchingInlineSnapshot(
+    `"Cannot specify disallowed CSS property \\"mx\\"."`
+  )
+})
+
+test('it fails marginX', () => {
+  expect(() =>
+    render({
+      marginX: 2,
+    })
+  ).toThrowErrorMatchingInlineSnapshot(
+    `"Cannot specify disallowed CSS property \\"marginX\\"."`
   )
 })
