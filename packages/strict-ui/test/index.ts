@@ -1,5 +1,5 @@
 import { renderToString } from 'react-dom/server'
-import { jsx } from '../src/index'
+import { jsx, ThemeProvider } from '../src/index'
 
 const render = (sx: Object) =>
   renderToString(
@@ -82,4 +82,26 @@ test('it fails marginX', () => {
   ).toThrowErrorMatchingInlineSnapshot(
     `"Cannot specify disallowed CSS property \\"marginX\\"."`
   )
+})
+
+test('it correctly handles theme properties that match their values', () => {
+  expect(() =>
+    renderToString(
+      jsx(
+        ThemeProvider,
+        {
+          theme: {
+            colors: {
+              red: 'red',
+            },
+          },
+        },
+        jsx('div', {
+          sx: {
+            color: 'red',
+          },
+        })
+      )
+    )
+  ).not.toThrowError()
 })
