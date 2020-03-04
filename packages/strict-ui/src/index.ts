@@ -1,10 +1,10 @@
 import { jsx as themeuijsx } from 'theme-ui'
 import { get } from '@theme-ui/css'
-import { scales, aliases, transforms } from './css'
+import { scales, aliases } from './css'
 // Always inject the CSS reset. You should not be able to use strict-ui without it.
 import './sanitize.css'
 
-export { Grid, Flex, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
+export { Grid, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
 
 export const jsx = (type, props, ...children) => {
   if (props.css) throw new Error('Using the `css` prop is disallowed.')

@@ -32,26 +32,6 @@ export const positiveOrNegative = (scale: object, value: string | number) => {
   return Number(n) * -1
 }
 
-export const transforms = [
-  'margin',
-  'marginTop',
-  'marginRight',
-  'marginBottom',
-  'marginLeft',
-  'marginX',
-  'marginY',
-  'top',
-  'bottom',
-  'left',
-  'right',
-].reduce(
-  (acc, curr) => ({
-    ...acc,
-    [curr]: positiveOrNegative,
-  }),
-  {}
-)
-
 export const scales = {
   color: 'colors',
   backgroundColor: 'colors',
