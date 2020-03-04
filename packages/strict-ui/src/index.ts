@@ -83,7 +83,10 @@ export const jsx = (type, props, ...children) => {
         const value = props.sx[prop]
         props.sx[prop] = theme => {
           const scale = get(theme, scales[alias])
-          if (!scale) return value
+          if (!scale)
+            throw new Error(
+              `Cannot specify "${prop}" because no "${scales[alias]}" scale is defined in the theme.`
+            )
 
           const valuesToCheck = Array.isArray(value) ? value : [value]
 

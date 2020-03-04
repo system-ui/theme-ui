@@ -111,7 +111,9 @@ test('it correctly handles unspecified scales', () => {
     render({
       height: 2,
     })
-  ).not.toThrowError()
+  ).toThrowErrorMatchingInlineSnapshot(
+    `"Cannot specify \\"height\\" because no \\"sizes\\" scale is defined in the theme."`
+  )
 })
 
 test('it correctly validates valid sizes', () => {
