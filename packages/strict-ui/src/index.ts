@@ -83,13 +83,14 @@ export const jsx = (type, props, ...children) => {
         const value = props.sx[prop]
         props.sx[prop] = theme => {
           const scale = get(theme, scales[alias])
+          if (!scale) return value
+
           const valuesToCheck = Array.isArray(value) ? value : [value]
 
           valuesToCheck.forEach(toCheck => {
-            const transform = get(transforms, prop, get)
-            const transformedValue = transform(scale, toCheck, toCheck)
+            const scaleValue = get(scale, toCheck)
 
-            if (transformedValue === toCheck) {
+            if (!scaleValue) {
               throw new Error(
                 `Cannot use a non-theme value "${toCheck}" for "${prop}". Please either use a theme value or add a new value to the theme.`
               )

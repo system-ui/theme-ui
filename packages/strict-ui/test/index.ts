@@ -105,3 +105,53 @@ test('it correctly handles theme properties that match their values', () => {
     )
   ).not.toThrowError()
 })
+
+test('it correctly handles unspecified scales', () => {
+  expect(() =>
+    render({
+      height: 2,
+    })
+  ).not.toThrowError()
+})
+
+test('it correctly validates valid sizes', () => {
+  expect(() =>
+    renderToString(
+      jsx(
+        ThemeProvider,
+        {
+          theme: {
+            sizes: ['0', '2px', '4px'],
+          },
+        },
+        jsx('div', {
+          sx: {
+            height: 2,
+          },
+        })
+      )
+    )
+  ).not.toThrowError()
+})
+
+test('it correctly validates invalid sizes', () => {
+  expect(() =>
+    renderToString(
+      jsx(
+        ThemeProvider,
+        {
+          theme: {
+            sizes: ['0', '2px', '4px'],
+          },
+        },
+        jsx('div', {
+          sx: {
+            height: '16px',
+          },
+        })
+      )
+    )
+  ).toThrowErrorMatchingInlineSnapshot(
+    `"Cannot use a non-theme value \\"16px\\" for \\"height\\". Please either use a theme value or add a new value to the theme."`
+  )
+})
