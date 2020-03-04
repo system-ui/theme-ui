@@ -1,3 +1,4 @@
+/** @jest-environment node */
 import { renderToString } from 'react-dom/server'
 import { jsx, ThemeProvider } from '../src/index'
 
@@ -155,5 +156,31 @@ test('it correctly validates invalid sizes', () => {
     )
   ).toThrowErrorMatchingInlineSnapshot(
     `"Cannot use a non-theme value \\"16px\\" for \\"height\\". Please either use a theme value or add a new value to the theme."`
+  )
+})
+
+test('it outputs the transformed styles with their theme values', () => {
+  expect(
+    renderToString(
+      jsx(
+        ThemeProvider,
+        {
+          theme: {
+            colors: {
+              text: '#000',
+              background: '#fff',
+            },
+          },
+        },
+        jsx('div', {
+          sx: {
+            padding: 2,
+            color: 'background',
+          },
+        })
+      )
+    )
+  ).toMatchInlineSnapshot(
+    `"<style data-emotion-css=\\"c4f9ew\\">body{color:var(--theme-ui-colors-text,#000);background-color:var(--theme-ui-colors-background,#fff);}</style><style data-emotion-css=\\"1d7m1w5\\">*{box-sizing:border-box;}body{margin:0;}</style><style data-emotion-css=\\"1m7wf6w\\">.css-1m7wf6w{padding:8px;color:var(--theme-ui-colors-background,#fff);}</style><div class=\\"css-1m7wf6w\\"></div>"`
   )
 })
