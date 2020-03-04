@@ -1,6 +1,6 @@
 {
   "name": "strict-ui",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
