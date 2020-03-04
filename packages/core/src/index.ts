@@ -13,10 +13,15 @@ import './react-jsx'
 
 export * from './types'
 
+const flattenDeep = arr =>
+  Array.isArray(arr)
+    ? arr.reduce((a, b) => a.concat(flattenDeep(b)), [])
+    : [arr]
+
 const getCSS = props => {
   if (!props.sx && !props.css) return undefined
   return theme => {
-    const sx = Array.isArray(props.sx) ? props.sx : [props.sx]
+    const sx = flattenDeep(props.sx)
     const styles = sx.map(s => css(s)(theme))
     const raw = typeof props.css === 'function' ? props.css(theme) : props.css
     return [...styles, raw]
