@@ -206,8 +206,8 @@ injectGlobal`
   *,
   *:before,
   *:after {
-    box-sizing: border-box;
-    margin: 0;
+    box-sizing: border-box!important;
+    margin: 0!important;
   }
   img {
     display: inline-block;
