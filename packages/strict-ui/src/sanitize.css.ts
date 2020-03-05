@@ -207,6 +207,7 @@ injectGlobal`
   *:before,
   *:after {
     box-sizing: border-box;
+    margin: 0;
   }
   img {
     display: inline-block;
