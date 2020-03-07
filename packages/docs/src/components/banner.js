@@ -24,7 +24,7 @@ export default props => (
     <div
       sx={{
         pt: 4,
-        pb: [5, 6],
+        pb: 4,
       }}>
       <Container>{props.children}</Container>
     </div>
