@@ -1,10 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+
+import { RecipeQuery } from '../types'
 import Recipe from './recipe'
 
 export const query = graphql`
-  query($id: String!) {
+  query recipeQuery($id: String!) {
     recipe: mdxRecipe(id: { eq: $id }) {
       id
       name
@@ -15,18 +17,12 @@ export const query = graphql`
   }
 `
 
-export default props => {
+export default (props: { data: { recipe: RecipeQuery } }) => {
   const { name, slug, id, body, snippets } = props.data.recipe
 
-  const children = <MDXRenderer children={body} />
-
-  return React.createElement(Recipe, {
-    ...props,
-    name,
-    slug,
-    id,
-    body,
-    snippets,
-    children,
-  })
+  return (
+    <Recipe name={name} slug={slug} id={id} snippets={snippets}>
+      <MDXRenderer children={body} />
+    </Recipe>
+  )
 }
