@@ -177,7 +177,6 @@ export default ({
   scale = 32,
   ...props
 }) => {
-  const { theme } = useThemeUI()
   const viewBox = [0, 0, width / ratio, height].join(' ')
   const rect = {
     width: width * scale,
