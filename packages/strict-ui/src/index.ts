@@ -4,7 +4,7 @@ import { scales, aliases } from './css'
 // Always inject the CSS reset. You should not be able to use strict-ui without it.
 import './sanitize.css'
 
-export { Grid, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
+export { Grid, ThemeProvider, Flex, useThemeUI as useStrictUI } from 'theme-ui'
 
 export const jsx = (type, props, ...children) => {
   if (props.css) throw new Error('Using the `css` prop is disallowed.')
