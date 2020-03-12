@@ -7,7 +7,8 @@
     "serve": "yarn workspace docs serve --port 8000",
     "clean": "lerna run clean",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
-    "test": "lerna run typecheck && jest",
+    "typecheck": "lerna run typecheck",
+    "test": "yarn typecheck && jest",
     "logo": "yarn workspace docs logo",
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev"
@@ -39,7 +40,9 @@
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^25.2.0"
   },
-  "resolutions": {},
+  "resolutions": {
+    "@types/vfile-message": "1.0.1"
+  },
   "jest": {
     "testMatch": [
       "**/packages/**/test/*.{js,ts,tsx}"

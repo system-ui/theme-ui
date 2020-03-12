@@ -6,8 +6,7 @@
   "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
+    "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",

@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    // needs `theme-ui`, which lacks many types
+    "noImplicitAny": false
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "index.d.ts"]
+}
