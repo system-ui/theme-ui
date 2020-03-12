@@ -7,7 +7,7 @@
     "serve": "yarn workspace docs serve --port 8000",
     "clean": "lerna run clean",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
-    "test": "jest",
+    "test": "lerna run typecheck && jest",
     "logo": "yarn workspace docs logo",
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev"
@@ -41,21 +41,6 @@
   },
   "resolutions": {},
   "jest": {
-    "preset": "ts-jest/presets/js-with-babel",
-    "globals": {
-      "ts-jest": {
-        "tsConfig": {
-          "module": "commonjs",
-          "esModuleInterop": true,
-          "resolveJsonModule": true,
-          "jsx": "react",
-          "alwaysStrict": true,
-          "noImplicitThis": true,
-          "noImplicitAny": false,
-          "strictBindCallApply": false
-        }
-      }
-    },
     "testMatch": [
       "**/packages/**/test/*.{js,ts,tsx}"
     ],

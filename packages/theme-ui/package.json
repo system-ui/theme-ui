@@ -11,7 +11,8 @@
   "repository": "system-ui/theme-ui",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@theme-ui/color-modes": "^0.3.1",
