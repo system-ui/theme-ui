@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, get } from 'theme-ui'
+import { jsx, get, useThemeUI } from 'theme-ui'
 import { useState, useEffect, Fragment } from 'react'
 import merge from 'deepmerge'
 import Logo from './logo'
@@ -54,6 +54,10 @@ const initialState = {
 
 const Node = ({ x, y, color = 0, ...props }) => {
   const inset = !!(y % 2)
+
+  // adjust for logo position
+  const isLogo = y === 2 && x === 0
+
   return (
     <circle
       {...props}
@@ -63,7 +67,7 @@ const Node = ({ x, y, color = 0, ...props }) => {
       fill="currentcolor"
       strokeWidth={1 / 8}
       sx={{
-        color: colors[color] || 'background',
+        color: isLogo ? 'background' : colors[color] || 'background',
         transitionProperty: 'stroke, color',
         transitionTimingFunction: 'ease-out',
         transitionDuration: '.4s',
@@ -137,6 +141,7 @@ const randomizeColors = state => {
 }
 
 export default ({ width = 32, height = 9, scale = 32 }) => {
+  const { theme } = useThemeUI()
   const rows = Array.from({ length: height / 3 }).map((n, y) =>
     Array.from({
       length: Math.floor(width / 3 + (y % 2 ? 0 : 1)),
@@ -171,6 +176,8 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
     )
   }
 
+  const logoColor = get(theme.colors, `${get(colors, get(state, '2.0') || 1)}`)
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +206,7 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
         ))
       )}
       <g transform="translate(0 6)">
-        <Logo size={2} />
+        <Logo size={2} color={logoColor} />
       </g>
     </svg>
   )

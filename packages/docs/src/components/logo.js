@@ -15,7 +15,7 @@ const css = {
 `,
 }
 
-export default ({ size = 256, ...props }) => (
+export default ({ size = 256, color = 'inherit', ...props }) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,8 @@ export default ({ size = 256, ...props }) => (
       fontSize: 12,
       letterSpacing: '0.1em',
       fill: 'currentcolor',
-      color: 'inherit',
+      color,
+      pointerEvents: 'none',
     }}>
     <defs>
       <style dangerouslySetInnerHTML={css} type="text/css" />
