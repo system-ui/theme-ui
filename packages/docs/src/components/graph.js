@@ -109,9 +109,7 @@ const Edges = ({ x, y, state }) => {
           fill="none"
           stroke="currentcolor"
           strokeWidth={1 / 4}
-          // transform={`rotate(${n})`}
           sx={{
-            // transformOrigin: '1 1',
             color: colors[active],
             transitionProperty: 'stroke, color',
             transitionTimingFunction: 'ease-out',
