@@ -1,5 +1,5 @@
 <img
-  src="packages/docs/static/logo.svg"
+  src="packages/docs/static/logo.png"
   width="96"
   height="96"
 />
