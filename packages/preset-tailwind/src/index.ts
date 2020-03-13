@@ -602,7 +602,7 @@ export const transforms = {
 }
 
 export const transitions = {
-  transitionProperty: {
+  property: {
     none: 'none',
     all: 'all',
     default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
@@ -611,13 +611,13 @@ export const transitions = {
     shadow: 'box-shadow',
     transform: 'transform',
   },
-  transitionTimingFunction: {
+  timingFunction: {
     linear: 'linear',
     in: 'cubic-bezier(0.4, 0, 1, 1)',
     out: 'cubic-bezier(0, 0, 0.2, 1)',
     'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
   },
-  transitionDuration: {
+  duration: {
     '75': '75ms',
     '100': '100ms',
     '150': '150ms',
