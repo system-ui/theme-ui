@@ -12,7 +12,8 @@
     "clean": "gatsby clean",
     "logo": "node ./scripts/svg-logo.js",
     "_logo": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?size=32&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI' --width=32 --height=32 --overwrite static/icon.png",
-    "card": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?width=1280&height=720&fontWeight=900&fontSize=0.75&text=Theme+UI' --width=1280 --height=720 --overwrite static/card.png",
+    "card": "npx capture-website-cli 'http://localhost:8080/card.svg' --width=1280 --height=720 --overwrite static/card.png",
+    "_card": "npx capture-website-cli 'https://contrast.now.sh/cff/40f?width=1280&height=720&fontWeight=900&fontSize=0.75&text=Theme+UI' --width=1280 --height=720 --overwrite static/card.png",
     "now-build": "gatsby build"
   },
   "dependencies": {
