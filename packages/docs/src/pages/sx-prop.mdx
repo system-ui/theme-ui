@@ -8,6 +8,10 @@ title: 'The `sx` Prop'
 The `sx` prop lets you style elements inline, using values from your theme.
 To use the `sx` prop, add the custom `/** @jsx jsx */` pragma comment to the top of your module and import the `jsx` function.
 
+The `sx` prop lets you add any valid CSS to an element,
+while using values from your theme to keep styles consistent.
+You can think of the style object that the `sx` prop accepts as a *superset* of CSS.
+
 ```jsx
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
@@ -124,6 +128,21 @@ export default props => (
 )
 ```
 
+### Media Queries
+
+If you prefer standard CSS media query syntax, you can use nested objects for responsive styles as well.
+
+```jsx
+<div
+  sx={{
+    width: '100%',
+    '@media screen and (min-width: 40em)': {
+      width: '50%',
+    }
+  }}
+/>
+```
+
 ## Margin and Padding
 
 Margin and padding are treated as first-class citizens in Theme UI,
@@ -167,7 +186,7 @@ export default props => (
 In some cases you might want to apply styles to children of the current element.
 You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
 
-If you want to reference the current class of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
+If you want to reference the current class selector of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
 
 ```jsx
 /** @jsx jsx */
@@ -229,4 +248,8 @@ import { Box } from 'theme-ui'
 
 </Box>
 ```
+
+## Object Styles
+
+If you're new to using JavaScript object notation for authoring styles, see the [guide to using objects for styling](/guides/object-styles).
 
