@@ -18,13 +18,13 @@ Build consistent, themeable React apps based on constraint-based design principl
 https://theme-ui.com
 
 [github]: https://github.com/system-ui/theme-ui
-[github-badge]: https://badgen.net/badge/-/github?icon=github&label
+[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
 [stars]: https://badgen.net/github/stars/system-ui/theme-ui
-[build status]: https://github.com/system-ui/theme-ui/workflows/CI/badge.svg?branch=master
-[version]: https://badgen.net/npm/v/theme-ui
+[build status]: https://flat.badgen.net/github/status/system-ui/theme-ui
+[version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
-[mit license]: https://badgen.net/badge/license/MIT/blue
-[size]: https://badgen.net/bundlephobia/minzip/theme-ui
+[mit license]: https://flat.badgen.net/badge/license/MIT/blue
+[size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
 
 Built for design systems, white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
 and based on a standard [Theme Specification][],
