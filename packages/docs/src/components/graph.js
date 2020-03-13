@@ -4,14 +4,7 @@ import { useState, useEffect, Fragment } from 'react'
 import merge from 'deepmerge'
 import Logo from './logo'
 
-const colors = [
-  'background',
-  'primary',
-  'secondary',
-  'accent',
-  // 'highlight',
-  // 'muted',
-]
+const colors = ['background', 'primary', 'secondary', 'accent']
 
 const initialState = {
   0: {
