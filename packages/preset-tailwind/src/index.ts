@@ -257,8 +257,8 @@ export const colors = {
 
 export const baseFonts = {
   sans:
-    '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
-  serif: 'Georgia, Cambria, "Times New Roman", Times, serif',
+    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+  serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
   mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
 }
 
@@ -377,11 +377,12 @@ export const radii = {
   none: '0',
   sm: '0.125rem',
   default: '0.25rem',
+  md: '0.375rem',
   lg: '0.5rem',
   full: '9999px',
 }
 
-export const sizes = {
+const tailwindSpacing = {
   px: '1px',
   '0': '0',
   '1': '0.25rem',
@@ -401,6 +402,9 @@ export const sizes = {
   '48': '12rem',
   '56': '14rem',
   '64': '16rem',
+}
+
+const tailwindMaxWidth = {
   xs: '20rem',
   sm: '24rem',
   md: '28rem',
@@ -411,6 +415,9 @@ export const sizes = {
   '4xl': '56rem',
   '5xl': '64rem',
   '6xl': '72rem',
+}
+
+const tailwindWidth = {
   '1/2': '50%',
   '1/3': '33.333333%',
   '2/3': '66.666667%',
@@ -437,12 +444,20 @@ export const sizes = {
   '9/12': '75%',
   '10/12': '83.333333%',
   '11/12': '91.666667%',
+}
+
+export const sizes = {
+  ...tailwindSpacing,
+  ...tailwindMaxWidth,
+  ...tailwindWidth,
   full: '100%',
   screenHeight: '100vh',
   screenWidth: '100vw',
 }
 
 export const shadows = {
+  xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+  sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
   default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
   md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
   lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
@@ -535,6 +550,85 @@ export const styles = {
   },
 }
 
+export const transforms = {
+  transformOrigin: {
+    center: 'center',
+    top: 'top',
+    'top-right': 'top right',
+    right: 'right',
+    'bottom-right': 'bottom right',
+    bottom: 'bottom',
+    'bottom-left': 'bottom left',
+    left: 'left',
+    'top-left': 'top left',
+  },
+  translate: {
+    ...tailwindSpacing,
+    '-full': '-100%',
+    '-1/2': '-50%',
+    '1/2': '50%',
+    full: '100%',
+  },
+  scale: {
+    '0': '0',
+    '50': '.5',
+    '75': '.75',
+    '90': '.9',
+    '95': '.95',
+    '100': '1',
+    '105': '1.05',
+    '110': '1.1',
+    '125': '1.25',
+    '150': '1.5',
+  },
+  rotate: {
+    '-180': '-180deg',
+    '-90': '-90deg',
+    '-45': '-45deg',
+    '0': '0',
+    '45': '45deg',
+    '90': '90deg',
+    '180': '180deg',
+  },
+  skew: {
+    '-12': '-12deg',
+    '-6': '-6deg',
+    '-3': '-3deg',
+    '0': '0',
+    '3': '3deg',
+    '6': '6deg',
+    '12': '12deg',
+  },
+}
+
+export const transitions = {
+  property: {
+    none: 'none',
+    all: 'all',
+    default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+    colors: 'background-color, border-color, color, fill, stroke',
+    opacity: 'opacity',
+    shadow: 'box-shadow',
+    transform: 'transform',
+  },
+  timingFunction: {
+    linear: 'linear',
+    in: 'cubic-bezier(0.4, 0, 1, 1)',
+    out: 'cubic-bezier(0, 0, 0.2, 1)',
+    'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+  duration: {
+    '75': '75ms',
+    '100': '100ms',
+    '150': '150ms',
+    '200': '200ms',
+    '300': '300ms',
+    '500': '500ms',
+    '700': '700ms',
+    '1000': '1000ms',
+  },
+}
+
 export const tailwind = {
   borderWidths,
   breakpoints,
@@ -552,6 +646,8 @@ export const tailwind = {
   styles,
   buttons,
   inputs,
+  transforms,
+  transitions,
 }
 
 export default tailwind
