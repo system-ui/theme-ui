@@ -176,7 +176,13 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
     )
   }
 
-  const logoColor = get(theme.colors, `${get(colors, get(state, '2.0') || 1)}`)
+  const logo = {}
+  logo.key = get(colors, get(state, '2.0'))
+  if (logo.key !== 'background') {
+    logo.color = get(theme.colors, logo.key)
+  } else {
+    logo.color = get(theme.colors, 'text')
+  }
 
   return (
     <svg
@@ -206,7 +212,7 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
         ))
       )}
       <g transform="translate(0 6)">
-        <Logo size={2} color={logoColor} />
+        <Logo size={2} color={logo.color} />
       </g>
     </svg>
   )
