@@ -6,7 +6,9 @@
 
 # Theme UI
 
-Build consistent, themeable React apps based on constraint-based design principles | Built with Emotion + Styled System + MDX + Typography.js
+**The Design Graph Framework**
+
+Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
 [![GitHub][github-badge]][github]
 [![Stars][]][github]
