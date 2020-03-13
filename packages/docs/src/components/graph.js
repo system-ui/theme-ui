@@ -2,6 +2,7 @@
 import { jsx, get } from 'theme-ui'
 import { useState, useEffect, Fragment } from 'react'
 import merge from 'deepmerge'
+import Logo from './logo'
 
 const colors = [
   'background',
@@ -197,6 +198,9 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
           </g>
         ))
       )}
+      <g transform="translate(0 6)">
+        <Logo size={2} />
+      </g>
     </svg>
   )
 }

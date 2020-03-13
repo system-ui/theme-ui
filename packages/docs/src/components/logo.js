@@ -1,30 +1,43 @@
 import React from 'react'
-import theme from '../gatsby-plugin-theme-ui'
 
-export default ({ size = 512, color = theme.colors.primary, ...props }) => (
+const css = {
+  __html: `
+<![CDATA[
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYAZ9hiA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+]]>
+`,
+}
+
+export default ({ size = 256, ...props }) => (
   <svg
     {...props}
-    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
     width={size}
     height={size}
-    overflow="visible">
-    <path
-      fill={color}
-      d={`
-      M 24 0
-      A 24 24 0 0 0 24 48
-      A 24 24 0 0 0 24 0
-      M 24 14
-      H 38
-      V 22
-      H 28
-      V 38
-      H 20
-      V 22
-      H 10
-      V 14
-      z
-    `}
-    />
+    style={{
+      fontFamily: 'Inter, sans-serif',
+      fontSize: 12,
+      letterSpacing: '0.1em',
+      fill: 'currentcolor',
+      color: 'inherit',
+    }}>
+    <defs>
+      <style dangerouslySetInnerHTML={css} type="text/css" />
+      <mask id="ui">
+        <rect width={32} height={32} fill="white" />
+        <text x={16} y={21} fill="black" textAnchor="middle">
+          UI
+        </text>
+      </mask>
+    </defs>
+    <circle cx={16} cy={16} r={16} mask="url(#ui)" />
   </svg>
 )
