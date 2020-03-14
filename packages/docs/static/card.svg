@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" style="color:white;max-width:100%;height:auto"><rect width="1280" height="720" fill="black"></rect><g transform="translate(512 232)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" style="font-family:Inter, sans-serif;font-size:12px;letter-spacing:0.1em;fill:currentcolor;color:inherit"><defs><style type="text/css">
+<![CDATA[
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYAZ9hiA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+]]>
+</style><mask id="ui"><rect width="32" height="32" fill="white"></rect><text x="16" y="21" fill="black" text-anchor="middle">UI</text></mask></defs><circle cx="16" cy="16" r="16" mask="url(#ui)"></circle></svg></g></svg>
