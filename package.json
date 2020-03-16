@@ -41,7 +41,9 @@
     "ts-jest": "^25.2.0",
     "typescript": "^3.8.2"
   },
-  "resolutions": {},
+  "resolutions": {
+    "@types/vfile-message": "1.0.1"
+  },
   "jest": {
     "preset": "ts-jest/presets/js-with-babel",
     "globals": {
