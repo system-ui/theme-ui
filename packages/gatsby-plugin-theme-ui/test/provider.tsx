@@ -41,12 +41,9 @@ test.skip('renders with ColorMode component', () => {
     },
   }
   const root = renderer.create(
-    wrapRootElement(
-      {
-        element: <Consumer />,
-      },
-      {}
-    )
+    wrapRootElement({
+      element: <Consumer />,
+    })
   )
   expect(context!.theme!.colors?.primary).toEqual('tomato')
   const tree = root.toTree()
