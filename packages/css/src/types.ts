@@ -299,6 +299,16 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingY?: StandardCSSProperties['paddingTop']
+  // TODO: Move me to `MultiplesCSSProperties type and colocate it with the
+  // multiples object possibly.
+  /**
+   * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
+   *
+   * @see https://theme-ui.com/sx-prop#theme-aware-properties
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
+  size?: StandardCSSProperties['width']
 }
 
 interface OverwriteCSSProperties {
