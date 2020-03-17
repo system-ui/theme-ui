@@ -17,7 +17,6 @@ export * from '@theme-ui/components'
 export {
   css,
   get,
-  ColorMode,
   CSSObject,
   CSSProperties,
   CSSPseudoSelectorProps,
