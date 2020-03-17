@@ -5,6 +5,7 @@ import { scales, aliases } from './css'
 import './sanitize.css'
 
 export { Grid, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
+export * from './Flex'
 
 export const jsx = (type, props, ...children) => {
   if (props.css) throw new Error('Using the `css` prop is disallowed.')
