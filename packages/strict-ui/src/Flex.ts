@@ -16,7 +16,14 @@ export const Flex = (
       jsx(
         'div',
         {
-          sx: index !== 0 ? { marginLeft: props.gap } : {},
+          sx:
+            index !== 0
+              ? {
+                  [props.flexDirection === 'column'
+                    ? 'marginTop'
+                    : 'marginLeft']: props.gap,
+                }
+              : {},
         },
         child
       )
