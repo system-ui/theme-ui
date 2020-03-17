@@ -48,7 +48,6 @@ injectGlobal`
     box-sizing: content-box;
   }
   h1 {
-    margin: 0.7em 0;
     font-size: 2em;
   }
   b,
@@ -114,9 +113,6 @@ injectGlobal`
   }
   svg:not(:root) {
     overflow: hidden;
-  }
-  figure {
-    margin: 1em 40px;
   }
   progress {
     vertical-align: baseline;
@@ -206,8 +202,8 @@ injectGlobal`
   *,
   *:before,
   *:after {
-    box-sizing: border-box!important;
-    margin: 0!important;
+    box-sizing: border-box;
+    margin: 0;
   }
   img {
     display: inline-block;
