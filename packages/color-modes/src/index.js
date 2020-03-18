@@ -50,17 +50,14 @@ const useColorModeState = (theme = {}) => {
 
   // initialize state
   React.useEffect(() => {
-    const stored = storage.get()
+    const stored = !theme.noLocalStorageForColorMode && storage.get()
     document.body.classList.remove('theme-ui-' + stored)
-    if (
-      (!stored || theme.noLocalStorageForColorMode) &&
-      theme.useColorSchemeMediaQuery
-    ) {
+    if (!stored && theme.useColorSchemeMediaQuery) {
       const query = getMediaQuery()
       setMode(query)
       return
     }
-    if (!stored || theme.noLocalStorageForColorMode || stored === mode) return
+    if (!stored || stored === mode) return
     setMode(stored)
   }, [])
 
