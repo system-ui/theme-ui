@@ -559,6 +559,11 @@ export interface Theme {
   useBorderBox?: boolean
 
   /**
+   * If true, does not save color mode as a localStorage value.
+   */
+  noLocalStorageForColorMode?: boolean
+
+  /**
    * Define the colors that are available through this theme
    */
   colors?: ColorMode & {
