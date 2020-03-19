@@ -6,7 +6,7 @@ import { Flex as Reflex, BoxProps } from 'reflexbox'
 export const Flex = (
   props: BoxProps & {
     gap?: number
-    children: React.ReactChildren | React.ReactChildren[]
+    children: React.ReactNode
   }
 ) => {
   let { children, ...rest } = props
