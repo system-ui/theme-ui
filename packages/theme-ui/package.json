@@ -1,7 +1,7 @@
 {
   "name": "theme-ui",
-  "version": "0.3.1",
-  "description": "Build consistent, themeable React UIs based on design system constraints",
+  "version": "0.4.0-alpha.0",
+  "description": "The Design Graph Framework",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -14,12 +14,12 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/color-modes": "^0.3.1",
-    "@theme-ui/components": "^0.3.1",
-    "@theme-ui/core": "^0.3.1",
-    "@theme-ui/css": "^0.3.1",
-    "@theme-ui/mdx": "^0.3.0",
-    "@theme-ui/theme-provider": "^0.3.1"
+    "@theme-ui/color-modes": "^0.4.0-alpha.0",
+    "@theme-ui/components": "^0.4.0-alpha.0",
+    "@theme-ui/core": "^0.4.0-alpha.0",
+    "@theme-ui/css": "^0.4.0-alpha.0",
+    "@theme-ui/mdx": "^0.4.0-alpha.0",
+    "@theme-ui/theme-provider": "^0.4.0-alpha.0"
   },
   "keywords": [
     "theme-ui",

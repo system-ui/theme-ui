@@ -33,7 +33,7 @@ export default props => (
 
 <Note>
 
-Under the hood, Theme UI uses a [custom pragma comment](/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to the Emotion's `jsx` function.
+Under the hood, Theme UI uses a [custom pragma comment](/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to Emotion's `jsx` function.
 The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
 This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 This is intended as a complete replacement for the Emotion custom JSX pragma.
