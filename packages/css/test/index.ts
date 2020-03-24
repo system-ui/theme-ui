@@ -160,6 +160,25 @@ test('handles all core styled system props', () => {
   })
 })
 
+test('handles css logical properties', () => {
+  const result = css({
+    borderInlineStartWidth: 'thin',
+    borderStartEndRadius: 'small',
+    marginInlineStart: 'auto',
+    maxBlockSize: 'large',
+    paddingInline: 0,
+    marginBlockEnd: 2,
+  })({ theme })
+  expect(result).toEqual({
+    borderInlineStartWidth: 1,
+    borderStartEndRadius: 5,
+    maxBlockSize: 16,
+    paddingInline: 0,
+    marginBlockEnd: 8,
+    marginInlineStart: 'auto',
+  })
+})
+
 test('works with the css prop', () => {
   const result = css({
     color: 'primary',
