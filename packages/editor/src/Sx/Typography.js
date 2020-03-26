@@ -32,6 +32,7 @@ export const SxTypography = ({
           onChange({ fontFamily })
         }}
         options={['inherit', ...Object.keys(fonts)]}
+        sx={{ zIndex: 3 }}
       />
       <div
         sx={{
