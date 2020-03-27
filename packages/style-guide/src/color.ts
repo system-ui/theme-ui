@@ -1,6 +1,7 @@
 import Color from 'color'
 
-export const toHex = raw => {
+type ColorArgument = ConstructorParameters<typeof Color>[0]
+export const toHex = (raw: ColorArgument) => {
   try {
     return Color(raw).hex()
   } catch (e) {
@@ -8,7 +9,7 @@ export const toHex = raw => {
   }
 }
 
-export const toRGB = raw => {
+export const toRGB = (raw: ColorArgument) => {
   try {
     return Color(raw)
       .rgb()
@@ -18,7 +19,7 @@ export const toRGB = raw => {
   }
 }
 
-export const toHSL = raw => {
+export const toHSL = (raw: ColorArgument) => {
   try {
     return Color(raw)
       .hsl()
