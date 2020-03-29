@@ -1,6 +1,7 @@
 export { Box } from './Box'
 export { Flex } from './Flex'
 export { Grid } from './Grid'
+export { Stack } from './Stack'
 export { Button } from './Button'
 export { Link } from './Link'
 export { Text } from './Text'

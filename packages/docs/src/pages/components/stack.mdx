@@ -1,0 +1,71 @@
+---
+title: Stack
+---
+
+# Stack
+
+Use the `Stack` component as a layout primitive to add spaces between components. It allows you to define
+spacing in one direction, either `row` or `column`. This is very useful when stacking components within a bigger grid system. 
+
+```js
+import { Stack, Box, Grid } from 'theme-ui'
+```
+
+```jsx live=true
+
+<Grid
+  gap={3}
+  columns={2}>
+  <Box bg="muted">
+    <Stack gap={3} flow="row">
+      <Box bg="primary" color="white">Stack Item</Box>
+      <Box bg="primary" color="white">Stack Item</Box>
+      <Box bg="primary" color="white">Stack Item</Box>
+    </Stack>
+  </Box>
+  <Box bg='muted'>Box</Box>
+</Grid>
+```
+
+Change the spacing by using the gap property
+
+```js
+import { Stack, Box } from 'theme-ui'
+```
+
+```jsx live=true
+<Stack gap="3">
+  <Box bg="primary" color="white">Stack Item</Box>
+  <Box bg="muted">Stack Item</Box>
+  <Box bg="primary" color="white">Stack Item</Box>
+</Stack>
+```
+
+Want to stack items horizontally? Use the flow property
+
+```js
+import { Stack, Box } from 'theme-ui'
+```
+
+```jsx live=true
+<Stack flow={"column"}>
+  <Box bg="primary" color="white">Stack Item</Box>
+  <Box bg="muted">Stack Item</Box>
+  <Box bg="primary" color="white">Stack Item</Box>
+</Stack>
+```
+
+The Stack component Supports responsive values too
+
+
+```js
+import { Stack, Box } from 'theme-ui'
+```
+
+```jsx live=true
+<Stack flow={["row", "row", "row", "column"]} gap={[3,3,4]}>
+  <Box bg="primary" color="white">Stack Item</Box>
+  <Box bg="muted">Stack Item</Box>
+  <Box bg="primary" color="white">Stack Item</Box>
+</Stack>
+```

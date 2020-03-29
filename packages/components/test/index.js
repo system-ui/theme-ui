@@ -8,6 +8,7 @@ import {
   Card,
   Flex,
   Grid,
+  Stack,
   Heading,
   Image,
   Link,
