@@ -4,20 +4,20 @@ title: Stack
 
 # Stack
 
-Use the `Stack` component as a layout primitive to add spaces between components. It allows you to define
-spacing in one direction, either `row` or `column`. This is very useful when stacking components within a bigger grid system. 
+Use the `Stack` component as a layout primitive to add spaces between components.
+This is very useful when stacking components within a bigger grid system, as it allows you to maintain a vertical rhythm.
+It also enforces the decoupling of layout from components.
 
 ```js
 import { Stack, Box, Grid } from 'theme-ui'
 ```
 
 ```jsx live=true
-
 <Grid
   gap={3}
   columns={2}>
   <Box bg="muted">
-    <Stack gap={3} flow="row">
+    <Stack>
       <Box bg="primary" color="white">Stack Item</Box>
       <Box bg="primary" color="white">Stack Item</Box>
       <Box bg="primary" color="white">Stack Item</Box>
@@ -27,35 +27,28 @@ import { Stack, Box, Grid } from 'theme-ui'
 </Grid>
 ```
 
-Change the spacing by using the gap property
+You can change the spacing by using the gap property
 
 ```js
 import { Stack, Box } from 'theme-ui'
 ```
 
 ```jsx live=true
-<Stack gap="3">
-  <Box bg="primary" color="white">Stack Item</Box>
-  <Box bg="muted">Stack Item</Box>
-  <Box bg="primary" color="white">Stack Item</Box>
-</Stack>
+<Grid
+  gap={3}
+  columns={2}>
+  <Box bg="muted">
+    <Stack gap={3}>
+      <Box bg="primary" color="white">Stack Item</Box>
+      <Box bg="primary" color="white">Stack Item</Box>
+      <Box bg="primary" color="white">Stack Item</Box>
+    </Stack>
+  </Box>
+  <Box bg='muted'>Box</Box>
+</Grid>
 ```
 
-Want to stack items horizontally? Use the flow property
-
-```js
-import { Stack, Box } from 'theme-ui'
-```
-
-```jsx live=true
-<Stack flow={"column"}>
-  <Box bg="primary" color="white">Stack Item</Box>
-  <Box bg="muted">Stack Item</Box>
-  <Box bg="primary" color="white">Stack Item</Box>
-</Stack>
-```
-
-The Stack component Supports responsive values too
+The Stack component Supports responsive values too. Try resizing this screen.
 
 
 ```js
@@ -63,9 +56,9 @@ import { Stack, Box } from 'theme-ui'
 ```
 
 ```jsx live=true
-<Stack flow={["row", "row", "row", "column"]} gap={[3,3,4]}>
+<Stack gap={[2, 3, 4]}>
   <Box bg="primary" color="white">Stack Item</Box>
-  <Box bg="muted">Stack Item</Box>
+  <Box bg="primary" color="white">Stack Item</Box>
   <Box bg="primary" color="white">Stack Item</Box>
 </Stack>
 ```
