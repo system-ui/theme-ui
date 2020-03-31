@@ -37,8 +37,11 @@ const RadioIcon = props => (
   </React.Fragment>
 )
 
-export const Radio = React.forwardRef(
-  ({ className, sx, variant = 'radio', ...props }, ref) => (
+export const Radio = React.forwardRef(function Radio(
+  { className, sx, variant = 'radio', ...props },
+  ref
+) {
+  return (
     <Box>
       <Box
         ref={ref}
@@ -76,4 +79,4 @@ export const Radio = React.forwardRef(
       />
     </Box>
   )
-)
+})

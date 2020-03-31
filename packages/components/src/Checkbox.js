@@ -37,8 +37,11 @@ const CheckboxIcon = props => (
   </React.Fragment>
 )
 
-export const Checkbox = React.forwardRef(
-  ({ className, sx, variant = 'checkbox', ...props }, ref) => (
+export const Checkbox = React.forwardRef(function Checkbox(
+  { className, sx, variant = 'checkbox', ...props },
+  ref
+) {
+  return (
     <Box>
       <Box
         ref={ref}
@@ -76,4 +79,4 @@ export const Checkbox = React.forwardRef(
       />
     </Box>
   )
-)
+})

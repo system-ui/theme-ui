@@ -13,23 +13,24 @@ const countToColumns = n =>
     ? n.map(countToColumns)
     : !!n && (typeof n === 'number' ? `repeat(${n}, 1fr)` : n)
 
-export const Grid = React.forwardRef(
-  ({ width, columns, gap = 3, ...props }, ref) => {
-    const gridTemplateColumns = !!width
-      ? widthToColumns(width)
-      : countToColumns(columns)
+export const Grid = React.forwardRef(function Grid(
+  { width, columns, gap = 3, ...props },
+  ref
+) {
+  const gridTemplateColumns = !!width
+    ? widthToColumns(width)
+    : countToColumns(columns)
 
-    return (
-      <Box
-        ref={ref}
-        {...props}
-        __themeKey="grids"
-        __css={{
-          display: 'grid',
-          gridGap: gap,
-          gridTemplateColumns,
-        }}
-      />
-    )
-  }
-)
+  return (
+    <Box
+      ref={ref}
+      {...props}
+      __themeKey="grids"
+      __css={{
+        display: 'grid',
+        gridGap: gap,
+        gridTemplateColumns,
+      }}
+    />
+  )
+})

@@ -1,20 +1,20 @@
 import React from 'react'
 import Box from './Box'
 
-export const Embed = React.forwardRef(
-  (
-    {
-      ratio = 16 / 9,
-      src,
-      frameBorder = 0,
-      allowFullScreen = true,
-      width = 560,
-      height = 315,
-      allow,
-      ...props
-    },
-    ref
-  ) => (
+export const Embed = React.forwardRef(function Embed(
+  {
+    ratio = 16 / 9,
+    src,
+    frameBorder = 0,
+    allowFullScreen = true,
+    width = 560,
+    height = 315,
+    allow,
+    ...props
+  },
+  ref
+) {
+  return (
     <Box
       {...props}
       __css={{
@@ -45,4 +45,4 @@ export const Embed = React.forwardRef(
       />
     </Box>
   )
-)
+})

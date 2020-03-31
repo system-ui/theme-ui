@@ -15,6 +15,7 @@ const variant = ({ theme, variant, __themeKey = 'variants' }) =>
   css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
 
 export const Box = styled('div', {
+  label: 'Box',
   shouldForwardProp,
 })(
   {

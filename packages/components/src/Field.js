@@ -4,13 +4,14 @@ import { Label } from './Label'
 import { Input } from './Input'
 import { getMargin, omitMargin } from './util'
 
-export const Field = React.forwardRef(
-  ({ as: Control = Input, label, name, ...props }, ref) => {
-    return (
-      <Box {...getMargin(props)}>
-        <Label htmlFor={name}>{label}</Label>
-        <Control ref={ref} id={name} name={name} {...omitMargin(props)} />
-      </Box>
-    )
-  }
-)
+export const Field = React.forwardRef(function Field(
+  { as: Control = Input, label, name, ...props },
+  ref
+) {
+  return (
+    <Box {...getMargin(props)}>
+      <Label htmlFor={name}>{label}</Label>
+      <Control ref={ref} id={name} name={name} {...omitMargin(props)} />
+    </Box>
+  )
+})
