@@ -1,0 +1,74 @@
+---
+title: Custom CacheProvider
+---
+
+# Custom CacheProvider
+
+## Style container
+
+You may come across a situation where you want to inject the generated styles into a
+different element than the current document head (an iframe perhaps).
+
+By using the CacheProvider from `@emotion/core` and `createCache` from `@emotion/cache` you can
+specify the target container element.
+
+```jsx
+import { ThemeProvider } from 'theme-ui'
+import { CacheProvider } from '@emotion/core'
+import createCache from '@emotion/cache'
+
+/**
+ * @see https://emotion.sh/docs/@emotion/cache
+ */
+const cache = createCache({
+  container: document.getElementById('my-cool-iframe'),
+})
+
+const theme = {
+  colors: {
+    text: 'tomato',
+  },
+}
+
+export default ({ children }) => {
+  return (
+    <CacheProvider value={cache}>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </CacheProvider>
+  )
+}
+```
+
+### With react-frame-component
+
+```jsx
+import { ThemeProvider } from 'theme-ui'
+import { CacheProvider } from '@emotion/core'
+import createCache from '@emotion/cache'
+import Iframe, { FrameContextConsumer } from 'react-frame-component'
+
+const theme = {
+  colors: {
+    text: 'tomato',
+  },
+}
+
+export default ({ children }) => {
+  return (
+    <Iframe initialContent="IFRAME_CONTENT">
+      <FrameContextConsumer>
+        {frameContext => {
+          const cache = createCache({
+            container: frameContext.document.head,
+          })
+          return (
+            <CacheProvider value={cache}>
+              <ThemeProvider theme={theme}>{children}</ThemeProvider>
+            </CacheProvider>
+          )
+        }}
+      </FrameContextConsumer>
+    </Iframe>
+  )
+}
+```
