@@ -4,13 +4,19 @@ title: Getting Started
 
 # Getting Started
 
-Install Theme UI.
+The `theme-ui` package includes a recommended set of packages out of the box, including [MDX support](/packages/mdx) and a set of [primitive UI components](/packages/components).
+However, if you would prefer a minimal installation, you can instead start with the `@theme-ui/core` package. For more information, see the [core package documention](/packages/core).
+
+## Setup
+
+#### 1. Install Theme UI:
 
 ```sh
 npm i theme-ui
 ```
 
-Create a theme object to include custom color, typography, and layout values.
+#### 2. Create a theme object
+Include custom color, typography, and layout values:
 
 ```js
 // example theme.js
@@ -34,7 +40,9 @@ If you're using Gatsby, see the [Getting Started with Gatsby](/getting-started/g
 
 </Note>
 
-Add the theme to your application with the `ThemeProvider`, passing in the `theme` object as a prop.
+#### 3. Add the theme to your application
+
+Using the `ThemeProvider`, pass in the `theme` object as a prop:
 
 ```jsx
 // basic usage
