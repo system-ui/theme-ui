@@ -3,6 +3,7 @@ title: Theme Spec
 ---
 
 import ThemeScales from '../components/theme-scales'
+import ColorKeys from '../components/color-keys'
 
 # Theme Specification
 
@@ -36,7 +37,7 @@ A theme does not require that all these fields be present and can include additi
     primary: '#07c',
     secondary: '#05a',
     accent: '#609',
-    muted: '#f6f6f6f',
+    muted: '#f6f6f6',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -59,14 +60,7 @@ A theme does not require that all these fields be present and can include additi
 
 The `theme.colors` scale (i.e. color palette) should be an object literal with the following keys.
 
-| Key          | Description                                                                                                     |
-| ------------ | --------------------------------------------------------------------------------------------------------------- |
-| `text`       | Body foreground color                                                                                           |
-| `background` | Body background color                                                                                           |
-| `primary`    | Primary brand color for links, buttons, etc.                                                                    |
-| `secondary`  | A secondary brand color for alternative styling                                                                 |
-| `accent`     | A contrast color for emphasizing UI                                                                             |
-| `muted`      | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
+<ColorKeys />
 
 Other color keys can be added, including raw color values for aliasing the values above.
 
