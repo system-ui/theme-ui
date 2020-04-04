@@ -1,6 +1,9 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
+import { useVariant } from './util'
 
 const CheckboxChecked = props => (
   <SVG {...props}>
@@ -18,7 +21,7 @@ const CheckboxIcon = props => (
   <React.Fragment>
     <CheckboxChecked
       {...props}
-      __css={{
+      sx={{
         display: 'none',
         'input:checked ~ &': {
           display: 'block',
@@ -27,7 +30,7 @@ const CheckboxIcon = props => (
     />
     <CheckboxUnchecked
       {...props}
-      __css={{
+      sx={{
         display: 'block',
         'input:checked ~ &': {
           display: 'none',
@@ -38,11 +41,12 @@ const CheckboxIcon = props => (
 )
 
 export const Checkbox = React.forwardRef(function Checkbox(
-  { className, sx, variant = 'checkbox', ...props },
+  { className, variant = 'checkbox', ...props },
   ref
 ) {
+  const variation = useVariant('forms', variant)
   return (
-    <Box>
+    <Box sx={variation.container}>
       <Box
         ref={ref}
         as="input"
@@ -55,16 +59,14 @@ export const Checkbox = React.forwardRef(function Checkbox(
           width: 1,
           height: 1,
           overflow: 'hidden',
+          ...(variation.input && { ...variation.input }),
         }}
       />
       <Box
         as={CheckboxIcon}
         aria-hidden="true"
-        __themeKey="forms"
-        variant={variant}
         className={className}
-        sx={sx}
-        __css={{
+        sx={{
           mr: 2,
           borderRadius: 4,
           color: 'gray',
@@ -75,6 +77,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
             color: 'primary',
             bg: 'highlight',
           },
+          ...(variation.icon && { ...variation.icon }),
         }}
       />
     </Box>

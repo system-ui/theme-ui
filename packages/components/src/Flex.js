@@ -1,6 +1,5 @@
-import styled from '@emotion/styled'
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import Box from './Box'
 
-export const Flex = styled(Box, { label: 'Flex' })({
-  display: 'flex',
-})
+export const Flex = props => <Box sx={{ display: 'flex' }} {...props} />

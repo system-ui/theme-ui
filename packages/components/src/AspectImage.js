@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import { AspectRatio } from './AspectRatio'
 import { Image } from './Image'
@@ -11,7 +13,7 @@ export const AspectImage = React.forwardRef(function AspectImage(
       <Image
         ref={ref}
         {...props}
-        __css={{
+        sx={{
           objectFit: 'cover',
         }}
       />

@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 import { IconButton } from './IconButton'

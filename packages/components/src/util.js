@@ -1,3 +1,7 @@
+import { ThemeContext } from '@emotion/core'
+import React from 'react'
+import { get } from '@theme-ui/css'
+
 export const getProps = test => props => {
   const next = {}
   for (const key in props) {
@@ -10,3 +14,8 @@ const MRE = /^m[trblxy]?$/
 
 export const getMargin = getProps(k => MRE.test(k))
 export const omitMargin = getProps(k => !MRE.test(k))
+
+export const useVariant = (key, variant) => {
+  const theme = React.useContext(ThemeContext)
+  return variant ? get(theme, key + '.' + variant) : {}
+}

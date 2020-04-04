@@ -1,7 +1,9 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
-import { getMargin, omitMargin } from './util'
+import { getMargin, omitMargin, useVariant } from './util'
 
 const DownArrow = props => (
   <SVG {...props}>
@@ -9,20 +11,23 @@ const DownArrow = props => (
   </SVG>
 )
 
-export const Select = React.forwardRef(function Select(props, ref) {
+export const Select = React.forwardRef(function Select(
+  { variant = 'select', ...props },
+  ref
+) {
+  const variation = useVariant('forms', variant)
   return (
     <Box
       {...getMargin(props)}
       sx={{
         display: 'flex',
+        ...variation.container,
       }}>
       <Box
         ref={ref}
         as="select"
-        variant="select"
         {...omitMargin(props)}
-        __themeKey="forms"
-        __css={{
+        sx={{
           display: 'block',
           width: '100%',
           p: 2,
@@ -33,6 +38,7 @@ export const Select = React.forwardRef(function Select(props, ref) {
           borderRadius: 4,
           color: 'inherit',
           bg: 'transparent',
+          ...variation.select,
         }}
       />
       <DownArrow
@@ -40,6 +46,7 @@ export const Select = React.forwardRef(function Select(props, ref) {
           ml: -28,
           alignSelf: 'center',
           pointerEvents: 'none',
+          ...variation.arrow,
         }}
       />
     </Box>

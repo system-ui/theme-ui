@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 
@@ -17,7 +19,7 @@ export const Embed = React.forwardRef(function Embed(
   return (
     <Box
       {...props}
-      __css={{
+      sx={{
         width: '100%',
         height: 0,
         paddingBottom: 100 / ratio + '%',
@@ -33,7 +35,7 @@ export const Embed = React.forwardRef(function Embed(
         frameBorder={frameBorder}
         allowFullScreen={allowFullScreen}
         allow={allow}
-        __css={{
+        sx={{
           position: 'absolute',
           width: '100%',
           height: '100%',

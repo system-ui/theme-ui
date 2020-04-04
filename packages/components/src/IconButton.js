@@ -1,18 +1,20 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
+import { useVariant } from './util'
 
 export const IconButton = React.forwardRef(function IconButton(
-  { size = 32, ...props },
+  { size = 32, variant = 'icon', ...props },
   ref
 ) {
+  const variation = useVariant('buttons', variant)
   return (
     <Box
       ref={ref}
       as="button"
-      variant="icon"
       {...props}
-      __themeKey="buttons"
-      __css={{
+      sx={{
         appearance: 'none',
         display: 'inline-flex',
         alignItems: 'center',
@@ -24,6 +26,7 @@ export const IconButton = React.forwardRef(function IconButton(
         bg: 'transparent',
         border: 'none',
         borderRadius: 4,
+        ...variation,
       }}
     />
   )

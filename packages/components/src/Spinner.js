@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import { keyframes } from '@emotion/core'
 import Box from './Box'
@@ -38,7 +40,7 @@ export const Spinner = React.forwardRef(function Spinner(
       stroke="currentcolor"
       role="img"
       {...props}
-      __css={{
+      sx={{
         color: 'primary',
         overflow: 'visible',
       }}>
@@ -51,7 +53,7 @@ export const Spinner = React.forwardRef(function Spinner(
         r={r}
         strokeDasharray={C}
         strokeDashoffset={offset}
-        __css={{
+        sx={{
           transformOrigin: '50% 50%',
           animationName: spin.toString(),
           animationTimingFunction: 'linear',

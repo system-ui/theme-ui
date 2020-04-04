@@ -1,5 +1,8 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
+import { useVariant } from './util'
 
 const px = n => (typeof n === 'number' ? n + 'px' : n)
 
@@ -14,22 +17,24 @@ const countToColumns = n =>
     : !!n && (typeof n === 'number' ? `repeat(${n}, 1fr)` : n)
 
 export const Grid = React.forwardRef(function Grid(
-  { width, columns, gap = 3, ...props },
+  { width, columns, gap = 3, variant, ...props },
   ref
 ) {
   const gridTemplateColumns = !!width
     ? widthToColumns(width)
     : countToColumns(columns)
 
+  const variation = useVariant('grids', variant)
+
   return (
     <Box
       ref={ref}
       {...props}
-      __themeKey="grids"
-      __css={{
+      sx={{
         display: 'grid',
         gridGap: gap,
         gridTemplateColumns,
+        ...variation,
       }}
     />
   )

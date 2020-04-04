@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import { Link } from './Link'
 
@@ -7,7 +9,7 @@ export const NavLink = React.forwardRef(function NavLink(props, ref) {
       ref={ref}
       variant="nav"
       {...props}
-      __css={{
+      sx={{
         color: 'inherit',
         textDecoration: 'none',
         fontWeight: 'bold',

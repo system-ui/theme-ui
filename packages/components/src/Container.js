@@ -1,17 +1,23 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
+import { useVariant } from './util'
 
-export const Container = React.forwardRef(function Container(props, ref) {
+export const Container = React.forwardRef(function Container(
+  { variant, ...props },
+  ref
+) {
+  const variation = useVariant('layout', variant)
   return (
     <Box
       ref={ref}
-      variant="container"
       {...props}
-      __themeKey="layout"
-      __css={{
+      sx={{
         width: '100%',
         maxWidth: 'container',
         mx: 'auto',
+        ...variation,
       }}
     />
   )

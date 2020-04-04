@@ -1,15 +1,20 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
+import { useVariant } from './util'
 
-export const Button = React.forwardRef(function Button(props, ref) {
+export const Button = React.forwardRef(function Button(
+  { variant = 'primary', ...props },
+  ref
+) {
+  const variation = useVariant('buttons', variant)
   return (
     <Box
       ref={ref}
       as="button"
-      variant="primary"
       {...props}
-      __themeKey="buttons"
-      __css={{
+      sx={{
         appearance: 'none',
         display: 'inline-block',
         textAlign: 'center',
@@ -22,6 +27,7 @@ export const Button = React.forwardRef(function Button(props, ref) {
         bg: 'primary',
         border: 0,
         borderRadius: 4,
+        ...variation,
       }}
     />
   )

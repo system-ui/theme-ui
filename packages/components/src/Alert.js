@@ -1,13 +1,15 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
-import Box from './Box'
+import { useVariant } from './util'
 
-export const Alert = React.forwardRef(function Alert(props, ref) {
+export const Alert = React.forwardRef(function Alert({ variant, ...props }, ref) {
+  const variation = useVariant('alerts', variant)
   return (
-    <Box
+    <div
       ref={ref}
       {...props}
-      __themeKey="alerts"
-      __css={{
+      sx={{
         display: 'flex',
         alignItems: 'center',
         px: 3,
@@ -16,6 +18,7 @@ export const Alert = React.forwardRef(function Alert(props, ref) {
         color: 'white',
         bg: 'primary',
         borderRadius: 4,
+        ...variation,
       }}
     />
   )

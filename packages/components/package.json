@@ -10,11 +10,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
-    "@styled-system/color": "^5.1.2",
-    "@styled-system/should-forward-prop": "^5.1.2",
-    "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "^0.4.0-alpha.0"
+    "@theme-ui/core": "^0.4.0-alpha.0"
   },
   "peerDependencies": {
     "react": "^16.8.0"

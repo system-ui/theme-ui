@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 
@@ -21,7 +23,7 @@ export const AspectRatio = React.forwardRef(function AspectRatio(
       />
       <Box
         {...props}
-        __css={{
+        sx={{
           position: 'absolute',
           top: 0,
           right: 0,

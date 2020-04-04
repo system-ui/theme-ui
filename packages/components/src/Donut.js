@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 
@@ -24,7 +26,7 @@ export const Donut = React.forwardRef(function Donut(
       aria-valuemin={min}
       aria-valuemax={max}
       {...props}
-      __css={{
+      sx={{
         color: 'primary',
       }}>
       {title && <title>{title}</title>}

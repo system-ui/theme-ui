@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import Box from './Box'
 
 export default ({ size = 24, ...props }) => (

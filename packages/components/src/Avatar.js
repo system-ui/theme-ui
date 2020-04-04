@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import { Image } from './Image'
 
@@ -12,7 +14,7 @@ export const Avatar = React.forwardRef(function Avatar(
       height={size}
       variant="avatar"
       {...props}
-      __css={{
+      sx={{
         borderRadius: 9999,
       }}
     />

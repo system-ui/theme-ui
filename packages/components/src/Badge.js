@@ -1,13 +1,19 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
+import { useVariant } from './util'
 
-export const Badge = React.forwardRef(function Badge(props, ref) {
+export const Badge = React.forwardRef(function Badge(
+  { variant, ...props },
+  ref
+) {
+  const variation = useVariant('badges', variant)
   return (
     <Box
       ref={ref}
       {...props}
-      __themeKey="badges"
-      __css={{
+      sx={{
         display: 'inline-block',
         verticalAlign: 'baseline',
         fontSize: 0,
@@ -17,6 +23,7 @@ export const Badge = React.forwardRef(function Badge(props, ref) {
         borderRadius: 2,
         color: 'white',
         bg: 'primary',
+        ...variation,
       }}
     />
   )

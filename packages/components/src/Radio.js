@@ -1,6 +1,9 @@
+/** @jsx jsx */
+import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
+import { useVariant } from './util'
 
 const RadioChecked = props => (
   <SVG {...props}>
@@ -18,7 +21,7 @@ const RadioIcon = props => (
   <React.Fragment>
     <RadioChecked
       {...props}
-      __css={{
+      sx={{
         display: 'none',
         'input:checked ~ &': {
           display: 'block',
@@ -27,7 +30,7 @@ const RadioIcon = props => (
     />
     <RadioUnchecked
       {...props}
-      __css={{
+      sx={{
         display: 'block',
         'input:checked ~ &': {
           display: 'none',
@@ -38,11 +41,12 @@ const RadioIcon = props => (
 )
 
 export const Radio = React.forwardRef(function Radio(
-  { className, sx, variant = 'radio', ...props },
+  { className, variant = 'radio', ...props },
   ref
 ) {
+  const variation = useVariant('forms', variant)
   return (
-    <Box>
+    <Box sx={variation.container}>
       <Box
         ref={ref}
         as="input"
@@ -55,16 +59,14 @@ export const Radio = React.forwardRef(function Radio(
           width: 1,
           height: 1,
           overflow: 'hidden',
+          ...variation.radio,
         }}
       />
       <Box
         as={RadioIcon}
         aria-hidden="true"
-        __themeKey="forms"
-        variant={variant}
         className={className}
-        sx={sx}
-        __css={{
+        sx={{
           // todo: system props??
           mr: 2,
           borderRadius: 9999,
@@ -75,6 +77,7 @@ export const Radio = React.forwardRef(function Radio(
           'input:focus ~ &': {
             bg: 'highlight',
           },
+          ...variation.icon,
         }}
       />
     </Box>
