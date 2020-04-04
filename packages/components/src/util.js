@@ -17,5 +17,11 @@ export const omitMargin = getProps(k => !MRE.test(k))
 
 export const useVariant = (key, variant) => {
   const theme = React.useContext(ThemeContext)
-  return variant ? get(theme, key + '.' + variant) : {}
+  if (variant) {
+    const variation = get(theme, key + '.' + variant)
+    if (variation) {
+      return variation
+    }
+  }
+  return {}
 }
