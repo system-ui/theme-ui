@@ -2,11 +2,12 @@
 import { jsx } from '@theme-ui/core'
 import React from 'react'
 import { useVariant } from './util'
+import Box from './Box'
 
 export const Alert = React.forwardRef(function Alert({ variant, ...props }, ref) {
   const variantStyle = useVariant('alerts', variant)
   return (
-    <div
+    <Box
       ref={ref}
       {...props}
       __css={{
