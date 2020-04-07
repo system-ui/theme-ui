@@ -4,7 +4,7 @@ import React from 'react'
 import { useVariant } from './util'
 
 export const Alert = React.forwardRef(function Alert({ variant, ...props }, ref) {
-  const variation = useVariant('alerts', variant)
+  const variantStyle = useVariant('alerts', variant)
   return (
     <div
       ref={ref}
@@ -18,7 +18,7 @@ export const Alert = React.forwardRef(function Alert({ variant, ...props }, ref)
         color: 'white',
         bg: 'primary',
         borderRadius: 4,
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

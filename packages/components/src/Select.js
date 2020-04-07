@@ -15,13 +15,13 @@ export const Select = React.forwardRef(function Select(
   { variant = 'select', ...props },
   ref
 ) {
-  const variation = useVariant('forms', variant)
+  const variantStyle = useVariant('forms', variant)
   return (
     <Box
       {...getMargin(props)}
       sx={{
         display: 'flex',
-        ...variation.container,
+        ...variantStyle.container,
       }}>
       <Box
         ref={ref}
@@ -38,7 +38,7 @@ export const Select = React.forwardRef(function Select(
           borderRadius: 4,
           color: 'inherit',
           bg: 'transparent',
-          ...variation.select,
+          ...variantStyle.select,
         }}
       />
       <DownArrow
@@ -46,7 +46,7 @@ export const Select = React.forwardRef(function Select(
           ml: -28,
           alignSelf: 'center',
           pointerEvents: 'none',
-          ...variation.arrow,
+          ...variantStyle.arrow,
         }}
       />
     </Box>

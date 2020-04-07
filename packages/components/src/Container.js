@@ -8,7 +8,7 @@ export const Container = React.forwardRef(function Container(
   { variant, ...props },
   ref
 ) {
-  const variation = useVariant('layout', variant)
+  const variantStyle = useVariant('layout', variant)
   return (
     <Box
       ref={ref}
@@ -17,7 +17,7 @@ export const Container = React.forwardRef(function Container(
         width: '100%',
         maxWidth: 'container',
         mx: 'auto',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

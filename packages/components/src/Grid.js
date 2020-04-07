@@ -24,7 +24,7 @@ export const Grid = React.forwardRef(function Grid(
     ? widthToColumns(width)
     : countToColumns(columns)
 
-  const variation = useVariant('grids', variant)
+  const variantStyle = useVariant('grids', variant)
 
   return (
     <Box
@@ -34,7 +34,7 @@ export const Grid = React.forwardRef(function Grid(
         display: 'grid',
         gridGap: gap,
         gridTemplateColumns,
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

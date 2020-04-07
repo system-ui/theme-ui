@@ -44,9 +44,9 @@ export const Radio = React.forwardRef(function Radio(
   { className, variant = 'radio', ...props },
   ref
 ) {
-  const variation = useVariant('forms', variant)
+  const variantStyle = useVariant('forms', variant)
   return (
-    <Box sx={variation.container}>
+    <Box sx={variantStyle.container}>
       <Box
         ref={ref}
         as="input"
@@ -59,7 +59,7 @@ export const Radio = React.forwardRef(function Radio(
           width: 1,
           height: 1,
           overflow: 'hidden',
-          ...variation.radio,
+          ...variantStyle.radio,
         }}
       />
       <Box
@@ -77,7 +77,7 @@ export const Radio = React.forwardRef(function Radio(
           'input:focus ~ &': {
             bg: 'highlight',
           },
-          ...variation.icon,
+          ...variantStyle.icon,
         }}
       />
     </Box>

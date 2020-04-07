@@ -5,6 +5,6 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Text = React.forwardRef(function Text({ variant, ...props }, ref) {
-  const variation = useVariant('text', variant)
-  return <Box ref={ref} {...props} sx={variation} />
+  const variantStyle = useVariant('text', variant)
+  return <Box ref={ref} {...props} sx={variantStyle} />
 })

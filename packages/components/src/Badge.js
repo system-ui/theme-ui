@@ -8,7 +8,7 @@ export const Badge = React.forwardRef(function Badge(
   { variant, ...props },
   ref
 ) {
-  const variation = useVariant('badges', variant)
+  const variantStyle = useVariant('badges', variant)
   return (
     <Box
       ref={ref}
@@ -23,7 +23,7 @@ export const Badge = React.forwardRef(function Badge(
         borderRadius: 2,
         color: 'white',
         bg: 'primary',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

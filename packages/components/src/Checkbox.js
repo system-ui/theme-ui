@@ -44,9 +44,9 @@ export const Checkbox = React.forwardRef(function Checkbox(
   { className, variant = 'checkbox', ...props },
   ref
 ) {
-  const variation = useVariant('forms', variant)
+  const variantStyle = useVariant('forms', variant)
   return (
-    <Box sx={variation.container}>
+    <Box sx={variantStyle.container}>
       <Box
         ref={ref}
         as="input"
@@ -59,7 +59,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
           width: 1,
           height: 1,
           overflow: 'hidden',
-          ...(variation.input && { ...variation.input }),
+          ...(variantStyle.input && { ...variantStyle.input }),
         }}
       />
       <Box
@@ -77,7 +77,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
             color: 'primary',
             bg: 'highlight',
           },
-          ...(variation.icon && { ...variation.icon }),
+          ...(variantStyle.icon && { ...variantStyle.icon }),
         }}
       />
     </Box>

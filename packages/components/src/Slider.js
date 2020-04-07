@@ -15,7 +15,7 @@ const thumb = {
 }
 
 export const Slider = React.forwardRef(function Slider(props, ref) {
-  const variation = useVariant('forms', 'slider')
+  const variantStyle = useVariant('forms', 'slider')
   return (
     <Box
       ref={ref}
@@ -39,7 +39,7 @@ export const Slider = React.forwardRef(function Slider(props, ref) {
         '&::-webkit-slider-thumb': thumb,
         '&::-moz-range-thumb': thumb,
         '&::-ms-thumb': thumb,
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

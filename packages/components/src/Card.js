@@ -8,6 +8,6 @@ export const Card = React.forwardRef(function Card(
   { variant = 'primary', ...props },
   ref
 ) {
-  const variation = useVariant('cards', variant)
-  return <Box ref={ref} {...props} sx={variation} />
+  const variantStyle = useVariant('cards', variant)
+  return <Box ref={ref} {...props} sx={variantStyle} />
 })

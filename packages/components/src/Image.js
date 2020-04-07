@@ -8,7 +8,7 @@ export const Image = React.forwardRef(function Image(
   { variant, ...props },
   ref
 ) {
-  const variation = useVariant('images', variant)
+  const variantStyle = useVariant('images', variant)
   return (
     <Box
       ref={ref}
@@ -17,7 +17,7 @@ export const Image = React.forwardRef(function Image(
       sx={{
         maxWidth: '100%',
         height: 'auto',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

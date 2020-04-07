@@ -8,7 +8,7 @@ export const Message = React.forwardRef(function Message(
   { variant, ...props },
   ref
 ) {
-  const variation = useVariant('messages', variant)
+  const variantStyle = useVariant('messages', variant)
   return (
     <Box
       ref={ref}
@@ -21,7 +21,7 @@ export const Message = React.forwardRef(function Message(
         borderLeftColor: 'primary',
         borderRadius: 4,
         bg: 'highlight',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

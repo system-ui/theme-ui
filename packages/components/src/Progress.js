@@ -5,7 +5,7 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Progress = React.forwardRef(function Progress(props, ref) {
-  const variation = useVariant('styles', 'progress')
+  const variantStyle = useVariant('styles', 'progress')
   return (
     <Box
       ref={ref}
@@ -32,7 +32,7 @@ export const Progress = React.forwardRef(function Progress(props, ref) {
         '&::-moz-progress-bar': {
           bg: 'currentcolor',
         },
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

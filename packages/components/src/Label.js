@@ -5,7 +5,7 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Label = React.forwardRef(function Label(props, ref) {
-  const variation = useVariant('forms', 'label')
+  const variantStyle = useVariant('forms', 'label')
   return (
     <Box
       ref={ref}
@@ -14,7 +14,7 @@ export const Label = React.forwardRef(function Label(props, ref) {
       sx={{
         width: '100%',
         display: 'flex',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

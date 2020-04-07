@@ -5,7 +5,7 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Textarea = React.forwardRef(function Textarea(props, ref) {
-  const variation = useVariant('forms', 'textarea')
+  const variantStyle = useVariant('forms', 'textarea')
   return (
     <Box
       ref={ref}
@@ -22,7 +22,7 @@ export const Textarea = React.forwardRef(function Textarea(props, ref) {
         borderRadius: 4,
         color: 'inherit',
         bg: 'transparent',
-        ...variation
+        ...variantStyle
       }}
     />
   )

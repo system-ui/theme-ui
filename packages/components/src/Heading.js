@@ -5,7 +5,7 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Heading = React.forwardRef(function Heading(props, ref) {
-  const variation = useVariant('text', 'heading')
+  const variantStyle = useVariant('text', 'heading')
   return (
     <Box
       ref={ref}
@@ -15,7 +15,7 @@ export const Heading = React.forwardRef(function Heading(props, ref) {
         fontFamily: 'heading',
         fontWeight: 'heading',
         lineHeight: 'heading',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

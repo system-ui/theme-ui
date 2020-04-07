@@ -8,7 +8,7 @@ export const Button = React.forwardRef(function Button(
   { variant = 'primary', ...props },
   ref
 ) {
-  const variation = useVariant('buttons', variant)
+  const variantStyle = useVariant('buttons', variant)
   return (
     <Box
       ref={ref}
@@ -27,7 +27,7 @@ export const Button = React.forwardRef(function Button(
         bg: 'primary',
         border: 0,
         borderRadius: 4,
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

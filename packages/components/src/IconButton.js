@@ -8,7 +8,7 @@ export const IconButton = React.forwardRef(function IconButton(
   { size = 32, variant = 'icon', ...props },
   ref
 ) {
-  const variation = useVariant('buttons', variant)
+  const variantStyle = useVariant('buttons', variant)
   return (
     <Box
       ref={ref}
@@ -26,7 +26,7 @@ export const IconButton = React.forwardRef(function IconButton(
         bg: 'transparent',
         border: 'none',
         borderRadius: 4,
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

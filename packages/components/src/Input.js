@@ -5,7 +5,7 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Input = React.forwardRef(function Input(props, ref) {
-  const variation = useVariant('forms', 'input')
+  const variantStyle = useVariant('forms', 'input')
   return (
     <Box
       ref={ref}
@@ -22,7 +22,7 @@ export const Input = React.forwardRef(function Input(props, ref) {
         borderRadius: 4,
         color: 'inherit',
         bg: 'transparent',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )

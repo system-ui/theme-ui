@@ -5,7 +5,7 @@ import Box from './Box'
 import { useVariant } from './util'
 
 export const Divider = React.forwardRef(function Divider(props, ref) {
-  const variation = useVariant('styles', 'hr')
+  const variantStyle = useVariant('styles', 'hr')
   return (
     <Box
       ref={ref}
@@ -17,7 +17,7 @@ export const Divider = React.forwardRef(function Divider(props, ref) {
         my: 2,
         border: 0,
         borderBottom: '1px solid',
-        ...variation,
+        ...variantStyle,
       }}
     />
   )
