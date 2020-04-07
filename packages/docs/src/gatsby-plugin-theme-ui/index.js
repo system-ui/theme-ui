@@ -90,14 +90,14 @@ export default {
       fontWeight: 'bold',
     },
     secondary: {
-      variant: 'buttons.primary',
       color: 'background',
       bg: 'secondary',
+      fontWeight: 'bold',
     },
     black: {
-      fontWeight: 'bold',
       color: 'background',
       bg: 'text',
+      fontWeight: 'bold',
       '&:hover, &:focus': {
         bg: 'primary',
       },
