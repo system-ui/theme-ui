@@ -14,7 +14,7 @@ export const Button = React.forwardRef(function Button(
       ref={ref}
       as="button"
       {...props}
-      sx={{
+      __css={{
         appearance: 'none',
         display: 'inline-block',
         textAlign: 'center',

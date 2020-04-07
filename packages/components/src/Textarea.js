@@ -11,7 +11,7 @@ export const Textarea = React.forwardRef(function Textarea(props, ref) {
       ref={ref}
       as="textarea"
       {...props}
-      sx={{
+      __css={{
         display: 'block',
         width: '100%',
         p: 2,

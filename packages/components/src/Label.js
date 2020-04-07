@@ -11,7 +11,7 @@ export const Label = React.forwardRef(function Label(props, ref) {
       ref={ref}
       as="label"
       {...props}
-      sx={{
+      __css={{
         width: '100%',
         display: 'flex',
         ...variantStyle,

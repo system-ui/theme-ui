@@ -21,7 +21,7 @@ const RadioIcon = props => (
   <React.Fragment>
     <RadioChecked
       {...props}
-      sx={{
+      __css={{
         display: 'none',
         'input:checked ~ &': {
           display: 'block',
@@ -30,7 +30,7 @@ const RadioIcon = props => (
     />
     <RadioUnchecked
       {...props}
-      sx={{
+      __css={{
         display: 'block',
         'input:checked ~ &': {
           display: 'none',
@@ -52,7 +52,7 @@ export const Radio = React.forwardRef(function Radio(
         as="input"
         type="radio"
         {...props}
-        sx={{
+        __css={{
           position: 'absolute',
           opacity: 0,
           zIndex: -1,
@@ -66,7 +66,7 @@ export const Radio = React.forwardRef(function Radio(
         as={RadioIcon}
         aria-hidden="true"
         className={className}
-        sx={{
+        __css={{
           // todo: system props??
           mr: 2,
           borderRadius: 9999,

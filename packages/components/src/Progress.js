@@ -11,7 +11,7 @@ export const Progress = React.forwardRef(function Progress(props, ref) {
       ref={ref}
       as="progress"
       {...props}
-      sx={{
+      __css={{
         display: 'block',
         width: '100%',
         height: '4px',

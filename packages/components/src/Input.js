@@ -11,7 +11,7 @@ export const Input = React.forwardRef(function Input(props, ref) {
       ref={ref}
       as="input"
       {...props}
-      sx={{
+      __css={{
         display: 'block',
         width: '100%',
         p: 2,

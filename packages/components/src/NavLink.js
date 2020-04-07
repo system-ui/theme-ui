@@ -9,7 +9,7 @@ export const NavLink = React.forwardRef(function NavLink(props, ref) {
       ref={ref}
       variant="nav"
       {...props}
-      sx={{
+      __css={{
         color: 'inherit',
         textDecoration: 'none',
         fontWeight: 'bold',

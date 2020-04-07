@@ -14,7 +14,7 @@ export const Avatar = React.forwardRef(function Avatar(
       height={size}
       variant="avatar"
       {...props}
-      sx={{
+      __css={{
         borderRadius: 9999,
       }}
     />

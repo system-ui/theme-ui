@@ -14,7 +14,7 @@ export const IconButton = React.forwardRef(function IconButton(
       ref={ref}
       as="button"
       {...props}
-      sx={{
+      __css={{
         appearance: 'none',
         display: 'inline-flex',
         alignItems: 'center',

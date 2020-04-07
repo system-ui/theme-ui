@@ -11,7 +11,7 @@ export const Divider = React.forwardRef(function Divider(props, ref) {
       ref={ref}
       as="hr"
       {...props}
-      sx={{
+      __css={{
         color: 'gray',
         m: 0,
         my: 2,

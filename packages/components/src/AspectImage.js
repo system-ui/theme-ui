@@ -13,7 +13,7 @@ export const AspectImage = React.forwardRef(function AspectImage(
       <Image
         ref={ref}
         {...props}
-        sx={{
+        __css={{
           objectFit: 'cover',
         }}
       />

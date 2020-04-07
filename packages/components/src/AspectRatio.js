@@ -10,12 +10,12 @@ export const AspectRatio = React.forwardRef(function AspectRatio(
   return (
     <Box
       ref={ref}
-      sx={{
+      __css={{
         position: 'relative',
         overflow: 'hidden',
       }}>
       <Box
-        sx={{
+        __css={{
           width: '100%',
           height: 0,
           paddingBottom: 100 / ratio + '%',
@@ -23,7 +23,7 @@ export const AspectRatio = React.forwardRef(function AspectRatio(
       />
       <Box
         {...props}
-        sx={{
+        __css={{
           position: 'absolute',
           top: 0,
           right: 0,

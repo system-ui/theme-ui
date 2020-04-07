@@ -21,7 +21,7 @@ const CheckboxIcon = props => (
   <React.Fragment>
     <CheckboxChecked
       {...props}
-      sx={{
+      __css={{
         display: 'none',
         'input:checked ~ &': {
           display: 'block',
@@ -30,7 +30,7 @@ const CheckboxIcon = props => (
     />
     <CheckboxUnchecked
       {...props}
-      sx={{
+      __css={{
         display: 'block',
         'input:checked ~ &': {
           display: 'none',
@@ -52,7 +52,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
         as="input"
         type="checkbox"
         {...props}
-        sx={{
+        __css={{
           position: 'absolute',
           opacity: 0,
           zIndex: -1,
@@ -66,7 +66,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
         as={CheckboxIcon}
         aria-hidden="true"
         className={className}
-        sx={{
+        __css={{
           mr: 2,
           borderRadius: 4,
           color: 'gray',

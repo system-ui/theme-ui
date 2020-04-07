@@ -19,7 +19,7 @@ export const Select = React.forwardRef(function Select(
   return (
     <Box
       {...getMargin(props)}
-      sx={{
+      __css={{
         display: 'flex',
         ...variantStyle.container,
       }}>
@@ -27,7 +27,7 @@ export const Select = React.forwardRef(function Select(
         ref={ref}
         as="select"
         {...omitMargin(props)}
-        sx={{
+        __css={{
           display: 'block',
           width: '100%',
           p: 2,
@@ -42,7 +42,7 @@ export const Select = React.forwardRef(function Select(
         }}
       />
       <DownArrow
-        sx={{
+        __css={{
           ml: -28,
           alignSelf: 'center',
           pointerEvents: 'none',

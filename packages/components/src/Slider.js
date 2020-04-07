@@ -22,7 +22,7 @@ export const Slider = React.forwardRef(function Slider(props, ref) {
       as="input"
       type="range"
       {...props}
-      sx={{
+      __css={{
         display: 'block',
         width: '100%',
         height: 4,

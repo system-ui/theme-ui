@@ -13,7 +13,7 @@ export const Badge = React.forwardRef(function Badge(
     <Box
       ref={ref}
       {...props}
-      sx={{
+      __css={{
         display: 'inline-block',
         verticalAlign: 'baseline',
         fontSize: 0,

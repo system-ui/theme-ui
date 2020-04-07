@@ -40,7 +40,7 @@ export const Spinner = React.forwardRef(function Spinner(
       stroke="currentcolor"
       role="img"
       {...props}
-      sx={{
+      __css={{
         color: 'primary',
         overflow: 'visible',
       }}>
@@ -53,7 +53,7 @@ export const Spinner = React.forwardRef(function Spinner(
         r={r}
         strokeDasharray={C}
         strokeDashoffset={offset}
-        sx={{
+        __css={{
           transformOrigin: '50% 50%',
           animationName: spin.toString(),
           animationTimingFunction: 'linear',

@@ -26,7 +26,7 @@ export const Donut = React.forwardRef(function Donut(
       aria-valuemin={min}
       aria-valuemax={max}
       {...props}
-      sx={{
+      __css={{
         color: 'primary',
       }}>
       {title && <title>{title}</title>}

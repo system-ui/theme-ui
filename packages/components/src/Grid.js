@@ -30,7 +30,7 @@ export const Grid = React.forwardRef(function Grid(
     <Box
       ref={ref}
       {...props}
-      sx={{
+      __css={{
         display: 'grid',
         gridGap: gap,
         gridTemplateColumns,

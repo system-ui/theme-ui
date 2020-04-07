@@ -13,7 +13,7 @@ export const Container = React.forwardRef(function Container(
     <Box
       ref={ref}
       {...props}
-      sx={{
+      __css={{
         width: '100%',
         maxWidth: 'container',
         mx: 'auto',

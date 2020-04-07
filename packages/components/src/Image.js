@@ -14,9 +14,10 @@ export const Image = React.forwardRef(function Image(
       ref={ref}
       as="img"
       {...props}
-      sx={{
+      __css={{
         maxWidth: '100%',
         height: 'auto',
+        ...props.__css,
         ...variantStyle,
       }}
     />

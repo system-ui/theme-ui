@@ -19,7 +19,7 @@ export const Embed = React.forwardRef(function Embed(
   return (
     <Box
       {...props}
-      sx={{
+      __css={{
         width: '100%',
         height: 0,
         paddingBottom: 100 / ratio + '%',
@@ -35,7 +35,7 @@ export const Embed = React.forwardRef(function Embed(
         frameBorder={frameBorder}
         allowFullScreen={allowFullScreen}
         allow={allow}
-        sx={{
+        __css={{
           position: 'absolute',
           width: '100%',
           height: '100%',

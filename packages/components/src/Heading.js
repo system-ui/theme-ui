@@ -11,7 +11,7 @@ export const Heading = React.forwardRef(function Heading(props, ref) {
       ref={ref}
       as="h2"
       {...props}
-      sx={{
+      __css={{
         fontFamily: 'heading',
         fontWeight: 'heading',
         lineHeight: 'heading',

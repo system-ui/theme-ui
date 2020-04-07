@@ -9,7 +9,7 @@ export const Alert = React.forwardRef(function Alert({ variant, ...props }, ref)
     <div
       ref={ref}
       {...props}
-      sx={{
+      __css={{
         display: 'flex',
         alignItems: 'center',
         px: 3,
