@@ -22,6 +22,9 @@
     "@theme-ui/theme-provider": "^0.4.0-alpha.0",
     "@types/theme-ui__components": "^0.2.3"
   },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  },
   "keywords": [
     "theme-ui",
     "emotion",
