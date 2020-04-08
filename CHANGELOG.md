@@ -5,6 +5,7 @@
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
 - Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
+- Fixed peer dependencies to keep yarn berry happy. Issue #725
 
 ## v0.3.0 2019-01-22
 
