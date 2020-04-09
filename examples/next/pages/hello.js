@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
 
-export default props => (
+export default () => (
   <div
     sx={{
       maxWidth: 1024,

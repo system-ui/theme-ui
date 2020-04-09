@@ -1,34 +1,18 @@
 import React from 'react'
-import App from 'next/app'
-import { ThemeProvider, Styled } from 'theme-ui'
+import NextApp from 'next/app'
 
 import Header from '../components/Header'
 import theme from '../src/theme'
+import { ThemeProvider } from 'theme-ui'
 
-class MyApp extends App {
-  // Only uncomment this method if you have blocking data requirements for
-  // every single page in your application. This disables the ability to
-  // perform automatic static optimization, causing every page in your app to
-  // be server-side rendered.
-  //
-  // static async getInitialProps(appContext) {
-  //   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  //   const appProps = await App.getInitialProps(appContext);
-  //
-  //   return { ...appProps }
-  // }
-
+export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>
         <Header />
-        <Styled.root>
-          <Component {...pageProps} />
-        </Styled.root>
+        <Component {...pageProps} />
       </ThemeProvider>
     )
   }
 }
-
-export default MyApp

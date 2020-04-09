@@ -1,14 +1,16 @@
 import React from 'react'
-import { useColorMode } from 'theme-ui'
+import { Button, useColorMode } from 'theme-ui'
 
-export default function Header() {
+const Header = () => {
   const [colorMode, setColorMode] = useColorMode()
   return (
     <header>
-      <button
+      <Button
         onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
         Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </button>
+      </Button>
     </header>
   )
 }
+
+export default Header
