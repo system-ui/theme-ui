@@ -9,6 +9,7 @@ export const AspectRatio = React.forwardRef(function AspectRatio(
     <Box
       ref={ref}
       sx={{
+        label: 'AspectRatio',
         position: 'relative',
         overflow: 'hidden',
       }}>

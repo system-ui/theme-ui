@@ -24,6 +24,7 @@ export const Close = React.forwardRef(function Close(
       variant="close"
       {...props}
       children={x}
+      __css={{ label: 'Close' }}
     />
   )
 })

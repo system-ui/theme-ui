@@ -8,6 +8,7 @@ export const NavLink = React.forwardRef(function NavLink(props, ref) {
       variant="nav"
       {...props}
       __css={{
+        label: 'NavLink',
         color: 'inherit',
         textDecoration: 'none',
         fontWeight: 'bold',

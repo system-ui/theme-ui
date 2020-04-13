@@ -10,6 +10,7 @@ export const Input = React.forwardRef(function Input(props, ref) {
       {...props}
       __themeKey="forms"
       __css={{
+        label: 'Input',
         display: 'block',
         width: '100%',
         p: 2,

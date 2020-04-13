@@ -10,6 +10,7 @@ export const Label = React.forwardRef(function Label(props, ref) {
       {...props}
       __themeKey="forms"
       __css={{
+        label: 'Label',
         width: '100%',
         display: 'flex',
       }}

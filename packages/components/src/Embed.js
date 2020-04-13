@@ -18,6 +18,7 @@ export const Embed = React.forwardRef(function Embed(
     <Box
       {...props}
       __css={{
+        label: 'Embed',
         width: '100%',
         height: 0,
         paddingBottom: 100 / ratio + '%',

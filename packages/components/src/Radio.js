@@ -42,7 +42,7 @@ export const Radio = React.forwardRef(function Radio(
   ref
 ) {
   return (
-    <Box>
+    <Box __css={{ label: 'Radio' }}>
       <Box
         ref={ref}
         as="input"

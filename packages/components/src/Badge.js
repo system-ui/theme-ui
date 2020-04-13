@@ -8,6 +8,7 @@ export const Badge = React.forwardRef(function Badge(props, ref) {
       {...props}
       __themeKey="badges"
       __css={{
+        label: 'Badge',
         display: 'inline-block',
         verticalAlign: 'baseline',
         fontSize: 0,

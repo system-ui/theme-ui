@@ -9,6 +9,7 @@ export const Divider = React.forwardRef(function Divider(props, ref) {
       variant="styles.hr"
       {...props}
       __css={{
+        label: 'Divider',
         color: 'gray',
         m: 0,
         my: 2,

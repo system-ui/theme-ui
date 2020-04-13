@@ -27,6 +27,7 @@ export const Grid = React.forwardRef(function Grid(
       {...props}
       __themeKey="grids"
       __css={{
+        label: 'Grid',
         display: 'grid',
         gridGap: gap,
         gridTemplateColumns,

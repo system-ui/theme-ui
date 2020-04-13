@@ -42,7 +42,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
   ref
 ) {
   return (
-    <Box>
+    <Box __css={{ label: 'Checkbox' }}>
       <Box
         ref={ref}
         as="input"

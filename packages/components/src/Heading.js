@@ -10,6 +10,7 @@ export const Heading = React.forwardRef(function Heading(props, ref) {
       {...props}
       __themeKey="text"
       __css={{
+        label: 'Heading',
         fontFamily: 'heading',
         fontWeight: 'heading',
         lineHeight: 'heading',

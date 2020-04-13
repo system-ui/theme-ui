@@ -8,6 +8,7 @@ export const Message = React.forwardRef(function Message(props, ref) {
       {...props}
       __themeKey="messages"
       __css={{
+        label: 'Message',
         padding: 3,
         paddingLeft: t => t.space[3] - t.space[1],
         borderLeftWidth: t => t.space[1],

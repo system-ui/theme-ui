@@ -10,5 +10,6 @@ export default ({ size = 24, ...props }) => (
     viewBox="0 0 24 24"
     fill="currentcolor"
     {...props}
+    __css={{ label: 'SVG' }}
   />
 )

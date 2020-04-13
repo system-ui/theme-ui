@@ -25,6 +25,7 @@ export const Donut = React.forwardRef(function Donut(
       aria-valuemax={max}
       {...props}
       __css={{
+        label: 'Donut',
         color: 'primary',
       }}>
       {title && <title>{title}</title>}

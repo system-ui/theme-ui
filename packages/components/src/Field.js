@@ -9,7 +9,7 @@ export const Field = React.forwardRef(function Field(
   ref
 ) {
   return (
-    <Box {...getMargin(props)}>
+    <Box {...getMargin(props)} __css={{ label: 'Field' }}>
       <Label htmlFor={name}>{label}</Label>
       <Control ref={ref} id={name} name={name} {...omitMargin(props)} />
     </Box>

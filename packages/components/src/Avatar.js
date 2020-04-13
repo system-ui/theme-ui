@@ -13,6 +13,7 @@ export const Avatar = React.forwardRef(function Avatar(
       variant="avatar"
       {...props}
       __css={{
+        label: 'Avatar',
         borderRadius: 9999,
       }}
     />

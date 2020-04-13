@@ -9,6 +9,7 @@ export const Container = React.forwardRef(function Container(props, ref) {
       {...props}
       __themeKey="layout"
       __css={{
+        label: 'Container',
         width: '100%',
         maxWidth: 'container',
         mx: 'auto',
