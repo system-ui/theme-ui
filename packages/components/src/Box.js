@@ -16,10 +16,9 @@ const variant = ({ theme, variant, __themeKey = 'variants' }) =>
 
 export const Box = styled('div', {
   shouldForwardProp,
+  label: 'Box',
 })(
   {
-    // Avoids e.g. 'css-191ogd4-Box-Text' in favor of 'css-191ogd4-Text' class names.
-    label: props => (props.__css && props.__css.label) || 'Box',
     boxSizing: 'border-box',
     margin: 0,
     minWidth: 0,
