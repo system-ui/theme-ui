@@ -21,7 +21,7 @@
     "theme-ui": "^0.4.0-alpha.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^9.1.3",
+    "@testing-library/react": "^10.0.2",
     "husky": ">=4.0.7",
     "jest": "^24.8.0",
     "lint-staged": "10",
