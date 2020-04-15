@@ -19,16 +19,11 @@ export default props => {
     <Helmet htmlAttributes={{ lang: 'en-US' }}>
       <title>{title}</title>
       <meta name="description" content={pkg.description} />
+      <link rel="icon" type="image/png" href="/icon.png" />
       <link
         rel="icon"
         media="(prefers-color-scheme:dark)"
         href="/icon-dark.png"
-        type="image/png"
-      />
-      <link
-        rel="icon"
-        media="(prefers-color-scheme:light)"
-        href="/icon.png"
         type="image/png"
       />
       <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
