@@ -6,59 +6,67 @@ title: Stack
 
 Use the `Stack` component as a layout primitive to add spaces between components.
 This is very useful when stacking components within a bigger grid system, as it allows you to maintain a vertical rhythm.
-It also enforces the decoupling of layout from components.
-
-```js
-import { Stack, Box, Grid } from 'theme-ui'
-```
-
-```jsx live=true
-<Grid
-  gap={3}
-  columns={2}>
-  <Box bg="muted">
-    <Stack>
-      <Box bg="primary" color="white">Stack Item</Box>
-      <Box bg="primary" color="white">Stack Item</Box>
-      <Box bg="primary" color="white">Stack Item</Box>
-    </Stack>
-  </Box>
-  <Box bg='muted'>Box</Box>
-</Grid>
-```
-
-You can change the spacing by using the gap property
+It forces the decoupling of layout from components.
 
 ```js
 import { Stack, Box } from 'theme-ui'
 ```
 
-```jsx live=true
-<Grid
-  gap={3}
-  columns={2}>
-  <Box bg="muted">
-    <Stack gap={3}>
-      <Box bg="primary" color="white">Stack Item</Box>
-      <Box bg="primary" color="white">Stack Item</Box>
-      <Box bg="primary" color="white">Stack Item</Box>
-    </Stack>
-  </Box>
-  <Box bg='muted'>Box</Box>
-</Grid>
-```
-
-The Stack component Supports responsive values too. Try resizing this screen.
-
-
-```js
-import { Stack, Box } from 'theme-ui'
-```
-
-```jsx live=true
+```jsx live xray
 <Stack gap={[2, 3, 4]}>
-  <Box bg="primary" color="white">Stack Item</Box>
-  <Box bg="primary" color="white">Stack Item</Box>
-  <Box bg="primary" color="white">Stack Item</Box>
+  <Box>1</Box>
+  <Box>2</Box>
+  <Box>3</Box>
 </Stack>
 ```
+
+You can stack horizontally
+
+```jsx live xray
+<Stack gap={[2, 3, 4]} direction="horizontal">
+  <Box>Stack Item</Box>
+  <Box>Stack Item</Box>
+  <Box>Stack Item</Box>
+</Stack>
+```
+
+Nest Stacks components to create complex layouts!
+
+import { Stack, Box, AspectRatio, Avatar } from 'theme-ui'
+
+```jsx live xray
+<Stack gap={4} direction="horizontal">
+  <Box>
+    <Avatar src={images.logo} />
+    <Badge
+      variant="circle"
+      sx={{
+        position: 'relative',
+        left: 4,
+        top: -4,
+      }}>
+      16
+    </Badge>
+  </Box>
+
+  <Stack gap={4}>
+    <Heading>Hello</Heading>
+    <Stack direction="horizontal">
+      <Badge variant="accent">Create</Badge>
+      <Badge variant="accent">Remove</Badge>
+      <Badge variant="accent">Update</Badge>
+      <Badge variant="accent">Delete</Badge>
+    </Stack>
+  </Stack>
+</Stack>
+```
+
+## Props
+
+| Name        | Type      | Description                                            |
+| ----------- | --------- | ------------------------------------------------------ |
+| `direction` | Component | Can be either `vertical` or `horizontal`               |
+| `gap`       | String    | How big the gap between items should be                |
+| `justify`   | String    | Any valid flexbox justify property                     |
+| `align`     | String    | Any valid flexbox align property                       |
+| `inline`    | boolean   | When true, renders as inline-flex item instead of flex |
