@@ -259,6 +259,18 @@ test('handles negative top, left, bottom, and right from scale', () => {
   })
 })
 
+test('handles negative margins from scale that is an object', () => {
+  const result = css({
+    mt: '-s',
+    mx: '-m',
+  })({...theme, space: { s: '16px', m: '32px' }})
+  expect(result).toEqual({
+    marginTop: '-16px',
+    marginLeft: '-32px',
+    marginRight: '-32px',
+  })
+})
+
 test('skip breakpoints', () => {
   const result = css({
     width: ['100%', , '50%'],
