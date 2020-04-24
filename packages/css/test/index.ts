@@ -52,6 +52,7 @@ const theme: Theme = {
   radii: {
     small: 5,
   },
+  opacities: [0, '50%'],
 }
 
 test('returns a function', () => {
@@ -140,6 +141,7 @@ test('handles all core styled system props', () => {
     fontWeight: 'bold',
     color: 'primary',
     bg: 'secondary',
+    opacity: 1,
     fontFamily: 'monospace',
     lineHeight: 'body',
   })({ theme })
@@ -153,6 +155,7 @@ test('handles all core styled system props', () => {
     paddingBottom: 32,
     color: 'tomato',
     backgroundColor: 'cyan',
+    opacity: '50%',
     fontFamily: 'Menlo, monospace',
     fontSize: 24,
     fontWeight: 600,
