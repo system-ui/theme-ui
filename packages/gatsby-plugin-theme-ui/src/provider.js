@@ -4,6 +4,7 @@ import {
   ThemeProvider,
   merge
 } from 'theme-ui'
+import { toTheme } from '@theme-ui/typography'
 import theme from './index'
 import components from './components'
 import useThemeUiConfig from './hooks/configOptions'
