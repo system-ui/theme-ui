@@ -1,7 +1,10 @@
 exports.onPreInit = (__, options) => {
-    let {themeModulePath} = options
+    let {themeModulePath, typographyTheme} = options
     if(themeModulePath) {
         options.themeModulePath = require(themeModulePath)
+    }
+    if(typographyTheme) {
+      options.typographyTheme = require(typographyTheme)
     }
 }
 
@@ -13,13 +16,14 @@ exports.createSchemaCustomization = ({ actions }) => {
         themeModule: JSON,
         themeModulePath: JSON,
         moduleExportName: String,
+        typographyTheme: JSON,
       }
     `)
   }
   
   exports.sourceNodes = (
     { actions, createContentDigest },
-    { moduleExportName = 'default', themeModule, themeModulePath}
+    { moduleExportName = 'default', themeModule, themeModulePath, typographyTheme }
   ) => {      
     const { createNode } = actions
   
@@ -27,6 +31,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         themeModule,
         themeModulePath,
         moduleExportName,
+        typographyTheme
     }
   
     createNode({

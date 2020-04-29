@@ -7,6 +7,7 @@ const useThemeUiConfig = () => {
         themeModule
         themeModulePath
         moduleExportName
+        typographyTheme
       }
     }
   `)

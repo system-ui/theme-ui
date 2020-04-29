@@ -23,6 +23,7 @@ prevent a flash of unstyled colors when using color modes.
 | `themeModule`               | `null`            | JSON theme object, use the `require` syntax to include it in options. Make sure the package you're requiring is installed in your dependencies.               |
 | `themeModulePath`            | `null`  | A string package name that the plugin will require for you. Make sure the package you're requiring is installed in your dependencies.                                                             |
 | `moduleExportName`              | `default` | The name of the export from the theme module, applies to `themeModule` or `themeModulePath` resolution depending which one you're using    |
+| `typographyTheme`              | `null` | The name of the typography theme you'd like to use. The available package names can be found in the [typography.js repo](https://github.com/KyleAMathews/typography.js/tree/master/packages). You'll need to install the package locally as well.     |
 
 > Note that if your theme is exported at the top level, the `moduleExportName` of `default` is bypassed. See [theme-ui/preset-deep](https://github.com/system-ui/theme-ui/blob/master/packages/preset-deep/src/index.ts).
 

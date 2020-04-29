@@ -26,7 +26,13 @@ const Root = ({children}) => {
     themeWrapper = themeWrapper[moduleExportName]
   }
 
+  let typography = {}
+  if (typographyTheme) {
+    typography = toTheme(typographyTheme.default)
+  }
+
   themeWrapper = merge(themeWrapper, {
+    ...typography,
     ...theme
   })
   return (
