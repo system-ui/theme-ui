@@ -27,6 +27,7 @@ const Root = ({children}) => {
   }
 
   themeWrapper = merge(themeWrapper, {
+    prism: prismPreset,
     ...theme
   })
   return (

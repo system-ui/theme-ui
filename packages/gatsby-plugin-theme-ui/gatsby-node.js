@@ -3,6 +3,9 @@ exports.onPreInit = (__, options) => {
     if(themeModulePath) {
         options.themeModulePath = require(themeModulePath)
     }
+    if(prismPreset) {
+      options.prismPreset = require(`@theme-ui/prism/presets/${prismPreset}.json`)
+    }
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -13,13 +16,14 @@ exports.createSchemaCustomization = ({ actions }) => {
         themeModule: JSON,
         themeModulePath: JSON,
         moduleExportName: String,
+        prismPreset: JSON,
       }
     `)
   }
   
   exports.sourceNodes = (
     { actions, createContentDigest },
-    { moduleExportName = 'default', themeModule, themeModulePath}
+    { prismPreset, moduleExportName = 'default', themeModule, themeModulePath}
   ) => {      
     const { createNode } = actions
   
@@ -27,6 +31,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         themeModule,
         themeModulePath,
         moduleExportName,
+        prismPreset
     }
   
     createNode({
