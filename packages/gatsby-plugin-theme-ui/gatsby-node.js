@@ -29,21 +29,19 @@ exports.createSchemaCustomization = ({ actions }) => {
       type ThemeUiConfig implements Node {
         themeModule: JSON,
         themeModulePath: JSON,
-        moduleExportName: String,
       }
     `)
   }
   
   exports.sourceNodes = (
     { actions, createContentDigest },
-    { moduleExportName = 'default', themeModule, themeModulePath}
+    { themeModule, themeModulePath}
   ) => {      
     const { createNode } = actions
   
     const themeUiConfig = {
         themeModule,
         themeModulePath,
-        moduleExportName,
     }
   
     createNode({

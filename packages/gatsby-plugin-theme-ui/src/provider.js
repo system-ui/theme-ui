@@ -11,7 +11,7 @@ import useThemeUiConfig from './hooks/configOptions'
 
 const Root = ({children}) => {
   const themeUiConfig = useThemeUiConfig()
-  const {themeModule, themeModulePath, moduleExportName} = themeUiConfig
+  const {themeModule, themeModulePath} = themeUiConfig
 
   let themeWrapper
   if (themeModule) {
@@ -22,8 +22,8 @@ const Root = ({children}) => {
     themeWrapper = themeModulePath
   }
   
-  if(themeWrapper && (moduleExportName in themeWrapper)) {
-    themeWrapper = themeWrapper[moduleExportName]
+  if(themeWrapper && ('default' in themeWrapper)) {
+    themeWrapper = themeWrapper.default
   }
 
   themeWrapper = merge(themeWrapper, {

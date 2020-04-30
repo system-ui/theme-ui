@@ -6,7 +6,6 @@ const useThemeUiConfig = () => {
       themeUiConfig(id: { eq: "gatsby-plugin-theme-ui-config" }) {
         themeModule
         themeModulePath
-        moduleExportName
       }
     }
   `)
