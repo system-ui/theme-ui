@@ -4,8 +4,23 @@ exports.onPreInit = (__, options) => {
         options.themeModulePath = require(themeModulePath)
     }
     if(prismPreset) {
-      options.prismPreset = require(`@theme-ui/prism/presets/${prismPreset}.json`)
+      try {
+        options.prismPreset = require(`@theme-ui/prism/presets/${prismPreset}.json`)
+      } catch {
+        reporter.error(`It appears the prism dependency is not installed. Try running \`${generateInstallInstructions()} @theme-ui/prism\``)
+      }
     }
+}
+
+function generateInstallInstructions() {
+  const { getConfigStore } = require(`gatsby-core-utils`)
+
+  const packageMangerConfigKey = `cli.packageManager`
+  const PACKAGE_MANGER = getConfigStore().get(packageMangerConfigKey) || `yarn`
+
+  const installKeyWord = PACKAGE_MANGER === `yarn` ? "add" : "install"
+
+  return `${PACKAGE_MANGER} ${installKeyWord}`
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
