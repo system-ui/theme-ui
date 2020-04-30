@@ -4,7 +4,7 @@ const heading = {
   lineHeight: 'heading',
 }
 
-export default {
+export const tosh = {
   useCustomProperties: true,
   initialColorMode: 'light',
   colors: {
@@ -156,3 +156,5 @@ export default {
     },
   },
 }
+
+export default tosh
