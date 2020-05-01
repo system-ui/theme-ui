@@ -6,34 +6,19 @@ import useThemeUiConfig from './hooks/configOptions'
 
 const Root = ({ children }) => {
   const themeUiConfig = useThemeUiConfig()
-  const { themeModule, themeModulePath, moduleExportName } = themeUiConfig
+  const { prismPreset } = themeUiConfig
 
-  let themeWrapper
-  if (themeModule) {
-    themeWrapper = themeModule
-  }
-
-  if (themeModulePath) {
-    themeWrapper = themeModulePath
-  }
-
-  if (themeWrapper && moduleExportName in themeWrapper) {
-    themeWrapper = themeWrapper[moduleExportName]
-  }
-
-  if (prismPreset) {
-    themeWrapper = merge(themeWrapper, {
+  const themeWithPrism = merge(
+    {},
+    {
       styles: {
-        pre: {
-          ...prismPreset,
-        },
+        pre: prismPreset,
       },
-    })
-  }
+    }
+  )
 
-  themeWrapper = merge(themeWrapper, {
-    ...theme,
-  })
+  themeWrapper = merge(themeWithPrism, theme)
+
   return (
     <ThemeProvider theme={themeWrapper} components={components}>
       {children}
