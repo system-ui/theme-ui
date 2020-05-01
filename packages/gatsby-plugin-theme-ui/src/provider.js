@@ -17,10 +17,10 @@ const Root = ({ children }) => {
     }
   )
 
-  themeWrapper = merge(themeWithPrism, theme)
+  const fullTheme = merge(themeWithPrism, theme)
 
   return (
-    <ThemeProvider theme={themeWrapper} components={components}>
+    <ThemeProvider theme={fullTheme} components={components}>
       {children}
     </ThemeProvider>
   )
