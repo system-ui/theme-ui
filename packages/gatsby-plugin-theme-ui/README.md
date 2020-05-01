@@ -20,9 +20,7 @@ prevent a flash of unstyled colors when using color modes.
 
 | Key                      | Default value    | Description                                                                      |
 | ------------------------ | ---------------- | -------------------------------------------------------------------------------- |
-| `themeModule`               | `null`            | JSON theme object, use the `require` syntax to include it in options. Make sure the package you're requiring is installed in your dependencies.               |
-| `themeModulePath`            | `null`  | A string package name that the plugin will require for you. Make sure the package you're requiring is installed in your dependencies.                                                             |
-
+| `themePreset`               | `null`            | This can be a JSON theme object or a string package name. Make sure the package you're requiring is installed in your dependencies.               |
 
 > Note that this plugin assumes the theme object is exported as `default`.
 

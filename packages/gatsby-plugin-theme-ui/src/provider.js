@@ -1,44 +1,24 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-  merge
-} from 'theme-ui'
+import { jsx, ThemeProvider, merge } from 'theme-ui'
 import theme from './index'
 import components from './components'
 import useThemeUiConfig from './hooks/configOptions'
 
-
-const Root = ({children}) => {
+const Root = ({ children }) => {
   const themeUiConfig = useThemeUiConfig()
-  const {themeModule, themeModulePath} = themeUiConfig
+  const { themePreset } = themeUiConfig
 
-  let themeWrapper
-  if (themeModule) {
-    themeWrapper = themeModule
-  }
+  const theme = themePreset.default || themePreset
 
-  if (themeModulePath) {
-    themeWrapper = themeModulePath
-  }
-  
-  if(themeWrapper && ('default' in themeWrapper)) {
-    themeWrapper = themeWrapper.default
-  }
+  const fullTheme = merge(theme, localTheme)
 
-  themeWrapper = merge(themeWrapper, {
-    ...theme
-  })
   return (
-    <ThemeProvider theme={themeWrapper} components={components}>
-    {children}
+    <ThemeProvider theme={fullTheme} components={components}>
+      {children}
     </ThemeProvider>
   )
 }
 
 export const wrapRootElement = ({ element }) => {
-  return (
-    <Root>{element}</Root>
-  )
+  return <Root>{element}</Root>
 }
-
