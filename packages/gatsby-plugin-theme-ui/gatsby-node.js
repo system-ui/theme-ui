@@ -1,6 +1,6 @@
 const prismPresetDictionary = require(`./utils/preset-dictionary`)
 
-exports.onPreInit = (__, options) => {
+exports.onPreInit = ({ reporter }, options) => {
   if (prismPreset in prismPresetDictionary) {
     prismPreset = prismPresetDictionary[prismPreset]
   }
