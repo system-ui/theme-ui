@@ -5,22 +5,11 @@ exports.onPreInit = (__, options) => {
     try {
       options.preset = require(preset)
     } catch {
-      reporter.error(
-        `It appears your theme dependency is not installed. Try running \`${generateInstallInstructions()} ${themeModule}\``
+      reporter.warn(
+        `It appears your theme dependency is not installed. Only local styles will appear.`
       )
     }
   }
-}
-
-function generateInstallInstructions() {
-  const { getConfigStore } = require(`gatsby-core-utils`)
-
-  const packageMangerConfigKey = `cli.packageManager`
-  const PACKAGE_MANGER = getConfigStore().get(packageMangerConfigKey) || `yarn`
-
-  const installKeyWord = PACKAGE_MANGER === `yarn` ? 'add' : 'install'
-
-  return `${PACKAGE_MANGER} ${installKeyWord}`
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
