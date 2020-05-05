@@ -4,7 +4,7 @@ const heading = {
   lineHeight: 'heading',
 }
 
-export default {
+export const dark = {
   colors: {
     text: '#fff',
     background: '#060606',
@@ -151,3 +151,5 @@ export default {
     },
   },
 }
+
+export default dark

@@ -57,6 +57,7 @@ export const scales = {
   backgroundColor: 'colors',
   borderColor: 'colors',
   caretColor: 'colors',
+  opacity: 'opacities',
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -130,6 +131,11 @@ type Scales = typeof scales
 
 const positiveOrNegative = (scale: object, value: string | number) => {
   if (typeof value !== 'number' || value >= 0) {
+    if (typeof value === 'string' && value.startsWith('-')) {
+      const valueWithoutMinus = value.substring(1)
+      const n = get(scale, valueWithoutMinus, valueWithoutMinus)
+      return `-${n}`
+    }
     return get(scale, value, value)
   }
   const absolute = Math.abs(value)

@@ -2,6 +2,8 @@
 title: Theming
 ---
 
+import ColorKeys from '../components/color-keys'
+
 # Theming
 
 Theming with Theme UI is based on a [Theme Specification][] including a `theme.styles` object for styling MDX elements and other components.
@@ -14,15 +16,7 @@ By adhering to a standard Theme Specification, Theme UI is designed to be intero
 Add a `theme.colors` object to provide colors for a theme.
 In order to ensure color palettes are as interoperable as possible, the following color keys should be used for defining a base set of colors:
 
-| Key          | Description                                     |
-| ------------ | ----------------------------------------------- |
-| `text`       | body color                                      |
-| `background` | body background color                           |
-| `primary`    | primary button and link color                   |
-| `secondary`  | secondary color - can be used for hover states  |
-| `accent`     | a contrast color for emphasizing UI             |
-| `highlight`     | a background color for highlighting text
-| `muted`      | a gray or subdued color for decorative purposes |
+<ColorKeys />
 
 Beyond these base colors, any additional values can be added to a theme to augment the base color palette.
 
@@ -280,5 +274,5 @@ export const theme = {
 
 For more information on the Theme UI `theme` object, see the [Theme Specification docs](/theme-spec).
 
-[example]: https://github.com/system-ui/theme-ui/tree/master/packages/preset-base/src/index.js
+[example]: https://github.com/system-ui/theme-ui/tree/master/packages/preset-base/src/index.ts
 [emotion]: https://emotion.sh

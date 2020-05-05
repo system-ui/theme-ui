@@ -530,6 +530,7 @@ export interface Theme {
   colorStyles?: ObjectOrArray<SystemCssProperties>
   textStyles?: ObjectOrArray<SystemCssProperties>
   text?: ObjectOrArray<SystemCssProperties>
+  opacities?: ObjectOrArray<CSS.OpacityProperty>
   /**
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
