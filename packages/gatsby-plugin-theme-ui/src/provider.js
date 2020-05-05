@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, merge } from 'theme-ui'
-import theme from './index'
+import localTheme from './index'
 import components from './components'
 import useThemeUiConfig from './hooks/configOptions'
 
 const Root = ({ children }) => {
   const themeUiConfig = useThemeUiConfig()
-  const { themePreset } = themeUiConfig
+  const { preset } = themeUiConfig
 
-  const theme = themePreset.default || themePreset
+  const theme = preset.default || preset
 
   const fullTheme = merge(theme, localTheme)
 

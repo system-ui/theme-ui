@@ -1,9 +1,9 @@
 exports.onPreInit = (__, options) => {
-  let { themePreset } = options
+  let { preset } = options
 
-  if (typeof themePreset === 'string') {
+  if (typeof preset === 'string') {
     try {
-      options.themePreset = require(themePreset)
+      options.preset = require(preset)
     } catch {
       reporter.error(
         `It appears your theme dependency is not installed. Try running \`${generateInstallInstructions()} ${themeModule}\``
@@ -28,19 +28,16 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   createTypes(`
       type ThemeUiConfig implements Node {
-        themePreset: JSON,
+        preset: JSON,
       }
     `)
 }
 
-exports.sourceNodes = (
-  { actions, createContentDigest },
-  { themePreset = {} }
-) => {
+exports.sourceNodes = ({ actions, createContentDigest }, { preset = {} }) => {
   const { createNode } = actions
 
   const themeUiConfig = {
-    themePreset,
+    preset,
   }
 
   createNode({

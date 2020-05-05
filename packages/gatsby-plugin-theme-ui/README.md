@@ -20,7 +20,7 @@ prevent a flash of unstyled colors when using color modes.
 
 | Key                      | Default value    | Description                                                                      |
 | ------------------------ | ---------------- | -------------------------------------------------------------------------------- |
-| `themePreset`               | `null`            | This can be a JSON theme object or a string package name. Make sure the package you're requiring is installed in your dependencies.               |
+| `preset`               | `null`            | This can be a JSON theme object or a string package name. Make sure the package you're requiring is installed in your dependencies.               |
 
 > Note that this plugin assumes the theme object is exported as `default`.
 

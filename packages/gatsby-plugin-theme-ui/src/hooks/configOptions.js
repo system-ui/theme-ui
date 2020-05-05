@@ -4,7 +4,7 @@ const useThemeUiConfig = () => {
   const data = useStaticQuery(graphql`
     query {
       themeUiConfig(id: { eq: "gatsby-plugin-theme-ui-config" }) {
-        themePreset
+        preset
       }
     }
   `)
