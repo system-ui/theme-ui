@@ -22,42 +22,30 @@ export const styles = {
   img: {
     maxWidth: '100%',
   },
-  h1: assign(
-    {
-      fontSize: 5,
-    },
-    heading
-  ),
-  h2: assign(
-    {
-      fontSize: 4,
-    },
-    heading
-  ),
-  h3: assign(
-    {
-      fontSize: 3,
-    },
-    heading
-  ),
-  h4: assign(
-    {
-      fontSize: 2,
-    },
-    heading
-  ),
-  h5: assign(
-    {
-      fontSize: 1,
-    },
-    heading
-  ),
-  h6: assign(
-    {
-      fontSize: 0,
-    },
-    heading
-  ),
+  h1: {
+    fontSize: 5,
+    ...heading
+  },
+  h2: {
+    fontSize: 4,
+    ...heading
+  },
+  h3: {
+    fontSize: 3,
+    ...heading
+  },
+  h4: {
+    fontSize: 2,
+    ...heading
+  },
+  h5: {
+    fontSize: 1,
+    ...heading
+  },
+  h6: {
+    fontSize: 0,
+    ...heading
+  },
   ul: {
     listStylePosition: 'outside',
     listStyleImage: 'none',

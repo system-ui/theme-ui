@@ -3,18 +3,21 @@
   "version": "0.4.0-alpha.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
   "dependencies": {
     "compass-vertical-rhythm": "^1.4.5",
-    "modularscale": "^2.0.1",
-    "object-assign": "^4.1.1"
+    "modularscale": "^2.0.1"
   },
   "devDependencies": {
+    "@types/typography": "^0.16.3",
+    "type-fest": "^0.13.1",
     "typography": "^0.16.19",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
