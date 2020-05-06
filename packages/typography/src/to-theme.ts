@@ -3,9 +3,14 @@ import verticalRhythm from 'compass-vertical-rhythm'
 import ms from 'modularscale'
 import styles from './styles'
 
-import type { TypographyOptions } from 'typography'
-import type { VerticalRhythmOptions, VerticalRhythm } from 'compass-vertical-rhythm'
-import type { Merge } from 'type-fest'
+import { TypographyOptions } from 'typography'
+import { Merge } from 'type-fest'
+
+// Temporary hack waiting for DT PR
+// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44513
+// TODO: Replace hack with official definition
+type VerticalRhythm = ReturnType<typeof verticalRhythm>
+type VerticalRhythmOptions = Parameters<typeof verticalRhythm>[0]
 
 const unwantedTypographyOptions = [
   'headerColor',
@@ -98,7 +103,12 @@ export const getSpace = (
   rhythm: VerticalRhythm,
   opts: CustomTypographyOptions
 ): Theme['space'] => {
-  const n = toUnitless(rhythm.rhythm(opts.blockMarginBottom))
+  // `as unknown as string` cast : temporary hack waiting for DT PR
+  // (bad `rhythm()` function number return type)
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44513
+  // TODO: Remove hack
+  const n = toUnitless(rhythm.rhythm(opts.blockMarginBottom) as unknown as string)
+  rhythm.rhythm(opts.blockMarginBottom)
   return [0, 1 / 4, 1 / 2, 1, 2, 4, 8].map(v => v * n) as Theme['space']
 }
 

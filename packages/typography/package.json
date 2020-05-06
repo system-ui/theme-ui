@@ -16,6 +16,7 @@
     "modularscale": "^2.0.1"
   },
   "devDependencies": {
+    "@types/compass-vertical-rhythm": "^1.4.0",
     "@types/typography": "^0.16.3",
     "type-fest": "^0.13.1",
     "typography": "^0.16.19",
