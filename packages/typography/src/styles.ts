@@ -4,15 +4,13 @@
 // - does not include color styles
 // - does not include responsive styles
 
-import assign from 'object-assign'
-
 const heading = {
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
 }
 
-export const styles = {
+const baseStyles = {
   root: {
     fontFamily: 'body',
     fontSize: 2,
@@ -125,7 +123,7 @@ export const styles = {
   },
 }
 
-const headings = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1']
+const headings = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1'] as const
 const blockElements = [
   ...headings,
   'ul',
@@ -136,19 +134,21 @@ const blockElements = [
   'blockquote',
   'img',
   'hr',
-]
+] as const
 
-blockElements.forEach(tag => {
-  assign(styles, {
-    [tag]: assign(
-      {
-        padding: 0,
-        margin: 0,
-        marginBottom: 3,
-      },
-      styles[tag]
-    ),
-  })
-})
+type BlockElements = typeof blockElements[number]
+
+export const styles = {
+  ...baseStyles,
+  ...(blockElements.reduce((style, tag) => ({
+    ...style,
+    [tag]: {
+      padding: 0,
+      margin: 0,
+      marginBottom: 3,
+      ...baseStyles[tag]
+    }
+  }), {}))
+}
 
 export default styles

@@ -1,5 +1,4 @@
 // custom implementation of typography.js for use in theme-ui
-import typooo from 'typography'
 import verticalRhythm from 'compass-vertical-rhythm'
 import ms from 'modularscale'
 import styles from './styles'
@@ -210,7 +209,7 @@ const toUnitlessOptions = (
 
 export const toTheme = (
   _opts?: TypographyOptions
-) => {
+): Theme => {
   const opts: CustomTypographyOptions = {
     ...defaults,
 

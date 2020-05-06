@@ -1,13 +1,23 @@
 import { toTheme, toUnitless } from '../src/to-theme'
 import themes from './fixtures/themes'
-import Typography from 'typography'
+import Typography, { TypographyOptions } from 'typography'
 
 const typo = new Typography({
   ...themes.wp2016,
-  baseFontSize: toUnitless(themes.wp2016.baseFontSize),
-  rhythmUnit: 'px',
-})
-const styles = typo.toJSON()
+  baseFontSize: toUnitless(themes.wp2016.baseFontSize as string),
+  rhythmUnit: 'px'
+} as unknown as TypographyOptions)
+
+interface TestStyledValue {
+  fontSize: string
+}
+interface TestStyle {
+  h6: TestStyledValue
+  h4: TestStyledValue
+  h2: TestStyledValue
+  h1: TestStyledValue
+}
+const styles: TestStyle = typo.toJSON() as TestStyle
 
 test('converts typography.js theme to theme-ui', () => {
   const theme = toTheme(themes.wp2016)
@@ -67,7 +77,7 @@ test('returns line heights', () => {
   expect(typeof theme.lineHeights.heading).toBe('number')
 })
 
-const snapshots = Object.keys(themes).map(key => [key, themes[key]])
+const snapshots = Object.entries(themes)
 
 test.each(snapshots)('snapshot %s', (name, config) => {
   const theme = toTheme(config)
