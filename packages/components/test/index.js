@@ -63,6 +63,9 @@ const theme = {
     },
   },
   text: {
+    default: {
+      fontSize: 3,
+    },
     heading: {
       fontSize: 5,
     },
