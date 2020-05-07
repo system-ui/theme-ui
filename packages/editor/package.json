@@ -6,8 +6,8 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
   "dependencies": {
     "@theme-ui/components": "^0.4.0-alpha.0",
