@@ -26,6 +26,13 @@ export default props => (
 
 ## API
 
+### `getColor`
+
+```js
+import { getColor } from '@theme-ui/color'
+// getColor(theme, 'primary')
+```
+
 ### `darken`
 
 Darken a color by an amount 0–1
@@ -185,7 +192,7 @@ We can take the result of any of the above helper functions (which return a func
         ${alpha('primary', 0.5)(t)}
         ${alpha('secondary', 0.5)(t)}
       )
-    `
+    `,
   }}
 />
 ```
