@@ -2,15 +2,22 @@
 import { jsx, useThemeUI } from 'theme-ui'
 import { ColorPalette } from '@theme-ui/style-guide'
 import ColorPicker from '../ColorPicker'
+import { EditorContext } from '../types'
 
 export default props => {
-  const context = useThemeUI()
-  const mode = context.colorMode
-  const { colors = {} } = context.theme
+  const context = useThemeUI() as EditorContext
+  const mode = (context as any).colorMode
+  const { colors } = context.theme
 
   const onChange = key => val => {
     let next = {}
-    if (mode && colors.modes && colors.modes[mode] && mode !== context.theme.initialColorMode) {
+    if (
+      mode &&
+      colors &&
+      colors.modes &&
+      colors.modes[mode] &&
+      mode !== (context.theme as any).initialColorMode
+    ) {
       next = {
         colors: {
           modes: {
