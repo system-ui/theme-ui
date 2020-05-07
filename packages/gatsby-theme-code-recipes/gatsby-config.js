@@ -9,10 +9,7 @@ module.exports = ({ path = 'src/recipes' } = {}) => ({
     },
     {
       resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true,
-        allExtensions: true,
-      },
+      options: {},
     },
   ],
 })
