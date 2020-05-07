@@ -3763,9 +3763,9 @@
   integrity sha512-79IFT37Kxb6dlbx/0hwIGOakNHkK5oU3cMypGziShnEK8WMgK/+vuAi4MHO7uLI+FZ5U8MGYvGY9Gtk0mBzxSg==
 
 "@styled-system/edit@^5.0.15":
-  version "5.0.21"
-  resolved "https://registry.yarnpkg.com/@styled-system/edit/-/edit-5.0.21.tgz#695eea8138c6d3c8d2975dea044a846de98d1628"
-  integrity sha512-hOPoN7gNUEdEdPn4nij7oW4Y/DPeKWLu77V+kGekXSwxTZu/pXQk5BVX843B+zY85PZ3m5K14nahuElZzlTy3Q==
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/@styled-system/edit/-/edit-5.1.5.tgz#134bc69d6ab46ffd08e4a568334c52e4627eeec8"
+  integrity sha512-o6UrYaBa4D3GkKhgWLnyvP1LAbGjP/JcBeAiHVWbHFFnhBDD/JsY9CjlCgvP/oaC271/xptkvb1S41qqqV/fdQ==
   dependencies:
     "@emotion/core" "^10.0.10"
     color "^3.1.0"
