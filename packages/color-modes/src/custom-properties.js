@@ -13,6 +13,7 @@ const reservedKeys = {
   useCustomProperties: true,
   initialColorModeName: true,
   initialColorMode: true,
+  useLocalStorage: true,
 }
 
 const toPixel = (key, value) => {
@@ -86,6 +87,6 @@ export const createColorStyles = (theme = {}) => {
       ...styles,
       color: 'text',
       bg: 'background',
-    }
+    },
   })(theme)
 }

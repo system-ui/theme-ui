@@ -209,6 +209,27 @@ test('initializes mode based on localStorage', () => {
   expect(mode).toBe('dark')
 })
 
+test('does not initialize mode based on localStorage if useLocalStorage is set to false', () => {
+  window.localStorage.setItem(STORAGE_KEY, 'dark')
+  let mode
+  const Button = props => {
+    const [colorMode, setMode] = useColorMode()
+    mode = colorMode
+    return <button children="test" />
+  }
+  const tree = render(
+    <ThemeProvider
+      theme={{
+        useLocalStorage: false,
+      }}>
+      <ColorModeProvider>
+        <Button />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(mode).toBe('default')
+})
+
 test('retains initial context', () => {
   let context
   const Consumer = props => {
