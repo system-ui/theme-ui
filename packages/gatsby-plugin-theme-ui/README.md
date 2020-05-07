@@ -20,12 +20,7 @@ prevent a flash of unstyled colors when using color modes.
 
 | Key                      | Default value    | Description                                                                      |
 | ------------------------ | ---------------- | -------------------------------------------------------------------------------- |
-| `themeModule`               | `null`            | JSON theme object, use the `require` syntax to include it in options. Make sure the package you're requiring is installed in your dependencies.               |
-| `themeModulePath`            | `null`  | A string package name that the plugin will require for you. Make sure the package you're requiring is installed in your dependencies.                                                             |
-| `moduleExportName`              | `default` | The name of the export from the theme module, applies to `themeModule` or `themeModulePath` resolution depending which one you're using    |
 | `prismPreset`              | `null` | The name of the preset you'd like to use to style code blocks inside your markdown files. The available presets can be found in the [theme-ui docs](https://theme-ui.com/packages/prism/). You can also use a package string of your own choosing. |
-
-> Note that if your theme is exported at the top level, the `moduleExportName` of `default` is bypassed. See [theme-ui/preset-deep](https://github.com/system-ui/theme-ui/blob/master/packages/preset-deep/src/index.ts).
 
 The theme module you include in options is considered your base theme. Any further customization and shadowing will be merged with it. 
 
@@ -37,8 +32,6 @@ module.exports = {
   plugins: [
     { resolve: 'gatsby-plugin-theme-ui',
       options: {
-        themeModulePath: '@theme-ui/preset-funk',
-        // or themeModule: require('@theme-ui/preset-funk')
         prismPreset: 'night-owl'
       }
     }],

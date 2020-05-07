@@ -9,22 +9,9 @@ exports.onPreInit = ({ reporter }, options) => {
     try {
       options.prismPreset = require(prismPreset)
     } catch {
-      reporter.error(
-        `It appears the prism dependency is not installed. Try running \`${generateInstallInstructions()}\n\n${prismPreset}\``
-      )
+      reporter.warn(`It appears the prism dependency is not installed.`)
     }
   }
-}
-
-function generateInstallInstructions() {
-  const { getConfigStore } = require(`gatsby-core-utils`)
-
-  const packageMangerConfigKey = `cli.packageManager`
-  const PACKAGE_MANGER = getConfigStore().get(packageMangerConfigKey) || `yarn`
-
-  const installKeyWord = PACKAGE_MANGER === `yarn` ? 'add' : 'install'
-
-  return `${PACKAGE_MANGER} ${installKeyWord}`
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

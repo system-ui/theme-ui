@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, merge } from 'theme-ui'
-import theme from './index'
+import localTheme from './index'
 import components from './components'
 import useThemeUiConfig from './hooks/configOptions'
 
@@ -17,7 +17,7 @@ const Root = ({ children }) => {
     }
   )
 
-  const fullTheme = merge(themeWithPrism, theme)
+  const fullTheme = merge(themeWithPrism, localTheme)
 
   return (
     <ThemeProvider theme={fullTheme} components={components}>

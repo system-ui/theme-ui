@@ -9,6 +9,7 @@ module.exports = {
   'prism-coy': '@theme-ui/prism/presets/prism-coy.json',
   'prism-dark': '@theme-ui/prism/presets/prism-dark.json',
   'prism-funky': '@theme-ui/prism/presets/prism-funky.json',
+  'prism-okaidia': '@theme-ui/prism/presets/prism-okaidia.json',
   'prism-solarizedlight': '@theme-ui/prism/presets/prism-solarizedlight.json',
   'prism-tomorrow': '@theme-ui/prism/presets/prism-tomorrow.json',
   'prism-twilight': '@theme-ui/prism/presets/prism-twilight.json',
