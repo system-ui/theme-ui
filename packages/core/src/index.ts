@@ -76,7 +76,7 @@ interface BaseProviderProps {
 const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   jsx(
     EmotionContext.Provider,
-    { value: context.theme },
+    { value: context.theme! },
     jsx(Context.Provider, {
       value: context,
       children,
@@ -103,7 +103,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
 
   const context =
     typeof theme === 'function'
-      ? { ...outer, theme: theme(outer.theme) }
+      ? { ...outer, theme: theme(outer.theme!) }
       : merge.all<ContextValue>({}, outer, { theme })
 
   return jsx(BaseProvider, { context }, children)

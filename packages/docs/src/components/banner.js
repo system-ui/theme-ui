@@ -6,21 +6,13 @@ export default props => (
     theme={{
       styles: {
         p: {
-          ':first-of-type': {
-            variant: 'text.display',
-            fontSize: [3, null, 4],
-            mt: 4,
-          },
-          fontWeight: 'bold',
-          mt: 0,
-          mb: 3,
+          maxWidth: '40em',
+          my: 4,
         },
         h1: {
           fontSize: [3, 3, 4],
-          fontWeight: 'heading',
-          letterSpacing: 'initial',
-          mt: 0,
-          mb: 4,
+          letterSpacing: '0',
+          my: 4,
         },
         a: {
           variant: 'links.button',
@@ -31,7 +23,8 @@ export default props => (
     }}>
     <div
       sx={{
-        pb: [5, 6],
+        pt: 4,
+        pb: 4,
       }}>
       <Container>{props.children}</Container>
     </div>

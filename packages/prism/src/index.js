@@ -27,7 +27,7 @@ export default ({ children, className: outerClassName, title, ...props }) => {
               {line.map((token, key) => (
                 <span
                   {...getTokenProps({ token, key })}
-                  sx={{ display: 'inline-block' }}
+                  sx={token.empty ? { display: 'inline-block' } : undefined}
                 />
               ))}
             </div>

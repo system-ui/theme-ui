@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "next-theme-ui-example",
-  "version": "0.3.1",
+  "version": "0.4.0-alpha.0",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -11,12 +11,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.15",
-    "@mdx-js/loader": "^1.0.19",
-    "@next/mdx": "^9.0.3",
-    "next": "^9.0.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "theme-ui": "^0.3.1"
+    "@mdx-js/loader": "^1.5.8",
+    "@next/mdx": "^9.3.4",
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.4.0-alpha.0"
   }
 }

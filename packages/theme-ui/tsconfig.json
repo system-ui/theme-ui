@@ -1,0 +1,8 @@
+{
+  "extends": "../core/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": false
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}

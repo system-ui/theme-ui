@@ -2,7 +2,7 @@
 import { jsx } from '../src'
 import renderer from 'react-test-renderer'
 
-const renderJSON = (el: React.ReactNode) => renderer.create(el).toJSON()
+const renderJSON = (el: React.ReactElement) => renderer.create(el).toJSON()
 
 describe('JSX', () => {
   test('accepts sx prop', () => {

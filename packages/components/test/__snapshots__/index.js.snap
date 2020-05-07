@@ -492,12 +492,6 @@ exports[`Embed renders 1`] = `
 `;
 
 exports[`Field renders 1`] = `
-.emotion-2 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-}
-
 .emotion-0 {
   box-sizing: border-box;
   margin: 0;
@@ -525,6 +519,12 @@ exports[`Field renders 1`] = `
   border-radius: 4px;
   color: inherit;
   background-color: transparent;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
 }
 
 <div
@@ -1313,6 +1313,7 @@ exports[`Text renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  font-size: 20px;
 }
 
 <div
