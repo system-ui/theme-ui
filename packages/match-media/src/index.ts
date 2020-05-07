@@ -1,9 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useThemeUI } from '@theme-ui/core'
-import { Theme } from '@theme-ui/css'
-
-// Shared with @theme-ui/css
-const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
+import { Theme, defaultBreakpoints } from '@theme-ui/css'
 
 type defaultOptions = {
   defaultIndex?: number
