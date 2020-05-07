@@ -4,7 +4,7 @@ const heading = {
   lineHeight: 'heading',
 }
 
-export default {
+export const deep = {
   colors: {
     text: 'hsl(210, 50%, 96%)',
     background: 'hsl(230, 25%, 18%)',
@@ -151,3 +151,5 @@ export default {
     },
   },
 }
+
+export default deep
