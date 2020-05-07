@@ -37,5 +37,8 @@
   },
   ".builtin,.char,.constant,.function,.class-name": {
     "color": "rgb(250, 208, 0)"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 40%, .5)"
   }
 }

@@ -44,5 +44,8 @@
   },
   ".boolean": {
     "color": "rgb(188, 84, 84)"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 70%, .5)"
   }
 }

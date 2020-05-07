@@ -124,6 +124,22 @@ export default {
 }
 ```
 
+## Highlight support
+
+This package supports highlighting inside code blocks. The following two syntaxes are supported:
+
+```js
+  let str = "highlight" // highlight-line
+```
+
+```js
+  // highlight-start
+  let str = "highlight"
+  // highlight-end
+```
+
+The highlight styling is controlled in `styles.pre`.
+
 ## Additional Languages
 
 Please note that `@theme-ui/prism` uses [`prism-react-renderer`](https://github.com/FormidableLabs/prism-react-renderer), [which does not include all languages supported in Prism](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js) by default. So, if you happen to use one of the missing languages, your code block simply won't show up as highlighted.
