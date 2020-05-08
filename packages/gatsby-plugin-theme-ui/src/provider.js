@@ -6,11 +6,17 @@ import useThemeUiConfig from './hooks/configOptions'
 
 const Root = ({ children }) => {
   const themeUiConfig = useThemeUiConfig()
-  const { preset } = themeUiConfig
+  const { preset, prismPreset } = themeUiConfig
 
   const theme = preset.default || preset
 
-  const fullTheme = merge(theme, localTheme)
+  const themeWithPrism = merge(theme, {
+    styles: {
+      pre: prismPreset,
+    },
+  })
+
+  const fullTheme = merge(themeWithPrism, localTheme)
 
   return (
     <ThemeProvider theme={fullTheme} components={components}>

@@ -5,6 +5,7 @@ const useThemeUiConfig = () => {
     query {
       themeUiConfig(id: { eq: "gatsby-plugin-theme-ui-config" }) {
         preset
+        prismPreset
       }
     }
   `)

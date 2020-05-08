@@ -1,5 +1,7 @@
-exports.onPreInit = (__, options) => {
-  let { preset } = options
+const prismPresetDictionary = require(`./utils/preset-dictionary`)
+
+exports.onPreInit = ({ reporter }, options) => {
+  let { preset, prismPreset } = options
 
   if (typeof preset === 'string') {
     try {
@@ -10,6 +12,18 @@ exports.onPreInit = (__, options) => {
       )
     }
   }
+
+  if (prismPreset in prismPresetDictionary) {
+    prismPreset = prismPresetDictionary[prismPreset]
+  }
+
+  if (prismPreset) {
+    try {
+      options.prismPreset = require(prismPreset)
+    } catch {
+      reporter.warn(`It appears the prism dependency is not installed.`)
+    }
+  }
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -18,15 +32,20 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
       type ThemeUiConfig implements Node {
         preset: JSON,
+        prismPreset: JSON,
       }
     `)
 }
 
-exports.sourceNodes = ({ actions, createContentDigest }, { preset = {} }) => {
+exports.sourceNodes = (
+  { actions, createContentDigest },
+  { preset = {}, prismPreset = {} }
+) => {
   const { createNode } = actions
 
   const themeUiConfig = {
     preset,
+    prismPreset,
   }
 
   createNode({
