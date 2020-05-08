@@ -16,6 +16,31 @@ module.exports = {
 In addition to providing context, this plugin will also
 prevent a flash of unstyled colors when using color modes.
 
+## Options
+
+| Key                      | Default value    | Description                                                                      |
+| ------------------------ | ---------------- | -------------------------------------------------------------------------------- |
+| `preset`               | `null`            | This can be a JSON theme object or a string package name. Make sure the package you're requiring is installed in your dependencies.               |
+
+> Note that this plugin assumes the theme object is exported as `default`.
+
+The theme module you include in options is considered your base theme. Any further customization and shadowing will be merged with it. 
+
+### Using options
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    { resolve: 'gatsby-plugin-theme-ui',
+      options: {
+        preset: '@theme-ui/preset-funk'
+        // or require('@theme-ui/preset-funk')
+      }
+    }],
+}
+```
+
 ## Customizing the theme
 
 To customize the theme used in your Gatsby site,
