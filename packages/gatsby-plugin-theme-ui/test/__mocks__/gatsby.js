@@ -7,6 +7,7 @@ module.exports = {
   useStaticQuery: jest.fn(() => ({
     themeUiConfig: {
       preset: {},
+      prismPreset: {},
     },
   })),
 }
