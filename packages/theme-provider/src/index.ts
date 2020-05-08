@@ -11,10 +11,15 @@ import { Global } from '@emotion/core'
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: (theme: Theme) => {
-      if (theme.useBodyStyles === false || (theme.styles && !theme.styles.root))
+    styles: emotionTheme => {
+      const theme = emotionTheme as Theme
+      if (
+        theme.useBodyStyles === false ||
+        (theme.styles && !theme.styles.root)
+      ) {
         return false
-      const boxSizing = theme.useBorderBox === false ? null : 'border-box'
+      }
+      const boxSizing = theme.useBorderBox === false ? undefined : 'border-box'
 
       return css({
         '*': {
