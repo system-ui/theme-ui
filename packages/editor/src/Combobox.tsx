@@ -92,21 +92,19 @@ const Combobox = ({
     onChange(e.target.value)
   }
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = () => {
     requestAnimationFrame(() => {
       if (root.current && root.current.contains(document.activeElement)) return
       setOpen(false)
     })
   }
 
-  const toggleOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const toggleOpen = () => {
     setOpen(!open)
     if (input.current) input.current.focus()
   }
 
-  const handleItemClick = (i: number) => (
-    e: React.MouseEvent<HTMLLIElement>
-  ) => {
+  const handleItemClick = (i: number) => () => {
     const val = options[i]
     if (val) onChange(val)
     setOpen(false)
