@@ -1,17 +1,28 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { ColorResult } from 'react-color'
+import { jsx, Theme } from 'theme-ui'
 import ThemeColorPicker from './ThemeColorPicker'
 
-export const Colors = ({
+type Color = string | ColorResult
+type OnChangeArg = { color: Color } | { bg: Color }
+
+type ColorsProps = {
   value: {
-    color,
-    bg,
-  } = {},
+    color?: string
+    bg?: string
+  }
+  theme?: Theme
+  onChange: (arg: OnChangeArg) => void
+}
+
+export const Colors = ({
+  value: { color, bg } = {},
   theme,
   onChange,
-}) => {
+}: ColorsProps) => {
   return (
     <div
+      // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
       sx={{
         display: 'grid',
         gridGap: 2,
