@@ -21,6 +21,9 @@ prevent a flash of unstyled colors when using color modes.
 | Key                      | Default value    | Description                                                                      |
 | ------------------------ | ---------------- | -------------------------------------------------------------------------------- |
 | `prismPreset`              | `null` | The name of the preset you'd like to use to style code blocks inside your markdown files. The available presets can be found in the [theme-ui docs](https://theme-ui.com/packages/prism/). You can also use a package string of your own choosing. |
+| `preset`               | `null`            | This can be a JSON theme object or a string package name. Make sure the package you're requiring is installed in your dependencies.               |
+
+> Note that this plugin assumes the theme object is exported as `default`.
 
 The theme module you include in options is considered your base theme. Any further customization and shadowing will be merged with it. 
 
@@ -33,6 +36,7 @@ module.exports = {
     { resolve: 'gatsby-plugin-theme-ui',
       options: {
         prismPreset: 'night-owl'
+        preset: '@theme-ui/preset-funk'
       }
     }],
 }

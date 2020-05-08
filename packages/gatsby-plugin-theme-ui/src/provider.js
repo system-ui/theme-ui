@@ -6,16 +6,15 @@ import useThemeUiConfig from './hooks/configOptions'
 
 const Root = ({ children }) => {
   const themeUiConfig = useThemeUiConfig()
-  const { prismPreset } = themeUiConfig
+  const { preset, prismPreset } = themeUiConfig
 
-  const themeWithPrism = merge(
-    {},
-    {
-      styles: {
-        pre: prismPreset,
-      },
-    }
-  )
+  const theme = preset.default || preset
+
+  const themeWithPrism = merge(theme, {
+    styles: {
+      pre: prismPreset,
+    },
+  })
 
   const fullTheme = merge(themeWithPrism, localTheme)
 
