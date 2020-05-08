@@ -1,6 +1,4 @@
-import React from 'react'
-import { Theme } from '@theme-ui/css'
-import { ContextValue } from '@theme-ui/core'
+import { Theme, ContextValue } from 'theme-ui'
 
 export type EditorContext = ContextValue & {
   setTheme: React.Dispatch<Theme>

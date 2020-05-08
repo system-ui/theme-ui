@@ -1,7 +1,6 @@
 import React from 'react'
-import { jsx, Context, useThemeUI, merge } from 'theme-ui'
+import { jsx, Context, useThemeUI, merge, Theme } from 'theme-ui'
 import { ThemeContext as Emotion } from '@emotion/core'
-import { Theme } from '@theme-ui/css'
 import { EditorContext } from './types'
 
 const reducer = (state: Theme, next: Theme) => merge<Theme>(state, next)
@@ -27,9 +26,7 @@ export const EditorProvider = ({
 
   return jsx(
     Context.Provider,
-    {
-      value: context,
-    },
+    { value: context },
     jsx(Emotion.Provider, {
       value: theme,
       children,
