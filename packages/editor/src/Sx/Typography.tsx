@@ -1,17 +1,29 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Theme } from 'theme-ui'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import Combobox from '../Combobox'
 
+type OnChangeArg =
+  | { fontFamily: string }
+  | { fontSize: number }
+  | { fontWeight: string }
+  | { lineHeight: string }
+type TypographyProps = {
+  tag?: string
+  value?: {
+    fontFamily?: string
+    fontSize?: string | number
+    fontWeight?: string
+    lineHeight?: string
+  }
+  theme?: Theme
+  onChange: (arg: OnChangeArg) => void
+}
+
 export const SxTypography = ({
   tag,
-  value: {
-    fontFamily,
-    fontSize,
-    fontWeight,
-    lineHeight,
-  } = {},
+  value: { fontFamily, fontSize, fontWeight, lineHeight } = {},
   theme: {
     fonts = {},
     fontSizes = [],
@@ -19,8 +31,8 @@ export const SxTypography = ({
     lineHeights = {},
   } = {},
   onChange,
-}) => {
-  const prefixName = name => tag ? `styles.${tag}.${name}` : name
+}: TypographyProps) => {
+  const prefixName = (name: string) => (tag ? `styles.${tag}.${name}` : name)
 
   return (
     <Fragment>
@@ -34,12 +46,14 @@ export const SxTypography = ({
         options={['inherit', ...Object.keys(fonts)]}
       />
       <div
+        // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
         sx={{
           display: 'grid',
           gridGap: 2,
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
         <Field
+          // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing value prop in there
           name={prefixName('fontSize')}
           label="Font Size"
           value={fontSize || ''}
