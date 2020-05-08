@@ -1,13 +1,18 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
 import { Field } from '@theme-ui/components'
+import { EditorContext } from '../types'
 
-export default props => {
-  const context = useThemeUI()
+// TODO: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
+const AnyField = Field as any
+
+const FontSizes = () => {
+  const context = useThemeUI() as EditorContext
   const { fontSizes = [] } = context.theme
 
-  const onChange = key => e => {
-    const n = parseFloat(e.target.value)
+  const onChange = (key: string) => (e: React.FormEvent<HTMLInputElement>) => {
+    // TODO: I needed to swap target to currentTarget because TypeScript complains about "Property 'value' does not exist on type 'EventTarget'.ts(2339)". Should I change it back or leave as is?
+    const n = parseFloat(e.currentTarget.value)
     if (Array.isArray(fontSizes)) {
       const i = parseInt(key)
       context.setTheme({
@@ -24,7 +29,7 @@ export default props => {
 
   return Object.keys(fontSizes).map(key => (
     <div key={key}>
-      <Field
+      <AnyField
         type="number"
         label={key}
         name={'fontSizes.' + key}
@@ -34,3 +39,5 @@ export default props => {
     </div>
   ))
 }
+
+export default FontSizes
