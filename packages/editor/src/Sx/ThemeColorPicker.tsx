@@ -1,16 +1,28 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx, useThemeUI, Theme } from 'theme-ui'
 import React from 'react'
 import tinycolor from 'tinycolor2'
-import { GithubPicker } from 'react-color'
+import { GithubPicker, ColorResult } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
-export const ThemeColorPicker = ({ children, theme, ...props }) => {
+type ThemeColorPickerProps = {
+  children?: React.ReactNode
+  theme?: Theme
+  value?: string
+  onChange: (color: string | ColorResult) => void
+}
+
+export const ThemeColorPicker = ({
+  children,
+  theme,
+  ...props
+}: ThemeColorPickerProps) => {
   const popover = usePopoverState()
   const context = useThemeUI()
   // todo: look into supporting v0.2 functionality
   // const { colors } = theme || context.theme || {}
   const _theme = theme || context.theme || {}
+  // TODO: Where to add rawColors type?
   const colors = _theme.rawColors || _theme.colors || {}
   const value = colors[props.value] || props.value
   const options = [
@@ -20,7 +32,7 @@ export const ThemeColorPicker = ({ children, theme, ...props }) => {
       .filter(color => typeof color === 'string')
       .filter(color => /^#/.test(color)),
   ]
-  const onChange = color => {
+  const onChange = (color: ColorResult) => {
     const [key] =
       Object.entries(colors).find(
         ([k, v]) => tinycolor(v).toHexString() === color.hex
