@@ -4,7 +4,7 @@ const heading = {
   lineHeight: 'heading',
 }
 
-export default {
+export const system = {
   useCustomProperties: true,
   initialColorMode: 'system',
   colors: {
@@ -163,3 +163,5 @@ export default {
     },
   },
 }
+
+export default system

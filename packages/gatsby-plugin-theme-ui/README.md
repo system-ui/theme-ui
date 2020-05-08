@@ -75,7 +75,7 @@ export default {
 }
 ```
 
-You can also import and use presets from [@theme-ui/presets](https://theme-ui.com/presets) to use as a starting point.
+You can also import and use presets from [@theme-ui/presets](https://theme-ui.com/packages/presets) to use as a starting point.
 
 ## Color Modes
 
