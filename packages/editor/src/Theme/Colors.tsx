@@ -48,6 +48,7 @@ const Colors = props => {
       {...props}
       mode={mode}
       render={({ swatch, color, key, ...rest }) => (
+        // FIXME: onChange(key) expects val.hex to exist, but the onChange prop does not provide that every time (see ColorPicker). Is this a bug?
         <ColorPicker key={key} color={color} onChange={onChange(key)}>
           {swatch}
         </ColorPicker>
