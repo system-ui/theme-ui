@@ -9,9 +9,10 @@ import {
 } from 'react-color/lib/components/common'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
-const round = (n, x = 0) => Math.floor(n * Math.pow(10, x)) / Math.pow(10, x)
+const round = (n: number, x: number = 0) =>
+  Math.floor(n * Math.pow(10, x)) / Math.pow(10, x)
 
-const Lens = props => (
+const Lens = () => (
   <div
     sx={{
       width: 16,
@@ -23,7 +24,7 @@ const Lens = props => (
   />
 )
 
-const Handle = props => (
+const Handle = () => (
   <div
     sx={{
       width: 12,
@@ -36,10 +37,17 @@ const Handle = props => (
   />
 )
 
+type InputProps = {
+  name?: string | number
+  value?: string | number
+  label: string
+  onChange: (val: { [k: string]: number }) => void
+}
+
 /** placeholder is used because react-color does not pass
  * HTML attributes to the element
  */
-const Input = props => (
+const Input = (props: InputProps) => (
   <EditableInput
     {...props}
     placeholder={props.name}
@@ -60,7 +68,13 @@ const Input = props => (
   />
 )
 
-const Label = ({ width = '100%', flex = 1, ...props }) => (
+type LabelProps = React.PropsWithoutRef<JSX.IntrinsicElements['label']> & {
+  // TODO: Couldn't find the exact type but I'm sure there is a specific width type
+  width?: string | number
+  flex?: number
+}
+
+const Label = ({ width = '100%', flex = 1, ...props }: LabelProps) => (
   <label
     {...props}
     sx={{
@@ -77,9 +91,21 @@ const Label = ({ width = '100%', flex = 1, ...props }) => (
   />
 )
 
-export const Picker = CustomPicker(({ size = 256, ...props }) => {
+type PickerProps = {
+  size?: number
+  hex: string
+  onChange: InputProps['onChange']
+  hsl: {
+    h: number
+    s: number
+    l: number
+  }
+}
+
+export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
   return (
     <div
+      // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
       sx={{
         display: 'grid',
         p: 2,
@@ -163,7 +189,11 @@ export const Picker = CustomPicker(({ size = 256, ...props }) => {
   )
 })
 
-export const ColorPicker = ({ children, ...props }) => {
+type ColorPickerProps = PickerProps & {
+  children?: React.ReactNode
+}
+
+export const ColorPicker = ({ children, ...props }: ColorPickerProps) => {
   const popover = usePopoverState()
   const hasChildren = !!children
 
