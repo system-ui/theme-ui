@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import * as CSS from 'csstype'
 import { jsx, useThemeUI } from 'theme-ui'
 import Combobox from '../Combobox'
 import { EditorContext } from '../types'
@@ -26,11 +27,11 @@ const defaultFonts = [
   'Menlo, monospace',
 ]
 
-const Fonts = ({ options = defaultFonts, ...props }) => {
+const Fonts = ({ options = defaultFonts }) => {
   const context = useThemeUI() as EditorContext
   const { fonts = {} } = context.theme
 
-  const onChange = key => val => {
+  const onChange = (key: string) => (val: CSS.FontFamilyProperty) => {
     context.setTheme({
       fonts: {
         [key]: val,
