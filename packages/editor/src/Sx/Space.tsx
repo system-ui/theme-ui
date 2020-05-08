@@ -3,7 +3,7 @@ import { jsx, Theme, SxStyleProp } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
 
-type SpaceProps = {
+export type SpaceProps = {
   tag?: string
   property?: 'margin' | 'padding'
   value?: Theme['space']
