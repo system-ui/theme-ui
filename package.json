@@ -96,7 +96,10 @@
     ],
     "setupFiles": [
       "jest-canvas-mock"
-    ]
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js"
+    }
   },
   "husky": {
     "hooks": {
