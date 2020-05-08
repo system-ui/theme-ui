@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
 import Combobox from '../Combobox'
+import { EditorContext } from '../types'
 
 const defaultFonts = [
   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -25,8 +26,8 @@ const defaultFonts = [
   'Menlo, monospace',
 ]
 
-export default ({ options = defaultFonts, ...props }) => {
-  const context = useThemeUI()
+const Fonts = ({ options = defaultFonts, ...props }) => {
+  const context = useThemeUI() as EditorContext
   const { fonts = {} } = context.theme
 
   const onChange = key => val => {
@@ -49,3 +50,5 @@ export default ({ options = defaultFonts, ...props }) => {
     </div>
   ))
 }
+
+export default Fonts
