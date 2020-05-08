@@ -18,6 +18,7 @@ export default props => {
       colors &&
       colors.modes &&
       colors.modes[mode] &&
+      // TODO: Where to add initialColorMode type?
       mode !== (context.theme as any).initialColorMode
     ) {
       next = {
