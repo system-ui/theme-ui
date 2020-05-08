@@ -5,7 +5,9 @@ import ColorPicker from '../ColorPicker'
 import { EditorContext } from '../types'
 
 export default props => {
+  // TODO: I need to cast the context value because TypeScript assumes the default theme-ui ContextValue. Is there a better way to make TypeScript know of the EditorContext than casting the type?
   const context = useThemeUI() as EditorContext
+  // TODO: Where to add colorMode type?
   const mode = (context as any).colorMode
   const { colors } = context.theme
 
