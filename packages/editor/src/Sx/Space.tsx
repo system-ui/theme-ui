@@ -1,14 +1,21 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Theme, SxStyleProp } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
+
+type SpaceProps = {
+  tag?: string
+  property?: 'margin' | 'padding'
+  value?: Theme['space']
+  onChange: (sx: SxStyleProp) => void
+}
 
 export const Space = ({
   tag,
   property = 'margin',
   value = {},
   onChange,
-}) => {
+}: SpaceProps) => {
   const [lock, setLock] = useState({ x: false, y: false })
   const key = property === 'margin' ? 'm' : 'p'
   const x = value[key + 'x'] || value[property + 'X'] || ''
@@ -50,7 +57,7 @@ export const Space = ({
     const isX = dir === 'x'
     if (!lock[dir]) {
       setLock(lock => ({ ...lock, [dir]: true }))
-      const val = isX ? (l || r) : (t || b)
+      const val = isX ? l || r : t || b
       onChange({
         [key + (isX ? 'l' : 't')]: undefined,
         [key + (isX ? 'r' : 'b')]: undefined,
@@ -67,11 +74,13 @@ export const Space = ({
     }
   }
 
-  const prefixName = name => tag ? `styles.${tag}.${key}${name}` : key + name
-  const label = dir => property === 'margin' ? 'Margin ' + dir : 'Padding ' + dir
+  const prefixName = name => (tag ? `styles.${tag}.${key}${name}` : key + name)
+  const label = dir =>
+    property === 'margin' ? 'Margin ' + dir : 'Padding ' + dir
 
   return (
     <div
+      // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
       sx={{
         display: 'grid',
         gridGap: 2,
@@ -79,52 +88,51 @@ export const Space = ({
         alignItems: 'center',
       }}>
       <Field
+        // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
         type="number"
         name={prefixName('l')}
-        label={label("Left")}
+        label={label('Left')}
         value={l}
         onChange={handleChange('l')}
       />
       <div
+        // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
         sx={{
           display: 'grid',
           gridGap: 2,
         }}>
         <Field
+          // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
           type="number"
           name={prefixName('t')}
-          label={label("Top")}
+          label={label('Top')}
           value={t}
           onChange={handleChange('t')}
         />
         <div>
           <Label>
-            <Checkbox
-              checked={lock.x}
-              onChange={onChangeLock('x')}
-            />
+            <Checkbox checked={lock.x} onChange={onChangeLock('x')} />
             Lock x-axis
           </Label>
           <Label>
-            <Checkbox
-              checked={lock.y}
-              onChange={onChangeLock('y')}
-            />
+            <Checkbox checked={lock.y} onChange={onChangeLock('y')} />
             Lock y-axis
           </Label>
         </div>
         <Field
+          // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
           type="number"
           name={prefixName('b')}
-          label={label("Bottom")}
+          label={label('Bottom')}
           value={b}
           onChange={handleChange('b')}
         />
       </div>
       <Field
+        // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
         type="number"
         name={prefixName('r')}
-        label={label("Right")}
+        label={label('Right')}
         value={r}
         onChange={handleChange('r')}
       />
