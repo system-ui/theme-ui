@@ -1,6 +1,8 @@
 const prismPresetDictionary = require(`./utils/preset-dictionary`)
 
 exports.onPreInit = ({ reporter }, options) => {
+  let { preset, prismPreset } = options
+
   if (typeof preset === 'string') {
     try {
       options.preset = require(preset)
@@ -29,8 +31,8 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   createTypes(`
       type ThemeUiConfig implements Node {
-        prismPreset: JSON,
         preset: JSON,
+        prismPreset: JSON,
       }
     `)
 }
