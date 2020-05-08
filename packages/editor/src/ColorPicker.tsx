@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
-import { CustomPicker } from 'react-color'
+import { CustomPicker, ColorChangeHandler } from 'react-color'
 import {
   Hue,
   Saturation,
@@ -38,10 +38,16 @@ const Handle = () => (
 )
 
 type InputProps = {
-  name?: string | number
+  name?: string
   value?: string | number
   label: string
-  onChange: (val: { [k: string]: number }) => void
+  onChange: ColorChangeHandler
+  hex: string
+  hsl: {
+    h: number
+    s: number
+    l: number
+  }
 }
 
 /** placeholder is used because react-color does not pass
@@ -50,6 +56,7 @@ type InputProps = {
 const Input = (props: InputProps) => (
   <EditableInput
     {...props}
+    // FIXME: placeholder type is missing in @types/react-color. I tried to fix that by redeclaring the module locally, but that didn't work unfortunately. How to add the missing prop to the EditableInput?
     placeholder={props.name}
     style={{
       input: {
@@ -91,15 +98,8 @@ const Label = ({ width = '100%', flex = 1, ...props }: LabelProps) => (
   />
 )
 
-type PickerProps = {
+type PickerProps = InputProps & {
   size?: number
-  hex: string
-  onChange: InputProps['onChange']
-  hsl: {
-    h: number
-    s: number
-    l: number
-  }
 }
 
 export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
@@ -168,6 +168,7 @@ export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
             name="saturation"
             label="s"
             onChange={({ s }) => {
+              // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
               props.onChange({ ...props.hsl, s: s / 100 })
             }}
           />
@@ -180,6 +181,7 @@ export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
             name="lightness"
             label="l"
             onChange={({ l }) => {
+              // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
               props.onChange({ ...props.hsl, l: l / 100 })
             }}
           />
