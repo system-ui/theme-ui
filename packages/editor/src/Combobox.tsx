@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
-import { Label, Input } from '@theme-ui/components'
+import { Label, Input, InputProps } from '@theme-ui/components'
 
 const Chevron = () => (
   <svg
@@ -27,6 +27,16 @@ const keys = {
   13: 'return',
 }
 
+type ComboboxOwnProps = {
+  type?: string
+  name: string
+  label?: React.ReactNode
+  value: string
+  onChange: (val: string) => void
+  options?: string[]
+}
+type ComboboxProps = ComboboxOwnProps & Omit<InputProps, keyof ComboboxOwnProps>
+
 const Combobox = ({
   type = 'text',
   name,
@@ -35,7 +45,7 @@ const Combobox = ({
   onChange,
   options = [],
   ...props
-}) => {
+}: ComboboxProps) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(-1)
   const root = useRef<HTMLDivElement>(null)
