@@ -4,25 +4,32 @@ import { ColorPalette } from '@theme-ui/style-guide'
 import ColorPicker from '../ColorPicker'
 import { EditorContext } from '../types'
 
-const Colors = props => {
+type ColorsProps = {
+  size?: number
+}
+type ColorPaletteRenderArg = {
+  color: string
+  swatch: React.ReactNode
+  key: string
+  name: string
+}
+
+const Colors = (props: ColorsProps) => {
   // TODO: I need to cast the context value because TypeScript assumes the default theme-ui ContextValue. Is there a better way to make TypeScript know of the EditorContext than casting the type?
   const context = useThemeUI() as EditorContext
-  // TODO: Where to add colorMode type?
-  const mode = (context as any).colorMode
+  // FIXME: Where to add colorMode type?
+  const mode = context.colorMode
   const { colors } = context.theme
 
-  const onChange = (key: string) => (val: {
-    // TODO: Maybe a more precise type?
-    hex: string
-  }) => {
+  const onChange = (key: string) => (val: { hex: string }) => {
     let next = {}
     if (
       mode &&
       colors &&
       colors.modes &&
       colors.modes[mode] &&
-      // TODO: Where to add initialColorMode type?
-      mode !== (context.theme as any).initialColorMode
+      // FIXME: Where to add initialColorMode type?
+      mode !== context.theme.initialColorMode
     ) {
       next = {
         colors: {
@@ -47,7 +54,7 @@ const Colors = props => {
     <ColorPalette
       {...props}
       mode={mode}
-      render={({ swatch, color, key, ...rest }) => (
+      render={({ swatch, color, key, ...rest }: ColorPaletteRenderArg) => (
         <ColorPicker key={key} color={color} onChange={onChange(key)}>
           {swatch}
         </ColorPicker>

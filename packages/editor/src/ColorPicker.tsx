@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
-import { CustomPicker, HSLColor } from 'react-color'
-import EditableInput, {
-  EditableInputProps,
-} from 'react-color/lib/components/common/EditableInput'
-import Hue, { HueProps } from 'react-color/lib/components/common/Hue'
-import Saturation, {
-  SaturationProps,
-} from 'react-color/lib/components/common/Saturation'
+import { CustomPicker, CustomPickerProps } from 'react-color'
+import {
+  EditableInput,
+  Hue,
+  Saturation,
+} from 'react-color/lib/components/common'
+import { EditableInputProps } from 'react-color/lib/components/common/EditableInput'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
 const round = (n: number, x: number = 0) =>
@@ -39,11 +38,8 @@ const Handle = () => (
   />
 )
 
-type InputProps = EditableInputProps & {
+type InputProps = React.PropsWithoutRef<EditableInputProps> & {
   name?: string
-  value: string | number
-  hex: string
-  hsl: HSLColor
 }
 
 /** placeholder is used because react-color does not pass
@@ -92,99 +88,100 @@ const Label = ({ width = '100%', flex = 1, ...props }: LabelProps) => (
   />
 )
 
-type PickerProps = React.PropsWithoutRef<InputProps> &
-  React.PropsWithoutRef<SaturationProps> &
-  React.PropsWithoutRef<HueProps> & {
-    size?: number
-  }
+type CustomPickerForwardedProps = {
+  size?: number
+}
+type PickerProps = CustomPickerForwardedProps & CustomPickerProps
 
-export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
-  return (
-    <div
-      sx={{
-        display: 'grid',
-        p: 2,
-        gap: 2,
-        width: size,
-        borderRadius: 4,
-        bg: 'white',
-        boxShadow: '0 2px 8px 1px rgba(0,0,0,.125)',
-      }}>
+export const Picker = CustomPicker<CustomPickerForwardedProps>(
+  ({ size = 256, ...props }) => {
+    return (
       <div
         sx={{
-          position: 'relative',
-          width: '100%',
-          height: 0,
-          paddingBottom: '75%',
+          display: 'grid',
+          p: 2,
+          gap: 2,
+          width: size,
+          borderRadius: 4,
+          bg: 'white',
+          boxShadow: '0 2px 8px 1px rgba(0,0,0,.125)',
         }}>
-        <Saturation {...props} pointer={Lens} />
+        <div
+          sx={{
+            position: 'relative',
+            width: '100%',
+            height: 0,
+            paddingBottom: '75%',
+          }}>
+          <Saturation {...props} pointer={Lens} />
+        </div>
+        <div
+          sx={{
+            position: 'relative',
+            width: '100%',
+            height: 8,
+          }}>
+          <Hue {...props} pointer={Handle} />
+        </div>
+        <div
+          sx={{
+            display: 'flex',
+          }}>
+          <Label>
+            Hex
+            <Input
+              {...props}
+              value={props.hex}
+              name="hex"
+              label="hex"
+              onChange={val => {
+                props.onChange(val)
+              }}
+            />
+          </Label>
+          <Label>
+            Hue
+            <Input
+              {...props}
+              value={round(props.hsl.h)}
+              name="hue"
+              label="h"
+              onChange={val => {
+                props.onChange({ ...props.hsl, ...val })
+              }}
+            />
+          </Label>
+          <Label>
+            Saturation
+            <Input
+              {...props}
+              value={round(props.hsl.s * 100)}
+              name="saturation"
+              label="s"
+              onChange={({ s }) => {
+                // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
+                props.onChange({ ...props.hsl, s: s / 100 })
+              }}
+            />
+          </Label>
+          <Label>
+            Lightness
+            <Input
+              {...props}
+              value={round(props.hsl.l * 100)}
+              name="lightness"
+              label="l"
+              onChange={({ l }) => {
+                // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
+                props.onChange({ ...props.hsl, l: l / 100 })
+              }}
+            />
+          </Label>
+        </div>
       </div>
-      <div
-        sx={{
-          position: 'relative',
-          width: '100%',
-          height: 8,
-        }}>
-        <Hue {...props} pointer={Handle} />
-      </div>
-      <div
-        sx={{
-          display: 'flex',
-        }}>
-        <Label>
-          Hex
-          <Input
-            {...props}
-            value={props.hex}
-            name="hex"
-            label="hex"
-            onChange={val => {
-              props.onChange(val)
-            }}
-          />
-        </Label>
-        <Label>
-          Hue
-          <Input
-            {...props}
-            value={round(props.hsl.h)}
-            name="hue"
-            label="h"
-            onChange={val => {
-              props.onChange({ ...props.hsl, ...val })
-            }}
-          />
-        </Label>
-        <Label>
-          Saturation
-          <Input
-            {...props}
-            value={round(props.hsl.s * 100)}
-            name="saturation"
-            label="s"
-            onChange={({ s }) => {
-              // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
-              props.onChange({ ...props.hsl, s: s / 100 })
-            }}
-          />
-        </Label>
-        <Label>
-          Lightness
-          <Input
-            {...props}
-            value={round(props.hsl.l * 100)}
-            name="lightness"
-            label="l"
-            onChange={({ l }) => {
-              // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
-              props.onChange({ ...props.hsl, l: l / 100 })
-            }}
-          />
-        </Label>
-      </div>
-    </div>
-  )
-})
+    )
+  }
+)
 
 type ColorPickerProps = React.PropsWithoutRef<PickerProps> & {
   children?: React.ReactNode
