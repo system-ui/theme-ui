@@ -71,7 +71,6 @@ const Input = (props: InputProps) => (
 )
 
 type LabelProps = React.PropsWithoutRef<JSX.IntrinsicElements['label']> & {
-  // TODO: Couldn't find the exact type but I'm sure there is a specific width type
   width?: string | number
   flex?: number
 }
