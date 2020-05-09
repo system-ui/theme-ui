@@ -80,10 +80,9 @@ export const Space = ({
 
   return (
     <div
-      // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
       sx={{
         display: 'grid',
-        gridGap: 2,
+        gap: 2,
         gridTemplateColumns: 'repeat(3, 1fr)',
         alignItems: 'center',
       }}>
@@ -96,10 +95,9 @@ export const Space = ({
         onChange={handleChange('l')}
       />
       <div
-        // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
         sx={{
           display: 'grid',
-          gridGap: 2,
+          gap: 2,
         }}>
         <Field
           // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there

@@ -105,11 +105,10 @@ type PickerProps = InputProps & {
 export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
   return (
     <div
-      // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
       sx={{
         display: 'grid',
         p: 2,
-        gridGap: 2,
+        gap: 2,
         width: size,
         borderRadius: 4,
         bg: 'white',

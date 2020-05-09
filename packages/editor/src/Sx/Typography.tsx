@@ -46,10 +46,9 @@ export const SxTypography = ({
         options={['inherit', ...Object.keys(fonts)]}
       />
       <div
-        // FIXME: All following keys trigger error "Type 'string' is not assignable to type 'SystemStyleObject'.ts(2322)", something seems to be wrong with the SystemStyleObject type.
         sx={{
           display: 'grid',
-          gridGap: 2,
+          gap: 2,
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
         <Field
