@@ -87,7 +87,7 @@ export const Space = ({
         alignItems: 'center',
       }}>
       <Field
-        // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
+        // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
         type="number"
         name={prefixName('l')}
         label={label('Left')}
@@ -100,7 +100,7 @@ export const Space = ({
           gap: 2,
         }}>
         <Field
-          // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
+          // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
           type="number"
           name={prefixName('t')}
           label={label('Top')}
@@ -118,7 +118,7 @@ export const Space = ({
           </Label>
         </div>
         <Field
-          // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
+          // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
           type="number"
           name={prefixName('b')}
           label={label('Bottom')}
@@ -127,7 +127,7 @@ export const Space = ({
         />
       </div>
       <Field
-        // FIXME: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
+        // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
         type="number"
         name={prefixName('r')}
         label={label('Right')}

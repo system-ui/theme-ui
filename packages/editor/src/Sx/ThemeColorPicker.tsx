@@ -22,7 +22,7 @@ export const ThemeColorPicker = ({
   // todo: look into supporting v0.2 functionality
   // const { colors } = theme || context.theme || {}
   const _theme = theme || context.theme || {}
-  // TODO: Where to add rawColors type?
+  // FIXME: Where to add rawColors type?
   const colors = _theme.rawColors || _theme.colors || {}
   const value = colors[props.value] || props.value
   const options = [
