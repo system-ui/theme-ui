@@ -10,10 +10,10 @@ const FontWeights = () => {
   const context = useThemeUI() as EditorContext
   const { fontWeights = {} } = context.theme
 
-  const onChange = (key: string) => (val: CSS.FontWeightProperty) => {
+  const onChange = (key: string) => (val: string | number) => {
     context.setTheme({
       fontWeights: {
-        [key]: val,
+        [key]: val as CSS.FontWeightProperty,
       },
     })
   }

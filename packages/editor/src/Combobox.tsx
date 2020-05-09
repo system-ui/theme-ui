@@ -31,9 +31,9 @@ type ComboboxOwnProps = {
   type?: string
   name: string
   label?: React.ReactNode
-  value: string
-  onChange: (val: string) => void
-  options?: string[]
+  value: string | number
+  onChange: (val: string | number) => void
+  options?: Array<string | number>
 }
 type ComboboxProps = ComboboxOwnProps & Omit<InputProps, keyof ComboboxOwnProps>
 
