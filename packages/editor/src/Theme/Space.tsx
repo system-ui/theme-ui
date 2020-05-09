@@ -3,9 +3,6 @@ import { jsx, useThemeUI } from 'theme-ui'
 import { Field } from '@theme-ui/components'
 import { EditorContext } from '../types'
 
-// TODO: Field type is comming from external package @types/theme-ui__components, Field is missing type prop in there
-const AnyField = Field as any
-
 const defaultSpace = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 
 const Space = () => {
@@ -31,7 +28,8 @@ const Space = () => {
 
   return Object.keys(space).map(key => (
     <div key={key}>
-      <AnyField
+      <Field
+        // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
         type="number"
         label={key}
         name={'space.' + key}
