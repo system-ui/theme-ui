@@ -27,17 +27,20 @@ const keys = {
   13: 'return',
 }
 
-type ComboboxOwnProps = {
+type ComboboxOwnProps<T> = {
   type?: string
   name: string
   label?: React.ReactNode
-  value: string | number
-  onChange: (val: string | number) => void
-  options?: Array<string | number>
+  value: T
+  onChange: (val: string | T) => void
+  options?: T[]
 }
-type ComboboxProps = ComboboxOwnProps & Omit<InputProps, keyof ComboboxOwnProps>
+type ComboboxProps<T> = ComboboxOwnProps<T> &
+  Omit<InputProps, keyof ComboboxOwnProps<T>>
 
-const Combobox = ({
+const Combobox: <T extends string | number>(
+  props: ComboboxProps<T>
+) => JSX.Element = ({
   type = 'text',
   name,
   label,
@@ -45,7 +48,7 @@ const Combobox = ({
   onChange,
   options = [],
   ...props
-}: ComboboxProps) => {
+}) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(-1)
   const root = useRef<HTMLDivElement>(null)
