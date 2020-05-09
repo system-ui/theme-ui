@@ -159,7 +159,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
               name="saturation"
               label="s"
               onChange={({ s }) => {
-                // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
+                // FIXME: props.onChange() expects param to be ColorState. Is this a bug?
                 props.onChange({ ...props.hsl, s: s / 100 })
               }}
             />
@@ -172,7 +172,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
               name="lightness"
               label="l"
               onChange={({ l }) => {
-                // FIXME: props.onChange() expects val.hex to exist, but the onChange prop does not provide that here. Is this a bug?
+                // FIXME: props.onChange() expects param to be ColorState. Is this a bug?
                 props.onChange({ ...props.hsl, l: l / 100 })
               }}
             />
