@@ -2,14 +2,14 @@
 import { jsx, useThemeUI, Theme } from 'theme-ui'
 import React from 'react'
 import tinycolor from 'tinycolor2'
-import { GithubPicker, ColorResult } from 'react-color'
+import { GithubPicker, ColorState } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
 type ThemeColorPickerProps = {
   children?: React.ReactNode
   theme?: Theme
   value?: string
-  onChange: (color: string | ColorResult) => void
+  onChange: (color: string | ColorState) => void
 }
 
 export const ThemeColorPicker = ({
@@ -32,7 +32,7 @@ export const ThemeColorPicker = ({
       .filter(color => typeof color === 'string')
       .filter(color => /^#/.test(color)),
   ]
-  const onChange = (color: ColorResult) => {
+  const onChange = (color: ColorState) => {
     const [key] =
       Object.entries(colors).find(
         ([k, v]) => tinycolor(v).toHexString() === color.hex

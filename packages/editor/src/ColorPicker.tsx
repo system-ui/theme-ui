@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
-import { CustomPicker, ColorChangeHandler } from 'react-color'
-import {
-  Hue,
-  Saturation,
-  EditableInput,
-} from 'react-color/lib/components/common'
+import { CustomPicker, HSLColor } from 'react-color'
+import EditableInput, {
+  EditableInputProps,
+} from 'react-color/lib/components/common/EditableInput'
+import Hue, { HueProps } from 'react-color/lib/components/common/Hue'
+import Saturation, {
+  SaturationProps,
+} from 'react-color/lib/components/common/Saturation'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
 const round = (n: number, x: number = 0) =>
@@ -37,17 +39,11 @@ const Handle = () => (
   />
 )
 
-type InputProps = {
+type InputProps = EditableInputProps & {
   name?: string
-  value?: string | number
-  label: string
-  onChange: ColorChangeHandler
+  value: string | number
   hex: string
-  hsl: {
-    h: number
-    s: number
-    l: number
-  }
+  hsl: HSLColor
 }
 
 /** placeholder is used because react-color does not pass
@@ -56,7 +52,6 @@ type InputProps = {
 const Input = (props: InputProps) => (
   <EditableInput
     {...props}
-    // FIXME: placeholder type is missing in @types/react-color. I tried to fix that by redeclaring the module locally, but that didn't work unfortunately. How to add the missing prop to the EditableInput?
     placeholder={props.name}
     style={{
       input: {
@@ -98,9 +93,11 @@ const Label = ({ width = '100%', flex = 1, ...props }: LabelProps) => (
   />
 )
 
-type PickerProps = InputProps & {
-  size?: number
-}
+type PickerProps = React.PropsWithoutRef<InputProps> &
+  React.PropsWithoutRef<SaturationProps> &
+  React.PropsWithoutRef<HueProps> & {
+    size?: number
+  }
 
 export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
   return (
@@ -190,7 +187,7 @@ export const Picker = CustomPicker(({ size = 256, ...props }: PickerProps) => {
   )
 })
 
-type ColorPickerProps = PickerProps & {
+type ColorPickerProps = React.PropsWithoutRef<PickerProps> & {
   children?: React.ReactNode
 }
 

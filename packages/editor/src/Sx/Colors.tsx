@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { ColorResult } from 'react-color'
+import { ColorState } from 'react-color'
 import { jsx, Theme } from 'theme-ui'
 import ThemeColorPicker from './ThemeColorPicker'
 
-type Color = string | ColorResult
+type Color = string | ColorState
 type OnChangeArg = { color: Color } | { bg: Color }
 
 type ColorsProps = {
