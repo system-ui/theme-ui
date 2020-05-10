@@ -26,6 +26,13 @@ export default props => (
 
 ## API
 
+### `getColor`
+
+```js
+import { getColor } from '@theme-ui/color'
+// getColor(theme, 'primary')
+```
+
 ### `darken`
 
 Darken a color by an amount 0–1
@@ -170,6 +177,26 @@ import { grayscale } from '@theme-ui/color'
 // grayscale('primary')
 ```
 
-### Related
+## Advanced Usage
+
+If you want to do something more complex, such as setting up gradients, you can do that with some extra workarounds.
+
+We can take the result of any of the above helper functions (which return a function) and call it with the theme object to generate a string in place. This is useful for interpolating values into complex CSS declarations:
+
+```jsx
+<MyComponentWithBackground
+  sx={{
+    backgroundImage: t => `
+      linear-gradient(
+        to bottom,
+        ${alpha('primary', 0.5)(t)}
+        ${alpha('secondary', 0.5)(t)}
+      )
+    `,
+  }}
+/>
+```
+
+## Related
 
 - [Polished](https://polished.js.org)

@@ -1,5 +1,6 @@
 export default {
-  useCustomProperties: true,
+  initialColorModeName: 'light',
+  useColorSchemeMediaQuery: true,
   colors: {
     text: '#000',
     background: '#fff',
