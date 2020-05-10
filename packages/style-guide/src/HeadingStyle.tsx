@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import TypeStyle from './TypeStyle'
+import TypeStyle, { TypeStyleProps } from './TypeStyle'
 
-export const HeadingStyle = props => (
+export const HeadingStyle = (props: TypeStyleProps) => (
   <TypeStyle
     fontFamily="heading"
     fontWeight="heading"

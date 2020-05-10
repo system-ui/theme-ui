@@ -1,10 +1,23 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useTheme } from './context'
-import ColorSwatch from './ColorSwatch'
+import ColorSwatch, { ColorSwatchProps } from './ColorSwatch'
 
-const join = (...args) => args.filter(Boolean).join('.')
+const join = (...args: unknown[]) => args.filter(Boolean).join('.')
 
+type Colors = Record<string, string | { [key: string]: Colors }>
+export interface ColorRowProps extends Omit<ColorSwatchProps, 'color'> {
+  colors: Colors
+  name?: string
+  omit?: string[]
+  render?: (value: {
+    swatch: React.ReactElement
+    color: string
+    key: string
+    name: string
+  }) => React.ReactNode
+  size?: number | string
+}
 export const ColorRow = ({
   colors,
   name,
@@ -12,7 +25,7 @@ export const ColorRow = ({
   render,
   size,
   ...props
-}) => {
+}: ColorRowProps) => {
   return (
     <div>
       <div
@@ -31,7 +44,7 @@ export const ColorRow = ({
                 {...props}
                 key={key}
                 name={id}
-                colors={color}
+                colors={color as Colors}
                 omit={omit}
               />
             )
@@ -63,16 +76,16 @@ export const ColorRow = ({
   )
 }
 
-export const ColorPalette = ({
-  omit,
-  mode,
-  ...props
-}) => {
+export interface ColorPaletteProps extends Omit<ColorRowProps, 'colors'> {
+  omit?: string[]
+  mode?: string
+}
+export const ColorPalette = ({ omit, mode, ...props }: ColorPaletteProps) => {
   const theme = useTheme()
-  let colors = theme.colors
+  let colors = theme!.colors
 
-  if (mode && colors.modes) {
-    colors = colors.modes[mode] || colors
+  if (mode && colors!.modes) {
+    colors = colors!.modes[mode] || colors
   }
 
   return (
@@ -81,7 +94,7 @@ export const ColorPalette = ({
         marginLeft: -8,
         marginRight: -8,
       }}>
-      <ColorRow {...props} omit={omit} colors={colors} />
+      <ColorRow {...props} omit={omit} colors={colors as Colors} />
     </div>
   )
 }
