@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
 import { Field } from '@theme-ui/components'
-import { EditorContext } from '../types'
+import { EditorContextValue } from '../types'
 
 const FontSizes = () => {
-  const context = useThemeUI() as EditorContext
+  const context = useThemeUI() as EditorContextValue
   const { fontSizes = [] } = context.theme
 
   const onChange = (key: string) => (e: React.FormEvent<HTMLInputElement>) => {

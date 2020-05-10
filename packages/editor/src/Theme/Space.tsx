@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
 import { Field } from '@theme-ui/components'
-import { EditorContext } from '../types'
+import { EditorContextValue } from '../types'
 
 const defaultSpace = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 
 const Space = () => {
-  const context = useThemeUI() as EditorContext
+  const context = useThemeUI() as EditorContextValue
   const { space = defaultSpace } = context.theme
 
   const onChange = (key: string) => (e: React.FormEvent<HTMLInputElement>) => {

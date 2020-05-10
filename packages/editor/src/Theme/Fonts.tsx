@@ -2,7 +2,7 @@
 import * as CSS from 'csstype'
 import { jsx, useThemeUI } from 'theme-ui'
 import Combobox from '../Combobox'
-import { EditorContext } from '../types'
+import { EditorContextValue } from '../types'
 
 const defaultFonts = [
   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -28,7 +28,7 @@ const defaultFonts = [
 ]
 
 const Fonts = ({ options = defaultFonts }) => {
-  const context = useThemeUI() as EditorContext
+  const context = useThemeUI() as EditorContextValue
   const { fonts = {} } = context.theme
 
   const onChange = (key: string) => (val: CSS.FontFamilyProperty) => {

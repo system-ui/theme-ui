@@ -1,7 +1,7 @@
 import React from 'react'
 import { jsx, Context, useThemeUI, merge, Theme } from 'theme-ui'
 import { ThemeContext as Emotion } from '@emotion/core'
-import { EditorContext } from './types'
+import { EditorContextValue } from './types'
 
 const reducer = (state: Theme, next: Partial<Theme>) =>
   merge<Theme>(state, next)
@@ -19,7 +19,7 @@ export const EditorProvider = ({
   const [theme, setTheme] = React.useReducer(reducer, {
     ...(propsTheme || outer.theme),
   })
-  const context: EditorContext = {
+  const context: EditorContextValue = {
     ...outer,
     theme,
     setTheme,

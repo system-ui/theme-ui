@@ -2,7 +2,7 @@
 import { jsx, useThemeUI } from 'theme-ui'
 import { ColorPalette } from '@theme-ui/style-guide'
 import ColorPicker from '../ColorPicker'
-import { EditorContext } from '../types'
+import { EditorContextValue } from '../types'
 
 type ColorsProps = {
   size?: number
@@ -15,7 +15,7 @@ type ColorPaletteRenderArg = {
 }
 
 const Colors = (props: ColorsProps) => {
-  const context = useThemeUI() as EditorContext
+  const context = useThemeUI() as EditorContextValue
   // FIXME: Where to add colorMode type?
   const mode = context.colorMode
   const { colors } = context.theme

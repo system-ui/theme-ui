@@ -2,12 +2,12 @@
 import { jsx, useThemeUI } from 'theme-ui'
 import * as CSS from 'csstype'
 import Combobox from '../Combobox'
-import { EditorContext } from '../types'
+import { EditorContextValue } from '../types'
 
 const weights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 const FontWeights = () => {
-  const context = useThemeUI() as EditorContext
+  const context = useThemeUI() as EditorContextValue
   const { fontWeights = {} } = context.theme
 
   const onChange = (key: string) => (val: string | number) => {

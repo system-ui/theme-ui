@@ -2,10 +2,10 @@
 import { jsx, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import Sx from './Sx'
-import { EditorContext } from './types'
+import { EditorContextValue } from './types'
 
 export default ({ tag = 'root' }) => {
-  const context = useThemeUI() as EditorContext
+  const context = useThemeUI() as EditorContextValue
   const { styles = {} } = context.theme
 
   const style = styles[tag] || {}
