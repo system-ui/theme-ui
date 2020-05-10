@@ -1,6 +1,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React, { useReducer, useEffect, useRef, useState } from 'react'
+import {
+  useReducer,
+  useEffect,
+  useRef,
+  useState,
+  FunctionComponent,
+} from 'react'
 import { render } from 'react-dom'
 import debounce from 'lodash.debounce'
 import merge from 'lodash.merge'
@@ -15,13 +21,15 @@ import {
   LineHeights,
   FontSizes,
   Space,
+  // @ts-ignore
 } from '@theme-ui/editor'
+import { Theme } from '@theme-ui/css'
 
-const runScript = script =>
+const runScript = (script: any) =>
   new Promise((resolve, reject) => {
     debounce(window.chrome.devtools.inspectedWindow.eval, 100)(
       script,
-      (result, err) => {
+      (result: any, err: Error) => {
         if (err) {
           console.error(err)
           reject(err)
@@ -31,17 +39,17 @@ const runScript = script =>
     )
   })
 
-const mergeState = (state, next) => merge({}, state, next)
+const mergeState = (state: any, next: any) => merge({}, state, next)
 
-const CopyTheme = ({ theme }) => {
+const CopyTheme = ({ theme }: { theme: Theme }) => {
   const [copied, setCopied] = useState(false)
-  const timer = useRef(false)
+  const timer = useRef(0)
 
   const handleClick = () => {
     setCopied(true)
     copyToClipboard(JSON.stringify(theme))
     clearInterval(timer.current)
-    timer.current = setInterval(() => setCopied(false), 1000)
+    timer.current = window.setInterval(() => setCopied(false), 1000)
   }
 
   return (
@@ -51,7 +59,7 @@ const CopyTheme = ({ theme }) => {
 
 const Spacer = () => <div sx={{ my: 2 }} />
 
-const App = () => {
+const App: FunctionComponent = () => {
   const dark = window.chrome.devtools.panels.themeName === 'dark'
 
   const [state, setState] = useReducer(mergeState, {
@@ -71,13 +79,13 @@ const App = () => {
     })
   }
 
-  const setTheme = nextTheme => {
+  const setTheme = (nextTheme: Theme) => {
     const json = JSON.stringify(nextTheme)
     runScript(`window.__THEME_UI__.setTheme(${json})`)
     setState({ theme: nextTheme })
   }
 
-  const setColorMode = nextMode => {
+  const setColorMode = (nextMode: Theme['initialColorModeName']) => {
     setState({ colorMode: nextMode })
     runScript(`window.__THEME_UI__.setColorMode('${nextMode}')`)
   }
@@ -96,7 +104,7 @@ const App = () => {
     setColorMode,
   }
 
-  if (!context.theme) return false
+  if (!context.theme) return null
 
   return (
     <Editor
