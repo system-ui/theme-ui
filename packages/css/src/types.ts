@@ -489,18 +489,10 @@ type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
 export type TLengthStyledSystem = string | 0 | number
 
 /**
- * To use Theme UI color modes, color scales should include at least a text
- * and background color. These values are used in the ColorMode component to
- * set body foreground and background colors. Color modes should be defined as
- * nested objects within a theme.colors.modes object. Each key in this object
- * should correspond to a color mode name, where the name can be anything, but
- * typically light and dark are used for applications with a dark mode. The
- * initialColorModeName key is required to enable color modes and will be used as
- * the name for the root color palette.
+ * Color modes can be used to create a user-configurable dark mode
+ * or any number of other color modes.
  */
-export type ColorMode = {
-  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
-} & {
+export interface ColorMode {
   /**
    * Body background color
    */
@@ -531,6 +523,8 @@ export type ColorMode = {
    * A contrast color for emphasizing UI
    */
   accent?: CSS.ColorProperty
+
+  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
 }
 
 export interface Theme {
