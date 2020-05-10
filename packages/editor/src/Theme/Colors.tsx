@@ -15,7 +15,6 @@ type ColorPaletteRenderArg = {
 }
 
 const Colors = (props: ColorsProps) => {
-  // TODO: I need to cast the context value because TypeScript assumes the default theme-ui ContextValue. Is there a better way to make TypeScript know of the EditorContext than casting the type?
   const context = useThemeUI() as EditorContext
   // FIXME: Where to add colorMode type?
   const mode = context.colorMode
