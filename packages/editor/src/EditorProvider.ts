@@ -3,7 +3,8 @@ import { jsx, Context, useThemeUI, merge, Theme } from 'theme-ui'
 import { ThemeContext as Emotion } from '@emotion/core'
 import { EditorContext } from './types'
 
-const reducer = (state: Theme, next: Theme) => merge<Theme>(state, next)
+const reducer = (state: Theme, next: Partial<Theme>) =>
+  merge<Theme>(state, next)
 
 type EditorProviderProps = {
   children?: React.ReactNode
