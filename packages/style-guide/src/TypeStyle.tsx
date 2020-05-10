@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import Card from './Card'
 
 export interface TypeStyleProps extends ComponentProps<typeof Card> {
-  fontSize?: number
+  fontSize?: number | string
   fontFamily?: string
   lineHeight?: string
   fontWeight?: string

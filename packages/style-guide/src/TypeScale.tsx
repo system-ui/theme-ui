@@ -3,17 +3,17 @@ import { jsx } from 'theme-ui'
 import { useTheme } from './context'
 import TypeStyle from './TypeStyle'
 
-const getValue = (fontSizes: Array<string | number>, key: number) => {
-  const raw = fontSizes[key]
-  if (typeof raw !== 'number') return raw
-  return raw + 'px'
-}
+const getValue = (fontSize: string | number) =>
+  typeof fontSize === 'number' ? `${fontSize}px` : fontSize
 
 export interface TypeScaleProps {
   reverse?: boolean
 }
 export const TypeScale = ({ reverse = true, ...props }) => {
-  const fontSizes = (useTheme()!.fontSizes as Array<string | number>) || []
+  const theme = useTheme() || {}
+  const fontSizeEntries = reverse
+    ? Object.entries(theme.fontSizes || []).reverse()
+    : Object.entries(theme.fontSizes || [])
 
   return (
     <div
@@ -22,16 +22,22 @@ export const TypeScale = ({ reverse = true, ...props }) => {
         flexWrap: 'wrap',
         alignItems: 'baseline',
       }}>
-      {fontSizes.map((n, i) => {
-        const key = reverse ? fontSizes.length - 1 - i : i
-        return (
+      {fontSizeEntries.map(([key, val]) => {
+        if (typeof val === 'object') {
+          // TODO: can theme.fontSizes be a deeply nested object?
+          // This wasn't handled previously
+          // We should either update the types or recursively render here.
+          return null
+        }
+
+          return (
           <TypeStyle
-            key={i}
+            key={key}
             fontSize={key}
             sx={{
               mr: 3,
             }}
-            children={getValue(fontSizes, key)}
+            children={getValue(val)}
             {...props}
           />
         )
