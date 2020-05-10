@@ -90,7 +90,7 @@ test('useColorMode updates color mode state', () => {
     )
   }
   const tree = render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -182,7 +182,7 @@ test('uses default mode', () => {
     return <button children="test" />
   }
   const tree = render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -200,7 +200,7 @@ test('initializes mode based on localStorage', () => {
     return <button children="test" />
   }
   const tree = render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -237,7 +237,7 @@ test('retains initial context', () => {
     return false
   }
   render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -340,7 +340,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
     return false
   }
   render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -606,7 +606,7 @@ test('warns when localStorage is disabled', () => {
   }
 
   render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>

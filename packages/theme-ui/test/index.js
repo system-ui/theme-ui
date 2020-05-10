@@ -21,7 +21,7 @@ const renderJSON = el => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -110,7 +110,7 @@ test('warns when multiple versions of emotion are installed', () => {
       value={{
         emotionVersion: '9.0.0',
       }}>
-      <ThemeProvider>Conflicting versions</ThemeProvider>
+      <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
     </Context.Provider>
   )
   expect(console.warn).toBeCalled()
