@@ -527,6 +527,16 @@ export interface ColorMode {
   [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
 }
 
+interface ColorModesScale extends ColorMode {
+  /**
+   * Nested color modes can provide overrides when used in conjunction with
+   * `Theme.initialColorModeName and `useColorMode()`
+   */
+  modes?: {
+    [k: string]: ColorMode
+  }
+}
+
 export interface Theme {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
@@ -584,15 +594,7 @@ export interface Theme {
   /**
    * Define the colors that are available through this theme
    */
-  colors?: ColorMode & {
-    /**
-     * Nested color modes can provide overrides when used in conjunction with
-     * `Theme.initialColorModeName and `useColorMode()`
-     */
-    modes?: {
-      [k: string]: ColorMode
-    }
-  }
+  colors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
