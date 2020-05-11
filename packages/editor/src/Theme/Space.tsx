@@ -9,9 +9,10 @@ const Space = () => {
   const context = useThemeUI() as EditorContextValue
   const { space = defaultSpace } = context.theme
 
-  const onChange = (key: string) => (e: React.FormEvent<HTMLInputElement>) => {
-    // TODO: I needed to swap target to currentTarget because TypeScript complains about "Property 'value' does not exist on type 'EventTarget'.ts(2339)". Should I change it back or leave as is?
-    const n = parseFloat(e.currentTarget.value)
+  const onChange = (key: string) => (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const n = parseFloat(e.target.value)
     if (Array.isArray(space)) {
       const i = parseInt(key)
       context.setTheme({
