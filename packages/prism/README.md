@@ -138,7 +138,13 @@ This package supports highlighting inside code blocks. The following two syntaxe
   // highlight-end
 ```
 
-The highlight styling is controlled in `styles.pre`.
+The highlight styling is controlled in `styles.pre` under `.highlight`. For example:
+
+```json
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
+  }
+```
 
 ## Additional Languages
 
