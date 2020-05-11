@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@theme-ui/chrome",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-highlight.0",
   "main": "index.js",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.16",
-    "@theme-ui/editor": "^0.4.0-alpha.0",
+    "@theme-ui/editor": "^0.4.0-highlight.0",
     "babel-loader": "^8.0.6",
     "copy-to-clipboard": "^3.2.0",
     "lodash.debounce": "^4.0.8",
@@ -27,7 +27,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "stringify-object": "^3.3.0",
-    "theme-ui": "^0.4.0-alpha.0",
+    "theme-ui": "^0.4.0-highlight.0",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.4"
   },

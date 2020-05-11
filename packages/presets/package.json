@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-highlight.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -15,16 +15,16 @@
     "@theme-ui/preset-base": "^0.4.0-alpha.0",
     "@theme-ui/preset-bootstrap": "^0.4.0-alpha.0",
     "@theme-ui/preset-bulma": "^0.4.0-alpha.0",
-    "@theme-ui/preset-dark": "^0.4.0-alpha.0",
-    "@theme-ui/preset-deep": "^0.4.0-alpha.0",
+    "@theme-ui/preset-dark": "^0.4.0-highlight.0",
+    "@theme-ui/preset-deep": "^0.4.0-highlight.0",
     "@theme-ui/preset-funk": "^0.4.0-alpha.0",
     "@theme-ui/preset-future": "^0.4.0-alpha.0",
     "@theme-ui/preset-polaris": "^0.4.0-alpha.0",
     "@theme-ui/preset-roboto": "^0.4.0-alpha.0",
-    "@theme-ui/preset-swiss": "^0.4.0-alpha.0",
-    "@theme-ui/preset-system": "^0.4.0-alpha.0",
+    "@theme-ui/preset-swiss": "^0.4.0-highlight.0",
+    "@theme-ui/preset-system": "^0.4.0-highlight.0",
     "@theme-ui/preset-tailwind": "^0.4.0-alpha.0",
-    "@theme-ui/preset-tosh": "^0.4.0-alpha.0"
+    "@theme-ui/preset-tosh": "^0.4.0-highlight.0"
   },
   "publishConfig": {
     "access": "public"
