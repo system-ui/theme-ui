@@ -146,8 +146,9 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
               value={round(props.hsl.h)}
               name="hue"
               label="h"
-              onChange={val => {
-                props.onChange({ ...props.hsl, ...val })
+              // We need to cast to any because @types/react-color does not define types correctly
+              onChange={({ h }: any) => {
+                props.onChange({ ...props.hsl, h } as any)
               }}
             />
           </Label>
@@ -158,9 +159,9 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
               value={round(props.hsl.s * 100)}
               name="saturation"
               label="s"
-              onChange={({ s }) => {
-                // FIXME: props.onChange() incorrectly expects param to be ColorState instead of { h, s, l }.
-                props.onChange({ ...props.hsl, s: s / 100 })
+              // We need to cast to any because @types/react-color does not define types correctly
+              onChange={({ s }: any) => {
+                props.onChange({ ...props.hsl, s: s / 100 } as any)
               }}
             />
           </Label>
@@ -171,9 +172,9 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
               value={round(props.hsl.l * 100)}
               name="lightness"
               label="l"
-              onChange={({ l }) => {
-                // FIXME: props.onChange() incorrectly expects param to be ColorState instead of { h, s, l }.
-                props.onChange({ ...props.hsl, l: l / 100 })
+              // We need to cast to any because @types/react-color does not define types correctly
+              onChange={({ l }: any) => {
+                props.onChange({ ...props.hsl, l: l / 100 } as any)
               }}
             />
           </Label>
