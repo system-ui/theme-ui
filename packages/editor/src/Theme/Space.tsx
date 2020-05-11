@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import { EditorContextValue } from '../types'
 
@@ -27,17 +28,21 @@ const Space = () => {
     }
   }
 
-  return Object.keys(space).map(key => (
-    <div key={key}>
-      <Field<'input'>
-        type="number"
-        label={key}
-        name={'space.' + key}
-        value={space[key]}
-        onChange={onChange(key)}
-      />
-    </div>
-  ))
+  return (
+    <Fragment>
+      {Object.keys(space).map(key => (
+        <div key={key}>
+          <Field<'input'>
+            type="number"
+            label={key}
+            name={'space.' + key}
+            value={space[key]}
+            onChange={onChange(key)}
+          />
+        </div>
+      ))}
+    </Fragment>
+  )
 }
 
 export default Space

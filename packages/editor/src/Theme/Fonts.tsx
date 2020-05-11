@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import * as CSS from 'csstype'
 import { jsx, useThemeUI } from 'theme-ui'
+import * as CSS from 'csstype'
+import { Fragment } from 'react'
 import Combobox from '../Combobox'
 import { EditorContextValue } from '../types'
 
@@ -39,17 +40,21 @@ const Fonts = ({ options = defaultFonts }) => {
     })
   }
 
-  return Object.keys(fonts).map(key => (
-    <div key={key}>
-      <Combobox
-        label={key}
-        name={'fonts.' + key}
-        value={fonts[key]}
-        onChange={onChange(key)}
-        options={options}
-      />
-    </div>
-  ))
+  return (
+    <Fragment>
+      {Object.keys(fonts).map(key => (
+        <div key={key}>
+          <Combobox
+            label={key}
+            name={'fonts.' + key}
+            value={fonts[key]}
+            onChange={onChange(key)}
+            options={options}
+          />
+        </div>
+      ))}
+    </Fragment>
+  )
 }
 
 export default Fonts

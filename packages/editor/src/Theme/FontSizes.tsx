@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import { EditorContextValue } from '../types'
 
@@ -25,17 +26,21 @@ const FontSizes = () => {
     }
   }
 
-  return Object.keys(fontSizes).map(key => (
-    <div key={key}>
-      <Field<'input'>
-        type="number"
-        label={key}
-        name={'fontSizes.' + key}
-        value={fontSizes[key]}
-        onChange={onChange(key)}
-      />
-    </div>
-  ))
+  return (
+    <Fragment>
+      {Object.keys(fontSizes).map(key => (
+        <div key={key}>
+          <Field<'input'>
+            type="number"
+            label={key}
+            name={'fontSizes.' + key}
+            value={fontSizes[key]}
+            onChange={onChange(key)}
+          />
+        </div>
+      ))}
+    </Fragment>
+  )
 }
 
 export default FontSizes

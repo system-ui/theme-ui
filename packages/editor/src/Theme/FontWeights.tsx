@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { Fragment } from 'react'
 import * as CSS from 'csstype'
 import Combobox from '../Combobox'
 import { EditorContextValue } from '../types'
@@ -18,17 +19,21 @@ const FontWeights = () => {
     })
   }
 
-  return Object.keys(fontWeights).map(key => (
-    <div key={key}>
-      <Combobox
-        label={key}
-        name={'fontWeights.' + key}
-        value={fontWeights[key]}
-        onChange={onChange(key)}
-        options={weights}
-      />
-    </div>
-  ))
+  return (
+    <Fragment>
+      {Object.keys(fontWeights).map(key => (
+        <div key={key}>
+          <Combobox
+            label={key}
+            name={'fontWeights.' + key}
+            value={fontWeights[key]}
+            onChange={onChange(key)}
+            options={weights}
+          />
+        </div>
+      ))}
+    </Fragment>
+  )
 }
 
 export default FontWeights
