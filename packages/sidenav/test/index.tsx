@@ -1,53 +1,67 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { Sidenav, Pagination, AccordionNav } from '../src'
+import { FunctionComponent } from 'react'
 
 afterEach(cleanup)
+
+const Link: FunctionComponent<{
+  href: string
+  mdxType: 'a'
+}> = (props) => {
+  const { children, ...rest } = props
+  return <a {...rest}>{children}</a>
+}
+
+const Ul: FunctionComponent<{ mdxType: 'ul' }> = (props) => {
+  const { children, ...rest } = props
+  return <ul {...rest}>{children}</ul>
+}
 
 const links = (
   <ul>
     <li>
-      <a mdxType="a" href="/">
+      <Link mdxType="a" href="/">
         Beep
-      </a>
+      </Link>
     </li>
     <li>
-      <a mdxType="a" href="/boop">
+      <Link mdxType="a" href="/boop">
         Boop
-      </a>
+      </Link>
     </li>
     <li>
-      <a mdxType="a" href="/bop">
+      <Link mdxType="a" href="/bop">
         Bop
-      </a>
+      </Link>
     </li>
   </ul>
 )
 const nestedLinks = (
   <ul>
     <li>
-      <a mdxType="a" href="/">
+      <Link mdxType="a" href="/">
         Beep
-      </a>
+      </Link>
     </li>
     <li>
-      <a mdxType="a" href="/boop">
+      <Link mdxType="a" href="/boop">
         Boop
-      </a>
+      </Link>
     </li>
     <li>
-      <a mdxType="a" href="/bop">
+      <Link mdxType="a" href="/bop">
         Bop
-      </a>
-      <ul mdxType="ul">
+      </Link>
+      <Ul mdxType="ul">
         <li>
-          <a mdxType="a" href="/bop/hi">
+          <Link mdxType="a" href="/bop/hi">
             Hi
-          </a>
+          </Link>
         </li>
-      </ul>
+      </Ul>
     </li>
   </ul>
 )
