@@ -7,7 +7,7 @@ type Color = string | ColorState
 type OnChangeArg = { color: Color } | { bg: Color }
 
 type ColorsProps = {
-  value: {
+  value?: {
     color?: string
     bg?: string
   }
