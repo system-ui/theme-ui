@@ -102,7 +102,7 @@ test('renders with custom components', () => {
     </ThemeProvider>
   )
   expect(json).toHaveStyleRule('color', 'tomato')
-  expect(json.type).toBe('pre')
+  expect(json!.type).toBe('pre')
 })
 
 test('renders global styles', () => {
@@ -197,7 +197,7 @@ test('adds box-sizing: border-box', () => {
 })
 
 test('does not add box-sizing: border-box', () => {
-  const styles = [].slice.call(document.querySelectorAll('style'))
+  const styles: HTMLStyleElement[] = [].slice.call(document.querySelectorAll('style'))
   styles.forEach(style => (style.innerHTML = ''))
   const root = render(
     <ThemeProvider
