@@ -25,11 +25,20 @@ import {
 } from '@theme-ui/editor'
 import { Theme } from '@theme-ui/css'
 
-const runScript = (script: any) =>
+interface DevToolsExceptionInfo {
+  isError: boolean
+  code: string
+  description: string
+  details: any[]
+  isException: boolean
+  value: string
+}
+
+const runScript = (script: string) =>
   new Promise((resolve, reject) => {
     debounce(window.chrome.devtools.inspectedWindow.eval, 100)(
       script,
-      (result: any, err: Error) => {
+      (result: object, err: DevToolsExceptionInfo) => {
         if (err) {
           console.error(err)
           reject(err)
@@ -39,7 +48,9 @@ const runScript = (script: any) =>
     )
   })
 
-const mergeState = (state: any, next: any) => merge({}, state, next)
+type StateWithColorMode = { colorMode?: string; theme?: Theme }
+const mergeState = (state: StateWithColorMode, next: StateWithColorMode) =>
+  merge({}, state, next)
 
 const CopyTheme = ({ theme }: { theme: Theme }) => {
   const [copied, setCopied] = useState(false)
@@ -62,19 +73,18 @@ const Spacer = () => <div sx={{ my: 2 }} />
 const App: FunctionComponent = () => {
   const dark = window.chrome.devtools.panels.themeName === 'dark'
 
-  const [state, setState] = useReducer(mergeState, {
-    theme: null,
-    colorMode: null,
-  })
+  const [state, setState] = useReducer(mergeState, {})
 
   const getTheme = () => {
-    runScript(`window.__THEME_UI__.theme`).then(theme => {
+    runScript(`window.__THEME_UI__.theme`).then(resolvedTheme => {
+      const theme = resolvedTheme as StateWithColorMode['theme']
       setState({ theme })
     })
   }
 
   const getColorMode = () => {
-    runScript(`window.__THEME_UI__.colorMode`).then(colorMode => {
+    runScript(`window.__THEME_UI__.colorMode`).then(resolvedColorMode => {
+      const colorMode = resolvedColorMode as StateWithColorMode['colorMode']
       setState({ colorMode })
     })
   }
@@ -143,7 +153,7 @@ const App: FunctionComponent = () => {
         <Space />
       </Row>
       <Spacer />
-      <CopyTheme theme={state.theme} />
+      <CopyTheme theme={context.theme} />
     </Editor>
   )
 }
