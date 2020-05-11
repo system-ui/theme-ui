@@ -86,8 +86,7 @@ export const Space = ({
         gridTemplateColumns: 'repeat(3, 1fr)',
         alignItems: 'center',
       }}>
-      <Field
-        // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
+      <Field<'input'>
         type="number"
         name={prefixName('l')}
         label={label('Left')}
@@ -99,8 +98,7 @@ export const Space = ({
           display: 'grid',
           gap: 2,
         }}>
-        <Field
-          // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
+        <Field<'input'>
           type="number"
           name={prefixName('t')}
           label={label('Top')}
@@ -117,8 +115,7 @@ export const Space = ({
             Lock y-axis
           </Label>
         </div>
-        <Field
-          // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
+        <Field<'input'>
           type="number"
           name={prefixName('b')}
           label={label('Bottom')}
@@ -126,8 +123,7 @@ export const Space = ({
           onChange={handleChange('b')}
         />
       </div>
-      <Field
-        // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
+      <Field<'input'>
         type="number"
         name={prefixName('r')}
         label={label('Right')}

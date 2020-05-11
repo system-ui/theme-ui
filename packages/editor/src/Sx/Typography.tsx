@@ -51,10 +51,9 @@ export const SxTypography = ({
           gap: 2,
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
-        <Field
+        <Field<'input'>
           name={prefixName('fontSize')}
           label="Font Size"
-          // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why value prop does not exist in type definition.
           value={fontSize || ''}
           type="number"
           onChange={e => {

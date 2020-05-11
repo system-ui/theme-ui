@@ -26,8 +26,7 @@ const FontSizes = () => {
 
   return Object.keys(fontSizes).map(key => (
     <div key={key}>
-      <Field
-        // FIXME: Field type is comming from external package @types/theme-ui__components, not sure why type prop does not exist in type definition.
+      <Field<'input'>
         type="number"
         label={key}
         name={'fontSizes.' + key}
