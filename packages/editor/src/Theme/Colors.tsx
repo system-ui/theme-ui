@@ -16,8 +16,8 @@ type ColorPaletteRenderArg = {
 
 const Colors = (props: ColorsProps) => {
   const context = useThemeUI() as EditorContextValue
-  // FIXME: Where to add colorMode type?
-  const mode = context.colorMode
+  // TODO: Remove any after @theme-ui/color-mode was transformed to TypeScript
+  const mode = (context as any).colorMode
   const { colors } = context.theme
 
   const onChange = (key: string) => (val: { hex: string }) => {
@@ -27,8 +27,8 @@ const Colors = (props: ColorsProps) => {
       colors &&
       colors.modes &&
       colors.modes[mode] &&
-      // FIXME: Where to add initialColorMode type?
-      mode !== context.theme.initialColorMode
+      // TODO: Remove any after @theme-ui/color-mode was transformed to TypeScript
+      mode !== (context.theme as any).initialColorMode
     ) {
       next = {
         colors: {
