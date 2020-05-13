@@ -9,15 +9,16 @@ const { act } = renderer
 
 afterEach(cleanup)
 
-if (global.document) {
-  document.createRange = () => ({
-    setStart: () => {},
-    setEnd: () => {},
-    commonAncestorContainer: {
-      nodeName: 'BODY',
-      ownerDocument: document,
-    },
-  })
+if ((global as any).document) {
+  document.createRange = () =>
+    (({
+      setStart: () => {},
+      setEnd: () => {},
+      commonAncestorContainer: {
+        nodeName: 'BODY',
+        ownerDocument: document,
+      },
+    } as unknown) as Range)
 }
 
 test('renders with styles', () => {
