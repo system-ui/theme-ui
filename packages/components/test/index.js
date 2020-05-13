@@ -237,6 +237,62 @@ describe('Grid', () => {
   })
 })
 
+describe('Stack', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Stack />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with direction prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Stack direction="horizontal" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with space prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Stack space={5} />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with justify prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Stack justify="center" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with align prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Stack justify="center" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with align prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Stack inline />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
 describe('Heading', () => {
   test('renders', () => {
     const json = renderJSON(
