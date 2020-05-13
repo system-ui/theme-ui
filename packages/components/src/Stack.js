@@ -7,24 +7,24 @@ export const merge = (...objs) => {
   }, {})
 }
 
-const createGap = (direction, gap) => {
+const createSpace = (direction, space) => {
   if (direction === 'vertical') {
     return {
-      marginBottom: gap,
+      marginBottom: space,
       marginRight: 0,
     }
   }
 
   return {
     marginBottom: 0,
-    marginRight: gap,
+    marginRight: space,
   }
 }
 
 export const Stack = React.forwardRef(
   (
     {
-      gap = 2,
+      space = 2,
       direction = 'vertical',
       inline = false,
       justify = 'normal',
@@ -45,10 +45,10 @@ export const Stack = React.forwardRef(
       styles.flexDirection = direction.map(d =>
         d === 'vertical' ? 'column' : 'row'
       )
-      styles['> *:not(:last-child)'] = direction.map(d => createGap(d, gap))
+      styles['> *:not(:last-child)'] = direction.map(d => createSpace(d, space))
     } else {
       styles.flexDirection = direction === 'vertical' ? 'column' : 'row'
-      styles['> *:not(:last-child)'] = createGap(direction, gap)
+      styles['> *:not(:last-child)'] = createSpace(direction, space)
     }
 
     console.log(styles)

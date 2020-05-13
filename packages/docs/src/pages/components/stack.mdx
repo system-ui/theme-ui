@@ -13,17 +13,27 @@ import { Stack, Box } from 'theme-ui'
 ```
 
 ```jsx live xray
-<Stack gap={[2, 3, 4]}>
+<Stack space={4}>
   <Box>1</Box>
   <Box>2</Box>
   <Box>3</Box>
 </Stack>
 ```
 
-You can stack horizontally
+You can stack horizontally too.
 
 ```jsx live xray
-<Stack gap={[2, 3, 4]} direction="horizontal">
+<Stack space={4} direction="horizontal">
+  <Box>Stack Item</Box>
+  <Box>Stack Item</Box>
+  <Box>Stack Item</Box>
+</Stack>
+```
+
+The space prop supports array values to adapt to your themes breakpoints.
+
+```jsx live xray
+<Stack space={[4, 5, 6]} direction="horizontal">
   <Box>Stack Item</Box>
   <Box>Stack Item</Box>
   <Box>Stack Item</Box>
@@ -35,7 +45,7 @@ Nest Stacks components to create complex layouts!
 import { Stack, Box, AspectRatio, Avatar } from 'theme-ui'
 
 ```jsx live xray
-<Stack gap={4} direction="horizontal">
+<Stack space={4} direction="horizontal">
   <Box>
     <Avatar src={images.logo} />
     <Badge
@@ -49,8 +59,8 @@ import { Stack, Box, AspectRatio, Avatar } from 'theme-ui'
     </Badge>
   </Box>
 
-  <Stack gap={4}>
-    <Heading>Hello</Heading>
+  <Stack space={2}>
+    <Heading>A nested stack component</Heading>
     <Stack direction="horizontal">
       <Badge variant="accent">Create</Badge>
       <Badge variant="accent">Remove</Badge>
@@ -63,10 +73,10 @@ import { Stack, Box, AspectRatio, Avatar } from 'theme-ui'
 
 ## Props
 
-| Name        | Type      | Description                                            |
-| ----------- | --------- | ------------------------------------------------------ |
-| `direction` | Component | Can be either `vertical` or `horizontal`               |
-| `gap`       | String    | How big the gap between items should be                |
-| `justify`   | String    | Any valid flexbox justify property                     |
-| `align`     | String    | Any valid flexbox align property                       |
-| `inline`    | boolean   | When true, renders as inline-flex item instead of flex |
+| Name        | Type      | Description                                            | Default  |
+| ----------- | --------- | ------------------------------------------------------ | -------- |
+| `direction` | Component | Can be either `vertical` (default) or `horizontal`     | vertical |
+| `space`     | String    | How big the space between items should be              | 2        |
+| `justify`   | String    | Any valid flexbox justify property                     | normal   |
+| `align`     | String    | Any valid flexbox align property                       | normal   |
+| `inline`    | boolean   | When true, renders as inline-flex item instead of flex | false    |
