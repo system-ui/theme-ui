@@ -5,29 +5,30 @@ import { Styles, EditorProvider } from '../src'
 
 afterEach(cleanup)
 
-if (global.document) {
-  document.createRange = () => ({
-    setStart: () => {},
-    setEnd: () => {},
-    commonAncestorContainer: {
-      nodeName: 'BODY',
-      ownerDocument: document,
-    },
-  })
+if ((global as any).document) {
+  document.createRange = () =>
+    (({
+      setStart: () => {},
+      setEnd: () => {},
+      commonAncestorContainer: {
+        nodeName: 'BODY',
+        ownerDocument: document,
+      },
+    } as unknown) as Range)
 }
 
 const theme = {
   styles: {
     root: {},
     h1: {},
-  }
+  },
 }
 
 test('edits styles.root.fontFamily', async () => {
   let context
   const GetContext = () => {
     context = useThemeUI()
-    return false
+    return null
   }
   const tree = render(
     <EditorProvider theme={theme}>
@@ -39,7 +40,7 @@ test('edits styles.root.fontFamily', async () => {
   fireEvent.change(input, {
     target: {
       value: 'system-ui',
-    }
+    },
   })
   expect(context.theme.styles.root.fontFamily).toBe('system-ui')
 })
