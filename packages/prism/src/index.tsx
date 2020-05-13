@@ -1,15 +1,29 @@
 /** @jsx jsx */
 /* eslint react/jsx-key: 0 */
-
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import { ComponentProps } from 'react'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { jsx, Styled } from 'theme-ui'
 
-const aliases = {
+const aliases: Record<string, Language | undefined> = {
   js: 'javascript',
   sh: 'bash',
 }
 
-export default ({ children, className: outerClassName, title, ...props }) => {
+type HighlightProps = ComponentProps<typeof Highlight>
+export interface ThemeUIPrismProps
+  extends Omit<
+    HighlightProps,
+    'children' | 'code' | 'language' | 'theme' | 'Prism'
+  > {
+  className: string
+  children: string
+  Prism?: HighlightProps['Prism']
+}
+export default ({
+  children,
+  className: outerClassName,
+  ...props
+}: ThemeUIPrismProps) => {
   const [language] = outerClassName.replace(/language-/, '').split(' ')
   const lang = aliases[language] || language
 
@@ -18,7 +32,7 @@ export default ({ children, className: outerClassName, title, ...props }) => {
       {...defaultProps}
       {...props}
       code={children.trim()}
-      language={lang}
+      language={lang as Language}
       theme={undefined}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Styled.pre className={`${outerClassName} ${className}`} style={style}>

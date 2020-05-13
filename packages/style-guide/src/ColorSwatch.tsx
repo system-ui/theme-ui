@@ -1,17 +1,24 @@
 /** @jsx jsx */
-import { jsx, get } from 'theme-ui'
-import { toHex, toHSL } from './color'
+import { ComponentProps } from 'react'
+import { jsx, get, ResponsiveStyleValue } from 'theme-ui'
+import { toHex } from './color'
 import { useTheme } from './context'
 
+export interface ColorSwatchProps extends ComponentProps<'div'> {
+  color: string
+  name?: React.ReactNode
+  size?: ResponsiveStyleValue<string | number>
+  label?: boolean
+}
 export const ColorSwatch = ({
   color,
   name,
   size = 128,
   label = true,
   ...props
-}) => {
-  const { colors } = useTheme()
-  const value = get(colors, color)
+}: ColorSwatchProps) => {
+  const { colors } = useTheme()!
+  const value = get(colors!, color)
   return (
     <div {...props} title={`${toHex(value)}`}>
       <div

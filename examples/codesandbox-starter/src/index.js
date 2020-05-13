@@ -6,7 +6,7 @@ import { jsx, Layout, Styled } from 'theme-ui'
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <Layout sx={{ p: 3 }}>
         <Reset />
         <Styled.h1 sx={{ color: 'primary', mb: 3 }}>Hello Theme UI</Styled.h1>

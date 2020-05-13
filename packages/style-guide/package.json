@@ -1,8 +1,10 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
@@ -15,12 +17,16 @@
     "theme-ui": "^0.3.0"
   },
   "dependencies": {
-    "@theme-ui/presets": "^0.4.0-alpha.0",
+    "@theme-ui/presets": "^0.4.0-alpha.1",
     "color": "^3.1.2",
+    "@types/color": "3.0.1",
     "lodash.get": "^4.4.2"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
+  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5",
+  "devDependencies": {
+    "@types/color": "^3.0.1"
+  }
 }

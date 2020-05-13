@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/tailwind",
   "description": "Generate static CSS for use outside of React with Theme UI and Tailwind.css",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -13,7 +13,7 @@
     "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
   "devDependencies": {
-    "@theme-ui/css": "^0.4.0-alpha.0",
+    "@theme-ui/css": "^0.4.0-alpha.1",
     "babel-polyfill": "^6.26.0",
     "execa": "^4.0.0",
     "tailwindcss": "^1.0.4"
