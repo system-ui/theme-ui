@@ -51,8 +51,6 @@ export const Stack = React.forwardRef(
       styles['> *:not(:last-child)'] = createSpace(direction, space)
     }
 
-    console.log(styles)
-
     return (
       <Box ref={ref} {...props} __themeKey="stacks" __css={styles}>
         {children}
