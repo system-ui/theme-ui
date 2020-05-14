@@ -20,7 +20,7 @@ const Chevron = () => (
   </svg>
 )
 
-const keys = {
+const keys: { [k: number]: string } = {
   38: 'up',
   40: 'down',
   27: 'escape',
@@ -121,7 +121,7 @@ const Combobox: <T extends string | number>(
     const val = options[i]
     if (val) onChange(val)
     setOpen(false)
-    input.current.select()
+    input.current && input.current.select()
   }
 
   return (

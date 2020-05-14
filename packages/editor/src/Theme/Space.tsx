@@ -8,7 +8,7 @@ const defaultSpace = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 
 const Space = () => {
   const context = useThemeUI() as EditorContextValue
-  const { space = defaultSpace } = context.theme
+  const { space = defaultSpace } = context.theme || {}
 
   const onChange = (key: string) => (
     e: React.ChangeEvent<HTMLInputElement>

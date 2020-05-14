@@ -143,7 +143,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
             Hue
             <Input
               {...props}
-              value={round(props.hsl.h)}
+              value={props.hsl ? Math.round(props.hsl.h) : ''}
               name="hue"
               label="h"
               // We need to cast to any because @types/react-color does not define types correctly
@@ -156,7 +156,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
             Saturation
             <Input
               {...props}
-              value={round(props.hsl.s * 100)}
+              value={props.hsl ? Math.round(props.hsl.s * 100) : ''}
               name="saturation"
               label="s"
               // We need to cast to any because @types/react-color does not define types correctly
@@ -169,7 +169,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
             Lightness
             <Input
               {...props}
-              value={round(props.hsl.l * 100)}
+              value={props.hsl ? Math.round(props.hsl.l * 100) : ''}
               name="lightness"
               label="l"
               // We need to cast to any because @types/react-color does not define types correctly

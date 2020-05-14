@@ -6,7 +6,7 @@ import { EditorContextValue } from '../types'
 
 export default () => {
   const context = useThemeUI() as EditorContextValue
-  const { lineHeights = {} } = context.theme
+  const { lineHeights = {} } = context.theme || {}
 
   const onChange = (key: string) => (
     e: React.ChangeEvent<HTMLInputElement>

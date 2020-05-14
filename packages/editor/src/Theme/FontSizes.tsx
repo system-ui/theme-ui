@@ -6,7 +6,7 @@ import { EditorContextValue } from '../types'
 
 const FontSizes = () => {
   const context = useThemeUI() as EditorContextValue
-  const { fontSizes = [] } = context.theme
+  const { fontSizes = [] } = context.theme || {}
 
   const onChange = (key: string) => (
     e: React.ChangeEvent<HTMLInputElement>

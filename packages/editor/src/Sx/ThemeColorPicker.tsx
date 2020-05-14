@@ -23,7 +23,7 @@ export const ThemeColorPicker = ({
   // const { colors } = theme || context.theme || {}
   const _theme = theme || context.theme || {}
   const colors = _theme.colors || {}
-  const value = colors[props.value] || props.value
+  const value = props.value && (colors[props.value] || props.value)
   const options = [
     'transparent',
     ...Object.keys(colors)
@@ -67,7 +67,7 @@ export const ThemeColorPicker = ({
         {...popover}
         aria-label="Choose Color"
         style={{
-          zIndex: popover.visible ? 1 : null,
+          zIndex: popover.visible ? 1 : undefined,
         }}>
         <GithubPicker
           colors={options}

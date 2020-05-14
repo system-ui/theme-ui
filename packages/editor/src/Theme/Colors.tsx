@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+// @ts-ignore: Remove @ts-ignore after @theme-ui/style-guide was transformed to TypeScript
 import { ColorPalette } from '@theme-ui/style-guide'
 import ColorPicker from '../ColorPicker'
 import { EditorContextValue } from '../types'
@@ -18,7 +19,7 @@ const Colors = (props: ColorsProps) => {
   const context = useThemeUI() as EditorContextValue
   // TODO: Remove any after @theme-ui/color-mode was transformed to TypeScript
   const mode = (context as any).colorMode
-  const { colors } = context.theme
+  const { colors } = context.theme || {}
 
   const onChange = (key: string) => (val: { hex: string }) => {
     let next = {}

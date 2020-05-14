@@ -74,10 +74,6 @@ test('down arrow moves selection down', async () => {
     keyCode: 40,
   })
   fireEvent.keyDown(input, {
-    key: 'ArrowDown',
-    keyCode: 40,
-  })
-  fireEvent.keyDown(input, {
     key: 'Enter',
     keyCode: 13,
   })
@@ -98,10 +94,6 @@ test('up arrow moves selection up', async () => {
   const button = await tree.getByRole('button')
   fireEvent.click(button)
   const input = await tree.getByLabelText('Beep')
-  fireEvent.keyDown(input, {
-    key: 'ArrowDown',
-    keyCode: 40,
-  })
   fireEvent.keyDown(input, {
     key: 'ArrowDown',
     keyCode: 40,
