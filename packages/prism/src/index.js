@@ -57,9 +57,10 @@ export default ({ children, className: outerClassName, title, ...props }) => {
   }
 
   const isInlineHighlighted = line => {
+    const regex = new RegExp('// highlight-line$')
     for (let token of line) {
-      if (token.content === '// highlight-line') {
-        token.content = '' // remove the highlight-line comment now that we've acted on it
+      if (regex.test(token.content)) {
+        token.content = token.content.replace(regex, '') // remove the highlight-line comment now that we've acted on it
         return true
       }
     }
