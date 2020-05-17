@@ -13,5 +13,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@theme-ui/css": "0.4.0-alpha.1"
   }
 }
