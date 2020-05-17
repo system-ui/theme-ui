@@ -25,8 +25,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5",
-  "devDependencies": {
-    "@types/color": "^3.0.1"
-  }
+  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }
