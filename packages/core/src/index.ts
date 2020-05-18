@@ -39,11 +39,13 @@ export const jsx: typeof React.createElement = (type, props, ...children) =>
 
 export interface ContextValue {
   __EMOTION_VERSION__: string
-  theme: Theme | null
+  theme: Theme
+  colorMode?: string
+  setColorMode?: () => void
 }
 export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,
-  theme: null,
+  theme: {},
 })
 
 export const useThemeUI = () => React.useContext(Context)
@@ -76,7 +78,7 @@ interface BaseProviderProps {
 const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   jsx(
     EmotionContext.Provider,
-    { value: context.theme! },
+    { value: context.theme },
     jsx(Context.Provider, {
       value: context,
       children,
@@ -103,7 +105,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
 
   const context =
     typeof theme === 'function'
-      ? { ...outer, theme: theme(outer.theme!) }
+      ? { ...outer, theme: theme(outer.theme) }
       : merge.all<ContextValue>({}, outer, { theme })
 
   return jsx(BaseProvider, { context }, children)

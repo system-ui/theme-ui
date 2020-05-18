@@ -414,6 +414,7 @@ Array [
     aria-haspopup="dialog"
     onClick={[Function]}
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
     onMouseDown={[Function]}
     type="button"
   >
