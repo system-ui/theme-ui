@@ -239,7 +239,7 @@ exports[`AccordionNav renders open 1`] = `
           </a>
           <button
             className="emotion-4"
-            disabled=""
+            disabled={false}
             href="/bop"
             onClick={[Function]}
             pathname=""
@@ -401,7 +401,7 @@ exports[`AccordionNav renders with nested links 1`] = `
           </a>
           <button
             className="emotion-3"
-            disabled=""
+            disabled={false}
             href="/bop"
             onClick={[Function]}
             pathname=""
