@@ -50,7 +50,7 @@ interface CSSOthersObjectForCSSObject {
 /**
  * Map all nested selectors
  */
-interface CSSSelectorObject {
+export interface CSSSelectorObject {
   [cssSelector: string]: SystemStyleObject
 }
 
@@ -411,7 +411,7 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
   borderRadius?: CSS.BorderRadiusProperty<string | number>
-  
+
   /**
    * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
    *
@@ -443,7 +443,7 @@ export type SystemCssProperties = {
     | SystemStyleObject
 }
 
-interface VariantProperty {
+export interface VariantProperty {
   /**
    * **`Variants`** can be useful for applying complex styles to a component based on a single prop.
    *

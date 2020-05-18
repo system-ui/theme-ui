@@ -12,7 +12,6 @@ exports[`AccordionNav renders 1`] = `
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -webkit-transition: -webkit-transform .2s ease-out;
   -webkit-transition: transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -20,6 +19,7 @@ exports[`AccordionNav renders 1`] = `
   -ms-transform: translate(-100%);
   transform: translate(-100%);
   background-color: background;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media screen and (min-width:40em) {
@@ -117,7 +117,6 @@ exports[`AccordionNav renders open 1`] = `
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -webkit-transition: -webkit-transform .2s ease-out;
   -webkit-transition: transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -125,6 +124,7 @@ exports[`AccordionNav renders open 1`] = `
   -ms-transform: translateX(0);
   transform: translateX(0);
   background-color: background;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media screen and (min-width:40em) {
@@ -239,7 +239,7 @@ exports[`AccordionNav renders open 1`] = `
           </a>
           <button
             className="emotion-4"
-            disabled=""
+            disabled={false}
             href="/bop"
             onClick={[Function]}
             pathname=""
@@ -282,7 +282,6 @@ exports[`AccordionNav renders with nested links 1`] = `
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -webkit-transition: -webkit-transform .2s ease-out;
   -webkit-transition: transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -290,6 +289,7 @@ exports[`AccordionNav renders with nested links 1`] = `
   -ms-transform: translate(-100%);
   transform: translate(-100%);
   background-color: background;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media screen and (min-width:40em) {
@@ -401,7 +401,7 @@ exports[`AccordionNav renders with nested links 1`] = `
           </a>
           <button
             className="emotion-3"
-            disabled=""
+            disabled={false}
             href="/bop"
             onClick={[Function]}
             pathname=""
@@ -491,7 +491,6 @@ exports[`Sidenav renders 1`] = `
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -webkit-transition: -webkit-transform .2s ease-out;
   -webkit-transition: transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -499,6 +498,7 @@ exports[`Sidenav renders 1`] = `
   -ms-transform: translate(-100%);
   transform: translate(-100%);
   background-color: background;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media screen and (min-width:40em) {
@@ -570,7 +570,6 @@ Array [
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -webkit-transition: -webkit-transform .2s ease-out;
   -webkit-transition: transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -578,6 +577,7 @@ Array [
   -ms-transform: translateX(0);
   transform: translateX(0);
   background-color: background;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media screen and (min-width:40em) {
