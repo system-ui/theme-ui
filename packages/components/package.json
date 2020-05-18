@@ -3,10 +3,12 @@
   "version": "0.4.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress --jsx React.createElement",
-    "watch": "microbundle watch --no-compress --jsx React.createElement"
+    "watch": "microbundle watch --no-compress --jsx React.createElement",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
