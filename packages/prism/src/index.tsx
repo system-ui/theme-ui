@@ -1,22 +1,22 @@
 /** @jsx jsx */
 /* eslint react/jsx-key: 0 */
-
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import { ComponentProps } from 'react'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { jsx, Styled } from 'theme-ui'
 
-const aliases = {
+const aliases: Record<string, Language | undefined> = {
   js: 'javascript',
   sh: 'bash',
 }
 
-const isInRange = (start, end, num) => {
+const isInRange = (start: number, end: number, num: number) => {
   if (num >= start && num <= end) {
     return true
   }
   return false
 }
 
-const checkRanges = (range, num) => {
+const checkRanges = (range: number[], num: number) => {
   for (let i = 0; i < range.length; i += 2) {
     if (isInRange(range[i], range[i + 1], num)) {
       return true
@@ -25,12 +25,30 @@ const checkRanges = (range, num) => {
   return false
 }
 
-export default ({ children, className: outerClassName, title, ...props }) => {
+type HighlightProps = ComponentProps<typeof Highlight>
+// prism-react-renderer doesn't export `Token` type
+type Tokens = Parameters<HighlightProps['children']>[0]['tokens']
+type Token = Tokens[number][number]
+
+export interface ThemeUIPrismProps
+  extends Omit<
+    HighlightProps,
+    'children' | 'code' | 'language' | 'theme' | 'Prism'
+  > {
+  className: string
+  children: string
+  Prism?: HighlightProps['Prism']
+}
+export default function ThemeUIPrism({
+  children,
+  className: outerClassName,
+  ...props
+}: ThemeUIPrismProps) {
   const [language] = outerClassName.replace(/language-/, '').split(' ')
   const lang = aliases[language] || language
-  let startEndRangesToHighlight = []
+  let startEndRangesToHighlight: number[] = []
 
-  const findStartAndEndHighlights = tokens => {
+  const findStartAndEndHighlights = (tokens: Token[][]) => {
     const tokensWithoutHighlightComments = tokens.filter((item, index) => {
       const removeLine = item
         .map(({ content }) => {
@@ -52,11 +70,11 @@ export default ({ children, className: outerClassName, title, ...props }) => {
     return tokensWithoutHighlightComments
   }
 
-  const isStartEndHighlighted = index => {
+  const isStartEndHighlighted = (index: number) => {
     return checkRanges(startEndRangesToHighlight, index)
   }
 
-  const isInlineHighlighted = line => {
+  const isInlineHighlighted = (line: Token[]) => {
     const regex = new RegExp('// highlight-line$')
     for (let token of line) {
       if (regex.test(token.content)) {
@@ -67,7 +85,7 @@ export default ({ children, className: outerClassName, title, ...props }) => {
     return false
   }
 
-  const shouldHighlightLine = (line, index) => {
+  const shouldHighlightLine = (line: Token[], index: number) => {
     return isStartEndHighlighted(index) || isInlineHighlighted(line)
   }
 
@@ -76,7 +94,7 @@ export default ({ children, className: outerClassName, title, ...props }) => {
       {...defaultProps}
       {...props}
       code={children.trim()}
-      language={lang}
+      language={lang as Language}
       theme={undefined}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         const tokensWithoutHighlightComments = findStartAndEndHighlights(tokens)

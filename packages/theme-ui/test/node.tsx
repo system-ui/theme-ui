@@ -12,7 +12,7 @@ test('does note initializes mode based on localStorage', () => {
   }
   expect(() => {
     renderToString(
-      <ThemeProvider>
+      <ThemeProvider theme={{}}>
         <Button />
       </ThemeProvider>
     )

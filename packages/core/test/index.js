@@ -4,24 +4,18 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
-import {
-  jsx,
-  Context,
-  useThemeUI,
-  merge,
-  ThemeProvider,
-} from '../src'
+import { jsx, Context, useThemeUI, merge, ThemeProvider } from '../src'
 
 afterEach(cleanup)
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = (el) => renderer.create(el).toJSON()
 
 describe('ThemeProvider', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider>
+      <ThemeProvider theme={{}}>
         <h1>Hello</h1>
       </ThemeProvider>
     )
@@ -35,7 +29,7 @@ describe('ThemeProvider', () => {
         value={{
           emotionVersion: '9.0.0',
         }}>
-        <ThemeProvider>Conflicting versions</ThemeProvider>
+        <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
       </Context.Provider>
     )
     expect(console.warn).toBeCalled()
@@ -103,21 +97,22 @@ describe('ThemeProvider', () => {
       },
       cards: {
         default: {
-          border: t => `1px solid ${t.colors.primary}`,
-        }
-      }
+          border: (t) => `1px solid ${t.colors.primary}`,
+        },
+      },
     }
     const json = renderJSON(
-      jsx(ThemeProvider, { theme },
+      jsx(
+        ThemeProvider,
+        { theme },
         jsx('div', {
           sx: {
             variant: 'cards.default',
-          }
+          },
         })
       )
     )
     expect(json).toHaveStyleRule('border', '1px solid tomato')
-
   })
 })
 
@@ -151,15 +146,17 @@ describe('jsx', () => {
 
   test('css prop accepts functions', () => {
     const json = renderJSON(
-      jsx(ThemeProvider, {
-        theme: {
-          colors: {
-            primary: 'tomato',
-          }
-        }
-      },
+      jsx(
+        ThemeProvider,
+        {
+          theme: {
+            colors: {
+              primary: 'tomato',
+            },
+          },
+        },
         jsx('div', {
-          css: t => ({
+          css: (t) => ({
             color: t.colors.primary,
           }),
         })
@@ -273,7 +270,7 @@ describe('merge', () => {
     const h1 = React.forwardRef((props, ref) => <h1 ref={ref} {...props} />)
     const result = merge(
       {
-        h1: props => <h1 {...props} />,
+        h1: (props) => <h1 {...props} />,
       },
       {
         h1,
@@ -329,7 +326,7 @@ describe('merge', () => {
 describe('useThemeUI', () => {
   test('returns theme context', () => {
     let context
-    const GetContext = props => {
+    const GetContext = (props) => {
       context = useThemeUI()
       return false
     }
@@ -338,7 +335,7 @@ describe('useThemeUI', () => {
         theme={{
           colors: {
             text: 'tomato',
-          }
+          },
         }}>
         <GetContext />
       </ThemeProvider>
@@ -347,4 +344,3 @@ describe('useThemeUI', () => {
     expect(context.theme.colors.text).toBe('tomato')
   })
 })
-

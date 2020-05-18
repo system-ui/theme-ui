@@ -1,3 +1,4 @@
+// @ts-check
 export default {
   '.comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url': {
     color: 'gray',

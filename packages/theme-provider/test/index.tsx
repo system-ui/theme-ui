@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
@@ -15,7 +14,7 @@ const renderJSON = el => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -29,6 +28,8 @@ test('renders with theme', () => {
         useCustomProperties: false,
         colors: {
           primary: 'tomato',
+          background: 'white',
+          text: 'black',
         },
       }}>
       <h1 sx={{ color: 'primary' }}>Hello</h1>
@@ -82,7 +83,7 @@ test('renders with nested provider', () => {
 })
 
 test('renders with custom components', () => {
-  const h1 = props => <pre {...props} />
+  const h1 = (props: any) => <pre {...props} />
 
   const json = renderJSON(
     <ThemeProvider
@@ -101,7 +102,7 @@ test('renders with custom components', () => {
     </ThemeProvider>
   )
   expect(json).toHaveStyleRule('color', 'tomato')
-  expect(json.type).toBe('pre')
+  expect(json!.type).toBe('pre')
 })
 
 test('renders global styles', () => {
@@ -136,7 +137,7 @@ test('renders global styles', () => {
 
 test('resets body margin', () => {
   const root = render(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -196,7 +197,7 @@ test('adds box-sizing: border-box', () => {
 })
 
 test('does not add box-sizing: border-box', () => {
-  const styles = [].slice.call(document.querySelectorAll('style'))
+  const styles: HTMLStyleElement[] = [].slice.call(document.querySelectorAll('style'))
   styles.forEach(style => (style.innerHTML = ''))
   const root = render(
     <ThemeProvider

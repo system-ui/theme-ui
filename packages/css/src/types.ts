@@ -299,6 +299,16 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingY?: StandardCSSProperties['paddingTop']
+  // TODO: Move me to `MultiplesCSSProperties type and colocate it with the
+  // multiples object possibly.
+  /**
+   * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
+   *
+   * @see https://theme-ui.com/sx-prop#theme-aware-properties
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
+  size?: StandardCSSProperties['width']
 }
 
 interface OverwriteCSSProperties {
@@ -401,6 +411,19 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
   borderRadius?: CSS.BorderRadiusProperty<string | number>
+  
+   /**
+   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
+   zIndex?: ZIndexProperty | string;
 }
 
 /**
@@ -558,6 +581,11 @@ export interface Theme {
    * Adds a global box-sizing: border-box style
    */
   useBorderBox?: boolean
+
+  /**
+   * If false, does not save color mode as a localStorage value.
+   */
+  useLocalStorage?: boolean
 
   /**
    * Define the colors that are available through this theme

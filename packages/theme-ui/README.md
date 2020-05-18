@@ -1,5 +1,5 @@
 <img
-  src="packages/docs/static/logo.png"
+  src="/packages/docs/static/logo.png"
   width="96"
   height="96"
 />
@@ -77,7 +77,7 @@ export default props => (
 )
 ```
 
-The `theme` object follows the System UI [Theme Specification](/theme-spec),
+The `theme` object follows the System UI [Theme Specification](https://theme-ui.com/theme-spec/),
 which lets you define custom color palettes, typographic scales, fonts, and more.
 Read more about [theming](https://theme-ui.com/theming).
 

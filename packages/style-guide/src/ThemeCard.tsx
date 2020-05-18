@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
-import Card from './Card'
+import { jsx } from 'theme-ui'
+import Card, { CardProps } from './Card'
 import ColorPalette from './ColorPalette'
 import TypeStyle from './TypeStyle'
 
-export const ThemeCard = props => {
-  const { theme } = useThemeUI()
-
+export interface ThemeCardProps extends CardProps {}
+export const ThemeCard: React.FC<ThemeCardProps> = props => {
   return (
     <Card
       {...props}
@@ -15,10 +14,7 @@ export const ThemeCard = props => {
         bg: 'background',
       }}>
       <TypeStyle />
-      <ColorPalette
-        label={false}
-        size={32}
-      />
+      <ColorPalette label={false} size={32} />
     </Card>
   )
 }
