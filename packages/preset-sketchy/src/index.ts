@@ -17,6 +17,7 @@ const defaultBorderStyles: SystemStyleObject = {
 
 const buttonStyles = {
   ...defaultBorderStyles,
+  transition: 'all 250ms ease',
   bg: 'muted',
   boxShadow: 'default',
   fontFamily: 'inherit',
