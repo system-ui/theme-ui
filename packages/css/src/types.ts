@@ -412,7 +412,7 @@ interface OverwriteCSSProperties {
    */
   borderRadius?: CSS.BorderRadiusProperty<string | number>
   
-   /**
+  /**
    * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
    *
    * **Initial value**: `auto`
@@ -423,7 +423,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
-   zIndex?: ZIndexProperty | string;
+  zIndex?: CSS.ZIndexProperty | string
 }
 
 /**
