@@ -4202,9 +4202,9 @@
     csstype "^2.6.6"
 
 "@types/theme-ui__components@*", "@types/theme-ui__components@^0.2.3":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@types/theme-ui__components/-/theme-ui__components-0.2.4.tgz#96e4342eb00a4164a66ac6b58dcf1877bd3cec1a"
-  integrity sha512-z3rz/PsBc+wEtNCianYHdt+DFP3CCfUjy5B8L1L6kQ+1EWCX+E7t4Onwg2fp0SV+NcR6iaCaVy/mCXAKp2CMjg==
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@types/theme-ui__components/-/theme-ui__components-0.2.5.tgz#65ef4e160e2e0cf7c52ae220f6579a707d33667d"
+  integrity sha512-qqhIJboXzGXE0ZpKRHrwQvRbuOAcGNyAWMPXXP2jGs65XcaTuDJJpz1Rx5JCaQ1h+Tt99uIriRzZRthWarh1wg==
   dependencies:
     "@emotion/core" "^10.0.0"
     "@emotion/styled" "^10.0.0"
