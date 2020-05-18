@@ -13,16 +13,16 @@ import './react-jsx'
 
 export * from './types'
 
-const getCSS = props => {
+const getCSS = (props) => {
   if (!props.sx && !props.css) return undefined
-  return theme => {
+  return (theme) => {
     const styles = css(props.sx)(theme)
     const raw = typeof props.css === 'function' ? props.css(theme) : props.css
     return [styles, raw]
   }
 }
 
-const parseProps = props => {
+const parseProps = (props) => {
   if (!props) return null
   const next: typeof props & { css?: InterpolationWithTheme<any> } = {}
   for (let key in props) {
@@ -55,7 +55,7 @@ const canUseSymbol = typeof Symbol === 'function' && Symbol.for
 const REACT_ELEMENT = canUseSymbol ? Symbol.for('react.element') : 0xeac7
 const FORWARD_REF = canUseSymbol ? Symbol.for('react.forward_ref') : 0xeac7
 
-const isMergeableObject = n => {
+const isMergeableObject = (n) => {
   return (
     !!n &&
     typeof n === 'object' &&
@@ -66,10 +66,13 @@ const isMergeableObject = n => {
 
 const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 
-export const merge = <T>(a: Partial<T>, b: Partial<T>): T =>
+/**
+ * Deeply merge themes
+ */
+export const merge = (a: Theme, b: Theme): Theme =>
   deepmerge(a, b, { isMergeableObject, arrayMerge })
 
-merge.all = <T>(...args: Partial<T>[]) =>
+merge.all = <T = Theme>(...args: Partial<T>[]) =>
   deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
 
 interface BaseProviderProps {
