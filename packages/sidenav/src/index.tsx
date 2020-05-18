@@ -17,28 +17,23 @@ import merge from 'deepmerge'
 const createNestedLinks = (
   children: ReactNode,
   depth: number = 0
-): ReactNode[] => {
-  const links = React.Children.toArray(children).reduce(
-    (acc: ReactNode[], child) => {
-      if (!React.isValidElement(child)) {
-        return acc
-      }
-      const type: string = child.props && child.props.mdxType
-      if (!child.props || !child.props.children) return acc
-      if (type === 'a') return [...acc, child]
-      if (depth > 0 && type === 'ul') {
-        const last = acc[acc.length - 1]
-        acc[acc.length - 1] = React.cloneElement(last as ReactElement, {
-          links: createNestedLinks(child.props.children),
-        })
-        return acc
-      }
-      return [...acc, ...createNestedLinks(child.props.children, depth + 1)]
-    },
-    []
-  ) as ReactNode[]
-  return links
-}
+): ReactNode[] =>
+  React.Children.toArray(children).reduce((acc: ReactNode[], child) => {
+    if (!React.isValidElement(child)) {
+      return acc
+    }
+    const type: string = child.props && child.props.mdxType
+    if (!child.props || !child.props.children) return acc
+    if (type === 'a') return [...acc, child]
+    if (depth > 0 && type === 'ul') {
+      const last = acc[acc.length - 1]
+      acc[acc.length - 1] = React.cloneElement(last as ReactElement, {
+        links: createNestedLinks(child.props.children),
+      })
+      return acc
+    }
+    return [...acc, ...createNestedLinks(child.props.children, depth + 1)]
+  }, [])
 
 const flattenLinks = (children: ReactNode): ReactNode[] =>
   React.Children.toArray(children).reduce((acc: ReactNode[], child) => {
@@ -53,7 +48,7 @@ const flattenLinks = (children: ReactNode): ReactNode[] =>
       ])
     }
     return acc
-  }, []) as ReactNode[]
+  }, [])
 
 const Overlay: FunctionComponent<{
   onClick?: EventHandler<MouseEvent<HTMLDivElement>>
@@ -121,24 +116,22 @@ export const Sidenav = forwardRef<
         <div
           {...props}
           ref={ref}
-          sx={
-            {
-              position: ['fixed', 'sticky'],
-              top: 0,
-              left: 0,
-              bottom: [0, 'auto'],
-              zIndex: 1,
-              minWidth: 0,
-              width: 256,
-              maxHeight: ['100vh', 'none'],
-              overflowX: 'visible',
-              overflowY: 'auto',
-              WebkitOverflowScrolling: 'touch',
-              transition: 'transform .2s ease-out',
-              transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
-              bg: ['background', 'transparent'],
-            } as SxStyleProp
-          }
+          sx={{
+            position: ['fixed', 'sticky'],
+            top: 0,
+            left: 0,
+            bottom: [0, 'auto'],
+            zIndex: 1,
+            minWidth: 0,
+            width: 256,
+            maxHeight: ['100vh', 'none'],
+            overflowX: 'visible',
+            overflowY: 'auto',
+            transition: 'transform .2s ease-out',
+            transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
+            bg: ['background', 'transparent'],
+            ...{ WebkitOverflowScrolling: 'touch' },
+          }}
         />
       </MDXProvider>
     </ThemeProvider>
@@ -259,24 +252,22 @@ export const AccordionNav = forwardRef<
         <div
           ref={ref}
           className={className}
-          sx={
-            {
-              position: ['fixed', 'sticky'],
-              top: 0,
-              left: 0,
-              bottom: [0, 'auto'],
-              zIndex: 1,
-              minWidth: 0,
-              width: 256,
-              maxHeight: ['100vh', 'none'],
-              overflowX: 'visible',
-              overflowY: 'auto',
-              WebkitOverflowScrolling: 'touch',
-              transition: 'transform .2s ease-out',
-              transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
-              bg: ['background', 'transparent'],
-            } as SxStyleProp
-          }>
+          sx={{
+            position: ['fixed', 'sticky'],
+            top: 0,
+            left: 0,
+            bottom: [0, 'auto'],
+            zIndex: 1,
+            minWidth: 0,
+            width: 256,
+            maxHeight: ['100vh', 'none'],
+            overflowX: 'visible',
+            overflowY: 'auto',
+            transition: 'transform .2s ease-out',
+            transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
+            bg: ['background', 'transparent'],
+            ...{ WebkitOverflowScrolling: 'touch' },
+          }}>
           <ul
             sx={{
               listStyle: 'none',
