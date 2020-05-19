@@ -19,8 +19,7 @@
     "@theme-ui/core": "^0.4.0-alpha.1",
     "@theme-ui/css": "^0.4.0-alpha.1",
     "@theme-ui/mdx": "^0.4.0-alpha.1",
-    "@theme-ui/theme-provider": "^0.4.0-alpha.1",
-    "@types/theme-ui__components": "^0.2.3"
+    "@theme-ui/theme-provider": "^0.4.0-alpha.1"
   },
   "keywords": [
     "theme-ui",

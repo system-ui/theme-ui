@@ -11,16 +11,21 @@
     "prepare": "microbundle --no-compress",
     "watch": "microbundle watch --no-compress"
   },
-  "peerDependencies": {
-    "@emotion/core": "^10.0.10",
-    "react": "^16.8.6",
-    "theme-ui": "^0.4.0-alpha.1"
-  },
   "dependencies": {
     "@theme-ui/presets": "^0.4.0-alpha.1",
     "color": "^3.1.2",
     "@types/color": "^3.0.1",
     "lodash.get": "^4.4.2"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10.0.10",
+    "react": "^16.8.6",
+    "theme-ui": "^0.4.0-alpha.1"
+  },
+  "devDependencies": {
+    "@emotion/core": "^10.0.10",
+    "react": "^16.8.6",
+    "theme-ui": "^0.4.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"
