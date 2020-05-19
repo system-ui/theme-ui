@@ -6,7 +6,7 @@ import ThemeColorPicker from './ThemeColorPicker'
 type Color = string | ColorState
 type OnChangeArg = { color: Color } | { bg: Color }
 
-type ColorsProps = {
+export interface ColorsProps {
   value?: {
     color?: string
     bg?: string
@@ -36,7 +36,7 @@ export const Colors = ({
         <ThemeColorPicker
           theme={theme}
           value={color || ''}
-          onChange={color => {
+          onChange={(color) => {
             onChange({ color })
           }}
         />
@@ -50,7 +50,7 @@ export const Colors = ({
         <ThemeColorPicker
           theme={theme}
           value={bg || ''}
-          onChange={bg => {
+          onChange={(bg) => {
             onChange({ bg })
           }}
         />

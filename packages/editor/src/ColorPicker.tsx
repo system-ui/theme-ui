@@ -88,7 +88,9 @@ const Label = ({ width = '100%', flex = 1, ...props }: LabelProps) => (
 type CustomPickerForwardedProps = {
   size?: number
 }
-type PickerProps = CustomPickerForwardedProps & CustomPickerProps
+export interface PickerProps
+  extends CustomPickerForwardedProps,
+    CustomPickerProps {}
 
 export const Picker = CustomPicker<CustomPickerForwardedProps>(
   ({ size = 256, ...props }) => {
@@ -131,7 +133,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
               value={props.hex}
               name="hex"
               label="hex"
-              onChange={val => {
+              onChange={(val) => {
                 props.onChange(val)
               }}
             />
@@ -181,7 +183,7 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
   }
 )
 
-type ColorPickerProps = React.PropsWithoutRef<PickerProps> & {
+export interface ColorPickerProps extends React.PropsWithoutRef<PickerProps> {
   children?: React.ReactNode
 }
 
@@ -197,7 +199,7 @@ export const ColorPicker = ({ children, ...props }: ColorPickerProps) => {
     <React.Fragment>
       <PopoverDisclosure
         {...popover}
-        children={disclosure => <div {...disclosure}>{children}</div>}
+        children={(disclosure) => <div {...disclosure}>{children}</div>}
       />
       <Popover
         {...popover}

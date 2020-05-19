@@ -4,7 +4,7 @@ import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import { EditorContextValue } from '../types'
 
-export default () => {
+const LineHeights = () => {
   const context = useThemeUI() as EditorContextValue
   const { lineHeights = {} } = context.theme || {}
 
@@ -21,7 +21,7 @@ export default () => {
 
   return (
     <Fragment>
-      {Object.keys(lineHeights).map(key => (
+      {Object.keys(lineHeights).map((key) => (
         <div key={key}>
           <Field<'input'>
             type="number"
@@ -38,3 +38,5 @@ export default () => {
     </Fragment>
   )
 }
+
+export default LineHeights

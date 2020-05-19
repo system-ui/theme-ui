@@ -35,8 +35,9 @@ type ComboboxOwnProps<T> = {
   onChange: (val: string | T) => void
   options?: T[]
 }
-type ComboboxProps<T> = ComboboxOwnProps<T> &
-  Omit<InputProps, keyof ComboboxOwnProps<T>>
+export interface ComboboxProps<T>
+  extends ComboboxOwnProps<T>,
+    Omit<InputProps, keyof ComboboxOwnProps<T>> {}
 
 const Combobox: <T extends string | number>(
   props: ComboboxProps<T>

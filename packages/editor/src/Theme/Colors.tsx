@@ -5,7 +5,7 @@ import { ColorPalette } from '@theme-ui/style-guide'
 import ColorPicker from '../ColorPicker'
 import { EditorContextValue } from '../types'
 
-type ColorsProps = {
+export interface ColorsProps {
   size?: number
 }
 type ColorPaletteRenderArg = {

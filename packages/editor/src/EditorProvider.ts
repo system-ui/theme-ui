@@ -6,7 +6,7 @@ import { EditorContextValue } from './types'
 const reducer = (state: Theme, next: Partial<Theme>) =>
   merge<Theme>(state, next)
 
-type EditorProviderProps = {
+export interface EditorProviderProps {
   children?: React.ReactNode
   theme?: Theme
 }

@@ -3,7 +3,7 @@ import { jsx, Theme, SxStyleProp } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
 
-export type SpaceProps = {
+export interface SpaceProps {
   tag?: string
   property?: 'margin' | 'padding'
   value?: Theme['space']
@@ -26,11 +26,11 @@ export const Space = ({
   const r = lock.x ? x : value[key + 'r'] || value[property + 'Right'] || ''
 
   useEffect(() => {
-    if (typeof x === 'number') setLock(lock => ({ ...lock, x: true }))
-    if (typeof y === 'number') setLock(lock => ({ ...lock, y: true }))
+    if (typeof x === 'number') setLock((lock) => ({ ...lock, x: true }))
+    if (typeof y === 'number') setLock((lock) => ({ ...lock, y: true }))
   }, [])
 
-  const handleChange = direction => e => {
+  const handleChange = (direction) => (e) => {
     const n = e.target.value
     const val = n === '' ? undefined : parseInt(n)
     switch (direction) {
@@ -53,10 +53,10 @@ export const Space = ({
     }
   }
 
-  const onChangeLock = dir => e => {
+  const onChangeLock = (dir) => (e) => {
     const isX = dir === 'x'
     if (!lock[dir]) {
-      setLock(lock => ({ ...lock, [dir]: true }))
+      setLock((lock) => ({ ...lock, [dir]: true }))
       const val = isX ? l || r : t || b
       onChange({
         [key + (isX ? 'l' : 't')]: undefined,
@@ -64,7 +64,7 @@ export const Space = ({
         [key + dir]: val,
       })
     } else {
-      setLock(lock => ({ ...lock, [dir]: false }))
+      setLock((lock) => ({ ...lock, [dir]: false }))
       const val = dir === 'x' ? x : y
       onChange({
         [key + (isX ? 'l' : 't')]: val,
@@ -74,8 +74,9 @@ export const Space = ({
     }
   }
 
-  const prefixName = name => (tag ? `styles.${tag}.${key}${name}` : key + name)
-  const label = dir =>
+  const prefixName = (name) =>
+    tag ? `styles.${tag}.${key}${name}` : key + name
+  const label = (dir) =>
     property === 'margin' ? 'Margin ' + dir : 'Padding ' + dir
 
   return (

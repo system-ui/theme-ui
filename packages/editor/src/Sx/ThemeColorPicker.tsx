@@ -5,7 +5,7 @@ import tinycolor from 'tinycolor2'
 import { GithubPicker, ColorState } from 'react-color'
 import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 
-type ThemeColorPickerProps = {
+export interface ThemeColorPickerProps {
   children?: React.ReactNode
   theme?: Theme
   value?: string
@@ -27,9 +27,9 @@ export const ThemeColorPicker = ({
   const options = [
     'transparent',
     ...Object.keys(colors)
-      .map(key => colors[key])
-      .filter(color => typeof color === 'string')
-      .filter(color => /^#/.test(color)),
+      .map((key) => colors[key])
+      .filter((color) => typeof color === 'string')
+      .filter((color) => /^#/.test(color)),
   ]
   const onChange = (color: ColorState) => {
     const [key] =
@@ -47,7 +47,7 @@ export const ThemeColorPicker = ({
     <React.Fragment>
       <PopoverDisclosure
         {...popover}
-        children={disclosure => (
+        children={(disclosure) => (
           <div
             {...disclosure}
             style={{
