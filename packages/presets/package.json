@@ -21,6 +21,7 @@
     "@theme-ui/preset-future": "^0.4.0-alpha.0",
     "@theme-ui/preset-polaris": "^0.4.0-alpha.0",
     "@theme-ui/preset-roboto": "^0.4.0-alpha.0",
+    "@theme-ui/preset-sketchy": "^0.4.0-alpha.1",
     "@theme-ui/preset-swiss": "^0.4.0-alpha.1",
     "@theme-ui/preset-system": "^0.4.0-alpha.1",
     "@theme-ui/preset-tailwind": "^0.4.0-alpha.1",
