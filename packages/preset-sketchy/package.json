@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-sketchy",
-  "version": "0.4.0-alpha.1",
+  "version": "0.4.0-alpha.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -15,6 +15,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.4.0-alpha.1"
+    "@theme-ui/css": "^0.4.0-alpha.2"
   }
 }
