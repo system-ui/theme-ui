@@ -63,17 +63,14 @@ const Input = (props: InputProps) => (
   />
 )
 
-type LabelProps = React.PropsWithoutRef<JSX.IntrinsicElements['label']> & {
-  width?: string | number
-  flex?: number
-}
+type LabelProps = React.PropsWithoutRef<JSX.IntrinsicElements['label']>
 
-const Label = ({ width = '100%', flex = 1, ...props }: LabelProps) => (
+const Label = (props: LabelProps) => (
   <label
     {...props}
     sx={{
       display: 'block',
-      width,
+      width: '100%',
       fontSize: 10,
       input: {
         ':focus': {
