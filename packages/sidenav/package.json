@@ -3,6 +3,8 @@
   "version": "0.4.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
@@ -16,7 +18,8 @@
     "@mdx-js/react": "^1.0.21",
     "deepmerge": "^4.0.0",
     "react": "^16.8.6",
-    "theme-ui": "^0.4.0-alpha.1"
+    "theme-ui": "^0.4.0-alpha.1",
+    "@types/mdx-js__react": "^1.5.1"
   },
   "keywords": [
     "theme-ui",

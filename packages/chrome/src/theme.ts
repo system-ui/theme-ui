@@ -1,5 +1,7 @@
-export default {
-  initialColorMode: 'light',
+import { Theme } from '@theme-ui/css'
+
+const theme: Theme = {
+  initialColorModeName: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -30,11 +32,13 @@ export default {
     monospace: 'Menlo, monospace',
   },
   fontWeights: {
-    body: '400',
-    heading: '700',
+    body: 400,
+    heading: 700,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.25,
   },
 }
+
+export default theme
