@@ -28,9 +28,9 @@ const FontSizes = () => {
 
   return (
     <Fragment>
-      {Object.keys(fontSizes).map(key => (
+      {Object.keys(fontSizes).map((key) => (
         <div key={key}>
-          <Field<'input'>
+          <Field
             type="number"
             label={key}
             name={'fontSizes.' + key}

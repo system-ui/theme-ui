@@ -30,9 +30,9 @@ const Space = () => {
 
   return (
     <Fragment>
-      {Object.keys(space).map(key => (
+      {Object.keys(space).map((key) => (
         <div key={key}>
-          <Field<'input'>
+          <Field
             type="number"
             label={key}
             name={'space.' + key}

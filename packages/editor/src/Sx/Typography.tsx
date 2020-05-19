@@ -51,7 +51,7 @@ export const SxTypography = ({
           gap: 2,
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
-        <Field<'input'>
+        <Field
           name={prefixName('fontSize')}
           label="Font Size"
           value={fontSize || ''}

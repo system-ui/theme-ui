@@ -23,7 +23,7 @@ const LineHeights = () => {
     <Fragment>
       {Object.keys(lineHeights).map((key) => (
         <div key={key}>
-          <Field<'input'>
+          <Field
             type="number"
             label={key}
             name={'lineHeights.' + key}

@@ -208,7 +208,7 @@ export type FieldProps<T extends React.ElementType> = FieldOwnProps &
 // `T` is far from unnecessary. We derive component props from it.
 // tslint:disable-next-line no-unnecessary-generics
 export function Field<
-  T extends React.ElementType = React.ElementType<InputProps>
+  T extends React.ElementType = React.ComponentType<InputProps>
 >(props: FieldProps<T>): JSX.Element
 
 export interface ProgressProps
