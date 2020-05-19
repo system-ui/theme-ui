@@ -48,10 +48,10 @@ test('snapshot renders as a popover', () => {
 test('inputs fire onChange', () => {
   let next
   let tree
-  const onChange = jest.fn(e => (next = e))
+  const onChange = jest.fn((e) => (next = e))
   act(() => {
     tree = render(
-      <ColorPicker color="#f00" onChange={onChange}>
+      <ColorPicker color="#f00" onChange={onChange} size={512}>
         <button>Edit color</button>
       </ColorPicker>
     )
