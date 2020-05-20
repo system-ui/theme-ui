@@ -17,7 +17,7 @@ import {
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = (el) => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
@@ -65,8 +65,8 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
-  const Beep = props => <h2 {...props} />
-  const Inner = props => mdx('Beep', props)
+  const Beep = (props) => <h2 {...props} />
+  const Inner = (props) => mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider

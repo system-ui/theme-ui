@@ -20,3 +20,38 @@ test('renders with other languages', () => {
   )
   expect(json).toMatchSnapshot()
 })
+
+const HIGHLIGHT_CODE = `
+ console.log('hello, world!') // highlight-line
+`
+
+test('highlights inline comment', () => {
+  const result = render(<Prism className="language-js">{HIGHLIGHT_CODE}</Prism>)
+  expect(result).toMatchSnapshot()
+})
+
+const HIGHLIGHT_START_END = `
+  // highlight-start
+ console.log('hello, world!') 
+ // highlight-end
+ let other = "no highlight"
+`
+
+test('highlight start and end', () => {
+  const result = render(
+    <Prism className="language-js">{HIGHLIGHT_START_END}</Prism>
+  )
+
+  expect(result).toMatchSnapshot()
+})
+
+const NO_HIGHLIGHT = `
+  // highlight-start
+ console.log('hello, world!') 
+`
+
+test('no highlight', () => {
+  const result = render(<Prism className="language-js">{NO_HIGHLIGHT}</Prism>)
+
+  expect(result).toMatchSnapshot()
+})

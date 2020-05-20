@@ -10,7 +10,7 @@ afterEach(cleanup)
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = (el) => renderer.create(el).toJSON()
 
 describe('ThemeProvider', () => {
   test('renders', () => {
@@ -97,7 +97,7 @@ describe('ThemeProvider', () => {
       },
       cards: {
         default: {
-          border: t => `1px solid ${t.colors.primary}`,
+          border: (t) => `1px solid ${t.colors.primary}`,
         },
       },
     }
@@ -156,7 +156,7 @@ describe('jsx', () => {
           },
         },
         jsx('div', {
-          css: t => ({
+          css: (t) => ({
             color: t.colors.primary,
           }),
         })
@@ -270,7 +270,7 @@ describe('merge', () => {
     const h1 = React.forwardRef((props, ref) => <h1 ref={ref} {...props} />)
     const result = merge(
       {
-        h1: props => <h1 {...props} />,
+        h1: (props) => <h1 {...props} />,
       },
       {
         h1,
@@ -326,7 +326,7 @@ describe('merge', () => {
 describe('useThemeUI', () => {
   test('returns theme context', () => {
     let context
-    const GetContext = props => {
+    const GetContext = (props) => {
       context = useThemeUI()
       return false
     }

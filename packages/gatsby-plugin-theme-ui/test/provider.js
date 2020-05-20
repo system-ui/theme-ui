@@ -14,7 +14,7 @@ afterEach(() => {
   delete theme.colors
 })
 
-const Consumer = props => {
+const Consumer = (props) => {
   context = useThemeUI()
   return false
 }

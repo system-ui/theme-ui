@@ -51,5 +51,8 @@
   },
   ".namespace": {
     "opacity": 0.7
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 40%, .5)"
   }
 }
