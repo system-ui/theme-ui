@@ -9,6 +9,7 @@
 - Fix broken base-preset link on `theming` page
 - Add `@theme-ui/preset-sketchy`
 - `@theme-ui/prism`: add support for highlighting lines #895
+- `@theme-ui/style-guide`: pass `size` prop to ColorRow component #941
 
 ## v0.3.0 2020-01-22
 
