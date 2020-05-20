@@ -45,6 +45,7 @@ export const ColorRow = ({
                 key={key}
                 name={id}
                 colors={color as Colors}
+                size={size}
                 omit={omit}
               />
             )
