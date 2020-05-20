@@ -1,0 +1,6 @@
+babel.config.js
+*.test.js
+coverage
+__snapshots__
+test
+.rts2_cache*

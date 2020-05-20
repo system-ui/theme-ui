@@ -23,7 +23,7 @@
     "gatsby-plugin-theme-ui": "^0.4.0-alpha.1",
     "gatsby-theme-blog-core": "^1.0.2",
     "gatsby-theme-ui-layout": "^0.4.0-alpha.0",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "theme-ui": "^0.4.0-alpha.2"
   },
   "repository": "system-ui/theme-ui",
