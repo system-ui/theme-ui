@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.4.0-alpha.1",
+  "version": "0.4.0-alpha.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/color-modes": "^0.4.0-alpha.1",
-    "@theme-ui/core": "^0.4.0-alpha.1",
+    "@theme-ui/color-modes": "^0.4.0-alpha.2",
+    "@theme-ui/core": "^0.4.0-alpha.2",
     "@theme-ui/mdx": "^0.4.0-alpha.1"
   },
   "repository": "system-ui/theme-ui",

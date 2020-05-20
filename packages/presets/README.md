@@ -36,6 +36,7 @@ Currently, the following presets are available for use:
 - [`bootstrap`](https://theme-ui.com/presets/bootstrap)
 - [`bulma`](https://theme-ui.com/presets/bulma) (WIP)
 - [`tailwind`](https://theme-ui.com/presets/tailwind)
+- `sketchy`: [Demo webiste](https://themeui-sketchy.netlify.app/), [Theme UI docs](https://theme-ui.com/presets/sketchy)
 
 ## Contributing
 

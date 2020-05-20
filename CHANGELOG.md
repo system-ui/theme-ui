@@ -7,6 +7,7 @@
 - Adjust media query sort logic #600
 - Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
 - Fix broken base-preset link on `theming` page
+- Add `@theme-ui/preset-sketchy`
 
 ## v0.3.0 2020-01-22
 
