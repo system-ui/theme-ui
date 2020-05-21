@@ -26,13 +26,13 @@ import {
   onSubmit={e => e.preventDefault()}>
   <Label htmlFor='username'>Username</Label>
   <Input
-    name='username'
+    id='username'
     mb={3}
   />
   <Label htmlFor='password'>Password</Label>
   <Input
     type='password'
-    name='password'
+    id='password'
     mb={3}
   />
   <Box>
@@ -42,14 +42,14 @@ import {
     </Label>
   </Box>
   <Label htmlFor='sound'>Sound</Label>
-  <Select name='sound' mb={3}>
+  <Select id='sound' mb={3}>
     <option>Beep</option>
     <option>Boop</option>
     <option>Blip</option>
   </Select>
   <Label htmlFor='comment'>Comment</Label>
   <Textarea
-    name='comment'
+    id='comment'
     rows='6'
     mb={3}
   />
