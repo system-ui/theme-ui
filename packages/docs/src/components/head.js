@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { useThemeUI } from 'theme-ui'
 import pkg from 'theme-ui/package.json'
 
-export default props => {
+export default (props) => {
   const title = [
     props.title,
     props.pageContext.frontmatter ? props.pageContext.frontmatter.title : false,

@@ -36,5 +36,8 @@
   },
   ".important": {
     "color": "#c4b9fe"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
   }
 }

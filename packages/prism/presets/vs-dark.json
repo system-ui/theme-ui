@@ -42,5 +42,8 @@
   },
   ".char": {
     "color": "rgb(209, 105, 105)"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 40%, .5)"
   }
 }

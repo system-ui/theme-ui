@@ -40,7 +40,7 @@ import {
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = (el) => renderer.create(el).toJSON()
 
 const theme = {
   boxes: {
