@@ -32,6 +32,7 @@ import {
   <Label htmlFor='password'>Password</Label>
   <Input
     type='password'
+    name='password'
     id='password'
     mb={3}
   />
@@ -42,13 +43,14 @@ import {
     </Label>
   </Box>
   <Label htmlFor='sound'>Sound</Label>
-  <Select id='sound' mb={3}>
+  <Select name='sound' id='sound' mb={3}>
     <option>Beep</option>
     <option>Boop</option>
     <option>Blip</option>
   </Select>
   <Label htmlFor='comment'>Comment</Label>
   <Textarea
+    name='comment'
     id='comment'
     rows='6'
     mb={3}
