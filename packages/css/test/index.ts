@@ -6,6 +6,17 @@ const theme: Theme = {
     secondary: 'cyan',
     background: 'white',
     text: 'black',
+    colorScale: {
+      default: 'color500',
+      100: 'color100',
+      500: 'color500',
+      900: 'color900',
+    },
+    colorScaleNoDefault: {
+      100: 'color100',
+      500: 'color500',
+      900: 'color900',
+    },
   },
   fontSizes: [12, 14, 16, 24, 36],
   fonts: {
@@ -196,7 +207,7 @@ test('works with the css prop', () => {
 })
 
 test('works with functional arguments', () => {
-  const result = css(t => ({
+  const result = css((t) => ({
     color: t.colors.primary,
   }))(theme)
   expect(result).toEqual({
@@ -206,10 +217,41 @@ test('works with functional arguments', () => {
 
 test('supports functional values', () => {
   const result = css({
-    color: t => t.colors.primary,
+    color: (t) => t.colors.primary,
   })(theme)
   expect(result).toEqual({
     color: 'tomato',
+  })
+})
+
+test('returns default key when accessing object value with default', () => {
+  const result = css({
+    color: 'colorScale',
+  })(theme)
+  expect(result).toEqual({
+    color: 'color500',
+  })
+})
+
+test('returns nested key when accessing key from object value with default', () => {
+  const result = css({
+    color: 'colorScale.100',
+  })(theme)
+  expect(result).toEqual({
+    color: 'color100',
+  })
+})
+
+test('returns object when accessing object value with no default key', () => {
+  const result = css({
+    color: 'colorScaleNoDefault',
+  })(theme)
+  expect(result).toEqual({
+    color: {
+      '100': 'color100',
+      '500': 'color500',
+      '900': 'color900',
+    },
   })
 })
 
@@ -285,7 +327,7 @@ test('handles negative margins from scale that is an object', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
-  })({...theme, space: { s: '16px', m: '32px' }})
+  })({ ...theme, space: { s: '16px', m: '32px' } })
   expect(result).toEqual({
     marginTop: '-16px',
     marginLeft: '-32px',
@@ -344,7 +386,7 @@ test('ignores array values longer than breakpoints', () => {
 
 test('functional values can return responsive arrays', () => {
   const result = css({
-    color: t => [t.colors.primary, t.colors.secondary],
+    color: (t) => [t.colors.primary, t.colors.secondary],
   })(theme)
   expect(result).toEqual({
     '@media screen and (min-width: 40em)': {

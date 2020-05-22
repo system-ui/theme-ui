@@ -1,6 +1,9 @@
+import isObject from 'is-object'
 import { CSSObject, SystemStyleObject, UseThemeFunction, Theme } from './types'
 
 export * from './types'
+
+const { hasOwnProperty } = {}
 
 export function get(
   obj: object,
@@ -13,10 +16,16 @@ export function get(
   for (p = 0; p < path.length; p++) {
     obj = obj ? (obj as any)[path[p]] : undef
   }
-  return obj === undef ? def : obj
+  if (obj === undef) return def
+
+  if (isObject(obj) && hasOwnProperty.call(obj, 'default')) {
+    return (obj as any).default
+  }
+
+  return obj
 }
 
-export const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
+export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
 
 const defaultTheme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -223,7 +232,7 @@ const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
     null,
-    ...breakpoints.map(n => `@media screen and (min-width: ${n})`),
+    ...breakpoints.map((n) => `@media screen and (min-width: ${n})`),
   ]
 
   for (const key in styles) {
