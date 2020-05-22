@@ -152,6 +152,7 @@ export const AccordionButton: FunctionComponent<{
       title="Expand Section"
       disabled={disabled}
       {...props}
+      onMouseDown={(e) => e.preventDefault()}
       sx={{
         appearance: 'none',
         display: 'flex',

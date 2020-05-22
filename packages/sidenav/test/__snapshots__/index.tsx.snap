@@ -242,6 +242,7 @@ exports[`AccordionNav renders open 1`] = `
             disabled={false}
             href="/bop"
             onClick={[Function]}
+            onMouseDown={[Function]}
             pathname=""
             title="Expand Section"
           >
@@ -404,6 +405,7 @@ exports[`AccordionNav renders with nested links 1`] = `
             disabled={false}
             href="/bop"
             onClick={[Function]}
+            onMouseDown={[Function]}
             pathname=""
             title="Expand Section"
           >
