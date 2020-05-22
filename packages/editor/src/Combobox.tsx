@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
-import { Label, Input } from '@theme-ui/components'
+import { Label, Input, InputProps } from '@theme-ui/components'
 
 const Chevron = () => (
   <svg
     viewBox="0 0 16 16"
-    width='12'
-    height='12'
+    width="12"
+    height="12"
     sx={{
       pointerEvents: 'none',
     }}>
@@ -20,14 +20,28 @@ const Chevron = () => (
   </svg>
 )
 
-const keys = {
+const keys: { [k: number]: string } = {
   38: 'up',
   40: 'down',
   27: 'escape',
   13: 'return',
 }
 
-export default ({
+type ComboboxOwnProps<T> = {
+  type?: string
+  name: string
+  label?: React.ReactNode
+  value: T
+  onChange: (val: string | T) => void
+  options?: T[]
+}
+export interface ComboboxProps<T>
+  extends ComboboxOwnProps<T>,
+    Omit<InputProps, keyof ComboboxOwnProps<T>> {}
+
+const Combobox: <T extends string | number>(
+  props: ComboboxProps<T>
+) => JSX.Element = ({
   type = 'text',
   name,
   label,
@@ -38,12 +52,12 @@ export default ({
 }) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(-1)
-  const root = useRef(null)
-  const input = useRef(null)
+  const root = useRef<HTMLDivElement>(null)
+  const input = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    const handleOutsideClick = e => {
-      if (root.current && root.current.contains(e.target)) return
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (root.current && root.current.contains(e.target as Node)) return
       setOpen(false)
     }
     document.addEventListener('click', handleOutsideClick)
@@ -63,7 +77,7 @@ export default ({
     setIndex(i)
   }
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.shiftKey || e.metaKey || e.ctrlKey || e.altKey) return
     switch (keys[e.keyCode]) {
       case 'up':
@@ -88,27 +102,27 @@ export default ({
     }
   }
 
-  const handleChange = e => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value)
   }
 
-  const handleBlur = e => {
+  const handleBlur = () => {
     requestAnimationFrame(() => {
       if (root.current && root.current.contains(document.activeElement)) return
       setOpen(false)
     })
   }
 
-  const toggleOpen = e => {
+  const toggleOpen = () => {
     setOpen(!open)
     if (input.current) input.current.focus()
   }
 
-  const handleItemClick = i => e => {
+  const handleItemClick = (i: number) => () => {
     const val = options[i]
     if (val) onChange(val)
     setOpen(false)
-    input.current.select()
+    input.current && input.current.select()
   }
 
   return (
@@ -120,9 +134,7 @@ export default ({
       sx={{
         zIndex: 2,
       }}>
-      <Label htmlFor={name}>
-        {label || name}
-      </Label>
+      <Label htmlFor={name}>{label || name}</Label>
       <div
         sx={{
           display: 'flex',
@@ -146,7 +158,7 @@ export default ({
           aria-activedescendant={name + index}
         />
         <button
-          tabIndex="-1"
+          tabIndex={-1}
           aria-label={open ? 'Close' : 'Open'}
           onClick={toggleOpen}
           sx={{
@@ -165,7 +177,7 @@ export default ({
         id={popup}
         role="listbox"
         aria-label={name}
-        tabIndex="-1"
+        tabIndex={-1}
         style={{
           visibility: open ? 'visible' : 'hidden',
           position: open ? 'absolute' : 'static',
@@ -205,3 +217,5 @@ export default ({
     </div>
   )
 }
+
+export default Combobox

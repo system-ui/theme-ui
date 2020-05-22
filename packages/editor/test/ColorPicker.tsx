@@ -9,15 +9,16 @@ const { act } = renderer
 
 afterEach(cleanup)
 
-if (global.document) {
-  document.createRange = () => ({
-    setStart: () => {},
-    setEnd: () => {},
-    commonAncestorContainer: {
-      nodeName: 'BODY',
-      ownerDocument: document,
-    },
-  })
+if ((global as any).document) {
+  document.createRange = () =>
+    (({
+      setStart: () => {},
+      setEnd: () => {},
+      commonAncestorContainer: {
+        nodeName: 'BODY',
+        ownerDocument: document,
+      },
+    } as unknown) as Range)
 }
 
 test('renders with styles', () => {
@@ -42,6 +43,53 @@ test('snapshot renders as a popover', () => {
     .toJSON()
   expect(json).toMatchSnapshot()
   restore()
+})
+
+test('inputs fire onChange', () => {
+  let next
+  let tree
+  const onChange = jest.fn((e) => (next = e))
+  act(() => {
+    tree = render(
+      <ColorPicker color="#f00" onChange={onChange} size={512}>
+        <button>Edit color</button>
+      </ColorPicker>
+    )
+  })
+  const button = tree.getByText('Edit color')
+  act(() => {
+    fireEvent.click(button)
+  })
+  const hueInput = tree.getByPlaceholderText('hue')
+  act(() => {
+    fireEvent.change(hueInput, {
+      target: {
+        value: '20',
+      },
+    })
+  })
+  expect(onChange).toHaveBeenCalled()
+  expect(next.hsl.h).toBe(20)
+  const saturationInput = tree.getByPlaceholderText('saturation')
+  act(() => {
+    fireEvent.change(saturationInput, {
+      target: {
+        value: '90',
+      },
+    })
+  })
+  expect(onChange).toHaveBeenCalled()
+  expect(next.hsl.s).toBeCloseTo(0.9, 8)
+  const lightnessInput = tree.getByPlaceholderText('lightness')
+  act(() => {
+    fireEvent.change(lightnessInput, {
+      target: {
+        value: 80,
+      },
+    })
+  })
+  expect(onChange).toHaveBeenCalled()
+  expect(next.hsl.l).toBeCloseTo(0.8, 8)
 })
 
 /*

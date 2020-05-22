@@ -6,28 +6,29 @@ import {
   act,
   waitForElement,
   waitForDomChange,
-  cleanup
+  cleanup,
 } from '@testing-library/react'
 import Combobox from '../src/Combobox'
+
+const noop = () => {}
 
 afterEach(cleanup)
 
 test('renders', () => {
-  const json = renderer.create(
-    <Combobox />
-  ).toJSON()
+  const json = renderer
+    .create(<Combobox name="beep" value="beep" onChange={noop} />)
+    .toJSON()
   expect(json).toMatchSnapshot()
 })
 
 test('clicking chevron button shows menu', async () => {
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const button = await tree.getByRole('button')
@@ -40,18 +41,16 @@ test('clicking item updates value', async () => {
   const onChange = jest.fn()
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
       onChange={onChange}
     />
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
-  const [ option ] = await waitForElement(() => tree.findAllByRole('option'))
+  const [option] = await waitForElement(() => tree.findAllByRole('option'))
   fireEvent.click(option)
   expect(onChange).toHaveBeenCalledWith('beep')
 })
@@ -60,22 +59,16 @@ test('down arrow moves selection down', async () => {
   const onChange = jest.fn()
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
       onChange={onChange}
     />
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
   const input = await tree.getByLabelText('Beep')
-  fireEvent.keyDown(input, {
-    key: 'ArrowDown',
-    keyCode: 40,
-  })
   fireEvent.keyDown(input, {
     key: 'ArrowDown',
     keyCode: 40,
@@ -91,22 +84,16 @@ test('up arrow moves selection up', async () => {
   const onChange = jest.fn()
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
       onChange={onChange}
     />
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
   const input = await tree.getByLabelText('Beep')
-  fireEvent.keyDown(input, {
-    key: 'ArrowDown',
-    keyCode: 40,
-  })
   fireEvent.keyDown(input, {
     key: 'ArrowDown',
     keyCode: 40,
@@ -125,12 +112,11 @@ test('up arrow moves selection up', async () => {
 test('escape key closes listbox', async () => {
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const button = await tree.getByRole('button')
@@ -149,12 +135,11 @@ test('escape key closes listbox', async () => {
 test('down arrow key opens listbox', async () => {
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const input = await tree.getByLabelText('Beep')
@@ -171,12 +156,11 @@ test('down arrow key opens listbox', async () => {
 test('up arrow key opens listbox', async () => {
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const input = await tree.getByLabelText('Beep')
@@ -193,12 +177,11 @@ test('up arrow key opens listbox', async () => {
 test('ignores keypresses with meta key', async () => {
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const input = await tree.getByLabelText('Beep')
@@ -208,7 +191,7 @@ test('ignores keypresses with meta key', async () => {
   fireEvent.keyDown(input, {
     key: 'ArrowDown',
     keyCode: 40,
-    metaKey: true
+    metaKey: true,
   })
   expect(listbox.style.visibility).toBe('hidden')
 })
@@ -216,12 +199,11 @@ test('ignores keypresses with meta key', async () => {
 test('ignores return key when closed', async () => {
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const input = await tree.getByLabelText('Beep')
@@ -237,15 +219,14 @@ test('ignores return key when closed', async () => {
 
 // todo
 test.skip('blur closes listbox', async () => {
-  global.requestAnimationFrame = jest.fn(fn => setTimeout(fn, 1))
+  ;(global as any).requestAnimationFrame = jest.fn(fn => setTimeout(fn, 1))
   const tree = render(
     <Combobox
-      label='Beep'
-      name='beep'
-      options={[
-        'beep',
-        'boop',
-      ]}
+      label="Beep"
+      name="beep"
+      value="beep"
+      options={['beep', 'boop']}
+      onChange={noop}
     />
   )
   const button = await tree.getByRole('button')
@@ -255,8 +236,8 @@ test.skip('blur closes listbox', async () => {
   const listbox = await tree.getByRole('listbox', {
     hidden: true,
   })
-  expect(global.requestAnimationFrame).toHaveBeenCalled()
+  expect((global as any).requestAnimationFrame).toHaveBeenCalled()
   // not sure how to use testing-library here
-  await waitForDomChange({ container: tree })
+  await waitForDomChange({ container: (tree as unknown) as HTMLElement })
   expect(listbox.style.visibility).toBe('hidden')
 })

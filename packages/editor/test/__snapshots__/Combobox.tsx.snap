@@ -86,28 +86,34 @@ exports[`renders 1`] = `
 >
   <label
     className="emotion-0"
-  />
+    htmlFor="beep"
+  >
+    beep
+  </label>
   <div
     className="emotion-4"
   >
     <input
-      aria-activedescendant={NaN}
+      aria-activedescendant="beep-1"
       aria-autocomplete="none"
       aria-expanded={false}
       aria-haspopup="true"
-      aria-owns="undefined-popup"
+      aria-owns="beep-popup"
       className="emotion-1"
+      id="beep"
+      name="beep"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyDown={[Function]}
       role="combobox"
       type="text"
+      value="beep"
     />
     <button
       aria-label="Open"
       className="emotion-3"
       onClick={[Function]}
-      tabIndex="-1"
+      tabIndex={-1}
     >
       <svg
         className="emotion-2"
@@ -125,8 +131,9 @@ exports[`renders 1`] = `
     </button>
   </div>
   <ul
+    aria-label="beep"
     className="emotion-5"
-    id="undefined-popup"
+    id="beep-popup"
     role="listbox"
     style={
       Object {
@@ -134,7 +141,7 @@ exports[`renders 1`] = `
         "visibility": "hidden",
       }
     }
-    tabIndex="-1"
+    tabIndex={-1}
   />
 </div>
 `;

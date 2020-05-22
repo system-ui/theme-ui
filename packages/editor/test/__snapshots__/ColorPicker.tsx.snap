@@ -4,7 +4,7 @@ exports[`renders with styles 1`] = `
 .emotion-9 {
   display: grid;
   padding: 8px;
-  grid-gap: 8px;
+  gap: 8px;
   width: 256px;
   border-radius: 4px;
   background-color: white;
@@ -425,7 +425,7 @@ Array [
   .emotion-9 {
   display: grid;
   padding: 8px;
-  grid-gap: 8px;
+  gap: 8px;
   width: 256px;
   border-radius: 4px;
   background-color: white;

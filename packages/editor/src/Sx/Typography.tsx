@@ -1,17 +1,29 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Theme } from 'theme-ui'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import Combobox from '../Combobox'
 
+type OnChangeArg =
+  | { fontFamily: string }
+  | { fontSize: number }
+  | { fontWeight: string }
+  | { lineHeight: string }
+export interface TypographyProps {
+  tag?: string
+  value?: {
+    fontFamily?: string
+    fontSize?: string | number
+    fontWeight?: string
+    lineHeight?: string
+  }
+  theme?: Theme
+  onChange: (arg: OnChangeArg) => void
+}
+
 export const SxTypography = ({
   tag,
-  value: {
-    fontFamily,
-    fontSize,
-    fontWeight,
-    lineHeight,
-  } = {},
+  value: { fontFamily, fontSize, fontWeight, lineHeight } = {},
   theme: {
     fonts = {},
     fontSizes = [],
@@ -19,8 +31,8 @@ export const SxTypography = ({
     lineHeights = {},
   } = {},
   onChange,
-}) => {
-  const prefixName = name => tag ? `styles.${tag}.${name}` : name
+}: TypographyProps) => {
+  const prefixName = (name: string) => (tag ? `styles.${tag}.${name}` : name)
 
   return (
     <Fragment>
@@ -28,7 +40,7 @@ export const SxTypography = ({
         name={prefixName('fontFamily')}
         label="Font Family"
         value={fontFamily || ''}
-        onChange={fontFamily => {
+        onChange={(fontFamily) => {
           onChange({ fontFamily })
         }}
         options={['inherit', ...Object.keys(fonts)]}
@@ -36,7 +48,7 @@ export const SxTypography = ({
       <div
         sx={{
           display: 'grid',
-          gridGap: 2,
+          gap: 2,
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
         <Field
@@ -44,7 +56,7 @@ export const SxTypography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={e => {
+          onChange={(e) => {
             const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
@@ -53,7 +65,7 @@ export const SxTypography = ({
           name={prefixName('fontWeight')}
           label="Font Weight"
           value={fontWeight || ''}
-          onChange={fontWeight => {
+          onChange={(fontWeight) => {
             onChange({ fontWeight })
           }}
           options={['inherit', ...Object.keys(fontWeights)]}
@@ -62,7 +74,7 @@ export const SxTypography = ({
           name={prefixName('lineHeight')}
           label="Line Height"
           value={lineHeight || ''}
-          onChange={lineHeight => {
+          onChange={(lineHeight) => {
             onChange({ lineHeight })
           }}
           options={['inherit', ...Object.keys(lineHeights)]}

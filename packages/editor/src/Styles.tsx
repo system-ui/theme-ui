@@ -2,10 +2,11 @@
 import { jsx, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import Sx from './Sx'
+import { EditorContextValue } from './types'
 
 export default ({ tag = 'root' }) => {
-  const context = useThemeUI()
-  const { styles = {} } = context.theme
+  const context = useThemeUI() as EditorContextValue
+  const { styles = {} } = context.theme || {}
 
   const style = styles[tag] || {}
 
@@ -26,16 +27,10 @@ export default ({ tag = 'root' }) => {
       <Sx.Typography
         value={style}
         onChange={setStyle}
-        theme={context.theme}
+        theme={context.theme || undefined}
       />
-      <Sx.Margin
-        value={style}
-        onChange={setStyle}
-      />
-      <Sx.Colors
-        value={style}
-        onChange={setStyle}
-      />
+      <Sx.Margin value={style} onChange={setStyle} />
+      <Sx.Colors value={style} onChange={setStyle} />
     </Fragment>
   )
 }

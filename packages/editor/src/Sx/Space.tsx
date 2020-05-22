@@ -1,14 +1,21 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Theme, SxStyleProp } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
+
+export interface SpaceProps {
+  tag?: string
+  property?: 'margin' | 'padding'
+  value?: Theme['space']
+  onChange: (sx: SxStyleProp) => void
+}
 
 export const Space = ({
   tag,
   property = 'margin',
   value = {},
   onChange,
-}) => {
+}: SpaceProps) => {
   const [lock, setLock] = useState({ x: false, y: false })
   const key = property === 'margin' ? 'm' : 'p'
   const x = value[key + 'x'] || value[property + 'X'] || ''
@@ -19,11 +26,11 @@ export const Space = ({
   const r = lock.x ? x : value[key + 'r'] || value[property + 'Right'] || ''
 
   useEffect(() => {
-    if (typeof x === 'number') setLock(lock => ({ ...lock, x: true }))
-    if (typeof y === 'number') setLock(lock => ({ ...lock, y: true }))
+    if (typeof x === 'number') setLock((lock) => ({ ...lock, x: true }))
+    if (typeof y === 'number') setLock((lock) => ({ ...lock, y: true }))
   }, [])
 
-  const handleChange = direction => e => {
+  const handleChange = (direction) => (e) => {
     const n = e.target.value
     const val = n === '' ? undefined : parseInt(n)
     switch (direction) {
@@ -46,18 +53,18 @@ export const Space = ({
     }
   }
 
-  const onChangeLock = dir => e => {
+  const onChangeLock = (dir) => (e) => {
     const isX = dir === 'x'
     if (!lock[dir]) {
-      setLock(lock => ({ ...lock, [dir]: true }))
-      const val = isX ? (l || r) : (t || b)
+      setLock((lock) => ({ ...lock, [dir]: true }))
+      const val = isX ? l || r : t || b
       onChange({
         [key + (isX ? 'l' : 't')]: undefined,
         [key + (isX ? 'r' : 'b')]: undefined,
         [key + dir]: val,
       })
     } else {
-      setLock(lock => ({ ...lock, [dir]: false }))
+      setLock((lock) => ({ ...lock, [dir]: false }))
       const val = dir === 'x' ? x : y
       onChange({
         [key + (isX ? 'l' : 't')]: val,
@@ -67,56 +74,52 @@ export const Space = ({
     }
   }
 
-  const prefixName = name => tag ? `styles.${tag}.${key}${name}` : key + name
-  const label = dir => property === 'margin' ? 'Margin ' + dir : 'Padding ' + dir
+  const prefixName = (name) =>
+    tag ? `styles.${tag}.${key}${name}` : key + name
+  const label = (dir) =>
+    property === 'margin' ? 'Margin ' + dir : 'Padding ' + dir
 
   return (
     <div
       sx={{
         display: 'grid',
-        gridGap: 2,
+        gap: 2,
         gridTemplateColumns: 'repeat(3, 1fr)',
         alignItems: 'center',
       }}>
       <Field
         type="number"
         name={prefixName('l')}
-        label={label("Left")}
+        label={label('Left')}
         value={l}
         onChange={handleChange('l')}
       />
       <div
         sx={{
           display: 'grid',
-          gridGap: 2,
+          gap: 2,
         }}>
         <Field
           type="number"
           name={prefixName('t')}
-          label={label("Top")}
+          label={label('Top')}
           value={t}
           onChange={handleChange('t')}
         />
         <div>
           <Label>
-            <Checkbox
-              checked={lock.x}
-              onChange={onChangeLock('x')}
-            />
+            <Checkbox checked={lock.x} onChange={onChangeLock('x')} />
             Lock x-axis
           </Label>
           <Label>
-            <Checkbox
-              checked={lock.y}
-              onChange={onChangeLock('y')}
-            />
+            <Checkbox checked={lock.y} onChange={onChangeLock('y')} />
             Lock y-axis
           </Label>
         </div>
         <Field
           type="number"
           name={prefixName('b')}
-          label={label("Bottom")}
+          label={label('Bottom')}
           value={b}
           onChange={handleChange('b')}
         />
@@ -124,7 +127,7 @@ export const Space = ({
       <Field
         type="number"
         name={prefixName('r')}
-        label={label("Right")}
+        label={label('Right')}
         value={r}
         onChange={handleChange('r')}
       />

@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import * as CSS from 'csstype'
+import { Fragment } from 'react'
 import Combobox from '../Combobox'
+import { EditorContextValue } from '../types'
 
 const defaultFonts = [
   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -25,11 +28,11 @@ const defaultFonts = [
   'Menlo, monospace',
 ]
 
-export default ({ options = defaultFonts, ...props }) => {
-  const context = useThemeUI()
-  const { fonts = {} } = context.theme
+const Fonts = ({ options = defaultFonts }) => {
+  const context = useThemeUI() as EditorContextValue
+  const { fonts = {} } = context.theme || {}
 
-  const onChange = key => val => {
+  const onChange = (key: string) => (val: CSS.FontFamilyProperty) => {
     context.setTheme({
       fonts: {
         [key]: val,
@@ -37,15 +40,21 @@ export default ({ options = defaultFonts, ...props }) => {
     })
   }
 
-  return Object.keys(fonts).map(key => (
-    <div key={key}>
-      <Combobox
-        label={key}
-        name={'fonts.' + key}
-        value={fonts[key]}
-        onChange={onChange(key)}
-        options={options}
-      />
-    </div>
-  ))
+  return (
+    <Fragment>
+      {Object.keys(fonts).map(key => (
+        <div key={key}>
+          <Combobox
+            label={key}
+            name={'fonts.' + key}
+            value={fonts[key]}
+            onChange={onChange(key)}
+            options={options}
+          />
+        </div>
+      ))}
+    </Fragment>
+  )
 }
+
+export default Fonts
