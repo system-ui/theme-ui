@@ -130,7 +130,7 @@ export const Sidenav = forwardRef<
             transition: 'transform .2s ease-out',
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
-            ...{ WebkitOverflowScrolling: 'touch' },
+            WebkitOverflowScrolling: 'touch',
           }}
         />
       </MDXProvider>
@@ -267,7 +267,7 @@ export const AccordionNav = forwardRef<
             transition: 'transform .2s ease-out',
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
-            ...{ WebkitOverflowScrolling: 'touch' },
+            WebkitOverflowScrolling: 'touch',
           }}>
           <ul
             sx={{

@@ -22,7 +22,9 @@ export type ResponsiveStyleValue<T> = T | Array<T | null>
  */
 export interface CSSProperties
   extends CSS.StandardProperties<number | string>,
-    CSS.SvgProperties<number | string> {}
+    CSS.SvgProperties<number | string>,
+    CSS.VendorProperties<number | string> 
+    {}
 
 /**
  * Map of all CSS pseudo selectors (`:hover`, `:focus`, ...)
