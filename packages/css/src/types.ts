@@ -5,7 +5,7 @@
 
 import * as CSS from 'csstype'
 
-type StandardCSSProperties = CSS.PropertiesFallback<number | string>
+type StandardCSSProperties = CSS.Properties<number | string>
 
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.

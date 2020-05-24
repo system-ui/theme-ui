@@ -1,14 +1,15 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx, useThemeUI, AllThemeUICSSProperties } from 'theme-ui'
 import { Fragment } from 'react'
 import Sx from './Sx'
 import { EditorContextValue } from './types'
 
-export default ({ tag = 'root' }) => {
+export default function Styles({ tag = 'root' }) {
   const context = useThemeUI() as EditorContextValue
   const { styles = {} } = context.theme || {}
 
-  const style = styles[tag] || {}
+  // unsafe
+  const style = (styles[tag] || {}) as AllThemeUICSSProperties
 
   const setStyle = next => {
     context.setTheme({
