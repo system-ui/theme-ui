@@ -2,6 +2,7 @@ import {
   jsx,
   useThemeUI,
   ThemeProvider as CoreProvider,
+  ThemeProviderProps as CoreThemeProviderProps,
   IntrinsicSxElements,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
@@ -33,10 +34,16 @@ const BodyStyles = () =>
     },
   })
 
-interface ThemeProviderProps {
-  theme: Theme
+type ProvidedComponentsKnownKeys = {
+  [key in keyof IntrinsicSxElements]?: React.ComponentType<any> | string
+}
+export interface ProvidedComponents extends ProvidedComponentsKnownKeys {
+  [key: string]: React.ComponentType<any> | string | undefined
+}
+
+interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
-  components?: { [key in keyof IntrinsicSxElements]?: React.ReactNode }
+  components?: ProvidedComponents
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
