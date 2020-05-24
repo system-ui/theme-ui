@@ -25,6 +25,7 @@ export {
   ThemeUICSSProperties,
   ThemeUIStyleObject,
   Theme,
+  ThemeStyles,
   TLengthStyledSystem,
   UseThemeFunction,
 } from '@theme-ui/css'

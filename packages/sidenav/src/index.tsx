@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, SxStyleProp, Theme } from 'theme-ui'
+import { jsx, ThemeProvider, Theme, ThemeStyles } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {
   useState,
@@ -79,7 +79,7 @@ export const Sidenav = forwardRef<
   {
     open?: boolean
     components?: MDXProviderComponents
-    styles?: Theme['styles']
+    styles?: ThemeStyles
     children: ReactNode
   }
 >(({ open, styles = {}, components = {}, ...props }, ref) => {
