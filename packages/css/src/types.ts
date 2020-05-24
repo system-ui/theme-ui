@@ -27,7 +27,7 @@ export interface CSSProperties
 /**
  * Map of all CSS pseudo selectors (`:hover`, `:focus`, ...)
  */
-export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: SystemStyleObject }
+export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: ThemeUIStyleObject }
 
 /**
  * CSS as POJO that is compatible with CSS-in-JS libaries.
@@ -51,7 +51,7 @@ interface CSSOthersObjectForCSSObject {
  * Map all nested selectors
  */
 export interface CSSSelectorObject {
-  [cssSelector: string]: SystemStyleObject
+  [cssSelector: string]: ThemeUIStyleObject
 }
 
 interface AliasesCSSProperties {
@@ -427,20 +427,19 @@ interface OverwriteCSSProperties {
 }
 
 /**
- * Map of all available CSS properties (including aliases) and their raw value.
- * Only used internally to map CCS properties to input types (responsive value,
- * theme function or nested) in `SystemCssProperties`.
+ * Map of all available CSS properties (including aliases and overwrites)
+ * and their raw value.
  */
-interface AllSystemCSSProperties
+export interface ThemeUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
-export type SystemCssProperties = {
-  [K in keyof AllSystemCSSProperties]:
-    | ResponsiveStyleValue<AllSystemCSSProperties[K]>
-    | ((theme: any) => ResponsiveStyleValue<AllSystemCSSProperties[K]>)
-    | SystemStyleObject
+export type ThemeUICSSProperties = {
+  [K in keyof ThemeUIExtendedCSSProperties]:
+    | ResponsiveStyleValue<ThemeUIExtendedCSSProperties[K]>
+    | ((theme: Theme) => ResponsiveStyleValue<ThemeUIExtendedCSSProperties[K]>)
+    | ThemeUIStyleObject
 }
 
 export interface VariantProperty {
@@ -469,16 +468,16 @@ export interface VariantProperty {
 }
 
 export interface UseThemeFunction {
-  (theme: any): Exclude<SystemStyleObject, UseThemeFunction>
+  (theme: any): Exclude<ThemeUIStyleObject, UseThemeFunction>
 }
 
 /**
- * The `SystemStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
+ * The `ThemeUIStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
  * such that properties that are part of the `Theme` will be transformed to
  * their corresponding values. Other valid CSS properties are also allowed.
  */
-export type SystemStyleObject =
-  | SystemCssProperties
+export type ThemeUIStyleObject =
+  | ThemeUICSSProperties
   | CSSPseudoSelectorProps
   | CSSSelectorObject
   | VariantProperty
@@ -538,36 +537,36 @@ interface ColorModesScale extends ColorMode {
 }
 
 interface ThemeStyles {
-  tr?: SystemStyleObject
-  th?: SystemStyleObject
-  td?: SystemStyleObject
-  em?: SystemStyleObject
-  strong?: SystemStyleObject
-  div?: SystemStyleObject
-  p?: SystemStyleObject
-  b?: SystemStyleObject
-  i?: SystemStyleObject
-  a?: SystemStyleObject
-  h1?: SystemStyleObject
-  h2?: SystemStyleObject
-  h3?: SystemStyleObject
-  h4?: SystemStyleObject
-  h5?: SystemStyleObject
-  h6?: SystemStyleObject
-  img?: SystemStyleObject
-  pre?: SystemStyleObject
-  code?: SystemStyleObject
-  ol?: SystemStyleObject
-  ul?: SystemStyleObject
-  li?: SystemStyleObject
-  blockquote?: SystemStyleObject
-  hr?: SystemStyleObject
-  table?: SystemStyleObject
-  delete?: SystemStyleObject
-  inlineCode?: SystemStyleObject
-  thematicBreak?: SystemStyleObject
-  root?: SystemStyleObject
-  [key: string]: SystemStyleObject
+  tr?: ThemeUIStyleObject
+  th?: ThemeUIStyleObject
+  td?: ThemeUIStyleObject
+  em?: ThemeUIStyleObject
+  strong?: ThemeUIStyleObject
+  div?: ThemeUIStyleObject
+  p?: ThemeUIStyleObject
+  b?: ThemeUIStyleObject
+  i?: ThemeUIStyleObject
+  a?: ThemeUIStyleObject
+  h1?: ThemeUIStyleObject
+  h2?: ThemeUIStyleObject
+  h3?: ThemeUIStyleObject
+  h4?: ThemeUIStyleObject
+  h5?: ThemeUIStyleObject
+  h6?: ThemeUIStyleObject
+  img?: ThemeUIStyleObject
+  pre?: ThemeUIStyleObject
+  code?: ThemeUIStyleObject
+  ol?: ThemeUIStyleObject
+  ul?: ThemeUIStyleObject
+  li?: ThemeUIStyleObject
+  blockquote?: ThemeUIStyleObject
+  hr?: ThemeUIStyleObject
+  table?: ThemeUIStyleObject
+  delete?: ThemeUIStyleObject
+  inlineCode?: ThemeUIStyleObject
+  thematicBreak?: ThemeUIStyleObject
+  root?: ThemeUIStyleObject
+  [key: string]: ThemeUIStyleObject
 }
 
 export interface Theme {
@@ -586,10 +585,10 @@ export interface Theme {
   radii?: ObjectOrArray<CSS.BorderRadiusProperty<TLengthStyledSystem>>
   shadows?: ObjectOrArray<CSS.BoxShadowProperty>
   zIndices?: ObjectOrArray<CSS.ZIndexProperty>
-  buttons?: ObjectOrArray<SystemCssProperties>
-  colorStyles?: ObjectOrArray<SystemCssProperties>
-  textStyles?: ObjectOrArray<SystemCssProperties>
-  text?: ObjectOrArray<SystemCssProperties>
+  buttons?: ObjectOrArray<ThemeUICSSProperties>
+  colorStyles?: ObjectOrArray<ThemeUICSSProperties>
+  textStyles?: ObjectOrArray<ThemeUICSSProperties>
+  text?: ObjectOrArray<ThemeUICSSProperties>
   opacities?: ObjectOrArray<CSS.OpacityProperty>
   /**
    * Enable/disable custom CSS properties/variables if lower browser

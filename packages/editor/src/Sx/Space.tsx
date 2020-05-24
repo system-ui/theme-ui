@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp, AllThemeUICSSProperties } from 'theme-ui'
+import { jsx, SxStyleProp } from 'theme-ui'
+import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
 
@@ -8,7 +9,7 @@ export interface SpaceProps {
   property?: 'margin' | 'padding'
   value?: Partial<
     Pick<
-      AllThemeUICSSProperties,
+      ThemeUIExtendedCSSProperties,
       | 'paddingTop'
       | 'marginTop'
       | 'paddingBottom'

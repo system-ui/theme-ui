@@ -7,6 +7,8 @@ import {
   act,
 } from '@testing-library/react'
 import { ThemeProvider } from 'theme-ui'
+import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
+
 import { Sx } from '../src'
 
 const noop = () => {}
@@ -38,7 +40,7 @@ const theme = {
   },
 }
 
-const style = {
+const style: ThemeUIExtendedCSSProperties = {
   fontFamily: 'body',
   fontSize: 4,
   fontWeight: 'bold',

@@ -32,7 +32,7 @@
     "webpack-cli": "^3.3.4"
   },
   "devDependencies": {
-    "@theme-ui/css": "^0.4.0-alpha.2"
+    "@theme-ui/css": "^0.4.0-alpha.3"
   },
   "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
 }
