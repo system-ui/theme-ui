@@ -89,7 +89,7 @@ const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   )
 
 export interface ThemeProviderProps {
-  theme: Partial<Theme> | ((outerTheme: Theme) => Theme)
+  theme: Theme | ((outerTheme: Theme) => Theme)
   children?: React.ReactNode
 }
 
