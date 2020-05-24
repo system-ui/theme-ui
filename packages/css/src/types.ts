@@ -496,12 +496,12 @@ export interface ColorMode {
   /**
    * Body background color
    */
-  background: CSS.ColorProperty
+  background?: CSS.ColorProperty
 
   /**
    * Body foreground color
    */
-  text: CSS.ColorProperty
+  text?: CSS.ColorProperty
 
   /**
    * Primary brand color for links, buttons, etc.
@@ -535,6 +535,39 @@ interface ColorModesScale extends ColorMode {
   modes?: {
     [k: string]: ColorMode
   }
+}
+
+interface ThemeStyles {
+  tr?: SystemStyleObject
+  th?: SystemStyleObject
+  td?: SystemStyleObject
+  em?: SystemStyleObject
+  strong?: SystemStyleObject
+  div?: SystemStyleObject
+  p?: SystemStyleObject
+  b?: SystemStyleObject
+  i?: SystemStyleObject
+  a?: SystemStyleObject
+  h1?: SystemStyleObject
+  h2?: SystemStyleObject
+  h3?: SystemStyleObject
+  h4?: SystemStyleObject
+  h5?: SystemStyleObject
+  h6?: SystemStyleObject
+  img?: SystemStyleObject
+  pre?: SystemStyleObject
+  code?: SystemStyleObject
+  ol?: SystemStyleObject
+  ul?: SystemStyleObject
+  li?: SystemStyleObject
+  blockquote?: SystemStyleObject
+  hr?: SystemStyleObject
+  table?: SystemStyleObject
+  delete?: SystemStyleObject
+  inlineCode?: SystemStyleObject
+  thematicBreak?: SystemStyleObject
+  root?: SystemStyleObject
+  [key: string]: SystemStyleObject
 }
 
 export interface Theme {
@@ -603,38 +636,5 @@ export interface Theme {
    * with @styled-system/css and have access to base theme values like colors,
    * fonts, etc.
    */
-  styles?: {
-    [P in StyledTags]?: SystemStyleObject
-  }
+  styles?: ThemeStyles
 }
-
-type StyledTags =
-  | 'tr'
-  | 'th'
-  | 'td'
-  | 'em'
-  | 'strong'
-  | 'div'
-  | 'p'
-  | 'b'
-  | 'i'
-  | 'a'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'img'
-  | 'pre'
-  | 'code'
-  | 'ol'
-  | 'ul'
-  | 'li'
-  | 'blockquote'
-  | 'hr'
-  | 'table'
-  | 'delete'
-  | 'inlineCode'
-  | 'thematicBreak'
-  | 'root'
