@@ -8,9 +8,9 @@ export { Grid, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
 export * from './Flex'
 
 export const jsx = (type, props, ...children) => {
-  if (props.css) throw new Error('Using the `css` prop is disallowed.')
+  if (props && props.css) throw new Error('Using the `css` prop is disallowed.')
 
-  if (process.env.NODE_ENV !== 'production' && props.sx) {
+  if (process.env.NODE_ENV !== 'production' && props && props.sx) {
     const filteredCSSProps = [
       // General
       'box-sizing',
@@ -82,7 +82,7 @@ export const jsx = (type, props, ...children) => {
       // Disallow non theme-based values for properties that are in the theme
       if (scales[alias]) {
         const value = props.sx[prop]
-        props.sx[prop] = theme => {
+        props.sx[prop] = (theme) => {
           const scale = get(theme, scales[alias])
           if (!scale)
             throw new Error(
@@ -91,7 +91,7 @@ export const jsx = (type, props, ...children) => {
 
           const valuesToCheck = Array.isArray(value) ? value : [value]
 
-          valuesToCheck.forEach(toCheck => {
+          valuesToCheck.forEach((toCheck) => {
             const scaleValue = get(scale, toCheck)
 
             if (!scaleValue) {
