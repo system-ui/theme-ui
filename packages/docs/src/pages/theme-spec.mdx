@@ -3,14 +3,12 @@ title: Theme Spec
 ---
 
 import ThemeScales from '../components/theme-scales'
+import ColorKeys from '../components/color-keys'
 
 # Theme Specification
 
-Theme UI is based on the [System UI Theme Specification][], with a few **optional** additions.
-The top-level naming convention used in the `theme` object come from this specification.
-Additionally, naming conventions for colors and typography are included
-to help ensure deeper interoperability with components from various other libraries.
-This is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose theming.
+Theme UI is based on a theme specification, which can be used in other libraries and applications for increased interoperability.
+This specification is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose theming.
 
 The theme object is made up of the following data types:
 
@@ -39,7 +37,7 @@ A theme does not require that all these fields be present and can include additi
     primary: '#07c',
     secondary: '#05a',
     accent: '#609',
-    muted: '#f6f6f6f',
+    muted: '#f6f6f6',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -62,21 +60,9 @@ A theme does not require that all these fields be present and can include additi
 
 The `theme.colors` scale (i.e. color palette) should be an object literal with the following keys.
 
-| Key          | Description                                                                                                     |
-| ------------ | --------------------------------------------------------------------------------------------------------------- |
-| `text`       | Body foreground color                                                                                           |
-| `background` | Body background color                                                                                           |
-| `primary`    | Primary brand color for links, buttons, etc.                                                                    |
-| `secondary`  | A secondary brand color for alternative styling                                                                 |
-| `accent`     | A contrast color for emphasizing UI                                                                             |
-| `muted`      | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
+<ColorKeys />
 
 Other color keys can be added, including raw color values for aliasing the values above.
-
-<!--
-## Aliasing Colors
-TK
--->
 
 ## Color Modes
 
@@ -94,7 +80,7 @@ where the name can be anything, but typically `light` and `dark` are used for ap
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
-    muted: '#f6f6f6f',
+    muted: '#f6f6f6',
     modes: {
       dark: {
         text: '#fff',
@@ -150,6 +136,8 @@ Font sizes are typically defined as an array, from smallest to largest.
   ],
 }
 ```
+
+Number values will be converted to pixel units. For other units, use string values, e.g. `'1em'`.
 
 <Note>
 
@@ -252,6 +240,13 @@ The Theme UI `styles` object is primarily used as a way to style MDX content
 and helps avoid the need to use global CSS.
 The styles defined within this object can also be used with the [`Styled`](/styled) component.
 
+<Note>
+
+The `styles` object is essentially an MDX-specific *variant*
+that maps directly to each MDX component.
+
+</Note>
+
 The `theme.styles` object may include the following keys, which map to elements that can be rendered by markdown:
 
 - `p` (paragraph)
@@ -331,6 +326,12 @@ Variants can also be used within the `theme.styles` object.
   }
 }
 ```
+
+## Aliasing Colors and Other Scales
+
+In many design systems, developers choose to create an additional layer of abstraction for mapping individual components to specific scale values.
+With Theme UI, *variants* are the mechanism to use for such abstractions.
+
 
 ## Breakpoints
 

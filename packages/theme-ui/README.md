@@ -1,32 +1,31 @@
 <img
-  src="https://contrast.now.sh/cff/40f?size=192&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
+  src="/packages/docs/static/logo.png"
   width="96"
-  heigh="96"
+  height="96"
 />
 
 # Theme UI
 
-Build consistent, themeable React apps based on constraint-based design principles | Built with Emotion + Styled System + MDX + Typography.js
+**The Design Graph Framework**
+
+Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
 [![GitHub][github-badge]][github]
-[![Stars][stars]][github]
-[![Build Status][circleci-badge]][circleci]
-[![Version][version]][npm]
-![MIT License][license]
-[![system-ui/theme][system-ui-badge]](https://system-ui.com/theme)
+[![Stars][]][github]
+![Build Status][]
+[![Version][]][npm]
+![MIT License][]
 ![][size]
 
 https://theme-ui.com
 
 [github]: https://github.com/system-ui/theme-ui
 [github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
-[stars]: https://flat.badgen.net/github/stars/system-ui/theme-ui
-[circleci]: https://circleci.com/gh/system-ui/theme-ui
-[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
+[stars]: https://badgen.net/github/stars/system-ui/theme-ui
+[build status]: https://flat.badgen.net/github/status/system-ui/theme-ui
 [version]: https://flat.badgen.net/npm/v/theme-ui
 [npm]: https://npmjs.com/package/theme-ui
-[license]: https://flat.badgen.net/badge/license/MIT/blue
-[system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
+[mit license]: https://flat.badgen.net/badge/license/MIT/blue
 [size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
 
 Built for design systems, white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
@@ -78,7 +77,7 @@ export default props => (
 )
 ```
 
-The `theme` object follows the System UI [Theme Specification](/theme-spec),
+The `theme` object follows the System UI [Theme Specification](https://theme-ui.com/theme-spec/),
 which lets you define custom color palettes, typographic scales, fonts, and more.
 Read more about [theming](https://theme-ui.com/theming).
 

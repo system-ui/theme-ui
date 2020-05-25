@@ -52,6 +52,7 @@ const theme: Theme = {
   radii: {
     small: 5,
   },
+  opacities: [0, '50%'],
 }
 
 test('returns a function', () => {
@@ -140,6 +141,7 @@ test('handles all core styled system props', () => {
     fontWeight: 'bold',
     color: 'primary',
     bg: 'secondary',
+    opacity: 1,
     fontFamily: 'monospace',
     lineHeight: 'body',
   })({ theme })
@@ -153,10 +155,30 @@ test('handles all core styled system props', () => {
     paddingBottom: 32,
     color: 'tomato',
     backgroundColor: 'cyan',
+    opacity: '50%',
     fontFamily: 'Menlo, monospace',
     fontSize: 24,
     fontWeight: 600,
     lineHeight: 1.5,
+  })
+})
+
+test('handles css logical properties', () => {
+  const result = css({
+    borderInlineStartWidth: 'thin',
+    borderStartEndRadius: 'small',
+    marginInlineStart: 'auto',
+    maxBlockSize: 'large',
+    paddingInline: 0,
+    marginBlockEnd: 2,
+  })({ theme })
+  expect(result).toEqual({
+    borderInlineStartWidth: 1,
+    borderStartEndRadius: 5,
+    maxBlockSize: 16,
+    paddingInline: 0,
+    marginBlockEnd: 8,
+    marginInlineStart: 'auto',
   })
 })
 
@@ -256,6 +278,18 @@ test('handles negative top, left, bottom, and right from scale', () => {
     right: -32,
     bottom: -16,
     left: -8,
+  })
+})
+
+test('handles negative margins from scale that is an object', () => {
+  const result = css({
+    mt: '-s',
+    mx: '-m',
+  })({...theme, space: { s: '16px', m: '32px' }})
+  expect(result).toEqual({
+    marginTop: '-16px',
+    marginLeft: '-32px',
+    marginRight: '-32px',
   })
 })
 
@@ -368,14 +402,16 @@ test('flexBasis uses theme.sizes', () => {
   })
 })
 
-test('fill and stroke use theme.colors', () => {
+test('fill and stroke and caretColor use theme.colors', () => {
   const style = css({
     fill: 'primary',
     stroke: 'secondary',
+    caretColor: 'primary',
   })(theme)
   expect(style).toEqual({
     fill: 'tomato',
     stroke: 'cyan',
+    caretColor: 'tomato',
   })
 })
 

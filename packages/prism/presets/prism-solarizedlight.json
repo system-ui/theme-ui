@@ -35,5 +35,8 @@
   },
   ".italic": {
     "fontStyle": "italic"
+  },
+  ".highlight": {
+    "background": "hsla(0, 70%, 40%, .2)"
   }
 }

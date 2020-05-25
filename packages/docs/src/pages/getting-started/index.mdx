@@ -52,6 +52,10 @@ export default props => (
 Use the `sx` prop throughout your application to add styles based on your theme to any component.
 Enable the `sx` prop by adding the `/** @jsx jsx */` comment to the top of your file and importing `jsx` from Theme UI.
 
+The `sx` prop lets you add any valid CSS to an element,
+while using values from your theme to keep styles consistent.
+You can think of the style object that the `sx` prop accepts as a *superset* of CSS.
+
 
 ```jsx
 /** @jsx jsx */
@@ -96,9 +100,23 @@ The values used for media queries can be defined in a [`theme.breakpoints`](/the
 
 </Note>
 
+If you prefer standard CSS syntax, you can use nested objects for responsive styles as well.
+
+```jsx
+<div
+  sx={{
+    width: '100%',
+    '@media screen and (min-width: 40em)': {
+      width: '50%',
+    }
+  }}
+/>
+```
+
 ## Components
 
 Theme UI includes a library of primitive UI components, which can be completely customized with your theme and include support for [variants](/components/variants).
+You can use variants to encapsulate more complex, component-specific styles that can be changed with props.
 Import and use these components to handle layout, images, forms, and more.
 
 ```jsx

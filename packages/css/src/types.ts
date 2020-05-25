@@ -50,7 +50,7 @@ interface CSSOthersObjectForCSSObject {
 /**
  * Map all nested selectors
  */
-interface CSSSelectorObject {
+export interface CSSSelectorObject {
   [cssSelector: string]: SystemStyleObject
 }
 
@@ -299,6 +299,16 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingY?: StandardCSSProperties['paddingTop']
+  // TODO: Move me to `MultiplesCSSProperties type and colocate it with the
+  // multiples object possibly.
+  /**
+   * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
+   *
+   * @see https://theme-ui.com/sx-prop#theme-aware-properties
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
+  size?: StandardCSSProperties['width']
 }
 
 interface OverwriteCSSProperties {
@@ -401,6 +411,19 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
   borderRadius?: CSS.BorderRadiusProperty<string | number>
+
+  /**
+   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
+  zIndex?: CSS.ZIndexProperty | string
 }
 
 /**
@@ -420,7 +443,7 @@ export type SystemCssProperties = {
     | SystemStyleObject
 }
 
-interface VariantProperty {
+export interface VariantProperty {
   /**
    * **`Variants`** can be useful for applying complex styles to a component based on a single prop.
    *
@@ -530,6 +553,7 @@ export interface Theme {
   colorStyles?: ObjectOrArray<SystemCssProperties>
   textStyles?: ObjectOrArray<SystemCssProperties>
   text?: ObjectOrArray<SystemCssProperties>
+  opacities?: ObjectOrArray<CSS.OpacityProperty>
   /**
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
@@ -556,7 +580,12 @@ export interface Theme {
   /**
    * Adds a global box-sizing: border-box style
    */
-  useBoxSizing?: boolean
+  useBorderBox?: boolean
+
+  /**
+   * If false, does not save color mode as a localStorage value.
+   */
+  useLocalStorage?: boolean
 
   /**
    * Define the colors that are available through this theme

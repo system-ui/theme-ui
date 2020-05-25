@@ -24,7 +24,7 @@ export default () => {
       <Helmet>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600|Architects+Daughter"
         />
       </Helmet>
       <div
@@ -32,22 +32,19 @@ export default () => {
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}
-      >
+        }}>
         <label
           sx={{
             display: 'block',
             mb: 4,
-          }}
-        >
+          }}>
           Preset:{' '}
           <Select
             value={theme}
-            onChange={e => {
+            onChange={(e) => {
               setTheme(e.target.value)
-            }}
-          >
-            {Object.keys(presets).map(key => (
+            }}>
+            {Object.keys(presets).map((key) => (
               <option key={key} children={key} />
             ))}
           </Select>
@@ -64,8 +61,7 @@ export default () => {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}
-            >
+              fontSize={7}>
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Styled.h2>Type Scale</Styled.h2>

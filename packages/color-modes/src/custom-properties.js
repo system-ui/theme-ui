@@ -1,6 +1,6 @@
 import { css } from '@theme-ui/css'
 
-const toVarName = key => `--theme-ui-${key}`
+const toVarName = (key) => `--theme-ui-${key}`
 const toVarValue = (key, value) => `var(${toVarName(key)}, ${value})`
 
 const join = (...args) => args.filter(Boolean).join('-')
@@ -13,6 +13,7 @@ const reservedKeys = {
   useCustomProperties: true,
   initialColorModeName: true,
   initialColorMode: true,
+  useLocalStorage: true,
 }
 
 const toPixel = (key, value) => {
@@ -76,7 +77,7 @@ export const createColorStyles = (theme = {}) => {
   const { modes } = colors
   const styles = objectToVars('colors', colors)
 
-  Object.keys(modes).forEach(mode => {
+  Object.keys(modes).forEach((mode) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
@@ -86,6 +87,6 @@ export const createColorStyles = (theme = {}) => {
       ...styles,
       color: 'text',
       bg: 'background',
-    }
+    },
   })(theme)
 }

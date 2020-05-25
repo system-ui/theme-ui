@@ -17,11 +17,11 @@ import {
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = (el) => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
-    <ThemeProvider>
+    <ThemeProvider theme={{}}>
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -65,8 +65,8 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
-  const Beep = props => <h2 {...props} />
-  const Inner = props => mdx('Beep', props)
+  const Beep = (props) => <h2 {...props} />
+  const Inner = (props) => mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider
@@ -110,7 +110,7 @@ test('warns when multiple versions of emotion are installed', () => {
       value={{
         emotionVersion: '9.0.0',
       }}>
-      <ThemeProvider>Conflicting versions</ThemeProvider>
+      <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
     </Context.Provider>
   )
   expect(console.warn).toBeCalled()

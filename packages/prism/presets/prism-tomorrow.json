@@ -39,5 +39,8 @@
   },
   ".inserted": {
     "color": "green"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
   }
 }

@@ -7,7 +7,7 @@ import { toCustomProperties, createColorStyles } from './custom-properties'
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 const storage = {
-  get: init => {
+  get: (init) => {
     try {
       return window.localStorage.getItem(STORAGE_KEY) || init
     } catch (e) {
@@ -18,7 +18,7 @@ const storage = {
       )
     }
   },
-  set: value => {
+  set: (value) => {
     try {
       window.localStorage.setItem(STORAGE_KEY, value)
     } catch (e) {
@@ -50,7 +50,7 @@ const useColorModeState = (theme = {}) => {
 
   // initialize state
   React.useEffect(() => {
-    const stored = storage.get()
+    const stored = theme.useLocalStorage !== false && storage.get()
     document.body.classList.remove('theme-ui-' + stored)
     if (!stored && theme.useColorSchemeMediaQuery) {
       const query = getMediaQuery()
@@ -62,7 +62,7 @@ const useColorModeState = (theme = {}) => {
   }, [])
 
   React.useEffect(() => {
-    if (!mode) return
+    if (!mode || theme.useLocalStorage === false) return
     storage.set(mode)
   }, [mode])
 
@@ -102,7 +102,7 @@ const applyColorMode = (theme, mode) => {
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: theme => createColorStyles(theme),
+    styles: (theme) => createColorStyles(theme),
   })
 
 export const ColorModeProvider = ({ children }) => {

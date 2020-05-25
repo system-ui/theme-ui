@@ -36,5 +36,8 @@
   },
   ".deleted": {
     "color": "red"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 70%, .5)"
   }
 }

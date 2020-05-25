@@ -9,5 +9,8 @@
   },
   ".class-name,.function,.tag,.attr-name": {
     "color": "rgb(40, 42, 46)"
+  },
+  ".highlight": {
+    "background": "hsla(0, 90%, 80%, .5)"
   }
 }

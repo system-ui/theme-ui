@@ -1,10 +1,4 @@
 {
-  "compilerOptions": {
-    "strict": true,
-
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node"
-  },
+  "extends": "../../tsconfig.json",
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"]
 }

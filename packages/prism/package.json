@@ -1,8 +1,10 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.3.0",
+  "version": "0.4.0-alpha.3",
   "main": "dist/prism.js",
   "module": "dist/prism.esm.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.tsx",
   "author": "John Otander",
   "license": "MIT",
   "scripts": {
@@ -14,7 +16,7 @@
     "prism-react-renderer": "^1.0.2"
   },
   "peerDependencies": {
-    "theme-ui": "^0.3.0"
+    "theme-ui": "^0.4.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"
@@ -33,6 +35,7 @@
   "devDependencies": {
     "lodash.kebabcase": "^4.1.1",
     "postcss": "^7.0.17",
-    "postcss-js": "^2.0.2"
+    "postcss-js": "^2.0.2",
+    "theme-ui": "^0.4.0-alpha.3"
   }
 }

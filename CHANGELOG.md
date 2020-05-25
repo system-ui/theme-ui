@@ -2,11 +2,16 @@
 
 ## Unreleased
 
+- Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
 - Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
+- Fix broken base-preset link on `theming` page
+- Add `@theme-ui/preset-sketchy`
+- `@theme-ui/prism`: add support for highlighting lines #895
+- `@theme-ui/style-guide`: pass `size` prop to ColorRow component #941
 
-## v0.3.0 2019-01-22
+## v0.3.0 2020-01-22
 
 - Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
 - Removes `context.components` (still available through MDX context)
