@@ -16,10 +16,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.3.x",
+    "@theme-ui/css": ">= 0.4.0-alpha.0",
     "@types/reflexbox": "^4.0.0",
     "emotion": "^10.0.27",
     "reflexbox": "^4.0.6",
-    "theme-ui": "0.3.x"
+    "theme-ui": ">= 0.4.0-alpha.0"
   }
 }
