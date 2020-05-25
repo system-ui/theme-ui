@@ -4,7 +4,8 @@ import { scales, aliases } from './css'
 // Always inject the CSS reset. You should not be able to use strict-ui without it.
 import './sanitize.css'
 
-export { Grid, ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
+export { ThemeProvider, useThemeUI as useStrictUI } from 'theme-ui'
+export { Grid } from '@theme-ui/components'
 export * from './Flex'
 
 export const jsx = (type, props, ...children) => {
