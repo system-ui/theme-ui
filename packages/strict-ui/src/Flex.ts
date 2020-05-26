@@ -12,8 +12,10 @@ export const Flex = (
   let { children, ...rest } = props
 
   if (typeof props.gap === 'number' && props.gap !== 0) {
-    children = React.Children.map(children, (child, index) =>
-      jsx(
+    children = React.Children.map(children, (child, index) => {
+      if (!child) return child
+
+      return jsx(
         'div',
         {
           sx:
@@ -27,7 +29,7 @@ export const Flex = (
         },
         child
       )
-    )
+    })
   }
 
   return jsx(Reflex, rest, children)
