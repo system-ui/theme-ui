@@ -23,12 +23,13 @@ export const ThemeColorPicker = ({
   // const { colors } = theme || context.theme || {}
   const _theme = theme || context.theme || {}
   const colors = _theme.colors || {}
-  const value = props.value && (colors[props.value] || props.value)
+  // bug: only supports flat color scales
+  const value = String(props.value && (colors[props.value] || props.value))
   const options = [
     'transparent',
     ...Object.keys(colors)
       .map((key) => colors[key])
-      .filter((color) => typeof color === 'string')
+      .filter((color): color is string => typeof color === 'string')
       .filter((color) => /^#/.test(color)),
   ]
   const onChange = (color: ColorState) => {

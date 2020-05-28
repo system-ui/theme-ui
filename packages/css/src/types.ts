@@ -5,7 +5,7 @@
 
 import * as CSS from 'csstype'
 
-type StandardCSSProperties = CSS.PropertiesFallback<number | string>
+type StandardCSSProperties = CSS.Properties<number | string>
 
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
@@ -22,12 +22,13 @@ export type ResponsiveStyleValue<T> = T | Array<T | null>
  */
 export interface CSSProperties
   extends CSS.StandardProperties<number | string>,
-    CSS.SvgProperties<number | string> {}
+    CSS.SvgProperties<number | string>,
+    CSS.VendorProperties<number | string> {}
 
 /**
  * Map of all CSS pseudo selectors (`:hover`, `:focus`, ...)
  */
-export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: SystemStyleObject }
+export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: ThemeUIStyleObject }
 
 /**
  * CSS as POJO that is compatible with CSS-in-JS libaries.
@@ -51,7 +52,7 @@ interface CSSOthersObjectForCSSObject {
  * Map all nested selectors
  */
 export interface CSSSelectorObject {
-  [cssSelector: string]: SystemStyleObject
+  [cssSelector: string]: ThemeUIStyleObject
 }
 
 interface AliasesCSSProperties {
@@ -427,20 +428,19 @@ interface OverwriteCSSProperties {
 }
 
 /**
- * Map of all available CSS properties (including aliases) and their raw value.
- * Only used internally to map CCS properties to input types (responsive value,
- * theme function or nested) in `SystemCssProperties`.
+ * Map of all available CSS properties (including aliases and overwrites)
+ * and their raw value.
  */
-interface AllSystemCSSProperties
+export interface ThemeUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
-export type SystemCssProperties = {
-  [K in keyof AllSystemCSSProperties]:
-    | ResponsiveStyleValue<AllSystemCSSProperties[K]>
-    | ((theme: any) => ResponsiveStyleValue<AllSystemCSSProperties[K]>)
-    | SystemStyleObject
+export type ThemeUICSSProperties = {
+  [K in keyof ThemeUIExtendedCSSProperties]:
+    | ResponsiveStyleValue<ThemeUIExtendedCSSProperties[K]>
+    | ((theme: Theme) => ResponsiveStyleValue<ThemeUIExtendedCSSProperties[K]>)
+    | ThemeUIStyleObject
 }
 
 export interface VariantProperty {
@@ -469,16 +469,16 @@ export interface VariantProperty {
 }
 
 export interface UseThemeFunction {
-  (theme: any): Exclude<SystemStyleObject, UseThemeFunction>
+  (theme: any): Exclude<ThemeUIStyleObject, UseThemeFunction>
 }
 
 /**
- * The `SystemStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
+ * The `ThemeUIStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
  * such that properties that are part of the `Theme` will be transformed to
  * their corresponding values. Other valid CSS properties are also allowed.
  */
-export type SystemStyleObject =
-  | SystemCssProperties
+export type ThemeUIStyleObject =
+  | ThemeUICSSProperties
   | CSSPseudoSelectorProps
   | CSSSelectorObject
   | VariantProperty
@@ -489,27 +489,19 @@ type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
 export type TLengthStyledSystem = string | 0 | number
 
 /**
- * To use Theme UI color modes, color scales should include at least a text
- * and background color. These values are used in the ColorMode component to
- * set body foreground and background colors. Color modes should be defined as
- * nested objects within a theme.colors.modes object. Each key in this object
- * should correspond to a color mode name, where the name can be anything, but
- * typically light and dark are used for applications with a dark mode. The
- * initialColorModeName key is required to enable color modes and will be used as
- * the name for the root color palette.
+ * Color modes can be used to create a user-configurable dark mode
+ * or any number of other color modes.
  */
-export type ColorMode = {
-  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
-} & {
+export interface ColorMode {
   /**
    * Body background color
    */
-  background: CSS.ColorProperty
+  background?: CSS.ColorProperty
 
   /**
    * Body foreground color
    */
-  text: CSS.ColorProperty
+  text?: CSS.ColorProperty
 
   /**
    * Primary brand color for links, buttons, etc.
@@ -531,6 +523,51 @@ export type ColorMode = {
    * A contrast color for emphasizing UI
    */
   accent?: CSS.ColorProperty
+
+  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
+}
+
+interface ColorModesScale extends ColorMode {
+  /**
+   * Nested color modes can provide overrides when used in conjunction with
+   * `Theme.initialColorModeName and `useColorMode()`
+   */
+  modes?: {
+    [k: string]: ColorMode
+  }
+}
+
+export interface ThemeStyles {
+  tr?: ThemeUIStyleObject
+  th?: ThemeUIStyleObject
+  td?: ThemeUIStyleObject
+  em?: ThemeUIStyleObject
+  strong?: ThemeUIStyleObject
+  div?: ThemeUIStyleObject
+  p?: ThemeUIStyleObject
+  b?: ThemeUIStyleObject
+  i?: ThemeUIStyleObject
+  a?: ThemeUIStyleObject
+  h1?: ThemeUIStyleObject
+  h2?: ThemeUIStyleObject
+  h3?: ThemeUIStyleObject
+  h4?: ThemeUIStyleObject
+  h5?: ThemeUIStyleObject
+  h6?: ThemeUIStyleObject
+  img?: ThemeUIStyleObject
+  pre?: ThemeUIStyleObject
+  code?: ThemeUIStyleObject
+  ol?: ThemeUIStyleObject
+  ul?: ThemeUIStyleObject
+  li?: ThemeUIStyleObject
+  blockquote?: ThemeUIStyleObject
+  hr?: ThemeUIStyleObject
+  table?: ThemeUIStyleObject
+  delete?: ThemeUIStyleObject
+  inlineCode?: ThemeUIStyleObject
+  thematicBreak?: ThemeUIStyleObject
+  root?: ThemeUIStyleObject
+  [key: string]: ThemeUIStyleObject
 }
 
 export interface Theme {
@@ -549,10 +586,10 @@ export interface Theme {
   radii?: ObjectOrArray<CSS.BorderRadiusProperty<TLengthStyledSystem>>
   shadows?: ObjectOrArray<CSS.BoxShadowProperty>
   zIndices?: ObjectOrArray<CSS.ZIndexProperty>
-  buttons?: ObjectOrArray<SystemCssProperties>
-  colorStyles?: ObjectOrArray<SystemCssProperties>
-  textStyles?: ObjectOrArray<SystemCssProperties>
-  text?: ObjectOrArray<SystemCssProperties>
+  buttons?: ObjectOrArray<ThemeUICSSProperties>
+  colorStyles?: ObjectOrArray<ThemeUICSSProperties>
+  textStyles?: ObjectOrArray<ThemeUICSSProperties>
+  text?: ObjectOrArray<ThemeUICSSProperties>
   opacities?: ObjectOrArray<CSS.OpacityProperty>
   /**
    * Enable/disable custom CSS properties/variables if lower browser
@@ -590,15 +627,7 @@ export interface Theme {
   /**
    * Define the colors that are available through this theme
    */
-  colors?: ColorMode & {
-    /**
-     * Nested color modes can provide overrides when used in conjunction with
-     * `Theme.initialColorModeName and `useColorMode()`
-     */
-    modes?: {
-      [k: string]: ColorMode
-    }
-  }
+  colors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
@@ -607,38 +636,5 @@ export interface Theme {
    * with @styled-system/css and have access to base theme values like colors,
    * fonts, etc.
    */
-  styles?: {
-    [P in StyledTags]?: SystemStyleObject
-  }
+  styles?: ThemeStyles
 }
-
-type StyledTags =
-  | 'tr'
-  | 'th'
-  | 'td'
-  | 'em'
-  | 'strong'
-  | 'div'
-  | 'p'
-  | 'b'
-  | 'i'
-  | 'a'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'img'
-  | 'pre'
-  | 'code'
-  | 'ol'
-  | 'ul'
-  | 'li'
-  | 'blockquote'
-  | 'hr'
-  | 'table'
-  | 'delete'
-  | 'inlineCode'
-  | 'thematicBreak'
-  | 'root'

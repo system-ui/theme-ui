@@ -1,23 +1,21 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import React, { useContext } from 'react'
 import renderer from 'react-test-renderer'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import {
   ThemeProvider,
   Context,
-  Styled,
   jsx,
   useColorMode,
   BaseStyles,
-  Container,
-  Box,
+  Theme,
 } from '../src/index'
 
 expect.extend(matchers)
 
-const renderJSON = (el) => renderer.create(el).toJSON()
+const renderJSON = (el: Parameters<typeof renderer.create>[0]) =>
+  renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
@@ -65,8 +63,8 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
-  const Beep = (props) => <h2 {...props} />
-  const Inner = (props) => mdx('Beep', props)
+  const Beep = props => <h2 {...props} />
+  const Inner = props => mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider
@@ -83,7 +81,7 @@ test('styles React components', () => {
       <Inner />
     </ThemeProvider>
   )
-  expect(json.type).toBe('h2')
+  expect(json!.type).toBe('h2')
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
@@ -108,7 +106,8 @@ test('warns when multiple versions of emotion are installed', () => {
   const json = renderJSON(
     <Context.Provider
       value={{
-        emotionVersion: '9.0.0',
+        __EMOTION_VERSION__: '9.0.0',
+        theme: {},
       }}>
       <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
     </Context.Provider>
@@ -122,9 +121,11 @@ test('functional themes receive outer theme', () => {
     useCustomProperties: false,
     colors: {
       text: 'tomato',
+      background: 'white',
+      primary: 'black',
     },
   }
-  const theme = jest.fn()
+  const theme = jest.fn<Theme, [Theme]>()
   const json = renderJSON(
     jsx(
       ThemeProvider,
@@ -145,18 +146,21 @@ test('functional themes receive outer theme', () => {
 })
 
 test('functional themes can be used at the top level', () => {
-  const theme = jest.fn(() => ({
-    useCustomProperties: false,
-    colors: {
-      primary: 'tomato',
-    },
-  }))
   let json
   expect(() => {
     json = renderJSON(
       jsx(
         ThemeProvider,
-        { theme },
+        {
+          theme: (_): Theme => ({
+            useCustomProperties: false,
+            colors: {
+              primary: 'tomato',
+              background: 'white',
+              text: 'black',
+            },
+          }),
+        },
         jsx(
           'div',
           {
