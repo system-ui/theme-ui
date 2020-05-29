@@ -44,7 +44,7 @@ export default props => {
                 {table[key].map((property, index) => (
                   <Styled.inlineCode>
                     {!!index && ', '}
-                    {property}
+                    <a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/${property}`}>{property}</a>
                   </Styled.inlineCode>
                 ))}
               </td>
