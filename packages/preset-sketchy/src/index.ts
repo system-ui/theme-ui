@@ -211,7 +211,6 @@ const theme: Theme = {
     },
   },
   links: {
-    color: 'primary',
     nav: {
       borderRadius: 'sketchy1',
       textDecoration: 'none',
