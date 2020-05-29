@@ -638,96 +638,99 @@ export interface Theme {
   styles?: ThemeStyles
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * You can define additional CSS grid layouts by adding variants to the
+   * `theme.grids` object. These styles can be used to create a wide variety of
+   * different reusable layouts.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/grid#variants
    */
   grids?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Button variants can be defined in the `theme.buttons` object. The `Button`
+   * component uses `theme.buttons.primary` as its default variant style.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/button#variants
    */
   buttons?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Text style variants can be defined in the `theme.text` object. The `Text`
+   * component uses `theme.text.default` as its default variant style.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/text#variants
    */
   text?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Link variants can be defined in the `theme.links` object. By default the
+   * `Link` component will use styles defined in `theme.styles.a`.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/link#variants
    */
   links?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Image style variants can be defined in the `theme.images` object.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/image#variants
    */
   images?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Card style variants can be defined in `the theme.cards` object. By default
+   * the `Card` component uses the `theme.cards.primary` variant.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/card#variants
    */
   cards?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Container variants can be defined in the `theme.layout` object. The
+   * `Container` component uses `theme.layout.container` as its default variant
+   * style.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/container#variants
    */
   layout?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Label variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.label` variant by default.
    *
-   * @see https://theme-ui.com/theme-spec
+   * Input variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.input` variant by default.
+   *
+   * Select variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.select` variant by default.
+   *
+   * Textarea variants can be defined in `theme.forms` and the component uses
+   * the `theme.forms.textarea` variant by default.
+   *
+   * Radio variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.radio` variant by default.
+   *
+   * Checkbox variants can be defined in `theme.forms` and the component uses
+   * the `theme.forms.checkbox` variant by default.
+   *
+   * Slider variants can be defined in the `theme.forms` object. The `Slider`
+   * component uses `theme.forms.slider` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/label#variants
    * @see https://theme-ui.com/components/input#variants
@@ -736,41 +739,33 @@ export interface Theme {
    * @see https://theme-ui.com/components/radio#variants
    * @see https://theme-ui.com/components/checkbox#variants
    * @see https://theme-ui.com/components/slider#variants
-   * @see https://theme-ui.com/components/field#variants
    */
   forms?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Badge variants can be defined in `theme.badges`. The `Badge` component uses
+   * `theme.badges.primary` as its default variant.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/badge#variants
    */
   badges?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Alert variants can be defined in `theme.alerts`. The `Alert` component uses
+   * `theme.alerts.primary` as its default variant.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/alert#variants
    */
   alerts?: Record<string, ThemeUIStyleObject>
 
   /**
-   * Variants: partial style objects that can be used for stylistic component
-   * variants or making part of an application themeable. These are commonly
-   * used for typographic styles, buttons, and themeable layout components.
-   * Variants are also used to style built-in components.
+   * Message variants can be defined in the `theme.messages` object.
    *
-   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/theme-spec#variants
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/message#variants
    */
