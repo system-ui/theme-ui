@@ -645,6 +645,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/grid#variants
    */
   grids?: Record<string, ThemeUIStyleObject>
 
@@ -656,6 +657,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/button#variants
    */
   buttons?: Record<string, ThemeUIStyleObject>
 
@@ -667,6 +669,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/text#variants
    */
   text?: Record<string, ThemeUIStyleObject>
 
@@ -678,6 +681,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/link#variants
    */
   links?: Record<string, ThemeUIStyleObject>
 
@@ -689,6 +693,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/image#variants
    */
   images?: Record<string, ThemeUIStyleObject>
 
@@ -700,6 +705,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/card#variants
    */
   cards?: Record<string, ThemeUIStyleObject>
 
@@ -711,6 +717,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/container#variants
    */
   layout?: Record<string, ThemeUIStyleObject>
 
@@ -722,6 +729,14 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/label#variants
+   * @see https://theme-ui.com/components/input#variants
+   * @see https://theme-ui.com/components/select#variants
+   * @see https://theme-ui.com/components/textarea#variants
+   * @see https://theme-ui.com/components/radio#variants
+   * @see https://theme-ui.com/components/checkbox#variants
+   * @see https://theme-ui.com/components/slider#variants
+   * @see https://theme-ui.com/components/field#variants
    */
   forms?: Record<string, ThemeUIStyleObject>
 
@@ -733,6 +748,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/badge#variants
    */
   badges?: Record<string, ThemeUIStyleObject>
 
@@ -744,6 +760,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/alert#variants
    */
   alerts?: Record<string, ThemeUIStyleObject>
 
@@ -755,6 +772,7 @@ export interface Theme {
    *
    * @see https://theme-ui.com/theme-spec
    * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/message#variants
    */
   messages?: Record<string, ThemeUIStyleObject>
 }
