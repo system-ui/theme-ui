@@ -1,14 +1,5 @@
 import { Theme, ThemeUIStyleObject } from '@theme-ui/css'
 
-export interface ThemeSketchy extends Theme {
-  cards: ThemeUIStyleObject
-  links: ThemeUIStyleObject
-  forms: Record<string, ThemeUIStyleObject>
-  badges: ThemeUIStyleObject
-  alerts: ThemeUIStyleObject
-  messages: ThemeUIStyleObject
-}
-
 const defaultBorderStyles: ThemeUIStyleObject = {
   border: 'thick',
   color: 'text',
@@ -36,7 +27,7 @@ const formStyles: ThemeUIStyleObject = {
   },
 }
 
-const theme: ThemeSketchy = {
+const theme: Theme = {
   colors: {
     text: '#000200',
     background: '#FAFAF9',

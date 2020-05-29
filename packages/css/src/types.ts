@@ -586,11 +586,10 @@ export interface Theme {
   radii?: ObjectOrArray<CSS.BorderRadiusProperty<TLengthStyledSystem>>
   shadows?: ObjectOrArray<CSS.BoxShadowProperty>
   zIndices?: ObjectOrArray<CSS.ZIndexProperty>
-  buttons?: ObjectOrArray<ThemeUICSSProperties>
   colorStyles?: ObjectOrArray<ThemeUICSSProperties>
   textStyles?: ObjectOrArray<ThemeUICSSProperties>
-  text?: ObjectOrArray<ThemeUICSSProperties>
   opacities?: ObjectOrArray<CSS.OpacityProperty>
+
   /**
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
@@ -637,4 +636,125 @@ export interface Theme {
    * fonts, etc.
    */
   styles?: ThemeStyles
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  grids?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  buttons?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  text?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  links?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  images?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  cards?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  layout?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  forms?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  badges?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  alerts?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Variants: partial style objects that can be used for stylistic component
+   * variants or making part of an application themeable. These are commonly
+   * used for typographic styles, buttons, and themeable layout components.
+   * Variants are also used to style built-in components.
+   *
+   * @see https://theme-ui.com/theme-spec
+   * @see https://theme-ui.com/components/variants
+   */
+  messages?: Record<string, ThemeUIStyleObject>
 }
