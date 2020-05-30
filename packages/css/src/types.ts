@@ -586,11 +586,10 @@ export interface Theme {
   radii?: ObjectOrArray<CSS.BorderRadiusProperty<TLengthStyledSystem>>
   shadows?: ObjectOrArray<CSS.BoxShadowProperty>
   zIndices?: ObjectOrArray<CSS.ZIndexProperty>
-  buttons?: ObjectOrArray<ThemeUICSSProperties>
   colorStyles?: ObjectOrArray<ThemeUICSSProperties>
   textStyles?: ObjectOrArray<ThemeUICSSProperties>
-  text?: ObjectOrArray<ThemeUICSSProperties>
   opacities?: ObjectOrArray<CSS.OpacityProperty>
+
   /**
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
@@ -637,4 +636,138 @@ export interface Theme {
    * fonts, etc.
    */
   styles?: ThemeStyles
+
+  /**
+   * You can define additional CSS grid layouts by adding variants to the
+   * `theme.grids` object. These styles can be used to create a wide variety of
+   * different reusable layouts.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/grid#variants
+   */
+  grids?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Button variants can be defined in the `theme.buttons` object. The `Button`
+   * component uses `theme.buttons.primary` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/button#variants
+   */
+  buttons?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Text style variants can be defined in the `theme.text` object. The `Text`
+   * component uses `theme.text.default` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/text#variants
+   */
+  text?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Link variants can be defined in the `theme.links` object. By default the
+   * `Link` component will use styles defined in `theme.styles.a`.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/link#variants
+   */
+  links?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Image style variants can be defined in the `theme.images` object.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/image#variants
+   */
+  images?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Card style variants can be defined in `the theme.cards` object. By default
+   * the `Card` component uses the `theme.cards.primary` variant.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/card#variants
+   */
+  cards?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Container variants can be defined in the `theme.layout` object. The
+   * `Container` component uses `theme.layout.container` as its default variant
+   * style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/container#variants
+   */
+  layout?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Label variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.label` variant by default.
+   *
+   * Input variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.input` variant by default.
+   *
+   * Select variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.select` variant by default.
+   *
+   * Textarea variants can be defined in `theme.forms` and the component uses
+   * the `theme.forms.textarea` variant by default.
+   *
+   * Radio variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.radio` variant by default.
+   *
+   * Checkbox variants can be defined in `theme.forms` and the component uses
+   * the `theme.forms.checkbox` variant by default.
+   *
+   * Slider variants can be defined in the `theme.forms` object. The `Slider`
+   * component uses `theme.forms.slider` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/label#variants
+   * @see https://theme-ui.com/components/input#variants
+   * @see https://theme-ui.com/components/select#variants
+   * @see https://theme-ui.com/components/textarea#variants
+   * @see https://theme-ui.com/components/radio#variants
+   * @see https://theme-ui.com/components/checkbox#variants
+   * @see https://theme-ui.com/components/slider#variants
+   */
+  forms?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Badge variants can be defined in `theme.badges`. The `Badge` component uses
+   * `theme.badges.primary` as its default variant.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/badge#variants
+   */
+  badges?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Alert variants can be defined in `theme.alerts`. The `Alert` component uses
+   * `theme.alerts.primary` as its default variant.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/alert#variants
+   */
+  alerts?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Message variants can be defined in the `theme.messages` object.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/message#variants
+   */
+  messages?: Record<string, ThemeUIStyleObject>
 }
