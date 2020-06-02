@@ -13,8 +13,7 @@
     "dev:editor": "yarn workspace @theme-ui/editor dev"
   },
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "devDependencies": {
     "@babel/cli": "^7.4.4",
