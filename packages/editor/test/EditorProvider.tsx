@@ -36,7 +36,7 @@ test('adds setTheme method to context', () => {
   let context
   const GetContext = () => {
     context = useThemeUI()
-    return false
+    return null
   }
   const tree = render(
     <ThemeProvider theme={theme}>
@@ -52,7 +52,7 @@ test('setTheme updates theme context', () => {
   let context
   const GetContext = () => {
     context = useThemeUI()
-    return false
+    return null
   }
   act(() => {
     const tree = render(
@@ -65,7 +65,7 @@ test('setTheme updates theme context', () => {
     context.setTheme({
       colors: {
         text: 'tomato',
-      }
+      },
     })
   })
   expect(context.theme.colors.text).toBe('tomato')

@@ -17,8 +17,8 @@
     "@theme-ui/color-modes": "^0.4.0-alpha.3",
     "@theme-ui/components": "^0.4.0-alpha.3",
     "@theme-ui/core": "^0.4.0-alpha.3",
-    "@theme-ui/css": "^0.4.0-alpha.2",
-    "@theme-ui/mdx": "^0.4.0-alpha.1",
+    "@theme-ui/css": "^0.4.0-alpha.3",
+    "@theme-ui/mdx": "^0.4.0-alpha.3",
     "@theme-ui/theme-provider": "^0.4.0-alpha.3"
   },
   "keywords": [

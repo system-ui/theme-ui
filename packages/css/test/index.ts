@@ -196,7 +196,7 @@ test('works with the css prop', () => {
 })
 
 test('works with functional arguments', () => {
-  const result = css(t => ({
+  const result = css((t) => ({
     color: t.colors.primary,
   }))(theme)
   expect(result).toEqual({
@@ -206,7 +206,7 @@ test('works with functional arguments', () => {
 
 test('supports functional values', () => {
   const result = css({
-    color: t => t.colors.primary,
+    color: (t) => t.colors.primary,
   })(theme)
   expect(result).toEqual({
     color: 'tomato',
@@ -285,7 +285,7 @@ test('handles negative margins from scale that is an object', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
-  })({...theme, space: { s: '16px', m: '32px' }})
+  })({ ...theme, space: { s: '16px', m: '32px' } })
   expect(result).toEqual({
     marginTop: '-16px',
     marginLeft: '-32px',
@@ -344,7 +344,7 @@ test('ignores array values longer than breakpoints', () => {
 
 test('functional values can return responsive arrays', () => {
   const result = css({
-    color: t => [t.colors.primary, t.colors.secondary],
+    color: (t) => [t.colors.primary, t.colors.secondary],
   })(theme)
   expect(result).toEqual({
     '@media screen and (min-width: 40em)': {
@@ -493,4 +493,10 @@ test('returns correct media query order 2', () => {
     'paddingTop',
     'paddingBottom',
   ])
+})
+
+test('supports vendor properties', () => {
+  expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
+    WebkitOverflowScrolling: 'touch',
+  })
 })

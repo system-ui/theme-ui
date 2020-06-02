@@ -3,15 +3,18 @@
   "version": "0.4.0-alpha.3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
   },
   "dependencies": {
     "@theme-ui/components": "^0.4.0-alpha.3",
+    "@theme-ui/css": "^0.4.0-alpha.3",
     "@theme-ui/style-guide": "^0.4.0-alpha.3",
+    "@types/react-color": "^2.17.3",
     "color": "^3.1.2",
     "react-color": "^2.18.0",
     "reakit": "^1.0.0-beta.14",

@@ -12,7 +12,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/presets": "^0.4.0-alpha.2",
+    "@theme-ui/presets": "^0.4.0-alpha.3",
     "@types/color": "^3.0.1",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
@@ -20,7 +20,7 @@
   "peerDependencies": {
     "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
-    "theme-ui": "^0.4.0-alpha.1"
+    "theme-ui": "^0.4.0-alpha.3"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.10",

@@ -1,4 +1,4 @@
-import { CSSObject, SystemStyleObject, UseThemeFunction, Theme } from './types'
+import { CSSObject, ThemeUIStyleObject, UseThemeFunction, Theme } from './types'
 
 export * from './types'
 
@@ -215,10 +215,10 @@ const transforms = [
   {}
 )
 
-const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
+const responsive = (styles: Exclude<ThemeUIStyleObject, UseThemeFunction>) => (
   theme?: Theme
 ) => {
-  const next: Exclude<SystemStyleObject, UseThemeFunction> = {}
+  const next: Exclude<ThemeUIStyleObject, UseThemeFunction> = {}
   const breakpoints =
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
@@ -252,7 +252,7 @@ const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
 
 type CssPropsArgument = { theme: Theme } | Theme
 
-export const css = (args: SystemStyleObject = {}) => (
+export const css = (args: ThemeUIStyleObject = {}) => (
   props: CssPropsArgument = {}
 ): CSSObject => {
   const theme: Theme = {

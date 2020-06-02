@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, SxStyleProp, Theme } from 'theme-ui'
+import { jsx, ThemeProvider, Theme, ThemeStyles } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {
   useState,
@@ -79,7 +79,7 @@ export const Sidenav = forwardRef<
   {
     open?: boolean
     components?: MDXProviderComponents
-    styles?: Theme['styles']
+    styles?: ThemeStyles
     children: ReactNode
   }
 >(({ open, styles = {}, components = {}, ...props }, ref) => {
@@ -130,7 +130,7 @@ export const Sidenav = forwardRef<
             transition: 'transform .2s ease-out',
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
-            ...{ WebkitOverflowScrolling: 'touch' },
+            WebkitOverflowScrolling: 'touch',
           }}
         />
       </MDXProvider>
@@ -152,6 +152,7 @@ export const AccordionButton: FunctionComponent<{
       title="Expand Section"
       disabled={disabled}
       {...props}
+      onMouseDown={(e) => e.preventDefault()}
       sx={{
         appearance: 'none',
         display: 'flex',
@@ -266,7 +267,7 @@ export const AccordionNav = forwardRef<
             transition: 'transform .2s ease-out',
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
-            ...{ WebkitOverflowScrolling: 'touch' },
+            WebkitOverflowScrolling: 'touch',
           }}>
           <ul
             sx={{

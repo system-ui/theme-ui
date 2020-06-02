@@ -1,17 +1,32 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Theme } from 'theme-ui'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import Combobox from '../Combobox'
 
+type TypographyPropsValue = {
+  fontFamily?: string
+  fontSize?: string | number
+  fontWeight?: string | number
+  lineHeight?: string | number
+}
+
+type OnChangeArg = {
+  [P in keyof TypographyPropsValue]: {
+    [K in P]: Exclude<TypographyPropsValue[P], undefined>
+  }
+}[keyof TypographyPropsValue]
+
+export interface TypographyProps {
+  tag?: string
+  value?: TypographyPropsValue
+  theme?: Theme
+  onChange: (arg: OnChangeArg) => void
+}
+
 export const SxTypography = ({
   tag,
-  value: {
-    fontFamily,
-    fontSize,
-    fontWeight,
-    lineHeight,
-  } = {},
+  value: { fontFamily, fontSize, fontWeight, lineHeight } = {},
   theme: {
     fonts = {},
     fontSizes = [],
@@ -19,8 +34,8 @@ export const SxTypography = ({
     lineHeights = {},
   } = {},
   onChange,
-}) => {
-  const prefixName = name => tag ? `styles.${tag}.${name}` : name
+}: TypographyProps) => {
+  const prefixName = (name: string) => (tag ? `styles.${tag}.${name}` : name)
 
   return (
     <Fragment>
@@ -36,7 +51,7 @@ export const SxTypography = ({
       <div
         sx={{
           display: 'grid',
-          gridGap: 2,
+          gap: 2,
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
         <Field
