@@ -7,7 +7,7 @@ export default ({ posts, ...props }) => (
   <Styled.root>
     <Layout {...props}>
       <ul>
-        {posts.map(post => (
+        {posts.map((post) => (
           <li key={post.id}>
             <Link to={post.slug}>{post.title}</Link>
           </li>
