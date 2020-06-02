@@ -13,12 +13,17 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "react": "^16.8.6"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.0.21",
     "@types/mdx-js__react": "^1.5.1",
     "deepmerge": "^4.0.0",
-    "react": "^16.8.6",
     "theme-ui": "^0.4.0-alpha.3"
   },
   "keywords": [
