@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Update "How it works" docs so that `ThemeProvider` is imported from `theme-ui`
 - Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
