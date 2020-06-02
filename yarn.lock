@@ -16682,7 +16682,7 @@ postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.14, postcss@^6.0.16, postcss@^6.0.
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.30:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.17, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.30:
   version "7.0.32"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
   integrity sha512-03eXong5NLnNCD05xscnGKGDZ98CyzoqPSMjOe6SuoQY7Z2hIj0Ld1g/O/UQRuOle2aRtiIRDg9tDcTGAkLfKw==
@@ -16691,7 +16691,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.3
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^7.0.11, postcss@^7.0.17, postcss@^7.0.18, postcss@^7.0.21, postcss@^7.0.23:
+postcss@^7.0.11, postcss@^7.0.18, postcss@^7.0.21, postcss@^7.0.23:
   version "7.0.30"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.30.tgz#cc9378beffe46a02cbc4506a0477d05fcea9a8e2"
   integrity sha512-nu/0m+NtIzoubO+xdAlwZl/u5S5vi/y6BCsoL8D+8IxsD3XvBS8X4YEADNIVXKVuQvduiucnRv+vPIqj56EGMQ==
