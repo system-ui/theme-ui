@@ -1,4 +1,6 @@
-import toCustomProperties from '../src'
+import React from 'react'
+import renderer from 'react-test-renderer'
+import toCustomProperties, { withCustomProperties } from '../src'
 
 const theme = {
   colors: {
@@ -44,4 +46,28 @@ it('transforms a theme config to CSS custom properties with prefix', () => {
   const result = toCustomProperties(theme, '🍭')
 
   expect(result).toMatchSnapshot()
+})
+
+it('adds the default className on the wrapping element of ThemeProvider', () => {
+  const ExtendedThemeProvider = withCustomProperties('🍭')
+  const themeProvider = renderer.create(
+    <ExtendedThemeProvider theme={theme}>
+      <p> Hello world! </p>
+    </ExtendedThemeProvider>
+  )
+
+  let tree = themeProvider.toJSON()
+  expect(tree).toMatchSnapshot()
+})
+
+it('adds a specific className on the wrapping element of ThemeProvider', () => {
+  const ExtendedThemeProvider = withCustomProperties('🍭', '🍧')
+  const themeProvider = renderer.create(
+    <ExtendedThemeProvider theme={theme}>
+      <p> Hello world! </p>
+    </ExtendedThemeProvider>
+  )
+
+  let tree = themeProvider.toJSON()
+  expect(tree).toMatchSnapshot()
 })
