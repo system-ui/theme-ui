@@ -65,21 +65,29 @@ const useColorModeState = (theme = {}) => {
     } else if (stored) setMode(stored)
   }, [theme])
 
-  const handleColorSchemeChange = React.useCallback(({ matches, media }) => {
-    const modeEvaluated = getEvaluatedMode(media)
-    if (matches) setMode(modeEvaluated)
+  const handleColorSchemeChange = React.useCallback((e) => {
+    const modeEvaluated = getEvaluatedMode(e.media)
+    if (e.matches) setMode(modeEvaluated)
   }, [])
 
   React.useEffect(() => {
     if (theme.useColorSchemeMediaQuery && window.matchMedia) {
-      window.matchMedia(darkQuery).addListener(handleColorSchemeChange)
-      window.matchMedia(lightQuery).addListener(handleColorSchemeChange)
+      window
+        .matchMedia(darkQuery)
+        .addEventListener('change', handleColorSchemeChange)
+      window
+        .matchMedia(lightQuery)
+        .addEventListener('change', handleColorSchemeChange)
     }
 
     return () => {
       if (theme.useColorSchemeMediaQuery && window.matchMedia) {
-        window.matchMedia(darkQuery).removeListener(handleColorSchemeChange)
-        window.matchMedia(lightQuery).removeListener(handleColorSchemeChange)
+        window
+          .matchMedia(darkQuery)
+          .removeEventListener('change', handleColorSchemeChange)
+        window
+          .matchMedia(lightQuery)
+          .removeEventListener('change', handleColorSchemeChange)
       }
     }
   }, [theme])
