@@ -31,15 +31,22 @@ const storage = {
   },
 }
 
+const darkQuery = '(prefers-color-scheme: dark)'
+const lightQuery = '(prefers-color-scheme: light)'
+
 const getMediaQuery = () => {
-  const darkQuery = '(prefers-color-scheme: dark)'
-  const lightQuery = '(prefers-color-scheme: light)'
   const darkMQL = window.matchMedia ? window.matchMedia(darkQuery) : {}
   const lightMQL = window.matchMedia ? window.matchMedia(lightQuery) : {}
   const dark = darkMQL.media === darkQuery && darkMQL.matches
   if (dark) return 'dark'
   const light = lightMQL.media === lightQuery && lightMQL.matches
   if (light) return 'light'
+  return 'default'
+}
+
+const getEvaluatedMode = (mediaString) => {
+  if (mediaString === darkQuery) return 'dark'
+  if (mediaString === lightQuery) return 'light'
   return 'default'
 }
 
@@ -55,8 +62,27 @@ const useColorModeState = (theme = {}) => {
     if (theme.useColorSchemeMediaQuery) {
       const query = getMediaQuery()
       if (!stored || stored !== query) setMode(query)
-    } else if (stored && stored !== mode) setMode(stored)
+    } else if (stored) setMode(stored)
+  }, [theme])
+
+  const handleColorSchemeChange = React.useCallback(({ matches, media }) => {
+    const modeEvaluated = getEvaluatedMode(media)
+    if (matches) setMode(modeEvaluated)
   }, [])
+
+  React.useEffect(() => {
+    if (theme.useColorSchemeMediaQuery && window.matchMedia) {
+      window.matchMedia(darkQuery).addListener(handleColorSchemeChange)
+      window.matchMedia(lightQuery).addListener(handleColorSchemeChange)
+    }
+
+    return () => {
+      if (theme.useColorSchemeMediaQuery && window.matchMedia) {
+        window.matchMedia(darkQuery).removeListener(handleColorSchemeChange)
+        window.matchMedia(lightQuery).removeListener(handleColorSchemeChange)
+      }
+    }
+  }, [theme])
 
   React.useEffect(() => {
     if (
@@ -66,7 +92,7 @@ const useColorModeState = (theme = {}) => {
     ) {
       storage.set(mode)
     }
-  }, [mode])
+  }, [mode, theme])
 
   if (process.env.NODE_ENV !== 'production') {
     if (
