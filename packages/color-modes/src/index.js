@@ -44,60 +44,50 @@ const getMediaQuery = () => {
   return 'default'
 }
 
-const getEvaluatedMode = (mediaString) => {
-  if (mediaString === darkQuery) return 'dark'
-  if (mediaString === lightQuery) return 'light'
-  return 'default'
-}
-
 const useColorModeState = (theme = {}) => {
   const [mode, setMode] = React.useState(
     theme.initialColorModeName || 'default'
   )
 
+  const setPreferredColorScheme = React.useCallback(() => {
+    const query = getMediaQuery()
+    setMode(query)
+  }, [])
+
   // initialize state
   React.useEffect(() => {
     const stored = theme.useLocalStorage !== false && storage.get()
     document.body.classList.remove('theme-ui-' + stored)
-    if (theme.useColorSchemeMediaQuery) {
-      const query = getMediaQuery()
-      if (!stored || stored !== query) setMode(query)
-    } else if (stored) setMode(stored)
+    if (theme.useColorSchemeMediaQuery === true) setPreferredColorScheme()
+    else if (stored) setMode(stored)
   }, [theme])
 
-  const handleColorSchemeChange = React.useCallback((e) => {
-    const modeEvaluated = getEvaluatedMode(e.media)
-    if (e.matches) setMode(modeEvaluated)
-  }, [])
-
   React.useEffect(() => {
-    if (theme.useColorSchemeMediaQuery && window.matchMedia) {
-      window
-        .matchMedia(darkQuery)
-        .addEventListener('change', handleColorSchemeChange)
-      window
-        .matchMedia(lightQuery)
-        .addEventListener('change', handleColorSchemeChange)
+    if (theme.useColorSchemeMediaQuery === true && window.matchMedia) {
+      // It doesn't matter if we add the listener only to the dark media query
+      // Because in our callback function we'll check for both media queries (light and dark).
+      const darkMQL = window.matchMedia(darkQuery)
+      if (typeof darkMQL.addEventListener === 'function') {
+        darkMQL.addEventListener('change', setPreferredColorScheme)
+      } else if (typeof darkMQL.addListener === 'function') {
+        darkMQL.addListener(setPreferredColorScheme)
+      }
     }
 
     return () => {
-      if (theme.useColorSchemeMediaQuery && window.matchMedia) {
-        window
-          .matchMedia(darkQuery)
-          .removeEventListener('change', handleColorSchemeChange)
-        window
-          .matchMedia(lightQuery)
-          .removeEventListener('change', handleColorSchemeChange)
+      if (theme.useColorSchemeMediaQuery === true && window.matchMedia) {
+        const darkMQL = window.matchMedia(darkQuery)
+        if (typeof darkMQL.removeEventListener === 'function') {
+          darkMQL.removeEventListener('change', setPreferredColorScheme)
+        } else if (typeof darkMQL.removeListener === 'function') {
+          darkMQL.removeListener(setPreferredColorScheme)
+        }
       }
     }
   }, [theme])
 
   React.useEffect(() => {
-    if (
-      mode &&
-      theme.useLocalStorage !== false &&
-      !theme.useColorSchemeMediaQuery
-    ) {
+    if (mode && theme.useLocalStorage !== false) {
       storage.set(mode)
     }
   }, [mode, theme])
