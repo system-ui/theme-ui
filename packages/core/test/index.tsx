@@ -4,13 +4,20 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
-import { jsx, Context, useThemeUI, merge, ThemeProvider } from '../src'
+import {
+  jsx,
+  Context,
+  useThemeUI,
+  merge,
+  ThemeProvider,
+  ContextValue,
+} from '../src'
 
 afterEach(cleanup)
 
 expect.extend(matchers)
 
-const renderJSON = (el) => renderer.create(el).toJSON()
+const renderJSON = (el: React.ReactElement) => renderer.create(el).toJSON()
 
 describe('ThemeProvider', () => {
   test('renders', () => {
@@ -217,7 +224,7 @@ describe('jsx', () => {
   test('does not add css prop when not provided', () => {
     jest.spyOn(global.console, 'warn')
     const json = renderJSON(jsx(React.Fragment, null, 'hi'))
-    expect(json.props).toEqual(undefined)
+    expect(json?.props).toEqual(undefined)
     expect(console.warn).not.toBeCalled()
   })
 })
@@ -330,8 +337,8 @@ describe('merge', () => {
 // describe('Context', () => {})
 describe('useThemeUI', () => {
   test('returns theme context', () => {
-    let context
-    const GetContext = (props) => {
+    let context: ContextValue | undefined
+    const GetContext = () => {
       context = useThemeUI()
       return null
     }
@@ -346,6 +353,6 @@ describe('useThemeUI', () => {
       </ThemeProvider>
     )
     expect(context).toBeTruthy()
-    expect(context.theme.colors.text).toBe('tomato')
+    expect(context?.theme.colors?.text).toBe('tomato')
   })
 })
