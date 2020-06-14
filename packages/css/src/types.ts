@@ -472,6 +472,10 @@ export interface UseThemeFunction {
   (theme: any): Exclude<ThemeUIStyleObject, UseThemeFunction>
 }
 
+export interface Label {
+  label?: string
+}
+
 /**
  * The `ThemeUIStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
  * such that properties that are part of the `Theme` will be transformed to
@@ -483,6 +487,7 @@ export type ThemeUIStyleObject =
   | CSSSelectorObject
   | VariantProperty
   | UseThemeFunction
+  | Label
 
 type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
 
