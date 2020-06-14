@@ -27,7 +27,8 @@ describe('ThemeProvider', () => {
     const json = renderJSON(
       <Context.Provider
         value={{
-          emotionVersion: '9.0.0',
+          __EMOTION_VERSION__: '9.0.0',
+          theme: {},
         }}>
         <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
       </Context.Provider>
@@ -267,9 +268,12 @@ describe('merge', () => {
   })
 
   test('does not attempt to merge React components', () => {
-    const h1 = React.forwardRef((props, ref) => <h1 ref={ref} {...props} />)
+    const h1 = React.forwardRef<HTMLHeadingElement, {}>((props, ref) => (
+      <h1 ref={ref} {...props} />
+    ))
     const result = merge(
       {
+        //@ts-ignore
         h1: (props) => <h1 {...props} />,
       },
       {
@@ -282,42 +286,42 @@ describe('merge', () => {
   test('primitive types override arrays', () => {
     const result = merge(
       {
-        fontSize: [3, 4, 5],
+        fontSizes: [3, 4, 5],
       },
       {
-        fontSize: 4,
+        fontSizes: 4 as any,
       }
     )
     expect(result).toEqual({
-      fontSize: 4,
+      fontSizes: 4,
     })
   })
 
   test('arrays override arrays', () => {
     const result = merge(
       {
-        fontSize: [3, 4, 5],
+        fontSizes: [3, 4, 5],
       },
       {
-        fontSize: [6, 7],
+        fontSizes: [6, 7],
       }
     )
     expect(result).toEqual({
-      fontSize: [6, 7],
+      fontSizes: [6, 7],
     })
   })
 
   test('arrays override primitive types', () => {
     const result = merge(
       {
-        fontSize: 5,
+        fontSizes: 5 as any,
       },
       {
-        fontSize: [6, 7],
+        fontSizes: [6, 7],
       }
     )
     expect(result).toEqual({
-      fontSize: [6, 7],
+      fontSizes: [6, 7],
     })
   })
 })
@@ -328,7 +332,7 @@ describe('useThemeUI', () => {
     let context
     const GetContext = (props) => {
       context = useThemeUI()
-      return false
+      return null
     }
     renderJSON(
       <ThemeProvider
