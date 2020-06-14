@@ -72,8 +72,14 @@ const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 export const merge = (a: Theme, b: Theme): Theme =>
   deepmerge(a, b, { isMergeableObject, arrayMerge })
 
-merge.all = <T = Theme>(...args: Partial<T>[]) =>
-  deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
+function mergeAll<A, B>(a: A, B: B): A & B
+function mergeAll<A, B, C>(a: A, B: B, c: C): A & B & C
+function mergeAll<A, B, C, D>(a: A, B: B, c: C, d: D): A & B & C & D
+function mergeAll<T = Theme>(...args: Partial<T>[]) {
+  return deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
+}
+
+merge.all = mergeAll
 
 interface BaseProviderProps {
   context: ContextValue

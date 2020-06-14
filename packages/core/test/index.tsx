@@ -226,6 +226,7 @@ describe('merge', () => {
   test('deeply merges objects', () => {
     const result = merge(
       {
+        // @ts-ignore
         beep: 'boop',
         hello: {
           hi: 'howdy',
