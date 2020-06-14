@@ -115,7 +115,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
   const context =
     typeof theme === 'function'
       ? { ...outer, theme: theme(outer.theme) }
-      : merge.all<ContextValue>({}, outer, { theme })
+      : merge.all({}, outer, { theme })
 
   return jsx(BaseProvider, { context }, children)
 }

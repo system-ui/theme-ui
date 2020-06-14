@@ -469,7 +469,7 @@ export interface VariantProperty {
 }
 
 export interface UseThemeFunction {
-  (theme: any): Exclude<ThemeUIStyleObject, UseThemeFunction>
+  (theme: Theme): Exclude<ThemeUIStyleObject, UseThemeFunction>
 }
 
 export interface Label {
