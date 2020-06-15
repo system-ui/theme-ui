@@ -43,13 +43,6 @@ interface CSSOthersObjectForCSSObject {
   [propertiesName: string]: CSSInterpolation
 }
 
-/**
- * Map all nested selectors
- */
-export interface CSSSelectorObject {
-  [cssSelector: string]: ThemeUIStyleObject
-}
-
 interface AliasesCSSProperties {
   /**
    * The **`background-color`** CSS property sets the background color of an element.
@@ -468,7 +461,7 @@ export interface VariantProperty {
 }
 
 export interface ThemeDerivedStyles {
-  (theme: Theme): Exclude<ThemeUIStyleObject, ThemeDerivedStyles>
+  (theme: Theme): ThemeUICSSObject
 }
 
 export type Label = {
