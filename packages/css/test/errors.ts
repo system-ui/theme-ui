@@ -6,7 +6,8 @@ const expectSnippet = expecter(
   import { css } from './packages/css/src'
   
   ${code}
-`
+`,
+  { strict: true }
 )
 
 test('shows friendly error only on bad property', () => {
@@ -22,7 +23,7 @@ test('shows friendly error only on bad property', () => {
       },
     })
   `).toFail(
-    /Error snippet\.ts \(7,7\): Type '"foo"' is not assignable to type 'StylePropertyValue<\w+>'./
+    /Error snippet\.ts \(7,7\): Type '"foo"' is not assignable to type [\s\S]+'./
   )
 })
 
@@ -38,9 +39,9 @@ test('shows friendly error on nested object', () => {
   `).toFail(
     new RegExp(
       `Error snippet\\.ts \\(7,7\\): Type '{ color: string; widows: "bar"; }'` +
-        ` is not assignable to type 'StylePropertyValue<string | number>'.\n\s+` +
-        `Types of property 'widows' are incompatible.\n\s+` +
-        `Type '"bar"' is not assignable to type 'StylePropertyValue<\w+>''`
+        ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
+        `Types of property 'widows' are incompatible.\\n\\s+` +
+        `Type '"bar"' is not assignable to type [\\s\\S]+`
     )
   )
 })
