@@ -295,12 +295,16 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     const val = typeof x === 'function' ? x(theme) : x
 
     if (key === 'variant') {
-      const styles = css(
-        merge.all(
-          ...val.split(VARIANT_SEPARATOR).map(variants => get(theme, variants))
-        )
-      )(theme)
-      result = { ...result, ...styles }
+      const variants = val
+        .split(VARIANT_SEPARATOR)
+        .map((variant) => get(theme, variant))
+        .filter(Boolean)
+
+      if (variants.length > 0) {
+        const styles = css(merge.all(...variants))(theme)
+        result = { ...result, ...styles }
+      }
+
       continue
     }
 

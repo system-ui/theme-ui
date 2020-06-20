@@ -256,7 +256,7 @@ test('handles responsive variants', () => {
 
 test('merges text.caps over text.title', () => {
   const caps = css({
-    variant: 'text.caps'
+    variant: 'text.caps',
   })(theme)
   const result = css({
     variant: 'text.title text.caps',
@@ -269,13 +269,13 @@ test('merges text.title into text.caps', () => {
     variant: 'text.caps text.title',
   })(theme)
   expect(result).toEqual({
-    "@media screen and (min-width: 40em)": {
-      "fontSize": 36,
-      "letterSpacing": "-0.02em",
+    '@media screen and (min-width: 40em)': {
+      fontSize: 36,
+      letterSpacing: '-0.02em',
     },
-    "fontSize": 24,
-    "letterSpacing": "-0.01em",
-    "textTransform": "uppercase"
+    fontSize: 24,
+    letterSpacing: '-0.01em',
+    textTransform: 'uppercase',
   })
 })
 
