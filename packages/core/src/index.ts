@@ -4,14 +4,14 @@ import {
   InterpolationWithTheme,
 } from '@emotion/core'
 // @ts-ignore
-import { css, Theme } from '@theme-ui/css'
+import { css, Theme, merge } from '@theme-ui/css'
 import React from 'react'
-import deepmerge from 'deepmerge'
 import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
 
 import './react-jsx'
 
 export * from './types'
+export { merge } from '@theme-ui/css'
 
 const getCSS = (props) => {
   if (!props.sx && !props.css) return undefined
@@ -49,31 +49,6 @@ export const Context = React.createContext<ContextValue>({
 })
 
 export const useThemeUI = () => React.useContext(Context)
-
-const canUseSymbol = typeof Symbol === 'function' && Symbol.for
-
-const REACT_ELEMENT = canUseSymbol ? Symbol.for('react.element') : 0xeac7
-const FORWARD_REF = canUseSymbol ? Symbol.for('react.forward_ref') : 0xeac7
-
-const isMergeableObject = (n) => {
-  return (
-    !!n &&
-    typeof n === 'object' &&
-    n.$$typeof !== REACT_ELEMENT &&
-    n.$$typeof !== FORWARD_REF
-  )
-}
-
-const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
-
-/**
- * Deeply merge themes
- */
-export const merge = (a: Theme, b: Theme): Theme =>
-  deepmerge(a, b, { isMergeableObject, arrayMerge })
-
-merge.all = <T = Theme>(...args: Partial<T>[]) =>
-  deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
 
 interface BaseProviderProps {
   context: ContextValue

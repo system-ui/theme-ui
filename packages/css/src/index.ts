@@ -1,4 +1,5 @@
 import { CSSObject, ThemeUIStyleObject, UseThemeFunction, Theme } from './types'
+import deepmerge from 'deepmerge'
 
 export * from './types'
 
@@ -16,7 +17,33 @@ export function get(
   return obj === undef ? def : obj
 }
 
-export const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
+const canUseSymbol = typeof Symbol === 'function' && Symbol.for
+
+const REACT_ELEMENT = canUseSymbol ? Symbol.for('react.element') : 0xeac7
+const FORWARD_REF = canUseSymbol ? Symbol.for('react.forward_ref') : 0xeac7
+const VARIANT_SEPARATOR = ' '
+
+const isMergeableObject = (n) => {
+  return (
+    !!n &&
+    typeof n === 'object' &&
+    n.$$typeof !== REACT_ELEMENT &&
+    n.$$typeof !== FORWARD_REF
+  )
+}
+
+const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
+
+/**
+ * Deeply merge themes
+ */
+export const merge = (a: Theme, b: Theme): Theme =>
+  deepmerge(a, b, { isMergeableObject, arrayMerge })
+
+merge.all = <T = Theme>(...args: Partial<T>[]) =>
+  deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
+
+export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
 
 const defaultTheme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -223,7 +250,7 @@ const responsive = (styles: Exclude<ThemeUIStyleObject, UseThemeFunction>) => (
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
     null,
-    ...breakpoints.map(n => `@media screen and (min-width: ${n})`),
+    ...breakpoints.map((n) => `@media screen and (min-width: ${n})`),
   ]
 
   for (const key in styles) {
@@ -268,8 +295,12 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     const val = typeof x === 'function' ? x(theme) : x
 
     if (key === 'variant') {
-      const variant = css(get(theme, val))(theme)
-      result = { ...result, ...variant }
+      const styles = css(
+        merge.all(
+          ...val.split(VARIANT_SEPARATOR).map(variants => get(theme, variants))
+        )
+      )(theme)
+      result = { ...result, ...styles }
       continue
     }
 
