@@ -16,6 +16,7 @@
     "access": "public"
   },
   "dependencies": {
-    "csstype": "^2.5.7"
+    "csstype": "^2.5.7",
+    "deepmerge": "^4.2.2"
   }
 }
