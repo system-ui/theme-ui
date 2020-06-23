@@ -4,8 +4,6 @@ import {
   ThemeDerivedStyles,
   Theme,
   ThemeUICSSObject,
-  VariantProperty,
-  Label,
 } from './types'
 
 export * from './types'
