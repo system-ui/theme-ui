@@ -489,7 +489,9 @@ export interface ThemeUICSSObject
  */
 export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
-type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
+type ObjectOrArray<T> =
+  | T[]
+  | { [K: string]: T | ObjectOrArray<T>; [I: number]: T }
 
 export type TLengthStyledSystem = string | 0 | number
 
