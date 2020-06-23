@@ -532,7 +532,7 @@ export interface ColorMode {
   [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty> | undefined
 }
 
-type ColorModesScale = ColorMode & {
+export type ColorModesScale = ColorMode & {
   /**
    * Nested color modes can provide overrides when used in conjunction with
    * `Theme.initialColorModeName and `useColorMode()`

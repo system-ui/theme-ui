@@ -18,6 +18,7 @@ export {
   css,
   get,
   ColorMode,
+  ColorModesScale,
   CSSObject,
   CSSProperties,
   CSSPseudoSelectorProps,
