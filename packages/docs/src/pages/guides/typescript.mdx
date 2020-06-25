@@ -10,6 +10,45 @@ better IDE support for both JS and TS users.
 Most of the public API should work seamlessly exactly as in JavaScript, but
 the usage in advanced cases differs.
 
+## Exact theme type
+
+If you need to know exact type of your particular theme on type level,
+you can use a identity "constructor" function to narrow the type.
+
+```tsx
+const makeTheme = <T extends Theme>(t: T) => t
+
+const theme = makeTheme({
+  colors: {
+    background: 'white',
+    text: 'black',
+    blue: {
+      light: '#187abf',
+      dark: '#235a97',
+    },
+  },
+})
+
+export type ExactTheme = typeof theme
+
+// No error
+const lightBlue = theme.colors.blue.light
+```
+
+You can then reexport `useThemeUI` hook with narrowed type.
+
+```tsx
+import { ContextValue } from 'theme-ui'
+
+interface ExactContextValue extends Omit<ContextValue, 'theme'> {
+  theme: ExactTheme
+}
+
+export const useTheme = (useThemeUI as unknown) as () => ExactContextValue
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-typescript-tips-yh8u1?file=/src/exact-theme-type.ts)_
+
 ## Accessing optional properties
 
 The `Theme` type represents all possible themes.
@@ -81,30 +120,3 @@ const syntaxHighlighting = theme.syntaxHighlighting
 ```
 
 _[Try it in TypeScript Playground.](https://www.typescriptlang.org/v2/en/play?#code/JYWwDg9gTgLgBAbzgFQBYFMTrgXzgMyghDgHIYMsBaAV2FIG4AoJ4AOxnSnwEMBjbAFkAngGVhHHgA8AEsADmqADYLUMdvLSZsCJnALR08ojTYATAFxwAzjCgbmOFmfR8lPKNhAQzNJdnJKdFp6RD04dk5ufmwtLDD9fWsJGGk5RRVFdTZ5KxFxSVlVTLUNOPRwpycmPgg2WzgKbStyuABeBJsUtOLVbNzO-XxDYwhTSzIAYgAmWdIAGkqmHGYauobkwvTlPo12xqCAOk3UoozdnLX6+C4iKH2mrGPhGDYe86yNJiA)_
-
-## Exact theme type
-
-If you need to know exact type of your particular theme on type level,
-you can use a identity "constructor" function to narrow the type.
-
-```tsx
-const makeTheme = <T extends Theme>(t: T) => t
-
-const theme = makeTheme({
-  colors: {
-    background: 'white',
-    text: 'black',
-    blue: {
-      light: '#187abf',
-      dark: '#235a97',
-    },
-  },
-})
-
-export type ExactTheme = typeof theme
-
-// no errors
-const lightBlue = theme.colors.blue.light
-```
-
-_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-typescript-tips-yh8u1?file=/src/exact-theme-type.ts)_
