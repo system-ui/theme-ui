@@ -7,20 +7,22 @@ export const Button = React.forwardRef((props, ref) => (
     as="button"
     variant="primary"
     {...props}
-    __themeKey="buttons"
-    __css={{
-      appearance: 'none',
-      display: 'inline-block',
-      textAlign: 'center',
-      lineHeight: 'inherit',
-      textDecoration: 'none',
-      fontSize: 'inherit',
-      px: 3,
-      py: 2,
-      color: 'white',
-      bg: 'primary',
-      border: 0,
-      borderRadius: 4,
+    config={{
+      group: 'buttons',
+      sx: {
+        appearance: 'none',
+        display: 'inline-block',
+        textAlign: 'center',
+        lineHeight: 'inherit',
+        textDecoration: 'none',
+        fontSize: 'inherit',
+        px: 3,
+        py: 2,
+        color: 'white',
+        bg: 'primary',
+        border: 0,
+        borderRadius: 4,
+      },
     }}
   />
 ))

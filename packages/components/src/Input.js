@@ -7,18 +7,20 @@ export const Input = React.forwardRef((props, ref) => (
     as="input"
     variant="input"
     {...props}
-    __themeKey="forms"
-    __css={{
-      display: 'block',
-      width: '100%',
-      p: 2,
-      appearance: 'none',
-      fontSize: 'inherit',
-      lineHeight: 'inherit',
-      border: '1px solid',
-      borderRadius: 4,
-      color: 'inherit',
-      bg: 'transparent',
+    config={{
+      group: 'forms',
+      sx: {
+        display: 'block',
+        width: '100%',
+        p: 2,
+        appearance: 'none',
+        fontSize: 'inherit',
+        lineHeight: 'inherit',
+        border: '1px solid',
+        borderRadius: 4,
+        color: 'inherit',
+        bg: 'transparent',
+      },
     }}
   />
 ))

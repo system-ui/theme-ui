@@ -6,11 +6,12 @@ export const Image = React.forwardRef((props, ref) => (
     ref={ref}
     as="img"
     {...props}
-    __themeKey="images"
-    __css={{
-      maxWidth: '100%',
-      height: 'auto',
-      ...props.__css,
+    config={{
+      group: 'images',
+      sx: {
+        maxWidth: '100%',
+        height: 'auto',
+      },
     }}
   />
 ))

@@ -39,9 +39,11 @@ export const Spinner = React.forwardRef(
         stroke="currentcolor"
         role="img"
         {...props}
-        __css={{
-          color: 'primary',
-          overflow: 'visible',
+        config={{
+          sx: {
+            color: 'primary',
+            overflow: 'visible',
+          },
         }}>
         <title>{title}</title>
         <circle cx={16} cy={16} r={r} opacity={1 / 8} />
@@ -52,12 +54,14 @@ export const Spinner = React.forwardRef(
           r={r}
           strokeDasharray={C}
           strokeDashoffset={offset}
-          __css={{
-            transformOrigin: '50% 50%',
-            animationName: spin.toString(),
-            animationTimingFunction: 'linear',
-            animationDuration: duration + 'ms',
-            animationIterationCount: 'infinite',
+          config={{
+            sx: {
+              transformOrigin: '50% 50%',
+              animationName: spin.toString(),
+              animationTimingFunction: 'linear',
+              animationDuration: duration + 'ms',
+              animationIterationCount: 'infinite',
+            },
           }}
         />
       </Box>

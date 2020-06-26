@@ -1,33 +1,71 @@
-import styled from '@emotion/styled'
-import { css, get } from '@theme-ui/css'
-import { createShouldForwardProp } from '@styled-system/should-forward-prop'
-import space from '@styled-system/space'
-import color from '@styled-system/color'
+import React from 'react'
+import { jsx } from '@theme-ui/core'
 
-const shouldForwardProp = createShouldForwardProp([
-  ...space.propNames,
-  ...color.propNames,
-])
+export const Box = React.forwardRef(
+  (
+    {
+      as = 'div',
+      sx,
+      variant: _variant,
+      config = {},
+      // TODO: backwards compatibility
+      color,
+      bg,
+      m,
+      mt,
+      mr,
+      mb,
+      ml,
+      mx,
+      my,
+      p,
+      pt,
+      pr,
+      pb,
+      pl,
+      px,
+      py,
+      //
+      ...props
+    },
+    ref
+  ) => {
+    const variant = config.group ? [config.group, _variant].join('.') : _variant
 
-const sx = props => css(props.sx)(props.theme)
-const base = props => css(props.__css)(props.theme)
-const variant = ({ theme, variant, __themeKey = 'variants' }) =>
-  css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
+    const styles = {
+      boxSizing: 'border-box',
+      margin: 0,
+      minWidth: 0,
+      // for backwards compatibility
+      color,
+      bg,
+      m,
+      mt,
+      mr,
+      mb,
+      ml,
+      mx,
+      my,
+      p,
+      pt,
+      pr,
+      pb,
+      pl,
+      px,
+      py,
+      //
+      ...config.sx,
+      variant,
+      ...sx,
+    }
 
-export const Box = styled('div', {
-  shouldForwardProp,
-})(
-  {
-    boxSizing: 'border-box',
-    margin: 0,
-    minWidth: 0,
-  },
-  base,
-  variant,
-  space,
-  color,
-  sx,
-  props => props.css
+    return jsx(as, {
+      sx: styles,
+      ...props,
+    })
+  }
 )
+
+Box.displayName = 'Box'
 
 export default Box

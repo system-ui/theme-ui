@@ -43,6 +43,12 @@ expect.extend(matchers)
 const renderJSON = (el) => renderer.create(el).toJSON()
 
 const theme = {
+  useCustomProperties: false,
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+  },
   boxes: {
     beep: {
       p: 4,
@@ -84,32 +90,44 @@ const theme = {
       fontWeight: 'normal',
     },
   },
+  forms: {
+    beep: {
+      select: {
+        color: 'tomato',
+      },
+      arrow: {
+        color: 'green',
+      },
+    },
+  },
 }
 
 describe('Box', () => {
   test('renders', () => {
-    const json = renderJSON(<Box p={2}>Hello</Box>)
+    const json = renderJSON(<Box sx={{ p: 2 }}>Hello</Box>)
     expect(json).toMatchSnapshot()
   })
 
-  test('renders with padding props', () => {
-    const json = renderJSON(<Box px={2} py={4} />)
-    expect(json).toHaveStyleRule('padding-left', '8px')
-    expect(json).toHaveStyleRule('padding-right', '8px')
-    expect(json).toHaveStyleRule('padding-top', '32px')
-    expect(json).toHaveStyleRule('padding-bottom', '32px')
-  })
+  describe('deprecated: backwards compatibility only', () => {
+    test('renders with padding props', () => {
+      const json = renderJSON(<Box px={2} py={4} />)
+      expect(json).toHaveStyleRule('padding-left', '8px')
+      expect(json).toHaveStyleRule('padding-right', '8px')
+      expect(json).toHaveStyleRule('padding-top', '32px')
+      expect(json).toHaveStyleRule('padding-bottom', '32px')
+    })
 
-  test('renders with margin props', () => {
-    const json = renderJSON(<Box m={3} mb={4} />)
-    expect(json).toHaveStyleRule('margin', '16px')
-    expect(json).toHaveStyleRule('margin-bottom', '32px')
-  })
+    test('renders with margin props', () => {
+      const json = renderJSON(<Box m={3} mb={4} />)
+      expect(json).toHaveStyleRule('margin', '16px')
+      expect(json).toHaveStyleRule('margin-bottom', '32px')
+    })
 
-  test('renders with color props', () => {
-    const json = renderJSON(<Box color="tomato" bg="black" />)
-    expect(json).toHaveStyleRule('color', 'tomato')
-    expect(json).toHaveStyleRule('background-color', 'black')
+    test('renders with color props', () => {
+      const json = renderJSON(<Box color="tomato" bg="black" />)
+      expect(json).toHaveStyleRule('color', 'tomato')
+      expect(json).toHaveStyleRule('background-color', 'black')
+    })
   })
 
   test('renders with sx prop', () => {
@@ -138,13 +156,15 @@ describe('Box', () => {
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box
-        __css={{
-          p: 4,
-          color: 'black',
-          bg: 'white',
+        config={{
+          sx: {
+            p: 4,
+            color: 'black',
+            bg: 'white',
+          },
         }}
-        bg="cyan"
         sx={{
+          bg: 'cyan',
           color: 'tomato',
         }}
       />
@@ -154,10 +174,10 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('background-color', 'cyan')
   })
 
-  test('renders with __themeKey variant', () => {
+  test('renders with variant group', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Box __themeKey="boxes" variant="beep" />
+        <Box config={{ group: 'boxes' }} variant="beep" />
       </ThemeProvider>
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')
@@ -318,10 +338,48 @@ describe('Select', () => {
   test('renders with style props', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Select mb={3} value="hello" />
+        <Select sx={{ mb: 3 }} value="hello" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
+  })
+
+  test('renders with inner styles', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Select
+          sx={{
+            mb: 3,
+            arrow: {
+              color: 'tomato',
+            },
+            select: {
+              p: 3,
+            },
+          }}
+          value="hello"
+        />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('padding', '16px', {
+      target: 'select',
+    })
+    /* maybe a bug in jest-emotion selecting
+      expect(json).toHaveStyleRule('color', 'tomato', {
+        target: 'svg'
+      })
+    */
+  })
+
+  test('renders with inner variant styles', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Select variant="beep" value="hello" />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('color', 'tomato', {
+      target: 'select',
+    })
   })
 })
 

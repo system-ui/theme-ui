@@ -6,11 +6,13 @@ export const Container = React.forwardRef((props, ref) => (
     ref={ref}
     variant="container"
     {...props}
-    __themeKey="layout"
-    __css={{
-      width: '100%',
-      maxWidth: 'container',
-      mx: 'auto',
+    config={{
+      group: 'layout',
+      sx: {
+        width: '100%',
+        maxWidth: 'container',
+        mx: 'auto',
+      },
     }}
   />
 ))

@@ -5,17 +5,6 @@ exports[`renders 1`] = `
   z-index: 2;
 }
 
-.emotion-0 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25,24 +14,6 @@ exports[`renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: block;
-  width: 100%;
-  padding: 8px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: inherit;
-  line-height: inherit;
-  border: 1px solid;
-  border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 .emotion-3 {
@@ -85,6 +56,13 @@ exports[`renders 1`] = `
   }
 >
   <label
+    __css={
+      Object {
+        "display": "flex",
+        "width": "100%",
+      }
+    }
+    __themeKey="forms"
     className="emotion-0"
     htmlFor="beep"
   >
@@ -94,12 +72,27 @@ exports[`renders 1`] = `
     className="emotion-4"
   >
     <input
+      __css={
+        Object {
+          "appearance": "none",
+          "bg": "transparent",
+          "border": "1px solid",
+          "borderRadius": 4,
+          "color": "inherit",
+          "display": "block",
+          "fontSize": "inherit",
+          "lineHeight": "inherit",
+          "p": 2,
+          "width": "100%",
+        }
+      }
+      __themeKey="forms"
       aria-activedescendant="beep-1"
       aria-autocomplete="none"
       aria-expanded={false}
       aria-haspopup="true"
       aria-owns="beep-popup"
-      className="emotion-1"
+      className="emotion-0"
       id="beep"
       name="beep"
       onBlur={[Function]}

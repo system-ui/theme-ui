@@ -5,6 +5,12 @@ exports[`Alert renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: white;
+  background-color: #07c;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13,13 +19,7 @@ exports[`Alert renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   font-weight: bold;
-  color: white;
-  background-color: primary;
   border-radius: 4px;
 }
 
@@ -129,11 +129,9 @@ exports[`Avatar renders 1`] = `
   margin: 0;
   min-width: 0;
   max-width: 100%;
-  height: auto;
-  border-radius: 9999px;
-  width: 48px;
   height: 48px;
   border-radius: 99999px;
+  width: 48px;
 }
 
 <img
@@ -148,16 +146,16 @@ exports[`Badge renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: white;
+  background-color: #07c;
+  padding-left: 4px;
+  padding-right: 4px;
   display: inline-block;
   vertical-align: baseline;
   font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
-  padding-left: 4px;
-  padding-right: 4px;
   border-radius: 2px;
-  color: white;
-  background-color: primary;
 }
 
 <div
@@ -185,6 +183,12 @@ exports[`Button renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: #fff;
+  background-color: #07c;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -194,16 +198,8 @@ exports[`Button renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: inherit;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
-  background-color: primary;
   border: 0;
   border-radius: 4px;
-  color: background;
-  background-color: primary;
 }
 
 <button
@@ -253,9 +249,9 @@ exports[`Checkbox renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: gray;
   margin-right: 8px;
   border-radius: 4px;
-  color: gray;
 }
 
 input:checked ~ .emotion-1 {
@@ -263,11 +259,11 @@ input:checked ~ .emotion-1 {
 }
 
 input:checked ~ .emotion-1 {
-  color: primary;
+  color: #07c;
 }
 
 input:focus ~ .emotion-1 {
-  color: primary;
+  color: #07c;
   background-color: highlight;
 }
 
@@ -279,9 +275,9 @@ input:focus ~ .emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: gray;
   margin-right: 8px;
   border-radius: 4px;
-  color: gray;
 }
 
 input:checked ~ .emotion-2 {
@@ -289,11 +285,11 @@ input:checked ~ .emotion-2 {
 }
 
 input:checked ~ .emotion-2 {
-  color: primary;
+  color: #07c;
 }
 
 input:focus ~ .emotion-2 {
-  color: primary;
+  color: #07c;
   background-color: highlight;
 }
 
@@ -338,6 +334,8 @@ exports[`Close renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -356,8 +354,6 @@ exports[`Close renders 1`] = `
   padding: 4px;
   width: 32px;
   height: 32px;
-  color: inherit;
-  background-color: transparent;
   border: none;
   border-radius: 4px;
 }
@@ -386,10 +382,10 @@ exports[`Container renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  width: 100%;
-  max-width: container;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  max-width: container;
 }
 
 <div
@@ -403,7 +399,6 @@ exports[`Divider renders 1`] = `
   margin: 0;
   min-width: 0;
   color: gray;
-  margin: 0;
   margin-top: 8px;
   margin-bottom: 8px;
   border: 0;
@@ -420,7 +415,7 @@ exports[`Donut renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  color: primary;
+  color: #07c;
 }
 
 <svg
@@ -507,9 +502,11 @@ exports[`Field renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
+  padding: 8px;
   display: block;
   width: 100%;
-  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -517,8 +514,6 @@ exports[`Field renders 1`] = `
   line-height: inherit;
   border: 1px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 .emotion-2 {
@@ -703,6 +698,8 @@ exports[`IconButton renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -721,8 +718,6 @@ exports[`IconButton renders 1`] = `
   padding: 4px;
   width: 32px;
   height: 32px;
-  color: inherit;
-  background-color: transparent;
   border: none;
   border-radius: 4px;
 }
@@ -738,9 +733,8 @@ exports[`Image renders 1`] = `
   margin: 0;
   min-width: 0;
   max-width: 100%;
-  height: auto;
-  width: 48px;
   height: 48px;
+  width: 48px;
   border-radius: 99999px;
 }
 
@@ -754,9 +748,11 @@ exports[`Input renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
+  padding: 8px;
   display: block;
   width: 100%;
-  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -764,8 +760,6 @@ exports[`Input renders 1`] = `
   line-height: inherit;
   border: 1px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 <input
@@ -811,6 +805,8 @@ exports[`MenuButton renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -829,8 +825,6 @@ exports[`MenuButton renders 1`] = `
   padding: 4px;
   width: 32px;
   height: 32px;
-  color: inherit;
-  background-color: transparent;
   border: none;
   border-radius: 4px;
 }
@@ -840,7 +834,6 @@ exports[`MenuButton renders 1`] = `
   margin: 0;
   min-width: 0;
   display: block;
-  margin: 0;
 }
 
 <button
@@ -868,13 +861,13 @@ exports[`Message renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  background-color: highlight;
   padding: 16px;
   padding-left: 12px;
   border-left-width: 4px;
   border-left-style: solid;
-  border-left-color: primary;
+  border-left-color: #07c;
   border-radius: 4px;
-  background-color: highlight;
 }
 
 <div
@@ -890,18 +883,14 @@ exports[`NavLink renders 1`] = `
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: inherit;
   font-weight: normal;
+  display: inline-block;
 }
 
 .emotion-0:hover,
 .emotion-0:focus,
 .emotion-0.active {
-  color: primary;
+  color: #07c;
 }
 
 <a
@@ -914,17 +903,16 @@ exports[`Progress renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: #07c;
+  background-color: gray;
   display: block;
   width: 100%;
   height: 4px;
-  margin: 0;
   padding: 0;
   overflow: hidden;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: primary;
-  background-color: gray;
   border-radius: 9999px;
   border: none;
 }
@@ -973,9 +961,9 @@ exports[`Radio renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: gray;
   margin-right: 8px;
   border-radius: 9999px;
-  color: gray;
 }
 
 input:checked ~ .emotion-1 {
@@ -983,7 +971,7 @@ input:checked ~ .emotion-1 {
 }
 
 input:checked ~ .emotion-1 {
-  color: primary;
+  color: #07c;
 }
 
 input:focus ~ .emotion-1 {
@@ -998,9 +986,9 @@ input:focus ~ .emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: gray;
   margin-right: 8px;
   border-radius: 9999px;
-  color: gray;
 }
 
 input:checked ~ .emotion-2 {
@@ -1008,7 +996,7 @@ input:checked ~ .emotion-2 {
 }
 
 input:checked ~ .emotion-2 {
-  color: primary;
+  color: #07c;
 }
 
 input:focus ~ .emotion-2 {
@@ -1066,9 +1054,11 @@ exports[`Select renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
+  padding: 8px;
   display: block;
   width: 100%;
-  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1076,8 +1066,6 @@ exports[`Select renders 1`] = `
   line-height: inherit;
   border: 1px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 .emotion-1 {
@@ -1117,9 +1105,11 @@ exports[`Select renders with style props 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
+  padding: 8px;
   display: block;
   width: 100%;
-  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1127,8 +1117,6 @@ exports[`Select renders with style props 1`] = `
   line-height: inherit;
   border: 1px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 .emotion-1 {
@@ -1180,23 +1168,23 @@ exports[`Slider renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: gray;
+  margin-top: 8px;
+  margin-bottom: 8px;
   display: block;
   width: 100%;
   height: 4px;
-  margin-top: 8px;
-  margin-bottom: 8px;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border-radius: 9999px;
-  color: inherit;
-  background-color: gray;
 }
 
 .emotion-0:focus {
   outline: none;
-  color: primary;
+  color: #07c;
 }
 
 .emotion-0::-webkit-slider-thumb {
@@ -1257,7 +1245,7 @@ exports[`Spinner renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  color: primary;
+  color: #07c;
   overflow: visible;
 }
 
@@ -1326,9 +1314,11 @@ exports[`Textarea renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  color: inherit;
+  background-color: transparent;
+  padding: 8px;
   display: block;
   width: 100%;
-  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1336,8 +1326,6 @@ exports[`Textarea renders 1`] = `
   line-height: inherit;
   border: 1px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 <textarea

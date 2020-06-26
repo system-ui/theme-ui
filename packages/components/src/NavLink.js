@@ -1,18 +1,22 @@
 import React from 'react'
-import { Link } from './Link'
+import Box from './Box'
 
 export const NavLink = React.forwardRef((props, ref) => (
-  <Link
+  <Box
     ref={ref}
+    as="a"
     variant="nav"
     {...props}
-    __css={{
-      color: 'inherit',
-      textDecoration: 'none',
-      fontWeight: 'bold',
-      display: 'inline-block',
-      '&:hover, &:focus, &.active': {
-        color: 'primary',
+    config={{
+      group: 'links',
+      sx: {
+        color: 'inherit',
+        textDecoration: 'none',
+        fontWeight: 'bold',
+        display: 'inline-block',
+        '&:hover, &:focus, &.active': {
+          color: 'primary',
+        },
       },
     }}
   />

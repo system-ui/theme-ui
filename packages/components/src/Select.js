@@ -1,45 +1,61 @@
 import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
-import { getMargin, omitMargin } from './util'
 
-const DownArrow = props => (
+const DownArrow = (props) => (
   <SVG {...props}>
     <path d="M7 10l5 5 5-5z" />
   </SVG>
 )
 
-export const Select = React.forwardRef((props, ref) => (
-  <Box
-    {...getMargin(props)}
-    sx={{
-      display: 'flex',
-    }}>
+// TODO BREAKING nested styling (sx + variants)
+export const Select = React.forwardRef(
+  ({ sx = {}, variant = 'select', ...props }, ref) => (
     <Box
-      ref={ref}
-      as="select"
-      variant="select"
-      {...omitMargin(props)}
-      __themeKey="forms"
-      __css={{
-        display: 'block',
-        width: '100%',
-        p: 2,
-        appearance: 'none',
-        fontSize: 'inherit',
-        lineHeight: 'inherit',
-        border: '1px solid',
-        borderRadius: 4,
-        color: 'inherit',
-        bg: 'transparent',
+      variant={variant}
+      config={{
+        group: 'forms',
       }}
-    />
-    <DownArrow
       sx={{
-        ml: -28,
-        alignSelf: 'center',
-        pointerEvents: 'none',
-      }}
-    />
-  </Box>
-))
+        display: 'flex',
+        ...sx,
+      }}>
+      <Box
+        ref={ref}
+        as="select"
+        variant={variant + '.select'}
+        {...props}
+        config={{
+          group: 'forms',
+          sx: {
+            display: 'block',
+            width: '100%',
+            p: 2,
+            appearance: 'none',
+            fontSize: 'inherit',
+            lineHeight: 'inherit',
+            border: '1px solid',
+            borderRadius: 4,
+            color: 'inherit',
+            bg: 'transparent',
+            ...sx.select,
+          },
+        }}
+      />
+      <DownArrow
+        variant={variant + '.arrow'}
+        config={{
+          group: 'forms',
+          sx: {
+            ml: -28,
+            alignSelf: 'center',
+            pointerEvents: 'none',
+          },
+        }}
+        sx={{
+          ...sx.arrow,
+        }}
+      />
+    </Box>
+  )
+)

@@ -7,11 +7,13 @@ export const Heading = React.forwardRef((props, ref) => (
     as="h2"
     variant="heading"
     {...props}
-    __themeKey="text"
-    __css={{
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
+    config={{
+      group: 'text',
+      sx: {
+        fontFamily: 'heading',
+        fontWeight: 'heading',
+        lineHeight: 'heading',
+      },
     }}
   />
 ))

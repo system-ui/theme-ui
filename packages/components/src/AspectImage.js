@@ -1,14 +1,20 @@
 import React from 'react'
+import Box from './Box'
 import { AspectRatio } from './AspectRatio'
-import { Image } from './Image'
 
 export const AspectImage = React.forwardRef(({ ratio, ...props }, ref) => (
   <AspectRatio ratio={ratio}>
-    <Image
+    <Box
       ref={ref}
+      as="img"
       {...props}
-      __css={{
-        objectFit: 'cover',
+      config={{
+        group: 'images',
+        sx: {
+          maxWidth: '100%',
+          height: 'auto',
+          objectFit: 'cover',
+        },
       }}
     />
   </AspectRatio>

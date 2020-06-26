@@ -33,8 +33,10 @@ export const Donut = React.forwardRef(
         aria-valuemin={min}
         aria-valuemax={max}
         {...props}
-        __css={{
-          color: 'primary',
+        config={{
+          sx: {
+            color: 'primary',
+          },
         }}>
         {title && <title>{title}</title>}
         <circle cx={16} cy={16} r={r} opacity={1 / 8} />

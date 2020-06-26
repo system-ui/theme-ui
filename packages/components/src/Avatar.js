@@ -1,15 +1,21 @@
 import React from 'react'
-import { Image } from './Image'
+import Box from './Box'
 
 export const Avatar = React.forwardRef(({ size = 48, ...props }, ref) => (
-  <Image
+  <Box
     ref={ref}
+    as="img"
     width={size}
     height={size}
     variant="avatar"
     {...props}
-    __css={{
-      borderRadius: 9999,
+    config={{
+      group: 'images',
+      sx: {
+        maxWidth: '100%',
+        height: 'auto',
+        borderRadius: 9999,
+      },
     }}
   />
 ))

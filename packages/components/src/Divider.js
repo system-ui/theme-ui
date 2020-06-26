@@ -7,12 +7,14 @@ export const Divider = React.forwardRef((props, ref) => (
     as="hr"
     variant="styles.hr"
     {...props}
-    __css={{
-      color: 'gray',
-      m: 0,
-      my: 2,
-      border: 0,
-      borderBottom: '1px solid',
+    config={{
+      sx: {
+        color: 'gray',
+        m: 0,
+        my: 2,
+        border: 0,
+        borderBottom: '1px solid',
+      },
     }}
   />
 ))

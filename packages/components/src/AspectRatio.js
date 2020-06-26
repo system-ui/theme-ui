@@ -18,12 +18,14 @@ export const AspectRatio = React.forwardRef(
       />
       <Box
         {...props}
-        __css={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
+        config={{
+          sx: {
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+          },
         }}>
         {children}
       </Box>
