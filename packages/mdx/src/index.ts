@@ -1,12 +1,16 @@
 import { jsx, IntrinsicSxElements } from '@theme-ui/core'
 import { css, get, Theme } from '@theme-ui/css'
 import { ComponentType, FC, ReactNode } from 'react'
-import styled, { Interpolation } from '@emotion/styled'
+import styled, { CreateStyled } from '@emotion/styled'
 import {
   MDXProvider as _MDXProvider,
-  useMDXComponents
+  useMDXComponents,
+  MDXProviderComponents as BaseProviderComponents,
 } from '@mdx-js/react'
 
+interface MDXProviderComponents extends BaseProviderComponents {
+  [key: string]: Parameters<CreateStyled>[0] | ComponentType<any> | undefined
+}
 
 export type MdxAliases = {
   [key in keyof IntrinsicSxElements]: keyof JSX.IntrinsicElements
@@ -14,16 +18,12 @@ export type MdxAliases = {
 
 export type MdxAliasesKeys = 'inlineCode' | 'thematicBreak' | 'root'
 
-export type MdxProviderComponents = {
-  [key in keyof IntrinsicSxElements]: ComponentType
-}
-
 export type ThemedProps = {
   theme: Theme
 }
 
 export interface MdxProviderProps {
-  components?: MdxProviderComponents
+  components?: MDXProviderComponents
   children: ReactNode
 }
 
@@ -70,36 +70,38 @@ const aliases: Pick<MdxAliases, MdxAliasesKeys> = {
   root: 'div',
 }
 
-const alias = (n: keyof IntrinsicSxElements): keyof JSX.IntrinsicElements => aliases[n] || n
+export type StyledComponentName =
+  | keyof IntrinsicSxElements
+  | keyof JSX.IntrinsicElements
 
-export const themed = (key: keyof IntrinsicSxElements) => (props: ThemedProps) =>
-  css(get(props.theme, `styles.${key}`))(props.theme) as Interpolation<ThemedProps>
+const alias = (n: StyledComponentName): keyof JSX.IntrinsicElements =>
+  aliases[n] || n
+
+export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
+  css(get(props.theme, `styles.${key}`))(props.theme)
 
 export const Styled = styled('div')(themed('div'))
 
 export const components = {}
 
-tags.forEach(tag => {
+tags.forEach((tag) => {
   components[tag] = styled(alias(tag))(themed(tag))
   Styled[tag] = components[tag]
 })
 
-const createComponents = (comps: MdxProviderComponents) => {
+const createComponents = (comps: MDXProviderComponents) => {
   const next = { ...components }
 
   const componentKeys = Object.keys(comps) as Array<keyof IntrinsicSxElements>
 
-  componentKeys.forEach(key => {
-    next[key] = styled(comps[key])(themed(key))
+  componentKeys.forEach((key) => {
+    next[key] = styled<any>(comps[key])(themed(key))
   })
   return next
 }
 
-export const MDXProvider: FC<MdxProviderProps> = ({
-  components,
-  children,
-}) => {
-  const outer = useMDXComponents()
+export const MDXProvider: FC<MdxProviderProps> = ({ components, children }) => {
+  const outer = useMDXComponents() as MDXProviderComponents
 
   return jsx(_MDXProvider, {
     components: createComponents({ ...outer, ...components }),
