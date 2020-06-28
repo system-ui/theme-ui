@@ -9,17 +9,15 @@ import {
   ElementType,
   ComponentProps,
 } from 'react'
-import styled, { CreateStyled, StyledComponent } from '@emotion/styled'
-import {
-  MDXProvider as _MDXProvider,
-  useMDXComponents,
-  MDXProviderComponents as BaseProviderComponents,
-} from '@mdx-js/react'
+import styled, { StyledComponent } from '@emotion/styled'
+import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
 
-interface MDXProviderComponents extends BaseProviderComponents {
-  [key: string]: Parameters<CreateStyled>[0] | ComponentType<any> | undefined
+type MDXProviderComponentsKnownKeys = {
+  [key in keyof IntrinsicSxElements]?: React.ComponentType<any> | string
 }
-
+export interface MDXProviderComponents extends MDXProviderComponentsKnownKeys {
+  [key: string]: React.ComponentType<any> | string | undefined
+}
 export type MdxAliases = {
   [key in keyof IntrinsicSxElements]: keyof JSX.IntrinsicElements
 }
@@ -87,7 +85,6 @@ export type StyledComponentName =
 
 const alias = (n: StyledComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
-
 
 export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
   css(get(props.theme, `styles.${key}`))(props.theme)
