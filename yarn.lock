@@ -3089,10 +3089,10 @@
   dependencies:
     "@types/color-convert" "*"
 
-"@types/compass-vertical-rhythm@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@types/compass-vertical-rhythm/-/compass-vertical-rhythm-1.4.0.tgz#57ee5cb6669e7b451e4707930a1a76915138a407"
-  integrity sha512-NuD0xvS1jEAz/i4R4Y9kRV08dB7AwYo1cfKRKWYroyskiBYqWtQ2Rl0Ry7P+HJp60k7gYJG69UPp7ojNsZpi+A==
+"@types/compass-vertical-rhythm@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@types/compass-vertical-rhythm/-/compass-vertical-rhythm-1.4.1.tgz#8061946343991b9b8b6f27fb061eadaae85881f5"
+  integrity sha512-IKpvdAX6SHWnywW0OQ5QKN3oYq+nfUe8C0x2tsSjdDrMGJY9vThsfvLHCq0LvnwcvA1xynitiDqDpnkXZezz1A==
 
 "@types/configstore@^2.1.1":
   version "2.1.1"
@@ -3260,6 +3260,11 @@
   integrity sha512-U5icWpv7YnZYGsN4/cmh3WD2onMY0aJIiTE6+51TwJCttdHvtCYmkBNOobHlXwrJRL0nkH9jH4kD+1FAdMN4Tg==
   dependencies:
     "@types/node" "*"
+
+"@types/modularscale@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/modularscale/-/modularscale-2.0.0.tgz#3514f4cf718489a495b6c3a884d70ff581b72b8c"
+  integrity sha512-YxUTFc4P4+uM3QTuWmiqPSR0Gl3hGDBvl+0o/zTJrQTw2OafuIzT4z+aS3myv3J+GdJD6SbCZHUfakSvCyxr2Q==
 
 "@types/node@*", "@types/node@>= 8":
   version "14.0.9"

@@ -1,16 +1,21 @@
 // custom implementation of typography.js for use in theme-ui
-import verticalRhythm from 'compass-vertical-rhythm'
+import verticalRhythm, {
+  VerticalRhythm,
+  VerticalRhythmStyles,
+} from 'compass-vertical-rhythm'
+import { Theme } from '@theme-ui/css'
+// import { VerticalRhythm, VerticalRhythmStyles } from 'compass-vertical-rhythm';
 import ms from 'modularscale'
 import styles from './styles'
 
 import { TypographyOptions } from 'typography'
 import { Merge } from 'type-fest'
 
-// Temporary hack waiting for DT PR
-// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44513
-// TODO: Replace hack with official definition
-type VerticalRhythm = ReturnType<typeof verticalRhythm>
-type VerticalRhythmOptions = Parameters<typeof verticalRhythm>[0]
+declare module '@theme-ui/css' {
+  // export interface Theme {
+  //   typography: ThemeTypographyRhythm
+  // }
+}
 
 const unwantedTypographyOptions = [
   'headerColor',
@@ -27,12 +32,10 @@ interface ChangedTypographyOptions {
   baseFontSize: number
 }
 
-export interface CustomTypographyOptions extends Merge<
-  Required<BaseTypographyOptions>,
-  ChangedTypographyOptions
-> { }
+export interface CustomTypographyOptions
+  extends Merge<Required<BaseTypographyOptions>, ChangedTypographyOptions> {}
 
-export interface CustomVerticalRhythm extends VerticalRhythm {
+export interface ThemeTypographyRhythm extends VerticalRhythm {
   options: CustomTypographyOptions
 }
 
@@ -70,34 +73,11 @@ const defaults: CustomTypographyOptions = {
   blockMarginBottom: 1,
 }
 
-// TODO: find better theme definition
-interface Theme {
-  space: number[]
-  fonts: {
-    body: string
-    heading: string
-  }
-  fontSizes: number[]
-  fontWeights: {
-    body: string | number
-    bold: string | number
-    heading: string | number
-  }
-  lineHeights: {
-    body: number
-    heading: number
-  }
-  styles: typeof styles
-  typography: CustomVerticalRhythm
-}
-
 export const toUnitless = parseFloat
 
-export const getScale = (
-  opts: CustomTypographyOptions
-) => (value: number): number => (
-  ms(value, opts.scaleRatio) * opts.baseFontSize
-)
+export const getScale = (opts: CustomTypographyOptions) => (
+  value: number
+): number => ms(value, opts.scaleRatio) * opts.baseFontSize
 
 export const getSpace = (
   rhythm: VerticalRhythm,
@@ -107,9 +87,11 @@ export const getSpace = (
   // (bad `rhythm()` function number return type)
   // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44513
   // TODO: Remove hack
-  const n = toUnitless(rhythm.rhythm(opts.blockMarginBottom) as unknown as string)
+  const n = toUnitless(
+    (rhythm.rhythm(opts.blockMarginBottom) as unknown) as string
+  )
   rhythm.rhythm(opts.blockMarginBottom)
-  return [0, 1 / 4, 1 / 2, 1, 2, 4, 8].map(v => v * n) as Theme['space']
+  return [0, 1 / 4, 1 / 2, 1, 2, 4, 8].map((v) => v * n) as Theme['space']
 }
 
 // genericFontFamilies, wrapFontFamily adapted from typography.js
@@ -127,17 +109,11 @@ const genericFontFamilies = [
   'system-ui',
 ]
 
-const wrapFontFamily = (
-  fontFamily: string
-): string => (
+const wrapFontFamily = (fontFamily: string): string =>
   genericFontFamilies.includes(fontFamily) ? fontFamily : `'${fontFamily}'`
-)
 
-const stackFonts = (
-  fonts: string[]
-): string => (
+const stackFonts = (fonts: string[]): string =>
   fonts.map(wrapFontFamily).join(', ')
-)
 
 export const getFonts = (
   rhythm: VerticalRhythm,
@@ -194,10 +170,10 @@ const pruneOptionsFromUnwanted = (
 
   // Fast omit
   return Object.fromEntries(
-    Object.entries(opts)
-    .filter(([key]) => !unwantedTypographyOptions.includes(
-      key as UnwantedTypographyOptions
-    ))
+    Object.entries(opts).filter(
+      ([key]) =>
+        !unwantedTypographyOptions.includes(key as UnwantedTypographyOptions)
+    )
   ) as BaseTypographyOptions
 }
 
@@ -213,13 +189,11 @@ const toUnitlessOptions = (
 
   return {
     ...opts,
-    baseFontSize: toUnitless(opts.baseFontSize)
+    baseFontSize: toUnitless(opts.baseFontSize),
   }
 }
 
-export const toTheme = (
-  _opts?: TypographyOptions
-): Theme => {
+export const toTheme = (_opts?: TypographyOptions): Theme => {
   const opts: CustomTypographyOptions = {
     ...defaults,
 
@@ -227,12 +201,12 @@ export const toTheme = (
     ...toUnitlessOptions(
       // enforce unitless values
       pruneOptionsFromUnwanted(_opts)
-    )
+    ),
   }
 
   const rhythmOpts: VerticalRhythmOptions = {
     ...opts,
-    rhythmUnit: 'px'
+    rhythmUnit: 'px',
   }
 
   const rhythm: VerticalRhythm = verticalRhythm(rhythmOpts)
@@ -246,8 +220,8 @@ export const toTheme = (
     styles,
     typography: {
       ...rhythm,
-      options: opts
-    }
+      options: opts,
+    },
   }
 
   return theme
