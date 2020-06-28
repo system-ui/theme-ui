@@ -489,9 +489,11 @@ export interface ThemeUICSSObject
  */
 export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
-type ObjectOrArray<T> =
-  | T[]
-  | { [K: string]: T | ObjectOrArray<T>; [I: number]: T }
+/**
+ * An array or object (possibly nested) of related CSS properties
+ * @see https://theme-ui.com/theme-spec#theme-scales
+ */
+export type Scale<T> = T[] | { [K: string]: T | Scale<T>; [I: number]: T }
 
 export type TLengthStyledSystem = string | 0 | number
 
@@ -531,7 +533,7 @@ export interface ColorMode {
    */
   accent?: CSS.ColorProperty
 
-  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty> | undefined
+  [k: string]: CSS.ColorProperty | Scale<CSS.ColorProperty> | undefined
 }
 
 export type ColorModesScale = ColorMode & {
@@ -580,22 +582,22 @@ export interface ThemeStyles {
 export interface Theme {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
-  space?: ObjectOrArray<CSS.MarginProperty<number | string>>
-  fontSizes?: ObjectOrArray<CSS.FontSizeProperty<number>>
-  fonts?: ObjectOrArray<CSS.FontFamilyProperty>
-  fontWeights?: ObjectOrArray<CSS.FontWeightProperty>
-  lineHeights?: ObjectOrArray<CSS.LineHeightProperty<TLengthStyledSystem>>
-  letterSpacings?: ObjectOrArray<CSS.LetterSpacingProperty<TLengthStyledSystem>>
-  sizes?: ObjectOrArray<CSS.HeightProperty<{}> | CSS.WidthProperty<{}>>
-  borders?: ObjectOrArray<CSS.BorderProperty<{}>>
-  borderStyles?: ObjectOrArray<CSS.BorderProperty<{}>>
-  borderWidths?: ObjectOrArray<CSS.BorderWidthProperty<TLengthStyledSystem>>
-  radii?: ObjectOrArray<CSS.BorderRadiusProperty<TLengthStyledSystem>>
-  shadows?: ObjectOrArray<CSS.BoxShadowProperty>
-  zIndices?: ObjectOrArray<CSS.ZIndexProperty>
-  colorStyles?: ObjectOrArray<ThemeUICSSProperties>
-  textStyles?: ObjectOrArray<ThemeUICSSProperties>
-  opacities?: ObjectOrArray<CSS.OpacityProperty>
+  space?: Scale<CSS.MarginProperty<number | string>>
+  fontSizes?: Scale<CSS.FontSizeProperty<number>>
+  fonts?: Scale<CSS.FontFamilyProperty>
+  fontWeights?: Scale<CSS.FontWeightProperty>
+  lineHeights?: Scale<CSS.LineHeightProperty<TLengthStyledSystem>>
+  letterSpacings?: Scale<CSS.LetterSpacingProperty<TLengthStyledSystem>>
+  sizes?: Scale<CSS.HeightProperty<{}> | CSS.WidthProperty<{}>>
+  borders?: Scale<CSS.BorderProperty<{}>>
+  borderStyles?: Scale<CSS.BorderProperty<{}>>
+  borderWidths?: Scale<CSS.BorderWidthProperty<TLengthStyledSystem>>
+  radii?: Scale<CSS.BorderRadiusProperty<TLengthStyledSystem>>
+  shadows?: Scale<CSS.BoxShadowProperty>
+  zIndices?: Scale<CSS.ZIndexProperty>
+  colorStyles?: Scale<ThemeUICSSProperties>
+  textStyles?: Scale<ThemeUICSSProperties>
+  opacities?: Scale<CSS.OpacityProperty>
 
   /**
    * Enable/disable custom CSS properties/variables if lower browser
