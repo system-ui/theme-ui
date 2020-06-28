@@ -1,7 +1,15 @@
 import { jsx, IntrinsicSxElements } from '@theme-ui/core'
 import { css, get, Theme } from '@theme-ui/css'
-import { ComponentType, FC, ReactNode } from 'react'
-import styled, { CreateStyled } from '@emotion/styled'
+import {
+  ComponentType,
+  FC,
+  ReactNode,
+  DetailedHTMLProps,
+  HTMLAttributes,
+  ElementType,
+  ComponentProps,
+} from 'react'
+import styled, { CreateStyled, StyledComponent } from '@emotion/styled'
 import {
   MDXProvider as _MDXProvider,
   useMDXComponents,
@@ -64,11 +72,13 @@ const tags: Array<keyof IntrinsicSxElements> = [
   'root',
 ]
 
-const aliases: Pick<MdxAliases, MdxAliasesKeys> = {
+const aliases = {
   inlineCode: 'code',
   thematicBreak: 'hr',
   root: 'div',
-}
+} as const
+
+type Aliases = typeof aliases
 
 export type StyledComponentName =
   | keyof IntrinsicSxElements
@@ -80,13 +90,44 @@ const alias = (n: StyledComponentName): keyof JSX.IntrinsicElements =>
 export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
   css(get(props.theme, `styles.${key}`))(props.theme)
 
-export const Styled = styled('div')(themed('div'))
+// opt out of typechecking whenever `as` prop is used
+export type WithPoorAsProp<
+  Props,
+  As extends ElementType | undefined = undefined
+> = {
+  as?: As
+} & (As extends undefined ? Props : { [key: string]: unknown })
 
-export const components = {}
+export interface ThemedComponent<Name extends ElementType> {
+  <As extends ElementType | undefined>(
+    props: WithPoorAsProp<ComponentProps<Name>, As>
+  ): JSX.Element
+}
+
+export type StyledComponentsDict = {
+  [K in keyof IntrinsicSxElements]: K extends keyof Aliases
+    ? ThemedComponent<Aliases[K]>
+    : K extends keyof JSX.IntrinsicElements
+    ? ThemedComponent<K>
+    : never
+}
+
+type StyledDiv = StyledComponent<
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  ThemedProps,
+  Theme
+>
+
+export const Styled: StyledDiv & StyledComponentsDict = styled('div')(
+  themed('div')
+) as StyledDiv & StyledComponentsDict
+
+export const components = {} as StyledComponentsDict
 
 tags.forEach((tag) => {
-  components[tag] = styled(alias(tag))(themed(tag))
-  Styled[tag] = components[tag]
+  // fixme?
+  components[tag] = styled(alias(tag))(themed(tag)) as any
+  Styled[tag] = components[tag] as any
 })
 
 const createComponents = (comps: MDXProviderComponents) => {
@@ -95,7 +136,9 @@ const createComponents = (comps: MDXProviderComponents) => {
   const componentKeys = Object.keys(comps) as Array<keyof IntrinsicSxElements>
 
   componentKeys.forEach((key) => {
-    next[key] = styled<any>(comps[key])(themed(key))
+    ;(next[key] as StyledComponentsDict[typeof key]) = styled<any>(comps[key])(
+      themed(key)
+    ) as StyledComponentsDict[typeof key]
   })
   return next
 }
