@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { useThemeUI } from '@theme-ui/core'
 import { Theme, defaultBreakpoints } from '@theme-ui/css'
 
