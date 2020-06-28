@@ -1,8 +1,3 @@
-/**
- * Copied and adapted from @types/styled-system__css
- * https://github.com/DefinitelyTyped/DefinitelyTyped/blob/028c46f833ffbbb0328a28ae6177923998fcf0cc/types/styled-system__css/index.d.ts
- */
-
 import * as CSS from 'csstype'
 
 type StandardCSSProperties = CSS.Properties<number | string>
@@ -14,7 +9,7 @@ type StandardCSSProperties = CSS.Properties<number | string>
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | Array<T | null>
+export type ResponsiveStyleValue<T> = T | Array<T | null | undefined>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
@@ -46,13 +41,6 @@ type CSSPseudosForCSSObject = { [K in CSS.Pseudos]?: CSSObject }
 type CSSInterpolation = undefined | number | string | CSSObject
 interface CSSOthersObjectForCSSObject {
   [propertiesName: string]: CSSInterpolation
-}
-
-/**
- * Map all nested selectors
- */
-export interface CSSSelectorObject {
-  [cssSelector: string]: ThemeUIStyleObject
 }
 
 interface AliasesCSSProperties {
@@ -436,11 +424,15 @@ export interface ThemeUIExtendedCSSProperties
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
+export type StylePropertyValue<T> =
+  | ResponsiveStyleValue<Exclude<T, undefined>>
+  | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
+  | ThemeUIStyleObject
+
 export type ThemeUICSSProperties = {
-  [K in keyof ThemeUIExtendedCSSProperties]:
-    | ResponsiveStyleValue<ThemeUIExtendedCSSProperties[K]>
-    | ((theme: Theme) => ResponsiveStyleValue<ThemeUIExtendedCSSProperties[K]>)
-    | ThemeUIStyleObject
+  [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<
+    ThemeUIExtendedCSSProperties[K]
+  >
 }
 
 export interface VariantProperty {
@@ -465,26 +457,41 @@ export interface VariantProperty {
    *
    * @see https://styled-system.com/variants
    */
-  variant: string
+  variant?: string
 }
 
-export interface UseThemeFunction {
-  (theme: any): Exclude<ThemeUIStyleObject, UseThemeFunction>
+export interface ThemeDerivedStyles {
+  (theme: Theme): ThemeUICSSObject
 }
+
+export type Label = {
+  label?: string
+}
+
+export interface CSSOthersObject {
+  // we want to match CSS selectors
+  // but index signature needs to be a supertype
+  // so as a side-effect we allow unknown CSS properties (Emotion does too)
+  [k: string]: StylePropertyValue<string | number> | undefined | null
+}
+
+export interface ThemeUICSSObject
+  extends ThemeUICSSProperties,
+    CSSPseudoSelectorProps,
+    CSSOthersObject,
+    VariantProperty,
+    Label {}
 
 /**
  * The `ThemeUIStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
  * such that properties that are part of the `Theme` will be transformed to
  * their corresponding values. Other valid CSS properties are also allowed.
  */
-export type ThemeUIStyleObject =
-  | ThemeUICSSProperties
-  | CSSPseudoSelectorProps
-  | CSSSelectorObject
-  | VariantProperty
-  | UseThemeFunction
+export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
-type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
+type ObjectOrArray<T> =
+  | T[]
+  | { [K: string]: T | ObjectOrArray<T>; [I: number]: T }
 
 export type TLengthStyledSystem = string | 0 | number
 
@@ -524,10 +531,10 @@ export interface ColorMode {
    */
   accent?: CSS.ColorProperty
 
-  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
+  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty> | undefined
 }
 
-interface ColorModesScale extends ColorMode {
+export type ColorModesScale = ColorMode & {
   /**
    * Nested color modes can provide overrides when used in conjunction with
    * `Theme.initialColorModeName and `useColorMode()`
@@ -567,7 +574,7 @@ export interface ThemeStyles {
   inlineCode?: ThemeUIStyleObject
   thematicBreak?: ThemeUIStyleObject
   root?: ThemeUIStyleObject
-  [key: string]: ThemeUIStyleObject
+  [key: string]: ThemeUIStyleObject | undefined
 }
 
 export interface Theme {
