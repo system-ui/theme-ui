@@ -1,3 +1,5 @@
+import { ThemeStyles } from '@theme-ui/css'
+
 // theme.styles object for use with typography.js-generated theme object
 // similar to typography.js style output, with these differences
 // - only includes styles for markdown elements
@@ -10,7 +12,7 @@ const heading = {
   fontWeight: 'heading',
 }
 
-const baseStyles = {
+const baseStyles: ThemeStyles = {
   root: {
     fontFamily: 'body',
     fontSize: 2,
@@ -22,27 +24,27 @@ const baseStyles = {
   },
   h1: {
     fontSize: 5,
-    ...heading
+    ...heading,
   },
   h2: {
     fontSize: 4,
-    ...heading
+    ...heading,
   },
   h3: {
     fontSize: 3,
-    ...heading
+    ...heading,
   },
   h4: {
     fontSize: 2,
-    ...heading
+    ...heading,
   },
   h5: {
     fontSize: 1,
-    ...heading
+    ...heading,
   },
   h6: {
     fontSize: 0,
-    ...heading
+    ...heading,
   },
   ul: {
     listStylePosition: 'outside',
@@ -136,19 +138,20 @@ const blockElements = [
   'hr',
 ] as const
 
-type BlockElements = typeof blockElements[number]
-
-export const styles = {
+export const styles: ThemeStyles = {
   ...baseStyles,
-  ...(blockElements.reduce((style, tag) => ({
-    ...style,
-    [tag]: {
-      padding: 0,
-      margin: 0,
-      marginBottom: 3,
-      ...baseStyles[tag]
-    }
-  }), {}))
+  ...blockElements.reduce(
+    (style, tag) => ({
+      ...style,
+      [tag]: {
+        padding: 0,
+        margin: 0,
+        marginBottom: 3,
+        ...baseStyles[tag],
+      },
+    }),
+    {}
+  ),
 }
 
 export default styles

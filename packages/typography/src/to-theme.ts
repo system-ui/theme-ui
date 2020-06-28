@@ -1,20 +1,21 @@
 // custom implementation of typography.js for use in theme-ui
-import verticalRhythm, {
-  VerticalRhythm,
-  VerticalRhythmStyles,
-} from 'compass-vertical-rhythm'
-import { Theme } from '@theme-ui/css'
-// import { VerticalRhythm, VerticalRhythmStyles } from 'compass-vertical-rhythm';
+import verticalRhythm from 'compass-vertical-rhythm'
+import { Theme, Scale, ThemeStyles } from '@theme-ui/css'
 import ms from 'modularscale'
-import styles from './styles'
-
+import {
+  FontFamilyProperty,
+  FontWeightProperty,
+  LineHeightProperty,
+} from 'csstype'
 import { TypographyOptions } from 'typography'
 import { Merge } from 'type-fest'
 
-declare module '@theme-ui/css' {
-  // export interface Theme {
-  //   typography: ThemeTypographyRhythm
-  // }
+import styles from './styles'
+
+declare module '@theme-ui/css/dist/types' {
+  interface Theme {
+    typography?: ThemeTypographyRhythm
+  }
 }
 
 const unwantedTypographyOptions = [
@@ -35,7 +36,7 @@ interface ChangedTypographyOptions {
 export interface CustomTypographyOptions
   extends Merge<Required<BaseTypographyOptions>, ChangedTypographyOptions> {}
 
-export interface ThemeTypographyRhythm extends VerticalRhythm {
+export interface ThemeTypographyRhythm extends verticalRhythm.VerticalRhythm {
   options: CustomTypographyOptions
 }
 
@@ -79,19 +80,13 @@ export const getScale = (opts: CustomTypographyOptions) => (
   value: number
 ): number => ms(value, opts.scaleRatio) * opts.baseFontSize
 
+export type ThemeSpace = number[]
 export const getSpace = (
-  rhythm: VerticalRhythm,
+  rhythm: verticalRhythm.VerticalRhythm,
   opts: CustomTypographyOptions
-): Theme['space'] => {
-  // `as unknown as string` cast : temporary hack waiting for DT PR
-  // (bad `rhythm()` function number return type)
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44513
-  // TODO: Remove hack
-  const n = toUnitless(
-    (rhythm.rhythm(opts.blockMarginBottom) as unknown) as string
-  )
-  rhythm.rhythm(opts.blockMarginBottom)
-  return [0, 1 / 4, 1 / 2, 1, 2, 4, 8].map((v) => v * n) as Theme['space']
+): ThemeSpace => {
+  const n = toUnitless(rhythm.rhythm(opts.blockMarginBottom) as any)
+  return [0, 1 / 4, 1 / 2, 1, 2, 4, 8].map((v) => v * n)
 }
 
 // genericFontFamilies, wrapFontFamily adapted from typography.js
@@ -115,10 +110,15 @@ const wrapFontFamily = (fontFamily: string): string =>
 const stackFonts = (fonts: string[]): string =>
   fonts.map(wrapFontFamily).join(', ')
 
+export type ThemeFonts = Scale<FontFamilyProperty> & {
+  body: FontFamilyProperty
+  heading: FontFamilyProperty
+}
+
 export const getFonts = (
-  rhythm: VerticalRhythm,
+  rhythm: verticalRhythm.VerticalRhythm,
   opts: CustomTypographyOptions
-): Theme['fonts'] => {
+): ThemeFonts => {
   const body = stackFonts(opts.bodyFontFamily)
   const heading = stackFonts(opts.headerFontFamily)
   return {
@@ -127,18 +127,23 @@ export const getFonts = (
   }
 }
 
+export type ThemeFontSizes = number[]
 export const getFontSizes = (
-  rhythm: VerticalRhythm,
+  rhythm: verticalRhythm.VerticalRhythm,
   opts: CustomTypographyOptions
-): Theme['fontSizes'] => {
+): ThemeFontSizes => {
   const scale = getScale(opts)
   return [-1.5 / 5, -1 / 5, 0, 2 / 5, 3 / 5, 1].map(scale)
 }
 
+export type ThemeLineHeights = Scale<LineHeightProperty<string | number>> & {
+  body: LineHeightProperty<string | number>
+  heading: LineHeightProperty<string | number>
+}
 export const getLineHeights = (
-  rhythm: VerticalRhythm,
+  rhythm: verticalRhythm.VerticalRhythm,
   opts: CustomTypographyOptions
-): Theme['lineHeights'] => {
+): ThemeLineHeights => {
   const body = opts.baseLineHeight
   const heading = opts.headerLineHeight
   return {
@@ -147,17 +152,19 @@ export const getLineHeights = (
   }
 }
 
+export type ThemeFontWeights = Scale<FontWeightProperty> & {
+  body: FontWeightProperty
+  bold: FontWeightProperty
+  heading: FontWeightProperty
+}
 export const getFontWeights = (
-  rhythm: VerticalRhythm,
+  rhythm: verticalRhythm.VerticalRhythm,
   opts: CustomTypographyOptions
-): Theme['fontWeights'] => {
-  const body = opts.bodyWeight
-  const bold = opts.boldWeight
-  const heading = opts.headerWeight
+): ThemeFontWeights => {
   return {
-    body,
-    bold,
-    heading,
+    body: opts.bodyWeight as FontWeightProperty,
+    bold: opts.boldWeight as FontWeightProperty,
+    heading: opts.headerWeight as FontWeightProperty,
   }
 }
 
@@ -193,25 +200,39 @@ const toUnitlessOptions = (
   }
 }
 
-export const toTheme = (_opts?: TypographyOptions): Theme => {
+// We can say more about the theme received from `toTheme` than about
+// unknown generic theme.
+interface ThemeConvertedFromTypographyConfig extends Theme {
+  space: ThemeSpace
+  fonts: ThemeFonts
+  fontSizes: ThemeFontSizes
+  fontWeights: ThemeFontWeights
+  lineHeights: ThemeLineHeights
+  styles: ThemeStyles
+  typography: ThemeTypographyRhythm
+}
+export const toTheme = (
+  options?: TypographyOptions
+): ThemeConvertedFromTypographyConfig => {
   const opts: CustomTypographyOptions = {
     ...defaults,
 
     // remove unwanted options
     ...toUnitlessOptions(
       // enforce unitless values
-      pruneOptionsFromUnwanted(_opts)
+      pruneOptionsFromUnwanted(options)
     ),
   }
 
-  const rhythmOpts: VerticalRhythmOptions = {
+  const rhythmOpts: verticalRhythm.Options = {
     ...opts,
     rhythmUnit: 'px',
+    baseFontSize: String(opts.baseFontSize),
   }
 
-  const rhythm: VerticalRhythm = verticalRhythm(rhythmOpts)
+  const rhythm: verticalRhythm.VerticalRhythm = verticalRhythm(rhythmOpts)
 
-  const theme: Theme = {
+  return {
     space: getSpace(rhythm, opts),
     fonts: getFonts(rhythm, opts),
     fontSizes: getFontSizes(rhythm, opts),
@@ -223,8 +244,6 @@ export const toTheme = (_opts?: TypographyOptions): Theme => {
       options: opts,
     },
   }
-
-  return theme
 }
 
 export default toTheme
