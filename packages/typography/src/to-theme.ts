@@ -175,13 +175,11 @@ const pruneOptionsFromUnwanted = (
     return opts
   }
 
-  // Fast omit
-  return Object.fromEntries(
-    Object.entries(opts).filter(
-      ([key]) =>
-        !unwantedTypographyOptions.includes(key as UnwantedTypographyOptions)
-    )
-  ) as BaseTypographyOptions
+  const res = { ...opts }
+  for (const k of unwantedTypographyOptions) {
+    delete res[k]
+  }
+  return res as BaseTypographyOptions
 }
 
 const toUnitlessOptions = (
