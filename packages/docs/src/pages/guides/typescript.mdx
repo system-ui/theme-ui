@@ -12,8 +12,15 @@ the usage in advanced cases differs.
 
 ## Exact theme type
 
-If you need to know exact type of your particular theme on type level,
-you can use a identity "constructor" function to narrow the type.
+The [`Theme` type](/theme-spec) represents all possible themes.
+
+It might be what you need when you're writing a library of reusable components
+or an app where the theme object is provided by the user and kept in the database.
+However, it's not the most convenient way to think about the theme,
+when building a blog or a landing page.
+
+To know the exact type of your particular theme on type level,
+you can use an identity "constructor" function to narrow the type.
 
 ```tsx
 const makeTheme = <T extends Theme>(t: T) => t
@@ -51,13 +58,8 @@ _[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-typescript-tips-yh8u
 
 ## Accessing optional properties
 
-The `Theme` type represents all possible themes.
-
-It might be what you need when you're writing a library of reusable components
-or an app where the theme is provided by the user and kept in the database.
-
 Because all properties of `Theme` are optional,
-accessing them requires usage of `get` function.
+accessing them requires usage of [`get` function](/api#get).
 
 ```tsx
 import { Theme } from 'theme-ui'
