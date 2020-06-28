@@ -79,13 +79,15 @@ const aliases = {
 } as const
 
 type Aliases = typeof aliases
+const isAlias = (x: string): x is keyof Aliases => x in aliases
 
 export type StyledComponentName =
   | keyof IntrinsicSxElements
   | keyof JSX.IntrinsicElements
 
 const alias = (n: StyledComponentName): keyof JSX.IntrinsicElements =>
-  aliases[n] || n
+  isAlias(n) ? aliases[n] : n
+
 
 export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
   css(get(props.theme, `styles.${key}`))(props.theme)
