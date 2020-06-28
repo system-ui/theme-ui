@@ -22,9 +22,10 @@ export {
   CSSProperties,
   CSSPseudoSelectorProps,
   ResponsiveStyleValue,
-  SystemCssProperties,
-  SystemStyleObject,
+  ThemeUICSSProperties,
+  ThemeUIStyleObject,
   Theme,
+  ThemeStyles,
   TLengthStyledSystem,
   UseThemeFunction,
 } from '@theme-ui/css'
