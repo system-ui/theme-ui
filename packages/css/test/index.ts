@@ -197,7 +197,7 @@ test('works with the css prop', () => {
 
 test('works with functional arguments', () => {
   const result = css((t) => ({
-    color: t.colors.primary,
+    color: t.colors?.primary,
   }))(theme)
   expect(result).toEqual({
     color: 'tomato',
@@ -206,7 +206,7 @@ test('works with functional arguments', () => {
 
 test('supports functional values', () => {
   const result = css({
-    color: (t) => t.colors.primary,
+    color: (t) => t.colors?.primary,
   })(theme)
   expect(result).toEqual({
     color: 'tomato',
@@ -344,7 +344,7 @@ test('ignores array values longer than breakpoints', () => {
 
 test('functional values can return responsive arrays', () => {
   const result = css({
-    color: (t) => [t.colors.primary, t.colors.secondary],
+    color: (t) => [t.colors?.primary, t.colors?.secondary],
   })(theme)
   expect(result).toEqual({
     '@media screen and (min-width: 40em)': {

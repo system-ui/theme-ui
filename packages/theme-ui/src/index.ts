@@ -18,6 +18,7 @@ export {
   css,
   get,
   ColorMode,
+  ColorModesScale,
   CSSObject,
   CSSProperties,
   CSSPseudoSelectorProps,
@@ -27,7 +28,7 @@ export {
   Theme,
   ThemeStyles,
   TLengthStyledSystem,
-  UseThemeFunction,
+  ThemeDerivedStyles,
 } from '@theme-ui/css'
 
 // TODO: work this into root provider/global styles?
