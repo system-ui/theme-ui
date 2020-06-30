@@ -38,7 +38,6 @@ export const Select = React.forwardRef(
             borderRadius: 4,
             color: 'inherit',
             bg: 'transparent',
-            ...sx.select,
           },
         }}
       />
@@ -51,9 +50,6 @@ export const Select = React.forwardRef(
             alignSelf: 'center',
             pointerEvents: 'none',
           },
-        }}
-        sx={{
-          ...sx.arrow,
         }}
       />
     </Box>
