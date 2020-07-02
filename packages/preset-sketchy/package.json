@@ -1,0 +1,20 @@
+{
+  "name": "@theme-ui/preset-sketchy",
+  "version": "0.4.0-rc.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "author": "Aleksandra Sikora",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@theme-ui/css": "^0.4.0-rc.1"
+  }
+}

@@ -18,15 +18,17 @@ export {
   css,
   get,
   ColorMode,
+  ColorModesScale,
   CSSObject,
   CSSProperties,
   CSSPseudoSelectorProps,
   ResponsiveStyleValue,
-  SystemCssProperties,
-  SystemStyleObject,
+  ThemeUICSSProperties,
+  ThemeUIStyleObject,
   Theme,
+  ThemeStyles,
   TLengthStyledSystem,
-  UseThemeFunction,
+  ThemeDerivedStyles,
 } from '@theme-ui/css'
 
 // TODO: work this into root provider/global styles?

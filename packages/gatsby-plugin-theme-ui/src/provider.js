@@ -1,15 +1,30 @@
 /** @jsx jsx */
-import {
-  jsx,
-  ThemeProvider,
-} from 'theme-ui'
-import theme from './index'
+import { jsx, ThemeProvider, merge } from 'theme-ui'
+import localTheme from './index'
 import components from './components'
+import useThemeUiConfig from './hooks/configOptions'
 
-export const wrapRootElement = ({ element }) =>
-  jsx(ThemeProvider, {
-      theme,
-      components,
+const Root = ({ children }) => {
+  const themeUiConfig = useThemeUiConfig()
+  const { preset, prismPreset } = themeUiConfig
+
+  const theme = preset.default || preset
+
+  const themeWithPrism = merge(theme, {
+    styles: {
+      pre: prismPreset,
     },
-    element,
+  })
+
+  const fullTheme = merge(themeWithPrism, localTheme)
+
+  return (
+    <ThemeProvider theme={fullTheme} components={components}>
+      {children}
+    </ThemeProvider>
   )
+}
+
+export const wrapRootElement = ({ element }) => {
+  return <Root>{element}</Root>
+}

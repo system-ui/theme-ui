@@ -148,3 +148,22 @@ If you do not have a color mode named `dark` or `light`, this will have no effec
 }
 ```
 
+### Disable persisting color mode on `localStorage`
+
+To disable `localStorage` add the `useLocalStorage: false` flag to your theme.
+
+```js
+{
+  useLocalStorage: false,
+  colors: {
+    text: '#000',
+    background: '#fff',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+      }
+    }
+  }
+}
+```

@@ -1,11 +1,11 @@
-import { SystemStyleObject } from '@theme-ui/css'
+import { ThemeUIStyleObject } from '@theme-ui/css'
 
 /**
  * The `sx` prop accepts a `SxStyleProp` object and properties that are part of
  * the `Theme` will be transformed to their corresponding values. Other valid
  * CSS properties are also allowed.
  */
-export type SxStyleProp = SystemStyleObject
+export type SxStyleProp = ThemeUIStyleObject
 
 export interface SxProps {
   /**

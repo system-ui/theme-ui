@@ -78,5 +78,8 @@
     "bottom": ".4em",
     "content": "attr(data-end)",
     "top": "auto"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
   }
 }

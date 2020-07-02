@@ -4,7 +4,7 @@ const heading = {
   lineHeight: 'heading',
 }
 
-export default {
+export const swiss = {
   colors: {
     text: 'hsl(10, 20%, 20%)',
     background: 'hsl(10, 10%, 98%)',
@@ -151,3 +151,5 @@ export default {
     },
   },
 }
+
+export default swiss

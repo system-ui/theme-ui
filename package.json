@@ -13,31 +13,36 @@
     "dev:editor": "yarn workspace @theme-ui/editor dev"
   },
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.8.3",
-    "@babel/runtime": "^7.7.7",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/helper-validator-identifier": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
     "@testing-library/react": "^9.1.3",
     "@types/jest": "^25.1.2",
-    "babel-jest": "^24.9.0",
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/react-test-renderer": "^16.9.2",
+    "babel-jest": "^26.0.1",
     "husky": ">=4.0.7",
-    "jest": "^24.8.0",
+    "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
-    "jest-emotion": "^10.0.11",
-    "jest-mock-console": "^1.0.0",
+    "jest-emotion": "^10.0.32",
+    "jest-mock-console": "^1.0.1",
     "lerna": "^3.14.1",
     "lint-staged": "10",
-    "microbundle": "^0.11.0",
-    "prettier": "^1.18.2",
+    "microbundle": "^0.12.2",
+    "prettier": "^2.0.5",
     "react-test-renderer": "^16.8.6",
-    "ts-jest": "^25.2.0"
+    "ts-jest": "^26.1.0",
+    "ts-snippet": "^4.2.0",
+    "typescript": "^3.9.5"
   },
   "resolutions": {},
   "jest": {
@@ -45,6 +50,7 @@
     "globals": {
       "ts-jest": {
         "tsConfig": {
+          "target": "es2018",
           "module": "commonjs",
           "esModuleInterop": true,
           "resolveJsonModule": true,
@@ -95,7 +101,10 @@
     ],
     "setupFiles": [
       "jest-canvas-mock"
-    ]
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js"
+    }
   },
   "husky": {
     "hooks": {
