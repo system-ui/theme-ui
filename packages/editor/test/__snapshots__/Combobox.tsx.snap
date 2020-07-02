@@ -33,7 +33,6 @@ exports[`renders 1`] = `
   min-width: 0;
   display: block;
   width: 100%;
-  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -41,8 +40,6 @@ exports[`renders 1`] = `
   line-height: inherit;
   border: 1px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
 }
 
 .emotion-3 {
