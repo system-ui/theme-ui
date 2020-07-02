@@ -44,12 +44,11 @@ export const Radio = React.forwardRef(function Radio(
   ref
 ) {
   return (
-    <Box sx={variantStyle.container}>
+    <Box>
       <Box
         ref={ref}
         as="input"
         type="radio"
-        variant="radio"
         {...props}
         sx={{
           position: 'absolute',
@@ -65,6 +64,7 @@ export const Radio = React.forwardRef(function Radio(
         aria-hidden="true"
         className={className}
         variant={variant}
+        sx={sx}
         config={{
           group: 'forms',
           sx: {

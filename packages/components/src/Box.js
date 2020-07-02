@@ -35,13 +35,12 @@ export const Box = ({
     boxSizing: 'border-box',
     margin: 0,
     minWidth: 0,
+      color, bg,
+      m, mt, mr, mb, ml, mx, my,
+      p, pt, pr, pb, pl, px, py,
     ...config.sx,
     variant,
-    color,
-    bg,
-    m, mt, mr, mb, ml, mx, my,
-    p, pt, pr, pb, pl, px, py,
-    sx,
+    ...sx,
   }
 
   return jsx(as, {
