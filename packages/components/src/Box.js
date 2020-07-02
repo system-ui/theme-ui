@@ -1,14 +1,51 @@
 /** @jsx jsx */
 import { jsx } from '@theme-ui/core'
 
-export const Box = ({ as = 'div', __css, ...props }) => {
+export const Box = ({
+  as = 'div',
+  sx,
+  variant: propsVariant,
+  config = {},
+  // TODO: backwards compatibility only. add deprecation warning
+  // prettier-ignore
+  color,
+  bg,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
+  //
+  ...props
+}) => {
+  const variant = config.group
+    ? config.group + '.' + propsVariant
+    : propsVariant
+  // prettier-ignore
+  const styles = {
+    boxSizing: 'border-box',
+    margin: 0,
+    minWidth: 0,
+    ...config.sx,
+    variant,
+    color,
+    bg,
+    m, mt, mr, mb, ml, mx, my,
+    p, pt, pr, pb, pl, px, py,
+    sx,
+  }
+
   return jsx(as, {
-    sx: {
-      boxSizing: 'border-box',
-      margin: 0,
-      minWidth: 0,
-      ...__css,
-    },
+    sx: styles,
     ...props,
   })
 }

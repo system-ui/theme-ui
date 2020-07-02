@@ -12,7 +12,7 @@ export const MenuIcon = ({ size = 24 }) => (
     height={size}
     fill="currentcolor"
     viewBox="0 0 24 24"
-    __css={{
+    sx={{
       display: 'block',
       margin: 0,
     }}>

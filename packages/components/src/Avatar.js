@@ -1,21 +1,27 @@
 /** @jsx jsx */
 import { jsx } from '@theme-ui/core'
 import React from 'react'
-import { Image } from './Image'
+import Box from './Box'
 
 export const Avatar = React.forwardRef(function Avatar(
   { size = 48, ...props },
   ref
 ) {
   return (
-    <Image
+    <Box
+      as="img"
       ref={ref}
       width={size}
       height={size}
       variant="avatar"
       {...props}
-      __css={{
-        borderRadius: 9999,
+      config={{
+        group: 'images',
+        sx: {
+          maxWidth: '100%',
+          height: 'auto',
+          borderRadius: 9999,
+        },
       }}
     />
   )

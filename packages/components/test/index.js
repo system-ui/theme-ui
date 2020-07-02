@@ -92,24 +92,26 @@ describe('Box', () => {
     expect(json).toMatchSnapshot()
   })
 
-  test('renders with padding props', () => {
-    const json = renderJSON(<Box px={2} py={4} />)
-    expect(json).toHaveStyleRule('padding-left', '8px')
-    expect(json).toHaveStyleRule('padding-right', '8px')
-    expect(json).toHaveStyleRule('padding-top', '32px')
-    expect(json).toHaveStyleRule('padding-bottom', '32px')
-  })
+  describe('deprecated', () => {
+    test('renders with padding props', () => {
+      const json = renderJSON(<Box px={2} py={4} />)
+      expect(json).toHaveStyleRule('padding-left', '8px')
+      expect(json).toHaveStyleRule('padding-right', '8px')
+      expect(json).toHaveStyleRule('padding-top', '32px')
+      expect(json).toHaveStyleRule('padding-bottom', '32px')
+    })
 
-  test('renders with margin props', () => {
-    const json = renderJSON(<Box m={3} mb={4} />)
-    expect(json).toHaveStyleRule('margin', '16px')
-    expect(json).toHaveStyleRule('margin-bottom', '32px')
-  })
+    test('renders with margin props', () => {
+      const json = renderJSON(<Box m={3} mb={4} />)
+      expect(json).toHaveStyleRule('margin', '16px')
+      expect(json).toHaveStyleRule('margin-bottom', '32px')
+    })
 
-  test('renders with color props', () => {
-    const json = renderJSON(<Box color="tomato" bg="black" />)
-    expect(json).toHaveStyleRule('color', 'tomato')
-    expect(json).toHaveStyleRule('background-color', 'black')
+    test('renders with color props', () => {
+      const json = renderJSON(<Box color="tomato" bg="black" />)
+      expect(json).toHaveStyleRule('color', 'tomato')
+      expect(json).toHaveStyleRule('background-color', 'black')
+    })
   })
 
   test('renders with sx prop', () => {
@@ -138,14 +140,16 @@ describe('Box', () => {
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box
-        __css={{
-          p: 4,
-          color: 'black',
-          bg: 'white',
+        config={{
+          sx: {
+            p: 4,
+            color: 'black',
+            bg: 'white',
+          },
         }}
-        bg="cyan"
         sx={{
           color: 'tomato',
+          bg: 'cyan',
         }}
       />
     )
@@ -154,10 +158,10 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('background-color', 'cyan')
   })
 
-  test('renders with __themeKey variant', () => {
+  test('renders with group variant', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Box __themeKey="boxes" variant="beep" />
+        <Box config={{ group: 'boxes' }} variant="beep" />
       </ThemeProvider>
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')

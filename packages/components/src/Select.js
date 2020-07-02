@@ -5,48 +5,45 @@ import Box from './Box'
 import SVG from './SVG'
 import { getMargin, omitMargin, useVariant } from './util'
 
-const DownArrow = props => (
+const DownArrow = (props) => (
   <SVG {...props}>
     <path d="M7 10l5 5 5-5z" />
   </SVG>
 )
 
-export const Select = React.forwardRef(function Select(
-  { variant = 'select', ...props },
-  ref
-) {
-  const variantStyle = useVariant('forms', variant)
+export const Select = React.forwardRef(function Select(props, ref) {
+  // const variantStyle = useVariant('forms', variant)
   return (
     <Box
       {...getMargin(props)}
-      __css={{
+      sx={{
         display: 'flex',
-        ...variantStyle.container,
       }}>
       <Box
         ref={ref}
         as="select"
         {...omitMargin(props)}
-        __css={{
-          display: 'block',
-          width: '100%',
-          p: 2,
-          appearance: 'none',
-          fontSize: 'inherit',
-          lineHeight: 'inherit',
-          border: '1px solid',
-          borderRadius: 4,
-          color: 'inherit',
-          bg: 'transparent',
-          ...variantStyle.select,
+        config={{
+          group: 'forms',
+          sx: {
+            display: 'block',
+            width: '100%',
+            p: 2,
+            appearance: 'none',
+            fontSize: 'inherit',
+            lineHeight: 'inherit',
+            border: '1px solid',
+            borderRadius: 4,
+            color: 'inherit',
+            bg: 'transparent',
+          },
         }}
       />
       <DownArrow
-        __css={{
+        sx={{
           ml: -28,
           alignSelf: 'center',
           pointerEvents: 'none',
-          ...variantStyle.arrow,
         }}
       />
     </Box>

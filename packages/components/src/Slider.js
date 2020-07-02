@@ -2,7 +2,6 @@
 import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
-import { useVariant } from './util'
 
 const thumb = {
   appearance: 'none',
@@ -15,31 +14,33 @@ const thumb = {
 }
 
 export const Slider = React.forwardRef(function Slider(props, ref) {
-  const variantStyle = useVariant('forms', 'slider')
   return (
     <Box
       ref={ref}
       as="input"
       type="range"
+      variant="slider"
       {...props}
-      __css={{
-        display: 'block',
-        width: '100%',
-        height: 4,
-        my: 2,
-        cursor: 'pointer',
-        appearance: 'none',
-        borderRadius: 9999,
-        color: 'inherit',
-        bg: 'gray',
-        ':focus': {
-          outline: 'none',
-          color: 'primary',
+      config={{
+        group: 'forms',
+        sx: {
+          display: 'block',
+          width: '100%',
+          height: 4,
+          my: 2,
+          cursor: 'pointer',
+          appearance: 'none',
+          borderRadius: 9999,
+          color: 'inherit',
+          bg: 'gray',
+          ':focus': {
+            outline: 'none',
+            color: 'primary',
+          },
+          '&::-webkit-slider-thumb': thumb,
+          '&::-moz-range-thumb': thumb,
+          '&::-ms-thumb': thumb,
         },
-        '&::-webkit-slider-thumb': thumb,
-        '&::-moz-range-thumb': thumb,
-        '&::-ms-thumb': thumb,
-        ...variantStyle,
       }}
     />
   )

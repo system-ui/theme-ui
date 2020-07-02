@@ -3,25 +3,24 @@ import { jsx } from '@theme-ui/core'
 import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
-import { useVariant } from './util'
 
-const CheckboxChecked = props => (
+const CheckboxChecked = (props) => (
   <SVG {...props}>
     <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
   </SVG>
 )
 
-const CheckboxUnchecked = props => (
+const CheckboxUnchecked = (props) => (
   <SVG {...props}>
     <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
   </SVG>
 )
 
-const CheckboxIcon = props => (
+const CheckboxIcon = (props) => (
   <React.Fragment>
     <CheckboxChecked
       {...props}
-      __css={{
+      sx={{
         display: 'none',
         'input:checked ~ &': {
           display: 'block',
@@ -30,7 +29,7 @@ const CheckboxIcon = props => (
     />
     <CheckboxUnchecked
       {...props}
-      __css={{
+      sx={{
         display: 'block',
         'input:checked ~ &': {
           display: 'none',
@@ -41,32 +40,34 @@ const CheckboxIcon = props => (
 )
 
 export const Checkbox = React.forwardRef(function Checkbox(
-  { className, variant = 'checkbox', ...props },
+  { className, ...props },
   ref
 ) {
-  const variantStyle = useVariant('forms', variant)
   return (
-    <Box sx={variantStyle.container}>
+    <Box>
       <Box
         ref={ref}
         as="input"
         type="checkbox"
+        variant="checkbox"
         {...props}
-        __css={{
-          position: 'absolute',
-          opacity: 0,
-          zIndex: -1,
-          width: 1,
-          height: 1,
-          overflow: 'hidden',
-          ...(variantStyle.input && { ...variantStyle.input }),
+        config={{
+          group: 'forms',
+          sx: {
+            position: 'absolute',
+            opacity: 0,
+            zIndex: -1,
+            width: 1,
+            height: 1,
+            overflow: 'hidden',
+          },
         }}
       />
       <Box
         as={CheckboxIcon}
         aria-hidden="true"
         className={className}
-        __css={{
+        sx={{
           mr: 2,
           borderRadius: 4,
           color: 'gray',
@@ -77,7 +78,6 @@ export const Checkbox = React.forwardRef(function Checkbox(
             color: 'primary',
             bg: 'highlight',
           },
-          ...(variantStyle.icon && { ...variantStyle.icon }),
         }}
       />
     </Box>

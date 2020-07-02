@@ -2,7 +2,7 @@
 import { jsx } from '@theme-ui/core'
 import React from 'react'
 import { AspectRatio } from './AspectRatio'
-import { Image } from './Image'
+import Box from './Box'
 
 export const AspectImage = React.forwardRef(function AspectImage(
   { ratio, ...props },
@@ -10,11 +10,17 @@ export const AspectImage = React.forwardRef(function AspectImage(
 ) {
   return (
     <AspectRatio ratio={ratio}>
-      <Image
+      <Box
+        as="img"
         ref={ref}
         {...props}
-        __css={{
-          objectFit: 'cover',
+        config={{
+          group: 'images',
+          sx: {
+            maxWidth: '100%',
+            height: 'auto',
+            objectFit: 'cover',
+          },
         }}
       />
     </AspectRatio>

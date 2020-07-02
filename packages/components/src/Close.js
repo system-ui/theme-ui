@@ -14,10 +14,7 @@ const x = (
   </svg>
 )
 
-export const Close = React.forwardRef(function Close(
-  { size = 32, ...props },
-  ref
-) {
+export const Close = React.forwardRef(function Close(props, ref) {
   return (
     <IconButton
       ref={ref}
