@@ -1,13 +1,24 @@
 import { toTheme, toUnitless } from '../src/to-theme'
 import themes from './fixtures/themes'
-import Typography from 'typography'
+import Typography, { TypographyOptions } from 'typography'
 
-const typo = new Typography({
+const typo = new Typography(({
   ...themes.wp2016,
-  baseFontSize: toUnitless(themes.wp2016.baseFontSize),
+  baseFontSize: toUnitless(themes.wp2016.baseFontSize as string),
   rhythmUnit: 'px',
-})
-const styles = typo.toJSON()
+} as unknown) as TypographyOptions)
+
+interface TestStyledValue {
+  fontSize: string
+}
+interface TestStyle {
+  h6: TestStyledValue
+  h4: TestStyledValue
+  h2: TestStyledValue
+  h1: TestStyledValue
+}
+
+const styles: TestStyle = typo.toJSON() as TestStyle
 
 test('converts typography.js theme to theme-ui', () => {
   const theme = toTheme(themes.wp2016)
@@ -24,7 +35,7 @@ test('includes default options', () => {
 test('returns rhythm function', () => {
   const theme = toTheme(themes.wp2016)
   const values = [0, 1 / 4, 1 / 2, 3 / 4, 1, 2]
-  const a = values.map(theme.typography.rhythm)
+  const a = values.map(theme.typography.rhythm as any)
   const b = values.map(typo.rhythm)
   expect(typeof theme.typography.rhythm).toBe('function')
   expect(a).toEqual(b)
@@ -67,9 +78,9 @@ test('returns line heights', () => {
   expect(typeof theme.lineHeights.heading).toBe('number')
 })
 
-const snapshots = Object.keys(themes).map(key => [key, themes[key]])
+const snapshots = Object.entries(themes)
 
 test.each(snapshots)('snapshot %s', (name, config) => {
   const theme = toTheme(config)
-  expect(theme).toMatchSnapshot()
+  expect(theme).toMatchSnapshot(name)
 })
