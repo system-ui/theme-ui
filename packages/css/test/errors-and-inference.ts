@@ -114,3 +114,32 @@ describe('Theme', () => {
     )
   })
 })
+
+describe('ColorMode', () => {
+  const expectedSnippet = expectSnippet(`
+    import { ColorMode } from './packages/css/src'
+
+    const colorMode: ColorMode = {}
+
+    colorMode.text?.toUpperCase();
+
+    const baseColors = [
+      colorMode.text,
+      colorMode.background,
+      colorMode.primary,
+      colorMode.secondary,
+      colorMode.muted,
+      colorMode.highlight,
+      colorMode.accent,
+    ];
+
+    const seriousPink = colorMode.seriousPink
+    if (Array.isArray(seriousPink)) {
+      const [light, medium, dark] = seriousPink
+    }
+  `)
+
+  expectedSnippet.toInfer('baseColors', '(string | undefined)[]')
+  expectedSnippet.toInfer('light', 'string')
+  expectedSnippet.toInfer('dark', 'string')
+})
