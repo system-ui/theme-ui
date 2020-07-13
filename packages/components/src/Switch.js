@@ -1,18 +1,22 @@
 import React from 'react'
-import Box from './Box'
+import { Box, Label } from './'
 
 const GUTTER = 2
 const SIZE = 18
 
 export const Switch = React.forwardRef(
-  ({ className, sx, variant = 'switch', ...props }, ref) => {
+  ({ className, label, sx, variant = 'switch', ...props }, ref) => {
     return (
-      <Box>
+      <Label
+        sx={{
+          cursor: 'pointer',
+        }}>
         <Box
           ref={ref}
           as="input"
           type="checkbox"
           __themeKey="forms"
+          aria-label={label}
           {...props}
           sx={{
             position: 'absolute',
@@ -38,7 +42,6 @@ export const Switch = React.forwardRef(
             height: SIZE + GUTTER * 2,
             width: SIZE * 2 + GUTTER * 2,
             mr: 2,
-            cursor: 'pointer',
 
             'input:disabled ~ &': {
               opacity: 0.5,
@@ -64,11 +67,11 @@ export const Switch = React.forwardRef(
                 transform: 'translateX(100%)',
               },
             },
-          }}
-          {...props}>
+          }}>
           <Box />
         </Box>
-      </Box>
+        {label}
+      </Label>
     )
   }
 )
