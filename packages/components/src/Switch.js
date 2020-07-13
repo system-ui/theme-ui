@@ -7,10 +7,7 @@ const SIZE = 18
 export const Switch = React.forwardRef(
   ({ className, label, sx, variant = 'switch', ...props }, ref) => {
     return (
-      <Label
-        sx={{
-          cursor: 'pointer',
-        }}>
+      <Label sx={{ cursor: 'pointer' }}>
         <Box
           ref={ref}
           as="input"
@@ -70,7 +67,7 @@ export const Switch = React.forwardRef(
           }}>
           <Box />
         </Box>
-        {label}
+        <span>{label}</span>
       </Label>
     )
   }
