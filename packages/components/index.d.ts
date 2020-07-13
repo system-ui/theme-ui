@@ -374,4 +374,6 @@ export const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps>
 export const Switch: ForwardRef<HTMLInputElement, SwitchProps>
 
 export interface SwitchProps
-  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {}
+  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {
+  label?: string
+}
