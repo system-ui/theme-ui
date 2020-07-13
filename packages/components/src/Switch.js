@@ -39,12 +39,10 @@ export const Switch = React.forwardRef(
             height: SIZE + GUTTER * 2,
             width: SIZE * 2 + GUTTER * 2,
             mr: 2,
-
             'input:disabled ~ &': {
               opacity: 0.5,
               cursor: 'not-allowed',
             },
-
             '& > div': {
               display: 'flex',
               alignItems: 'center',
@@ -57,7 +55,6 @@ export const Switch = React.forwardRef(
               transform: 'translateX(0%)',
               transition: `transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000)`,
             },
-
             'input:checked ~ &': {
               bg: 'primary',
               '> div': {
