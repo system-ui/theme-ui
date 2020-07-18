@@ -5,6 +5,7 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
