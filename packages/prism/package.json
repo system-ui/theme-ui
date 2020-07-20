@@ -10,7 +10,8 @@
   "scripts": {
     "prepare": "microbundle --no-compress -o dist",
     "watch": "microbundle watch --no-compress -o dist",
-    "build-presets": "node build-presets.js"
+    "build-presets": "node build-presets.js",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "prism-react-renderer": "^1.0.2"

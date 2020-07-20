@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@theme-ui/preset-base": "^0.4.0-rc.1",

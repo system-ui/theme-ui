@@ -308,8 +308,8 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
 test('useColorMode throws when there is no theme context', () => {
   const restore = mockConsole()
   expect(() => {
-    const Consumer = (props) => {
-      const _ = useColorMode('beep')
+    const Consumer = () => {
+      const _ = useColorMode()
       return null
     }
     render(<Consumer />)
