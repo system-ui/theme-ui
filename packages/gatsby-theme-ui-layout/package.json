@@ -6,8 +6,7 @@
   "peerDependencies": {
     "gatsby": "^2.13.1",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "typecheck": "tsc --noEmit"
+    "react-dom": "^16.8.0"
   },
   "license": "MIT"
 }
