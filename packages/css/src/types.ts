@@ -43,6 +43,24 @@ interface CSSOthersObjectForCSSObject {
   [propertiesName: string]: CSSInterpolation
 }
 
+/**
+ * Can be augmented by users to inject their exact theme into Theme UI types.
+ * @see TODO LINK TO THE DOCS
+ */
+export interface UserTheme {}
+
+export type FinalTheme = Assign<Theme, UserTheme>
+
+export type Assign<T, U> = {
+  [P in keyof (T & U)]: P extends keyof U
+    ? U[P]
+    : P extends keyof T
+    ? T[P]
+    : never
+}
+
+type Color = Exclude<keyof Exclude<FinalTheme['colors'], undefined>, 'modes'>
+
 interface AliasesCSSProperties {
   /**
    * The **`background-color`** CSS property sets the background color of an element.
@@ -413,6 +431,9 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
   zIndex?: CSS.ZIndexProperty | string
+
+  // properties typechecked with user theme scales (from exact theme)
+  color?: Color
 }
 
 /**
