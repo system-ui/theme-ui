@@ -56,15 +56,18 @@ describe('Theme', () => {
 
   test('infers Theme argument in computed style function', () => {
     expectSnippet(`
-      import { get } from 'theme-ui'
+      import { get, Theme } from 'theme-ui'
 
       css({
         p: t => {
-          const theme = t;
+          const inferred = t
+
+          const assignableToTheme: Theme = t
+
           return get(t, 'sizes.5')
         }
       })
-    `).toInfer('theme', 'Theme')
+    `).toInfer('inferred', 'FinalTheme')
   })
 
   test('accepts additional properties by declaration merging', () => {
