@@ -25,6 +25,7 @@ export {
   ResponsiveStyleValue,
   ThemeUICSSProperties,
   ThemeUIStyleObject,
+  ThemeUICSSObject,
   Theme,
   ThemeStyles,
   TLengthStyledSystem,
