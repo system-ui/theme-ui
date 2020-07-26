@@ -59,7 +59,9 @@ export type Assign<T, U> = {
     : never
 }
 
-type Color = Exclude<keyof Exclude<FinalTheme['colors'], undefined>, 'modes'>
+type Color =
+  | Exclude<keyof Exclude<FinalTheme['colors'], undefined>, 'modes'>
+  | CSS.Globals
 
 interface AliasesCSSProperties {
   /**

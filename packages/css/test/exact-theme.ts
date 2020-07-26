@@ -1,5 +1,3 @@
-import { Theme, css } from '../src'
-
 import { expecter } from 'ts-snippet'
 
 const expectSnippet = expecter(
@@ -42,7 +40,7 @@ describe('exact theme', () => {
         color: 'hotpink',
       })
     `).toFail(
-      /^(?=.*Type '"hotpink"' is not assignable to type)(?=.*ThemeUICSSObject)(?=.*"primary" | "primary-dark").*$/m
+      /^(?=.*Type '"hotpink"' is not assignable to type)(?=.*ThemeUICSSObject)(?=.*"inherit")(?=.*"primary" | "primary-dark").*$/m
     )
   })
 
