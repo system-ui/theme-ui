@@ -49,7 +49,7 @@ interface CSSOthersObjectForCSSObject {
  */
 export interface UserTheme {}
 
-export type FinalTheme = Assign<Theme, UserTheme>
+export interface FinalTheme extends Assign<Theme, UserTheme> {}
 
 export type Assign<T, U> = {
   [P in keyof (T & U)]: P extends keyof U
@@ -434,6 +434,9 @@ interface OverwriteCSSProperties {
 
   // properties typechecked with user theme scales (from exact theme)
   color?: Color
+  backgroundColor?: Color
+  borderColor?: Color
+  caretColor?: Color
 }
 
 /**
@@ -447,7 +450,9 @@ export interface ThemeUIExtendedCSSProperties
 
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
-  | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
+  | ((
+      theme: FinalTheme
+    ) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
 
 export type ThemeUICSSProperties = {
@@ -482,7 +487,7 @@ export interface VariantProperty {
 }
 
 export interface ThemeDerivedStyles {
-  (theme: Theme): ThemeUICSSObject
+  (theme: FinalTheme): ThemeUICSSObject
 }
 
 export type Label = {

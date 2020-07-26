@@ -8,8 +8,8 @@ type OnChangeArg = { color: Color } | { bg: Color }
 
 export interface ColorsProps {
   value?: {
-    color?: string
-    bg?: string
+    color?: string | number
+    bg?: string | number
   }
   theme?: Theme
   onChange: (arg: OnChangeArg) => void
