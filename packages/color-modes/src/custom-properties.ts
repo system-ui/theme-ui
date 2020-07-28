@@ -1,10 +1,10 @@
 import { css, Theme, ColorModesScale, ColorMode } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
-const toVarValue = (key: string, value: unknown) =>
+const toVarValue = (key: string, value: string | number) =>
   `var(${toVarName(key)}, ${value})`
 
-const join = (...args: any[]) => args.filter(Boolean).join('-')
+const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
 const numberScales = {
   fontWeights: true,
@@ -17,21 +17,19 @@ const reservedKeys = {
   useLocalStorage: true,
 }
 
-const toPixel = (key: keyof typeof numberScales, value: string | number) => {
+const toPixel = (key: string, value: string | number) => {
   if (typeof value !== 'number') return value
-  if (numberScales[key]) return value
+  if (numberScales[key as keyof typeof numberScales]) return value
   return value + 'px'
 }
 
 // convert theme values to custom properties
 export const toCustomProperties = (
-  obj: any,
-  parent?: any,
+  obj: Record<string, any> | undefined,
+  parent?: string,
   themeKey?: string
 ) => {
-  const next: any = Array.isArray(obj)
-    ? ([] as ColorMode[])
-    : ({} as ColorModesScale)
+  const next: Record<string, any> = Array.isArray(obj) ? [] : {}
 
   for (let key in obj) {
     const value = obj[key]
@@ -40,20 +38,19 @@ export const toCustomProperties = (
       next[key] = toCustomProperties(value, name, key)
       continue
     }
-    if ((reservedKeys as any)[key]) {
+    if (reservedKeys[key as keyof typeof reservedKeys]) {
       next[key] = value
       continue
     }
-    const val = toPixel(themeKey || (key as any), value)
+    const val = toPixel(themeKey || key, value)
     next[key] = toVarValue(name, val)
   }
 
   return next
 }
 
-// todo
-export const objectToVars = (parent: unknown, obj: Record<string, any>) => {
-  let vars: Record<string, any> = {}
+export const objectToVars = (parent: string, obj: Record<string, any>) => {
+  let vars: Record<string, object> = {}
   for (let key in obj) {
     if (key === 'modes') continue
     const name = join(parent, key)

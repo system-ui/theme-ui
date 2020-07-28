@@ -35,6 +35,12 @@ describe('toCustomProperties', () => {
       },
     })
   })
+
+  test('handles undefined as first argument', () => {
+    const result = toCustomProperties(undefined, 'colors')
+
+    expect(result).toStrictEqual({})
+  })
 })
 
 describe('createColorStyles', () => {
