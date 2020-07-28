@@ -40,7 +40,7 @@ export interface ContextValue {
   __EMOTION_VERSION__: string
   theme: Theme
   colorMode?: string
-  setColorMode?: () => void
+  setColorMode?: (mode: string) => void
 }
 export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,

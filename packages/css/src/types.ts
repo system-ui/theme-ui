@@ -641,6 +641,7 @@ export interface Theme {
    * Define the colors that are available through this theme
    */
   colors?: ColorModesScale
+  rawColors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
