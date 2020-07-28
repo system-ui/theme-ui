@@ -560,7 +560,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = () => {
     const context = useThemeUI()
-    color = context.theme.colors.primary
+    color = context.theme?.colors?.primary
     return null
   }
   const root = render(
