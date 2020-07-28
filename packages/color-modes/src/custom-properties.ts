@@ -17,7 +17,7 @@ const reservedKeys = {
   useLocalStorage: true,
 }
 
-const toPixel = (key: keyof typeof numberScales, value: unknown) => {
+const toPixel = (key: keyof typeof numberScales, value: string | number) => {
   if (typeof value !== 'number') return value
   if (numberScales[key]) return value
   return value + 'px'
@@ -52,8 +52,8 @@ export const toCustomProperties = (
 }
 
 // todo
-export const objectToVars = (parent: any, obj: any) => {
-  let vars: any = {}
+export const objectToVars = (parent: unknown, obj: Record<string, any>) => {
+  let vars: Record<string, any> = {}
   for (let key in obj) {
     if (key === 'modes') continue
     const name = join(parent, key)

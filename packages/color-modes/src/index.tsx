@@ -118,7 +118,7 @@ const BodyStyles = () =>
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
-  const theme = applyColorMode(outer.theme || {}, colorMode as string)
+  const theme = applyColorMode(outer.theme || {}, colorMode)
   const emotionTheme = { ...theme }
 
   if (theme.useCustomProperties !== false) {
