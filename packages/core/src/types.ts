@@ -1,11 +1,11 @@
-import { SystemStyleObject } from '@theme-ui/css'
+import { ThemeUIStyleObject } from '@theme-ui/css'
 
 /**
  * The `sx` prop accepts a `SxStyleProp` object and properties that are part of
  * the `Theme` will be transformed to their corresponding values. Other valid
  * CSS properties are also allowed.
  */
-export type SxStyleProp = SystemStyleObject
+export type SxStyleProp = ThemeUIStyleObject
 
 export interface SxProps {
   /**
@@ -48,7 +48,7 @@ export interface IntrinsicSxElements {
   em: JSX.IntrinsicElements['em'] & SxProps
   strong: JSX.IntrinsicElements['strong'] & SxProps
   div: JSX.IntrinsicElements['div'] & SxProps
-  delete: JSX.IntrinsicElements['div'] & SxProps
+  del: JSX.IntrinsicElements['div'] & SxProps
   inlineCode: JSX.IntrinsicElements['div'] & SxProps
   thematicBreak: JSX.IntrinsicElements['div'] & SxProps
   root: JSX.IntrinsicElements['div'] & SxProps

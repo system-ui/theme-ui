@@ -2,11 +2,12 @@ import {
   jsx,
   useThemeUI,
   ThemeProvider as CoreProvider,
+  ThemeProviderProps as CoreThemeProviderProps,
   IntrinsicSxElements,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
-import { MDXProvider } from '@theme-ui/mdx'
+import { MDXProvider, MDXProviderComponents } from '@theme-ui/mdx'
 import { Global } from '@emotion/core'
 
 const BodyStyles = () =>
@@ -33,10 +34,11 @@ const BodyStyles = () =>
     },
   })
 
-interface ThemeProviderProps {
-  theme: Theme
+
+
+interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
-  components?: { [key in keyof IntrinsicSxElements]?: React.ReactNode }
+  components?: MDXProviderComponents
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({

@@ -1,8 +1,9 @@
 {
   "name": "@theme-ui/color-modes",
-  "version": "0.4.0-alpha.3",
+  "version": "0.4.0-rc.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress",
@@ -16,8 +17,8 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/core": "^0.4.0-alpha.3",
-    "@theme-ui/css": "^0.4.0-alpha.2",
+    "@theme-ui/core": "^0.4.0-rc.1",
+    "@theme-ui/css": "^0.4.0-rc.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

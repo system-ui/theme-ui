@@ -10,6 +10,7 @@
 - Add `@theme-ui/preset-sketchy`
 - `@theme-ui/prism`: add support for highlighting lines #895
 - `@theme-ui/style-guide`: pass `size` prop to ColorRow component #941
+- `@theme-ui/sidenav`: move React to peerDependencies #978
 
 ## v0.3.0 2020-01-22
 

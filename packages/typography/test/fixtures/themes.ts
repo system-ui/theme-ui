@@ -1,3 +1,5 @@
+import { TypographyOptions } from 'typography'
+
 import alton from 'typography-theme-alton'
 import bootstrap from 'typography-theme-bootstrap'
 import deYoung from 'typography-theme-de-young'
@@ -78,4 +80,6 @@ export const themes = {
   anonymous,
 }
 
-export default themes
+type ThemeNames = keyof typeof themes
+
+export default themes as Record<ThemeNames, TypographyOptions>

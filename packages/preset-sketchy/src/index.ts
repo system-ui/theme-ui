@@ -1,15 +1,6 @@
-import { Theme, SystemStyleObject } from '@theme-ui/css'
+import { Theme, ThemeUIStyleObject } from '@theme-ui/css'
 
-export interface ThemeSketchy extends Theme {
-  cards: SystemStyleObject
-  links: SystemStyleObject
-  forms: Record<string, SystemStyleObject>
-  badges: SystemStyleObject
-  alerts: SystemStyleObject
-  messages: SystemStyleObject
-}
-
-const defaultBorderStyles: SystemStyleObject = {
+const defaultBorderStyles: ThemeUIStyleObject = {
   border: 'thick',
   color: 'text',
   borderRadius: 'sketchy0',
@@ -26,7 +17,7 @@ const buttonStyles = {
   },
 }
 
-const formStyles: SystemStyleObject = {
+const formStyles: ThemeUIStyleObject = {
   borderRadius: 'sketchy3',
   borderColor: 'text',
   fontFamily: 'inherit',
@@ -36,7 +27,7 @@ const formStyles: SystemStyleObject = {
   },
 }
 
-const theme: ThemeSketchy = {
+const theme: Theme = {
   colors: {
     text: '#000200',
     background: '#FAFAF9',
@@ -220,7 +211,6 @@ const theme: ThemeSketchy = {
     },
   },
   links: {
-    color: 'primary',
     nav: {
       borderRadius: 'sketchy1',
       textDecoration: 'none',

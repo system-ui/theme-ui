@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/match-media",
-  "version": "0.4.0-alpha.3",
+  "version": "0.4.0-rc.1",
   "description": "React hooks for theme-ui breakpoints",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -11,14 +11,15 @@
   "repository": "system-ui/theme-ui",
   "scripts": {
     "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "@theme-ui/core": "^0.4.0-alpha.3",
-    "@theme-ui/css": "^0.4.0-alpha.2",
+    "@theme-ui/core": "^0.4.0-rc.1",
+    "@theme-ui/css": "^0.4.0-rc.1",
     "react": "^16.9.0"
   },
   "peerDependencies": {

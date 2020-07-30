@@ -24,3 +24,4 @@ jobs:
           ${{ runner.os }}-yarn-
     - run: yarn
     - run: yarn test --coverage
+    - run: yarn typecheck

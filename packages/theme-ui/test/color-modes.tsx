@@ -198,7 +198,7 @@ test('inherits color mode state from parent context', () => {
   const Consumer = (props) => {
     const [colorMode] = useColorMode()
     mode = colorMode
-    return false
+    return null
   }
   render(
     <ThemeProvider
@@ -225,7 +225,7 @@ test('retains initial context', () => {
   let context
   const Consumer = (props) => {
     context = useThemeUI()
-    return false
+    return null
   }
   render(
     <ThemeProvider theme={{}}>
@@ -247,7 +247,7 @@ test('initializes mode from prefers-color-scheme media query', () => {
   const Consumer = (props) => {
     const [colorMode] = useColorMode()
     mode = colorMode
-    return false
+    return null
   }
   render(
     <ThemeProvider
@@ -271,7 +271,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   const Consumer = (props) => {
     const [colorMode] = useColorMode()
     mode = colorMode
-    return false
+    return null
   }
   render(
     <ThemeProvider
@@ -295,7 +295,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   const Consumer = (props) => {
     const [colorMode] = useColorMode()
     mode = colorMode
-    return false
+    return null
   }
   render(
     <ThemeProvider theme={{}}>
@@ -308,10 +308,9 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
 test('useColorMode throws when there is no theme context', () => {
   const restore = mockConsole()
   expect(() => {
-    const Consumer = (props) => {
-      const [colorMode] = useColorMode('beep')
-      mode = colorMode
-      return false
+    const Consumer = () => {
+      const _ = useColorMode()
+      return null
     }
     render(<Consumer />)
   }).toThrow()
@@ -325,7 +324,7 @@ test('useThemeUI returns current color mode colors', () => {
   const GetColors = () => {
     const { theme } = useThemeUI()
     colors = theme.colors
-    return false
+    return null
   }
   const root = render(
     <ThemeProvider
@@ -458,8 +457,8 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = (props) => {
     const context = useThemeUI()
-    color = context.theme.colors.primary
-    return false
+    color = context.theme.colors!.primary
+    return null
   }
   const root = render(
     <ThemeProvider
@@ -490,7 +489,7 @@ test('warns when localStorage is disabled', () => {
   const Consumer = (props) => {
     const [colorMode] = useColorMode()
     mode = colorMode
-    return false
+    return null
   }
 
   render(
