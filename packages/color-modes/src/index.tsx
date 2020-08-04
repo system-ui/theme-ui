@@ -6,6 +6,13 @@ import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
+declare module '@theme-ui/core' {
+  export interface ContextValue {
+    colorMode?: string
+    setColorMode?: (mode: string) => void
+  }
+}
+
 const storage = {
   get: (init?: string) => {
     try {
