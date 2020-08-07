@@ -22,32 +22,12 @@ export interface SxProps {
   sx?: SxStyleProp
 }
 
-export interface IntrinsicSxElements {
-  p: JSX.IntrinsicElements['p'] & SxProps
-  b: JSX.IntrinsicElements['b'] & SxProps
-  i: JSX.IntrinsicElements['i'] & SxProps
-  a: JSX.IntrinsicElements['a'] & SxProps
-  h1: JSX.IntrinsicElements['h1'] & SxProps
-  h2: JSX.IntrinsicElements['h2'] & SxProps
-  h3: JSX.IntrinsicElements['h3'] & SxProps
-  h4: JSX.IntrinsicElements['h4'] & SxProps
-  h5: JSX.IntrinsicElements['h5'] & SxProps
-  h6: JSX.IntrinsicElements['h6'] & SxProps
-  img: JSX.IntrinsicElements['img'] & SxProps
-  pre: JSX.IntrinsicElements['pre'] & SxProps
-  code: JSX.IntrinsicElements['code'] & SxProps
-  ol: JSX.IntrinsicElements['ol'] & SxProps
-  ul: JSX.IntrinsicElements['ul'] & SxProps
-  li: JSX.IntrinsicElements['li'] & SxProps
-  blockquote: JSX.IntrinsicElements['blockquote'] & SxProps
-  hr: JSX.IntrinsicElements['hr'] & SxProps
-  table: JSX.IntrinsicElements['table'] & SxProps
-  tr: JSX.IntrinsicElements['tr'] & SxProps
-  th: JSX.IntrinsicElements['th'] & SxProps
-  td: JSX.IntrinsicElements['td'] & SxProps
-  em: JSX.IntrinsicElements['em'] & SxProps
-  strong: JSX.IntrinsicElements['strong'] & SxProps
-  div: JSX.IntrinsicElements['div'] & SxProps
+export type SxElements =
+  'p' | 'b' | 'i' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'img' | 'pre' | 'code' | 'ol' | 'ul' | 'li' | 'blockquote' | 'hr' | 'table' | 'tr' | 'th' | 'td' | 'em' | 'strong' | 'div'
+
+export type IntrinsicSxElements = {
+  [key in SxElements]: JSX.IntrinsicElements[key] & SxProps
+} & {
   del: JSX.IntrinsicElements['div'] & SxProps
   inlineCode: JSX.IntrinsicElements['div'] & SxProps
   thematicBreak: JSX.IntrinsicElements['div'] & SxProps
