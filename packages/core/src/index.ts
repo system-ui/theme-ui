@@ -10,6 +10,7 @@ import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
 
 import './react-jsx'
 
+export * from '@theme-ui/css/dist/types'
 export * from './types'
 
 const getCSS = (props) => {

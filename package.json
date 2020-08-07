@@ -105,6 +105,9 @@
     ],
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js"
+    },
+    "moduleNameMapper": {
+      "@theme-ui/css/dist/types": "@theme-ui/css/src/types"
     }
   },
   "husky": {
