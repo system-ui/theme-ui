@@ -78,7 +78,7 @@ export const createColorStyles = (theme: Theme = {}) => {
       },
     })(theme)
   }
-  const colors = theme.rawColors || theme.colors
+  const { colors } = theme
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
 
