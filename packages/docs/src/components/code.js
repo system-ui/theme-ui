@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Styled, Alert } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
@@ -111,6 +111,16 @@ export const LiveCode = ({ children, preview, xray }) => {
 export default (props) => {
   if (props.live) {
     return <LiveCode {...props} />
+  }
+  if (props.filename) {
+    return (
+      <section>
+        <Alert sx={{ bg: 'gray', color: 'background', borderRadius: 0 }}>
+          {props.filename}
+        </Alert>
+        <Prism {...props} sx={{ mt: 0 }} />
+      </section>
+    )
   }
   return <Prism {...props} />
 }
