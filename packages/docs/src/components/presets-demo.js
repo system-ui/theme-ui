@@ -50,7 +50,7 @@ export default () => {
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
-          <Styled.root>
+          <Styled.root sx={{ bg: 'background', color: 'text' }}>
             <Styled.h2>Colors</Styled.h2>
             <ColorPalette omit={['modes', 'header']} />
             <Styled.h2>Typography</Styled.h2>
