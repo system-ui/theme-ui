@@ -192,6 +192,7 @@ const Combobox: <T extends string | number>(
           maxHeight: 512,
           overflowY: 'auto',
           bg: 'white',
+          color: 'black',
           border: '1px solid',
           borderTop: 0,
           borderColor: 'lightgray',
