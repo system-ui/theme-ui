@@ -65,6 +65,7 @@ export const Checkbox = React.forwardRef(
           mr: 2,
           borderRadius: 4,
           color: 'gray',
+          flexShrink: 0,
           'input:checked ~ &': {
             color: 'primary',
           },

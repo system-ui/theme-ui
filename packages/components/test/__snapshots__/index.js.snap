@@ -256,6 +256,9 @@ exports[`Checkbox renders 1`] = `
   margin-right: 8px;
   border-radius: 4px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-1 {
@@ -282,6 +285,9 @@ input:focus ~ .emotion-1 {
   margin-right: 8px;
   border-radius: 4px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-2 {
@@ -976,6 +982,9 @@ exports[`Radio renders 1`] = `
   margin-right: 8px;
   border-radius: 9999px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-1 {
@@ -1001,6 +1010,9 @@ input:focus ~ .emotion-1 {
   margin-right: 8px;
   border-radius: 9999px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-2 {
