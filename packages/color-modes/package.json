@@ -3,11 +3,13 @@
   "version": "0.4.0-rc.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
+  "source": "src/index.tsx",
   "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",

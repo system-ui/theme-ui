@@ -1,13 +1,20 @@
 import React from 'react'
 import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
-import { get } from '@theme-ui/css'
+import { get, Theme } from '@theme-ui/css'
 import { Global, ThemeContext as EmotionContext } from '@emotion/core'
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
+declare module '@theme-ui/core' {
+  export interface ContextValue {
+    colorMode?: string
+    setColorMode?: (mode: string) => void
+  }
+}
+
 const storage = {
-  get: (init) => {
+  get: (init?: string) => {
     try {
       return window.localStorage.getItem(STORAGE_KEY) || init
     } catch (e) {
@@ -18,7 +25,7 @@ const storage = {
       )
     }
   },
-  set: (value) => {
+  set: (value: string) => {
     try {
       window.localStorage.setItem(STORAGE_KEY, value)
     } catch (e) {
@@ -34,8 +41,12 @@ const storage = {
 const getMediaQuery = () => {
   const darkQuery = '(prefers-color-scheme: dark)'
   const lightQuery = '(prefers-color-scheme: light)'
-  const darkMQL = window.matchMedia ? window.matchMedia(darkQuery) : {}
-  const lightMQL = window.matchMedia ? window.matchMedia(lightQuery) : {}
+  const darkMQL = window.matchMedia
+    ? window.matchMedia(darkQuery)
+    : { media: false }
+  const lightMQL = window.matchMedia
+    ? window.matchMedia(lightQuery)
+    : { media: false }
   const dark = darkMQL.media === darkQuery && darkMQL.matches
   if (dark) return 'dark'
   const light = lightMQL.media === lightQuery && lightMQL.matches
@@ -43,7 +54,9 @@ const getMediaQuery = () => {
   return 'default'
 }
 
-const useColorModeState = (theme = {}) => {
+const useColorModeState = (
+  theme: Theme = {}
+): [string, React.Dispatch<React.SetStateAction<string>>] => {
   const [mode, setMode] = React.useState(
     theme.initialColorModeName || 'default'
   )
@@ -70,6 +83,7 @@ const useColorModeState = (theme = {}) => {
     if (
       theme.colors &&
       theme.colors.modes &&
+      theme.initialColorModeName &&
       Object.keys(theme.colors.modes).indexOf(theme.initialColorModeName) > -1
     ) {
       console.warn(
@@ -82,7 +96,10 @@ const useColorModeState = (theme = {}) => {
   return [mode, setMode]
 }
 
-export const useColorMode = () => {
+export const useColorMode = (): [
+  string | undefined,
+  (mode: string) => void
+] => {
   const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
@@ -92,7 +109,7 @@ export const useColorMode = () => {
   return [colorMode, setColorMode]
 }
 
-const applyColorMode = (theme, mode) => {
+const applyColorMode = (theme: Theme, mode: string): Theme => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
   return merge.all({}, theme, {
@@ -102,10 +119,10 @@ const applyColorMode = (theme, mode) => {
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: (theme) => createColorStyles(theme),
+    styles: (theme) => createColorStyles(theme as Theme),
   })
 
-export const ColorModeProvider = ({ children }) => {
+export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
