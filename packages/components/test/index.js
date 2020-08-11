@@ -477,6 +477,15 @@ describe('Embed', () => {
     )
     expect(json).toMatchSnapshot()
   })
+
+  test('renders with title', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Embed title="Embed" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('AspectRatio', () => {
