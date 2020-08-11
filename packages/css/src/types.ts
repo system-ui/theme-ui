@@ -1,5 +1,7 @@
 import * as CSS from 'csstype'
 
+import { ColorScaleCSSProperties } from './scales'
+
 type StandardCSSProperties = CSS.Properties<number | string>
 
 /**
@@ -320,7 +322,7 @@ interface AliasesCSSProperties {
   size?: StandardCSSProperties['width']
 }
 
-interface OverwriteCSSProperties {
+interface OverwriteCSSProperties extends ColorScaleCSSProperties {
   /**
    * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the
    * element, blur and spread radii, and color.
@@ -433,12 +435,6 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
   zIndex?: CSS.ZIndexProperty | string
-
-  // properties typechecked with user theme scales (from exact theme)
-  color?: Color
-  backgroundColor?: Color
-  borderColor?: Color
-  caretColor?: Color
 }
 
 /**
