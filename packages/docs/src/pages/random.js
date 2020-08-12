@@ -91,11 +91,12 @@ export default () => {
             <MDXProvider components={components}>
               <Lorem />
             </MDXProvider>
-            <Styled.h2>Raw JSON</Styled.h2>
+            <Styled.h2 id="json">Raw JSON</Styled.h2>
             <textarea
               value={JSON.stringify(theme, null, 2)}
               rows={16}
               readOnly
+              aria-labelledby="json"
               css={{
                 width: '100%',
                 fontFamily: 'monospace',
