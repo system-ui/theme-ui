@@ -4,6 +4,8 @@ import { ColorScaleCSSProperties } from './scales'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
+export interface ResponsiveStyleTuple<T> extends Array<T | null | undefined> {}
+
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
  * Note that this extends to non-theme values also. For example `display=['none', 'block']`
@@ -11,7 +13,7 @@ type StandardCSSProperties = CSS.Properties<number | string>
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | Array<T | null | undefined>
+export type ResponsiveStyleValue<T> = T | ResponsiveStyleTuple<T>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
