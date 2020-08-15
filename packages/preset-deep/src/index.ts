@@ -146,7 +146,7 @@ export const deep = {
     '.atrule,.attr-value,.keyword': {
       color: 'primary',
     },
-    '.selector,.attr-name,.string,.char,.bultin,.inserted': {
+    '.selector,.attr-name,.string,.char,.builtin,.inserted': {
       color: 'secondary',
     },
   },
