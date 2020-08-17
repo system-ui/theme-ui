@@ -63,6 +63,7 @@ test('components with `as` prop receive all props', () => {
 
 test('cleans up style props', () => {
   const json = renderJSON(
+    // @ts-expect-error
     <Styled.h1 mx={2} id="test">
       Hello
     </Styled.h1>
@@ -112,5 +113,44 @@ test('keys of components match snapshot', () => {
       "div",
       "root",
     ]
+  `)
+})
+
+test('opt out of typechecking props whenever `as` prop is used', () => {
+  expect(
+    renderJSON(
+      <div>
+        {/* no error */}
+        <Styled.img
+          as="button"
+          src={2}
+          onClick={(_event) => {
+            // @ts-ignore todo: this fails in tests, but it shouldn't.
+            _event.x = 2
+          }}
+        />
+        <Styled.img
+          // @ts-expect-error Type 'number' is not assignable to type 'string'.ts(2322)
+          src={2}
+          onClick={(_event) => {
+            // @ts-expect-error Property 'y' does not exist on type 'MouseEvent<HTMLImageElement, MouseEvent>'.ts(2339)
+            _event.y = 2
+          }}
+        />
+      </div>
+    )
+  ).toMatchInlineSnapshot(`
+    <div>
+      <button
+        className="emotion-0"
+        onClick={[Function]}
+        src={2}
+      />
+      <img
+        className="emotion-0"
+        onClick={[Function]}
+        src={2}
+      />
+    </div>
   `)
 })

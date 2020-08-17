@@ -98,7 +98,7 @@ export type WithPoorAsProp<
 } & (As extends undefined ? Props : { [key: string]: unknown })
 
 export interface ThemedComponent<Name extends ElementType> {
-  <As extends ElementType | undefined>(
+  <As extends ElementType | undefined = undefined>(
     props: WithPoorAsProp<ComponentProps<Name>, As>
   ): JSX.Element
 }
