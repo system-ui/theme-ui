@@ -2,40 +2,89 @@ import * as CSS from 'csstype'
 
 import { FinalTheme } from './types'
 
-const scale = <K extends string, S extends string>(
-  scaleName: S,
-  properties: K[]
-): Record<K, S> => {
-  const res = {} as Record<K, S>
-  properties.forEach((p) => {
-    res[p] = scaleName
-  })
+const colors = {
+  color: 'colors',
+  backgroundColor: 'colors',
+  borderColor: 'colors',
+  caretColor: 'colors',
 
-  return res
-}
+  fill: 'colors',
+  stroke: 'colors',
 
-// TODO: Concise, but we lose the tooltip comment.
-// This should be done manually or at build time.
-type ScaleCSSProperties<TValue, TRecord extends object> = {
-  [P in keyof TRecord]?: TValue
-}
+  borderTopColor: 'colors',
+  borderBottomColor: 'colors',
+  borderLeftColor: 'colors',
+  borderRightColor: 'colors',
 
-const colors = scale('colors', [
-  'color',
-  'backgroundColor',
-  'borderColor',
-  'caretColor',
-])
+  outlineColor: 'colors',
+} as const
 
 export type Color =
   | Exclude<keyof Exclude<FinalTheme['colors'], undefined>, 'modes'>
   | CSS.Globals
 
-export interface ColorScaleCSSProperties
-  extends ScaleCSSProperties<Color, typeof colors> {}
+export interface ColorScaleCSSProperties {
+  /**
+   * The **`color`** CSS property sets the foreground color value of an element's text and text decorations, and sets the `currentcolor` value. `currentcolor` may be used as an indirect value on _other_ properties and is the default for other color properties, such as `border-color`.
+   *
+   * **Syntax**: `<color>`
+   *
+   * **Initial value**: Varies from one browser to another
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **3** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color
+   */
+  color?: Color
 
-const x: ColorScaleCSSProperties = {
-  color: 2,
+  /**
+   * The **`background-color`** CSS property sets the background color of an element.
+   *
+   * **Syntax**: `<color>`
+   *
+   * **Initial value**: `transparent`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-color
+   */
+  backgroundColor?: Color
+
+  /**
+   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
+   *
+   * **Syntax**: `<color>{1,4}`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
+   */
+  borderColor?: Color
+
+  /**
+   * The **`caret-color`** CSS property sets the color of the insertion caret, the visible marker where the next character typed will be inserted. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   *
+   * **Syntax**: `auto | <color>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **53**  | **11.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
+   */
+  caretColor?: Color
+  // TODO add comment
+  fill?: Color
+  // TODO add comment
+  stroke?: Color
 }
 
 const opacities = {
@@ -88,6 +137,31 @@ const space = {
   rowGap: 'space',
 }
 
+const sizes = {
+  width: 'sizes',
+  minWidth: 'sizes',
+  maxWidth: 'sizes',
+  height: 'sizes',
+  minHeight: 'sizes',
+  maxHeight: 'sizes',
+  flexBasis: 'sizes',
+  size: 'sizes',
+  blockSize: 'sizes',
+  inlineSize: 'sizes',
+  maxBlockSize: 'sizes',
+  maxInlineSize: 'sizes',
+  minBlockSize: 'sizes',
+  minInlineSize: 'sizes',
+}
+
+const borders = {
+  border: 'borders',
+  borderTop: 'borders',
+  borderRight: 'borders',
+  borderBottom: 'borders',
+  borderLeft: 'borders',
+}
+
 export const scales = {
   ...colors,
   ...opacities,
@@ -97,11 +171,6 @@ export const scales = {
   fontWeight: 'fontWeights',
   lineHeight: 'lineHeights',
   letterSpacing: 'letterSpacings',
-  border: 'borders',
-  borderTop: 'borders',
-  borderRight: 'borders',
-  borderBottom: 'borders',
-  borderLeft: 'borders',
   borderWidth: 'borderWidths',
   borderStyle: 'borderStyles',
   borderRadius: 'radii',
@@ -110,16 +179,12 @@ export const scales = {
   borderBottomRightRadius: 'radii',
   borderBottomLeftRadius: 'radii',
   borderTopWidth: 'borderWidths',
-  borderTopColor: 'colors',
   borderTopStyle: 'borderStyles',
   borderBottomWidth: 'borderWidths',
-  borderBottomColor: 'colors',
   borderBottomStyle: 'borderStyles',
   borderLeftWidth: 'borderWidths',
-  borderLeftColor: 'colors',
   borderLeftStyle: 'borderStyles',
   borderRightWidth: 'borderWidths',
-  borderRightColor: 'colors',
   borderRightStyle: 'borderStyles',
   borderBlock: 'borders',
   borderBlockEnd: 'borders',
@@ -143,27 +208,9 @@ export const scales = {
   borderInlineWidth: 'borderWidths',
   borderStartEndRadius: 'radii',
   borderStartStartRadius: 'radii',
-  outlineColor: 'colors',
   boxShadow: 'shadows',
   textShadow: 'shadows',
   zIndex: 'zIndices',
-  width: 'sizes',
-  minWidth: 'sizes',
-  maxWidth: 'sizes',
-  height: 'sizes',
-  minHeight: 'sizes',
-  maxHeight: 'sizes',
-  flexBasis: 'sizes',
-  size: 'sizes',
-  blockSize: 'sizes',
-  inlineSize: 'sizes',
-  maxBlockSize: 'sizes',
-  maxInlineSize: 'sizes',
-  minBlockSize: 'sizes',
-  minInlineSize: 'sizes',
-  // svg
-  fill: 'colors',
-  stroke: 'colors',
 } as const
 
 export type Scales = typeof scales
