@@ -6,12 +6,14 @@ import {
 import { css, Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
-import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
+import packageInfo from '@emotion/core/package.json'
 
 import './react-jsx'
 
 export * from '@theme-ui/css/dist/types'
 export * from './types'
+
+const __EMOTION_VERSION__ = packageInfo.version
 
 const getCSS = (props) => {
   if (!props.sx && !props.css) return undefined
