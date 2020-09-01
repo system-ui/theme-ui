@@ -218,6 +218,16 @@ describe('Grid', () => {
     expect(json).toMatchSnapshot()
   })
 
+  test('renders with repeat and width props', () => {
+    const json = renderJSON(<Grid repeat="fill" width={256} />)
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with repeat and responsive width props', () => {
+    const json = renderJSON(<Grid repeat="fill" width={[256, 512]} />)
+    expect(json).toMatchSnapshot()
+  })
+
   test('renders with columns prop', () => {
     const json = renderJSON(<Grid columns={2} />)
     expect(json).toMatchSnapshot()
