@@ -90,15 +90,19 @@ export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
   css(get(props.theme, `styles.${key}`))(props.theme)
 
 // opt out of typechecking whenever `as` prop is used
+interface AnyComponentProps extends JSX.IntrinsicAttributes {
+    [key: string]: unknown
+}
+
 export type WithPoorAsProp<
   Props,
   As extends ElementType | undefined = undefined
 > = {
   as?: As
-} & (As extends undefined ? Props : { [key: string]: unknown })
+} & (As extends undefined ? Props : AnyComponentProps)
 
 export interface ThemedComponent<Name extends ElementType> {
-  <As extends ElementType | undefined>(
+  <As extends ElementType | undefined = undefined>(
     props: WithPoorAsProp<ComponentProps<Name>, As>
   ): JSX.Element
 }
