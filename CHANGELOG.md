@@ -2,10 +2,9 @@
 
 ## v0.4.0 UNRELEASED
 
-## v0.4.0-rc.10 2020-11-17
-
 ### `@theme-ui/components`
 
+- Fix: Field component uses `id` if passed. PR #1252
 - Fix circular import in Switch.js
 
 ## v0.4.0-rc.9 2020-11-17
