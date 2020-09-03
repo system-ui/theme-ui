@@ -4,9 +4,10 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
-import { version as emotionVersion } from '@emotion/core/package.json'
+import packageInfo from '@emotion/core/package.json'
 import { jsx, ThemeProvider, useColorMode, useThemeUI } from '../src/index'
 
+const emotionVersion = packageInfo.version
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 afterEach(cleanup)
