@@ -3539,6 +3539,13 @@
   dependencies:
     csstype "^2.6.9"
 
+"@types/styled-system@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-4.2.2.tgz#d8ec981978dc303849030c2428c92e2d472507ff"
+  integrity sha512-eULPjWVEaXElIFKBwDVWRvGkHC0Fj63XVRna8RHoaRivNhCI/QkEJpMgyb0uA4WpsHpO5SDXH+DyQwEUkyW3rA==
+  dependencies:
+    csstype "^2.6.4"
+
 "@types/testing-library__dom@*":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@types/testing-library__dom/-/testing-library__dom-7.0.2.tgz#2906f8a0dce58b0746c6ab606f786bd06fe6940e"
@@ -7686,6 +7693,11 @@ csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.10, csstype@^2.6.9:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.10.tgz#e63af50e66d7c266edb6b32909cfd0aabe03928b"
   integrity sha512-D34BqZU4cIlMCY93rZHbrq9pjTAQJ3U8S8rfBqjwHxkGPThWFjzZDQpgMJY0QViLxth6ZKYiwFBo14RdN44U/w==
+
+csstype@^2.6.4:
+  version "2.6.13"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.13.tgz#a6893015b90e84dd6e85d0e3b442a1e84f2dbe0f"
+  integrity sha512-ul26pfSQTZW8dcOnD2iiJssfXw0gdNVX9IJDH/X3K5DGPfj+fUYe3kB+swUY6BF3oZDxaID3AJt+9/ojSAE05A==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
