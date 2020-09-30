@@ -91,6 +91,16 @@ const opacities = {
   opacity: 'opacities',
 }
 
+
+type Opacities = 
+| keyof Exclude<FinalTheme['opacities'], undefined>
+| CSS.Globals
+
+export interface OpacitiesCSSProperties {
+  // TODO add comment
+  opacity: Opacities
+}
+
 const space = {
   margin: 'space',
   marginTop: 'space',
@@ -135,6 +145,57 @@ const space = {
   gap: 'space',
   columnGap: 'space',
   rowGap: 'space',
+}
+
+type Space = 
+| keyof Exclude<FinalTheme['space'], undefined>
+| CSS.Globals
+
+export interface SpaceCSSProperties {
+  // TODO add comments for all
+  margin: Space,
+  marginTop: Space,
+  marginRight: Space,
+  marginBottom: Space,
+  marginLeft: Space,
+  marginX: Space,
+  marginY: Space,
+  marginBlock: Space,
+  marginBlockEnd: Space,
+  marginBlockStart: Space,
+  marginInline: Space,
+  marginInlineEnd: Space,
+  marginInlineStart: Space,
+  padding: Space,
+  paddingTop: Space,
+  paddingRight: Space,
+  paddingBottom: Space,
+  paddingLeft: Space,
+  paddingX: Space,
+  paddingY: Space,
+  paddingBlock: Space,
+  paddingBlockEnd: Space,
+  paddingBlockStart: Space,
+  paddingInline: Space,
+  paddingInlineEnd: Space,
+  paddingInlineStart: Space,
+  inset: Space,
+  insetBlock: Space,
+  insetBlockEnd: Space,
+  insetBlockStart: Space,
+  insetInline: Space,
+  insetInlineEnd: Space,
+  insetInlineStart: Space,
+  top: Space,
+  right: Space,
+  bottom: Space,
+  left: Space,
+  gridGap: Space,
+  gridColumnGap: Space,
+  gridRowGap: Space,
+  gap: Space,
+  columnGap: Space,
+  rowGap: Space,
 }
 
 const sizes = {
