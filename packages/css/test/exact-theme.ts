@@ -136,7 +136,9 @@ describe('exact theme', () => {
         ${theme}
         ${augmentation}
         ${scalesTest}
-      `).toSucceed()
+      `).toFail(
+        /Error snippet.ts (\d+,\d+): Type '"kinda transparent"' is not assignable to type '"-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "transparent" | "translucent" | "full"[\s\S]*/
+      )
     })
   })
 })

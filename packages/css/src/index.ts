@@ -4,6 +4,7 @@ import {
   ThemeDerivedStyles,
   Theme,
   ThemeUICSSObject,
+  FinalTheme,
 } from './types'
 import { scales, Scales } from './scales'
 
@@ -101,7 +102,7 @@ const transforms = [
 
 const responsive = (
   styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>
-) => (theme?: Theme) => {
+) => (theme: FinalTheme) => {
   const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
   const breakpoints =
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
@@ -114,7 +115,7 @@ const responsive = (
     const key = k as keyof typeof styles
     let value = styles[key]
     if (typeof value === 'function') {
-      value = value(theme || {})
+      value = value(theme)
     }
 
     if (value == null) continue
@@ -137,15 +138,15 @@ const responsive = (
   return next
 }
 
-type CssPropsArgument = { theme: Theme } | Theme
+type CssPropsArgument = { theme?: FinalTheme } | FinalTheme
 
 export const css = (args: ThemeUIStyleObject = {}) => (
   props: CssPropsArgument = {}
 ): CSSObject => {
-  const theme: Theme = {
+  const theme = {
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
-  }
+  } as FinalTheme
   let result: CSSObject = {}
   const obj = typeof args === 'function' ? args(theme) : args
   const styles = responsive(obj)(theme)

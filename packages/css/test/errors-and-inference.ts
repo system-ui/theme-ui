@@ -40,10 +40,8 @@ describe('Theme', () => {
       })
     `).toFail(
       new RegExp(
-        `Error snippet\\.ts \\(\\d+,\\d+\\): Type '{ color: string; widows: "bar"; }'` +
-          ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
-          `Types of property 'widows' are incompatible.\\n\\s+` +
-          `Type '"bar"' is not assignable to type [\\s\\S]+`
+        `Types of property 'widows' are incompatible.[\\s\\S]+` +
+          `Type '"bar"' is not assignable to type`
       )
     )
   })
