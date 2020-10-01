@@ -89,6 +89,17 @@ export interface ColorScaleCSSProperties {
 
 const opacities = {
   opacity: 'opacities',
+} as const
+
+
+// by excluding Array<any>, we remove Array's "push", "pop" methods, etc.
+type Opacities = 
+| Exclude<keyof Exclude<FinalTheme['opacities'], undefined>, keyof Array<any>>
+| CSS.Globals
+
+export interface OpacitiesCSSProperties {
+  // TODO add comment
+  opacity?: Opacities
 }
 
 const space = {
@@ -135,7 +146,78 @@ const space = {
   gap: 'space',
   columnGap: 'space',
   rowGap: 'space',
+} as const
+
+type Space = 
+| Exclude<keyof Exclude<FinalTheme['space'], undefined>, keyof Array<any>>
+| CSS.Globals
+
+export interface SpaceCSSProperties {
+  /**
+   * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **3** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin
+   */
+  margin?: Space,
+  /**
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **3** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
+   */
+  marginTop?: Space,
+  marginRight?: Space,
+  marginBottom?: Space,
+  marginLeft?: Space,
+  marginX?: Space,
+  marginY?: Space,
+  marginBlock?: Space,
+  marginBlockEnd?: Space,
+  marginBlockStart?: Space,
+  marginInline?: Space,
+  marginInlineEnd?: Space,
+  marginInlineStart?: Space,
+  padding?: Space,
+  paddingTop?: Space,
+  paddingRight?: Space,
+  paddingBottom?: Space,
+  paddingLeft?: Space,
+  paddingX?: Space,
+  paddingY?: Space,
+  paddingBlock?: Space,
+  paddingBlockEnd?: Space,
+  paddingBlockStart?: Space,
+  paddingInline?: Space,
+  paddingInlineEnd?: Space,
+  paddingInlineStart?: Space,
+  inset?: Space,
+  insetBlock?: Space,
+  insetBlockEnd?: Space,
+  insetBlockStart?: Space,
+  insetInline?: Space,
+  insetInlineEnd?: Space,
+  insetInlineStart?: Space,
+  top?: Space,
+  right?: Space,
+  bottom?: Space,
+  left?: Space,
+  gridGap?: Space,
+  gridColumnGap?: Space,
+  gridRowGap?: Space,
+  gap?: Space,
+  columnGap?: Space,
+  rowGap?: Space,
 }
+
 
 const sizes = {
   width: 'sizes',
@@ -152,6 +234,27 @@ const sizes = {
   maxInlineSize: 'sizes',
   minBlockSize: 'sizes',
   minInlineSize: 'sizes',
+} as const
+
+type Sizes = 
+| Exclude<keyof Exclude<FinalTheme['sizes'], undefined>, keyof Array<any>>
+| CSS.Globals
+
+export interface SizesCSSProperties {
+  width?: Sizes
+  minWidth?: Sizes
+  maxWidth?: Sizes
+  height?: Sizes
+  minHeight?: Sizes
+  maxHeight?: Sizes
+  flexBasis?: Sizes
+  size?: Sizes
+  blockSize?: Sizes
+  inlineSize?: Sizes
+  maxBlockSize?: Sizes
+  maxInlineSize?: Sizes
+  minBlockSize?: Sizes
+  minInlineSize?: Sizes
 }
 
 const borders = {
@@ -160,12 +263,26 @@ const borders = {
   borderRight: 'borders',
   borderBottom: 'borders',
   borderLeft: 'borders',
+} as const
+
+type Borders = 
+| Exclude<keyof Exclude<FinalTheme['borders'], undefined>, keyof Array<any>>
+| CSS.Globals
+
+export interface BordersCSSProperties {
+  border?: Borders
+  borderTop?: Borders
+  borderRight?: Borders
+  borderBottom?: Borders
+  borderLeft?: Borders
 }
 
 export const scales = {
   ...colors,
   ...opacities,
   ...space,
+  ...borders,
+  ...sizes,
   fontFamily: 'fonts',
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',

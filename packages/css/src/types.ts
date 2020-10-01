@@ -1,6 +1,6 @@
 import * as CSS from 'csstype'
 
-import { ColorScaleCSSProperties } from './scales'
+import { BordersCSSProperties, ColorScaleCSSProperties, OpacitiesCSSProperties, SizesCSSProperties, SpaceCSSProperties } from './scales'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -324,7 +324,7 @@ interface AliasesCSSProperties {
   size?: StandardCSSProperties['width']
 }
 
-interface OverwriteCSSProperties extends ColorScaleCSSProperties {
+interface OverwriteCSSProperties extends ColorScaleCSSProperties, OpacitiesCSSProperties, SpaceCSSProperties, BordersCSSProperties, SizesCSSProperties {
   /**
    * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the
    * element, blur and spread radii, and color.
@@ -445,7 +445,7 @@ interface OverwriteCSSProperties extends ColorScaleCSSProperties {
  */
 export interface ThemeUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
-    AliasesCSSProperties,
+    Omit<AliasesCSSProperties, keyof OverwriteCSSProperties>,
     OverwriteCSSProperties {}
 
 export type StylePropertyValue<T> =
