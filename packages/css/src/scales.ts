@@ -89,7 +89,7 @@ export interface ColorScaleCSSProperties {
 
 const opacities = {
   opacity: 'opacities',
-}
+} as const
 
 
 type Opacities = 
@@ -145,7 +145,7 @@ const space = {
   gap: 'space',
   columnGap: 'space',
   rowGap: 'space',
-}
+} as const
 
 type Space = 
 | keyof Exclude<FinalTheme['space'], undefined>
@@ -233,7 +233,7 @@ const sizes = {
   maxInlineSize: 'sizes',
   minBlockSize: 'sizes',
   minInlineSize: 'sizes',
-}
+} as const
 
 type Sizes = 
 | keyof Exclude<FinalTheme['sizes'], undefined>
@@ -262,7 +262,7 @@ const borders = {
   borderRight: 'borders',
   borderBottom: 'borders',
   borderLeft: 'borders',
-}
+} as const
 
 type Borders = 
 | keyof Exclude<FinalTheme['borders'], undefined>
