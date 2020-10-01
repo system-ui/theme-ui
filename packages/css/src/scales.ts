@@ -98,7 +98,7 @@ type Opacities =
 
 export interface OpacitiesCSSProperties {
   // TODO add comment
-  opacity: Opacities
+  opacity?: Opacities
 }
 
 const space = {
@@ -152,51 +152,71 @@ type Space =
 | CSS.Globals
 
 export interface SpaceCSSProperties {
-  // TODO add comments for all
-  margin: Space,
-  marginTop: Space,
-  marginRight: Space,
-  marginBottom: Space,
-  marginLeft: Space,
-  marginX: Space,
-  marginY: Space,
-  marginBlock: Space,
-  marginBlockEnd: Space,
-  marginBlockStart: Space,
-  marginInline: Space,
-  marginInlineEnd: Space,
-  marginInlineStart: Space,
-  padding: Space,
-  paddingTop: Space,
-  paddingRight: Space,
-  paddingBottom: Space,
-  paddingLeft: Space,
-  paddingX: Space,
-  paddingY: Space,
-  paddingBlock: Space,
-  paddingBlockEnd: Space,
-  paddingBlockStart: Space,
-  paddingInline: Space,
-  paddingInlineEnd: Space,
-  paddingInlineStart: Space,
-  inset: Space,
-  insetBlock: Space,
-  insetBlockEnd: Space,
-  insetBlockStart: Space,
-  insetInline: Space,
-  insetInlineEnd: Space,
-  insetInlineStart: Space,
-  top: Space,
-  right: Space,
-  bottom: Space,
-  left: Space,
-  gridGap: Space,
-  gridColumnGap: Space,
-  gridRowGap: Space,
-  gap: Space,
-  columnGap: Space,
-  rowGap: Space,
+  /**
+   * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **3** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin
+   */
+  margin?: Space,
+  /**
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **3** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
+   */
+  marginTop?: Space,
+  marginRight?: Space,
+  marginBottom?: Space,
+  marginLeft?: Space,
+  marginX?: Space,
+  marginY?: Space,
+  marginBlock?: Space,
+  marginBlockEnd?: Space,
+  marginBlockStart?: Space,
+  marginInline?: Space,
+  marginInlineEnd?: Space,
+  marginInlineStart?: Space,
+  padding?: Space,
+  paddingTop?: Space,
+  paddingRight?: Space,
+  paddingBottom?: Space,
+  paddingLeft?: Space,
+  paddingX?: Space,
+  paddingY?: Space,
+  paddingBlock?: Space,
+  paddingBlockEnd?: Space,
+  paddingBlockStart?: Space,
+  paddingInline?: Space,
+  paddingInlineEnd?: Space,
+  paddingInlineStart?: Space,
+  inset?: Space,
+  insetBlock?: Space,
+  insetBlockEnd?: Space,
+  insetBlockStart?: Space,
+  insetInline?: Space,
+  insetInlineEnd?: Space,
+  insetInlineStart?: Space,
+  top?: Space,
+  right?: Space,
+  bottom?: Space,
+  left?: Space,
+  gridGap?: Space,
+  gridColumnGap?: Space,
+  gridRowGap?: Space,
+  gap?: Space,
+  columnGap?: Space,
+  rowGap?: Space,
 }
+
 
 const sizes = {
   width: 'sizes',
@@ -215,6 +235,27 @@ const sizes = {
   minInlineSize: 'sizes',
 }
 
+type Sizes = 
+| keyof Exclude<FinalTheme['sizes'], undefined>
+| CSS.Globals
+
+export interface SizesCSSProperties {
+  width?: Sizes
+  minWidth?: Sizes
+  maxWidth?: Sizes
+  height?: Sizes
+  minHeight?: Sizes
+  maxHeight?: Sizes
+  flexBasis?: Sizes
+  size?: Sizes
+  blockSize?: Sizes
+  inlineSize?: Sizes
+  maxBlockSize?: Sizes
+  maxInlineSize?: Sizes
+  minBlockSize?: Sizes
+  minInlineSize?: Sizes
+}
+
 const borders = {
   border: 'borders',
   borderTop: 'borders',
@@ -223,10 +264,24 @@ const borders = {
   borderLeft: 'borders',
 }
 
+type Borders = 
+| keyof Exclude<FinalTheme['borders'], undefined>
+| CSS.Globals
+
+export interface BordersCSSProperties {
+  border?: Borders
+  borderTop?: Borders
+  borderRight?: Borders
+  borderBottom?: Borders
+  borderLeft?: Borders
+}
+
 export const scales = {
   ...colors,
   ...opacities,
   ...space,
+  ...borders,
+  ...sizes,
   fontFamily: 'fonts',
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',
