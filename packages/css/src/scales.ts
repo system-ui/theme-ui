@@ -176,7 +176,7 @@ export interface ColorScaleCSSProperties {
 
 const opacities: Record<keyof OpacitiesCSSProperties, 'opacities'> = {
   opacity: 'opacities',
-}
+} as const
 
 export type Opacities = ScaleProperty<FinalTheme['opacities']>
 
