@@ -8,6 +8,7 @@ import {
 } from './types'
 import { scales, Scales } from './scales'
 
+export { scales } from './scales';
 export type { Scales } from './scales'
 export * from './types'
 
