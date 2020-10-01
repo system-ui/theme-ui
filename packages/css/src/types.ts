@@ -445,7 +445,7 @@ interface OverwriteCSSProperties extends ColorScaleCSSProperties, OpacitiesCSSPr
  */
 export interface ThemeUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
-    AliasesCSSProperties,
+    Omit<AliasesCSSProperties, keyof OverwriteCSSProperties>,
     OverwriteCSSProperties {}
 
 export type StylePropertyValue<T> =
