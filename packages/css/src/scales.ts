@@ -92,8 +92,9 @@ const opacities = {
 } as const
 
 
+// by excluding Array<any>, we remove Array's "push", "pop" methods, etc.
 type Opacities = 
-| keyof Exclude<FinalTheme['opacities'], undefined>
+| Exclude<keyof Exclude<FinalTheme['opacities'], undefined>, keyof Array<any>>
 | CSS.Globals
 
 export interface OpacitiesCSSProperties {
@@ -148,7 +149,7 @@ const space = {
 } as const
 
 type Space = 
-| keyof Exclude<FinalTheme['space'], undefined>
+| Exclude<keyof Exclude<FinalTheme['space'], undefined>, keyof Array<any>>
 | CSS.Globals
 
 export interface SpaceCSSProperties {
@@ -236,7 +237,7 @@ const sizes = {
 } as const
 
 type Sizes = 
-| keyof Exclude<FinalTheme['sizes'], undefined>
+| Exclude<keyof Exclude<FinalTheme['sizes'], undefined>, keyof Array<any>>
 | CSS.Globals
 
 export interface SizesCSSProperties {
@@ -265,7 +266,7 @@ const borders = {
 } as const
 
 type Borders = 
-| keyof Exclude<FinalTheme['borders'], undefined>
+| Exclude<keyof Exclude<FinalTheme['borders'], undefined>, keyof Array<any>>
 | CSS.Globals
 
 export interface BordersCSSProperties {
