@@ -2,6 +2,18 @@ import * as CSS from 'csstype'
 
 import { FinalTheme } from './types'
 
+type CollectionKeys<T> = T extends any[]
+  ? Exclude<keyof T, keyof any[]> | number
+  : keyof T
+
+// turn `string` to `string & {}` which can be part of a union
+// we use this to allow autocomplete on css globals
+type StringHack<T> = string extends T ? Exclude<T, string> | (string & {}) : T
+
+type ScaleProperty<TScale> =
+  | StringHack<CollectionKeys<Exclude<TScale, undefined>>>
+  | CSS.Globals
+
 const colors = {
   color: 'colors',
   backgroundColor: 'colors',
@@ -19,9 +31,7 @@ const colors = {
   outlineColor: 'colors',
 } as const
 
-export type Color =
-  | Exclude<keyof Exclude<FinalTheme['colors'], undefined>, 'modes'>
-  | CSS.Globals
+export type Color = Exclude<ScaleProperty<FinalTheme['colors']>, 'modes'>
 
 export interface ColorScaleCSSProperties {
   /**
@@ -91,11 +101,7 @@ const opacities = {
   opacity: 'opacities',
 } as const
 
-
-// by excluding Array<any>, we remove Array's "push", "pop" methods, etc.
-type Opacities = 
-| Exclude<keyof Exclude<FinalTheme['opacities'], undefined>, keyof Array<any>>
-| CSS.Globals
+export type Opacities = ScaleProperty<FinalTheme['opacities']>
 
 export interface OpacitiesCSSProperties {
   // TODO add comment
@@ -148,9 +154,7 @@ const space = {
   rowGap: 'space',
 } as const
 
-type Space = 
-| Exclude<keyof Exclude<FinalTheme['space'], undefined>, keyof Array<any>>
-| CSS.Globals
+export type Space = ScaleProperty<FinalTheme['space']>
 
 export interface SpaceCSSProperties {
   /**
@@ -162,7 +166,7 @@ export interface SpaceCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin
    */
-  margin?: Space,
+  margin?: Space
   /**
    * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
@@ -174,50 +178,49 @@ export interface SpaceCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
    */
-  marginTop?: Space,
-  marginRight?: Space,
-  marginBottom?: Space,
-  marginLeft?: Space,
-  marginX?: Space,
-  marginY?: Space,
-  marginBlock?: Space,
-  marginBlockEnd?: Space,
-  marginBlockStart?: Space,
-  marginInline?: Space,
-  marginInlineEnd?: Space,
-  marginInlineStart?: Space,
-  padding?: Space,
-  paddingTop?: Space,
-  paddingRight?: Space,
-  paddingBottom?: Space,
-  paddingLeft?: Space,
-  paddingX?: Space,
-  paddingY?: Space,
-  paddingBlock?: Space,
-  paddingBlockEnd?: Space,
-  paddingBlockStart?: Space,
-  paddingInline?: Space,
-  paddingInlineEnd?: Space,
-  paddingInlineStart?: Space,
-  inset?: Space,
-  insetBlock?: Space,
-  insetBlockEnd?: Space,
-  insetBlockStart?: Space,
-  insetInline?: Space,
-  insetInlineEnd?: Space,
-  insetInlineStart?: Space,
-  top?: Space,
-  right?: Space,
-  bottom?: Space,
-  left?: Space,
-  gridGap?: Space,
-  gridColumnGap?: Space,
-  gridRowGap?: Space,
-  gap?: Space,
-  columnGap?: Space,
-  rowGap?: Space,
+  marginTop?: Space
+  marginRight?: Space
+  marginBottom?: Space
+  marginLeft?: Space
+  marginX?: Space
+  marginY?: Space
+  marginBlock?: Space
+  marginBlockEnd?: Space
+  marginBlockStart?: Space
+  marginInline?: Space
+  marginInlineEnd?: Space
+  marginInlineStart?: Space
+  padding?: Space
+  paddingTop?: Space
+  paddingRight?: Space
+  paddingBottom?: Space
+  paddingLeft?: Space
+  paddingX?: Space
+  paddingY?: Space
+  paddingBlock?: Space
+  paddingBlockEnd?: Space
+  paddingBlockStart?: Space
+  paddingInline?: Space
+  paddingInlineEnd?: Space
+  paddingInlineStart?: Space
+  inset?: Space
+  insetBlock?: Space
+  insetBlockEnd?: Space
+  insetBlockStart?: Space
+  insetInline?: Space
+  insetInlineEnd?: Space
+  insetInlineStart?: Space
+  top?: Space
+  right?: Space
+  bottom?: Space
+  left?: Space
+  gridGap?: Space
+  gridColumnGap?: Space
+  gridRowGap?: Space
+  gap?: Space
+  columnGap?: Space
+  rowGap?: Space
 }
-
 
 const sizes = {
   width: 'sizes',
@@ -236,9 +239,7 @@ const sizes = {
   minInlineSize: 'sizes',
 } as const
 
-type Sizes = 
-| Exclude<keyof Exclude<FinalTheme['sizes'], undefined>, keyof Array<any>>
-| CSS.Globals
+export type Sizes = ScaleProperty<FinalTheme['sizes']>
 
 export interface SizesCSSProperties {
   width?: Sizes
@@ -265,9 +266,7 @@ const borders = {
   borderLeft: 'borders',
 } as const
 
-type Borders = 
-| Exclude<keyof Exclude<FinalTheme['borders'], undefined>, keyof Array<any>>
-| CSS.Globals
+type Borders = ScaleProperty<FinalTheme['borders']>
 
 export interface BordersCSSProperties {
   border?: Borders
