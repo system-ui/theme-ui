@@ -5,11 +5,7 @@
   "module": "dist/components.esm.js",
   "types": "index.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress --jsx React.createElement",
-    "watch": "microbundle watch --no-compress --jsx React.createElement",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",

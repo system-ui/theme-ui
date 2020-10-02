@@ -6,11 +6,7 @@
   "module": "dist/mdx.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",

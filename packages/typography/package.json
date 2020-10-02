@@ -7,11 +7,7 @@
   "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@theme-ui/css": "^0.4.0-rc.5",
     "@types/compass-vertical-rhythm": "^1.4.1",

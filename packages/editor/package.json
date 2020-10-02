@@ -6,11 +6,7 @@
   "types": "dist/index.d.ts",
   "author": "Brent Jackson",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@theme-ui/components": "^0.4.0-rc.5",
     "@theme-ui/css": "^0.4.0-rc.5",

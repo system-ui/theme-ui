@@ -6,11 +6,7 @@
   "types": "dist/index.d.ts",
   "source": "src/index.tsx",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
   "license": "MIT",

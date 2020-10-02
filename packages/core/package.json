@@ -6,11 +6,7 @@
   "module": "dist/core.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
   "license": "MIT",
