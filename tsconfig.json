@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "strict": true,
     "jsx": "react",
-    "noEmit": true /* Do not emit outputs. */
+    "noEmit": true /* Do not emit outputs. */,
+    "module": "es2015" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
   }
 }
