@@ -1,7 +1,8 @@
 {
+  "name": "theme-ui",
   "private": true,
   "scripts": {
-    "prepare": "lerna run prepare",
+    "postinstall": "preconstruct dev",
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "serve": "yarn workspace docs serve --port 8000",
@@ -25,6 +26,7 @@
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
     "@babel/runtime": "^7.10.2",
+    "@preconstruct/cli": "^1.1.27",
     "@testing-library/react": "^11.0.1",
     "@types/jest": "^26.0.10",
     "@types/lodash.debounce": "^4.0.6",
@@ -114,5 +116,10 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ]
   }
 }
