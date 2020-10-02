@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/color-modes",
   "version": "0.4.0-rc.5",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/color-modes.cjs.js",
+  "module": "dist/color-modes.esm.js",
   "types": "dist/index.d.ts",
   "source": "src/index.tsx",
   "sideEffects": false,

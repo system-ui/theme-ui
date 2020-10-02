@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/editor",
   "version": "0.4.0-rc.5",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/editor.cjs.js",
+  "module": "dist/editor.esm.js",
   "types": "dist/index.d.ts",
   "author": "Brent Jackson",
   "license": "MIT",

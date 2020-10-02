@@ -2,8 +2,8 @@
   "name": "@theme-ui/mdx",
   "version": "0.4.0-rc.5",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/mdx.cjs.js",
+  "module": "dist/mdx.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {

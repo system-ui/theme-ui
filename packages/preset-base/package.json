@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/preset-base",
   "version": "0.4.0-rc.5",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/preset-base.cjs.js",
+  "module": "dist/preset-base.esm.js",
   "author": "Brent Jackson",
   "license": "MIT",
   "repository": "system-ui/theme-ui",

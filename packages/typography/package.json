@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/typography",
   "version": "0.4.0-rc.5",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/typography.cjs.js",
+  "module": "dist/typography.esm.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",

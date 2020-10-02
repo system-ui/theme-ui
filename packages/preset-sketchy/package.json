@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/preset-sketchy",
   "version": "0.4.0-rc.5",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/preset-sketchy.cjs.js",
+  "module": "dist/preset-sketchy.esm.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "author": "Aleksandra Sikora",
