@@ -2,8 +2,9 @@
   "name": "theme-ui",
   "private": true,
   "scripts": {
+    "prepare": "preconstruct build",
     "start": "yarn workspace docs start",
-    "build": "preconstruct build",
+    "build": "yarn workspace docs build",
     "serve": "yarn workspace docs serve --port 8000",
     "clean": "lerna run clean",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
