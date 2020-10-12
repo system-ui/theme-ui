@@ -1,6 +1,6 @@
 import * as CSS from 'csstype'
 
-import { BordersCSSProperties, BorderWidthsCSSProperties, ColorScaleCSSProperties, OpacitiesCSSProperties, RadiiCSSProperties, SizesCSSProperties, SpaceCSSProperties } from './scales'
+import { BordersCSSProperties, BorderStylesCSSProperties, BorderWidthsCSSProperties, ColorScaleCSSProperties, OpacitiesCSSProperties, RadiiCSSProperties, SizesCSSProperties, SpaceCSSProperties } from './scales'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -324,7 +324,7 @@ interface AliasesCSSProperties {
   size?: StandardCSSProperties['width']
 }
 
-interface OverwriteCSSProperties extends ColorScaleCSSProperties, OpacitiesCSSProperties, SpaceCSSProperties, BordersCSSProperties, SizesCSSProperties, RadiiCSSProperties, BorderWidthsCSSProperties {
+interface OverwriteCSSProperties extends ColorScaleCSSProperties, OpacitiesCSSProperties, SpaceCSSProperties, BordersCSSProperties, SizesCSSProperties, RadiiCSSProperties, BorderWidthsCSSProperties, BorderStylesCSSProperties {
   /**
    * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the
    * element, blur and spread radii, and color.

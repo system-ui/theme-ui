@@ -332,6 +332,36 @@ export interface BorderWidthsCSSProperties {
   borderInlineWidth?: BorderWidths
 }
 
+const borderStyles = {
+  borderStyle: 'borderStyles',
+  borderTopStyle: 'borderStyles',
+  borderBottomStyle: 'borderStyles',
+  borderLeftStyle: 'borderStyles',
+  borderRightStyle: 'borderStyles',
+  borderBlockEndStyle: 'borderStyles',
+  borderBlockStartStyle: 'borderStyles',
+  borderBlockStyle: 'borderStyles',
+  borderInlineEndStyle: 'borderStyles',
+  borderInlineStartStyle: 'borderStyles',
+  borderInlineStyle: 'borderStyles',
+} as const
+
+type BorderStyles = ScaleProperty<FinalTheme['borderStyles']>
+
+export interface BorderStylesCSSProperties {
+  borderStyle?: BorderStyles
+  borderTopStyle?: BorderStyles
+  borderBottomStyle?: BorderStyles
+  borderLeftStyle?: BorderStyles
+  borderRightStyle?: BorderStyles
+  borderBlockEndStyle?: BorderStyles
+  borderBlockStartStyle?: BorderStyles
+  borderBlockStyle?: BorderStyles
+  borderInlineEndStyle?: BorderStyles
+  borderInlineStartStyle?: BorderStyles
+  borderInlineStyle?: BorderStyles
+}
+
 export const scales = {
   ...colors,
   ...opacities,
@@ -340,28 +370,18 @@ export const scales = {
   ...sizes,
   ...radii,
   ...borderWidths,
+  ...borderStyles,
   fontFamily: 'fonts',
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',
   lineHeight: 'lineHeights',
   letterSpacing: 'letterSpacings',
-  borderStyle: 'borderStyles',
-  borderTopStyle: 'borderStyles',
-  borderBottomStyle: 'borderStyles',
-  borderLeftStyle: 'borderStyles',
-  borderRightStyle: 'borderStyles',
   borderBlock: 'borders',
   borderBlockEnd: 'borders',
-  borderBlockEndStyle: 'borderStyles',
   borderBlockStart: 'borders',
-  borderBlockStartStyle: 'borderStyles',
-  borderBlockStyle: 'borderStyles',
   borderInline: 'borders',
   borderInlineEnd: 'borders',
-  borderInlineEndStyle: 'borderStyles',
   borderInlineStart: 'borders',
-  borderInlineStartStyle: 'borderStyles',
-  borderInlineStyle: 'borderStyles',
   boxShadow: 'shadows',
   textShadow: 'shadows',
   zIndex: 'zIndices',
