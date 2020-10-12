@@ -373,7 +373,18 @@ export interface BorderStylesCSSProperties {
   borderInlineStartStyle?: BorderStyles
   borderInlineStyle?: BorderStyles
 }
- 
+
+const fonts = {
+  fontFamily: 'fonts',
+} as const
+
+type Fonts = ScaleProperty<FinalTheme['fonts']>
+
+export interface FontsCSSProperties {
+  fontFamily: Fonts
+}
+
+const 
 
 export const scales = {
   ...colors,
@@ -384,7 +395,7 @@ export const scales = {
   ...radii,
   ...borderWidths,
   ...borderStyles,
-  fontFamily: 'fonts',
+  ...fonts,
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',
   lineHeight: 'lineHeights',
