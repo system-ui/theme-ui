@@ -276,54 +276,92 @@ export interface BordersCSSProperties {
   borderLeft?: Borders
 }
 
+const radii = {
+  borderRadius: 'radii',
+  borderTopRightRadius: 'radii',
+  borderTopLeftRadius: 'radii',
+  borderBottomRightRadius: 'radii',
+  borderBottomLeftRadius: 'radii',
+  borderEndEndRadius: 'radii',
+  borderEndStartRadius: 'radii',
+  borderStartEndRadius: 'radii',
+  borderStartStartRadius: 'radii',
+} as const
+
+type Radii = ScaleProperty<FinalTheme['radii']>
+
+export interface RadiiCSSProperties {
+  borderRadius?: Radii,
+  borderTopRightRadius?: Radii,
+  borderTopLeftRadius?: Radii,
+  borderBottomRightRadius?: Radii,
+  borderBottomLeftRadius?: Radii,
+  borderEndEndRadius?: Radii
+  borderEndStartRadius?: Radii
+  borderStartEndRadius?: Radii
+  borderStartStartRadius?: Radii
+}
+
+const borderWidths = {
+  borderWidth: 'borderWidths',
+  borderTopWidth: 'borderWidths',
+  borderBottomWidth: 'borderWidths',
+  borderLeftWidth: 'borderWidths',
+  borderRightWidth: 'borderWidths',
+  borderBlockEndWidth: 'borderWidths',
+  borderBlockStartWidth: 'borderWidths',
+  borderBlockWidth: 'borderWidths',
+  borderInlineEndWidth: 'borderWidths',
+  borderInlineStartWidth: 'borderWidths',
+  borderInlineWidth: 'borderWidths',
+} as const
+
+type BorderWidths = ScaleProperty<FinalTheme['borderWidths']>
+
+export interface BorderWidthsCSSProperties {
+  borderWidth?: BorderWidths
+  borderTopWidth?: BorderWidths
+  borderBottomWidth?: BorderWidths
+  borderLeftWidth?: BorderWidths
+  borderRightWidth?: BorderWidths
+  borderBlockEndWidth?: BorderWidths
+  borderBlockStartWidth?: BorderWidths
+  borderBlockWidth?: BorderWidths
+  borderInlineEndWidth?: BorderWidths
+  borderInlineStartWidth?: BorderWidths
+  borderInlineWidth?: BorderWidths
+}
+
 export const scales = {
   ...colors,
   ...opacities,
   ...space,
   ...borders,
   ...sizes,
+  ...radii,
+  ...borderWidths,
   fontFamily: 'fonts',
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',
   lineHeight: 'lineHeights',
   letterSpacing: 'letterSpacings',
-  borderWidth: 'borderWidths',
   borderStyle: 'borderStyles',
-  borderRadius: 'radii',
-  borderTopRightRadius: 'radii',
-  borderTopLeftRadius: 'radii',
-  borderBottomRightRadius: 'radii',
-  borderBottomLeftRadius: 'radii',
-  borderTopWidth: 'borderWidths',
   borderTopStyle: 'borderStyles',
-  borderBottomWidth: 'borderWidths',
   borderBottomStyle: 'borderStyles',
-  borderLeftWidth: 'borderWidths',
   borderLeftStyle: 'borderStyles',
-  borderRightWidth: 'borderWidths',
   borderRightStyle: 'borderStyles',
   borderBlock: 'borders',
   borderBlockEnd: 'borders',
   borderBlockEndStyle: 'borderStyles',
-  borderBlockEndWidth: 'borderWidths',
   borderBlockStart: 'borders',
   borderBlockStartStyle: 'borderStyles',
-  borderBlockStartWidth: 'borderWidths',
   borderBlockStyle: 'borderStyles',
-  borderBlockWidth: 'borderWidths',
-  borderEndEndRadius: 'radii',
-  borderEndStartRadius: 'radii',
   borderInline: 'borders',
   borderInlineEnd: 'borders',
   borderInlineEndStyle: 'borderStyles',
-  borderInlineEndWidth: 'borderWidths',
   borderInlineStart: 'borders',
   borderInlineStartStyle: 'borderStyles',
-  borderInlineStartWidth: 'borderWidths',
   borderInlineStyle: 'borderStyles',
-  borderInlineWidth: 'borderWidths',
-  borderStartEndRadius: 'radii',
-  borderStartStartRadius: 'radii',
   boxShadow: 'shadows',
   textShadow: 'shadows',
   zIndex: 'zIndices',
