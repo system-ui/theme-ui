@@ -436,6 +436,16 @@ export interface ShadowsCSSProperties {
   textShadow?: Shadows
 }
 
+const zIndices = {
+  zIndex: 'zIndices'
+} as const
+
+type ZIndices = ScaleProperty<FinalTheme['zIndices']>
+
+export interface ZIndicesCSSProperties {
+  zIndex?: ZIndices
+}
+
 export const scales = {
   ...colors,
   ...opacities,
@@ -451,7 +461,7 @@ export const scales = {
   ...lineHeights,
   ...letterSpacings,
   ...shadows,
-  zIndex: 'zIndices',
+  ...zIndices
 } as const
 
 export type Scales = typeof scales
