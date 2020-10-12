@@ -404,6 +404,16 @@ export interface FontWeightsCSSProperties {
   fontWeight: FontWeights
 }
 
+const lineHeights = {
+  lineHeight: 'lineHeights'
+} as const
+
+type LineHeights = ScaleProperty<FinalTheme['lineHeights']>
+
+export interface LineHeightsCSSProperties {
+  lineHeight: LineHeights
+}
+
 export const scales = {
   ...colors,
   ...opacities,
@@ -416,7 +426,7 @@ export const scales = {
   ...fonts,
   ...fontSizes,
   ...fontWeights,
-  lineHeight: 'lineHeights',
+  ...lineHeights,
   letterSpacing: 'letterSpacings',
   boxShadow: 'shadows',
   textShadow: 'shadows',
