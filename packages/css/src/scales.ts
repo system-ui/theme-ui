@@ -264,6 +264,12 @@ const borders = {
   borderRight: 'borders',
   borderBottom: 'borders',
   borderLeft: 'borders',
+  borderBlock: 'borders',
+  borderBlockEnd: 'borders',
+  borderBlockStart: 'borders',
+  borderInline: 'borders',
+  borderInlineEnd: 'borders',
+  borderInlineStart: 'borders',
 } as const
 
 type Borders = ScaleProperty<FinalTheme['borders']>
@@ -274,6 +280,12 @@ export interface BordersCSSProperties {
   borderRight?: Borders
   borderBottom?: Borders
   borderLeft?: Borders
+  borderBlock?: Borders
+  borderBlockEnd?: Borders
+  borderBlockStart?: Borders
+  borderInline?: Borders
+  borderInlineEnd?: Borders
+  borderInlineStart?: Borders
 }
 
 const radii = {
@@ -361,6 +373,7 @@ export interface BorderStylesCSSProperties {
   borderInlineStartStyle?: BorderStyles
   borderInlineStyle?: BorderStyles
 }
+ 
 
 export const scales = {
   ...colors,
@@ -376,12 +389,6 @@ export const scales = {
   fontWeight: 'fontWeights',
   lineHeight: 'lineHeights',
   letterSpacing: 'letterSpacings',
-  borderBlock: 'borders',
-  borderBlockEnd: 'borders',
-  borderBlockStart: 'borders',
-  borderInline: 'borders',
-  borderInlineEnd: 'borders',
-  borderInlineStart: 'borders',
   boxShadow: 'shadows',
   textShadow: 'shadows',
   zIndex: 'zIndices',
