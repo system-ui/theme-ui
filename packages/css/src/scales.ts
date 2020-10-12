@@ -384,7 +384,25 @@ export interface FontsCSSProperties {
   fontFamily: Fonts
 }
 
-const 
+const fontSizes = {
+  fontFamily: 'fonts',
+} as const
+
+type FontSizes = ScaleProperty<FinalTheme['fontSizes']>
+
+export interface FontSizesCSSProperties {
+  fontSize: FontSizes
+}
+
+const fontWeights = {
+  fontWeight: 'fontWeights',
+} as const
+
+type FontWeights = ScaleProperty<FinalTheme['fontWeights']>
+
+export interface FontWeightsCSSProperties {
+  fontWeight: FontWeights
+}
 
 export const scales = {
   ...colors,
@@ -396,8 +414,8 @@ export const scales = {
   ...borderWidths,
   ...borderStyles,
   ...fonts,
-  fontSize: 'fontSizes',
-  fontWeight: 'fontWeights',
+  ...fontSizes,
+  ...fontWeights,
   lineHeight: 'lineHeights',
   letterSpacing: 'letterSpacings',
   boxShadow: 'shadows',
