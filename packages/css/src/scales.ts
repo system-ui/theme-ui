@@ -381,7 +381,7 @@ const fonts = {
 type Fonts = ScaleProperty<FinalTheme['fonts']>
 
 export interface FontsCSSProperties {
-  fontFamily: Fonts
+  fontFamily?: Fonts
 }
 
 const fontSizes = {
@@ -391,7 +391,7 @@ const fontSizes = {
 type FontSizes = ScaleProperty<FinalTheme['fontSizes']>
 
 export interface FontSizesCSSProperties {
-  fontSize: FontSizes
+  fontSize?: FontSizes
 }
 
 const fontWeights = {
@@ -401,7 +401,7 @@ const fontWeights = {
 type FontWeights = ScaleProperty<FinalTheme['fontWeights']>
 
 export interface FontWeightsCSSProperties {
-  fontWeight: FontWeights
+  fontWeight?: FontWeights
 }
 
 const lineHeights = {
@@ -411,7 +411,29 @@ const lineHeights = {
 type LineHeights = ScaleProperty<FinalTheme['lineHeights']>
 
 export interface LineHeightsCSSProperties {
-  lineHeight: LineHeights
+  lineHeight?: LineHeights
+}
+
+const letterSpacings = {
+  letterSpacing: 'letterSpacings'
+} as const
+
+type LetterSpacings = ScaleProperty<FinalTheme['letterSpacings']>
+
+export interface LetterSpacingsCSSProperties {
+  letterSpacing?: LetterSpacings
+}
+
+const shadows = {
+  boxShadow: 'shadows',
+  textShadow: 'shadows',
+} as const
+
+type Shadows = ScaleProperty<FinalTheme['shadows']>
+
+export interface ShadowsCSSProperties {
+  boxShadow?: Shadows
+  textShadow?: Shadows
 }
 
 export const scales = {
@@ -427,9 +449,8 @@ export const scales = {
   ...fontSizes,
   ...fontWeights,
   ...lineHeights,
-  letterSpacing: 'letterSpacings',
-  boxShadow: 'shadows',
-  textShadow: 'shadows',
+  ...letterSpacings,
+  ...shadows,
   zIndex: 'zIndices',
 } as const
 
