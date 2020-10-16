@@ -176,7 +176,7 @@ export interface ColorScaleCSSProperties {
 
 const opacities: Record<keyof OpacitiesCSSProperties, 'opacities'> = {
   opacity: 'opacities',
-} as const
+}
 
 export type Opacities = ScaleProperty<FinalTheme['opacities']>
 
@@ -241,7 +241,7 @@ const space: Record<keyof SpaceCSSProperties, 'space'> = {
   gap: 'space',
   columnGap: 'space',
   rowGap: 'space',
-} as const
+}
 
 export type Space = ScaleProperty<FinalTheme['space']>
 
@@ -1131,7 +1131,7 @@ const borders: Record<keyof BordersCSSProperties, 'borders'> = {
   borderInlineStart: 'borders',
 }
 
-type Borders = ScaleProperty<FinalTheme['borders']>
+export type Borders = ScaleProperty<FinalTheme['borders']>
 
 export interface BordersCSSProperties {
   /**
@@ -1278,7 +1278,7 @@ export interface BordersCSSProperties {
   borderInlineStart?: Borders
 }
 
-const radii = {
+const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
   borderRadius: 'radii',
   borderTopRightRadius: 'radii',
   borderTopLeftRadius: 'radii',
@@ -1288,9 +1288,9 @@ const radii = {
   borderEndStartRadius: 'radii',
   borderStartEndRadius: 'radii',
   borderStartStartRadius: 'radii',
-} as const
+}
 
-type Radii = ScaleProperty<FinalTheme['radii']>
+export type Radii = ScaleProperty<FinalTheme['radii']>
 
 export interface RadiiCSSProperties {
   borderRadius?: Radii
@@ -1304,7 +1304,7 @@ export interface RadiiCSSProperties {
   borderStartStartRadius?: Radii
 }
 
-const borderWidths = {
+const borderWidths: Record<keyof BorderWidthsCSSProperties, 'borderWidths'> = {
   borderWidth: 'borderWidths',
   borderTopWidth: 'borderWidths',
   borderBottomWidth: 'borderWidths',
@@ -1316,9 +1316,9 @@ const borderWidths = {
   borderInlineEndWidth: 'borderWidths',
   borderInlineStartWidth: 'borderWidths',
   borderInlineWidth: 'borderWidths',
-} as const
+}
 
-type BorderWidths = ScaleProperty<FinalTheme['borderWidths']>
+export type BorderWidths = ScaleProperty<FinalTheme['borderWidths']>
 
 export interface BorderWidthsCSSProperties {
   borderWidth?: BorderWidths
@@ -1334,7 +1334,7 @@ export interface BorderWidthsCSSProperties {
   borderInlineWidth?: BorderWidths
 }
 
-const borderStyles = {
+const borderStyles: Record<keyof BorderStylesCSSProperties, 'borderStyles'> = {
   borderStyle: 'borderStyles',
   borderTopStyle: 'borderStyles',
   borderBottomStyle: 'borderStyles',
@@ -1346,7 +1346,7 @@ const borderStyles = {
   borderInlineEndStyle: 'borderStyles',
   borderInlineStartStyle: 'borderStyles',
   borderInlineStyle: 'borderStyles',
-} as const
+}
 
 type BorderStyles = ScaleProperty<FinalTheme['borderStyles']>
 
@@ -1364,9 +1364,9 @@ export interface BorderStylesCSSProperties {
   borderInlineStyle?: BorderStyles
 }
 
-const fonts = {
+const fonts: Record<keyof FontsCSSProperties, 'fonts'> = {
   fontFamily: 'fonts',
-} as const
+}
 
 type Fonts = ScaleProperty<FinalTheme['fonts']>
 
@@ -1374,9 +1374,9 @@ export interface FontsCSSProperties {
   fontFamily?: Fonts
 }
 
-const fontSizes = {
-  fontFamily: 'fonts',
-} as const
+const fontSizes: Record<keyof FontSizesCSSProperties, 'fontSizes'> = {
+  fontSize: 'fontSizes',
+}
 
 type FontSizes = ScaleProperty<FinalTheme['fontSizes']>
 
@@ -1384,9 +1384,9 @@ export interface FontSizesCSSProperties {
   fontSize?: FontSizes
 }
 
-const fontWeights = {
+const fontWeights: Record<keyof FontWeightsCSSProperties, 'fontWeights'> = {
   fontWeight: 'fontWeights',
-} as const
+}
 
 type FontWeights = ScaleProperty<FinalTheme['fontWeights']>
 
@@ -1394,9 +1394,9 @@ export interface FontWeightsCSSProperties {
   fontWeight?: FontWeights
 }
 
-const lineHeights = {
+const lineHeights: Record<keyof LineHeightsCSSProperties, 'lineHeights'> = {
   lineHeight: 'lineHeights',
-} as const
+}
 
 type LineHeights = ScaleProperty<FinalTheme['lineHeights']>
 
@@ -1404,9 +1404,12 @@ export interface LineHeightsCSSProperties {
   lineHeight?: LineHeights
 }
 
-const letterSpacings = {
+const letterSpacings: Record<
+  keyof LetterSpacingsCSSProperties,
+  'letterSpacings'
+> = {
   letterSpacing: 'letterSpacings',
-} as const
+}
 
 type LetterSpacings = ScaleProperty<FinalTheme['letterSpacings']>
 
@@ -1414,10 +1417,10 @@ export interface LetterSpacingsCSSProperties {
   letterSpacing?: LetterSpacings
 }
 
-const shadows = {
+const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
   boxShadow: 'shadows',
   textShadow: 'shadows',
-} as const
+}
 
 type Shadows = ScaleProperty<FinalTheme['shadows']>
 
@@ -1426,9 +1429,9 @@ export interface ShadowsCSSProperties {
   textShadow?: Shadows
 }
 
-const zIndices = {
+const zIndices: Record<keyof ZIndicesCSSProperties, 'zIndices'> = {
   zIndex: 'zIndices',
-} as const
+}
 
 type ZIndices = ScaleProperty<FinalTheme['zIndices']>
 
