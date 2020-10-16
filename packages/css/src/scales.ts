@@ -911,23 +911,213 @@ const sizes: Record<keyof SizesCSSProperties, 'sizes'> = {
 export type Sizes = ScaleProperty<FinalTheme['sizes']>
 
 export interface SizesCSSProperties {
+  /**
+   * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
+   *
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   */
   width?: Sizes
+
+  /**
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
+   *
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **7** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-width
+   */
   minWidth?: Sizes
+
+  /**
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
+   *
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **7** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-width
+   */
   maxWidth?: Sizes
+
+  /**
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
+   *
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
   height?: Sizes
+
+  /**
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
+   *
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari  |  Edge  |  IE   |
+   * | :----: | :-----: | :-----: | :----: | :---: |
+   * | **1**  |  **3**  | **1.3** | **12** | **7** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-height
+   */
   minHeight?: Sizes
+
+  /**
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
+   *
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari  |  Edge  |  IE   |
+   * | :----: | :-----: | :-----: | :----: | :---: |
+   * | **18** |  **1**  | **1.3** | **12** | **7** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-height
+   */
   maxHeight?: Sizes
+
+  /**
+   * The **`flex-basis`** CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
+   *
+   * **Syntax**: `content | <'width'>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **22**  |  **9**  | **12** | **11** |
+   * | 22 _-x-_ |         | 7 _-x-_ |        |        |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
+   */
   flexBasis?: Sizes
+
+  /**
+   * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
   size?: Sizes
+
+  /**
+   * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
+   * **Syntax**: `<'width'>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/block-size
+   */
   blockSize?: Sizes
+
+  /**
+   * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
+   * **Syntax**: `<'width'>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
+   */
   inlineSize?: Sizes
-  maxBlockSize?: Sizes
-  maxInlineSize?: Sizes
-  minBlockSize?: Sizes
+
+  /**
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
+   * **Syntax**: `<'min-width'>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-inline-size
+   */
   minInlineSize?: Sizes
+
+  /**
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block depending on its writing mode. It corresponds to the `max-width` or the `max-height` property depending on the value defined for `writing-mode`. If the writing mode is vertically oriented, the value of `max-inline-size` relates to the maximal height of the element, otherwise it relates to the maximal width of the element. It relates to `max-block-size`, which defines the other dimension of the element.
+   *
+   * **Syntax**: `<'max-width'>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |   Safari   |  Edge  | IE  |
+   * | :----: | :-----: | :--------: | :----: | :-: |
+   * | **57** | **41**  |  **12.1**  | **79** | No  |
+   * |        |         | 10.1 _-x-_ |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-inline-size
+   */
+  maxInlineSize?: Sizes
+
+  /**
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
+   * **Syntax**: `<'min-width'>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
+   */
+  minBlockSize?: Sizes
+
+  /**
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
+   * **Syntax**: `<'min-width'>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
+   */
+  maxBlockSize?: Sizes
 }
 
-const borders = {
+const borders: Record<keyof BordersCSSProperties, 'borders'> = {
   border: 'borders',
   borderTop: 'borders',
   borderRight: 'borders',
@@ -939,21 +1129,152 @@ const borders = {
   borderInline: 'borders',
   borderInlineEnd: 'borders',
   borderInlineStart: 'borders',
-} as const
+}
 
 type Borders = ScaleProperty<FinalTheme['borders']>
 
 export interface BordersCSSProperties {
+  /**
+   * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
+   *
+   * **Syntax**: `<line-width> || <line-style> || <color>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border
+   */
   border?: Borders
+
+  /**
+   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-width`, `border-top-style` and `border-top-color`. These properties set an element's top border.
+   *
+   * **Syntax**: `<line-width> || <line-style> || <color>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top
+   */
   borderTop?: Borders
+
+  /**
+   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-width`, `border-right-style` and `border-right-color`. These properties set an element's right border.
+   *
+   * **Syntax**: `<line-width> || <line-style> || <color>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right
+   */
   borderRight?: Borders
+
+  /**
+   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`. These properties set an element's bottom border.
+   *
+   * **Syntax**: `<line-width> || <line-style> || <color>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
+   */
   borderBottom?: Borders
+
+  /**
+   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-width`, `border-left-style` and `border-left-color`. These properties set an element's left border.
+   *
+   * **Syntax**: `<line-width> || <line-style> || <color>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left
+   */
   borderLeft?: Borders
+
+  /**
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **66**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block
+   */
   borderBlock?: Borders
+
+  /**
+   * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
+   */
   borderBlockEnd?: Borders
+
+  /**
+   * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
+   */
   borderBlockStart?: Borders
+
+  /**
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **66**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
+   */
   borderInline?: Borders
+
+  /**
+   * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
+   */
   borderInlineEnd?: Borders
+
+  /**
+   * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **41**  | **12.1** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
+   */
   borderInlineStart?: Borders
 }
 
@@ -972,11 +1293,11 @@ const radii = {
 type Radii = ScaleProperty<FinalTheme['radii']>
 
 export interface RadiiCSSProperties {
-  borderRadius?: Radii,
-  borderTopRightRadius?: Radii,
-  borderTopLeftRadius?: Radii,
-  borderBottomRightRadius?: Radii,
-  borderBottomLeftRadius?: Radii,
+  borderRadius?: Radii
+  borderTopRightRadius?: Radii
+  borderTopLeftRadius?: Radii
+  borderBottomRightRadius?: Radii
+  borderBottomLeftRadius?: Radii
   borderEndEndRadius?: Radii
   borderEndStartRadius?: Radii
   borderStartEndRadius?: Radii
@@ -1074,7 +1395,7 @@ export interface FontWeightsCSSProperties {
 }
 
 const lineHeights = {
-  lineHeight: 'lineHeights'
+  lineHeight: 'lineHeights',
 } as const
 
 type LineHeights = ScaleProperty<FinalTheme['lineHeights']>
@@ -1084,7 +1405,7 @@ export interface LineHeightsCSSProperties {
 }
 
 const letterSpacings = {
-  letterSpacing: 'letterSpacings'
+  letterSpacing: 'letterSpacings',
 } as const
 
 type LetterSpacings = ScaleProperty<FinalTheme['letterSpacings']>
@@ -1106,7 +1427,7 @@ export interface ShadowsCSSProperties {
 }
 
 const zIndices = {
-  zIndex: 'zIndices'
+  zIndex: 'zIndices',
 } as const
 
 type ZIndices = ScaleProperty<FinalTheme['zIndices']>
@@ -1130,7 +1451,7 @@ export const scales = {
   ...lineHeights,
   ...letterSpacings,
   ...shadows,
-  ...zIndices
+  ...zIndices,
 } as const
 
 export type Scales = typeof scales
