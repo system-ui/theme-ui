@@ -5,7 +5,7 @@ import { Field } from '@theme-ui/components'
 import Combobox from '../Combobox'
 
 type TypographyPropsValue = {
-  fontFamily?: string
+  fontFamily?: string | number
   fontSize?: string | number
   fontWeight?: string | number
   lineHeight?: string | number
