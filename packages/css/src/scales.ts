@@ -6,7 +6,7 @@ type CollectionKeys<T> = T extends any[]
   ? Exclude<keyof T, keyof any[]> | number
   : keyof T
 
-// turn `string` to `string & {}` which can be part of a union
+// turns `string` to `string & {}` which can be part of a union
 // we use this to allow autocomplete on css globals
 type StringHack<T> = string extends T ? Exclude<T, string> | (string & {}) : T
 
