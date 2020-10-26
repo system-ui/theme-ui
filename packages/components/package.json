@@ -1,12 +1,14 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-rc.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress --jsx React.createElement",
-    "watch": "microbundle watch --no-compress --jsx React.createElement"
+    "watch": "microbundle watch --no-compress --jsx React.createElement",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
@@ -14,7 +16,7 @@
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "^0.4.0-alpha.0"
+    "@theme-ui/css": "^0.4.0-rc.5"
   },
   "peerDependencies": {
     "react": "^16.8.0"

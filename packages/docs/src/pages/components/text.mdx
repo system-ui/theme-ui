@@ -24,11 +24,16 @@ import { Text } from 'theme-ui'
 ## Variants
 
 Text style variants can be defined in the `theme.text` object.
+The Text component uses `theme.text.default` as its default variant style.
 
 ```js
 // example theme variants
 {
   text: {
+    default: {
+      color: 'text',
+      fontSize: 3,
+    },
     caps: {
       textTransform: 'uppercase',
       letterSpacing: '0.2em',

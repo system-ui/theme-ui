@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-rc.5",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -8,7 +8,8 @@
   "sideEffects": false,
   "scripts": {
     "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
@@ -18,7 +19,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/css": "^0.4.0-alpha.0",
+    "@theme-ui/css": "^0.4.0-rc.5",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

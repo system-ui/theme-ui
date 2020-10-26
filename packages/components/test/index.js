@@ -40,7 +40,7 @@ import {
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = (el) => renderer.create(el).toJSON()
 
 const theme = {
   boxes: {
@@ -63,6 +63,9 @@ const theme = {
     },
   },
   text: {
+    default: {
+      fontSize: 3,
+    },
     heading: {
       fontSize: 5,
     },
@@ -212,6 +215,16 @@ describe('Grid', () => {
 
   test('renders with responsive width prop', () => {
     const json = renderJSON(<Grid width={[256, 512]} />)
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with repeat and width props', () => {
+    const json = renderJSON(<Grid repeat="fill" width={256} />)
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with repeat and responsive width props', () => {
+    const json = renderJSON(<Grid repeat="fill" width={[256, 512]} />)
     expect(json).toMatchSnapshot()
   })
 

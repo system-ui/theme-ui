@@ -14,7 +14,7 @@ afterEach(() => {
   delete theme.colors
 })
 
-const Consumer = props => {
+const Consumer = (props) => {
   context = useThemeUI()
   return false
 }
@@ -23,6 +23,9 @@ test('renders with theme context', () => {
   const root = render(wrapRootElement({ element: <Consumer /> }, {}))
   expect(context.theme).toEqual({
     colors: {},
+    styles: {
+      pre: {},
+    },
   })
 })
 
@@ -32,8 +35,8 @@ test.skip('renders with ColorMode component', () => {
     modes: {
       dark: {
         primary: 'magenta',
-      }
-    }
+      },
+    },
   }
   const root = renderer.create(
     wrapRootElement(

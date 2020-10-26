@@ -1,14 +1,15 @@
 {
   "name": "@theme-ui/css",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-rc.5",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "author": "Brent Jackson",
   "license": "MIT",

@@ -1,11 +1,6 @@
-/**
- * Copied and adapted from @types/styled-system__css
- * https://github.com/DefinitelyTyped/DefinitelyTyped/blob/028c46f833ffbbb0328a28ae6177923998fcf0cc/types/styled-system__css/index.d.ts
- */
-
 import * as CSS from 'csstype'
 
-type StandardCSSProperties = CSS.PropertiesFallback<number | string>
+type StandardCSSProperties = CSS.Properties<number | string>
 
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
@@ -14,7 +9,7 @@ type StandardCSSProperties = CSS.PropertiesFallback<number | string>
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | Array<T | null>
+export type ResponsiveStyleValue<T> = T | Array<T | null | undefined>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
@@ -22,12 +17,13 @@ export type ResponsiveStyleValue<T> = T | Array<T | null>
  */
 export interface CSSProperties
   extends CSS.StandardProperties<number | string>,
-    CSS.SvgProperties<number | string> {}
+    CSS.SvgProperties<number | string>,
+    CSS.VendorProperties<number | string> {}
 
 /**
  * Map of all CSS pseudo selectors (`:hover`, `:focus`, ...)
  */
-export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: SystemStyleObject }
+export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: ThemeUIStyleObject }
 
 /**
  * CSS as POJO that is compatible with CSS-in-JS libaries.
@@ -45,13 +41,6 @@ type CSSPseudosForCSSObject = { [K in CSS.Pseudos]?: CSSObject }
 type CSSInterpolation = undefined | number | string | CSSObject
 interface CSSOthersObjectForCSSObject {
   [propertiesName: string]: CSSInterpolation
-}
-
-/**
- * Map all nested selectors
- */
-interface CSSSelectorObject {
-  [cssSelector: string]: SystemStyleObject
 }
 
 interface AliasesCSSProperties {
@@ -299,6 +288,16 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingY?: StandardCSSProperties['paddingTop']
+  // TODO: Move me to `MultiplesCSSProperties type and colocate it with the
+  // multiples object possibly.
+  /**
+   * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
+   *
+   * @see https://theme-ui.com/sx-prop#theme-aware-properties
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
+  size?: StandardCSSProperties['width']
 }
 
 interface OverwriteCSSProperties {
@@ -401,26 +400,42 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
   borderRadius?: CSS.BorderRadiusProperty<string | number>
+
+  /**
+   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
+  zIndex?: CSS.ZIndexProperty | string
 }
 
 /**
- * Map of all available CSS properties (including aliases) and their raw value.
- * Only used internally to map CCS properties to input types (responsive value,
- * theme function or nested) in `SystemCssProperties`.
+ * Map of all available CSS properties (including aliases and overwrites)
+ * and their raw value.
  */
-interface AllSystemCSSProperties
+export interface ThemeUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
-export type SystemCssProperties = {
-  [K in keyof AllSystemCSSProperties]:
-    | ResponsiveStyleValue<AllSystemCSSProperties[K]>
-    | ((theme: any) => ResponsiveStyleValue<AllSystemCSSProperties[K]>)
-    | SystemStyleObject
+export type StylePropertyValue<T> =
+  | ResponsiveStyleValue<Exclude<T, undefined>>
+  | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
+  | ThemeUIStyleObject
+
+export type ThemeUICSSProperties = {
+  [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<
+    ThemeUIExtendedCSSProperties[K]
+  >
 }
 
-interface VariantProperty {
+export interface VariantProperty {
   /**
    * **`Variants`** can be useful for applying complex styles to a component based on a single prop.
    *
@@ -442,51 +457,60 @@ interface VariantProperty {
    *
    * @see https://styled-system.com/variants
    */
-  variant: string
+  variant?: string
 }
 
-export interface UseThemeFunction {
-  (theme: any): Exclude<SystemStyleObject, UseThemeFunction>
+export interface ThemeDerivedStyles {
+  (theme: Theme): ThemeUICSSObject
 }
+
+export type Label = {
+  label?: string
+}
+
+export interface CSSOthersObject {
+  // we want to match CSS selectors
+  // but index signature needs to be a supertype
+  // so as a side-effect we allow unknown CSS properties (Emotion does too)
+  [k: string]: StylePropertyValue<string | number> | undefined | null
+}
+
+export interface ThemeUICSSObject
+  extends ThemeUICSSProperties,
+    CSSPseudoSelectorProps,
+    CSSOthersObject,
+    VariantProperty,
+    Label {}
 
 /**
- * The `SystemStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
+ * The `ThemeUIStyleObject` extends [style props](https://emotion.sh/docs/object-styles)
  * such that properties that are part of the `Theme` will be transformed to
  * their corresponding values. Other valid CSS properties are also allowed.
  */
-export type SystemStyleObject =
-  | SystemCssProperties
-  | CSSPseudoSelectorProps
-  | CSSSelectorObject
-  | VariantProperty
-  | UseThemeFunction
+export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
-type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
+/**
+ * An array or object (possibly nested) of related CSS properties
+ * @see https://theme-ui.com/theme-spec#theme-scales
+ */
+export type Scale<T> = T[] | { [K: string]: T | Scale<T>; [I: number]: T }
 
 export type TLengthStyledSystem = string | 0 | number
 
 /**
- * To use Theme UI color modes, color scales should include at least a text
- * and background color. These values are used in the ColorMode component to
- * set body foreground and background colors. Color modes should be defined as
- * nested objects within a theme.colors.modes object. Each key in this object
- * should correspond to a color mode name, where the name can be anything, but
- * typically light and dark are used for applications with a dark mode. The
- * initialColorModeName key is required to enable color modes and will be used as
- * the name for the root color palette.
+ * Color modes can be used to create a user-configurable dark mode
+ * or any number of other color modes.
  */
-export type ColorMode = {
-  [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
-} & {
+export interface ColorMode {
   /**
    * Body background color
    */
-  background: CSS.ColorProperty
+  background?: CSS.ColorProperty
 
   /**
    * Body foreground color
    */
-  text: CSS.ColorProperty
+  text?: CSS.ColorProperty
 
   /**
    * Primary brand color for links, buttons, etc.
@@ -499,37 +523,87 @@ export type ColorMode = {
   secondary?: CSS.ColorProperty
 
   /**
+   * A contrast color for emphasizing UI
+   */
+  accent?: CSS.ColorProperty
+
+  /**
+   * A background color for highlighting text
+   */
+  highlight?: CSS.ColorProperty
+
+  /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
   muted?: CSS.ColorProperty
 
+  [k: string]: CSS.ColorProperty | Scale<CSS.ColorProperty> | undefined
+}
+
+export type ColorModesScale = ColorMode & {
   /**
-   * A contrast color for emphasizing UI
+   * Nested color modes can provide overrides when used in conjunction with
+   * `Theme.initialColorModeName and `useColorMode()`
    */
-  accent?: CSS.ColorProperty
+  modes?: {
+    [k: string]: ColorMode
+  }
+}
+
+export interface ThemeStyles {
+  tr?: ThemeUIStyleObject
+  th?: ThemeUIStyleObject
+  td?: ThemeUIStyleObject
+  em?: ThemeUIStyleObject
+  strong?: ThemeUIStyleObject
+  div?: ThemeUIStyleObject
+  p?: ThemeUIStyleObject
+  b?: ThemeUIStyleObject
+  i?: ThemeUIStyleObject
+  a?: ThemeUIStyleObject
+  h1?: ThemeUIStyleObject
+  h2?: ThemeUIStyleObject
+  h3?: ThemeUIStyleObject
+  h4?: ThemeUIStyleObject
+  h5?: ThemeUIStyleObject
+  h6?: ThemeUIStyleObject
+  img?: ThemeUIStyleObject
+  pre?: ThemeUIStyleObject
+  code?: ThemeUIStyleObject
+  ol?: ThemeUIStyleObject
+  ul?: ThemeUIStyleObject
+  li?: ThemeUIStyleObject
+  blockquote?: ThemeUIStyleObject
+  hr?: ThemeUIStyleObject
+  table?: ThemeUIStyleObject
+  delete?: ThemeUIStyleObject
+  inlineCode?: ThemeUIStyleObject
+  thematicBreak?: ThemeUIStyleObject
+  root?: ThemeUIStyleObject
+  [key: string]: ThemeUIStyleObject | undefined
 }
 
 export interface Theme {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
-  space?: ObjectOrArray<CSS.MarginProperty<number | string>>
-  fontSizes?: ObjectOrArray<CSS.FontSizeProperty<number>>
-  fonts?: ObjectOrArray<CSS.FontFamilyProperty>
-  fontWeights?: ObjectOrArray<CSS.FontWeightProperty>
-  lineHeights?: ObjectOrArray<CSS.LineHeightProperty<TLengthStyledSystem>>
-  letterSpacings?: ObjectOrArray<CSS.LetterSpacingProperty<TLengthStyledSystem>>
-  sizes?: ObjectOrArray<CSS.HeightProperty<{}> | CSS.WidthProperty<{}>>
-  borders?: ObjectOrArray<CSS.BorderProperty<{}>>
-  borderStyles?: ObjectOrArray<CSS.BorderProperty<{}>>
-  borderWidths?: ObjectOrArray<CSS.BorderWidthProperty<TLengthStyledSystem>>
-  radii?: ObjectOrArray<CSS.BorderRadiusProperty<TLengthStyledSystem>>
-  shadows?: ObjectOrArray<CSS.BoxShadowProperty>
-  zIndices?: ObjectOrArray<CSS.ZIndexProperty>
-  buttons?: ObjectOrArray<SystemCssProperties>
-  colorStyles?: ObjectOrArray<SystemCssProperties>
-  textStyles?: ObjectOrArray<SystemCssProperties>
-  text?: ObjectOrArray<SystemCssProperties>
+  space?: Scale<CSS.MarginProperty<number | string>>
+  fontSizes?: Scale<CSS.FontSizeProperty<number>>
+  fonts?: Scale<CSS.FontFamilyProperty>
+  fontWeights?: Scale<CSS.FontWeightProperty>
+  lineHeights?: Scale<CSS.LineHeightProperty<TLengthStyledSystem>>
+  letterSpacings?: Scale<CSS.LetterSpacingProperty<TLengthStyledSystem>>
+  sizes?: Scale<CSS.HeightProperty<{}> | CSS.WidthProperty<{}>>
+  borders?: Scale<CSS.BorderProperty<{}>>
+  borderStyles?: Scale<CSS.BorderProperty<{}>>
+  borderWidths?: Scale<CSS.BorderWidthProperty<TLengthStyledSystem>>
+  radii?: Scale<CSS.BorderRadiusProperty<TLengthStyledSystem>>
+  shadows?: Scale<CSS.BoxShadowProperty>
+  zIndices?: Scale<CSS.ZIndexProperty>
+  colorStyles?: Scale<ThemeUICSSProperties>
+  textStyles?: Scale<ThemeUICSSProperties>
+  opacities?: Scale<CSS.OpacityProperty>
+
   /**
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
@@ -559,17 +633,14 @@ export interface Theme {
   useBorderBox?: boolean
 
   /**
+   * If false, does not save color mode as a localStorage value.
+   */
+  useLocalStorage?: boolean
+
+  /**
    * Define the colors that are available through this theme
    */
-  colors?: ColorMode & {
-    /**
-     * Nested color modes can provide overrides when used in conjunction with
-     * `Theme.initialColorModeName and `useColorMode()`
-     */
-    modes?: {
-      [k: string]: ColorMode
-    }
-  }
+  colors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
@@ -578,38 +649,139 @@ export interface Theme {
    * with @styled-system/css and have access to base theme values like colors,
    * fonts, etc.
    */
-  styles?: {
-    [P in StyledTags]?: SystemStyleObject
-  }
-}
+  styles?: ThemeStyles
 
-type StyledTags =
-  | 'tr'
-  | 'th'
-  | 'td'
-  | 'em'
-  | 'strong'
-  | 'div'
-  | 'p'
-  | 'b'
-  | 'i'
-  | 'a'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'img'
-  | 'pre'
-  | 'code'
-  | 'ol'
-  | 'ul'
-  | 'li'
-  | 'blockquote'
-  | 'hr'
-  | 'table'
-  | 'delete'
-  | 'inlineCode'
-  | 'thematicBreak'
-  | 'root'
+  /**
+   * You can define additional CSS grid layouts by adding variants to the
+   * `theme.grids` object. These styles can be used to create a wide variety of
+   * different reusable layouts.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/grid#variants
+   */
+  grids?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Button variants can be defined in the `theme.buttons` object. The `Button`
+   * component uses `theme.buttons.primary` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/button#variants
+   */
+  buttons?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Text style variants can be defined in the `theme.text` object. The `Text`
+   * component uses `theme.text.default` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/text#variants
+   */
+  text?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Link variants can be defined in the `theme.links` object. By default the
+   * `Link` component will use styles defined in `theme.styles.a`.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/link#variants
+   */
+  links?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Image style variants can be defined in the `theme.images` object.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/image#variants
+   */
+  images?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Card style variants can be defined in `the theme.cards` object. By default
+   * the `Card` component uses the `theme.cards.primary` variant.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/card#variants
+   */
+  cards?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Container variants can be defined in the `theme.layout` object. The
+   * `Container` component uses `theme.layout.container` as its default variant
+   * style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/container#variants
+   */
+  layout?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Label variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.label` variant by default.
+   *
+   * Input variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.input` variant by default.
+   *
+   * Select variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.select` variant by default.
+   *
+   * Textarea variants can be defined in `theme.forms` and the component uses
+   * the `theme.forms.textarea` variant by default.
+   *
+   * Radio variants can be defined in `theme.forms` and the component uses the
+   * `theme.forms.radio` variant by default.
+   *
+   * Checkbox variants can be defined in `theme.forms` and the component uses
+   * the `theme.forms.checkbox` variant by default.
+   *
+   * Slider variants can be defined in the `theme.forms` object. The `Slider`
+   * component uses `theme.forms.slider` as its default variant style.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/label#variants
+   * @see https://theme-ui.com/components/input#variants
+   * @see https://theme-ui.com/components/select#variants
+   * @see https://theme-ui.com/components/textarea#variants
+   * @see https://theme-ui.com/components/radio#variants
+   * @see https://theme-ui.com/components/checkbox#variants
+   * @see https://theme-ui.com/components/slider#variants
+   */
+  forms?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Badge variants can be defined in `theme.badges`. The `Badge` component uses
+   * `theme.badges.primary` as its default variant.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/badge#variants
+   */
+  badges?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Alert variants can be defined in `theme.alerts`. The `Alert` component uses
+   * `theme.alerts.primary` as its default variant.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/alert#variants
+   */
+  alerts?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * Message variants can be defined in the `theme.messages` object.
+   *
+   * @see https://theme-ui.com/theme-spec#variants
+   * @see https://theme-ui.com/components/variants
+   * @see https://theme-ui.com/components/message#variants
+   */
+  messages?: Record<string, ThemeUIStyleObject>
+}

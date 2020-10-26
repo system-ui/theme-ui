@@ -1,0 +1,169 @@
+---
+title: TypeScript
+---
+
+# TypeScript
+
+Theme UI is written in TypeScript.
+
+While most APIs in Theme UI should _just work_ in TypeScript,
+there are a few advanced use cases which will differ slightly.
+This guide is intended to cover those use cases.
+
+## Exact theme type
+
+The [`Theme` type](/theme-spec) represents all possible themes.
+
+It might be what you need when you're writing a library of reusable components
+or an app where the theme object is provided by the user and kept in the database.
+However, it's not the most convenient way to think about the theme,
+when building a blog or a landing page.
+
+To know the exact type of your particular theme on type level,
+you can use an identity "constructor" function to narrow the type.
+
+```tsx
+const makeTheme = <T extends Theme>(t: T) => t
+
+const theme = makeTheme({
+  colors: {
+    background: 'white',
+    text: 'black',
+    blue: {
+      light: '#187abf',
+      dark: '#235a97',
+    },
+  },
+})
+
+export type ExactTheme = typeof theme
+
+// No error
+const lightBlue = theme.colors.blue.light
+```
+
+You can then reexport `useThemeUI` hook with narrowed type.
+
+```tsx
+import { ContextValue } from 'theme-ui'
+
+interface ExactContextValue extends Omit<ContextValue, 'theme'> {
+  theme: ExactTheme
+}
+
+export const useTheme = (useThemeUI as unknown) as () => ExactContextValue
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-typescript-tips-yh8u1?file=/src/exact-theme-type.ts)_
+
+## Accessing optional properties
+
+Because all properties of `Theme` are optional,
+accessing them requires usage of [`get` function](/api#get).
+
+```tsx
+import { Theme } from 'theme-ui'
+
+const theme: Theme = {
+  space: [0, 8, 16, 32, 64, 128, 256],
+  sizes: [0, 8, 16, 32, 64, 128, 256],
+}
+
+// Type error on `theme.space` and `theme.sizes`.
+// Object is possibly 'undefined'.ts(2532)
+return <div sx={{ size: (t) => t.space[3] + t.sizes[5] }} />
+```
+
+```tsx
+import { Theme, get } from 'theme-ui'
+
+// No error
+return <div sx={{ size: (t) => get(t, 'space.3') + get(t, 'sizes.5') }} />
+```
+
+Properties of scales can be accessed with optional chaining.
+Values under numeric keys can be accessed with bracket notation.
+
+```tsx
+const parse = (x: unknown) => parseInt(String(x))
+
+return (
+  <div sx={{
+    size: size: (t) => parse(t.space?.[3]) + parse(t.sizes?.[5]) }}
+  />
+)
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-typescript-tips-yh8u1?file=/src/App.tsx)_
+
+## Additional properties in the theme
+
+If you need additional properties in theme object,
+you can add them with [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#merging-interfaces).
+
+```tsx
+interface MySyntaxHighlightingTheme {
+  foreground: string
+}
+
+declare module 'theme-ui' {
+  interface Theme {
+    syntaxHighlighting: MySyntaxHighlightingTheme
+  }
+}
+
+const theme: Theme = {
+  syntaxHighlighting: {
+    foreground: '#222',
+  },
+}
+
+const syntaxHighlighting = theme.syntaxHighlighting
+```
+
+_[Try it in TypeScript Playground.](https://www.typescriptlang.org/v2/en/play?#code/JYWwDg9gTgLgBAbzgFQBYFMTrgXzgMyghDgHIYMsBaAV2FIG4AoJ4AOxnSnwEMBjbAFkAngGVhHHgA8AEsADmqADYLUMdvLSZsCJnALR08ojTYATAFxwAzjCgbmOFmfR8lPKNhAQzNJdnJKdFp6RD04dk5ufmwtLDD9fWsJGGk5RRVFdTZ5KxFxSVlVTLUNOPRwpycmPgg2WzgKbStyuABeBJsUtOLVbNzO-XxDYwhTSzIAYgAmWdIAGkqmHGYauobkwvTlPo12xqCAOk3UoozdnLX6+C4iKH2mrGPhGDYe86yNJiA)_
+
+## Common Problems
+
+### Union types are not inferred without explicit annotation
+
+Style objects defined outside of `css` function and `sx` prop need explicit
+annotation to prevent following error.
+
+```tsx
+const style = { whiteSpace: 'pre-line' }
+
+// Type '{ whiteSpace: string; }' is not assignable to type 'ThemeUICSSObject'.
+// Type 'string' is not assignable to type '"inherit" | "initial" | "revert" | "unset" | "normal" | "break-spaces"
+return <div sx={style} />
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-inferrence-too-wide-vkrf5?file=/src/index.tsx&view=editor&previewwindow=tests)_
+
+TypeScript assumes that `whiteSpace` here is a `string`, but the `whiteSpace`
+property in `ThemeUICSSObject` is a union of possible white-space values
+([see on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#Values))
+or a nested style object.
+
+We can explicitly annotate `style` ensure that it is a correct Theme UI style
+object and that `whiteSpace` is one of appropriate values.
+
+```tsx
+import { ThemeUICSSObject } from 'theme-ui'
+
+const style: ThemeUICSSObject = { whiteSpace: 'pre-line' }
+
+// No error
+return <div sx={style} />
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-inferrence-too-wide-vkrf5?file=/src/index.tsx&view=editor&previewwindow=tests)_
+
+We could also fix our problem by narrowing the type of `style` with a
+[const assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions).
+
+```tsx
+const style = { whiteSpace: 'pre-line' } as const
+```
+
+This is succinct, but error prone, because we won't get TS intellisense support inside of this object.

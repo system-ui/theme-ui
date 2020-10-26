@@ -28,5 +28,8 @@
   },
   ".tag,.selector,.keyword": {
     "color": "#00009f"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 70%, .5)"
   }
 }

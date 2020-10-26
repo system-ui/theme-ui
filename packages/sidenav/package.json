@@ -1,22 +1,31 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-rc.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "react": "^16.8.6"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.0.21",
+    "@types/mdx-js__react": "^1.5.1",
     "deepmerge": "^4.0.0",
-    "react": "^16.8.6",
-    "theme-ui": "^0.4.0-alpha.0"
+    "theme-ui": "^0.4.0-rc.5"
   },
   "keywords": [
     "theme-ui",

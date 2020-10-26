@@ -24,7 +24,7 @@ export default () => {
       <Helmet>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600|Architects+Daughter"
         />
       </Helmet>
       <div
@@ -32,28 +32,27 @@ export default () => {
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}
-      >
+        }}>
         <label
+          htmlFor="theme"
           sx={{
             display: 'block',
             mb: 4,
-          }}
-        >
-          Preset:{' '}
+          }}>
+          Preset:
           <Select
+            id="theme"
             value={theme}
-            onChange={e => {
+            onChange={(e) => {
               setTheme(e.target.value)
-            }}
-          >
-            {Object.keys(presets).map(key => (
+            }}>
+            {Object.keys(presets).map((key) => (
               <option key={key} children={key} />
             ))}
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
-          <Styled.root>
+          <Styled.root sx={{ bg: 'background', color: 'text', p: 3 }}>
             <Styled.h2>Colors</Styled.h2>
             <ColorPalette omit={['modes', 'header']} />
             <Styled.h2>Typography</Styled.h2>
@@ -64,8 +63,7 @@ export default () => {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}
-            >
+              fontSize={7}>
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Styled.h2>Type Scale</Styled.h2>
@@ -73,11 +71,12 @@ export default () => {
             <MDXProvider components={components}>
               <Lorem />
             </MDXProvider>
-            <Styled.h2>Raw JSON</Styled.h2>
+            <Styled.h2 id="json">Raw JSON</Styled.h2>
             <textarea
               value={JSON.stringify(preset, null, 2)}
               rows={16}
               readOnly
+              aria-labelledby="json"
               sx={{
                 width: '100%',
                 fontFamily: 'monospace',

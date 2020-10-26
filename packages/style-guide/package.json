@@ -1,23 +1,32 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.4.0-alpha.0",
+  "version": "0.4.0-rc.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@theme-ui/presets": "^0.4.0-rc.5",
+    "@types/color": "^3.0.1",
+    "color": "^3.1.2",
+    "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
-    "theme-ui": "^0.3.0"
+    "theme-ui": "^0.4.0-rc.0"
   },
-  "dependencies": {
-    "@theme-ui/presets": "^0.4.0-alpha.0",
-    "color": "^3.1.2",
-    "lodash.get": "^4.4.2"
+  "devDependencies": {
+    "@emotion/core": "^10.0.10",
+    "react": "^16.8.6",
+    "theme-ui": "^0.4.0-rc.5"
   },
   "publishConfig": {
     "access": "public"
