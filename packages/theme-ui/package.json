@@ -20,6 +20,9 @@
     "@theme-ui/mdx": "^0.3.0",
     "@theme-ui/theme-provider": "^0.3.1"
   },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  },
   "keywords": [
     "theme-ui",
     "emotion",
