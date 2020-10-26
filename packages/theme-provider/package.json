@@ -17,6 +17,10 @@
     "@theme-ui/core": "^0.4.0-rc.5",
     "@theme-ui/mdx": "^0.4.0-rc.5"
   },
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "@theme-ui/css": "*"
+  },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
   "license": "MIT",
