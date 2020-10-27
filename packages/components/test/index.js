@@ -48,6 +48,10 @@ const theme = {
       p: 4,
       bg: 'highlight',
     },
+    bop: {
+      m: 1,
+      bg: 'muted',
+    },
   },
   cards: {
     primary: {
@@ -133,6 +137,16 @@ describe('Box', () => {
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')
     expect(json).toHaveStyleRule('padding', '32px')
+  })
+  test('renders with variant array', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variant={['boxes.beep', 'boxes.bop']} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('background-color', 'muted')
+    expect(json).toHaveStyleRule('padding', '32px')
+    expect(json).toHaveStyleRule('margin', '4px')
   })
 
   test('renders with base styles', () => {

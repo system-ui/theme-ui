@@ -20,7 +20,7 @@ type ForwardRef<T, P> = React.ForwardRefExoticComponent<
 
 export interface BoxOwnProps extends SpaceProps, ColorProps {
   as?: React.ElementType
-  variant?: string
+  variant?: string | string[]
   css?: InterpolationWithTheme<any>
 }
 export interface BoxProps
