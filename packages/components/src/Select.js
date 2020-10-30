@@ -3,13 +3,13 @@ import Box from './Box'
 import SVG from './SVG'
 import { getMargin, omitMargin } from './util'
 
-const DownArrow = props => (
+const DownArrow = (props) => (
   <SVG {...props}>
     <path d="M7 10l5 5 5-5z" />
   </SVG>
 )
 
-export const Select = React.forwardRef((props, ref) => (
+export const Select = React.forwardRef(({ arrow, ...props }, ref) => (
   <Box
     {...getMargin(props)}
     sx={{
@@ -34,12 +34,16 @@ export const Select = React.forwardRef((props, ref) => (
         bg: 'transparent',
       }}
     />
-    <DownArrow
-      sx={{
-        ml: -28,
-        alignSelf: 'center',
-        pointerEvents: 'none',
-      }}
-    />
+    {arrow ? (
+      arrow
+    ) : (
+      <DownArrow
+        sx={{
+          ml: -28,
+          alignSelf: 'center',
+          pointerEvents: 'none',
+        }}
+      />
+    )}
   </Box>
 ))

@@ -135,7 +135,9 @@ export interface InputProps
 export const Input: ForwardRef<HTMLInputElement, InputProps>
 
 export interface SelectProps
-  extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
+    arrow?: React.ReactElement;
+  }
 /**
  * Select variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.select` variant by default.
