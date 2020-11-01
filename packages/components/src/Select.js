@@ -34,9 +34,7 @@ export const Select = React.forwardRef(({ arrow, ...props }, ref) => (
         bg: 'transparent',
       }}
     />
-    {arrow ? (
-      arrow
-    ) : (
+    {arrow || (
       <DownArrow
         sx={{
           ml: -28,
