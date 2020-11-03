@@ -16,7 +16,8 @@
     "@theme-ui/presets": "^0.4.0-rc.5",
     "@types/color": "^3.0.1",
     "color": "^3.1.2",
-    "lodash.get": "^4.4.2"
+    "lodash.get": "^4.4.2",
+    "react-google-font-loader": "^1.1.0"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.10",

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, components } from 'theme-ui'
-import { ThemeContext } from '@emotion/core'
+import { ThemeProvider } from '@theme-ui/core'
 import { MDXProvider } from '@mdx-js/react'
 import * as presets from '@theme-ui/presets'
 import {
@@ -17,7 +17,7 @@ export default ({ preset: presetName }) => {
 
   return (
     <div>
-      <ThemeContext.Provider value={preset}>
+      <ThemeProvider theme={preset}>
         <Styled.root>
           <Styled.h2>Colors</Styled.h2>
           <ColorPalette omit={['modes', 'header']} />
@@ -52,7 +52,7 @@ export default ({ preset: presetName }) => {
             }}
           />
         </Styled.root>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </div>
   )
 }
