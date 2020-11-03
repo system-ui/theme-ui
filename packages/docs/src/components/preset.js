@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Helmet } from 'react-helmet'
 import { jsx, Styled, components } from 'theme-ui'
 import { ThemeProvider } from '@theme-ui/core'
 import { MDXProvider } from '@mdx-js/react'
@@ -17,6 +18,12 @@ export default ({ preset: presetName }) => {
 
   return (
     <div>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600|Architects+Daughter"
+        />
+      </Helmet>
       <ThemeProvider theme={preset}>
         <Styled.root>
           <Styled.h2>Colors</Styled.h2>
