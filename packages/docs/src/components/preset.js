@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { Helmet } from 'react-helmet'
-import { jsx, Styled, components } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import { ThemeProvider } from '@theme-ui/core'
-import { MDXProvider } from '@mdx-js/react'
 import * as presets from '@theme-ui/presets'
 import {
   TypeScale,
@@ -11,7 +10,7 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Lorem from './lorem.mdx'
+import Components from './components.mdx'
 
 export default ({ preset: presetName }) => {
   const preset = presets[presetName]
@@ -41,9 +40,7 @@ export default ({ preset: presetName }) => {
           </HeadingStyle>
           <Styled.h2>Type Scale</Styled.h2>
           <TypeScale />
-          <MDXProvider components={components}>
-            <Lorem />
-          </MDXProvider>
+          <Components />
           <Styled.h2 id="json">Raw JSON</Styled.h2>
           <textarea
             value={JSON.stringify(preset, null, 2)}
