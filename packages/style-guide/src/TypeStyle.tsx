@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { ComponentProps, Fragment } from 'react'
-import { jsx, get } from 'theme-ui'
+import { ComponentProps } from 'react'
+import { jsx } from 'theme-ui'
 import Card from './Card'
 
 export interface TypeStyleProps extends ComponentProps<typeof Card> {
