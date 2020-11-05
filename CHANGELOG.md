@@ -19,6 +19,7 @@
 
 - Adds `primary` as default variant for `Badge` component #1109
 - Adds `primary` as default variant for `Alert` component #1102
+- Adds `theme.text.default` variant for `Text` component #870
 
 ## v0.3.0 2019-01-22
 
