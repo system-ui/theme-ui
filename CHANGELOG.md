@@ -1,17 +1,66 @@
 # Changelog
 
-## Unreleased
+## v0.4.0 UNRELEASED
+
+- Fixed peer dependencies to keep yarn berry happy. Issue #725
+
+### `@theme-ui/core`
 
 - Make ThemeProvider `theme` prop required
-- Removes overriding property on editor combobox
-- Adjust media query sort logic #600
-- Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
-- Fixed peer dependencies to keep yarn berry happy. Issue #725
-- Fix broken base-preset link on `theming` page
+
+### `@theme-ui/editor`
+
+- Removes overriding property on editor combobox #687
+
+### `@theme-ui/preset-sketchy`
+
 - Add `@theme-ui/preset-sketchy`
-- `@theme-ui/prism`: add support for highlighting lines #895
-- `@theme-ui/style-guide`: pass `size` prop to ColorRow component #941
+
+### `@theme-ui/prism`
+
+- Add support for highlighting lines #895
+
+### `@theme-ui/sidenav`
+
 - `@theme-ui/sidenav`: move React to peerDependencies #978
+
+### `@theme-ui/style-guide`
+
+- Pass `size` prop to ColorRow component #941
+
+### `@theme-ui/color-modes`
+
+- Accept SetStateAction and generic parameter #1174
+
+### docs
+
+- Fix broken base-preset link on `theming` page
+
+## v0.3.2 UNRELEASED
+
+### `@theme-ui/css`
+
+- Add theme colors support to columnRuleColor and caretColor #1085
+
+### `@theme-ui/core`
+
+- Support Webpack 5. (Uses default export from package.json instead of named export) #1141
+
+### `@theme-ui/components`
+
+- Add `primary` as default variant for `Badge` component #1109
+- Add `primary` as default variant for `Alert` component #1102
+- Add `theme.text.default` variant for `Text` component #870
+
+### docs
+
+- Fix example logo on Avatar & Image component docs #1233
+- Fix theme editor output in docs #1182
+
+## v0.3.1 2020-01-32
+
+- Adjusts media query sort logic #600
+- Fixes link to Gatsby Plugin page in `getting-started` page. Issue #602, PR #603
 
 ## v0.3.0 2020-01-22
 
