@@ -5,6 +5,21 @@
 - Adjust media query sort logic #600
 - Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
 
+## v0.3.2 2020-11-05
+
+### `@theme-ui/css`
+
+- Adds theme colors support to columnRuleColor and caretColor #1085
+
+### `@theme-ui/core`
+
+- Supports Webpack 5. (Uses default export from package.json instead of named export) #1141
+
+### `@theme-ui/components`
+
+- Adds `primary` as default variant for `Badge` component #1109
+- Adds `primary` as default variant for `Alert` component #1102
+
 ## v0.3.0 2019-01-22
 
 - Split theme-ui package into `@theme-ui/core`, `@theme-ui/mdx`, and `@theme-ui/color-modes`
