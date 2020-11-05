@@ -7,7 +7,10 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
+    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json",
+    "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
+    "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
     "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
@@ -20,6 +23,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.1",
     "@theme-ui/css": "^0.4.0-rc.13",
+    "@theme-ui/parse-props": "^0.4.0-rc.13",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
