@@ -19,6 +19,7 @@
 ### docs
 
 - Fix example logo on Avatar & Image component docs #1233
+- Fix theme editor output in docs #1182
 
 ## v0.3.1 2020-01-32
 
