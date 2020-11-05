@@ -4,17 +4,21 @@
 
 ### `@theme-ui/css`
 
-- Adds theme colors support to columnRuleColor and caretColor #1085
+- Add theme colors support to columnRuleColor and caretColor #1085
 
 ### `@theme-ui/core`
 
-- Supports Webpack 5. (Uses default export from package.json instead of named export) #1141
+- Support Webpack 5. (Uses default export from package.json instead of named export) #1141
 
 ### `@theme-ui/components`
 
-- Adds `primary` as default variant for `Badge` component #1109
-- Adds `primary` as default variant for `Alert` component #1102
-- Adds `theme.text.default` variant for `Text` component #870
+- Add `primary` as default variant for `Badge` component #1109
+- Add `primary` as default variant for `Alert` component #1102
+- Add `theme.text.default` variant for `Text` component #870
+
+### docs
+
+- Fix example logo on Avatar & Image component docs #1233
 
 ## v0.3.1 2020-01-32
 
