@@ -11,7 +11,10 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
-    "prepare": "microbundle --no-compress",
+    "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
+    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json",
+    "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
+    "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
     "watch": "microbundle watch --no-compress",
     "typecheck": "tsc --noEmit"
   },
