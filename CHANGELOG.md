@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.3.2 2020-11-05
+## v0.3.2 UNRELEASED
 
 ### `@theme-ui/css`
 
