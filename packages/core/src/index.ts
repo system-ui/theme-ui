@@ -7,6 +7,7 @@ import { css, Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
 import packageInfo from '@emotion/react/package.json'
+import parseProps from '@theme-ui/parse-props'
 import {} from '@emotion/react/types/css-prop'
 
 import './react-jsx'
@@ -35,27 +36,6 @@ export type {
 export * from './types'
 
 const __EMOTION_VERSION__ = packageInfo.version
-
-const getCSS = (props) => {
-  if (!props.sx && !props.css) return undefined
-  return (theme) => {
-    const styles = css(props.sx)(theme)
-    const raw = typeof props.css === 'function' ? props.css(theme) : props.css
-    return [styles, raw]
-  }
-}
-
-const parseProps = (props) => {
-  if (!props) return null
-  const next: typeof props & { css?: Interpolation<any> } = {}
-  for (let key in props) {
-    if (key === 'sx') continue
-    next[key] = props[key]
-  }
-  const css = getCSS(props)
-  if (css) next.css = css
-  return next
-}
 
 export const jsx: typeof React.createElement = (type, props, ...children) =>
   emotion.apply(undefined, [type, parseProps(props), ...children])
