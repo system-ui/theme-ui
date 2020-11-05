@@ -1,10 +1,5 @@
 # Changelog
 
-## Unreleased
-
-- Adjust media query sort logic #600
-- Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
-
 ## v0.3.2 2020-11-05
 
 ### `@theme-ui/css`
@@ -20,6 +15,11 @@
 - Adds `primary` as default variant for `Badge` component #1109
 - Adds `primary` as default variant for `Alert` component #1102
 - Adds `theme.text.default` variant for `Text` component #870
+
+## v0.3.1 2020-01-32
+
+- Adjusts media query sort logic #600
+- Fixes link to Gatsby Plugin page in `getting-started` page. Issue #602, PR #603
 
 ## v0.3.0 2019-01-22
 
