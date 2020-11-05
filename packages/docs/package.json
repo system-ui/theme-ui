@@ -16,6 +16,7 @@
     "icon": "npx repng src/components/logo.js -d static -f icon.png -w=32 -h=32 --props='{\"size\":32}'"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "@mdx-js/mdx": "^1.0.0-rc.0",
     "@mdx-js/react": "^1.0.0-rc.0",
@@ -86,8 +87,7 @@
     "typography-theme-wordpress-2015": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
-    "typography-theme-zacklive": "^1.0.2",
-    "@emotion/react": "^11.1.1"
+    "typography-theme-zacklive": "^1.0.2"
   },
   "devDependencies": {
     "@babel/register": "^7.8.6",
