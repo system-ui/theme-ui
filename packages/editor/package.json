@@ -27,6 +27,9 @@
     "react-dom": "^16.8.6",
     "theme-ui": "^0.3.0"
   },
+  "devDependencies": {
+    "react": "^16.14.0"
+  },
   "publishConfig": {
     "access": "public"
   },

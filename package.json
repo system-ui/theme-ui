@@ -49,7 +49,6 @@
     "ts-snippet": "^5.0.0",
     "typescript": "^4"
   },
-  "resolutions": {},
   "jest": {
     "preset": "ts-jest/presets/js-with-babel",
     "globals": {

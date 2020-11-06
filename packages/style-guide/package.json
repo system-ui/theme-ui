@@ -23,7 +23,7 @@
     "theme-ui": "^0.4.0-rc.0"
   },
   "devDependencies": {
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "theme-ui": "^0.4.0-rc.14"
   },
   "publishConfig": {

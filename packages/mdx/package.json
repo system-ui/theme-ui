@@ -18,6 +18,9 @@
     "@theme-ui/core": "^0.4.0-rc.13",
     "@theme-ui/css": "^0.4.0-rc.13"
   },
+  "devDependencies": {
+    "react": "^16.14.0"
+  },
   "peerDependencies": {
     "react": "^16.11.0"
   },

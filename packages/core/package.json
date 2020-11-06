@@ -30,8 +30,7 @@
     "react": "^16.11.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.19",
-    "react": "^16.11.0"
-  },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+    "@types/react": "^16.9.56",
+    "react": "^16.14.0"
+  }
 }

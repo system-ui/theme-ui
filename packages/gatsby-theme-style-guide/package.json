@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "gatsby": "^2.26.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "dependencies": {
     "@theme-ui/style-guide": "^0.4.0-rc.14",
