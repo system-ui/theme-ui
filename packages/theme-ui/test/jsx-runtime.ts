@@ -5,7 +5,7 @@ import { jsx, jsxs } from '../src/jsx-runtime'
 
 expect.extend(matchers)
 
-describe('automatic JSX runtime in @theme-ui/core package', () => {
+describe('automatic JSX runtime in theme-ui package', () => {
   test('jsx and jsxs', () => {
     render(
       jsxs('div', {
