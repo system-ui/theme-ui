@@ -149,6 +149,31 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('margin', '4px')
   })
 
+  test('renders with variant array function merge', () => {
+    const json = renderJSON(
+      <ThemeProvider
+        theme={{
+          colors: {
+            shadow: '#333333',
+          },
+          boxes: {
+            beep: {
+              border: (t) => `1px solid ${t.colors.shadow}`,
+            },
+            bop: {
+              border: (t) => `2px solid ${t.colors.shadow}`,
+            },
+          },
+        }}>
+        <Box variant={['boxes.beep', 'boxes.bop']} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule(
+      'border',
+      '2px solid var(--theme-ui-colors-shadow,#333333)'
+    )
+  })
+
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box

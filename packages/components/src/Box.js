@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import merge from 'deepmerge'
+import deepmerge from 'deepmerge'
 import { css, get } from '@theme-ui/css'
 import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
@@ -15,10 +15,8 @@ const base = (props) => css(props.__css)(props.theme)
 const variant = ({ theme, variant, __themeKey = 'variants' }) => {
   if (Array.isArray(variant)) {
     return css(
-      variant.reduce(
-        (styles, v) =>
-          merge(styles, get(theme, __themeKey + '.' + v, get(theme, v))),
-        {}
+      deepmerge.all(
+        variant.map((v) => get(theme, __themeKey + '.' + v, get(theme, v)))
       )
     )
   }
