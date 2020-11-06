@@ -42,21 +42,21 @@ export default ({ preset: presetName }) => {
           <TypeScale />
           <Components />
           <Styled.h2 id="json">Raw JSON</Styled.h2>
-          <textarea
-            value={JSON.stringify(preset, null, 2)}
-            rows={16}
-            readOnly
-            aria-labelledby="json"
-            sx={{
-              width: '100%',
-              fontFamily: 'monospace',
-              bg: 'muted',
-              border: 0,
-              borderRadius: 4,
-            }}
-          />
         </Styled.root>
       </ThemeProvider>
+      <textarea
+        value={JSON.stringify(preset, null, 2)}
+        rows={16}
+        readOnly
+        aria-labelledby="json"
+        sx={{
+          width: '100%',
+          fontFamily: 'monospace',
+          bg: 'muted',
+          border: 0,
+          borderRadius: 4,
+        }}
+      />
     </div>
   )
 }
