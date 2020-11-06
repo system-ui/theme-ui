@@ -10,10 +10,9 @@ you can use the `Styled.h1` component to render an `<h1>` element with styles fr
 
 ```jsx
 // example
-import React from 'react'
 import { Styled } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <div>
     <Styled.h1>Hello, styled heading!</Styled.h1>
   </div>
@@ -48,4 +47,3 @@ This can also be used to style components like the Gatsby `Link` component to ma
 To add base typographic styles to the `<body>` element, add styles to `theme.styles.root`.
 Previous versions of Theme UI used the `Styled.root` component.
 See the [theming docs](/theming/#body-styles) for more information.
-

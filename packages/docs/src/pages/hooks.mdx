@@ -17,10 +17,9 @@ To learn more about how React Hooks work, please see the [official React docs](h
 To access the `context` object directly in a component, use the `useThemeUI` hook.
 
 ```jsx
-import React from 'react'
 import { useThemeUI } from 'theme-ui'
 
-export default props => {
+export default (props) => {
   const context = useThemeUI()
   const { theme, components, colorMode, setColorMode } = context
 
@@ -33,14 +32,13 @@ export default props => {
 To change the color mode state in your application, use the `useColorMode` hook.
 
 ```jsx
-import React from 'react'
 import { useColorMode } from 'theme-ui'
 
-export default props => {
+export default (props) => {
   const [colorMode, setColorMode] = useColorMode()
   return (
     <button
-      onClick={e => {
+      onClick={(e) => {
         setColorMode(colorMode === 'light' ? 'dark' : 'light')
       }}>
       Toggle {colorMode === 'light' ? 'Dark' : 'Light'}

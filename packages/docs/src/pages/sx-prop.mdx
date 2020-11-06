@@ -2,21 +2,19 @@
 title: 'The `sx` Prop'
 ---
 
-
 # The `sx` Prop
 
 The `sx` prop lets you style elements inline, using values from your theme.
-To use the `sx` prop, add the custom `/** @jsx jsx */` pragma comment to the top of your module and import the `jsx` function.
+To use the `sx` prop, add the custom `/** @jsxImportSource theme-ui */` pragma comment to the top of your module.
 
 The `sx` prop lets you add any valid CSS to an element,
 while using values from your theme to keep styles consistent.
-You can think of the style object that the `sx` prop accepts as a *superset* of CSS.
+You can think of the style object that the `sx` prop accepts as a _superset_ of CSS.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -33,67 +31,69 @@ export default props => (
 
 <Note>
 
-Under the hood, Theme UI uses a [custom pragma comment](/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to Emotion's `jsx` function.
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
+
+Under the hood, Theme UI uses a [custom pragma comment](/guides/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to Emotion's `jsx` functions.
+The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default React `jsx` functions.
 This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 This is intended as a complete replacement for the Emotion custom JSX pragma.
 
 </Note>
 
+
 ## Theme-Aware Properties
 
 The following CSS properties will use values defined in the theme, when available.
 
-Property  | Theme Key
----|---
-`fontFamily` | `fonts`
-`fontSize` | `fontSizes`
-`fontWeight` | `fontWeights`
-`lineHeight` | `lineHeights`
-`letterSpacing` | `letterSpacings`
-`color` | `colors`
-`backgroundColor`, `bg` | `colors`
-`opacity` | `opacities`
-`transition` | `transitions`
-`margin`, `m` | `space`
-`marginTop`, `mt` | `space`
-`marginRight`, `mr` | `space`
-`marginBottom`, `mb` | `space`
-`marginLeft`, `ml` | `space`
-`marginX`, `mx` | `space`
-`marginY`, `my` | `space`
-`padding`, `p` | `space`
-`paddingTop`, `pt` | `space`
-`paddingRight`, `pr` | `space`
-`paddingBottom`, `pb` | `space`
-`paddingLeft`, `pl` | `space`
-`paddingX`, `px` | `space`
-`paddingY`, `py` | `space`
-`top` | `space`
-`bottom` | `space`
-`left` | `space`
-`right` | `space`
-`border` | `borders`
-`borderTop` | `borders`
-`borderRight` | `borders`
-`borderBottom` | `borders`
-`borderLeft` | `borders`
-`borderColor` | `colors`
-`borderWidth` | `borderWidths`
-`borderStyle` | `borderStyles`
-`borderRadius` | `radii`
-`boxShadow` | `shadows`
-`textShadow` | `shadows`
-`zIndex` | `zIndices`
-`width` | `sizes`
-`minWidth` | `sizes`
-`maxWidth` | `sizes`
-`height` | `sizes`
-`minHeight` | `sizes`
-`maxHeight` | `sizes`
-`size` | `sizes`
-`fill` | `colors`
-`stroke` | `colors`
+| Property                | Theme Key        |
+| ----------------------- | ---------------- |
+| `fontFamily`            | `fonts`          |
+| `fontSize`              | `fontSizes`      |
+| `fontWeight`            | `fontWeights`    |
+| `lineHeight`            | `lineHeights`    |
+| `letterSpacing`         | `letterSpacings` |
+| `color`                 | `colors`         |
+| `backgroundColor`, `bg` | `colors`         |
+| `opacity`               | `opacities`      |
+| `transition`            | `transitions`    |
+| `margin`, `m`           | `space`          |
+| `marginTop`, `mt`       | `space`          |
+| `marginRight`, `mr`     | `space`          |
+| `marginBottom`, `mb`    | `space`          |
+| `marginLeft`, `ml`      | `space`          |
+| `marginX`, `mx`         | `space`          |
+| `marginY`, `my`         | `space`          |
+| `padding`, `p`          | `space`          |
+| `paddingTop`, `pt`      | `space`          |
+| `paddingRight`, `pr`    | `space`          |
+| `paddingBottom`, `pb`   | `space`          |
+| `paddingLeft`, `pl`     | `space`          |
+| `paddingX`, `px`        | `space`          |
+| `paddingY`, `py`        | `space`          |
+| `top`                   | `space`          |
+| `bottom`                | `space`          |
+| `left`                  | `space`          |
+| `right`                 | `space`          |
+| `border`                | `borders`        |
+| `borderTop`             | `borders`        |
+| `borderRight`           | `borders`        |
+| `borderBottom`          | `borders`        |
+| `borderLeft`            | `borders`        |
+| `borderColor`           | `colors`         |
+| `borderWidth`           | `borderWidths`   |
+| `borderStyle`           | `borderStyles`   |
+| `borderRadius`          | `radii`          |
+| `boxShadow`             | `shadows`        |
+| `textShadow`            | `shadows`        |
+| `zIndex`                | `zIndices`       |
+| `width`                 | `sizes`          |
+| `minWidth`              | `sizes`          |
+| `maxWidth`              | `sizes`          |
+| `height`                | `sizes`          |
+| `minHeight`             | `sizes`          |
+| `maxHeight`             | `sizes`          |
+| `size`                  | `sizes`          |
+| `fill`                  | `colors`         |
+| `stroke`                | `colors`         |
 
 ## Responsive Values
 
@@ -101,10 +101,9 @@ Theme UI, like Styled System, includes a shorthand syntax for writing mobile-fir
 This is useful when you want to change a single property across multiple breakpoints without needing to write verbose media query syntax.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -119,10 +118,9 @@ export default props => (
 If you want to skip a breakpoint, you can use the value `null`. This is useful if you want to set a value for only the largest breakpoint, for example.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -142,7 +140,7 @@ If you prefer standard CSS media query syntax, you can use nested objects for re
     width: '100%',
     '@media screen and (min-width: 40em)': {
       width: '50%',
-    }
+    },
   }}
 />
 ```
@@ -172,14 +170,13 @@ For shorthand CSS properties or ones that are not automatically mapped to values
 use an inline function to reference values from the `theme` object.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
-      boxShadow: theme => `0 0 4px ${theme.colors.primary}`,
+      boxShadow: (theme) => `0 0 4px ${theme.colors.primary}`,
     }}
   />
 )
@@ -193,19 +190,18 @@ You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
 If you want to reference the current class selector of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
       h1: {
-        backgroundColor: 'tomato'
+        backgroundColor: 'tomato',
       },
       '& > div': {
-        fontSize: [2, 3, 4]
-      }
+        fontSize: [2, 3, 4],
+      },
     }}
   />
 )
@@ -216,10 +212,9 @@ export default props => (
 To opt-out of using theme-based CSS, use the `css` prop to render raw CSS values.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     css={{
@@ -256,4 +251,3 @@ import { Box } from 'theme-ui'
 ## Object Styles
 
 If you're new to using JavaScript object notation for authoring styles, see the [guide to using objects for styling](/guides/object-styles).
-
