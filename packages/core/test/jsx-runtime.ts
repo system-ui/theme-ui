@@ -7,7 +7,7 @@ expect.extend(matchers)
 
 describe('automatic JSX runtime', () => {
   test('jsx', () => {
-    const { container } = render(
+    render(
       jsxs('div', {
         'data-testid': 'bg-hotpink',
         sx: {
