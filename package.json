@@ -76,6 +76,9 @@
       "tailwind.config.js",
       "/dist/"
     ],
+    "modulePathIgnorePatterns": [
+      "./package.json"
+    ],
     "coverageReporters": [
       "lcov",
       "text",
