@@ -53,6 +53,8 @@ export const multiples = {
   marginY: ['marginTop', 'marginBottom'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
+  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
+  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
   size: ['width', 'height'],
 }
 
@@ -89,6 +91,13 @@ export const scales = {
   paddingInline: 'space',
   paddingInlineEnd: 'space',
   paddingInlineStart: 'space',
+  scrollPadding: 'space',
+  scrollPaddingTop: 'space',
+  scrollPaddingRight: 'space',
+  scrollPaddingBottom: 'space',
+  scrollPaddingLeft: 'space',
+  scrollPaddingX: 'space',
+  scrollPaddingY: 'space',
   inset: 'space',
   insetBlock: 'space',
   insetBlockEnd: 'space',
