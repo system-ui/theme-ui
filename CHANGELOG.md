@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Box - ability to merge array variant prop. Issues #1209 #1208
 - Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
