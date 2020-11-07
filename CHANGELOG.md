@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-
+- Tailwind preset typescript compatibility. Issue #1139
 - Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
