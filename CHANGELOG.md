@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-
+- Ability to pass custom arrow icon to Select. Issues #1177 #1151
 - Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
