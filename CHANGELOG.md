@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-
+- docs `preset/presetname`fix fonts and preview components. Issue #1128
 - Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
