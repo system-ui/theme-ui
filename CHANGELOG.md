@@ -14,6 +14,10 @@
   <Close size={24} />
   ```
 
+### examples
+
+- Convert Gatsby example to TypeScript and stop using removed components. Issue #1227, PR #1229
+
 ## v0.4.0-rc.7 2020-11-08
 
 ### `@theme-ui/core`
