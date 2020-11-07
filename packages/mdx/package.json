@@ -4,7 +4,6 @@
   "source": "src/index.ts",
   "main": "dist/mdx.cjs.js",
   "module": "dist/mdx.esm.js",
-  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {

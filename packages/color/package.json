@@ -4,7 +4,6 @@
   "source": "src/index.ts",
   "main": "dist/color.cjs.js",
   "module": "dist/color.esm.js",
-  "types": "dist/index.d.ts",
   "scripts": {},
   "dependencies": {
     "@theme-ui/css": "^0.4.0-rc.5",

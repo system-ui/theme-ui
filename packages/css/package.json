@@ -4,7 +4,6 @@
   "source": "src/index.ts",
   "main": "dist/css.cjs.js",
   "module": "dist/css.esm.js",
-  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {},
   "author": "Brent Jackson",

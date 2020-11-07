@@ -3,7 +3,6 @@
   "version": "0.4.0-rc.5",
   "main": "dist/preset-future.cjs.js",
   "module": "dist/preset-future.esm.js",
-  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",

@@ -4,7 +4,6 @@
   "main": "dist/theme-provider.cjs.js",
   "module": "dist/theme-provider.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {

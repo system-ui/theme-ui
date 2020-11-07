@@ -4,7 +4,6 @@
   "main": "dist/typography.cjs.js",
   "module": "dist/typography.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {},

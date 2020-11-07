@@ -5,7 +5,6 @@
   "source": "src/index.ts",
   "main": "dist/custom-properties.cjs.js",
   "module": "dist/custom-properties.esm.js",
-  "types": "dist/index.d.ts",
   "author": "Alex Page <alex@alexpage.com.au>",
   "license": "MIT",
   "scripts": {},

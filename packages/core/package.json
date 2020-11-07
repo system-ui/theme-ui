@@ -4,7 +4,6 @@
   "source": "src/index.ts",
   "main": "dist/core.cjs.js",
   "module": "dist/core.esm.js",
-  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {},
   "repository": "system-ui/theme-ui",

@@ -5,7 +5,6 @@
   "main": "dist/tailwind.cjs.js",
   "module": "dist/tailwind.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "author": "John Otander <johnotander@gmail.com>",
   "license": "MIT",
   "scripts": {},

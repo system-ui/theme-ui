@@ -4,7 +4,6 @@
   "main": "dist/preset-polaris.cjs.js",
   "module": "dist/preset-polaris.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "author": "Yuraima Estevez",
   "license": "MIT",
   "scripts": {},

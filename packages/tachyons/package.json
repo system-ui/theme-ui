@@ -5,7 +5,6 @@
   "main": "dist/tachyons.cjs.js",
   "module": "dist/tachyons.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "author": "John Otander <johnotander@gmail.com>",
   "license": "MIT",
   "scripts": {},

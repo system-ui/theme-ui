@@ -5,7 +5,6 @@
   "source": "src/index.ts",
   "main": "dist/match-media.cjs.js",
   "module": "dist/match-media.esm.js",
-  "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",

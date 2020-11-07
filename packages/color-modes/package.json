@@ -3,7 +3,6 @@
   "version": "0.4.0-rc.5",
   "main": "dist/color-modes.cjs.js",
   "module": "dist/color-modes.esm.js",
-  "types": "dist/index.d.ts",
   "source": "src/index.tsx",
   "sideEffects": false,
   "scripts": {},

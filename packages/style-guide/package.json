@@ -3,7 +3,6 @@
   "version": "0.4.0-rc.5",
   "main": "dist/style-guide.cjs.js",
   "module": "dist/style-guide.esm.js",
-  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",

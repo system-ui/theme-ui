@@ -3,7 +3,6 @@
   "version": "0.4.0-rc.5",
   "main": "dist/preset-tosh.cjs.js",
   "module": "dist/preset-tosh.esm.js",
-  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "author": "John Otander",
   "license": "MIT",

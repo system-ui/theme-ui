@@ -3,7 +3,6 @@
   "version": "0.4.0-rc.5",
   "main": "dist/preset-sketchy.cjs.js",
   "module": "dist/preset-sketchy.esm.js",
-  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "author": "Aleksandra Sikora",
   "license": "MIT",
