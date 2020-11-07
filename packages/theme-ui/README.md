@@ -69,11 +69,10 @@ wrap your application with the `ThemeProvider` component and pass in a custom `t
 
 ```jsx
 // basic usage
-import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
-export default props => (
+export default (props) => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )
 ```
@@ -105,14 +104,13 @@ The `sx` prop works similarly to Emotion's `css` prop, accepting style objects t
 Using the `sx` prop for styles means that certain properties can reference values defined in your `theme` object.
 This is intended to make keeping styles consistent throughout your app the easy thing to do.
 
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
+The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default React JSX functions.
 This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     sx={{
       fontWeight: 'bold',
@@ -132,10 +130,9 @@ The `sx` prop also supports using arrays as values to change properties responsi
 This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     sx={{
       // applies width 100% to all viewport widths,
