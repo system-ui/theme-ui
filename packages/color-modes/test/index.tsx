@@ -5,6 +5,7 @@ import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
+import { Theme } from '@theme-ui/css'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -588,7 +589,76 @@ test('InitializeColorMode renders', () => {
   expect(json).toMatchSnapshot()
 })
 
+test('colorMode accepts function from previous state to new one', () => {
+  type MyColorMode = 'serious' | 'cute' | 'hackerman'
+
+  const theme: Theme = {
+    initialColorModeName: 'serious',
+    colors: {
+      primary: 'black',
+      modes: {
+        cute: {
+          primary: 'pink',
+        },
+        hackerman: {
+          primary: 'chartreuse',
+        },
+      },
+    },
+  }
+
+  let primaryColor
+  const Grabber = () => {
+    const context = useThemeUI()
+    primaryColor = context.theme?.colors?.primary
+    return null
+  }
+
+  const colorModes: MyColorMode[] = ['serious', 'cute', 'hackerman']
+  const NextColorModeButton = () => {
+    // user can specify their color mode name type
+    const [, setColorMode] = useColorMode<MyColorMode>()
+
+    return (
+      <button
+        onClick={() => {
+          setColorMode((previous) => {
+            return colorModes[
+              (colorModes.indexOf(previous) + 1) % colorModes.length
+            ]
+          })
+        }}>
+        next color mode
+      </button>
+    )
+  }
+
+  const root = render(
+    <ThemeProvider theme={theme}>
+      <ColorModeProvider>
+        <Grabber />
+        <NextColorModeButton />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+
+  expect(primaryColor).toBe('black')
+
+  act(() => {
+    root.getByText('next color mode').click()
+  })
+
+  expect(primaryColor).toBe('pink')
+
+  act(() => {
+    root.getByText('next color mode').click()
+  })
+
+  expect(primaryColor).toBe('chartreuse')
+})
+
 test('warns when localStorage is disabled', () => {
+  const localStorage = window.localStorage
   Object.defineProperty(window, 'localStorage', {
     get: jest.fn(() => {
       throw 'SecurityError: The operation is insecure.'
@@ -610,4 +680,6 @@ test('warns when localStorage is disabled', () => {
     </ThemeProvider>
   )
   expect(mode).toBe('default')
+
+  Object.defineProperty(window, 'localStorage', { value: localStorage })
 })
