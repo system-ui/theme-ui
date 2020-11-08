@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.4.0-rc.5",
+  "version": "0.4.0-rc.6",
   "main": "dist/prism.js",
   "module": "dist/prism.esm.js",
   "types": "dist/index.d.ts",
@@ -37,6 +37,6 @@
     "lodash.kebabcase": "^4.1.1",
     "postcss": "^7.0.17",
     "postcss-js": "^2.0.2",
-    "theme-ui": "^0.4.0-rc.5"
+    "theme-ui": "^0.4.0-rc.6"
   }
 }
