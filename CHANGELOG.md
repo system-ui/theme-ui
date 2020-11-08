@@ -2,8 +2,6 @@
 
 ## v0.4.0 UNRELEASED
 
-- Fix peer dependencies to keep Yarn Berry happy. Issue #725
-
 ### `@theme-ui/core`
 
 - Make ThemeProvider `theme` prop required
@@ -36,7 +34,9 @@
 
 - Fix broken base-preset link on `theming` page
 
-## v0.3.2 UNRELEASED
+## v0.3.2 2020-11-08
+
+- Fix peer dependencies. Issue #725, PR #836
 
 ### `@theme-ui/css`
 
