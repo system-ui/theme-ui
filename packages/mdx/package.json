@@ -28,5 +28,6 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

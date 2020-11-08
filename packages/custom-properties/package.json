@@ -22,5 +22,6 @@
   "devDependencies": {
     "@theme-ui/css": "^0.4.0-rc.6",
     "@types/pluralize": "^0.0.29"
-  }
+  },
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }
