@@ -115,6 +115,7 @@ test('returns nested responsive styles', () => {
     color: 'primary',
     h1: {
       py: [3, 4],
+      scrollPaddingY: [2, 4]
     },
   })({ theme })
   expect(result).toEqual({
@@ -122,9 +123,14 @@ test('returns nested responsive styles', () => {
     h1: {
       paddingTop: 16,
       paddingBottom: 16,
+      scrollPaddingBottom: 8,
+      scrollPaddingTop: 8,
       '@media screen and (min-width: 40em)': {
         paddingTop: 32,
         paddingBottom: 32,
+        scrollPaddingBottom: 32,
+        scrollPaddingTop: 32,
+  
       },
     },
   })
@@ -137,6 +143,8 @@ test('handles all core styled system props', () => {
     mx: 'auto',
     p: 3,
     py: 4,
+    scrollPadding: 1,
+    scrollPaddingY: 2,
     fontSize: 3,
     fontWeight: 'bold',
     color: 'primary',
@@ -153,6 +161,9 @@ test('handles all core styled system props', () => {
     padding: 16,
     paddingTop: 32,
     paddingBottom: 32,
+    scrollPadding: 4,
+    scrollPaddingTop: 8,
+    scrollPaddingBottom: 8,
     color: 'tomato',
     backgroundColor: 'cyan',
     opacity: '50%',
@@ -421,6 +432,9 @@ test('multiples are transformed', () => {
     marginY: 2,
     paddingX: 2,
     paddingY: 2,
+    scrollPaddingX: 2,
+    scrollPaddingY: 2,
+
     size: 'large',
   })(theme)
   expect(style).toEqual({
@@ -432,6 +446,10 @@ test('multiples are transformed', () => {
     paddingRight: 8,
     paddingTop: 8,
     paddingBottom: 8,
+    scrollPaddingLeft: 8,
+    scrollPaddingRight: 8,
+    scrollPaddingTop: 8,
+    scrollPaddingBottom: 8,
     width: 16,
     height: 16,
   })
@@ -479,6 +497,7 @@ test('returns correct media query order 2', () => {
     height: '100%',
     px: [2, 3, 4],
     py: 4,
+    scrollPadding: 4,
   })(theme)
   const keys = Object.keys(result)
   expect(keys).toEqual([
@@ -492,6 +511,7 @@ test('returns correct media query order 2', () => {
     'paddingRight',
     'paddingTop',
     'paddingBottom',
+    'scrollPadding'
   ])
 })
 

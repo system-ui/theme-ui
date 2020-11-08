@@ -2,7 +2,7 @@
 
 ## v0.4.0 UNRELEASED
 
-- Fixed peer dependencies to keep yarn berry happy. Issue #725
+- Fix peer dependencies to keep Yarn Berry happy. Issue #725
 
 ### `@theme-ui/core`
 
@@ -41,6 +41,7 @@
 ### `@theme-ui/css`
 
 - Add theme colors support to columnRuleColor and caretColor #1085
+- Support scrollPadding variations in sx props. Issue #1214
 
 ### `@theme-ui/core`
 
