@@ -2,6 +2,7 @@
   "name": "gatsby-theme-ui-blog",
   "version": "0.3.2",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "avatar": "npx capture-website-cli \"https://contrast.now.sh/fff/33e?text=UI&size=48&fontSize=1.5&radius=32&baseline=1\" content/assets/avatar.png --width=48 --height=48 --overwrite"
   },
@@ -27,5 +28,6 @@
     "theme-ui": "^0.3.2"
   },
   "repository": "system-ui/theme-ui",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "3f78f13ae0c62105fb81bdb7792c6e28cf3521b5"
 }

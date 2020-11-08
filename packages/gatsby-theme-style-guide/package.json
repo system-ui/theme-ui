@@ -16,5 +16,6 @@
   "dependencies": {
     "@theme-ui/style-guide": "^0.3.0",
     "theme-ui": "^0.3.2"
-  }
+  },
+  "gitHead": "3f78f13ae0c62105fb81bdb7792c6e28cf3521b5"
 }
