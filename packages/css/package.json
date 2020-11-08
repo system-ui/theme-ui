@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/css",
-  "version": "0.4.0-rc.6",
+  "version": "0.4.0-rc.7",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
