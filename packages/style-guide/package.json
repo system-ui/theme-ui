@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.3.0",
+  "version": "0.3.3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
