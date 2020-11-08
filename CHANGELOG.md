@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.4.0 UNRELEASED
+## v0.4.0-rc.6 2020-11-08
 
 ### `@theme-ui/core`
 
