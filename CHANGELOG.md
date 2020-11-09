@@ -2,6 +2,8 @@
 
 ## v0.4.0 UNRELEASED
 
+## v0.4.0-rc.8 2020-11-09
+
 ### `@theme-ui/color`
 
 - Fix support for rgb/hsl color values
