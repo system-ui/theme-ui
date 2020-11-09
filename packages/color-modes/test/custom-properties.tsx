@@ -1,7 +1,4 @@
-import {
-  toCustomProperties,
-  createColorStyles,
-} from '../src/custom-properties'
+import { toCustomProperties, createColorStyles } from '../src/custom-properties'
 
 describe('toCustomProperties', () => {
   test('converts theme object to custom properties', () => {
@@ -10,9 +7,7 @@ describe('toCustomProperties', () => {
       colors: {
         text: 'black',
       },
-      space: [
-        0, 4, 8, 16, 32,
-      ],
+      space: [0, 4, 8, 16, 32],
       fonts: {
         body: 'system-ui, sans-serif',
       },
@@ -37,8 +32,14 @@ describe('toCustomProperties', () => {
       },
       fontWeights: {
         body: 'var(--theme-ui-fontWeights-body, 400)',
-      }
+      },
     })
+  })
+
+  test('handles undefined as first argument', () => {
+    const result = toCustomProperties(undefined, 'colors')
+
+    expect(result).toStrictEqual({})
   })
 })
 
@@ -54,7 +55,7 @@ describe('createColorStyles', () => {
             background: 'black',
           },
         },
-      }
+      },
     })
     expect(styles).toEqual({
       body: {
@@ -65,8 +66,8 @@ describe('createColorStyles', () => {
         '&.theme-ui-dark': {
           '--theme-ui-colors-text': 'white',
           '--theme-ui-colors-background': 'black',
-        }
-      }
+        },
+      },
     })
   })
 })

@@ -13,6 +13,7 @@ describe('JSX', () => {
             // TypeScript support should autocomplete keys here
             mt: 10,
             px: 2,
+            scrollPaddingY: 2,
           }}
         />
       )

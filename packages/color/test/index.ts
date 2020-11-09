@@ -214,3 +214,25 @@ test('darkenTomatoCustomProps', () => {
   const n = darken('primary', 0.25)(themeTomatoCustomProps)
   expect(n).toBe('#c61e00')
 })
+
+const themeRgba = {
+  colors: {
+    primary: 'rgba(255, 0, 0, .5)',
+  },
+} as Theme
+
+test('alphaRgba', () => {
+  const n = alpha('primary', 0.25)(themeRgba)
+  expect(n).toBe('rgba(255,0,0,0.25)')
+})
+
+const themeRgbaCustomProps = {
+  colors: {
+    primary: 'var(--theme-ui-colors-primary, rgba(255, 0, 0, .5))',
+  },
+} as Theme
+
+test('alphaRgbaCustomProps', () => {
+  const n = alpha('primary', 0.25)(themeRgba)
+  expect(n).toBe('rgba(255,0,0,0.25)')
+})

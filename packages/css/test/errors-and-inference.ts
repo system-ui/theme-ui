@@ -8,7 +8,7 @@ const expectSnippet = expecter(
 
   ${code}
 `,
-  { strict: true }
+  { strict: true, noErrorTruncation: true }
 )
 
 describe('Theme', () => {
@@ -113,4 +113,57 @@ describe('Theme', () => {
       /Element implicitly has an 'any' type because index expression is not of type 'number'/
     )
   })
+})
+
+// This is not a feature, but the TypeScript chapter in the docs will need an
+// update if this test fails.
+test('inferred type `string` is too wide for `whiteSpace`', () => {
+  expectSnippet(`
+    const style = {
+      whiteSpace: 'pre-line'
+    }
+
+    css(style);
+  `).toFail(
+    /Type '{ whiteSpace: string; }' is not assignable to type 'ThemeUICSSObject'./
+  )
+
+  expectSnippet(`
+    import { ThemeUICSSObject } from 'theme-ui'
+
+    const style: ThemeUICSSObject = {
+      whiteSpace: 'pre-line'
+    }
+
+    css(style);
+  `).toSucceed()
+})
+
+describe('ColorMode', () => {
+  const expectedSnippet = expectSnippet(`
+    import { ColorMode } from './packages/css/src'
+
+    const colorMode: ColorMode = {}
+
+    colorMode.text?.toUpperCase();
+
+    const baseColors = [
+      colorMode.text,
+      colorMode.background,
+      colorMode.primary,
+      colorMode.secondary,
+      colorMode.muted,
+      colorMode.highlight,
+      colorMode.accent,
+    ];
+
+    const seriousPink = colorMode.seriousPink
+    if (Array.isArray(seriousPink)) {
+      const [light, medium, dark] = seriousPink
+    }
+  `)
+
+  expectedSnippet.toInfer('baseColors', '(string | undefined)[]')
+  expectedSnippet.toInfer('light', 'string')
+  expectedSnippet.toInfer('dark', 'string')
 })

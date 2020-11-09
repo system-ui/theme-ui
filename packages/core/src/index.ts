@@ -6,11 +6,34 @@ import {
 import { css, Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
-import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
+import packageInfo from '@emotion/core/package.json'
 
 import './react-jsx'
 
+export type {
+  CSSObject,
+  CSSOthersObject,
+  CSSProperties,
+  CSSPseudoSelectorProps,
+  ColorMode,
+  ColorModesScale,
+  Label,
+  ResponsiveStyleValue,
+  Scale,
+  StylePropertyValue,
+  TLengthStyledSystem,
+  Theme,
+  ThemeDerivedStyles,
+  ThemeStyles,
+  ThemeUICSSObject,
+  ThemeUICSSProperties,
+  ThemeUIExtendedCSSProperties,
+  ThemeUIStyleObject,
+  VariantProperty,
+} from '@theme-ui/css'
 export * from './types'
+
+const __EMOTION_VERSION__ = packageInfo.version
 
 const getCSS = (props) => {
   if (!props.sx && !props.css) return undefined
@@ -39,9 +62,8 @@ export const jsx: typeof React.createElement = (type, props, ...children) =>
 export interface ContextValue {
   __EMOTION_VERSION__: string
   theme: Theme
-  colorMode?: string
-  setColorMode?: () => void
 }
+
 export const Context = React.createContext<ContextValue>({
   __EMOTION_VERSION__,
   theme: {},

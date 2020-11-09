@@ -11,9 +11,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.5.8",
-    "@next/mdx": "^9.3.4",
-    "next": "^9.3.4",
+    "@mdx-js/loader": "^1.6.16",
+    "@next/mdx": "^9.5.1",
+    "next": "^9.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "theme-ui": "^0.4.0-rc.0"

@@ -297,6 +297,22 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/width
    * @see https://developer.mozilla.org/docs/Web/CSS/height
    */
+
+   /**
+   * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-right
+   */
+  scrollPaddingX?: StandardCSSProperties['scrollPaddingLeft']
+
+/**
+   * The **`scrollPaddingY`** is shorthand property for CSS properties **`scroll-padding-top`** and **`scroll-padding-bottom`**. They set the width of the scroll padding area on the top and bottom side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-bottom
+   */
+  scrollPaddingY?: StandardCSSProperties['scrollPaddingTop']  
   size?: StandardCSSProperties['width']
 }
 
@@ -523,15 +539,20 @@ export interface ColorMode {
   secondary?: CSS.ColorProperty
 
   /**
+   * A contrast color for emphasizing UI
+   */
+  accent?: CSS.ColorProperty
+
+  /**
+   * A background color for highlighting text
+   */
+  highlight?: CSS.ColorProperty
+
+  /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
   muted?: CSS.ColorProperty
-
-  /**
-   * A contrast color for emphasizing UI
-   */
-  accent?: CSS.ColorProperty
 
   [k: string]: CSS.ColorProperty | Scale<CSS.ColorProperty> | undefined
 }

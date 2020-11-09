@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-code-recipes",
-  "version": "0.4.0-rc.1",
+  "version": "0.4.0-rc.5",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {

@@ -1,9 +1,10 @@
-import { css } from '@theme-ui/css'
+import { css, Theme, ColorModesScale, ColorMode } from '@theme-ui/css'
 
-const toVarName = (key) => `--theme-ui-${key}`
-const toVarValue = (key, value) => `var(${toVarName(key)}, ${value})`
+const toVarName = (key: string) => `--theme-ui-${key}`
+const toVarValue = (key: string, value: string | number) =>
+  `var(${toVarName(key)}, ${value})`
 
-const join = (...args) => args.filter(Boolean).join('-')
+const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
 const numberScales = {
   fontWeights: true,
@@ -16,15 +17,19 @@ const reservedKeys = {
   useLocalStorage: true,
 }
 
-const toPixel = (key, value) => {
+const toPixel = (key: string, value: string | number) => {
   if (typeof value !== 'number') return value
-  if (numberScales[key]) return value
+  if (numberScales[key as keyof typeof numberScales]) return value
   return value + 'px'
 }
 
 // convert theme values to custom properties
-export const toCustomProperties = (obj, parent, themeKey) => {
-  const next = Array.isArray(obj) ? [] : {}
+export const toCustomProperties = (
+  obj: Record<string, any> | undefined,
+  parent?: string,
+  themeKey?: string
+) => {
+  const next: Record<string, any> = Array.isArray(obj) ? [] : {}
 
   for (let key in obj) {
     const value = obj[key]
@@ -33,7 +38,7 @@ export const toCustomProperties = (obj, parent, themeKey) => {
       next[key] = toCustomProperties(value, name, key)
       continue
     }
-    if (reservedKeys[key]) {
+    if (reservedKeys[key as keyof typeof reservedKeys]) {
       next[key] = value
       continue
     }
@@ -44,8 +49,8 @@ export const toCustomProperties = (obj, parent, themeKey) => {
   return next
 }
 
-export const objectToVars = (parent, obj) => {
-  let vars = {}
+export const objectToVars = (parent: string, obj: Record<string, any>) => {
+  let vars: Record<string, object> = {}
   for (let key in obj) {
     if (key === 'modes') continue
     const name = join(parent, key)
@@ -63,7 +68,7 @@ export const objectToVars = (parent, obj) => {
 }
 
 // create body styles for color modes
-export const createColorStyles = (theme = {}) => {
+export const createColorStyles = (theme: Theme = {}) => {
   if (!theme.colors || theme.useBodyStyles === false) return {}
   if (theme.useCustomProperties === false || !theme.colors.modes) {
     return css({
@@ -73,8 +78,8 @@ export const createColorStyles = (theme = {}) => {
       },
     })(theme)
   }
-  const colors = theme.rawColors || theme.colors
-  const { modes } = colors
+  const { colors } = theme
+  const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
 
   Object.keys(modes).forEach((mode) => {

@@ -1,10 +1,10 @@
+import { ThemeStyles } from '@theme-ui/css'
+
 // theme.styles object for use with typography.js-generated theme object
 // similar to typography.js style output, with these differences
 // - only includes styles for markdown elements
 // - does not include color styles
 // - does not include responsive styles
-
-import assign from 'object-assign'
 
 const heading = {
   fontFamily: 'heading',
@@ -12,7 +12,7 @@ const heading = {
   fontWeight: 'heading',
 }
 
-export const styles = {
+const baseStyles: ThemeStyles = {
   root: {
     fontFamily: 'body',
     fontSize: 2,
@@ -22,42 +22,30 @@ export const styles = {
   img: {
     maxWidth: '100%',
   },
-  h1: assign(
-    {
-      fontSize: 5,
-    },
-    heading
-  ),
-  h2: assign(
-    {
-      fontSize: 4,
-    },
-    heading
-  ),
-  h3: assign(
-    {
-      fontSize: 3,
-    },
-    heading
-  ),
-  h4: assign(
-    {
-      fontSize: 2,
-    },
-    heading
-  ),
-  h5: assign(
-    {
-      fontSize: 1,
-    },
-    heading
-  ),
-  h6: assign(
-    {
-      fontSize: 0,
-    },
-    heading
-  ),
+  h1: {
+    fontSize: 5,
+    ...heading,
+  },
+  h2: {
+    fontSize: 4,
+    ...heading,
+  },
+  h3: {
+    fontSize: 3,
+    ...heading,
+  },
+  h4: {
+    fontSize: 2,
+    ...heading,
+  },
+  h5: {
+    fontSize: 1,
+    ...heading,
+  },
+  h6: {
+    fontSize: 0,
+    ...heading,
+  },
   ul: {
     listStylePosition: 'outside',
     listStyleImage: 'none',
@@ -137,7 +125,7 @@ export const styles = {
   },
 }
 
-const headings = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1']
+const headings = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1'] as const
 const blockElements = [
   ...headings,
   'ul',
@@ -148,19 +136,22 @@ const blockElements = [
   'blockquote',
   'img',
   'hr',
-]
+] as const
 
-blockElements.forEach(tag => {
-  assign(styles, {
-    [tag]: assign(
-      {
+export const styles: ThemeStyles = {
+  ...baseStyles,
+  ...blockElements.reduce(
+    (style, tag) => ({
+      ...style,
+      [tag]: {
         padding: 0,
         margin: 0,
         marginBottom: 3,
+        ...baseStyles[tag],
       },
-      styles[tag]
-    ),
-  })
-})
+    }),
+    {}
+  ),
+}
 
 export default styles

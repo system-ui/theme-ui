@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-base",
-  "version": "0.4.0-rc.1",
+  "version": "0.4.0-rc.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -8,7 +8,8 @@
   "repository": "system-ui/theme-ui",
   "scripts": {
     "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "types": "dist/index.d.ts",
   "source": "src/index.ts",

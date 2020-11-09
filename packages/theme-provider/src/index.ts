@@ -7,7 +7,7 @@ import {
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
-import { MDXProvider } from '@theme-ui/mdx'
+import { MDXProvider, MDXProviderComponents } from '@theme-ui/mdx'
 import { Global } from '@emotion/core'
 
 const BodyStyles = () =>
@@ -34,16 +34,11 @@ const BodyStyles = () =>
     },
   })
 
-type ProvidedComponentsKnownKeys = {
-  [key in keyof IntrinsicSxElements]?: React.ComponentType<any> | string
-}
-export interface ProvidedComponents extends ProvidedComponentsKnownKeys {
-  [key: string]: React.ComponentType<any> | string | undefined
-}
+
 
 interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
-  components?: ProvidedComponents
+  components?: MDXProviderComponents
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({

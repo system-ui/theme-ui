@@ -4,9 +4,10 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
-import { version as emotionVersion } from '@emotion/core/package.json'
+import packageInfo from '@emotion/core/package.json'
 import { jsx, ThemeProvider, useColorMode, useThemeUI } from '../src/index'
 
+const emotionVersion = packageInfo.version
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 afterEach(cleanup)
@@ -308,8 +309,8 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
 test('useColorMode throws when there is no theme context', () => {
   const restore = mockConsole()
   expect(() => {
-    const Consumer = (props) => {
-      const _ = useColorMode('beep')
+    const Consumer = () => {
+      const _ = useColorMode()
       return null
     }
     render(<Consumer />)

@@ -3,15 +3,15 @@ import { jsx } from 'theme-ui'
 import { scales, multiples } from '@theme-ui/css'
 import { Styled } from 'theme-ui'
 
-const camelDash = string =>
-  string.replace(/([A-Z])/g, g => `-${g[0].toLowerCase()}`)
+const camelDash = (string) =>
+  string.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`)
 
 const alphabeticSort = (a, b) =>
   a.localeCompare(b, undefined, {
     sensitivity: 'base',
   })
 
-export default props => {
+export default (props) => {
   const exclude = Object.keys(multiples)
   const table = Object.keys(scales).reduce((acc, curr) => {
     if (!Array.isArray(acc[scales[curr]])) {
@@ -35,7 +35,7 @@ export default props => {
       <tbody>
         {Object.keys(table)
           .sort(alphabeticSort)
-          .map(key => (
+          .map((key) => (
             <tr>
               <td>
                 <Styled.inlineCode>{key}</Styled.inlineCode>
@@ -44,7 +44,10 @@ export default props => {
                 {table[key].map((property, index) => (
                   <Styled.inlineCode>
                     {!!index && ', '}
-                    <Styled.a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/${property}`}>{property}</Styled.a>
+                    <Styled.a
+                      href={`https://developer.mozilla.org/en-US/docs/Web/CSS/${property}`}>
+                      {property}
+                    </Styled.a>
                   </Styled.inlineCode>
                 ))}
               </td>

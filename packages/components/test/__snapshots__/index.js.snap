@@ -256,6 +256,9 @@ exports[`Checkbox renders 1`] = `
   margin-right: 8px;
   border-radius: 4px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-1 {
@@ -282,6 +285,9 @@ input:focus ~ .emotion-1 {
   margin-right: 8px;
   border-radius: 4px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-2 {
@@ -612,6 +618,42 @@ exports[`Grid renders with mixed columns prop 2`] = `
   .emotion-0 {
     grid-template-columns: 1fr 2fr;
   }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with repeat and responsive width props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill,minmax(256px,1fr));
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(auto-fill,minmax(512px,1fr));
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with repeat and width props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill,minmax(256px,1fr));
 }
 
 <div
@@ -976,6 +1018,9 @@ exports[`Radio renders 1`] = `
   margin-right: 8px;
   border-radius: 9999px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-1 {
@@ -1001,6 +1046,9 @@ input:focus ~ .emotion-1 {
   margin-right: 8px;
   border-radius: 9999px;
   color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 input:checked ~ .emotion-2 {

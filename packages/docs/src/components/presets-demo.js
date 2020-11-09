@@ -34,12 +34,14 @@ export default () => {
           },
         }}>
         <label
+          htmlFor="theme"
           sx={{
             display: 'block',
             mb: 4,
           }}>
-          Preset:{' '}
+          Preset:
           <Select
+            id="theme"
             value={theme}
             onChange={(e) => {
               setTheme(e.target.value)
@@ -50,7 +52,7 @@ export default () => {
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
-          <Styled.root>
+          <Styled.root sx={{ bg: 'background', color: 'text', p: 3 }}>
             <Styled.h2>Colors</Styled.h2>
             <ColorPalette omit={['modes', 'header']} />
             <Styled.h2>Typography</Styled.h2>
@@ -69,11 +71,12 @@ export default () => {
             <MDXProvider components={components}>
               <Lorem />
             </MDXProvider>
-            <Styled.h2>Raw JSON</Styled.h2>
+            <Styled.h2 id="json">Raw JSON</Styled.h2>
             <textarea
               value={JSON.stringify(preset, null, 2)}
               rows={16}
               readOnly
+              aria-labelledby="json"
               sx={{
                 width: '100%',
                 fontFamily: 'monospace',

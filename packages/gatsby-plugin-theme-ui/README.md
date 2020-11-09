@@ -33,12 +33,14 @@ The theme module you include in options is considered your base theme. Any furth
 // gatsby-config.js
 module.exports = {
   plugins: [
-    { resolve: 'gatsby-plugin-theme-ui',
+    {
+      resolve: 'gatsby-plugin-theme-ui',
       options: {
-        prismPreset: 'night-owl'
-        preset: '@theme-ui/preset-funk'
-      }
-    }],
+        prismPreset: 'night-owl',
+        preset: '@theme-ui/preset-funk',
+      },
+    },
+  ],
 }
 ```
 
