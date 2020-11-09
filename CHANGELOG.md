@@ -8,6 +8,14 @@
 
 ### `@theme-ui/components`
 
+- Add Switch component #1035
+
+  ```tsx
+  <Label>
+    <Switch /> Enable email alerts?
+  </Label>
+  ```
+
 - Pass `size` prop down to IconButton in Close component. PR #1242
 
   ```tsx
