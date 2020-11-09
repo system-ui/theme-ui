@@ -3,7 +3,16 @@
 ## v0.4.0 UNRELEASED
 
 ### `@theme-ui/color`
+
 - Fix support for rgb/hsl color values
+
+### `@theme-ui/components`
+
+- Pass `size` prop down to IconButton in Close component. PR #1242
+
+  ```tsx
+  <Close size={24} />
+  ```
 
 ## v0.4.0-rc.7 2020-11-08
 
