@@ -13,7 +13,7 @@
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish",
-    "prerelease": "yarn typecheck && yarn test"
+    "prerelease": "yarn prepare && yarn typecheck && yarn test"
   },
   "workspaces": [
     "packages/*"
