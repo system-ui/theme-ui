@@ -388,6 +388,14 @@ describe('Field', () => {
     )
     expect(json).toMatchSnapshot()
   })
+  test('renders with id prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Field id="test-field" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Progress', () => {
