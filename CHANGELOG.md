@@ -1,17 +1,99 @@
 # Changelog
 
-## Unreleased
+## v0.4.0 UNRELEASED
+
+### `@theme-ui/components`
+
 - Fix Button not respecting hidden prop. Issue #1254
+
+## v0.4.0-rc.8 2020-11-09
+
+### `@theme-ui/color`
+
+- Fix support for rgb/hsl color values
+
+### `@theme-ui/components`
+
+- Add Switch component #1035
+
+  ```tsx
+  <Label>
+    <Switch /> Enable email alerts?
+  </Label>
+  ```
+
+- Pass `size` prop down to IconButton in Close component. PR #1242
+
+  ```tsx
+  <Close size={24} />
+  ```
+
+### examples
+
+- Convert Gatsby example to TypeScript and stop using removed components. Issue #1227, PR #1229
+
+## v0.4.0-rc.7 2020-11-08
+
+### `@theme-ui/core`
+
 - Make ThemeProvider `theme` prop required
-- Removes overriding property on editor combobox
-- Adjust media query sort logic #600
-- Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
-- Fixed peer dependencies to keep yarn berry happy. Issue #725
-- Fix broken base-preset link on `theming` page
+
+### `@theme-ui/editor`
+
+- Removes overriding property on editor combobox #687
+
+### `@theme-ui/preset-sketchy`
+
 - Add `@theme-ui/preset-sketchy`
-- `@theme-ui/prism`: add support for highlighting lines #895
-- `@theme-ui/style-guide`: pass `size` prop to ColorRow component #941
+
+### `@theme-ui/prism`
+
+- Add support for highlighting lines #895
+
+### `@theme-ui/sidenav`
+
 - `@theme-ui/sidenav`: move React to peerDependencies #978
+
+### `@theme-ui/style-guide`
+
+- Pass `size` prop to ColorRow component #941
+
+### `@theme-ui/color-modes`
+
+- Accept SetStateAction and generic parameter #1174
+
+### docs
+
+- Fix broken base-preset link on `theming` page
+
+## v0.3.2 2020-11-08
+
+- Fix peer dependencies. Issue #725, PR #836
+
+### `@theme-ui/css`
+
+- Add theme colors support to columnRuleColor and caretColor #1085
+- Support scrollPadding variations in sx props. Issue #1214
+
+### `@theme-ui/core`
+
+- Support Webpack 5. (Uses default export from package.json instead of named export) #1141
+
+### `@theme-ui/components`
+
+- Add `primary` as default variant for `Badge` component #1109
+- Add `primary` as default variant for `Alert` component #1102
+- Add `theme.text.default` variant for `Text` component #870
+
+### docs
+
+- Fix example logo on Avatar & Image component docs #1233
+- Fix theme editor output in docs #1182
+
+## v0.3.1 2020-01-32
+
+- Adjusts media query sort logic #600
+- Fixes link to Gatsby Plugin page in `getting-started` page. Issue #602, PR #603
 
 ## v0.3.0 2020-01-22
 

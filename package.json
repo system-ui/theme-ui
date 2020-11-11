@@ -11,7 +11,9 @@
     "typecheck": "lerna run typecheck",
     "logo": "yarn workspace docs logo",
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
-    "dev:editor": "yarn workspace @theme-ui/editor dev"
+    "dev:editor": "yarn workspace @theme-ui/editor dev",
+    "release": "lerna publish",
+    "prerelease": "yarn prepare && yarn typecheck && yarn test"
   },
   "workspaces": [
     "packages/*"
@@ -43,7 +45,7 @@
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^26.1.0",
     "ts-snippet": "^4.2.0",
-    "typescript": "^3.9.5"
+    "typescript": "^4"
   },
   "resolutions": {},
   "jest": {
