@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-
+- Fix Button not respecting hidden prop. Issue #1254
 - Make ThemeProvider `theme` prop required
 - Removes overriding property on editor combobox
 - Adjust media query sort logic #600
