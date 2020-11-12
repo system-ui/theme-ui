@@ -174,6 +174,14 @@ describe('Button', () => {
     )
     expect(json).toMatchSnapshot()
   })
+  test('hidden', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Button hidden />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Card', () => {
