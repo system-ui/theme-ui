@@ -2,6 +2,10 @@
 
 ## v0.4.0 UNRELEASED
 
+### `@theme-ui/components`
+
+- Fix Button not respecting hidden prop. Issue #1254
+
 ## v0.4.0-rc.8 2020-11-09
 
 ### `@theme-ui/color`
