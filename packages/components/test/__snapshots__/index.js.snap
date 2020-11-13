@@ -227,6 +227,15 @@ exports[`Card renders 1`] = `
 `;
 
 exports[`Checkbox renders 1`] = `
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
 .emotion-0 {
   box-sizing: border-box;
   margin: 0;
@@ -237,15 +246,6 @@ exports[`Checkbox renders 1`] = `
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-
-.emotion-3 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
 }
 
 .emotion-1 {
@@ -996,6 +996,9 @@ exports[`Radio renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
 }
 
 .emotion-0 {
