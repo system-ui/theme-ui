@@ -163,7 +163,7 @@ describe('ColorMode', () => {
     }
   `)
 
-  expectedSnippet.toInfer('baseColors', '(string | undefined)[]')
+  expectedSnippet.toInfer('baseColors', '((string & {}) | undefined)[]')
   expectedSnippet.toInfer('light', 'string')
   expectedSnippet.toInfer('dark', 'string')
 })
