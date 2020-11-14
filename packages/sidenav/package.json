@@ -21,7 +21,7 @@
     "react": "^16.8.6"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.14",
+    "@emotion/react": "^11.0.0",
     "@mdx-js/react": "^1.0.21",
     "@types/mdx-js__react": "^1.5.1",
     "deepmerge": "^4.0.0",

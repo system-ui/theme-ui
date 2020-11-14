@@ -19,12 +19,10 @@
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
     "theme-ui": "^0.4.0-rc.0"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
     "theme-ui": "0.4.0-rc.12"
   },

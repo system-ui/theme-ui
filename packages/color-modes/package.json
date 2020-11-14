@@ -18,8 +18,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@theme-ui/core": "0.4.0-rc.12",
+    "@emotion/react": "^11.0.0",
+    "@theme-ui/core": "^0.4.0-rc.12",
     "@theme-ui/css": "^0.4.0-rc.11",
     "deepmerge": "^4.2.2"
   },
