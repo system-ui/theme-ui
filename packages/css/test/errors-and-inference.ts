@@ -40,7 +40,7 @@ describe('Theme', () => {
       })
     `).toFail(
       new RegExp(
-        `Error snippet\\.ts \\(\\d+,\\d+\\): Type '{ color: string; widows: "bar"; }'` +
+        `Error snippet\\.ts \\(\\d+,\\d+\\): Type '{ color: "blue"; widows: "bar"; }'` +
           ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
           `Types of property 'widows' are incompatible.\\n\\s+` +
           `Type '"bar"' is not assignable to type [\\s\\S]+`
@@ -164,6 +164,6 @@ describe('ColorMode', () => {
   `)
 
   expectedSnippet.toInfer('baseColors', '((string & {}) | undefined)[]')
-  expectedSnippet.toInfer('light', 'string')
-  expectedSnippet.toInfer('dark', 'string')
+  expectedSnippet.toInfer('light', 'Color')
+  expectedSnippet.toInfer('dark', 'Color')
 })
