@@ -12,8 +12,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
     "@mdx-js/react": "^1.0.0"
   },
   "devDependencies": {
