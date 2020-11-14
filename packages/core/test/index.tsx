@@ -49,7 +49,7 @@ describe('ThemeProvider', () => {
         text: 'tomato',
       },
     }
-    const theme = jest.fn()
+    const theme = jest.fn(() => ({}))
     const json = renderJSON(
       jsx(
         ThemeProvider,

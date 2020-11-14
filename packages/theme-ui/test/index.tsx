@@ -125,7 +125,7 @@ test('functional themes receive outer theme', () => {
       primary: 'black',
     },
   }
-  const theme = jest.fn<Theme, [Theme]>()
+  const theme = jest.fn<Theme, [Theme]>(() => ({}))
   const json = renderJSON(
     jsx(
       ThemeProvider,
