@@ -35,8 +35,8 @@ import { ThemeProvider } from 'emotion-theming'
 import styled from '@emotion/styled'
 
 const themeUIComponents = {
-  h1: styled('h1')(props => props.theme.styles.h1),
-  h2: styled('h2')(props => props.theme.styles.h2),
+  h1: styled('h1')((props) => props.theme.styles.h1),
+  h2: styled('h2')((props) => props.theme.styles.h2),
   // other MDX components
 }
 
@@ -63,10 +63,10 @@ The two examples below yield the same results:
 // with Emotion's JSX function
 // this is typically handled with the Emotion Babel preset
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { css } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     css={css({
@@ -83,7 +83,7 @@ export default props => (
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{

@@ -3,7 +3,7 @@ import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import {
   jsx,
@@ -17,7 +17,6 @@ import {
 afterEach(cleanup)
 
 expect.extend(matchers)
-
 
 describe('ThemeProvider', () => {
   test('renders', () => {

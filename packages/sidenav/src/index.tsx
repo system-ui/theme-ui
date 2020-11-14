@@ -11,7 +11,7 @@ import React, {
   ReactComponentElement,
   ReactElement,
 } from 'react'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import merge from 'deepmerge'
 
 const createNestedLinks = (

@@ -1,7 +1,7 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { renderJSON } from '@theme-ui/test-utils'
 

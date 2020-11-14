@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, components } from 'theme-ui'
-import { ThemeContext } from '@emotion/core'
+import { ThemeContext } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import * as presets from '@theme-ui/presets'
 import {

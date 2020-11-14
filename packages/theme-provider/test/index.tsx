@@ -3,7 +3,7 @@ import { jsx } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
 import { render, cleanup } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'
 
 import { ThemeProvider } from '../src'

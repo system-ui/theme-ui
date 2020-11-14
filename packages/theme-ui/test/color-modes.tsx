@@ -2,9 +2,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import packageInfo from '@emotion/core/package.json'
+import packageInfo from '@emotion/react/package.json'
 import { jsx, ThemeProvider, useColorMode, useThemeUI } from '../src/index'
 
 const emotionVersion = packageInfo.version

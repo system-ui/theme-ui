@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import React, { memo } from 'react'
 import { jsx, useThemeUI, ThemeProvider, Styled } from 'theme-ui'
 import { base } from '@theme-ui/presets'

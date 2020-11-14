@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
 import { get, Theme } from '@theme-ui/css'
-import { Global, ThemeContext as EmotionContext } from '@emotion/core'
+import { Global, ThemeContext as EmotionContext } from '@emotion/react'
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'

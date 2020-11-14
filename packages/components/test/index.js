@@ -1,6 +1,6 @@
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import { ThemeProvider } from 'theme-ui'
 import {
   Box,
