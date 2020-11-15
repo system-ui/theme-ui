@@ -1,12 +1,13 @@
 import {
   jsx as emotion,
   ThemeContext as EmotionContext,
-  Interpolation
+  Interpolation,
 } from '@emotion/react'
 import { css, Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
 import packageInfo from '@emotion/react/package.json'
+import {} from '@emotion/react/types/css-prop'
 
 import './react-jsx'
 
