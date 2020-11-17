@@ -5,6 +5,7 @@
 ### `@theme-ui/components`
 
 - Fix Button not respecting hidden prop. Issue #1254
+- Add `minWidth: min-content` on Checkbox and Radio
 
 ## v0.4.0-rc.8 2020-11-09
 
