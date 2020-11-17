@@ -2,10 +2,18 @@
 
 ## v0.4.0 UNRELEASED
 
+## v0.4.0-rc.10 2020-11-17
+
+### `@theme-ui/components`
+
+- Fix circular import in Switch.js
+
+## v0.4.0-rc.9 2020-11-17
+
 ### `@theme-ui/components`
 
 - Fix Button not respecting hidden prop. Issue #1254
-- Add `minWidth: min-content` on Checkbox and Radio
+- Add `minWidth: min-content` on Checkbox and Radio. PR #1256
 
 ## v0.4.0-rc.8 2020-11-09
 

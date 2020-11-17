@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Label } from './'
+import { Box } from './Box'
+import { Label } from './Label'
 
 const GUTTER = 2
 const SIZE = 18
