@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.4.0-rc.10",
+  "version": "0.4.0-rc.11",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
-    "@theme-ui/css": "^0.4.0-rc.10",
+    "@theme-ui/css": "^0.4.0-rc.11",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
