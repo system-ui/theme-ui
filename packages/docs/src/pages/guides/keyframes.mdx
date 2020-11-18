@@ -9,14 +9,14 @@ library itself. Instead, use [the `keyframes` helper from Emotion](https://emoti
 
 ## Usage
 
-1. `import { keyframes } from '@emotion/core'`
+1. `import { keyframes } from '@emotion/react'`
 2. Create a variable using `keyframes` for your animation (examples below)
 3. Use the variable as the animation name, in an `animation` or `animationName`
    declaration
 
 <Note>
 
-Because `@emotion/core` is a dependency of Theme UI, it’s available in your
+Because `@emotion/react` is a dependency of Theme UI, it’s available in your
 project without manual installation. Installing it separately can cause configuration issues due to
 multiple copies with conflicting versions.
 
@@ -28,7 +28,7 @@ Using object syntax:
 
 ```js
 import { Box } from 'theme-ui'
-import { keyframes } from '@emotion/core'
+import { keyframes } from '@emotion/react'
 
 const fadeIn = keyframes({ from: { opacity: 0 }, to: { opacity: 1 } })
 
@@ -49,7 +49,7 @@ Using template literal syntax:
 ```js
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { keyframes } from '@emotion/core'
+import { keyframes } from '@emotion/react'
 
 const wave = keyframes`
   from {
