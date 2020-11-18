@@ -12,12 +12,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.0.0",
+    "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "@mdx-js/react": "^1.0.0",
     "@theme-ui/core": "^0.4.0-rc.12",
     "@theme-ui/css": "^0.4.0-rc.11"
-    },
+  },
   "peerDependencies": {
     "react": "^16.11.0"
   },
