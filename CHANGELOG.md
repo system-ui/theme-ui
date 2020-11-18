@@ -2,6 +2,13 @@
 
 ## v0.5.0 UNRELEASED
 
+## v0.5.0-alpha.0 2020-11-20
+
+- BREAKING: Upgrade to Emotion 11, and `csstype` 3. PR #1261
+  - We are now depending on `@emotion/react@11` instead of `@emotion/core@10`
+  - `sx` prop types are still global, and we opt in for Emotion `css` prop types (This will change in the future.)
+  - Refer to [Emotion 11 release notes](https://emotion.sh/docs/emotion-11) for more information.
+
 ## v0.4.0-rc.14 2020-11-20
 
 ### `@theme-ui/color-modes`
