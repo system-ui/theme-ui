@@ -119,7 +119,7 @@ describe('components type check', () => {
           }}
         />
         <Link href="#" target="_self" bg="blue" ref={(r) => r} />
-        <Text backgroundColor="red" sx={{ py: 1 }} paddingX={[3, 2, 1]} />
+        <Text backgroundColor="red" sx={{ py: 1 }} px={[3, 2, 1]} />
         <Heading contentEditable="true" m="1em" />
         <Image />
         <Card />
