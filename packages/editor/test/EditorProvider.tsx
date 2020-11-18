@@ -9,7 +9,7 @@ import { EditorProvider } from '../src'
 
 afterEach(cleanup)
 expect.extend(matchers)
-]
+
 
 const theme = {
   useCustomProperties: false,
