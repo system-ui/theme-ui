@@ -19,6 +19,7 @@
 
 ### `@theme-ui/components`
 
+- Add `arrow` prop to Select to allow passing custom arrow icon. Issues #1177 #1151, PR #1232
 - Fix: Field component uses `id` if passed. PR #1252
 - Fix circular import in Switch.js
 
