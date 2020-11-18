@@ -5,7 +5,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/jsx-dev-runtime.d.ts",
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@theme-ui/parse-props": "^0.4.0-rc.5"
+    "@emotion/core": "*",
+    "@theme-ui/parse-props": "*"
   }
 }
