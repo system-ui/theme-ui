@@ -88,6 +88,7 @@ describe('components type check', () => {
         ref={(ref) => ref}>
         <Box
           onPointerEnter={(e) => e.pointerType}
+          ref={(ref) => ref}
           sx={{
             ':first-of-type': {
               bg: 'red',
