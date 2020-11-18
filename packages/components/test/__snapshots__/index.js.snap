@@ -588,6 +588,12 @@ exports[`Field renders with id prop 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -595,7 +601,7 @@ exports[`Field renders with id prop 1`] = `
   display: flex;
 }
 
-.emotion-1 {
+.emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -604,6 +610,7 @@ exports[`Field renders with id prop 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -613,21 +620,15 @@ exports[`Field renders with id prop 1`] = `
   background-color: transparent;
 }
 
-.emotion-2 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-}
-
 <div
-  className="emotion-2"
+  className="emotion-0"
 >
   <label
-    className="emotion-0"
+    className="emotion-1"
     htmlFor="test-field"
   />
   <input
-    className="emotion-1"
+    className="emotion-2"
     id="test-field"
   />
 </div>
@@ -1257,7 +1258,7 @@ exports[`Select renders 1`] = `
 `;
 
 exports[`Select renders with custom icon 1`] = `
-.emotion-1 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1267,7 +1268,7 @@ exports[`Select renders with custom icon 1`] = `
   display: flex;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1276,6 +1277,7 @@ exports[`Select renders with custom icon 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -1286,10 +1288,10 @@ exports[`Select renders with custom icon 1`] = `
 }
 
 <div
-  className="emotion-1"
+  className="emotion-0"
 >
   <select
-    className="emotion-0"
+    className="emotion-1"
   />
   <svg>
     <path
