@@ -18,20 +18,20 @@ describe('toCustomProperties', () => {
     expect(result).toEqual({
       initialColorModeName: 'light',
       colors: {
-        text: 'var(--theme-ui-colors-text, black)',
+        text: 'var(--theme-ui-colors-text)',
       },
       space: [
-        'var(--theme-ui-space-0, 0px)',
-        'var(--theme-ui-space-1, 4px)',
-        'var(--theme-ui-space-2, 8px)',
-        'var(--theme-ui-space-3, 16px)',
-        'var(--theme-ui-space-4, 32px)',
+        'var(--theme-ui-space-0)',
+        'var(--theme-ui-space-1)',
+        'var(--theme-ui-space-2)',
+        'var(--theme-ui-space-3)',
+        'var(--theme-ui-space-4)',
       ],
       fonts: {
-        body: 'var(--theme-ui-fonts-body, system-ui, sans-serif)',
+        body: 'var(--theme-ui-fonts-body)',
       },
       fontWeights: {
-        body: 'var(--theme-ui-fontWeights-body, 400)',
+        body: 'var(--theme-ui-fontWeights-body)',
       },
     })
   })
