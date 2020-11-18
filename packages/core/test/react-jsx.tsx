@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '../src'
 import renderer from 'react-test-renderer'
+import { renderJSON } from '@theme-ui/test-utils'
 
-const renderJSON = (el: React.ReactElement) => renderer.create(el).toJSON()
+import { jsx } from '../src'
 
 describe('JSX', () => {
   test('accepts sx prop', () => {

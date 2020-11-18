@@ -6,6 +6,7 @@ import mockConsole from 'jest-mock-console'
 import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
 import { Theme } from '@theme-ui/css'
+import { renderJSON } from '@theme-ui/test-utils'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -15,7 +16,6 @@ beforeEach(() => {
 })
 expect.extend(matchers)
 
-const renderJSON = (el) => renderer.create(el).toJSON()
 
 test('renders with color modes', () => {
   let mode

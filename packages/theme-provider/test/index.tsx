@@ -4,13 +4,13 @@ import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
 import { render, cleanup } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
+import { renderJSON } from '@theme-ui/test-utils'
+
 import { ThemeProvider } from '../src'
 
 expect.extend(matchers)
 
 afterEach(cleanup)
-
-const renderJSON = el => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
@@ -197,8 +197,10 @@ test('adds box-sizing: border-box', () => {
 })
 
 test('does not add box-sizing: border-box', () => {
-  const styles: HTMLStyleElement[] = [].slice.call(document.querySelectorAll('style'))
-  styles.forEach(style => (style.innerHTML = ''))
+  const styles: HTMLStyleElement[] = [].slice.call(
+    document.querySelectorAll('style')
+  )
+  styles.forEach((style) => (style.innerHTML = ''))
   const root = render(
     <ThemeProvider
       theme={{

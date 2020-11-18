@@ -2,6 +2,7 @@ import React from 'react'
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
+import { renderJSON } from '@theme-ui/test-utils'
 import { matchers } from 'jest-emotion'
 import mockConsole from 'jest-mock-console'
 import {
@@ -17,7 +18,6 @@ afterEach(cleanup)
 
 expect.extend(matchers)
 
-const renderJSON = (el: React.ReactElement) => renderer.create(el).toJSON()
 
 describe('ThemeProvider', () => {
   test('renders', () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { renderJSON } from '@theme-ui/test-utils'
 import { matchers } from 'jest-emotion'
 import { ThemeProvider } from 'theme-ui'
 import {
@@ -39,8 +39,6 @@ import {
 } from '../src'
 
 expect.extend(matchers)
-
-const renderJSON = (el) => renderer.create(el).toJSON()
 
 const theme = {
   boxes: {
