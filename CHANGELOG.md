@@ -2,6 +2,21 @@
 
 ## v0.4.0 UNRELEASED
 
+### docs
+
+- Add documentation on CSS keyframes #1269
+
+### `@theme-ui/color-modes`
+
+- Add configuration option for printing color mode. PR #1267, issue #1144.
+
+  ```
+  {
+    initialColorModeName: "dark",
+    printColorModeName: "light"
+  }
+  ```
+
 ### `@theme-ui/components`
 
 - Fix: Field component uses `id` if passed. PR #1252
