@@ -1,8 +1,8 @@
 import { css, Theme, ColorModesScale, ColorMode } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
-const toVarValue = (key: string, value: string | number) =>
-  `var(${toVarName(key)}, ${value})`
+const toCssCustomVar = (key: string) =>
+  `var(${toVarName(key)})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
@@ -30,7 +30,6 @@ export const toCustomProperties = (
   themeKey?: string
 ) => {
   const next: Record<string, any> = Array.isArray(obj) ? [] : {}
-
   for (let key in obj) {
     const value = obj[key]
     const name = join(parent, key)
@@ -42,8 +41,7 @@ export const toCustomProperties = (
       next[key] = value
       continue
     }
-    const val = toPixel(themeKey || key, value)
-    next[key] = toVarValue(name, val)
+    next[key] = toCssCustomVar(name)
   }
 
   return next
