@@ -634,6 +634,11 @@ export interface Theme {
   initialColorModeName?: string
 
   /**
+   * Provide a value here to set a color mode for printing
+   */
+  printColorModeName?: string
+
+  /**
    * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean
