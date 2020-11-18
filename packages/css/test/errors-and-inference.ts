@@ -1,15 +1,10 @@
-import { expecter } from 'ts-snippet'
+import { expecter } from '@theme-ui/test-utils'
 
 import { css, get, Theme } from '../src'
 
-const expectSnippet = expecter(
-  (code) => `
+const expectSnippet = expecter(`
   import { css } from './packages/css/src'
-
-  ${code}
-`,
-  { strict: true, noErrorTruncation: true }
-)
+`)
 
 describe('Theme', () => {
   test('shows friendly error only on bad property', () => {

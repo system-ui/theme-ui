@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { expecter } from '@theme-ui/test-utils'
 
 import {
   Alert,
@@ -100,7 +101,7 @@ describe('components type check', () => {
           width={[128, null, 192]}
           backgroundColor="#eee"
           ref={(ref) => ref}>
-          <Box bg="primary">Box</Box>
+          <Box bg="primary" ref={primaryBox => primaryBox}>Box</Box>
           <Box bg="muted">Box</Box>
           <Box bg="primary">Box</Box>
           <Box bg="muted">Box</Box>
@@ -373,5 +374,45 @@ describe('components type check', () => {
 
     // Textarea
     ;((props: TextareaProps) => <Textarea {...props} />)({})
+  })
+
+  describe('ref types inference', () => {
+    const expectSnippet = expecter(`
+      import { Box, Flex } from './packages/components'
+    `)
+
+    it('Box#ref infers HTMLDivElement | null', () => {
+      expectSnippet(`    
+        <Box
+          ref={ref => {
+            const _ref = ref;
+          }}
+        />
+      `).toInfer('_ref', 'HTMLDivElement | null')
+    })
+
+    it("Flex.withComponent('form')#ref infers HTMLFormElement | null", () => {
+      expectSnippet(`    
+        const FormFlex = Flex.withComponent('form');
+  
+        <FormFlex
+          ref={ref => {
+            const _ref = ref;
+          }}
+        />
+      `).toInfer('_ref', 'HTMLFormElement | null')
+    })
+
+    it("Box.withComponent('button')#ref infers HTMLButtonElement | null", () => {
+      expectSnippet(`    
+        const ButtonBox = Box.withComponent('button');
+  
+        <ButtonBox
+          ref={ref => {
+            const _ref = ref;
+          }}
+        />
+      `).toInfer('_ref', 'HTMLButtonElement | null')
+    })
   })
 })

@@ -31,13 +31,13 @@ export interface BoxProps
  */
 export const Box: StyledComponent<BoxOwnProps, BoxProps>
 
-export type FlexStyleProps = BoxOwnProps
+export type FlexOwnProps = BoxOwnProps
 export type FlexProps = BoxProps
 /**
  * Use the Flex component to create flexbox layouts.
  * @see https://theme-ui.com/components/flex
  */
-export const Flex: StyledComponent<FlexStyleProps, FlexProps>
+export const Flex: StyledComponent<FlexOwnProps, FlexProps>
 
 export interface GridProps extends BoxProps {
   /**
