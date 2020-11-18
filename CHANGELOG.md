@@ -2,7 +2,10 @@
 
 ## v0.4.0 UNRELEASED
 
-- Use correct version of @theme-ui/components in theme-ui package
+## v0.4.0-rc.12 2020-11-18
+
+- Use correct version of @theme-ui/components in theme-ui package.
+  (Locked dependencies on other Theme UI packages)
 
 ## v0.4.0-rc.11 2020-11-18
 
