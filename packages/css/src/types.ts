@@ -619,6 +619,7 @@ export interface Theme {
   colorStyles?: Scale<ThemeUICSSProperties>
   textStyles?: Scale<ThemeUICSSProperties>
   opacities?: Scale<CSS.OpacityProperty>
+  transitions?: Scale<CSS.TransitionProperty>
 
   /**
    * Enable/disable custom CSS properties/variables if lower browser

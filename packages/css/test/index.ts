@@ -53,6 +53,9 @@ const theme: Theme = {
     small: 5,
   },
   opacities: [0, '50%'],
+  transitions: {
+    standard: '0.3s ease-in-out'
+  }
 }
 
 test('returns a function', () => {
@@ -150,6 +153,7 @@ test('handles all core styled system props', () => {
     color: 'primary',
     bg: 'secondary',
     opacity: 1,
+    transition: 'standard',
     fontFamily: 'monospace',
     lineHeight: 'body',
   })({ theme })
@@ -167,6 +171,7 @@ test('handles all core styled system props', () => {
     color: 'tomato',
     backgroundColor: 'cyan',
     opacity: '50%',
+    transition: '0.3s ease-in-out',
     fontFamily: 'Menlo, monospace',
     fontSize: 24,
     fontWeight: 600,
