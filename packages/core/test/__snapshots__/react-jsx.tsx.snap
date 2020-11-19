@@ -5,6 +5,14 @@ exports[`JSX accepts sx prop 1`] = `
   margin-top: 10px;
   padding-left: 8px;
   padding-right: 8px;
+  -webkit-scroll-padding-top: 8px;
+  -moz-scroll-padding-top: 8px;
+  -ms-scroll-padding-top: 8px;
+  scroll-padding-top: 8px;
+  -webkit-scroll-padding-bottom: 8px;
+  -moz-scroll-padding-bottom: 8px;
+  -ms-scroll-padding-bottom: 8px;
+  scroll-padding-bottom: 8px;
 }
 
 <div

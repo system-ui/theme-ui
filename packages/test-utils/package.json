@@ -1,0 +1,16 @@
+{
+  "name": "@theme-ui/test-utils",
+  "version": "0.4.0-rc.12",
+  "private": true,
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "tsc",
+    "watch": "tsc -w",
+    "typecheck": "tsc --noEmit"
+  }
+}

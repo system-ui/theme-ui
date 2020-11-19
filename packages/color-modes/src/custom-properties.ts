@@ -13,6 +13,7 @@ const numberScales = {
 const reservedKeys = {
   useCustomProperties: true,
   initialColorModeName: true,
+  printColorModeName: true,
   initialColorMode: true,
   useLocalStorage: true,
 }
@@ -76,14 +77,23 @@ export const createColorStyles = (theme: Theme = {}) => {
       },
     })(theme)
   }
-  const { colors } = theme
+  const { colors, initialColorModeName, printColorModeName } = theme
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
 
-  Object.keys(modes).forEach((mode) => {
+  Object.keys(modes).forEach(mode => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
+
+  if (printColorModeName) {
+    const mode =
+      printColorModeName === 'initial' ||
+      printColorModeName === initialColorModeName
+        ? colors
+        : modes[printColorModeName]
+    styles['@media (print)'] = objectToVars('colors', mode)
+  }
 
   return css({
     body: {

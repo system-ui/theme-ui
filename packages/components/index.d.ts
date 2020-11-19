@@ -135,7 +135,9 @@ export interface InputProps
 export const Input: ForwardRef<HTMLInputElement, InputProps>
 
 export interface SelectProps
-  extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
+    arrow?: React.ReactElement;
+  }
 /**
  * Select variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.select` variant by default.
@@ -379,3 +381,16 @@ export type MenuButtonProps = IconButtonProps
  * @see https://theme-ui.com/components/menu-button
  */
 export const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps>
+
+/**
+ * Form switch component
+ *
+ * Switch variants can be defined in `theme.forms`
+ * and the component uses the `theme.forms.switch` variant by default.
+ */
+export const Switch: ForwardRef<HTMLInputElement, SwitchProps>
+
+export interface SwitchProps
+  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {
+  label?: string
+}

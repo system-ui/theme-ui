@@ -70,4 +70,69 @@ describe('createColorStyles', () => {
       },
     })
   })
+
+  test('creates styles for print color mode', () => {
+    const styles = createColorStyles({
+      printColorModeName: 'light',
+      colors: {
+        text: 'white',
+        background: 'tomato',
+        modes: {
+          light: {
+            text: 'tomato',
+            background: 'white',
+          },
+        },
+      },
+    })
+    expect(styles).toEqual({
+      body: {
+        color: 'white',
+        backgroundColor: 'tomato',
+        '--theme-ui-colors-text': 'white',
+        '--theme-ui-colors-background': 'tomato',
+        '&.theme-ui-light': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
+        '@media (print)': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
+      },
+    })
+  })
+
+  test('creates styles for initial print color mode', () => {
+    const styles = createColorStyles({
+      initialColorModeName: 'tomato',
+      printColorModeName: 'tomato',
+      colors: {
+        text: 'tomato',
+        background: 'white',
+        modes: {
+          dark: {
+            text: 'white',
+            background: 'black',
+          },
+        },
+      },
+    })
+    expect(styles).toEqual({
+      body: {
+        color: 'tomato',
+        backgroundColor: 'white',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+        '&.theme-ui-dark': {
+          '--theme-ui-colors-text': 'white',
+          '--theme-ui-colors-background': 'black',
+        },
+        '@media (print)': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
+      },
+    })
+  })
 })

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
 import { get, Theme } from '@theme-ui/css'
 import { Global, ThemeContext as EmotionContext } from '@emotion/core'
@@ -9,7 +9,7 @@ const STORAGE_KEY = 'theme-ui-color-mode'
 declare module '@theme-ui/core' {
   export interface ContextValue {
     colorMode?: string
-    setColorMode?: (mode: string) => void
+    setColorMode?: (colorMode: SetStateAction<string>) => void
   }
 }
 
@@ -54,9 +54,7 @@ const getMediaQuery = () => {
   return 'default'
 }
 
-const useColorModeState = (
-  theme: Theme = {}
-): [string, React.Dispatch<React.SetStateAction<string>>] => {
+const useColorModeState = (theme: Theme = {}) => {
   const [mode, setMode] = React.useState(
     theme.initialColorModeName || 'default'
   )
@@ -93,20 +91,24 @@ const useColorModeState = (
     }
   }
 
-  return [mode, setMode]
+  return [mode, setMode] as const
 }
 
-export const useColorMode = (): [
-  string | undefined,
-  (mode: string) => void
-] => {
+export function useColorMode<T extends string = string>(): [
+  T,
+  Dispatch<SetStateAction<T>>
+] {
   const { colorMode, setColorMode } = useThemeUI()
 
   if (typeof setColorMode !== 'function') {
     throw new Error(`[useColorMode] requires the ColorModeProvider component`)
   }
 
-  return [colorMode, setColorMode]
+  // We're allowing the user to specify a narrower type for its color mode name.
+  return ([colorMode, setColorMode] as unknown) as [
+    T,
+    Dispatch<SetStateAction<T>>
+  ]
 }
 
 const applyColorMode = (theme: Theme, mode: string): Theme => {

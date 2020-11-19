@@ -180,6 +180,37 @@ exports[`Box renders 1`] = `
 </div>
 `;
 
+exports[`Button hidden 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: inherit;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: primary;
+  border: 0;
+  border-radius: 4px;
+  color: background;
+  background-color: primary;
+}
+
+<button
+  className="emotion-0"
+  hidden={true}
+/>
+`;
+
 exports[`Button renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
@@ -231,6 +262,9 @@ exports[`Checkbox renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
 }
 
 .emotion-0 {
@@ -541,6 +575,56 @@ exports[`Field renders 1`] = `
   />
   <input
     className="emotion-1"
+  />
+</div>
+`;
+
+exports[`Field renders with id prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+  className="emotion-2"
+>
+  <label
+    className="emotion-0"
+    htmlFor="test-field"
+  />
+  <input
+    className="emotion-1"
+    id="test-field"
   />
 </div>
 `;
@@ -993,6 +1077,9 @@ exports[`Radio renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
 }
 
 .emotion-0 {
@@ -1155,6 +1242,49 @@ exports[`Select renders 1`] = `
   >
     <path
       d="M7 10l5 5 5-5z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Select renders with custom icon 1`] = `
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+<div
+  className="emotion-1"
+>
+  <select
+    className="emotion-0"
+  />
+  <svg>
+    <path
+      d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z"
     />
   </svg>
 </div>

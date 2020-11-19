@@ -297,6 +297,22 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/width
    * @see https://developer.mozilla.org/docs/Web/CSS/height
    */
+
+   /**
+   * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-right
+   */
+  scrollPaddingX?: StandardCSSProperties['scrollPaddingLeft']
+
+/**
+   * The **`scrollPaddingY`** is shorthand property for CSS properties **`scroll-padding-top`** and **`scroll-padding-bottom`**. They set the width of the scroll padding area on the top and bottom side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-bottom
+   */
+  scrollPaddingY?: StandardCSSProperties['scrollPaddingTop']  
   size?: StandardCSSProperties['width']
 }
 
@@ -616,6 +632,11 @@ export interface Theme {
    * Provide a value here to enable color modes
    */
   initialColorModeName?: string
+
+  /**
+   * Provide a value here to set a color mode for printing
+   */
+  printColorModeName?: string
 
   /**
    * Adds styles defined in theme.styles.root to the <body> element along with color and background-color

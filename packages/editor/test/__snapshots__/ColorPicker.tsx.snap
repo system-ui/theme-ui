@@ -246,6 +246,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-1"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -264,7 +265,8 @@ exports[`renders with styles 1`] = `
           }
           value="#FF0000"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-1"
           onMouseDown={[Function]}
           style={
             Object {
@@ -273,7 +275,7 @@ exports[`renders with styles 1`] = `
           }
         >
           hex
-        </span>
+        </label>
       </div>
     </label>
     <label
@@ -288,6 +290,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-2"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -306,7 +309,8 @@ exports[`renders with styles 1`] = `
           }
           value="0"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-2"
           onMouseDown={[Function]}
           style={
             Object {
@@ -315,7 +319,7 @@ exports[`renders with styles 1`] = `
           }
         >
           h
-        </span>
+        </label>
       </div>
     </label>
     <label
@@ -330,6 +334,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-3"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -348,7 +353,8 @@ exports[`renders with styles 1`] = `
           }
           value="100"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-3"
           onMouseDown={[Function]}
           style={
             Object {
@@ -357,7 +363,7 @@ exports[`renders with styles 1`] = `
           }
         >
           s
-        </span>
+        </label>
       </div>
     </label>
     <label
@@ -372,6 +378,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-4"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -390,7 +397,8 @@ exports[`renders with styles 1`] = `
           }
           value="50"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-4"
           onMouseDown={[Function]}
           style={
             Object {
@@ -399,7 +407,7 @@ exports[`renders with styles 1`] = `
           }
         >
           l
-        </span>
+        </label>
       </div>
     </label>
   </div>
@@ -413,9 +421,12 @@ Array [
     aria-expanded={false}
     aria-haspopup="dialog"
     onClick={[Function]}
+    onClickCapture={[Function]}
     onKeyDown={[Function]}
+    onKeyPressCapture={[Function]}
     onKeyUp={[Function]}
     onMouseDown={[Function]}
+    onMouseDownCapture={[Function]}
     type="button"
   >
     <button>
@@ -495,6 +506,7 @@ Array [
     hidden={true}
     id="id-1"
     onAnimationEnd={[Function]}
+    onBlur={[Function]}
     onKeyDown={[Function]}
     onTransitionEnd={[Function]}
     role="dialog"
@@ -688,6 +700,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-5"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -706,7 +719,8 @@ Array [
               }
               value="#FF0000"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-5"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -715,7 +729,7 @@ Array [
               }
             >
               hex
-            </span>
+            </label>
           </div>
         </label>
         <label
@@ -730,6 +744,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-6"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -748,7 +763,8 @@ Array [
               }
               value="0"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-6"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -757,7 +773,7 @@ Array [
               }
             >
               h
-            </span>
+            </label>
           </div>
         </label>
         <label
@@ -772,6 +788,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-7"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -790,7 +807,8 @@ Array [
               }
               value="100"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-7"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -799,7 +817,7 @@ Array [
               }
             >
               s
-            </span>
+            </label>
           </div>
         </label>
         <label
@@ -814,6 +832,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-8"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -832,7 +851,8 @@ Array [
               }
               value="50"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-8"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -841,7 +861,7 @@ Array [
               }
             >
               l
-            </span>
+            </label>
           </div>
         </label>
       </div>
