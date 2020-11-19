@@ -1,4 +1,4 @@
-import { css, Theme } from '@theme-ui/css'
+import { css, get, Theme } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
 const toVarValue = (key: string, value: string | number) =>
@@ -87,7 +87,6 @@ export const createColorStyles = (theme: Theme = {}) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
-
   if (printColorModeName) {
     const mode =
       printColorModeName === 'initial' ||
@@ -96,12 +95,13 @@ export const createColorStyles = (theme: Theme = {}) => {
         : modes[printColorModeName]
     styles['@media (print)'] = objectToVars('colors', mode)
   }
+  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`, get(theme, `colors.${color}`));
 
   return css({
     body: {
       ...styles,
-      color: 'text',
-      bg: 'background',
+      color: colorToVarValue('text'),
+      bg: colorToVarValue('background'),
     },
   })(theme)
 }
