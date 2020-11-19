@@ -1,8 +1,8 @@
-import { css, Theme, ColorModesScale, ColorMode } from '@theme-ui/css'
+import { css, Theme } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
-const toCssCustomVar = (key: string) =>
-  `var(${toVarName(key)})`
+const toVarValue = (key: string, value: string | number) =>
+  `var(${toVarName(key)}, ${value})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
@@ -31,6 +31,7 @@ export const toCustomProperties = (
   themeKey?: string
 ) => {
   const next: Record<string, any> = Array.isArray(obj) ? [] : {}
+
   for (let key in obj) {
     const value = obj[key]
     const name = join(parent, key)
@@ -42,7 +43,8 @@ export const toCustomProperties = (
       next[key] = value
       continue
     }
-    next[key] = toCssCustomVar(name)
+    const val = toPixel(themeKey || key, value)
+    next[key] = toVarValue(name, val)
   }
 
   return next
