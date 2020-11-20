@@ -2,6 +2,7 @@
 
 ## v0.4.0 UNRELEASED
 
+-- Add support for transitions token. issue: #1079 
 ## v0.4.0-rc.12 2020-11-18
 
 - Use correct version of @theme-ui/components in theme-ui package.
