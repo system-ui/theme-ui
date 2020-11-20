@@ -91,6 +91,6 @@
   },
   "devDependencies": {
     "@babel/register": "^7.8.6",
-    "repng": "^3.2.0"
+    "repng": "^4.0.1"
   }
 }
