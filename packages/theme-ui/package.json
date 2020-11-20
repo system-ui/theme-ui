@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.4.0-rc.13",
+  "version": "0.4.0-rc.14",
   "description": "The Design Graph Framework",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -16,12 +16,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/color-modes": "^0.4.0-rc.13",
+    "@theme-ui/color-modes": "^0.4.0-rc.14",
     "@theme-ui/components": "^0.4.0-rc.13",
     "@theme-ui/core": "^0.4.0-rc.13",
     "@theme-ui/css": "^0.4.0-rc.13",
     "@theme-ui/mdx": "^0.4.0-rc.13",
-    "@theme-ui/theme-provider": "^0.4.0-rc.13"
+    "@theme-ui/theme-provider": "^0.4.0-rc.14"
   },
   "peerDependencies": {
     "react": "^16.11.0"
