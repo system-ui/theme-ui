@@ -19,7 +19,7 @@
   },
   "peerDependencies": {
     "@theme-ui/css": "*",
-    "react": "^16.11.0"
+    "react": "^16.11.0 || ^17.0.0"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",

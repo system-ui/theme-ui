@@ -23,8 +23,8 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11.1.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.8.6 || ^17.0.0",
+    "react-dom": "^16.8.6 || ^17.0.0",
     "theme-ui": "^0.3.0"
   },
   "devDependencies": {
