@@ -5,8 +5,8 @@
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.13.1",
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0"
   },
   "dependencies": {
     "gatsby-source-filesystem": "^2.1.11",
