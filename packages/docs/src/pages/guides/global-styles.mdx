@@ -10,20 +10,21 @@ By default, the `ThemeProvider` component will apply styles in `theme.styles.roo
 It will also apply `color` and `background-color` styles based on `theme.colors.text` and `theme.colors.background` respectively.
 
 <Note>
-Generally, you should try to avoid adding CSS to global scope.
-Many styles can be safely encapsulated into a component without the need for global styles.
+  Generally, you should try to avoid adding CSS to global scope. Many styles can
+  be safely encapsulated into a component without the need for global styles.
 </Note>
 
 ```jsx
 import React from 'react'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 
-export default props =>
+export default (props) => (
   <Global
-    styles={theme => ({
+    styles={(theme) => ({
       '*': {
         boxSizing: 'border-box',
-      }
+      },
     })}
   />
+)
 ```

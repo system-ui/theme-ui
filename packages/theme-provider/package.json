@@ -12,10 +12,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
     "@theme-ui/color-modes": "^0.4.0-rc.14",
     "@theme-ui/core": "^0.4.0-rc.13",
-    "@theme-ui/mdx": "^0.4.0-rc.13"
+    "@theme-ui/mdx": "^0.4.0-rc.13",
+    "@emotion/react": "^11.1.1"
   },
   "peerDependencies": {
     "@theme-ui/css": "*",

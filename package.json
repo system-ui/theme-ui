@@ -38,7 +38,6 @@
     "husky": ">=4.0.7",
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
-    "jest-emotion": "^10.0.32",
     "jest-mock-console": "^1.0.1",
     "lerna": "^3.14.1",
     "lint-staged": "10",
@@ -47,7 +46,8 @@
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^26.4.4",
     "ts-snippet": "^4.2.0",
-    "typescript": "^4"
+    "typescript": "^4",
+    "@emotion/jest": "^11.1.0"
   },
   "resolutions": {},
   "jest": {
@@ -102,7 +102,7 @@
       }
     },
     "snapshotSerializers": [
-      "jest-emotion"
+      "@emotion/jest/serializer"
     ],
     "setupFiles": [
       "jest-canvas-mock"

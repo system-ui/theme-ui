@@ -1,7 +1,7 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { renderJSON } from '@theme-ui/test-utils'
 
@@ -125,7 +125,7 @@ test('functional themes receive outer theme', () => {
       primary: 'black',
     },
   }
-  const theme = jest.fn<Theme, [Theme]>()
+  const theme = jest.fn<Theme, [Theme]>(() => ({}))
   const json = renderJSON(
     jsx(
       ThemeProvider,

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
@@ -168,7 +168,7 @@ test('converts color modes to css custom properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-text,#000)'
+    'var(--theme-ui-colors-text, #000)'
   )
 })
 
@@ -553,7 +553,7 @@ test('dot notation works with color modes and custom properties', () => {
   button.click()
   expect(button).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-header-title,tomato)'
+    'var(--theme-ui-colors-header-title, tomato)'
   )
 })
 

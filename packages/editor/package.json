@@ -22,10 +22,10 @@
     "tinycolor2": "^1.4.1"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.3.0"
+    "theme-ui": "^0.3.0",
+    "@emotion/react": "^11.1.1"
   },
   "publishConfig": {
     "access": "public"
