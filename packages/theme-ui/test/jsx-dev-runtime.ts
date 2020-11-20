@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 
 import { jsxDEV } from '../src/jsx-dev-runtime'
 
