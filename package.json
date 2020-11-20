@@ -12,7 +12,7 @@
     "logo": "yarn workspace docs logo",
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
-    "release": "lerna publish",
+    "release": "lerna publish from-package",
     "prerelease": "yarn prepare && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version"
   },
