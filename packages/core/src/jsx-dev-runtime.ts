@@ -1,4 +1,5 @@
-import { jsxDEV as emotionJsxDEV } from '@emotion/core/jsx-dev-runtime'
+// @ts-ignore
+import { jsxDEV as emotionJsxDEV } from '@emotion/react/jsx-dev-runtime'
 import parseProps from '@theme-ui/parse-props'
 
 export const jsxDEV: typeof emotionJsxDEV = (

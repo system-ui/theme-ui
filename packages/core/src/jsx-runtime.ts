@@ -1,7 +1,9 @@
 import {
+  // @ts-ignore
   jsx as emotionJsx,
+  // @ts-ignore
   jsxs as emotionJsxs,
-} from '@emotion/core/jsx-runtime'
+} from '@emotion/react/jsx-runtime'
 import parseProps from '@theme-ui/parse-props'
 
 export const jsx: typeof emotionJsx = (type, props, key) =>
