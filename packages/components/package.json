@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "sideEffects": false,
@@ -14,7 +14,7 @@
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "^0.3.3"
+    "@theme-ui/css": "^0.3.4"
   },
   "peerDependencies": {
     "react": "^16.8.0"

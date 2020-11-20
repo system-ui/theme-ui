@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Brent Jackson",
@@ -10,8 +10,8 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/components": "^0.3.3",
-    "@theme-ui/style-guide": "^0.3.3",
+    "@theme-ui/components": "^0.3.4",
+    "@theme-ui/style-guide": "^0.3.4",
     "color": "^3.1.2",
     "react-color": "^2.18.0",
     "reakit": "^1.0.0-beta.14",
