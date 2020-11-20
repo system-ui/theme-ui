@@ -59,8 +59,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'tomato',
-        backgroundColor: 'white',
+        color: 'var(--theme-ui-colors-text, tomato)',
+        backgroundColor: 'var(--theme-ui-colors-background, white)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
         '&.theme-ui-dark': {
@@ -87,8 +87,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'white',
-        backgroundColor: 'tomato',
+        color: 'var(--theme-ui-colors-text, white)',
+        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -120,8 +120,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'tomato',
-        backgroundColor: 'white',
+        color: 'var(--theme-ui-colors-text, tomato)',
+        backgroundColor: 'var(--theme-ui-colors-background, white)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
         '&.theme-ui-dark': {

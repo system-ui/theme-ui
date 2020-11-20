@@ -119,9 +119,11 @@ const applyColorMode = (theme: Theme, mode: string): Theme => {
   })
 }
 
-const BodyStyles = () =>
+const BodyStyles = ({ theme }: { theme: Theme}) =>
   jsx(Global, {
-    styles: (theme) => createColorStyles(theme as Theme),
+    styles: () => {
+      return createColorStyles(theme);
+    },
   })
 
 export const ColorModeProvider: React.FC = ({ children }) => {
@@ -140,14 +142,13 @@ export const ColorModeProvider: React.FC = ({ children }) => {
     colorMode,
     setColorMode,
   }
-
   return jsx(
     EmotionContext.Provider,
     { value: emotionTheme },
     jsx(
       Context.Provider,
       { value: context },
-      jsx(BodyStyles, { key: 'color-mode' }),
+      jsx(BodyStyles, { key: 'color-mode', theme }),
       children
     )
   )
