@@ -1,4 +1,4 @@
-import { InterpolationWithTheme } from '@emotion/core'
+import { Interpolation } from '@emotion/react'
 import { css } from '@theme-ui/css'
 
 const getCSS = (props: any) => (theme: any) => {
@@ -9,7 +9,7 @@ const getCSS = (props: any) => (theme: any) => {
 
 const parseProps = (props: any) => {
   if (!props || (!props.sx && !props.css)) return props
-  const next: typeof props & { css: InterpolationWithTheme<any> } = {}
+  const next: typeof props & { css: Interpolation<any> } = {}
   for (let key in props) {
     if (key === 'sx') continue
     next[key] = props[key]
