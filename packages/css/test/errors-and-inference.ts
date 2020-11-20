@@ -20,7 +20,7 @@ describe('Theme', () => {
         },
       })
     `).toFail(
-      /Error snippet\.ts \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
+      /Error snippet\.tsx \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
     )
   })
 
@@ -35,7 +35,7 @@ describe('Theme', () => {
       })
     `).toFail(
       new RegExp(
-        `Error snippet\\.ts \\(\\d+,\\d+\\): Type '{ color: "blue"; widows: "bar"; }'` +
+        `Error snippet\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; widows: "bar"; }'` +
           ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
           `Types of property 'widows' are incompatible.\\n\\s+` +
           `Type '"bar"' is not assignable to type [\\s\\S]+`

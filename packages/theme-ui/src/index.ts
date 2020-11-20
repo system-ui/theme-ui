@@ -1,11 +1,6 @@
 import { jsx } from '@theme-ui/core'
 
-export {
-  jsx,
-  Context,
-  merge,
-  useThemeUI,
-} from '@theme-ui/core'
+export { jsx, Context, merge, useThemeUI } from '@theme-ui/core'
 export type {
   ContextValue,
   IntrinsicSxElements,
@@ -23,8 +18,8 @@ export type {
   Theme,
   ThemeStyles,
   TLengthStyledSystem,
-  StylePropertyValue
-} from '@theme-ui/core';
+  StylePropertyValue,
+} from '@theme-ui/core'
 export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
 export { Styled, components } from '@theme-ui/mdx'
 export { ThemeProvider } from '@theme-ui/theme-provider'
