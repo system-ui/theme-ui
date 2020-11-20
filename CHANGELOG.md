@@ -1,10 +1,22 @@
 # Changelog
 
-## v0.4.0 UNRELEASED
+## v0.5.0 UNRELEASED
+
+## v0.4.0-rc.14 2020-11-20
+
+### `@theme-ui/color-modes`
+
+- Fix color CSS Custom Properties recursive reference
+
+## v0.4.0-rc.13 2020-11-20
+
+### `@theme-ui/css`
 
 - Add transitions scale. Issue #1079, PR #1272
 
 ## v0.4.0-rc.12 2020-11-18
+
+### `theme-ui`
 
 - Use correct version of @theme-ui/components in theme-ui package.
   (Locked dependencies on other Theme UI packages)
