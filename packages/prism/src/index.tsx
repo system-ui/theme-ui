@@ -1,5 +1,4 @@
 /** @jsx jsx */
-/* eslint react/jsx-key: 0 */
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { jsx, Styled } from 'theme-ui'
 
