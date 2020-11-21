@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/tachyons",
   "description": "Generate static CSS for use outside of React with Theme UI and Tachyons",
-  "version": "0.4.0-rc.13",
+  "version": "0.5.0-alpha.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@theme-ui/css": "^0.4.0-rc.13",
+    "@theme-ui/css": "^0.5.0-alpha.0",
     "babel-polyfill": "^6.26.0",
     "execa": "^4.0.0"
   },
