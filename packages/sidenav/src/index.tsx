@@ -142,6 +142,7 @@ export const AccordionButton: FunctionComponent<{
   open: boolean
   pathname?: string
   href: string
+  className?: string
   onClick: EventHandler<MouseEvent<HTMLButtonElement>>
 }> = (props) => {
   const transform = props.open ? 'rotate(-180 8 8)' : 'rotate(0 8 8)'
