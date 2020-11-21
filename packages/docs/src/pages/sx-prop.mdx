@@ -2,6 +2,7 @@
 title: 'The `sx` Prop'
 ---
 
+import { Note } from '..'
 
 # The `sx` Prop
 
@@ -190,8 +191,6 @@ export default props => (
 In some cases you might want to apply styles to children of the current element.
 You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
 
-If you want to reference the current class selector of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
-
 ```jsx
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
@@ -201,10 +200,41 @@ export default props => (
     {...props}
     sx={{
       h1: {
-        backgroundColor: 'tomato'
-      },
-      '& > div': {
+        backgroundColor: 'tomato',
+        'a, span': {
+          backgroundColor: 'white',
+          color: 'tomato'
+        }
+      }
+    }}
+  />
+)
+```
+
+<Note>
+
+If you’re looking to style text content like Markdown or from a CMS using your theme,
+check out the [`BaseStyles`](/api#basestyles) component.
+
+</Note>
+
+If you want to reference the current class selector of the component, such as for
+[psuedo-classes & psuedo-elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements),
+you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      '& > p': {
         fontSize: [2, 3, 4]
+      },
+      '&:hover': {
+        color: 'accent'
       }
     }}
   />
