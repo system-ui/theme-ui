@@ -3,8 +3,8 @@ import { SxProps } from './types'
 type WithConditionalSxProps<P> = 'className' extends keyof P
   ? P extends { className?: string }
     ? Omit<P, keyof SxProps> & SxProps
-    : P
-  : P
+    : Omit<P, keyof SxProps>
+  : Omit<P, keyof SxProps>
 
 type ReactJSXElement = JSX.Element
 type ReactJSXElementClass = JSX.ElementClass
