@@ -25,11 +25,11 @@
     "@emotion/react": "^11.1.1",
     "react": "^16.14.0 || ^17.0.0",
     "react-dom": "^16.14.0 || ^17.0.0",
-    "theme-ui": "^0.3.0"
+    "theme-ui": "^0.5.0-alpha.0"
   },
   "devDependencies": {
     "react": "^16.14.0",
-    "theme-ui": "^0.3.0"
+    "theme-ui": "^0.5.0-alpha.0"
   },
   "publishConfig": {
     "access": "public"

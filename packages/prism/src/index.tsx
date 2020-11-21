@@ -1,6 +1,5 @@
 /** @jsx jsx */
 /* eslint react/jsx-key: 0 */
-import { ComponentProps } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { jsx, Styled } from 'theme-ui'
 
@@ -25,7 +24,7 @@ const checkRanges = (range: number[], num: number) => {
   return false
 }
 
-type HighlightProps = ComponentProps<typeof Highlight>
+type HighlightProps = React.ComponentPropsWithoutRef<typeof Highlight>
 // prism-react-renderer doesn't export `Token` type
 type Tokens = Parameters<HighlightProps['children']>[0]['tokens']
 type Token = Tokens[number][number]
