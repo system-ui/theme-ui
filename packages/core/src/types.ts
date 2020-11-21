@@ -22,7 +22,6 @@ export interface SxProps {
    * ```
    */
   sx?: SxStyleProp
-  css?: CSSObject
 }
 
 export interface IntrinsicSxElements {
