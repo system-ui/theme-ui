@@ -90,7 +90,8 @@
       "!packages/gatsby-theme-style-guide/**/*",
       "!packages/chrome/**/*",
       "!packages/gatsby-theme-*/**/*",
-      "!packages/preset-*/**/*"
+      "!packages/preset-*/**/*",
+      "!packages/test-utils/**/*"
     ],
     "coverageThreshold": {
       "global": {
