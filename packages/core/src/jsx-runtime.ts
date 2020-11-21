@@ -7,8 +7,8 @@ import {
 import parseProps from '@theme-ui/parse-props'
 export type { ThemeUIJSX as JSX } from './jsx-namespace'
 
-export const jsx: typeof emotionJsx = (type, props, key) =>
+export const jsx = <P>(type: React.ElementType<P>, props: P, key?: string) =>
   emotionJsx(type, parseProps(props), key)
 
-export const jsxs: typeof emotionJsxs = (type, props, key) =>
+export const jsxs = <P>(type: React.ElementType<P>, props: P, key?: string) =>
   emotionJsxs(type, parseProps(props), key)
