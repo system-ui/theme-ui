@@ -1,4 +1,4 @@
-import { ThemeUIStyleObject } from '@theme-ui/css'
+import { ThemeUIStyleObject, CSSObject } from '@theme-ui/css'
 
 /**
  * The `sx` prop accepts a `SxStyleProp` object and properties that are part of
@@ -20,6 +20,7 @@ export interface SxProps {
    * ```
    */
   sx?: SxStyleProp
+  css?: CSSObject
 }
 
 export interface IntrinsicSxElements {
