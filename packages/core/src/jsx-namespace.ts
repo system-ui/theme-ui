@@ -23,7 +23,7 @@ export declare namespace ThemeUIJSX {
   export interface ElementChildrenAttribute
     extends ReactJSXElementChildrenAttribute {}
   export type LibraryManagedAttributes<C, P> = WithConditionalSxProps<P> &
-    Omit<ReactJSXLibraryManagedAttributes<C, P>, keyof SxProps>
+    ReactJSXLibraryManagedAttributes<C, P>
   export interface IntrinsicAttributes extends ReactJSXIntrinsicAttributes {}
   export interface IntrinsicClassAttributes<T>
     extends ReactJSXIntrinsicClassAttributes<T> {}
