@@ -282,7 +282,7 @@ export const css = (args: ThemeUIStyleObject = {}) => (
   let obj = typeof args === 'function' ? args(theme) : args
   // insert variant props before responsive styles, so they can be merged
   if (obj['variant']) {
-    obj = { ...obj, ...get(theme, obj['variant']) }
+    obj = { ...get(theme, obj['variant']), ...obj }
     delete obj['variant'];
   }
   const styles = responsive(obj)(theme)
