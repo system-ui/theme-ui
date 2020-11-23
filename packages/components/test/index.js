@@ -168,7 +168,7 @@ describe('Box', () => {
     )
     expect(json).toHaveStyleRule(
       'border',
-      '2px solid var(--theme-ui-colors-shadow,#333333)'
+      '2px solid var(--theme-ui-colors-shadow, #333333)'
     )
   })
 
