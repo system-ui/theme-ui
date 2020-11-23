@@ -1,5 +1,56 @@
 import { expecter } from 'ts-snippet'
 
+// import { css } from '../src'
+// import { makeTheme } from '../src/exact-theme'
+
+// const myTheme = makeTheme({
+//   colors: {
+//     orange: [
+//       null,
+//       '#fffaf0',
+//       '#feebc8',
+//       '#fbd38d',
+//       '#f6ad55',
+//       '#ed8936',
+//       '#dd6b20',
+//       '#c05621',
+//       '#9c4221',
+//       '#7b341e',
+//     ],
+//     gray: {
+//       50: 'rgb(8, 8, 8)',
+//       75: 'rgb(26, 26, 26)',
+//       100: 'rgb(30, 30, 30),',
+//       150: null as null,
+//       200: undefined as undefined,
+//     },
+//   },
+//   space: {
+//     we: {
+//       have: {
+//         to: {
+//           go: {
+//             deeper: '1234px',
+//           },
+//         },
+//       },
+//     },
+//   },
+//   options: {
+//     strictMode: {
+//       allowStrings: true
+//     }
+//   }
+// })
+
+// type MyTheme = typeof myTheme
+
+// declare module '../src' {
+//   export interface UserTheme extends MyTheme {}
+// }
+
+// import { Color, Space } from '../src/scales'
+
 const expectSnippet = expecter(
   (code) => `
   import { css } from './packages/css/src'
@@ -140,5 +191,49 @@ describe('exact theme', () => {
         /Error snippet.ts (\d+,\d+): Type '"kinda transparent"' is not assignable to type '"-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "transparent" | "translucent" | "full"[\s\S]*/
       )
     })
+  })
+
+  describe('scale dotted paths', () => {
+    const a = `\
+      const myTheme = makeTheme({
+        colors: {
+          orange: [
+            null,
+            '#fffaf0',
+            '#feebc8',
+            '#fbd38d',
+            '#f6ad55',
+            '#ed8936',
+            '#dd6b20',
+            '#c05621',
+            '#9c4221',
+            '#7b341e',
+          ],
+          gray: {
+            50: 'rgb(8, 8, 8)',
+            75: 'rgb(26, 26, 26)',
+            100: 'rgb(30, 30, 30),',
+            150: null as null,
+            200: undefined as undefined,
+          },
+          blue: {
+            we: {
+              have: {
+                to: {
+                  go: {
+                    deeper: '#00f'
+                  }
+                }
+              }
+            } 
+          }
+        },
+      })
+      
+      type MyTheme = typeof myTheme
+      
+      declare module '../src' {
+        export interface UserTheme extends MyTheme {}
+      }`
   })
 })

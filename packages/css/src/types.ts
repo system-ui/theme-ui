@@ -1,29 +1,23 @@
 import * as CSS from 'csstype'
 import '@emotion/react'
 
-
-
-import { BordersCSSProperties, BorderStylesCSSProperties, BorderWidthsCSSProperties, ColorScaleCSSProperties, FontsCSSProperties, FontSizesCSSProperties, FontWeightsCSSProperties, LetterSpacingsCSSProperties, LineHeightsCSSProperties, OpacitiesCSSProperties, RadiiCSSProperties, ShadowsCSSProperties, SizesCSSProperties, SpaceCSSProperties, ZIndicesCSSProperties } from './scales'
-
 import {
-  Function,
-  Iteration,
-} from 'ts-toolbelt';
-
-type Joinable = string | number;
-
-// TODO: Import it from ts-toolbelt when it's published.
-/**
- * @author millsp
- * @source https://gist.github.com/millsp/1eec03fbe64592c70efa4c80515f741f
- */
-export type DottedPaths<O, I extends Iteration.Iteration = Iteration.IterationOf<'0'>> =
-  9 extends Iteration.Pos<I> ? never : {
-      [K in keyof O & Joinable]: O[K] extends Function.Function
-      ? never
-      : `${K}` | `${K}.${DottedPaths<O[K], Iteration.Next<I>>}`
-  }[keyof O & Joinable];
-
+  BordersCSSProperties,
+  BorderStylesCSSProperties,
+  BorderWidthsCSSProperties,
+  ColorScaleCSSProperties,
+  FontsCSSProperties,
+  FontSizesCSSProperties,
+  FontWeightsCSSProperties,
+  LetterSpacingsCSSProperties,
+  LineHeightsCSSProperties,
+  OpacitiesCSSProperties,
+  RadiiCSSProperties,
+  ShadowsCSSProperties,
+  SizesCSSProperties,
+  SpaceCSSProperties,
+  ZIndicesCSSProperties,
+} from './scales'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -359,7 +353,22 @@ interface AliasesCSSProperties {
   size?: StandardCSSProperties['width']
 }
 
-interface OverwriteCSSProperties extends ColorScaleCSSProperties, OpacitiesCSSProperties, SpaceCSSProperties, BordersCSSProperties, SizesCSSProperties, RadiiCSSProperties, BorderWidthsCSSProperties, BorderStylesCSSProperties, FontsCSSProperties, FontSizesCSSProperties, FontWeightsCSSProperties, LineHeightsCSSProperties, LetterSpacingsCSSProperties, ShadowsCSSProperties, ZIndicesCSSProperties {
+interface OverwriteCSSProperties
+  extends ColorScaleCSSProperties,
+    OpacitiesCSSProperties,
+    SpaceCSSProperties,
+    BordersCSSProperties,
+    SizesCSSProperties,
+    RadiiCSSProperties,
+    BorderWidthsCSSProperties,
+    BorderStylesCSSProperties,
+    FontsCSSProperties,
+    FontSizesCSSProperties,
+    FontWeightsCSSProperties,
+    LineHeightsCSSProperties,
+    LetterSpacingsCSSProperties,
+    ShadowsCSSProperties,
+    ZIndicesCSSProperties {
   /**
    * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the
    * element, blur and spread radii, and color.
@@ -703,6 +712,19 @@ export interface Theme {
    * If false, does not save color mode as a localStorage value.
    */
   useLocalStorage?: boolean
+
+  /**
+   * Other options
+   */
+  options?: {
+    strictMode?: {
+      /**
+       * If true, (string & {}) is accepted as style value.
+       * If false, all values need to be taken from scales.
+       */
+      allowStrings: boolean
+    }
+  }
 
   /**
    * Define the colors that are available through this theme

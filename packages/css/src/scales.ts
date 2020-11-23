@@ -1,18 +1,44 @@
 import * as CSS from 'csstype'
 
-import { FinalTheme, DottedPaths } from './types'
+import { FinalTheme } from './types'
 
-type CollectionKeys<T> = T extends any[]
-  ? Exclude<keyof T, keyof any[]> | number
-  : keyof T
+import { Iteration, Object } from 'ts-toolbelt'
+
+type StringOrNumber = string | number
+type TokenValue = StringOrNumber
+type IgnoredKeys = Exclude<keyof any[], number>
+
+export type ScaleDottedPaths<
+  O,
+  I extends Iteration.Iteration = Iteration.IterationOf<'0'>
+> = 9 extends Iteration.Pos<I>
+  ? never
+  : {
+      [K in keyof O & StringOrNumber]: K extends IgnoredKeys
+        ? never
+        : O[K] extends null | undefined
+        ? never
+        : O[K] extends TokenValue
+        ? `${K}`
+        : `${K}.${ScaleDottedPaths<O[K], Iteration.Next<I>>}`
+    }[keyof O & StringOrNumber]
 
 // turns `string` to `string & {}` which can be part of a union
-// we use this to allow autocomplete on css globals
+// we use this to allow autocomplete on css globals in non-strict mode
 type StringHack<T> = string extends T ? Exclude<T, string> | (string & {}) : T
 
+type Defined<T> = Exclude<T, undefined>
+
+type AllowedStrings = Object.Path<
+  FinalTheme,
+  ['options', 'strictMode', 'allowStrings']
+>
+
+type StringEscapeHatch = AllowedStrings extends true ? string & {} : never
+
 type ScaleProperty<TScale> =
-  | StringHack<DottedPaths<Exclude<TScale, undefined>>>
-  // | StringHack<CollectionKeys<Exclude<TScale, undefined>>>
+  | StringEscapeHatch
+  | StringHack<ScaleDottedPaths<Exclude<TScale, undefined>>>
   | CSS.Globals
 
 const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
