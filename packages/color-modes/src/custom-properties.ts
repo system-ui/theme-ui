@@ -1,4 +1,4 @@
-import { css, Theme, ColorModesScale, ColorMode } from '@theme-ui/css'
+import { css, get, Theme } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
 const toVarValue = (key: string, value: string | number) =>
@@ -13,6 +13,7 @@ const numberScales = {
 const reservedKeys = {
   useCustomProperties: true,
   initialColorModeName: true,
+  printColorModeName: true,
   initialColorMode: true,
   useLocalStorage: true,
 }
@@ -78,20 +79,29 @@ export const createColorStyles = (theme: Theme = {}) => {
       },
     })(theme)
   }
-  const { colors } = theme
+  const { colors, initialColorModeName, printColorModeName } = theme
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
 
-  Object.keys(modes).forEach((mode) => {
+  Object.keys(modes).forEach(mode => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
+  if (printColorModeName) {
+    const mode =
+      printColorModeName === 'initial' ||
+      printColorModeName === initialColorModeName
+        ? colors
+        : modes[printColorModeName]
+    styles['@media (print)'] = objectToVars('colors', mode)
+  }
+  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`, get(theme, `colors.${color}`));
 
   return css({
     body: {
       ...styles,
-      color: 'text',
-      bg: 'background',
+      color: colorToVarValue('text'),
+      bg: colorToVarValue('background'),
     },
   })(theme)
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { jsx, Context, useThemeUI, merge, Theme } from 'theme-ui'
-import { ThemeContext as Emotion } from '@emotion/core'
+import { ThemeContext as Emotion } from '@emotion/react'
 import { EditorContextValue } from './types'
 
 const reducer = (state: Theme, next: Partial<Theme>) => merge(state, next)

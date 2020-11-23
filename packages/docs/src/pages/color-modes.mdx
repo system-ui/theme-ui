@@ -2,7 +2,6 @@
 title: Color Modes
 ---
 
-
 # Color Modes
 
 Color modes can be used to create a user-configurable _dark mode_ or any number of other color modes.
@@ -66,9 +65,7 @@ import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
 export default props => (
-  <ThemeProvider theme={theme}>
-    {props.children}
-  </ThemeProvider>
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )
 ```
 
@@ -155,6 +152,35 @@ To disable `localStorage` add the `useLocalStorage: false` flag to your theme.
 ```js
 {
   useLocalStorage: false,
+  colors: {
+    text: '#000',
+    background: '#fff',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+      }
+    }
+  }
+}
+```
+
+### Set a custom color mode for printing
+
+By default, when printing a webpage, browsers will use the current color mode
+enabled. (This means if a user is currently using a dark or colored-background
+mode, their printed page will share that styling). If you’d like to set a color
+mode to be used on printing, set that color mode with the configuration option
+`printColorModeName`, set to one of your `colors.modes` names, the
+`initialColorModeName` value, or the string `'initial'`.
+
+This option sets your color mode in the `@media (print)` media query, so there’s no
+additional client-side JavaScript for printing.
+
+```js
+{
+  initialColorModeName: 'light',
+  printColorModeName: 'light',
   colors: {
     text: '#000',
     background: '#fff',
