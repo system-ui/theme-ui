@@ -47,6 +47,7 @@ export default () => {
               setTheme(e.target.value)
             }}>
             {Object.keys(presets).map((key) => (
+              // eslint-disable-next-line jsx-a11y/control-has-associated-label
               <option key={key} children={key} />
             ))}
           </Select>
