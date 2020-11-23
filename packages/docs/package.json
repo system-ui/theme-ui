@@ -90,7 +90,6 @@
     "typography-theme-zacklive": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/register": "^7.8.6",
-    "repng": "^3.2.0"
+    "@babel/register": "^7.8.6"
   }
 }
