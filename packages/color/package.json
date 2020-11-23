@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@theme-ui/css": "^0.5.0-alpha.0",
-    "polished": "^3.4.1"
+    "polished": "^4.0.4"
   },
   "publishConfig": {
     "access": "public"
