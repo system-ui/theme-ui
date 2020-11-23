@@ -34,11 +34,16 @@ type AllowedStrings = Object.Path<
   ['options', 'strictMode', 'allowStrings']
 >
 
-type StringEscapeHatch = AllowedStrings extends true ? string & {} : never
+// TODO: test it
+type StringEscapeHatch = AllowedStrings extends false ? never : string & {}
+// if T contains stringified `${number}`, we add normal `number` for convenience
+type AddNumberForConvenience<T> = `${number}` extends T ? T | number : T
 
 type ScaleProperty<TScale> =
   | StringEscapeHatch
-  | StringHack<ScaleDottedPaths<Exclude<TScale, undefined>>>
+  | AddNumberForConvenience<
+      StringHack<ScaleDottedPaths<Exclude<TScale, undefined>>>
+    >
   | CSS.Globals
 
 const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
@@ -1320,6 +1325,16 @@ const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
 export type Radii = ScaleProperty<FinalTheme['radii']>
 
 export interface RadiiCSSProperties {
+  /**
+   * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
+   *
+   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
+   * | :-----: | :-----: | :-----: | :----: | :---: |
+   * |  **4**  |  **4**  |  **5**  | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
+   */
   borderRadius?: Radii
   borderTopRightRadius?: Radii
   borderTopLeftRadius?: Radii
@@ -1334,7 +1349,7 @@ export interface RadiiCSSProperties {
 const borderWidths: Record<keyof BorderWidthsCSSProperties, 'borderWidths'> = {
   borderWidth: 'borderWidths',
   borderTopWidth: 'borderWidths',
-  borderBottomWidth: 'borderWidths',
+  borderBottomWidth: 'boBorderWidthsCSSPropertiesrderWidths',
   borderLeftWidth: 'borderWidths',
   borderRightWidth: 'borderWidths',
   borderBlockEndWidth: 'borderWidths',
@@ -1349,6 +1364,17 @@ export type BorderWidths = ScaleProperty<FinalTheme['borderWidths']>
 
 export interface BorderWidthsCSSProperties {
   borderWidth?: BorderWidths
+  /**
+   * The **`border-top-width`** CSS property sets the width of the top border of an element.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
+   */
   borderTopWidth?: BorderWidths
   borderBottomWidth?: BorderWidths
   borderLeftWidth?: BorderWidths
@@ -1379,9 +1405,54 @@ type BorderStyles = ScaleProperty<FinalTheme['borderStyles']>
 
 export interface BorderStylesCSSProperties {
   borderStyle?: BorderStyles
+  /**
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
+   */
+
   borderTopStyle?: BorderStyles
+  /**
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
+   */
   borderBottomStyle?: BorderStyles
+  /**
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
+   */
   borderLeftStyle?: BorderStyles
+  /**
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
+   */
   borderRightStyle?: BorderStyles
   borderBlockEndStyle?: BorderStyles
   borderBlockStartStyle?: BorderStyles
@@ -1418,6 +1489,18 @@ const fontWeights: Record<keyof FontWeightsCSSProperties, 'fontWeights'> = {
 type FontWeights = ScaleProperty<FinalTheme['fontWeights']>
 
 export interface FontWeightsCSSProperties {
+  /**
+   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only
+   * available in `normal` and `bold`.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **2**  |  **1**  | **1**  | **12** | **3** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
+   */
   fontWeight?: FontWeights
 }
 
@@ -1452,6 +1535,19 @@ const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
 type Shadows = ScaleProperty<FinalTheme['shadows']>
 
 export interface ShadowsCSSProperties {
+  /**
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the
+   * element, blur and spread radii, and color.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
+   * | :-----: | :-----: | :-----: | :----: | :---: |
+   * | **10**  |  **4**  | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
+   */
   boxShadow?: Shadows
   textShadow?: Shadows
 }
@@ -1463,6 +1559,17 @@ const zIndices: Record<keyof ZIndicesCSSProperties, 'zIndices'> = {
 type ZIndices = ScaleProperty<FinalTheme['zIndices']>
 
 export interface ZIndicesCSSProperties {
+  /**
+   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
   zIndex?: ZIndices
 }
 

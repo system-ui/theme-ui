@@ -49,7 +49,7 @@ import { expecter } from 'ts-snippet'
 //   export interface UserTheme extends MyTheme {}
 // }
 
-// import { Color, Space } from '../src/scales'
+import { Color, Space } from '../src/scales'
 
 const expectSnippet = expecter(
   (code) => `

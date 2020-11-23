@@ -353,7 +353,7 @@ interface AliasesCSSProperties {
   size?: StandardCSSProperties['width']
 }
 
-interface OverwriteCSSProperties
+interface ScalesCSSProperties
   extends ColorScaleCSSProperties,
     OpacitiesCSSProperties,
     SpaceCSSProperties,
@@ -368,129 +368,16 @@ interface OverwriteCSSProperties
     LineHeightsCSSProperties,
     LetterSpacingsCSSProperties,
     ShadowsCSSProperties,
-    ZIndicesCSSProperties {
-  /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the
-   * element, blur and spread radii, and color.
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
-   * | :-----: | :-----: | :-----: | :----: | :---: |
-   * | **10**  |  **4**  | **5.1** | **12** | **9** |
-   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
-   */
-  boxShadow?: CSS.Property.BoxShadow | number
-  /**
-   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only
-   * available in `normal` and `bold`.
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **2**  |  **1**  | **1**  | **12** | **3** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
-   */
-  fontWeight?: CSS.Property.FontWeight | string
-
-  /**
-   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |   IE    |
-   * | :----: | :-----: | :----: | :----: | :-----: |
-   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
-   */
-  borderTopStyle?: CSS.Property.BorderTopStyle | string
-  /**
-   * The **`border-top-width`** CSS property sets the width of the top border of an element.
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
-   */
-  borderTopWidth?: CSS.Property.BorderTopWidth<never> | string
-  /**
-   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |   IE    |
-   * | :----: | :-----: | :----: | :----: | :-----: |
-   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
-   */
-  borderBottomStyle?: CSS.Property.BorderBottomStyle | string
-  /**
-   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |   IE    |
-   * | :----: | :-----: | :----: | :----: | :-----: |
-   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
-   */
-  borderRightStyle?: CSS.Property.BorderRightStyle | string
-  /**
-   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |   IE    |
-   * | :----: | :-----: | :----: | :----: | :-----: |
-   * | **1**  |  **1**  | **1**  | **12** | **5.5** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
-   */
-  borderLeftStyle?: CSS.Property.BorderLeftStyle | string
-  /**
-   * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
-   *
-   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
-   * | :-----: | :-----: | :-----: | :----: | :---: |
-   * |  **4**  |  **4**  |  **5**  | **12** | **9** |
-   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
-   */
-  borderRadius?: CSS.Property.BorderRadius<string | number>
-
-  /**
-   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
-   */
-  zIndex?: CSS.Property.ZIndex | string
-}
+    ZIndicesCSSProperties {}
 
 /**
  * Map of all available CSS properties (including aliases and overwrites)
  * and their raw value.
  */
 export interface ThemeUIExtendedCSSProperties
-  extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
-    Omit<AliasesCSSProperties, keyof OverwriteCSSProperties>,
-    OverwriteCSSProperties {}
+  extends Omit<CSSProperties, keyof ScalesCSSProperties>,
+    Omit<AliasesCSSProperties, keyof ScalesCSSProperties>,
+    ScalesCSSProperties {}
 
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
