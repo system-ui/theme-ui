@@ -6,6 +6,7 @@
   "types": "dist/jsx-runtime.d.ts",
   "dependencies": {
     "@emotion/react": "*",
-    "@theme-ui/parse-props": "*"
+    "@theme-ui/parse-props": "*",
+    "react": "*"
   }
 }

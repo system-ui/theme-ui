@@ -7,6 +7,7 @@ import {
 import parseProps from '@theme-ui/parse-props'
 import { ThemeUIJSX } from './jsx-namespace'
 
+export { Fragment } from 'react'
 export type { ThemeUIJSX as JSX } from './jsx-namespace'
 
 export const jsx = <P>(

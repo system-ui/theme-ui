@@ -5,6 +5,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/jsx-runtime.d.ts",
   "dependencies": {
-    "@theme-ui/core": "*"
+    "@theme-ui/core": "*",
+    "react": "*"
   }
 }
