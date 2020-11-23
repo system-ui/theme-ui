@@ -174,6 +174,83 @@ describe('Box', () => {
     )
   })
 
+  test('renders with variant array derived variant from theme merge', () => {
+    jest.spyOn(global.Math, 'random').mockReturnValue(0.4)
+
+    const lighten = (color, amount) => {
+      if (color === '#0cf' && amount === 0.25) {
+        return '#80e5ff'
+      }
+    }
+
+    const sketchyBorders = [
+      {
+        borderBottomLeftRadius: '5px 85px',
+        borderBottomRightRadius: '75px 5px',
+        borderTopLeftRadius: '85px 5px',
+        borderTopRightRadius: '5px 75px',
+      },
+      {
+        borderBottomLeftRadius: '61px 8px',
+        borderBottomRightRadius: '6px 68px',
+        borderTopLeftRadius: '41px 8px',
+        borderTopRightRadius: '3px 68px',
+      },
+      {
+        borderBottomLeftRadius: '75px 5px',
+        borderBottomRightRadius: '5px 85px',
+        borderTopLeftRadius: '5px 75px',
+        borderTopRightRadius: '85px 5px',
+      },
+    ]
+
+    const json = renderJSON(
+      <ThemeProvider
+        theme={{
+          colors: {
+            primary: '#0cf',
+            text: '#000',
+            background: '#fefefe',
+          },
+          buttons: {
+            primary: (t) => {
+              const backgroundColor = lighten(t?.colors?.primary, 0.25)
+
+              return {
+                color: 'background',
+                border: `2px solid ${backgroundColor}`,
+                backgroundColor,
+              }
+            },
+            ghost: {
+              backgroundColor: 'transparent',
+            },
+            sketchy: (t) => {
+              return sketchyBorders[Math.random() * sketchyBorders.length]
+            },
+          },
+        }}>
+        <Button variant={['primary', 'ghost', 'sketchy']} />
+      </ThemeProvider>
+    )
+
+    expect(json).toMatchSnapshot()
+
+    expect(json).toHaveStyleRule('color', '#fefefe')
+    expect(json).toHaveStyleRule('border', '2px solid #80e5ff')
+
+    expect(json).toHaveStyleRule('border-bottom-left-radius', '61px 8px')
+    expect(json).toHaveStyleRule('border-bottom-right-radius', '6px 68px')
+
+    expect(json).toHaveStyleRule(
+      'background-color',
+      'var(--theme-ui-colors-primary,#0cf)'
+    )
+    expect(json).toHaveStyleRule('background-color', 'transparent')
+
+    jest.spyOn(global.Math, 'random').mockRestore()
+  })
+
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box
