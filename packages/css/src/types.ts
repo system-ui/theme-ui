@@ -1,6 +1,28 @@
 import * as CSS from 'csstype'
 
+
+
 import { BordersCSSProperties, BorderStylesCSSProperties, BorderWidthsCSSProperties, ColorScaleCSSProperties, FontsCSSProperties, FontSizesCSSProperties, FontWeightsCSSProperties, LetterSpacingsCSSProperties, LineHeightsCSSProperties, OpacitiesCSSProperties, RadiiCSSProperties, ShadowsCSSProperties, SizesCSSProperties, SpaceCSSProperties, ZIndicesCSSProperties } from './scales'
+
+import {
+  Function,
+  Iteration,
+} from 'ts-toolbelt';
+
+type Joinable = string | number;
+
+// TODO: Import it from ts-toolbelt when it's published.
+/**
+ * @author millsp
+ * @source https://gist.github.com/millsp/1eec03fbe64592c70efa4c80515f741f
+ */
+export type DottedPaths<O, I extends Iteration.Iteration = Iteration.IterationOf<'0'>> =
+  9 extends Iteration.Pos<I> ? never : {
+      [K in keyof O & Joinable]: O[K] extends Function.Function
+      ? never
+      : `${K}` | `${K}.${DottedPaths<O[K], Iteration.Next<I>>}`
+  }[keyof O & Joinable];
+
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -62,10 +84,6 @@ export type Assign<T, U> = {
     ? T[P]
     : never
 }
-
-type Color =
-  | Exclude<keyof Exclude<FinalTheme['colors'], undefined>, 'modes'>
-  | CSS.Globals
 
 interface AliasesCSSProperties {
   /**

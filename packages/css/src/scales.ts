@@ -1,6 +1,6 @@
 import * as CSS from 'csstype'
 
-import { FinalTheme } from './types'
+import { FinalTheme, DottedPaths } from './types'
 
 type CollectionKeys<T> = T extends any[]
   ? Exclude<keyof T, keyof any[]> | number
@@ -11,7 +11,8 @@ type CollectionKeys<T> = T extends any[]
 type StringHack<T> = string extends T ? Exclude<T, string> | (string & {}) : T
 
 type ScaleProperty<TScale> =
-  | StringHack<CollectionKeys<Exclude<TScale, undefined>>>
+  | StringHack<DottedPaths<Exclude<TScale, undefined>>>
+  // | StringHack<CollectionKeys<Exclude<TScale, undefined>>>
   | CSS.Globals
 
 const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {

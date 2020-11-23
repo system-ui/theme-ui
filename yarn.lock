@@ -20040,12 +20040,17 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-ts-snippet@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-4.2.0.tgz#6678ced559afdf34009f7c98c34c384d0c5d5dc4"
-  integrity sha512-tyJROhE6hqvTPc/drhTVu2UfaxWjTtp49UZqMGMSIkgXXO5Stq+4PRwmIQOuiamue5Bu9E7ez9Q9b0walTyQ7w==
+ts-snippet@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-4.3.0.tgz#719a2e635ecb512ae85a2429acfa198333c9468a"
+  integrity sha512-at9G0NYJXj6+6GEPSK+b4GWW15rACCupBoyvAIOa7sRGQfSdku5+DPN5q2R5xY3l08a759uC3VbpfDmxFLWlQQ==
   dependencies:
     tsutils "^3.0.0"
+
+ts-toolbelt@^8.0.7:
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-8.0.7.tgz#4dad2928831a811ee17dbdab6eb1919fc0a295bf"
+  integrity sha512-KICHyKxc5Nu34kyoODrEe2+zvuQQaubTJz7pnC5RQ19TH/Jged1xv+h8LBrouaSD310m75oAljYs59LNHkLDkQ==
 
 tslib@1.10.0:
   version "1.10.0"
@@ -20162,6 +20167,11 @@ typescript@^3.9.3, typescript@^3.9.5:
   version "3.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.5.tgz#586f0dba300cde8be52dd1ac4f7e1009c1b13f36"
   integrity sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
+
+typescript@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
+  integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
 
 typography-breakpoint-constants@^0.14.0:
   version "0.14.0"
