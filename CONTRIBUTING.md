@@ -21,7 +21,7 @@ Install dependencies and link local packages in the root directory:
 yarn
 ```
 
-After yarn has linked packages and installed dependences in the repo you can run the docs or an
+After yarn has linked packages and installed dependencies in the repo you can run the docs or an
 example site in the workspace with this command:
 
 ```sh

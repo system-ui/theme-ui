@@ -122,3 +122,48 @@ const syntaxHighlighting = theme.syntaxHighlighting
 ```
 
 _[Try it in TypeScript Playground.](https://www.typescriptlang.org/v2/en/play?#code/JYWwDg9gTgLgBAbzgFQBYFMTrgXzgMyghDgHIYMsBaAV2FIG4AoJ4AOxnSnwEMBjbAFkAngGVhHHgA8AEsADmqADYLUMdvLSZsCJnALR08ojTYATAFxwAzjCgbmOFmfR8lPKNhAQzNJdnJKdFp6RD04dk5ufmwtLDD9fWsJGGk5RRVFdTZ5KxFxSVlVTLUNOPRwpycmPgg2WzgKbStyuABeBJsUtOLVbNzO-XxDYwhTSzIAYgAmWdIAGkqmHGYauobkwvTlPo12xqCAOk3UoozdnLX6+C4iKH2mrGPhGDYe86yNJiA)_
+
+## Common Problems
+
+### Union types are not inferred without explicit annotation
+
+Style objects defined outside of `css` function and `sx` prop need explicit
+annotation to prevent following error.
+
+```tsx
+const style = { whiteSpace: 'pre-line' }
+
+// Type '{ whiteSpace: string; }' is not assignable to type 'ThemeUICSSObject'.
+// Type 'string' is not assignable to type '"inherit" | "initial" | "revert" | "unset" | "normal" | "break-spaces"
+return <div sx={style} />
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-inferrence-too-wide-vkrf5?file=/src/index.tsx&view=editor&previewwindow=tests)_
+
+TypeScript assumes that `whiteSpace` here is a `string`, but the `whiteSpace`
+property in `ThemeUICSSObject` is a union of possible white-space values
+([see on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#Values))
+or a nested style object.
+
+We can explicitly annotate `style` ensure that it is a correct Theme UI style
+object and that `whiteSpace` is one of appropriate values.
+
+```tsx
+import { ThemeUICSSObject } from 'theme-ui'
+
+const style: ThemeUICSSObject = { whiteSpace: 'pre-line' }
+
+// No error
+return <div sx={style} />
+```
+
+_[Try it on CodeSandbox.](https://codesandbox.io/s/theme-ui-inferrence-too-wide-vkrf5?file=/src/index.tsx&view=editor&previewwindow=tests)_
+
+We could also fix our problem by narrowing the type of `style` with a
+[const assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions).
+
+```tsx
+const style = { whiteSpace: 'pre-line' } as const
+```
+
+This is succinct, but error prone, because we won't get TS intellisense support inside of this object.

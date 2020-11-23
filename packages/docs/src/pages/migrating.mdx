@@ -15,7 +15,7 @@ title: Migrating
 
 ### Breaking Changes
 
-- `@emotion/core` and `@mdx-js/react` are now dependencies of `theme-ui` and should not be installed separately. If you'd like to use a particular version of each library, use [Yarn resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/).
+- `@emotion/react` and `@mdx-js/react` are now dependencies of `theme-ui` and should not be installed separately. If you'd like to use a particular version of each library, use [Yarn resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/).
 - Theme UI context no longer provides `context.components`. If you're using this object from context, use the MDX hook instead. E.g. `import { useMDXComponents } from '@mdx-js/react'`
 - If you'd like color mode to be initialized from the `prefers-color-scheme` media query, you must enable the `useColorSchemeMediaQuery: true` flag in your theme.
 - The `ColorMode` component is deprecated and no longer required to add color styles to the `<body>` element.

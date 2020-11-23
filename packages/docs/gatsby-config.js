@@ -1,6 +1,9 @@
 const remarkPlugins = [require('remark-slug')]
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://theme-ui.com',
+  },
   plugins: [
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',

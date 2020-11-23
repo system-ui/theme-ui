@@ -1,6 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { renderJSON } from '@theme-ui/test-utils'
+import { matchers } from '@emotion/jest'
 import { ThemeProvider } from 'theme-ui'
 import {
   Box,
@@ -39,8 +39,6 @@ import {
 } from '../src'
 
 expect.extend(matchers)
-
-const renderJSON = (el) => renderer.create(el).toJSON()
 
 const theme = {
   boxes: {
@@ -174,6 +172,14 @@ describe('Button', () => {
     )
     expect(json).toMatchSnapshot()
   })
+  test('hidden', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Button hidden />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Card', () => {
@@ -215,6 +221,16 @@ describe('Grid', () => {
 
   test('renders with responsive width prop', () => {
     const json = renderJSON(<Grid width={[256, 512]} />)
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with repeat and width props', () => {
+    const json = renderJSON(<Grid repeat="fill" width={256} />)
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with repeat and responsive width props', () => {
+    const json = renderJSON(<Grid repeat="fill" width={[256, 512]} />)
     expect(json).toMatchSnapshot()
   })
 
@@ -323,6 +339,21 @@ describe('Select', () => {
     )
     expect(json).toMatchSnapshot()
   })
+
+  test('renders with custom icon', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Select
+          arrow={
+            <svg>
+              <path d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z" />
+            </svg>
+          }
+        />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Textarea', () => {
@@ -374,6 +405,14 @@ describe('Field', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Field />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+  test('renders with id prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Field id="test-field" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()

@@ -1,15 +1,10 @@
-import { expecter } from 'ts-snippet'
+import { expecter } from '@theme-ui/test-utils'
 
 import { css, get, Theme } from '../src'
 
-const expectSnippet = expecter(
-  (code) => `
+const expectSnippet = expecter(`
   import { css } from './packages/css/src'
-
-  ${code}
-`,
-  { strict: true }
-)
+`)
 
 describe('Theme', () => {
   test('shows friendly error only on bad property', () => {
@@ -25,7 +20,7 @@ describe('Theme', () => {
         },
       })
     `).toFail(
-      /Error snippet\.ts \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
+      /Error snippet\.tsx \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
     )
   })
 
@@ -40,8 +35,10 @@ describe('Theme', () => {
       })
     `).toFail(
       new RegExp(
-        `Types of property 'widows' are incompatible.[\\s\\S]+` +
-          `Type '"bar"' is not assignable to type`
+        `Error snippet\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; widows: "bar"; }'` +
+          ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
+          `Types of property 'widows' are incompatible.\\n\\s+` +
+          `Type '"bar"' is not assignable to type [\\s\\S]+`
       )
     )
   })
@@ -116,6 +113,30 @@ describe('Theme', () => {
   })
 })
 
+// This is not a feature, but the TypeScript chapter in the docs will need an
+// update if this test fails.
+test('inferred type `string` is too wide for `whiteSpace`', () => {
+  expectSnippet(`
+    const style = {
+      whiteSpace: 'pre-line'
+    }
+
+    css(style);
+  `).toFail(
+    /Type '{ whiteSpace: string; }' is not assignable to type 'ThemeUICSSObject'./
+  )
+
+  expectSnippet(`
+    import { ThemeUICSSObject } from 'theme-ui'
+
+    const style: ThemeUICSSObject = {
+      whiteSpace: 'pre-line'
+    }
+
+    css(style);
+  `).toSucceed()
+})
+
 describe('ColorMode', () => {
   const expectedSnippet = expectSnippet(`
     import { ColorMode } from './packages/css/src'
@@ -140,7 +161,7 @@ describe('ColorMode', () => {
     }
   `)
 
-  expectedSnippet.toInfer('baseColors', '(string | undefined)[]')
-  expectedSnippet.toInfer('light', 'string')
-  expectedSnippet.toInfer('dark', 'string')
+  expectedSnippet.toInfer('baseColors', '((string & {}) | undefined)[]')
+  expectedSnippet.toInfer('light', 'Color')
+  expectedSnippet.toInfer('dark', 'Color')
 })

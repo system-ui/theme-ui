@@ -17,7 +17,8 @@ Theme UI is a library for creating themeable user interfaces based on constraint
 ![MIT License][]
 ![][size]
 
-https://theme-ui.com
+stable docs: https://theme-ui.com \
+next (v0.4.0) docs: https://development--dev-theme-ui.netlify.app/
 
 [github]: https://github.com/system-ui/theme-ui
 [github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label

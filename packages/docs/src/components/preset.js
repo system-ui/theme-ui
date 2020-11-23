@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, components } from 'theme-ui'
-import { ThemeContext } from '@emotion/core'
+import { ThemeContext } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import * as presets from '@theme-ui/presets'
 import {
@@ -37,11 +37,12 @@ export default ({ preset: presetName }) => {
           <MDXProvider components={components}>
             <Lorem />
           </MDXProvider>
-          <Styled.h2>Raw JSON</Styled.h2>
+          <Styled.h2 id="json">Raw JSON</Styled.h2>
           <textarea
             value={JSON.stringify(preset, null, 2)}
             rows={16}
             readOnly
+            aria-labelledby="json"
             sx={{
               width: '100%',
               fontFamily: 'monospace',

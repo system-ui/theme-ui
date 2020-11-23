@@ -39,7 +39,7 @@ const CheckboxIcon = (props) => (
 
 export const Checkbox = React.forwardRef(
   ({ className, sx, variant = 'checkbox', children, ...props }, ref) => (
-    <Box>
+    <Box sx={{ minWidth: 'min-content' }}>
       <Box
         ref={ref}
         as="input"
@@ -65,6 +65,7 @@ export const Checkbox = React.forwardRef(
           mr: 2,
           borderRadius: 4,
           color: 'gray',
+          flexShrink: 0,
           'input:checked ~ &': {
             color: 'primary',
           },
