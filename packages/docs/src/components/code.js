@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Alert } from 'theme-ui'
+import { jsx, Styled, Text } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
@@ -47,7 +47,7 @@ const images = {
 
 const scope = {
   ...themeUI,
-  Link: (props) => {
+  Link: props => {
     if (props.activeClassName)
       return <span className={props.activeClassName} {...props} />
     return <span {...props} sx={{ cursor: 'pointer' }} />
@@ -56,7 +56,7 @@ const scope = {
   images,
 }
 
-const transformCode = (src) => `/** @jsx jsx */\n<>${src}</>`
+const transformCode = src => `/** @jsx jsx */\n<>${src}</>`
 
 const liveTheme = { styles: [] }
 
@@ -83,7 +83,7 @@ export const LiveCode = ({ children, preview, xray }) => {
         sx={{
           p: 3,
           variant: xray ? 'styles.xray' : null,
-          border: (t) => `1px solid ${t.colors.muted}`,
+          border: t => `1px solid ${t.colors.muted}`,
         }}>
         <LivePreview />
         <LiveError
@@ -108,19 +108,30 @@ export const LiveCode = ({ children, preview, xray }) => {
   )
 }
 
-export default (props) => {
+const Code = props => {
   if (props.live) {
     return <LiveCode {...props} />
   }
   if (props.filename) {
     return (
       <section>
-        <Alert sx={{ bg: 'gray', color: 'background', borderRadius: 0 }}>
+        <Text
+          as="span"
+          sx={{
+            display: 'block',
+            bg: 'gray',
+            color: 'background',
+            px: 3,
+            py: 2,
+            fontWeight: 'bold',
+          }}>
           {props.filename}
-        </Alert>
+        </Text>
         <Prism {...props} sx={{ mt: 0 }} />
       </section>
     )
   }
-  return <Prism {...props} />
+  return <div {...props} />
 }
+
+export default Code
