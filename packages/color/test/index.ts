@@ -1,4 +1,4 @@
-import { Theme } from '@theme-ui/css'
+import { css, Theme, ThemeUICSSObject } from '@theme-ui/css'
 
 import {
   darken,
@@ -235,4 +235,30 @@ const themeRgbaCustomProps = {
 test('alphaRgbaCustomProps', () => {
   const n = alpha('primary', 0.25)(themeRgba)
   expect(n).toBe('rgba(255,0,0,0.25)')
+})
+
+test('typechecks', () => {
+  const _a: ThemeUICSSObject = {
+    color: darken('primary', 0.1),
+  }
+
+  //#region past bugs
+  const _b: ThemeUICSSObject = {
+    'h1, h2, h3, h4, h5, h6': {
+      '.remark-autolink-headers__anchor': {
+        opacity: 0,
+        borderRadius: '50%',
+        transition: 'all 150ms linear',
+        ':focus, :hover': {
+          backgroundColor: alpha('primary', 0.07),
+        },
+      },
+      ':focus, :hover': {
+        '.remark-autolink-headers__anchor': {
+          opacity: 1,
+        },
+      },
+    },
+  }
+  //#endregion
 })
