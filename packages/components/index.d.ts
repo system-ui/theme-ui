@@ -9,9 +9,7 @@ type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 type Assign<T, U> = {
   [P in keyof (T & U)]: P extends keyof T
     ? T[P]
-    : P extends keyof U
-    ? U[P]
-    : never
+    : P extends keyof U ? U[P] : never
 }
 
 type ForwardRef<T, P> = React.ForwardRefExoticComponent<
@@ -281,7 +279,8 @@ export type DividerProps = BoxProps
  */
 export const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
-export interface EmbedProps extends BoxProps {
+export interface EmbedProps extends React.ComponentProps<'iframe'> {
+  variant?: string
   ratio?: number
   src?: React.IframeHTMLAttributes<any>['src']
   frameBorder?: React.IframeHTMLAttributes<any>['frameBorder']
