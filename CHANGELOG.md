@@ -2,7 +2,12 @@
 
 ## v0.5.0 UNRELEASED
 
-- Fix sx prop variant responsive. Issue: #1030
+- Fix sx prop variant responsive. Issue #1030
+
+### `@theme-ui/components`
+
+- Render extra Embed props onto `iframe` tag instead of wrapping `div`. PR #1122
+
 ## v0.5.0-alpha.0 2020-11-20
 
 - BREAKING: Upgrade to Emotion 11, and `csstype` 3. PR #1261
