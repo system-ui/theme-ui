@@ -44,12 +44,14 @@
     "prettier": "^2.2.0",
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^26.4.4",
-    "ts-snippet": "^4.3.0",
+    "ts-snippet": "^5.0.1",
     "typescript": "^4.1.2",
     "babel-preset-gatsby": "^0.6.0",
     "@emotion/jest": "^11.1.0"
   },
-  "resolutions": {},
+  "resolutions": {
+    "typescript": "4.1.2"
+  },
   "jest": {
     "preset": "ts-jest/presets/js-with-babel",
     "globals": {

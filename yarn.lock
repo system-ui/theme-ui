@@ -18283,10 +18283,10 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-ts-snippet@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-4.3.0.tgz#719a2e635ecb512ae85a2429acfa198333c9468a"
-  integrity sha512-at9G0NYJXj6+6GEPSK+b4GWW15rACCupBoyvAIOa7sRGQfSdku5+DPN5q2R5xY3l08a759uC3VbpfDmxFLWlQQ==
+ts-snippet@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-5.0.1.tgz#e94117abebabc0b62279b0b469d6318c9f3dab3e"
+  integrity sha512-WHO9W4Wty9mfOU2K3Cmakw2ZqHMke5RhmBeeuh2aoLxvVxatWFBQD5AmfpwkvuNxXbNRA8FK/Jkg2yGNBnWiwQ==
   dependencies:
     tsutils "^3.0.0"
 
@@ -18426,12 +18426,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.9.5:
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
-  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
-
-typescript@^4.1.2:
+typescript@4.1.2, typescript@^3.9.5, typescript@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
   integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==

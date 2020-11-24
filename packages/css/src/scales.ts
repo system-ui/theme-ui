@@ -27,8 +27,6 @@ export type ScaleDottedPaths<
 // we use this to allow autocomplete on css globals in non-strict mode
 type StringHack<T> = string extends T ? Exclude<T, string> | (string & {}) : T
 
-type Defined<T> = Exclude<T, undefined>
-
 type AllowedStrings = Object.Path<
   FinalTheme,
   ['options', 'strictMode', 'allowStrings']
@@ -44,7 +42,6 @@ type ScaleProperty<TScale> =
   | AddNumberForConvenience<
       StringHack<ScaleDottedPaths<Exclude<TScale, undefined>>>
     >
-  | CSS.Globals
 
 const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
   color: 'colors',
@@ -63,7 +60,10 @@ const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
   outlineColor: 'colors',
 }
 
-export type Color = Exclude<ScaleProperty<FinalTheme['colors']>, 'modes'>
+export type Color =
+  | Exclude<ScaleProperty<FinalTheme['colors']>, 'modes'>
+  | 'currentColor'
+  | CSS.Globals
 
 export interface ColorScaleCSSProperties {
   /**
@@ -1177,7 +1177,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border
    */
-  border?: Borders
+  border?: CSS.Property.Border<Borders>
 
   /**
    * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-width`, `border-top-style` and `border-top-color`. These properties set an element's top border.
@@ -1190,7 +1190,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top
    */
-  borderTop?: Borders
+  borderTop?: CSS.Property.BorderTop<Borders>
 
   /**
    * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-width`, `border-right-style` and `border-right-color`. These properties set an element's right border.
@@ -1203,7 +1203,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right
    */
-  borderRight?: Borders
+  borderRight?: CSS.Property.BorderRight<Borders>
 
   /**
    * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`. These properties set an element's bottom border.
@@ -1216,7 +1216,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
    */
-  borderBottom?: Borders
+  borderBottom?: CSS.Property.BorderBottom<Borders>
 
   /**
    * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-width`, `border-left-style` and `border-left-color`. These properties set an element's left border.
@@ -1229,7 +1229,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left
    */
-  borderLeft?: Borders
+  borderLeft?: CSS.Property.BorderLeft<Borders>
 
   /**
    * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
@@ -1242,7 +1242,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
-  borderBlock?: Borders
+  borderBlock?: CSS.Property.BorderBlock<Borders>
 
   /**
    * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
@@ -1255,7 +1255,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
    */
-  borderBlockEnd?: Borders
+  borderBlockEnd?: CSS.Property.BorderBlockEnd<Borders>
 
   /**
    * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
@@ -1268,7 +1268,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
    */
-  borderBlockStart?: Borders
+  borderBlockStart?: CSS.Property.BorderBlockStart<Borders>
 
   /**
    * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
@@ -1281,7 +1281,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
-  borderInline?: Borders
+  borderInline?: CSS.Property.BorderInline<Borders>
 
   /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
@@ -1294,7 +1294,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
    */
-  borderInlineEnd?: Borders
+  borderInlineEnd?: CSS.Property.BorderInlineEnd<Borders>
 
   /**
    * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
@@ -1307,7 +1307,7 @@ export interface BordersCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
    */
-  borderInlineStart?: Borders
+  borderInlineStart?: CSS.Property.BorderInlineStart<Borders>
 }
 
 const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
@@ -1335,21 +1335,21 @@ export interface RadiiCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
-  borderRadius?: Radii
-  borderTopRightRadius?: Radii
-  borderTopLeftRadius?: Radii
-  borderBottomRightRadius?: Radii
-  borderBottomLeftRadius?: Radii
-  borderEndEndRadius?: Radii
-  borderEndStartRadius?: Radii
-  borderStartEndRadius?: Radii
-  borderStartStartRadius?: Radii
+  borderRadius?: CSS.Property.BorderRadius<Radii>
+  borderTopRightRadius?: CSS.Property.BorderTopRightRadius<Radii>
+  borderTopLeftRadius?: CSS.Property.BorderTopLeftRadius<Radii>
+  borderBottomRightRadius?: CSS.Property.BorderBottomRightRadius<Radii>
+  borderBottomLeftRadius?: CSS.Property.BorderBottomLeftRadius<Radii>
+  borderEndEndRadius?: CSS.Property.BorderEndEndRadius<Radii>
+  borderEndStartRadius?: CSS.Property.BorderEndStartRadius<Radii>
+  borderStartEndRadius?: CSS.Property.BorderStartEndRadius<Radii>
+  borderStartStartRadius?: CSS.Property.BorderStartStartRadius<Radii>
 }
 
 const borderWidths: Record<keyof BorderWidthsCSSProperties, 'borderWidths'> = {
   borderWidth: 'borderWidths',
   borderTopWidth: 'borderWidths',
-  borderBottomWidth: 'boBorderWidthsCSSPropertiesrderWidths',
+  borderBottomWidth: 'borderWidths',
   borderLeftWidth: 'borderWidths',
   borderRightWidth: 'borderWidths',
   borderBlockEndWidth: 'borderWidths',
@@ -1360,7 +1360,9 @@ const borderWidths: Record<keyof BorderWidthsCSSProperties, 'borderWidths'> = {
   borderInlineWidth: 'borderWidths',
 }
 
-export type BorderWidths = ScaleProperty<FinalTheme['borderWidths']>
+export type BorderWidths =
+  | ScaleProperty<FinalTheme['borderWidths']>
+  | CSS.Globals
 
 export interface BorderWidthsCSSProperties {
   borderWidth?: BorderWidths
@@ -1404,7 +1406,7 @@ const borderStyles: Record<keyof BorderStylesCSSProperties, 'borderStyles'> = {
 type BorderStyles = ScaleProperty<FinalTheme['borderStyles']>
 
 export interface BorderStylesCSSProperties {
-  borderStyle?: BorderStyles
+  borderStyle?: BorderStyles | CSS.Property.BorderStyle
   /**
    * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
    *
@@ -1429,7 +1431,7 @@ export interface BorderStylesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
    */
-  borderBottomStyle?: BorderStyles
+  borderBottomStyle?: BorderStyles | CSS.Property.BorderBottomStyle
   /**
    * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
    *
@@ -1441,7 +1443,7 @@ export interface BorderStylesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
    */
-  borderLeftStyle?: BorderStyles
+  borderLeftStyle?: BorderStyles | CSS.Property.BorderLeftStyle
   /**
    * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
    *
@@ -1453,13 +1455,13 @@ export interface BorderStylesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
    */
-  borderRightStyle?: BorderStyles
-  borderBlockEndStyle?: BorderStyles
-  borderBlockStartStyle?: BorderStyles
-  borderBlockStyle?: BorderStyles
-  borderInlineEndStyle?: BorderStyles
-  borderInlineStartStyle?: BorderStyles
-  borderInlineStyle?: BorderStyles
+  borderRightStyle?: BorderStyles | CSS.Property.BorderRightStyle
+  borderBlockEndStyle?: BorderStyles | CSS.Property.BorderBlockEndStyle
+  borderBlockStartStyle?: BorderStyles | CSS.Property.BorderBlockStartStyle
+  borderBlockStyle?: BorderStyles | CSS.Property.BorderBlockStyle
+  borderInlineEndStyle?: BorderStyles | CSS.Property.BorderInlineEndStyle
+  borderInlineStartStyle?: BorderStyles | CSS.Property.BorderInlineStartStyle
+  borderInlineStyle?: BorderStyles | CSS.Property.BorderInlineStyle
 }
 
 const fonts: Record<keyof FontsCSSProperties, 'fonts'> = {
@@ -1476,7 +1478,10 @@ const fontSizes: Record<keyof FontSizesCSSProperties, 'fontSizes'> = {
   fontSize: 'fontSizes',
 }
 
-type FontSizes = ScaleProperty<FinalTheme['fontSizes']>
+// We ignore CSS.Property.FontSize, because it has too many keyword values.
+// Theme UI users define their own design tokens, and autocompleting built-in
+// keywords may lead to confusion.
+type FontSizes = ScaleProperty<FinalTheme['fontSizes']> | CSS.Globals
 
 export interface FontSizesCSSProperties {
   fontSize?: FontSizes
@@ -1508,7 +1513,7 @@ const lineHeights: Record<keyof LineHeightsCSSProperties, 'lineHeights'> = {
   lineHeight: 'lineHeights',
 }
 
-type LineHeights = ScaleProperty<FinalTheme['lineHeights']>
+type LineHeights = ScaleProperty<FinalTheme['lineHeights']> | CSS.Globals
 
 export interface LineHeightsCSSProperties {
   lineHeight?: LineHeights
@@ -1524,7 +1529,7 @@ const letterSpacings: Record<
 type LetterSpacings = ScaleProperty<FinalTheme['letterSpacings']>
 
 export interface LetterSpacingsCSSProperties {
-  letterSpacing?: LetterSpacings
+  letterSpacing?: CSS.Property.LetterSpacing<LetterSpacings>
 }
 
 const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
@@ -1532,7 +1537,7 @@ const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
   textShadow: 'shadows',
 }
 
-type Shadows = ScaleProperty<FinalTheme['shadows']>
+type Shadows = ScaleProperty<FinalTheme['shadows']> | CSS.Globals | 'none'
 
 export interface ShadowsCSSProperties {
   /**
@@ -1556,7 +1561,7 @@ const zIndices: Record<keyof ZIndicesCSSProperties, 'zIndices'> = {
   zIndex: 'zIndices',
 }
 
-type ZIndices = ScaleProperty<FinalTheme['zIndices']>
+type ZIndices = ScaleProperty<FinalTheme['zIndices']> | 'auto'
 
 export interface ZIndicesCSSProperties {
   /**
