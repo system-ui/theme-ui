@@ -1,4 +1,5 @@
 import * as CSS from 'csstype'
+import '@emotion/react'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -297,6 +298,22 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/width
    * @see https://developer.mozilla.org/docs/Web/CSS/height
    */
+
+  /**
+   * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-right
+   */
+  scrollPaddingX?: StandardCSSProperties['scrollPaddingLeft']
+
+  /**
+   * The **`scrollPaddingY`** is shorthand property for CSS properties **`scroll-padding-top`** and **`scroll-padding-bottom`**. They set the width of the scroll padding area on the top and bottom side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-bottom
+   */
+  scrollPaddingY?: StandardCSSProperties['scrollPaddingTop']
   size?: StandardCSSProperties['width']
 }
 
@@ -314,7 +331,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-  boxShadow?: CSS.BoxShadowProperty | number
+  boxShadow?: CSS.Property.BoxShadow | number
   /**
    * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only
    * available in `normal` and `bold`.
@@ -327,7 +344,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
-  fontWeight?: CSS.FontWeightProperty | string
+  fontWeight?: CSS.Property.FontWeight | string
 
   /**
    * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
@@ -340,7 +357,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
    */
-  borderTopStyle?: CSS.BorderTopStyleProperty | string
+  borderTopStyle?: CSS.Property.BorderTopStyle | string
   /**
    * The **`border-top-width`** CSS property sets the width of the top border of an element.
    *
@@ -352,7 +369,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
    */
-  borderTopWidth?: CSS.BorderTopWidthProperty<never> | string
+  borderTopWidth?: CSS.Property.BorderTopWidth<never> | string
   /**
    * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
@@ -364,7 +381,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
    */
-  borderBottomStyle?: CSS.BorderBottomStyleProperty | string
+  borderBottomStyle?: CSS.Property.BorderBottomStyle | string
   /**
    * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
    *
@@ -376,7 +393,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
    */
-  borderRightStyle?: CSS.BorderRightStyleProperty | string
+  borderRightStyle?: CSS.Property.BorderRightStyle | string
   /**
    * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
    *
@@ -388,7 +405,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
    */
-  borderLeftStyle?: CSS.BorderLeftStyleProperty | string
+  borderLeftStyle?: CSS.Property.BorderLeftStyle | string
   /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
@@ -399,7 +416,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
-  borderRadius?: CSS.BorderRadiusProperty<string | number>
+  borderRadius?: CSS.Property.BorderRadius<string | number>
 
   /**
    * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
@@ -412,7 +429,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
-  zIndex?: CSS.ZIndexProperty | string
+  zIndex?: CSS.Property.ZIndex | string
 }
 
 /**
@@ -505,40 +522,40 @@ export interface ColorMode {
   /**
    * Body background color
    */
-  background?: CSS.ColorProperty
+  background?: CSS.Property.Color
 
   /**
    * Body foreground color
    */
-  text?: CSS.ColorProperty
+  text?: CSS.Property.Color
 
   /**
    * Primary brand color for links, buttons, etc.
    */
-  primary?: CSS.ColorProperty
+  primary?: CSS.Property.Color
 
   /**
    * A secondary brand color for alternative styling
    */
-  secondary?: CSS.ColorProperty
+  secondary?: CSS.Property.Color
 
   /**
    * A contrast color for emphasizing UI
    */
-  accent?: CSS.ColorProperty
+  accent?: CSS.Property.Color
 
   /**
    * A background color for highlighting text
    */
-  highlight?: CSS.ColorProperty
+  highlight?: CSS.Property.Color
 
   /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
-  muted?: CSS.ColorProperty
+  muted?: CSS.Property.Color
 
-  [k: string]: CSS.ColorProperty | Scale<CSS.ColorProperty> | undefined
+  [k: string]: CSS.Property.Color | Scale<CSS.Property.Color> | undefined
 }
 
 export type ColorModesScale = ColorMode & {
@@ -587,22 +604,23 @@ export interface ThemeStyles {
 export interface Theme {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
-  space?: Scale<CSS.MarginProperty<number | string>>
-  fontSizes?: Scale<CSS.FontSizeProperty<number>>
-  fonts?: Scale<CSS.FontFamilyProperty>
-  fontWeights?: Scale<CSS.FontWeightProperty>
-  lineHeights?: Scale<CSS.LineHeightProperty<TLengthStyledSystem>>
-  letterSpacings?: Scale<CSS.LetterSpacingProperty<TLengthStyledSystem>>
-  sizes?: Scale<CSS.HeightProperty<{}> | CSS.WidthProperty<{}>>
-  borders?: Scale<CSS.BorderProperty<{}>>
-  borderStyles?: Scale<CSS.BorderProperty<{}>>
-  borderWidths?: Scale<CSS.BorderWidthProperty<TLengthStyledSystem>>
-  radii?: Scale<CSS.BorderRadiusProperty<TLengthStyledSystem>>
-  shadows?: Scale<CSS.BoxShadowProperty>
-  zIndices?: Scale<CSS.ZIndexProperty>
+  space?: Scale<CSS.Property.Margin<number | string>>
+  fontSizes?: Scale<CSS.Property.FontSize<number>>
+  fonts?: Scale<CSS.Property.FontFamily>
+  fontWeights?: Scale<CSS.Property.FontWeight>
+  lineHeights?: Scale<CSS.Property.LineHeight<TLengthStyledSystem>>
+  letterSpacings?: Scale<CSS.Property.LetterSpacing<TLengthStyledSystem>>
+  sizes?: Scale<CSS.Property.Height<{}> | CSS.Property.Width<{}>>
+  borders?: Scale<CSS.Property.Border<{}>>
+  borderStyles?: Scale<CSS.Property.Border<{}>>
+  borderWidths?: Scale<CSS.Property.BorderWidth<TLengthStyledSystem>>
+  radii?: Scale<CSS.Property.BorderRadius<TLengthStyledSystem>>
+  shadows?: Scale<CSS.Property.BoxShadow>
+  zIndices?: Scale<CSS.Property.ZIndex>
   colorStyles?: Scale<ThemeUICSSProperties>
   textStyles?: Scale<ThemeUICSSProperties>
-  opacities?: Scale<CSS.OpacityProperty>
+  opacities?: Scale<CSS.Property.Opacity>
+  transitions?: Scale<CSS.Property.Transition>
 
   /**
    * Enable/disable custom CSS properties/variables if lower browser
@@ -616,6 +634,11 @@ export interface Theme {
    * Provide a value here to enable color modes
    */
   initialColorModeName?: string
+
+  /**
+   * Provide a value here to set a color mode for printing
+   */
+  printColorModeName?: string
 
   /**
    * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
@@ -784,4 +807,10 @@ export interface Theme {
    * @see https://theme-ui.com/components/message#variants
    */
   messages?: Record<string, ThemeUIStyleObject>
+}
+
+interface ThemeUITheme extends Theme {}
+
+declare module '@emotion/react' {
+  export interface Theme extends ThemeUITheme {}
 }

@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.4.0-rc.1",
+  "version": "0.5.0-alpha.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -12,13 +12,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
-    "@mdx-js/react": "^1.0.0"
-  },
-  "devDependencies": {
-    "@theme-ui/core": "^0.4.0-rc.1",
-    "@theme-ui/css": "^0.4.0-rc.1"
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^11.0.0",
+    "@mdx-js/react": "^1.0.0",
+    "@theme-ui/core": "^0.5.0-alpha.0",
+    "@theme-ui/css": "^0.5.0-alpha.0"
   },
   "peerDependencies": {
     "react": "^16.11.0"
@@ -28,5 +26,6 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

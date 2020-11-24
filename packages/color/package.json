@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.4.0-rc.1",
+  "version": "0.5.0-alpha.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,11 +10,12 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "@theme-ui/css": "^0.4.0-rc.1",
+    "@theme-ui/css": "^0.5.0-alpha.0",
     "polished": "^3.4.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

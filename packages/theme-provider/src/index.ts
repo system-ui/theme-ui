@@ -8,7 +8,7 @@ import {
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
 import { MDXProvider, MDXProviderComponents } from '@theme-ui/mdx'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 
 const BodyStyles = () =>
   jsx(Global, {

@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '../src'
 import renderer from 'react-test-renderer'
+import { renderJSON } from '@theme-ui/test-utils'
 
-const renderJSON = (el: React.ReactElement) => renderer.create(el).toJSON()
+import { jsx } from '../src'
 
 describe('JSX', () => {
   test('accepts sx prop', () => {
@@ -13,6 +13,7 @@ describe('JSX', () => {
             // TypeScript support should autocomplete keys here
             mt: 10,
             px: 2,
+            scrollPaddingY: 2,
           }}
         />
       )

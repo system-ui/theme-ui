@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.emotion-6 {
+.emotion-0 {
   z-index: 2;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -16,7 +16,7 @@ exports[`renders 1`] = `
   display: flex;
 }
 
-.emotion-4 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,7 +27,7 @@ exports[`renders 1`] = `
   align-items: center;
 }
 
-.emotion-1 {
+.emotion-3 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -36,6 +36,7 @@ exports[`renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -45,9 +46,10 @@ exports[`renders 1`] = `
   background-color: transparent;
 }
 
-.emotion-3 {
+.emotion-4 {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   width: 32px;
   height: 32px;
@@ -57,11 +59,11 @@ exports[`renders 1`] = `
   margin-left: -32px;
 }
 
-.emotion-2 {
+.emotion-5 {
   pointer-events: none;
 }
 
-.emotion-5 {
+.emotion-6 {
   left: 0;
   right: 0;
   top: 100%;
@@ -78,7 +80,7 @@ exports[`renders 1`] = `
 }
 
 <div
-  className="emotion-6"
+  className="emotion-0"
   style={
     Object {
       "position": "static",
@@ -86,13 +88,13 @@ exports[`renders 1`] = `
   }
 >
   <label
-    className="emotion-0"
+    className="emotion-1"
     htmlFor="beep"
   >
     beep
   </label>
   <div
-    className="emotion-4"
+    className="emotion-2"
   >
     <input
       aria-activedescendant="beep-1"
@@ -100,7 +102,7 @@ exports[`renders 1`] = `
       aria-expanded={false}
       aria-haspopup="true"
       aria-owns="beep-popup"
-      className="emotion-1"
+      className="emotion-3"
       id="beep"
       name="beep"
       onBlur={[Function]}
@@ -112,12 +114,12 @@ exports[`renders 1`] = `
     />
     <button
       aria-label="Open"
-      className="emotion-3"
+      className="emotion-4"
       onClick={[Function]}
       tabIndex={-1}
     >
       <svg
-        className="emotion-2"
+        className="emotion-5"
         height="12"
         viewBox="0 0 16 16"
         width="12"
@@ -133,7 +135,7 @@ exports[`renders 1`] = `
   </div>
   <ul
     aria-label="beep"
-    className="emotion-5"
+    className="emotion-6"
     id="beep-popup"
     role="listbox"
     style={

@@ -1,17 +1,40 @@
 import {
   jsx as emotion,
   ThemeContext as EmotionContext,
-  InterpolationWithTheme,
-} from '@emotion/core'
+  Interpolation,
+} from '@emotion/react'
 import { css, Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
-import { version as __EMOTION_VERSION__ } from '@emotion/core/package.json'
+import packageInfo from '@emotion/react/package.json'
+import {} from '@emotion/react/types/css-prop'
 
 import './react-jsx'
 
-export * from '@theme-ui/css/dist/types'
+export type {
+  CSSObject,
+  CSSOthersObject,
+  CSSProperties,
+  CSSPseudoSelectorProps,
+  ColorMode,
+  ColorModesScale,
+  Label,
+  ResponsiveStyleValue,
+  Scale,
+  StylePropertyValue,
+  TLengthStyledSystem,
+  Theme,
+  ThemeDerivedStyles,
+  ThemeStyles,
+  ThemeUICSSObject,
+  ThemeUICSSProperties,
+  ThemeUIExtendedCSSProperties,
+  ThemeUIStyleObject,
+  VariantProperty,
+} from '@theme-ui/css'
 export * from './types'
+
+const __EMOTION_VERSION__ = packageInfo.version
 
 const getCSS = (props) => {
   if (!props.sx && !props.css) return undefined
@@ -24,7 +47,7 @@ const getCSS = (props) => {
 
 const parseProps = (props) => {
   if (!props) return null
-  const next: typeof props & { css?: InterpolationWithTheme<any> } = {}
+  const next: typeof props & { css?: Interpolation<any> } = {}
   for (let key in props) {
     if (key === 'sx') continue
     next[key] = props[key]
@@ -106,7 +129,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
       console.warn(
         'Multiple versions of Emotion detected,',
         'and theming might not work as expected.',
-        'Please ensure there is only one copy of @emotion/core installed in your application.'
+        'Please ensure there is only one copy of @emotion/react installed in your application.'
       )
     }
   }

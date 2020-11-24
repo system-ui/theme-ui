@@ -100,51 +100,51 @@ export default (props) => {
         <Box
           sx={{
             flex: '1 1 auto',
+            display: ['block', 'flex'],
           }}>
           <div
-            sx={{
-              display: ['block', 'flex'],
+            ref={nav}
+            role="navigation"
+            onFocus={(e) => {
+              setMenuOpen(true)
+            }}
+            onBlur={(e) => {
+              setMenuOpen(false)
+            }}
+            onClick={(e) => {
+              setMenuOpen(false)
+            }}
+            onKeyPress={(e) => {
+              setMenuOpen(false)
             }}>
-            <div
-              ref={nav}
-              onFocus={(e) => {
-                setMenuOpen(true)
-              }}
-              onBlur={(e) => {
-                setMenuOpen(false)
-              }}
-              onClick={(e) => {
-                setMenuOpen(false)
-              }}>
-              <Sidebar
-                open={menuOpen}
-                components={sidebar}
-                pathname={props.location.pathname}
-                sx={{
-                  display: [null, fullwidth ? 'none' : 'block'],
-                  width: 256,
-                  flex: 'none',
-                  px: 3,
-                  pt: 3,
-                  pb: 4,
-                  mt: [64, 0],
-                }}
-              />
-            </div>
-            <main
-              id="content"
+            <Sidebar
+              open={menuOpen}
+              components={sidebar}
+              pathname={props.location.pathname}
               sx={{
-                width: '100%',
-                minWidth: 0,
-                maxWidth: fullwidth ? 'none' : 768,
-                mx: 'auto',
-                px: fullwidth ? 0 : 3,
-              }}>
-              {props.children}
-              <EditLink />
-              {!fullwidth && <Pagination />}
-            </main>
+                display: [null, fullwidth ? 'none' : 'block'],
+                width: 256,
+                flex: 'none',
+                px: 3,
+                pt: 3,
+                pb: 4,
+                mt: [64, 0],
+              }}
+            />
           </div>
+          <main
+            id="content"
+            sx={{
+              width: '100%',
+              minWidth: 0,
+              maxWidth: fullwidth ? 'none' : 768,
+              mx: 'auto',
+              px: fullwidth ? 0 : 3,
+            }}>
+            {props.children}
+            <EditLink />
+            {!fullwidth && <Pagination />}
+          </main>
         </Box>
       </Flex>
     </Styled.root>
