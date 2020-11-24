@@ -12,11 +12,13 @@ export const Embed = React.forwardRef(
       height = 315,
       allow,
       sx,
+      variant,
       ...props
     },
     ref
   ) => (
     <Box
+      variant={variant}
       sx={sx}
       __css={{
         width: '100%',
