@@ -248,7 +248,7 @@ export const AccordionNav = forwardRef<
     }
 
     return (
-      <div>
+      <React.Fragment>
         {open && <Overlay {...props} />}
         <div
           ref={ref}
@@ -309,7 +309,7 @@ export const AccordionNav = forwardRef<
             ))}
           </ul>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 )
