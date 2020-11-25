@@ -14,7 +14,8 @@
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
     "prerelease": "yarn prepare && yarn typecheck && yarn test --coverage",
-    "bump-version": "lerna version"
+    "bump-version": "lerna version",
+    "bump-version-next": "lerna version prerelease --preid rc"
   },
   "workspaces": [
     "packages/*"
