@@ -262,11 +262,10 @@ const responsive = (
         continue
       }
       next[media] = next[media] || {}
-      if (value[i] == null) continue
-      ;(next[media] as Record<string, any>)[key] = value[i]
+      if (value[i] == null) continue;
+      (next[media] as Record<string, any>)[key] = value[i]
     }
   }
-
   return next
 }
 
@@ -280,18 +279,17 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     ...('theme' in props ? props.theme : props),
   }
   let result: CSSObject = {}
-  const obj = typeof args === 'function' ? args(theme) : args
+  let obj = typeof args === 'function' ? args(theme) : args
+  // insert variant props before responsive styles, so they can be merged
+  if (obj['variant']) {
+    obj = { ...get(theme, obj['variant']), ...obj }
+    delete obj['variant'];
+  }
   const styles = responsive(obj)(theme)
 
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
     const val = typeof x === 'function' ? x(theme) : x
-
-    if (key === 'variant') {
-      const variant = css(get(theme, val as string))(theme)
-      result = { ...result, ...variant }
-      continue
-    }
 
     if (val && typeof val === 'object') {
       // TODO: val can also be an array here. Is this a bug? Can it be reproduced?
