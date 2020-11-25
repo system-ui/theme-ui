@@ -31,8 +31,6 @@
     "@emotion/jest": "^11.1.0",
     "@testing-library/react": "^11.0.1",
     "@types/jest": "^26.0.10",
-    "@types/lodash.debounce": "^4.0.6",
-    "@types/lodash.merge": "^4.6.6",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.6.0",
