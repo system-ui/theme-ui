@@ -40,7 +40,7 @@
     "cursor": "help"
   },
   ".namespace": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".highlight": {
     "background": "hsla(0, 0%, 70%, .5)"
