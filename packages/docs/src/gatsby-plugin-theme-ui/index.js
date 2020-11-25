@@ -71,6 +71,13 @@ export default {
       fontWeight: 'heading',
       lineHeight: 'heading',
     },
+    block: {
+      variant: 'default',
+      my: 2,
+      textAlign: 'justify',
+      textAlignLast: 'last',
+      textJustify: 'auto',
+    },
     display: {
       variant: 'text.heading',
       fontSize: [5, 6],
@@ -195,7 +202,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -203,7 +210,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -211,7 +218,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
