@@ -2,7 +2,7 @@
   "color": "#f8f8f2",
   "backgroundColor": "#272822",
   ".comment,.prolog,.doctype,.cdata": {
-    "color": "slategray"
+    "color": "#8292a2"
   },
   ".punctuation": {
     "color": "#f8f8f2"
