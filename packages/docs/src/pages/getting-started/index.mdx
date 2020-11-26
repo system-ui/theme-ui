@@ -38,11 +38,10 @@ Add the theme to your application with the `ThemeProvider`, passing in the `them
 
 ```jsx
 // basic usage
-import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
-export default props => (
+export default (props) => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )
 ```
@@ -50,18 +49,16 @@ export default props => (
 ## `sx` prop
 
 Use the `sx` prop throughout your application to add styles based on your theme to any component.
-Enable the `sx` prop by adding the `/** @jsx jsx */` comment to the top of your file and importing `jsx` from Theme UI.
+Enable the `sx` prop by adding the `/** @jsxImportSource theme-ui */` comment to the top of your file.
 
 The `sx` prop lets you add any valid CSS to an element,
 while using values from your theme to keep styles consistent.
-You can think of the style object that the `sx` prop accepts as a *superset* of CSS.
-
+You can think of the style object that the `sx` prop accepts as a _superset_ of CSS.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     sx={{
       fontWeight: 'bold',
@@ -73,15 +70,24 @@ export default props => (
 )
 ```
 
+### Classic JSX runtime
+
+If you use the classic JSX runtime, the the `/** @jsxImportSource theme-ui */` comment has no effect.
+In this case enable the `sx` prop by adding the `/** @jsx jsx */` comment instead and importing `jsx` from Theme UI.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+```
+
 ## Responsive styles
 
 The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     sx={{
       // applies width 100% to all viewport widths,
@@ -108,7 +114,7 @@ If you prefer standard CSS syntax, you can use nested objects for responsive sty
     width: '100%',
     '@media screen and (min-width: 40em)': {
       width: '50%',
-    }
+    },
   }}
 />
 ```
@@ -120,29 +126,16 @@ You can use variants to encapsulate more complex, component-specific styles that
 Import and use these components to handle layout, images, forms, and more.
 
 ```jsx
-/** @jsx jsx */
-import {
-  jsx,
-  Box,
-  Label,
-  Input,
-  Button,
-} from 'theme-ui'
+/** @jsxImportSource theme-ui */
+import { Box, Label, Input, Button } from 'theme-ui'
 
-export default props =>
+export default (props) => (
   <Box sx={{ mb: 4 }}>
-    <Label htmlFor='search'>
-      Search
-    </Label>
-    <Input
-      id='search'
-      name='search'
-      {...props}
-    />
-    <Button>
-      Go
-    </Button>
+    <Label htmlFor="search">Search</Label>
+    <Input id="search" name="search" {...props} />
+    <Button>Go</Button>
   </Box>
+)
 ```
 
 See the [Components](/components) documentation for more.

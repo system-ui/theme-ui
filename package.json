@@ -14,7 +14,8 @@
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
     "prerelease": "yarn prepare && yarn typecheck && yarn test --coverage",
-    "bump-version": "lerna version"
+    "bump-version": "lerna version",
+    "bump-version-next": "lerna version prerelease --preid alpha"
   },
   "workspaces": [
     "packages/*"
@@ -47,7 +48,6 @@
     "ts-snippet": "^5.0.0",
     "typescript": "^4"
   },
-  "resolutions": {},
   "jest": {
     "preset": "ts-jest/presets/js-with-babel",
     "globals": {
@@ -89,7 +89,8 @@
       "!packages/gatsby-theme-style-guide/**/*",
       "!packages/chrome/**/*",
       "!packages/gatsby-theme-*/**/*",
-      "!packages/preset-*/**/*"
+      "!packages/preset-*/**/*",
+      "!packages/test-utils/**/*"
     ],
     "coverageThreshold": {
       "global": {

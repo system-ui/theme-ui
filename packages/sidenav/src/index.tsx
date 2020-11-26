@@ -138,12 +138,13 @@ export const Sidenav = forwardRef<
   )
 })
 
-export const AccordionButton: FunctionComponent<{
+export const AccordionButton = (props: {
   open: boolean
   pathname?: string
   href: string
+  className?: string
   onClick: EventHandler<MouseEvent<HTMLButtonElement>>
-}> = (props) => {
+}) => {
   const transform = props.open ? 'rotate(-180 8 8)' : 'rotate(0 8 8)'
   const disabled = props.pathname ? props.pathname.includes(props.href) : false
 

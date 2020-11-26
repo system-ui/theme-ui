@@ -29,7 +29,6 @@ For illustrative purposes, the `ThemeProvider` renders something like the follow
 
 ```jsx
 // for demonstration only – this does not reflect the actual source code
-import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'emotion-theming'
 import styled from '@emotion/styled'
@@ -62,8 +61,7 @@ The two examples below yield the same results:
 ```jsx
 // with Emotion's JSX function
 // this is typically handled with the Emotion Babel preset
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
+/** @jsxImportSource @emotion/reaact */
 import { css } from 'theme-ui'
 
 export default (props) => (
@@ -80,8 +78,7 @@ export default (props) => (
 
 ```jsx
 // with Theme UI's JSX function
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
 export default (props) => (
   <div
