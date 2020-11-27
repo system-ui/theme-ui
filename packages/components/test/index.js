@@ -325,7 +325,7 @@ describe('Paragraph', () => {
     const json = renderJSON(
       <Paragraph
         sx={{
-          m: margin,
+          margin,
         }}
       />
     )
