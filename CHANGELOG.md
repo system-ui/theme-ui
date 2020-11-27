@@ -2,6 +2,11 @@
 
 ## v0.5.0 UNRELEASED
 
+- **breaking TypeScript**: Rename SxProps type to SxProp. PR #1308
+- Fix: Add `sx` prop to all props accepting `className`. PR #1308
+
+## v0.5.0-alpha.1 2020-11-26
+
 - Support automatic JSX runtime. Issue #1160, PR #1237
 - Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
 - Apply variant styles _before_ responsive styles. Issues #1030, and #720, PR #1273
