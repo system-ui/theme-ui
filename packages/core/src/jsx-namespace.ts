@@ -1,8 +1,8 @@
-import { SxProps } from './types'
+import { SxProp } from './types'
 
 export type WithConditionalSxProp<P> = { className: string } extends P
-  ? Omit<P, keyof SxProps> & SxProps
-  : Omit<P, keyof SxProps>
+  ? Omit<P, keyof SxProp> & SxProp
+  : Omit<P, keyof SxProp>
 
 type ReactJSXElement = JSX.Element
 type ReactJSXElementClass = JSX.ElementClass
@@ -27,6 +27,6 @@ export declare namespace ThemeUIJSX {
     extends ReactJSXIntrinsicClassAttributes<T> {}
   export type IntrinsicElements = {
     [K in keyof ReactJSXIntrinsicElements]: ReactJSXIntrinsicElements[K] &
-      SxProps
+      SxProp
   }
 }

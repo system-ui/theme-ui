@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { renderJSON, NotHas, Assert, IsExact } from '@theme-ui/test-utils'
 
-import { jsx, SxProps, WithConditionalSxProp } from '../src'
+import { jsx, SxProp, WithConditionalSxProp } from '../src'
 
 describe('JSX', () => {
   test('accepts sx prop', () => {
@@ -21,7 +21,7 @@ describe('JSX', () => {
 })
 
 {
-  type HasSxProp<T extends SxProps> = T extends SxProps ? true : false
+  type HasSxProp<T extends SxProp> = T extends SxProp ? true : false
   type DoesNotHaveSxProp<T extends object> = NotHas<T, 'sx'>
 
   type _ =
