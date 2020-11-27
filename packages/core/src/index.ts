@@ -1,5 +1,5 @@
 import {
-  emotionJsx as emotionJsx,
+  jsx as emotionJsx,
   ThemeContext as EmotionContext,
 } from '@emotion/react'
 import { Theme } from '@theme-ui/css'
