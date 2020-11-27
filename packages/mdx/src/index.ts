@@ -99,7 +99,7 @@ export type WithPoorAsProp<
   As extends ElementType | undefined = undefined
 > = {
   as?: As
-} & (As extends undefined ? Props : AnyComponentProps)
+} & (undefined extends As ? Props : AnyComponentProps)
 
 export interface ThemedComponent<Name extends ElementType> {
   <As extends ElementType | undefined = undefined>(
