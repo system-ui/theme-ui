@@ -2,11 +2,11 @@
 
 ## v0.5.0 UNRELEASED
 
-- **breaking TypeScript**: Renamed and removed types.
-  - `SxProps` to `SxProp`. PR #1308
+- **breaking TypeScript**: Renamed and removed types. PR #1308
+  - `SxProps` to `SxProp`.
   - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
-- Fix: Add `sx` props types to all props accepting `className`. PR #1308
-- Fix WithPoorAsProp to work with ComponentProps utility type. PR #1308
+- Fix: Add `sx` props types to all props accepting `className`. 
+- Fix WithPoorAsProp to work with ComponentProps utility type.
 
 ## v0.5.0-alpha.1 2020-11-26
 
