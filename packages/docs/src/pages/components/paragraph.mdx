@@ -4,7 +4,7 @@ title: Paragraph
 
 # Paragraph
 
-Primitive typographic component for text blocks, defaults to `<p>`, and without margin.
+Primitive typographic component meant to display text blocks, defaults to `<p>`.
 
 ```js
 import { Paragraph } from 'theme-ui'
@@ -34,14 +34,14 @@ Use the `as` prop to set the correct HTML element independent from styling.
 ## Variants
 
 Text style variants can be defined in the `theme.text` object.
-The Paragraph component uses `theme.text.default` as its default variant style.
+The Paragraph component uses `theme.text.paragraph` as its default variant style.
 
 ```js
 // example theme variants
 {
   text: {
     block: {
-      variant: 'default',
+      variant: 'paragraph',
       my: 2,
       textAlign: 'justify',
       textAlignLast: 'start',
