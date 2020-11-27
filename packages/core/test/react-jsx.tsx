@@ -69,13 +69,3 @@ describe('JSX', () => {
         true
       >
 }
-
-{
-  // Unfortunately, we have to assume that all `sx` props are for us,
-  // as we can't check "does this component accept className or css?"
-  // at runtime
-  type _ = Assert<
-    IsExact<ThemeUIJSX.LibraryManagedAttributes<React.FC, { sx: 200 }>, {}>,
-    true
-  >
-}

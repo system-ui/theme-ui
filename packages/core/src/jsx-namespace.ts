@@ -2,9 +2,9 @@ import { SxProp } from './types'
 
 type WithConditionalSxProp<P> = 'className' extends keyof P
   ? string extends P['className']
-    ? Omit<P, 'sx'> & SxProp
-    : Omit<P, 'sx'>
-  : Omit<P, 'sx'>
+    ? P & SxProp
+    : P
+  : P
 
 type ReactJSXElement = JSX.Element
 type ReactJSXElementClass = JSX.ElementClass
@@ -23,7 +23,14 @@ export declare namespace ThemeUIJSX {
   export interface ElementChildrenAttribute
     extends ReactJSXElementChildrenAttribute {}
   export type LibraryManagedAttributes<C, P> = WithConditionalSxProp<P> &
-    Omit<ReactJSXLibraryManagedAttributes<C, P>, 'sx'>
+    // We are not removing incompatible `sx` props, because touching this breaks
+    // inference in generic components.
+    // Yes, we steal any prop called `sx` at runtime, but we
+    // can't represent it on type level without breaking compatibility with
+    // our own Field, react-hook-form, and a bunch of other generic components.
+    // Don't touch ReactJSXLibraryManagedAttributes or you'll spend hours
+    // debugging and entirely spoil your day.
+    ReactJSXLibraryManagedAttributes<C, P>
   export interface IntrinsicAttributes extends ReactJSXIntrinsicAttributes {}
   export interface IntrinsicClassAttributes<T>
     extends ReactJSXIntrinsicClassAttributes<T> {}
