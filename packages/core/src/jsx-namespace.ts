@@ -1,9 +1,7 @@
 import { SxProps } from './types'
 
-type WithConditionalSxProps<P> = 'className' extends keyof P
-  ? P extends { className?: string }
-    ? Omit<P, keyof SxProps> & SxProps
-    : Omit<P, keyof SxProps>
+export type WithConditionalSxProp<P> = { className: string } extends P
+  ? Omit<P, keyof SxProps> & SxProps
   : Omit<P, keyof SxProps>
 
 type ReactJSXElement = JSX.Element
@@ -22,7 +20,7 @@ export declare namespace ThemeUIJSX {
     extends ReactJSXElementAttributesProperty {}
   export interface ElementChildrenAttribute
     extends ReactJSXElementChildrenAttribute {}
-  export type LibraryManagedAttributes<C, P> = WithConditionalSxProps<P> &
+  export type LibraryManagedAttributes<C, P> = WithConditionalSxProp<P> &
     ReactJSXLibraryManagedAttributes<C, P>
   export interface IntrinsicAttributes extends ReactJSXIntrinsicAttributes {}
   export interface IntrinsicClassAttributes<T>

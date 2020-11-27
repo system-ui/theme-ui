@@ -6,7 +6,7 @@ import packageInfo from '@emotion/react/package.json'
 import parseProps from '@theme-ui/parse-props'
 
 import { ThemeUIJSX } from './jsx-namespace'
-export type { ThemeUIJSX } from './jsx-namespace'
+export type { ThemeUIJSX, WithConditionalSxProp } from './jsx-namespace'
 
 export type {
   CSSObject,
