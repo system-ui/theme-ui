@@ -333,7 +333,6 @@ describe('merge', () => {
   })
 })
 
-// describe('Context', () => {})
 describe('useThemeUI', () => {
   test('returns theme context', () => {
     let context: ContextValue | undefined
