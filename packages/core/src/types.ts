@@ -1,4 +1,4 @@
-import { ThemeUIStyleObject, CSSObject } from '@theme-ui/css'
+import { ThemeUIStyleObject } from '@theme-ui/css'
 
 import { ThemeUIJSX } from './jsx-namespace'
 
