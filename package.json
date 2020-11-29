@@ -14,7 +14,8 @@
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
     "prerelease": "yarn prepare && yarn typecheck && yarn test --coverage",
-    "bump-version": "lerna version"
+    "bump-version": "lerna version",
+    "bump-version-next": "lerna version prerelease --preid alpha"
   },
   "workspaces": [
     "packages/*"
@@ -28,12 +29,14 @@
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
     "@babel/runtime": "^7.10.2",
+    "@emotion/jest": "^11.1.0",
     "@testing-library/react": "^11.0.1",
     "@types/jest": "^26.0.10",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.merge": "^4.6.6",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.0.1",
+    "babel-preset-gatsby": "^0.6.0",
     "husky": ">=4.0.7",
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
@@ -45,9 +48,7 @@
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^26.4.4",
     "ts-snippet": "^5.0.1",
-    "typescript": "^4.1.2",
-    "babel-preset-gatsby": "^0.6.0",
-    "@emotion/jest": "^11.1.0"
+    "typescript": "^4.1.2"
   },
   "resolutions": {
     "typescript": "4.1.2"
@@ -93,7 +94,8 @@
       "!packages/gatsby-theme-style-guide/**/*",
       "!packages/chrome/**/*",
       "!packages/gatsby-theme-*/**/*",
-      "!packages/preset-*/**/*"
+      "!packages/preset-*/**/*",
+      "!packages/test-utils/**/*"
     ],
     "coverageThreshold": {
       "global": {

@@ -21,14 +21,9 @@ Create a responsive auto-sized tiled layout using CSS Grid.
 ```
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default ({
-  gap = 3,
-  width = 128,
-  ...props
-}) =>
+export default ({ gap = 3, width = 128, ...props }) => (
   <div
     {...props}
     sx={{
@@ -37,6 +32,7 @@ export default ({
       gridTemplateColumns: `repeat(auto-fit, minmax(${width}px, 1fr))`,
     }}
   />
+)
 ```
 
 See also: [Grid component](/components/grid)

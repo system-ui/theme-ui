@@ -8,12 +8,11 @@ To provide custom components to MDX context, but still apply styles from your th
 For a list of keys that can be used in the `components` object, see the [MDX docs for components](https://mdxjs.com/getting-started/#table-of-components).
 
 ```jsx
-/** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 import components from './components'
 
-export default props => (
+export default (props) => (
   <ThemeProvider theme={theme} components={components}>
     {props.children}
   </ThemeProvider>

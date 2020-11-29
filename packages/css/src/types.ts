@@ -3,21 +3,21 @@ import '@emotion/react'
 
 import {
   BordersCSSProperties,
-  BorderStylesCSSProperties,
-  BorderWidthsCSSProperties,
   ColorScaleCSSProperties,
-  FontsCSSProperties,
-  FontSizesCSSProperties,
-  FontWeightsCSSProperties,
   LetterSpacingsCSSProperties,
-  LineHeightsCSSProperties,
   OpacitiesCSSProperties,
-  RadiiCSSProperties,
-  ShadowsCSSProperties,
   SizesCSSProperties,
   SpaceCSSProperties,
-  ZIndicesCSSProperties,
 } from './scales'
+import { ZIndicesCSSProperties } from "./zIndices"
+import { ShadowsCSSProperties } from "./shadows"
+import { LineHeightsCSSProperties } from "./lineHeights"
+import { FontWeightsCSSProperties } from "./fontWeights"
+import { FontSizesCSSProperties } from "./fontSizes"
+import { FontsCSSProperties } from "./fonts"
+import { BorderStylesCSSProperties } from "./borderStyles"
+import { BorderWidthsCSSProperties } from "./borderWidths"
+import { RadiiCSSProperties } from "./radii"
 
 type StandardCSSProperties = CSS.Properties<number | string>
 

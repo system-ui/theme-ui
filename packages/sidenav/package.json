@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.5.0-alpha.0",
+  "version": "0.5.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -15,17 +15,17 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.14.0"
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
     "@mdx-js/react": "^1.0.21",
     "@types/mdx-js__react": "^1.5.1",
     "deepmerge": "^4.0.0",
-    "theme-ui": "^0.5.0-alpha.0"
+    "theme-ui": "0.5.0-alpha.1"
   },
   "keywords": [
     "theme-ui",

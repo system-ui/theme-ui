@@ -1,4 +1,4 @@
-import { ThemeStyles } from '@theme-ui/css'
+import { ThemeStyles, ThemeUICSSObject } from '@theme-ui/css'
 
 // theme.styles object for use with typography.js-generated theme object
 // similar to typography.js style output, with these differences
@@ -105,7 +105,7 @@ const baseStyles: ThemeStyles = {
     mx: 3,
   },
   hr: {
-    border: 0,
+    border: 'none',
     borderBottom: '1px solid',
     mt: '-1px',
     mb: 3,
@@ -138,20 +138,21 @@ const blockElements = [
   'hr',
 ] as const
 
-export const styles: ThemeStyles = {
-  ...baseStyles,
-  ...blockElements.reduce(
-    (style, tag) => ({
-      ...style,
-      [tag]: {
-        padding: 0,
-        margin: 0,
-        marginBottom: 3,
-        ...baseStyles[tag],
-      },
-    }),
-    {}
-  ),
-}
+export const styles: ThemeStyles = Object.assign(
+  {},
+  baseStyles,
+  ...blockElements.map(
+    (tag): ThemeUICSSObject => ({
+      [tag]: Object.assign<ThemeUICSSObject, ThemeUICSSObject>(
+        {
+          padding: 0,
+          margin: 0,
+          marginBottom: 3,
+        },
+        baseStyles[tag] as any
+      ),
+    })
+  )
+)
 
 export default styles

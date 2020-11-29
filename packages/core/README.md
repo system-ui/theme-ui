@@ -1,4 +1,3 @@
-
 # @theme-ui/core
 
 Core Emotion and JSX implementation for Theme UI
@@ -20,3 +19,12 @@ This package is already included in the main `theme-ui` package. However, for a 
 - `useThemeUI`
 - `merge`
 - `ThemeProvider`
+
+### Entry point `/jsx-runtime`
+
+- `jsx`
+- `jsxs`
+
+### Entry point `/jsx-dev-runtime`
+
+- `jsxDEV`

@@ -2,7 +2,11 @@
 
 ## v0.5.0 UNRELEASED
 
-- Fix sx prop variant responsive. Issue: #1030
+- Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
+- Support automatic JSX runtime. Issue #1160, PR #1237
+- Apply variant styles _before_ responsive styles. Issues #1030, and #720, PR #1273
+- Add Paragraph component. PR #1298
+
 ## v0.5.0-alpha.0 2020-11-20
 
 - BREAKING: Upgrade to Emotion 11, and `csstype` 3. PR #1261
