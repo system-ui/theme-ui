@@ -7,6 +7,7 @@
   - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
 - Fix: Add `sx` props types to all props accepting `className`. 
 - Fix WithPoorAsProp to work with ComponentProps utility type.
+- Add Paragraph component. PR #1298
 
 ## v0.5.0-alpha.1 2020-11-26
 

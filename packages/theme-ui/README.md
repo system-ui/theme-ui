@@ -1,14 +1,17 @@
-<img
-  src="/packages/docs/static/logo.png"
-  width="96"
-  height="96"
-/>
+<p align="center">
+  <img
+    src="/packages/docs/static/logo.png"
+    width="96"
+    height="96"
+  />
+</p>
 
-# Theme UI
+<h1 align="center">Theme UI</h1>
 
-**The Design Graph Framework**
+<p align="center">
+  <strong>The Design Graph Framework</strong>
+</p>
 
-Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
 &nbsp;
 
@@ -60,6 +63,8 @@ Theme UI is a library for creating themeable user interfaces based on constraint
 </p>
 
 \
+Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
+
 **stable docs**: https://theme-ui.com \
 **next (v0.5.0-alpha) docs**: [https://development--dev-theme-ui.netlify.app/](https://development--dev-theme-ui.netlify.app/)
 

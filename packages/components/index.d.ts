@@ -85,6 +85,17 @@ export type TextProps = BoxProps
  */
 export const Text: ForwardRef<HTMLDivElement, BoxProps>
 
+export interface ParagraphProps
+  extends Assign<React.ComponentPropsWithRef<'p'>, BoxOwnProps> {}
+/**
+ * Primitive typographic component.
+ *
+ * Text style variants can be defined in the theme.text object.
+ * The Paragraph component uses theme.text.default as its default variant style.
+ * @see https://theme-ui.com/components/paragraph
+ */
+export const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps>
+
 export interface HeadingProps
   extends Assign<React.ComponentPropsWithRef<'h2'>, BoxOwnProps> {}
 /**
