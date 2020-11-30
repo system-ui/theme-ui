@@ -12,7 +12,6 @@
   <strong>The Design Graph Framework</strong>
 </p>
 
-
 &nbsp;
 
 <p align="center">
@@ -20,13 +19,13 @@
     <img src="https://badgen.net/badge/-/github?icon=github&label" alt="GitHub" />
   </a>
   <a href="https://github.com/system-ui/theme-ui/stargazers">
-    <img src="https://badgen.net/github/stars/system-ui/theme-ui" alt="GitHub Stars">
+    <img src="https://badgen.net/github/stars/system-ui/theme-ui" alt="GitHub Stars"/>
   </a>
   <a>
-    <img alt="npm (latest)" src="https://img.shields.io/npm/v/theme-ui/latest">
+    <img alt="npm (latest)" src="https://img.shields.io/npm/v/theme-ui/latest"/>
   </a>
   <a>
-    <img alt="npm (next)" src="https://img.shields.io/npm/v/theme-ui/next?color=%23e044aa">
+    <img alt="npm (next)" src="https://img.shields.io/npm/v/theme-ui/next?color=%23e044aa"/>
   </a>
   <br />
   <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
@@ -58,7 +57,7 @@
     />
   </a>
   <a href="https://discord.gg/stp6BY7MXA">
-    <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community">
+    <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
   </a>
 </p>
 
