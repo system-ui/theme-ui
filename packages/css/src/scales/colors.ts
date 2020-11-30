@@ -1,7 +1,6 @@
-import type* as CSS from 'csstype'
-
 import type { FinalTheme } from '../types'
 
+import type { Globals } from './css-common'
 import type { ScaleProperty } from './scales-utility-types'
 
 export const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
@@ -24,7 +23,6 @@ export const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
 export type Color =
   | Exclude<ScaleProperty<FinalTheme['colors']>, 'modes'>
   | 'currentColor'
-  | CSS.Globals
 
 export interface ColorScaleCSSProperties {
   /**
@@ -40,7 +38,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color
    */
-  color?: Color
+  color?: Color | Globals
 
   /**const
    * The **`background-color`** CSS property sets the background color of an element.
@@ -55,7 +53,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-color
    */
-  backgroundColor?: Color
+  backgroundColor?: Color | Globals
 
   /**
    * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
@@ -68,7 +66,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-color
    */
-  borderColor?: Color
+  borderColor?: Color | Globals
 
   /**
    * The **`caret-color`** CSS property sets the color of the insertion caret, the visible marker where the next character typed will be inserted. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
@@ -83,7 +81,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
    */
-  caretColor?: Color
+  caretColor?: Color | Globals
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -98,7 +96,7 @@ export interface ColorScaleCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-color
    */
 
-  borderTopColor?: Color
+  borderTopColor?: Color | Globals
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -112,7 +110,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-color
    */
-  borderBottomColor?: Color
+  borderBottomColor?: Color | Globals
   /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -126,7 +124,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left-color
    */
-  borderLeftColor?: Color
+  borderLeftColor?: Color | Globals
   /**
    * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
@@ -140,7 +138,7 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right-color
    */
-  borderRightColor?: Color
+  borderRightColor?: Color | Globals
   /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -154,15 +152,15 @@ export interface ColorScaleCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline-color
    */
-  outlineColor?: Color
+  outlineColor?: Color | Globals
 
   /**
    * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill
    */
-  fill?: Color
+  fill?: Color | Globals
 
   /**
    * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke
    */
-  stroke?: Color
+  stroke?: Color | Globals
 }
