@@ -149,7 +149,7 @@ export const styles: ThemeStyles = Object.assign(
           margin: 0,
           marginBottom: 3,
         },
-        baseStyles[tag] as any
+        baseStyles[tag] as ThemeUICSSObject
       ),
     })
   )
