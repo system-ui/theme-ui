@@ -19,7 +19,7 @@ export const sizes: Record<keyof SizesCSSProperties, 'sizes'> = {
   minInlineSize: 'sizes',
 }
 
-export type Size = ScaleProperty<Theme['sizes']>
+export type Size = ScaleProperty<Theme['sizes']> | number
 
 export interface SizesCSSProperties {
   /**

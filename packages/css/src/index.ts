@@ -161,6 +161,11 @@ export const css = (args: ThemeUIStyleObject = {}) => (
 
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
+
+    if (x === false || x == null) {
+      continue
+    }
+
     const val = typeof x === 'function' ? x(theme) : x
 
     if (val && typeof val === 'object') {

@@ -1,4 +1,4 @@
-import { expecter } from 'ts-snippet'
+import { expecter } from '@theme-ui/test-utils'
 
 // import { css } from '../src'
 // import { makeTheme } from '../src/exact-theme'
@@ -38,7 +38,7 @@ import { expecter } from 'ts-snippet'
 //   },
 //   options: {
 //     strictMode: {
-//       allowStrings: true
+//       allowStrings: true // <- test and document it or get rid of it
 //     }
 //   }
 // })
@@ -49,17 +49,12 @@ import { expecter } from 'ts-snippet'
 //   export interface UserTheme extends MyTheme {}
 // }
 
-import { Color, Space } from '../src/scales'
+import { Scales } from '../src/scales'
 
-const expectSnippet = expecter(
-  (code) => `
+const expectSnippet = expecter(`
   import { css } from './packages/css/src'
   import { makeTheme } from './packages/css/src/exact-theme'
-
-  ${code}
-`,
-  { strict: true }
-)
+`)
 
 const AUGMENT_COLORS = `
   const myTheme = makeTheme({

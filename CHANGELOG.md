@@ -2,6 +2,7 @@
 
 ## v0.5.0 UNRELEASED
 
+- Don't pass `false`, `undefined` and `null` to Emotion. Allow them as style values in TypeScript.
 - Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
 - Support automatic JSX runtime. Issue #1160, PR #1237
 - Apply variant styles _before_ responsive styles. Issues #1030, and #720, PR #1273
