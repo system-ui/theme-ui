@@ -1,8 +1,7 @@
-import type { FinalTheme } from '../types'
+import type { Theme } from '../types'
 
 import type { ScaleProperty } from './scales-utility-types'
 import type { Globals, DataType } from './css-common'
-
 import type { Color } from './colors'
 
 // We can't use Property types from csstype.
@@ -246,7 +245,7 @@ export const borders: Record<keyof BordersCSSProperties, 'borders'> = {
   borderInlineStart: 'borders',
 }
 
-export type Border = ScaleProperty<FinalTheme['borders']>
+export type Border = ScaleProperty<Theme['borders']>
 
 export interface BordersCSSProperties {
   /**

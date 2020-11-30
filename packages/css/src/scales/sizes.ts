@@ -1,4 +1,4 @@
-import type { FinalTheme } from '../types'
+import type { Theme } from '../types'
 
 import type { ScaleProperty } from './scales-utility-types'
 
@@ -19,7 +19,7 @@ export const sizes: Record<keyof SizesCSSProperties, 'sizes'> = {
   minInlineSize: 'sizes',
 }
 
-export type Size = ScaleProperty<FinalTheme['sizes']>
+export type Size = ScaleProperty<Theme['sizes']>
 
 export interface SizesCSSProperties {
   /**

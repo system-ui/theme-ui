@@ -1,3 +1,3 @@
-import { Theme } from './types'
+import { BaseTheme } from './types'
 
-export const makeTheme = <T extends Theme>(t: T) => t
+export const makeTheme = <T extends BaseTheme>(t: T) => t

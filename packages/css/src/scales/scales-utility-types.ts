@@ -1,4 +1,4 @@
-import { FinalTheme } from '../types'
+import { Theme } from '../types'
 
 import { Iteration, Object } from 'ts-toolbelt'
 
@@ -47,7 +47,7 @@ export type StringHack<T> = string extends T
  * @internal
  */
 export type AllowedStrings = Object.Path<
-  FinalTheme,
+  Theme,
   ['options', 'strictMode', 'allowStrings']
 >
 

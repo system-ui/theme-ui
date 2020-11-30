@@ -1,12 +1,13 @@
-import { FinalTheme } from '../types'
+import { Theme } from '../types'
 
+import { Globals } from './css-common'
 import { ScaleProperty } from './scales-utility-types'
 
 export const zIndices: Record<keyof ZIndicesCSSProperties, 'zIndices'> = {
   zIndex: 'zIndices',
 }
 
-export type ZIndex = ScaleProperty<FinalTheme['zIndices']> | 'auto'
+export type ZIndex = ScaleProperty<Theme['zIndices']> | 'auto'
 
 export interface ZIndicesCSSProperties {
   /**
@@ -20,5 +21,5 @@ export interface ZIndicesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
-  zIndex?: ZIndex
+  zIndex?: ZIndex | Globals
 }

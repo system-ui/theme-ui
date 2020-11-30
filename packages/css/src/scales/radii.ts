@@ -1,5 +1,7 @@
 import * as CSS from 'csstype'
-import { FinalTheme } from '../types'
+
+import { Theme } from '../types'
+
 import { ScaleProperty } from './scales-utility-types'
 
 export const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
@@ -14,7 +16,7 @@ export const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
   borderStartStartRadius: 'radii',
 }
 
-export type Radius = ScaleProperty<FinalTheme['radii']>
+export type Radius = ScaleProperty<Theme['radii']>
 
 export interface RadiiCSSProperties {
   /**

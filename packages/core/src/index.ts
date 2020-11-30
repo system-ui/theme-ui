@@ -28,6 +28,8 @@ export type {
   ThemeUIExtendedCSSProperties,
   ThemeUIStyleObject,
   VariantProperty,
+  BaseTheme,
+  UserTheme,
 } from '@theme-ui/css'
 export * from './types'
 

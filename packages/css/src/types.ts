@@ -70,7 +70,7 @@ interface CSSOthersObjectForCSSObject {
  */
 export interface UserTheme {}
 
-export interface FinalTheme extends Assign<Theme, UserTheme> {}
+export interface Theme extends Assign<BaseTheme, UserTheme> {}
 
 export type Assign<T, U> = {
   [P in keyof (T & U)]: P extends keyof U
@@ -382,7 +382,7 @@ export interface ThemeUIExtendedCSSProperties
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
   | ((
-      theme: FinalTheme
+      theme: Theme
     ) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
 
@@ -418,7 +418,7 @@ export interface VariantProperty {
 }
 
 export interface ThemeDerivedStyles {
-  (theme: FinalTheme): ThemeUICSSObject
+  (theme: Theme): ThemeUICSSObject
 }
 
 export type Label = {
@@ -541,7 +541,7 @@ export interface ThemeStyles {
   [key: string]: ThemeUIStyleObject | undefined
 }
 
-export interface Theme {
+export interface BaseTheme {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
   space?: Scale<CSS.Property.Margin<number | string>>
@@ -762,7 +762,7 @@ export interface Theme {
   messages?: Record<string, ThemeUIStyleObject>
 }
 
-interface ThemeUITheme extends Theme {}
+interface ThemeUITheme extends BaseTheme {}
 
 declare module '@emotion/react' {
   export interface Theme extends ThemeUITheme {}

@@ -1,4 +1,4 @@
-import type { FinalTheme } from '../types'
+import type { Theme } from '../types'
 
 import type { Globals } from './css-common'
 import type { ScaleProperty } from './scales-utility-types'
@@ -21,7 +21,7 @@ export const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
 }
 
 export type Color =
-  | Exclude<ScaleProperty<FinalTheme['colors']>, 'modes'>
+  | Exclude<ScaleProperty<Theme['colors']>, 'modes'>
   | 'currentColor'
 
 export interface ColorScaleCSSProperties {

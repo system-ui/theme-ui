@@ -1,4 +1,4 @@
-import { FinalTheme } from '../types'
+import { Theme } from '../types'
 
 import { ScaleProperty } from './scales-utility-types'
 
@@ -48,7 +48,7 @@ export const space: Record<keyof SpaceCSSProperties, 'space'> = {
   rowGap: 'space',
 }
 
-export type Space = ScaleProperty<FinalTheme['space']>
+export type Space = ScaleProperty<Theme['space']>
 
 export interface SpaceCSSProperties {
   /**

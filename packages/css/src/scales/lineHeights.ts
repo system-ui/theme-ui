@@ -1,18 +1,18 @@
-import * as CSS from 'csstype';
-import { FinalTheme } from '../types';
-import { ScaleProperty } from './scales-utility-types';
+import * as CSS from 'csstype'
 
+import { Theme } from '../types'
 
+import { ScaleProperty } from './scales-utility-types'
 
-
-
-
-export const lineHeights: Record<keyof LineHeightsCSSProperties, 'lineHeights'> = {
+export const lineHeights: Record<
+  keyof LineHeightsCSSProperties,
+  'lineHeights'
+> = {
   lineHeight: 'lineHeights',
-};
+}
 
-export type LineHeight = ScaleProperty<FinalTheme['lineHeights']> | CSS.Globals;
+export type LineHeight = ScaleProperty<Theme['lineHeights']> | CSS.Globals
 
 export interface LineHeightsCSSProperties {
-  lineHeight?: LineHeight;
+  lineHeight?: LineHeight
 }

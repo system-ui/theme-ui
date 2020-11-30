@@ -1,5 +1,6 @@
-import * as CSS from 'csstype'
-import { FinalTheme } from '../types'
+import { Theme } from '../types'
+
+import { Globals } from './css-common'
 import { ScaleProperty } from './scales-utility-types'
 
 export const borderWidths: Record<
@@ -19,12 +20,10 @@ export const borderWidths: Record<
   borderInlineWidth: 'borderWidths',
 }
 
-export type BorderWidth =
-  | ScaleProperty<FinalTheme['borderWidths']>
-  | CSS.Globals
+export type BorderWidth = ScaleProperty<Theme['borderWidths']>
 
 export interface BorderWidthsCSSProperties {
-  borderWidth?: BorderWidth
+  borderWidth?: BorderWidth | Globals
   /**
    * The **`border-top-width`** CSS property sets the width of the top border of an element.
    *
@@ -36,14 +35,14 @@ export interface BorderWidthsCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
    */
-  borderTopWidth?: BorderWidth
-  borderBottomWidth?: BorderWidth
-  borderLeftWidth?: BorderWidth
-  borderRightWidth?: BorderWidth
-  borderBlockEndWidth?: BorderWidth
-  borderBlockStartWidth?: BorderWidth
-  borderBlockWidth?: BorderWidth
-  borderInlineEndWidth?: BorderWidth
-  borderInlineStartWidth?: BorderWidth
-  borderInlineWidth?: BorderWidth
+  borderTopWidth?: BorderWidth | Globals
+  borderBottomWidth?: BorderWidth | Globals
+  borderLeftWidth?: BorderWidth | Globals
+  borderRightWidth?: BorderWidth | Globals
+  borderBlockEndWidth?: BorderWidth | Globals
+  borderBlockStartWidth?: BorderWidth | Globals
+  borderBlockWidth?: BorderWidth | Globals
+  borderInlineEndWidth?: BorderWidth | Globals
+  borderInlineStartWidth?: BorderWidth | Globals
+  borderInlineWidth?: BorderWidth | Globals
 }

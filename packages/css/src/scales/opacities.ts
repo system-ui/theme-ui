@@ -1,4 +1,4 @@
-import { FinalTheme } from '../types'
+import { Theme } from '../types'
 
 import { ScaleProperty } from './scales-utility-types'
 
@@ -6,7 +6,7 @@ export const opacities: Record<keyof OpacitiesCSSProperties, 'opacities'> = {
   opacity: 'opacities',
 }
 
-export type Opacity = ScaleProperty<FinalTheme['opacities']>
+export type Opacity = ScaleProperty<Theme['opacities']>
 
 export interface OpacitiesCSSProperties {
   /**

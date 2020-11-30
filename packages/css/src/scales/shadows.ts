@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { FinalTheme } from '../types'
+import { Theme } from '../types'
 import { ScaleProperty } from './scales-utility-types'
 
 export const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
@@ -7,7 +7,7 @@ export const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
   textShadow: 'shadows',
 }
 
-export type Shadow = ScaleProperty<FinalTheme['shadows']> | CSS.Globals | 'none'
+export type Shadow = ScaleProperty<Theme['shadows']> | CSS.Globals | 'none'
 
 export interface ShadowsCSSProperties {
   /**
