@@ -18,18 +18,20 @@ export type { BorderStylesCSSProperties, BorderStyle } from './borderStyles'
 export type { BorderWidthsCSSProperties, BorderWidth } from './borderWidths'
 export type { FontsCSSProperties, Font } from './fonts'
 export type { FontSizesCSSProperties, FontSize } from './fontSizes'
-// TODO
-export type {} from './fontWeights'
-export type {} from './letterSpacings'
-export type {} from './lineHeights'
-export type {} from './radii'
-export type {} from './shadows'
-export type {} from './zIndices'
-export type {} from './colors'
-export type {} from './borders'
-export type {} from './sizes'
-export type {} from './space'
-export type {} from './opacities'
+export type { FontWeightsCSSProperties, FontWeight } from './fontWeights'
+export type {
+  LetterSpacingsCSSProperties,
+  LetterSpacing,
+} from './letterSpacings'
+export type { LineHeightsCSSProperties, LineHeight } from './lineHeights'
+export type { RadiiCSSProperties, Radius } from './radii'
+export type { ShadowsCSSProperties, Shadow } from './shadows'
+export type { ZIndicesCSSProperties, ZIndex } from './zIndices'
+export type { ColorScaleCSSProperties, Color } from './colors'
+export type { BordersCSSProperties, Border } from './borders'
+export type { SizesCSSProperties, Size } from './sizes'
+export type { SpaceCSSProperties, Space } from './space'
+export type { OpacitiesCSSProperties, Opacity } from './opacities'
 
 export const scales = {
   ...colors,

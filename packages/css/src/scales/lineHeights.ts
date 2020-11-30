@@ -11,8 +11,8 @@ export const lineHeights: Record<keyof LineHeightsCSSProperties, 'lineHeights'> 
   lineHeight: 'lineHeights',
 };
 
-export type LineHeights = ScaleProperty<FinalTheme['lineHeights']> | CSS.Globals;
+export type LineHeight = ScaleProperty<FinalTheme['lineHeights']> | CSS.Globals;
 
 export interface LineHeightsCSSProperties {
-  lineHeight?: LineHeights;
+  lineHeight?: LineHeight;
 }

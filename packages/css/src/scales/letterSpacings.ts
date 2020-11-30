@@ -12,8 +12,8 @@ export const letterSpacings: Record<
   letterSpacing: 'letterSpacings',
 }
 
-export type LetterSpacings = ScaleProperty<FinalTheme['letterSpacings']>
+export type LetterSpacing = ScaleProperty<FinalTheme['letterSpacings']>
 
 export interface LetterSpacingsCSSProperties {
-  letterSpacing?: Property.LetterSpacing<LetterSpacings>
+  letterSpacing?: Property.LetterSpacing<LetterSpacing>
 }

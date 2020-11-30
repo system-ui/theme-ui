@@ -6,7 +6,7 @@ export const opacities: Record<keyof OpacitiesCSSProperties, 'opacities'> = {
   opacity: 'opacities',
 }
 
-export type Opacities = ScaleProperty<FinalTheme['opacities']>
+export type Opacity = ScaleProperty<FinalTheme['opacities']>
 
 export interface OpacitiesCSSProperties {
   /**
@@ -22,5 +22,5 @@ export interface OpacitiesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/opacity
    */
-  opacity?: Opacities
+  opacity?: Opacity
 }

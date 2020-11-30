@@ -19,7 +19,7 @@ export const sizes: Record<keyof SizesCSSProperties, 'sizes'> = {
   minInlineSize: 'sizes',
 }
 
-export type Sizes = ScaleProperty<FinalTheme['sizes']>
+export type Size = ScaleProperty<FinalTheme['sizes']>
 
 export interface SizesCSSProperties {
   /**
@@ -35,7 +35,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/width
    */
-  width?: Sizes
+  width?: Size
 
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
@@ -50,7 +50,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/min-width
    */
-  minWidth?: Sizes
+  minWidth?: Size
 
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
@@ -65,7 +65,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/max-width
    */
-  maxWidth?: Sizes
+  maxWidth?: Size
 
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
@@ -80,7 +80,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/height
    */
-  height?: Sizes
+  height?: Size
 
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
@@ -95,7 +95,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/min-height
    */
-  minHeight?: Sizes
+  minHeight?: Size
 
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
@@ -110,7 +110,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/max-height
    */
-  maxHeight?: Sizes
+  maxHeight?: Size
 
   /**
    * The **`flex-basis`** CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
@@ -126,7 +126,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
    */
-  flexBasis?: Sizes
+  flexBasis?: Size
 
   /**
    * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
@@ -134,7 +134,7 @@ export interface SizesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/width
    * @see https://developer.mozilla.org/docs/Web/CSS/height
    */
-  size?: Sizes
+  size?: Size
 
   /**
    * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
@@ -149,7 +149,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/block-size
    */
-  blockSize?: Sizes
+  blockSize?: Size
 
   /**
    * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
@@ -164,7 +164,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
    */
-  inlineSize?: Sizes
+  inlineSize?: Size
 
   /**
    * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
@@ -179,7 +179,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/min-inline-size
    */
-  minInlineSize?: Sizes
+  minInlineSize?: Size
 
   /**
    * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block depending on its writing mode. It corresponds to the `max-width` or the `max-height` property depending on the value defined for `writing-mode`. If the writing mode is vertically oriented, the value of `max-inline-size` relates to the maximal height of the element, otherwise it relates to the maximal width of the element. It relates to `max-block-size`, which defines the other dimension of the element.
@@ -195,7 +195,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/max-inline-size
    */
-  maxInlineSize?: Sizes
+  maxInlineSize?: Size
 
   /**
    * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
@@ -210,7 +210,7 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
    */
-  minBlockSize?: Sizes
+  minBlockSize?: Size
 
   /**
    * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
@@ -225,5 +225,5 @@ export interface SizesCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
    */
-  maxBlockSize?: Sizes
+  maxBlockSize?: Size
 }

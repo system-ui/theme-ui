@@ -1,11 +1,6 @@
-import * as CSS from 'csstype';
-import { FinalTheme } from '../types';
-import { ScaleProperty } from './scales-utility-types';
-
-
-
-
-
+import * as CSS from 'csstype'
+import { FinalTheme } from '../types'
+import { ScaleProperty } from './scales-utility-types'
 
 export const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
   borderRadius: 'radii',
@@ -17,9 +12,9 @@ export const radii: Record<keyof RadiiCSSProperties, 'radii'> = {
   borderEndStartRadius: 'radii',
   borderStartEndRadius: 'radii',
   borderStartStartRadius: 'radii',
-};
+}
 
-export type Radii = ScaleProperty<FinalTheme['radii']>;
+export type Radius = ScaleProperty<FinalTheme['radii']>
 
 export interface RadiiCSSProperties {
   /**
@@ -32,13 +27,13 @@ export interface RadiiCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
-  borderRadius?: CSS.Property.BorderRadius<Radii>;
-  borderTopRightRadius?: CSS.Property.BorderTopRightRadius<Radii>;
-  borderTopLeftRadius?: CSS.Property.BorderTopLeftRadius<Radii>;
-  borderBottomRightRadius?: CSS.Property.BorderBottomRightRadius<Radii>;
-  borderBottomLeftRadius?: CSS.Property.BorderBottomLeftRadius<Radii>;
-  borderEndEndRadius?: CSS.Property.BorderEndEndRadius<Radii>;
-  borderEndStartRadius?: CSS.Property.BorderEndStartRadius<Radii>;
-  borderStartEndRadius?: CSS.Property.BorderStartEndRadius<Radii>;
-  borderStartStartRadius?: CSS.Property.BorderStartStartRadius<Radii>;
+  borderRadius?: CSS.Property.BorderRadius<Radius>
+  borderTopRightRadius?: CSS.Property.BorderTopRightRadius<Radius>
+  borderTopLeftRadius?: CSS.Property.BorderTopLeftRadius<Radius>
+  borderBottomRightRadius?: CSS.Property.BorderBottomRightRadius<Radius>
+  borderBottomLeftRadius?: CSS.Property.BorderBottomLeftRadius<Radius>
+  borderEndEndRadius?: CSS.Property.BorderEndEndRadius<Radius>
+  borderEndStartRadius?: CSS.Property.BorderEndStartRadius<Radius>
+  borderStartEndRadius?: CSS.Property.BorderStartEndRadius<Radius>
+  borderStartStartRadius?: CSS.Property.BorderStartStartRadius<Radius>
 }

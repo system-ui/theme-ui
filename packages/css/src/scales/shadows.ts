@@ -1,19 +1,13 @@
-import * as CSS from 'csstype';
-import { FinalTheme } from '../types';
-import { ScaleProperty } from './scales-utility-types';
-
-
-
-
-
-
+import * as CSS from 'csstype'
+import { FinalTheme } from '../types'
+import { ScaleProperty } from './scales-utility-types'
 
 export const shadows: Record<keyof ShadowsCSSProperties, 'shadows'> = {
   boxShadow: 'shadows',
   textShadow: 'shadows',
-};
+}
 
-export type Shadows = ScaleProperty<FinalTheme['shadows']> | CSS.Globals | 'none';
+export type Shadow = ScaleProperty<FinalTheme['shadows']> | CSS.Globals | 'none'
 
 export interface ShadowsCSSProperties {
   /**
@@ -29,6 +23,6 @@ export interface ShadowsCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-  boxShadow?: Shadows;
-  textShadow?: Shadows;
+  boxShadow?: Shadow
+  textShadow?: Shadow
 }

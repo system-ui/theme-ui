@@ -10,7 +10,7 @@ export const fontWeights: Record<keyof FontWeightsCSSProperties, 'fontWeights'> 
   fontWeight: 'fontWeights',
 };
 
-export type FontWeights = ScaleProperty<FinalTheme['fontWeights']>;
+export type FontWeight = ScaleProperty<FinalTheme['fontWeights']>;
 
 export interface FontWeightsCSSProperties {
   /**
@@ -25,5 +25,5 @@ export interface FontWeightsCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
-  fontWeight?: FontWeights;
+  fontWeight?: FontWeight;
 }
