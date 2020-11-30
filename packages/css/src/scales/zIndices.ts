@@ -1,4 +1,5 @@
 import { FinalTheme } from '../types'
+
 import { ScaleProperty } from './scales-utility-types'
 
 export const zIndices: Record<keyof ZIndicesCSSProperties, 'zIndices'> = {

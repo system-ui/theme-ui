@@ -8,8 +8,9 @@ import {
 } from './types'
 import { scales, Scales } from './scales'
 
-export { scales } from './scales';
+export { scales } from './scales'
 export type { Scales } from './scales'
+
 export * from './types'
 
 export function get(
@@ -133,8 +134,8 @@ const responsive = (
         continue
       }
       next[media] = next[media] || {}
-      if (value[i] == null) continue;
-      (next[media] as Record<string, any>)[key] = value[i]
+      if (value[i] == null) continue
+      ;(next[media] as Record<string, any>)[key] = value[i]
     }
   }
   return next
@@ -155,7 +156,7 @@ export const css = (args: ThemeUIStyleObject = {}) => (
   if (obj['variant']) {
     // Type instantiation is excessively deep and possibly infinite.ts(2589)
     obj = { ...get(theme, obj['variant']), ...obj }
-    delete obj['variant'];
+    delete obj['variant']
   }
   const styles = responsive(obj)(theme)
 
