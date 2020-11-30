@@ -1,8 +1,5 @@
 export type { Globals } from 'csstype'
 
-// TODO DataType.LineWidth
-// DataType.LineStyle
-
 // DataType is not exported from `csstype`, and we need to do some slight
 // modifications to it for performance and correctness
 // Refer to MDN and csstype DataType namespace
