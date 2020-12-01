@@ -2,10 +2,11 @@
 
 ## v0.5.0 UNRELEASED
 
+- Make Text component use `span` instead of `div`
 - **breaking TypeScript**: Renamed and removed types. PR #1308
   - `SxProps` to `SxProp`.
   - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
-- Fix: Add `sx` props types to all props accepting `className`. 
+- Fix: Add `sx` props types to all props accepting `className`.
 - Fix WithPoorAsProp to work with ComponentProps utility type.
 
 ## v0.5.0-alpha.2 2020-11-30
