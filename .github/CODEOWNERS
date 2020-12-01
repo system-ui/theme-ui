@@ -55,6 +55,8 @@ packages/typography @hasparus
 # examples/dark-mode
 # examples/gatsby
 # examples/gatsby-plugin
+
 examples/next @lachlanjc
+
 # examples/prism 
 # examples/typography

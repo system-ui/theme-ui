@@ -130,7 +130,7 @@ export const components = {} as ThemedComponentsDict
 tags.forEach((tag) => {
   // fixme?
   components[tag] = styled(alias(tag))(themed(tag)) as any
-  Styled[tag] = components[tag] as any
+  Themed[tag] = components[tag] as any
 })
 
 const createComponents = (comps: MDXProviderComponents) => {
