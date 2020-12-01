@@ -1,12 +1,9 @@
 # Changelog
 
-## v1.0 UNRELEASED
-
-- BREAKING: Rename `Styled` component to `Themed`
-
 ## v0.5.0 UNRELEASED
 
-- Make Text component use `span` instead of `div`
+- **BREAKING**: Rename `Styled` component to `Themed`
+- **BREAKING**: Make Text component use `span` instead of `div`
 - **breaking TypeScript**: Renamed and removed types. PR #1308
   - `SxProps` to `SxProp`.
   - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
@@ -26,7 +23,7 @@
 
 ## v0.5.0-alpha.0 2020-11-20
 
-- BREAKING: Upgrade to Emotion 11, and `csstype` 3. PR #1261
+- **BREAKING**: Upgrade to Emotion 11, and `csstype` 3. PR #1261
   - We are now depending on `@emotion/react@11` instead of `@emotion/core@10`
   - `sx` prop types are still global, and we opt in for Emotion `css` prop types (This will change in the future.)
   - Refer to [Emotion 11 release notes](https://emotion.sh/docs/emotion-11) for more information.
