@@ -2,14 +2,7 @@ import { ThemeUIStyleObject } from '@theme-ui/css'
 
 import { ThemeUIJSX } from './jsx-namespace'
 
-/**
- * The `sx` prop accepts a `SxStyleProp` object and properties that are part of
- * the `Theme` will be transformed to their corresponding values. Other valid
- * CSS properties are also allowed.
- */
-export type SxStyleProp = ThemeUIStyleObject
-
-export interface SxProps {
+export interface SxProp {
   /**
    * The sx prop lets you style elements inline, using values from your
    * theme. To use the sx prop, add the custom pragma as a comment to the
@@ -21,7 +14,7 @@ export interface SxProps {
    * import { jsx } from 'theme-ui'
    * ```
    */
-  sx?: SxStyleProp
+  sx?: ThemeUIStyleObject
 }
 
 export interface IntrinsicSxElements {

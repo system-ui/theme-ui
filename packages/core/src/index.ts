@@ -1,4 +1,7 @@
-import { jsx as emotion, ThemeContext as EmotionContext } from '@emotion/react'
+import {
+  jsx as emotionJsx,
+  ThemeContext as EmotionContext,
+} from '@emotion/react'
 import { Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
@@ -35,8 +38,11 @@ export * from './types'
 
 const __EMOTION_VERSION__ = packageInfo.version
 
-export const jsx: typeof React.createElement = (type, props, ...children) =>
-  emotion.apply(undefined, [type, parseProps(props), ...children])
+export const jsx: typeof React.createElement = <P extends {}>(
+  type: React.FunctionComponent<P> | React.ComponentClass<P> | string,
+  props: React.Attributes & P,
+  ...children: React.ReactNode[]
+): any => emotionJsx(type, parseProps(props), ...children)
 
 export declare namespace jsx {
   export namespace JSX {
@@ -75,28 +81,29 @@ const canUseSymbol = typeof Symbol === 'function' && Symbol.for
 const REACT_ELEMENT = canUseSymbol ? Symbol.for('react.element') : 0xeac7
 const FORWARD_REF = canUseSymbol ? Symbol.for('react.forward_ref') : 0xeac7
 
-const isMergeableObject = (n) => {
-  return (
-    !!n &&
-    typeof n === 'object' &&
-    n.$$typeof !== REACT_ELEMENT &&
-    n.$$typeof !== FORWARD_REF
-  )
+const deepmergeOptions: deepmerge.Options = {
+  isMergeableObject: (n) => {
+    return (
+      !!n &&
+      typeof n === 'object' &&
+      (n as React.ExoticComponent).$$typeof !== REACT_ELEMENT &&
+      (n as React.ExoticComponent).$$typeof !== FORWARD_REF
+    )
+  },
+  arrayMerge: (_leftArray, rightArray) => rightArray,
 }
-
-const arrayMerge = (destinationArray, sourceArray, options) => sourceArray
 
 /**
  * Deeply merge themes
  */
 export const merge = (a: Theme, b: Theme): Theme =>
-  deepmerge(a, b, { isMergeableObject, arrayMerge })
+  deepmerge(a, b, deepmergeOptions)
 
 function mergeAll<A, B>(a: A, B: B): A & B
 function mergeAll<A, B, C>(a: A, B: B, c: C): A & B & C
 function mergeAll<A, B, C, D>(a: A, B: B, c: C, d: D): A & B & C & D
 function mergeAll<T = Theme>(...args: Partial<T>[]) {
-  return deepmerge.all<T>(args, { isMergeableObject, arrayMerge })
+  return deepmerge.all<T>(args, deepmergeOptions)
 }
 
 merge.all = mergeAll

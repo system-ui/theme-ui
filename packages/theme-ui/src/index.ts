@@ -3,8 +3,7 @@ export { Context, merge, useThemeUI } from '@theme-ui/core'
 export type {
   ContextValue,
   IntrinsicSxElements,
-  SxProps,
-  SxStyleProp,
+  SxProp,
   ColorMode,
   ColorModesScale,
   CSSObject,

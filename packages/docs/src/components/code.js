@@ -47,7 +47,7 @@ const images = {
 
 const scope = {
   ...themeUI,
-  Link: props => {
+  Link: (props) => {
     if (props.activeClassName)
       return <span className={props.activeClassName} {...props} />
     return <span {...props} sx={{ cursor: 'pointer' }} />
@@ -56,7 +56,7 @@ const scope = {
   images,
 }
 
-const transformCode = src => `/** @jsx jsx */\n<>${src}</>`
+const transformCode = (src) => `/** @jsx jsx */\n<>${src}</>`
 
 const liveTheme = { styles: [] }
 
@@ -83,7 +83,7 @@ export const LiveCode = ({ children, preview, xray }) => {
         sx={{
           p: 3,
           variant: xray ? 'styles.xray' : null,
-          border: t => `1px solid ${t.colors.muted}`,
+          border: (t) => `1px solid ${t.colors.muted}`,
         }}>
         <LivePreview />
         <LiveError
@@ -108,7 +108,7 @@ export const LiveCode = ({ children, preview, xray }) => {
   )
 }
 
-const Code = props => {
+const Code = (props) => {
   if (props.live) {
     return <LiveCode {...props} />
   }
@@ -131,7 +131,7 @@ const Code = props => {
       </section>
     )
   }
-  return <div {...props} />
+  return <Prism {...props} />
 }
 
 export default Code

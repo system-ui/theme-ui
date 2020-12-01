@@ -2,9 +2,14 @@
 
 ## v0.5.0 UNRELEASED
 
-- Don't pass `false`, `undefined` and `null` to Emotion. Allow them as style values in TypeScript.
-- Allow to inject user's exact theme type.
-- Add `theme.options.strictMode` object with configuration for Theme UI strict mode.
+- **breaking TypeScript**: Renamed and removed types. PR #1308
+  - `SxProps` to `SxProp`.
+  - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
+- Fix: Add `sx` props types to all props accepting `className`.
+- Fix WithPoorAsProp to work with ComponentProps utility type.
+- Don't pass `false`, `undefined` and `null` to Emotion. Allow them as style values in TypeScript. PR #1090
+- Allow to inject user's exact theme type. PR #1090
+  - Add `theme.options.strictMode` object with configuration for Theme UI strict mode.
   - TODO short excerpt from the docs on how to use it
 
 ## v0.5.0-alpha.2 2020-11-30
@@ -15,6 +20,7 @@
 
 - Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
 - Support automatic JSX runtime. Issue #1160, PR #1237
+- Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
 - Apply variant styles _before_ responsive styles. Issues #1030, and #720, PR #1273
 
 ## v0.5.0-alpha.0 2020-11-20

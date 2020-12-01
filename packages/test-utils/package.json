@@ -12,5 +12,9 @@
     "prepare": "tsc",
     "watch": "tsc -w",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ts-snippet": "^5.0.0",
+    "conditional-type-checks": "^1.0.5"
   }
 }
