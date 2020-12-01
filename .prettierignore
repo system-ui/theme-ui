@@ -5,4 +5,5 @@ yarn.lock
 node_modules
 dist
 coverage
+examples/next/.next
 docs/src/pages/index.mdx
