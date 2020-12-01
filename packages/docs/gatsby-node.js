@@ -2,8 +2,6 @@ const presets = require('@theme-ui/presets')
 
 const Preset = require.resolve('./src/templates/preset')
 
-console.log('test');
-
 module.exports.createPages = ({ actions }) => {
   actions.createRedirect({
     fromPath: '/custom-pragma',
