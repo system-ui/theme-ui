@@ -1,14 +1,16 @@
 # Changelog
 
-## v0.5.0 UNRELEASED
+## v0.6.0 UNRELEASED
 
-- **BREAKING**: Rename `Styled` component to `Themed`
+## v0.6.0-alpha.0
+
+- **BREAKING**: Rename `Styled` component to `Themed`. PR #1323
 - **BREAKING**: Make Text component use `span` instead of `div`
 - **breaking TypeScript**: Renamed and removed types. PR #1308
   - `SxProps` to `SxProp`.
   - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
-- Fix: Add `sx` props types to all props accepting `className`.
-- Fix WithPoorAsProp to work with ComponentProps utility type.
+- Fix: Add `sx` props types to all props accepting `className`. PR #1308
+- Fix WithPoorAsProp to work with ComponentProps utility type. PR #1308
 
 ## v0.5.0-alpha.2 2020-11-30
 
