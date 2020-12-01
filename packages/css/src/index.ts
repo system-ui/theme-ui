@@ -22,6 +22,17 @@ export function get(
   return obj === undef ? def : obj
 }
 
+export const getVariantValue = (
+  theme: Theme,
+  _themeKey: string,
+  variant: string): ThemeUICSSObject => {
+  const defValue = get(theme, variant);
+  const value = get(theme, `${_themeKey}.${variant}`, 
+    typeof defValue === 'function' ? defValue(theme) : defValue
+  );
+  return typeof value === 'function' ?value(theme) : value;
+}
+
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
 
 const defaultTheme = {

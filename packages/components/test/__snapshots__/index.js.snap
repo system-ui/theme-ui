@@ -203,7 +203,13 @@ exports[`Box renders with variant array derived variant from theme merge 1`] = `
   background-color: var(--theme-ui-colors-primary, #0cf);
   border: 0;
   border-radius: 4px;
+  color: var(--theme-ui-colors-background, #fefefe);
+  border: 2px solid undefined;
   background-color: transparent;
+  border-bottom-left-radius: 61px 8px;
+  border-bottom-right-radius: 6px 68px;
+  border-top-left-radius: 41px 8px;
+  border-top-right-radius: 3px 68px;
 }
 
 <button

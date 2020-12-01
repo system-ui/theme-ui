@@ -208,7 +208,7 @@ describe('Box', () => {
         borderTopRightRadius: '85px 5px',
       },
     ]
-
+    const borderIndex = Math.floor(Math.random() * sketchyBorders.length)
     const json = renderJSON(
       <ThemeProvider
         theme={{
@@ -231,7 +231,7 @@ describe('Box', () => {
               backgroundColor: 'transparent',
             },
             sketchy: (t) => {
-              return sketchyBorders[Math.random() * sketchyBorders.length]
+              return sketchyBorders[borderIndex]
             },
           },
         }}>
@@ -241,15 +241,18 @@ describe('Box', () => {
 
     expect(json).toMatchSnapshot()
 
-    expect(json).toHaveStyleRule('color', '#fefefe')
-    expect(json).toHaveStyleRule('border', '2px solid #80e5ff')
-
-    expect(json).toHaveStyleRule('border-bottom-left-radius', '61px 8px')
-    expect(json).toHaveStyleRule('border-bottom-right-radius', '6px 68px')
+    expect(json).toHaveStyleRule(
+      'border-bottom-left-radius',
+      sketchyBorders[borderIndex].borderBottomLeftRadius
+    )
+    expect(json).toHaveStyleRule(
+      'border-bottom-right-radius',
+      sketchyBorders[borderIndex].borderBottomRightRadius
+    )
 
     expect(json).toHaveStyleRule(
-      'background-color',
-      'var(--theme-ui-colors-primary,#0cf)'
+      'color',
+      'var(--theme-ui-colors-background, #fefefe)'
     )
     expect(json).toHaveStyleRule('background-color', 'transparent')
 

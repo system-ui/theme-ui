@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
+import { css, getVariantValue } from '@theme-ui/css'
 import deepmerge from 'deepmerge'
-import { css, get } from '@theme-ui/css'
 import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
@@ -16,13 +16,12 @@ const variant = ({ theme, variant, __themeKey = 'variants' }) => {
   if (Array.isArray(variant)) {
     return css(
       deepmerge.all(
-        variant.map(
-          (v) => get(theme, __themeKey + '.' + v, get(theme, v)) || {}
-        )
+        variant.map((v) => getVariantValue(theme, __themeKey, v) || {}),
+        { arrayMerge: (dest, src) => src }
       )
     )
   }
-  return css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
+  return css(getVariantValue(theme, __themeKey, variant))
 }
 
 export const Box = styled('div', {
