@@ -5,6 +5,7 @@
 # looking for maintainers. The more the merrier!
 
 **/types.ts @hasparus
+**/types.tsx @hasparus
 
 # packages/chrome DEPRECATED
 packages/color @hasparus
