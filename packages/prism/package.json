@@ -36,7 +36,7 @@
   "devDependencies": {
     "lodash.kebabcase": "^4.1.1",
     "postcss": "^7.0.17",
-    "postcss-js": "^2.0.2",
+    "postcss-js": "^3.0.3",
     "theme-ui": "0.6.0-alpha.0"
   }
 }
