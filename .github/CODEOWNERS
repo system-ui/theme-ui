@@ -23,7 +23,7 @@ packages/docs @lachlanjc @hasparus
 # packages/gatsby-theme-ui-layout looking for maintainers!
 packages/match-media @hasparus
 packages/mdx @hasparus
-packages/parse-props @hasparus @dcastil
+packages/parse-props @hasparus
 packages/preset-base @hasparus
 packages/preset-bootstrap @hasparus
 packages/preset-bulma @hasparus
