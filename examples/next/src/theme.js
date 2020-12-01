@@ -8,7 +8,7 @@ export default {
     secondary: '#609',
     modes: {
       dark: {
-        text: '#fff',
+        text: 'hotpink',
         background: '#222',
         primary: '#0cf',
         secondary: '#90c',
