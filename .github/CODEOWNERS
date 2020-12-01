@@ -1,0 +1,60 @@
+# Hi there!
+# If you're using one of Theme UI packages a lot, and you would like to help
+# maintaining it, let us know on our Discord https://discord.gg/U5sQYcuaj2.
+# As you can see below, there are tons of packages here, and they are always
+# looking for maintainers. The more the merrier!
+
+**/types.ts @hasparus
+**/types.tsx @hasparus
+
+# packages/chrome DEPRECATED
+packages/color @hasparus
+packages/color-modes @hasparus
+packages/components @atanasster
+packages/core @hasparus
+packages/css @hasparus
+packages/custom-properties @hasparus
+packages/docs @lachlanjc @hasparus
+# packages/editor looking for maintainers!
+# packages/gatsby-plugin-theme-ui looking for maintainers! 
+# packages/gatsby-theme-code-recipes looking for maintainers!
+# packages/gatsby-theme-style-guide looking for maintainers!
+# packages/gatsby-theme-ui-blog looking for maintainers!
+# packages/gatsby-theme-ui-layout looking for maintainers!
+packages/match-media @hasparus
+packages/mdx @hasparus
+packages/parse-props @hasparus @dcastil
+packages/preset-base @hasparus
+packages/preset-bootstrap @hasparus
+packages/preset-bulma @hasparus
+packages/preset-dark @hasparus
+packages/preset-deep @hasparus
+packages/preset-funk @hasparus
+packages/preset-future @hasparus
+packages/preset-polaris @hasparus
+packages/preset-roboto @hasparus
+packages/presets @hasparus
+packages/preset-sketchy @hasparus @beerose
+packages/preset-swiss @hasparus
+packages/preset-system @hasparus
+packages/preset-tailwind @hasparus
+packages/preset-tosh @hasparus
+packages/prism @hasparus
+packages/sidenav @hasparus
+packages/style-guide @hasparus
+packages/tachyons @hasparus
+packages/tailwind @hasparus
+packages/test-utils @hasparus
+packages/theme-provider @hasparus
+packages/theme-ui @hasparus
+packages/typography @hasparus
+
+# examples/codesandbox-starter
+# examples/create-react-app
+# examples/custom-pragma
+# examples/dark-mode
+# examples/gatsby
+# examples/gatsby-plugin
+examples/next @lachlanjc
+# examples/prism 
+# examples/typography

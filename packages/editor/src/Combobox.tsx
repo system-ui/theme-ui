@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, SxProps } from 'theme-ui'
+import { jsx, SxProp } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
 import { Label, Input, InputProps } from '@theme-ui/components'
 
@@ -37,8 +37,8 @@ type ComboboxOwnProps<T> = {
 }
 export interface ComboboxProps<T>
   extends ComboboxOwnProps<T>,
-    Omit<InputProps, keyof ComboboxOwnProps<T> | keyof SxProps>,
-    SxProps {}
+    Omit<InputProps, keyof ComboboxOwnProps<T> | keyof SxProp>,
+    SxProp {}
 
 const Combobox = <T extends string | number>({
   type = 'text',

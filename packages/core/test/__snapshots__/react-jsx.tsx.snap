@@ -9,7 +9,16 @@ exports[`JSX accepts sx prop 1`] = `
   scroll-padding-bottom: 8px;
 }
 
+.emotion-1 {
+  bg-color: primary;
+}
+
 <div
   className="emotion-0"
-/>
+>
+  <input
+    className="emotion-1"
+    onChange={[Function]}
+  />
+</div>
 `;

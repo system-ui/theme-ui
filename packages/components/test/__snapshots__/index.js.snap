@@ -1043,6 +1043,28 @@ exports[`NavLink renders 1`] = `
 />
 `;
 
+exports[`Paragraph renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: body;
+  font-weight: body;
+  line-height: body;
+  margin: 0;
+}
+
+@media screen and (min-width: 36em) {
+  .emotion-0 {
+    max-width: 48rem;
+  }
+}
+
+<p
+  className="emotion-0"
+/>
+`;
+
 exports[`Progress renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
@@ -1510,7 +1532,7 @@ exports[`Text renders 1`] = `
   font-size: 20px;
 }
 
-<div
+<span
   className="emotion-0"
 />
 `;
