@@ -101,7 +101,9 @@ describe('components type check', () => {
           width={[128, null, 192]}
           backgroundColor="#eee"
           ref={(ref) => ref}>
-          <Box bg="primary" ref={primaryBox => primaryBox}>Box</Box>
+          <Box bg="primary" ref={(primaryBox) => primaryBox}>
+            Box
+          </Box>
           <Box bg="muted">Box</Box>
           <Box bg="primary">Box</Box>
           <Box bg="muted">Box</Box>

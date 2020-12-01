@@ -11,6 +11,7 @@ import {
   Heading,
   Image,
   Link,
+  Paragraph,
   Text,
   Label,
   Input,
@@ -67,6 +68,12 @@ const theme = {
   text: {
     default: {
       fontSize: 3,
+    },
+    block: {
+      variant: 'default',
+      textAlign: 'justify',
+      textAlignLast: 'start',
+      textJustify: 'auto',
     },
     heading: {
       fontSize: 5,
@@ -401,6 +408,44 @@ describe('Link', () => {
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Paragraph', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Paragraph />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with variant prop', () => {
+    const variant = 'block'
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Paragraph variant={variant}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </Paragraph>
+      </ThemeProvider>
+    )
+    const style = theme.text[variant]
+    expect(json).toHaveStyleRule('text-align', style.textAlign)
+    expect(json).toHaveStyleRule('text-align-last', style.textAlignLast)
+    expect(json).toHaveStyleRule('text-justify', style.textJustify)
+  })
+
+  test('renders with sx prop', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <Paragraph
+        sx={{
+          margin,
+        }}
+      />
+    )
+    expect(json).toHaveStyleRule('margin', margin)
   })
 })
 

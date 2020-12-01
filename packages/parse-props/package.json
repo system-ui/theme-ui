@@ -1,0 +1,30 @@
+{
+  "name": "@theme-ui/parse-props",
+  "version": "0.5.0-alpha.1",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": "system-ui/theme-ui",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.1",
+    "@theme-ui/css": "0.5.0-alpha.1"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.14.1",
+    "react": "^16.14.0"
+  }
+}
