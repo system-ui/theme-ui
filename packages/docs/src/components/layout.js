@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from 'theme-ui'
+import { jsx, Themed, useColorMode } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
@@ -53,7 +53,7 @@ export default (props) => {
   }
 
   return (
-    <Styled.root>
+    <Themed.root>
       <Head {...props} />
       <SkipLink>Skip to content</SkipLink>
       <Flex
@@ -102,7 +102,7 @@ export default (props) => {
             flex: '1 1 auto',
             alignItems: 'flex-start',
             display: ['block', 'flex'],
-            height: '100%'
+            height: '100%',
           }}>
           <Sidebar
             ref={nav}
@@ -149,6 +149,6 @@ export default (props) => {
           </main>
         </Box>
       </Flex>
-    </Styled.root>
+    </Themed.root>
   )
 }

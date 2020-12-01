@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0 UNRELEASED
+
+- BREAKING: Rename `Styled` component to `Themed`
+
 ## v0.5.0 UNRELEASED
 
 ## v0.5.0-alpha.2 2020-11-30

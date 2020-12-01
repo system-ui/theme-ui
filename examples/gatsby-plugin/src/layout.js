@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
-export default props => (
-  <Styled.root>
+export default (props) => (
+  <Themed.root>
     <header>
       <h2>Theme UI Gatsby Example</h2>
     </header>
     <main>
       <div sx={{ fontFamily: 'body' }}>{props.children}</div>
     </main>
-  </Styled.root>
+  </Themed.root>
 )

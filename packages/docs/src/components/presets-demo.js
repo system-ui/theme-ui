@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, components } from 'theme-ui'
+import { jsx, Themed, components } from 'theme-ui'
 import { ThemeContext } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
@@ -52,10 +52,10 @@ export default () => {
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
-          <Styled.root sx={{ bg: 'background', color: 'text', p: 3 }}>
-            <Styled.h2>Colors</Styled.h2>
+          <Themed.root sx={{ bg: 'background', color: 'text', p: 3 }}>
+            <Themed.h2>Colors</Themed.h2>
             <ColorPalette omit={['modes', 'header']} />
-            <Styled.h2>Typography</Styled.h2>
+            <Themed.h2>Typography</Themed.h2>
             <TypeStyle fontSize={7}>
               Body: <FontFamily name="body" />
             </TypeStyle>
@@ -66,12 +66,12 @@ export default () => {
               fontSize={7}>
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
-            <Styled.h2>Type Scale</Styled.h2>
+            <Themed.h2>Type Scale</Themed.h2>
             <TypeScale />
             <MDXProvider components={components}>
               <Lorem />
             </MDXProvider>
-            <Styled.h2 id="json">Raw JSON</Styled.h2>
+            <Themed.h2 id="json">Raw JSON</Themed.h2>
             <textarea
               value={JSON.stringify(preset, null, 2)}
               rows={16}
@@ -85,7 +85,7 @@ export default () => {
                 borderRadius: 4,
               }}
             />
-          </Styled.root>
+          </Themed.root>
         </ThemeContext.Provider>
       </div>
     </div>

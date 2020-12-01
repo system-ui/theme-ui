@@ -79,19 +79,19 @@ const aliases = {
 type Aliases = typeof aliases
 const isAlias = (x: string): x is keyof Aliases => x in aliases
 
-export type StyledComponentName =
+export type ThemedComponentName =
   | keyof IntrinsicSxElements
   | keyof JSX.IntrinsicElements
 
-const alias = (n: StyledComponentName): keyof JSX.IntrinsicElements =>
+const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
-export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
+export const themed = (key: ThemedComponentName) => (props: ThemedProps) =>
   css(get(props.theme, `styles.${key}`))(props.theme)
 
 // opt out of typechecking whenever `as` prop is used
 interface AnyComponentProps extends JSX.IntrinsicAttributes {
-    [key: string]: unknown
+  [key: string]: unknown
 }
 
 export type WithPoorAsProp<
@@ -107,7 +107,7 @@ export interface ThemedComponent<Name extends ElementType> {
   ): JSX.Element
 }
 
-export type StyledComponentsDict = {
+export type ThemedComponentsDict = {
   [K in keyof IntrinsicSxElements]: K extends keyof Aliases
     ? ThemedComponent<Aliases[K]>
     : K extends keyof JSX.IntrinsicElements
@@ -115,17 +115,17 @@ export type StyledComponentsDict = {
     : never
 }
 
-type StyledDiv = StyledComponent<
+type ThemedDiv = StyledComponent<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   ThemedProps,
   Theme
 >
 
-export const Styled: StyledDiv & StyledComponentsDict = styled('div')(
+export const Themed: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
-) as StyledDiv & StyledComponentsDict
+) as ThemedDiv & ThemedComponentsDict
 
-export const components = {} as StyledComponentsDict
+export const components = {} as ThemedComponentsDict
 
 tags.forEach((tag) => {
   // fixme?
@@ -139,9 +139,9 @@ const createComponents = (comps: MDXProviderComponents) => {
   const componentKeys = Object.keys(comps) as Array<keyof IntrinsicSxElements>
 
   componentKeys.forEach((key) => {
-    ;(next[key] as StyledComponentsDict[typeof key]) = styled<any>(comps[key])(
+    ;(next[key] as ThemedComponentsDict[typeof key]) = styled<any>(comps[key])(
       themed(key)
-    ) as StyledComponentsDict[typeof key]
+    ) as ThemedComponentsDict[typeof key]
   })
   return next
 }
