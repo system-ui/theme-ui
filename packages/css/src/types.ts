@@ -608,10 +608,11 @@ export interface BaseTheme {
   options?: {
     strictMode?: {
       /**
-       * If true, (string & {}) is accepted as style value.
-       * If false, all values need to be taken from scales.
+       * If false, (string & {}) is accepted as style value.
+       * If true, all values need to be taken from scales.
+       * @default false
        */
-      allowStrings: boolean
+      noStrings?: boolean
     }
   }
 

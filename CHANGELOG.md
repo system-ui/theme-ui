@@ -4,6 +4,7 @@
 
 - Don't pass `false`, `undefined` and `null` to Emotion. Allow them as style values in TypeScript.
 - Allow to inject user's exact theme type.
+- Add `theme.options.strictMode` object with configuration for Theme UI strict mode.
   - TODO short excerpt from the docs on how to use it
 
 ## v0.5.0-alpha.2 2020-11-30

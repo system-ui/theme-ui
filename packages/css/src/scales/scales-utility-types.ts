@@ -46,18 +46,13 @@ export type StringHack<T> = string extends T
 /**
  * @internal
  */
-export type AllowedStrings = Object.Path<
-  Theme,
-  ['options', 'strictMode', 'allowStrings']
->
+type NoStrings = Object.Path<Theme, ['options', 'strictMode', 'noStrings']>
 
 /**
  * @internal
  */
 // TODO: test it
-export type StringEscapeHatch = AllowedStrings extends false
-  ? never
-  : string & {}
+export type StringEscapeHatch = NoStrings extends true ? never : string & {}
 
 /**
  * @internal

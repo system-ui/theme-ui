@@ -1,55 +1,36 @@
 import { expecter } from '@theme-ui/test-utils'
 
-// import { css } from '../src'
-// import { makeTheme } from '../src/exact-theme'
+import { makeTheme } from '../src/exact-theme'
 
-// const myTheme = makeTheme({
-//   colors: {
-//     orange: [
-//       null,
-//       '#fffaf0',
-//       '#feebc8',
-//       '#fbd38d',
-//       '#f6ad55',
-//       '#ed8936',
-//       '#dd6b20',
-//       '#c05621',
-//       '#9c4221',
-//       '#7b341e',
-//     ],
-//     gray: {
-//       50: 'rgb(8, 8, 8)',
-//       75: 'rgb(26, 26, 26)',
-//       100: 'rgb(30, 30, 30),',
-//       150: null as null,
-//       200: undefined as undefined,
-//     },
-//   },
-//   space: {
-//     we: {
-//       have: {
-//         to: {
-//           go: {
-//             deeper: '1234px',
-//           },
-//         },
-//       },
-//     },
-//   },
-//   options: {
-//     strictMode: {
-//       allowStrings: true // <- test and document it or get rid of it
-//     }
-//   }
-// })
+const myTheme = makeTheme({
+  colors: {
+    gray: {
+      50: 'rgb(8, 8, 8)',
+      75: 'rgb(26, 26, 26)',
+      100: 'rgb(30, 30, 30),',
+      150: null as null,
+      200: undefined as undefined,
+    },
+  },
+  options: {
+    strictMode: {
+      noStrings: true,
+    },
+  },
+})
 
-// type MyTheme = typeof myTheme
+type MyTheme = typeof myTheme
 
-// declare module '../src' {
-//   export interface UserTheme extends MyTheme {}
-// }
+declare module '../src' {
+  export interface UserTheme extends MyTheme {}
+}
 
-import { Scales } from '../src/scales'
+import { Scales } from '../src'
+
+type Color = Scales.Color
+
+import type {  } from '@theme-ui/test-utils'
+
 
 const expectSnippet = expecter(`
   import { css } from './packages/css/src'
