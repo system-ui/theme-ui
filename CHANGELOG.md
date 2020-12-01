@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0 UNRELEASED
+
+- BREAKING: Rename `Styled` component to `Themed`
+
 ## v0.5.0 UNRELEASED
 
 - Make Text component use `span` instead of `div`

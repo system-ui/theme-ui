@@ -192,7 +192,7 @@ export default (props) => (
 - [The `sx` Prop](https://theme-ui.com/sx-prop)
 - [Layout](https://theme-ui.com/layout)
 - [Color Modes](https://theme-ui.com/color-modes)
-- [Styled](https://theme-ui.com/styled)
+- [Themed](https://theme-ui.com/themed)
 - [MDX Components](https://theme-ui.com/mdx-components)
 - [Theme Spec](https://theme-ui.com/theme-spec)
 - [Gatsby Plugin](https://theme-ui.com/packages/gatsby-plugin)
