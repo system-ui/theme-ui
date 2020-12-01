@@ -47,7 +47,6 @@
     "prettier": "^2.2.0",
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^26.4.4",
-    "ts-snippet": "^5.0.0",
     "typescript": "^4"
   },
   "jest": {
