@@ -280,7 +280,7 @@ export const css = (args: ThemeUIStyleObject = {}) => (
   }
   let obj = typeof args === 'function' ? args(theme) : args
   let result: CSSObject = {}
- 
+
   // insert variant props before responsive styles, so they can be merged
   // we need to maintain order of the style props, so if a variant is place in the middle
   // of other props, it will extends its props at that same location order.
@@ -289,7 +289,7 @@ export const css = (args: ThemeUIStyleObject = {}) => (
       const x = obj[key as keyof typeof styles]
       if (key === 'variant') {
         const val = typeof x === 'function' ? x(theme) : x;
-        const variant = css(get(theme, val as string))(theme);
+        const variant = get(theme, val as string);
         result = { ...result, ...variant };
       } else {
         result[key] = x as CSSObject;
