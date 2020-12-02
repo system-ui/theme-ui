@@ -1,40 +1,7 @@
-import { expecter } from '@theme-ui/test-utils'
-
-import { makeTheme } from '../src/exact-theme'
-
-const myTheme = makeTheme({
-  colors: {
-    gray: {
-      50: 'rgb(8, 8, 8)',
-      75: 'rgb(26, 26, 26)',
-      100: 'rgb(30, 30, 30),',
-      150: null as null,
-      200: undefined as undefined,
-    },
-  },
-  options: {
-    strictMode: {
-      noStrings: true,
-    },
-  },
-})
-
-type MyTheme = typeof myTheme
-
-declare module '../src' {
-  export interface UserTheme extends MyTheme {}
-}
-
-import { Scales } from '../src'
-
-type Color = Scales.Color
-
-import type {  } from '@theme-ui/test-utils'
-
+import { Assert, expecter, IsExact } from '@theme-ui/test-utils'
 
 const expectSnippet = expecter(`
-  import { css } from './packages/css/src'
-  import { makeTheme } from './packages/css/src/exact-theme'
+  import { css, makeTheme } from './packages/css/src'
 `)
 
 const AUGMENT_COLORS = `
@@ -43,6 +10,11 @@ const AUGMENT_COLORS = `
       primary: 'red',
       'primary-dark': 'darkred',
     },
+    options: {
+      strictMode: {
+        noStrings: true
+      }
+    }
   })
 
   type MyTheme = typeof myTheme
@@ -76,12 +48,12 @@ describe('exact theme', () => {
       ${AUGMENT_COLORS}
 
       css({
-        color: t => {
+        backgroundColor: t => {
           const colors = t.colors;
-          return Math.random() > 0.5 ? colors.primary : colors['primary-dark']
+          return Math.random() > 0.5 ? 'primary' : 'primary-dark'
         }
       })
-    `).toInfer('colors', `{ primary: string; 'primary-dark': string; }`)
+    `).toInfer('colors', `{ primary: "red"; 'primary-dark': "darkred"; }`)
   })
 
   describe('scale properties', () => {
@@ -131,6 +103,11 @@ describe('exact theme', () => {
           headings: 1.25,
           'code-blocks': 1.5,
         },
+        options: {
+          strictMode: {
+            noStrings: true
+          }
+        }
       })
     `
 
@@ -170,7 +147,7 @@ describe('exact theme', () => {
   })
 
   describe('scale dotted paths', () => {
-    const a = `\
+    const todo = `\
       const myTheme = makeTheme({
         colors: {
           orange: [
@@ -185,13 +162,6 @@ describe('exact theme', () => {
             '#9c4221',
             '#7b341e',
           ],
-          gray: {
-            50: 'rgb(8, 8, 8)',
-            75: 'rgb(26, 26, 26)',
-            100: 'rgb(30, 30, 30),',
-            150: null as null,
-            200: undefined as undefined,
-          },
           blue: {
             we: {
               have: {
@@ -208,8 +178,81 @@ describe('exact theme', () => {
       
       type MyTheme = typeof myTheme
       
-      declare module '../src' {
+      declare module './packages/css/src' {
         export interface UserTheme extends MyTheme {}
       }`
+
+      // TODO
   })
+
+  describe('options.strictMode.noStrings', () => {
+    const themeSnippet = (options: { noStrings?: boolean }) => `
+      const myTheme = makeTheme({
+        colors: {
+          gray: {
+            50: 'rgb(8, 8, 8)',
+            75: 'rgb(26, 26, 26)',
+            100: 'rgb(30, 30, 30),',
+            150: null as null,
+            200: undefined as undefined,
+          },
+        },
+        options: {
+          strictMode: ${JSON.stringify(options)},
+        },
+      })
+    `
+  
+    const expectSnippet = expecter(`
+      import { Assert, IsExact } from '@theme-ui/test-utils'
+      import { Scales, makeTheme } from './packages/css/src'
+  
+      type MyTheme = typeof myTheme
+  
+      declare module './packages/css/src' {
+        export interface UserTheme extends MyTheme {}
+      }
+    `)
+    
+    it('defines if (string & {}) is accepted by color scale', () => {
+      expectSnippet(`
+        ${themeSnippet({ noStrings: true })}
+       
+        type _ = Assert<
+          IsExact<
+            Scales.Color,
+            "gray.50" | "gray.75" | "gray.100" | "currentColor"
+          >,
+          true
+        >
+      `).toSucceed()
+  
+      expectSnippet(`
+        ${themeSnippet({ noStrings: false })}
+      
+        type _ = Assert<
+          IsExact<
+            Scales.Color,
+            (string & {}) | "gray.50" | "gray.75" | "gray.100" | "currentColor"
+          >,
+          true
+        >
+      `).toSucceed()
+    })
+  
+    it ('defaults to false', () => {
+      expectSnippet(`
+        ${themeSnippet({})}
+      
+        type _ = Assert<
+          IsExact<
+            Scales.Color,
+            (string & {}) | "gray.50" | "gray.75" | "gray.100" | "currentColor"
+          >,
+          true
+        >
+      `).toSucceed()
+    })
+  })
+  
 })

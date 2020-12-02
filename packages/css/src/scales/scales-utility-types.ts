@@ -1,4 +1,4 @@
-import { Theme } from '../types'
+import { Theme, UserTheme } from '../types'
 
 import { Iteration, Object } from 'ts-toolbelt'
 
@@ -46,13 +46,14 @@ export type StringHack<T> = string extends T
 /**
  * @internal
  */
-type NoStrings = Object.Path<Theme, ['options', 'strictMode', 'noStrings']>
+type NoStrings = Object.Path<UserTheme, ['options', 'strictMode', 'noStrings']>
 
 /**
  * @internal
+ * @default never
  */
-// TODO: test it
-export type StringEscapeHatch = NoStrings extends true ? never : string & {}
+// never extends everything, so false is default
+export type StringEscapeHatch = NoStrings extends false ?  (string & {}) : never
 
 /**
  * @internal
