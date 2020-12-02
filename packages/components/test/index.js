@@ -208,7 +208,8 @@ describe('Box', () => {
         borderTopRightRadius: '85px 5px',
       },
     ]
-    const borderIndex = Math.floor(Math.random() * sketchyBorders.length)
+    const randomNumber = () => 0.321;
+    const borderIndex = Math.floor(randomNumber() * sketchyBorders.length)
     const json = renderJSON(
       <ThemeProvider
         theme={{
