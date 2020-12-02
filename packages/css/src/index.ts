@@ -1,9 +1,16 @@
-import isObject from 'is-object'
 import { CSSObject, SystemStyleObject, UseThemeFunction, Theme } from './types'
 
 export * from './types'
 
-const { hasOwnProperty } = {}
+const hasDefault = (x: unknown): x is { default: string | number } => {
+  return (
+    typeof x === 'object' &&
+    x &&
+    'default' in x &&
+    (typeof (x as any).default === 'string' ||
+      typeof (x as any).default === 'number')
+  )
+}
 
 export function get(
   obj: object,
@@ -18,11 +25,7 @@ export function get(
   }
   if (obj === undef) return def
 
-  if (isObject(obj) && hasOwnProperty.call(obj, 'default')) {
-    return (obj as any).default
-  }
-
-  return obj
+  return hasDefault(obj) ? obj.default : obj
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')

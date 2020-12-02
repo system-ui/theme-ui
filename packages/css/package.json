@@ -16,7 +16,6 @@
     "access": "public"
   },
   "dependencies": {
-    "csstype": "^2.5.7",
-    "is-object": "^1.0.1"
+    "csstype": "^2.5.7"
   }
 }
