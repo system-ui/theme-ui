@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
 const aliases: Record<string, Language | undefined> = {
   js: 'javascript',
@@ -97,7 +97,7 @@ export default function ThemeUIPrism({
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         const tokensWithoutHighlightComments = findStartAndEndHighlights(tokens)
         return (
-          <Styled.pre
+          <Themed.pre
             className={`${outerClassName} ${className}`}
             style={style}>
             {tokensWithoutHighlightComments.map((line, i) => {
@@ -116,7 +116,7 @@ export default function ThemeUIPrism({
                 </div>
               )
             })}
-          </Styled.pre>
+          </Themed.pre>
         )
       }}
     </Highlight>

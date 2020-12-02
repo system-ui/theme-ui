@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyledComponent } from '@emotion/styled'
 import { Interpolation } from '@emotion/react'
 import { SpaceProps, ColorProps, MarginProps } from 'styled-system'
-import { ResponsiveStyleValue } from '@theme-ui/css'
+import { ResponsiveStyleValue, ThemeUIStyleObject } from '@theme-ui/css'
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
@@ -22,6 +22,7 @@ export interface BoxOwnProps extends SpaceProps, ColorProps {
   as?: React.ElementType
   variant?: string
   css?: Interpolation<any>
+  sx?: ThemeUIStyleObject
 }
 export interface BoxProps
   extends Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps> {}
@@ -143,8 +144,8 @@ export const Input: ForwardRef<HTMLInputElement, InputProps>
 
 export interface SelectProps
   extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
-    arrow?: React.ReactElement;
-  }
+  arrow?: React.ReactElement
+}
 /**
  * Select variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.select` variant by default.

@@ -2,12 +2,12 @@
 
 import { Global } from '@emotion/react'
 import React, { memo } from 'react'
-import { jsx, useThemeUI, ThemeProvider, Styled } from 'theme-ui'
+import { jsx, useThemeUI, ThemeProvider, Themed } from 'theme-ui'
 import { base } from '@theme-ui/presets'
 
 const CustomThemeProvider = memo(({ children, ...props }) => (
   <ThemeProvider theme={base} {...props}>
-    <Styled.root>{children}</Styled.root>
+    <Themed.root>{children}</Themed.root>
   </ThemeProvider>
 ))
 

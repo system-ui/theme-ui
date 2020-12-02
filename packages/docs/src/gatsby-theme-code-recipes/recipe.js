@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 import { Link } from 'gatsby'
 
-export default props => (
+export default (props) => (
   <div>
     <div
       sx={{
         fontWeight: 'bold',
         mb: 3,
       }}>
-      <Styled.a as={Link} to="/recipes">
+      <Themed.a as={Link} to="/recipes">
         Recipes
-      </Styled.a>
+      </Themed.a>
       {' / '}
       <span>{props.name}</span>
     </div>

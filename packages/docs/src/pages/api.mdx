@@ -89,15 +89,15 @@ The color mode state can be any string and should match the name of a color mode
 const [colorMode, setColorMode] = useColorMode()
 ```
 
-### `Styled`
+### `Themed`
 
-The [`Styled`](/styled) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
+The [`Themed`](/themed) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
 Each component will pick up styles from its corresponding theme object.
 These are primarily meant to be used as a mechanism to use styles defined in a `theme` object outside of MDX.
 
 ```jsx
 // picks up styles from `theme.styles.h1`
-<Styled.h1 />
+<Themed.h1 />
 ```
 
 | Prop | Type                | Description                             |

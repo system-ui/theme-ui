@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Text } from 'theme-ui'
+import { jsx, Themed, Text } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
@@ -97,13 +97,13 @@ export const LiveCode = ({ children, preview, xray }) => {
           }}
         />
       </div>
-      <Styled.pre
+      <Themed.pre
         sx={{
           mt: 0,
           mb: 3,
         }}>
         <LiveEditor padding={0} />
-      </Styled.pre>
+      </Themed.pre>
     </LiveProvider>
   )
 }
