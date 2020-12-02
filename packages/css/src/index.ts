@@ -3,13 +3,7 @@ import { CSSObject, SystemStyleObject, UseThemeFunction, Theme } from './types'
 export * from './types'
 
 const hasDefault = (x: unknown): x is { default: string | number } => {
-  return (
-    typeof x === 'object' &&
-    x &&
-    'default' in x &&
-    (typeof (x as any).default === 'string' ||
-      typeof (x as any).default === 'number')
-  )
+  return typeof x === 'object' && x && 'default' in x
 }
 
 export function get(
