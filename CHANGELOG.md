@@ -6,6 +6,8 @@
 
 - Switches from lodash.kebabCase to alternative package ([param-case](/blakeembrey/change-case/tree/master/packages/param-case)) per [official Lodash documentation](https://lodash.com/per-method-packages). PR #1304
 - Rebuilds Prism preset with latest upstream theme changes. PR #1304
+- Fix: Preserve order of variant expansion props. PR #1326
+  _(bug introduced in 0.5.0-alpha.1)_
 
 ## v0.6.0-alpha.0
 
