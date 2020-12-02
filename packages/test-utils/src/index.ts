@@ -1,6 +1,19 @@
 import renderer from 'react-test-renderer'
 import * as tsSnippet from 'ts-snippet'
 
+export type {
+  Assert,
+  AssertFalse,
+  AssertTrue,
+  Has,
+  IsAny,
+  IsExact,
+  IsNever,
+  IsNullable,
+  IsUnknown,
+  NotHas,
+} from 'conditional-type-checks'
+
 export const renderJSON = (
   el: Parameters<typeof renderer.create>[0]
 ): renderer.ReactTestRendererJSON | null => {

@@ -1569,7 +1569,7 @@ exports[`Text renders 1`] = `
   font-size: 20px;
 }
 
-<div
+<span
   className="emotion-0"
 />
 `;

@@ -289,15 +289,28 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
   }
-  let result: CSSObject = {}
   let obj = typeof args === 'function' ? args(theme) : args
-  // insert variant props before responsive styles, so they can be merged
-  if (obj['variant']) {
-    obj = { ...get(theme, obj['variant']), ...obj }
-    delete obj['variant'];
-  }
-  const styles = responsive(obj)(theme)
+  let result: CSSObject = {}
 
+  // insert variant props before responsive styles, so they can be merged
+  // we need to maintain order of the style props, so if a variant is place in the middle
+  // of other props, it will extends its props at that same location order.
+  if (obj && obj['variant']) {
+    for (const key in obj) {
+      const x = obj[key as keyof typeof styles]
+      if (key === 'variant') {
+        const val = typeof x === 'function' ? x(theme) : x;
+        const variant = get(theme, val as string);
+        result = { ...result, ...variant };
+      } else {
+        result[key] = x as CSSObject;
+      }  
+    }
+  } else {
+    result = obj as CSSObject ;
+  }
+  const styles = responsive(result as ThemeUICSSObject)(theme)
+  result = {}
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
     const val = typeof x === 'function' ? x(theme) : x

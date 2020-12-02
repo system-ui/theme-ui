@@ -1,7 +1,5 @@
 import React from 'react'
-import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup, act } from '@testing-library/react'
+import { cleanup } from '@testing-library/react'
 import { renderJSON } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
@@ -333,7 +331,6 @@ describe('merge', () => {
   })
 })
 
-// describe('Context', () => {})
 describe('useThemeUI', () => {
   test('returns theme context', () => {
     let context: ContextValue | undefined

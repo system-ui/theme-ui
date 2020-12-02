@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/typography",
-  "version": "0.5.0-alpha.1",
+  "version": "0.6.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/css": "0.5.0-alpha.1",
+    "@theme-ui/css": "0.6.0-alpha.1",
     "@types/compass-vertical-rhythm": "^1.4.1",
     "@types/modularscale": "^2.0.0",
     "@types/typography": "^0.16.3",
