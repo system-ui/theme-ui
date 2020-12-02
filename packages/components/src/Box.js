@@ -17,7 +17,7 @@ const variant = ({ theme, variant, __themeKey = 'variants' }) => {
     return css(
       deepmerge.all(
         variant.map((v) => getVariantValue(theme, __themeKey, v) || {}),
-        { arrayMerge: (dest, src) => src }
+        { arrayMerge: (_dest, src) => src }
       )
     )
   }
