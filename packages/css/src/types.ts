@@ -452,9 +452,23 @@ export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
  * An array or object (possibly nested) of related CSS properties
  * @see https://theme-ui.com/theme-spec#theme-scales
  */
-export type Scale<T> = T[] | { [K: string]: T | Scale<T>; [I: number]: T }
+export type Scale<T> =
+  | T[]
+  | {
+    [K: string]: T | null | undefined | Scale<T | null | undefined>;
+    [I: number]: T | null | undefined
+  }
 
 export type TLengthStyledSystem = string | 0 | number
+
+
+export declare namespace ColorMode {
+  // We won't autocomplete "mediumseagreen" inside of `sx` prop, because
+  // csstype's Property.Color is a huge union of literals you didn't include
+  // in your theme. That would be a tiny sabotage, right?
+  // Nevertheless, it's convenient to have them inside of the colors scale.
+  export type ColorValue = CSS.Property.Color;
+}
 
 /**
  * Color modes can be used to create a user-configurable dark mode
@@ -464,40 +478,40 @@ export interface ColorMode {
   /**
    * Body background color
    */
-  background?: CSS.Property.Color
+  background?: ColorMode.ColorValue
 
   /**
    * Body foreground color
    */
-  text?: CSS.Property.Color
+  text?: ColorMode.ColorValue
 
   /**
    * Primary brand color for links, buttons, etc.
    */
-  primary?: CSS.Property.Color
+  primary?: ColorMode.ColorValue
 
   /**
    * A secondary brand color for alternative styling
    */
-  secondary?: CSS.Property.Color
+  secondary?: ColorMode.ColorValue
 
   /**
    * A contrast color for emphasizing UI
    */
-  accent?: CSS.Property.Color
+  accent?: ColorMode.ColorValue
 
   /**
    * A background color for highlighting text
    */
-  highlight?: CSS.Property.Color
+  highlight?: ColorMode.ColorValue
 
   /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
-  muted?: CSS.Property.Color
+  muted?: ColorMode.ColorValue
 
-  [k: string]: CSS.Property.Color | Scale<CSS.Property.Color> | undefined
+  [k: string]: ColorMode.ColorValue | Scale<ColorMode.ColorValue> | undefined
 }
 
 export type ColorModesScale = ColorMode & {
