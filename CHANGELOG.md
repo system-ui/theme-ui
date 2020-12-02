@@ -2,6 +2,11 @@
 
 ## v0.6.0 UNRELEASED
 
+## v0.6.0-alpha.1
+
+- Switches from lodash.kebabCase to alternative package ([param-case](/blakeembrey/change-case/tree/master/packages/param-case)) per [official Lodash documentation](https://lodash.com/per-method-packages). PR #1304
+- Rebuilds Prism preset with latest upstream theme changes. PR #1304
+
 ## v0.6.0-alpha.0
 
 - **BREAKING**: Rename `Styled` component to `Themed`. PR #1323
