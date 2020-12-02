@@ -206,10 +206,10 @@ exports[`Box renders with variant array derived variant from theme merge 1`] = `
   color: var(--theme-ui-colors-background, #fefefe);
   border: 2px solid undefined;
   background-color: transparent;
-  border-bottom-left-radius: 61px 8px;
-  border-bottom-right-radius: 6px 68px;
-  border-top-left-radius: 41px 8px;
-  border-top-right-radius: 3px 68px;
+  border-bottom-left-radius: 5px 85px;
+  border-bottom-right-radius: 75px 5px;
+  border-top-left-radius: 85px 5px;
+  border-top-right-radius: 5px 75px;
 }
 
 <button
