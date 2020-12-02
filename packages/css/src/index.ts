@@ -11,6 +11,7 @@ export { scales } from './scales'
 export type { Scales } from './scales'
 
 export * from './types'
+export * from './exact-theme';
 
 export function get(
   obj: object,
