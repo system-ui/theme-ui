@@ -4,6 +4,7 @@ import {
   ThemeDerivedStyles,
   Theme,
   ThemeUICSSObject,
+  VariantProperty,
 } from './types'
 
 export * from './types'
@@ -25,12 +26,15 @@ export function get(
 export const getVariantValue = (
   theme: Theme,
   _themeKey: string,
-  variant: string): ThemeUICSSObject => {
-  const defValue = get(theme, variant);
-  const value = get(theme, `${_themeKey}.${variant}`, 
+  variant: string
+): ThemeUICSSObject => {
+  const defValue = get(theme, variant)
+  const value = get(
+    theme,
+    `${_themeKey}.${variant}`,
     typeof defValue === 'function' ? defValue(theme) : defValue
-  );
-  return typeof value === 'function' ?value(theme) : value;
+  )
+  return typeof value === 'function' ? value(theme) : value
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
@@ -273,8 +277,8 @@ const responsive = (
         continue
       }
       next[media] = next[media] || {}
-      if (value[i] == null) continue;
-      (next[media] as Record<string, any>)[key] = value[i]
+      if (value[i] == null) continue
+      ;(next[media] as Record<string, any>)[key] = value[i]
     }
   }
   return next
@@ -294,23 +298,30 @@ export const css = (args: ThemeUIStyleObject = {}) => (
 
   // insert variant props before responsive styles, so they can be merged
   // we need to maintain order of the style props, so if a variant is place in the middle
-  // of other props, it will extends its props at that same location order.
+  // of other props, it will extend its props at that same location order.
   if (obj && obj['variant']) {
     for (const key in obj) {
       const x = obj[key as keyof typeof styles]
       if (key === 'variant') {
-        const val = typeof x === 'function' ? x(theme) : x;
-        const variant = get(theme, val as string);
-        result = { ...result, ...variant };
+        // We could start using the types here to ensure we cover all public API.
+        const variantName = x as VariantProperty.Variant
+
+        // TODO: Is this even documented?
+        const val = typeof x === 'function' ? x(theme) : x
+
+        const variant = get(theme, val as string)
+        result = { ...result, ...variant }
       } else {
-        result[key] = x as CSSObject;
-      }  
+        result[key] = x as CSSObject
+      }
     }
   } else {
-    result = obj as CSSObject ;
+    result = obj as CSSObject
   }
+
   const styles = responsive(result as ThemeUICSSObject)(theme)
   result = {}
+
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
     const val = typeof x === 'function' ? x(theme) : x
