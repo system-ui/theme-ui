@@ -242,9 +242,9 @@ export interface BaseTheme {
   fontWeights?: Scale<CSS.Property.FontWeight>
   lineHeights?: Scale<CSS.Property.LineHeight<TLengthStyledSystem>>
   letterSpacings?: Scale<CSS.Property.LetterSpacing<TLengthStyledSystem>>
-  sizes?: Scale<CSS.Property.Height<{}> | CSS.Property.Width<{}>>
-  borders?: Scale<CSS.Property.Border<{}>>
-  borderStyles?: Scale<CSS.Property.Border<{}>>
+  sizes?: Scale<CSS.Property.Height | CSS.Property.Width>
+  borders?: Scale<CSS.Property.Border>
+  borderStyles?: Scale<CSS.Property.Border>
   borderWidths?: Scale<CSS.Property.BorderWidth<TLengthStyledSystem>>
   radii?: Scale<CSS.Property.BorderRadius<TLengthStyledSystem>>
   shadows?: Scale<CSS.Property.BoxShadow>

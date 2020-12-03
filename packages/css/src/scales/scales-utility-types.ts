@@ -53,16 +53,10 @@ type NoStrings = Object.Path<UserTheme, ['options', 'strictMode', 'noStrings']>
  * @default never
  */
 // never extends everything, so false is default
-export type StringEscapeHatch = NoStrings extends false ?  (string & {}) : never
-
-/**
- * @internal
- * if T contains stringified `${number}`, we add normal `number` for convenience
- */
-export type AddNumberForConvenience<T> = `${number}` extends T ? T | number : T
+export type StringEscapeHatch = NoStrings extends false ? string & {} : never
 
 export type ScaleProperty<TScale> =
+  | StringHack<ScaleDottedPaths<Exclude<TScale, undefined>>>
   | StringEscapeHatch
-  | AddNumberForConvenience<
-      StringHack<ScaleDottedPaths<Exclude<TScale, undefined>>>
-    >
+  // numbers are always allowed
+  | number

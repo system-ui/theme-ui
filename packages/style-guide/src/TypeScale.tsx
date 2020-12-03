@@ -23,14 +23,14 @@ export const TypeScale = ({ reverse = true, ...props }) => {
         alignItems: 'baseline',
       }}>
       {fontSizeEntries.map(([key, val]) => {
-        if (typeof val === 'object') {
+        if (!val || typeof val === 'object') {
           // TODO: can theme.fontSizes be a deeply nested object?
           // This wasn't handled previously
           // We should either update the types or recursively render here.
           return null
         }
 
-          return (
+        return (
           <TypeStyle
             key={key}
             fontSize={key}
