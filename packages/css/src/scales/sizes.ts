@@ -1,8 +1,16 @@
 import type { Theme } from '../types'
 
 import type { ScaleProperty } from './scales-utility-types'
+import { makeScaleMapping, unsafeKeys } from './scales-utils'
 
-export const sizes: Record<keyof SizesCSSProperties, 'sizes'> = {
+export const sizesScaleMultiples = {
+  size: ['width', 'height'],
+}
+
+export const sizes: Record<
+  keyof SizesCSSProperties | keyof SizesScaleMultiples,
+  'sizes'
+> = {
   width: 'sizes',
   minWidth: 'sizes',
   maxWidth: 'sizes',
@@ -10,13 +18,13 @@ export const sizes: Record<keyof SizesCSSProperties, 'sizes'> = {
   minHeight: 'sizes',
   maxHeight: 'sizes',
   flexBasis: 'sizes',
-  size: 'sizes',
   blockSize: 'sizes',
   inlineSize: 'sizes',
   maxBlockSize: 'sizes',
   maxInlineSize: 'sizes',
   minBlockSize: 'sizes',
   minInlineSize: 'sizes',
+  ...makeScaleMapping(unsafeKeys(sizesScaleMultiples), 'sizes'),
 }
 
 export type Size = ScaleProperty<Theme['sizes']> | number
@@ -226,4 +234,11 @@ export interface SizesCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
    */
   maxBlockSize?: Size
+}
+
+export interface SizesScaleMultiples {
+  /**
+   * The **`size`** is shorthand property for CSS Properties **`width`** and **`height`**.
+   */
+  size?: SizesCSSProperties['width']
 }

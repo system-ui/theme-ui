@@ -1,4 +1,4 @@
-import { Theme, UserTheme } from '../types'
+import { UserTheme } from '../types'
 
 import { Iteration, Object } from 'ts-toolbelt'
 

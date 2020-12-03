@@ -1,74 +1,84 @@
-import { Theme } from '../types'
+import type { Theme } from '../types'
+import { makeScaleMapping, unsafeKeys } from './scales-utils'
 
-import { ScaleProperty } from './scales-utility-types'
+import type { ScaleProperty } from './scales-utility-types'
 
-export const space: Record<keyof SpaceCSSProperties, 'space'> = {
-  margin: 'space',
-  marginTop: 'space',
-  marginRight: 'space',
-  marginBottom: 'space',
-  marginLeft: 'space',
-  marginX: 'space',
-  marginY: 'space',
-  marginBlock: 'space',
-  marginBlockEnd: 'space',
-  marginBlockStart: 'space',
-  marginInline: 'space',
-  marginInlineEnd: 'space',
-  marginInlineStart: 'space',
-  padding: 'space',
-  paddingTop: 'space',
-  paddingRight: 'space',
-  paddingBottom: 'space',
-  paddingLeft: 'space',
-  paddingX: 'space',
-  paddingY: 'space',
-  paddingBlock: 'space',
-  paddingBlockEnd: 'space',
-  paddingBlockStart: 'space',
-  paddingInline: 'space',
-  paddingInlineEnd: 'space',
-  paddingInlineStart: 'space',
-  scrollPadding: 'space',
-  scrollPaddingTop: 'space',
-  scrollPaddingRight: 'space',
-  scrollPaddingBottom: 'space',
-  scrollPaddingLeft: 'space',
-  scrollMargin: 'space',
-  scrollMarginBlock: 'space',
-  scrollMarginBlockEnd: 'space',
-  scrollMarginBlockStart: 'space',
-  scrollMarginBottom: 'space',
-  scrollMarginInline: 'space',
-  scrollMarginInlineEnd: 'space',
-  scrollMarginInlineStart: 'space',
-  scrollMarginLeft: 'space',
-  scrollMarginRight: 'space',
-  scrollMarginTop: 'space',
-  scrollPaddingBlock: 'space',
-  scrollPaddingBlockEnd: 'space',
-  scrollPaddingBlockStart: 'space',
-  scrollPaddingInline: 'space',
-  scrollPaddingInlineEnd: 'space',
-  scrollPaddingInlineStart: 'space',
-  inset: 'space',
-  insetBlock: 'space',
-  insetBlockEnd: 'space',
-  insetBlockStart: 'space',
-  insetInline: 'space',
-  insetInlineEnd: 'space',
-  insetInlineStart: 'space',
-  top: 'space',
-  right: 'space',
-  bottom: 'space',
-  left: 'space',
-  gridGap: 'space',
-  gridColumnGap: 'space',
-  gridRowGap: 'space',
-  gap: 'space',
-  columnGap: 'space',
-  rowGap: 'space',
+export const spaceScaleMultiples = {
+  marginX: ['marginLeft', 'marginRight'],
+  marginY: ['marginTop', 'marginBottom'],
+  paddingX: ['paddingLeft', 'paddingRight'],
+  paddingY: ['paddingTop', 'paddingBottom'],
+  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
+  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
 }
+type SpaceScaleKeys = keyof SpaceCSSProperties | keyof SpaceScaleMultiples
+
+export const space: Record<SpaceScaleKeys, 'space'> = Object.assign(
+  {
+    margin: 'space',
+    marginTop: 'space',
+    marginRight: 'space',
+    marginBottom: 'space',
+    marginLeft: 'space',
+    marginBlock: 'space',
+    marginBlockEnd: 'space',
+    marginBlockStart: 'space',
+    marginInline: 'space',
+    marginInlineEnd: 'space',
+    marginInlineStart: 'space',
+    padding: 'space',
+    paddingTop: 'space',
+    paddingRight: 'space',
+    paddingBottom: 'space',
+    paddingLeft: 'space',
+    paddingBlock: 'space',
+    paddingBlockEnd: 'space',
+    paddingBlockStart: 'space',
+    paddingInline: 'space',
+    paddingInlineEnd: 'space',
+    paddingInlineStart: 'space',
+    scrollPadding: 'space',
+    scrollPaddingTop: 'space',
+    scrollPaddingRight: 'space',
+    scrollPaddingBottom: 'space',
+    scrollPaddingLeft: 'space',
+    scrollMargin: 'space',
+    scrollMarginBlock: 'space',
+    scrollMarginBlockEnd: 'space',
+    scrollMarginBlockStart: 'space',
+    scrollMarginBottom: 'space',
+    scrollMarginInline: 'space',
+    scrollMarginInlineEnd: 'space',
+    scrollMarginInlineStart: 'space',
+    scrollMarginLeft: 'space',
+    scrollMarginRight: 'space',
+    scrollMarginTop: 'space',
+    scrollPaddingBlock: 'space',
+    scrollPaddingBlockEnd: 'space',
+    scrollPaddingBlockStart: 'space',
+    scrollPaddingInline: 'space',
+    scrollPaddingInlineEnd: 'space',
+    scrollPaddingInlineStart: 'space',
+    inset: 'space',
+    insetBlock: 'space',
+    insetBlockEnd: 'space',
+    insetBlockStart: 'space',
+    insetInline: 'space',
+    insetInlineEnd: 'space',
+    insetInlineStart: 'space',
+    top: 'space',
+    right: 'space',
+    bottom: 'space',
+    left: 'space',
+    gridGap: 'space',
+    gridColumnGap: 'space',
+    gridRowGap: 'space',
+    gap: 'space',
+    columnGap: 'space',
+    rowGap: 'space',
+  } as const,
+  makeScaleMapping(unsafeKeys(spaceScaleMultiples), 'space')
+)
 
 export type Space = ScaleProperty<Theme['space']>
 
@@ -1037,4 +1047,44 @@ export interface SpaceCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/row-gap
    */
   rowGap?: Space
+}
+
+export interface SpaceScaleMultiples {
+  /**
+   * The **`paddingY`** is shorthand property for CSS properties **`padding-top`** and **`padding-bottom`**. They set the width of the padding area on the top and bottom of an element.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://styled-system.com/#padding-props
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
+   */
+  paddingY?: SpaceCSSProperties['paddingTop']
+  /**
+   * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
+   *
+   * @see https://theme-ui.com/sx-prop#theme-aware-properties
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
+
+  /**
+   * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-right
+   */
+  scrollPaddingX?: SpaceCSSProperties['scrollPaddingLeft']
+
+  /**
+   * The **`scrollPaddingY`** is shorthand property for CSS properties **`scroll-padding-top`** and **`scroll-padding-bottom`**. They set the width of the scroll padding area on the top and bottom side of an element.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-bottom
+   */
+  scrollPaddingY?: SpaceCSSProperties['scrollPaddingTop']
 }
