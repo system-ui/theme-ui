@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import '@emotion/react'
+import { CSSObject } from '@emotion/react'
 
 import {
   BordersCSSProperties,
@@ -45,24 +45,6 @@ export interface CSSProperties
  * Map of all CSS pseudo selectors (`:hover`, `:focus`, ...)
  */
 export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: ThemeUIStyleObject }
-
-/**
- * CSS as POJO that is compatible with CSS-in-JS libaries.
- * Copied directly from [emotion](https://github.com/emotion-js/emotion/blob/ca3ad1c1dcabf78a95b55cc2dc94cad1998a3196/packages/serialize/types/index.d.ts#L45) types
- */
-export interface CSSObject
-  extends CSSPropertiesWithMultiValues,
-    CSSPseudosForCSSObject,
-    CSSOthersObjectForCSSObject {}
-
-type CSSPropertiesWithMultiValues = {
-  [K in keyof CSSProperties]: CSSProperties[K]
-}
-type CSSPseudosForCSSObject = { [K in CSS.Pseudos]?: CSSObject }
-type CSSInterpolation = undefined | number | string | CSSObject
-interface CSSOthersObjectForCSSObject {
-  [propertiesName: string]: CSSInterpolation
-}
 
 /**
  * Can be augmented by users to inject their exact theme into Theme UI types.
@@ -455,19 +437,18 @@ export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 export type Scale<T> =
   | T[]
   | {
-    [K: string]: T | null | undefined | Scale<T | null | undefined>;
-    [I: number]: T | null | undefined
-  }
+      [K: string]: T | null | undefined | Scale<T | null | undefined>
+      [I: number]: T | null | undefined
+    }
 
 export type TLengthStyledSystem = string | 0 | number
-
 
 export declare namespace ColorMode {
   // We won't autocomplete "mediumseagreen" inside of `sx` prop, because
   // csstype's Property.Color is a huge union of literals you didn't include
   // in your theme. That would be a tiny sabotage, right?
   // Nevertheless, it's convenient to have them inside of the colors scale.
-  export type ColorValue = CSS.Property.Color;
+  export type ColorValue = CSS.Property.Color
 }
 
 /**
