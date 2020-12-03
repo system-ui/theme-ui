@@ -5,10 +5,10 @@ import { Field } from '@theme-ui/components'
 import Combobox from '../Combobox'
 
 type TypographyPropsValue = {
-  fontFamily?: string | number
-  fontSize?: string | number
-  fontWeight?: string | number
-  lineHeight?: string | number
+  fontFamily?: string | number | null | false
+  fontSize?: string | number | null | false
+  fontWeight?: string | number | null | false
+  lineHeight?: string | number | null | false
 }
 
 type OnChangeArg = {
@@ -43,7 +43,7 @@ export const SxTypography = ({
         name={prefixName('fontFamily')}
         label="Font Family"
         value={fontFamily || ''}
-        onChange={fontFamily => {
+        onChange={(fontFamily) => {
           onChange({ fontFamily })
         }}
         options={['inherit', ...Object.keys(fonts)]}
@@ -59,7 +59,7 @@ export const SxTypography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={e => {
+          onChange={(e) => {
             const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
@@ -68,7 +68,7 @@ export const SxTypography = ({
           name={prefixName('fontWeight')}
           label="Font Weight"
           value={fontWeight || ''}
-          onChange={fontWeight => {
+          onChange={(fontWeight) => {
             onChange({ fontWeight })
           }}
           options={['inherit', ...Object.keys(fontWeights)]}
@@ -77,7 +77,7 @@ export const SxTypography = ({
           name={prefixName('lineHeight')}
           label="Line Height"
           value={lineHeight || ''}
-          onChange={lineHeight => {
+          onChange={(lineHeight) => {
             onChange({ lineHeight })
           }}
           options={['inherit', ...Object.keys(lineHeights)]}

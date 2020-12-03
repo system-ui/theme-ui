@@ -1,7 +1,13 @@
+/**
+ * @internal
+ */
 export const unsafeKeys = Object.keys as <T extends object>(
   x: T
 ) => Array<keyof T>
 
+/**
+ * @internal
+ */
 export const makeScaleMapping = <K extends string, N extends string>(
   properties: K[],
   scaleName: N

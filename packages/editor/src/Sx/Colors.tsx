@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
 import { ColorState } from 'react-color'
 import { jsx, Theme } from 'theme-ui'
 import ThemeColorPicker from './ThemeColorPicker'
@@ -7,10 +8,7 @@ type Color = string | ColorState
 type OnChangeArg = { color: Color } | { bg: Color }
 
 export interface ColorsProps {
-  value?: {
-    color?: string | number
-    bg?: string | number
-  }
+  value?: Pick<ThemeUIExtendedCSSProperties, 'color' | 'bg'>
   theme?: Theme
   onChange: (arg: OnChangeArg) => void
 }
