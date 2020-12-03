@@ -242,7 +242,7 @@ export interface BaseTheme {
   fontWeights?: Scale<CSS.Property.FontWeight>
   lineHeights?: Scale<CSS.Property.LineHeight<TLengthStyledSystem>>
   letterSpacings?: Scale<CSS.Property.LetterSpacing<TLengthStyledSystem>>
-  sizes?: Scale<CSS.Property.Height | CSS.Property.Width>
+  sizes?: Scale<CSS.Property.Height<number> | CSS.Property.Width<number>>
   borders?: Scale<CSS.Property.Border>
   borderStyles?: Scale<CSS.Property.Border>
   borderWidths?: Scale<CSS.Property.BorderWidth<TLengthStyledSystem>>
