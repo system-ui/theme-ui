@@ -1,6 +1,6 @@
-import { UserTheme } from '../types'
+import type { UserTheme } from '../types'
 
-import { Iteration, Object } from 'ts-toolbelt'
+import type { Iteration, Object } from 'ts-toolbelt'
 
 /**
  * @internal
@@ -60,3 +60,5 @@ export type ScaleProperty<TScale> =
   | StringEscapeHatch
   // numbers are always allowed
   | number
+
+export {}
