@@ -6,12 +6,14 @@ import {
   Theme,
 } from './types'
 import { scales, Scales } from './scales'
+import { multiples } from './multiples'
+import { Aliases, aliases } from './aliases'
 
 export { scales } from './scales'
 export type { Scales } from './scales'
 
 export * from './types'
-export * from './exact-theme';
+export * from './exact-theme'
 
 export function get(
   obj: object,
@@ -32,35 +34,6 @@ export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
 const defaultTheme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-}
-
-const aliases = {
-  bg: 'backgroundColor',
-  m: 'margin',
-  mt: 'marginTop',
-  mr: 'marginRight',
-  mb: 'marginBottom',
-  ml: 'marginLeft',
-  mx: 'marginX',
-  my: 'marginY',
-  p: 'padding',
-  pt: 'paddingTop',
-  pr: 'paddingRight',
-  pb: 'paddingBottom',
-  pl: 'paddingLeft',
-  px: 'paddingX',
-  py: 'paddingY',
-} as const
-type Aliases = typeof aliases
-
-export const multiples = {
-  marginX: ['marginLeft', 'marginRight'],
-  marginY: ['marginTop', 'marginBottom'],
-  paddingX: ['paddingLeft', 'paddingRight'],
-  paddingY: ['paddingTop', 'paddingBottom'],
-  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
-  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
-  size: ['width', 'height'],
 }
 
 const positiveOrNegative = (scale: object, value: string | number) => {
@@ -160,17 +133,17 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     for (const key in obj) {
       const x = obj[key as keyof typeof styles]
       if (key === 'variant') {
-        const val = typeof x === 'function' ? x(theme) : x;
-        const variant = get(theme, val as string);
-        result = { ...result, ...variant };
+        const val = typeof x === 'function' ? x(theme) : x
+        const variant = get(theme, val as string)
+        result = { ...result, ...variant }
       } else {
-        result[key] = x as CSSObject;
-      }  
+        result[key] = x as CSSObject
+      }
     }
   } else {
-    result = obj as CSSObject ;
+    result = obj as CSSObject
   }
-  
+
   const styles = responsive(result as ThemeUICSSObject)(theme)
   result = {}
 

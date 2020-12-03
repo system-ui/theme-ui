@@ -29,6 +29,28 @@ export const space: Record<keyof SpaceCSSProperties, 'space'> = {
   paddingInline: 'space',
   paddingInlineEnd: 'space',
   paddingInlineStart: 'space',
+  scrollPadding: 'space',
+  scrollPaddingTop: 'space',
+  scrollPaddingRight: 'space',
+  scrollPaddingBottom: 'space',
+  scrollPaddingLeft: 'space',
+  scrollMargin: 'space',
+  scrollMarginBlock: 'space',
+  scrollMarginBlockEnd: 'space',
+  scrollMarginBlockStart: 'space',
+  scrollMarginBottom: 'space',
+  scrollMarginInline: 'space',
+  scrollMarginInlineEnd: 'space',
+  scrollMarginInlineStart: 'space',
+  scrollMarginLeft: 'space',
+  scrollMarginRight: 'space',
+  scrollMarginTop: 'space',
+  scrollPaddingBlock: 'space',
+  scrollPaddingBlockEnd: 'space',
+  scrollPaddingBlockStart: 'space',
+  scrollPaddingInline: 'space',
+  scrollPaddingInlineEnd: 'space',
+  scrollPaddingInlineStart: 'space',
   inset: 'space',
   insetBlock: 'space',
   insetBlockEnd: 'space',
@@ -412,6 +434,327 @@ export interface SpaceCSSProperties {
   paddingInlineStart?: Space
   /**
    * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Syntax**: `<'top'>{1,4}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset
+   */
+  /**
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+   *
+   * **Syntax**: `<length>{1,4}`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
+   */
+  scrollMargin?: Space
+  /**
+   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
+   *
+   * **Syntax**: `<length>{1,2}`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
+   */
+  scrollMarginBlock?: Space
+  /**
+   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end
+   */
+  scrollMarginBlockEnd?: Space
+  /**
+   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start
+   */
+  scrollMarginBlockStart?: Space
+  /**
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
+   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
+   */
+  scrollMarginBottom?: Space
+  /**
+   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
+   *
+   * **Syntax**: `<length>{1,2}`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
+   */
+  scrollMarginInline?: Space
+  /**
+   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end
+   */
+  scrollMarginInlineEnd?: Space
+  /**
+   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start
+   */
+  scrollMarginInlineStart?: Space
+  /**
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
+   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
+   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
+   */
+  scrollMarginLeft?: Space
+  /**
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
+   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
+   */
+  scrollMarginRight?: Space
+  /**
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   *
+   * **Syntax**: `<length>`
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
+   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
+   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
+   */
+  scrollMarginTop?: Space
+  /**
+   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  | **11** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
+  scrollPadding?: Space
+  /**
+   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
+  scrollPaddingBlock?: Space
+  /**
+   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end
+   */
+  scrollPaddingBlockEnd?: Space
+  /**
+   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start
+   */
+  scrollPaddingBlockStart?: Space
+  /**
+   * The `scroll-padding-bottom` property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  | **11** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
+   */
+  scrollPaddingBottom?: Space
+  /**
+   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
+  scrollPaddingInline?: Space
+  /**
+   * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end
+   */
+  scrollPaddingInlineEnd?: Space
+  /**
+   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  |   No   | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start
+   */
+  scrollPaddingInlineStart?: Space
+  /**
+   * The `scroll-padding-left` property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  | **11** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
+   */
+  scrollPaddingLeft?: Space
+  /**
+   * The `scroll-padding-right` property defines offsets for the right of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  | **11** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
+   */
+  scrollPaddingRight?: Space
+  /**
+   * The **`scroll-padding-top`** property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   *
+   * **Syntax**: `auto | <length-percentage>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **69** | **68**  | **11** | **79** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
+   */
+  scrollPaddingTop?: Space
+  /**
+   * The **`inset`** CSS property, though part of the logical specification, doesn't define logical block or inline offsets, and instead defines physical offsets, regardless of the element's writing mode, directionality, and text orientation. It has the same multi-value syntax of the `margin` shorthand. It is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties.
    *
    * **Syntax**: `<'top'>{1,4}`
    *

@@ -14,35 +14,54 @@ import { sizes } from './sizes'
 import { space } from './space'
 import { zIndices } from './zIndices'
 
-export type { BordersCSSProperties } from './borders'
-export type { BorderStylesCSSProperties } from './borderStyles'
-export type { BorderWidthsCSSProperties } from './borderWidths'
-export type { ColorScaleCSSProperties } from './colors'
-export type { FontsCSSProperties } from './fonts'
-export type { FontSizesCSSProperties } from './fontSizes'
-export type { FontWeightsCSSProperties } from './fontWeights'
-export type { LetterSpacingsCSSProperties } from './letterSpacings'
-export type { LineHeightsCSSProperties } from './lineHeights'
-export type { OpacitiesCSSProperties } from './opacities'
-export type { RadiiCSSProperties } from './radii'
-export type { ShadowsCSSProperties } from './shadows'
-export type { SizesCSSProperties } from './sizes'
-export type { SpaceCSSProperties } from './space'
-export type { ZIndicesCSSProperties } from './zIndices'
-
-import type { Border as BorderScaleValue } from './borders'
-import type { BorderStyle as BorderStyleScaleValue } from './borderStyles'
-import type { BorderWidth as BorderWidthScaleValue } from './borderWidths'
-import type { Color as ColorScaleValue } from './colors'
-import type { Font as FontScaleValue } from './fonts'
-import type { FontSize as FontSizeScaleValue } from './fontSizes'
-import type { LineHeight as LineHeightScaleValue } from './lineHeights'
-import type { Opacity as OpacityScaleValue } from './opacities'
-import type { Radius as RadiusScaleValue } from './radii'
-import type { Shadow as ShadowScaleValue } from './shadows'
-import type { Size as SizeScaleValue } from './sizes'
-import type { Space as SpaceScaleValue } from './space'
-import type { ZIndex as ZIndexScaleValue } from './zIndices'
+import type {
+  BordersCSSProperties,
+  Border as BorderScaleValue,
+} from './borders'
+import type {
+  BorderStylesCSSProperties,
+  BorderStyle as BorderStyleScaleValue,
+} from './borderStyles'
+import type {
+  BorderWidthsCSSProperties,
+  BorderWidth as BorderWidthScaleValue,
+} from './borderWidths'
+import type {
+  ColorScaleCSSProperties,
+  Color as ColorScaleValue,
+} from './colors'
+import type { FontsCSSProperties, Font as FontScaleValue } from './fonts'
+import type {
+  FontSizesCSSProperties,
+  FontSize as FontSizeScaleValue,
+} from './fontSizes'
+import type {
+  FontWeightsCSSProperties,
+  FontWeight as FontWeightScaleValue,
+} from './fontWeights'
+import type {
+  LetterSpacingsCSSProperties,
+  LetterSpacing as LetterSpacingScaleValue,
+} from './letterSpacings'
+import type {
+  LineHeightsCSSProperties,
+  LineHeight as LineHeightScaleValue,
+} from './lineHeights'
+import type {
+  OpacitiesCSSProperties,
+  Opacity as OpacityScaleValue,
+} from './opacities'
+import type { RadiiCSSProperties, Radius as RadiusScaleValue } from './radii'
+import type {
+  ShadowsCSSProperties,
+  Shadow as ShadowScaleValue,
+} from './shadows'
+import type { SizesCSSProperties, Size as SizeScaleValue } from './sizes'
+import type { SpaceCSSProperties, Space as SpaceScaleValue } from './space'
+import type {
+  ZIndicesCSSProperties,
+  ZIndex as ZIndexScaleValue,
+} from './zIndices'
 
 export declare namespace Scales {
   export type Border = BorderScaleValue
@@ -51,6 +70,8 @@ export declare namespace Scales {
   export type Color = ColorScaleValue
   export type Font = FontScaleValue
   export type FontSize = FontSizeScaleValue
+  export type FontWeight = FontWeightScaleValue
+  export type LetterSpacing = LetterSpacingScaleValue
   export type LineHeight = LineHeightScaleValue
   export type Opacity = OpacityScaleValue
   export type Radius = RadiusScaleValue
@@ -80,3 +101,19 @@ export const scales = {
 
 export type Scales = typeof scales
 
+export interface ScalesCSSProperties
+  extends ColorScaleCSSProperties,
+    OpacitiesCSSProperties,
+    SpaceCSSProperties,
+    BordersCSSProperties,
+    SizesCSSProperties,
+    RadiiCSSProperties,
+    BorderWidthsCSSProperties,
+    BorderStylesCSSProperties,
+    FontsCSSProperties,
+    FontSizesCSSProperties,
+    FontWeightsCSSProperties,
+    LineHeightsCSSProperties,
+    LetterSpacingsCSSProperties,
+    ShadowsCSSProperties,
+    ZIndicesCSSProperties {}
