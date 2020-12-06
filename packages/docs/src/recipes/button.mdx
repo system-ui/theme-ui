@@ -28,13 +28,9 @@ Create a simple button component with variants.
 ```
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-const Button = ({
-  variant = 'primary',
-  ...props
-}) =>
+const Button = ({ variant = 'primary', ...props }) => (
   <button
     {...props}
     sx={{
@@ -54,6 +50,7 @@ const Button = ({
       variant: `buttons.${variant}`,
     }}
   />
+)
 
 export default Button
 ```

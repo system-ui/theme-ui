@@ -1,18 +1,26 @@
 {
   "name": "@theme-ui/typography",
-  "version": "0.4.0-alpha.0",
+  "version": "0.6.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@theme-ui/css": "0.6.0-alpha.1",
+    "@types/compass-vertical-rhythm": "^1.4.1",
+    "@types/modularscale": "^2.0.0",
+    "@types/typography": "^0.16.3",
     "compass-vertical-rhythm": "^1.4.5",
+    "csstype": "^3.0.5",
     "modularscale": "^2.0.1",
-    "object-assign": "^4.1.1"
+    "type-fest": "^0.13.1"
   },
   "devDependencies": {
     "typography": "^0.16.19",
@@ -63,5 +71,5 @@
     "css"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

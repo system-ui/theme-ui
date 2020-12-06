@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.4.0-alpha.3",
+  "version": "0.6.0-alpha.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "index.d.ts",
@@ -11,19 +11,24 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^11.0.0",
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "^0.4.0-alpha.3"
+    "@theme-ui/css": "0.6.0-alpha.1",
+    "@types/styled-system": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.14.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "react": "^16.14.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "author": "Brent Jackson <jxnblk@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

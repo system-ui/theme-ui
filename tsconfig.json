@@ -4,6 +4,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true,
-    "jsx": "react"
+    "jsx": "react",
+    "isolatedModules": true
   }
 }

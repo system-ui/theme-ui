@@ -26,7 +26,7 @@ exports[`creates non-standard components 1`] = `
 
 exports[`renders 1`] = `
 <h1
-  className="css-0"
+  className="emotion-0"
 >
   Hello
 </h1>

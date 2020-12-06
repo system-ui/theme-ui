@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, SxProp } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
 import { Label, Input, InputProps } from '@theme-ui/components'
 
@@ -37,11 +37,10 @@ type ComboboxOwnProps<T> = {
 }
 export interface ComboboxProps<T>
   extends ComboboxOwnProps<T>,
-    Omit<InputProps, keyof ComboboxOwnProps<T>> {}
+    Omit<InputProps, keyof ComboboxOwnProps<T> | keyof SxProp>,
+    SxProp {}
 
-const Combobox: <T extends string | number>(
-  props: ComboboxProps<T>
-) => JSX.Element = ({
+const Combobox = <T extends string | number>({
   type = 'text',
   name,
   label,
@@ -49,7 +48,7 @@ const Combobox: <T extends string | number>(
   onChange,
   options = [],
   ...props
-}) => {
+}: ComboboxProps<T>) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(-1)
   const root = useRef<HTMLDivElement>(null)
@@ -192,6 +191,7 @@ const Combobox: <T extends string | number>(
           maxHeight: 512,
           overflowY: 'auto',
           bg: 'white',
+          color: 'black',
           border: '1px solid',
           borderTop: 0,
           borderColor: 'lightgray',

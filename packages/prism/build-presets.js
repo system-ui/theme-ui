@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const postcss = require('postcss')
 const postcssJS = require('postcss-js')
-const hyphenate = require('lodash.kebabcase')
+const { paramCase } = require('param-case')
 
 const dir = {
   prismjs: path.join(path.dirname(require.resolve('prismjs')), 'themes'),
@@ -57,7 +57,7 @@ const createStyles = (name, obj) => {
   return next
 }
 
-const cleanName = str => str.replace(/\.css$/, '')
+const cleanName = (str) => str.replace(/\.css$/, '')
 
 const prism = [
   'prism-coy.css',
@@ -68,7 +68,7 @@ const prism = [
   'prism-tomorrow.css',
   'prism-twilight.css',
   'prism.css',
-].map(name => {
+].map((name) => {
   const filename = path.join(dir.prismjs, name)
   const content = fs.readFileSync(filename, 'utf8')
   const tree = postcss.parse(content)
@@ -82,12 +82,12 @@ const prism = [
   }
 })
 
-const prismReactToStyles = obj => {
+const prismReactToStyles = (obj) => {
   let styles = {
     ...obj.plain,
   }
-  obj.styles.forEach(s => {
-    const selector = s.types.map(t => '.' + t).join(',')
+  obj.styles.forEach((s) => {
+    const selector = s.types.map((t) => '.' + t).join(',')
     styles[selector] = s.style
   })
   return styles
@@ -104,18 +104,18 @@ const reactPrism = [
   'github',
   'shadesOfPurple',
   'vsDark',
-].map(name => {
+].map((name) => {
   const raw = require('prism-react-renderer/themes/' + name)
   const styles = prismReactToStyles(raw)
   return {
-    name: hyphenate(name),
+    name: paramCase(name),
     raw,
     styles,
   }
 })
 
 const presets = [...prism, ...reactPrism]
-presets.forEach(preset => {
+presets.forEach((preset) => {
   const outfile = path.join(__dirname, 'presets', preset.name + '.json')
   const json = JSON.stringify(preset.styles, null, 2)
   fs.writeFileSync(outfile, json)

@@ -14,7 +14,7 @@ const FontWeights = () => {
   const onChange = (key: string) => (val: string | number) => {
     context.setTheme({
       fontWeights: {
-        [key]: val as CSS.FontWeightProperty,
+        [key]: val as CSS.Property.FontWeight,
       },
     })
   }

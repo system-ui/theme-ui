@@ -40,10 +40,7 @@
     "cursor": "help"
   },
   ".namespace": {
-    "opacity": ".7"
-  },
-  ".tab:not(:empty):before,.cr:before,.lf:before": {
-    "color": "#e0d7d1"
+    "opacity": 0.7
   },
   ".highlight": {
     "background": "hsla(0, 0%, 70%, .5)"

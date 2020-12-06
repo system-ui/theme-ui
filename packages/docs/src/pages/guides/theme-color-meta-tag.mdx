@@ -8,11 +8,10 @@ Use your framework’s method of adding a meta tag to `<head />`—[`react-helme
 
 ```jsx
 // example Head component with react-helmet
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useThemeUI } from 'theme-ui'
 
-export default props => {
+export default (props) => {
   const { theme } = useThemeUI()
 
   return (
@@ -22,4 +21,3 @@ export default props => {
   )
 }
 ```
-

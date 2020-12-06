@@ -1,8 +1,8 @@
 import React from 'react'
-import { Styled } from 'theme-ui'
+import { Themed } from 'theme-ui'
 
 export default () => (
   <header>
-    <Styled.h1>Style Guide</Styled.h1>
+    <Themed.h1>Style Guide</Themed.h1>
   </header>
 )
