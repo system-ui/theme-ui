@@ -37,6 +37,7 @@ import {
   Message,
   IconButton,
   MenuButton,
+  Switch,
 } from '../src'
 
 expect.extend(matchers)
@@ -634,6 +635,17 @@ describe('MenuButton', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <MenuButton />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Switch', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Switch />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
