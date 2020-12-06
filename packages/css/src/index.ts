@@ -53,6 +53,8 @@ export const multiples = {
   marginY: ['marginTop', 'marginBottom'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
+  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
+  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
   size: ['width', 'height'],
 }
 
@@ -63,6 +65,7 @@ export const scales = {
   caretColor: 'colors',
   columnRuleColor: 'colors',
   opacity: 'opacities',
+  transition: 'transitions',
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -89,6 +92,13 @@ export const scales = {
   paddingInline: 'space',
   paddingInlineEnd: 'space',
   paddingInlineStart: 'space',
+  scrollPadding: 'space',
+  scrollPaddingTop: 'space',
+  scrollPaddingRight: 'space',
+  scrollPaddingBottom: 'space',
+  scrollPaddingLeft: 'space',
+  scrollPaddingX: 'space',
+  scrollPaddingY: 'space',
   inset: 'space',
   insetBlock: 'space',
   insetBlockEnd: 'space',
@@ -252,11 +262,10 @@ const responsive = (
         continue
       }
       next[media] = next[media] || {}
-      if (value[i] == null) continue
-      ;(next[media] as Record<string, any>)[key] = value[i]
+      if (value[i] == null) continue;
+      (next[media] as Record<string, any>)[key] = value[i]
     }
   }
-
   return next
 }
 
@@ -269,19 +278,31 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
   }
+  let obj = typeof args === 'function' ? args(theme) : args
   let result: CSSObject = {}
-  const obj = typeof args === 'function' ? args(theme) : args
-  const styles = responsive(obj)(theme)
 
+  // insert variant props before responsive styles, so they can be merged
+  // we need to maintain order of the style props, so if a variant is place in the middle
+  // of other props, it will extends its props at that same location order.
+  if (obj && obj['variant']) {
+    for (const key in obj) {
+      const x = obj[key as keyof typeof styles]
+      if (key === 'variant') {
+        const val = typeof x === 'function' ? x(theme) : x;
+        const variant = get(theme, val as string);
+        result = { ...result, ...variant };
+      } else {
+        result[key] = x as CSSObject;
+      }  
+    }
+  } else {
+    result = obj as CSSObject ;
+  }
+  const styles = responsive(result as ThemeUICSSObject)(theme)
+  result = {}
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
     const val = typeof x === 'function' ? x(theme) : x
-
-    if (key === 'variant') {
-      const variant = css(get(theme, val as string))(theme)
-      result = { ...result, ...variant }
-      continue
-    }
 
     if (val && typeof val === 'object') {
       // TODO: val can also be an array here. Is this a bug? Can it be reproduced?

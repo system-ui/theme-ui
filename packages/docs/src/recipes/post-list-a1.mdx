@@ -13,31 +13,31 @@ component: post-list
     px: 3,
     py: 4,
   }}>
-  {posts.map(post => (
-    <li key={post.id}
+  {posts.map((post) => (
+    <li
+      key={post.id}
       sx={{
         mb: 4,
       }}>
-      <Styled.h2
+      <Themed.h2
         sx={{
           m: 0,
         }}>
-        <Link to={post.slug}
+        <Link
+          to={post.slug}
           sx={{
             color: 'inherit',
             textDecoration: 'none',
             ':hover,:focus': {
               color: 'primary',
               textDecoration: 'underline',
-            }
+            },
           }}>
           {post.title}
         </Link>
-      </Styled.h2>
+      </Themed.h2>
       <small sx={{ fontWeight: 'bold' }}>{post.date}</small>
-      <Styled.p>
-        {post.excerpt}
-      </Styled.p>
+      <Themed.p>{post.excerpt}</Themed.p>
     </li>
   ))}
 </ul>

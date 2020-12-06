@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from 'theme-ui'
+import { jsx, Themed, useColorMode } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
@@ -53,7 +53,7 @@ export default (props) => {
   }
 
   return (
-    <Styled.root>
+    <Themed.root>
       <Head {...props} />
       <SkipLink>Skip to content</SkipLink>
       <Flex
@@ -100,9 +100,11 @@ export default (props) => {
         <Box
           sx={{
             flex: '1 1 auto',
+            alignItems: 'flex-start',
             display: ['block', 'flex'],
+            height: '100%',
           }}>
-          <div
+          <Sidebar
             ref={nav}
             role="navigation"
             onFocus={(e) => {
@@ -116,22 +118,22 @@ export default (props) => {
             }}
             onKeyPress={(e) => {
               setMenuOpen(false)
-            }}>
-            <Sidebar
-              open={menuOpen}
-              components={sidebar}
-              pathname={props.location.pathname}
-              sx={{
-                display: [null, fullwidth ? 'none' : 'block'],
-                width: 256,
-                flex: 'none',
-                px: 3,
-                pt: 3,
-                pb: 4,
-                mt: [64, 0],
-              }}
-            />
-          </div>
+            }}
+            open={menuOpen}
+            components={sidebar}
+            pathname={props.location.pathname}
+            sx={{
+              display: [null, fullwidth ? 'none' : 'block'],
+              width: 256,
+              flex: 'none',
+              maxHeight: ['100%', 'calc(100vh - 64px)'],
+              overflowY: 'auto',
+              px: 3,
+              pt: 3,
+              pb: 4,
+              mt: [64, 0],
+            }}
+          />
           <main
             id="content"
             sx={{
@@ -147,6 +149,6 @@ export default (props) => {
           </main>
         </Box>
       </Flex>
-    </Styled.root>
+    </Themed.root>
   )
 }

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
 const XRay = props => (
   <div
@@ -21,10 +21,10 @@ export default props => (
         gridGap: 3,
         gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))',
       }}>
-      <Styled.img src="https://source.unsplash.com/random/512x512?new-york" />
-      <Styled.img src="https://source.unsplash.com/random/512x512?new-york" />
-      <Styled.img src="https://source.unsplash.com/random/512x512?new-york" />
-      <Styled.img src="https://source.unsplash.com/random/512x512?new-york" />
+      <Themed.img src="https://source.unsplash.com/random/512x512?new-york" />
+      <Themed.img src="https://source.unsplash.com/random/512x512?new-york" />
+      <Themed.img src="https://source.unsplash.com/random/512x512?new-york" />
+      <Themed.img src="https://source.unsplash.com/random/512x512?new-york" />
     </div>
   </XRay>
 )

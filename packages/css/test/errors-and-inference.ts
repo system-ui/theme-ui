@@ -1,15 +1,10 @@
-import { expecter } from 'ts-snippet'
+import { expecter } from '@theme-ui/test-utils'
 
 import { css, get, Theme } from '../src'
 
-const expectSnippet = expecter(
-  (code) => `
+const expectSnippet = expecter(`
   import { css } from './packages/css/src'
-
-  ${code}
-`,
-  { strict: true, noErrorTruncation: true }
-)
+`)
 
 describe('Theme', () => {
   test('shows friendly error only on bad property', () => {
@@ -25,7 +20,7 @@ describe('Theme', () => {
         },
       })
     `).toFail(
-      /Error snippet\.ts \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
+      /Error snippet\.tsx \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
     )
   })
 
@@ -40,7 +35,7 @@ describe('Theme', () => {
       })
     `).toFail(
       new RegExp(
-        `Error snippet\\.ts \\(\\d+,\\d+\\): Type '{ color: string; widows: "bar"; }'` +
+        `Error snippet\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; widows: "bar"; }'` +
           ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
           `Types of property 'widows' are incompatible.\\n\\s+` +
           `Type '"bar"' is not assignable to type [\\s\\S]+`
@@ -163,7 +158,7 @@ describe('ColorMode', () => {
     }
   `)
 
-  expectedSnippet.toInfer('baseColors', '(string | undefined)[]')
-  expectedSnippet.toInfer('light', 'string')
-  expectedSnippet.toInfer('dark', 'string')
+  expectedSnippet.toInfer('baseColors', '((string & {}) | undefined)[]')
+  expectedSnippet.toInfer('light', 'Color')
+  expectedSnippet.toInfer('dark', 'Color')
 })

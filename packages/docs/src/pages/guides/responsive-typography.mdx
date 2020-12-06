@@ -77,7 +77,7 @@ For example, with the following, the `fontSize` style will only apply at the sma
 ```
 
 ```jsx
-<Styled.h1
+<Themed.h1
   sx={{
     // styles for larger breakpoints will still apply
     // due to CSS specificity in media queries
@@ -90,14 +90,14 @@ For example, with the following, the `fontSize` style will only apply at the sma
 
 ## Non-MDX content
 
-The [`Styled`][] components can be used to pick up responsive styles outside of MDX,
+The [`Themed`][] components can be used to pick up responsive styles outside of MDX,
 but if you'd like to apply styles to other markdown or user generated content,
 you can use the `sx` prop with a variant to style child elements.
 What this does is take the entire `theme.styles` object, adds a scoped classname to the `<div>`,
 and injects CSS with child selectors based on the keys in `theme.styles`.
 
 ```jsx
-export default props => (
+export default (props) => (
   <div
     sx={{
       variant: 'styles',
@@ -107,17 +107,17 @@ export default props => (
 )
 ```
 
-Optionally, the `Styled.root` component can be used to set base styles within the `<div>`.
+Optionally, the `Themed.root` component can be used to set base styles within the `<div>`.
 
 ```jsx
-export default props => (
+export default (props) => (
   <div
     sx={{
       variant: 'styles',
     }}>
-    <Styled.root>{props.children}</Styled.root>
+    <Themed.root>{props.children}</Themed.root>
   </div>
 )
 ```
 
-[`styled`]: /styled
+[`themed`]: /themed

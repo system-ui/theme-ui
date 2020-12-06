@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from 'theme-ui'
+import { jsx, ThemeUIStyleObject } from 'theme-ui'
 import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
@@ -36,7 +36,7 @@ export interface SpaceProps {
       | 'my'
     >
   >
-  onChange: (sx: SxStyleProp) => void
+  onChange: (sx: ThemeUIStyleObject) => void
 }
 
 export const Space = ({

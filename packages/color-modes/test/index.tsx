@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
+import { Theme } from '@theme-ui/css'
+import { renderJSON } from '@theme-ui/test-utils'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -14,7 +16,6 @@ beforeEach(() => {
 })
 expect.extend(matchers)
 
-const renderJSON = (el) => renderer.create(el).toJSON()
 
 test('renders with color modes', () => {
   let mode
@@ -167,7 +168,7 @@ test('converts color modes to css custom properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-text,#000)'
+    'var(--theme-ui-colors-text)'
   )
 })
 
@@ -552,7 +553,7 @@ test('dot notation works with color modes and custom properties', () => {
   button.click()
   expect(button).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-header-title,tomato)'
+    'var(--theme-ui-colors-header-title)'
   )
 })
 
@@ -588,7 +589,76 @@ test('InitializeColorMode renders', () => {
   expect(json).toMatchSnapshot()
 })
 
+test('colorMode accepts function from previous state to new one', () => {
+  type MyColorMode = 'serious' | 'cute' | 'hackerman'
+
+  const theme: Theme = {
+    initialColorModeName: 'serious',
+    colors: {
+      primary: 'black',
+      modes: {
+        cute: {
+          primary: 'pink',
+        },
+        hackerman: {
+          primary: 'chartreuse',
+        },
+      },
+    },
+  }
+
+  let primaryColor
+  const Grabber = () => {
+    const context = useThemeUI()
+    primaryColor = context.theme?.colors?.primary
+    return null
+  }
+
+  const colorModes: MyColorMode[] = ['serious', 'cute', 'hackerman']
+  const NextColorModeButton = () => {
+    // user can specify their color mode name type
+    const [, setColorMode] = useColorMode<MyColorMode>()
+
+    return (
+      <button
+        onClick={() => {
+          setColorMode((previous) => {
+            return colorModes[
+              (colorModes.indexOf(previous) + 1) % colorModes.length
+            ]
+          })
+        }}>
+        next color mode
+      </button>
+    )
+  }
+
+  const root = render(
+    <ThemeProvider theme={theme}>
+      <ColorModeProvider>
+        <Grabber />
+        <NextColorModeButton />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+
+  expect(primaryColor).toBe('black')
+
+  act(() => {
+    root.getByText('next color mode').click()
+  })
+
+  expect(primaryColor).toBe('pink')
+
+  act(() => {
+    root.getByText('next color mode').click()
+  })
+
+  expect(primaryColor).toBe('chartreuse')
+})
+
 test('warns when localStorage is disabled', () => {
+  const localStorage = window.localStorage
   Object.defineProperty(window, 'localStorage', {
     get: jest.fn(() => {
       throw 'SecurityError: The operation is insecure.'
@@ -610,4 +680,6 @@ test('warns when localStorage is disabled', () => {
     </ThemeProvider>
   )
   expect(mode).toBe('default')
+
+  Object.defineProperty(window, 'localStorage', { value: localStorage })
 })

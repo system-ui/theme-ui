@@ -9,12 +9,12 @@ title: Custom CacheProvider
 You may come across a situation where you want to inject the generated styles into a
 different element than the current document head (an iframe perhaps).
 
-By using the CacheProvider from `@emotion/core` and `createCache` from `@emotion/cache` you can
+By using the CacheProvider from `@emotion/react` and `createCache` from `@emotion/cache` you can
 specify the target container element.
 
 ```jsx
 import { ThemeProvider } from 'theme-ui'
-import { CacheProvider } from '@emotion/core'
+import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 
 /**
@@ -43,7 +43,7 @@ export default ({ children }) => {
 
 ```jsx
 import { ThemeProvider } from 'theme-ui'
-import { CacheProvider } from '@emotion/core'
+import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import Iframe, { FrameContextConsumer } from 'react-frame-component'
 
@@ -57,7 +57,7 @@ export default ({ children }) => {
   return (
     <Iframe initialContent="IFRAME_CONTENT">
       <FrameContextConsumer>
-        {frameContext => {
+        {(frameContext) => {
           const cache = createCache({
             container: frameContext.document.head,
           })

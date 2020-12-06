@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Grid, useThemeUI } from 'theme-ui'
+import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
 import {
   EditorProvider,
   Theme,
@@ -34,7 +34,7 @@ const ThemeOutput = () => {
         }}>
         Copy Theme
       </Button>
-      <Styled.pre
+      <Themed.pre
         children={output}
         sx={{
           maxHeight: 512,
@@ -50,8 +50,8 @@ export default (props) => {
   const json = stringify(theme, { indent: '  ' })
 
   return (
-    <div>
-      <Styled.h1>Create a Custom Theme</Styled.h1>
+    <>
+      <Themed.h1>Create a Custom Theme</Themed.h1>
       <EditorProvider theme={theme}>
         <b>Colors</b>
         <Theme.Colors size={64} />

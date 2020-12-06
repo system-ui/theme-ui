@@ -1,13 +1,13 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
 import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
-import { themed, Styled, components, MDXProvider } from '../src'
+import { renderJSON } from '@theme-ui/test-utils'
+
+import { themed, Themed, components, MDXProvider } from '../src'
 
 expect.extend(matchers)
-
-const renderJSON = (el) => renderer.create(el).toJSON()
 
 test('styles React components', () => {
   const Beep = (props) => <h2 {...props} />
@@ -46,7 +46,7 @@ test('components accept an `as` prop', () => {
         },
       }}>
       <MDXProvider>
-        <Styled.h1 as={Beep}>Beep boop</Styled.h1>
+        <Themed.h1 as={Beep}>Beep boop</Themed.h1>
       </MDXProvider>
     </ThemeProvider>
   )!
@@ -56,7 +56,7 @@ test('components accept an `as` prop', () => {
 
 test('components with `as` prop receive all props', () => {
   const Beep = (props) => <div {...props} />
-  const json = renderJSON(<Styled.a as={Beep} activeClassName="active" />)!
+  const json = renderJSON(<Themed.a as={Beep} activeClassName="active" />)!
   expect(json.type).toBe('div')
   expect(json.props.activeClassName).toBe('active')
 })
@@ -64,9 +64,9 @@ test('components with `as` prop receive all props', () => {
 test('cleans up style props', () => {
   const json = renderJSON(
     // @ts-expect-error
-    <Styled.h1 mx={2} id="test">
+    <Themed.h1 mx={2} id="test">
       Hello
-    </Styled.h1>
+    </Themed.h1>
   )!
   expect(json.props.id).toBe('test')
   expect(json.props.mx).not.toBeDefined()
@@ -121,7 +121,7 @@ test('opt out of typechecking props whenever `as` prop is used', () => {
     renderJSON(
       <div>
         {/* no error */}
-        <Styled.img
+        <Themed.img
           as="button"
           src={2}
           onClick={(_event) => {
@@ -129,7 +129,7 @@ test('opt out of typechecking props whenever `as` prop is used', () => {
             _event.x = 2
           }}
         />
-        <Styled.img
+        <Themed.img
           // @ts-expect-error Type 'number' is not assignable to type 'string'.ts(2322)
           src={2}
           onClick={(_event) => {

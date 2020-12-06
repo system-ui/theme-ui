@@ -1,16 +1,181 @@
 # Changelog
 
-## Unreleased
+## v0.6.0 UNRELEASED
+
+- Remove recursive default values from CSS custom properties. PR #1327
+
+## v0.6.0-alpha.1
+
+- Switches from lodash.kebabCase to alternative package ([param-case](/blakeembrey/change-case/tree/master/packages/param-case)) per [official Lodash documentation](https://lodash.com/per-method-packages). PR #1304
+- Rebuilds Prism preset with latest upstream theme changes. PR #1304
+- Fix: Preserve order of variant expansion props. PR #1326
+  _(bug introduced in 0.5.0-alpha.1)_
+
+## v0.6.0-alpha.0
+
+- **BREAKING**: Rename `Styled` component to `Themed`. PR #1323
+- **BREAKING**: Make Text component use `span` instead of `div`
+- **breaking TypeScript**: Renamed and removed types. PR #1308
+  - `SxProps` to `SxProp`.
+  - `SxStyleProp`, an alias for `ThemeUIStyleObject` removed. Use `ThemeUIStyleObject` instead.
+- Fix: Add `sx` props types to all props accepting `className`. PR #1308
+- Fix WithPoorAsProp to work with ComponentProps utility type. PR #1308
+
+## v0.5.0-alpha.2 2020-11-30
+
+- Add Paragraph component. PR #1298
+
+## v0.5.0-alpha.1 2020-11-26
+
+- Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
+- Support automatic JSX runtime. Issue #1160, PR #1237
+- Bump React peerDependency to `"^16.14.0 || ^17.0.0"`.
+- Apply variant styles _before_ responsive styles. Issues #1030, and #720, PR #1273
+
+## v0.5.0-alpha.0 2020-11-20
+
+- **BREAKING**: Upgrade to Emotion 11, and `csstype` 3. PR #1261
+  - We are now depending on `@emotion/react@11` instead of `@emotion/core@10`
+  - `sx` prop types are still global, and we opt in for Emotion `css` prop types (This will change in the future.)
+  - Refer to [Emotion 11 release notes](https://emotion.sh/docs/emotion-11) for more information.
+
+## v0.4.0-rc.14 2020-11-20
+
+### `@theme-ui/color-modes`
+
+- Fix color CSS Custom Properties recursive reference
+
+## v0.4.0-rc.13 2020-11-20
+
+### `@theme-ui/css`
+
+- Add transitions scale. Issue #1079, PR #1272
+
+## v0.4.0-rc.12 2020-11-18
+
+### `theme-ui`
+
+- Use correct version of @theme-ui/components in theme-ui package.
+  (Locked dependencies on other Theme UI packages)
+
+## v0.4.0-rc.11 2020-11-18
+
+### docs
+
+- Add documentation on CSS keyframes #1269
+
+### `@theme-ui/color-modes`
+
+- Add configuration option for printing color mode. PR #1267, issue #1144.
+
+  ```
+  {
+    initialColorModeName: "dark",
+    printColorModeName: "light"
+  }
+  ```
+
+### `@theme-ui/components`
+
+- Add `arrow` prop to Select to allow passing custom arrow icon. Issues #1177 #1151, PR #1232
+- Fix: Field component uses `id` if passed. PR #1252
+- Fix circular import in Switch.js
+
+## v0.4.0-rc.9 2020-11-17
+
+### `@theme-ui/components`
+
+- Fix Button not respecting hidden prop. Issue #1254
+- Add `minWidth: min-content` on Checkbox and Radio. PR #1256
+
+## v0.4.0-rc.8 2020-11-09
+
+### `@theme-ui/color`
+
+- Fix support for rgb/hsl color values
+
+### `@theme-ui/components`
+
+- Add Switch component #1035
+
+  ```tsx
+  <Label>
+    <Switch /> Enable email alerts?
+  </Label>
+  ```
+
+- Pass `size` prop down to IconButton in Close component. PR #1242
+
+  ```tsx
+  <Close size={24} />
+  ```
+
+### examples
+
+- Convert Gatsby example to TypeScript and stop using removed components. Issue #1227, PR #1229
+
+## v0.4.0-rc.7 2020-11-08
+
+### `@theme-ui/core`
 
 - Make ThemeProvider `theme` prop required
-- Removes overriding property on editor combobox
-- Adjust media query sort logic #600
-- Fixed link to Gatsby Plugin page in `getting-started` page. Issue #602
-- Fix broken base-preset link on `theming` page
+
+### `@theme-ui/editor`
+
+- Removes overriding property on editor combobox #687
+
+### `@theme-ui/preset-sketchy`
+
 - Add `@theme-ui/preset-sketchy`
-- `@theme-ui/prism`: add support for highlighting lines #895
-- `@theme-ui/style-guide`: pass `size` prop to ColorRow component #941
+
+### `@theme-ui/prism`
+
+- Add support for highlighting lines #895
+
+### `@theme-ui/sidenav`
+
 - `@theme-ui/sidenav`: move React to peerDependencies #978
+
+### `@theme-ui/style-guide`
+
+- Pass `size` prop to ColorRow component #941
+
+### `@theme-ui/color-modes`
+
+- Accept SetStateAction and generic parameter #1174
+
+### docs
+
+- Fix broken base-preset link on `theming` page
+
+## v0.3.2 2020-11-08
+
+- Fix peer dependencies. Issue #725, PR #836
+
+### `@theme-ui/css`
+
+- Add theme colors support to columnRuleColor and caretColor #1085
+- Support scrollPadding variations in sx props. Issue #1214
+
+### `@theme-ui/core`
+
+- Support Webpack 5. (Uses default export from package.json instead of named export) #1141
+
+### `@theme-ui/components`
+
+- Add `primary` as default variant for `Badge` component #1109
+- Add `primary` as default variant for `Alert` component #1102
+- Add `theme.text.default` variant for `Text` component #870
+
+### docs
+
+- Fix example logo on Avatar & Image component docs #1233
+- Fix theme editor output in docs #1182
+
+## v0.3.1 2020-01-32
+
+- Adjusts media query sort logic #600
+- Fixes link to Gatsby Plugin page in `getting-started` page. Issue #602, PR #603
 
 ## v0.3.0 2020-01-22
 

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { scales, multiples } from '@theme-ui/css'
-import { Styled } from 'theme-ui'
+import { Themed } from 'theme-ui'
 
 const camelDash = (string) =>
   string.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`)
@@ -25,7 +25,7 @@ export default (props) => {
   }, {})
 
   return (
-    <Styled.table>
+    <Themed.table>
       <thead>
         <tr>
           <th>Theme Key</th>
@@ -38,22 +38,22 @@ export default (props) => {
           .map((key) => (
             <tr>
               <td>
-                <Styled.inlineCode>{key}</Styled.inlineCode>
+                <Themed.inlineCode>{key}</Themed.inlineCode>
               </td>
               <td>
                 {table[key].map((property, index) => (
-                  <Styled.inlineCode>
+                  <Themed.inlineCode>
                     {!!index && ', '}
-                    <Styled.a
+                    <Themed.a
                       href={`https://developer.mozilla.org/en-US/docs/Web/CSS/${property}`}>
                       {property}
-                    </Styled.a>
-                  </Styled.inlineCode>
+                    </Themed.a>
+                  </Themed.inlineCode>
                 ))}
               </td>
             </tr>
           ))}
       </tbody>
-    </Styled.table>
+    </Themed.table>
   )
 }

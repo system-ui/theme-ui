@@ -13,7 +13,6 @@ Theme UI is a library for creating themeable user interfaces based on constraint
 Build custom component libraries, design systems, web applications, Gatsby themes, and more
 with a flexible API for best-in-class developer ergonomics.
 
-
 [Documentation](/getting-started)
 [GitHub](https://github.com/system-ui/theme-ui)
 
@@ -31,35 +30,35 @@ with a flexible API for best-in-class developer ergonomics.
 
 1. ## Create your theme
 
-  ```javascript
-  export default {
-    colors: {
-      text: '#000',
-      background: '#fff',
-      primary: 'tomato',
-    },
-    fonts: {
-      body: 'system-ui, sans-serif',
-      heading: '"Avenir Next", sans-serif',
-    },
-  }
-  ```
+```js
+export default {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: 'tomato',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+  },
+}
+```
 
 2. ## Style your UI
 
-  ```jsx
-  /** @jsx jsx */
-  import { jsx } from 'theme-ui'
-  export default props => (
-    <h1
-      sx={{
-        color: 'primary',
-        fontFamily: 'heading',
-      }}>
-      Hello
-    </h1>
-  )
-  ```
+```jsx
+/** @jsxImportSource theme-ui */
+
+export default (props) => (
+  <h1
+    sx={{
+      color: 'primary',
+      fontFamily: 'heading',
+    }}>
+    Hello
+  </h1>
+)
+```
 
 </Tiles>
 
@@ -110,10 +109,7 @@ with a flexible API for best-in-class developer ergonomics.
 
 ## Get Started
 
-<Button
-  as='a'
-  href='/getting-started'
-  variant='black'>
+<Button as="a" href="/getting-started" variant="black">
   Explore the Docs
 </Button>
 
