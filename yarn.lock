@@ -3233,10 +3233,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-color@^2.17.3":
-  version "2.17.4"
-  resolved "https://registry.yarnpkg.com/@types/react-color/-/react-color-2.17.4.tgz#ddeffbb2fcebf8fb1f3bb25721c3bdf7a3a05788"
-  integrity sha512-pAO3+7uHoESg5QMqjnGjw9F7sALjEZsaU41yGiUZbmHiJMoSXH1UklFJ1bZkwhYskaJgiY+AS6wirl17yBh5GA==
+"@types/react-color@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/react-color/-/react-color-3.0.4.tgz#c63daf012ad067ac0127bdd86725f079d02082bd"
+  integrity sha512-EswbYJDF1kkrx93/YU+BbBtb46CCtDMvTiGmcOa/c5PETnwTiSWoseJ1oSWeRl/4rUXkhME9bVURvvPg0W5YQw==
   dependencies:
     "@types/react" "*"
     "@types/reactcss" "*"
