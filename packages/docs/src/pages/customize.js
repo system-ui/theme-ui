@@ -12,7 +12,7 @@ import {
   // Row,
 } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
-import { useReducer } from 'react'
+import React, { useReducer } from 'react'
 import merge from 'lodash.merge'
 import * as presets from '@theme-ui/presets'
 import copy from 'copy-to-clipboard'
@@ -47,7 +47,6 @@ const ThemeOutput = () => {
 
 export default (props) => {
   const [theme] = useReducer(reducer, { ...presets.base })
-  const json = stringify(theme, { indent: '  ' })
 
   return (
     <>
@@ -107,6 +106,6 @@ export default (props) => {
         <p>Note: some web fonts may not render unless installed locally.</p>
         <ThemeOutput />
       </EditorProvider>
-    </div>
+    </>
   )
 }
