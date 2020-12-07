@@ -1,7 +1,8 @@
 import { css, get, Theme } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
-const toVarValue = (key: string) => `var(${toVarName(key)})`
+const toVarValue = (key: string, value: string | number) =>
+  `var(${toVarName(key)}, ${value})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
@@ -15,6 +16,12 @@ const reservedKeys = {
   printColorModeName: true,
   initialColorMode: true,
   useLocalStorage: true,
+}
+
+const toPixel = (key: string, value: string | number) => {
+  if (typeof value !== 'number') return value
+  if (numberScales[key as keyof typeof numberScales]) return value
+  return value + 'px'
 }
 
 // convert theme values to custom properties
@@ -36,7 +43,8 @@ export const toCustomProperties = (
       next[key] = value
       continue
     }
-    next[key] = toVarValue(name)
+    const val = toPixel(themeKey || key, value)
+    next[key] = toVarValue(name, val)
   }
 
   return next
@@ -87,7 +95,8 @@ export const createColorStyles = (theme: Theme = {}) => {
         : modes[printColorModeName]
     styles['@media (print)'] = objectToVars('colors', mode)
   }
-  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`)
+  const colorToVarValue = (color: string) =>
+    toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
 
   return css({
     body: {
