@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, Grid } from 'theme-ui'
+import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
 import {
   EditorProvider,
   Theme,
@@ -21,12 +21,36 @@ import Button from '../components/button'
 
 const reducer = (state, next) => merge({}, state, next)
 
+const ThemeOutput = () => {
+  const context = useThemeUI()
+
+  const output = stringify(context.theme, { indent: '  ' })
+
+  return (
+    <div>
+      <Button
+        onClick={(e) => {
+          copy(output)
+        }}>
+        Copy Theme
+      </Button>
+      <Themed.pre
+        children={output}
+        sx={{
+          maxHeight: 512,
+          overflowY: 'auto',
+        }}
+      />
+    </div>
+  )
+}
+
 export default (props) => {
   const [theme] = useReducer(reducer, { ...presets.base })
   const json = stringify(theme, { indent: '  ' })
 
   return (
-    <div>
+    <>
       <Themed.h1>Create a Custom Theme</Themed.h1>
       <EditorProvider theme={theme}>
         <b>Colors</b>
@@ -81,20 +105,8 @@ export default (props) => {
           </Grid>
         </div>
         <p>Note: some web fonts may not render unless installed locally.</p>
+        <ThemeOutput />
       </EditorProvider>
-      <Button
-        onClick={(e) => {
-          copy(json)
-        }}>
-        Copy Theme
-      </Button>
-      <Themed.pre
-        children={json}
-        sx={{
-          maxHeight: 512,
-          overflowY: 'auto',
-        }}
-      />
     </div>
   )
 }
