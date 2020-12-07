@@ -3,8 +3,7 @@ name: CI
 on:
   push:
   pull_request:
-    pull_request:
-      types: [opened, reopened]
+    types: [opened, reopened]
 jobs:
   build:
     runs-on: ubuntu-latest
