@@ -3,7 +3,7 @@
 ## v0.6.0 UNRELEASED
 
 - Remove recursive default values from CSS custom properties. PR #1327
-
+- Fix match-media useBreakpointIndex defaultIndex. Issue #1191
 ## v0.6.0-alpha.1
 
 - Switches from lodash.kebabCase to alternative package ([param-case](/blakeembrey/change-case/tree/master/packages/param-case)) per [official Lodash documentation](https://lodash.com/per-method-packages). PR #1304
