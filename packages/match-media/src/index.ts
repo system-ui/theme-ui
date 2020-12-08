@@ -55,8 +55,7 @@ export function useResponsiveValue<T>(
 ): T {
   const { theme } = useThemeUI()
   const array = typeof values === 'function' ? values(theme) : values
-  const breakpoints =
-    (theme && theme.breakpoints) || defaultBreakpoints
+  const breakpoints = (theme && theme.breakpoints) || defaultBreakpoints
   if (breakpoints.length < array.length) {
     throw new TypeError(
       `You have provided an array of values larger than the number of breakpoints. Breakpoints: ${breakpoints.length}, values: ${array.length}`
