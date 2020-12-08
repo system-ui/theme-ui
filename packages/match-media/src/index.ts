@@ -30,7 +30,10 @@ export const useBreakpointIndex = (options: defaultOptions = {}) => {
       ).length
 
     const onResize = () => {
-      const newValue = getIndex()
+      const index = getIndex()
+      //if/ternary operator faster than Math.max
+      //https://measurethat.net/Benchmarks/Show/3161/0/mathmaxmin-vs-if-vs-ternary-operator
+      const newValue = index === 0 ? 0 : index - 1
       if (value !== newValue) {
         setValue(newValue)
       }
@@ -52,6 +55,13 @@ export function useResponsiveValue<T>(
 ): T {
   const { theme } = useThemeUI()
   const array = typeof values === 'function' ? values(theme) : values
+  const breakpoints =
+    (theme && theme.breakpoints) || defaultBreakpoints
+  if (breakpoints.length < array.length) {
+    throw new TypeError(
+      `You have provided an array of values larger than the number of breakpoints. Breakpoints: ${breakpoints.length}, values: ${array.length}`
+    )
+  }
   const index = useBreakpointIndex(options)
   return array[index >= array.length ? array.length - 1 : index]
 }
