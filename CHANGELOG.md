@@ -2,6 +2,7 @@
 
 ## v0.6.0 UNRELEASED
 
+- Bump versions @mdx-js/mdx and @mdx-js/react to "^1.6.22", gatsby-plugin-mdx to "^1.6.0"
 - Remove recursive default values from CSS custom properties. PR #1327
 
 ## v0.6.0-alpha.1
