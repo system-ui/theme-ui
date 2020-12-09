@@ -72,7 +72,7 @@ export default {
 }
 ```
 
-The following themes are available and can be found in the [`presets/`](https://github.com/system-ui/theme-ui/tree/master/packages/prism/presets) directory.
+The following themes are available and can be found in the [`presets/`](https://github.com/system-ui/theme-ui/tree/stable/packages/prism/presets) directory.
 
 - `dracula.json`
 - `duotone-dark.json`

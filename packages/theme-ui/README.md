@@ -1,33 +1,73 @@
-<img
-  src="https://contrast.now.sh/cff/40f?size=192&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
-  width="96"
-  heigh="96"
-/>
+<p align="center">
+  <img
+    src="/packages/docs/static/logo.png"
+    width="96"
+    height="96"
+  />
+</p>
 
-# Theme UI
+<h1 align="center">Theme UI</h1>
 
-Build consistent, themeable React apps based on constraint-based design principles | Built with Emotion + Styled System + MDX + Typography.js
+<p align="center">
+  <strong>The Design Graph Framework</strong>
+</p>
 
-[![GitHub][github-badge]][github]
-[![Stars][stars]][github]
-[![Build Status][circleci-badge]][circleci]
-[![Version][version]][npm]
-![MIT License][license]
-[![system-ui/theme][system-ui-badge]](https://system-ui.com/theme)
-![][size]
+&nbsp;
 
-https://theme-ui.com
+<p align="center">
+  <a href="https://github.com/system-ui/theme-ui">
+    <img src="https://badgen.net/badge/-/github?icon=github&label" alt="GitHub" />
+  </a>
+  <a href="https://github.com/system-ui/theme-ui/stargazers">
+    <img src="https://badgen.net/github/stars/system-ui/theme-ui" alt="GitHub Stars"/>
+  </a>
+  <a>
+    <img alt="npm (latest)" src="https://img.shields.io/npm/v/theme-ui/latest"/>
+  </a>
+  <a>
+    <img alt="npm (next)" src="https://img.shields.io/npm/v/theme-ui/next?color=%23e044aa"/>
+  </a>
+  <br />
+  <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
+    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg" alt="Build Status"/>
+  </a>
+  <a href="https://github.com/system-ui/theme-ui/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/system-ui/theme-ui" alt="Contributors" />
+  </a>
+  <a href="https://github.com/badges/shields/pulse" >
+    <img src="https://img.shields.io/github/commit-activity/m/system-ui/theme-ui" alt="Activity" />        
+  </a>
+  <br />
+  <a href="https://badgen.net/bundlephobia/minzip/theme-ui">
+    <img
+      src="https://badgen.net/bundlephobia/minzip/theme-ui"
+      alt="Size"
+    />
+  </a>
+  <a href="https://bundlephobia.com/result?p=theme-ui">
+    <img
+      src="https://badgen.net/bundlephobia/tree-shaking/theme-ui"
+      alt="Tree Shaking"
+    />
+  </a>
+  <a href="https://github.com/system-ui/theme-ui/blob/stable/LICENSE.md">
+    <img
+      src="https://badgen.net/badge/license/MIT/blue"
+      alt="MIT license"
+    />
+  </a>
+  <a href="https://discord.gg/stp6BY7MXA">
+    <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
+  </a>
+</p>
 
-[github]: https://github.com/system-ui/theme-ui
-[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
-[stars]: https://flat.badgen.net/github/stars/system-ui/theme-ui
-[circleci]: https://circleci.com/gh/system-ui/theme-ui
-[circleci-badge]: https://flat.badgen.net/circleci/github/system-ui/theme-ui/master
-[version]: https://flat.badgen.net/npm/v/theme-ui
-[npm]: https://npmjs.com/package/theme-ui
-[license]: https://flat.badgen.net/badge/license/MIT/blue
-[system-ui-badge]: https://flat.badgen.net/badge/system-ui/theme/black
-[size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
+\
+Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
+
+**stable docs**: https://theme-ui.com \
+**next (v0.6.0-alpha) docs**: [https://development--dev-theme-ui.netlify.app/](https://development--dev-theme-ui.netlify.app/)
+
+---
 
 Built for design systems, white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
 and based on a standard [Theme Specification][],
