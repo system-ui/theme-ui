@@ -50,7 +50,7 @@
       alt="Tree Shaking"
     />
   </a>
-  <a href="https://github.com/system-ui/theme-ui/blob/master/LICENSE.md">
+  <a href="https://github.com/system-ui/theme-ui/blob/stable/LICENSE.md">
     <img
       src="https://badgen.net/badge/license/MIT/blue"
       alt="MIT license"
