@@ -13,10 +13,10 @@ import styled, { StyledComponent } from '@emotion/styled'
 import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
 
 type MDXProviderComponentsKnownKeys = {
-  [key in keyof IntrinsicSxElements]?: React.ComponentType<any> | string
+  [key in keyof IntrinsicSxElements]?: ComponentType<any> | string
 }
 export interface MDXProviderComponents extends MDXProviderComponentsKnownKeys {
-  [key: string]: React.ComponentType<any> | string | undefined
+  [key: string]: ComponentType<any> | string | undefined
 }
 export type MdxAliases = {
   [key in keyof IntrinsicSxElements]: keyof JSX.IntrinsicElements
@@ -86,8 +86,35 @@ export type ThemedComponentName =
 const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
-export const themed = (key: ThemedComponentName) => (props: ThemedProps) =>
-  css(get(props.theme, `styles.${key}`))(props.theme)
+const propOverrides: {
+  [key in Partial<ThemedComponentName>]?: Record<string, string>
+} = {
+  th: {
+    align: 'textAlign',
+  },
+  td: {
+    align: 'textAlign',
+  },
+}
+export const themed = (key: ThemedComponentName) => ({
+  theme,
+  ...rest
+}: ThemedProps) => {
+  const propsStyle = propOverrides[key]
+
+  const extraStyles = propsStyle
+    ? Object.keys(rest)
+        .filter((prop) => propsStyle[prop] !== undefined)
+        .reduce(
+          (acc, prop) => ({
+            ...acc,
+            [propsStyle[prop]]: (rest as Record<string, string>)[prop],
+          }),
+          {}
+        )
+    : undefined
+  return css({ ...get(theme, `styles.${key}`), ...extraStyles })(theme)
+}
 
 // opt out of typechecking whenever `as` prop is used
 interface AnyComponentProps extends JSX.IntrinsicAttributes {

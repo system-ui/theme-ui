@@ -1,6 +1,6 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -153,4 +153,46 @@ test('opt out of typechecking props whenever `as` prop is used', () => {
       />
     </div>
   `)
+})
+
+test('table columns align', () => {
+  const tree = render(
+    <MDXProvider>
+      <Themed.table>
+        <thead>
+          <Themed.tr>
+            <Themed.th align="left">
+              Left
+            </Themed.th>
+            <Themed.th align="center">
+              Center
+            </Themed.th>
+            <Themed.th align="right">
+              Right
+            </Themed.th>
+          </Themed.tr>
+        </thead>  
+        <tbody>
+          <Themed.tr>
+            <Themed.td align="left">
+              TextLeft
+            </Themed.td>
+            <Themed.td align="center">
+              TextCenter
+            </Themed.td>
+            <Themed.td align="right">
+              TextRight
+            </Themed.td>
+          </Themed.tr>
+        </tbody>
+      </Themed.table>
+    </MDXProvider>
+  )
+  expect(tree.getByText('Left')).toHaveStyleRule('text-align', 'left')
+  expect(tree.getByText('Center')).toHaveStyleRule('text-align', 'center')
+  expect(tree.getByText('Right')).toHaveStyleRule('text-align', 'right')
+  expect(tree.getByText('TextLeft')).toHaveStyleRule('text-align', 'left')
+  expect(tree.getByText('TextCenter')).toHaveStyleRule('text-align', 'center')
+  expect(tree.getByText('TextRight')).toHaveStyleRule('text-align', 'right')
+
 })
