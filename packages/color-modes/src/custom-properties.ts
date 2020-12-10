@@ -73,7 +73,7 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
 export const createColorStyles = (theme: Theme = {}) => {
   const use = __internalGetUseRootStyles(theme)
   if (!theme.colors || use.rootStyles === false) return {}
-  if (theme.useCustomProperties === false || !theme.colors.modes) {
+  if (theme.useCustomProperties === false) {
     return css({
       [use.scope]: {
         color: 'text',

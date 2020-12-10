@@ -264,4 +264,21 @@ describe('createColorStyles', () => {
       },
     })
   })
+
+  test('creates styles from color palette', () => {
+    const styles = createColorStyles({
+      colors: {
+        text: 'tomato',
+        background: 'white',
+      },
+    })
+    expect(styles).toEqual({
+      body: {
+        color: 'var(--theme-ui-colors-text, tomato)',
+        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+      },
+    })
+  })
 })
