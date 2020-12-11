@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Flex, Styled } from 'theme-ui'
+import { jsx, ThemeProvider, Flex, Themed } from 'theme-ui'
 import { useState } from 'react'
 import { toTheme } from '@theme-ui/typography'
 import GoogleFonts from './google-fonts'
@@ -9,7 +9,7 @@ import typographyThemes from './typography-themes'
 
 const themeNames = Object.keys(themes)
 
-const ThemeSelect = props => (
+const ThemeSelect = (props) => (
   <div>
     <label
       htmlFor={props.name}
@@ -27,7 +27,7 @@ const ThemeSelect = props => (
         fontSize: 16,
         p: 2,
       }}>
-      {themeNames.map(name => (
+      {themeNames.map((name) => (
         <option key={name} label={name} value={name}>
           {name}
         </option>
@@ -36,7 +36,7 @@ const ThemeSelect = props => (
   </div>
 )
 
-export default props => {
+export default (props) => {
   const [themeName, setTheme] = useState(themeNames[0])
 
   const typographyTheme = typographyThemes[themeName]
@@ -55,7 +55,7 @@ export default props => {
         <ThemeSelect
           name="theme"
           value={themeName}
-          onChange={e => {
+          onChange={(e) => {
             setTheme(e.target.value)
           }}
         />
@@ -63,7 +63,7 @@ export default props => {
           sx={{
             ml: 2,
           }}
-          onClick={e => {
+          onClick={(e) => {
             const i = (themeNames.indexOf(themeName) + 1) % themeNames.length
             setTheme(themeNames[i])
           }}>
@@ -72,7 +72,7 @@ export default props => {
       </Flex>
       <ThemeProvider theme={theme}>
         <GoogleFonts />
-        <Styled.root>{props.children}</Styled.root>
+        <Themed.root>{props.children}</Themed.root>
       </ThemeProvider>
     </div>
   )

@@ -8,7 +8,7 @@
     "color": "#999"
   },
   ".namespace": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".property,.tag,.boolean,.number,.constant,.symbol,.deleted": {
     "color": "#905"
@@ -37,5 +37,8 @@
   },
   ".entity": {
     "cursor": "help"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 70%, .5)"
   }
 }

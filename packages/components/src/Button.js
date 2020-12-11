@@ -12,7 +12,7 @@ export const Button = React.forwardRef(function Button(props, ref) {
       __css={{
         label: 'Button',
         appearance: 'none',
-        display: 'inline-block',
+        display: props.hidden ? undefined : 'inline-block',
         textAlign: 'center',
         lineHeight: 'inherit',
         textDecoration: 'none',

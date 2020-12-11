@@ -5,10 +5,10 @@
     "color": "hsl(30, 20%, 50%)"
   },
   ".punctuation": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".namespace": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".property,.tag,.boolean,.number,.constant,.symbol": {
     "color": "hsl(350, 40%, 70%)"
@@ -36,5 +36,8 @@
   },
   ".deleted": {
     "color": "red"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 70%, .5)"
   }
 }

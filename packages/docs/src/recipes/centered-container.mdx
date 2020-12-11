@@ -26,16 +26,15 @@ then use the size in your component definition.
 export default {
   sizes: {
     container: 768,
-  }
+  },
 }
 ```
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
 // example Container component
-export default props =>
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -44,6 +43,7 @@ export default props =>
       px: 3,
     }}
   />
+)
 ```
 
 See also: [Container component](/components/container)

@@ -50,5 +50,8 @@
   },
   ".namespace": {
     "color": "rgb(178, 204, 214)"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
   }
 }

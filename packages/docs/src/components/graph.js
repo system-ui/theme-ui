@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, get, useThemeUI } from 'theme-ui'
-import { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect } from 'react'
 import merge from 'deepmerge'
 import Logo from './logo'
 
@@ -65,7 +65,7 @@ const Node = ({ x, y, color = 0, ...props }) => {
         transitionTimingFunction: 'ease-out',
         transitionDuration: '.4s',
         '&:hover': {
-          stroke: t => t.colors.highlight,
+          stroke: (t) => t.colors.highlight,
         },
       }}
     />
@@ -102,7 +102,7 @@ const Edges = ({ x, y, state }) => {
 
   return (
     <g transform={transform}>
-      {angles.map(n => (
+      {angles.map((n) => (
         <path
           key={n}
           d={paths[n]}
@@ -121,8 +121,8 @@ const Edges = ({ x, y, state }) => {
   )
 }
 
-const rand = l => Math.floor(Math.random() * (l + 1))
-const randomizeColors = state => {
+const rand = (l) => Math.floor(Math.random() * (l + 1))
+const randomizeColors = (state) => {
   const color = rand(colors.length - 1)
   return merge(state, {
     [rand(2)]: {
@@ -131,7 +131,7 @@ const randomizeColors = state => {
   })
 }
 
-export default ({ width = 32, height = 9, scale = 32 }) => {
+const Graph = ({ width = 32, height = 9, scale = 32 }) => {
   const { theme } = useThemeUI()
   const rows = Array.from({ length: height / 3 }).map((n, y) =>
     Array.from({
@@ -139,11 +139,6 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
     }).map((o, x) => ({ x, y }))
   )
   const [state, setState] = useState(initialState)
-  const viewBox = `0 0 ${width} ${height}`
-  const dimensions = {
-    width: width * scale,
-    height: height * scale,
-  }
 
   useEffect(() => {
     const tick = () => {
@@ -155,10 +150,10 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
     }
   }, [])
 
-  const handleClick = ({ x, y }) => e => {
+  const handleClick = ({ x, y }) => (e) => {
     const i = get(state, [y, x].join('.'), 0)
     const n = (i + 1) % colors.length
-    setState(s =>
+    setState((s) =>
       merge(s, {
         [y]: {
           [x]: n,
@@ -189,7 +184,7 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
         userSelect: 'none',
       }}>
       <rect width={width} height={height} fill="none" />
-      {rows.map(row =>
+      {rows.map((row) =>
         row.map(({ x, y }) => (
           <g key={x + y}>
             <Edges x={x} y={y} state={state} />
@@ -208,3 +203,5 @@ export default ({ width = 32, height = 9, scale = 32 }) => {
     </svg>
   )
 }
+
+export default Graph

@@ -13,12 +13,12 @@ which is written in MDX.
 
 As an example, create a new component with the `ThemeProvider` and a wrapping `<div>`.
 
-```jsx
-/** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+```jsx filename=Layout.js
+/** @jsxImportSource theme-ui */
+import { ThemeProvider } from 'theme-ui'
 
-export default props => (
-  <ThemeProvider>
+export default (props) => (
+  <ThemeProvider theme={{}}>
     <div {...props} />
   </ThemeProvider>
 )
@@ -26,11 +26,11 @@ export default props => (
 
 To add styles to this component, add a `theme` prop to the `ThemeProvider` and an `sx` prop to the `div`.
 
-```jsx
-/** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+```jsx filename=Layout.js
+/** @jsxImportSource theme-ui */
+import { ThemeProvider } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <ThemeProvider
     theme={{
       styles: {

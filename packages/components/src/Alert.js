@@ -5,6 +5,7 @@ export const Alert = React.forwardRef(function Alert(props, ref) {
   return (
     <Box
       ref={ref}
+      variant="primary"
       {...props}
       __themeKey="alerts"
       __css={{

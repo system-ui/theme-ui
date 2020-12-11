@@ -8,7 +8,7 @@
     "color": "#586e75"
   },
   ".namespace": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".property,.tag,.boolean,.number,.constant,.symbol,.deleted": {
     "color": "#268bd2"
@@ -35,5 +35,8 @@
   },
   ".italic": {
     "fontStyle": "italic"
+  },
+  ".highlight": {
+    "background": "hsla(0, 70%, 40%, .2)"
   }
 }

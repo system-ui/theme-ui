@@ -5,13 +5,20 @@ import { Input } from './Input'
 import { getMargin, omitMargin } from './util'
 
 export const Field = React.forwardRef(function Field(
-  { as: Control = Input, label, name, ...props },
+  { as: Control = Input, label, id, name, ...props },
   ref
 ) {
+  const fieldIdentifier = id || name
+
   return (
     <Box {...getMargin(props)} __css={{ label: 'Field' }}>
-      <Label htmlFor={name}>{label}</Label>
-      <Control ref={ref} id={name} name={name} {...omitMargin(props)} />
+      <Label htmlFor={fieldIdentifier}>{label}</Label>
+      <Control
+        ref={ref}
+        id={fieldIdentifier}
+        name={name}
+        {...omitMargin(props)}
+      />
     </Box>
   )
 })

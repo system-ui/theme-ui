@@ -5,6 +5,7 @@ export const Badge = React.forwardRef(function Badge(props, ref) {
   return (
     <Box
       ref={ref}
+      variant="primary"
       {...props}
       __themeKey="badges"
       __css={{

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <button
     {...props}
     sx={{
@@ -16,9 +16,6 @@ export default props => (
       bg: 'muted',
       border: 0,
       borderRadius: 2,
-      ':focus': {
-        outline: '2px solid',
-      },
     }}
   />
 )

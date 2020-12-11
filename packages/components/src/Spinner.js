@@ -1,5 +1,5 @@
 import React from 'react'
-import { keyframes } from '@emotion/core'
+import { keyframes } from '@emotion/react'
 import Box from './Box'
 
 const spin = keyframes({

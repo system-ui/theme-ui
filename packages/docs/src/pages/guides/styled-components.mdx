@@ -8,12 +8,12 @@ If you're already using the `styled` API from the [@emotion/styled][] package, t
 Instead of using the `ThemeProvider` component from `emotion-theming`, you can import and use the Theme UI provider.
 
 ```jsx
-/** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+/** @jsxImportSource theme-ui */
+import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 import SomeComponent from './SomeComponent'
 
-export default props => (
+export default (props) => (
   <ThemeProvider theme={theme}>
     <SomeComponent />
   </ThemeProvider>
@@ -38,8 +38,7 @@ To avoid the need for an additional dependency,
 you can use the `sx` prop to create custom styled components.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
 export default ({ width, color, bg, ...props }) => (
   <div

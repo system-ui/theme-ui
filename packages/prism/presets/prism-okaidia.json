@@ -2,13 +2,13 @@
   "color": "#f8f8f2",
   "backgroundColor": "#272822",
   ".comment,.prolog,.doctype,.cdata": {
-    "color": "slategray"
+    "color": "#8292a2"
   },
   ".punctuation": {
     "color": "#f8f8f2"
   },
   ".namespace": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".property,.tag,.constant,.symbol,.deleted": {
     "color": "#f92672"
@@ -39,5 +39,8 @@
   },
   ".entity": {
     "cursor": "help"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
   }
 }

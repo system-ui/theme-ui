@@ -16,7 +16,7 @@ const Burger = ({ size = '1em' }) => (
   </svg>
 )
 
-export default props => (
+export default (props) => (
   <button
     title="Toggle Menu"
     {...props}
@@ -31,12 +31,7 @@ export default props => (
       m: 0,
       border: 0,
       appearance: 'none',
-      ':focus': {
-        outline: '2px solid',
-      },
-      '@media screen and (min-width: 40em)': {
-        display: 'none',
-      },
+      display: [null, 'none'],
     }}>
     <Burger />
   </button>

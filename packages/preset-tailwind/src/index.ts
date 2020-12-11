@@ -470,7 +470,7 @@ export const shadows = {
 }
 
 export const space = [
-  0,
+  "0",
   '0.25rem',
   '0.5rem',
   '1rem',

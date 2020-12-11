@@ -53,6 +53,9 @@ const theme: Theme = {
     small: 5,
   },
   opacities: [0, '50%'],
+  transitions: {
+    standard: '0.3s ease-in-out'
+  }
 }
 
 test('returns a function', () => {
@@ -115,6 +118,7 @@ test('returns nested responsive styles', () => {
     color: 'primary',
     h1: {
       py: [3, 4],
+      scrollPaddingY: [2, 4]
     },
   })({ theme })
   expect(result).toEqual({
@@ -122,9 +126,14 @@ test('returns nested responsive styles', () => {
     h1: {
       paddingTop: 16,
       paddingBottom: 16,
+      scrollPaddingBottom: 8,
+      scrollPaddingTop: 8,
       '@media screen and (min-width: 40em)': {
         paddingTop: 32,
         paddingBottom: 32,
+        scrollPaddingBottom: 32,
+        scrollPaddingTop: 32,
+  
       },
     },
   })
@@ -137,11 +146,14 @@ test('handles all core styled system props', () => {
     mx: 'auto',
     p: 3,
     py: 4,
+    scrollPadding: 1,
+    scrollPaddingY: 2,
     fontSize: 3,
     fontWeight: 'bold',
     color: 'primary',
     bg: 'secondary',
     opacity: 1,
+    transition: 'standard',
     fontFamily: 'monospace',
     lineHeight: 'body',
   })({ theme })
@@ -153,9 +165,13 @@ test('handles all core styled system props', () => {
     padding: 16,
     paddingTop: 32,
     paddingBottom: 32,
+    scrollPadding: 4,
+    scrollPaddingTop: 8,
+    scrollPaddingBottom: 8,
     color: 'tomato',
     backgroundColor: 'cyan',
     opacity: '50%',
+    transition: '0.3s ease-in-out',
     fontFamily: 'Menlo, monospace',
     fontSize: 24,
     fontWeight: 600,
@@ -196,8 +212,8 @@ test('works with the css prop', () => {
 })
 
 test('works with functional arguments', () => {
-  const result = css(t => ({
-    color: t.colors.primary,
+  const result = css((t) => ({
+    color: t.colors?.primary,
   }))(theme)
   expect(result).toEqual({
     color: 'tomato',
@@ -206,7 +222,7 @@ test('works with functional arguments', () => {
 
 test('supports functional values', () => {
   const result = css({
-    color: t => t.colors.primary,
+    color: (t) => t.colors?.primary,
   })(theme)
   expect(result).toEqual({
     color: 'tomato',
@@ -285,7 +301,7 @@ test('handles negative margins from scale that is an object', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
-  })({...theme, space: { s: '16px', m: '32px' }})
+  })({ ...theme, space: { s: '16px', m: '32px' } })
   expect(result).toEqual({
     marginTop: '-16px',
     marginLeft: '-32px',
@@ -344,7 +360,7 @@ test('ignores array values longer than breakpoints', () => {
 
 test('functional values can return responsive arrays', () => {
   const result = css({
-    color: t => [t.colors.primary, t.colors.secondary],
+    color: (t) => [t.colors?.primary, t.colors?.secondary],
   })(theme)
   expect(result).toEqual({
     '@media screen and (min-width: 40em)': {
@@ -421,6 +437,9 @@ test('multiples are transformed', () => {
     marginY: 2,
     paddingX: 2,
     paddingY: 2,
+    scrollPaddingX: 2,
+    scrollPaddingY: 2,
+
     size: 'large',
   })(theme)
   expect(style).toEqual({
@@ -432,6 +451,10 @@ test('multiples are transformed', () => {
     paddingRight: 8,
     paddingTop: 8,
     paddingBottom: 8,
+    scrollPaddingLeft: 8,
+    scrollPaddingRight: 8,
+    scrollPaddingTop: 8,
+    scrollPaddingBottom: 8,
     width: 16,
     height: 16,
   })
@@ -479,6 +502,7 @@ test('returns correct media query order 2', () => {
     height: '100%',
     px: [2, 3, 4],
     py: 4,
+    scrollPadding: 4,
   })(theme)
   const keys = Object.keys(result)
   expect(keys).toEqual([
@@ -492,5 +516,12 @@ test('returns correct media query order 2', () => {
     'paddingRight',
     'paddingTop',
     'paddingBottom',
+    'scrollPadding'
   ])
+})
+
+test('supports vendor properties', () => {
+  expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
+    WebkitOverflowScrolling: 'touch',
+  })
 })

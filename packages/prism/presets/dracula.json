@@ -28,5 +28,8 @@
   },
   ".attr-name": {
     "color": "rgb(241, 250, 140)"
+  },
+  ".highlight": {
+    "background": "hsla(0, 0%, 30%, .5)"
   }
 }
