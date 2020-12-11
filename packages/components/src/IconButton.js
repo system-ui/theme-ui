@@ -13,7 +13,7 @@ export const IconButton = React.forwardRef(function IconButton(
       {...props}
       __themeKey="buttons"
       __css={{
-        label: props.__css.label || 'IconButton',
+        label: props.__css?.label || 'IconButton',
         appearance: 'none',
         display: 'inline-flex',
         alignItems: 'center',
