@@ -2,6 +2,7 @@
 
 ## v0.6.0 UNRELEASED
 
+- Add ability for MDX styling, and fix mdx table align styles. Issue #654
 - Remove recursive default values from CSS custom properties. PR #1327
 
 ## v0.6.0-alpha.1
