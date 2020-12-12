@@ -32,7 +32,7 @@
     "@emotion/jest": "^11.1.0",
     "@testing-library/react": "^11.0.1",
     "@types/jest": "^26.0.10",
-    "@types/react-test-renderer": "^16.9.2",
+    "@types/react-test-renderer": "^17.0.0",
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.8.0",
     "husky": ">=4.0.7",
