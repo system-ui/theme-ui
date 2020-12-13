@@ -10,7 +10,6 @@ export const Button = React.forwardRef(function Button(props, ref) {
       {...props}
       __themeKey="buttons"
       __css={{
-        label: 'Button',
         appearance: 'none',
         display: props.hidden ? undefined : 'inline-block',
         textAlign: 'center',

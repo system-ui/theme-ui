@@ -25,8 +25,7 @@ export const MenuButton = React.forwardRef(function MenuButton(props, ref) {
       title="Menu"
       aria-label="Toggle Menu"
       variant="menu"
-      {...props}
-      __css={{ label: 'MenuButton' }}>
+      {...props}>
       <MenuIcon />
     </IconButton>
   )

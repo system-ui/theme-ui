@@ -39,7 +39,6 @@ export const Spinner = React.forwardRef(function Spinner(
       role="img"
       {...props}
       __css={{
-        label: 'Spinner',
         color: 'primary',
         overflow: 'visible',
       }}>

@@ -21,7 +21,6 @@ export const Slider = React.forwardRef(function Slider(props, ref) {
       {...props}
       __themeKey="forms"
       __css={{
-        label: 'Slider',
         display: 'block',
         width: '100%',
         height: 4,

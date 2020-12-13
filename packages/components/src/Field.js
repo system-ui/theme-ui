@@ -11,7 +11,7 @@ export const Field = React.forwardRef(function Field(
   const fieldIdentifier = id || name
 
   return (
-    <Box {...getMargin(props)} __css={{ label: 'Field' }}>
+    <Box {...getMargin(props)}>
       <Label htmlFor={fieldIdentifier}>{label}</Label>
       <Control
         ref={ref}

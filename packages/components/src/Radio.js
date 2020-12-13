@@ -42,7 +42,7 @@ export const Radio = React.forwardRef(function Radio(
   ref
 ) {
   return (
-    <Box sx={{ label: 'Radio', minWidth: 'min-content' }}>
+    <Box sx={{ minWidth: 'min-content' }}>
       <Box
         ref={ref}
         as="input"

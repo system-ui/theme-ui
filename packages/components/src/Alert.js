@@ -9,7 +9,6 @@ export const Alert = React.forwardRef(function Alert(props, ref) {
       {...props}
       __themeKey="alerts"
       __css={{
-        label: 'Alert',
         display: 'flex',
         alignItems: 'center',
         px: 3,

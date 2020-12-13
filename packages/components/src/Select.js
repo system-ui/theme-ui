@@ -17,7 +17,6 @@ export const Select = React.forwardRef(function Select(
     <Box
       {...getMargin(props)}
       sx={{
-        label: 'Select',
         display: 'flex',
       }}>
       <Box

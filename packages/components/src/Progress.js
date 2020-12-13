@@ -9,7 +9,6 @@ export const Progress = React.forwardRef(function Progress(props, ref) {
       variant="styles.progress"
       {...props}
       __css={{
-        label: 'Progress',
         display: 'block',
         width: '100%',
         height: '4px',

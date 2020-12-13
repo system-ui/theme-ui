@@ -42,7 +42,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
   ref
 ) {
   return (
-    <Box sx={{ label: 'Checkbox', minWidth: 'min-content' }}>
+    <Box sx={{ minWidth: 'min-content' }}>
       <Box
         ref={ref}
         as="input"

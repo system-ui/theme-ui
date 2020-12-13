@@ -10,7 +10,6 @@ export const Textarea = React.forwardRef(function Textarea(props, ref) {
       {...props}
       __themeKey="forms"
       __css={{
-        label: 'Textarea',
         display: 'block',
         width: '100%',
         p: 2,
