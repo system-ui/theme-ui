@@ -11,12 +11,15 @@ export const Embed = React.forwardRef(
       width = 560,
       height = 315,
       allow,
+      sx,
+      variant,
       ...props
     },
     ref
   ) => (
     <Box
-      {...props}
+      variant={variant}
+      sx={sx}
       __css={{
         width: '100%',
         height: 0,
@@ -33,6 +36,7 @@ export const Embed = React.forwardRef(
         frameBorder={frameBorder}
         allowFullScreen={allowFullScreen}
         allow={allow}
+        {...props}
         __css={{
           position: 'absolute',
           width: '100%',
