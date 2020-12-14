@@ -22,7 +22,7 @@ const mergeProps = (props, initial, ...args) => {
     objToArray(initial)
   )
 }
-export const Box = React.forwardRef((props, ref) => {
+export const Box = React.forwardRef(function Box(props, ref) {
   const theme = useTheme()
   const {
     variant: variantProp,
