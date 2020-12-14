@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`adds a specific className on the wrapping element of ThemeProvider 1`] = `
+<div
+  className="🍧"
+>
+  <p>
+     Hello world! 
+  </p>
+</div>
+`;
+
+exports[`adds the default className on the wrapping element of ThemeProvider 1`] = `
+<div
+  className="theme-ui-provider"
+>
+  <p>
+     Hello world! 
+  </p>
+</div>
+`;
+
 exports[`transforms a theme config to CSS custom properties 1`] = `
 Object {
   "--color-accent": "#609",
