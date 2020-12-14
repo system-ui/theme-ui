@@ -554,10 +554,10 @@ describe('Divider', () => {
 })
 
 describe('Embed', () => {
-  test('renders', () => {
+  test('renders with box system props', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Embed />
+        <Embed mx="auto" py={4} />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()

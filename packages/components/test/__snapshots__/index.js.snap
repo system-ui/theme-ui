@@ -496,7 +496,7 @@ exports[`Donut renders 1`] = `
 </svg>
 `;
 
-exports[`Embed renders 1`] = `
+exports[`Embed renders with box system props 1`] = `
 .emotion-0 {
   box-sizing: border-box;
   margin: 0;
@@ -506,6 +506,10 @@ exports[`Embed renders 1`] = `
   padding-bottom: 56.25%;
   position: relative;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .emotion-1 {

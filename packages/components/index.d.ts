@@ -9,7 +9,9 @@ type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 type Assign<T, U> = {
   [P in keyof (T & U)]: P extends keyof T
     ? T[P]
-    : P extends keyof U ? U[P] : never
+    : P extends keyof U
+    ? U[P]
+    : never
 }
 
 type ForwardRef<T, P> = React.ForwardRefExoticComponent<
@@ -293,14 +295,8 @@ export type DividerProps = BoxProps
  */
 export const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
-/**
- * EmbedProps are a bit tricky. It is a composite component that uses a <Box />
- * as the parent element. The actual `ref` however is a nested <Box as="iframe" />
- * element which is what `props` are spread onto. To support these props we
- * need to use an intersection of the intrinsic attributes of HTMLIFrameElement,
- * with the ref attributes of HTMLIFrameElement.
- */
-export interface EmbedProps extends React.ComponentProps<'iframe'> & React.RefAttributes<HTMLIFrameElement> {
+export interface EmbedProps
+  extends Assign<React.ComponentProps<'iframe'>, BoxOwnProps> {
   variant?: string
   ratio?: number
   src?: React.IframeHTMLAttributes<any>['src']
