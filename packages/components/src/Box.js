@@ -1,33 +1,59 @@
-import styled from '@emotion/styled'
+/** @jsx jsx */
+import { jsx, useTheme } from '@emotion/react'
+import React from 'react'
 import { css, get } from '@theme-ui/css'
-import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
 
-const shouldForwardProp = createShouldForwardProp([
-  ...space.propNames,
-  ...color.propNames,
-])
+const internalProps = [...space.propNames, ...color.propNames]
 
-const sx = props => css(props.sx)(props.theme)
-const base = props => css(props.__css)(props.theme)
-const variant = ({ theme, variant, __themeKey = 'variants' }) =>
-  css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
+const sx = (props) => css(props.sx)(props.theme)
+const base = (props) => css(props.__css)(props.theme)
+const variant = ({ theme, variant, __themeKey = 'variants' }) => {
+  return css(get(theme, __themeKey + '.' + variant, get(theme, variant)))(theme)
+}
 
-export const Box = styled('div', {
-  shouldForwardProp,
-})(
-  {
-    boxSizing: 'border-box',
-    margin: 0,
-    minWidth: 0,
-  },
-  base,
-  variant,
-  space,
-  color,
-  sx,
-  props => props.css
+const objToArray = (obj) =>
+  obj ? Object.keys(obj).map((key) => ({ [key]: obj[key] })) : []
+
+const mergeProps = (props, initial, ...args) => {
+  return args.reduce(
+    (acc, fn) => [...acc, ...objToArray(fn(props))],
+    objToArray(initial)
+  )
+}
+export const Box = React.forwardRef((props, ref) => {
+  const theme = useTheme()
+  const {
+    variant: variantProp,
+    __themeKey = 'variants',
+    __css,
+    css: cssProp,
+    sx: sxProp,
+    as: Component = 'div',
+    ...rest
+  } = props
+  const style = mergeProps(
+    { theme, ...props },
+    {
+      boxSizing: 'border-box',
+      margin: 0,
+      minWidth: 0,
+    },
+    base,
+    variant,
+    space,
+    color,
+    sx,
+    () => cssProp
+  )
+  internalProps.forEach((name) => {
+    delete rest[name]
+  })
+  return <Component ref={ref} css={style} {...rest} />
+})
+
+Box.withComponent = (component) => ({ as, ...props }) => (
+  <Box as={component} {...props} />
 )
-
 export default Box
