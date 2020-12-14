@@ -1,4 +1,3 @@
-
 # gatsby-theme-ui-blog
 
 Minimal Gatsby MDX blog theme built with Theme UI.
@@ -11,9 +10,7 @@ npm i gatsby-theme-ui-blog
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: [
-    'gatsby-theme-ui-blog',
-  ]
+  plugins: ['gatsby-theme-ui-blog'],
 }
 ```
 
@@ -21,11 +18,11 @@ module.exports = {
 
 Shadow the following components to customize styles and page layout:
 
-Component | Description | Props
----|---|---
-`src/gatsby-theme-ui-blog/posts.js` | Index page for all blog posts | `{ posts }`
-`src/gatsby-theme-ui-blog/post.js` | Full blog post article page | `{ title, date, children, keywords, tags }`
-`src/gatsby-theme-ui-blog/layout.js` | Wrapping layout component for the Post and Posts components || all page-level props
+| Component                            | Description                                                 | Props                                       |
+| ------------------------------------ | ----------------------------------------------------------- | ------------------------------------------- | -------------------- |
+| `src/gatsby-theme-ui-blog/posts.js`  | Index page for all blog posts                               | `{ posts }`                                 |
+| `src/gatsby-theme-ui-blog/post.js`   | Full blog post article page                                 | `{ title, date, children, keywords, tags }` |
+| `src/gatsby-theme-ui-blog/layout.js` | Wrapping layout component for the Post and Posts components |                                             | all page-level props |
 
 ## Theming
 
@@ -38,10 +35,7 @@ npm i gatsby-plugin-theme-ui
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: [
-    'gatsby-theme-ui-blog',
-    'gatsby-plugin-theme-ui',
-  ]
+  plugins: ['gatsby-theme-ui-blog', 'gatsby-plugin-theme-ui'],
 }
 ```
 
@@ -56,7 +50,7 @@ export default {
     background: 'black',
     primary: 'cyan',
     secondary: 'magenta',
-  }
+  },
 }
 ```
 

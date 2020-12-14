@@ -1,1 +1,1 @@
-export default props => props.children
+export default (props) => props.children

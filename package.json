@@ -34,7 +34,7 @@
     "@types/jest": "^26.0.10",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.0.1",
-    "babel-preset-gatsby": "^0.6.0",
+    "babel-preset-gatsby": "^0.8.0",
     "husky": ">=4.0.7",
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
