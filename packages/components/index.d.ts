@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { StyledComponent } from '@emotion/styled'
-import { InterpolationWithTheme } from '@emotion/core'
+import { Interpolation } from '@emotion/react'
 import { SpaceProps, ColorProps, MarginProps } from 'styled-system'
-import { ResponsiveStyleValue } from '@theme-ui/css'
+import { ResponsiveStyleValue, ThemeUIStyleObject } from '@theme-ui/css'
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
@@ -21,27 +21,24 @@ type ForwardRef<T, P> = React.ForwardRefExoticComponent<
 export interface BoxOwnProps extends SpaceProps, ColorProps {
   as?: React.ElementType
   variant?: string
-  css?: InterpolationWithTheme<any>
+  css?: Interpolation<any>
+  sx?: ThemeUIStyleObject
 }
 export interface BoxProps
-  extends Assign<React.ComponentProps<'div'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps> {}
 /**
  * Use the Box component as a layout primitive to add margin, padding, and colors to content.
  * @see https://theme-ui.com/components/box
  */
-export const Box: StyledComponent<React.ComponentProps<'div'>, BoxOwnProps, {}>
+export const Box: StyledComponent<BoxOwnProps, BoxProps>
 
-export type FlexStyleProps = BoxOwnProps
+export type FlexOwnProps = BoxOwnProps
 export type FlexProps = BoxProps
 /**
  * Use the Flex component to create flexbox layouts.
  * @see https://theme-ui.com/components/flex
  */
-export const Flex: StyledComponent<
-  React.ComponentProps<'div'>,
-  FlexStyleProps,
-  {}
->
+export const Flex: StyledComponent<FlexOwnProps, FlexProps>
 
 export interface GridProps extends BoxProps {
   /**
@@ -89,6 +86,17 @@ export type TextProps = BoxProps
  */
 export const Text: ForwardRef<HTMLDivElement, BoxProps>
 
+export interface ParagraphProps
+  extends Assign<React.ComponentPropsWithRef<'p'>, BoxOwnProps> {}
+/**
+ * Primitive typographic component.
+ *
+ * Text style variants can be defined in the theme.text object.
+ * The Paragraph component uses theme.text.default as its default variant style.
+ * @see https://theme-ui.com/components/paragraph
+ */
+export const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps>
+
 export interface HeadingProps
   extends Assign<React.ComponentPropsWithRef<'h2'>, BoxOwnProps> {}
 /**
@@ -101,7 +109,7 @@ export interface HeadingProps
 export const Heading: ForwardRef<HTMLHeadingElement, HeadingProps>
 
 export interface ImageProps
-  extends Assign<React.ComponentProps<'img'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'img'>, BoxOwnProps> {}
 /**
  * Image style variants can be defined in the theme.images object.
  * @see https://theme-ui.com/components/image/
@@ -117,7 +125,7 @@ export type CardProps = BoxProps
 export const Card: ForwardRef<HTMLDivElement, CardProps>
 
 export interface LabelProps
-  extends Assign<React.ComponentProps<'label'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'label'>, BoxOwnProps> {}
 /**
  * Label variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.label` variant by default.
@@ -126,7 +134,7 @@ export interface LabelProps
 export const Label: ForwardRef<HTMLLabelElement, LabelProps>
 
 export interface InputProps
-  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
 /**
  * Input variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.input` variant by default.
@@ -135,7 +143,9 @@ export interface InputProps
 export const Input: ForwardRef<HTMLInputElement, InputProps>
 
 export interface SelectProps
-  extends Assign<React.ComponentProps<'select'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
+  arrow?: React.ReactElement
+}
 /**
  * Select variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.select` variant by default.
@@ -144,7 +154,7 @@ export interface SelectProps
 export const Select: ForwardRef<HTMLSelectElement, SelectProps>
 
 export interface TextareaProps
-  extends Assign<React.ComponentProps<'textarea'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'textarea'>, BoxOwnProps> {}
 /**
  * Form textarea component
  *
@@ -155,7 +165,7 @@ export interface TextareaProps
 export const Textarea: ForwardRef<HTMLTextAreaElement, TextareaProps>
 
 export interface RadioProps
-  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
 /**
  * Form radio input component
  *
@@ -166,7 +176,7 @@ export interface RadioProps
 export const Radio: ForwardRef<HTMLInputElement, RadioProps>
 
 export interface CheckboxProps
-  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
 /**
  * Form checkbox input component
  *
@@ -177,7 +187,7 @@ export interface CheckboxProps
 export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps>
 
 export interface SliderProps
-  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
 /**
  * Range input element
  *
@@ -198,7 +208,7 @@ export interface FieldOwnProps extends MarginProps {
   name: string
 }
 export type FieldProps<T extends React.ElementType> = FieldOwnProps &
-  Omit<React.ComponentProps<T>, 'as' | keyof FieldOwnProps> & {
+  Omit<React.ComponentPropsWithRef<T>, 'as' | keyof FieldOwnProps> & {
     /**
      * form control to render, default Input
      */
@@ -212,18 +222,20 @@ export function Field<
 >(props: FieldProps<T>): JSX.Element
 
 export interface ProgressProps
-  extends Assign<React.ComponentProps<'progress'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'progress'>, BoxOwnProps> {}
 /**
  * @see https://theme-ui.com/components/progress/
  */
 export const Progress: ForwardRef<HTMLProgressElement, ProgressProps>
 
 export interface DonutProps
-  extends Omit<
-      React.SVGProps<SVGSVGElement>,
+  extends Assign<
+    Omit<
+      React.ComponentPropsWithRef<'svg'>,
       'opacity' | 'color' | 'css' | 'sx' | 'max' | 'min'
     >,
-    BoxOwnProps {
+    BoxOwnProps
+  > {
   value: number
   min?: number
   max?: number
@@ -237,11 +249,13 @@ export interface DonutProps
 export const Donut: ForwardRef<SVGSVGElement, DonutProps>
 
 export interface SpinnerProps
-  extends Omit<
-      React.SVGProps<SVGSVGElement>,
+  extends Assign<
+    Omit<
+      React.ComponentPropsWithRef<'svg'>,
       'opacity' | 'color' | 'css' | 'sx'
     >,
-    BoxOwnProps {
+    BoxOwnProps
+  > {
   size?: number | string
 }
 export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps>
@@ -281,7 +295,18 @@ export type DividerProps = BoxProps
  */
 export const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
-export interface EmbedProps extends BoxProps {
+/**
+ * EmbedProps are a bit tricky. It is a composite component that uses a <Box />
+ * as the parent element which is what `props` are spread onto. The actual `ref`
+ * however is a nested <Box as="iframe" /> element. To support these props we
+ * need to use an intersection of the intrinsic attributes of HTMLDivElement,
+ * with the ref attributes of HTMLIFrameElement.
+ */
+export interface EmbedProps
+  extends Assign<
+    React.ComponentProps<'div'> & React.RefAttributes<HTMLIFrameElement>,
+    BoxOwnProps
+  > {
   ratio?: number
   src?: React.IframeHTMLAttributes<any>['src']
   frameBorder?: React.IframeHTMLAttributes<any>['frameBorder']
@@ -364,3 +389,16 @@ export type MenuButtonProps = IconButtonProps
  * @see https://theme-ui.com/components/menu-button
  */
 export const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps>
+
+/**
+ * Form switch component
+ *
+ * Switch variants can be defined in `theme.forms`
+ * and the component uses the `theme.forms.switch` variant by default.
+ */
+export const Switch: ForwardRef<HTMLInputElement, SwitchProps>
+
+export interface SwitchProps
+  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {
+  label?: string
+}

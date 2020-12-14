@@ -12,9 +12,9 @@ This specification is also intended to help ensure that themes created for Theme
 
 The theme object is made up of the following data types:
 
-- *Scales:* plain objects or arrays of values for related CSS properties
-- *Variants:* partial style objects that can be used for stylistic component variants or making part of an application themeable
-- *Styles:* a collection of styles for MDX content
+- _Scales:_ plain objects or arrays of values for related CSS properties
+- _Variants:_ partial style objects that can be used for stylistic component variants or making part of an application themeable
+- _Styles:_ a collection of styles for MDX content
 
 ## Theme Scales
 
@@ -106,7 +106,6 @@ Any undefined color keys in the nested color modes objects will fallback to valu
 
 </Note>
 
-
 ## Typography
 
 To ensure that themes built for Theme UI are as portable and interoperable as possible, the following keys should be defined within each theme scale.
@@ -145,9 +144,8 @@ Arrays are _not_ required, and plain objects will work as well.
 
 </Note>
 
-
 For illustration purposes, the index values of the array can be thought of as loosely mapping to heading levels,
-but these values are *not* in any way tied to HTML elements.
+but these values are _not_ in any way tied to HTML elements.
 
 | Index | Heading-Level Equivalent |
 | ----- | ------------------------ |
@@ -168,10 +166,10 @@ Variants are also used to style built-in [components](/components).
 // example typographic style variants
 {
   colors: {
-    white: #FFFFFF,
-    primary: #663399,
-    text: #393939,
-    secondary: #DAA520,
+    white: '#FFFFFF',
+    primary: '#663399',
+    text: '#393939',
+    secondary: '#DAA520',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -238,11 +236,11 @@ Variants support the same style objects as the `sx` prop, which means responsive
 
 The Theme UI `styles` object is primarily used as a way to style MDX content
 and helps avoid the need to use global CSS.
-The styles defined within this object can also be used with the [`Styled`](/styled) component.
+The styles defined within this object can also be used with the [`Themed`](/themed) component.
 
 <Note>
 
-The `styles` object is essentially an MDX-specific *variant*
+The `styles` object is essentially an MDX-specific _variant_
 that maps directly to each MDX component.
 
 </Note>
@@ -330,8 +328,7 @@ Variants can also be used within the `theme.styles` object.
 ## Aliasing Colors and Other Scales
 
 In many design systems, developers choose to create an additional layer of abstraction for mapping individual components to specific scale values.
-With Theme UI, *variants* are the mechanism to use for such abstractions.
-
+With Theme UI, _variants_ are the mechanism to use for such abstractions.
 
 ## Breakpoints
 

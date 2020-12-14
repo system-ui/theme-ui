@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, SxStyleProp, Theme } from 'theme-ui'
+import { jsx, ThemeProvider, Theme, ThemeStyles } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {
   useState,
@@ -11,7 +11,7 @@ import React, {
   ReactComponentElement,
   ReactElement,
 } from 'react'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import merge from 'deepmerge'
 
 const createNestedLinks = (
@@ -79,7 +79,7 @@ export const Sidenav = forwardRef<
   {
     open?: boolean
     components?: MDXProviderComponents
-    styles?: Theme['styles']
+    styles?: ThemeStyles
     children: ReactNode
   }
 >(({ open, styles = {}, components = {}, ...props }, ref) => {
@@ -130,7 +130,7 @@ export const Sidenav = forwardRef<
             transition: 'transform .2s ease-out',
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
-            ...{ WebkitOverflowScrolling: 'touch' },
+            WebkitOverflowScrolling: 'touch',
           }}
         />
       </MDXProvider>
@@ -138,12 +138,13 @@ export const Sidenav = forwardRef<
   )
 })
 
-export const AccordionButton: FunctionComponent<{
+export const AccordionButton = (props: {
   open: boolean
   pathname?: string
   href: string
+  className?: string
   onClick: EventHandler<MouseEvent<HTMLButtonElement>>
-}> = (props) => {
+}) => {
   const transform = props.open ? 'rotate(-180 8 8)' : 'rotate(0 8 8)'
   const disabled = props.pathname ? props.pathname.includes(props.href) : false
 
@@ -248,7 +249,7 @@ export const AccordionNav = forwardRef<
     }
 
     return (
-      <div>
+      <React.Fragment>
         {open && <Overlay {...props} />}
         <div
           ref={ref}
@@ -267,7 +268,7 @@ export const AccordionNav = forwardRef<
             transition: 'transform .2s ease-out',
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
-            ...{ WebkitOverflowScrolling: 'touch' },
+            WebkitOverflowScrolling: 'touch',
           }}>
           <ul
             sx={{
@@ -309,7 +310,7 @@ export const AccordionNav = forwardRef<
             ))}
           </ul>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 )

@@ -1,13 +1,42 @@
 /** @jsx jsx */
-import { jsx, Theme, SxStyleProp } from 'theme-ui'
+import { jsx, ThemeUIStyleObject } from 'theme-ui'
+import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
 import { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
 
 export interface SpaceProps {
   tag?: string
   property?: 'margin' | 'padding'
-  value?: Theme['space']
-  onChange: (sx: SxStyleProp) => void
+  value?: Partial<
+    Pick<
+      ThemeUIExtendedCSSProperties,
+      | 'paddingTop'
+      | 'marginTop'
+      | 'paddingBottom'
+      | 'marginBottom'
+      | 'paddingLeft'
+      | 'marginLeft'
+      | 'paddingRight'
+      | 'marginRight'
+      | 'paddingX'
+      | 'paddingY'
+      | 'marginX'
+      | 'marginY'
+      | 'mt'
+      | 'pt'
+      | 'mb'
+      | 'pb'
+      | 'ml'
+      | 'pl'
+      | 'mr'
+      | 'pr'
+      | 'px'
+      | 'py'
+      | 'mx'
+      | 'my'
+    >
+  >
+  onChange: (sx: ThemeUIStyleObject) => void
 }
 
 export const Space = ({

@@ -8,10 +8,37 @@ title: API
 
 The core `theme-ui` package exports the following modules.
 
+### `/jsx-runtime`
+
+While not being available in the `theme-ui` package directly, there are two separate entry points for React create element functions intended to be used in the [automatic JSX runtime](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) with a custom pragma comment.
+They add support for the `sx` prop, which uses Emotion's create element functions internally and parse style objects with the Theme UI `css` utility.
+
+**Usage:**
+
+```jsx
+/** @jsxImportSource theme-ui */
+
+export default (props) => (
+  <div
+    {...props}
+    sx={{
+      color: 'primary',
+    }}
+  />
+)
+```
+
+**Imports for use without JSX:**
+
+```js
+import { jsx, jsxs } from 'theme-ui/jsx-runtime'
+import { jsxDEV } from 'theme-ui/jsx-dev-runtime'
+```
+
 ### `jsx`
 
-The `jsx` export is a React create element function intended for use with a custom pragma comment.
-It adds support for the `sx` prop, which uses Emotion's create element function internally and parses style objects with the Theme UI `css` utility.
+The `jsx` export is a React create element function for the classic JSX runtime intended for use with a custom pragma comment.
+It adds support for the `sx` prop in the same way like the `/jsx-runtime` entrypoint.
 
 **Usage:**
 
@@ -62,15 +89,15 @@ The color mode state can be any string and should match the name of a color mode
 const [colorMode, setColorMode] = useColorMode()
 ```
 
-### `Styled`
+### `Themed`
 
-The [`Styled`](/styled) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
+The [`Themed`](/themed) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
 Each component will pick up styles from its corresponding theme object.
 These are primarily meant to be used as a mechanism to use styles defined in a `theme` object outside of MDX.
 
 ```jsx
 // picks up styles from `theme.styles.h1`
-<Styled.h1 />
+<Themed.h1 />
 ```
 
 | Prop | Type                | Description                             |

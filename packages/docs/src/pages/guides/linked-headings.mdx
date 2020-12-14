@@ -18,12 +18,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        remarkPlugins: [
-          remarkSlug,
-        ]
-      }
-    }
-  ]
+        remarkPlugins: [remarkSlug],
+      },
+    },
+  ],
 }
 ```
 
@@ -33,18 +31,14 @@ If you're not using Gatsby, pass these components to the [`MDXProvider` componen
 
 ```jsx
 // src/gatsby-plugin-theme-ui/components.js
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-const heading = Tag => props => {
+const heading = (Tag) => (props) => {
   if (!props.id) return <Tag {...props} />
 
   return (
     <Tag {...props}>
-      <a
-        href={`#${props.id}`}>
-        {props.children}
-      </a>
+      <a href={`#${props.id}`}>{props.children}</a>
     </Tag>
   )
 }

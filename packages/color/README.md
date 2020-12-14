@@ -189,7 +189,7 @@ We can take the result of any of the above helper functions (which return a func
     backgroundImage: t => `
       linear-gradient(
         to bottom,
-        ${alpha('primary', 0.5)(t)}
+        ${alpha('primary', 0.5)(t)},
         ${alpha('secondary', 0.5)(t)}
       )
     `,

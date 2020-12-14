@@ -13,10 +13,9 @@ Feel free to customize the content and default styles however you like.
 
 ```js
 // example src/layout.js
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props =>
+export default (props) => (
   <div
     sx={{
       display: 'flex',
@@ -52,16 +51,16 @@ export default props =>
       Footer content
     </footer>
   </div>
+)
 ```
 
 Next use the `variant` property to name parts of the layout.
 
 ```js
 // example src/layout.js
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props =>
+export default (props) => (
   <div
     sx={{
       display: 'flex',
@@ -102,6 +101,7 @@ export default props =>
       Footer content
     </footer>
   </div>
+)
 ```
 
 The `variant` properties above will look for styles in `theme.layout`.
@@ -125,7 +125,6 @@ export default {
       color: 'white',
       backgroundColor: 'black',
     },
-  }
+  },
 }
 ```
-

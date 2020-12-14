@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
-import { CustomPicker, CustomPickerProps, HSLColor } from 'react-color'
+import { CustomPicker, CustomPickerProps } from 'react-color'
 import {
   EditableInput,
   Hue,

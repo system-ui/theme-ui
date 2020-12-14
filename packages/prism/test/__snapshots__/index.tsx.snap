@@ -2,7 +2,7 @@
 
 exports[`highlight start and end 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -88,7 +88,7 @@ exports[`highlight start and end 1`] = `
 
 exports[`highlights inline comment 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -140,7 +140,7 @@ exports[`highlights inline comment 1`] = `
 
 exports[`no highlight 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -187,7 +187,7 @@ exports[`no highlight 1`] = `
 
 exports[`renders a code block 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -229,7 +229,7 @@ exports[`renders a code block 1`] = `
 
 exports[`renders with other languages 1`] = `
 <pre
-  className="language-php prism-code language-php css-0"
+  className="language-php prism-code language-php emotion-0"
   style={Object {}}
 >
   <div

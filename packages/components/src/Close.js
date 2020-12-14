@@ -15,6 +15,7 @@ const x = (
 export const Close = React.forwardRef(({ size = 32, ...props }, ref) => (
   <IconButton
     ref={ref}
+    size={size}
     title="Close"
     aria-label="Close"
     variant="close"
