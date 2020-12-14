@@ -14,9 +14,8 @@ export const __isBoxStyledSystemProp = (prop) => boxSystemProps.includes(prop)
 
 const sx = (props) => css(props.sx)(props.theme)
 const base = (props) => css(props.__css)(props.theme)
-const variant = ({ theme, variant, __themeKey = 'variants' }) => {
-  return css(get(theme, __themeKey + '.' + variant, get(theme, variant)))(theme)
-}
+const variant = ({ theme, variant, __themeKey = 'variants' }) =>
+  css(get(theme, __themeKey + '.' + variant, get(theme, variant)))(theme)
 
 const objToArray = (obj) =>
   obj ? Object.keys(obj).map((key) => ({ [key]: obj[key] })) : []
