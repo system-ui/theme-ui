@@ -1,21 +1,27 @@
-import { CSSObject, SystemStyleObject, UseThemeFunction, Theme } from './types'
+import {
+  CSSObject,
+  ThemeUIStyleObject,
+  ThemeDerivedStyles,
+  Theme,
+  ThemeUICSSObject,
+} from './types'
 
 export * from './types'
 
 const hasDefault = (x: unknown): x is { default: string | number } => {
-  return typeof x === 'object' && x && 'default' in x
+  return typeof x === 'object' && x !== null && 'default' in x
 }
 
 export function get(
   obj: object,
-  key: string | number,
+  key: string | number | undefined,
   def?: unknown,
   p?: number,
   undef?: unknown
 ): any {
   const path = key && typeof key === 'string' ? key.split('.') : [key]
   for (p = 0; p < path.length; p++) {
-    obj = obj ? (obj as any)[path[p]] : undef
+    obj = obj ? (obj as any)[path[p]!] : undef
   }
   if (obj === undef) return def
 
@@ -53,6 +59,8 @@ export const multiples = {
   marginY: ['marginTop', 'marginBottom'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
+  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
+  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
   size: ['width', 'height'],
 }
 
@@ -61,7 +69,9 @@ export const scales = {
   backgroundColor: 'colors',
   borderColor: 'colors',
   caretColor: 'colors',
+  columnRuleColor: 'colors',
   opacity: 'opacities',
+  transition: 'transitions',
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -88,6 +98,13 @@ export const scales = {
   paddingInline: 'space',
   paddingInlineEnd: 'space',
   paddingInlineStart: 'space',
+  scrollPadding: 'space',
+  scrollPaddingTop: 'space',
+  scrollPaddingRight: 'space',
+  scrollPaddingBottom: 'space',
+  scrollPaddingLeft: 'space',
+  scrollPaddingX: 'space',
+  scrollPaddingY: 'space',
   inset: 'space',
   insetBlock: 'space',
   insetBlockEnd: 'space',
@@ -221,10 +238,10 @@ const transforms = [
   {}
 )
 
-const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
-  theme?: Theme
-) => {
-  const next: Exclude<SystemStyleObject, UseThemeFunction> = {}
+const responsive = (
+  styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>
+) => (theme?: Theme) => {
+  const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
   const breakpoints =
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
@@ -232,9 +249,12 @@ const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
     ...breakpoints.map((n) => `@media screen and (min-width: ${n})`),
   ]
 
-  for (const key in styles) {
-    const value =
-      typeof styles[key] === 'function' ? styles[key](theme) : styles[key]
+  for (const k in styles) {
+    const key = k as keyof typeof styles
+    let value = styles[key]
+    if (typeof value === 'function') {
+      value = value(theme || {})
+    }
 
     if (value == null) continue
     if (!Array.isArray(value)) {
@@ -249,38 +269,50 @@ const responsive = (styles: Exclude<SystemStyleObject, UseThemeFunction>) => (
       }
       next[media] = next[media] || {}
       if (value[i] == null) continue
-      next[media][key] = value[i]
+      ;(next[media] as Record<string, any>)[key] = value[i]
     }
   }
-
   return next
 }
 
 type CssPropsArgument = { theme: Theme } | Theme
 
-export const css = (args: SystemStyleObject = {}) => (
+export const css = (args: ThemeUIStyleObject = {}) => (
   props: CssPropsArgument = {}
 ): CSSObject => {
   const theme: Theme = {
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
   }
-  let result = {}
-  const obj = typeof args === 'function' ? args(theme) : args
-  const styles = responsive(obj)(theme)
+  let obj = typeof args === 'function' ? args(theme) : args
+  let result: CSSObject = {}
 
+  // insert variant props before responsive styles, so they can be merged
+  // we need to maintain order of the style props, so if a variant is place in the middle
+  // of other props, it will extends its props at that same location order.
+  if (obj && obj['variant']) {
+    for (const key in obj) {
+      const x = obj[key as keyof typeof styles]
+      if (key === 'variant') {
+        const val = typeof x === 'function' ? x(theme) : x
+        const variant = get(theme, val as string)
+        result = { ...result, ...variant }
+      } else {
+        result[key] = x as CSSObject
+      }
+    }
+  } else {
+    result = obj as CSSObject
+  }
+  const styles = responsive(result as ThemeUICSSObject)(theme)
+  result = {}
   for (const key in styles) {
-    const x = styles[key]
+    const x = styles[key as keyof typeof styles]
     const val = typeof x === 'function' ? x(theme) : x
 
-    if (key === 'variant') {
-      const variant = css(get(theme, val))(theme)
-      result = { ...result, ...variant }
-      continue
-    }
-
     if (val && typeof val === 'object') {
-      result[key] = css(val)(theme)
+      // TODO: val can also be an array here. Is this a bug? Can it be reproduced?
+      result[key] = css(val as ThemeUICSSObject)(theme)
       continue
     }
 
@@ -290,8 +322,8 @@ export const css = (args: SystemStyleObject = {}) => (
     const transform: any = get(transforms, prop, get)
     const value = transform(scale, val, val)
 
-    if (multiples[prop]) {
-      const dirs = multiples[prop]
+    if (prop in multiples) {
+      const dirs = multiples[prop as keyof typeof multiples]
 
       for (let i = 0; i < dirs.length; i++) {
         result[dirs[i]] = value

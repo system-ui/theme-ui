@@ -8,3 +8,4 @@ coverage
 .rts2_cache*
 .idea
 .vscode
+.envrc

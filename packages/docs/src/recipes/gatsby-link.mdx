@@ -10,13 +10,13 @@ the router link components directly, without using wrapper components.
 
 ```jsx live
 <Link
-  to='/recipes/gatsby-link/'
-  activeClassName='active'
+  to="/recipes/gatsby-link/"
+  activeClassName="active"
   sx={{
     color: 'inherit',
     '&.active': {
       color: 'primary',
-    }
+    },
   }}>
   Link
 </Link>
@@ -25,21 +25,21 @@ the router link components directly, without using wrapper components.
 Full code for this example:
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import { Link } from 'gatsby'
 
-export default props =>
+export default (props) => (
   <Link
     {...props}
-    activeClassName='active'
+    activeClassName="active"
     sx={{
       color: 'inherit',
       '&.active': {
         color: 'primary',
-      }
+      },
     }}
   />
+)
 ```
 
-[Gatsby Link]: https://www.gatsbyjs.org/docs/linking-between-pages/
+[gatsby link]: https://www.gatsbyjs.org/docs/linking-between-pages/

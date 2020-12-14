@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-swiss",
-  "version": "0.4.0-alpha.1",
+  "version": "0.5.0-alpha.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public"

@@ -7,6 +7,8 @@ import { Note } from '../..'
 # Components
 
 A number of built-in UI components are available for layouts, grids, buttons, form elements, and more.
+Components can be used as an alternative to the [JSX pragma](/jsx-pragma) for using Theme UI features,
+or in parallel to provide specific UI components.
 
 ```jsx live=true
 <Box
@@ -95,6 +97,15 @@ The `sx` prop on Theme UI components can be used *without* the `jsx` pragma comm
 
 </Note>
 
+<Note>
+
+If you’re using TypeScript, Theme UI merges prop types with the props of components passed
+in the `as` prop on [`Field`](/components/field).
+However, it’s tricky to get the `as` element props working on [`Box`](/components/box), especially with `svg`.
+You can work around this by using the [custom JSX pragma](/jsx-pragma), which can be transpiled by TypeScript.
+
+</Note>
+
 [variant]: /guides/variants
 
 ### Style Props
@@ -104,8 +115,7 @@ These props work the same as properties within the `sx` prop, but allow for a mo
 
 <Note>
 
-If you've used [Styled System][] or [Rebass][] before,
-these props work the same way.
+If you’ve used [Styled System][] or [Rebass][] before, these props work the same way.
 
 </Note>
 
@@ -120,13 +130,13 @@ Name | Description
 `marginLeft`, `ml`    | Margin Left
 `marginX`, `mx`       | Margin Left & Right
 `marginY`, `my`       | Margin Top & Bottom
-`padding`, `p`         | Padding
-`paddingTop`, `pt`     | Padding Top
-`paddingRight`, `pr`   | Padding Right
-`paddingBottom`, `pb`  | Padding Bottom
-`paddingLeft`, `pl`    | Padding Left
-`paddingX`, `px`       | Padding Left & Right
-`paddingY`, `py`       | Padding Top & Bottom
+`padding`, `p`        | Padding
+`paddingTop`, `pt`    | Padding Top
+`paddingRight`, `pr`  | Padding Right
+`paddingBottom`, `pb` | Padding Bottom
+`paddingLeft`, `pl`   | Padding Left
+`paddingX`, `px`      | Padding Left & Right
+`paddingY`, `py`      | Padding Top & Bottom
 
 [styled system]: https://styled-system.com
 [rebass]: https://rebassjs.org

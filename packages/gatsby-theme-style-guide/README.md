@@ -1,7 +1,7 @@
 
 # gatsby-theme-style-guide
 
-Automatically generate a style guide page based on your Theme UI configuration, built with [`@theme-ui/style-guide`](https://theme-ui.com/style-guide).
+Automatically generate a style guide page based on your Theme UI configuration, built with [`@theme-ui/style-guide`](https://theme-ui.com/packages/style-guide).
 
 ```sh
 npm i gatsby-theme-style-guide

@@ -4,19 +4,22 @@ import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import Combobox from '../Combobox'
 
-type OnChangeArg =
-  | { fontFamily: string }
-  | { fontSize: number }
-  | { fontWeight: string }
-  | { lineHeight: string }
+type TypographyPropsValue = {
+  fontFamily?: string
+  fontSize?: string | number
+  fontWeight?: string | number
+  lineHeight?: string | number
+}
+
+type OnChangeArg = {
+  [P in keyof TypographyPropsValue]: {
+    [K in P]: Exclude<TypographyPropsValue[P], undefined>
+  }
+}[keyof TypographyPropsValue]
+
 export interface TypographyProps {
   tag?: string
-  value?: {
-    fontFamily?: string
-    fontSize?: string | number
-    fontWeight?: string
-    lineHeight?: string
-  }
+  value?: TypographyPropsValue
   theme?: Theme
   onChange: (arg: OnChangeArg) => void
 }
@@ -40,7 +43,7 @@ export const SxTypography = ({
         name={prefixName('fontFamily')}
         label="Font Family"
         value={fontFamily || ''}
-        onChange={(fontFamily) => {
+        onChange={fontFamily => {
           onChange({ fontFamily })
         }}
         options={['inherit', ...Object.keys(fonts)]}
@@ -56,7 +59,7 @@ export const SxTypography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={(e) => {
+          onChange={e => {
             const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
@@ -65,7 +68,7 @@ export const SxTypography = ({
           name={prefixName('fontWeight')}
           label="Font Weight"
           value={fontWeight || ''}
-          onChange={(fontWeight) => {
+          onChange={fontWeight => {
             onChange({ fontWeight })
           }}
           options={['inherit', ...Object.keys(fontWeights)]}
@@ -74,7 +77,7 @@ export const SxTypography = ({
           name={prefixName('lineHeight')}
           label="Line Height"
           value={lineHeight || ''}
-          onChange={(lineHeight) => {
+          onChange={lineHeight => {
             onChange({ lineHeight })
           }}
           options={['inherit', ...Object.keys(lineHeights)]}

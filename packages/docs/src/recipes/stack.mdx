@@ -20,13 +20,9 @@ Add vertical space between child elements using CSS Grid.
 ```
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default ({
-  gap = 4,
-  ...props
-}) =>
+export default ({ gap = 4, ...props }) => (
   <div
     {...props}
     sx={{
@@ -34,6 +30,7 @@ export default ({
       gridGap: gap,
     }}
   />
+)
 ```
 
 See also: [Grid component](/components/grid)
