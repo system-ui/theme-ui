@@ -1,7 +1,7 @@
 # [@theme-ui/preset-polaris](https://theme-ui.com/presets/polaris)
 
 Theme UI includes `@theme-ui/preset-polaris` which can be used as an example or
-starting point for extending your own themes.  `@theme-ui/preset-polaris` is based on the Shopify design system, [Polaris](https://polaris.shopify.com/design/colors).
+starting point for extending your own themes. `@theme-ui/preset-polaris` is based on the Shopify design system, [Polaris](https://polaris.shopify.com/design/colors).
 
 ```sh
 npm i @theme-ui/preset-polaris
@@ -28,5 +28,4 @@ If you'd like to add a new preset or improve upon the existing ones, please open
 
 [issue]: https://github.com/system-ui/theme-ui/issues
 [pull request]: https://github.com/system-ui/theme-ui/pulls
-
 [demo]: https://theme-ui.com/demo

@@ -1,9 +1,19 @@
+// @ts-check
 import React from 'react'
-import Box from './Box'
 
+import Box, { __isBoxStyledSystemProp } from './Box'
+import { getProps } from './util'
+
+const getContainerProps = getProps(__isBoxStyledSystemProp)
+const getIframeProps = getProps((str) => !__isBoxStyledSystemProp(str))
+
+/** @typedef {import("../index").EmbedProps} EmbedProps */
+/** @type {React.ForwardRefExoticComponent<EmbedProps>} */
 export const Embed = React.forwardRef(
   (
     {
+      variant,
+      sx,
       ratio = 16 / 9,
       src,
       frameBorder = 0,
@@ -11,38 +21,43 @@ export const Embed = React.forwardRef(
       width = 560,
       height = 315,
       allow,
-      ...props
+      ...rest
     },
     ref
-  ) => (
-    <Box
-      {...props}
-      __css={{
-        width: '100%',
-        height: 0,
-        paddingBottom: 100 / ratio + '%',
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
+  ) => {
+    return (
       <Box
-        ref={ref}
-        as="iframe"
-        src={src}
-        width={width}
-        height={height}
-        frameBorder={frameBorder}
-        allowFullScreen={allowFullScreen}
-        allow={allow}
+        variant={variant}
+        sx={sx}
         __css={{
-          position: 'absolute',
           width: '100%',
-          height: '100%',
-          top: 0,
-          bottom: 0,
-          left: 0,
-          border: 0,
+          height: 0,
+          paddingBottom: 100 / ratio + '%',
+          position: 'relative',
+          overflow: 'hidden',
         }}
-      />
-    </Box>
-  )
+        {...getContainerProps(rest)}>
+        <Box
+          ref={ref}
+          as="iframe"
+          src={src}
+          width={width}
+          height={height}
+          frameBorder={frameBorder}
+          allowFullScreen={allowFullScreen}
+          allow={allow}
+          {...getIframeProps(rest)}
+          __css={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            border: 0,
+          }}
+        />
+      </Box>
+    )
+  }
 )

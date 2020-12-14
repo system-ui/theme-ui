@@ -8,6 +8,10 @@ import {
 
 export * from './types'
 
+const hasDefault = (x: unknown): x is { default: string | number } => {
+  return typeof x === 'object' && x !== null && 'default' in x
+}
+
 export function get(
   obj: object,
   key: string | number | undefined,
@@ -19,7 +23,9 @@ export function get(
   for (p = 0; p < path.length; p++) {
     obj = obj ? (obj as any)[path[p]!] : undef
   }
-  return obj === undef ? def : obj
+  if (obj === undef) return def
+
+  return hasDefault(obj) ? obj.default : obj
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
@@ -262,8 +268,8 @@ const responsive = (
         continue
       }
       next[media] = next[media] || {}
-      if (value[i] == null) continue;
-      (next[media] as Record<string, any>)[key] = value[i]
+      if (value[i] == null) continue
+      ;(next[media] as Record<string, any>)[key] = value[i]
     }
   }
   return next
@@ -288,15 +294,15 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     for (const key in obj) {
       const x = obj[key as keyof typeof styles]
       if (key === 'variant') {
-        const val = typeof x === 'function' ? x(theme) : x;
-        const variant = get(theme, val as string);
-        result = { ...result, ...variant };
+        const val = typeof x === 'function' ? x(theme) : x
+        const variant = get(theme, val as string)
+        result = { ...result, ...variant }
       } else {
-        result[key] = x as CSSObject;
-      }  
+        result[key] = x as CSSObject
+      }
     }
   } else {
-    result = obj as CSSObject ;
+    result = obj as CSSObject
   }
   const styles = responsive(result as ThemeUICSSObject)(theme)
   result = {}

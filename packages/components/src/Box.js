@@ -5,7 +5,12 @@ import { css, get } from '@theme-ui/css'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
 
-const internalProps = [...space.propNames, ...color.propNames]
+const boxSystemProps = [...space.propNames, ...color.propNames]
+/**
+ * @internal
+ * @type {(prop: string) => boolean}
+ */
+export const __isBoxStyledSystemProp = (prop) => boxSystemProps.includes(prop)
 
 const sx = (props) => css(props.sx)(props.theme)
 const base = (props) => css(props.__css)(props.theme)
@@ -45,9 +50,9 @@ export const Box = forwardRef(function Box(props, ref) {
     space,
     color,
     sx,
-    () => cssProp
+    (props) => props.css
   )
-  internalProps.forEach((name) => {
+  boxSystemProps.forEach((name) => {
     delete rest[name]
   })
   return <Component ref={ref} css={style} {...rest} />
