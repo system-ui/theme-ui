@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react'
-import React from 'react'
+import { forwardRef } from 'react'
 import { css, get } from '@theme-ui/css'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
@@ -27,7 +27,7 @@ const mergeProps = (props, initial, ...args) => {
     objToArray(initial)
   )
 }
-export const Box = React.forwardRef(function Box(props, ref) {
+export const Box = forwardRef(function Box(props, ref) {
   const theme = useTheme()
 
   const {
