@@ -9,8 +9,8 @@ const shouldForwardProp = createShouldForwardProp([
   ...color.propNames,
 ])
 
-const sx = props => css(props.sx)(props.theme)
-const base = props => css(props.__css)(props.theme)
+const sx = (props) => css(props.sx)(props.theme)
+const base = (props) => css(props.__css)(props.theme)
 const variant = ({ theme, variant, __themeKey = 'variants' }) =>
   css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
 
@@ -27,7 +27,7 @@ export const Box = styled('div', {
   space,
   color,
   sx,
-  props => props.css
+  (props) => props.css
 )
 
 export default Box
