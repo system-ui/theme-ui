@@ -1,5 +1,9 @@
 # Changelog
 
+## UNRELEASED
+
+- Option for `gatsby-plugin-theme-ui` to disable body script (`noFlashScript`). Issue ##1369
+
 ## v0.6.0 UNRELEASED
 
 - Extract objects with nested variant props. Issue #1357
