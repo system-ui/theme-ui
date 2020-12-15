@@ -2,7 +2,7 @@
 
 ## UNRELEASED
 
-- Option for `gatsby-plugin-theme-ui` to disable body script (`noFlashScript`). Issue ##1369
+- Option for `gatsby-plugin-theme-ui` to disable body script (`noFlashScript`). Issue #1369
 
 ## v0.6.0 UNRELEASED
 
