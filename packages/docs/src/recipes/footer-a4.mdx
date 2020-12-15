@@ -15,30 +15,59 @@ component: footer
     sx={{
       display: 'grid',
       gridTemplateRows: 'repeat(4, 32px)',
-      gridTemplateColumns: [
-        'repeat(2, 1fr)',
-        'repeat(4, 1fr)',
-      ],
+      gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(4, 1fr)'],
       gridAutoFlow: 'column',
       px: 2,
       py: 4,
     }}>
-    <Link to='/' sx={{ variant: 'styles.navlink', p: 2 }}>Home</Link>
-    <Link to='/work' sx={{ variant: 'styles.navlink', p: 2 }}>Work</Link>
-    <Link to='/blog' sx={{ variant: 'styles.navlink', p: 2 }}>Blog</Link>
-    <Link to='/about' sx={{ variant: 'styles.navlink', p: 2 }}>About</Link>
-    <Link to='/products' sx={{ variant: 'styles.navlink', p: 2 }}>Products</Link>
-    <Link to='/community' sx={{ variant: 'styles.navlink', p: 2 }}>Community</Link>
-    <Link to='/support' sx={{ variant: 'styles.navlink', p: 2 }}>Support</Link>
-    <Link to='/contact' sx={{ variant: 'styles.navlink', p: 2 }}>Contact</Link>
-    <Link to='/support' sx={{ variant: 'styles.navlink', p: 2 }}>Support</Link>
-    <Link to='/products' sx={{ variant: 'styles.navlink', p: 2 }}>Products</Link>
-    <Link to='/contact' sx={{ variant: 'styles.navlink', p: 2 }}>Contact</Link>
-    <Link to='/community' sx={{ variant: 'styles.navlink', p: 2 }}>Community</Link>
-    <Link to='/products' sx={{ variant: 'styles.navlink', p: 2 }}>Products</Link>
-    <Link to='/community' sx={{ variant: 'styles.navlink', p: 2 }}>Community</Link>
-    <Link to='/support' sx={{ variant: 'styles.navlink', p: 2 }}>Support</Link>
-    <Link to='/contact' sx={{ variant: 'styles.navlink', p: 2 }}>Contact</Link>
+    <Link to="/" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Home
+    </Link>
+    <Link to="/work" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Work
+    </Link>
+    <Link to="/blog" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Blog
+    </Link>
+    <Link to="/about" sx={{ variant: 'styles.navlink', p: 2 }}>
+      About
+    </Link>
+    <Link to="/products" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Products
+    </Link>
+    <Link to="/community" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Community
+    </Link>
+    <Link to="/support" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Support
+    </Link>
+    <Link to="/contact" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Contact
+    </Link>
+    <Link to="/support" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Support
+    </Link>
+    <Link to="/products" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Products
+    </Link>
+    <Link to="/contact" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Contact
+    </Link>
+    <Link to="/community" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Community
+    </Link>
+    <Link to="/products" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Products
+    </Link>
+    <Link to="/community" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Community
+    </Link>
+    <Link to="/support" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Support
+    </Link>
+    <Link to="/contact" sx={{ variant: 'styles.navlink', p: 2 }}>
+      Contact
+    </Link>
   </div>
   <div
     sx={{
@@ -46,11 +75,14 @@ component: footer
       justifyContent: 'flex-end',
       p: 3,
     }}>
-    <Link to='/privacy-policy' sx={{ color: 'inherit' }}>Privacy Policy</Link>
+    <Link to="/privacy-policy" sx={{ color: 'inherit' }}>
+      Privacy Policy
+    </Link>
     <div sx={{ mx: 1 }} />
-    <Link to='/terms-of-use' sx={{ color: 'inherit' }}>Terms of Use</Link>
-    <div sx={{ mx: 1 }} />
-    © 2019 Jane Doe
+    <Link to="/terms-of-use" sx={{ color: 'inherit' }}>
+      Terms of Use
+    </Link>
+    <div sx={{ mx: 1 }} />© 2019 Jane Doe
   </div>
 </footer>
 ```

@@ -8,7 +8,7 @@ import ReactDOMServer from 'react-dom/server'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
 test("falls back to user's default index", () => {
-  const Component = props => {
+  const Component = (props) => {
     const value = useResponsiveValue(['a', 'b'], { defaultIndex: 1 })
     const index = useBreakpointIndex({ defaultIndex: 2 })
     return (
@@ -26,7 +26,7 @@ test("falls back to user's default index", () => {
 test('defaults to first breakpoint without user input', () => {
   let value
   let index
-  const Component = props => {
+  const Component = (props) => {
     value = useResponsiveValue(['a', 'b'])
     index = useBreakpointIndex()
     return null
@@ -38,7 +38,7 @@ test('defaults to first breakpoint without user input', () => {
 })
 
 test('requires default index be in range', () => {
-  const Component = props => {
+  const Component = (props) => {
     const value = useResponsiveValue(['a', 'b'], { defaultIndex: 4 })
     const index = useBreakpointIndex({ defaultIndex: 4 })
     return null
@@ -62,7 +62,7 @@ test('requires default index be a number', () => {
     return null
   }
 
-  const createRender = defaultIndex => () =>
+  const createRender = (defaultIndex) => () =>
     ReactDOMServer.renderToStaticMarkup(<Component index={defaultIndex} />)
 
   expect(createRender(() => 2)).toThrowError(TypeError)

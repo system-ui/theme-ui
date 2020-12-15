@@ -4,13 +4,18 @@ import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
 
-const shouldForwardProp = createShouldForwardProp([
-  ...space.propNames,
-  ...color.propNames,
-])
+const boxSystemProps = [...space.propNames, ...color.propNames]
 
-const sx = props => css(props.sx)(props.theme)
-const base = props => css(props.__css)(props.theme)
+/**
+ * @internal
+ * @type {(prop: string) => boolean}
+ */
+export const __isBoxStyledSystemProp = (prop) => boxSystemProps.includes(prop)
+
+const shouldForwardProp = createShouldForwardProp(boxSystemProps)
+
+const sx = (props) => css(props.sx)(props.theme)
+const base = (props) => css(props.__css)(props.theme)
 const variant = ({ theme, variant, __themeKey = 'variants' }) =>
   css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
 
@@ -27,7 +32,7 @@ export const Box = styled('div', {
   space,
   color,
   sx,
-  props => props.css
+  (props) => props.css
 )
 
 export default Box

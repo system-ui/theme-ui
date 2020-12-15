@@ -11,9 +11,11 @@ import { Embed } from 'theme-ui'
 ```
 
 ```js live=true
-<Embed
-  src="https://www.youtube.com/embed/GNCd_ERZvZM"
-/>
+<Embed src="https://www.youtube.com/embed/GNCd_ERZvZM" />
 ```
+
+Props besides [`sx`](/sx-prop) will be passed to the `iframe` itself, since
+using a [`title` prop](https://accessibility.18f.gov/iframes/) or other labels are recommended
+for accessibility.
 
 Embed variants can be defined anywhere in the `theme` object.

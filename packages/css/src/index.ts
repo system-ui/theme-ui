@@ -8,6 +8,10 @@ import {
 
 export * from './types'
 
+const hasDefault = (x: unknown): x is { default: string | number } => {
+  return typeof x === 'object' && x !== null && 'default' in x
+}
+
 export function get(
   obj: object,
   key: string | number | undefined,
@@ -19,7 +23,9 @@ export function get(
   for (p = 0; p < path.length; p++) {
     obj = obj ? (obj as any)[path[p]!] : undef
   }
-  return obj === undef ? def : obj
+  if (obj === undef) return def
+
+  return hasDefault(obj) ? obj.default : obj
 }
 
 export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
