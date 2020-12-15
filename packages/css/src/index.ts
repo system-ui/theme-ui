@@ -4,6 +4,7 @@ import {
   ThemeDerivedStyles,
   Theme,
   ThemeUICSSObject,
+  VariantProperty,
 } from './types'
 
 export * from './types'
@@ -49,12 +50,15 @@ export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
 export const getVariantValue = (
   theme: Theme,
   _themeKey: string,
-  variant: string): ThemeUICSSObject => {
-  const defValue = get(theme, variant);
-  const value = get(theme, `${_themeKey}.${variant}`, 
+  variant: string
+): ThemeUICSSObject => {
+  const defValue = get(theme, variant)
+  const value = get(
+    theme,
+    `${_themeKey}.${variant}`,
     typeof defValue === 'function' ? defValue(theme) : defValue
-  );
-  return typeof value === 'function' ?value(theme) : value;
+  )
+  return typeof value === 'function' ? value(theme) : value
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
@@ -321,7 +325,6 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     typeof args === 'function' ? args(theme) : args,
     theme
   )
-
   const styles = responsive(obj as ThemeUICSSObject)(theme)
   let result: CSSObject = {}
   for (const key in styles) {
