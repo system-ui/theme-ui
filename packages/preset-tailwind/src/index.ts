@@ -1,6 +1,6 @@
 // Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 // and https://tailwindcss.com/components
-import { Theme, ColorMode, ThemeUIStyleObject } from '@theme-ui/css'
+import { Theme, ThemeUIStyleObject } from '@theme-ui/css'
 
 export const borderWidths = {
   px: '1px',
@@ -10,7 +10,12 @@ export const borderWidths = {
   '8': '8px',
 }
 
-export const breakpoints: Theme['breakpoints'] = ['640px', '768px', '1024px', '1280px']
+export const breakpoints: Theme['breakpoints'] = [
+  '640px',
+  '768px',
+  '1024px',
+  '1280px',
+]
 
 export const baseColors = {
   transparent: 'transparent',
@@ -471,7 +476,7 @@ export const shadows: Theme['shadows'] = {
 }
 
 export const space: Theme['space'] = [
-  0,
+  '0',
   '0.25rem',
   '0.5rem',
   '1rem',
@@ -602,11 +607,12 @@ export const transforms: ThemeUIStyleObject = {
   },
 }
 
-export const transitions: Record<string, ThemeUIStyleObject> = {
+export const transitions = {
   property: {
     none: 'none',
     // all: 'all',
-    default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+    default:
+      'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
     colors: 'background-color, border-color, color, fill, stroke',
     opacity: 'opacity',
     shadow: 'box-shadow',
@@ -630,11 +636,11 @@ export const transitions: Record<string, ThemeUIStyleObject> = {
   },
 }
 
-export const tailwind: Theme & { 
-  inputs: Record<string, ThemeUIStyleObject>;
-  transforms: ThemeUIStyleObject;
-  transitions: Record<string, ThemeUIStyleObject>;
- } = {
+export const tailwind: Theme & {
+  inputs: Record<string, ThemeUIStyleObject>
+  transforms: ThemeUIStyleObject
+  transitions: Record<string, ThemeUIStyleObject>
+} = {
   borderWidths,
   breakpoints,
   colors,

@@ -2,11 +2,7 @@
 import verticalRhythm from 'compass-vertical-rhythm'
 import { Theme, Scale, ThemeStyles } from '@theme-ui/css'
 import ms from 'modularscale'
-import {
-  FontFamilyProperty,
-  FontWeightProperty,
-  LineHeightProperty,
-} from 'csstype'
+import CSS from 'csstype'
 import { TypographyOptions } from 'typography'
 import { Merge } from 'type-fest'
 
@@ -110,9 +106,9 @@ const wrapFontFamily = (fontFamily: string): string =>
 const stackFonts = (fonts: string[]): string =>
   fonts.map(wrapFontFamily).join(', ')
 
-export type ThemeFonts = Scale<FontFamilyProperty> & {
-  body: FontFamilyProperty
-  heading: FontFamilyProperty
+export type ThemeFonts = Scale<CSS.Property.FontFamily> & {
+  body: CSS.Property.FontFamily
+  heading: CSS.Property.FontFamily
 }
 
 export const getFonts = (
@@ -136,9 +132,9 @@ export const getFontSizes = (
   return [-1.5 / 5, -1 / 5, 0, 2 / 5, 3 / 5, 1].map(scale)
 }
 
-export type ThemeLineHeights = Scale<LineHeightProperty<string | number>> & {
-  body: LineHeightProperty<string | number>
-  heading: LineHeightProperty<string | number>
+export type ThemeLineHeights = Scale<CSS.Property.LineHeight<string | number>> & {
+  body: CSS.Property.LineHeight<string | number>
+  heading: CSS.Property.LineHeight<string | number>
 }
 export const getLineHeights = (
   rhythm: verticalRhythm.VerticalRhythm,
@@ -152,19 +148,19 @@ export const getLineHeights = (
   }
 }
 
-export type ThemeFontWeights = Scale<FontWeightProperty> & {
-  body: FontWeightProperty
-  bold: FontWeightProperty
-  heading: FontWeightProperty
+export type ThemeFontWeights = Scale<CSS.Property.FontWeight> & {
+  body: CSS.Property.FontWeight
+  bold: CSS.Property.FontWeight
+  heading: CSS.Property.FontWeight
 }
 export const getFontWeights = (
   rhythm: verticalRhythm.VerticalRhythm,
   opts: CustomTypographyOptions
 ): ThemeFontWeights => {
   return {
-    body: opts.bodyWeight as FontWeightProperty,
-    bold: opts.boldWeight as FontWeightProperty,
-    heading: opts.headerWeight as FontWeightProperty,
+    body: opts.bodyWeight as CSS.Property.FontWeight,
+    bold: opts.boldWeight as CSS.Property.FontWeight,
+    heading: opts.headerWeight as CSS.Property.FontWeight,
   }
 }
 

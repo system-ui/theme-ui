@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Tiles from './tiles'
 
-export default props => (
+export default (props) => (
   <Tiles
     {...props}
     sx={{

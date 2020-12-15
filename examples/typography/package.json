@@ -17,8 +17,8 @@
     "gatsby-plugin-google-fonts": "^1.0.0",
     "gatsby-plugin-mdx": "^1.0.4",
     "lodash.merge": "^4.6.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "theme-ui": "^0.4.0-rc.0",
     "theme-ui-typography": "^0.1.7",
     "typography-theme-fairy-gates": "^0.16.19"

@@ -2,13 +2,13 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
+import { renderJSON } from '@theme-ui/test-utils'
+
 import { EditorProvider } from '../src'
 
 afterEach(cleanup)
 expect.extend(matchers)
-
-const renderJSON = el => renderer.create(el).toJSON()
 
 const theme = {
   useCustomProperties: false,

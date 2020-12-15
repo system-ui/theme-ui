@@ -29,7 +29,7 @@ exports[`Alert renders 1`] = `
 `;
 
 exports[`AspectImage renders 1`] = `
-.emotion-3 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -37,7 +37,7 @@ exports[`AspectImage renders 1`] = `
   overflow: hidden;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -57,7 +57,7 @@ exports[`AspectImage renders 1`] = `
   left: 0;
 }
 
-.emotion-1 {
+.emotion-3 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -67,23 +67,23 @@ exports[`AspectImage renders 1`] = `
 }
 
 <div
-  className="emotion-3"
+  className="emotion-0"
 >
   <div
-    className="emotion-0"
+    className="emotion-1"
   />
   <div
     className="emotion-2"
   >
     <img
-      className="emotion-1"
+      className="emotion-3"
     />
   </div>
 </div>
 `;
 
 exports[`AspectRatio renders 1`] = `
-.emotion-2 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -91,7 +91,7 @@ exports[`AspectRatio renders 1`] = `
   overflow: hidden;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -100,7 +100,7 @@ exports[`AspectRatio renders 1`] = `
   padding-bottom: 75%;
 }
 
-.emotion-1 {
+.emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -112,13 +112,13 @@ exports[`AspectRatio renders 1`] = `
 }
 
 <div
-  className="emotion-2"
+  className="emotion-0"
 >
   <div
-    className="emotion-0"
+    className="emotion-1"
   />
   <div
-    className="emotion-1"
+    className="emotion-2"
   />
 </div>
 `;
@@ -180,6 +180,38 @@ exports[`Box renders 1`] = `
 </div>
 `;
 
+exports[`Button hidden 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: inherit;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: primary;
+  border: 0;
+  border-radius: 4px;
+  color: background;
+  background-color: primary;
+}
+
+<button
+  className="emotion-0"
+  hidden={true}
+/>
+`;
+
 exports[`Button renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
@@ -187,6 +219,7 @@ exports[`Button renders 1`] = `
   min-width: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   display: inline-block;
   text-align: center;
@@ -227,13 +260,16 @@ exports[`Card renders 1`] = `
 `;
 
 exports[`Checkbox renders 1`] = `
-.emotion-3 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -245,39 +281,39 @@ exports[`Checkbox renders 1`] = `
   overflow: hidden;
 }
 
-.emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: none;
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-right: 8px;
-  border-radius: 4px;
-  color: gray;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-input:checked ~ .emotion-1 {
-  display: block;
-}
-
-input:checked ~ .emotion-1 {
-  color: primary;
-}
-
-input:focus ~ .emotion-1 {
-  color: primary;
-  background-color: highlight;
-}
-
 .emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  color: primary;
+  background-color: highlight;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   display: block;
   box-sizing: border-box;
   margin: 0;
@@ -290,29 +326,29 @@ input:focus ~ .emotion-1 {
   flex-shrink: 0;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   display: none;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   color: primary;
 }
 
-input:focus ~ .emotion-2 {
+input:focus~.emotion-3 {
   color: primary;
   background-color: highlight;
 }
 
 <div
-  className="emotion-3"
+  className="emotion-0"
 >
   <input
-    className="emotion-0"
+    className="emotion-1"
     type="checkbox"
   />
   <svg
     aria-hidden="true"
-    className="emotion-1"
+    className="emotion-2"
     fill="currentcolor"
     height="24"
     viewBox="0 0 24 24"
@@ -325,7 +361,7 @@ input:focus ~ .emotion-2 {
   </svg>
   <svg
     aria-hidden="true"
-    className="emotion-2"
+    className="emotion-3"
     fill="currentcolor"
     height="24"
     viewBox="0 0 24 24"
@@ -346,6 +382,7 @@ exports[`Close renders 1`] = `
   min-width: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -356,8 +393,8 @@ exports[`Close renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   padding: 4px;
   width: 32px;
@@ -459,8 +496,8 @@ exports[`Donut renders 1`] = `
 </svg>
 `;
 
-exports[`Embed renders 1`] = `
-.emotion-1 {
+exports[`Embed renders with box system props 1`] = `
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -469,9 +506,13 @@ exports[`Embed renders 1`] = `
   padding-bottom: 56.25%;
   position: relative;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -485,13 +526,52 @@ exports[`Embed renders 1`] = `
 }
 
 <div
-  className="emotion-1"
+  className="emotion-0"
 >
   <iframe
     allowFullScreen={true}
-    className="emotion-0"
+    className="emotion-1"
     frameBorder={0}
     height={315}
+    width={560}
+  />
+</div>
+`;
+
+exports[`Embed renders with title 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+}
+
+<div
+  className="emotion-0"
+>
+  <iframe
+    allowFullScreen={true}
+    className="emotion-1"
+    frameBorder={0}
+    height={315}
+    title="Embed"
     width={560}
   />
 </div>
@@ -502,6 +582,12 @@ exports[`Field renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -509,7 +595,7 @@ exports[`Field renders 1`] = `
   display: flex;
 }
 
-.emotion-1 {
+.emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -518,6 +604,7 @@ exports[`Field renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -527,20 +614,65 @@ exports[`Field renders 1`] = `
   background-color: transparent;
 }
 
-.emotion-2 {
+<div
+  className="emotion-0"
+>
+  <label
+    className="emotion-1"
+  />
+  <input
+    className="emotion-2"
+  />
+</div>
+`;
+
+exports[`Field renders with id prop 1`] = `
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
 }
 
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
 <div
-  className="emotion-2"
+  className="emotion-0"
 >
   <label
-    className="emotion-0"
+    className="emotion-1"
+    htmlFor="test-field"
   />
   <input
-    className="emotion-1"
+    className="emotion-2"
+    id="test-field"
   />
 </div>
 `;
@@ -582,7 +714,7 @@ exports[`Grid renders with columns prop 1`] = `
   min-width: 0;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 <div
@@ -614,7 +746,7 @@ exports[`Grid renders with mixed columns prop 2`] = `
   grid-gap: 16px;
 }
 
-@media screen and (min-width:40em) {
+@media screen and (min-width: 40em) {
   .emotion-0 {
     grid-template-columns: 1fr 2fr;
   }
@@ -632,12 +764,12 @@ exports[`Grid renders with repeat and responsive width props 1`] = `
   min-width: 0;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill,minmax(256px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
 }
 
-@media screen and (min-width:40em) {
+@media screen and (min-width: 40em) {
   .emotion-0 {
-    grid-template-columns: repeat(auto-fill,minmax(512px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(512px, 1fr));
   }
 }
 
@@ -653,7 +785,7 @@ exports[`Grid renders with repeat and width props 1`] = `
   min-width: 0;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill,minmax(256px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
 }
 
 <div
@@ -668,18 +800,18 @@ exports[`Grid renders with responsive columns prop 1`] = `
   min-width: 0;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-@media screen and (min-width:40em) {
+@media screen and (min-width: 40em) {
   .emotion-0 {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (min-width:52em) {
+@media screen and (min-width: 52em) {
   .emotion-0 {
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -695,12 +827,12 @@ exports[`Grid renders with responsive width prop 1`] = `
   min-width: 0;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
 }
 
-@media screen and (min-width:40em) {
+@media screen and (min-width: 40em) {
   .emotion-0 {
-    grid-template-columns: repeat(auto-fit,minmax(512px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
   }
 }
 
@@ -716,7 +848,7 @@ exports[`Grid renders with width prop 1`] = `
   min-width: 0;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
 }
 
 <div
@@ -747,6 +879,7 @@ exports[`IconButton renders 1`] = `
   min-width: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -757,8 +890,8 @@ exports[`IconButton renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   padding: 4px;
   width: 32px;
@@ -801,6 +934,7 @@ exports[`Input renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -849,12 +983,13 @@ exports[`Link renders 1`] = `
 `;
 
 exports[`MenuButton renders 1`] = `
-.emotion-1 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -865,8 +1000,8 @@ exports[`MenuButton renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   padding: 4px;
   width: 32px;
@@ -877,7 +1012,7 @@ exports[`MenuButton renders 1`] = `
   border-radius: 4px;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -887,11 +1022,11 @@ exports[`MenuButton renders 1`] = `
 
 <button
   aria-label="Toggle Menu"
-  className="emotion-1"
+  className="emotion-0"
   title="Menu"
 >
   <svg
-    className="emotion-0"
+    className="emotion-1"
     fill="currentcolor"
     height={24}
     viewBox="0 0 24 24"
@@ -951,6 +1086,28 @@ exports[`NavLink renders 1`] = `
 />
 `;
 
+exports[`Paragraph renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: body;
+  font-weight: body;
+  line-height: body;
+  margin: 0;
+}
+
+@media screen and (min-width: 36em) {
+  .emotion-0 {
+    max-width: 48rem;
+  }
+}
+
+<p
+  className="emotion-0"
+/>
+`;
+
 exports[`Progress renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
@@ -964,6 +1121,7 @@ exports[`Progress renders 1`] = `
   overflow: hidden;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   color: primary;
   background-color: gray;
@@ -989,13 +1147,16 @@ exports[`Progress renders 1`] = `
 `;
 
 exports[`Radio renders 1`] = `
-.emotion-3 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1007,38 +1168,38 @@ exports[`Radio renders 1`] = `
   overflow: hidden;
 }
 
-.emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: none;
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-right: 8px;
-  border-radius: 9999px;
-  color: gray;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-input:checked ~ .emotion-1 {
-  display: block;
-}
-
-input:checked ~ .emotion-1 {
-  color: primary;
-}
-
-input:focus ~ .emotion-1 {
-  background-color: highlight;
-}
-
 .emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 9999px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  background-color: highlight;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   display: block;
   box-sizing: border-box;
   margin: 0;
@@ -1051,28 +1212,28 @@ input:focus ~ .emotion-1 {
   flex-shrink: 0;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   display: none;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   color: primary;
 }
 
-input:focus ~ .emotion-2 {
+input:focus~.emotion-3 {
   background-color: highlight;
 }
 
 <div
-  className="emotion-3"
+  className="emotion-0"
 >
   <input
-    className="emotion-0"
+    className="emotion-1"
     type="radio"
   />
   <svg
     aria-hidden="true"
-    className="emotion-1"
+    className="emotion-2"
     fill="currentcolor"
     height="24"
     viewBox="0 0 24 24"
@@ -1085,7 +1246,7 @@ input:focus ~ .emotion-2 {
   </svg>
   <svg
     aria-hidden="true"
-    className="emotion-2"
+    className="emotion-3"
     fill="currentcolor"
     height="24"
     viewBox="0 0 24 24"
@@ -1100,7 +1261,7 @@ input:focus ~ .emotion-2 {
 `;
 
 exports[`Select renders 1`] = `
-.emotion-2 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1110,7 +1271,7 @@ exports[`Select renders 1`] = `
   display: flex;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1119,6 +1280,7 @@ exports[`Select renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -1128,7 +1290,7 @@ exports[`Select renders 1`] = `
   background-color: transparent;
 }
 
-.emotion-1 {
+.emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1140,13 +1302,13 @@ exports[`Select renders 1`] = `
 }
 
 <div
-  className="emotion-2"
+  className="emotion-0"
 >
   <select
-    className="emotion-0"
+    className="emotion-1"
   />
   <svg
-    className="emotion-1"
+    className="emotion-2"
     fill="currentcolor"
     height="24"
     viewBox="0 0 24 24"
@@ -1160,8 +1322,18 @@ exports[`Select renders 1`] = `
 </div>
 `;
 
-exports[`Select renders with style props 1`] = `
+exports[`Select renders with custom icon 1`] = `
 .emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1170,6 +1342,7 @@ exports[`Select renders with style props 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -1179,18 +1352,22 @@ exports[`Select renders with style props 1`] = `
   background-color: transparent;
 }
 
-.emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-left: -28px;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  pointer-events: none;
-}
+<div
+  className="emotion-0"
+>
+  <select
+    className="emotion-1"
+  />
+  <svg>
+    <path
+      d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z"
+    />
+  </svg>
+</div>
+`;
 
-.emotion-2 {
+exports[`Select renders with style props 1`] = `
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1201,15 +1378,45 @@ exports[`Select renders with style props 1`] = `
   display: flex;
 }
 
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -28px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  pointer-events: none;
+}
+
 <div
-  className="emotion-2"
+  className="emotion-0"
 >
   <select
-    className="emotion-0"
+    className="emotion-1"
     value="hello"
   />
   <svg
-    className="emotion-1"
+    className="emotion-2"
     fill="currentcolor"
     height="24"
     viewBox="0 0 24 24"
@@ -1236,6 +1443,7 @@ exports[`Slider renders 1`] = `
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   border-radius: 9999px;
   color: inherit;
@@ -1250,6 +1458,7 @@ exports[`Slider renders 1`] = `
 .emotion-0::-webkit-slider-thumb {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   width: 16px;
   height: 16px;
@@ -1261,6 +1470,7 @@ exports[`Slider renders 1`] = `
 .emotion-0::-moz-range-thumb {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   width: 16px;
   height: 16px;
@@ -1272,6 +1482,7 @@ exports[`Slider renders 1`] = `
 .emotion-0::-ms-thumb {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   width: 16px;
   height: 16px;
@@ -1290,18 +1501,20 @@ exports[`Spinner renders 1`] = `
 @keyframes animation-0 {
   from {
     -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   to {
     -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
-.emotion-1 {
+.emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -1309,12 +1522,10 @@ exports[`Spinner renders 1`] = `
   overflow: visible;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
   -webkit-animation-name: animation-0;
   animation-name: animation-0;
@@ -1327,7 +1538,7 @@ exports[`Spinner renders 1`] = `
 }
 
 <svg
-  className="emotion-1"
+  className="emotion-0"
   fill="none"
   height={48}
   role="img"
@@ -1346,7 +1557,7 @@ exports[`Spinner renders 1`] = `
     r={12}
   />
   <circle
-    className="emotion-0"
+    className="emotion-1"
     cx={16}
     cy={16}
     r={12}
@@ -1354,6 +1565,107 @@ exports[`Spinner renders 1`] = `
     strokeDashoffset={56.548667764616276}
   />
 </svg>
+`;
+
+exports[`Switch renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  background-color: gray;
+  border-radius: 18px;
+  height: 22px;
+  width: 40px;
+  margin-right: 8px;
+  padding: 2px;
+}
+
+input:disabled~.emotion-2 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emotion-2>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transition: -webkit-transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transition: transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+input:checked~.emotion-2 {
+  background-color: primary;
+}
+
+input:checked~.emotion-2>div {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<label
+  className="emotion-0"
+>
+  <input
+    className="emotion-1"
+    type="checkbox"
+  />
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-3"
+    />
+  </div>
+  <span />
+</label>
 `;
 
 exports[`Text renders 1`] = `
@@ -1364,7 +1676,7 @@ exports[`Text renders 1`] = `
   font-size: 20px;
 }
 
-<div
+<span
   className="emotion-0"
 />
 `;
@@ -1379,6 +1691,7 @@ exports[`Textarea renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;

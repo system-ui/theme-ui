@@ -4,9 +4,9 @@ import {
   render,
   fireEvent,
   act,
-  waitForElement,
-  waitForDomChange,
+  findAllByRole,
   cleanup,
+  waitFor,
 } from '@testing-library/react'
 import Combobox from '../src/Combobox'
 
@@ -33,7 +33,7 @@ test('clicking chevron button shows menu', async () => {
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
-  const options = await waitForElement(() => tree.findAllByRole('option'))
+  const options = await findAllByRole(tree.container, 'option')
   expect(options.length).toBe(2)
 })
 
@@ -50,7 +50,7 @@ test('clicking item updates value', async () => {
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
-  const [option] = await waitForElement(() => tree.findAllByRole('option'))
+  const [option] = await findAllByRole(tree.container, 'option')
   fireEvent.click(option)
   expect(onChange).toHaveBeenCalledWith('beep')
 })
@@ -217,9 +217,8 @@ test('ignores return key when closed', async () => {
   expect(listbox.style.visibility).toBe('hidden')
 })
 
-// todo
 test.skip('blur closes listbox', async () => {
-  ;(global as any).requestAnimationFrame = jest.fn(fn => setTimeout(fn, 1))
+  ;(global as any).requestAnimationFrame = jest.fn((fn) => setTimeout(fn, 1))
   const tree = render(
     <Combobox
       label="Beep"
@@ -237,7 +236,5 @@ test.skip('blur closes listbox', async () => {
     hidden: true,
   })
   expect((global as any).requestAnimationFrame).toHaveBeenCalled()
-  // not sure how to use testing-library here
-  await waitForDomChange({ container: (tree as unknown) as HTMLElement })
   expect(listbox.style.visibility).toBe('hidden')
 })

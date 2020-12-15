@@ -32,7 +32,7 @@ const Fonts = ({ options = defaultFonts }) => {
   const context = useThemeUI() as EditorContextValue
   const { fonts = {} } = context.theme || {}
 
-  const onChange = (key: string) => (val: CSS.FontFamilyProperty) => {
+  const onChange = (key: string) => (val: CSS.Property.FontFamily) => {
     context.setTheme({
       fonts: {
         [key]: val,

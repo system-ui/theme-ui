@@ -1,0 +1,20 @@
+{
+  "name": "@theme-ui/test-utils",
+  "version": "0.6.0-alpha.0",
+  "private": true,
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "tsc",
+    "watch": "tsc -w",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "conditional-type-checks": "^1.0.5",
+    "ts-snippet": "^5.0.0"
+  }
+}

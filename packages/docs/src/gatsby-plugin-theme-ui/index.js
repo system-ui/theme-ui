@@ -1,5 +1,14 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 
+const tableCellStyle = {
+  textAlign: 'left',
+  py: '4px',
+  pr: '4px',
+  pl: 0,
+  borderColor: 'muted',
+  borderBottomStyle: 'solid',
+}
+
 export default {
   colors: {
     text: '#000000',
@@ -70,6 +79,13 @@ export default {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
+    },
+    block: {
+      variant: 'default',
+      my: 2,
+      textAlign: 'justify',
+      textAlignLast: 'last',
+      textJustify: 'auto',
     },
     display: {
       variant: 'text.heading',
@@ -195,7 +211,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -203,7 +219,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -211,7 +227,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -308,22 +324,16 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
-        textAlign: 'left',
-        py: '4px',
-        pr: '4px',
-        pl: 0,
-        borderColor: 'muted',
-        borderBottomStyle: 'solid',
-      },
     },
     th: {
       verticalAlign: 'bottom',
       borderBottomWidth: '2px',
+      ...tableCellStyle,
     },
     td: {
       verticalAlign: 'top',
       borderBottomWidth: '1px',
+      ...tableCellStyle,
     },
     hr: {
       border: 0,

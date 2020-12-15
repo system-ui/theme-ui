@@ -8,7 +8,7 @@
     "color": "#999"
   },
   ".namespace": {
-    "opacity": ".7"
+    "opacity": 0.7
   },
   ".property,.tag,.boolean,.number,.constant,.symbol": {
     "color": "#0cf"

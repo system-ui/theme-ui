@@ -1,6 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { renderJSON } from '@theme-ui/test-utils'
+import { matchers } from '@emotion/jest'
 import { ThemeProvider } from 'theme-ui'
 import {
   Box,
@@ -11,6 +11,7 @@ import {
   Heading,
   Image,
   Link,
+  Paragraph,
   Text,
   Label,
   Input,
@@ -36,11 +37,10 @@ import {
   Message,
   IconButton,
   MenuButton,
+  Switch,
 } from '../src'
 
 expect.extend(matchers)
-
-const renderJSON = (el) => renderer.create(el).toJSON()
 
 const theme = {
   boxes: {
@@ -65,6 +65,12 @@ const theme = {
   text: {
     default: {
       fontSize: 3,
+    },
+    block: {
+      variant: 'default',
+      textAlign: 'justify',
+      textAlignLast: 'start',
+      textJustify: 'auto',
     },
     heading: {
       fontSize: 5,
@@ -170,6 +176,14 @@ describe('Button', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Button />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+  test('hidden', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Button hidden />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -282,6 +296,44 @@ describe('Link', () => {
   })
 })
 
+describe('Paragraph', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Paragraph />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with variant prop', () => {
+    const variant = 'block'
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Paragraph variant={variant}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </Paragraph>
+      </ThemeProvider>
+    )
+    const style = theme.text[variant]
+    expect(json).toHaveStyleRule('text-align', style.textAlign)
+    expect(json).toHaveStyleRule('text-align-last', style.textAlignLast)
+    expect(json).toHaveStyleRule('text-justify', style.textJustify)
+  })
+
+  test('renders with sx prop', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <Paragraph
+        sx={{
+          margin,
+        }}
+      />
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
+})
+
 describe('Text', () => {
   test('renders', () => {
     const json = renderJSON(
@@ -329,6 +381,21 @@ describe('Select', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Select mb={3} value="hello" />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with custom icon', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Select
+          arrow={
+            <svg>
+              <path d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z" />
+            </svg>
+          }
+        />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -384,6 +451,14 @@ describe('Field', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Field />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+  test('renders with id prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Field id="test-field" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -479,10 +554,19 @@ describe('Divider', () => {
 })
 
 describe('Embed', () => {
-  test('renders', () => {
+  test('renders with box system props', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Embed />
+        <Embed mx="auto" py={4} />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with title', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Embed title="Embed" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -560,6 +644,17 @@ describe('MenuButton', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <MenuButton />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Switch', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Switch />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()

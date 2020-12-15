@@ -8,6 +8,10 @@ import {
 
 export * from './types'
 
+const hasDefault = (x: unknown): x is { default: string | number } => {
+  return typeof x === 'object' && x !== null && 'default' in x
+}
+
 export function get(
   obj: object,
   key: string | number | undefined,
@@ -19,7 +23,27 @@ export function get(
   for (p = 0; p < path.length; p++) {
     obj = obj ? (obj as any)[path[p]!] : undef
   }
-  return obj === undef ? def : obj
+  if (obj === undef) return def
+
+  return hasDefault(obj) ? obj.default : obj
+}
+
+export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
+  if (obj && obj['variant']) {
+    let result: CSSObject = {}
+    for (const key in obj) {
+      const x = obj[key]
+      if (key === 'variant') {
+        const val = typeof x === 'function' ? x(theme) : x
+        const variant = getObjectWithVariants(get(theme, val as string), theme)
+        result = { ...result, ...variant }
+      } else {
+        result[key] = x as CSSObject
+      }
+    }
+    return result
+  }
+  return obj as CSSObject
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
@@ -53,6 +77,8 @@ export const multiples = {
   marginY: ['marginTop', 'marginBottom'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
+  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
+  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
   size: ['width', 'height'],
 }
 
@@ -63,6 +89,7 @@ export const scales = {
   caretColor: 'colors',
   columnRuleColor: 'colors',
   opacity: 'opacities',
+  transition: 'transitions',
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -89,6 +116,13 @@ export const scales = {
   paddingInline: 'space',
   paddingInlineEnd: 'space',
   paddingInlineStart: 'space',
+  scrollPadding: 'space',
+  scrollPaddingTop: 'space',
+  scrollPaddingRight: 'space',
+  scrollPaddingBottom: 'space',
+  scrollPaddingLeft: 'space',
+  scrollPaddingX: 'space',
+  scrollPaddingY: 'space',
   inset: 'space',
   insetBlock: 'space',
   insetBlockEnd: 'space',
@@ -256,7 +290,6 @@ const responsive = (
       ;(next[media] as Record<string, any>)[key] = value[i]
     }
   }
-
   return next
 }
 
@@ -269,19 +302,20 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
   }
-  let result: CSSObject = {}
-  const obj = typeof args === 'function' ? args(theme) : args
-  const styles = responsive(obj)(theme)
+  // insert variant props before responsive styles, so they can be merged
+  // we need to maintain order of the style props, so if a variant is place in the middle
+  // of other props, it will extends its props at that same location order.
 
+  const obj: CSSObject = getObjectWithVariants(
+    typeof args === 'function' ? args(theme) : args,
+    theme
+  )
+
+  const styles = responsive(obj as ThemeUICSSObject)(theme)
+  let result: CSSObject = {}
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
     const val = typeof x === 'function' ? x(theme) : x
-
-    if (key === 'variant') {
-      const variant = css(get(theme, val as string))(theme)
-      result = { ...result, ...variant }
-      continue
-    }
 
     if (val && typeof val === 'object') {
       // TODO: val can also be an array here. Is this a bug? Can it be reproduced?

@@ -40,10 +40,9 @@ export default {
 ```
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props =>
+export default (props) => (
   <div
     sx={{
       display: 'flex',
@@ -65,4 +64,5 @@ export default props =>
       {props.children}
     </main>
   </div>
+)
 ```
