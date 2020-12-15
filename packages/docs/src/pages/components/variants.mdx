@@ -62,18 +62,16 @@ For example, a secondary button style can be added to `theme.buttons.secondary` 
 <Button variant="secondary">Secondary</Button>
 ```
 
-## Combining Multiple Variants
+## Combining multiple variants
 
- If you want to combine multiple variants on the same element, pass an array of variants with the `variant` prop.
- Variant styles are merged from left to right, so if some of the styles conflict, those of the variant passed later will render.
+If you want to combine multiple variants on the same element, pass an array of variants with the `variant` prop.
+Variant styles are merged from left to right, so if some of the styles conflict, those of the variant passed later will render.
 
- ```jsx live=true
- <Text variant={['caps', 'heading']}>
-   Title text
- </Text>
- ```
+```jsx live=true
+<Text variant={['caps', 'heading']}>Title text</Text>
+```
 
-## Example Theme
+## Example theme
 
 ```js
 // example theme

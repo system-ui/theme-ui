@@ -122,7 +122,7 @@
 
 ### `@theme-ui/core`
 
-- Box - ability to merge array variant prop. Issues #1209 #1208
+- Add ability to use arrays to merge variants. Issues #1209 #1208, PR #1226
 - Make ThemeProvider `theme` prop required
 
 ### `@theme-ui/editor`
