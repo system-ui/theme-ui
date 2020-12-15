@@ -50,7 +50,7 @@
       alt="Tree Shaking"
     />
   </a>
-  <a href="https://github.com/system-ui/theme-ui/blob/master/LICENSE.md">
+  <a href="https://github.com/system-ui/theme-ui/blob/stable/LICENSE.md">
     <img
       src="https://badgen.net/badge/license/MIT/blue"
       alt="MIT license"
@@ -64,8 +64,11 @@
 \
 Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
-**stable docs**: https://theme-ui.com \
-**next (v0.5.0-alpha) docs**: [https://development--dev-theme-ui.netlify.app/](https://development--dev-theme-ui.netlify.app/)
+**[stable] docs**: https://theme-ui.com \
+**[develop] (v0.6.0-alpha) docs**: [https://development--dev-theme-ui.netlify.app/](https://development--dev-theme-ui.netlify.app/)
+
+[stable]: https://github.com/system-ui/theme-ui/tree/stable
+[develop]: https://github.com/system-ui/theme-ui/tree/develop
 
 ---
 
@@ -192,7 +195,7 @@ export default (props) => (
 - [The `sx` Prop](https://theme-ui.com/sx-prop)
 - [Layout](https://theme-ui.com/layout)
 - [Color Modes](https://theme-ui.com/color-modes)
-- [Styled](https://theme-ui.com/styled)
+- [Themed](https://theme-ui.com/themed)
 - [MDX Components](https://theme-ui.com/mdx-components)
 - [Theme Spec](https://theme-ui.com/theme-spec)
 - [Gatsby Plugin](https://theme-ui.com/packages/gatsby-plugin)

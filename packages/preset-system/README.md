@@ -28,5 +28,4 @@ If you'd like to add a new preset or improve upon the existing ones, please open
 
 [issue]: https://github.com/system-ui/theme-ui/issues
 [pull request]: https://github.com/system-ui/theme-ui/pulls
-
 [demo]: https://theme-ui.com/demo

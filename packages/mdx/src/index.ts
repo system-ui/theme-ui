@@ -13,10 +13,10 @@ import styled, { StyledComponent } from '@emotion/styled'
 import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
 
 type MDXProviderComponentsKnownKeys = {
-  [key in keyof IntrinsicSxElements]?: React.ComponentType<any> | string
+  [key in keyof IntrinsicSxElements]?: ComponentType<any> | string
 }
 export interface MDXProviderComponents extends MDXProviderComponentsKnownKeys {
-  [key: string]: React.ComponentType<any> | string | undefined
+  [key: string]: ComponentType<any> | string | undefined
 }
 export type MdxAliases = {
   [key in keyof IntrinsicSxElements]: keyof JSX.IntrinsicElements
@@ -79,19 +79,46 @@ const aliases = {
 type Aliases = typeof aliases
 const isAlias = (x: string): x is keyof Aliases => x in aliases
 
-export type StyledComponentName =
+export type ThemedComponentName =
   | keyof IntrinsicSxElements
   | keyof JSX.IntrinsicElements
 
-const alias = (n: StyledComponentName): keyof JSX.IntrinsicElements =>
+const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
-export const themed = (key: StyledComponentName) => (props: ThemedProps) =>
-  css(get(props.theme, `styles.${key}`))(props.theme)
+const propOverrides: {
+  [key in Partial<ThemedComponentName>]?: Record<string, string>
+} = {
+  th: {
+    align: 'textAlign',
+  },
+  td: {
+    align: 'textAlign',
+  },
+}
+export const themed = (key: ThemedComponentName) => ({
+  theme,
+  ...rest
+}: ThemedProps) => {
+  const propsStyle = propOverrides[key]
+
+  const extraStyles = propsStyle
+    ? Object.keys(rest)
+        .filter((prop) => propsStyle[prop] !== undefined)
+        .reduce(
+          (acc, prop) => ({
+            ...acc,
+            [propsStyle[prop]]: (rest as Record<string, string>)[prop],
+          }),
+          {}
+        )
+    : undefined
+  return css({ ...get(theme, `styles.${key}`), ...extraStyles })(theme)
+}
 
 // opt out of typechecking whenever `as` prop is used
 interface AnyComponentProps extends JSX.IntrinsicAttributes {
-    [key: string]: unknown
+  [key: string]: unknown
 }
 
 export type WithPoorAsProp<
@@ -99,7 +126,7 @@ export type WithPoorAsProp<
   As extends ElementType | undefined = undefined
 > = {
   as?: As
-} & (As extends undefined ? Props : AnyComponentProps)
+} & (undefined extends As ? Props : AnyComponentProps)
 
 export interface ThemedComponent<Name extends ElementType> {
   <As extends ElementType | undefined = undefined>(
@@ -107,7 +134,7 @@ export interface ThemedComponent<Name extends ElementType> {
   ): JSX.Element
 }
 
-export type StyledComponentsDict = {
+export type ThemedComponentsDict = {
   [K in keyof IntrinsicSxElements]: K extends keyof Aliases
     ? ThemedComponent<Aliases[K]>
     : K extends keyof JSX.IntrinsicElements
@@ -115,22 +142,22 @@ export type StyledComponentsDict = {
     : never
 }
 
-type StyledDiv = StyledComponent<
+type ThemedDiv = StyledComponent<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   ThemedProps,
   Theme
 >
 
-export const Styled: StyledDiv & StyledComponentsDict = styled('div')(
+export const Themed: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
-) as StyledDiv & StyledComponentsDict
+) as ThemedDiv & ThemedComponentsDict
 
-export const components = {} as StyledComponentsDict
+export const components = {} as ThemedComponentsDict
 
 tags.forEach((tag) => {
   // fixme?
   components[tag] = styled(alias(tag))(themed(tag)) as any
-  Styled[tag] = components[tag] as any
+  Themed[tag] = components[tag] as any
 })
 
 const createComponents = (comps: MDXProviderComponents) => {
@@ -139,9 +166,9 @@ const createComponents = (comps: MDXProviderComponents) => {
   const componentKeys = Object.keys(comps) as Array<keyof IntrinsicSxElements>
 
   componentKeys.forEach((key) => {
-    ;(next[key] as StyledComponentsDict[typeof key]) = styled<any>(comps[key])(
+    ;(next[key] as ThemedComponentsDict[typeof key]) = styled<any>(comps[key])(
       themed(key)
-    ) as StyledComponentsDict[typeof key]
+    ) as ThemedComponentsDict[typeof key]
   })
   return next
 }

@@ -7,12 +7,12 @@ npm i @theme-ui/style-guide
 ```
 
 ```jsx
-import { Styled } from 'theme-ui'
+import { Themed } from 'theme-ui'
 import { TypeScale, TypeStyle, ColorPalette } from '@theme-ui/style-guide'
 
 export default (props) => (
   <>
-    <Styled.h1>Style Guide</Styled.h1>
+    <Themed.h1>Style Guide</Themed.h1>
     <ColorPalette />
     <TypeScale />
     <TypeStyle fontFamily="heading" fontWeight="heading" lineHeight="heading" />

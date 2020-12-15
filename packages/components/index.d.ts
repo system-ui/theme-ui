@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyledComponent } from '@emotion/styled'
 import { Interpolation } from '@emotion/react'
 import { SpaceProps, ColorProps, MarginProps } from 'styled-system'
-import { ResponsiveStyleValue } from '@theme-ui/css'
+import { ResponsiveStyleValue, ThemeUIStyleObject } from '@theme-ui/css'
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
@@ -22,6 +22,7 @@ export interface BoxOwnProps extends SpaceProps, ColorProps {
   as?: React.ElementType
   variant?: string
   css?: Interpolation<any>
+  sx?: ThemeUIStyleObject
 }
 export interface BoxProps
   extends Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps> {}
@@ -143,8 +144,8 @@ export const Input: ForwardRef<HTMLInputElement, InputProps>
 
 export interface SelectProps
   extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
-    arrow?: React.ReactElement;
-  }
+  arrow?: React.ReactElement
+}
 /**
  * Select variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.select` variant by default.
@@ -294,18 +295,9 @@ export type DividerProps = BoxProps
  */
 export const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
-/**
- * EmbedProps are a bit tricky. It is a composite component that uses a <Box />
- * as the parent element which is what `props` are spread onto. The actual `ref`
- * however is a nested <Box as="iframe" /> element. To support these props we
- * need to use an intersection of the intrinsic attributes of HTMLDivElement,
- * with the ref attributes of HTMLIFrameElement.
- */
 export interface EmbedProps
-  extends Assign<
-    React.ComponentProps<'div'> & React.RefAttributes<HTMLIFrameElement>,
-    BoxOwnProps
-  > {
+  extends Assign<React.ComponentPropsWithRef<'iframe'>, BoxOwnProps> {
+  variant?: string
   ratio?: number
   src?: React.IframeHTMLAttributes<any>['src']
   frameBorder?: React.IframeHTMLAttributes<any>['frameBorder']

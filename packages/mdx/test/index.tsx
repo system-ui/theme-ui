@@ -1,11 +1,11 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
-import { themed, Styled, components, MDXProvider } from '../src'
+import { themed, Themed, components, MDXProvider } from '../src'
 
 expect.extend(matchers)
 
@@ -46,7 +46,7 @@ test('components accept an `as` prop', () => {
         },
       }}>
       <MDXProvider>
-        <Styled.h1 as={Beep}>Beep boop</Styled.h1>
+        <Themed.h1 as={Beep}>Beep boop</Themed.h1>
       </MDXProvider>
     </ThemeProvider>
   )!
@@ -56,7 +56,7 @@ test('components accept an `as` prop', () => {
 
 test('components with `as` prop receive all props', () => {
   const Beep = (props) => <div {...props} />
-  const json = renderJSON(<Styled.a as={Beep} activeClassName="active" />)!
+  const json = renderJSON(<Themed.a as={Beep} activeClassName="active" />)!
   expect(json.type).toBe('div')
   expect(json.props.activeClassName).toBe('active')
 })
@@ -64,9 +64,9 @@ test('components with `as` prop receive all props', () => {
 test('cleans up style props', () => {
   const json = renderJSON(
     // @ts-expect-error
-    <Styled.h1 mx={2} id="test">
+    <Themed.h1 mx={2} id="test">
       Hello
-    </Styled.h1>
+    </Themed.h1>
   )!
   expect(json.props.id).toBe('test')
   expect(json.props.mx).not.toBeDefined()
@@ -121,7 +121,7 @@ test('opt out of typechecking props whenever `as` prop is used', () => {
     renderJSON(
       <div>
         {/* no error */}
-        <Styled.img
+        <Themed.img
           as="button"
           src={2}
           onClick={(_event) => {
@@ -129,7 +129,7 @@ test('opt out of typechecking props whenever `as` prop is used', () => {
             _event.x = 2
           }}
         />
-        <Styled.img
+        <Themed.img
           // @ts-expect-error Type 'number' is not assignable to type 'string'.ts(2322)
           src={2}
           onClick={(_event) => {
@@ -153,4 +153,46 @@ test('opt out of typechecking props whenever `as` prop is used', () => {
       />
     </div>
   `)
+})
+
+test('table columns align', () => {
+  const tree = render(
+    <MDXProvider>
+      <Themed.table>
+        <thead>
+          <Themed.tr>
+            <Themed.th align="left">
+              Left
+            </Themed.th>
+            <Themed.th align="center">
+              Center
+            </Themed.th>
+            <Themed.th align="right">
+              Right
+            </Themed.th>
+          </Themed.tr>
+        </thead>  
+        <tbody>
+          <Themed.tr>
+            <Themed.td align="left">
+              TextLeft
+            </Themed.td>
+            <Themed.td align="center">
+              TextCenter
+            </Themed.td>
+            <Themed.td align="right">
+              TextRight
+            </Themed.td>
+          </Themed.tr>
+        </tbody>
+      </Themed.table>
+    </MDXProvider>
+  )
+  expect(tree.getByText('Left')).toHaveStyleRule('text-align', 'left')
+  expect(tree.getByText('Center')).toHaveStyleRule('text-align', 'center')
+  expect(tree.getByText('Right')).toHaveStyleRule('text-align', 'right')
+  expect(tree.getByText('TextLeft')).toHaveStyleRule('text-align', 'left')
+  expect(tree.getByText('TextCenter')).toHaveStyleRule('text-align', 'center')
+  expect(tree.getByText('TextRight')).toHaveStyleRule('text-align', 'right')
+
 })

@@ -37,6 +37,7 @@ import {
   Message,
   IconButton,
   MenuButton,
+  Switch,
 } from '../src'
 
 expect.extend(matchers)
@@ -208,7 +209,7 @@ describe('Box', () => {
         borderTopRightRadius: '85px 5px',
       },
     ]
-    const randomNumber = () => 0.321;
+    const randomNumber = () => 0.321
     const borderIndex = Math.floor(randomNumber() * sketchyBorders.length)
     const json = renderJSON(
       <ThemeProvider
@@ -673,10 +674,19 @@ describe('Divider', () => {
 })
 
 describe('Embed', () => {
-  test('renders', () => {
+  test('renders with box system props', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Embed />
+        <Embed mx="auto" py={4} />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders with title', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Embed title="Embed" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -754,6 +764,17 @@ describe('MenuButton', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <MenuButton />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Switch', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Switch />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()

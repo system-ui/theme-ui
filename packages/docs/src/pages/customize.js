@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Grid } from 'theme-ui'
+import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
 import {
   EditorProvider,
   Theme,
@@ -12,7 +12,7 @@ import {
   // Row,
 } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
-import { useReducer } from 'react'
+import React, { useReducer } from 'react'
 import merge from 'lodash.merge'
 import * as presets from '@theme-ui/presets'
 import copy from 'copy-to-clipboard'
@@ -21,13 +21,36 @@ import Button from '../components/button'
 
 const reducer = (state, next) => merge({}, state, next)
 
-export default (props) => {
-  const [theme] = useReducer(reducer, { ...presets.base })
-  const json = stringify(theme, { indent: '  ' })
+const ThemeOutput = () => {
+  const context = useThemeUI()
+
+  const output = stringify(context.theme, { indent: '  ' })
 
   return (
     <div>
-      <Styled.h1>Create a Custom Theme</Styled.h1>
+      <Button
+        onClick={(e) => {
+          copy(output)
+        }}>
+        Copy Theme
+      </Button>
+      <Themed.pre
+        children={output}
+        sx={{
+          maxHeight: 512,
+          overflowY: 'auto',
+        }}
+      />
+    </div>
+  )
+}
+
+export default (props) => {
+  const [theme] = useReducer(reducer, { ...presets.base })
+
+  return (
+    <>
+      <Themed.h1>Create a Custom Theme</Themed.h1>
       <EditorProvider theme={theme}>
         <b>Colors</b>
         <Theme.Colors size={64} />
@@ -81,20 +104,8 @@ export default (props) => {
           </Grid>
         </div>
         <p>Note: some web fonts may not render unless installed locally.</p>
+        <ThemeOutput />
       </EditorProvider>
-      <Button
-        onClick={(e) => {
-          copy(json)
-        }}>
-        Copy Theme
-      </Button>
-      <Styled.pre
-        children={json}
-        sx={{
-          maxHeight: 512,
-          overflowY: 'auto',
-        }}
-      />
-    </div>
+    </>
   )
 }

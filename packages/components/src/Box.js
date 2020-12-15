@@ -5,10 +5,15 @@ import { createShouldForwardProp } from '@styled-system/should-forward-prop'
 import space from '@styled-system/space'
 import color from '@styled-system/color'
 
-const shouldForwardProp = createShouldForwardProp([
-  ...space.propNames,
-  ...color.propNames,
-])
+const boxSystemProps = [...space.propNames, ...color.propNames]
+
+/**
+ * @internal
+ * @type {(prop: string) => boolean}
+ */
+export const __isBoxStyledSystemProp = (prop) => boxSystemProps.includes(prop)
+
+const shouldForwardProp = createShouldForwardProp(boxSystemProps)
 
 const sx = (props) => css(props.sx)(props.theme)
 const base = (props) => css(props.__css)(props.theme)

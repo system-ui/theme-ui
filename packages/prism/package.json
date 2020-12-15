@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.5.0-alpha.2",
+  "version": "0.6.0-alpha.3",
   "main": "dist/prism.js",
   "module": "dist/prism.esm.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "prism-react-renderer": "^1.0.2"
+    "prism-react-renderer": "^1.1.1"
   },
   "peerDependencies": {
     "theme-ui": "^0.5.0-alpha.0"
@@ -34,9 +34,9 @@
   ],
   "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437",
   "devDependencies": {
-    "lodash.kebabcase": "^4.1.1",
-    "postcss": "^7.0.17",
-    "postcss-js": "^2.0.2",
-    "theme-ui": "0.5.0-alpha.2"
+    "param-case": "^3.0.3",
+    "postcss": "^8.1.10",
+    "postcss-js": "^3.0.3",
+    "theme-ui": "^0.6.0-alpha.3"
   }
 }

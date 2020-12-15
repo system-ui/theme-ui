@@ -7,7 +7,7 @@
   ".attr-value": {
     "color": "#8dc891"
   },
-  ".comment,.block-comment,.prolog,.doctype,.cdata": {
+  ".comment,.block-comment,.prolog,.doctype,.cdata,.shebang": {
     "color": "#999999"
   },
   ".property,.number,.function-name,.constant,.symbol,.deleted": {

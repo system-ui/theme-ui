@@ -10,7 +10,7 @@ See [Blocks UI](https://github.com/blocks/blocks) for a theme editor and JSX pag
 
 ## Installation
 
-1. [Download extension](https://github.com/system-ui/theme-ui/tree/master/packages/chrome/public)
+1. [Download extension](https://github.com/system-ui/theme-ui/tree/stable/packages/chrome/public)
 1. Navigate to chrome://extensions/
 1. Enable "Developer mode"
 1. Click "LOAD UNPACKED"
