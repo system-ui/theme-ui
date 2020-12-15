@@ -1,8 +1,7 @@
 import React from 'react'
-import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup, act } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { cleanup } from '@testing-library/react'
+import { renderJSON } from '@theme-ui/test-utils'
+import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import {
   jsx,
@@ -16,8 +15,6 @@ import {
 afterEach(cleanup)
 
 expect.extend(matchers)
-
-const renderJSON = (el: React.ReactElement) => renderer.create(el).toJSON()
 
 describe('ThemeProvider', () => {
   test('renders', () => {
@@ -50,7 +47,7 @@ describe('ThemeProvider', () => {
         text: 'tomato',
       },
     }
-    const theme = jest.fn()
+    const theme = jest.fn(() => ({}))
     const json = renderJSON(
       jsx(
         ThemeProvider,
@@ -334,7 +331,6 @@ describe('merge', () => {
   })
 })
 
-// describe('Context', () => {})
 describe('useThemeUI', () => {
   test('returns theme context', () => {
     let context: ContextValue | undefined

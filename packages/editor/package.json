@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.4.0-rc.5",
+  "version": "0.6.0-alpha.3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -12,9 +12,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/components": "^0.4.0-rc.5",
-    "@theme-ui/css": "^0.4.0-rc.5",
-    "@theme-ui/style-guide": "^0.4.0-rc.5",
+    "@theme-ui/components": "^0.6.0-alpha.3",
+    "@theme-ui/css": "0.6.0-alpha.1",
+    "@theme-ui/style-guide": "^0.6.0-alpha.3",
     "@types/react-color": "^2.17.3",
     "color": "^3.1.2",
     "react-color": "^2.18.0",
@@ -22,13 +22,17 @@
     "tinycolor2": "^1.4.1"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.10",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "theme-ui": "^0.3.0"
+    "@emotion/react": "^11.1.1",
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0",
+    "theme-ui": "^0.5.0-alpha.0"
+  },
+  "devDependencies": {
+    "react": "^16.14.0",
+    "theme-ui": "^0.6.0-alpha.3"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

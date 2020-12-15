@@ -35,7 +35,7 @@ figure { margin: 1em 40px; }
 hr { box-sizing: content-box; height: 0; overflow: visible; }
 pre { font-family: monospace, monospace; font-size: 1em; }
 a { background-color: transparent; -webkit-text-decoration-skip: objects; }
-abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted; }
+abbr[title] { border-bottom: none; text-decoration: underline; -webkit-text-decoration: underline dotted; text-decoration: underline dotted; }
 b, strong { font-weight: inherit; }
 b, strong { font-weight: bolder; }
 code, kbd, samp { font-family: monospace, monospace; font-size: 1em; }

@@ -12,10 +12,7 @@ Using Theme UI's `sx` prop gives you quick access to your space scale as well as
   sx={{
     display: 'grid',
     gridGap: 4,
-    gridTemplateColumns: [
-      'auto',
-      '1fr 256px'
-    ]
+    gridTemplateColumns: ['auto', '1fr 256px'],
   }}>
   <main>Main</main>
   <aside>Sidebar</aside>
@@ -25,10 +22,9 @@ Using Theme UI's `sx` prop gives you quick access to your space scale as well as
 Use a wrapping `<div>` element with the `sx` prop to control the layout of direct child elements.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props =>
+export default (props) => (
   <div
     sx={{
       display: 'grid',
@@ -36,16 +32,13 @@ export default props =>
       // use arrays for mobile-first responsive styles
       gridTemplateColumns: [
         'auto', // default to a stacked layout on small screens
-        '1fr 256px' // use columns for larger screens
-      ]
+        '1fr 256px', // use columns for larger screens
+      ],
     }}>
-    <main>
-      {props.children}
-    </main>
-    <div>
-      Sidebar
-    </div>
+    <main>{props.children}</main>
+    <div>Sidebar</div>
   </div>
+)
 ```
 
 See also: [Grid component](/components/grid)

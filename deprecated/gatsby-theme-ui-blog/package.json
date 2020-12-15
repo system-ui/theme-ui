@@ -7,16 +7,16 @@
   },
   "peerDependencies": {
     "gatsby": "^2.13.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
   },
   "devDependencies": {
     "gatsby": "^2.13.73",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
+    "@emotion/react": "^11.1.1",
     "@mdx-js/react": "^1.0.0",
     "@theme-ui/preset-base": "^0.4.0-alpha.0",
     "gatsby-plugin-react-helmet": "^3.1.3",

@@ -1,5 +1,6 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
 export default () => (
   <div
@@ -8,6 +9,6 @@ export default () => (
       mx: 'auto',
       p: 3,
     }}>
-    <Styled.h1>Hello</Styled.h1>
+    <Themed.h1>Hello</Themed.h1>
   </div>
 )

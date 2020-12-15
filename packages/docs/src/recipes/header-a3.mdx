@@ -15,10 +15,7 @@ component: header
     px: 3,
     py: 3,
     gridAutoFlow: 'row',
-    gridTemplateColumns: [
-      'repeat(2, 1fr)',
-      'repeat(3, 1fr)',
-    ],
+    gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(3, 1fr)'],
     variant: 'styles.header',
   }}>
   <div
@@ -26,14 +23,14 @@ component: header
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gridColumnStart: [ 1, 2 ],
-      gridColumnEnd: [ 3, 3 ],
-      order: [ 0, 1 ],
+      gridColumnStart: [1, 2],
+      gridColumnEnd: [3, 3],
+      order: [0, 1],
     }}>
-    <Link to='/' title='Home'>
+    <Link to="/" title="Home">
       <img
-        alt='UI Logo'
-        src='https://contrast.now.sh/cff/40f?size=48&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI'
+        alt="UI Logo"
+        src="https://contrast.now.sh/cff/40f?size=48&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
       />
       <span
         sx={{
@@ -53,14 +50,16 @@ component: header
       alignItems: 'center',
       justifyContent: 'flex-start',
     }}>
-    <Link to='/work'
+    <Link
+      to="/work"
       sx={{
         variant: 'styles.navlink',
         p: 2,
       }}>
       Work
     </Link>
-    <Link to='/blog'
+    <Link
+      to="/blog"
       sx={{
         variant: 'styles.navlink',
         p: 2,
@@ -73,16 +72,18 @@ component: header
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-end',
-      order: 2
+      order: 2,
     }}>
-    <Link to='/about'
+    <Link
+      to="/about"
       sx={{
         variant: 'styles.navlink',
         p: 2,
       }}>
       About
     </Link>
-    <Link to='/contact'
+    <Link
+      to="/contact"
       sx={{
         variant: 'styles.navlink',
         p: 2,

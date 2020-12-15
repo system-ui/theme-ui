@@ -6,6 +6,17 @@ const theme: Theme = {
     secondary: 'cyan',
     background: 'white',
     text: 'black',
+    purple: {
+      default: 'darkviolet',
+      100: 'rebeccapurple',
+      500: 'darkviolet',
+      900: 'violet',
+    },
+    pink: {
+      100: 'mediumvioletred',
+      500: 'hotpink',
+      900: 'pink',
+    },
   },
   fontSizes: [12, 14, 16, 24, 36],
   fonts: {
@@ -24,12 +35,28 @@ const theme: Theme = {
     sidebar: 320,
   },
   buttons: {
+    default: {
+      px: 4,
+      py: 2,
+      fontWeight: 'bold',
+      color: 'secondary',
+      bg: 'background',
+    },
     primary: {
       p: 3,
       fontWeight: 'bold',
       color: 'white',
       bg: 'primary',
       borderRadius: 2,
+    },
+    size: {
+      size: '100%',
+      bg: 'primary',
+    },
+    round: {
+      variant: 'buttons.size',
+      overflow: 'hidden',
+      borderRadius: '50%',
     },
   },
   text: {
@@ -53,6 +80,9 @@ const theme: Theme = {
     small: 5,
   },
   opacities: [0, '50%'],
+  transitions: {
+    standard: '0.3s ease-in-out',
+  },
 }
 
 test('returns a function', () => {
@@ -115,6 +145,7 @@ test('returns nested responsive styles', () => {
     color: 'primary',
     h1: {
       py: [3, 4],
+      scrollPaddingY: [2, 4],
     },
   })({ theme })
   expect(result).toEqual({
@@ -122,9 +153,13 @@ test('returns nested responsive styles', () => {
     h1: {
       paddingTop: 16,
       paddingBottom: 16,
+      scrollPaddingBottom: 8,
+      scrollPaddingTop: 8,
       '@media screen and (min-width: 40em)': {
         paddingTop: 32,
         paddingBottom: 32,
+        scrollPaddingBottom: 32,
+        scrollPaddingTop: 32,
       },
     },
   })
@@ -137,11 +172,14 @@ test('handles all core styled system props', () => {
     mx: 'auto',
     p: 3,
     py: 4,
+    scrollPadding: 1,
+    scrollPaddingY: 2,
     fontSize: 3,
     fontWeight: 'bold',
     color: 'primary',
     bg: 'secondary',
     opacity: 1,
+    transition: 'standard',
     fontFamily: 'monospace',
     lineHeight: 'body',
   })({ theme })
@@ -153,9 +191,13 @@ test('handles all core styled system props', () => {
     padding: 16,
     paddingTop: 32,
     paddingBottom: 32,
+    scrollPadding: 4,
+    scrollPaddingTop: 8,
+    scrollPaddingBottom: 8,
     color: 'tomato',
     backgroundColor: 'cyan',
     opacity: '50%',
+    transition: '0.3s ease-in-out',
     fontFamily: 'Menlo, monospace',
     fontSize: 24,
     fontWeight: 600,
@@ -213,6 +255,58 @@ test('supports functional values', () => {
   })
 })
 
+test('returns `default` key when accessing object value with default', () => {
+  const result = css({
+    color: 'purple',
+  })(theme)
+  expect(result).toEqual({
+    color: 'darkviolet',
+  })
+})
+
+test('returns nested key when accessing key from object value with default', () => {
+  const result = css({
+    color: 'purple.100',
+  })(theme)
+  expect(result).toEqual({
+    color: 'rebeccapurple',
+  })
+})
+
+test('variant prop returns `default` key when accessing variant object with default', () => {
+  const result = css({
+    variant: 'buttons',
+  })(theme)
+
+  expect(result).toEqual({
+    paddingLeft: 32,
+    paddingRight: 32,
+    paddingTop: 8,
+    paddingBottom: 8,
+    fontWeight: 600,
+    color: 'cyan',
+    backgroundColor: 'white',
+  })
+})
+
+test('returns object when accessing object value with no default key', () => {
+  const result = css({
+    color: 'pink',
+  })(theme)
+  // Note: Returning this object is the expected behavior; however, an object
+  // value like this isn't able to become valid CSS. Ensure the theme path
+  // points to a primitive value (such as 'pink.100') when intending to make
+  // CSS out of these values.
+  // Ref: https://github.com/system-ui/theme-ui/pull/951#discussion_r430697168
+  expect(result).toEqual({
+    color: {
+      100: 'mediumvioletred',
+      500: 'hotpink',
+      900: 'pink',
+    },
+  })
+})
+
 test('returns variants from theme', () => {
   const result = css({
     variant: 'buttons.primary',
@@ -223,6 +317,19 @@ test('returns variants from theme', () => {
     color: 'white',
     backgroundColor: 'tomato',
     borderRadius: 2,
+  })
+})
+
+test('returns nested variants from theme', () => {
+  const result = css({
+    variant: 'buttons.round',
+  })(theme)
+  expect(result).toEqual({
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    borderRadius: '50%',
+    backgroundColor: 'tomato',
   })
 })
 
@@ -421,6 +528,9 @@ test('multiples are transformed', () => {
     marginY: 2,
     paddingX: 2,
     paddingY: 2,
+    scrollPaddingX: 2,
+    scrollPaddingY: 2,
+
     size: 'large',
   })(theme)
   expect(style).toEqual({
@@ -432,6 +542,10 @@ test('multiples are transformed', () => {
     paddingRight: 8,
     paddingTop: 8,
     paddingBottom: 8,
+    scrollPaddingLeft: 8,
+    scrollPaddingRight: 8,
+    scrollPaddingTop: 8,
+    scrollPaddingBottom: 8,
     width: 16,
     height: 16,
   })
@@ -479,6 +593,7 @@ test('returns correct media query order 2', () => {
     height: '100%',
     px: [2, 3, 4],
     py: 4,
+    scrollPadding: 4,
   })(theme)
   const keys = Object.keys(result)
   expect(keys).toEqual([
@@ -492,6 +607,7 @@ test('returns correct media query order 2', () => {
     'paddingRight',
     'paddingTop',
     'paddingBottom',
+    'scrollPadding',
   ])
 })
 

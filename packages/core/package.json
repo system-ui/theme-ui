@@ -1,13 +1,16 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.4.0-rc.5",
+  "version": "0.6.0-alpha.1",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
+    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json",
+    "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
+    "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
     "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
@@ -18,15 +21,16 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@theme-ui/css": "^0.4.0-rc.5",
+    "@emotion/react": "^11.1.1",
+    "@theme-ui/css": "0.6.0-alpha.1",
+    "@theme-ui/parse-props": "0.6.0-alpha.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^16.11.0"
+    "react": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.19",
-    "react": "^16.11.0"
+    "@types/react": "^16.14.1",
+    "react": "^16.14.0"
   }
 }

@@ -24,7 +24,7 @@ import { jsx } from 'theme-ui'
 import { Sidenav } from '@theme-ui/sidenav'
 import Links from './links.mdx'
 
-export default props => (
+export default (props) => (
   <Sidenav {...props}>
     <Links />
   </Sidenav>
@@ -39,7 +39,7 @@ import { jsx } from 'theme-ui'
 import { AccordionNav } from '@theme-ui/sidenav'
 import Links from './links.mdx'
 
-export default props => (
+export default (props) => (
   <Links
     {...props}
     components={{
@@ -59,15 +59,16 @@ import { Pagination } from '@theme-ui/sidenav'
 import { Location } from '@reach/router'
 import Links from './links.mdx'
 
-export default props =>
+export default (props) => (
   <Location
     children={({ location }) => (
       <Links
         pathname={location.pathname}
         components={{
-          wrapper: Pagination
+          wrapper: Pagination,
         }}
       />
     )}
   />
+)
 ```

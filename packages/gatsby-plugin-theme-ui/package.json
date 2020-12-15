@@ -1,12 +1,12 @@
 {
   "name": "gatsby-plugin-theme-ui",
-  "version": "0.4.0-rc.5",
+  "version": "0.6.0-alpha.3",
   "main": "index.js",
   "author": "Brent Jackson",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.13.1",
-    "theme-ui": "^0.3.0"
+    "theme-ui": "^0.5.0-alpha.0"
   },
   "keywords": [
     "gatsby",
@@ -15,5 +15,5 @@
     "theme-ui"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

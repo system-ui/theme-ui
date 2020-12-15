@@ -1,32 +1,76 @@
-<img
-  src="/packages/docs/static/logo.png"
-  width="96"
-  height="96"
-/>
+<p align="center">
+  <img
+    src="/packages/docs/static/logo.png"
+    width="96"
+    height="96"
+  />
+</p>
 
-# Theme UI
+<h1 align="center">Theme UI</h1>
 
-**The Design Graph Framework**
+<p align="center">
+  <strong>The Design Graph Framework</strong>
+</p>
 
+&nbsp;
+
+<p align="center">
+  <a href="https://github.com/system-ui/theme-ui">
+    <img src="https://badgen.net/badge/-/github?icon=github&label" alt="GitHub" />
+  </a>
+  <a href="https://github.com/system-ui/theme-ui/stargazers">
+    <img src="https://badgen.net/github/stars/system-ui/theme-ui" alt="GitHub Stars"/>
+  </a>
+  <a>
+    <img alt="npm (latest)" src="https://img.shields.io/npm/v/theme-ui/latest"/>
+  </a>
+  <a>
+    <img alt="npm (next)" src="https://img.shields.io/npm/v/theme-ui/next?color=%23e044aa"/>
+  </a>
+  <br />
+  <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
+    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg" alt="Build Status"/>
+  </a>
+  <a href="https://github.com/system-ui/theme-ui/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/system-ui/theme-ui" alt="Contributors" />
+  </a>
+  <a href="https://github.com/badges/shields/pulse" >
+    <img src="https://img.shields.io/github/commit-activity/m/system-ui/theme-ui" alt="Activity" />        
+  </a>
+  <br />
+  <a href="https://badgen.net/bundlephobia/minzip/theme-ui">
+    <img
+      src="https://badgen.net/bundlephobia/minzip/theme-ui"
+      alt="Size"
+    />
+  </a>
+  <a href="https://bundlephobia.com/result?p=theme-ui">
+    <img
+      src="https://badgen.net/bundlephobia/tree-shaking/theme-ui"
+      alt="Tree Shaking"
+    />
+  </a>
+  <a href="https://github.com/system-ui/theme-ui/blob/stable/LICENSE.md">
+    <img
+      src="https://badgen.net/badge/license/MIT/blue"
+      alt="MIT license"
+    />
+  </a>
+  <a href="https://discord.gg/stp6BY7MXA">
+    <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
+  </a>
+</p>
+
+\
 Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
-[![GitHub][github-badge]][github]
-[![Stars][]][github]
-![Build Status][]
-[![Version][]][npm]
-![MIT License][]
-![][size]
+**[stable] docs**: https://theme-ui.com \
+**[develop] (v0.6.0-alpha) docs**: [https://development--dev-theme-ui.netlify.app/](https://development--dev-theme-ui.netlify.app/)
 
-https://theme-ui.com
+[stable]: https://github.com/system-ui/theme-ui/tree/stable
+[develop]: https://github.com/system-ui/theme-ui/tree/develop
 
-[github]: https://github.com/system-ui/theme-ui
-[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
-[stars]: https://badgen.net/github/stars/system-ui/theme-ui
-[build status]: https://flat.badgen.net/github/status/system-ui/theme-ui
-[version]: https://flat.badgen.net/npm/v/theme-ui
-[npm]: https://npmjs.com/package/theme-ui
-[mit license]: https://flat.badgen.net/badge/license/MIT/blue
-[size]: https://flat.badgen.net/bundlephobia/minzip/theme-ui
+---
 
 Built for design systems, white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
 and based on a standard [Theme Specification][],
@@ -68,11 +112,10 @@ wrap your application with the `ThemeProvider` component and pass in a custom `t
 
 ```jsx
 // basic usage
-import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import theme from './theme'
 
-export default props => (
+export default (props) => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )
 ```
@@ -104,14 +147,13 @@ The `sx` prop works similarly to Emotion's `css` prop, accepting style objects t
 Using the `sx` prop for styles means that certain properties can reference values defined in your `theme` object.
 This is intended to make keeping styles consistent throughout your app the easy thing to do.
 
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
+The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default React JSX functions.
 This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     sx={{
       fontWeight: 'bold',
@@ -131,10 +173,9 @@ The `sx` prop also supports using arrays as values to change properties responsi
 This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     sx={{
       // applies width 100% to all viewport widths,
@@ -154,7 +195,7 @@ export default props => (
 - [The `sx` Prop](https://theme-ui.com/sx-prop)
 - [Layout](https://theme-ui.com/layout)
 - [Color Modes](https://theme-ui.com/color-modes)
-- [Styled](https://theme-ui.com/styled)
+- [Themed](https://theme-ui.com/themed)
 - [MDX Components](https://theme-ui.com/mdx-components)
 - [Theme Spec](https://theme-ui.com/theme-spec)
 - [Gatsby Plugin](https://theme-ui.com/packages/gatsby-plugin)

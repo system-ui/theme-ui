@@ -62,6 +62,7 @@ Because all properties of `Theme` are optional,
 accessing them requires usage of [`get` function](/api#get).
 
 ```tsx
+/** @jsxImportSource theme-ui */
 import { Theme } from 'theme-ui'
 
 const theme: Theme = {
@@ -75,6 +76,7 @@ return <div sx={{ size: (t) => t.space[3] + t.sizes[5] }} />
 ```
 
 ```tsx
+/** @jsxImportSource theme-ui */
 import { Theme, get } from 'theme-ui'
 
 // No error
@@ -85,6 +87,8 @@ Properties of scales can be accessed with optional chaining.
 Values under numeric keys can be accessed with bracket notation.
 
 ```tsx
+/** @jsxImportSource theme-ui */
+
 const parse = (x: unknown) => parseInt(String(x))
 
 return (
@@ -131,6 +135,8 @@ Style objects defined outside of `css` function and `sx` prop need explicit
 annotation to prevent following error.
 
 ```tsx
+/** @jsxImportSource theme-ui */
+
 const style = { whiteSpace: 'pre-line' }
 
 // Type '{ whiteSpace: string; }' is not assignable to type 'ThemeUICSSObject'.
@@ -149,6 +155,7 @@ We can explicitly annotate `style` ensure that it is a correct Theme UI style
 object and that `whiteSpace` is one of appropriate values.
 
 ```tsx
+/** @jsxImportSource theme-ui */
 import { ThemeUICSSObject } from 'theme-ui'
 
 const style: ThemeUICSSObject = { whiteSpace: 'pre-line' }

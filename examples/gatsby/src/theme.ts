@@ -1,4 +1,6 @@
-export default {
+import { Theme } from 'theme-ui'
+
+const theme: Theme = {
   colors: {
     text: '#000',
     background: '#fff',
@@ -26,3 +28,5 @@ export default {
     },
   },
 }
+
+export default theme
