@@ -1,5 +1,14 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 
+const tableCellStyle = {
+  textAlign: 'left',
+  py: '4px',
+  pr: '4px',
+  pl: 0,
+  borderColor: 'muted',
+  borderBottomStyle: 'solid',
+}
+
 export default {
   colors: {
     text: '#000000',
@@ -315,22 +324,16 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
-        textAlign: 'left',
-        py: '4px',
-        pr: '4px',
-        pl: 0,
-        borderColor: 'muted',
-        borderBottomStyle: 'solid',
-      },
     },
     th: {
       verticalAlign: 'bottom',
       borderBottomWidth: '2px',
+      ...tableCellStyle,
     },
     td: {
       verticalAlign: 'top',
       borderBottomWidth: '1px',
+      ...tableCellStyle,
     },
     hr: {
       border: 0,

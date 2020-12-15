@@ -146,7 +146,11 @@ css(styleObject)(theme)
 
 ### `get`
 
-An existential getter function used internally.
+An existential getter function used internally to extract a field (or object) from a theme object.
+
+### `getObjectWithVariants`
+
+Similar to the `get` function above, but will also resolve any `variant` field if found inside the object.
 
 ### `merge`
 

@@ -42,7 +42,7 @@ export const EditLink = ({ base, children, ...props }) => (
 )
 
 EditLink.defaultProps = {
-  base: 'https://github.com/system-ui/theme-ui/edit/master/packages/docs/src',
+  base: 'https://github.com/system-ui/theme-ui/edit/develop/packages/docs/src',
   children: 'Edit the page on GitHub',
 }
 

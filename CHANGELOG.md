@@ -1,9 +1,15 @@
 # Changelog
 
+- **BREAKING** Fix match-media `defaultIndex` on `useBreakpointIndex`. Issue #1191, PR #1346
+
 ## v0.6.0 UNRELEASED
 
+- Extract objects with nested variant props. Issue #1357
+- Add ability for MDX styling, and fix mdx table align styles. Issue #654
 - Remove recursive default values from CSS custom properties. PR #1327
-- Fix match-media useBreakpointIndex defaultIndex. Issue #1191
+- Support a `"default"` key for object in scales. PR #951
+- Render extra Embed props onto `iframe` tag instead of wrapping `div`. Issue #966, PR #1122
+
 ## v0.6.0-alpha.1
 
 - Switches from lodash.kebabCase to alternative package ([param-case](/blakeembrey/change-case/tree/master/packages/param-case)) per [official Lodash documentation](https://lodash.com/per-method-packages). PR #1304
