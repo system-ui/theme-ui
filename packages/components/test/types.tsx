@@ -315,7 +315,11 @@ describe('components type check', () => {
     ;((props: DonutProps) => <Donut {...props} />)({ value: 50 })
 
     // Embed
-    ;((props: EmbedProps) => <Embed {...props} />)({})
+    ;((props: EmbedProps) => <Embed {...props} />)({
+      ref: (iframeRef: HTMLIFrameElement) => {
+        console.log(iframeRef)
+      },
+    })
 
     // Field
     ;((props: FieldProps<'input'>) => <Field {...props} />)({
