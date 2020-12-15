@@ -49,6 +49,15 @@ const theme: Theme = {
       bg: 'primary',
       borderRadius: 2,
     },
+    size: {
+      size: '100%',
+      bg: 'primary',
+    },
+    round: {
+      variant: 'buttons.size',
+      overflow: 'hidden',
+      borderRadius: '50%',
+    },
   },
   text: {
     caps: {
@@ -72,8 +81,8 @@ const theme: Theme = {
   },
   opacities: [0, '50%'],
   transitions: {
-    standard: '0.3s ease-in-out'
-  }
+    standard: '0.3s ease-in-out',
+  },
 }
 
 test('returns a function', () => {
@@ -136,7 +145,7 @@ test('returns nested responsive styles', () => {
     color: 'primary',
     h1: {
       py: [3, 4],
-      scrollPaddingY: [2, 4]
+      scrollPaddingY: [2, 4],
     },
   })({ theme })
   expect(result).toEqual({
@@ -151,7 +160,6 @@ test('returns nested responsive styles', () => {
         paddingBottom: 32,
         scrollPaddingBottom: 32,
         scrollPaddingTop: 32,
-  
       },
     },
   })
@@ -309,6 +317,19 @@ test('returns variants from theme', () => {
     color: 'white',
     backgroundColor: 'tomato',
     borderRadius: 2,
+  })
+})
+
+test('returns nested variants from theme', () => {
+  const result = css({
+    variant: 'buttons.round',
+  })(theme)
+  expect(result).toEqual({
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    borderRadius: '50%',
+    backgroundColor: 'tomato',
   })
 })
 
@@ -586,7 +607,7 @@ test('returns correct media query order 2', () => {
     'paddingRight',
     'paddingTop',
     'paddingBottom',
-    'scrollPadding'
+    'scrollPadding',
   ])
 })
 
