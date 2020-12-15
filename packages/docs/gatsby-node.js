@@ -17,7 +17,7 @@ module.exports.createPages = ({ actions }) => {
     toPath: '/sx-prop',
   })
 
-  Object.keys(presets).forEach(preset => {
+  Object.keys(presets).forEach((preset) => {
     actions.createPage({
       path: `/presets/${preset}`,
       component: Preset,

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from 'theme-ui'
 
-const XRay = props => (
+const XRay = (props) => (
   <div
     {...props}
     sx={{
@@ -12,7 +12,7 @@ const XRay = props => (
   />
 )
 
-export default props => (
+export default (props) => (
   <XRay>
     <pre>Demo/debugging page</pre>
     <div

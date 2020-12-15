@@ -16,7 +16,7 @@
   "devDependencies": {
     "@theme-ui/css": "0.6.0-alpha.1",
     "babel-polyfill": "^6.26.0",
-    "execa": "^4.0.0",
+    "execa": "^5.0.0",
     "tailwindcss": "^1.0.4"
   },
   "publishConfig": {
