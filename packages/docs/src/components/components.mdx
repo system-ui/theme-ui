@@ -92,9 +92,9 @@ export const Buttons = () => {
   onSubmit={(e) => e.preventDefault()}
   sx={{ width: '100%', maxWidth: '500px' }}>
   <Label htmlFor="username">Username</Label>
-  <Input name="username" mb={3} />
+  <Input id="username" mb={3} />
   <Label htmlFor="password">Password</Label>
-  <Input type="password" name="password" mb={3} />
+  <Input type="password" id="password" mb={3} />
   <Box>
     <Label mb={3}>
       <Checkbox />
@@ -102,13 +102,13 @@ export const Buttons = () => {
     </Label>
   </Box>
   <Label htmlFor="sound">Sound</Label>
-  <Select name="sound" mb={3}>
+  <Select id="sound" mb={3}>
     <option>Beep</option>
     <option>Boop</option>
     <option>Blip</option>
   </Select>
   <Label htmlFor="comment">Comment</Label>
-  <Textarea name="comment" rows="6" mb={3} />
+  <Textarea id="comment" rows="6" mb={3} />
   <Flex mb={3}>
     <Label>
       <Radio name="letter" /> Alpha

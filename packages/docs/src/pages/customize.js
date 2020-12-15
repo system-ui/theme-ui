@@ -12,7 +12,7 @@ import {
   // Row,
 } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
-import React, { useReducer } from 'react'
+import { useReducer } from 'react'
 import merge from 'lodash.merge'
 import * as presets from '@theme-ui/presets'
 import copy from 'copy-to-clipboard'

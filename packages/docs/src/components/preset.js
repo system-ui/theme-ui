@@ -41,11 +41,14 @@ export default ({ preset: presetName }) => {
           <Themed.h2>Type Scale</Themed.h2>
           <TypeScale />
           <Components />
-          <Themed.h2 id="json">Raw JSON</Themed.h2>
+          <label htmlFor="json" sx="styled.hs">
+            Raw JSON
+          </label>
           <textarea
             value={JSON.stringify(preset, null, 2)}
             rows={16}
             readOnly
+            id="json"
             aria-labelledby="json"
             sx={{
               width: '100%',
