@@ -77,6 +77,30 @@ With the example below, the primary button will adapt its colors based on the cu
 }
 ```
 
+## Combining Multiple Variants
+
+If you want to combine multiple variants on the same element, pass an array to `variant` in the `sx` prop.
+If styles conflict, those of the variant passed later will render.
+
+```jsx
+<button sx={{ variant: ['buttons.primary', 'buttons.small'] }} />
+```
+
+## Variant as a function
+
+If you need to determine variants at run-time, pass a function to `variant` in the `sx` prop.
+
+```jsx
+<button
+  sx={{
+    variant: (theme: Theme) => {
+      const buttonVariant = Object.keys(theme.buttons!)[3]
+      return `buttons.${buttonVariant}`
+    },
+  }}
+/>
+```
+
 ## Typography
 
 Variants can also be used to create typographic styles,

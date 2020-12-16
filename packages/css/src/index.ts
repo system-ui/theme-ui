@@ -1,3 +1,4 @@
+import deepmerge from 'deepmerge'
 import {
   CSSObject,
   ThemeUIStyleObject,
@@ -29,14 +30,41 @@ export function get(
   return hasDefault(obj) ? obj.default : obj
 }
 
+export const getValue = (
+  theme: Theme,
+  key: string,
+  _themeKey?: string
+): ThemeUICSSObject => {
+  const defValue = _themeKey ? get(theme, key) : undefined
+  const value = get(
+    theme,
+    _themeKey ? `${_themeKey}.${key}` : key,
+    typeof defValue === 'function' ? defValue(theme) : defValue
+  )
+  return typeof value === 'function' ? value(theme) : value
+}
+export const getVariantValue = (
+  theme: Theme,
+  variant: VariantProperty.Variant,
+  _themeKey?: string
+): ThemeUICSSObject => {
+  const key = typeof variant === 'function' ? variant(theme) : variant
+  if (Array.isArray(key)) {
+    return deepmerge.all(
+      key.map((v) => getValue(theme, v, _themeKey) || {}),
+      { arrayMerge: (_dest, src) => src }
+    ) as ThemeUICSSObject
+  }
+  return getValue(theme, key, _themeKey)
+}
+
 export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
   if (obj && obj['variant']) {
     let result: CSSObject = {}
     for (const key in obj) {
       const x = obj[key]
       if (key === 'variant') {
-        const val = typeof x === 'function' ? x(theme) : x
-        const variant = getObjectWithVariants(get(theme, val as string), theme)
+        const variant = getObjectWithVariants(getVariantValue(theme, x), theme)
         result = { ...result, ...variant }
       } else {
         result[key] = x as CSSObject
@@ -45,20 +73,6 @@ export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
     return result
   }
   return obj as CSSObject
-}
-
-export const getVariantValue = (
-  theme: Theme,
-  _themeKey: string,
-  variant: string
-): ThemeUICSSObject => {
-  const defValue = get(theme, variant)
-  const value = get(
-    theme,
-    `${_themeKey}.${variant}`,
-    typeof defValue === 'function' ? defValue(theme) : defValue
-  )
-  return typeof value === 'function' ? value(theme) : value
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')

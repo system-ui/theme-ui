@@ -453,7 +453,7 @@ export type ThemeUICSSProperties = {
 }
 
 export declare namespace VariantProperty {
-  export type Variant = string | string[]
+  export type Variant = string | string[] | ((theme: Theme) => string)
 }
 
 export interface VariantProperty {

@@ -360,7 +360,36 @@ test('handles responsive variants', () => {
     },
   })
 })
+test('merge array of variant', () => {
+  const result = css({
+    variant: ['buttons.primary', 'buttons.round'],
+  })(theme)
+  expect(result).toEqual({
+    padding: 16,
+    fontWeight: 600,
+    color: 'white',
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    borderRadius: '50%',
+    backgroundColor: 'tomato',
+  })
+})
 
+it('invoke variants as a function', () => {
+  const result = css({
+    variant: ((theme: Theme) => {
+      return `buttons.${Object.keys(theme.buttons!)[3]}`
+    }) as any,
+  })(theme)
+  expect(result).toEqual({
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    borderRadius: '50%',
+    backgroundColor: 'tomato',
+  })
+})
 test('handles negative margins from scale', () => {
   const result = css({
     mt: -3,

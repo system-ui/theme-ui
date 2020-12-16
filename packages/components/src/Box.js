@@ -17,17 +17,8 @@ const shouldForwardProp = createShouldForwardProp(boxSystemProps)
 
 const sx = (props) => css(props.sx)(props.theme)
 const base = (props) => css(props.__css)(props.theme)
-const variant = ({ theme, variant, __themeKey = 'variants' }) => {
-  if (Array.isArray(variant)) {
-    return css(
-      deepmerge.all(
-        variant.map((v) => getVariantValue(theme, __themeKey, v) || {}),
-        { arrayMerge: (_dest, src) => src }
-      )
-    )
-  }
-  return css(getVariantValue(theme, __themeKey, variant))
-}
+const variant = ({ theme, variant, __themeKey = 'variants' }) =>
+  css(getVariantValue(theme, variant, __themeKey))
 
 export const Box = styled('div', {
   shouldForwardProp,
