@@ -4,9 +4,9 @@ export { wrapRootElement } from './src/provider'
 
 export const onRenderBody = (
   { setPreBodyComponents },
-  { noFlashScript = true }
+  { injectColorFlashScript = true }
 ) => {
-  if (noFlashScript) {
+  if (injectColorFlashScript) {
     setPreBodyComponents([
       jsx(InitializeColorMode, { key: 'theme-ui-no-flash' }),
     ])
