@@ -83,7 +83,7 @@ export const createColorStyles = (theme: Theme = {}) => {
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
 
-  Object.keys(modes).forEach(mode => {
+  Object.keys(modes).forEach((mode) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
@@ -95,7 +95,8 @@ export const createColorStyles = (theme: Theme = {}) => {
         : modes[printColorModeName]
     styles['@media (print)'] = objectToVars('colors', mode)
   }
-  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`, get(theme, `colors.${color}`));
+  const colorToVarValue = (color: string) =>
+    toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
 
   return css({
     body: {

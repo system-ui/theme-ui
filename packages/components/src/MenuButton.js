@@ -18,13 +18,15 @@ export const MenuIcon = ({ size = 24 }) => (
   </Box>
 )
 
-export const MenuButton = React.forwardRef((props, ref) => (
-  <IconButton
-    ref={ref}
-    title="Menu"
-    aria-label="Toggle Menu"
-    variant="menu"
-    {...props}>
-    <MenuIcon />
-  </IconButton>
-))
+export const MenuButton = React.forwardRef(function MenuButton(props, ref) {
+  return (
+    <IconButton
+      ref={ref}
+      title="Menu"
+      aria-label="Toggle Menu"
+      variant="menu"
+      {...props}>
+      <MenuIcon />
+    </IconButton>
+  )
+})

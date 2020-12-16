@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "react": "^16.14.0",
-    "theme-ui": "0.6.0-alpha.1"
+    "theme-ui": "^0.6.0-alpha.3"
   },
   "publishConfig": {
     "access": "public"

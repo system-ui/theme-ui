@@ -13,7 +13,7 @@ Import utilities from the `@theme-ui/color` package and use them with colors in 
 import { jsx } from 'theme-ui'
 import { darken, lighten } from '@theme-ui/color'
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -186,7 +186,7 @@ We can take the result of any of the above helper functions (which return a func
 ```jsx
 <MyComponentWithBackground
   sx={{
-    backgroundImage: t => `
+    backgroundImage: (t) => `
       linear-gradient(
         to bottom,
         ${alpha('primary', 0.5)(t)},

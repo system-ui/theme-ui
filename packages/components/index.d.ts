@@ -295,18 +295,9 @@ export type DividerProps = BoxProps
  */
 export const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
-/**
- * EmbedProps are a bit tricky. It is a composite component that uses a <Box />
- * as the parent element which is what `props` are spread onto. The actual `ref`
- * however is a nested <Box as="iframe" /> element. To support these props we
- * need to use an intersection of the intrinsic attributes of HTMLDivElement,
- * with the ref attributes of HTMLIFrameElement.
- */
 export interface EmbedProps
-  extends Assign<
-    React.ComponentProps<'div'> & React.RefAttributes<HTMLIFrameElement>,
-    BoxOwnProps
-  > {
+  extends Assign<React.ComponentPropsWithRef<'iframe'>, BoxOwnProps> {
+  variant?: string
   ratio?: number
   src?: React.IframeHTMLAttributes<any>['src']
   frameBorder?: React.IframeHTMLAttributes<any>['frameBorder']

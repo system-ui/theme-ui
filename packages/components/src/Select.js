@@ -9,39 +9,44 @@ const DownArrow = (props) => (
   </SVG>
 )
 
-export const Select = React.forwardRef(({ arrow, ...props }, ref) => (
-  <Box
-    {...getMargin(props)}
-    sx={{
-      display: 'flex',
-    }}>
+export const Select = React.forwardRef(function Select(
+  { arrow, ...props },
+  ref
+) {
+  return (
     <Box
-      ref={ref}
-      as="select"
-      variant="select"
-      {...omitMargin(props)}
-      __themeKey="forms"
-      __css={{
-        display: 'block',
-        width: '100%',
-        p: 2,
-        appearance: 'none',
-        fontSize: 'inherit',
-        lineHeight: 'inherit',
-        border: '1px solid',
-        borderRadius: 4,
-        color: 'inherit',
-        bg: 'transparent',
-      }}
-    />
-    {arrow || (
-      <DownArrow
-        sx={{
-          ml: -28,
-          alignSelf: 'center',
-          pointerEvents: 'none',
+      {...getMargin(props)}
+      sx={{
+        display: 'flex',
+      }}>
+      <Box
+        ref={ref}
+        as="select"
+        variant="select"
+        {...omitMargin(props)}
+        __themeKey="forms"
+        __css={{
+          display: 'block',
+          width: '100%',
+          p: 2,
+          appearance: 'none',
+          fontSize: 'inherit',
+          lineHeight: 'inherit',
+          border: '1px solid',
+          borderRadius: 4,
+          color: 'inherit',
+          bg: 'transparent',
         }}
       />
-    )}
-  </Box>
-))
+      {arrow || (
+        <DownArrow
+          sx={{
+            ml: -28,
+            alignSelf: 'center',
+            pointerEvents: 'none',
+          }}
+        />
+      )}
+    </Box>
+  )
+})
