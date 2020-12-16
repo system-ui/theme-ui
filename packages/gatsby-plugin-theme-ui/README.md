@@ -49,9 +49,37 @@ module.exports = {
 To customize the theme used in your Gatsby site,
 shadow the `src/gatsby-plugin-theme-ui/index.js` module.
 
-```js
-// src/gatsby-plugin-theme-ui/index.js
+```js filename=src/gatsby-plugin-theme-ui/index.js
 export default {
+  colors: {
+    text: '#111',
+    background: '#fff',
+  },
+}
+```
+
+### Load theme from custom path
+
+If you prefer to load your theme from a custom path (instead of the standard `src/gatsby-plugin-theme-ui/index.js`),
+you can require it in your `gatsby-config.js` file:
+
+```js filename=gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-theme-ui',
+      options: {
+        preset: require('./src/theme'),
+      },
+    },
+  ],
+}
+```
+
+Note that `gatsby-config.js` does not support ES6 modules, so you should use `module.exports` in your theme file:
+
+```js filename=src/theme.js
+module.exports = {
   colors: {
     text: '#111',
     background: '#fff',
@@ -63,8 +91,7 @@ export default {
 
 To extend a Gatsby theme that uses Theme UI, import the base theme and export a new theme object.
 
-```js
-// src/gatsby-plugin-theme-ui/index.js
+```js filename=src/gatsby-plugin-theme-ui/index.js
 import baseTheme from 'gatsby-theme-blog/src/gatsby-plugin-theme-ui'
 
 export default {
@@ -83,8 +110,7 @@ You can also import and use presets from [@theme-ui/presets](https://theme-ui.co
 
 To enable support for multiple color modes, add a nested `modes` object to `theme.colors`.
 
-```js
-// src/gatsby-plugin-theme-ui/index.js
+```js filename=src/gatsby-plugin-theme-ui/index.js
 export default {
   colors: {
     text: '#000',
@@ -103,8 +129,7 @@ export default {
 
 Custom MDX components that will receive styles from the theme can be included by adding a `src/gatsby-plugin-theme-ui/components.js` module.
 
-```js
-// src/gatsby-plugin-theme-ui/components.js
+```js filename=src/gatsby-plugin-theme-ui/components.js
 export default {
   h1: (props) => (
     <h1 {...props}>

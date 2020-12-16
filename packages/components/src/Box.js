@@ -45,4 +45,6 @@ export const Box = styled('div', {
   (props) => props.css
 )
 
+Box.displayName = 'Box'
+
 export default Box
