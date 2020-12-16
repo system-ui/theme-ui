@@ -378,9 +378,7 @@ test('merge array of variant', () => {
 
 it('invoke variants as a function', () => {
   const result = css({
-    variant: ((theme: Theme) => {
-      return `buttons.${Object.keys(theme.buttons!)[3]}`
-    }) as any,
+    variant: (theme: Theme) => `buttons.${Object.keys(theme.buttons!)[3]}`,
   })(theme)
   expect(result).toEqual({
     width: '100%',
