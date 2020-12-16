@@ -2,6 +2,8 @@
 
 ## v0.6.0 UNRELEASED
 
+- **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
+
 ## v0.6.0-alpha.1
 
 - Switches from lodash.kebabCase to alternative package ([param-case](/blakeembrey/change-case/tree/master/packages/param-case)) per [official Lodash documentation](https://lodash.com/per-method-packages). PR #1304
