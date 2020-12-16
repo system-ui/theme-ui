@@ -296,7 +296,7 @@ export type DividerProps = BoxProps
 export const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
 export interface EmbedProps
-  extends Assign<React.ComponentProps<'iframe'>, BoxOwnProps> {
+  extends Assign<React.ComponentPropsWithRef<'iframe'>, BoxOwnProps> {
   variant?: string
   ratio?: number
   src?: React.IframeHTMLAttributes<any>['src']
