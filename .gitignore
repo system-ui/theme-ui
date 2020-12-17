@@ -9,3 +9,5 @@ coverage
 .idea
 .vscode
 .envrc
+packages/docs/.env*
+

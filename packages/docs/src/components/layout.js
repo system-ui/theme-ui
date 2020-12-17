@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, useColorMode } from 'theme-ui'
+import { jsx, Themed, useColorMode, Input } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
@@ -53,7 +53,6 @@ export default (props) => {
     const next = modes[(i + 1) % modes.length]
     setMode(next)
   }
-
   return (
     <Themed.root>
       <Head {...props} />
@@ -86,16 +85,37 @@ export default (props) => {
               </Link>
             </Flex>
             <Flex>
-              <NavLink href="https://github.com/system-ui/theme-ui">
-                GitHub
-              </NavLink>
-              <Button
-                sx={{
-                  ml: 2,
-                }}
-                onClick={cycleMode}>
-                {getModeName(mode)}
-              </Button>
+              <div sx={{ mr: [0, 2] }}>
+                <form
+                  sx={{
+                    display: 'flex',
+                    px: 1,
+                    flex: '0 0 auto',
+                    justifyContent: ['flex-end', 'flex-start'],
+                  }}>
+                  <Input
+                    type="search"
+                    id="algolia-docs-search"
+                    placeholder="Search"
+                    aria-label="Search docs"
+                    sx={{
+                      minWidth: ['unset', 100],
+                    }}
+                  />
+                </form>
+              </div>
+              <Flex>
+                <NavLink href="https://github.com/system-ui/theme-ui">
+                  GitHub
+                </NavLink>
+                <Button
+                  sx={{
+                    ml: 2,
+                  }}
+                  onClick={cycleMode}>
+                  {getModeName(mode)}
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
         )}
