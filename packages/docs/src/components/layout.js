@@ -108,7 +108,7 @@ export default function DocsLayout(props) {
                   />
                 </form>
               </div>
-              <Flex>
+              <Flex sx={{ alignItems: 'center' }}>
                 <NavLink href="https://github.com/system-ui/theme-ui">
                   GitHub
                 </NavLink>
