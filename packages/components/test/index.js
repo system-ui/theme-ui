@@ -144,6 +144,15 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('background-color', 'highlight')
     expect(json).toHaveStyleRule('padding', '32px')
   })
+  it('renders with variant prop as a function', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variant={(theme) => `boxes.${Object.keys(theme.boxes)[0]}`} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('background-color', 'highlight')
+    expect(json).toHaveStyleRule('padding', '32px')
+  })
   test('renders with variant array', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>

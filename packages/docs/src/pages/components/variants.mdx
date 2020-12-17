@@ -71,6 +71,20 @@ Variant styles are merged from left to right, so if some of the styles conflict,
 <Text variant={['caps', 'heading']}>Title text</Text>
 ```
 
+## Variant as a function
+
+If you need to determine variants at run-time, pass a function to the `variant` prop.
+
+```jsx live=true
+<Box
+  variant={(theme) => {
+    const buttonVariant = Object.keys(theme.buttons)[0]
+    return `buttons.${buttonVariant}`
+  }}>
+  some text
+</Box>
+```
+
 ## Example theme
 
 ```js
