@@ -26,14 +26,14 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
       dangerouslySetInnerHTML={{
         __html: `
           var observer = new MutationObserver(function () {
-          var searchSelector = "${process.env.ALGOLIA_DOCSEARCH_SEARCH_INPUT}";
+          var searchSelector = "#algolia-docs-search";
           var searchInput = document.querySelector(searchSelector);
           if (searchInput) {
             docsearch({
-              apiKey: "${process.env.ALGOLIA_DOCSEARCH_API_KEY}",
-              indexName: "${process.env.ALGOLIA_DOCSEARCH_INDEX_NAME}",
+              apiKey: "84ed820927eee5fa5018c9f1abe70390",
+              indexName: "theme-ui",
               inputSelector: searchSelector,
-              debug: ${process.env.ALGOLIA_DOCSEARCH_DEBUG}
+              debug: false
             })
             observer.disconnect()
             observer = null
