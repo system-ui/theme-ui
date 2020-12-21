@@ -5,7 +5,7 @@
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "serve": "yarn workspace docs serve --port 8000",
-    "clean": "lerna run clean",
+    "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
     "typecheck": "lerna run typecheck",
@@ -13,7 +13,7 @@
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
-    "prerelease": "yarn prepare && yarn typecheck && yarn test --coverage",
+    "prerelease": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version",
     "bump-version-next": "lerna version prerelease --preid alpha"
   },
@@ -44,6 +44,7 @@
     "microbundle": "^0.12.2",
     "prettier": "^2.2.0",
     "react-test-renderer": "^16.8.6",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4"
   },
