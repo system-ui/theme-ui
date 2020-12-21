@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.5 2020-12-21
+
+- Remove `.d.ts` from dist. Use `@types/theme-ui` with Theme UI 0.3.
+
+## v0.3.4
+
+- Fix peer dependencies in `gatsby-plugin-theme-ui`
+
+## v0.3.3
+
+- Fix peer dependencies in `@theme-ui/style-guide`.
+
 ## v0.3.2 2020-11-08
 
 - Fix peer dependencies. Issue #725, PR #836
