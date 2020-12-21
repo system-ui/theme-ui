@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-polaris",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Yuraima Estevez",
