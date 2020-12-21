@@ -6,6 +6,7 @@
 
 ## v0.6.0 UNRELEASED
 
+- **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
 - Remove recursive default values from CSS custom properties. PR #1327
