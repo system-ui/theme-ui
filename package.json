@@ -43,7 +43,7 @@
     "lint-staged": "10",
     "microbundle": "^0.12.2",
     "prettier": "^2.2.0",
-    "react-test-renderer": "^16.8.6",
+    "react-test-renderer": "^17.0.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4"
