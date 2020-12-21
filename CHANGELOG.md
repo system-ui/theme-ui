@@ -1,5 +1,9 @@
 # Changelog
 
+## UNRELEASED
+
+- Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
+
 ## v0.6.0 UNRELEASED
 
 - Extract objects with nested variant props. Issue #1357
