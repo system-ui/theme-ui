@@ -13,7 +13,7 @@
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
-    "prerelease": "yarn clean yarn prepare && yarn typecheck && yarn test --coverage",
+    "prerelease": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version",
     "bump-version-next": "lerna version prerelease --preid alpha"
   },
