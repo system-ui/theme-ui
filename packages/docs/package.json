@@ -42,7 +42,7 @@
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "prismjs": "^1.16.0",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.0",
     "react-live": "^2.1.2",

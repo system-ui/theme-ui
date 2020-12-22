@@ -13,6 +13,6 @@
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
-    "react": "^16.14.0"
+    "react": "^17.0.1"
   }
 }
