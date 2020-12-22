@@ -23,7 +23,7 @@
     "react": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
-    "react": "^16.14.0"
+    "react": "^17.0.1"
   },
   "publishConfig": {
     "access": "public"
