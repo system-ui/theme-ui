@@ -1,8 +1,8 @@
 import { css, get, Theme } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
-const toVarValue = (key: string) =>
-  `var(${toVarName(key)})`
+const toVarValue = (key: string, value: string | number) =>
+  `var(${toVarName(key)}, ${value})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
@@ -43,7 +43,8 @@ export const toCustomProperties = (
       next[key] = value
       continue
     }
-    next[key] = toVarValue(name)
+    const val = toPixel(themeKey || key, value)
+    next[key] = toVarValue(name, val)
   }
 
   return next
@@ -82,7 +83,7 @@ export const createColorStyles = (theme: Theme = {}) => {
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
 
-  Object.keys(modes).forEach(mode => {
+  Object.keys(modes).forEach((mode) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
@@ -94,7 +95,8 @@ export const createColorStyles = (theme: Theme = {}) => {
         : modes[printColorModeName]
     styles['@media (print)'] = objectToVars('colors', mode)
   }
-  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`);
+  const colorToVarValue = (color: string) =>
+    toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
 
   return css({
     body: {

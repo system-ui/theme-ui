@@ -6,6 +6,17 @@ const theme: Theme = {
     secondary: 'cyan',
     background: 'white',
     text: 'black',
+    purple: {
+      default: 'darkviolet',
+      100: 'rebeccapurple',
+      500: 'darkviolet',
+      900: 'violet',
+    },
+    pink: {
+      100: 'mediumvioletred',
+      500: 'hotpink',
+      900: 'pink',
+    },
   },
   fontSizes: [12, 14, 16, 24, 36],
   fonts: {
@@ -24,12 +35,28 @@ const theme: Theme = {
     sidebar: 320,
   },
   buttons: {
+    default: {
+      px: 4,
+      py: 2,
+      fontWeight: 'bold',
+      color: 'secondary',
+      bg: 'background',
+    },
     primary: {
       p: 3,
       fontWeight: 'bold',
       color: 'white',
       bg: 'primary',
       borderRadius: 2,
+    },
+    size: {
+      size: '100%',
+      bg: 'primary',
+    },
+    round: {
+      variant: 'buttons.size',
+      overflow: 'hidden',
+      borderRadius: '50%',
     },
   },
   text: {
@@ -228,6 +255,58 @@ test('supports functional values', () => {
   })
 })
 
+test('returns `default` key when accessing object value with default', () => {
+  const result = css({
+    color: 'purple',
+  })(theme)
+  expect(result).toEqual({
+    color: 'darkviolet',
+  })
+})
+
+test('returns nested key when accessing key from object value with default', () => {
+  const result = css({
+    color: 'purple.100',
+  })(theme)
+  expect(result).toEqual({
+    color: 'rebeccapurple',
+  })
+})
+
+test('variant prop returns `default` key when accessing variant object with default', () => {
+  const result = css({
+    variant: 'buttons',
+  })(theme)
+
+  expect(result).toEqual({
+    paddingLeft: 32,
+    paddingRight: 32,
+    paddingTop: 8,
+    paddingBottom: 8,
+    fontWeight: 600,
+    color: 'cyan',
+    backgroundColor: 'white',
+  })
+})
+
+test('returns object when accessing object value with no default key', () => {
+  const result = css({
+    color: 'pink',
+  })(theme)
+  // Note: Returning this object is the expected behavior; however, an object
+  // value like this isn't able to become valid CSS. Ensure the theme path
+  // points to a primitive value (such as 'pink.100') when intending to make
+  // CSS out of these values.
+  // Ref: https://github.com/system-ui/theme-ui/pull/951#discussion_r430697168
+  expect(result).toEqual({
+    color: {
+      100: 'mediumvioletred',
+      500: 'hotpink',
+      900: 'pink',
+    },
+  })
+})
+
 test('returns variants from theme', () => {
   const result = css({
     variant: 'buttons.primary',
@@ -238,6 +317,19 @@ test('returns variants from theme', () => {
     color: 'white',
     backgroundColor: 'tomato',
     borderRadius: 2,
+  })
+})
+
+test('returns nested variants from theme', () => {
+  const result = css({
+    variant: 'buttons.round',
+  })(theme)
+  expect(result).toEqual({
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    borderRadius: '50%',
+    backgroundColor: 'tomato',
   })
 })
 

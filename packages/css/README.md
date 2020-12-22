@@ -1,4 +1,3 @@
-
 # @theme-ui/css
 
 Theme UI CSS lets you write style objects with responsive, theme-aware ergonomic shortcuts.

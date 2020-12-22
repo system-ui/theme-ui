@@ -5,7 +5,7 @@
     "start": "yarn workspace docs start",
     "build": "yarn workspace docs build",
     "serve": "yarn workspace docs serve --port 8000",
-    "clean": "lerna run clean",
+    "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
     "typecheck": "lerna run typecheck",
@@ -13,7 +13,7 @@
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
-    "prerelease": "yarn prepare && yarn typecheck && yarn test --coverage",
+    "prerelease": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version",
     "bump-version-next": "lerna version prerelease --preid alpha"
   },
@@ -34,7 +34,7 @@
     "@types/jest": "^26.0.10",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.0.1",
-    "babel-preset-gatsby": "^0.6.0",
+    "babel-preset-gatsby": "^0.8.0",
     "husky": ">=4.0.7",
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
@@ -45,7 +45,8 @@
     "prettier": "^2.2.0",
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^26.4.4",
-    "ts-snippet": "^5.0.1"
+    "ts-snippet": "^5.0.1",
+    "rimraf": "^3.0.2"
   },
   "jest": {
     "preset": "ts-jest/presets/js-with-babel",

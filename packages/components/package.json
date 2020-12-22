@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "index.d.ts",
@@ -16,8 +16,8 @@
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "0.6.0-alpha.1",
-    "@types/styled-system": "^4.2.2"
+    "@theme-ui/css": "0.6.0-alpha.4",
+    "@types/styled-system": "^5.1.10"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0"

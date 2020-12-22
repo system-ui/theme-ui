@@ -2,7 +2,7 @@ const visit = require('unist-util-visit')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { urlResolve } = require('gatsby-core-utils')
 
-const mdxResolverPassthrough = fieldName => async (
+const mdxResolverPassthrough = (fieldName) => async (
   source,
   args,
   context,
@@ -19,7 +19,7 @@ const mdxResolverPassthrough = fieldName => async (
   return result
 }
 
-const parseProps = meta => {
+const parseProps = (meta) => {
   return meta.split(' ').reduce((a, prop) => {
     if (prop.split('=').length > 1) {
       const [key, value] = prop.split('=')
@@ -158,9 +158,9 @@ exports.createPages = async ({ actions, graphql, reporter }, opts) => {
 
   if (result.errors) reporter.panic(result.errors)
 
-  const recipes = result.data.allMdxRecipe.edges.map(e => e.node)
+  const recipes = result.data.allMdxRecipe.edges.map((e) => e.node)
 
-  recipes.forEach(r => {
+  recipes.forEach((r) => {
     actions.createPage({
       path: r.slug,
       component: require.resolve('./src/query'),

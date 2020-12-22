@@ -56,6 +56,10 @@ export interface ThemeUIExtendedCSSProperties
     MultiplesCSSProperties,
     ScalesCSSProperties {}
 
+export type DerivedStylePropertyValue<T> = (
+  theme: Theme
+) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined
+
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
   | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)

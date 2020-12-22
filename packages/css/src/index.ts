@@ -4,6 +4,8 @@ import {
   ThemeDerivedStyles,
   ThemeUICSSObject,
   Theme,
+  ResponsiveStyleTuple,
+  DerivedStylePropertyValue,
 } from './types'
 import { scales, Scales } from './scales'
 import { multiples } from './multiples'
@@ -14,6 +16,10 @@ export type { Scales } from './scales'
 
 export * from './types'
 export * from './exact-theme'
+
+const hasDefault = (x: unknown): x is { default: string | number } => {
+  return typeof x === 'object' && x !== null && 'default' in x
+}
 
 export function get(
   obj: object,
@@ -26,7 +32,30 @@ export function get(
   for (p = 0; p < path.length; p++) {
     obj = obj ? (obj as any)[path[p]!] : undef
   }
-  return obj === undef ? def : obj
+  if (obj === undef) return def
+
+  return hasDefault(obj) ? obj.default : obj
+}
+
+export const getObjectWithVariants = (
+  obj: ThemeUICSSObject,
+  theme: Theme
+): ThemeUICSSObject => {
+  if (obj && obj['variant']) {
+    let result: ThemeUICSSObject = {}
+    for (const key in obj) {
+      const x = obj[key]
+      if (key === 'variant') {
+        const val = typeof x === 'function' ? x(theme) : x
+        const variant = getObjectWithVariants(get(theme, val as string), theme)
+        result = { ...result, ...variant }
+      } else {
+        result[key] = x
+      }
+    }
+    return result
+  }
+  return obj
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
@@ -77,10 +106,26 @@ const transforms = [
   {}
 )
 
-const responsive = (
-  styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>
-) => (theme: Theme) => {
-  const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
+type StyleObjectWithoutTuples = {
+  [P in keyof ThemeUICSSObject]:
+    | Exclude<
+        ThemeUICSSObject[P],
+        ResponsiveStyleTuple<any> | DerivedStylePropertyValue<any>
+      >
+    | ((theme: Theme) => string | number | null | false)
+}
+
+type _ = StyleObjectWithoutTuples[keyof StyleObjectWithoutTuples]
+
+/**
+ * transform functions (satyles derived from theme) into their values
+ * and transforms responsive style tuples into media queries
+ */
+function responsive(
+  styles: ThemeUICSSObject,
+  theme: Theme
+): StyleObjectWithoutTuples {
+  const next: StyleObjectWithoutTuples = {}
   const breakpoints =
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
@@ -123,29 +168,17 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
   } as Theme
-  let obj = typeof args === 'function' ? args(theme) : args
-  let result: CSSObject = {}
-
   // insert variant props before responsive styles, so they can be merged
   // we need to maintain order of the style props, so if a variant is place in the middle
   // of other props, it will extends its props at that same location order.
-  if (obj && obj['variant']) {
-    for (const key in obj) {
-      const x = obj[key as keyof typeof styles]
-      if (key === 'variant') {
-        const val = typeof x === 'function' ? x(theme) : x
-        const variant = get(theme, val as string)
-        result = { ...result, ...variant }
-      } else {
-        result[key] = x as CSSObject
-      }
-    }
-  } else {
-    result = obj as CSSObject
-  }
 
-  const styles = responsive(result as ThemeUICSSObject)(theme)
-  result = {}
+  const obj = getObjectWithVariants(
+    typeof args === 'function' ? args(theme) : args,
+    theme
+  )
+
+  const styles = responsive(obj, theme)
+  let result: CSSObject = {}
 
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
@@ -157,8 +190,7 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     const val = typeof x === 'function' ? x(theme) : x
 
     if (val && typeof val === 'object') {
-      // TODO: val can also be an array here. Is this a bug? Can it be reproduced?
-      result[key] = css(val as ThemeUICSSObject)(theme)
+      result[key] = css(val)(theme)
       continue
     }
 

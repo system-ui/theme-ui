@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider, Container } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <ThemeProvider
     theme={{
       styles: {

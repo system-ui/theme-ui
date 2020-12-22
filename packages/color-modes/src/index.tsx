@@ -63,7 +63,7 @@ const useColorModeState = (theme: Theme = {}) => {
   React.useEffect(() => {
     const stored = theme.useLocalStorage !== false && storage.get()
     document.body.classList.remove('theme-ui-' + stored)
-    if (!stored && theme.useColorSchemeMediaQuery) {
+    if (!stored && theme.useColorSchemeMediaQuery !== false) {
       const query = getMediaQuery()
       setMode(query)
       return
@@ -119,10 +119,10 @@ const applyColorMode = (theme: Theme, mode: string): Theme => {
   })
 }
 
-const BodyStyles = ({ theme }: { theme: Theme}) =>
+const BodyStyles = ({ theme }: { theme: Theme }) =>
   jsx(Global, {
     styles: () => {
-      return createColorStyles(theme);
+      return createColorStyles(theme)
     },
   })
 
