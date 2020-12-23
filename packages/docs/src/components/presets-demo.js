@@ -68,9 +68,7 @@ export default () => {
             <Themed.h2>Type Scale</Themed.h2>
             <TypeScale />
             <Components />
-            <label htmlFor="json" sx="styled.hs">
-              Raw JSON
-            </label>
+            <label htmlFor="json">Raw JSON</label>
             <textarea
               id="json"
               value={JSON.stringify(preset, null, 2)}

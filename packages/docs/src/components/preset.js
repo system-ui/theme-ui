@@ -41,7 +41,7 @@ export default ({ preset: presetName }) => {
           <Themed.h2>Type Scale</Themed.h2>
           <TypeScale />
           <Components />
-          <label htmlFor="json" sx="styled.hs">
+          <label htmlFor="json">
             Raw JSON
           </label>
           <textarea
