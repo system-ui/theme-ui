@@ -1,16 +1,7 @@
 /** @jsx jsx */
+/** @jsxFrag React.Fragment */
 import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
-import {
-  EditorProvider,
-  Theme,
-  // ColorPalette,
-  // Fonts,
-  // FontWeights,
-  // LineHeights,
-  // FontSizes,
-  // Space,
-  // Row,
-} from '@theme-ui/editor'
+import { EditorProvider, Theme } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
 import React, { useReducer } from 'react'
 import merge from 'lodash.merge'
