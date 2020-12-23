@@ -3,6 +3,8 @@ import type { AliasesCSSProperties } from './aliases'
 import type { ScalesCSSProperties } from './scales'
 import type { MultiplesCSSProperties } from './multiples'
 
+import type {} from '../emotion-theme'
+
 export type { CSSObject } from '@emotion/react'
 
 export interface ResponsiveStyleTuple<T> extends Array<T | null | undefined> {}
@@ -457,10 +459,4 @@ export interface BaseTheme {
    * @see https://theme-ui.com/components/message#variants
    */
   messages?: Record<string, ThemeUIStyleObject>
-}
-
-interface ThemeUITheme extends Theme {}
-
-declare module '@emotion/react' {
-  export interface Theme extends ThemeUITheme {}
 }

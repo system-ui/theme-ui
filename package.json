@@ -15,7 +15,8 @@
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
     "prerelease": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version",
-    "bump-version-next": "lerna version prerelease --preid alpha"
+    "bump-version-next": "lerna version prerelease --preid alpha",
+    "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json"
   },
   "workspaces": [
     "packages/*"
@@ -44,75 +45,11 @@
     "microbundle": "^0.13.0",
     "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.1",
-    "ts-jest": "^26.4.4",
-    "ts-snippet": "^5.0.2",
     "rimraf": "^3.0.2",
-    "typescript": "4.2.0-dev.20201223"
-  },
-  "jest": {
-    "preset": "ts-jest/presets/js-with-babel",
-    "globals": {
-      "ts-jest": {
-        "tsconfig": {
-          "target": "es2018",
-          "module": "commonjs",
-          "esModuleInterop": true,
-          "resolveJsonModule": true,
-          "jsx": "react",
-          "alwaysStrict": true,
-          "noImplicitThis": true,
-          "noImplicitAny": false,
-          "strictBindCallApply": false
-        }
-      }
-    },
-    "testMatch": [
-      "**/packages/**/test/*.{js,ts,tsx}"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/fixtures/",
-      "/presets/",
-      "/style-guide/",
-      "tailwind.config.js",
-      "/dist/"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "html"
-    ],
-    "collectCoverageFrom": [
-      "packages/**/src/**/*.{js,ts,tsx}",
-      "!packages/docs/**/*",
-      "!packages/presets/**/*",
-      "!packages/style-guide/**/*",
-      "!packages/gatsby-theme-style-guide/**/*",
-      "!packages/chrome/**/*",
-      "!packages/gatsby-theme-*/**/*",
-      "!packages/preset-*/**/*",
-      "!packages/test-utils/**/*"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
-    "snapshotSerializers": [
-      "@emotion/jest/serializer"
-    ],
-    "setupFiles": [
-      "jest-canvas-mock"
-    ],
-    "transform": {
-      "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js"
-    },
-    "moduleNameMapper": {
-      "@theme-ui/css/dist/types": "@theme-ui/css/src/types"
-    }
+    "ts-jest": "^26.4.4",
+    "typescript": "4.2.0-dev.20201223",
+    "ts-snippet": "^5.0.2",
+    "@types/react-dom": "^17.0.0"
   },
   "husky": {
     "hooks": {
