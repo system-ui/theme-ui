@@ -18,7 +18,7 @@ const createNestedLinks = (
   children: ReactNode,
   depth: number = 0
 ): ReactNode[] =>
-  React.Children.toArray(children).reduce((acc: ReactNode[], child) => {
+  React.Children.toArray(children).reduce<ReactNode[]>((acc, child) => {
     if (!React.isValidElement(child)) {
       return acc
     }
@@ -36,7 +36,7 @@ const createNestedLinks = (
   }, [])
 
 const flattenLinks = (children: ReactNode): ReactNode[] =>
-  React.Children.toArray(children).reduce((acc: ReactNode[], child) => {
+  React.Children.toArray(children).reduce<ReactNode[]>((acc, child) => {
     if (React.isValidElement(child)) {
       if (child.props && child.props.mdxType === 'a') {
         return [...acc, child]
