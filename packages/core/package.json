@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -22,15 +22,15 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/css": "0.6.0-alpha.1",
-    "@theme-ui/parse-props": "0.6.0-alpha.1",
+    "@theme-ui/css": "0.6.0-alpha.4",
+    "@theme-ui/parse-props": "0.6.0-alpha.4",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@types/react": "^16.14.1",
-    "react": "^16.14.0"
+    "@types/react": "^17.0.0",
+    "react": "^17.0.1"
   }
 }

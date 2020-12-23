@@ -1,4 +1,5 @@
 /** @jsx mdx */
+import React from 'react'
 import { mdx } from '@mdx-js/react'
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
@@ -10,8 +11,11 @@ import { themed, Themed, components, MDXProvider } from '../src'
 expect.extend(matchers)
 
 test('styles React components', () => {
-  const Beep = (props) => <h2 {...props} />
-  const Inner = (props) => mdx('Beep', props)
+  const Beep = (props: React.ComponentPropsWithoutRef<'h2'>) => (
+    <h2 {...props} />
+  )
+  const Inner = (props: React.ComponentPropsWithoutRef<typeof Beep>) =>
+    mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider
@@ -35,7 +39,9 @@ test('styles React components', () => {
 })
 
 test('components accept an `as` prop', () => {
-  const Beep = (props) => <h2 {...props} />
+  const Beep = (props: React.ComponentPropsWithoutRef<'h2'>) => (
+    <h2 {...props} />
+  )
   const json = renderJSON(
     <ThemeProvider
       theme={{
@@ -55,7 +61,9 @@ test('components accept an `as` prop', () => {
 })
 
 test('components with `as` prop receive all props', () => {
-  const Beep = (props) => <div {...props} />
+  const Beep = (props: React.ComponentPropsWithoutRef<'div'>) => (
+    <div {...props} />
+  )
   const json = renderJSON(<Themed.a as={Beep} activeClassName="active" />)!
   expect(json.type).toBe('div')
   expect(json.props.activeClassName).toBe('active')
@@ -161,28 +169,16 @@ test('table columns align', () => {
       <Themed.table>
         <thead>
           <Themed.tr>
-            <Themed.th align="left">
-              Left
-            </Themed.th>
-            <Themed.th align="center">
-              Center
-            </Themed.th>
-            <Themed.th align="right">
-              Right
-            </Themed.th>
+            <Themed.th align="left">Left</Themed.th>
+            <Themed.th align="center">Center</Themed.th>
+            <Themed.th align="right">Right</Themed.th>
           </Themed.tr>
-        </thead>  
+        </thead>
         <tbody>
           <Themed.tr>
-            <Themed.td align="left">
-              TextLeft
-            </Themed.td>
-            <Themed.td align="center">
-              TextCenter
-            </Themed.td>
-            <Themed.td align="right">
-              TextRight
-            </Themed.td>
+            <Themed.td align="left">TextLeft</Themed.td>
+            <Themed.td align="center">TextCenter</Themed.td>
+            <Themed.td align="right">TextRight</Themed.td>
           </Themed.tr>
         </tbody>
       </Themed.table>
@@ -194,5 +190,4 @@ test('table columns align', () => {
   expect(tree.getByText('TextLeft')).toHaveStyleRule('text-align', 'left')
   expect(tree.getByText('TextCenter')).toHaveStyleRule('text-align', 'center')
   expect(tree.getByText('TextRight')).toHaveStyleRule('text-align', 'right')
-
 })

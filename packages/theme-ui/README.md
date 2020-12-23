@@ -65,7 +65,7 @@
 Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
 **[stable] docs**: https://theme-ui.com \
-**[develop] (v0.6.0-alpha) docs**: [https://development--dev-theme-ui.netlify.app/](https://development--dev-theme-ui.netlify.app/)
+**[develop] (v0.6.0-alpha) docs**: https://dev.theme-ui.com
 
 [stable]: https://github.com/system-ui/theme-ui/tree/stable
 [develop]: https://github.com/system-ui/theme-ui/tree/develop

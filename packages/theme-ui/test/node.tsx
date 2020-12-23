@@ -5,8 +5,8 @@ import { jsx, ThemeProvider, useColorMode } from '../src'
 
 test('does note initializes mode based on localStorage', () => {
   let mode
-  const Button = props => {
-    const [colorMode, setMode] = useColorMode()
+  const Button = () => {
+    const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
