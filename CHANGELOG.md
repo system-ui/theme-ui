@@ -5,11 +5,21 @@
 
 ## v0.6.0 UNRELEASED
 
+- **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
+- Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
+- Fix: "as" prop on Themed.X components now properly opts out of typechecking
+  - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
+
+## v0.6.0-alpha.4
+
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
-- Remove recursive default values from CSS custom properties. PR #1327
 - Support a `"default"` key for object in scales. PR #951
 - Render extra Embed props onto `iframe` tag instead of wrapping `div`. Issue #966, PR #1122
+
+## v0.6.0-alpha.2
+
+- Remove recursive default values from CSS custom properties. PR #1327
 
 ## v0.6.0-alpha.1
 

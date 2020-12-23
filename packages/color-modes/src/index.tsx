@@ -38,43 +38,40 @@ const storage = {
   },
 }
 
-const getMediaQuery = () => {
-  const darkQuery = '(prefers-color-scheme: dark)'
-  const lightQuery = '(prefers-color-scheme: light)'
-  const darkMQL = window.matchMedia
-    ? window.matchMedia(darkQuery)
-    : { media: false }
-  const lightMQL = window.matchMedia
-    ? window.matchMedia(lightQuery)
-    : { media: false }
-  const dark = darkMQL.media === darkQuery && darkMQL.matches
-  if (dark) return 'dark'
-  const light = lightMQL.media === lightQuery && lightMQL.matches
-  if (light) return 'light'
-  return 'default'
+const getPreferredColorScheme = (): 'dark' | 'light' | null => {
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light'
+    }
+  }
+  return null
 }
 
 const useColorModeState = (theme: Theme = {}) => {
-  const [mode, setMode] = React.useState(
-    theme.initialColorModeName || 'default'
-  )
+  const [mode, setMode] = React.useState(() => {
+    const preferredMode =
+      theme.useColorSchemeMediaQuery !== false && getPreferredColorScheme()
 
-  // initialize state
+    return preferredMode || theme.initialColorModeName || 'default'
+  })
+
+  // read color mode from local storage
   React.useEffect(() => {
     const stored = theme.useLocalStorage !== false && storage.get()
     document.body.classList.remove('theme-ui-' + stored)
-    if (!stored && theme.useColorSchemeMediaQuery) {
-      const query = getMediaQuery()
-      setMode(query)
-      return
+
+    if (stored && stored !== mode) {
+      setMode(stored)
     }
-    if (!stored || stored === mode) return
-    setMode(stored)
   }, [])
 
   React.useEffect(() => {
-    if (!mode || theme.useLocalStorage === false) return
-    storage.set(mode)
+    if (mode && theme.useLocalStorage !== false) {
+      storage.set(mode)
+    }
   }, [mode])
 
   if (process.env.NODE_ENV !== 'production') {
@@ -119,10 +116,10 @@ const applyColorMode = (theme: Theme, mode: string): Theme => {
   })
 }
 
-const BodyStyles = ({ theme }: { theme: Theme}) =>
+const BodyStyles = ({ theme }: { theme: Theme }) =>
   jsx(Global, {
     styles: () => {
-      return createColorStyles(theme);
+      return createColorStyles(theme)
     },
   })
 
@@ -142,6 +139,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
     colorMode,
     setColorMode,
   }
+
   return jsx(
     EmotionContext.Provider,
     { value: emotionTheme },

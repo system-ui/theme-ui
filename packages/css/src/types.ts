@@ -1,5 +1,6 @@
 import * as CSS from 'csstype'
-import '@emotion/react'
+
+import type {} from '../emotion-theme'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -807,10 +808,4 @@ export interface Theme {
    * @see https://theme-ui.com/components/message#variants
    */
   messages?: Record<string, ThemeUIStyleObject>
-}
-
-interface ThemeUITheme extends Theme {}
-
-declare module '@emotion/react' {
-  export interface Theme extends ThemeUITheme {}
 }

@@ -10,12 +10,14 @@ import { renderJSON } from '@theme-ui/test-utils'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
-afterEach(cleanup)
+afterEach(() => {
+  cleanup()
+  window.matchMedia = undefined as any
+})
 beforeEach(() => {
   localStorage.removeItem(STORAGE_KEY)
 })
 expect.extend(matchers)
-
 
 test('renders with color modes', () => {
   let mode
@@ -48,7 +50,7 @@ test('renders with color modes', () => {
 
 test('renders with initial color mode name', () => {
   let mode
-  const Mode = (props) => {
+  const Mode = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
     return <div>Mode</div>
@@ -174,8 +176,8 @@ test('converts color modes to css custom properties', () => {
 
 test('uses default mode', () => {
   let mode
-  const Button = (props) => {
-    const [colorMode, setMode] = useColorMode()
+  const Button = () => {
+    const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
@@ -210,8 +212,8 @@ test('initializes mode based on localStorage', () => {
 test('does not initialize mode based on localStorage if useLocalStorage is set to false', () => {
   window.localStorage.setItem(STORAGE_KEY, 'dark')
   let mode
-  const Button = (props) => {
-    const [colorMode, setMode] = useColorMode()
+  const Button = () => {
+    const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
@@ -324,7 +326,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   expect(mode).toBe('default')
 })
 
-test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is not set', () => {
+test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is set to `false`', () => {
   window.matchMedia = jest.fn().mockImplementation((query) => {
     return {
       matches: true,
@@ -338,7 +340,10 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
     return null
   }
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+      }}>
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -389,7 +394,7 @@ test('useColorMode throws when there is no theme context', () => {
 
 test('useThemeUI returns current color mode colors', () => {
   window.localStorage.setItem(STORAGE_KEY, 'tomato')
-  let colors
+  let colors: Theme['colors']
   const GetColors = () => {
     const { theme } = useThemeUI()
     colors = theme.colors
@@ -416,8 +421,8 @@ test('useThemeUI returns current color mode colors', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(colors.text).toBe('black')
-  expect(colors.background).toBe('tomato')
+  expect(colors?.text).toBe('black')
+  expect(colors?.background).toBe('tomato')
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
@@ -567,6 +572,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   const root = render(
     <ThemeProvider
       theme={{
+        useColorSchemeMediaQuery: false,
         colors: {
           primary: 'tomato',
           modes: {
@@ -658,6 +664,8 @@ test('colorMode accepts function from previous state to new one', () => {
 })
 
 test('warns when localStorage is disabled', () => {
+  const restoreConsole = mockConsole()
+
   const localStorage = window.localStorage
   Object.defineProperty(window, 'localStorage', {
     get: jest.fn(() => {
@@ -665,7 +673,7 @@ test('warns when localStorage is disabled', () => {
     }),
   })
 
-  let mode
+  let mode = ''
   const Consumer = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
@@ -682,4 +690,14 @@ test('warns when localStorage is disabled', () => {
   expect(mode).toBe('default')
 
   Object.defineProperty(window, 'localStorage', { value: localStorage })
+
+  expect((console.warn as jest.Mock).mock.calls[0]).toMatchInlineSnapshot(`
+    Array [
+      "localStorage is disabled and color mode might not work as expected.",
+      "Please check your Site Settings.",
+      "SecurityError: The operation is insecure.",
+    ]
+  `)
+
+  restoreConsole()
 })
