@@ -2,17 +2,14 @@
   "name": "@theme-ui/core",
   "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/core.cjs.js",
+  "module": "dist/core.esm.js",
   "sideEffects": false,
   "scripts": {
     "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
-    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json",
     "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
     "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
-    "typecheck": "tsc --noEmit"
+    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
@@ -21,10 +18,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.1",
     "@theme-ui/css": "0.6.0-alpha.4",
+    "deepmerge": "^4.2.2",
     "@theme-ui/parse-props": "0.6.0-alpha.4",
-    "deepmerge": "^4.2.2"
+    "@emotion/react": "^11.1.1"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0"

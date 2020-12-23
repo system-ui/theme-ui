@@ -1,17 +1,12 @@
 {
   "name": "@theme-ui/preset-future",
   "version": "0.6.0-alpha.4",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/preset-future.cjs.js",
+  "module": "dist/preset-future.esm.js",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@theme-ui/preset-base": "0.6.0-alpha.4"
   },

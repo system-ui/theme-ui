@@ -2,13 +2,9 @@
   "name": "@theme-ui/color",
   "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
-  },
+  "main": "dist/color.cjs.js",
+  "module": "dist/color.esm.js",
+  "scripts": {},
   "dependencies": {
     "@theme-ui/css": "0.6.0-alpha.4",
     "polished": "^4.0.5"

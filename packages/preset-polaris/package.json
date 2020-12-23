@@ -1,17 +1,12 @@
 {
   "name": "@theme-ui/preset-polaris",
   "version": "0.6.0-alpha.4",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/preset-polaris.cjs.js",
+  "module": "dist/preset-polaris.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "author": "Yuraima Estevez",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@theme-ui/preset-base": "0.6.0-alpha.4"
   },
