@@ -8,6 +8,14 @@ const mockMediaQueries = (matches) =>
     matches: matches.includes(query),
   }))
 
+/**
+ * silence console.error, invoked when an exception is thrown.
+ * reduces clutter in tests console
+ */
+beforeEach(() => {
+  jest.spyOn(console, 'error').mockImplementation(() => {})
+})
+
 afterEach(cleanup)
 
 describe('renders correct initial values and uses default breakpoints', () => {
@@ -33,12 +41,12 @@ describe('renders correct initial values and uses default breakpoints', () => {
 
     let value
     const Component = (props) => {
-      value = useResponsiveValue(['a', 'b', 'c', 'd'])
+      value = useResponsiveValue(['a', 'b', 'c'])
       return null
     }
 
     render(<Component />)
-    expect(value).toEqual('d')
+    expect(value).toEqual('c')
   })
 
   test('uses the last value provided', () => {
@@ -57,7 +65,7 @@ describe('renders correct initial values and uses default breakpoints', () => {
 
     render(<Component />)
     expect(value).toEqual('b')
-    expect(index).toEqual(2)
+    expect(index).toEqual(1)
   })
 })
 
@@ -84,7 +92,7 @@ test('reads breakpoints from theme', () => {
     </ThemeProvider>
   )
   expect(value).toEqual('b')
-  expect(index).toEqual(2)
+  expect(index).toEqual(1)
 })
 
 test('responds to resize event', () => {
@@ -101,26 +109,56 @@ test('responds to resize event', () => {
 
   let value
   const Component = (props) => {
-    value = useResponsiveValue(['a', 'b', 'c', 'd'])
+    value = useResponsiveValue(['a', 'b', 'c'])
     return null
   }
 
   render(<Component />)
 
-  expect(value).toEqual('d')
+  expect(value).toEqual('c')
 
   window.matchMedia = mockMediaQueries([
     'screen and (min-width: 40em)',
     'screen and (min-width: 52em)',
   ])
   act(() => resizeCb())
-  expect(value).toEqual('c')
+  expect(value).toEqual('b')
 
   window.matchMedia = mockMediaQueries(['screen and (min-width: 40em)'])
   act(() => resizeCb())
-  expect(value).toEqual('b')
+  expect(value).toEqual('a')
 
   window.matchMedia = mockMediaQueries([])
   act(() => resizeCb())
   expect(value).toEqual('a')
+})
+
+test('default index largest size to match media index', () => {
+  window.matchMedia = mockMediaQueries([
+    'screen and (min-width: 40em)',
+    'screen and (min-width: 52em)',
+    'screen and (min-width: 64em)',
+  ])
+
+  let indexDefault
+  let indexMedia
+  const Component = (props) => {
+    const index = useBreakpointIndex({ defaultIndex: 2 })
+    if (indexDefault === undefined) {
+      indexDefault = index
+    }
+    indexMedia = index
+    return null
+  }
+
+  render(<Component />)
+  expect(indexDefault).toEqual(indexMedia)
+})
+
+test('more values than breakpoints exception', () => {
+  const Component = (props) => {
+    useResponsiveValue(['a', 'b', 'c', 'd'])
+    return null
+  }
+  expect(() => render(<Component />)).toThrow()
 })
