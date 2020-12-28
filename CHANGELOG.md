@@ -6,6 +6,8 @@
 - Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
 - Fix: "as" prop on Themed.X components now properly opts out of typechecking
   - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
+### `@theme-ui/prism`
+- Add support for multiple highlight wrappers in a single code block.
 
 ## v0.6.0-alpha.4
 
