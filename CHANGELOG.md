@@ -8,7 +8,7 @@
   - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
   
 ### `@theme-ui/prism`
-- Add support for multiple highlight wrappers in a single code block.
+- Support multiple highlight wrappers in a single code block.
 
 ## v0.6.0-alpha.4
 
