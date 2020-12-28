@@ -58,17 +58,20 @@ const render = (el: ReactElement) => renderer.create(el).toJSON()
 
 const MULTI_HIGHLIGHT_START_END = `
   // highlight-start
-  console.log('i am highlighted!') 
+  // i am highlighted!
   // highlight-end
-  let other = "no highlight"
+
+  // no highlight here ...
+
   // highlight-start
-  console.log('i am also highlighted!')
+  // i am also highlighted!
   // highlight-end
-  other = "still no highlight here"
-  // asdsad 
+
+  // no highlight here either ...
+  
   // highlight-start 
-  // ok 
-  // asd
+  // i am highlighted, and
+  // so am i!
   // highlight-end
 `
 
@@ -77,5 +80,5 @@ test('multiple highlight start and end', () => {
     <Prism className="language-js">{MULTI_HIGHLIGHT_START_END}</Prism>
   )
 
-  // expect(result).toMatchSnapshot()
+  expect(result).toMatchSnapshot()
 })

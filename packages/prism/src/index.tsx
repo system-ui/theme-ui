@@ -71,14 +71,12 @@ export default function ThemeUIPrism({
           }
         })
         .filter(Boolean)[0]
-      
       if (!removeLine) {
         return item
       }
     })
     return tokensWithoutHighlightComments
   }
-
 
   const isStartEndHighlighted = (index: number) => {
     return checkRanges(startEndRangesToHighlight, index)
