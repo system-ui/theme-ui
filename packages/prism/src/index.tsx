@@ -45,28 +45,40 @@ export default function ThemeUIPrism({
   const [language] = outerClassName.replace(/language-/, '').split(' ')
   const lang = aliases[language] || language
   let startEndRangesToHighlight: number[] = []
+  let countHighlightCommentsRemoved: number = 0;
 
   const findStartAndEndHighlights = (tokens: Token[][]) => {
     const tokensWithoutHighlightComments = tokens.filter((item, index) => {
       const removeLine = item
         .map(({ content }) => {
-          if (content === '// highlight-start') {
-            startEndRangesToHighlight.push(index) // track our highlighted lines
+          if (content.trim() === '// highlight-start') {
+            /**
+             * Track highlighted lines, including countHighlightCommentsRemoved 
+             * so we can keep track of multiple highlint-start and highlight-end blocks. 
+             * */
+            startEndRangesToHighlight.push(index - countHighlightCommentsRemoved)
+            countHighlightCommentsRemoved += 1; 
             return true
           }
-          if (content === '// highlight-end') {
-            startEndRangesToHighlight.push(index - 2) // since we're removing start and end lines, we'll shorten the range by 2 lines
+          if (content.trim() === '// highlight-end') {
+            /**
+             * Subtract by (countHighlightCommentsRemoved + 1) to account for 
+             * the current highlight-end block being removed.
+             * */
+            startEndRangesToHighlight.push(index - (countHighlightCommentsRemoved + 1))
+            countHighlightCommentsRemoved += 1; 
             return true
           }
         })
         .filter(Boolean)[0]
-
+      
       if (!removeLine) {
         return item
       }
     })
     return tokensWithoutHighlightComments
   }
+
 
   const isStartEndHighlighted = (index: number) => {
     return checkRanges(startEndRangesToHighlight, index)
