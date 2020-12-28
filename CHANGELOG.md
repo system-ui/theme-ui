@@ -2,7 +2,7 @@
 
 ## UNRELEASED
 
-- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`). Issue #1369
+- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
 
 ## v0.6.0 UNRELEASED
 
