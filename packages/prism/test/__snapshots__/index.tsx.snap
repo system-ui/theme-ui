@@ -214,7 +214,26 @@ exports[`multiple highlight start and end 1`] = `
     <span
       className="token comment"
     >
-      // i am also highlighted!
+      // i am highlighted, and
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line highlight"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // so am i!
     </span>
     <span
       className="token plain"
@@ -244,8 +263,43 @@ exports[`multiple highlight start and end 1`] = `
     >
       // no highlight here either ...
     </span>
+  </div>
+</pre>
+`;
+
+exports[`multiple highlights start and end 1`] = `
+.emotion-1 {
+  display: inline-block;
+}
+
+<pre
+  className="language-js prism-code language-javascript emotion-0"
+  style={Object {}}
+>
+  <div
+    className="token-line highlight"
+  >
     <span
       className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // i am highlighted!
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain emotion-1"
     >
       
     </span>
@@ -257,6 +311,25 @@ exports[`multiple highlight start and end 1`] = `
       className="token plain"
     >
         
+    </span>
+    <span
+      className="token comment"
+    >
+      // no highlight here ...
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain emotion-1"
+    >
+      
     </span>
   </div>
   <div
@@ -295,6 +368,29 @@ exports[`multiple highlight start and end 1`] = `
       className="token plain"
     >
       
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain emotion-1"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // no highlight here either ...
     </span>
   </div>
 </pre>

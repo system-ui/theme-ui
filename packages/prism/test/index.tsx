@@ -56,28 +56,24 @@ test('no highlight', () => {
   expect(result).toMatchSnapshot()
 })
 
-const MULTI_HIGHLIGHT_START_END = `
+const MULTIPLE_HIGHLIGHTS_START_END = `
   // highlight-start
   // i am highlighted!
   // highlight-end
 
   // no highlight here ...
 
-  // highlight-start
-  // i am also highlighted!
-  // highlight-end
-
-  // no highlight here either ...
-  
   // highlight-start 
   // i am highlighted, and
   // so am i!
   // highlight-end
+
+  // no highlight here either ...
 `
 
-test('multiple highlight start and end', () => {
+test('multiple highlights start and end', () => {
   const result = render(
-    <Prism className="language-js">{MULTI_HIGHLIGHT_START_END}</Prism>
+    <Prism className="language-js">{MULTIPLE_HIGHLIGHTS_START_END}</Prism>
   )
 
   expect(result).toMatchSnapshot()
