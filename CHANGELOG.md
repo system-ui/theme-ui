@@ -1,5 +1,9 @@
 # Changelog
 
+## UNRELEASED
+
+- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
+
 ## v0.6.0 UNRELEASED
 
 - **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
