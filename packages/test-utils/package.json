@@ -4,12 +4,12 @@
   "private": true,
   "license": "MIT",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/theme-ui-test-utils.cjs.js",
+  "module": "dist/theme-ui-test-utils.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "tsc",
+    "build": "tsc",
     "watch": "tsc -w",
     "typecheck": "tsc --noEmit"
   },

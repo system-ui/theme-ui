@@ -1,23 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "preconstruct build",
-    "start": "yarn workspace docs start",
-    "build": "yarn workspace docs build",
-    "serve": "yarn workspace docs serve --port 8000",
+    "postinstall": "preconstruct dev",
+    "build": "preconstruct build",
     "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
-    "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
+    "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
     "typecheck": "tsc --noEmit",
-    "logo": "yarn workspace docs logo",
-    "dev:chrome": "yarn workspace @theme-ui/chrome dev",
-    "dev:editor": "yarn workspace @theme-ui/editor dev",
     "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",
+    "logo": "yarn workspace docs logo",
     "release": "lerna publish from-package --dist-tag next --pre-dist-tag next",
     "prerelease": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
-    "dev:init": "preconstruct dev",
-    "bump-version-next": "lerna version prerelease --preid alpha",
-    "bump-version": "lerna version"
+    "version:bump-next": "lerna version prerelease --preid alpha",
+    "version:bump": "lerna version",
+    "docs:start": "yarn workspace docs start",
+    "docs:build": "yarn workspace docs build",
+    "docs:serve": "yarn workspace docs serve --port 8000"
   },
   "workspaces": [
     "packages/*"
@@ -48,7 +46,7 @@
     "rimraf": "^3.0.2",
     "babel-preset-gatsby": "^0.8.0",
     "@types/react-dom": "^17.0.0",
-    "@preconstruct/cli": "^1.1.27",
+    "@preconstruct/cli": "^2",
     "@emotion/jest": "^11.1.0"
   },
   "husky": {
@@ -62,5 +60,5 @@
       "!packages/docs"
     ]
   },
-  "name": "theme-ui"
+  "name": "@theme-ui/monorepo"
 }

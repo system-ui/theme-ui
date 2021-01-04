@@ -2,8 +2,9 @@
   "name": "@theme-ui/color",
   "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
-  "main": "dist/color.cjs.js",
-  "module": "dist/color.esm.js",
+  "main": "dist/theme-ui-color.cjs.js",
+  "module": "dist/theme-ui-color.esm.js",
+  "types": "dist/theme-ui-color.cjs.d.ts",
   "scripts": {},
   "dependencies": {
     "@theme-ui/css": "0.6.0-alpha.4",

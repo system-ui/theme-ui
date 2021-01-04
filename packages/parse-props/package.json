@@ -1,9 +1,10 @@
 {
   "name": "@theme-ui/parse-props",
+  "description": "internal package",
   "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/theme-ui-parse-props.cjs.js",
+  "module": "dist/theme-ui-parse-props.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {

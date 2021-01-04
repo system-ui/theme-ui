@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/preset-future",
   "version": "0.6.0-alpha.4",
-  "main": "dist/preset-future.cjs.js",
-  "module": "dist/preset-future.esm.js",
+  "main": "dist/theme-ui-preset-future.cjs.js",
+  "module": "dist/theme-ui-preset-future.esm.js",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",

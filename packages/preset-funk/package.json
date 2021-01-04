@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/preset-funk",
   "version": "0.6.0-alpha.4",
-  "main": "dist/preset-funk.cjs.js",
-  "module": "dist/preset-funk.esm.js",
+  "main": "dist/theme-ui-preset-funk.cjs.js",
+  "module": "dist/theme-ui-preset-funk.esm.js",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",

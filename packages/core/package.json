@@ -2,15 +2,11 @@
   "name": "@theme-ui/core",
   "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
-  "main": "dist/core.cjs.js",
-  "module": "dist/core.esm.js",
+  "main": "dist/theme-ui-core.cjs.js",
+  "module": "dist/theme-ui-core.esm.js",
+  "types": "dist/theme-ui-core.cjs.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
-    "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
-    "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
-    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json"
-  },
+  "scripts": {},
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -29,5 +25,12 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "react": "^17.0.1"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "jsx-dev-runtime.ts",
+      "jsx-runtime.ts"
+    ]
   }
 }

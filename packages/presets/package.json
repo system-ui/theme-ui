@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/presets",
   "version": "0.6.0-alpha.4",
-  "main": "dist/presets.cjs.js",
-  "module": "dist/presets.esm.js",
+  "main": "dist/theme-ui-presets.cjs.js",
+  "module": "dist/theme-ui-presets.esm.js",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",

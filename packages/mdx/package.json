@@ -2,8 +2,8 @@
   "name": "@theme-ui/mdx",
   "version": "0.6.0-alpha.4",
   "source": "src/index.ts",
-  "main": "dist/mdx.cjs.js",
-  "module": "dist/mdx.esm.js",
+  "main": "dist/theme-ui-mdx.cjs.js",
+  "module": "dist/theme-ui-mdx.esm.js",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {

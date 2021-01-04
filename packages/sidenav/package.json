@@ -1,8 +1,8 @@
 {
   "name": "@theme-ui/sidenav",
   "version": "0.6.0-alpha.4",
-  "main": "dist/sidenav.cjs.js",
-  "module": "dist/sidenav.esm.js",
+  "main": "dist/theme-ui-sidenav.cjs.js",
+  "module": "dist/theme-ui-sidenav.esm.js",
   "sideEffects": false,
   "license": "MIT",
   "scripts": {},
