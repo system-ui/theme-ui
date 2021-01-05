@@ -64,7 +64,13 @@ export const Box = forwardRef(function Box(props, ref) {
 
 Box.withComponent =
   (component) =>
-  ({ as, ...props }) =>
-    <Box as={component} {...props} />
+  ({ as, ...props }) => {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(
+        '[theme-ui] You’re using the `.withComponent` API on a Theme UI component. This API will be deprecated in the next version; pass the `as` prop instead.'
+      )
+    }
+    return <Box as={component} {...props} />
+  }
 
 export default Box
