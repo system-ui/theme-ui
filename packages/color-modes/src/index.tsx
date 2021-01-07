@@ -76,7 +76,8 @@ const useColorModeState = (theme: Theme = {}) => {
     }
 
     const preferredMode =
-      theme.useColorSchemeMediaQuery !== false && getPreferredColorScheme()
+      theme.config?.useColorSchemeMediaQuery !== false &&
+      getPreferredColorScheme()
 
     return preferredMode || theme.initialColorModeName
   })
@@ -99,17 +100,18 @@ const useColorModeState = (theme: Theme = {}) => {
 
   // when mode changes, we save it to localStorage
   React.useEffect(() => {
-    if (mode && theme.useLocalStorage !== false) {
+    if (mode && theme.config?.useLocalStorage !== false) {
       storage.set(mode)
     }
   }, [mode])
 
   if (process.env.NODE_ENV !== 'production') {
     if (
-      theme.colors &&
-      theme.colors.modes &&
-      theme.initialColorModeName &&
-      Object.keys(theme.colors.modes).indexOf(theme.initialColorModeName) > -1
+      theme.colors?.modes &&
+      theme.config?.initialColorModeName &&
+      Object.keys(theme.colors.modes).indexOf(
+        theme.config?.initialColorModeName
+      ) > -1
     ) {
       console.warn(
         'The `initialColorModeName` value should be a unique name' +

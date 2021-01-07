@@ -3,7 +3,9 @@ import { toCustomProperties, createColorStyles } from '../src/custom-properties'
 describe('toCustomProperties', () => {
   test('converts theme object to custom properties', () => {
     const result = toCustomProperties({
-      initialColorModeName: 'light',
+      config: {
+        initialColorModeName: 'light',
+      },
       colors: {
         text: 'black',
       },
@@ -16,7 +18,9 @@ describe('toCustomProperties', () => {
       },
     })
     expect(result).toEqual({
-      initialColorModeName: 'light',
+      config: {
+        initialColorModeName: 'light',
+      },
       colors: {
         text: 'var(--theme-ui-colors-text)',
       },
@@ -202,7 +206,9 @@ describe('createColorStyles', () => {
 
   test('creates styles for print color mode', () => {
     const styles = createColorStyles({
-      printColorModeName: 'light',
+      config: {
+        printColorModeName: 'light',
+      },
       colors: {
         text: 'white',
         background: 'tomato',
@@ -234,8 +240,10 @@ describe('createColorStyles', () => {
 
   test('creates styles for initial print color mode', () => {
     const styles = createColorStyles({
-      initialColorModeName: 'tomato',
-      printColorModeName: 'tomato',
+      config: {
+        initialColorModeName: 'tomato',
+        printColorModeName: 'tomato',
+      },
       colors: {
         text: 'tomato',
         background: 'white',

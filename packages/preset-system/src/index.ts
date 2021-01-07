@@ -5,8 +5,10 @@ const heading = {
 }
 
 export const system = {
-  useCustomProperties: true,
-  initialColorMode: 'system',
+  config: {
+    useCustomProperties: true,
+    initialColorMode: 'system',
+  },
   colors: {
     text: '#000',
     background: '#fff',

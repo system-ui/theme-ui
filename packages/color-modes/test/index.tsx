@@ -66,7 +66,9 @@ test('renders with initial color mode name', () => {
     renderer.create(
       <ThemeProvider
         theme={{
-          initialColorModeName: 'light',
+          config: {
+            initialColorModeName: 'light',
+          },
           colors: {
             modes: {
               dark: {},
@@ -128,7 +130,9 @@ test('color mode is passed through theme context', () => {
   const tree = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: '#000',
           modes: {
@@ -230,7 +234,9 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
   const tree = render(
     <ThemeProvider
       theme={{
-        useLocalStorage: false,
+        config: {
+          useLocalStorage: false,
+        },
       }}>
       <ColorModeProvider>
         <Button />
@@ -326,7 +332,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: { useColorSchemeMediaQuery: true },
       }}>
       <ColorModeProvider>
         <Consumer />
@@ -352,7 +358,9 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: false,
+        config: {
+          useColorSchemeMediaQuery: false,
+        },
       }}>
       <ColorModeProvider>
         <Consumer />
@@ -366,7 +374,9 @@ test('ColorModeProvider renders with global colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: 'tomato',
           background: 'black',
@@ -414,7 +424,9 @@ test('useThemeUI returns current color mode colors', () => {
     <ThemeProvider
       theme={{
         // minor functional change
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: 'tomato',
           background: 'black',
@@ -481,7 +493,9 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorModeName: 'dark',
+        config: {
+          initialColorModeName: 'dark',
+        },
         colors: {
           text: '#000',
           background: '#fff',
@@ -507,7 +521,9 @@ test('does not warn in production', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorModeName: 'dark',
+        config: {
+          initialColorModeName: 'dark',
+        },
         colors: {
           text: '#000',
           background: '#fff',
@@ -545,7 +561,9 @@ test('dot notation works with color modes', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           header: {
             title: 'blue',
@@ -620,7 +638,9 @@ test('raw color values are passed to theme-ui context when custom properties are
   const root = render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: false,
+        config: {
+          useColorSchemeMediaQuery: false,
+        },
         colors: {
           primary: 'tomato',
           modes: {
@@ -647,7 +667,9 @@ test('colorMode accepts function from previous state to new one', () => {
   type MyColorMode = 'serious' | 'cute' | 'hackerman'
 
   const theme: Theme = {
-    initialColorModeName: 'serious',
+    config: {
+      initialColorModeName: 'serious',
+    },
     colors: {
       primary: 'black',
       modes: {
