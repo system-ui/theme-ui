@@ -280,7 +280,9 @@ test('initializes mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <ColorModeProvider>
         <Consumer />
@@ -306,7 +308,9 @@ test('initializes light mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <ColorModeProvider>
         <Consumer />
@@ -332,7 +336,9 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        config: { useColorSchemeMediaQuery: true },
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <ColorModeProvider>
         <Consumer />

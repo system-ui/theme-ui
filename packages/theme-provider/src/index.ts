@@ -20,7 +20,7 @@ const RootStyles = () =>
         return false
       }
       const boxSizing =
-        theme.config.useBorderBox === false ? undefined : 'border-box'
+        theme.config?.useBorderBox === false ? undefined : 'border-box'
 
       return css({
         '*': {
