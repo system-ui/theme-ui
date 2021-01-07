@@ -90,14 +90,14 @@ See the [Gatsby plugin docs](/packages/gatsby-plugin) for more info.
 
 ## Advanced
 
-Theme UI includes a few advanced usage options for color modes.
+Theme UI includes a few advanced configuration options for color modes.
 
 ### Turn off custom properties
 
 Theme UI uses
 [CSS custom properties](https://caniuse.com/#feat=css-variables)
 under the hood to help prevent the flash of color on load.
-If you're targeting browsers that don't support custom properties you can turn off this setting.
+If you’re targeting browsers that don't support custom properties you can turn off this setting.
 This will cause the colors to flash on initial page load.
 
 ```js
@@ -105,7 +105,7 @@ This will cause the colors to flash on initial page load.
 {
   config: {
     useCustomProperties: false,
-    },
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -150,7 +150,7 @@ This is enabled by default.
 
 ### Disable persisting color mode on `localStorage`
 
-To disable `localStorage` add the `useLocalStorage: false` flag to your theme
+To disable `localStorage`, add the `useLocalStorage: false` flag to your theme
 configuration.
 
 ```js
