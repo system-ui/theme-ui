@@ -15,13 +15,13 @@ const BodyStyles = () =>
     styles: (emotionTheme) => {
       const theme = emotionTheme as Theme
       if (
-        theme.config.useBodyStyles === false ||
-        (theme.styles && !theme.styles.root)
+        theme.config?.useBodyStyles === false ||
+        (theme.styles && !theme.styles?.root)
       ) {
         return false
       }
       const boxSizing =
-        theme.config.useBorderBox === false ? undefined : 'border-box'
+        theme.config?.useBorderBox === false ? undefined : 'border-box'
 
       return css({
         '*': {
