@@ -18258,9 +18258,9 @@ ts-pnp@^1.1.6:
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
 ts-snippet@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-5.0.0.tgz#dfc02acb372f7c4152242143d34c540294fdac88"
-  integrity sha512-jb4mRrNf2EY9iDWcxe2unCVzbB9dINTdIaBeUP5YaZE6L1zR82bjJVEgXQywky4PWIwGHYTS0SCpu1cuzc59cg==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-5.0.2.tgz#7416e22083c8b00d088a32168007dc63408d0135"
+  integrity sha512-4vZdRz2LXaA+PI3X7/tCsnunixhLkI/nbl105wOHmxo7vB/VL4MclEbV+JFRe9h+Be+wIFsJ1whrLY/bZo4AXQ==
   dependencies:
     tsutils "^3.0.0"
 
