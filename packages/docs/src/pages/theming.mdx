@@ -147,8 +147,8 @@ To add base, top-level styles to the `<body>` element, use `theme.styles.root`.
 }
 ```
 
-- To disable applying styles to the `<body>` element, add the `useBodyStyles: false` flag to your theme.
-- Additionally, to apply styles to the `<html>` element instead, add the `useRootStyles` flag. It works the same way as and will override `useBodyStyles`.
+- To disable applying styles to the `<body>` element, add the `config.useBodyStyles: false` flag to your theme.
+- Additionally, to apply styles to the `<html>` element instead, add the `config.useRootStyles` flag. It works the same way as and will override `config.useBodyStyles`.
 
 ## Breakpoints
 
@@ -167,7 +167,8 @@ These values will be used to generate mobile-first (i.e. `min-width`) media quer
 
 ## Configuration Flags
 
-The theme object can also include configuration options for Theme UI. The following keys can be used to enable and disable certain features.
+The theme object can also include configuration options for Theme UI, which are nested in the `config` object.
+The following keys can be used to enable and disable certain features.
 
 | Flag                       | Default             | Description                                                                                                                                 |
 | -------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
