@@ -103,7 +103,9 @@ This will cause the colors to flash on initial page load.
 ```js
 // example theme colors
 {
-  useCustomProperties: false,
+  config: {
+    useCustomProperties: false,
+    },
   colors: {
     text: '#000',
     background: '#fff',
@@ -121,7 +123,7 @@ This will cause the colors to flash on initial page load.
 
 ### Responding to the `prefers-color-scheme` media query
 
-The `useColorSchemeMediaQuery` configuration option on the theme
+The `useColorSchemeMediaQuery` option on the theme configuration
 initializes a color mode based on the `prefers-color-scheme` media query.
 This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
 or `light` when `@media (prefers-color-scheme: light)` matches.
@@ -130,7 +132,9 @@ This is enabled by default.
 
 ```js
 {
-  useColorSchemeMediaQuery: false,
+  config: {
+    useColorSchemeMediaQuery: false,
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -146,11 +150,14 @@ This is enabled by default.
 
 ### Disable persisting color mode on `localStorage`
 
-To disable `localStorage` add the `useLocalStorage: false` flag to your theme.
+To disable `localStorage` add the `useLocalStorage: false` flag to your theme
+configuration.
 
 ```js
 {
-  useLocalStorage: false,
+  config: {
+    useLocalStorage: false
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -178,8 +185,10 @@ additional client-side JavaScript for printing.
 
 ```js
 {
-  initialColorModeName: 'light',
-  printColorModeName: 'light',
+  config: {
+    initialColorModeName: 'light',
+    printColorModeName: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',
