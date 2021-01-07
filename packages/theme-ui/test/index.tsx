@@ -118,7 +118,9 @@ test('warns when multiple versions of emotion are installed', () => {
 
 test('functional themes receive outer theme', () => {
   const outer = {
-    useCustomProperties: false,
+    config: {
+      useCustomProperties: false,
+    },
     colors: {
       text: 'tomato',
       background: 'white',
@@ -153,7 +155,9 @@ test('functional themes can be used at the top level', () => {
         ThemeProvider,
         {
           theme: (_): Theme => ({
-            useCustomProperties: false,
+            config: {
+              useCustomProperties: false,
+            },
             colors: {
               primary: 'tomato',
               background: 'white',

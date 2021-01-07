@@ -10,7 +10,7 @@ let context
 afterEach(() => {
   cleanup()
   context = null
-  delete theme.initialColorMode
+  delete theme.config.initialColorMode
   delete theme.colors
 })
 

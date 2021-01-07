@@ -12,15 +12,16 @@ import { Global } from '@emotion/react'
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: emotionTheme => {
+    styles: (emotionTheme) => {
       const theme = emotionTheme as Theme
       if (
-        theme.useBodyStyles === false ||
+        theme.config.useBodyStyles === false ||
         (theme.styles && !theme.styles.root)
       ) {
         return false
       }
-      const boxSizing = theme.useBorderBox === false ? undefined : 'border-box'
+      const boxSizing =
+        theme.config.useBorderBox === false ? undefined : 'border-box'
 
       return css({
         '*': {
@@ -33,8 +34,6 @@ const BodyStyles = () =>
       })(theme)
     },
   })
-
-
 
 interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode

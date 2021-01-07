@@ -70,8 +70,19 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
 
 // create body styles for color modes
 export const createColorStyles = (theme: Theme = {}) => {
-  if (!theme.colors || theme.useBodyStyles === false) return {}
-  if (theme.useCustomProperties === false || !theme.colors.modes) {
+  const {
+    colors = {},
+    colors: { modes = {} } = {},
+    config: {
+      useBodyStyles,
+      useCustomProperties,
+      initialColorModeName,
+      printColorModeName,
+    } = {},
+  } = theme
+
+  if (!colors || useBodyStyles === false) return {}
+  if (useCustomProperties === false || !modes) {
     return css({
       body: {
         color: 'text',
@@ -79,10 +90,8 @@ export const createColorStyles = (theme: Theme = {}) => {
       },
     })(theme)
   }
-  const { colors, initialColorModeName, printColorModeName } = theme
-  const modes = colors.modes || {}
-  const styles = objectToVars('colors', colors)
 
+  const styles = objectToVars('colors', colors)
   Object.keys(modes).forEach((mode) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])

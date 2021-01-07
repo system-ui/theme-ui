@@ -69,7 +69,9 @@ describe('ThemeProvider', () => {
 
   test('functional themes can be used at the top level', () => {
     const theme = jest.fn(() => ({
-      useCustomProperties: false,
+      config: {
+        useCustomProperties: false,
+      },
       colors: {
         primary: 'tomato',
       },
@@ -196,7 +198,9 @@ describe('jsx', () => {
         ThemeProvider,
         {
           theme: {
-            useCustomProperties: false,
+            config: {
+              useCustomProperties: false,
+            },
             colors: {
               text: 'black',
               base: {

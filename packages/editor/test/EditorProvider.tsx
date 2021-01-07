@@ -11,7 +11,9 @@ afterEach(cleanup)
 expect.extend(matchers)
 
 const theme = {
-  useCustomProperties: false,
+  config: {
+    useCustomProperties: false,
+  },
   colors: {
     text: 'black',
     background: 'white',

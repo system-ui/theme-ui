@@ -53,14 +53,15 @@ const getPreferredColorScheme = (): 'dark' | 'light' | null => {
 const useColorModeState = (theme: Theme = {}) => {
   const [mode, setMode] = React.useState(() => {
     const preferredMode =
-      theme.useColorSchemeMediaQuery !== false && getPreferredColorScheme()
+      theme.config?.useColorSchemeMediaQuery !== false &&
+      getPreferredColorScheme()
 
-    return preferredMode || theme.initialColorModeName || 'default'
+    return preferredMode || theme.config?.initialColorModeName || 'default'
   })
 
   // read color mode from local storage
   React.useEffect(() => {
-    const stored = theme.useLocalStorage !== false && storage.get()
+    const stored = theme.config?.useLocalStorage !== false && storage.get()
     document.body.classList.remove('theme-ui-' + stored)
 
     if (stored && stored !== mode) {
@@ -69,17 +70,18 @@ const useColorModeState = (theme: Theme = {}) => {
   }, [])
 
   React.useEffect(() => {
-    if (mode && theme.useLocalStorage !== false) {
+    if (mode && theme.config?.useLocalStorage !== false) {
       storage.set(mode)
     }
   }, [mode])
 
   if (process.env.NODE_ENV !== 'production') {
     if (
-      theme.colors &&
-      theme.colors.modes &&
-      theme.initialColorModeName &&
-      Object.keys(theme.colors.modes).indexOf(theme.initialColorModeName) > -1
+      theme.colors?.modes &&
+      theme.config?.initialColorModeName &&
+      Object.keys(theme.colors.modes).indexOf(
+        theme.config?.initialColorModeName
+      ) > -1
     ) {
       console.warn(
         'The `initialColorModeName` value should be a unique name' +
@@ -129,7 +131,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const theme = applyColorMode(outer.theme || {}, colorMode)
   const emotionTheme = { ...theme }
 
-  if (theme.useCustomProperties !== false) {
+  if (theme.config?.useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
   }
 
