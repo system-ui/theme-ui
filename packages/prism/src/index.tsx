@@ -54,7 +54,7 @@ export default function ThemeUIPrism({
           if (content.trim() === '// highlight-start') {
             /**
              * Track highlighted lines, including countHighlightCommentsRemoved 
-             * so we can keep track of multiple highlint-start and highlight-end blocks. 
+             * so we can keep track of multiple highlight-start and highlight-end blocks. 
              * */
             startEndRangesToHighlight.push(index - countHighlightCommentsRemoved)
             countHighlightCommentsRemoved += 1; 
