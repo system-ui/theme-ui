@@ -56,6 +56,8 @@ export const expecter = (
 
       // for better error message snapshots
       noErrorTruncation: true,
+
+      types: ['node'],
     })
 
     const snippets = tsSnippet.snippet(

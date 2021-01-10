@@ -6,7 +6,7 @@
   "source": "src/index.ts",
   "main": "dist/theme-ui-test-utils.cjs.js",
   "module": "dist/theme-ui-test-utils.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/theme-ui-test-utils.cjs.d.ts",
   "sideEffects": false,
   "scripts": {
     "build": "tsc",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "conditional-type-checks": "^1.0.5",
-    "ts-snippet": "^5.0.0"
+    "ts-snippet": "^5.0.0",
+    "react-test-renderer": "17.0.1"
   }
 }
