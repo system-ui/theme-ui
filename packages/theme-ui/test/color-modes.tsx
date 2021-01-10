@@ -503,6 +503,7 @@ test('raw color values are passed to theme-ui context when custom properties are
 })
 
 test('warns when localStorage is disabled', () => {
+  const restore = mockConsole()
   window.matchMedia = jest.fn().mockImplementation((query) => {
     return {
       matches: false,
@@ -529,4 +530,6 @@ test('warns when localStorage is disabled', () => {
   )
 
   expect(mode).toBe('default')
+  expect(console.warn).toHaveBeenCalled()
+  restore()
 })
