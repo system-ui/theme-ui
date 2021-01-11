@@ -35,7 +35,7 @@ export const ThemeColorPicker = ({
   const onChange = (color: ColorState) => {
     const [key] =
       Object.entries(colors).find(
-        ([k, v]) => tinycolor(v).toHexString() === color.hex
+        ([k, v]) => tinycolor(v as string).toHexString() === color.hex
       ) || []
 
     props.onChange(key || color.hex || color)
