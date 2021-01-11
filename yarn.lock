@@ -1161,9 +1161,9 @@
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
 "@emotion/react@^11.1.1":
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.1.3.tgz#4a33f9bfdbcbe2d5449f5d44e48fca045b86dcc0"
-  integrity sha512-4kTKUm321key/capzff/AEIm8ow9IrcYltqaMQVdKlqMTUQpoO9GozDnDG1YXLYzgFnxYTZUbok3Z0vudylxiA==
+  version "11.1.4"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.1.4.tgz#ddee4247627ff7dd7d0c6ae52f1cfd6b420357d2"
+  integrity sha512-9gkhrW8UjV4IGRnEe4/aGPkUxoGS23aD9Vu6JCGfEDyBYL+nGkkRBoMFGAzCT9qFdyUvQp4UUtErbKWxq/JS4A==
   dependencies:
     "@babel/runtime" "^7.7.2"
     "@emotion/cache" "^11.1.3"
