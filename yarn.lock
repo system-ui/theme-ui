@@ -3375,6 +3375,11 @@
   dependencies:
     csstype "^3.0.2"
 
+"@types/tinycolor@^1.4":
+  version "1.1.27"
+  resolved "https://registry.yarnpkg.com/@types/tinycolor/-/tinycolor-1.1.27.tgz#d01d05a681d0ce28923b021d5f3d752ea0478089"
+  integrity sha1-0B0FpoHQziiSOwIdXz11LqBHgIk=
+
 "@types/tmp@^0.0.33":
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.33.tgz#1073c4bc824754ae3d10cfab88ab0237ba964e4d"

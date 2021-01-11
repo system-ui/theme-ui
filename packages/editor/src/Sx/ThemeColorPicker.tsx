@@ -82,5 +82,3 @@ export const ThemeColorPicker = ({
     </React.Fragment>
   )
 }
-
-export default ThemeColorPicker

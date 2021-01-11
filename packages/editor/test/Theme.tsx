@@ -52,7 +52,7 @@ const theme = {
 
 test('edits theme.colors', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -126,7 +126,7 @@ test('edits theme.fontSizes', async () => {
 
 test('supports non-array theme.fontSizes objects', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -154,7 +154,7 @@ test('supports non-array theme.fontSizes objects', async () => {
 
 test('renders without a theme', () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -173,7 +173,7 @@ test('renders without a theme', () => {
 
 test('edits theme.fontWeights', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -194,7 +194,7 @@ test('edits theme.fontWeights', async () => {
 
 test('edits theme.lineHeights', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -215,7 +215,7 @@ test('edits theme.lineHeights', async () => {
 
 test('edits theme.fonts', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -237,7 +237,7 @@ test('edits theme.fonts', async () => {
 
 test('edits theme.space', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }
@@ -259,7 +259,7 @@ test('edits theme.space', async () => {
 
 test('supports non-array theme.space objects', async () => {
   let context
-  const GetContext = props => {
+  const GetContext = (props) => {
     context = useThemeUI()
     return null
   }

@@ -163,5 +163,3 @@ export const Space = ({
     </div>
   )
 }
-
-export default Space
