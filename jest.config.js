@@ -6,7 +6,7 @@ const config = {
   preset: 'ts-jest/presets/js-with-babel',
   globals: {
     'ts-jest': {
-      tsconfig: './tsconfig.test.json',
+      tsConfig: './tsconfig.test.json',
     },
   },
   testMatch: ['**/packages/**/test/*.{js,ts,tsx}'],

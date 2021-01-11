@@ -35,5 +35,12 @@
     "styles",
     "css-in-js"
   ],
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "jsx-dev-runtime.ts",
+      "jsx-runtime.ts"
+    ]
+  },
   "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }
