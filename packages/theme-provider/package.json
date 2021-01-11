@@ -10,12 +10,11 @@
     "@theme-ui/color-modes": "0.6.0-alpha.4",
     "@theme-ui/core": "0.6.0-alpha.4",
     "@theme-ui/mdx": "0.6.0-alpha.4",
-    "@theme-ui/css": "^0.4.0-rc.5",
+    "@theme-ui/css": "^0.6.0-alpha.4",
     "@emotion/react": "^11.1.1"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0",
-    "@theme-ui/css": "*"
+    "react": "^16.14.0 || ^17.0.0"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
