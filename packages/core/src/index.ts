@@ -67,10 +67,12 @@ export interface ContextValue {
   theme: Theme
 }
 
-export const Context = React.createContext<ContextValue>({
+const defaultContextValue: ContextValue = {
   __EMOTION_VERSION__,
   theme: {},
-})
+}
+
+export const Context = React.createContext<ContextValue>(defaultContextValue)
 
 export const useThemeUI = () => React.useContext(Context)
 
@@ -141,6 +143,13 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
     typeof theme === 'function'
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
+
+  const isTopLevelProvider = outer === defaultContextValue
+
+  console.debug({ isTopLevelProvider })
+  if (isTopLevelProvider) {
+    // TODO: Wrap the tree in CacheProvider from @emotion/react
+  }
 
   return jsx(BaseProvider, { context }, children)
 }

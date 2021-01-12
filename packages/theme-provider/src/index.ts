@@ -12,7 +12,7 @@ import { Global } from '@emotion/react'
 
 const BodyStyles = () =>
   jsx(Global, {
-    styles: emotionTheme => {
+    styles: (emotionTheme) => {
       const theme = emotionTheme as Theme
       if (
         theme.useBodyStyles === false ||
@@ -33,8 +33,6 @@ const BodyStyles = () =>
       })(theme)
     },
   })
-
-
 
 interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
