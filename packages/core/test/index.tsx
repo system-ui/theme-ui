@@ -1,8 +1,9 @@
 import React from 'react'
 import { cleanup } from '@testing-library/react'
-import { renderJSON } from '@theme-ui/test-utils'
+import { renderJSON, render } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
+
 import {
   jsx,
   __ThemeUIContext,
@@ -12,6 +13,15 @@ import {
   ThemeUIContextValue,
   Theme,
 } from '../src'
+
+jest.mock('@emotion/react', () => {
+  const emotionReact = jest.requireActual('@emotion/react')
+
+  return {
+    ...emotionReact,
+    CacheProvider: (props: {}) => jsx('mock-cache-provider', props),
+  }
+})
 
 afterEach(cleanup)
 
@@ -121,6 +131,38 @@ describe('ThemeProvider', () => {
       )
     )
     expect(json).toHaveStyleRule('border', '1px solid tomato')
+  })
+
+  /**
+   * @see https://github.com/system-ui/theme-ui/issues/1436
+   * @see https://codesandbox.io/s/theme-ui-next-ssr-number-of-emotion-style-tags-forked-ifum1
+   */
+  it('renders CacheProvider only on top level', () => {
+    const { baseElement } = render(
+      <ThemeProvider theme={{}}>
+        <ThemeProvider theme={{}}>
+          <ThemeProvider theme={{}}>
+            <span>Hello!</span>
+          </ThemeProvider>
+        </ThemeProvider>
+      </ThemeProvider>
+    )
+
+    expect(baseElement).toMatchInlineSnapshot(`
+      <body>
+        <div>
+          <mock-cache-provider
+            value="[object Object]"
+          >
+            <span>
+              Hello!
+            </span>
+          </mock-cache-provider>
+        </div>
+      </body>
+    `)
+
+    expect(baseElement.querySelector('mock-cache-provider')).toBeTruthy()
   })
 })
 
