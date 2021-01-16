@@ -1,4 +1,5 @@
 import {
+  CacheProvider,
   jsx as emotionJsx,
   ThemeContext as EmotionContext,
 } from '@emotion/react'
@@ -7,8 +8,9 @@ import * as React from 'react'
 import deepmerge from 'deepmerge'
 import packageInfo from '@emotion/react/package.json'
 import parseProps from '@theme-ui/parse-props'
-
+import createCache, { EmotionCache } from '@emotion/cache'
 import { ThemeUIJSX } from './jsx-namespace'
+import { create } from 'react-test-renderer'
 export type { ThemeUIJSX } from './jsx-namespace'
 
 export type {
@@ -121,6 +123,7 @@ const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
     })
   )
 
+const emotionCache: EmotionCache = createCache({ key: 'css' })
 export interface ThemeProviderProps {
   theme: Theme | ((outerTheme: Theme) => Theme)
   children?: React.ReactNode
@@ -147,8 +150,13 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
   const isTopLevelProvider = outer === defaultContextValue
 
   console.debug({ isTopLevelProvider })
+
   if (isTopLevelProvider) {
-    // TODO: Wrap the tree in CacheProvider from @emotion/react
+    return jsx(
+      CacheProvider,
+      { value: emotionCache },
+      jsx(BaseProvider, { context }, children)
+    )
   }
 
   return jsx(BaseProvider, { context }, children)
