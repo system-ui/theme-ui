@@ -10,9 +10,6 @@ const tableCellStyle = {
 }
 
 export default {
-  useRootStyles: true,
-  useBodyStyles: true,
-  useLocalStorage: true,
   colors: {
     text: '#000000',
     background: '#ffffff',
