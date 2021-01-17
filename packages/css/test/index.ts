@@ -70,6 +70,9 @@ const theme: Theme = {
       letterSpacing: ['-0.01em', '-0.02em'],
     },
   },
+  borders: {
+    body: "3px solid #000000",
+  },
   borderWidths: {
     thin: 1,
   },
@@ -82,6 +85,14 @@ const theme: Theme = {
   opacities: [0, '50%'],
   transitions: {
     standard: '0.3s ease-in-out',
+  },
+  shadows: {
+    card: "5px 5px 15px 5px #000000",
+  },
+  zIndices: {
+    below: -1,
+    body: 1,
+    nav: 2,
   },
 }
 
@@ -182,6 +193,9 @@ test('handles all core styled system props', () => {
     transition: 'standard',
     fontFamily: 'monospace',
     lineHeight: 'body',
+    border: 'body',
+    boxShadow: 'card',
+    zIndex: 'nav',
   })({ theme })
   expect(result).toEqual({
     margin: 0,
@@ -202,6 +216,9 @@ test('handles all core styled system props', () => {
     fontSize: 24,
     fontWeight: 600,
     lineHeight: 1.5,
+    border: '3px solid #000000',
+    boxShadow: '5px 5px 15px 5px #000000',
+    zIndex: 2,
   })
 })
 
