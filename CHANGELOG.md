@@ -1,11 +1,27 @@
 # Changelog
 
-## v0.6.0 UNRELEASED
+## v0.6.0-alpha.5
 
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
 - Remove recursive default values from CSS custom properties. PR #1327
-- Support a `"default"` key for object in scales. PR #951
+- Support a default key for object in scales. PR #951
+
+  Given the theme
+
+  ```
+  const theme = {
+    colors: {
+      primary: {
+        __default: '#00f",
+        light: '#33f',
+      }
+    }
+  }
+  ```
+
+  `color: 'primary'` resolves to `color: '#00f'`.
+
 - Render extra Embed props onto `iframe` tag instead of wrapping `div`. Issue #966, PR #1122
 
 ## v0.6.0-alpha.1
