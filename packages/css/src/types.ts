@@ -602,6 +602,16 @@ export interface ThemeStyles {
   [key: string]: ThemeUIStyleObject | undefined
 }
 
+export function useRootProp(theme: Theme = {}): any {
+  const { useRootStyles = {}, useBodyStyles = {} } = theme
+  const root = ('useRootStyles' in theme) && useRootStyles != null
+
+  return {
+    scope: root ? 'html' : 'body',
+    rootStyles: root ? useRootStyles : useBodyStyles,
+  }
+}
+
 export interface Theme {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
@@ -642,10 +652,15 @@ export interface Theme {
   printColorModeName?: string
 
   /**
-   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
+   * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
+   */
+  useRootStyles?: boolean
+
+  /**
+   * Legacy : Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean
-
+  
   /**
    * Initializes the color mode based on the prefers-color-scheme media query
    */
