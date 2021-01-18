@@ -808,4 +808,14 @@ export interface Theme {
    * @see https://theme-ui.com/components/message#variants
    */
   messages?: Record<string, ThemeUIStyleObject>
+
+  /**
+   * When the theme values are replaced with css custom vars, save original values
+   */
+  original?: {
+    /**
+     * when present, theme.colors contains the css custom vars for colors
+     */
+    colors?: ColorModesScale
+  }
 }

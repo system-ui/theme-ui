@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
+import { useTheme } from '@emotion/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
@@ -170,7 +171,7 @@ test('converts color modes to css custom properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-text, #000)'
+    'var(--theme-ui-colors-text)'
   )
 })
 
@@ -425,6 +426,44 @@ test('useThemeUI returns current color mode colors', () => {
   expect(colors?.background).toBe('tomato')
 })
 
+test('emotion useTheme with custom css vars', () => {
+  window.localStorage.setItem(STORAGE_KEY, 'tomato')
+  let cssVarsColors: Theme['colors']
+  let orignalColors: Theme['colors']
+  const GetColors = () => {
+    const theme = useTheme() as Theme;
+    cssVarsColors = theme.colors
+    orignalColors = theme.original.colors
+    return null
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        // minor functional change
+        useCustomProperties: true,
+        colors: {
+          text: 'tomato',
+          background: 'black',
+          modes: {
+            tomato: {
+              text: 'black',
+              background: 'tomato',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider>
+        <GetColors />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(cssVarsColors?.text).toBe('var(--theme-ui-colors-text)')
+  expect(cssVarsColors?.background).toBe('var(--theme-ui-colors-background)')
+
+  expect(orignalColors?.text).toBe('black')
+  expect(orignalColors?.background).toBe('tomato')
+})
+
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
   const restore = mockConsole()
   const root = render(
@@ -558,7 +597,7 @@ test('dot notation works with color modes and custom properties', () => {
   button.click()
   expect(button).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-header-title, tomato)'
+    'var(--theme-ui-colors-header-title)'
   )
 })
 

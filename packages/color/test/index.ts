@@ -1,4 +1,4 @@
-import { css, Theme, ThemeUICSSObject } from '@theme-ui/css'
+import { Theme, ThemeUICSSObject } from '@theme-ui/css'
 
 import {
   darken,
@@ -113,8 +113,14 @@ test('grayscale', () => {
 
 const themeCustomProps = {
   colors: {
-    primary: 'var(--theme-ui-colors-primary, #0cf)',
-    secondary: 'var(--theme-ui-colors-primary, #639)',
+    primary: 'var(--theme-ui-colors-primary)',
+    secondary: 'var(--theme-ui-colors-primary)',
+  },
+  original: {
+    colors: {
+      primary: '#0cf',
+      secondary: '#639',
+    },
   },
 } as Theme
 
@@ -206,7 +212,12 @@ test('darkenTomato', () => {
 
 const themeTomatoCustomProps = {
   colors: {
-    primary: 'var(--theme-ui-colors-primary, tomato)',
+    primary: 'var(--theme-ui-colors-primary)',
+  },
+  original: {
+    colors: {
+      primary: 'tomato',
+    },
   },
 } as Theme
 
@@ -228,12 +239,17 @@ test('alphaRgba', () => {
 
 const themeRgbaCustomProps = {
   colors: {
-    primary: 'var(--theme-ui-colors-primary, rgba(255, 0, 0, .5))',
+    primary: 'var(--theme-ui-colors-primary)',
+  },
+  original: {
+    colors: {
+      primary: 'rgba(255, 0, 0, .5)',
+    },
   },
 } as Theme
 
 test('alphaRgbaCustomProps', () => {
-  const n = alpha('primary', 0.25)(themeRgba)
+  const n = alpha('primary', 0.25)(themeRgbaCustomProps)
   expect(n).toBe('rgba(255,0,0,0.25)')
 })
 

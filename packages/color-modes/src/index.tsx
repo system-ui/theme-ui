@@ -131,8 +131,10 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 
   if (theme.useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
+    emotionTheme.original = {
+      colors: theme.colors
+    }
   }
-
   const context = {
     ...outer,
     theme,

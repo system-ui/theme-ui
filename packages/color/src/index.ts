@@ -4,13 +4,12 @@ import { get, Theme } from '@theme-ui/css'
 /**
  * Get color from theme.colors
  */
-export const getColor = (theme: Theme, color: string) => {
-  const colorValue = get(theme, `colors.${color}`, color)
-  const isCustomProperty = /^var\(--/.test(colorValue)
-  return isCustomProperty
-    ? colorValue.replace(/^var\(--(\w+)(.*?), /, '').replace(/\)/, '')
-    : colorValue
-}
+export const getColor = (theme: Theme, color: string) =>
+  get(
+    theme,
+    theme.original?.colors ? `original.colors.${color}` : `colors.${color}`,
+    color
+  )
 
 /**
  * Darken a color by an amount 0–1
