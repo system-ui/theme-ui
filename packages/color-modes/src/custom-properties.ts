@@ -93,7 +93,7 @@ export const createColorStyles = (theme: Theme = {}) => {
       printColorModeName === initialColorModeName
         ? colors
         : modes[printColorModeName]
-    styles['@media (print)'] = objectToVars('colors', mode)
+    styles['@media print'] = objectToVars('colors', mode)
   }
   const colorToVarValue = (color: string) =>
     toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
