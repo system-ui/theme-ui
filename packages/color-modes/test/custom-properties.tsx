@@ -95,7 +95,7 @@ describe('createColorStyles', () => {
           '--theme-ui-colors-text': 'tomato',
           '--theme-ui-colors-background': 'white',
         },
-        '@media (print)': {
+        '@media print': {
           '--theme-ui-colors-text': 'tomato',
           '--theme-ui-colors-background': 'white',
         },
@@ -128,7 +128,7 @@ describe('createColorStyles', () => {
           '--theme-ui-colors-text': 'white',
           '--theme-ui-colors-background': 'black',
         },
-        '@media (print)': {
+        '@media print': {
           '--theme-ui-colors-text': 'tomato',
           '--theme-ui-colors-background': 'white',
         },
