@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
-import { get, Theme } from '@theme-ui/css'
+import { get, Theme, ColorModesScale } from '@theme-ui/css'
 import { Global, ThemeContext as EmotionContext } from '@emotion/react'
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
@@ -127,11 +127,15 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
-  const emotionTheme = { ...theme }
+  const emotionTheme: Theme & {
+    __original?: {
+      colors?: ColorModesScale
+    }
+  } = { ...theme }
 
   if (theme.useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
-    emotionTheme.original = {
+    emotionTheme.__original = {
       colors: theme.colors
     }
   }

@@ -433,7 +433,7 @@ test('emotion useTheme with custom css vars', () => {
   const GetColors = () => {
     const theme = useTheme() as Theme;
     cssVarsColors = theme.colors
-    orignalColors = theme.original.colors
+    orignalColors = (theme as any).__original.colors
     return null
   }
   const root = render(

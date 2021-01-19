@@ -116,7 +116,7 @@ const themeCustomProps = {
     primary: 'var(--theme-ui-colors-primary)',
     secondary: 'var(--theme-ui-colors-primary)',
   },
-  original: {
+  __original: {
     colors: {
       primary: '#0cf',
       secondary: '#639',
@@ -214,7 +214,7 @@ const themeTomatoCustomProps = {
   colors: {
     primary: 'var(--theme-ui-colors-primary)',
   },
-  original: {
+  __original: {
     colors: {
       primary: 'tomato',
     },
@@ -241,7 +241,7 @@ const themeRgbaCustomProps = {
   colors: {
     primary: 'var(--theme-ui-colors-primary)',
   },
-  original: {
+  __original: {
     colors: {
       primary: 'rgba(255, 0, 0, .5)',
     },

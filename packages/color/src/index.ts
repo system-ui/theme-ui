@@ -7,7 +7,9 @@ import { get, Theme } from '@theme-ui/css'
 export const getColor = (theme: Theme, color: string) =>
   get(
     theme,
-    theme.original?.colors ? `original.colors.${color}` : `colors.${color}`,
+    (theme as any).__original?.colors
+      ? `__original.colors.${color}`
+      : `colors.${color}`,
     color
   )
 
