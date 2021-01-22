@@ -602,7 +602,7 @@ export interface ThemeStyles {
   [key: string]: ThemeUIStyleObject | undefined
 }
 
-export function getUseRootStyles(theme: Theme = {}): any {
+export function getUseRootStyles(theme: Theme = {}) {
   const { useRootStyles = {}, useBodyStyles = {} } = theme
   const root = 'useRootStyles' in theme && useRootStyles != null
 
