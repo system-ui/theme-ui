@@ -8,24 +8,49 @@ import {
 
 export * from './types'
 
-const hasDefault = (x: unknown): x is { default: string | number } => {
-  return typeof x === 'object' && x !== null && 'default' in x
+/**
+ * Allows for nested scales with shorthand values
+ * @example
+ * {
+ *   colors: {
+ *     primary: { __default: '#00f', light: '#33f' }
+ *   }
+ * }
+ * css({ color: 'primary' }); // { color: '#00f' }
+ * css({ color: 'primary.light' }) // { color: '#33f' }
+ */
+export const THEME_UI_DEFAULT_KEY = '__default'
+
+const hasDefault = (
+  x: unknown
+): x is { [THEME_UI_DEFAULT_KEY]: string | number } => {
+  return typeof x === 'object' && x !== null && THEME_UI_DEFAULT_KEY in x
 }
 
+/**
+ * Extracts value under path from a deeply nested object.
+ * Used for Themes, variants and Theme UI style objects.
+ * Given a path to object with `__default` key, returns the value under that key.
+ *
+ * @param obj a theme, variant or style object
+ * @param path path separated with dots (`.`)
+ * @param fallback default value returned if get(obj, path) is not found
+ */
 export function get(
   obj: object,
-  key: string | number | undefined,
-  def?: unknown,
+  path: string | number | undefined,
+  fallback?: unknown,
   p?: number,
   undef?: unknown
 ): any {
-  const path = key && typeof key === 'string' ? key.split('.') : [key]
-  for (p = 0; p < path.length; p++) {
-    obj = obj ? (obj as any)[path[p]!] : undef
+  const pathArray = path && typeof path === 'string' ? path.split('.') : [path]
+  for (p = 0; p < pathArray.length; p++) {
+    obj = obj ? (obj as any)[pathArray[p]!] : undef
   }
-  if (obj === undef) return def
 
-  return hasDefault(obj) ? obj.default : obj
+  if (obj === undef) return fallback
+
+  return hasDefault(obj) ? obj[THEME_UI_DEFAULT_KEY] : obj
 }
 
 export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
@@ -325,8 +350,8 @@ export const css = (args: ThemeUIStyleObject = {}) => (
 
     const prop = key in aliases ? aliases[key as keyof Aliases] : key
     const scaleName = prop in scales ? scales[prop as keyof Scales] : undefined
-    const scale = get(theme, scaleName as any, get(theme, prop, {}))
-    const transform: any = get(transforms, prop, get)
+    const scale = scaleName ? theme?.[scaleName] : get(theme, prop, {})
+    const transform = get(transforms, prop, get)
     const value = transform(scale, val, val)
 
     if (prop in multiples) {
