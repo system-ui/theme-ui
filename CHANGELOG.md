@@ -1,15 +1,21 @@
 # Changelog
 
-## v0.6.0-alpha.5
+## v0.6.0 UNRELEASED
+
+# v0.6.0-alpha.6 2021-01-22
+
+- **BREAKING**: Default `useColorSchemeMediaQuery` to `true`. Issue #624, PR #1373
+
+  **How to migrate?** Add `useColorSchemeMediaQuery: false` to your theme if you don't have this property.
+  [Read more in the docs.](https://dev.theme-ui.com/color-modes/#responding-to-the-prefers-color-scheme-media-query)
 
 - Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
-- **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
 - Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
 - Fix: "as" prop on Themed.X components now properly opts out of typechecking
   - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
 - `@theme-ui/prism`: Support multiple highlight wrappers in a single code block. PR #1393
 
-## v0.6.0-alpha.5
+## v0.6.0-alpha.5 2021-01-22
 
 - Support a default key for object in scales. PR #951
 
