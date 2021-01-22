@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.6.0 UNRELEASED
+## v0.6.0-alpha.5
 
 - Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
 - **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
@@ -8,11 +8,30 @@
 - Fix: "as" prop on Themed.X components now properly opts out of typechecking
   - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
 
+## v0.6.0-alpha.5
+
+- Support a default key for object in scales. PR #951
+
+  Given the theme
+
+  ```
+  const theme = {
+    colors: {
+      primary: {
+        __default: '#00f",
+        light: '#33f',
+      }
+    }
+  }
+  ```
+
+  `color: 'primary'` resolves to `color: '#00f'`.
+
 ## v0.6.0-alpha.4
 
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
-- Support a `"default"` key for object in scales. PR #951
+- Remove recursive default values from CSS custom properties. PR #1327
 - Render extra Embed props onto `iframe` tag instead of wrapping `div`. Issue #966, PR #1122
 
 ## v0.6.0-alpha.2
