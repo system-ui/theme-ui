@@ -605,9 +605,9 @@ export interface ThemeStyles {
   [key: string]: ThemeUIStyleObject | undefined
 }
 
-export function useRootProp(theme: Theme = {}): any {
+export function getUseRootStyles(theme: Theme = {}): any {
   const { useRootStyles = {}, useBodyStyles = {} } = theme
-  const root = ('useRootStyles' in theme) && useRootStyles != null
+  const root = 'useRootStyles' in theme && useRootStyles != null
 
   return {
     scope: root ? 'html' : 'body',
@@ -663,7 +663,7 @@ export interface Theme {
    * Legacy : Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean
-  
+
   /**
    * Initializes the color mode based on the prefers-color-scheme media query
    */
