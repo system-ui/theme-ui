@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Does the branch name start with "dependabot/"
-if [[ "dependabot/skip-deploy" = dependabot/* ]] ; then
+if [[ "$VERCEL_GIT_COMMIT_REF" = dependabot/* ]] ; then
   echo "should-skip-deploy >> Skipping deploy!"
   exit 0;
 else
