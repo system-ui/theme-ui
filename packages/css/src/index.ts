@@ -299,7 +299,9 @@ const responsive = (
       value = value(theme || {})
     }
 
-    if (value == null) continue
+    if (value === false || value == null) {
+      continue
+    }
     if (!Array.isArray(value)) {
       next[key] = value
       continue
