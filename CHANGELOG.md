@@ -1,11 +1,8 @@
 # Changelog
 
-## UNRELEASED
-
-- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
-
 ## v0.6.0 UNRELEASED
 
+- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
 - **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
 - Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
 - Fix: "as" prop on Themed.X components now properly opts out of typechecking
