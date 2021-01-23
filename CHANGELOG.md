@@ -2,7 +2,9 @@
 
 ## v0.6.0 UNRELEASED
 
-# v0.6.0-alpha.6 2021-01-22
+- Make the deprecation of `Styled` → `Themed` non-breaking, with backwards compatability & a deprecation warning on `Styled` until a future release. PR #1461
+
+## v0.6.0-alpha.6 2021-01-22
 
 - **BREAKING**: Default `useColorSchemeMediaQuery` to `true`. Issue #624, PR #1373
 
