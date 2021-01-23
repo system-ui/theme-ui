@@ -6,6 +6,7 @@
 
 ## v0.6.0-alpha.6 2021-01-22
 
+- Skip `false` values before passing style objects to Emotion. Allow `false` as style property value in TS types. Issue #1297, PR #1460.
 - **BREAKING**: Default `useColorSchemeMediaQuery` to `true`. Issue #624, PR #1373
 
   **How to migrate?** Add `useColorSchemeMediaQuery: false` to your theme if you don't have this property.

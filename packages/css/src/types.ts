@@ -442,10 +442,13 @@ export interface ThemeUIExtendedCSSProperties
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
+type Empty = undefined | null | false
+
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
   | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
+  | Empty
 
 export type ThemeUICSSProperties = {
   [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<
@@ -490,7 +493,7 @@ export interface CSSOthersObject {
   // we want to match CSS selectors
   // but index signature needs to be a supertype
   // so as a side-effect we allow unknown CSS properties (Emotion does too)
-  [k: string]: StylePropertyValue<string | number> | undefined | null
+  [k: string]: StylePropertyValue<string | number>
 }
 
 export interface ThemeUICSSObject
