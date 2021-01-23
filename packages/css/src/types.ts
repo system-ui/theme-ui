@@ -660,7 +660,8 @@ export interface Theme {
   useRootStyles?: boolean
 
   /**
-   * Legacy : Adds styles defined in theme.styles.root to the <body> element along with color and background-color
+   * @deprecated
+   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean
 
