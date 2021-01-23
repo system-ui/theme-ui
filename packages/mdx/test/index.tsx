@@ -6,7 +6,7 @@ import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
-import { themed, Themed, components, MDXProvider } from '../src'
+import { themed, Themed, Styled, components, MDXProvider } from '../src'
 
 expect.extend(matchers)
 
@@ -190,4 +190,26 @@ test('table columns align', () => {
   expect(tree.getByText('TextLeft')).toHaveStyleRule('text-align', 'left')
   expect(tree.getByText('TextCenter')).toHaveStyleRule('text-align', 'center')
   expect(tree.getByText('TextRight')).toHaveStyleRule('text-align', 'right')
+})
+
+
+test('Deprecated Styled test', () => {
+  const json = renderJSON(
+    <ThemeProvider
+      theme={{
+        styles: {
+          h1: {
+            color: 'tomato',
+          },
+        },
+      }}>
+      <MDXProvider>
+        <Styled.h1>
+          H1
+        </Styled.h1>
+      </MDXProvider>
+    </ThemeProvider>
+  )!
+  expect(json.type).toBe('h1')
+  expect(json).toHaveStyleRule('color', 'tomato')
 })

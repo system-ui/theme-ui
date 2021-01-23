@@ -8,6 +8,8 @@ import {
   HTMLAttributes,
   ElementType,
   ComponentProps,
+  createElement,
+  useEffect,
 } from 'react'
 import styled, { StyledComponent } from '@emotion/styled'
 import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
@@ -156,12 +158,29 @@ export const Themed: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
 ) as ThemedDiv & ThemedComponentsDict
 
+// to be deprecated
+export const Styled: ThemedDiv & ThemedComponentsDict = styled('div')(
+  themed('div')
+) as ThemedDiv & ThemedComponentsDict
+
+export const warnStyled = (tag: keyof IntrinsicSxElements): FC => (props) => {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(
+        'The Styled component from "@theme-ui/mdx" is deprecated and will be removed in a future version, please use Themed instead'
+      )
+    }
+  }, [])
+  return createElement(tag, props)
+}
+
 export const components = {} as ThemedComponentsDict
 
 tags.forEach((tag) => {
   // fixme?
   components[tag] = styled(alias(tag))(themed(tag)) as any
   Themed[tag] = components[tag] as any
+  Styled[tag] = styled(warnStyled(tag))(themed(tag)) as any
 })
 
 const createComponents = (comps: MDXProviderComponents) => {
