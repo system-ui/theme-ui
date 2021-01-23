@@ -633,3 +633,14 @@ test('supports vendor properties', () => {
     WebkitOverflowScrolling: 'touch',
   })
 })
+
+test('omits empty values', () => {
+  expect(
+    css({
+      color: false && 'blue',
+      backgroundColor: undefined && 'whitesmoke',
+      textDecoration: null && 'underline',
+      border: '1px solid black',
+    })(theme)
+  ).toStrictEqual({ border: '1px solid black' })
+})
