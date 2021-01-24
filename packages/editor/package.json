@@ -1,15 +1,15 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.6",
   "main": "dist/theme-ui-editor.cjs.js",
   "module": "dist/theme-ui-editor.esm.js",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/components": "0.6.0-alpha.4",
-    "@theme-ui/css": "0.6.0-alpha.4",
-    "@theme-ui/style-guide": "0.6.0-alpha.4",
+    "@theme-ui/components": "0.6.0-alpha.6",
+    "@theme-ui/css": "0.6.0-alpha.6",
+    "@theme-ui/style-guide": "0.6.0-alpha.6",
     "@types/react-color": "^2.17.3",
     "color": "^3.1.2",
     "react-color": "^2.18.0",
@@ -20,15 +20,15 @@
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0",
     "react-dom": "^16.14.0 || ^17.0.0",
-    "theme-ui": "^0.5.0-alpha.0",
+    "theme-ui": "^0.6.0-alpha.6",
     "@emotion/react": "^11.1.1"
+  },
+  "devDependencies": {
+    "react": "^17.0.1",
+    "theme-ui": "0.6.0-alpha.6"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437",
-  "devDependencies": {
-    "react": "^17.0.1",
-    "theme-ui": "0.6.0-alpha.4"
-  }
+  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

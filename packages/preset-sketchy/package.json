@@ -1,8 +1,9 @@
 {
   "name": "@theme-ui/preset-sketchy",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.6",
   "main": "dist/theme-ui-preset-sketchy.cjs.js",
   "module": "dist/theme-ui-preset-sketchy.esm.js",
+  "types": "dist/theme-ui-preset-sketchy.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Aleksandra Sikora",
   "license": "MIT",
@@ -11,7 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.6.0-alpha.4"
+    "@theme-ui/css": "0.6.0-alpha.6"
   },
   "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
 }

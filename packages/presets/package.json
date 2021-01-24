@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.6",
   "main": "dist/theme-ui-presets.cjs.js",
   "module": "dist/theme-ui-presets.esm.js",
   "source": "src/index.ts",
@@ -17,7 +17,7 @@
     "@theme-ui/preset-future": "0.6.0-alpha.4",
     "@theme-ui/preset-polaris": "0.6.0-alpha.4",
     "@theme-ui/preset-roboto": "0.6.0-alpha.4",
-    "@theme-ui/preset-sketchy": "0.6.0-alpha.4",
+    "@theme-ui/preset-sketchy": "0.6.0-alpha.6",
     "@theme-ui/preset-swiss": "0.6.0-alpha.4",
     "@theme-ui/preset-system": "0.6.0-alpha.4",
     "@theme-ui/preset-tailwind": "0.6.0-alpha.4",
