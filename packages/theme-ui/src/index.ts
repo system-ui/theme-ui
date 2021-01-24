@@ -24,7 +24,6 @@ export { ThemeProvider } from '@theme-ui/theme-provider'
 export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
 
-// TODO: work this into root provider/global styles?
 export const BaseStyles = (props: Record<string, unknown>) =>
   jsx('div', {
     ...props,

@@ -645,6 +645,13 @@ export interface Theme {
   printColorModeName?: string
 
   /**
+   * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
+   */
+  useRootStyles?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of `useRootStyles`.
+   *
    * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean

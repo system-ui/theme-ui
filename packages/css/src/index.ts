@@ -7,6 +7,7 @@ import {
 } from './types'
 
 export * from './types'
+export { __internalGetUseRootStyles } from './options'
 
 /**
  * Allows for nested scales with shorthand values

@@ -3,6 +3,11 @@
 ## v0.6.0 UNRELEASED
 
 - Make the rename of `Styled` to `Themed` non-breaking. Add a deprecation warning on `Styled` until a future release. PR #1461
+- Add `theme.useRootStyles` configuration option (false by default).
+  Set it to `true` to add `styles.root` to `html` instead of `body`.
+  `theme.useBodyStyles` configuration option still defaults to `true`,
+  but it's going in to be deprecated in favor of `theme.useRootStyles` in the future.
+- Skip `false` values before passing style objects to Emotion. Allow `false` as style property value in TS types. Issue #1297, PR #1460.
 
 ## v0.6.0-alpha.6 2021-01-22
 
