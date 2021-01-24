@@ -33,7 +33,7 @@ export type {
   VariantProperty,
 } from '@theme-ui/css'
 
-export { getUseRootStyles } from '@theme-ui/css'
+export { __internalGetUseRootStyles } from '@theme-ui/css'
 
 export * from './types'
 

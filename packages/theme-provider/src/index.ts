@@ -4,7 +4,7 @@ import {
   ThemeProvider as CoreProvider,
   ThemeProviderProps as CoreThemeProviderProps,
   IntrinsicSxElements,
-  getUseRootStyles,
+  __internalGetUseRootStyles,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
@@ -15,7 +15,7 @@ const RootStyles = () =>
   jsx(Global, {
     styles: (emotionTheme) => {
       const theme = emotionTheme as Theme
-      const use = getUseRootStyles(theme)
+      const use = __internalGetUseRootStyles(theme)
 
       if (use.rootStyles === false || (theme.styles && !theme.styles.root)) {
         return false
