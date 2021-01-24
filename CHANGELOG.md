@@ -1,21 +1,46 @@
 # Changelog
 
-## UNRELEASED
-
-- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
-
 ## v0.6.0 UNRELEASED
 
-- **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
+- Skip `false` values before passing style objects to Emotion. Allow `false` as style property value in TS types. Issue #1297, PR #1460.
+
+# v0.6.0-alpha.6 2021-01-22
+
+- **BREAKING**: Default `useColorSchemeMediaQuery` to `true`. Issue #624, PR #1373
+
+  **How to migrate?** Add `useColorSchemeMediaQuery: false` to your theme if you don't have this property.
+  [Read more in the docs.](https://dev.theme-ui.com/color-modes/#responding-to-the-prefers-color-scheme-media-query)
+
+- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
 - Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
 - Fix: "as" prop on Themed.X components now properly opts out of typechecking
   - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
+- `@theme-ui/prism`: Support multiple highlight wrappers in a single code block. PR #1393
+
+## v0.6.0-alpha.5 2021-01-22
+
+- Support a default key for object in scales. PR #951
+
+  Given the theme
+
+  ```
+  const theme = {
+    colors: {
+      primary: {
+        __default: '#00f",
+        light: '#33f',
+      }
+    }
+  }
+  ```
+
+  `color: 'primary'` resolves to `color: '#00f'`.
 
 ## v0.6.0-alpha.4
 
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
-- Support a `"default"` key for object in scales. PR #951
+- Remove recursive default values from CSS custom properties. PR #1327
 - Render extra Embed props onto `iframe` tag instead of wrapping `div`. Issue #966, PR #1122
 
 ## v0.6.0-alpha.2

@@ -125,22 +125,28 @@ export default {
 
 This package supports highlighting inside code blocks. The following two syntaxes are supported:
 
+Single-line highlight by placing `// highlight-line` at the end of the line.
 ```js
-let str = 'highlight' // highlight-line
+let singleLineHighlight = 'there is a // highlight-line comment here ->' // highlight-line
 ```
 
+Multi-line highlights by wrapping lines with `// highlight-start` and `// highlight-end`. Multiple highlight wrappers are supported in a single code block.
 ```js
 // highlight-start
-let str = 'highlight'
+let multiLineHighlight = `
+  this multiline string is wrapped by 
+  // highlight-start and // highlight-end 
+  comments
+`
 // highlight-end
 ```
 
 The highlight styling is controlled in `styles.pre` under `.highlight`. For example:
 
 ```json
-  ".highlight": {
-    "background": "hsla(0, 0%, 30%, .5)"
-  }
+".highlight": {
+  "background": "hsla(0, 0%, 30%, .5)"
+}
 ```
 
 ## Additional Languages

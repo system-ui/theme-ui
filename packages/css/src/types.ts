@@ -442,10 +442,13 @@ export interface ThemeUIExtendedCSSProperties
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
+type Empty = undefined | null | false
+
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
   | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
+  | Empty
 
 export type ThemeUICSSProperties = {
   [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<
@@ -490,7 +493,7 @@ export interface CSSOthersObject {
   // we want to match CSS selectors
   // but index signature needs to be a supertype
   // so as a side-effect we allow unknown CSS properties (Emotion does too)
-  [k: string]: StylePropertyValue<string | number> | undefined | null
+  [k: string]: StylePropertyValue<string | number>
 }
 
 export interface ThemeUICSSObject
@@ -602,7 +605,11 @@ export interface ThemeStyles {
   [key: string]: ThemeUIStyleObject | undefined
 }
 
-export function getUseRootStyles(theme: Theme = {}) {
+/**
+ * @internal
+ * We fall back to `theme.useBodyStyles` when `theme.useRootStyles` is not set.
+ */
+export function __internalGetUseRootStyles(theme: Theme = {}) {
   const { useRootStyles = {}, useBodyStyles = {} } = theme
   const root = 'useRootStyles' in theme && useRootStyles != null
 
@@ -657,7 +664,8 @@ export interface Theme {
   useRootStyles?: boolean
 
   /**
-   * @deprecated
+   * @deprecated Deprecated in favor of `useRootStyles`.
+   *
    * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean

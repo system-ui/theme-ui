@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.6",
   "main": "dist/prism.js",
   "module": "dist/prism.esm.js",
   "types": "dist/index.d.ts",
@@ -37,6 +37,6 @@
     "param-case": "^3.0.3",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
-    "theme-ui": "0.6.0-alpha.4"
+    "theme-ui": "0.6.0-alpha.6"
   }
 }

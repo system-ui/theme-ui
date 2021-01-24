@@ -1,4 +1,4 @@
-import { css, get, Theme, getUseRootStyles } from '@theme-ui/css'
+import { css, get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
 const toVarValue = (key: string, value: string | number) =>
@@ -70,7 +70,7 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
 
 // create root styles for color modes
 export const createColorStyles = (theme: Theme = {}) => {
-  const use = getUseRootStyles(theme)
+  const use = __internalGetUseRootStyles(theme)
   if (!theme.colors || use.rootStyles === false) return {}
   if (theme.useCustomProperties === false || !theme.colors.modes) {
     return css({
@@ -94,7 +94,7 @@ export const createColorStyles = (theme: Theme = {}) => {
       printColorModeName === initialColorModeName
         ? colors
         : modes[printColorModeName]
-    styles['@media (print)'] = objectToVars('colors', mode)
+    styles['@media print'] = objectToVars('colors', mode)
   }
   const colorToVarValue = (color: string) =>
     toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
