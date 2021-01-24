@@ -2,7 +2,7 @@
 
 ## v0.6.0 UNRELEASED
 
-- Make the deprecation of `Styled` → `Themed` non-breaking, with backwards compatability & a deprecation warning on `Styled` until a future release. PR #1461
+- Make the rename of `Styled` to `Themed` non-breaking. Add a deprecation warning on `Styled` until a future release. PR #1461
 
 ## v0.6.0-alpha.6 2021-01-22
 
