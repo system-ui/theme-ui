@@ -158,7 +158,11 @@ export const Themed: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
 ) as ThemedDiv & ThemedComponentsDict
 
-// to be deprecated
+/**
+ * @deprecated since 0.6.0.
+ * 
+ * `Styled` was renamed to `Themed` to avoid confusion with styled components.
+ */
 export const Styled: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
 ) as ThemedDiv & ThemedComponentsDict
