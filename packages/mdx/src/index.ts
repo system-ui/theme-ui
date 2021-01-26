@@ -160,14 +160,14 @@ export const Themed: ThemedDiv & ThemedComponentsDict = styled('div')(
 
 /**
  * @deprecated since 0.6.0.
- * 
+ *
  * `Styled` was renamed to `Themed` to avoid confusion with styled components.
  */
 export const Styled: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
 ) as ThemedDiv & ThemedComponentsDict
 
-export const warnStyled = (tag: keyof IntrinsicSxElements): FC => (props) => {
+const warnStyled = (tag: keyof IntrinsicSxElements): FC => (props) => {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
@@ -184,6 +184,7 @@ tags.forEach((tag) => {
   // fixme?
   components[tag] = styled(alias(tag))(themed(tag)) as any
   Themed[tag] = components[tag] as any
+
   Styled[tag] = styled(warnStyled(tag))(themed(tag)) as any
 })
 
