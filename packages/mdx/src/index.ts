@@ -175,7 +175,7 @@ const warnStyled = (tag: keyof IntrinsicSxElements): FC => (props) => {
       )
     }
   }, [])
-  return createElement(tag, props)
+  return createElement(alias(tag), props)
 }
 
 export const components = {} as ThemedComponentsDict

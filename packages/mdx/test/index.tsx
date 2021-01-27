@@ -3,6 +3,7 @@ import React from 'react'
 import { mdx } from '@mdx-js/react'
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
+import mockConsole from 'jest-mock-console'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
@@ -192,6 +193,33 @@ test('table columns align', () => {
   expect(tree.getByText('TextRight')).toHaveStyleRule('text-align', 'right')
 })
 
+test('Warn deprecated Styled', () => {
+  const restore = mockConsole()
+  const tree = render(
+    <ThemeProvider
+      theme={{
+        styles: {
+          h1: {
+            color: 'tomato',
+          },
+        },
+      }}>
+      <MDXProvider>
+        <Styled.inlineCode>styled</Styled.inlineCode>
+      </MDXProvider>
+    </ThemeProvider>
+  )!
+  const code = tree.getByText('styled')
+  expect(code).toMatchInlineSnapshot(`
+  <code
+    class="emotion-0"
+  >
+    styled
+  </code>
+`)
+  expect(console.warn).toHaveBeenCalled()
+  restore()
+})  
 
 test('Deprecated Styled test', () => {
   const json = renderJSON(
