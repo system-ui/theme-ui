@@ -357,16 +357,18 @@ Because MDX uses its own custom pragma and `createElement` function, the Theme U
 You can use any of the [Theme UI components](/components),
 which support the `sx` prop, in an MDX file as a workaround.
 
-```js
+```mdx
 import { Box } from 'theme-ui'
 
-;<Box
+<Box
   sx={{
     padding: 3,
     bg: 'highlight',
   }}
 >
-  # Hello
+
+# Hello
+
 </Box>
 ```
 
