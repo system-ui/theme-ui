@@ -2,8 +2,11 @@
 
 ## v0.6.0 UNRELEASED
 
+## v0.6.0-alpha.8 2021-02-19
+
 - Make the rename of `Styled` to `Themed` non-breaking. Add a deprecation warning on `Styled` until a future release. PR #1461
 - Paragraph component's hardcoded responsive style has been removed (issue #1476)
+- Fix issue where css custom vars are only added to body if modes is in the colors declaration of the theme.
 
 ## v0.6.0-alpha.7 2021-02-15
 
