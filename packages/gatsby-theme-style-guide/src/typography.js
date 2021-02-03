@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Themed, useThemeUI } from 'theme-ui'
+import React from 'react'
+import { Themed, useThemeUI } from 'theme-ui'
 import { TypeScale, TypeStyle } from '@theme-ui/style-guide'
 
 const Row = (props) => (
