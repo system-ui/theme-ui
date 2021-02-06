@@ -7,7 +7,7 @@ const theme: Theme = {
     background: 'white',
     text: 'black',
     purple: {
-      default: 'darkviolet',
+      __default: 'darkviolet',
       100: 'rebeccapurple',
       500: 'darkviolet',
       900: 'violet',
@@ -35,7 +35,7 @@ const theme: Theme = {
     sidebar: 320,
   },
   buttons: {
-    default: {
+    __default: {
       px: 4,
       py: 2,
       fontWeight: 'bold',
@@ -71,7 +71,7 @@ const theme: Theme = {
     },
   },
   borders: {
-    body: "3px solid #000000",
+    body: '3px solid #000000',
   },
   borderWidths: {
     thin: 1,
@@ -87,7 +87,7 @@ const theme: Theme = {
     standard: '0.3s ease-in-out',
   },
   shadows: {
-    card: "5px 5px 15px 5px #000000",
+    card: '5px 5px 15px 5px #000000',
   },
   zIndices: {
     below: -1,
@@ -272,7 +272,7 @@ test('supports functional values', () => {
   })
 })
 
-test('returns `default` key when accessing object value with default', () => {
+test('returns `__default` key when accessing object value with default', () => {
   const result = css({
     color: 'purple',
   })(theme)
@@ -281,7 +281,7 @@ test('returns `default` key when accessing object value with default', () => {
   })
 })
 
-test('returns nested key when accessing key from object value with default', () => {
+test('returns nested key when accessing key from object value with __default', () => {
   const result = css({
     color: 'purple.100',
   })(theme)
@@ -290,7 +290,7 @@ test('returns nested key when accessing key from object value with default', () 
   })
 })
 
-test('variant prop returns `default` key when accessing variant object with default', () => {
+test('variant prop returns `__default` key when accessing variant object with default', () => {
   const result = css({
     variant: 'buttons',
   })(theme)
@@ -632,4 +632,15 @@ test('supports vendor properties', () => {
   expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
     WebkitOverflowScrolling: 'touch',
   })
+})
+
+test('omits empty values', () => {
+  expect(
+    css({
+      color: false && 'blue',
+      backgroundColor: undefined && 'whitesmoke',
+      textDecoration: null && 'underline',
+      border: '1px solid black',
+    })(theme)
+  ).toStrictEqual({ border: '1px solid black' })
 })

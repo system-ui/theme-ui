@@ -4,20 +4,20 @@ import {
   ThemeProvider as CoreProvider,
   ThemeProviderProps as CoreThemeProviderProps,
   IntrinsicSxElements,
+  __internalGetUseRootStyles,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
 import { MDXProvider, MDXProviderComponents } from '@theme-ui/mdx'
 import { Global } from '@emotion/react'
 
-const BodyStyles = () =>
+const RootStyles = () =>
   jsx(Global, {
-    styles: emotionTheme => {
+    styles: (emotionTheme) => {
       const theme = emotionTheme as Theme
-      if (
-        theme.useBodyStyles === false ||
-        (theme.styles && !theme.styles.root)
-      ) {
+      const use = __internalGetUseRootStyles(theme)
+
+      if (use.rootStyles === false || (theme.styles && !theme.styles.root)) {
         return false
       }
       const boxSizing = theme.useBorderBox === false ? undefined : 'border-box'
@@ -26,15 +26,13 @@ const BodyStyles = () =>
         '*': {
           boxSizing,
         },
-        body: {
+        [use.scope]: {
           margin: 0,
           variant: 'styles.root',
         },
       })(theme)
     },
   })
-
-
 
 interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
@@ -65,7 +63,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     jsx(
       ColorModeProvider,
       null,
-      jsx(BodyStyles),
+      jsx(RootStyles),
       jsx(MDXProvider, {
         components,
         children,

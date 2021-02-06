@@ -1,4 +1,4 @@
-import { css, get, Theme } from '@theme-ui/css'
+import { css, get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key}`
 const toVarValue = (key: string, value: string | number) =>
@@ -68,12 +68,13 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
   return vars
 }
 
-// create body styles for color modes
+// create root styles for color modes
 export const createColorStyles = (theme: Theme = {}) => {
-  if (!theme.colors || theme.useBodyStyles === false) return {}
+  const use = __internalGetUseRootStyles(theme)
+  if (!theme.colors || use.rootStyles === false) return {}
   if (theme.useCustomProperties === false || !theme.colors.modes) {
     return css({
-      body: {
+      [use.scope]: {
         color: 'text',
         bg: 'background',
       },
@@ -99,7 +100,7 @@ export const createColorStyles = (theme: Theme = {}) => {
     toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
 
   return css({
-    body: {
+    [use.scope]: {
       ...styles,
       color: colorToVarValue('text'),
       bg: colorToVarValue('background'),
