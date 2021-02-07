@@ -3,7 +3,7 @@ import { css, get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 const stripKeyDefault = (key: string) => key.replace('-__default', '')
 const toVarName = (key: string) => `--theme-ui-${stripKeyDefault(key)}`
 const toVarValue = (key: string, value: string | number) =>
-  `var(${toVarName(stripKeyDefault(key))}, ${value})`
+  `var(${toVarName(key)}, ${value})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
