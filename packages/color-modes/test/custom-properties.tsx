@@ -87,7 +87,7 @@ describe('createColorStyles', () => {
     })
   })
 
-  test('creates styles and remove __default key', () => {
+  test('creates styles from simple theme', () => {
     const styles = createColorStyles({
       colors: {
         text: 'tomato',
