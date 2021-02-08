@@ -31,7 +31,7 @@
   const theme = {
     colors: {
       primary: {
-        __default: '#00f",
+        __default: '#00f',
         light: '#33f',
       }
     }
