@@ -30,21 +30,40 @@ For example, you can define `primary` and `secondary` variants for buttons and u
 }
 ```
 
-With the `theme` object above, the `buttons` variants can be referenced in the `sx` prop.
+With the `theme` object above, the `buttons` variants can be referenced by any tag through the `sx` prop.
 
 ```jsx
 <button sx={{ variant: 'buttons.primary' }} />
 ```
 
-When using the built-in [`Button` component](/components/button), you can set these styles with the `variant` prop.
+When using the [built-in components](/components), you can use the `variant` prop directly on components,
+instead of inside the `sx` object.
+Most [components have their own variant group](/components/variants)
+(e.g. the [`Button` component](/components/button) uses `buttons`),
+and some also have a default variant they’ll utilize from that variant group (e.g. `Button` uses `primary`).
+
+This means using `<Button />` without specifying a variant has the same result as the snippet above,
+since the default variant name (`primary`) matches a variant name inside the `buttons` group.
+If you want a different variant from the same group, you can give its key without specifying the group:
 
 ```jsx
 <Button variant="secondary" />
 ```
 
+You can also use variants outside of a component’s default variant group with dot notation.
+This is especially useful for combining layout components without further nesting your DOM,
+such as adding container styles to a grid or flexbox. By using the [`Grid` component](/components/grid)
+here, you’re still able to use `Grid`’s props, and the variant styles are combined with the grid’s.
+
+```jsx
+<Grid variant="layouts.container" columns={3} gap={3} />
+```
+
 <Note>
 
 Variants can use any name you choose, and deeply nested objects can be accessed with dot notation.
+You could use this to organize more complex variants, like `<Button variant="outline.small" />`,
+which would access the `buttons.outline.small` object from the theme.
 
 </Note>
 
