@@ -277,15 +277,7 @@ describe('colors inside ThemeProvider', () => {
     type MyTheme = typeof theme
 
     const tree = render(
-      <ThemeProvider
-        theme={{
-          colors: {
-            secondary: {
-              __default: 'deepskyblue',
-              light: 'skyblue',
-            },
-          },
-        }}>
+      <ThemeProvider theme={theme}>
         <button
           sx={{
             color: (theme) =>
@@ -301,26 +293,37 @@ describe('colors inside ThemeProvider', () => {
   })
 
   test('derived __default color is lightened', () => {
+    const theme = {
+      colors: {
+        blue: {
+          __default: '#00f',
+          dark: '#00c',
+        },
+      },
+    }
+
+    type MyTheme = typeof theme
+
     const tree = render(
-      <ThemeProvider
-        theme={{
-          colors: {
-            blue: {
-              __default: '#00f',
-              dark: '#00c',
-            },
-          },
-        }}>
+      <ThemeProvider theme={theme}>
         <button
           sx={{
             color: (theme) => lighten(theme.colors.blue, 0.1)(theme),
           }}>
           Click me
         </button>
+        <p
+          sx={{
+            color: (theme) =>
+              lighten((theme as MyTheme).colors.blue.__default, 0.1)(theme),
+          }}>
+          Hello
+        </p>
       </ThemeProvider>
     )
 
     expect(tree.getByRole('button')).toHaveStyleRule('color', '#33f')
+    expect(tree.getByText('Hello')).toHaveStyleRule('color', '#33f')
   })
 })
 

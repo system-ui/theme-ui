@@ -140,8 +140,6 @@ describe('ColorMode', () => {
 
     const colorMode: ColorMode = {}
 
-    colorMode.text?.toUpperCase();
-
     const baseColors = [
       colorMode.text,
       colorMode.background,
@@ -158,7 +156,10 @@ describe('ColorMode', () => {
     }
   `)
 
-  expectedSnippet.toInfer('baseColors', '((string & {}) | undefined)[]')
+  expectedSnippet.toInfer(
+    'baseColors',
+    '((string & {}) | Color[] | NestedScaleDict<Color> | undefined)[]'
+  )
   expectedSnippet.toInfer('light', 'Color')
   expectedSnippet.toInfer('dark', 'Color')
 })

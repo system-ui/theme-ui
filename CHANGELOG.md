@@ -2,6 +2,26 @@
 
 ## v0.6.0 UNRELEASED
 
+- **Breaking TypeScript**: Known colors (_primary_, _text_, _background_, _accent_, _secondary_) in `ColorMode` can now be nested scales.
+
+  Following no longer typechecks, as `colors.primary` can be an object.
+
+  ```tsx
+  sx={{
+    color: theme => theme.colors?.primary?.toUpperCase()
+  }}
+  ```
+
+  But the following code still works.
+
+  ```tsx
+  sx={{
+    color: theme => theme.colors?.primary
+  }}
+  ```
+
+  If `colors.primary` is an object, `colors.primary.__default` is used.
+
 - Add `theme.useRootStyles` configuration option (false by default).
   Set it to `true` to add `styles.root` to `html` instead of `body`.
   `theme.useBodyStyles` configuration option still defaults to `true`,

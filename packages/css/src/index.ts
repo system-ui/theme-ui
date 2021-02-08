@@ -346,7 +346,13 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     const val = typeof x === 'function' ? x(theme) : x
 
     if (val && typeof val === 'object') {
-      // TODO: val can also be an array here. Is this a bug? Can it be reproduced?
+      if (hasDefault(val)) {
+        result[key] = val[THEME_UI_DEFAULT_KEY]
+        continue
+      }
+
+      // On type level, val can also be an array here,
+      // but we transform all arrays in `responsive` function.
       result[key] = css(val as ThemeUICSSObject)(theme)
       continue
     }

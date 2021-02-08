@@ -444,9 +444,11 @@ export interface ThemeUIExtendedCSSProperties
 
 type Empty = undefined | null | false
 
+type ThemeUIStyleValue<T> = ResponsiveStyleValue<T | ObjectWithDefault<T> | T[]>
+
 export type StylePropertyValue<T> =
-  | ResponsiveStyleValue<Exclude<T, undefined>>
-  | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
+  | ThemeUIStyleValue<Exclude<T, undefined>>
+  | ((theme: Theme) => ThemeUIStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
   | Empty
 
@@ -517,7 +519,7 @@ export interface ScaleDict<T> {
   [I: number]: T
 }
 
-export interface NestedScaleDict<T> extends ScaleDict<T> {
+export interface ObjectWithDefault<T> {
   /**
    * Default value in nested scale.
    *
@@ -534,6 +536,10 @@ export interface NestedScaleDict<T> extends ScaleDict<T> {
   __default?: T
 }
 
+export interface NestedScaleDict<T>
+  extends ScaleDict<T>,
+    ObjectWithDefault<T> {}
+
 /**
  * An array or object (possibly nested) of related CSS properties
  * @see https://theme-ui.com/theme-spec#theme-scales
@@ -542,7 +548,9 @@ export type Scale<T> = T[] | ScaleDict<T>
 
 export type NestedScale<T> = T[] | NestedScaleDict<T>
 
-type ColorOrMany = CSS.Property.Color | NestedScale<CSS.Property.Color>
+export type ColorOrNestedColorScale =
+  | CSS.Property.Color
+  | NestedScale<CSS.Property.Color>
 
 /**
  * Color modes can be used to create a user-configurable dark mode
@@ -552,38 +560,38 @@ export interface ColorMode extends ScaleDict<CSS.Property.Color> {
   /**
    * Body background color
    */
-  background?: ColorOrMany
+  background?: ColorOrNestedColorScale
 
   /**
    * Body foreground color
    */
-  text?: ColorOrMany
+  text?: ColorOrNestedColorScale
 
   /**
    * Primary brand color for links, buttons, etc.
    */
-  primary?: ColorOrMany
+  primary?: ColorOrNestedColorScale
 
   /**
    * A secondary brand color for alternative styling
    */
-  secondary?: ColorOrMany
+  secondary?: ColorOrNestedColorScale
 
   /**
    * A contrast color for emphasizing UI
    */
-  accent?: ColorOrMany
+  accent?: ColorOrNestedColorScale
 
   /**
    * A background color for highlighting text
    */
-  highlight?: ColorOrMany
+  highlight?: ColorOrNestedColorScale
 
   /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
-  muted?: ColorOrMany
+  muted?: ColorOrNestedColorScale
 }
 
 export type ColorModesScale = ColorMode & {

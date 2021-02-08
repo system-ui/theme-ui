@@ -200,8 +200,6 @@ describe('createColorStyles', () => {
     })
   })
 
-  //
-
   test('creates styles for print color mode', () => {
     const styles = createColorStyles({
       printColorModeName: 'light',
