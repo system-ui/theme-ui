@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { useTheme } from './context'
 import TypeStyle from './TypeStyle'
 
-const getValue = (fontSize: string | number) =>
+const getValue = (fontSize: string | number | (string & {})) =>
   typeof fontSize === 'number' ? `${fontSize}px` : fontSize
 
 export interface TypeScaleProps {
