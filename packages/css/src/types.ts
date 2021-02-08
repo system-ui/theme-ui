@@ -510,56 +510,80 @@ export interface ThemeUICSSObject
  */
 export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
+export type TLengthStyledSystem = string | 0 | number
+
+export interface ScaleDict<T> {
+  [K: string]: T | T[] | NestedScaleDict<T> | undefined
+  [I: number]: T
+}
+
+export interface NestedScaleDict<T> extends ScaleDict<T> {
+  /**
+   * Default value in nested scale.
+   *
+   * Given theme
+   * ```
+   * {
+   *   colors: {
+   *     primary: { __default: '#00f', light: '#33f' }
+   *   }
+   * }
+   * ```
+   * `sx={{ color: 'primary' }}` resolves to `color: #00f`.
+   */
+  __default?: T
+}
+
 /**
  * An array or object (possibly nested) of related CSS properties
  * @see https://theme-ui.com/theme-spec#theme-scales
  */
-export type Scale<T> = T[] | { [K: string]: T | Scale<T>; [I: number]: T }
+export type Scale<T> = T[] | ScaleDict<T>
 
-export type TLengthStyledSystem = string | 0 | number
+export type NestedScale<T> = T[] | NestedScaleDict<T>
+
+type ColorOrMany = CSS.Property.Color | NestedScale<CSS.Property.Color>
 
 /**
  * Color modes can be used to create a user-configurable dark mode
  * or any number of other color modes.
  */
-export interface ColorMode {
+export interface ColorMode extends ScaleDict<CSS.Property.Color> {
   /**
    * Body background color
    */
-  background?: CSS.Property.Color
+  background?: ColorOrMany
 
   /**
    * Body foreground color
    */
-  text?: CSS.Property.Color
+  text?: ColorOrMany
 
   /**
    * Primary brand color for links, buttons, etc.
    */
-  primary?: CSS.Property.Color
+  primary?: ColorOrMany
 
   /**
    * A secondary brand color for alternative styling
    */
-  secondary?: CSS.Property.Color
+  secondary?: ColorOrMany
 
   /**
    * A contrast color for emphasizing UI
    */
-  accent?: CSS.Property.Color
+  accent?: ColorOrMany
 
   /**
    * A background color for highlighting text
    */
-  highlight?: CSS.Property.Color
+  highlight?: ColorOrMany
 
   /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
-  muted?: CSS.Property.Color
-
-  [k: string]: CSS.Property.Color | Scale<CSS.Property.Color> | undefined
+  muted?: ColorOrMany
 }
 
 export type ColorModesScale = ColorMode & {
