@@ -67,7 +67,8 @@ export default (props) => (
 )
 ```
 
-To disable this behavior, add the `useBodyStyles: false` flag to your theme.
+- To disable this behavior, add the `useBodyStyles: false` flag to your theme.
+- Additionally, to apply styles to the `<html>` element instead, add the `useRootStyles` flag. It works the same way as and will override `useBodyStyles`.
 
 ## Gatsby plugin
 
@@ -80,8 +81,7 @@ npm i gatsby-plugin-theme-ui
 
 This plugin will look for a `src/gatsby-plugin-theme-ui/index.js` file to import and pass to the ThemeProvider.
 
-```js
-// gatsby-config.js
+```js filename=gatsby-config.js
 module.exports = {
   plugins: ['gatsby-plugin-theme-ui'],
 }
@@ -120,16 +120,18 @@ This will cause the colors to flash on initial page load.
 }
 ```
 
-### Initialize mode with `prefers-color-scheme` media query
+### Responding to the `prefers-color-scheme` media query
 
-To initialize a color mode based on the `prefers-color-scheme` media query, add the `useColorSchemeMediaQuery` flag to your theme.
+The `useColorSchemeMediaQuery` configuration option on the theme
+initializes a color mode based on the `prefers-color-scheme` media query.
 This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
 or `light` when `@media (prefers-color-scheme: light)` matches.
 If you do not have a color mode named `dark` or `light`, this will have no effect.
+This is enabled by default.
 
 ```js
 {
-  useColorSchemeMediaQuery: true,
+  useColorSchemeMediaQuery: false,
   colors: {
     text: '#000',
     background: '#fff',

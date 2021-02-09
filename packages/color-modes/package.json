@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color-modes",
-  "version": "0.6.0-alpha.3",
+  "version": "0.6.0-alpha.6",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -19,14 +19,14 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/core": "0.6.0-alpha.1",
-    "@theme-ui/css": "0.6.0-alpha.1",
+    "@theme-ui/core": "0.6.0-alpha.6",
+    "@theme-ui/css": "0.6.0-alpha.6",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
-    "react": "^16.14.0"
+    "react": "^17.0.1"
   }
 }
