@@ -2,6 +2,7 @@
 
 ## v0.6.0 UNRELEASED
 
+- (types) Accept `false` in responsive tuples. PR #1499
 - Add `theme.useRootStyles` configuration option (false by default).
   Set it to `true` to add `styles.root` to `html` instead of `body`.
   `theme.useBodyStyles` configuration option still defaults to `true`,

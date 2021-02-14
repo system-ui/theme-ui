@@ -4,6 +4,8 @@ import type {} from '../emotion-theme'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
+type Empty = undefined | null | false
+
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
  * Note that this extends to non-theme values also. For example `display=['none', 'block']`
@@ -11,7 +13,7 @@ type StandardCSSProperties = CSS.Properties<number | string>
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | Array<T | null | undefined>
+export type ResponsiveStyleValue<T> = T | Empty | Array<T | Empty>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
@@ -441,8 +443,6 @@ export interface ThemeUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwriteCSSProperties>,
     AliasesCSSProperties,
     OverwriteCSSProperties {}
-
-type Empty = undefined | null | false
 
 export type StylePropertyValue<T> =
   | ResponsiveStyleValue<Exclude<T, undefined>>
