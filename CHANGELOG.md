@@ -2,6 +2,8 @@
 
 ## v0.6.0 UNRELEASED
 
+## v0.6.0-alpha.7 2021-02-14
+
 - **Breaking TypeScript**: Known colors (_primary_, _text_, _background_, _accent_, _secondary_) in `ColorMode` can now be nested scales.
 
   The following no longer typechecks, as `colors.primary` can be an object.
@@ -22,14 +24,15 @@
 
   If `colors.primary` is an object, `colors.primary.__default` is used.
 
-- (types) Accept `false` in responsive tuples. PR #1499
 - Add `theme.useRootStyles` configuration option (false by default).
   Set it to `true` to add `styles.root` to `html` instead of `body`.
   `theme.useBodyStyles` configuration option still defaults to `true`,
   but it's going in to be deprecated in favor of `theme.useRootStyles` in the future.
-- Skip `false` values before passing style objects to Emotion. Allow `false` as style property value in TS types. Issue #1297, PR #1460.
+- <img src="https://emojis.slackmojis.com/emojis/images/1479745458/1383/typescript.png?1479745458" width="16" height="16" /> Accept `false` in responsive tuple types. PR #1499
+- Skip `false` values before passing style objects to Emotion. Issue #1297, PR #1460.
+  - <img src="https://emojis.slackmojis.com/emojis/images/1479745458/1383/typescript.png?1479745458" width="16" height="16" /> Allow `false` as style property value in TS types.
 
-# v0.6.0-alpha.6 2021-01-22
+## v0.6.0-alpha.6 2021-01-22
 
 - **BREAKING**: Default `useColorSchemeMediaQuery` to `true`. Issue #624, PR #1373
 
