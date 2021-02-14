@@ -22,6 +22,7 @@
 
   If `colors.primary` is an object, `colors.primary.__default` is used.
 
+- (types) Accept `false` in responsive tuples. PR #1499
 - Add `theme.useRootStyles` configuration option (false by default).
   Set it to `true` to add `styles.root` to `html` instead of `body`.
   `theme.useBodyStyles` configuration option still defaults to `true`,
