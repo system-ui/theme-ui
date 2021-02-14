@@ -4,7 +4,7 @@
 
 - **Breaking TypeScript**: Known colors (_primary_, _text_, _background_, _accent_, _secondary_) in `ColorMode` can now be nested scales.
 
-  Following no longer typechecks, as `colors.primary` can be an object.
+  The following no longer typechecks, as `colors.primary` can be an object.
 
   ```tsx
   sx={{
