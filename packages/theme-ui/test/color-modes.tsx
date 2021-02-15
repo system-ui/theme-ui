@@ -3,7 +3,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
-import mockConsole from 'jest-mock-console'
+import mockConsole, { RestoreConsole } from 'jest-mock-console'
 import packageInfo from '@emotion/react/package.json'
 
 import {
@@ -18,18 +18,21 @@ import {
 const emotionVersion = packageInfo.version
 const STORAGE_KEY = 'theme-ui-color-mode'
 
-afterEach(() => {
-  cleanup()
-  window.matchMedia = undefined as any
-})
-beforeEach(() => {
-  localStorage.removeItem(STORAGE_KEY)
-})
 expect.extend(matchers)
 
+let restoreConsole: RestoreConsole
+beforeEach(() => {
+  restoreConsole = mockConsole()
+  localStorage.removeItem(STORAGE_KEY)
+})
+afterEach(() => {
+  cleanup()
+  restoreConsole()
+  window.matchMedia = undefined as any
+})
+
 test('renders with color modes', () => {
-  let json
-  let mode
+  let mode: string | undefined
   const Mode = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
@@ -56,8 +59,7 @@ test('renders with color modes', () => {
 })
 
 test('renders with initial color mode name', () => {
-  let json
-  let mode
+  let mode: string | undefined
   const Mode = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
@@ -84,7 +86,7 @@ test('renders with initial color mode name', () => {
 })
 
 test('useColorMode updates color mode state', () => {
-  let mode
+  let mode: string | undefined
   const Button = () => {
     const [colorMode, setMode] = useColorMode()
     mode = colorMode
@@ -337,7 +339,6 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
 })
 
 test('useColorMode throws when there is no theme context', () => {
-  const restore = mockConsole()
   expect(() => {
     const Consumer = () => {
       const _ = useColorMode()
@@ -346,7 +347,6 @@ test('useColorMode throws when there is no theme context', () => {
     render(<Consumer />)
   }).toThrow()
   expect(console.error).toHaveBeenCalled()
-  restore()
 })
 
 test('useThemeUI returns current color mode colors', () => {
@@ -382,7 +382,6 @@ test('useThemeUI returns current color mode colors', () => {
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
-  const restore = mockConsole()
   const root = render(
     <ThemeProvider
       theme={{
@@ -403,7 +402,6 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
     />
   )
   expect(console.warn).toBeCalled()
-  restore()
 })
 
 test('dot notation works with color modes', () => {

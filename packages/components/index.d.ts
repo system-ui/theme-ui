@@ -268,7 +268,7 @@ export const Avatar: ForwardRef<HTMLImageElement, AvatarProps>
 export type BadgeProps = BoxProps
 export const Badge: ForwardRef<HTMLDivElement, BadgeProps>
 
-interface CloseProps extends Omit<IconButtonProps, 'children'> {}
+export interface CloseProps extends Omit<IconButtonProps, 'children'> {}
 /**
  * Button with close (×) icon.
  *

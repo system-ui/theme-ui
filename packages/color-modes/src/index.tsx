@@ -56,13 +56,16 @@ const useColorModeState = (theme: Theme = {}) => {
       theme.config?.useColorSchemeMediaQuery !== false &&
       getPreferredColorScheme()
 
-    return preferredMode || theme.config?.initialColorModeName || 'default'
+    return preferredMode || theme.config?.initialColorModeName || theme.initialColorModeName || 'default'
   })
+
+  const useLocalStorage = (theme.config?.useLocalStorage || theme.useLocalStorage) !== false
 
   // read color mode from local storage
   React.useEffect(() => {
-    const stored = theme.config?.useLocalStorage !== false && storage.get()
-    document.body.classList.remove('theme-ui-' + stored)
+
+    const stored = useLocalStorage && storage.get()
+    document.documentElement.classList.remove('theme-ui-' + stored)
 
     if (stored && stored !== mode) {
       setMode(stored)
@@ -70,7 +73,7 @@ const useColorModeState = (theme: Theme = {}) => {
   }, [])
 
   React.useEffect(() => {
-    if (mode && theme.config?.useLocalStorage !== false) {
+    if (mode && (useLocalStorage) !== false) {
       storage.set(mode)
     }
   }, [mode])
@@ -157,6 +160,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 const noflash = `(function() { try {
   var mode = localStorage.getItem('theme-ui-color-mode');
   if (!mode) return
+  document.documentElement.classList.add('theme-ui-' + mode);
   document.body.classList.add('theme-ui-' + mode);
 } catch (e) {} })();`
 

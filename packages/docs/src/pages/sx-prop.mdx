@@ -66,12 +66,6 @@ The following CSS properties will use values defined in the theme, when availabl
 | `ml`, `marginLeft`        | `space`          |
 | `mx`, `marginX`           | `space`          |
 | `my`, `marginY`           | `space`          |
-| `marginBlock`             | `space`          |
-| `marginBlockEnd`          | `space`          |
-| `marginBlockStart`        | `space`          |
-| `marginInline`            | `space`          |
-| `marginInlineEnd`         | `space`          |
-| `marginInlineStart`       | `space`          |
 | `p`, `padding`            | `space`          |
 | `pt`, `paddingTop`        | `space`          |
 | `pr`, `paddingRight`      | `space`          |
@@ -79,12 +73,6 @@ The following CSS properties will use values defined in the theme, when availabl
 | `pl`, `paddingLeft`       | `space`          |
 | `px`, `paddingX`          | `space`          |
 | `py`, `paddingY`          | `space`          |
-| `paddingBlock`            | `space`          |
-| `paddingBlockEnd`         | `space`          |
-| `paddingBlockStart`       | `space`          |
-| `paddingInline`           | `space`          |
-| `paddingInlineEnd`        | `space`          |
-| `paddingInlineStart`      | `space`          |
 | `scrollPadding`           | `space`          |
 | `scrollPaddingTop`        | `space`          |
 | `scrollPaddingRight`      | `space`          |
@@ -92,13 +80,6 @@ The following CSS properties will use values defined in the theme, when availabl
 | `scrollPaddingLeft`       | `space`          |
 | `scrollPaddingX`          | `space`          |
 | `scrollPaddingY`          | `space`          |
-| `inset`                   | `space`          |
-| `insetBlock`              | `space`          |
-| `insetBlockEnd`           | `space`          |
-| `insetBlockStart`         | `space`          |
-| `insetInline`             | `space`          |
-| `insetInlineEnd`          | `space`          |
-| `insetInlineStart`        | `space`          |
 | `top`                     | `space`          |
 | `right`                   | `space`          |
 | `bottom`                  | `space`          |
@@ -133,28 +114,6 @@ The following CSS properties will use values defined in the theme, when availabl
 | `borderRightWidth`        | `borderWidths`   |
 | `borderRightColor`        | `colors`         |
 | `borderRightStyle`        | `borderStyles`   |
-| `borderBlock`             | `borders`        |
-| `borderBlockEnd`          | `borders`        |
-| `borderBlockEndStyle`     | `borderStyles`   |
-| `borderBlockEndWidth`     | `borderWidths`   |
-| `borderBlockStart`        | `borders`        |
-| `borderBlockStartStyle`   | `borderStyles`   |
-| `borderBlockStartWidth`   | `borderWidths`   |
-| `borderBlockStyle`        | `borderStyles`   |
-| `borderBlockWidth`        | `borderWidths`   |
-| `borderEndEndRadius`      | `radii`          |
-| `borderEndStartRadius`    | `radii`          |
-| `borderInline`            | `borders`        |
-| `borderInlineEnd`         | `borders`        |
-| `borderInlineEndStyle`    | `borderStyles`   |
-| `borderInlineEndWidth`    | `borderWidths`   |
-| `borderInlineStart`       | `borders`        |
-| `borderInlineStartStyle`  | `borderStyles`   |
-| `borderInlineStartWidth`  | `borderWidths`   |
-| `borderInlineStyle`       | `borderStyles`   |
-| `borderInlineWidth`       | `borderWidths`   |
-| `borderStartEndRadius`    | `radii`          |
-| `borderStartStartRadius`  | `radii`          |
 | `boxShadow`               | `shadows`        |
 | `textShadow`              | `shadows`        |
 | `zIndex`                  | `zIndices`       |
@@ -166,14 +125,71 @@ The following CSS properties will use values defined in the theme, when availabl
 | `maxHeight`               | `sizes`          |
 | `flexBasis`               | `sizes`          |
 | `size`                    | `sizes`          |
-| `blockSize`               | `sizes`          |
-| `inlineSize`              | `sizes`          |
-| `maxBlockSize`            | `sizes`          |
-| `maxInlineSize`           | `sizes`          |
-| `minBlockSize`            | `sizes`          |
-| `minInlineSize`           | `sizes`          |
 | `fill`                    | `colors`         |
 | `stroke`                  | `colors`         |
+
+Theme UI also supports [CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties),
+which follow this structure:
+
+- `margin-{block,inline}-{start,end}`
+- `padding-{block,inline}-{start,end}`
+- `border-{block,inline}-{start,end}-{width,style,color}`
+- `inset-{block,inline}-{start,end}`
+
+<details>
+  <summary>See the full list</summary>
+
+| Property                 | Theme Key      |
+| ------------------------ | -------------- |
+| `marginBlock`            | `space`        |
+| `marginBlockEnd`         | `space`        |
+| `marginBlockStart`       | `space`        |
+| `marginInline`           | `space`        |
+| `marginInlineEnd`        | `space`        |
+| `marginInlineStart`      | `space`        |
+| `paddingBlock`           | `space`        |
+| `paddingBlockEnd`        | `space`        |
+| `paddingBlockStart`      | `space`        |
+| `paddingInline`          | `space`        |
+| `paddingInlineEnd`       | `space`        |
+| `paddingInlineStart`     | `space`        |
+| `inset`                  | `space`        |
+| `insetBlock`             | `space`        |
+| `insetBlockEnd`          | `space`        |
+| `insetBlockStart`        | `space`        |
+| `insetInline`            | `space`        |
+| `insetInlineEnd`         | `space`        |
+| `insetInlineStart`       | `space`        |
+| `borderBlock`            | `borders`      |
+| `borderBlockEnd`         | `borders`      |
+| `borderBlockEndStyle`    | `borderStyles` |
+| `borderBlockEndWidth`    | `borderWidths` |
+| `borderBlockStart`       | `borders`      |
+| `borderBlockStartStyle`  | `borderStyles` |
+| `borderBlockStartWidth`  | `borderWidths` |
+| `borderBlockStyle`       | `borderStyles` |
+| `borderBlockWidth`       | `borderWidths` |
+| `borderEndEndRadius`     | `radii`        |
+| `borderEndStartRadius`   | `radii`        |
+| `borderInline`           | `borders`      |
+| `borderInlineEnd`        | `borders`      |
+| `borderInlineEndStyle`   | `borderStyles` |
+| `borderInlineEndWidth`   | `borderWidths` |
+| `borderInlineStart`      | `borders`      |
+| `borderInlineStartStyle` | `borderStyles` |
+| `borderInlineStartWidth` | `borderWidths` |
+| `borderInlineStyle`      | `borderStyles` |
+| `borderInlineWidth`      | `borderWidths` |
+| `borderStartEndRadius`   | `radii`        |
+| `borderStartStartRadius` | `radii`        |
+| `blockSize`              | `sizes`        |
+| `inlineSize`             | `sizes`        |
+| `maxBlockSize`           | `sizes`        |
+| `maxInlineSize`          | `sizes`        |
+| `minBlockSize`           | `sizes`        |
+| `minInlineSize`          | `sizes`        |
+
+</details>
 
 ## Responsive Values
 
@@ -341,7 +357,7 @@ Because MDX uses its own custom pragma and `createElement` function, the Theme U
 You can use any of the [Theme UI components](/components),
 which support the `sx` prop, in an MDX file as a workaround.
 
-```js
+```mdx
 import { Box } from 'theme-ui'
 
 <Box

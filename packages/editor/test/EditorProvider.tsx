@@ -73,5 +73,3 @@ test('setTheme updates theme context', () => {
   expect(context.theme.colors.text).toBe('tomato')
   expect(context.theme.colors.background).toBe('white')
 })
-
-test.todo('works with custom properties')
