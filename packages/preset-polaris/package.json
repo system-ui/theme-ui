@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-polaris",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "0.6.0-alpha.4"
+    "@theme-ui/preset-base": "0.6.0-alpha.7"
   },
   "publishConfig": {
     "access": "public"

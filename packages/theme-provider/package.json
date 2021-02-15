@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.0-alpha.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/color-modes": "0.6.0-alpha.6",
-    "@theme-ui/core": "0.6.0-alpha.6",
-    "@theme-ui/mdx": "0.6.0-alpha.6"
+    "@theme-ui/color-modes": "0.6.0-alpha.7",
+    "@theme-ui/core": "0.6.0-alpha.7",
+    "@theme-ui/mdx": "0.6.0-alpha.7"
   },
   "peerDependencies": {
     "@theme-ui/css": "*",
