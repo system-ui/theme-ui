@@ -217,6 +217,7 @@ describe('Grid', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Grid />
+        <Grid width="1fr" repeat="fit" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -480,7 +481,7 @@ describe('Donut', () => {
   test('renders', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Donut />
+        <Donut title="Donut" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
