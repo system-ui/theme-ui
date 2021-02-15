@@ -703,7 +703,66 @@ export interface Theme {
      * If false, does not save color mode as a localStorage value.
      */
     useLocalStorage?: boolean
-  },
+  }
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Enable/disable custom CSS properties/variables if lower browser
+   * support is required (for eg. IE 11).
+   *
+   * References: https://theme-ui.com/color-modes/#turn-off-custom-properties
+   */
+  useCustomProperties?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Provide a value here to enable color modes
+   */
+  initialColorModeName?: string
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Provide a value here to set a color mode for printing
+   */
+  printColorModeName?: string
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
+   */
+  useRootStyles?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of `config.useRootStyles`
+   *
+   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
+   */
+  useBodyStyles?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Initializes the color mode based on the prefers-color-scheme media query
+   */
+  useColorSchemeMediaQuery?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Adds a global box-sizing: border-box style
+   */
+  useBorderBox?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * If false, does not save color mode as a localStorage value.
+   */
+  useLocalStorage?: boolean
 
   /**
    * Define the colors that are available through this theme

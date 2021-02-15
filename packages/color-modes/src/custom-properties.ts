@@ -71,23 +71,16 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
 
 // create root styles for color modes
 export const createColorStyles = (theme: Theme = {}) => {
-  const {
-    colors = {},
-    colors: { modes = {} } = {},
-    config = {},
-  } = theme
-  
-  const {
-    useCustomProperties,
-    initialColorModeName,
-    printColorModeName,
-  } = theme.config || theme || {}
+  const { colors = {}, colors: { modes = {} } = {}, config = {} } = theme
+
+  const { useCustomProperties, initialColorModeName, printColorModeName } =
+    theme.config || theme || {}
 
   const root = __internalGetUseRootStyles(theme)
   if (!theme.colors || root.rootStyles === false) return {}
   if (useCustomProperties === false || !theme.colors.modes) {
     return css({
-      [use.scope]: {
+      [root.scope]: {
         color: 'text',
         bg: 'background',
       },
