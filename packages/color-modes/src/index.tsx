@@ -134,7 +134,9 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const theme = applyColorMode(outer.theme || {}, colorMode)
   const emotionTheme = { ...theme }
 
-  if (theme.config?.useCustomProperties !== false) {
+  const { useCustomProperties = false } = theme.config || theme
+
+  if (useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
   }
 
