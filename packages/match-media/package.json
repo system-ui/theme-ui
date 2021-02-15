@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/match-media",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.0-alpha.7",
   "description": "React hooks for theme-ui breakpoints",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -18,8 +18,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@theme-ui/core": "0.6.0-alpha.6",
-    "@theme-ui/css": "0.6.0-alpha.6",
+    "@theme-ui/core": "0.6.0-alpha.7",
+    "@theme-ui/css": "0.6.0-alpha.7",
     "react": "^17.0.1"
   },
   "peerDependencies": {
@@ -27,5 +27,5 @@
     "@theme-ui/css": "^0.5.0-alpha.0",
     "react": "^16.14.0 || ^17.0.0"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

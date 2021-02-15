@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.0-alpha.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/presets": "0.6.0-alpha.6",
+    "@theme-ui/presets": "0.6.0-alpha.7",
     "@types/color": "^3.0.1",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "react": "^17.0.1",
-    "theme-ui": "0.6.0-alpha.6"
+    "theme-ui": "0.6.0-alpha.7"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

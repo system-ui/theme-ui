@@ -1,6 +1,7 @@
 import { css, get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 
-const toVarName = (key: string) => `--theme-ui-${key}`
+const stripKeyDefault = (key: string) => key.replace('-__default', '')
+const toVarName = (key: string) => `--theme-ui-${stripKeyDefault(key)}`
 const toVarValue = (key: string, value: string | number) =>
   `var(${toVarName(key)}, ${value})`
 

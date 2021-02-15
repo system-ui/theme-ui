@@ -49,6 +49,49 @@ describe('createColorStyles', () => {
       colors: {
         text: 'tomato',
         background: 'white',
+        primary: {
+          __default: '#3333ee',
+          light: '#7373f7',
+          dark: '#00008f',
+        },
+        modes: {
+          dark: {
+            text: 'white',
+            background: 'black',
+            primary: {
+              __default: '#ee4933',
+              light: '#fd6d5a',
+              dark: '#962415',
+            },
+          },
+        },
+      },
+    })
+    expect(styles).toEqual({
+      body: {
+        color: 'var(--theme-ui-colors-text, tomato)',
+        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+        '--theme-ui-colors-primary': '#3333ee',
+        '--theme-ui-colors-primary-light': '#7373f7',
+        '--theme-ui-colors-primary-dark': '#00008f',
+        '&.theme-ui-dark': {
+          '--theme-ui-colors-text': 'white',
+          '--theme-ui-colors-background': 'black',
+          '--theme-ui-colors-primary': '#ee4933',
+          '--theme-ui-colors-primary-light': '#fd6d5a',
+          '--theme-ui-colors-primary-dark': '#962415',
+        },
+      },
+    })
+  })
+
+  test('creates styles from simple theme', () => {
+    const styles = createColorStyles({
+      colors: {
+        text: 'tomato',
+        background: 'white',
         modes: {
           dark: {
             text: 'white',
@@ -156,8 +199,6 @@ describe('createColorStyles', () => {
       },
     })
   })
-
-  // 
 
   test('creates styles for print color mode', () => {
     const styles = createColorStyles({

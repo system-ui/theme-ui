@@ -1,4 +1,6 @@
-import { toTheme, toUnitless } from '../src/to-theme'
+import { toUnitless } from '../src/to-theme'
+import { toTheme } from '../src'
+
 import themes from './fixtures/themes'
 import Typography, { TypographyOptions } from 'typography'
 

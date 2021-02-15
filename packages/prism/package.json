@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.0-alpha.7",
   "main": "dist/prism.js",
   "module": "dist/prism.esm.js",
   "types": "dist/index.d.ts",
@@ -32,11 +32,11 @@
     "css-in-js",
     "style"
   ],
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437",
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8",
   "devDependencies": {
     "param-case": "^3.0.3",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
-    "theme-ui": "0.6.0-alpha.6"
+    "theme-ui": "0.6.0-alpha.7"
   }
 }
