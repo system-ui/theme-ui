@@ -8,5 +8,6 @@
     "react": "^16.14.0 || ^17.0.0",
     "react-dom": "^16.14.0 || ^17.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
