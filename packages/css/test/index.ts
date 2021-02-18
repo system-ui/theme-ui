@@ -1,4 +1,4 @@
-import { css, Theme } from '../src'
+import { css, NestedScale, NestedScaleDict, Theme } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -475,6 +475,38 @@ test('functional values can return responsive arrays', () => {
       color: 'cyan',
     },
     color: 'tomato',
+  })
+})
+
+test('object with __default key is accepted as style value', () => {
+  const actual = css({
+    width: { __default: 2 },
+    color: (t) => t.colors?.primary,
+    backgroundColor: (t) => [
+      t.colors?.background,
+      (t.colors?.background as NestedScaleDict<string>).inverted,
+    ],
+  })({
+    sizes: ['10px', '20px', '40px'],
+    colors: {
+      primary: {
+        __default: 'blue',
+        light: 'lightblue',
+      },
+      background: {
+        __default: 'whitesmoke',
+        inverted: 'black',
+      },
+    },
+  })
+
+  expect(actual).toEqual({
+    '@media screen and (min-width: 40em)': {
+      backgroundColor: 'black',
+    },
+    backgroundColor: 'whitesmoke',
+    color: 'blue',
+    width: 2, // yes, 2 not 40px
   })
 })
 

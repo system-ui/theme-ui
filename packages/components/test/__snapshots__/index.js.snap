@@ -479,6 +479,9 @@ exports[`Donut renders 1`] = `
   viewBox="0 0 32 32"
   width={128}
 >
+  <title>
+    Donut
+  </title>
   <circle
     cx={16}
     cy={16}
