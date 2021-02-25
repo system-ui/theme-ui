@@ -61,6 +61,7 @@ const useColorModeState = (theme: Theme = {}) => {
   // read color mode from local storage
   React.useEffect(() => {
     const stored = theme.useLocalStorage !== false && storage.get()
+    document.documentElement.classList.remove('theme-ui-' + stored)
     document.body.classList.remove('theme-ui-' + stored)
 
     if (stored && stored !== mode) {
@@ -155,6 +156,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 const noflash = `(function() { try {
   var mode = localStorage.getItem('theme-ui-color-mode');
   if (!mode) return
+  document.documentElement.classList.add('theme-ui-' + mode);
   document.body.classList.add('theme-ui-' + mode);
 } catch (e) {} })();`
 

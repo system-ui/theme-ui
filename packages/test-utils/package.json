@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/test-utils",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.7",
   "private": true,
   "license": "MIT",
   "source": "src/index.ts",
@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@testing-library/react": "^11.0.1",
     "conditional-type-checks": "^1.0.5",
     "ts-snippet": "^5.0.1"
   }

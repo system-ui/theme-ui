@@ -147,7 +147,8 @@ To add base, top-level styles to the `<body>` element, use `theme.styles.root`.
 }
 ```
 
-To disable applying styles to the `<body>` element, add the `useBodyStyles: false` flag to your theme.
+- To disable applying styles to the `<body>` element, add the `useBodyStyles: false` flag to your theme.
+- Additionally, to apply styles to the `<html>` element instead, add the `useRootStyles` flag. It works the same way as and will override `useBodyStyles`.
 
 ## Breakpoints
 
@@ -168,14 +169,15 @@ These values will be used to generate mobile-first (i.e. `min-width`) media quer
 
 The theme object can also include configuration options for Theme UI. The following keys can be used to enable and disable certain features.
 
-| Flag                       | Default     | Description                                                                                                  |
-| -------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
-| `useCustomProperties`      | `true`      | Enables CSS custom properties to help mitigate a flash of unstyled content during rehydration                |
-| `useBodyStyles`            | `true`      | Adds styles defined in `theme.styles.root` to the `<body>` element along with `color` and `background-color` |
-| `initialColorModeName`     | `'default'` | The key used for the top-level color palette in `theme.colors`                                               |
-| `useColorSchemeMediaQuery` | `false`     | Initializes the color mode based on the `prefers-color-scheme` media query                                   |
-| `useBorderBox`             | `true`      | Adds a global `box-sizing: border-box` style                                                                 |
-| `useLocalStorage`          | `true`      | Persists the color mode in `localStorage`                                                                    |
+| Flag                       | Default             | Description                                                                                                                                 |
+| -------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `useCustomProperties`      | `true`              | Enables CSS custom properties to help mitigate a flash of unstyled content during rehydration                                               |
+| `useRootStyles`            | `false`             | Adds styles defined in `theme.styles.root` to the `<html>` element along with `color` and `background-color`                                |
+| `useBodyStyles`            | `true`              | (Will be deprecated in future) Adds styles defined in `theme.styles.root` to the `<body>` element along with `color` and `background-color` |
+| `initialColorModeName`     | `'default'`         | The key used for the top-level color palette in `theme.colors`                                                                              |
+| `useColorSchemeMediaQuery` | `false`             | Initializes the color mode based on the `prefers-color-scheme` media query                                                                  |
+| `useBorderBox`             | `true`              | Adds a global `box-sizing: border-box` style                                                                                                |
+| `useLocalStorage`          | `true`              | Persists the color mode in `localStorage`                                                                                                   |
 
 ## Example Theme
 
@@ -276,5 +278,5 @@ export const theme = {
 
 For more information on the Theme UI `theme` object, see the [Theme Specification docs](/theme-spec).
 
-[example]: https://github.com/system-ui/theme-ui/tree/stable/packages/preset-base/src/index.ts
+[example]: https://github.com/system-ui/theme-ui/tree/develop/packages/preset-base/src/index.ts
 [emotion]: https://emotion.sh

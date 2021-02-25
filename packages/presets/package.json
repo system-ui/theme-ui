@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -13,20 +13,20 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "0.6.0-alpha.4",
-    "@theme-ui/preset-bootstrap": "0.6.0-alpha.4",
-    "@theme-ui/preset-bulma": "0.6.0-alpha.4",
-    "@theme-ui/preset-dark": "0.6.0-alpha.4",
-    "@theme-ui/preset-deep": "0.6.0-alpha.4",
-    "@theme-ui/preset-funk": "0.6.0-alpha.4",
-    "@theme-ui/preset-future": "0.6.0-alpha.4",
-    "@theme-ui/preset-polaris": "0.6.0-alpha.4",
-    "@theme-ui/preset-roboto": "0.6.0-alpha.4",
-    "@theme-ui/preset-sketchy": "0.6.0-alpha.4",
-    "@theme-ui/preset-swiss": "0.6.0-alpha.4",
-    "@theme-ui/preset-system": "0.6.0-alpha.4",
-    "@theme-ui/preset-tailwind": "0.6.0-alpha.4",
-    "@theme-ui/preset-tosh": "0.6.0-alpha.4"
+    "@theme-ui/preset-base": "0.6.0-alpha.7",
+    "@theme-ui/preset-bootstrap": "0.6.0-alpha.7",
+    "@theme-ui/preset-bulma": "0.6.0-alpha.7",
+    "@theme-ui/preset-dark": "0.6.0-alpha.7",
+    "@theme-ui/preset-deep": "0.6.0-alpha.7",
+    "@theme-ui/preset-funk": "0.6.0-alpha.7",
+    "@theme-ui/preset-future": "0.6.0-alpha.7",
+    "@theme-ui/preset-polaris": "0.6.0-alpha.7",
+    "@theme-ui/preset-roboto": "0.6.0-alpha.7",
+    "@theme-ui/preset-sketchy": "0.6.0-alpha.7",
+    "@theme-ui/preset-swiss": "0.6.0-alpha.7",
+    "@theme-ui/preset-system": "0.6.0-alpha.7",
+    "@theme-ui/preset-tailwind": "0.6.0-alpha.7",
+    "@theme-ui/preset-tosh": "0.6.0-alpha.7"
   },
   "publishConfig": {
     "access": "public"
@@ -39,5 +39,5 @@
     "emotion"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

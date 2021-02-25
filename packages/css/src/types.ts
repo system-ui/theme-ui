@@ -9,6 +9,8 @@ export type { CSSObject } from '@emotion/react'
 
 export interface ResponsiveStyleTuple<T> extends Array<T | null | undefined> {}
 
+export type ThemeUIEmpty = undefined | null | false
+
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
  * Note that this extends to non-theme values also. For example `display=['none', 'block']`
@@ -16,7 +18,10 @@ export interface ResponsiveStyleTuple<T> extends Array<T | null | undefined> {}
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | ResponsiveStyleTuple<T>
+export type ResponsiveStyleValue<T> =
+  | T
+  | ThemeUIEmpty
+  | ResponsiveStyleTuple<T | ThemeUIEmpty>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
@@ -62,10 +67,13 @@ export type DerivedStylePropertyValue<T> = (
   theme: Theme
 ) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined
 
+type ThemeUIStyleValue<T> = ResponsiveStyleValue<T | ObjectWithDefault<T>>
+
 export type StylePropertyValue<T> =
-  | ResponsiveStyleValue<Exclude<T, undefined>>
-  | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
+  | ThemeUIStyleValue<Exclude<T, undefined>>
+  | ((theme: Theme) => ThemeUIStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
+  | ThemeUIEmpty
 
 export type ThemeUICSSProperties = {
   [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<
@@ -110,11 +118,7 @@ export interface CSSOthersObject {
   // we want to match CSS selectors
   // but index signature needs to be a supertype
   // so as a side-effect we allow unknown CSS properties (Emotion does too)
-  [k: string]:
-    | StylePropertyValue<string | number | false | null>
-    | false
-    | undefined
-    | null
+  [k: string]: StylePropertyValue<string | number | ThemeUIEmpty>
 }
 
 export interface ThemeUICSSObject
@@ -131,18 +135,41 @@ export interface ThemeUICSSObject
  */
 export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
+export type TLengthStyledSystem = string | 0 | number
+
+export interface ScaleDict<T> {
+  [K: string]: T | T[] | NestedScaleDict<T> | undefined
+  [I: number]: T
+}
+
+export interface ObjectWithDefault<T> {
+  /**
+   * Default value in nested scale.
+   *
+   * Given theme
+   * ```
+   * {
+   *   colors: {
+   *     primary: { __default: '#00f', light: '#33f' }
+   *   }
+   * }
+   * ```
+   * `sx={{ color: 'primary' }}` resolves to `color: #00f`.
+   */
+  __default?: T
+}
+
+export interface NestedScaleDict<T>
+  extends ScaleDict<T>,
+    ObjectWithDefault<T> {}
+
 /**
  * An array or object (possibly nested) of related CSS properties
  * @see https://theme-ui.com/theme-spec#theme-scales
  */
-export type Scale<T> =
-  | T[]
-  | {
-      [K: string]: T | null | undefined | Scale<T | null | undefined>
-      [I: number]: T | null | undefined
-    }
+export type Scale<T> = (T | ThemeUIEmpty)[] | ScaleDict<T | ThemeUIEmpty>
 
-export type TLengthStyledSystem = string | 0 | number
+export type NestedScale<T> = T[] | NestedScaleDict<T>
 
 export declare namespace ColorMode {
   // We won't autocomplete "mediumseagreen" inside of `sx` prop, because
@@ -150,50 +177,52 @@ export declare namespace ColorMode {
   // in your theme. That would be a tiny sabotage, right?
   // Nevertheless, it's convenient to have them inside of the colors scale.
   export type ColorValue = CSS.Property.Color
+  export type ColorOrNestedScale =
+    | ColorValue
+    | NestedScale<CSS.Property.Color | ThemeUIEmpty>
+    | ThemeUIEmpty
 }
 
 /**
  * Color modes can be used to create a user-configurable dark mode
  * or any number of other color modes.
  */
-export interface ColorMode {
+export interface ColorMode extends ScaleDict<ColorMode.ColorOrNestedScale> {
   /**
    * Body background color
    */
-  background?: ColorMode.ColorValue
+  background?: ColorMode.ColorOrNestedScale
 
   /**
    * Body foreground color
    */
-  text?: ColorMode.ColorValue
+  text?: ColorMode.ColorOrNestedScale
 
   /**
    * Primary brand color for links, buttons, etc.
    */
-  primary?: ColorMode.ColorValue
+  primary?: ColorMode.ColorOrNestedScale
 
   /**
    * A secondary brand color for alternative styling
    */
-  secondary?: ColorMode.ColorValue
+  secondary?: ColorMode.ColorOrNestedScale
 
   /**
    * A contrast color for emphasizing UI
    */
-  accent?: ColorMode.ColorValue
+  accent?: ColorMode.ColorOrNestedScale
 
   /**
    * A background color for highlighting text
    */
-  highlight?: ColorMode.ColorValue
+  highlight?: ColorMode.ColorOrNestedScale
 
   /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
-  muted?: ColorMode.ColorValue
-
-  [k: string]: ColorMode.ColorValue | Scale<ColorMode.ColorValue> | undefined
+  muted?: ColorMode.ColorOrNestedScale
 }
 
 export type ColorModesScale = ColorMode & {
@@ -279,6 +308,13 @@ export interface BaseTheme {
   printColorModeName?: string
 
   /**
+   * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
+   */
+  useRootStyles?: boolean
+
+  /**
+   * @deprecated Deprecated in favor of `useRootStyles`.
+   *
    * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
    */
   useBodyStyles?: boolean
