@@ -1,10 +1,10 @@
-import { Theme } from './types'
+import { BaseTheme } from './types'
 
 /**
  * @internal
  * We fall back to `theme.useBodyStyles` when `theme.useRootStyles` is not set.
  */
-export function __internalGetUseRootStyles(theme: Theme = {}) {
+export function __internalGetUseRootStyles(theme: BaseTheme = {}) {
   const { useRootStyles, useBodyStyles } = theme
   const root = 'useRootStyles' in theme && useRootStyles != null
 

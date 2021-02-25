@@ -70,7 +70,7 @@ test('snapshot', () => {
         "padding": 0,
       },
       "hr": Object {
-        "border": 0,
+        "border": "none",
         "borderBottom": "1px solid",
         "margin": 0,
         "marginBottom": 3,

@@ -1,5 +1,7 @@
 export {}
 
+// TODO: Remove this file before merging PR.
+
 // import { makeTheme, css } from '../src'
 
 // const myTheme = makeTheme({
