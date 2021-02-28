@@ -12,6 +12,7 @@ import { radii } from './radii'
 import { shadows } from './shadows'
 import { sizes } from './sizes'
 import { space } from './space'
+import { transitions } from './transitions'
 import { zIndices } from './zIndices'
 
 import type {
@@ -59,6 +60,10 @@ import type {
 import type { SizesCSSProperties, Size as SizeScaleValue } from './sizes'
 import type { SpaceCSSProperties, Space as SpaceScaleValue } from './space'
 import type {
+  TransitionsCSSProperties,
+  Transition as TransitionsScaleValue,
+} from './transitions'
+import type {
   ZIndicesCSSProperties,
   ZIndex as ZIndexScaleValue,
 } from './zIndices'
@@ -78,6 +83,7 @@ export declare namespace Scales {
   export type Shadow = ShadowScaleValue
   export type Size = SizeScaleValue
   export type Space = SpaceScaleValue
+  export type Transition = TransitionsScaleValue
   export type ZIndex = ZIndexScaleValue
 }
 
@@ -96,6 +102,7 @@ export const scales = {
   ...lineHeights,
   ...letterSpacings,
   ...shadows,
+  ...transitions,
   ...zIndices,
 } as const
 
