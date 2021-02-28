@@ -1,8 +1,4 @@
-import {
-  css,
-  NestedScaleDict,
-  Theme,
-} from '../src'
+import { BaseTheme, css, NestedScaleDict, Theme } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -651,7 +647,6 @@ test('returns correct media query order 2', () => {
   const keys = Object.keys(result)
   expect(keys).toEqual([
     'flexDirection',
-    'justifyContent',
     '@media screen and (min-width: 40em)',
     '@media screen and (min-width: 52em)',
     'color',
@@ -671,6 +666,18 @@ test('supports vendor properties', () => {
 })
 
 test('omits empty values', () => {
+  const theme: BaseTheme = {
+    colors: {
+      gray: {
+        50: 'rgb(8, 8, 8)',
+        75: 'rgb(26, 26, 26)',
+        100: 'rgb(30, 30, 30),',
+        150: null as null,
+        200: undefined as undefined,
+      },
+    },
+  }
+
   expect(
     css({
       color: false && 'blue',

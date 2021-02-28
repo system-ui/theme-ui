@@ -39,7 +39,7 @@ describe('exact theme', () => {
         color: 'hotpink',
       })
     `).toFail(
-      /^(?=.*Type '"hotpink"' is not assignable to type)(?=.*ThemeUICSSObject)(?=.*"inherit")(?=.*"primary" | "primary-dark").*$/m
+      /Error snippet.ts (\d+,\d+): Type '"hotpink"' is not assignable to is not assignable to type 'StylePropertyValue<Globals | Color>'[\s\S]*/m
     )
   })
 
@@ -141,14 +141,13 @@ describe('exact theme', () => {
         ${augmentation}
         ${scalesTest}
       `).toFail(
-        /Error snippet.ts (\d+,\d+): Type '"kinda transparent"' is not assignable to type '"-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "transparent" | "translucent" | "full"[\s\S]*/
+        /Error snippet.ts (\d+,\d+): Type '"kinda transparent"' is not assignable to type 'StylePropertyValue<Opacity | undefined>'[\s\S]*/
       )
     })
   })
 
   describe('scale dotted paths', () => {
-
-      const expectSnippet = expecter(`
+    const expectSnippet = expecter(`
         const myTheme = makeTheme({
           colors: {
             orange: [
@@ -181,10 +180,9 @@ describe('exact theme', () => {
         
         declare module './packages/css/src' {
           export interface UserTheme extends MyTheme {}
-        }`
-      )
+        }`)
 
-      // TODO Assert IsExact
+    // TODO Assert IsExact
   })
 
   describe('options.strictMode.noStrings', () => {
@@ -204,7 +202,7 @@ describe('exact theme', () => {
         },
       })
     `
-  
+
     const expectSnippet = expecter(`
       import { Assert, IsExact } from '@theme-ui/test-utils'
       import { Scales, makeTheme } from './packages/css/src'
@@ -215,7 +213,7 @@ describe('exact theme', () => {
         export interface UserTheme extends MyTheme {}
       }
     `)
-    
+
     it('defines if (string & {}) is accepted by color scale', () => {
       expectSnippet(`
         ${themeSnippet({ noStrings: true })}
@@ -223,12 +221,12 @@ describe('exact theme', () => {
         type _ = Assert<
           IsExact<
             Scales.Color,
-            "gray.50" | "gray.75" | "gray.100" | "currentColor"
+            number | "gray.50" | "gray.75" | "gray.100" | "currentColor"
           >,
           true
         >
       `).toSucceed()
-  
+
       expectSnippet(`
         ${themeSnippet({ noStrings: false })}
       
@@ -241,20 +239,19 @@ describe('exact theme', () => {
         >
       `).toSucceed()
     })
-  
-    it ('defaults to false', () => {
+
+    it('defaults to false', () => {
       expectSnippet(`
         ${themeSnippet({})}
       
         type _ = Assert<
           IsExact<
             Scales.Color,
-            (string & {}) | "gray.50" | "gray.75" | "gray.100" | "currentColor"
+            number | (string & {}) | "gray.50" | "gray.75" | "gray.100" | "currentColor"
           >,
           true
         >
       `).toSucceed()
     })
   })
-  
 })

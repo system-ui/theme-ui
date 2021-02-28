@@ -51,18 +51,18 @@ describe('Theme', () => {
 
   test('infers Theme argument in computed style function', () => {
     expectSnippet(`
-      import { get, Theme } from 'theme-ui'
+      import { get, BaseTheme } from 'theme-ui'
 
       css({
         p: t => {
           const inferred = t
 
-          const assignableToTheme: Theme = t
+          const assignableToTheme: BaseTheme = t
 
           return get(t, 'sizes.5')
         }
       })
-    `).toInfer('inferred', 'FinalTheme')
+    `).toInfer('inferred', 'Theme')
   })
 
   test('accepts additional properties by declaration merging', () => {
@@ -140,7 +140,7 @@ test('inferred type `string` is too wide for `whiteSpace`', () => {
 
 describe('ColorMode', () => {
   const expectedSnippet = expectSnippet(`
-    import { ColorMode } from './packages/css/src'
+    import { ColorMode, ThemeUIEmpty } from './packages/css/src'
 
     const colorMode: ColorMode = {}
 
@@ -160,10 +160,6 @@ describe('ColorMode', () => {
     }
   `)
 
-  expectedSnippet.toInfer(
-    'baseColors',
-    '((string & {}) | Color[] | NestedScaleDict<Color> | undefined)[]'
-  )
   expectedSnippet.toInfer('light', 'Color')
   expectedSnippet.toInfer('dark', 'Color')
 })

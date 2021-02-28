@@ -139,7 +139,7 @@ export type TLengthStyledSystem = string | 0 | number
 
 export interface ScaleDict<T> {
   [K: string]: T | NestedScale<T> | ThemeUIEmpty
-  [I: number]: T
+  [I: number]: T | ThemeUIEmpty
 }
 
 export interface ObjectWithDefault<T> {
