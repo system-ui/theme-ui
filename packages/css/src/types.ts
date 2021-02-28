@@ -7,9 +7,9 @@ import type {} from '../emotion-theme'
 
 export type { CSSObject } from '@emotion/react'
 
-export interface ResponsiveStyleTuple<T> extends Array<T | null | undefined> {}
-
 export type ThemeUIEmpty = undefined | null | false
+
+export interface ResponsiveStyleTuple<T> extends Array<T | ThemeUIEmpty> {}
 
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
@@ -67,7 +67,7 @@ export type DerivedStylePropertyValue<T> = (
   theme: Theme
 ) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined
 
-type ThemeUIStyleValue<T> = ResponsiveStyleValue<T | ObjectWithDefault<T>>
+type ThemeUIStyleValue<T> = ResponsiveStyleValue<T | ObjectWithDefault<T> | T[]>
 
 export type StylePropertyValue<T> =
   | ThemeUIStyleValue<Exclude<T, undefined>>
@@ -138,7 +138,7 @@ export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 export type TLengthStyledSystem = string | 0 | number
 
 export interface ScaleDict<T> {
-  [K: string]: T | T[] | NestedScaleDict<T> | undefined
+  [K: string]: T | NestedScale<T> | ThemeUIEmpty
   [I: number]: T
 }
 
@@ -179,7 +179,7 @@ export declare namespace ColorMode {
   export type ColorValue = CSS.Property.Color
   export type ColorOrNestedScale =
     | ColorValue
-    | NestedScale<CSS.Property.Color | ThemeUIEmpty>
+    | NestedScale<ColorValue>
     | ThemeUIEmpty
 }
 
@@ -187,7 +187,7 @@ export declare namespace ColorMode {
  * Color modes can be used to create a user-configurable dark mode
  * or any number of other color modes.
  */
-export interface ColorMode extends ScaleDict<ColorMode.ColorOrNestedScale> {
+export interface ColorMode extends ScaleDict<ColorMode.ColorValue> {
   /**
    * Body background color
    */

@@ -1,4 +1,4 @@
-import { Assert, expecter, IsExact } from '@theme-ui/test-utils'
+import { expecter } from '@theme-ui/test-utils'
 
 const expectSnippet = expecter(`
   import { css, makeTheme } from './packages/css/src'
@@ -147,42 +147,44 @@ describe('exact theme', () => {
   })
 
   describe('scale dotted paths', () => {
-    const todo = `\
-      const myTheme = makeTheme({
-        colors: {
-          orange: [
-            null,
-            '#fffaf0',
-            '#feebc8',
-            '#fbd38d',
-            '#f6ad55',
-            '#ed8936',
-            '#dd6b20',
-            '#c05621',
-            '#9c4221',
-            '#7b341e',
-          ],
-          blue: {
-            we: {
-              have: {
-                to: {
-                  go: {
-                    deeper: '#00f'
+
+      const expectSnippet = expecter(`
+        const myTheme = makeTheme({
+          colors: {
+            orange: [
+              null,
+              '#fffaf0',
+              '#feebc8',
+              '#fbd38d',
+              '#f6ad55',
+              '#ed8936',
+              '#dd6b20',
+              '#c05621',
+              '#9c4221',
+              '#7b341e',
+            ],
+            blue: {
+              we: {
+                have: {
+                  to: {
+                    go: {
+                      deeper: '#00f'
+                    }
                   }
                 }
-              }
-            } 
-          }
-        },
-      })
-      
-      type MyTheme = typeof myTheme
-      
-      declare module './packages/css/src' {
-        export interface UserTheme extends MyTheme {}
-      }`
+              } 
+            }
+          },
+        })
+        
+        type MyTheme = typeof myTheme
+        
+        declare module './packages/css/src' {
+          export interface UserTheme extends MyTheme {}
+        }`
+      )
 
-      // TODO
+      // TODO Assert IsExact
   })
 
   describe('options.strictMode.noStrings', () => {
@@ -233,7 +235,7 @@ describe('exact theme', () => {
         type _ = Assert<
           IsExact<
             Scales.Color,
-            (string & {}) | "gray.50" | "gray.75" | "gray.100" | "currentColor"
+            number | (string & {}) | "gray.50" | "gray.75" | "gray.100" | "currentColor"
           >,
           true
         >

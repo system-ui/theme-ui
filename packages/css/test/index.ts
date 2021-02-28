@@ -1,4 +1,8 @@
-import { css, NestedScale, NestedScaleDict, Theme } from '../src'
+import {
+  css,
+  NestedScaleDict,
+  Theme,
+} from '../src'
 
 const theme: Theme = {
   colors: {

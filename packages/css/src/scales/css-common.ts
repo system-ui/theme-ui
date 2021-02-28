@@ -2,7 +2,7 @@ import type { Globals as CSSGlobals } from 'csstype'
 
 // We add null and false values for convenience.
 // `color: isActive && 'blue'` syntax common in JS projects
-export type Globals = CSSGlobals | null | false
+export type Globals = CSSGlobals | null | false | undefined
 
 // DataType is not exported from `csstype`, and we need to do some slight
 // modifications to it for performance and correctness

@@ -172,7 +172,7 @@ function responsive(
     for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
       const media = mediaQueries[i]
       if (!media) {
-        next[key] = value[i]
+        next[key] = value[i] as Exclude<typeof value[0], any[]>
         continue
       }
       next[media] = next[media] || {}
