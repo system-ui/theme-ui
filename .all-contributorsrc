@@ -1,0 +1,14 @@
+{
+  "projectName": "theme-ui",
+  "projectOwner": "system-ui",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "packages/theme-ui/README.md"
+  ],
+  "imageSize": 63,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [],
+  "contributorsPerLine": 7
+}

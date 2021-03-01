@@ -22,6 +22,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@auto-it/all-contributors": "^10.16.8",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@babel/helper-validator-identifier": "^7.10.1",
