@@ -1,5 +1,7 @@
 {
   "plugins": [
+    "npm",
+    "conventional-commits",
     [
       "all-contributors",
       {
