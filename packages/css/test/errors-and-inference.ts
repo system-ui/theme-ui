@@ -140,26 +140,12 @@ describe('ColorMode', () => {
 
     const colorMode: ColorMode = {}
 
-    const baseColors = [
-      colorMode.text,
-      colorMode.background,
-      colorMode.primary,
-      colorMode.secondary,
-      colorMode.muted,
-      colorMode.highlight,
-      colorMode.accent,
-    ];
-
     const seriousPink = colorMode.seriousPink
     if (Array.isArray(seriousPink)) {
       const [light, medium, dark] = seriousPink
     }
   `)
 
-  expectedSnippet.toInfer(
-    'baseColors',
-    '((string & {}) | Color[] | NestedScaleDict<Color> | undefined)[]'
-  )
   expectedSnippet.toInfer('light', 'Color')
   expectedSnippet.toInfer('dark', 'Color')
 })
