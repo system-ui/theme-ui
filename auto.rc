@@ -2,6 +2,7 @@
   "plugins": [
     "npm",
     "conventional-commits",
+    "first-time-contributor",
     [
       "all-contributors",
       {

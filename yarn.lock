@@ -88,6 +88,18 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
+"@auto-it/first-time-contributor@^10.16.8":
+  version "10.16.8"
+  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.16.8.tgz#4ed805e3e37e34319d74f07911f3b84d1fdba1e2"
+  integrity sha512-ZukwCl2bWzyYHgsPkLL+QgWdCimVrUI8CT/OHecekk3e0wnflbzMeJXcqMQERB4vk5vxR4fxfIziy0pak1RV+w==
+  dependencies:
+    "@auto-it/bot-list" "10.16.8"
+    "@auto-it/core" "10.16.8"
+    array.prototype.flatmap "^1.2.2"
+    endent "^2.0.1"
+    tslib "2.1.0"
+    url-join "^4.0.0"
+
 "@auto-it/npm@10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-10.16.8.tgz#a2fc53f0ba31dda2795fbdd91bf5662091d6f99b"
