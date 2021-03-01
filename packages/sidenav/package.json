@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-canary.c5a716a.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -25,7 +25,7 @@
     "@mdx-js/react": "^1.6.22",
     "@types/mdx-js__react": "^1.5.3",
     "deepmerge": "^4.0.0",
-    "theme-ui": "0.6.0-alpha.7"
+    "theme-ui": "0.6.0-canary.c5a716a.0"
   },
   "keywords": [
     "theme-ui",
@@ -36,5 +36,5 @@
     "style"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }

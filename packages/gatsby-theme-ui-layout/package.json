@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-ui-layout",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-canary.c5a716a.0",
   "main": "index.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
@@ -9,5 +9,5 @@
     "react-dom": "^16.14.0 || ^17.0.0"
   },
   "license": "MIT",
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }

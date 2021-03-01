@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-style-guide",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-canary.c5a716a.0",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -14,8 +14,8 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@theme-ui/style-guide": "0.6.0-alpha.7",
-    "theme-ui": "0.6.0-alpha.7"
+    "@theme-ui/style-guide": "0.6.0-canary.c5a716a.0",
+    "theme-ui": "0.6.0-canary.c5a716a.0"
   },
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }

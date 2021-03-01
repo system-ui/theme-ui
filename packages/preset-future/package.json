@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-future",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-canary.c5a716a.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -13,10 +13,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "0.6.0-alpha.7"
+    "@theme-ui/preset-base": "0.6.0-canary.c5a716a.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }

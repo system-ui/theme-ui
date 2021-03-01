@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/custom-properties",
   "description": "Generate CSS custom properties for use with Theme UI",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-canary.c5a716a.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -20,8 +20,8 @@
     "pluralize": "^8.0.0"
   },
   "devDependencies": {
-    "@theme-ui/css": "0.6.0-alpha.7",
+    "@theme-ui/css": "0.6.0-canary.c5a716a.0",
     "@types/pluralize": "^0.0.29"
   },
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }
