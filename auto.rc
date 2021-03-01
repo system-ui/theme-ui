@@ -1,4 +1,7 @@
 {
+  "author": "Piotr Monwid-Olechnowicz <hasparus@gmail.com>",
+  "baseBranch": "stable",
+  "prereleaseBranches": ["develop"],
   "plugins": [
     "npm",
     "conventional-commits",
