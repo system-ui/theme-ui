@@ -17,7 +17,8 @@
     "prerelease": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version",
     "bump-version-next": "lerna version prerelease --preid alpha --exact --force-publish",
-    "all-contributors:check": "./scripts/all-contributors-check.js"
+    "all-contributors:check": "./scripts/all-contributors-check.js",
+    "all-contributors:add": "npx all-contributors add"
   },
   "workspaces": [
     "packages/*"
