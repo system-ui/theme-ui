@@ -9,6 +9,7 @@
   dependencies:
     tslib "~2.0.1"
 
+<<<<<<< HEAD
 "@auto-it/all-contributors@^10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.16.8.tgz#ef9adc8e326b22dd8c469ceee316aa44a987cf8b"
@@ -27,11 +28,14 @@
     io-ts "^2.1.2"
     tslib "2.1.0"
 
+=======
+>>>>>>> e7b2560f... chore: install auto
 "@auto-it/bot-list@10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.16.8.tgz#0f0923b852154d97f52e2825eafe91178870d7ff"
   integrity sha512-SjzoIzKongdyKOzNkIoCkRuNjulxTdC/vaR+DcmS0FTAqwxAWcUCGwukBDWeYDkNXIIAxsEBQAXFnpNtadjciQ==
 
+<<<<<<< HEAD
 "@auto-it/conventional-commits@^10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-10.16.8.tgz#1e3a808e70003ceab824b0f14e78b8505d0d93a0"
@@ -46,6 +50,8 @@
     io-ts "^2.1.2"
     tslib "2.1.0"
 
+=======
+>>>>>>> e7b2560f... chore: install auto
 "@auto-it/core@10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.16.8.tgz#435f6c8ec6fac01f57b4438501032bb3faf77c17"
@@ -88,6 +94,7 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
+<<<<<<< HEAD
 "@auto-it/first-time-contributor@^10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.16.8.tgz#4ed805e3e37e34319d74f07911f3b84d1fdba1e2"
@@ -100,6 +107,8 @@
     tslib "2.1.0"
     url-join "^4.0.0"
 
+=======
+>>>>>>> e7b2560f... chore: install auto
 "@auto-it/npm@10.16.8":
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-10.16.8.tgz#a2fc53f0ba31dda2795fbdd91bf5662091d6f99b"
@@ -127,7 +136,11 @@
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
+<<<<<<< HEAD
 "@auto-it/released@10.16.8", "@auto-it/released@^10.16.8":
+=======
+"@auto-it/released@10.16.8":
+>>>>>>> e7b2560f... chore: install auto
   version "10.16.8"
   resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.16.8.tgz#7bcab454110edf2547618c19eff77c4e8aa248f7"
   integrity sha512-UZCwl9scCYF6I8+E6/tOibV3fmm9JUcmRH2jc8ngPC/BgT3EQyAh8D0C6eQ3HVnkaKV8McQeraqUSLyK4c5qQQ==
@@ -19244,6 +19257,16 @@ typescript@^4, typescript@^4.1.3:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.2.tgz#1450f020618f872db0ea17317d16d8da8ddb8c4c"
   integrity sha512-tbb+NVrLfnsJy3M59lsDgrzWIflR4d4TIUjz+heUnHZwdF7YsrMTKoRERiIvI2lvBG95dfpLxB21WZhys1bgaQ==
+
+typical@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/typical/-/typical-4.0.0.tgz#cbeaff3b9d7ae1e2bbfaf5a4e6f11eccfde94fc4"
+  integrity sha512-VAH4IvQ7BDFYglMd7BPRDfLgxZZX4O4TFcRDA6EN5X7erNJJq+McIEp8np9aVtxrCJ6qx4GTYVfOWNjcqwZgRw==
+
+typical@^5.0.0, typical@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/typical/-/typical-5.2.0.tgz#4daaac4f2b5315460804f0acf6cb69c52bb93066"
+  integrity sha512-dvdQgNDNJo+8B2uBQoqdb11eUCE1JQXhvjC/CZtgvZseVd5TYMXnq0+vuUemXbd/Se29cTaUuPX3YIc2xgbvIg==
 
 typical@^4.0.0:
   version "4.0.0"
