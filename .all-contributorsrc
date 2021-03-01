@@ -9,6 +9,21 @@
   "imageSize": 63,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "jxnblk",
+      "name": "Brent Jackson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3451712?v=4",
+      "profile": "https://jxnblk.com/",
+      "contributions": [
+        "ideas",
+        "code",
+        "design",
+        "doc",
+        "example",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 11
 }
