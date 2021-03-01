@@ -144,16 +144,6 @@ describe('ColorMode', () => {
 
     const colorMode: ColorMode = {}
 
-    const baseColors = [
-      colorMode.text,
-      colorMode.background,
-      colorMode.primary,
-      colorMode.secondary,
-      colorMode.muted,
-      colorMode.highlight,
-      colorMode.accent,
-    ];
-
     const seriousPink = colorMode.seriousPink
     if (Array.isArray(seriousPink)) {
       const [light, medium, dark] = seriousPink
