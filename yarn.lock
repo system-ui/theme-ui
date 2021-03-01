@@ -7541,6 +7541,11 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+egzek@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/egzek/-/egzek-1.2.0.tgz#85e1621e86c5a8a0fcfe7f57b1ba101a601f0d93"
+  integrity sha512-CtAwJYXtvNatDXHRqgwihnxQpvk/iShqvPkMeDx/V+Gg7sO3Ds95jXZSCxozH94htGGT5DB0WK8huJ6p389OYQ==
+
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
   version "1.3.599"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.599.tgz#3fbb004733f3c0dcf59934c8644ddf800b94443a"
