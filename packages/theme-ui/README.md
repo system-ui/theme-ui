@@ -210,8 +210,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://jxnblk.com/"><img src="https://avatars.githubusercontent.com/u/3451712?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Brent Jackson</b></sub></a><br /><a href="#ideas-jxnblk" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jxnblk" title="Code">💻</a> <a href="#design-jxnblk" title="Design">🎨</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jxnblk" title="Documentation">📖</a> <a href="#example-jxnblk" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jxnblk" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
