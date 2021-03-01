@@ -3,7 +3,12 @@
   "baseBranch": "stable",
   "prereleaseBranches": ["develop"],
   "plugins": [
-    "npm",
+    [
+      "npm",
+      {
+        "exact": true
+      }
+    ],
     "conventional-commits",
     "first-time-contributor",
     "released",
