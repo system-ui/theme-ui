@@ -3,6 +3,7 @@
     "npm",
     "conventional-commits",
     "first-time-contributor",
+    "released",
     [
       "all-contributors",
       {
