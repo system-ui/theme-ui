@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    [
+      "all-contributors",
+      {
+        "exclude": ["dependabot", "dependabot-preview"],
+        "types": {
+          "infra": ["./github/**/*"],
+          "example": ["examples/**/*"],
+          "doc": ["**/*.mdx", "**/*.md", "packages/docs/**/*"],
+          "test": ["**/*.test.*", "**/*.spec.*"],
+          "code": [
+            "packages/**/*.js",
+            "packages/**/*.ts",
+            "packages/**/*.jsx",
+            "packages/**/*.tsx",
+            "**/package.json",
+            "**/tsconfig.json"
+          ]
+        }
+      }
+    ]
+  ]
+}
