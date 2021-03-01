@@ -27,6 +27,7 @@
     "@auto-it/all-contributors": "^10.16.8",
     "@auto-it/conventional-commits": "^10.16.8",
     "@auto-it/first-time-contributor": "^10.16.8",
+    "@auto-it/released": "^10.16.8",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@babel/helper-validator-identifier": "^7.10.1",
