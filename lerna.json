@@ -2,9 +2,7 @@
   "version": "0.6.0-canary.c5a716a.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "verifyAccess": false

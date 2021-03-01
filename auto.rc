@@ -1,5 +1,6 @@
 {
   "author": "Piotr Monwid-Olechnowicz <hasparus@gmail.com>",
+  "onlyPublishWithReleaseLabel": true,
   "baseBranch": "stable",
   "prereleaseBranches": ["develop"],
   "plugins": [
