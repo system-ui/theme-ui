@@ -41,6 +41,11 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        with:
+          abort-after-seconds: 600
+
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
