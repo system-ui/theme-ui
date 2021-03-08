@@ -1097,13 +1097,6 @@ exports[`Paragraph renders 1`] = `
   font-family: body;
   font-weight: body;
   line-height: body;
-  margin: 0;
-}
-
-@media screen and (min-width: 36em) {
-  .emotion-0 {
-    max-width: 48rem;
-  }
 }
 
 <p

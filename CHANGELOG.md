@@ -2,6 +2,8 @@
 
 ## v0.6.0 UNRELEASED
 
+- Paragraph component's hardcoded responsive style has been removed (issue #1476)
+
 ## v0.6.0-alpha.7 2021-02-15
 
 - **Breaking TypeScript**: Known colors (_primary_, _text_, _background_, _accent_, _secondary_) in `ColorMode` can now be nested scales.
