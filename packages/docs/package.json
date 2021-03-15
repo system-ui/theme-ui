@@ -32,7 +32,7 @@
     "@theme-ui/typography": "0.6.0-alpha.7",
     "copy-to-clipboard": "^3.2.0",
     "gatsby": "^2.26.1",
-    "gatsby-plugin-catch-links": "^2.4.0",
+    "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-mdx": "^2.0.1",
     "gatsby-plugin-react-helmet": "^3.4.0",
