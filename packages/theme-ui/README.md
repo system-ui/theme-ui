@@ -56,7 +56,7 @@
       alt="MIT license"
     />
   </a>
-  <a href="https://discord.gg/stp6BY7MXA">
+  <a href="https://discord.gg/theme-ui">
     <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
   </a>
 </p>
