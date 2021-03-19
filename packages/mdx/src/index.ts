@@ -171,7 +171,7 @@ const warnStyled = (tag: keyof IntrinsicSxElements): FC => (props) => {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
-        '[theme-ui] The Styled component from "@theme-ui/mdx" is deprecated and will be removed in a future version, please use Themed instead'
+        '[theme-ui] The Styled component from "@theme-ui/mdx" is deprecated and will be removed in a future version. It has been renamed to Themed with the same API.'
       )
     }
   }, [])
