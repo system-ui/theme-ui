@@ -6,7 +6,7 @@
     "avatar": "npx capture-website-cli \"https://contrast.now.sh/fff/33e?text=UI&size=48&fontSize=1.5&radius=32&baseline=1\" content/assets/avatar.png --width=48 --height=48 --overwrite"
   },
   "peerDependencies": {
-    "gatsby": "^2.13.1",
+    "gatsby": ">=2",
     "react": "^16.14.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
