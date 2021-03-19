@@ -1,5 +1,8 @@
 # Changelog
 
+- docs site - fix the fonts on `preset/presetname`. Issue #1128
+- docs site - add preview components on `preset/presetname`.
+
 ## v0.6.0 UNRELEASED
 
 - Paragraph component's hardcoded responsive style has been removed (issue #1476)
@@ -190,6 +193,8 @@
 ## v0.4.0-rc.7 2020-11-08
 
 ### `@theme-ui/core`
+
+> > > > > > > develop
 
 - Make ThemeProvider `theme` prop required
 
