@@ -33,7 +33,6 @@ export type {
   VariantProperty,
 } from '@theme-ui/css'
 
-
 export { __internalGetUseRootStyles } from '@theme-ui/css'
 export * from './types'
 
@@ -65,12 +64,12 @@ export declare namespace jsx {
   }
 }
 
-export interface ContextValue {
+export interface ThemeUIContextValue {
   __EMOTION_VERSION__: string
   theme: Theme
 }
 
-export const Context = React.createContext<ContextValue>({
+export const Context = React.createContext<ThemeUIContextValue>({
   __EMOTION_VERSION__,
   theme: {},
 })
@@ -110,7 +109,7 @@ function mergeAll<T = Theme>(...args: Partial<T>[]) {
 merge.all = mergeAll
 
 interface BaseProviderProps {
-  context: ContextValue
+  context: ThemeUIContextValue
 }
 const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
   jsx(

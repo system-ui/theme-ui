@@ -1,9 +1,7 @@
 import { css, get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 
-const stripKeyDefault = (key: string) => key.replace('-__default', '')
-const toVarName = (key: string) => `--theme-ui-${stripKeyDefault(key)}`
-const toVarValue = (key: string, value: string | number) =>
-  `var(${toVarName(key)}, ${value})`
+const toVarName = (key: string) => `--theme-ui-${key.replace('-__default', '')}`
+const toVarValue = (key: string) => `var(${toVarName(key)})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
@@ -45,7 +43,7 @@ export const toCustomProperties = (
       continue
     }
     const val = toPixel(themeKey || key, value)
-    next[key] = toVarValue(name, val)
+    next[key] = toVarValue(name)
   }
 
   return next
@@ -97,8 +95,7 @@ export const createColorStyles = (theme: Theme = {}) => {
         : modes[printColorModeName]
     styles['@media print'] = objectToVars('colors', mode)
   }
-  const colorToVarValue = (color: string) =>
-    toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
+  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`)
 
   return css({
     [use.scope]: {
