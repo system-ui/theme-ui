@@ -284,7 +284,7 @@ describe('colors inside ThemeProvider', () => {
       },
     }
 
-    type MyTheme = typeof theme
+    type MyTheme = typeof theme & { rawColors: typeof theme.colors }
 
     const tree = render(
       <ThemeProvider theme={theme}>
@@ -292,7 +292,10 @@ describe('colors inside ThemeProvider', () => {
           sx={{
             color: (theme) =>
               // When read from Emotion theme, colors are CSS custom properties.
-              saturate((theme as MyTheme).colors.secondary.light, 0.1)(theme),
+              saturate(
+                (theme as MyTheme).rawColors.secondary.light,
+                0.1
+              )(theme),
           }}>
           Click me
         </button>
@@ -312,20 +315,20 @@ describe('colors inside ThemeProvider', () => {
       },
     }
 
-    type MyTheme = typeof theme
+    type MyTheme = typeof theme & { rawColors: typeof theme.colors }
 
     const tree = render(
       <ThemeProvider theme={theme}>
         <button
           sx={{
-            color: (theme) => lighten(theme.colors?.blue, 0.1)(theme),
+            color: (theme) => lighten(theme.rawColors?.blue, 0.1)(theme),
           }}>
           Click me
         </button>
         <p
           sx={{
             color: (theme) =>
-              lighten((theme as MyTheme).colors.blue.__default, 0.1)(theme),
+              lighten((theme as MyTheme).rawColors.blue.__default, 0.1)(theme),
           }}>
           Hello
         </p>

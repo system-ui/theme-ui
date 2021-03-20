@@ -7,7 +7,7 @@ import { toCustomProperties, createColorStyles } from './custom-properties'
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 declare module '@theme-ui/core' {
-  export interface ContextValue {
+  export interface ThemeUIContextValue {
     colorMode?: string
     setColorMode?: (colorMode: SetStateAction<string>) => void
   }
@@ -128,17 +128,11 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
   const theme = applyColorMode(outer.theme || {}, colorMode)
-  const emotionTheme: Theme & {
-    __original?: {
-      colors?: ColorModesScale
-    }
-  } = { ...theme }
+  const emotionTheme = { ...theme }
 
   if (theme.useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
-    emotionTheme.__original = {
-      colors: theme.colors
-    }
+    emotionTheme.rawColors = theme.colors
   }
   const context = {
     ...outer,

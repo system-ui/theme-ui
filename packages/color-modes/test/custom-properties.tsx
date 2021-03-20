@@ -69,8 +69,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, tomato)',
-        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
         '--theme-ui-colors-primary': '#3333ee',
@@ -130,8 +130,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       html: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -159,8 +159,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       html: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -173,7 +173,7 @@ describe('createColorStyles', () => {
 
   test('creates styles at the BODY root while ignoring the root styles prop', () => {
     const styles = createColorStyles({
-      useRootStyles: null,
+      useRootStyles: undefined,
       useBodyStyles: true,
       colors: {
         text: 'white',
@@ -188,8 +188,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -274,8 +274,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, tomato)',
-        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
       },

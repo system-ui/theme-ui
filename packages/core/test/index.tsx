@@ -9,7 +9,8 @@ import {
   useThemeUI,
   merge,
   ThemeProvider,
-  ContextValue,
+  ThemeUIContextValue,
+  Theme,
 } from '../src'
 
 afterEach(cleanup)
@@ -96,13 +97,13 @@ describe('ThemeProvider', () => {
   })
 
   test('variants support functional values', () => {
-    const theme = {
+    const theme: Theme = {
       colors: {
         primary: 'tomato',
       },
       cards: {
         default: {
-          border: (t) => `1px solid ${t.colors.primary}`,
+          border: (t) => `1px solid ${t.colors!.primary}`,
         },
       },
     }
@@ -333,7 +334,7 @@ describe('merge', () => {
 
 describe('useThemeUI', () => {
   test('returns theme context', () => {
-    let context: ContextValue | undefined
+    let context: ThemeUIContextValue | undefined
     const GetContext = () => {
       context = useThemeUI()
       return null

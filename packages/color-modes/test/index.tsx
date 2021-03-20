@@ -431,9 +431,9 @@ test('emotion useTheme with custom css vars', () => {
   let cssVarsColors: Theme['colors']
   let orignalColors: Theme['colors']
   const GetColors = () => {
-    const theme = useTheme() as Theme;
+    const theme = useTheme() as Theme
     cssVarsColors = theme.colors
-    orignalColors = (theme as any).__original.colors
+    orignalColors = theme.rawColors
     return null
   }
   const root = render(
@@ -595,10 +595,7 @@ test('dot notation works with color modes and custom properties', () => {
   )
   const button = root.getByText('test')
   button.click()
-  expect(button).toHaveStyleRule(
-    'color',
-    'var(--theme-ui-colors-header-title)'
-  )
+  expect(button).toHaveStyleRule('color', 'var(--theme-ui-colors-header-title)')
 })
 
 test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
