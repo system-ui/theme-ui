@@ -30,21 +30,43 @@ For example, you can define `primary` and `secondary` variants for buttons and u
 }
 ```
 
-With the `theme` object above, the `buttons` variants can be referenced in the `sx` prop.
+With the `theme` object above, the `buttons` variants can be referenced by any tag through [the `sx` prop](/sx-prop).
+Inside `sx`, the variant should begin with a top-level key from the theme, then use dot notation to access nested objects.
 
 ```jsx
 <button sx={{ variant: 'buttons.primary' }} />
 ```
 
-When using the built-in [`Button` component](/components/button), you can set these styles with the `variant` prop.
+When using the [built-in components](/components), you can use the `variant` prop directly on components,
+instead of inside the `sx` object.
+
+Most [components have their own variant group](/components/variants)
+(“variant group” being a top-level theme key, e.g. the [`Button` component](/components/button) uses `buttons`),
+and some also have a default variant they’ll utilize from that variant group
+(e.g. `Button` defaults to using `primary`).
+
+This means using `<Button />` without specifying a variant has the same result as the snippet above,
+since the default variant name (`primary`) matches a variant name inside the `buttons` group.
+If you want a different variant from the same group, you can give its key without specifying the group:
 
 ```jsx
 <Button variant="secondary" />
 ```
 
+You can also use variants outside of a component’s default variant group with dot notation.
+This is especially useful for combining layout components without further nesting your DOM,
+such as adding container styles to a grid or flexbox. By using the [`Grid` component](/components/grid)
+here with a variant, you’re able to use `Grid`’s props combined with the variant styles.
+
+```jsx
+<Grid variant="layouts.container" columns={3} gap={3} />
+```
+
 <Note>
 
 Variants can use any name you choose, and deeply nested objects can be accessed with dot notation.
+You could use this to organize more complex variants, like `<Button variant="outline.small" />`,
+which would access the `buttons.outline.small` object from the theme.
 
 </Note>
 
@@ -143,7 +165,19 @@ These variants can then be used in the `theme.styles` object, with the `sx` prop
 />
 ```
 
-## Themeable Layout Components
+## `styles` variants
+
+Variants inside the `styles` object, while usable through the same mechanisms as regular variants,
+are also used for other Theme UI APIs.
+
+- The entire [`styles` object](/theme-spec#styles) can style child HTML elements or Markdown content,
+  via the [`BaseStyles` component](/api/#basestyles)
+- If the [`useRootStyles` configuration option](/theming#configuration-flags) is enabled,
+  the `styles.root` object will style the `<html>` element
+- [`Themed` components](/themed) will use their respective variant from inside `styles`,
+  e.g. `<Themed.h2>` uses `styles.h2`
+
+## Themeable layout components
 
 Variants can also be used to create themeable layout components.
 This is especially useful when creating [Gatsby themes][],

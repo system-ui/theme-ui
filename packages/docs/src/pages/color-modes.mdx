@@ -67,7 +67,8 @@ export default (props) => (
 )
 ```
 
-To disable this behavior, add the `useBodyStyles: false` flag to your theme.
+- To disable this behavior, add the `useBodyStyles: false` flag to your theme.
+- Additionally, to apply styles to the `<html>` element instead, add the `useRootStyles` flag. It works the same way as and will override `useBodyStyles`.
 
 ## Gatsby plugin
 
@@ -173,7 +174,7 @@ mode to be used on printing, set that color mode with the configuration option
 `printColorModeName`, set to one of your `colors.modes` names, the
 `initialColorModeName` value, or the string `'initial'`.
 
-This option sets your color mode in the `@media (print)` media query, so there’s no
+This option sets your color mode in the `@media print` media query, so there’s no
 additional client-side JavaScript for printing.
 
 ```js

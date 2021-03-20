@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0-alpha.8",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/color-modes": "0.6.0-alpha.4",
-    "@theme-ui/core": "0.6.0-alpha.4",
-    "@theme-ui/mdx": "0.6.0-alpha.4"
+    "@theme-ui/color-modes": "0.6.0-alpha.8",
+    "@theme-ui/core": "0.6.0-alpha.8",
+    "@theme-ui/mdx": "0.6.0-alpha.8"
   },
   "peerDependencies": {
     "@theme-ui/css": "*",
@@ -27,5 +27,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

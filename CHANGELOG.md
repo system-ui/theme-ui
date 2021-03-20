@@ -1,21 +1,81 @@
 # Changelog
 
-## UNRELEASED
-
-- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
-
 ## v0.6.0 UNRELEASED
 
-- **BREAKING**: Default `useColorModeMediaQuery` to `true`. Issue #624, PR #1373
+## v0.6.0-alpha.8 2021-02-19
+
+- Make the rename of `Styled` to `Themed` non-breaking. Add a deprecation warning on `Styled` until a future release. PR #1461
+- Paragraph component's hardcoded responsive style has been removed (issue #1476)
+- Fix issue where css custom vars are only added to body if modes is in the colors declaration of the theme.
+- Gatsby peerDependency updated to handle Gatsby 3
+
+## v0.6.0-alpha.7 2021-02-15
+
+- **Breaking TypeScript**: Known colors (_primary_, _text_, _background_, _accent_, _secondary_) in `ColorMode` can now be nested scales.
+
+  The following no longer typechecks, as `colors.primary` can be an object.
+
+  ```tsx
+  sx={{
+    color: theme => theme.colors?.primary?.toUpperCase()
+  }}
+  ```
+
+  But the following code still works.
+
+  ```tsx
+  sx={{
+    color: theme => theme.colors?.primary
+  }}
+  ```
+
+  If `colors.primary` is an object, `colors.primary.__default` is used.
+
+- Add `theme.useRootStyles` configuration option (false by default).
+  Set it to `true` to add `styles.root` to `html` instead of `body`.
+  `theme.useBodyStyles` configuration option still defaults to `true`,
+  but it's going in to be deprecated in favor of `theme.useRootStyles` in the future.
+- <img src="https://emojis.slackmojis.com/emojis/images/1479745458/1383/typescript.png?1479745458" width="16" height="16" /> Accept `false` in responsive tuple types. PR #1499
+- Skip `false` values before passing style objects to Emotion. Issue #1297, PR #1460.
+  - <img src="https://emojis.slackmojis.com/emojis/images/1479745458/1383/typescript.png?1479745458" width="16" height="16" /> Allow `false` as style property value in TS types.
+
+## v0.6.0-alpha.6 2021-01-22
+
+- **BREAKING**: Default `useColorSchemeMediaQuery` to `true`. Issue #624, PR #1373
+
+  **How to migrate?** Add `useColorSchemeMediaQuery: false` to your theme if you don't have this property.
+  [Read more in the docs.](https://dev.theme-ui.com/color-modes/#responding-to-the-prefers-color-scheme-media-query)
+
+- Option for `gatsby-plugin-theme-ui` to disable body script (`injectColorFlashScript`, defaulting to `true`). Issue #1369, PR #1370
 - Bump versions `@mdx-js/mdx` and `@mdx-js/react` to `^1.6.22`, gatsby-plugin-mdx to `^1.6.0`. PR #1351
 - Fix: "as" prop on Themed.X components now properly opts out of typechecking
   - TypeScript users, don't use `ComponentProps<typeof Themed['div']>`, import `ThemedComponent<'div'>` instead.
+- `@theme-ui/prism`: Support multiple highlight wrappers in a single code block. PR #1393
+
+## v0.6.0-alpha.5 2021-01-22
+
+- Support a default key for object in scales. PR #951
+
+  Given the theme
+
+  ```
+  const theme = {
+    colors: {
+      primary: {
+        __default: '#00f',
+        light: '#33f',
+      }
+    }
+  }
+  ```
+
+  `color: 'primary'` resolves to `color: '#00f'`.
 
 ## v0.6.0-alpha.4
 
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
-- Support a `"default"` key for object in scales. PR #951
+- Remove recursive default values from CSS custom properties. PR #1327
 - Render extra Embed props onto `iframe` tag instead of wrapping `div`. Issue #966, PR #1122
 
 ## v0.6.0-alpha.2

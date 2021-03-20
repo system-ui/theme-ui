@@ -4,10 +4,12 @@ import Header from './header'
 import Typography from './typography'
 import Colors from './colors'
 
-export default (props) => (
-  <Layout>
-    <Header />
-    <Typography />
-    <Colors />
-  </Layout>
-)
+export default function Template() {
+  return (
+    <Layout>
+      <Header />
+      <Typography />
+      <Colors />
+    </Layout>
+  )
+}

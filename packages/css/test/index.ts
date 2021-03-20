@@ -1,4 +1,4 @@
-import { css, Theme } from '../src'
+import { css, NestedScale, NestedScaleDict, Theme } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -7,7 +7,7 @@ const theme: Theme = {
     background: 'white',
     text: 'black',
     purple: {
-      default: 'darkviolet',
+      __default: 'darkviolet',
       100: 'rebeccapurple',
       500: 'darkviolet',
       900: 'violet',
@@ -35,7 +35,7 @@ const theme: Theme = {
     sidebar: 320,
   },
   buttons: {
-    default: {
+    __default: {
       px: 4,
       py: 2,
       fontWeight: 'bold',
@@ -71,7 +71,7 @@ const theme: Theme = {
     },
   },
   borders: {
-    body: "3px solid #000000",
+    body: '3px solid #000000',
   },
   borderWidths: {
     thin: 1,
@@ -87,7 +87,7 @@ const theme: Theme = {
     standard: '0.3s ease-in-out',
   },
   shadows: {
-    card: "5px 5px 15px 5px #000000",
+    card: '5px 5px 15px 5px #000000',
   },
   zIndices: {
     below: -1,
@@ -272,7 +272,7 @@ test('supports functional values', () => {
   })
 })
 
-test('returns `default` key when accessing object value with default', () => {
+test('returns `__default` key when accessing object value with default', () => {
   const result = css({
     color: 'purple',
   })(theme)
@@ -281,7 +281,7 @@ test('returns `default` key when accessing object value with default', () => {
   })
 })
 
-test('returns nested key when accessing key from object value with default', () => {
+test('returns nested key when accessing key from object value with __default', () => {
   const result = css({
     color: 'purple.100',
   })(theme)
@@ -290,7 +290,7 @@ test('returns nested key when accessing key from object value with default', () 
   })
 })
 
-test('variant prop returns `default` key when accessing variant object with default', () => {
+test('variant prop returns `__default` key when accessing variant object with default', () => {
   const result = css({
     variant: 'buttons',
   })(theme)
@@ -478,6 +478,38 @@ test('functional values can return responsive arrays', () => {
   })
 })
 
+test('object with __default key is accepted as style value', () => {
+  const actual = css({
+    width: { __default: 2 },
+    color: (t) => t.colors?.primary,
+    backgroundColor: (t) => [
+      t.colors?.background,
+      (t.colors?.background as NestedScaleDict<string>).inverted,
+    ],
+  })({
+    sizes: ['10px', '20px', '40px'],
+    colors: {
+      primary: {
+        __default: 'blue',
+        light: 'lightblue',
+      },
+      background: {
+        __default: 'whitesmoke',
+        inverted: 'black',
+      },
+    },
+  })
+
+  expect(actual).toEqual({
+    '@media screen and (min-width: 40em)': {
+      backgroundColor: 'black',
+    },
+    backgroundColor: 'whitesmoke',
+    color: 'blue',
+    width: 2, // yes, 2 not 40px
+  })
+})
+
 test('returns individual border styles', () => {
   const result = css({
     borderTopWidth: 'thin',
@@ -632,4 +664,15 @@ test('supports vendor properties', () => {
   expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
     WebkitOverflowScrolling: 'touch',
   })
+})
+
+test('omits empty values', () => {
+  expect(
+    css({
+      color: false && 'blue',
+      backgroundColor: undefined && 'whitesmoke',
+      textDecoration: null && 'underline',
+      border: '1px solid black',
+    })(theme)
+  ).toStrictEqual({ border: '1px solid black' })
 })

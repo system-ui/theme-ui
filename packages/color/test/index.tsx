@@ -1,4 +1,12 @@
+/** @jsx jsx */
+
+import { jsx } from '@theme-ui/core'
 import { Theme, ThemeUICSSObject } from '@theme-ui/css'
+import { ThemeProvider } from '@theme-ui/theme-provider'
+import { render } from '@theme-ui/test-utils'
+import { matchers } from '@emotion/jest'
+
+expect.extend(matchers)
 
 import {
   darken,
@@ -116,11 +124,9 @@ const themeCustomProps = {
     primary: 'var(--theme-ui-colors-primary)',
     secondary: 'var(--theme-ui-colors-primary)',
   },
-  __original: {
-    colors: {
-      primary: '#0cf',
-      secondary: '#639',
-    },
+  rawColors: {
+    primary: '#0cf',
+    secondary: '#639',
   },
 } as Theme
 
@@ -199,58 +205,136 @@ test('grayscaleCustomProps', () => {
   expect(n).toBe('#808080')
 })
 
-const themeTomato = {
+const themeTomato: Theme = {
   colors: {
     primary: 'tomato',
   },
-} as Theme
+}
 
 test('darkenTomato', () => {
   const n = darken('primary', 0.25)(themeTomato)
   expect(n).toBe('#c61e00')
 })
 
-const themeTomatoCustomProps = {
+const themeTomatoCustomProps: Theme = {
   colors: {
     primary: 'var(--theme-ui-colors-primary)',
   },
-  __original: {
-    colors: {
-      primary: 'tomato',
-    },
+  rawColors: {
+    primary: 'tomato',
   },
-} as Theme
+}
 
 test('darkenTomatoCustomProps', () => {
   const n = darken('primary', 0.25)(themeTomatoCustomProps)
   expect(n).toBe('#c61e00')
 })
 
-const themeRgba = {
+const themeRgba: Theme = {
   colors: {
     primary: 'rgba(255, 0, 0, .5)',
   },
-} as Theme
+}
 
 test('alphaRgba', () => {
   const n = alpha('primary', 0.25)(themeRgba)
   expect(n).toBe('rgba(255,0,0,0.25)')
 })
 
-const themeRgbaCustomProps = {
+const themeRgbaCustomProps: Theme = {
   colors: {
     primary: 'var(--theme-ui-colors-primary)',
   },
-  __original: {
-    colors: {
-      primary: 'rgba(255, 0, 0, .5)',
-    },
+  rawColors: {
+    primary: 'rgba(255, 0, 0, .5)',
   },
-} as Theme
+}
 
 test('alphaRgbaCustomProps', () => {
   const n = alpha('primary', 0.25)(themeRgbaCustomProps)
   expect(n).toBe('rgba(255,0,0,0.25)')
+})
+
+describe('colors inside ThemeProvider', () => {
+  test('__default color is darkened', () => {
+    const tree = render(
+      <ThemeProvider
+        theme={{
+          colors: {
+            primary: {
+              __default: 'deepskyblue',
+              light: 'skyblue',
+            },
+          },
+        }}>
+        <button sx={{ color: darken('primary', 0.1) }}>Click me</button>
+      </ThemeProvider>
+    )
+
+    expect(tree.getByRole('button')).toHaveStyleRule('color', '#09c')
+  })
+
+  test('derived color is saturated', () => {
+    const theme = {
+      colors: {
+        secondary: {
+          __default: 'deepskyblue',
+          light: 'skyblue',
+        },
+      },
+    }
+
+    type MyTheme = typeof theme
+
+    const tree = render(
+      <ThemeProvider theme={theme}>
+        <button
+          sx={{
+            color: (theme) =>
+              // When read from Emotion theme, colors are CSS custom properties.
+              saturate((theme as MyTheme).colors.secondary.light, 0.1)(theme),
+          }}>
+          Click me
+        </button>
+      </ThemeProvider>
+    )
+
+    expect(tree.getByRole('button')).toHaveStyleRule('color', '#80d1f2')
+  })
+
+  test('derived __default color is lightened', () => {
+    const theme = {
+      colors: {
+        blue: {
+          __default: '#00f',
+          dark: '#00c',
+        },
+      },
+    }
+
+    type MyTheme = typeof theme
+
+    const tree = render(
+      <ThemeProvider theme={theme}>
+        <button
+          sx={{
+            color: (theme) => lighten(theme.colors?.blue, 0.1)(theme),
+          }}>
+          Click me
+        </button>
+        <p
+          sx={{
+            color: (theme) =>
+              lighten((theme as MyTheme).colors.blue.__default, 0.1)(theme),
+          }}>
+          Hello
+        </p>
+      </ThemeProvider>
+    )
+
+    expect(tree.getByRole('button')).toHaveStyleRule('color', '#33f')
+    expect(tree.getByText('Hello')).toHaveStyleRule('color', '#33f')
+  })
 })
 
 test('typechecks', () => {
