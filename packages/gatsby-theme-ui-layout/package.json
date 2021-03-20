@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
-    "gatsby": ">=2",
+    "gatsby": "^2.13.1",
     "react": "^16.14.0 || ^17.0.0",
     "react-dom": "^16.14.0 || ^17.0.0"
   },
