@@ -7,7 +7,7 @@ import mockConsole, { RestoreConsole } from 'jest-mock-console'
 import packageInfo from '@emotion/react/package.json'
 
 import {
-  ContextValue,
+  ThemeUIContextValue,
   jsx,
   Theme,
   ThemeProvider,
@@ -236,7 +236,7 @@ test('inherits color mode state from parent context', () => {
 })
 
 test('retains initial context', () => {
-  let context: ContextValue | undefined
+  let context: ThemeUIContextValue | undefined
   const Consumer = () => {
     context = useThemeUI()
     return null

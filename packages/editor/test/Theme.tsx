@@ -5,9 +5,8 @@ import {
   cleanup,
   waitForElement,
 } from '@testing-library/react'
-import { useThemeUI, ContextValue, Context } from 'theme-ui'
+import { useThemeUI, ThemeUIContextValue, Context } from 'theme-ui'
 import { EditorProvider, Theme } from '../src'
-import { ThemeUIContextValue } from '@theme-ui/core'
 
 afterEach(cleanup)
 
