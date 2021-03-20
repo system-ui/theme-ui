@@ -1,5 +1,9 @@
 # Changelog
 
+## UNRELEASED
+
+- Tailwind preset typescript compatibility. Issue #1139
+
 ## v0.6.0 UNRELEASED
 
 ## v0.6.0-alpha.8 2021-02-19

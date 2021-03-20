@@ -1,5 +1,6 @@
 // Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 // and https://tailwindcss.com/components
+import { Theme, ThemeUIStyleObject } from '@theme-ui/css'
 
 export const borderWidths = {
   px: '1px',
@@ -9,14 +10,19 @@ export const borderWidths = {
   '8': '8px',
 }
 
-export const breakpoints = ['640px', '768px', '1024px', '1280px']
+export const breakpoints: Theme['breakpoints'] = [
+  '640px',
+  '768px',
+  '1024px',
+  '1280px',
+]
 
 export const baseColors = {
   transparent: 'transparent',
   black: '#000',
   white: '#fff',
   gray: [
-    null,
+    '',
     '#f7fafc',
     '#edf2f7',
     '#e2e8f0',
@@ -28,7 +34,7 @@ export const baseColors = {
     '#1a202c',
   ],
   red: [
-    null,
+    '',
     '#fff5f5',
     '#fed7d7',
     '#feb2b2',
@@ -40,7 +46,7 @@ export const baseColors = {
     '#742a2a',
   ],
   orange: [
-    null,
+    ``,
     '#fffaf0',
     '#feebc8',
     '#fbd38d',
@@ -52,7 +58,7 @@ export const baseColors = {
     '#7b341e',
   ],
   yellow: [
-    null,
+    '',
     '#fffff0',
     '#fefcbf',
     '#faf089',
@@ -64,7 +70,7 @@ export const baseColors = {
     '#744210',
   ],
   green: [
-    null,
+    '',
     '#f0fff4',
     '#c6f6d5',
     '#9ae6b4',
@@ -76,7 +82,7 @@ export const baseColors = {
     '#22543d',
   ],
   teal: [
-    null,
+    '',
     '#e6fffa',
     '#b2f5ea',
     '#81e6d9',
@@ -88,7 +94,7 @@ export const baseColors = {
     '#234e52',
   ],
   blue: [
-    null,
+    '',
     '#ebf8ff',
     '#bee3f8',
     '#90cdf4',
@@ -100,7 +106,7 @@ export const baseColors = {
     '#2a4365',
   ],
   indigo: [
-    null,
+    '',
     '#ebf4ff',
     '#c3dafe',
     '#a3bffa',
@@ -112,7 +118,7 @@ export const baseColors = {
     '#3c366b',
   ],
   purple: [
-    null,
+    '',
     '#faf5ff',
     '#e9d8fd',
     '#d6bcfa',
@@ -124,7 +130,7 @@ export const baseColors = {
     '#44337a',
   ],
   pink: [
-    null,
+    '',
     '#fff5f7',
     '#fed7e2',
     '#fbb6ce',
@@ -237,7 +243,7 @@ export const buttons = {
   },
 }
 
-export const colors = {
+export const colors: Theme['colors'] = {
   ...baseColors,
   grayDark: baseColors.gray[8],
   text: baseColors.gray[8],
@@ -255,21 +261,21 @@ export const colors = {
   textMuted: baseColors.gray[6],
 }
 
-export const baseFonts = {
+export const baseFonts: Theme['fonts'] = {
   sans:
     'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
   mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
 }
 
-export const fonts = {
+export const fonts: Theme['fonts'] = {
   ...baseFonts,
   body: baseFonts.sans,
   heading: 'inherit',
   monospace: baseFonts.mono,
 }
 
-export const fontSizes = [
+export const fontSizes: Theme['fontSizes'] = [
   '0.875rem',
   '1rem',
   '1.25rem',
@@ -281,25 +287,25 @@ export const fontSizes = [
   '4.5rem',
 ]
 
-export const baseFontWeights = {
-  hairline: '100',
-  thin: '200',
-  light: '300',
-  normal: '400',
-  medium: '500',
-  semibold: '600',
-  bold: '700',
-  extrabold: '800',
-  black: '900',
+export const baseFontWeights: Theme['fontWeights'] = {
+  hairline: 100,
+  thin: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
 }
 
-export const fontWeights = {
+export const fontWeights: Theme['fontWeights'] = {
   ...baseFontWeights,
   body: baseFontWeights.normal,
   heading: baseFontWeights.bold,
 }
 
-const commonInputStyles = {
+const commonInputStyles: ThemeUIStyleObject = {
   py: 2,
   px: 3,
   fontSize: `100%`,
@@ -308,7 +314,7 @@ const commonInputStyles = {
   lineHeight: `tight`,
 }
 
-export const inputs = {
+export const inputs: Record<string, ThemeUIStyleObject> = {
   shadow: {
     ...commonInputStyles,
     border: `none`,
@@ -349,7 +355,7 @@ export const inputs = {
   },
 }
 
-export const letterSpacings = {
+export const letterSpacings: Theme['letterSpacings'] = {
   tighter: '-0.05em',
   tight: '-0.025em',
   normal: '0',
@@ -358,7 +364,7 @@ export const letterSpacings = {
   widest: '0.1em',
 }
 
-export const baseLineHeights = {
+export const baseLineHeights: Theme['lineHeights'] = {
   none: '1',
   tight: '1.25',
   snug: '1.375',
@@ -367,13 +373,13 @@ export const baseLineHeights = {
   loose: '2',
 }
 
-export const lineHeights = {
+export const lineHeights: Theme['lineHeights'] = {
   ...baseLineHeights,
   body: baseLineHeights.relaxed,
   heading: baseLineHeights.tight,
 }
 
-export const radii = {
+export const radii: Theme['space'] = {
   none: '0',
   sm: '0.125rem',
   default: '0.25rem',
@@ -382,7 +388,7 @@ export const radii = {
   full: '9999px',
 }
 
-const tailwindSpacing = {
+const tailwindSpacing: Theme['space'] = {
   px: '1px',
   '0': '0',
   '1': '0.25rem',
@@ -404,7 +410,7 @@ const tailwindSpacing = {
   '64': '16rem',
 }
 
-const tailwindMaxWidth = {
+const tailwindMaxWidth: Theme['sizes'] = {
   xs: '20rem',
   sm: '24rem',
   md: '28rem',
@@ -417,7 +423,7 @@ const tailwindMaxWidth = {
   '6xl': '72rem',
 }
 
-const tailwindWidth = {
+const tailwindWidth: Theme['sizes'] = {
   '1/2': '50%',
   '1/3': '33.333333%',
   '2/3': '66.666667%',
@@ -446,7 +452,7 @@ const tailwindWidth = {
   '11/12': '91.666667%',
 }
 
-export const sizes = {
+export const sizes: Theme['sizes'] = {
   ...tailwindSpacing,
   ...tailwindMaxWidth,
   ...tailwindWidth,
@@ -455,7 +461,7 @@ export const sizes = {
   screenWidth: '100vw',
 }
 
-export const shadows = {
+export const shadows: Theme['shadows'] = {
   xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
   sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
   default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -469,8 +475,8 @@ export const shadows = {
   none: 'none',
 }
 
-export const space = [
-  "0",
+export const space: Theme['space'] = [
+  '0',
   '0.25rem',
   '0.5rem',
   '1rem',
@@ -481,17 +487,17 @@ export const space = [
   '32rem',
 ]
 
-export const zIndices = {
+export const zIndices: Theme['zIndices'] = {
   auto: 'auto',
-  '0': '0',
-  '10': '10',
-  '20': '20',
-  '30': '30',
-  '40': '40',
-  '50': '50',
+  '0': 0,
+  '10': 10,
+  '20': 20,
+  '30': 30,
+  '40': 40,
+  '50': 50,
 }
 
-const heading = {
+const heading: ThemeUIStyleObject = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
@@ -499,7 +505,7 @@ const heading = {
   mb: 1,
 }
 
-export const styles = {
+export const styles: Theme['styles'] = {
   root: {
     fontFamily: 'body',
     lineHeight: 'body',
@@ -550,7 +556,7 @@ export const styles = {
   },
 }
 
-export const transforms = {
+export const transforms: ThemeUIStyleObject = {
   transformOrigin: {
     center: 'center',
     top: 'top',
@@ -604,8 +610,9 @@ export const transforms = {
 export const transitions = {
   property: {
     none: 'none',
-    all: 'all',
-    default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+    // all: 'all',
+    default:
+      'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
     colors: 'background-color, border-color, color, fill, stroke',
     opacity: 'opacity',
     shadow: 'box-shadow',
@@ -629,7 +636,11 @@ export const transitions = {
   },
 }
 
-export const tailwind = {
+export const tailwind: Theme & {
+  inputs: Record<string, ThemeUIStyleObject>
+  transforms: ThemeUIStyleObject
+  transitions: Record<string, ThemeUIStyleObject>
+} = {
   borderWidths,
   breakpoints,
   colors,
