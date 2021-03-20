@@ -5,7 +5,7 @@ import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import {
   jsx,
-  Context,
+  __ThemeUIContext,
   useThemeUI,
   merge,
   ThemeProvider,
@@ -30,13 +30,13 @@ describe('ThemeProvider', () => {
   test('warns when multiple versions of emotion are installed', () => {
     const restore = mockConsole()
     const json = renderJSON(
-      <Context.Provider
+      <__ThemeUIContext.Provider
         value={{
           __EMOTION_VERSION__: '9.0.0',
           theme: {},
         }}>
         <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
-      </Context.Provider>
+      </__ThemeUIContext.Provider>
     )
     expect(console.warn).toBeCalled()
     restore()

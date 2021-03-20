@@ -1,5 +1,5 @@
 import React from 'react'
-import { jsx, Context, useThemeUI, merge, Theme } from 'theme-ui'
+import { jsx, __ThemeUIContext, useThemeUI, merge, Theme } from 'theme-ui'
 import { ThemeContext as Emotion } from '@emotion/react'
 import { EditorContextValue } from './types'
 
@@ -25,7 +25,7 @@ export const EditorProvider = ({
   }
 
   return jsx(
-    Context.Provider,
+    __ThemeUIContext.Provider,
     { value: context },
     jsx(Emotion.Provider, {
       value: theme,

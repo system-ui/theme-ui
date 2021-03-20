@@ -1,7 +1,12 @@
-import React, { Dispatch, SetStateAction } from 'react'
-import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
-import { get, Theme, ColorModesScale } from '@theme-ui/css'
-import { Global, ThemeContext as EmotionContext } from '@emotion/react'
+import React, { Dispatch, useEffect, useState, SetStateAction } from 'react'
+import {
+  jsx,
+  useThemeUI,
+  merge,
+  __ThemeUIInternalBaseThemeProvider,
+} from '@theme-ui/core'
+import { get, Theme } from '@theme-ui/css'
+import { Global } from '@emotion/react'
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
@@ -9,14 +14,14 @@ const STORAGE_KEY = 'theme-ui-color-mode'
 declare module '@theme-ui/core' {
   export interface ThemeUIContextValue {
     colorMode?: string
-    setColorMode?: (colorMode: SetStateAction<string>) => void
+    setColorMode?: (colorMode: SetStateAction<string | undefined>) => void
   }
 }
 
 const storage = {
-  get: (init?: string) => {
+  get: () => {
     try {
-      return window.localStorage.getItem(STORAGE_KEY) || init
+      return window.localStorage.getItem(STORAGE_KEY)
     } catch (e) {
       console.warn(
         'localStorage is disabled and color mode might not work as expected.',
@@ -50,25 +55,48 @@ const getPreferredColorScheme = (): 'dark' | 'light' | null => {
   return null
 }
 
+const getModeFromClass = (): string | undefined => {
+  let mode: string | undefined
+  if (typeof document !== 'undefined') {
+    document.documentElement.classList.forEach((className) => {
+      if (className.startsWith('theme-ui-')) {
+        mode = className.replace('theme-ui-', '')
+      }
+    })
+  }
+  return mode
+}
+
 const useColorModeState = (theme: Theme = {}) => {
-  const [mode, setMode] = React.useState(() => {
+  let [mode, setMode] = useState(() => {
+    const modeFromClass = getModeFromClass()
+    if (modeFromClass) {
+      return modeFromClass
+    }
+
     const preferredMode =
       theme.useColorSchemeMediaQuery !== false && getPreferredColorScheme()
 
-    return preferredMode || theme.initialColorModeName || 'default'
+    return preferredMode || theme.initialColorModeName
   })
 
-  // read color mode from local storage
-  React.useEffect(() => {
+  // on first render, we read the color mode from localStorage and
+  // clear the class on document element body
+  useEffect(() => {
     const stored = theme.useLocalStorage !== false && storage.get()
-    document.documentElement.classList.remove('theme-ui-' + stored)
-    document.body.classList.remove('theme-ui-' + stored)
+
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.remove('theme-ui-' + stored)
+      document.body.classList.remove('theme-ui-' + stored)
+    }
 
     if (stored && stored !== mode) {
+      mode = stored
       setMode(stored)
     }
   }, [])
 
+  // when mode changes, we save it to localStorage
   React.useEffect(() => {
     if (mode && theme.useLocalStorage !== false) {
       storage.set(mode)
@@ -109,7 +137,7 @@ export function useColorMode<T extends string = string>(): [
   ]
 }
 
-const applyColorMode = (theme: Theme, mode: string): Theme => {
+const applyColorMode = (theme: Theme, mode: string | undefined): Theme => {
   if (!mode) return theme
   const modes = get(theme, 'colors.modes', {})
   return merge.all({}, theme, {
@@ -117,7 +145,7 @@ const applyColorMode = (theme: Theme, mode: string): Theme => {
   })
 }
 
-const BodyStyles = ({ theme }: { theme: Theme }) =>
+const GlobalStyles = ({ theme }: { theme: Theme }) =>
   jsx(Global, {
     styles: () => {
       return createColorStyles(theme)
@@ -127,12 +155,14 @@ const BodyStyles = ({ theme }: { theme: Theme }) =>
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
-  const theme = applyColorMode(outer.theme || {}, colorMode)
-  const emotionTheme = { ...theme }
 
+  const theme = applyColorMode(outer.theme || {}, colorMode)
   if (theme.useCustomProperties !== false) {
-    emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
-    emotionTheme.rawColors = theme.colors
+    // TODO: This mutation is less than ideal
+    // I'd rather save custom properties to `theme.colorVars`,
+    // But it's infeasible to do this because of how the packages are split.
+    theme.rawColors = theme.colors
+    theme.colors = toCustomProperties(theme.colors, 'colors')
   }
   const context = {
     ...outer,
@@ -142,14 +172,10 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   }
 
   return jsx(
-    EmotionContext.Provider,
-    { value: emotionTheme },
-    jsx(
-      Context.Provider,
-      { value: context },
-      jsx(BodyStyles, { key: 'color-mode', theme }),
-      children
-    )
+    __ThemeUIInternalBaseThemeProvider,
+    { context },
+    jsx(GlobalStyles, { key: 'color-mode', theme }),
+    children
   )
 }
 

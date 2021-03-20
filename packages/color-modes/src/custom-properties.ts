@@ -70,7 +70,9 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
 // create root styles for color modes
 export const createColorStyles = (theme: Theme = {}) => {
   const use = __internalGetUseRootStyles(theme)
-  if (!theme.colors || use.rootStyles === false) return {}
+  const colors = theme.rawColors || theme.colors;
+
+  if (!colors || use.rootStyles === false) return {}
   if (theme.useCustomProperties === false) {
     return css({
       [use.scope]: {
@@ -79,14 +81,17 @@ export const createColorStyles = (theme: Theme = {}) => {
       },
     })(theme)
   }
-  const { colors, initialColorModeName, printColorModeName } = theme
+  const { initialColorModeName, printColorModeName } = theme
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
+
+  console.log({ styles, colors })
 
   Object.keys(modes).forEach((mode) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
+
   if (printColorModeName) {
     const mode =
       printColorModeName === 'initial' ||
