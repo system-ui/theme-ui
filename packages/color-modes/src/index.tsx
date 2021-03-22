@@ -139,7 +139,7 @@ export function useColorMode<T extends string = string>(): [
 }
 
 const applyColorMode = (theme: Theme, mode: string | undefined): Theme => {
-  if (!mode) return theme
+  if (!mode) return { ...theme }
   const modes = get(theme, 'colors.modes', {})
   return merge.all({}, theme, {
     colors: get(modes, mode, {}),

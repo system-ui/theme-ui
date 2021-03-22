@@ -4,7 +4,12 @@ import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { useTheme } from '@emotion/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
+import {
+  jsx,
+  ThemeProvider,
+  ThemeUIContextValue,
+  useThemeUI,
+} from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
 import { Theme } from '@theme-ui/css'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -236,7 +241,7 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
 })
 
 test('retains initial context', () => {
-  let context
+  let context: ThemeUIContextValue
   const Consumer = () => {
     context = useThemeUI()
     return null
@@ -249,8 +254,8 @@ test('retains initial context', () => {
     </ThemeProvider>
   )
   expect(typeof context).toBe('object')
-  expect(typeof context.theme).toBe('object')
-  expect(typeof context.setColorMode).toBe('function')
+  expect(typeof context!.theme).toBe('object')
+  expect(typeof context!.setColorMode).toBe('function')
 })
 
 test('initializes mode from prefers-color-scheme media query', () => {
@@ -431,7 +436,7 @@ test('useThemeUI returns current color mode colors', () => {
 })
 
 test('emotion useTheme with custom css vars', () => {
-  window.localStorage.setItem(STORAGE_KEY, 'tomato')
+  window.localStorage.setItem(STORAGE_KEY, 'hacker')
   let cssVarsColors: Theme['colors']
   let orignalColors: Theme['colors']
 
@@ -442,7 +447,7 @@ test('emotion useTheme with custom css vars', () => {
     return null
   }
 
-  const root = render(
+  const _root = render(
     <ThemeProvider
       theme={{
         // minor functional change
@@ -451,9 +456,9 @@ test('emotion useTheme with custom css vars', () => {
           text: 'tomato',
           background: 'black',
           modes: {
-            tomato: {
-              text: 'black',
-              background: 'tomato',
+            hacker: {
+              text: 'limegreen',
+              background: '#111',
             },
           },
         },
@@ -464,16 +469,11 @@ test('emotion useTheme with custom css vars', () => {
     </ThemeProvider>
   )
 
-  console.debug({
-    orignalColors,
-    cssVarsColors,
-  })
-
   expect(cssVarsColors?.text).toBe('var(--theme-ui-colors-text)')
   expect(cssVarsColors?.background).toBe('var(--theme-ui-colors-background)')
 
-  expect(orignalColors?.text).toBe('black')
-  expect(orignalColors?.background).toBe('tomato')
+  expect(orignalColors?.text).toBe('limegreen') 
+  expect(orignalColors?.background).toBe('#111')
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
@@ -570,7 +570,7 @@ test('dot notation works with color modes', () => {
 })
 
 test('dot notation works with color modes and custom properties', () => {
-  const Button = (props) => {
+  const Button = () => {
     const [colorMode, setMode] = useColorMode()
     return (
       <button
