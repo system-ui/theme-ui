@@ -44,7 +44,7 @@
     "@types/react-test-renderer": "^17.0.0",
     "auto": "^10.16.8",
     "babel-jest": "^26.0.1",
-    "babel-preset-gatsby": "^0.12.1",
+    "babel-preset-gatsby": "^1.1.0",
     "egzek": "^1.2.0",
     "husky": ">=4.0.7",
     "jest": "^26.0.1",
