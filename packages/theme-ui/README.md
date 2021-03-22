@@ -62,21 +62,24 @@
 </p>
 
 \
-Theme UI is a library for creating themeable user interfaces based on constraint-based design principles. Build custom component libraries, design systems, web applications, Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
+Theme UI is a library for creating themeable user interfaces based on constraint-based
+design principles. Build custom component libraries, design systems, web applications,
+Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
 **[stable] docs**: https://theme-ui.com \
-**[develop] (v0.6.0-alpha) docs**: https://dev.theme-ui.com
+**[develop] (v0.7.0-alpha) docs**: https://dev.theme-ui.com
 
 [stable]: https://github.com/system-ui/theme-ui/tree/stable
 [develop]: https://github.com/system-ui/theme-ui/tree/develop
 
 ---
 
-Built for design systems, white-labels, themes, and other applications where customizing colors, typography, and layout are treated as first-class citizens
-and based on a standard [Theme Specification][],
-Theme UI is intended to work in a variety of applications, libraries, and other UI components.
-Colors, typography, and layout styles derived from customizable theme-based design scales
-help you build UI rooted in constraint-based design principles.
+Built for design systems, white-labels, themes, and other applications where
+customizing colors, typography, and layout are treated as first-class citizens
+and based on a standard [Theme Specification][], Theme UI is intended to work in
+a variety of applications, libraries, and other UI components. Colors,
+typography, and layout styles derived from customizable theme-based design
+scales help you build UI rooted in constraint-based design principles.
 
 - The next evolution of Styled System
 - From the creators of utility-based, atomic CSS methodologies
@@ -106,9 +109,9 @@ help you build UI rooted in constraint-based design principles.
 npm install theme-ui
 ```
 
-Any styles in your app can reference values from the global `theme` object.
-To provide the theme in context,
-wrap your application with the `ThemeProvider` component and pass in a custom `theme` object.
+Any styles in your app can reference values from the global `theme` object. To
+provide the theme in context, wrap your application with the `ThemeProvider`
+component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
@@ -120,9 +123,10 @@ export default (props) => (
 )
 ```
 
-The `theme` object follows the System UI [Theme Specification](https://theme-ui.com/theme-spec/),
-which lets you define custom color palettes, typographic scales, fonts, and more.
-Read more about [theming](https://theme-ui.com/theming).
+The `theme` object follows the System UI
+[Theme Specification](https://theme-ui.com/theme-spec/), which lets you define
+custom color palettes, typographic scales, fonts, and more. Read more about
+[theming](https://theme-ui.com/theming).
 
 ```js
 // example theme.js
@@ -143,12 +147,16 @@ export default {
 
 ## `sx` prop
 
-The `sx` prop works similarly to Emotion's `css` prop, accepting style objects to add CSS directly to an element in JSX, but includes extra theme-aware functionality.
-Using the `sx` prop for styles means that certain properties can reference values defined in your `theme` object.
-This is intended to make keeping styles consistent throughout your app the easy thing to do.
+The `sx` prop works similarly to Emotion's `css` prop, accepting style objects
+to add CSS directly to an element in JSX, but includes extra theme-aware
+functionality. Using the `sx` prop for styles means that certain properties can
+reference values defined in your `theme` object. This is intended to make
+keeping styles consistent throughout your app the easy thing to do.
 
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default React JSX functions.
-This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
+The `sx` prop only works in modules that have defined a custom pragma at the top
+of the file, which replaces the default React JSX functions. This means you can
+control which modules in your application opt into this feature without the need
+for a Babel plugin or additional configuration.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -165,12 +173,16 @@ export default (props) => (
 )
 ```
 
-Read more about [how the custom pragma works](https://theme-ui.com/guides/how-it-works/#jsx-pragma).
+Read more about
+[how the custom pragma works](https://theme-ui.com/guides/how-it-works/#jsx-pragma).
 
 ## Responsive styles
 
-The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
-This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
+The `sx` prop also supports using arrays as values to change properties
+responsively with a mobile-first approach. This API originated in [Styled
+System][] and is intended as
+[a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props)
+across a singular dimension.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -205,7 +217,8 @@ MIT License
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -353,4 +366,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
