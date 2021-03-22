@@ -1,18 +1,9 @@
 /** @jsx jsx */
-import { jsx, Styled, Grid, useThemeUI } from 'theme-ui'
-import {
-  EditorProvider,
-  Theme,
-  // ColorPalette,
-  // Fonts,
-  // FontWeights,
-  // LineHeights,
-  // FontSizes,
-  // Space,
-  // Row,
-} from '@theme-ui/editor'
+/** @jsxFrag React.Fragment */
+import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
+import { EditorProvider, Theme } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
-import { useReducer } from 'react'
+import React from 'react'
 import merge from 'lodash.merge'
 import * as presets from '@theme-ui/presets'
 import copy from 'copy-to-clipboard'
@@ -29,12 +20,12 @@ const ThemeOutput = () => {
   return (
     <div>
       <Button
-        onClick={e => {
+        onClick={(e) => {
           copy(output)
         }}>
         Copy Theme
       </Button>
-      <Styled.pre
+      <Themed.pre
         children={output}
         sx={{
           maxHeight: 512,
@@ -45,12 +36,12 @@ const ThemeOutput = () => {
   )
 }
 
-export default function ThemeCreator() {
-  const [theme] = useReducer(reducer, { ...presets.base })
+export default function CustomizePage(props) {
+  const theme = { ...presets.base }
 
   return (
-    <div>
-      <Styled.h1>Create a Custom Theme</Styled.h1>
+    <>
+      <Themed.h1>Create a Custom Theme</Themed.h1>
       <EditorProvider theme={theme}>
         <b>Colors</b>
         <Theme.Colors size={64} />
@@ -106,6 +97,6 @@ export default function ThemeCreator() {
         <p>Note: some web fonts may not render unless installed locally.</p>
         <ThemeOutput />
       </EditorProvider>
-    </div>
+    </>
   )
 }

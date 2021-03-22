@@ -7,21 +7,17 @@ import { Note } from '../..'
 # Components
 
 A number of built-in UI components are available for layouts, grids, buttons, form elements, and more.
+Components can be used as an alternative to the [JSX pragma](/jsx-pragma) for using Theme UI features,
+or in parallel to provide specific UI components.
 
 ```jsx live=true
-<Box
-  p={4}
-  bg='highlight'>
+<Box p={4} bg="highlight">
   <Flex
     sx={{
       alignItems: 'center',
     }}>
-    <Heading>
-      Components
-    </Heading>
-    <Button ml='auto'>
-      Beep
-    </Button>
+    <Heading>Components</Heading>
+    <Button ml="auto">Beep</Button>
   </Flex>
 </Box>
 ```
@@ -33,11 +29,11 @@ Each component accepts a `variant` prop to quickly
 change custom stylistic variations that you define.
 
 ```js
-// example theme
 {
-  // base theme...
+  // ...base theme...
+  // After the base theme, define the variants:
   buttons: {
-    primary: {
+    secondary: {
       fontWeight: 'bold',
       color: 'white',
       bg: 'primary',
@@ -74,24 +70,31 @@ change custom stylistic variations that you define.
 ```
 
 ```jsx live=true
-<Button variant='secondary'>
-  Secondary Button
-</Button>
+<Button variant="secondary">Secondary Button</Button>
 ```
 
 ## Props
 
 All Theme UI components include the following props.
 
-Name | Type | Description
----|---|---
-`sx` | Object | [Theme-aware styles](/sx-prop)
-`variant` | String | Applies a theme [variant][] style
-`as` | String | Changes the underlying HTML element
+| Name      | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `sx`      | Object | [Theme-aware styles](/sx-prop)      |
+| `variant` | String | Applies a theme [variant][] style   |
+| `as`      | String | Changes the underlying HTML element |
 
 <Note>
 
-The `sx` prop on Theme UI components can be used *without* the `jsx` pragma comment and can be used in MDX files to apply theme-based styles.
+The `sx` prop on Theme UI components can be used _without_ the `jsx` pragma comment and can be used in MDX files to apply theme-based styles.
+
+</Note>
+
+<Note>
+
+If you’re using TypeScript, Theme UI merges prop types with the props of components passed
+in the `as` prop on [`Field`](/components/field).
+However, it’s tricky to get the `as` element props working on [`Box`](/components/box), especially with `svg`.
+You can work around this by using the [custom JSX pragma](/jsx-pragma), which can be transpiled by TypeScript.
 
 </Note>
 
@@ -104,29 +107,28 @@ These props work the same as properties within the `sx` prop, but allow for a mo
 
 <Note>
 
-If you've used [Styled System][] or [Rebass][] before,
-these props work the same way.
+If you’ve used [Styled System][] or [Rebass][] before, these props work the same way.
 
 </Note>
 
-Name | Description
----|---
-`color` | Foreground color
-`bg` | Background color
-`margin`, `m`         | Margin
-`marginTop`, `mt`     | Margin Top
-`marginRight`, `mr`   | Margin Right
-`marginBottom`, `mb`  | Margin Bottom
-`marginLeft`, `ml`    | Margin Left
-`marginX`, `mx`       | Margin Left & Right
-`marginY`, `my`       | Margin Top & Bottom
-`padding`, `p`         | Padding
-`paddingTop`, `pt`     | Padding Top
-`paddingRight`, `pr`   | Padding Right
-`paddingBottom`, `pb`  | Padding Bottom
-`paddingLeft`, `pl`    | Padding Left
-`paddingX`, `px`       | Padding Left & Right
-`paddingY`, `py`       | Padding Top & Bottom
+| Name                  | Description          |
+| --------------------- | -------------------- |
+| `color`               | Foreground color     |
+| `bg`                  | Background color     |
+| `margin`, `m`         | Margin               |
+| `marginTop`, `mt`     | Margin Top           |
+| `marginRight`, `mr`   | Margin Right         |
+| `marginBottom`, `mb`  | Margin Bottom        |
+| `marginLeft`, `ml`    | Margin Left          |
+| `marginX`, `mx`       | Margin Left & Right  |
+| `marginY`, `my`       | Margin Top & Bottom  |
+| `padding`, `p`        | Padding              |
+| `paddingTop`, `pt`    | Padding Top          |
+| `paddingRight`, `pr`  | Padding Right        |
+| `paddingBottom`, `pb` | Padding Bottom       |
+| `paddingLeft`, `pl`   | Padding Left         |
+| `paddingX`, `px`      | Padding Left & Right |
+| `paddingY`, `py`      | Padding Top & Bottom |
 
 [styled system]: https://styled-system.com
 [rebass]: https://rebassjs.org

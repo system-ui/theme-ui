@@ -10,31 +10,28 @@ https://theme-ui.com
 yarn add @theme-ui/custom-properties
 ```
 
-
 ## Usage
 
 Transform your Theme UI compliant theme config with the library:
 
 ```js
 const toCustomProperties = require('@theme-ui/custom-properties')
-const theme = require('../theme');
+const theme = require('../theme')
 
 module.exports = () => {
-  const customProperties = toCustomProperties(theme, '🍭');
+  const customProperties = toCustomProperties(theme, '🍭')
 
-  return customProperties;
+  return customProperties
 }
 ```
-
 
 ## Parameters
 
 The @theme-ui/custom-properties function takes two parameters:
 
 ```js
-toCustomProperties( $theme, $prefix );
+toCustomProperties($theme, $prefix)
 ```
 
 1. theme - The theme ui specification object
 1. prefix - An optional prefix for the css custom property _optional_
-

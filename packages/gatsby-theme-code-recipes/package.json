@@ -1,15 +1,19 @@
 {
   "name": "gatsby-theme-code-recipes",
-  "version": "0.3.5",
+  "version": "0.6.0-alpha.8",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.13.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "gatsby": ">=2",
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0"
   },
   "dependencies": {
     "gatsby-source-filesystem": "^2.1.11",
     "unist-util-visit": "^2.0.0"
-  }
+  },
+  "devDependencies": {
+    "react": "^17.0.1"
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

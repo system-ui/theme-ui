@@ -1,11 +1,11 @@
 {
   "private": true,
   "name": "create-react-app-theme-ui-example",
-  "version": "0.3.5",
+  "version": "0.4.0-alpha.0",
   "dependencies": {
     "mdx.macro": "^0.2.8",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "scripts": {
     "start": "react-scripts start",

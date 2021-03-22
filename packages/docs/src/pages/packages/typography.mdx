@@ -21,14 +21,13 @@ npm i @theme-ui/typography
 Use the `toTheme` function to create a base `theme` object based on Typography.js options or a preset Typography.js theme.
 
 ```js
-import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import { toTheme } from '@theme-ui/typography'
 import wp2016 from 'typography-theme-wordpress-2016'
 
 const theme = toTheme(wp2016)
 
-export default props => (
+export default (props) => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )
 ```

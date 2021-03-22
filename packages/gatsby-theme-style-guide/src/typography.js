@@ -1,15 +1,11 @@
-/** @jsx jsx */
-import { jsx, Styled, useThemeUI } from 'theme-ui'
-import {
-  TypeScale,
-  TypeStyle,
-} from '@theme-ui/style-guide'
+import React from 'react'
+import { Flex, Themed, useThemeUI } from 'theme-ui'
+import { TypeScale, TypeStyle } from '@theme-ui/style-guide'
 
-const Row = props => (
-  <div
+const Row = (props) => (
+  <Flex
     {...props}
     sx={{
-      display: 'flex',
       alignItems: 'baseline',
       flexWrap: 'wrap',
       mx: -3,
@@ -20,40 +16,40 @@ const Row = props => (
   />
 )
 
-export default props => {
+export default (props) => {
   const { theme } = useThemeUI()
   const { fonts, fontWeights, lineHeights } = theme
 
   return (
     <section id="typography">
-      <Styled.h2>Typography</Styled.h2>
+      <Themed.h2>Typography</Themed.h2>
       {fonts && (
         <div>
-          <Styled.h3>Font Families</Styled.h3>
+          <Themed.h3>Font Families</Themed.h3>
           <Row>
-            {Object.keys(fonts).map(name => (
+            {Object.keys(fonts).map((name) => (
               <div key={name}>
                 <TypeStyle fontFamily={name} fontSize={6}>
                   Aa
                 </TypeStyle>
-                <Styled.code title={fonts[name]}>{name}</Styled.code>
+                <Themed.code title={fonts[name]}>{name}</Themed.code>
               </div>
             ))}
           </Row>
         </div>
       )}
-      <Styled.h3>Font Sizes</Styled.h3>
+      <Themed.h3>Font Sizes</Themed.h3>
       <TypeScale />
       {fontWeights && (
         <div>
-          <Styled.h3>Font Weights</Styled.h3>
+          <Themed.h3>Font Weights</Themed.h3>
           <Row>
-            {Object.keys(fontWeights).map(name => (
+            {Object.keys(fontWeights).map((name) => (
               <div key={name}>
                 <TypeStyle fontSize={6} fontWeight={name}>
                   {fontWeights[name]}
                 </TypeStyle>
-                <Styled.code>{name}</Styled.code>
+                <Themed.code>{name}</Themed.code>
               </div>
             ))}
           </Row>
@@ -61,14 +57,14 @@ export default props => {
       )}
       {lineHeights && (
         <div>
-          <Styled.h3>Line Heights</Styled.h3>
+          <Themed.h3>Line Heights</Themed.h3>
           <Row>
-            {Object.keys(lineHeights).map(name => (
+            {Object.keys(lineHeights).map((name) => (
               <div key={name}>
                 <TypeStyle fontSize={6} lineHeight={name}>
                   {lineHeights[name]}
                 </TypeStyle>
-                <Styled.code>{name}</Styled.code>
+                <Themed.code>{name}</Themed.code>
               </div>
             ))}
           </Row>

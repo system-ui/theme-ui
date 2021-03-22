@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed, Text } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
@@ -42,7 +42,7 @@ const images = {
   flatiron:
     'https://images.unsplash.com/photo-1520222984843-df35ebc0f24d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
   logo:
-    'https://raw.githubusercontent.com/system-ui/theme-ui/stable/packages/docs/static/logo.png',
+    'https://raw.githubusercontent.com/system-ui/theme-ui/stable/packages/docs/static/icon.png',
 }
 
 const scope = {
@@ -56,16 +56,27 @@ const scope = {
   images,
 }
 
-const transformCode = (src) => `/** @jsx jsx */\n<>${src}</>`
+const stripTrailingNewline = (str) => {
+  if (typeof str === 'string' && str[str.length - 1] === '\n') {
+    return str.slice(0, -1)
+  }
+  return str
+}
+
+const transformCode = (src) => {
+  return `/** @jsx jsx */\n<>${src}</>`
+}
 
 const liveTheme = { styles: [] }
 
 export const LiveCode = ({ children, preview, xray }) => {
+  const code = stripTrailingNewline(children)
+
   if (preview) {
     return (
       <LiveProvider
         theme={liveTheme}
-        code={children}
+        code={code}
         scope={scope}
         transformCode={transformCode}>
         <LivePreview />
@@ -76,7 +87,7 @@ export const LiveCode = ({ children, preview, xray }) => {
   return (
     <LiveProvider
       theme={liveTheme}
-      code={children}
+      code={code}
       scope={scope}
       transformCode={transformCode}>
       <div
@@ -97,20 +108,42 @@ export const LiveCode = ({ children, preview, xray }) => {
           }}
         />
       </div>
-      <Styled.pre
+      <Themed.pre
         sx={{
+          p: 0,
           mt: 0,
           mb: 3,
         }}>
-        <LiveEditor padding={0} />
-      </Styled.pre>
+        <LiveEditor padding="1rem" />
+      </Themed.pre>
     </LiveProvider>
   )
 }
 
-export default (props) => {
+const Code = (props) => {
   if (props.live) {
     return <LiveCode {...props} />
   }
+  if (props.filename) {
+    return (
+      <section>
+        <Text
+          as="span"
+          sx={{
+            display: 'block',
+            bg: 'gray',
+            color: 'background',
+            px: 3,
+            py: 2,
+            fontWeight: 'bold',
+          }}>
+          {props.filename}
+        </Text>
+        <Prism {...props} sx={{ mt: 0 }} />
+      </section>
+    )
+  }
   return <Prism {...props} />
 }
+
+export default Code

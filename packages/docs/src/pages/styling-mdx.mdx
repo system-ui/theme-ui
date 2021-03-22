@@ -2,8 +2,6 @@
 title: Styling MDX Content
 ---
 
-import Note from '../components/note'
-
 # Styling MDX Content
 
 The `theme.styles` object is the primary way to style content in MDX documents.
@@ -43,7 +41,7 @@ Any MDX document rendered as a child of the `ThemeProvider` will pick up the sty
 
 <Note>
 
-These styles will **not** apply to HTML elements used outside of MDX. To reuse these styles outside of MDX, see the [Styled component](/styled) docs.
+These styles will **not** apply to HTML elements used outside of MDX. To reuse these styles outside of MDX, see the [Themed component](/themed) docs.
 
 </Note>
 
@@ -88,8 +86,7 @@ To support syntax highlighting libraries like [Prism.js][],
 colors and other styles can be added to `theme.styles.pre` to target child elements with class selectors.
 Prism.js adds `<span>` elements with class names that can be used as child selectors.
 
-
-To enable syntax highlighting in MDX, see the [`@theme-ui/prism`](/prism) package.
+To enable syntax highlighting in MDX, see the [`@theme-ui/prism`](/packages/prism) package.
 
 [prism.js]: https://github.com/PrismJS/prism
 

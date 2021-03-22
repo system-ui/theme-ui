@@ -1,22 +1,25 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.3.5",
+  "version": "0.6.0-alpha.8",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@theme-ui/color-modes": "0.3.5",
-    "@theme-ui/core": "0.3.5",
-    "@theme-ui/mdx": "0.3.5"
+    "@emotion/react": "^11.1.1",
+    "@theme-ui/color-modes": "0.6.0-alpha.8",
+    "@theme-ui/core": "0.6.0-alpha.8",
+    "@theme-ui/mdx": "0.6.0-alpha.8"
   },
   "peerDependencies": {
     "@theme-ui/css": "*",
-    "react": "^16.11.0"
+    "react": "^16.14.0 || ^17.0.0"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
@@ -24,5 +27,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "3f78f13ae0c62105fb81bdb7792c6e28cf3521b5"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

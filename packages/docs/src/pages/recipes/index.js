@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import { LiveCode } from '../../components/code'
 
@@ -33,9 +33,9 @@ const Card = ({ name, slug, snippets }) => {
         textDecoration: 'none',
         p: 2,
         borderRadius: 4,
-        boxShadow: t => `0 0 3px ${t.colors.darken}`,
+        boxShadow: (t) => `0 0 3px ${t.colors.darken}`,
         ':hover': {
-          boxShadow: t => `0 0 8px 1px ${t.colors.darken}`,
+          boxShadow: (t) => `0 0 8px 1px ${t.colors.darken}`,
         },
       }}>
       {props.live && (
@@ -62,12 +62,12 @@ const Card = ({ name, slug, snippets }) => {
   )
 }
 
-export default props => {
+export default function RecipesPage(props) {
   const recipes = props.data.recipes.nodes
 
   return (
     <div sx={{}}>
-      <Styled.h1>Recipes</Styled.h1>
+      <Themed.h1>Recipes</Themed.h1>
       <ul
         sx={{
           listStyle: 'none',
@@ -77,7 +77,7 @@ export default props => {
           gridGap: 4,
           gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
         }}>
-        {recipes.map(r => (
+        {recipes.map((r) => (
           <li key={r.id}>
             <Card {...r} />
           </li>

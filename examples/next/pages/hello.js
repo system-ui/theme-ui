@@ -1,13 +1,16 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
-export default props => (
-  <div
-    sx={{
-      maxWidth: 1024,
-      mx: 'auto',
-      p: 3,
-    }}>
-    <Styled.h1>Hello</Styled.h1>
-  </div>
-)
+export default function Hello() {
+  return (
+    <div
+      sx={{
+        maxWidth: 1024,
+        mx: 'auto',
+        p: 3,
+      }}>
+      <Themed.h1>Hello</Themed.h1>
+    </div>
+  )
+}

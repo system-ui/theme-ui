@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled, components } from 'theme-ui'
-import { ThemeContext } from '@emotion/core'
+import { jsx, Themed, components } from 'theme-ui'
+import { ThemeContext } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
@@ -15,7 +15,7 @@ import {
 import Select from './select'
 import Lorem from './lorem.mdx'
 
-export default () => {
+export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
   const preset = presets[theme]
 
@@ -24,7 +24,7 @@ export default () => {
       <Helmet>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600|Architects+Daughter"
         />
       </Helmet>
       <div
@@ -32,31 +32,30 @@ export default () => {
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}
-      >
+        }}>
         <label
+          htmlFor="theme"
           sx={{
             display: 'block',
             mb: 4,
-          }}
-        >
-          Preset:{' '}
+          }}>
+          Preset:
           <Select
+            id="theme"
             value={theme}
-            onChange={e => {
+            onChange={(e) => {
               setTheme(e.target.value)
-            }}
-          >
-            {Object.keys(presets).map(key => (
+            }}>
+            {Object.keys(presets).map((key) => (
               <option key={key} children={key} />
             ))}
           </Select>
         </label>
         <ThemeContext.Provider value={preset}>
-          <Styled.root>
-            <Styled.h2>Colors</Styled.h2>
+          <Themed.root sx={{ bg: 'background', color: 'text', p: 3 }}>
+            <Themed.h2>Colors</Themed.h2>
             <ColorPalette omit={['modes', 'header']} />
-            <Styled.h2>Typography</Styled.h2>
+            <Themed.h2>Typography</Themed.h2>
             <TypeStyle fontSize={7}>
               Body: <FontFamily name="body" />
             </TypeStyle>
@@ -64,20 +63,20 @@ export default () => {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}
-            >
+              fontSize={7}>
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
-            <Styled.h2>Type Scale</Styled.h2>
+            <Themed.h2>Type Scale</Themed.h2>
             <TypeScale />
             <MDXProvider components={components}>
               <Lorem />
             </MDXProvider>
-            <Styled.h2>Raw JSON</Styled.h2>
+            <Themed.h2 id="json">Raw JSON</Themed.h2>
             <textarea
               value={JSON.stringify(preset, null, 2)}
               rows={16}
               readOnly
+              aria-labelledby="json"
               sx={{
                 width: '100%',
                 fontFamily: 'monospace',
@@ -86,7 +85,7 @@ export default () => {
                 borderRadius: 4,
               }}
             />
-          </Styled.root>
+          </Themed.root>
         </ThemeContext.Provider>
       </div>
     </div>

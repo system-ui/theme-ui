@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from './Box'
 
-export default ({ size = 24, ...props }) => (
+const SVG = ({ size = 24, ...props }) => (
   <Box
     as="svg"
     xmlns="http://www.w3.org/2000/svg"
@@ -12,3 +12,7 @@ export default ({ size = 24, ...props }) => (
     {...props}
   />
 )
+
+SVG.displayName = 'SVG'
+
+export default SVG

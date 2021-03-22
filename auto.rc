@@ -1,0 +1,37 @@
+{
+  "author": "Piotr Monwid-Olechnowicz <hasparus@gmail.com>",
+  "onlyPublishWithReleaseLabel": true,
+  "baseBranch": "stable",
+  "prereleaseBranches": ["develop"],
+  "plugins": [
+    [
+      "npm",
+      {
+        "exact": true
+      }
+    ],
+    "conventional-commits",
+    "first-time-contributor",
+    "released",
+    [
+      "all-contributors",
+      {
+        "exclude": ["dependabot", "dependabot-preview"],
+        "types": {
+          "infra": ["./github/**/*"],
+          "example": ["examples/**/*"],
+          "doc": ["**/*.mdx", "**/*.md", "packages/docs/**/*"],
+          "test": ["**/*.test.*", "**/*.spec.*"],
+          "code": [
+            "packages/**/*.js",
+            "packages/**/*.ts",
+            "packages/**/*.jsx",
+            "packages/**/*.tsx",
+            "**/package.json",
+            "**/tsconfig.json"
+          ]
+        }
+      }
+    ]
+  ]
+}

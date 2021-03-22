@@ -1,26 +1,31 @@
 {
   "name": "@theme-ui/match-media",
-  "version": "0.3.5",
+  "version": "0.6.0-alpha.8",
   "description": "React hooks for theme-ui breakpoints",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "react": "^16.9.0",
-    "theme-ui": "0.3.5"
+    "@theme-ui/core": "0.6.0-alpha.8",
+    "@theme-ui/css": "0.6.0-alpha.8",
+    "react": "^17.0.1"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "theme-ui": "^0.2.43"
+    "@theme-ui/core": "^0.5.0-alpha.0",
+    "@theme-ui/css": "^0.5.0-alpha.0",
+    "react": "^16.14.0 || ^17.0.0"
   },
-  "gitHead": "3f78f13ae0c62105fb81bdb7792c6e28cf3521b5"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

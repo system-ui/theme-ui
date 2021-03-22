@@ -7,7 +7,7 @@ title: Object Styles
 Authoring CSS in JavaScript object literal syntax can be a great way to catch syntax errors before committing code and use other features of JS syntax in styles.
 If you're not used to writing styles in object literal syntax though, there are a few key differences to using native CSS syntax.
 
-## Camel Case
+## Camel case
 
 All CSS properties should be written in camel case instead of using the hyphenated form.
 For example, the CSS `background-color` property should be written as `backgroundColor`.
@@ -41,6 +41,14 @@ This also means that you can use JS math expressions to derive values.
 }
 ```
 
+To use other CSS units, use strings as values instead.
+
+```js
+{
+  fontSize: '2em',
+}
+```
+
 ## Commas
 
 All properties should be separated by commas, not semicolons.
@@ -52,7 +60,7 @@ All properties should be separated by commas, not semicolons.
 }
 ```
 
-## Pseudo Elements
+## Pseudo elements
 
 To use the `content` property in a pseudo-element with `::before` or `::after`, be sure to wrap the string value with quotes in order for it to be parsed correctly as CSS.
 
@@ -65,6 +73,19 @@ To use the `content` property in a pseudo-element with `::before` or `::after`, 
     height: 32,
     backgroundColor: 'tomato',
   }
+}
+```
+
+## Vendor prefixes
+
+To use CSS properties with [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix),
+omit the dashes and capitalize the first letter of the prefix.
+
+```js
+{
+  WebkitTextStroke: 'white',
+  WebkitTextStrokeWidth: '3px',
+  WebkitTextFillColor: 'transparent'
 }
 ```
 

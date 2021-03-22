@@ -1,0 +1,26 @@
+---
+title: Design Graph
+---
+
+# Design Graph
+
+The core organizing principle for styles in Theme UI is based
+on a conceptual model called the _Design Graph_.
+
+The Design Graph is composed of the following nodes:
+
+- **Scales** are limited collections of raw values that map to specific style properties.
+  For example, values for `font-size` are stored in the `fontSizes` scale.
+- **Components** are elements that have styles constrained by _scales_.
+- **Variants** are partial styles that map to specific components.
+  For example, a button might have _primary_ and _secondary_ variants, or _large_ and _small_ variants.
+- **Themes** are collections of _scales_ (and possibly _variants_) that encapsulate a particular visual design language.
+  Ideally, themes follow a common interface (or schema) and can be swapped out in different implementations.
+
+The Design Graph provides a way to think and talk about the styles in Theme UI,
+and the [Theme Specification][] is the primary interface for theme objects.
+
+To read more about the Design Graph, see the original [blog post][].
+
+[blog post]: https://jxnblk.com/blog/design-graph
+[theme specification]: /theme-spec

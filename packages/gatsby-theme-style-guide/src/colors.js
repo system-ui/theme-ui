@@ -1,11 +1,11 @@
 import React from 'react'
-import { Styled } from 'theme-ui'
+import { Themed } from 'theme-ui'
 import { ColorPalette } from '@theme-ui/style-guide'
 
-export default () => {
+export default function ColorsDemo() {
   return (
     <section id="colors">
-      <Styled.h2>Colors</Styled.h2>
+      <Themed.h2>Colors</Themed.h2>
       <ColorPalette omit={[]} />
     </section>
   )

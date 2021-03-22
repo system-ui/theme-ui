@@ -7,12 +7,39 @@ title: Select
 Form select component
 
 ```js
-import { Select } from 'theme-ui'
+import { Select, Box } from 'theme-ui'
 ```
 
 ```js live=true
+<Select defaultValue="Hello">
+  <option>Hello</option>
+  <option>Hi</option>
+  <option>Beep</option>
+  <option>Boop</option>
+</Select>
+```
+
+## Custom arrow icon
+
+```jsx live=true
 <Select
-  defaultValue='Hello'>
+  arrow={
+    <Box
+      as="svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentcolor"
+      sx={{
+        ml: -28,
+        alignSelf: 'center',
+        pointerEvents: 'none',
+      }}>
+      <path d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z" />
+    </Box>
+  }
+  defaultValue="Hello">
   <option>Hello</option>
   <option>Hi</option>
   <option>Beep</option>

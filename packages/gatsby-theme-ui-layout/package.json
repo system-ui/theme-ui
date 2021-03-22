@@ -1,12 +1,13 @@
 {
   "name": "gatsby-theme-ui-layout",
-  "version": "0.3.5",
+  "version": "0.6.0-alpha.8",
   "main": "index.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
-    "gatsby": "^2.13.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "gatsby": ">=2",
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

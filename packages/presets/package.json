@@ -1,28 +1,32 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.3.5",
+  "version": "0.6.0-alpha.8",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
     "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
+    "watch": "microbundle watch --no-compress",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "0.3.5",
-    "@theme-ui/preset-bootstrap": "0.3.5",
-    "@theme-ui/preset-bulma": "0.3.5",
-    "@theme-ui/preset-dark": "0.3.5",
-    "@theme-ui/preset-deep": "0.3.5",
-    "@theme-ui/preset-funk": "0.3.5",
-    "@theme-ui/preset-future": "0.3.5",
-    "@theme-ui/preset-polaris": "0.3.5",
-    "@theme-ui/preset-roboto": "0.3.5",
-    "@theme-ui/preset-swiss": "0.3.5",
-    "@theme-ui/preset-system": "0.3.5",
-    "@theme-ui/preset-tailwind": "0.3.5",
-    "@theme-ui/preset-tosh": "0.3.5"
+    "@theme-ui/preset-base": "0.6.0-alpha.8",
+    "@theme-ui/preset-bootstrap": "0.6.0-alpha.8",
+    "@theme-ui/preset-bulma": "0.6.0-alpha.8",
+    "@theme-ui/preset-dark": "0.6.0-alpha.8",
+    "@theme-ui/preset-deep": "0.6.0-alpha.8",
+    "@theme-ui/preset-funk": "0.6.0-alpha.8",
+    "@theme-ui/preset-future": "0.6.0-alpha.8",
+    "@theme-ui/preset-polaris": "0.6.0-alpha.8",
+    "@theme-ui/preset-roboto": "0.6.0-alpha.8",
+    "@theme-ui/preset-sketchy": "0.6.0-alpha.8",
+    "@theme-ui/preset-swiss": "0.6.0-alpha.8",
+    "@theme-ui/preset-system": "0.6.0-alpha.8",
+    "@theme-ui/preset-tailwind": "0.6.0-alpha.8",
+    "@theme-ui/preset-tosh": "0.6.0-alpha.8"
   },
   "publishConfig": {
     "access": "public"
@@ -35,5 +39,5 @@
     "emotion"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

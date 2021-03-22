@@ -13,9 +13,10 @@ import theme from '@theme-ui/preset-tailwind'
 
 export default {
   ...theme,
-  styles: {
-    ...theme,
-  },
+  // You can extend the default theme like:
+  // styles: {
+  //   ...theme.styles,
+  //}
 }
 ```
 
@@ -28,5 +29,4 @@ If you'd like to add a new preset or improve upon the existing ones, please open
 
 [issue]: https://github.com/system-ui/theme-ui/issues
 [pull request]: https://github.com/system-ui/theme-ui/pulls
-
 [demo]: https://theme-ui.com/demo

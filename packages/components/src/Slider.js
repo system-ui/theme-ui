@@ -11,31 +11,33 @@ const thumb = {
   variant: 'forms.slider.thumb',
 }
 
-export const Slider = React.forwardRef((props, ref) => (
-  <Box
-    ref={ref}
-    as="input"
-    type="range"
-    variant="slider"
-    {...props}
-    __themeKey="forms"
-    __css={{
-      display: 'block',
-      width: '100%',
-      height: 4,
-      my: 2,
-      cursor: 'pointer',
-      appearance: 'none',
-      borderRadius: 9999,
-      color: 'inherit',
-      bg: 'gray',
-      ':focus': {
-        outline: 'none',
-        color: 'primary',
-      },
-      '&::-webkit-slider-thumb': thumb,
-      '&::-moz-range-thumb': thumb,
-      '&::-ms-thumb': thumb,
-    }}
-  />
-))
+export const Slider = React.forwardRef(function Slider(props, ref) {
+  return (
+    <Box
+      ref={ref}
+      as="input"
+      type="range"
+      variant="slider"
+      {...props}
+      __themeKey="forms"
+      __css={{
+        display: 'block',
+        width: '100%',
+        height: 4,
+        my: 2,
+        cursor: 'pointer',
+        appearance: 'none',
+        borderRadius: 9999,
+        color: 'inherit',
+        bg: 'gray',
+        ':focus': {
+          outline: 'none',
+          color: 'primary',
+        },
+        '&::-webkit-slider-thumb': thumb,
+        '&::-moz-range-thumb': thumb,
+        '&::-ms-thumb': thumb,
+      }}
+    />
+  )
+})

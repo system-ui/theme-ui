@@ -2,18 +2,43 @@
 title: API
 ---
 
-import Note from '../components/note'
-
 # API
 
 ## `theme-ui`
 
 The core `theme-ui` package exports the following modules.
 
+### `/jsx-runtime`
+
+While not being available in the `theme-ui` package directly, there are two separate entry points for React create element functions intended to be used in the [automatic JSX runtime](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) with a custom pragma comment.
+They add support for the `sx` prop, which uses Emotion's create element functions internally and parse style objects with the Theme UI `css` utility.
+
+**Usage:**
+
+```jsx
+/** @jsxImportSource theme-ui */
+
+export default (props) => (
+  <div
+    {...props}
+    sx={{
+      color: 'primary',
+    }}
+  />
+)
+```
+
+**Imports for use without JSX:**
+
+```js
+import { jsx, jsxs } from 'theme-ui/jsx-runtime'
+import { jsxDEV } from 'theme-ui/jsx-dev-runtime'
+```
+
 ### `jsx`
 
-The `jsx` export is a React create element function intended for use with a custom pragma comment.
-It adds support for the `sx` prop, which uses Emotion's create element function internally and parses style objects with the Theme UI `css` utility.
+The `jsx` export is a React create element function for the classic JSX runtime intended for use with a custom pragma comment.
+It adds support for the `sx` prop in the same way like the `/jsx-runtime` entrypoint.
 
 **Usage:**
 
@@ -21,7 +46,7 @@ It adds support for the `sx` prop, which uses Emotion's create element function 
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -64,15 +89,15 @@ The color mode state can be any string and should match the name of a color mode
 const [colorMode, setColorMode] = useColorMode()
 ```
 
-### `Styled`
+### `Themed`
 
-The [`Styled`](/styled) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
+The [`Themed`](/themed) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
 Each component will pick up styles from its corresponding theme object.
 These are primarily meant to be used as a mechanism to use styles defined in a `theme` object outside of MDX.
 
 ```jsx
 // picks up styles from `theme.styles.h1`
-<Styled.h1 />
+<Themed.h1 />
 ```
 
 | Prop | Type                | Description                             |
@@ -91,7 +116,9 @@ Note that this will increase the CSS specificity of child elements, and you may 
 
 ```jsx
 <BaseStyles>
-  <h1>Styled based on <code>theme.styles</code></h1>
+  <h1>
+    Styled based on <code>theme.styles</code>
+  </h1>
 </BaseStyles>
 ```
 
@@ -119,11 +146,29 @@ css(styleObject)(theme)
 
 ### `get`
 
-An existential getter function used internally.
+An existential getter function used internally to extract a field (or object) from a theme object.
+
+### `getObjectWithVariants`
+
+Similar to the `get` function above, but will also resolve any `variant` field if found inside the object.
 
 ### `merge`
 
-A deep object merge function used internally.
+A function to deeply merge themes.
+
+**Usage**
+
+```jsx
+import dark from '@theme-ui/preset-dark'
+
+const theme = merge(dark, {
+  fontWeights: {
+    body: 500,
+    heading: 700,
+    bold: 900,
+  },
+})
+```
 
 ### `InitializeColorMode`
 

@@ -1,0 +1,84 @@
+---
+title: 'Merging Themes'
+---
+
+# Merging Themes
+
+Sometimes it's useful to split a theme across multiple files, use a preset as the basis for a custom theme, or combine two or more themes together.
+Since themes are plain JavaScript objects, any merging strategy will work.
+This guide shows a few common ways to merge themes together.
+
+## Using a preset
+
+To use a preset as the basis for a custom theme, it's recommended that you use a deep merge utility.
+The `theme-ui` package exports a preconfigured version of the `deepmerge` package that can be used for this.
+
+```js
+// example theme based on preset-future
+import future from '@theme-ui/preset-future'
+import { merge } from 'theme-ui'
+
+export default merge(future, {
+  fonts: {
+    body: 'Montserrat, sans-serif',
+  },
+})
+```
+
+## Multiple files
+
+While there is absolutely nothing wrong with keeping an entire theme in a single file, you can split a theme into multiple files (or modules).
+
+```js
+// example theme/colors.js
+export default {
+  text: '#000',
+  background: '#fff',
+  primary: '#07c',
+}
+```
+
+```js
+// example theme/fonts.js
+export default {
+  body: 'system-ui, sans-serif',
+  heading: 'Baskerville, Georgia, serif',
+  monospace: 'Menlo, monospace',
+}
+```
+
+```js
+// example theme/index.js
+import colors from './colors'
+import fonts from './fonts'
+
+export default {
+  colors,
+  fonts,
+}
+```
+
+## Merging theme values from multiple files
+
+For the core scales (`colors`, `fontSizes`, `space`, etc), it’s typically simpler to understand a theme when values are defined in one file.
+However, especially for projects with many [styles](/styling-mdx) or [variants](/guides/variants), you may want to split values that end up
+as part of one object across multiple files. You can use the same kind of imports combined with the `merge` utility for this.
+
+```js
+// example theme/index.js
+import { merge } from 'theme-ui'
+import colors from './colors'
+import fonts from './fonts'
+import textStyles from './styles/text'
+import tableStyles from './styles/tables'
+import { buttons, forms, links } from './variants'
+
+export default {
+  colors,
+  fonts,
+  styles: merge(textStyles, tableStyles),
+  buttons,
+  forms,
+  links,
+}
+```
