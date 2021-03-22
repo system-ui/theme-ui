@@ -1,5 +1,5 @@
 import { jsx as coreJsx, ThemeUIJSX } from '@theme-ui/core'
-export { Context, merge, useThemeUI } from '@theme-ui/core'
+export { __ThemeUIContext, merge, useThemeUI } from '@theme-ui/core'
 export type {
   ThemeUIContextValue,
   IntrinsicSxElements,

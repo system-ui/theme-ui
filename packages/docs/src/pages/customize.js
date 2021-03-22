@@ -3,7 +3,7 @@
 import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
 import { EditorProvider, Theme } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
-import React, { useReducer } from 'react'
+import React from 'react'
 import merge from 'lodash.merge'
 import * as presets from '@theme-ui/presets'
 import copy from 'copy-to-clipboard'
@@ -37,7 +37,7 @@ const ThemeOutput = () => {
 }
 
 export default function CustomizePage(props) {
-  const [theme] = useReducer(reducer, { ...presets.base })
+  const theme = { ...presets.base }
 
   return (
     <>

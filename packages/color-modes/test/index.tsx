@@ -4,12 +4,18 @@ import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { useTheme } from '@emotion/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import { jsx, ThemeProvider, useThemeUI } from '@theme-ui/core'
+import {
+  jsx,
+  ThemeProvider,
+  ThemeUIContextValue,
+  useThemeUI,
+} from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
 import { Theme } from '@theme-ui/css'
 import { renderJSON } from '@theme-ui/test-utils'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
+const defaultColorModeName = undefined
 
 afterEach(() => {
   cleanup()
@@ -46,7 +52,7 @@ test('renders with color modes', () => {
       </ThemeProvider>
     )
   })
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorModeName)
 })
 
 test('renders with initial color mode name', () => {
@@ -177,11 +183,13 @@ test('converts color modes to css custom properties', () => {
 
 test('uses default mode', () => {
   let mode
+
   const Button = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
+
   const tree = render(
     <ThemeProvider theme={{}}>
       <ColorModeProvider>
@@ -189,7 +197,8 @@ test('uses default mode', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+
+  expect(mode).toBe(undefined)
 })
 
 test('initializes mode based on localStorage', () => {
@@ -228,11 +237,11 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorModeName)
 })
 
 test('retains initial context', () => {
-  let context
+  let context: ThemeUIContextValue
   const Consumer = () => {
     context = useThemeUI()
     return null
@@ -245,8 +254,8 @@ test('retains initial context', () => {
     </ThemeProvider>
   )
   expect(typeof context).toBe('object')
-  expect(typeof context.theme).toBe('object')
-  expect(typeof context.setColorMode).toBe('function')
+  expect(typeof context!.theme).toBe('object')
+  expect(typeof context!.setColorMode).toBe('function')
 })
 
 test('initializes mode from prefers-color-scheme media query', () => {
@@ -324,7 +333,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorModeName)
 })
 
 test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is set to `false`', () => {
@@ -350,7 +359,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorModeName)
 })
 
 test('ColorModeProvider renders with global colors', () => {
@@ -427,16 +436,18 @@ test('useThemeUI returns current color mode colors', () => {
 })
 
 test('emotion useTheme with custom css vars', () => {
-  window.localStorage.setItem(STORAGE_KEY, 'tomato')
+  window.localStorage.setItem(STORAGE_KEY, 'hacker')
   let cssVarsColors: Theme['colors']
   let orignalColors: Theme['colors']
+
   const GetColors = () => {
     const theme = useTheme() as Theme
     cssVarsColors = theme.colors
     orignalColors = theme.rawColors
     return null
   }
-  const root = render(
+
+  const _root = render(
     <ThemeProvider
       theme={{
         // minor functional change
@@ -445,9 +456,9 @@ test('emotion useTheme with custom css vars', () => {
           text: 'tomato',
           background: 'black',
           modes: {
-            tomato: {
-              text: 'black',
-              background: 'tomato',
+            hacker: {
+              text: 'limegreen',
+              background: '#111',
             },
           },
         },
@@ -457,11 +468,12 @@ test('emotion useTheme with custom css vars', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
+
   expect(cssVarsColors?.text).toBe('var(--theme-ui-colors-text)')
   expect(cssVarsColors?.background).toBe('var(--theme-ui-colors-background)')
 
-  expect(orignalColors?.text).toBe('black')
-  expect(orignalColors?.background).toBe('tomato')
+  expect(orignalColors?.text).toBe('limegreen') 
+  expect(orignalColors?.background).toBe('#111')
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
@@ -558,7 +570,7 @@ test('dot notation works with color modes', () => {
 })
 
 test('dot notation works with color modes and custom properties', () => {
-  const Button = (props) => {
+  const Button = () => {
     const [colorMode, setMode] = useColorMode()
     return (
       <button
@@ -602,7 +614,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = () => {
     const context = useThemeUI()
-    color = context.theme?.colors?.primary
+    color = context.theme?.rawColors?.primary
     return null
   }
   const root = render(
@@ -652,7 +664,7 @@ test('colorMode accepts function from previous state to new one', () => {
   let primaryColor
   const Grabber = () => {
     const context = useThemeUI()
-    primaryColor = context.theme?.colors?.primary
+    primaryColor = context.theme?.rawColors?.primary
     return null
   }
 
@@ -723,7 +735,8 @@ test('warns when localStorage is disabled', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+
+  expect(mode).toBe(undefined)
 
   Object.defineProperty(window, 'localStorage', { value: localStorage })
 

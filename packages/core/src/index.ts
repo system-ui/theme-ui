@@ -69,12 +69,15 @@ export interface ThemeUIContextValue {
   theme: Theme
 }
 
-export const Context = React.createContext<ThemeUIContextValue>({
+/**
+ * @internal
+ */
+export const __ThemeUIContext = React.createContext<ThemeUIContextValue>({
   __EMOTION_VERSION__,
   theme: {},
 })
 
-export const useThemeUI = () => React.useContext(Context)
+export const useThemeUI = () => React.useContext(__ThemeUIContext)
 
 const canUseSymbol = typeof Symbol === 'function' && Symbol.for
 
@@ -108,14 +111,20 @@ function mergeAll<T = Theme>(...args: Partial<T>[]) {
 
 merge.all = mergeAll
 
-interface BaseProviderProps {
+export interface __ThemeUIInternalBaseThemeProviderProps {
   context: ThemeUIContextValue
 }
-const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
+/**
+ * @internal
+ */
+export const __ThemeUIInternalBaseThemeProvider: React.FC<__ThemeUIInternalBaseThemeProviderProps> = ({
+  context,
+  children,
+}) =>
   jsx(
     EmotionContext.Provider,
     { value: context.theme },
-    jsx(Context.Provider, {
+    jsx(__ThemeUIContext.Provider, {
       value: context,
       children,
     })
@@ -144,5 +153,5 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
 
-  return jsx(BaseProvider, { context }, children)
+  return jsx(__ThemeUIInternalBaseThemeProvider, { context }, children)
 }

@@ -4,8 +4,9 @@ import {
   fireEvent,
   cleanup,
   waitForElement,
+  act,
 } from '@testing-library/react'
-import { useThemeUI, ThemeUIContextValue, Context } from 'theme-ui'
+import { useThemeUI, ThemeUIContextValue, __ThemeUIContext } from 'theme-ui'
 import { EditorProvider, Theme } from '../src'
 
 afterEach(cleanup)
@@ -81,23 +82,29 @@ test('edits theme.colors within a color mode', async () => {
     return null
   }
   const tree = render(
-    // TODO: Remove any after @theme-ui/color-mode was transformed to TypeScript
-    <Context.Provider value={{ colorMode: 'dark' } as any}>
+    <__ThemeUIContext.Provider
+      value={{
+        colorMode: 'dark',
+        theme: {},
+        __EMOTION_VERSION__: undefined as any,
+      }}>
       <EditorProvider theme={theme}>
         <Theme.Colors />
         <GetContext />
       </EditorProvider>
-    </Context.Provider>
+    </__ThemeUIContext.Provider>
   )
   const swatch = tree.getByText('text')
   fireEvent.click(swatch)
   const [input] = await waitForElement(() =>
     tree.getAllByPlaceholderText('hex')
   )
-  fireEvent.change(input, {
-    target: {
-      value: '#ff0000',
-    },
+  act(() => {
+    fireEvent.change(input, {
+      target: {
+        value: '#ff0000',
+      },
+    })
   })
   expect(context!.theme!.colors!.modes!.dark.text).toBe('#ff0000')
 })
