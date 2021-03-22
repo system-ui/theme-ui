@@ -28,6 +28,5 @@
     "theme-ui": "^0.4.0-rc.0"
   },
   "repository": "system-ui/theme-ui",
-  "license": "MIT",
-  "gitHead": "3f78f13ae0c62105fb81bdb7792c6e28cf3521b5"
+  "license": "MIT"
 }
