@@ -70,6 +70,18 @@ _changes relative to 0.3, not the latest 0.6 prerelease_
   Refer to [Emotion 11 release notes](https://emotion.sh/docs/emotion-11) for
   more information.
 
+- Color mode flash on first render is gone, but to achieve this we had to bring
+  back `theme.rawColors`.
+
+  - **You can no longer read raw color values from `theme.colors`** when reading
+    theme from `useThemeUI` or inside `sx`.
+  - `.colors` object contains Custom CSS Properties now.
+  - If you need to pass original value somewhere where CSS Properties (e.g.
+    WebGL Canvas) won't work use `.rawColors`.
+
+- Default color mode name is no longer `"default"` — it's now `undefined`, what
+  represents the lack of color mode set by user or detected from preferences.
+
 - `useColorSchemeMediaQuery` defaults to `true`. Issue
   [#624](https://github.com/system-ui/theme-ui/issues/624), PR
   [#1373](https://github.com/system-ui/theme-ui/pull/1373)
@@ -77,6 +89,11 @@ _changes relative to 0.3, not the latest 0.6 prerelease_
   **How to migrate?** Add `useColorSchemeMediaQuery: false` to your theme if you
   don't have this property.
   [Read more in the docs.](https://dev.theme-ui.com/color-modes/#responding-to-the-prefers-color-scheme-media-query)
+
+- We no longer export internal React context named as `Context` 😅 It wasn't and
+  it's still not public API, but if you used it and _you really_ need it, you
+  can grab it as `__ThemeUIContext`. (But please don't do this. Use
+  `ThemeProvider` from _@theme-ui/core_ for local theme overrides instead.)
 
 ### Deprecations
 
