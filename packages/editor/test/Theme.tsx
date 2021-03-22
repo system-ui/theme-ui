@@ -4,6 +4,7 @@ import {
   fireEvent,
   cleanup,
   waitForElement,
+  act,
 } from '@testing-library/react'
 import { useThemeUI, ThemeUIContextValue, __ThemeUIContext } from 'theme-ui'
 import { EditorProvider, Theme } from '../src'
@@ -98,10 +99,12 @@ test('edits theme.colors within a color mode', async () => {
   const [input] = await waitForElement(() =>
     tree.getAllByPlaceholderText('hex')
   )
-  fireEvent.change(input, {
-    target: {
-      value: '#ff0000',
-    },
+  act(() => {
+    fireEvent.change(input, {
+      target: {
+        value: '#ff0000',
+      },
+    })
   })
   expect(context!.theme!.colors!.modes!.dark.text).toBe('#ff0000')
 })
