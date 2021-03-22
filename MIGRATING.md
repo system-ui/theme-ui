@@ -77,6 +77,15 @@
   - If you need to pass original value somewhere where CSS Properties (e.g.
     WebGL Canvas) won't work use `.rawColors`.
 
+  **How to migrate?**
+
+  Find places where you read `colors` from the _useThemeUI_, and extract
+  `rawColors` instead of `colors`.
+
+  ```tsx
+  const { rawColors: colors } = useThemeUI().theme
+  ```
+
 - Default color mode name is no longer `"default"` — it's now `undefined`, what
   represents the lack of color mode set by user or detected from preferences.
 
