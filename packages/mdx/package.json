@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-alpha.8",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,8 +15,8 @@
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "@mdx-js/react": "^1.6.22",
-    "@theme-ui/core": "0.6.0-alpha.7",
-    "@theme-ui/css": "0.6.0-alpha.7"
+    "@theme-ui/core": "0.6.0-alpha.8",
+    "@theme-ui/css": "0.6.0-alpha.8"
   },
   "devDependencies": {
     "react": "^17.0.1"

@@ -709,6 +709,14 @@ export interface Theme {
   colors?: ColorModesScale
 
   /**
+   * Colors are transformed into CSS custom properties.
+   *
+   * If you need to read their raw values to pass them somewhere where CSS
+   * custom properties are not supported, use `rawColors`.
+   */
+  rawColors?: ColorModesScale
+
+  /**
    * Styles for elements rendered in MDX can be added to the theme.styles
    * object. This is the primary, low-level way to control typographic and
    * other styles in markdown content. Styles within this object are processed

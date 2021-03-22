@@ -1,13 +1,13 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
-import { get, Theme } from '@theme-ui/css'
+import { get, Theme, ColorModesScale } from '@theme-ui/css'
 import { Global, ThemeContext as EmotionContext } from '@emotion/react'
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 declare module '@theme-ui/core' {
-  export interface ContextValue {
+  export interface ThemeUIContextValue {
     colorMode?: string
     setColorMode?: (colorMode: SetStateAction<string>) => void
   }
@@ -132,8 +132,8 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 
   if (theme.useCustomProperties !== false) {
     emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
+    emotionTheme.rawColors = theme.colors
   }
-
   const context = {
     ...outer,
     theme,

@@ -67,6 +67,8 @@ const theme = {
       fontSize: 3,
     },
     block: {
+      my: 0,
+      maxWidth: [0, '48em'],
       variant: 'default',
       textAlign: 'justify',
       textAlignLast: 'start',

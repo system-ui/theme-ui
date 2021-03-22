@@ -15,7 +15,7 @@ export const query = graphql`
   }
 `
 
-export default (props) => {
+export default function Query(props) {
   const { name, slug, id, body, snippets } = props.data.recipe
 
   const children = <MDXRenderer children={body} />

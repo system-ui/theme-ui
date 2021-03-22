@@ -36,7 +36,7 @@ const ThemeOutput = () => {
   )
 }
 
-export default (props) => {
+export default function CustomizePage(props) {
   const [theme] = useReducer(reducer, { ...presets.base })
 
   return (

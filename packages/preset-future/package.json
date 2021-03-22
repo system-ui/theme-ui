@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-future",
-  "version": "0.6.0-alpha.7",
+  "version": "0.6.0-alpha.8",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/preset-base": "0.6.0-alpha.7"
+    "@theme-ui/preset-base": "0.6.0-alpha.8"
   },
   "publishConfig": {
     "access": "public"

@@ -62,7 +62,7 @@ const Card = ({ name, slug, snippets }) => {
   )
 }
 
-export default (props) => {
+export default function RecipesPage(props) {
   const recipes = props.data.recipes.nodes
 
   return (
