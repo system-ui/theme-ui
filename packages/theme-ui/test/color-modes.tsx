@@ -18,6 +18,8 @@ import {
 const emotionVersion = packageInfo.version
 const STORAGE_KEY = 'theme-ui-color-mode'
 
+const defaultColorMode = undefined
+
 expect.extend(matchers)
 
 let restoreConsole: RestoreConsole
@@ -33,29 +35,37 @@ afterEach(() => {
 
 test('renders with color modes', () => {
   let mode: string | undefined
+  let rendered:
+    | renderer.ReactTestRendererJSON
+    | renderer.ReactTestRendererJSON[]
+
   const Mode = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
     return <div>Mode</div>
   }
   renderer.act(() => {
-    renderer.create(
-      <ThemeProvider
-        theme={{
-          colors: {
-            text: 'black',
-            modes: {
-              dark: {
-                text: 'white',
+    rendered = renderer
+      .create(
+        <ThemeProvider
+          theme={{
+            colors: {
+              text: 'black',
+              modes: {
+                dark: {
+                  text: 'white',
+                },
               },
             },
-          },
-        }}>
-        <Mode />
-      </ThemeProvider>
-    )
+          }}>
+          <Mode />
+        </ThemeProvider>
+      )
+      .toJSON()
   })
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
+  expect(rendered).toBe(null)
+  // expect(rendered).toHaveStyleRule('color', 'var(--theme-ui-color-black)')
 })
 
 test('renders with initial color mode name', () => {
@@ -188,7 +198,7 @@ test('uses default mode', () => {
       <Button />
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
 })
 
 test('initializes mode based on localStorage', () => {
@@ -296,7 +306,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
       <Consumer />
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
 })
 
 test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is set to `false`', () => {
@@ -321,7 +331,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
       <Consumer />
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
 })
 
 test('useColorMode throws when there is no theme context', () => {
@@ -462,10 +472,7 @@ test('dot notation works with color modes and custom properties', () => {
   )
   const button = root.getByText('test')
   button.click()
-  expect(button).toHaveStyleRule(
-    'color',
-    'var(--theme-ui-colors-header-title)'
-  )
+  expect(button).toHaveStyleRule('color', 'var(--theme-ui-colors-header-title)')
 })
 
 test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
@@ -479,7 +486,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = () => {
     const context = useThemeUI()
-    color = context.theme.colors!.primary
+    color = context.theme.rawColors!.primary
     return null
   }
   const root = render(
@@ -526,5 +533,5 @@ test('warns when localStorage is disabled', () => {
     </ThemeProvider>
   )
 
-  expect(mode).toBe('default')
+  expect(mode).toBe(undefined)
 })

@@ -20,10 +20,8 @@ export const ThemeColorPicker = ({
   const popover = usePopoverState()
   const context = useThemeUI()
 
-  // todo: look into supporting v0.2 functionality
-  // const { colors } = theme || context.theme || {}
   const _theme = theme || context.theme || {}
-  const colors = _theme.colors || {}
+  const colors = _theme.rawColors || _theme.colors || {}
   // bug: only supports flat color scales
   const value = String(props.value && (colors[props.value] || props.value))
   const options = [

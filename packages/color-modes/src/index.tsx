@@ -5,8 +5,9 @@ import {
   merge,
   __ThemeUIInternalBaseThemeProvider,
 } from '@theme-ui/core'
-import { get, Theme } from '@theme-ui/css'
+import { get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 import { Global } from '@emotion/react'
+
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
@@ -145,13 +146,6 @@ const applyColorMode = (theme: Theme, mode: string | undefined): Theme => {
   })
 }
 
-const GlobalStyles = ({ theme }: { theme: Theme }) =>
-  jsx(Global, {
-    styles: () => {
-      return createColorStyles(theme)
-    },
-  })
-
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
@@ -159,11 +153,12 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const theme = applyColorMode(outer.theme || {}, colorMode)
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
-    // I'd rather save custom properties to `theme.colorVars`,
+    // We could save custom properties to `theme.colorVars`,
     // But it's infeasible to do this because of how the packages are split.
     theme.rawColors = theme.colors
     theme.colors = toCustomProperties(theme.colors, 'colors')
   }
+
   const context = {
     ...outer,
     theme,
@@ -171,10 +166,24 @@ export const ColorModeProvider: React.FC = ({ children }) => {
     setColorMode,
   }
 
+  const isTopLevelColorModeProvider = outer.setColorMode === undefined
+
   return jsx(
     __ThemeUIInternalBaseThemeProvider,
     { context },
-    jsx(GlobalStyles, { key: 'color-mode', theme }),
+    isTopLevelColorModeProvider
+      ? jsx(Global, {
+          styles: () => {
+            return createColorStyles(theme)
+          },
+        })
+      : jsx('div', {
+          className: 'theme-ui__nested-color-mode-provider',
+          // TODO: This could be refactored a bit.
+          style: createColorStyles(theme)[
+            __internalGetUseRootStyles(theme).scope
+          ],
+        }),
     children
   )
 }
