@@ -9,7 +9,7 @@
     "react-dom": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
-    "gatsby": "^2.26.1",
+    "gatsby": "^3.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
