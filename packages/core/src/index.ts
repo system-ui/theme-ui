@@ -111,13 +111,13 @@ function mergeAll<T = Theme>(...args: Partial<T>[]) {
 
 merge.all = mergeAll
 
-interface BaseProviderProps {
+export interface __ThemeUIInternalBaseThemeProviderProps {
   context: ThemeUIContextValue
 }
 /**
  * @internal
  */
-export const __ThemeUIInternalBaseThemeProvider: React.FC<BaseProviderProps> = ({
+export const __ThemeUIInternalBaseThemeProvider: React.FC<__ThemeUIInternalBaseThemeProviderProps> = ({
   context,
   children,
 }) =>
