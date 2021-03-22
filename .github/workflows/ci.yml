@@ -2,6 +2,7 @@ name: CI
 
 on:
   pull_request:
+    types: [opened, synchronize]
   push:
     branches:
       - develop
@@ -10,22 +11,50 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+          node-version: 14.x
 
-      - uses: actions/cache@v1
+      - uses: bahmutov/npm-install@v1
         with:
-          path: ${{ steps.yarn-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn
-      - run: yarn test --coverage
-      - run: yarn typecheck
+          # By default, bahmutov/npm-install uses --frozen-lockfile
+          install-command: yarn
+
+      - name: Run tests and collect coverage
+        run: yarn test --coverage
+
+      - name: Typecheck
+        run: yarn typecheck
+  release:
+    runs-on: ubuntu-latest
+    needs: [build]
+    if: >
+      !contains(github.event.head_commit.message, 'ci skip') && 
+      !contains(github.event.head_commit.message, 'skip ci') &&
+      (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare repository
+        run: git fetch --unshallow --tags
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - uses: bahmutov/npm-install@v1
+
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        with:
+          abort-after-seconds: 600
+
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN }}
+        run: yarn release
