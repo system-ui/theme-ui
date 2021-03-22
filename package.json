@@ -50,7 +50,7 @@
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
     "jest-mock-console": "^1.0.1",
-    "lerna": "^3.14.1",
+    "lerna": "^4.0.0",
     "lint-staged": "10",
     "microbundle": "^0.13.0",
     "prettier": "^2.2.0",
