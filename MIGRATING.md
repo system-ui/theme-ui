@@ -79,7 +79,7 @@
 
   **How to migrate?**
 
-  Find places where you read `colors` from the _useThemeUI_, and extract
+  Find places where you read `colors` from the _useThemeUI_ and extract
   `rawColors` instead of `colors`.
 
   ```tsx
