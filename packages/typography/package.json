@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@theme-ui/css": "^0.6.0",
+    "@theme-ui/css": "0.6.0",
     "@types/compass-vertical-rhythm": "^1.4.1",
     "@types/modularscale": "^2.0.0",
     "@types/typography": "^0.16.3",

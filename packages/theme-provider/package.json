@@ -18,7 +18,7 @@
     "@theme-ui/mdx": "^0.6.0"
   },
   "peerDependencies": {
-    "@theme-ui/css": "*",
+    "@theme-ui/css": "0.6.0",
     "react": "^16.14.0 || ^17.0.0"
   },
   "repository": "system-ui/theme-ui",

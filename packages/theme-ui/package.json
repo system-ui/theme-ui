@@ -22,7 +22,7 @@
     "@theme-ui/color-modes": "^0.6.0",
     "@theme-ui/components": "^0.6.0",
     "@theme-ui/core": "^0.6.0",
-    "@theme-ui/css": "^0.6.0",
+    "@theme-ui/css": "0.6.0",
     "@theme-ui/mdx": "^0.6.0",
     "@theme-ui/theme-provider": "^0.6.0"
   },

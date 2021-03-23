@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@theme-ui/css": "^0.6.0",
+    "@theme-ui/css": "0.6.0",
     "babel-polyfill": "^6.26.0",
     "execa": "^5.0.0",
     "tailwindcss": "^1.0.4"
