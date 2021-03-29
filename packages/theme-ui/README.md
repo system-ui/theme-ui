@@ -67,7 +67,7 @@ design principles. Build custom component libraries, design systems, web applica
 Gatsby themes, and more with a flexible API for best-in-class developer ergonomics.
 
 **[stable] docs**: https://theme-ui.com \
-**[develop] (v0.7.0-alpha) docs**: https://dev.theme-ui.com
+**[develop] (prerelease) docs**: https://dev.theme-ui.com
 
 [stable]: https://github.com/system-ui/theme-ui/tree/stable
 [develop]: https://github.com/system-ui/theme-ui/tree/develop
