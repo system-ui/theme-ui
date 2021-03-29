@@ -36,6 +36,7 @@ export const BaseStyles = (props: Record<string, unknown>) =>
   })
 
 export const jsx = coreJsx
+export const createElement = jsx
 export declare namespace jsx {
   export namespace JSX {
     export interface Element extends ThemeUIJSX.Element {}
