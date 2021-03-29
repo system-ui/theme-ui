@@ -32,13 +32,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     if: >
-      !contains(github.event.head_commit.message, 'ci skip') && 
+      !contains(github.event.head_commit.message, 'ci skip') &&
       !contains(github.event.head_commit.message, 'skip ci') &&
-      (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
+      !contains(github.event.head_commit.message, 'chore') && (
+        github.event_name == 'push' ||
+        github.event.pull_request.head.repo.full_name == github.repository
+      )
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare repository
+      - name: prepare repository
         run: git fetch --unshallow --tags
 
       - uses: actions/setup-node@v1
@@ -47,12 +50,14 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
-      - name: Turnstyle
+      - name: turnstyle
+        continue-on-error: true
         uses: softprops/turnstyle@v1
         with:
           abort-after-seconds: 600
 
-      - name: Create Release
+      - name: create release
+        if: steps.turnstyle.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
