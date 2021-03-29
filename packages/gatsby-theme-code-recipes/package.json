@@ -9,7 +9,7 @@
     "react-dom": "^16.14.0 || ^17.0.0"
   },
   "dependencies": {
-    "gatsby-source-filesystem": "^2.1.11",
+    "gatsby-source-filesystem": "^3.1.0",
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
