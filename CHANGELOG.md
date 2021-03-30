@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.6.1
+
+- Reexport `jsx` are `createElement. PR
+  [#1604](https://github.com/system-ui/theme-ui/pull/1604).
+
 ## v0.6.0
 
 _changes relative to 0.3, not the latest 0.6 prerelease_
