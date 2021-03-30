@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: prepare repository
+      - name: Prepare Repository
         run: git fetch --unshallow --tags
 
       - uses: actions/setup-node@v1
@@ -50,13 +50,14 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
-      - name: turnstyle
+      - name: Queue in release turnstile
+        id: turnstyle
         continue-on-error: true
         uses: softprops/turnstyle@v1
         with:
           abort-after-seconds: 600
 
-      - name: create release
+      - name: Create Release
         if: steps.turnstyle.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
