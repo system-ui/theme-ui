@@ -44,6 +44,12 @@ export const jsx: typeof React.createElement = <P extends {}>(
   ...children: React.ReactNode[]
 ): any => emotionJsx(type, parseProps(props), ...children)
 
+/**
+ * @internal for Babel JSX pragma
+ * @see https://github.com/system-ui/theme-ui/issues/1603
+ */
+export const createElement: unknown = jsx
+
 export declare namespace jsx {
   export namespace JSX {
     export interface Element extends ThemeUIJSX.Element {}

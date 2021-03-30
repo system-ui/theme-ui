@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare Repository
+      - name: Prepare repository
         run: git fetch --unshallow --tags
 
       - uses: actions/setup-node@v1
@@ -57,7 +57,7 @@ jobs:
         with:
           abort-after-seconds: 600
 
-      - name: Create Release
+      - name: Create release
         if: steps.turnstyle.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}

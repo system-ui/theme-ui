@@ -1,5 +1,10 @@
 import { jsx as coreJsx, ThemeUIJSX } from '@theme-ui/core'
-export { __ThemeUIContext, merge, useThemeUI } from '@theme-ui/core'
+export {
+  __ThemeUIContext,
+  merge,
+  useThemeUI,
+  createElement,
+} from '@theme-ui/core'
 export type {
   ThemeUIContextValue,
   IntrinsicSxElements,
@@ -36,7 +41,7 @@ export const BaseStyles = (props: Record<string, unknown>) =>
   })
 
 export const jsx = coreJsx
-export const createElement = jsx
+
 export declare namespace jsx {
   export namespace JSX {
     export interface Element extends ThemeUIJSX.Element {}

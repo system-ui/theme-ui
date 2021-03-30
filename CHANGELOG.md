@@ -2,8 +2,15 @@
 
 ## v0.6.1
 
-- Reexport `jsx` are `createElement. PR
-  [#1604](https://github.com/system-ui/theme-ui/pull/1604).
+- Reexported `jsx` as `createElement` to fix babel JSX pragma crash. Issue
+  [#1603](https://github.com/system-ui/theme-ui/issues/1603), PR
+  [#1604](https://github.com/system-ui/theme-ui/pull/1604) by @ethanwu10.
+
+  The following code doesn't crash anymore.
+
+  ```tsx
+  <div {...{}} key="1" />
+  ```
 
 ## v0.6.0
 
