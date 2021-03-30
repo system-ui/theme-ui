@@ -2,6 +2,9 @@
 
 ## v0.7.0 UNRELEASED
 
+- **BREAKING:** `theme.config.useRootStyles` now defaults to `true` following
+  deprecation of `useBodyStyles`.
+
 - Moved theme configuration options to `config` object in theme.
 
   - **Deprecations:** `useRootStyles`, `useCustomProperties`,
