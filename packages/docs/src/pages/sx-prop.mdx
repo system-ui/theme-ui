@@ -13,11 +13,11 @@ The `sx` prop lets you add any valid CSS to an element,
 while using values from your theme to keep styles consistent.
 You can think of the style object that the `sx` prop accepts as a _superset_ of CSS.
 
-```jsx
-/** @jsxImportSource theme-ui */
+```/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 
 export default (props) => (
-  <div
+  <Box
     {...props}
     sx={{
       // values referencing scales defined in a theme
@@ -196,11 +196,11 @@ which follow this structure:
 Theme UI, like Styled System, includes a shorthand syntax for writing mobile-first responsive styles using arrays as values.
 This is useful when you want to change a single property across multiple breakpoints without needing to write verbose media query syntax.
 
-```jsx
-/** @jsxImportSource theme-ui */
+```/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 
 export default (props) => (
-  <div
+  <Box
     {...props}
     sx={{
       width: ['100%', '50%', '25%'],
@@ -213,8 +213,8 @@ export default (props) => (
 
 If you want to skip a breakpoint, you can use the value `null`. This is useful if you want to set a value for only the largest breakpoint, for example.
 
-```jsx
-/** @jsxImportSource theme-ui */
+```/** @jsx jsx */
+import { jsx, Flex } from 'theme-ui'
 
 export default (props) => (
   <div
@@ -231,7 +231,7 @@ export default (props) => (
 If you prefer standard CSS media query syntax, you can use nested objects for responsive styles as well.
 
 ```jsx
-<div
+<Box
   sx={{
     width: '100%',
     '@media screen and (min-width: 40em)': {
@@ -250,7 +250,7 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 
 ```jsx
 // example of using margin and padding shorthand syntax
-<div
+<Box
   sx={{
     px: 3, // padding-left & padding-right
     // paddingX: 3 will also work
@@ -265,11 +265,11 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 For shorthand CSS properties or ones that are not automatically mapped to values in the theme,
 use an inline function to reference values from the `theme` object.
 
-```jsx
-/** @jsxImportSource theme-ui */
+```/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 
 export default (props) => (
-  <div
+  <Box
     {...props}
     sx={{
       boxShadow: (theme) => `0 0 4px ${theme.colors.primary}`,
@@ -283,11 +283,11 @@ export default (props) => (
 In some cases you might want to apply styles to children of the current element.
 You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
 
-```jsx
-/** @jsxImportSource theme-ui */
+```/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 
 export default (props) => (
-  <div
+  <Box
     {...props}
     sx={{
       h1: {
@@ -313,12 +313,11 @@ If you want to reference the current class selector of the component, such as fo
 [psuedo-classes & psuedo-elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements),
 you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
 
-```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+```/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 
 export default (props) => (
-  <div
+  <Box
     {...props}
     sx={{
       '& > p': {
@@ -336,11 +335,11 @@ export default (props) => (
 
 To opt-out of using theme-based CSS, use the `css` prop to render raw CSS values.
 
-```jsx
-/** @jsxImportSource theme-ui */
+```/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 
 export default (props) => (
-  <div
+  <Box
     {...props}
     css={{
       // raw values
