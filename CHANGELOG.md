@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.2 (Mon Apr 05 2021)
+
+### 🐛 Bug Fix
+
+- `@theme-ui/css`
+  - Types for `borderTopWidth` now correctly accept `number`.
+    [#1623](https://github.com/system-ui/theme-ui/pull/1623)
+    ([@beerose](https://github.com/beerose))
+
 ## v0.6.1
 
 - Reexported `jsx` as `createElement` to fix babel JSX pragma crash. Issue
