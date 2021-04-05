@@ -59,7 +59,7 @@ export const Typography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
