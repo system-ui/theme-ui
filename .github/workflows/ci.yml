@@ -39,6 +39,11 @@ jobs:
         github.event.pull_request.head.repo.full_name == github.repository
       )
     steps:
+      - name: Debug actions
+        run: |
+          echo ${{ github.event.head_commit.message }}
+          echo ${{ contains(github.event.head_commit.message, 'chore') }}
+
       - uses: actions/checkout@v2
 
       - name: Prepare repository
