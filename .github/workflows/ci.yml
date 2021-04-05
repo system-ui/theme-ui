@@ -39,9 +39,10 @@ jobs:
         github.event.pull_request.head.repo.full_name == github.repository
       )
     steps:
-      - name: Debug actions
-        run: |
-          echo "${{ toJSON(github.event) }}"
+      - name: Dump GitHub event
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: echo "$GITHUB_EVENT"
 
       - uses: actions/checkout@v2
 
