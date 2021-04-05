@@ -39,10 +39,10 @@ jobs:
         github.event.pull_request.head.repo.full_name == github.repository
       )
     steps:
-      - name: Debug actions
-        run: |
-          echo "${{ github.event.head_commit.message }}"
-          echo "${{ contains(github.event.head_commit.message, 'chore') }}"
+      - name: Dump GitHub event
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: echo "$GITHUB_EVENT"
 
       - uses: actions/checkout@v2
 
