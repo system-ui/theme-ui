@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Debug actions
         run: |
-          echo "${{ github.event }}"
+          echo "${{ toJSON(github.event) }}"
 
       - uses: actions/checkout@v2
 
