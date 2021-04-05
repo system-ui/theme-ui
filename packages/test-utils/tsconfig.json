@@ -1,8 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "declaration": true,
     "target": "ES2018"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"]

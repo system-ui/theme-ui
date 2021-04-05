@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
-import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
+import { ThemeUIExtendedCSSProperties, ThemeUIStyleObject } from '@theme-ui/css'
 import { Fragment } from 'react'
-import Sx from './Sx'
+import * as Sx from './Sx'
 import { EditorContextValue } from './types'
 
 export default function Styles({ tag = 'root' }) {
@@ -12,7 +12,12 @@ export default function Styles({ tag = 'root' }) {
   // todo: this is unsafe, and most probably a bug
   const style = (styles[tag] || {}) as ThemeUIExtendedCSSProperties
 
-  const setStyle = next => {
+  const setStyle = (
+    next:
+      | Parameters<Sx.TypographyProps['onChange']>[0]
+      | Parameters<Sx.MarginProps['onChange']>[0]
+      | Parameters<Sx.ColorsProps['onChange']>[0]
+  ) => {
     context.setTheme({
       styles: {
         [tag]: {

@@ -1,21 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "lerna run prepare",
-    "start": "yarn workspace docs start",
-    "build": "yarn workspace docs build",
-    "serve": "yarn workspace docs serve --port 8000",
+    "build": "preconstruct build",
     "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
-    "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
+    "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
-    "typecheck": "lerna run typecheck",
+    "typecheck": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",
     "logo": "yarn workspace docs logo",
+    "postinstall": "preconstruct dev",
+    "version:bump": "lerna version",
+    "version:bump-next": "lerna version prerelease --preid alpha --exact",
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
-    "release": "yarn clean && yarn prepare && auto shipit -v",
+    "release": "yarn clean && yarn build && auto shipit -v",
     "release-manual": "yarn prerelease-manual && lerna publish from-package --dist-tag next --pre-dist-tag next",
-    "prerelease-manual": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
+    "prerelease-manual": "yarn clean && yarn build && yarn typecheck && yarn test --coverage",
     "bump-version": "lerna version",
     "bump-version-next": "lerna version prerelease --preid alpha --exact --force-publish",
     "all-contributors:check": "./scripts/all-contributors-check.js",
@@ -52,16 +52,24 @@
     "jest-mock-console": "^1.0.1",
     "lerna": "^3.14.1",
     "lint-staged": "10",
-    "microbundle": "^0.13.0",
     "prettier": "^2.2.0",
     "react-test-renderer": "^17.0.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
-    "typescript": "^4"
+    "typescript": "^4",
+    "@types/node": "^14.14.20",
+    "@preconstruct/cli": "^2"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*",
+      "!packages/docs"
+    ]
+  },
+  "name": "@theme-ui/monorepo"
 }

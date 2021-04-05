@@ -62,8 +62,8 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
-  const Beep = (props) => <h2 {...props} />
-  const Inner = (props) => mdx('Beep', props)
+  const Beep = (props: {}) => <h2 {...props} />
+  const Inner = (props: {}) => mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider
