@@ -11,10 +11,10 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
-    "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
-    "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
-    "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
-    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json"
+    "build": "yarn prepare:index && yarn build:jsx-runtime && yarn build:jsx-dev-runtime",
+    "build:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
+    "build:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
+    "build:index": "microbundle --no-compress --tsconfig tsconfig.json"
   },
   "dependencies": {
     "@theme-ui/color-modes": "^0.6.1",
