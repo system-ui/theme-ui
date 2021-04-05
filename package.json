@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "preconstruct build",
-    "build:docs": "yarn workspace docs build",
+    "build:docs": "yarn build && yarn workspace docs build",
     "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
     "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
