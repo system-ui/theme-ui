@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-base",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0",
   "main": "dist/theme-ui-preset-base.cjs.js",
   "module": "dist/theme-ui-preset-base.esm.js",
   "author": "Brent Jackson",
@@ -10,5 +10,6 @@
   "source": "src/index.ts",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

@@ -1,12 +1,11 @@
-/** @jsx jsx */
-import { jsx, Themed, useThemeUI } from 'theme-ui'
+import React from 'react'
+import { Flex, Themed, useThemeUI } from 'theme-ui'
 import { TypeScale, TypeStyle } from '@theme-ui/style-guide'
 
 const Row = (props) => (
-  <div
+  <Flex
     {...props}
     sx={{
-      display: 'flex',
       alignItems: 'baseline',
       flexWrap: 'wrap',
       mx: -3,

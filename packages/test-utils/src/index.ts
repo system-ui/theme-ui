@@ -1,6 +1,8 @@
 import renderer from 'react-test-renderer'
 import * as tsSnippet from 'ts-snippet'
 
+export * from '@testing-library/react'
+
 export type {
   Assert,
   AssertFalse,

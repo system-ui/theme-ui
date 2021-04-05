@@ -42,7 +42,7 @@ const images = {
   flatiron:
     'https://images.unsplash.com/photo-1520222984843-df35ebc0f24d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
   logo:
-    'https://raw.githubusercontent.com/system-ui/theme-ui/stable/packages/docs/static/logo.png',
+    'https://raw.githubusercontent.com/system-ui/theme-ui/stable/packages/docs/static/icon.png',
 }
 
 const scope = {
@@ -56,16 +56,27 @@ const scope = {
   images,
 }
 
-const transformCode = (src) => `/** @jsx jsx */\n<>${src}</>`
+const stripTrailingNewline = (str) => {
+  if (typeof str === 'string' && str[str.length - 1] === '\n') {
+    return str.slice(0, -1)
+  }
+  return str
+}
+
+const transformCode = (src) => {
+  return `/** @jsx jsx */\n<>${src}</>`
+}
 
 const liveTheme = { styles: [] }
 
 export const LiveCode = ({ children, preview, xray }) => {
+  const code = stripTrailingNewline(children)
+
   if (preview) {
     return (
       <LiveProvider
         theme={liveTheme}
-        code={children}
+        code={code}
         scope={scope}
         transformCode={transformCode}>
         <LivePreview />
@@ -76,7 +87,7 @@ export const LiveCode = ({ children, preview, xray }) => {
   return (
     <LiveProvider
       theme={liveTheme}
-      code={children}
+      code={code}
       scope={scope}
       transformCode={transformCode}>
       <div
@@ -99,10 +110,11 @@ export const LiveCode = ({ children, preview, xray }) => {
       </div>
       <Themed.pre
         sx={{
+          p: 0,
           mt: 0,
           mb: 3,
         }}>
-        <LiveEditor padding={0} />
+        <LiveEditor padding="1rem" />
       </Themed.pre>
     </LiveProvider>
   )

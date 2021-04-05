@@ -18,20 +18,20 @@ describe('toCustomProperties', () => {
     expect(result).toEqual({
       initialColorModeName: 'light',
       colors: {
-        text: 'var(--theme-ui-colors-text, black)',
+        text: 'var(--theme-ui-colors-text)',
       },
       space: [
-        'var(--theme-ui-space-0, 0px)',
-        'var(--theme-ui-space-1, 4px)',
-        'var(--theme-ui-space-2, 8px)',
-        'var(--theme-ui-space-3, 16px)',
-        'var(--theme-ui-space-4, 32px)',
+        'var(--theme-ui-space-0)',
+        'var(--theme-ui-space-1)',
+        'var(--theme-ui-space-2)',
+        'var(--theme-ui-space-3)',
+        'var(--theme-ui-space-4)',
       ],
       fonts: {
-        body: 'var(--theme-ui-fonts-body, system-ui, sans-serif)',
+        body: 'var(--theme-ui-fonts-body)',
       },
       fontWeights: {
-        body: 'var(--theme-ui-fontWeights-body, 400)',
+        body: 'var(--theme-ui-fontWeights-body)',
       },
     })
   })
@@ -49,6 +49,49 @@ describe('createColorStyles', () => {
       colors: {
         text: 'tomato',
         background: 'white',
+        primary: {
+          __default: '#3333ee',
+          light: '#7373f7',
+          dark: '#00008f',
+        },
+        modes: {
+          dark: {
+            text: 'white',
+            background: 'black',
+            primary: {
+              __default: '#ee4933',
+              light: '#fd6d5a',
+              dark: '#962415',
+            },
+          },
+        },
+      },
+    })
+    expect(styles).toEqual({
+      body: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+        '--theme-ui-colors-primary': '#3333ee',
+        '--theme-ui-colors-primary-light': '#7373f7',
+        '--theme-ui-colors-primary-dark': '#00008f',
+        '&.theme-ui-dark': {
+          '--theme-ui-colors-text': 'white',
+          '--theme-ui-colors-background': 'black',
+          '--theme-ui-colors-primary': '#ee4933',
+          '--theme-ui-colors-primary-light': '#fd6d5a',
+          '--theme-ui-colors-primary-dark': '#962415',
+        },
+      },
+    })
+  })
+
+  test('creates styles from simple theme', () => {
+    const styles = createColorStyles({
+      colors: {
+        text: 'tomato',
+        background: 'white',
         modes: {
           dark: {
             text: 'white',
@@ -59,8 +102,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, tomato)',
-        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
         '&.theme-ui-dark': {
@@ -87,8 +130,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       html: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -116,8 +159,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       html: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -130,7 +173,7 @@ describe('createColorStyles', () => {
 
   test('creates styles at the BODY root while ignoring the root styles prop', () => {
     const styles = createColorStyles({
-      useRootStyles: null,
+      useRootStyles: undefined,
       useBodyStyles: true,
       colors: {
         text: 'white',
@@ -145,8 +188,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -156,8 +199,6 @@ describe('createColorStyles', () => {
       },
     })
   })
-
-  // 
 
   test('creates styles for print color mode', () => {
     const styles = createColorStyles({
@@ -175,8 +216,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, white)',
-        backgroundColor: 'var(--theme-ui-colors-background, tomato)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'tomato',
         '&.theme-ui-light': {
@@ -208,8 +249,8 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       body: {
-        color: 'var(--theme-ui-colors-text, tomato)',
-        backgroundColor: 'var(--theme-ui-colors-background, white)',
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
         '&.theme-ui-dark': {
@@ -220,6 +261,23 @@ describe('createColorStyles', () => {
           '--theme-ui-colors-text': 'tomato',
           '--theme-ui-colors-background': 'white',
         },
+      },
+    })
+  })
+
+  test('creates styles from color palette', () => {
+    const styles = createColorStyles({
+      colors: {
+        text: 'tomato',
+        background: 'white',
+      },
+    })
+    expect(styles).toEqual({
+      body: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
       },
     })
   })

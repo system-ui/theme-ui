@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/parse-props",
-  "description": "internal package",
-  "version": "0.6.0-alpha.6",
+  "description": "Internal package — You don't want to consume this directly.",
+  "version": "0.6.1",
   "source": "src/index.ts",
   "main": "dist/theme-ui-parse-props.cjs.js",
   "module": "dist/theme-ui-parse-props.esm.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/css": "0.6.0-alpha.6"
+    "@theme-ui/css": "0.6.0"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0"
@@ -27,5 +27,6 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "react": "^17.0.1"
-  }
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

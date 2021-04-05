@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.1",
   "source": "src/index.ts",
   "main": "dist/theme-ui-mdx.cjs.js",
   "module": "dist/theme-ui-mdx.esm.js",
@@ -9,8 +9,8 @@
   "dependencies": {
     "@emotion/styled": "^11.0.0",
     "@mdx-js/react": "^1.6.22",
-    "@theme-ui/css": "0.6.0-alpha.6",
-    "@theme-ui/core": "0.6.0-alpha.6",
+    "@theme-ui/core": "^0.6.1",
+    "@theme-ui/css": "^0.6.0",
     "@emotion/react": "^11.1.1"
   },
   "devDependencies": {
@@ -25,5 +25,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

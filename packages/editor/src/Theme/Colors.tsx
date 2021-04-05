@@ -16,9 +16,13 @@ type ColorPaletteRenderArg = {
 
 const Colors = (props: ColorsProps) => {
   const context = useThemeUI() as EditorContextValue
-  // TODO: Remove any after @theme-ui/color-mode was transformed to TypeScript
-  const mode = (context as any).colorMode
-  const { colors } = context.theme || {}
+  const { colorMode: mode, theme } = context
+  const colorsKey = theme.rawColors ? 'rawColors' : 'colors'
+  const colors = theme[colorsKey]
+
+  if (colorsKey === 'rawColors') {
+    console.debug('>> rawColors', theme)
+  }
 
   const onChange = (key: string) => (val: { hex: string }) => {
     let next = {}
@@ -31,7 +35,7 @@ const Colors = (props: ColorsProps) => {
       mode !== (context.theme as any).initialColorMode
     ) {
       next = {
-        colors: {
+        [colorsKey]: {
           modes: {
             [mode]: {
               [key]: val.hex,
@@ -41,11 +45,12 @@ const Colors = (props: ColorsProps) => {
       }
     } else {
       next = {
-        colors: {
+        [colorsKey]: {
           [key]: val.hex,
         },
       }
     }
+
     context.setTheme(next)
   }
 
@@ -53,7 +58,7 @@ const Colors = (props: ColorsProps) => {
     <ColorPalette
       {...props}
       mode={mode}
-      render={({ swatch, color, key, ...rest }: ColorPaletteRenderArg) => (
+      render={({ swatch, color, key }: ColorPaletteRenderArg) => (
         <ColorPicker key={key} color={color} onChange={onChange(key)}>
           {swatch}
         </ColorPicker>

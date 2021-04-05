@@ -14,11 +14,7 @@ export const Paragraph = React.forwardRef(function Paragraph(
       sx={{
         // reset margin by default: avoid relying on user-agent margins (not aware of theme-ui space scale)
         margin: 0,
-        // set a max-width: avoid full-page paragraphs
-        '@media screen and (min-width: 36em)': {
-          maxWidth: '48rem',
-        },
-        ...sx,
+        ...sx
       }}
       __themeKey="text"
       __css={{

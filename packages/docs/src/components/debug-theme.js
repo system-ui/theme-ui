@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Context } from 'theme-ui'
-import { useContext } from 'react'
+import { jsx, useThemeUI } from 'theme-ui'
 
-export default (props) => {
-  const theme = useContext(Context)
+export default () => {
+  const theme = useThemeUI()
   return <pre children={JSON.stringify(theme, null, 2)} />
 }

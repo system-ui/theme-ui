@@ -1,18 +1,18 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.1",
   "source": "src/index.ts",
   "main": "dist/theme-ui-color.cjs.js",
   "module": "dist/theme-ui-color.esm.js",
   "types": "dist/theme-ui-color.cjs.d.ts",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.6.0-alpha.6",
+    "@theme-ui/css": "0.6.0",
     "polished": "^4.0.5"
   },
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

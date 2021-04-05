@@ -1,13 +1,15 @@
 {
   "name": "@theme-ui/preset-dark",
-  "version": "0.6.0-alpha.4",
+  "version": "0.6.0",
   "main": "dist/theme-ui-preset-dark.cjs.js",
   "module": "dist/theme-ui-preset-dark.esm.js",
+  "types": "dist/theme-ui-preset-dark.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {},
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
