@@ -13,6 +13,7 @@
     "logo": "yarn workspace docs logo",
     "dev:chrome": "yarn workspace @theme-ui/chrome dev",
     "dev:editor": "yarn workspace @theme-ui/editor dev",
+    "auto:shipit-and-log": "auto shipit -v 2>&1 | tee ./.publish-log.txt",
     "release": "yarn clean && yarn prepare && auto shipit -v",
     "release-manual": "yarn prerelease-manual && lerna publish from-package --dist-tag next --pre-dist-tag next",
     "prerelease-manual": "yarn clean && yarn prepare && yarn typecheck && yarn test --coverage",
