@@ -10,7 +10,7 @@
     "@theme-ui/color-modes": "^0.6.1",
     "@theme-ui/core": "^0.6.1",
     "@theme-ui/mdx": "^0.6.1",
-    "@theme-ui/css": "^0.6.1",
+    "@theme-ui/css": "^0.6.0",
     "@emotion/react": "^11.1.1"
   },
   "peerDependencies": {

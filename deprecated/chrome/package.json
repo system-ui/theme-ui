@@ -31,9 +31,6 @@
     "webpack-cli": "^3.3.4",
     "@emotion/react": "^11.1.1"
   },
-  "devDependencies": {
-    "@theme-ui/css": "^0.5.0-alpha.0"
-  },
   "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5",
   "module": "dist/chrome.esm.js"
 }
