@@ -41,8 +41,7 @@ jobs:
     steps:
       - name: Debug actions
         run: |
-          echo "${{ github.event.head_commit.message }}"
-          echo "${{ contains(github.event.head_commit.message, 'chore') }}"
+          echo "${{ github.event }}"
 
       - uses: actions/checkout@v2
 
