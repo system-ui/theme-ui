@@ -20,10 +20,6 @@ const Colors = (props: ColorsProps) => {
   const colorsKey = theme.rawColors ? 'rawColors' : 'colors'
   const colors = theme[colorsKey]
 
-  if (colorsKey === 'rawColors') {
-    console.debug('>> rawColors', theme)
-  }
-
   const onChange = (key: string) => (val: { hex: string }) => {
     let next = {}
     if (
