@@ -241,7 +241,7 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
 })
 
 test('retains initial context', () => {
-  let context: ThemeUIContextValue
+  let context: ThemeUIContextValue | undefined = undefined;
   const Consumer = () => {
     context = useThemeUI()
     return null

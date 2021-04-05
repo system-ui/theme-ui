@@ -38,6 +38,7 @@ test('renders with color modes', () => {
   let rendered:
     | renderer.ReactTestRendererJSON
     | renderer.ReactTestRendererJSON[]
+    | null = null
 
   const Mode = () => {
     const [colorMode] = useColorMode()
