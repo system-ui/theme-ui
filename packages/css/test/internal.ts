@@ -29,7 +29,7 @@ describe(__internalGetUseRootStyles, () => {
     (value) => {
       const theme: Theme = {
         useBodyStyles: value,
-        useRootStyles: null,
+        useRootStyles: null as any as undefined,
       }
 
       expect(__internalGetUseRootStyles(theme)).toStrictEqual({

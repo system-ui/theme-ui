@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import * as CSS from 'csstype'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
 import { EditorContextValue } from '../types'
@@ -27,7 +28,11 @@ const LineHeights = () => {
             type="number"
             label={key}
             name={'lineHeights.' + key}
-            value={lineHeights[key]}
+            value={
+              lineHeights[
+                key as keyof typeof lineHeights
+              ] as CSS.Property.LineHeight
+            }
             onChange={onChange(key)}
             min={1}
             max={3}

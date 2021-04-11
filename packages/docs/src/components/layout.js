@@ -29,8 +29,11 @@ const getModeName = (mode) => {
       return 'Deep'
     case 'swiss':
       return 'Swiss'
+    case 'light':
     case 'default':
       return 'Light'
+    case undefined:
+      return '         '
     default:
       return mode
   }
@@ -92,6 +95,7 @@ export default (props) => {
               <Button
                 sx={{
                   ml: 2,
+                  whiteSpace: 'pre',
                 }}
                 onClick={cycleMode}>
                 {getModeName(mode)}

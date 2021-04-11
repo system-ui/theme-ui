@@ -6,4 +6,5 @@ module.exports = {
   semi: false,
   jsxBracketSameLine: true,
   arrowParens: 'always',
+  proseWrap: 'always',
 }

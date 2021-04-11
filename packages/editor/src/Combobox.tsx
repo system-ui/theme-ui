@@ -31,7 +31,7 @@ type ComboboxOwnProps<T> = {
   type?: string
   name: string
   label?: React.ReactNode
-  value: T
+  value: T | undefined
   onChange: (val: string | T) => void
   options?: T[]
 }
@@ -72,7 +72,7 @@ const Combobox = <T extends string | number>({
   const popup = name + '-popup'
 
   const resetIndex = () => {
-    const i = options.indexOf(value)
+    const i = options.indexOf(value!)
     setIndex(i)
   }
 

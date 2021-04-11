@@ -38,6 +38,8 @@ const config = {
       statements: 90,
     },
   },
+  modulePathIgnorePatterns: ['packages/.*/dist'],
+  // projects: ['<rootDir>/packages/*'],
   snapshotSerializers: ['@emotion/jest/serializer'],
   setupFiles: ['jest-canvas-mock'],
   transform: {

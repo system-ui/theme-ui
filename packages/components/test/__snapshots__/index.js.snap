@@ -1100,12 +1100,6 @@ exports[`Paragraph renders 1`] = `
   margin: 0;
 }
 
-@media screen and (min-width: 36em) {
-  .emotion-0 {
-    max-width: 48rem;
-  }
-}
-
 <p
   className="emotion-0"
 />

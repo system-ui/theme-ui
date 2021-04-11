@@ -362,18 +362,6 @@ interface OverwriteCSSProperties {
    */
   borderTopStyle?: CSS.Property.BorderTopStyle | string
   /**
-   * The **`border-top-width`** CSS property sets the width of the top border of an element.
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
-   */
-  borderTopWidth?: CSS.Property.BorderTopWidth<never> | string
-  /**
    * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
    * **Initial value**: `none`
@@ -707,6 +695,14 @@ export interface Theme {
    * Define the colors that are available through this theme
    */
   colors?: ColorModesScale
+
+  /**
+   * Colors are transformed into CSS custom properties.
+   *
+   * If you need to read their raw values to pass them somewhere where CSS
+   * custom properties are not supported, use `rawColors`.
+   */
+  rawColors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles

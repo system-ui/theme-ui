@@ -1,4 +1,4 @@
-import { css, NestedScale, NestedScaleDict, Theme } from '../src'
+import { css, NestedScale, NestedScaleDict, Theme, ThemeUIExtendedCSSProperties } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -675,4 +675,21 @@ test('omits empty values', () => {
       border: '1px solid black',
     })(theme)
   ).toStrictEqual({ border: '1px solid black' })
+})
+
+
+test('borderTopWidth accepts number', () => {
+  expect(css({
+    borderTopWidth: 7,
+  })(theme)).toEqual({
+    borderTopWidth: 7,
+  })
+
+  expect(css({
+    borderTopWidth: 1,
+  })({
+    borderWidths: ['10px', '20px']
+  })).toEqual({
+    borderTopWidth: '20px',
+  })
 })

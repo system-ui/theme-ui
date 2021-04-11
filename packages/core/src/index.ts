@@ -33,7 +33,6 @@ export type {
   VariantProperty,
 } from '@theme-ui/css'
 
-
 export { __internalGetUseRootStyles } from '@theme-ui/css'
 export * from './types'
 
@@ -44,6 +43,12 @@ export const jsx: typeof React.createElement = <P extends {}>(
   props: React.Attributes & P,
   ...children: React.ReactNode[]
 ): any => emotionJsx(type, parseProps(props), ...children)
+
+/**
+ * @internal for Babel JSX pragma
+ * @see https://github.com/system-ui/theme-ui/issues/1603
+ */
+export const createElement: unknown = jsx
 
 export declare namespace jsx {
   export namespace JSX {
@@ -65,17 +70,20 @@ export declare namespace jsx {
   }
 }
 
-export interface ContextValue {
+export interface ThemeUIContextValue {
   __EMOTION_VERSION__: string
   theme: Theme
 }
 
-export const Context = React.createContext<ContextValue>({
+/**
+ * @internal
+ */
+export const __ThemeUIContext = React.createContext<ThemeUIContextValue>({
   __EMOTION_VERSION__,
   theme: {},
 })
 
-export const useThemeUI = () => React.useContext(Context)
+export const useThemeUI = () => React.useContext(__ThemeUIContext)
 
 const canUseSymbol = typeof Symbol === 'function' && Symbol.for
 
@@ -109,14 +117,20 @@ function mergeAll<T = Theme>(...args: Partial<T>[]) {
 
 merge.all = mergeAll
 
-interface BaseProviderProps {
-  context: ContextValue
+export interface __ThemeUIInternalBaseThemeProviderProps {
+  context: ThemeUIContextValue
 }
-const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
+/**
+ * @internal
+ */
+export const __ThemeUIInternalBaseThemeProvider: React.FC<__ThemeUIInternalBaseThemeProviderProps> = ({
+  context,
+  children,
+}) =>
   jsx(
     EmotionContext.Provider,
     { value: context.theme },
-    jsx(Context.Provider, {
+    jsx(__ThemeUIContext.Provider, {
       value: context,
       children,
     })
@@ -145,5 +159,5 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
 
-  return jsx(BaseProvider, { context }, children)
+  return jsx(__ThemeUIInternalBaseThemeProvider, { context }, children)
 }
