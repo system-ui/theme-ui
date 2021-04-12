@@ -727,7 +727,7 @@ export interface Theme {
   /**
    * The colors object values are transformed to match the set color mode.
    *
-   * If you need to use values that will not get mutated, use the `allModes` object.
+   * If you need to use values that will not get mutated, use the `allColorModes` object.
    * Additionnaly, the default colors are nested under the `initialColorModeName` key (if undefined, will default to `__default`)
    */
   allColorModes?: AllColorModesScale
