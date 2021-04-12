@@ -7,6 +7,7 @@ import {
 } from '@theme-ui/core'
 import { get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
 import { Global } from '@emotion/react'
+import omit from 'lodash.omit'
 
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
@@ -151,11 +152,22 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
 
   const theme = applyColorMode(outer.theme || {}, colorMode)
+
+  const assembledColorModes = {
+    [outer.theme.initialColorModeName || '__default']: omit(
+      outer.theme.colors,
+      ['modes']
+    ),
+    ...outer.theme.colors?.modes,
+  }
+
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
     // We could save custom properties to `theme.colorVars`,
     // But it's infeasible to do this because of how the packages are split.
+
     theme.rawColors = theme.colors
+    theme.allColorModes = assembledColorModes
     theme.colors = toCustomProperties(theme.colors, 'colors')
   }
 

@@ -241,7 +241,7 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
 })
 
 test('retains initial context', () => {
-  let context: ThemeUIContextValue | undefined = undefined;
+  let context: ThemeUIContextValue | undefined = undefined
   const Consumer = () => {
     context = useThemeUI()
     return null
@@ -472,7 +472,7 @@ test('emotion useTheme with custom css vars', () => {
   expect(cssVarsColors?.text).toBe('var(--theme-ui-colors-text)')
   expect(cssVarsColors?.background).toBe('var(--theme-ui-colors-background)')
 
-  expect(orignalColors?.text).toBe('limegreen') 
+  expect(orignalColors?.text).toBe('limegreen')
   expect(orignalColors?.background).toBe('#111')
 })
 
@@ -749,4 +749,114 @@ test('warns when localStorage is disabled', () => {
   `)
 
   restoreConsole()
+})
+
+test('allColorModes object is passed to theme-ui context without initialColorModeName', () => {
+  let modes
+  const Grabber = () => {
+    const context = useThemeUI()
+    modes = context.theme?.allColorModes
+    return null
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider>
+        <Grabber />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(modes).toStrictEqual({
+    __default: { primary: 'tomato' },
+    dark: { primary: 'black' },
+  })
+})
+
+test('allColorModes object is passed to theme-ui context with initialColorModeName', () => {
+  let modes
+  const Grabber = () => {
+    const context = useThemeUI()
+    modes = context.theme?.allColorModes
+    return null
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+        initialColorModeName: 'light',
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider>
+        <Grabber />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(modes).toStrictEqual({
+    light: { primary: 'tomato' },
+    dark: { primary: 'black' },
+  })
+})
+
+test('useColorMode does not update allColorModes object', () => {
+  let modes
+  const Grabber = () => {
+    const context = useThemeUI()
+    modes = context.theme?.allColorModes
+    return null
+  }
+
+  const Button = (props) => {
+    const [, setMode] = useColorMode()
+    return (
+      <button
+        onClick={() => {
+          setMode('dark')
+        }}
+        children="test"
+      />
+    )
+  }
+  const tree = render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+        initialColorModeName: 'light',
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider>
+        <Button />
+        <Grabber />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  const button = tree.getByText('test')
+  fireEvent.click(button)
+  expect(modes).toStrictEqual({
+    light: { primary: 'tomato' },
+    dark: { primary: 'black' },
+  })
 })

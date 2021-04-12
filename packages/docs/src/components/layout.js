@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, useColorMode } from 'theme-ui'
+import { jsx, Themed, useColorMode, useThemeUI } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'

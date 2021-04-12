@@ -608,6 +608,10 @@ export type ColorModesScale = ColorMode & {
   }
 }
 
+export type AllColorModesScale = {
+  [k: string]: ColorMode
+}
+
 export interface ThemeStyles {
   tr?: ThemeUIStyleObject
   th?: ThemeUIStyleObject
@@ -719,6 +723,14 @@ export interface Theme {
    * custom properties are not supported, use `rawColors`.
    */
   rawColors?: ColorModesScale
+
+  /**
+   * The colors object values are transformed to match the set color mode.
+   *
+   * If you need to use values that will not get mutated, use the `allModes` object.
+   * Additionnaly, the default colors are nested under the `initialColorModeName` key (if undefined, will default to `__default`)
+   */
+  allColorModes?: AllColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
