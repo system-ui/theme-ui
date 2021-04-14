@@ -3,7 +3,7 @@
 ## UNRELEASED
 
 - Set `gatsby` peerDependency more explicit to `^2.0.0 || ^3.0.0`. [#1640](https://github.com/system-ui/theme-ui/pull/1640) ([@LekoArts](https://github.com/LekoArts))
-- Allow using custom media queries in `breakpoints`-key of theme. [@carolinmaisenbacher](https://github.com/carolinmaisenbacher)
+- Have `breakpoints` accept custom media queries [#1653](https://github.com/system-ui/theme-ui/pull/1653) [@carolinmaisenbacher](https://github.com/carolinmaisenbacher)
 
 ## v0.6.2 (Mon Apr 05 2021)
 
