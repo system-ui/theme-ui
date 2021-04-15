@@ -104,6 +104,17 @@
     tslib "2.1.0"
     url-join "^4.0.0"
 
+"@auto-it/magic-zero@^10.25.0":
+  version "10.25.0"
+  resolved "https://registry.npmjs.org/@auto-it/magic-zero/-/magic-zero-10.25.0.tgz#385a64e36cc09ef7c92d82c959c270991b164ce1"
+  integrity sha512-J1hXCfhYZ/4HYOsmaEIpWxQKWcyBE0wYEliybAO2gridiPOKyWoW6XlQZoa+VbgAoaSuGYL94RypP/9Z5vG6Gw==
+  dependencies:
+    "@auto-it/core" "10.25.0"
+    fp-ts "^2.5.3"
+    io-ts "^2.1.2"
+    semver "^7.0.0"
+    tslib "2.1.0"
+
 "@auto-it/npm@10.25.0":
   version "10.25.0"
   resolved "https://registry.npmjs.org/@auto-it/npm/-/npm-10.25.0.tgz#6b47c337c2c8976f7acc9932750ab35ebefa9c9f"
@@ -14420,9 +14431,9 @@ param-case@^2.1.0:
   dependencies:
     no-case "^2.2.0"
 
-param-case@^3.0.3:
+param-case@^3.0.4:
   version "3.0.4"
-  resolved "https://registry.yarnpkg.com/param-case/-/param-case-3.0.4.tgz#7d17fe4aa12bde34d4a77d91acfb6219caad01c5"
+  resolved "https://registry.npmjs.org/param-case/-/param-case-3.0.4.tgz#7d17fe4aa12bde34d4a77d91acfb6219caad01c5"
   integrity sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==
   dependencies:
     dot-case "^3.0.4"

@@ -1,5 +1,4 @@
-import { AutoRc } from '@auto-it/core'
-
+import { AutoRc } from 'auto'
 import { INpmConfig } from '@auto-it/npm'
 import { IAllContributorsPluginOptions } from '@auto-it/all-contributors'
 
@@ -35,6 +34,7 @@ export default function config(): AutoRc {
       'first-time-contributor',
       'released',
       ['all-contributors', allContributorsOptions],
+      'magic-zero',
     ],
   }
 }
