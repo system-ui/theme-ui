@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-roboto",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "dist/theme-ui-preset-roboto.cjs.js",
   "module": "dist/theme-ui-preset-roboto.esm.js",
   "types": "dist/theme-ui-preset-roboto.cjs.d.ts",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/preset-base": "^0.6.0"
+    "@theme-ui/preset-base": "0.7.0"
   },
   "publishConfig": {
     "access": "public"
