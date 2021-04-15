@@ -1055,6 +1055,18 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "alexanderchan",
+      "name": "Alex Chan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1864372?v=4",
+      "profile": "https://twitter.com/alexandermchan",
+      "contributions": [
+        "doc",
+        "example",
+        "test",
+        "code"
+      ]
     }
   ]
 }
