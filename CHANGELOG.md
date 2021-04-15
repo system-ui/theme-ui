@@ -1,74 +1,27 @@
-# v0.7.0 (Thu Apr 15 2021)
-
-:tada: This release contains work from new contributors! :tada:
-
-Thanks for all your work!
-
-:heart: Carolin Maisenbacher ([@carolinmaisenbacher](https://github.com/carolinmaisenbacher))
-
-:heart: Alex Chan ([@alexanderchan](https://github.com/alexanderchan))
-
-#### 🚀 Enhancement
-
-- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tachyons`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
-  - WIP: Build packages with Preconstruct 2 [#1423](https://github.com/system-ui/theme-ui/pull/1423) ([@alexanderchan](https://github.com/alexanderchan) [@hasparus](https://github.com/hasparus))
-
-#### 🐛 Bug Fix
-
-- `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`
-  - chore: More explicit Gatsby peer dep [#1640](https://github.com/system-ui/theme-ui/pull/1640) ([@LekoArts](https://github.com/LekoArts))
-
-#### ⚠️ Pushed to `stable`
-
-- chore: update yarn.lock ([@hasparus](https://github.com/hasparus))
-- ci(auto): patch-package cosmiconfig-ts-loader ([@hasparus](https://github.com/hasparus))
-- ci(auto): rewrite auto config to TypeScript ([@hasparus](https://github.com/hasparus))
-- chore: bump deps ([@hasparus](https://github.com/hasparus))
-- chore: rename auto.rc to .autorc 🤦 ([@hasparus](https://github.com/hasparus))
-- chore(docs): build packages before building docs ([@hasparus](https://github.com/hasparus))
-- chore: add build:docs script ([@hasparus](https://github.com/hasparus))
-- chore(ci): stop logging whole github event ([@hasparus](https://github.com/hasparus))
-- ci(actions): skip release job when PR startsWith "chore" ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tachyons`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
-  - Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
-- `theme-ui`
-  - docs: add @carolinmaisenbacher as a contributor ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/theme-provider`
-  - Update package.json ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/editor`
-  - refactor(editor): remove console.log ([@hasparus](https://github.com/hasparus))
-
-#### 🔩 Dependency Updates
-
-- chore(deps): bump @testing-library/react from 11.2.5 to 11.2.6 [#1643](https://github.com/system-ui/theme-ui/pull/1643) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps): bump react-test-renderer from 17.0.1 to 17.0.2 [#1645](https://github.com/system-ui/theme-ui/pull/1645) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @auto-it/all-contributors from 10.24.1 to 10.24.3 [#1646](https://github.com/system-ui/theme-ui/pull/1646) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @auto-it/first-time-contributor [#1647](https://github.com/system-ui/theme-ui/pull/1647) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @babel/core from 7.13.14 to 7.13.15 [#1648](https://github.com/system-ui/theme-ui/pull/1648) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @types/node from 14.14.20 to 14.14.37 [#1649](https://github.com/system-ui/theme-ui/pull/1649) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump typescript from 4.2.3 to 4.2.4 [#1650](https://github.com/system-ui/theme-ui/pull/1650) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @auto-it/released from 10.23.0 to 10.24.3 [#1641](https://github.com/system-ui/theme-ui/pull/1641) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump postcss from 8.2.9 to 8.2.10 [#1642](https://github.com/system-ui/theme-ui/pull/1642) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @auto-it/all-contributors from 10.23.0 to 10.24.1 [#1630](https://github.com/system-ui/theme-ui/pull/1630) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @auto-it/first-time-contributor [#1631](https://github.com/system-ui/theme-ui/pull/1631) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- chore(deps-dev): bump @babel/runtime from 7.13.9 to 7.13.10 [#1628](https://github.com/system-ui/theme-ui/pull/1628) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-
-#### Authors: 5
-
-- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
-- Alex Chan ([@alexanderchan](https://github.com/alexanderchan))
-- Carolin Maisenbacher ([@carolinmaisenbacher](https://github.com/carolinmaisenbacher))
-- Lennart ([@LekoArts](https://github.com/LekoArts))
-- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
-
----
-
 # Changelog
 
-## UNRELEASED
+## v0.7.0 (Thu Apr 15 2021)
 
-- Set `gatsby` peerDependency more explicit to `^2.0.0 || ^3.0.0`. [#1640](https://github.com/system-ui/theme-ui/pull/1640) ([@LekoArts](https://github.com/LekoArts))
-- Have `breakpoints` accept custom media queries [#1653](https://github.com/system-ui/theme-ui/pull/1653) [@carolinmaisenbacher](https://github.com/carolinmaisenbacher)
+### 🚀 Enhancement
+
+- Have `breakpoints` accept custom media queries
+  [#1653](https://github.com/system-ui/theme-ui/pull/1653)
+  [@carolinmaisenbacher](https://github.com/carolinmaisenbacher)
+
+### 🐛 Bug Fix
+
+- `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`,
+  `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`
+  - Set `gatsby` peerDependency more explicit to `^2.0.0 || ^3.0.0`.
+    [#1640](https://github.com/system-ui/theme-ui/pull/1640)
+    ([@LekoArts](https://github.com/LekoArts))
+
+### ⚙️ Internal
+
+- all packages -Build packages with Preconstruct 2
+  [#1423](https://github.com/system-ui/theme-ui/pull/1423)
+  ([@alexanderchan](https://github.com/alexanderchan)
+  [@hasparus](https://github.com/hasparus))
 
 ## v0.6.2 (Mon Apr 05 2021)
 
