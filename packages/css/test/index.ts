@@ -660,6 +660,38 @@ test('returns correct media query order 2', () => {
   ])
 })
 
+test('returns custom media queries', () => {
+  const result = css({
+    fontSize: [2, 3, 4],
+    color: 'primary',
+  })({
+    theme: {
+      ...theme,
+      breakpoints: [
+        '32em',
+        '@media screen and (orientation: landscape) and (min-width: 40rem)',
+      ],
+    },
+  })
+  const keys = Object.keys(result)
+  expect(keys).toEqual([
+    'fontSize',
+    '@media screen and (min-width: 32em)',
+    '@media screen and (orientation: landscape) and (min-width: 40rem)',
+    'color',
+  ])
+  expect(result).toEqual({
+    fontSize: 16,
+    '@media screen and (min-width: 32em)': {
+      fontSize: 24,
+    },
+    '@media screen and (orientation: landscape) and (min-width: 40rem)': {
+      fontSize: 36,
+    },
+    color: 'tomato',
+  })
+})
+
 test('supports vendor properties', () => {
   expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
     WebkitOverflowScrolling: 'touch',
@@ -676,7 +708,6 @@ test('omits empty values', () => {
     })(theme)
   ).toStrictEqual({ border: '1px solid black' })
 })
-
 
 test('borderTopWidth accepts number', () => {
   expect(css({

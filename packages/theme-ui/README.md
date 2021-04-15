@@ -358,6 +358,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/navsgh"><img src="https://avatars.githubusercontent.com/u/45191853?v=4?s=63" width="63px;" alt=""/><br /><sub><b>navsgh</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=navsgh" title="Documentation">📖</a></td>
     <td align="center"><a href="https://zeevo.io/"><img src="https://avatars.githubusercontent.com/u/8338013?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Shane O'Neill</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=zeevo" title="Documentation">📖</a></td>
     <td align="center"><a href="https://zce.me/"><img src="https://avatars.githubusercontent.com/u/6166576?v=4?s=63" width="63px;" alt=""/><br /><sub><b>汪磊</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=zce" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/issues?q=author%3Azce" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/carolinmaisenbacher"><img src="https://avatars.githubusercontent.com/u/32734844?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Carolin Maisenbacher</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=carolinmaisenbacher" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=carolinmaisenbacher" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=carolinmaisenbacher" title="Tests">⚠️</a></td>
   </tr>
 </table>
 

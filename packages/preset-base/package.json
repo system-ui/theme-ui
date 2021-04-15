@@ -1,17 +1,12 @@
 {
   "name": "@theme-ui/preset-base",
   "version": "0.6.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/theme-ui-preset-base.cjs.js",
+  "module": "dist/theme-ui-preset-base.esm.js",
   "author": "Brent Jackson",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
-    "typecheck": "tsc --noEmit"
-  },
-  "types": "dist/index.d.ts",
+  "scripts": {},
   "source": "src/index.ts",
   "publishConfig": {
     "access": "public"

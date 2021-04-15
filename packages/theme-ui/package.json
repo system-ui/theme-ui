@@ -3,20 +3,18 @@
   "version": "0.6.2",
   "description": "The Design Graph Framework",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/theme-ui.cjs.js",
+  "module": "dist/theme-ui.esm.js",
+  "types": "dist/theme-ui.cjs.d.ts",
   "sideEffects": false,
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
-    "prepare": "yarn prepare:index && yarn prepare:jsx-runtime && yarn prepare:jsx-dev-runtime",
-    "prepare:index": "microbundle --no-compress --tsconfig tsconfig.json",
-    "prepare:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
-    "prepare:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
+    "build": "yarn build:index && yarn build:jsx-runtime && yarn build:jsx-dev-runtime",
+    "build:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
+    "build:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
+    "build:index": "microbundle --no-compress --tsconfig tsconfig.json"
   },
   "dependencies": {
     "@theme-ui/color-modes": "^0.6.2",
@@ -37,5 +35,11 @@
     "styles",
     "css-in-js"
   ],
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "jsx-dev-runtime.ts",
+      "jsx-runtime.ts"
+    ]
+  }
 }

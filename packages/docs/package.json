@@ -2,7 +2,7 @@
   "private": true,
   "name": "docs",
   "version": "0.6.2",
-  "main": "index.js",
+  "main": "dist/docs.cjs.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {

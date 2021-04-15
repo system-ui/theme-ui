@@ -34,16 +34,12 @@ jobs:
     if: >
       !contains(github.event.head_commit.message, 'ci skip') &&
       !contains(github.event.head_commit.message, 'skip ci') &&
-      !contains(github.event.head_commit.message, 'chore') && (
+      !startsWith(github.event.head_commit.message, 'chore') &&
+      !startsWith(github.event.pull_request.title, 'chore') && (
         github.event_name == 'push' ||
         github.event.pull_request.head.repo.full_name == github.repository
       )
     steps:
-      - name: Dump GitHub event
-        env:
-          GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: echo "$GITHUB_EVENT"
-
       - uses: actions/checkout@v2
 
       - name: Prepare repository

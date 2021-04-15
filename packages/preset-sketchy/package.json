@@ -1,17 +1,13 @@
 {
   "name": "@theme-ui/preset-sketchy",
   "version": "0.6.2",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/theme-ui-preset-sketchy.cjs.js",
+  "module": "dist/theme-ui-preset-sketchy.esm.js",
+  "types": "dist/theme-ui-preset-sketchy.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Aleksandra Sikora",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "publishConfig": {
     "access": "public"
   },
