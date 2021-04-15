@@ -333,14 +333,15 @@ With Theme UI, _variants_ are the mechanism to use for such abstractions.
 ## Breakpoints
 
 To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
-Each breakpoint should be a string with a CSS length unit included.
-These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/getting-started/#responsive-styles).
+Each breakpoint should be a string with a CSS length unit included or a string including a CSS media query.
+String values with a CSS length unit will be used to generate a mobile-first (i.e. `min-width`) media query. 
+The breakpoints can then be used to apply [responsive styles](/sx-prop/#responsive-values).
 
 ```js
 // example custom breakpoints
 {
   breakpoints: [
-    '40em', '56em', '64em',
+    '40em', '@media (min-width: 56em) and (orientation: landscape)', '64em',
   ],
 }
 ```
