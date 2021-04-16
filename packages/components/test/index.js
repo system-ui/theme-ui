@@ -335,6 +335,16 @@ describe('Paragraph', () => {
     )
     expect(json).toHaveStyleRule('margin', margin)
   })
+
+  test('renders with space prop overrides', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <Paragraph
+        m={margin}
+      />
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
 })
 
 describe('Text', () => {
