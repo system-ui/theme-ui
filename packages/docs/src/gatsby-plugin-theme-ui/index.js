@@ -9,7 +9,7 @@ const tableCellStyle = {
   borderBottomStyle: 'solid',
 }
 
-export default {
+const theme = {
   colors: {
     text: '#000000',
     background: '#ffffff',
@@ -357,3 +357,5 @@ export default {
   },
   prism,
 }
+
+export default theme

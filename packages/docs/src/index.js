@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from './components/layout'
 
-export const wrapPageElement = ({ element, props }) => (
+export const WrapPageElement = ({ element, props }) => (
   <Layout {...props} children={element} />
 )
 
