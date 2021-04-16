@@ -5,9 +5,13 @@ import {
   merge,
   __ThemeUIInternalBaseThemeProvider,
 } from '@theme-ui/core'
-import { get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
+import {
+  get,
+  Theme,
+  ColorModesScale,
+  __internalGetUseRootStyles,
+} from '@theme-ui/css'
 import { Global } from '@emotion/react'
-import omit from 'lodash.omit'
 
 import { toCustomProperties, createColorStyles } from './custom-properties'
 
@@ -147,36 +151,44 @@ const applyColorMode = (theme: Theme, mode: string | undefined): Theme => {
   })
 }
 
+const omitModes = (colors: ColorModesScale) => {
+  const res = { ...colors }
+  delete res.modes
+  return res
+}
+
 const assembleColorModes = (theme: Theme, outer: Theme) => {
   const { colors = {}, initialColorModeName } = outer
 
   const mutatedColors = get(theme, 'colors', {})
   const modes = get(outer, 'colors.modes', {})
 
-  if (!('modes' in colors)) return theme.colors
+  if (!('modes' in colors)) return mutatedColors
 
-  return merge.all({}, mutatedColors, {
+  return {
+    ...mutatedColors,
     modes: {
-      [initialColorModeName || '__default']: omit(colors, ['modes']),
+      [initialColorModeName || '__default']: omitModes(colors),
       ...modes,
     },
-  })
+  }
 }
 
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
 
-  const theme = applyColorMode(outer.theme || {}, colorMode)
+  const initialTheme = outer.theme || {}
+  const theme = applyColorMode(initialTheme, colorMode)
 
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
     // We could save custom properties to `theme.colorVars`,
     // But it's infeasible to do this because of how the packages are split.
 
-    theme.rawColors = assembleColorModes(theme, outer.theme)
+    theme.rawColors = assembleColorModes(theme, initialTheme)
     theme.colors = toCustomProperties(
-      omit(outer.theme.colors, ['modes']),
+      omitModes(initialTheme.colors || {}),
       'colors'
     )
   }
