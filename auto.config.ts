@@ -34,7 +34,7 @@ export default function config(): AutoRc {
       'first-time-contributor',
       'released',
       ['all-contributors', allContributorsOptions],
-      'magic-zero',
+      // 'magic-zero',
     ],
   }
 }
