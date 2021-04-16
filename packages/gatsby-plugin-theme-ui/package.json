@@ -6,7 +6,7 @@
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.0.0 || ^3.0.0",
-    "theme-ui": ">=0.6.0"
+    "theme-ui": ">=0.7.0"
   },
   "keywords": [
     "gatsby",

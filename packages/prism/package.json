@@ -14,7 +14,7 @@
     "prism-react-renderer": "^1.1.1"
   },
   "peerDependencies": {
-    "theme-ui": "^0.5.0-alpha.0"
+    "theme-ui": ">=0.7.0"
   },
   "publishConfig": {
     "access": "public"
