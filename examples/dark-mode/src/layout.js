@@ -2,7 +2,7 @@
 import { jsx, useColorMode, Layout, Header, Main, Container } from 'theme-ui'
 import { Global } from '@emotion/react'
 
-export default (props) => {
+const Layout = (props) => {
   const [mode, setMode] = useColorMode()
   const toggleMode = (e) => {
     setMode(mode === 'dark' ? 'light' : 'dark')
@@ -31,3 +31,5 @@ export default (props) => {
     </Layout>
   )
 }
+
+export default Layout
