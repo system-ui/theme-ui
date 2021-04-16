@@ -147,28 +147,38 @@ const applyColorMode = (theme: Theme, mode: string | undefined): Theme => {
   })
 }
 
+const assembleColorModes = (theme: Theme, outer: Theme) => {
+  const { colors = {}, initialColorModeName } = outer
+
+  const mutatedColors = get(theme, 'colors', {})
+  const modes = get(outer, 'colors.modes', {})
+
+  if (!('modes' in colors)) return theme.colors
+
+  return merge.all({}, mutatedColors, {
+    modes: {
+      [initialColorModeName || '__default']: omit(colors, ['modes']),
+      ...modes,
+    },
+  })
+}
+
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
 
   const theme = applyColorMode(outer.theme || {}, colorMode)
 
-  const assembledColorModes = {
-    [outer.theme.initialColorModeName || '__default']: omit(
-      outer.theme.colors,
-      ['modes']
-    ),
-    ...outer.theme.colors?.modes,
-  }
-
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
     // We could save custom properties to `theme.colorVars`,
     // But it's infeasible to do this because of how the packages are split.
 
-    theme.rawColors = theme.colors
-    theme.allColorModes = assembledColorModes
-    theme.colors = toCustomProperties(theme.colors, 'colors')
+    theme.rawColors = assembleColorModes(theme, outer.theme)
+    theme.colors = toCustomProperties(
+      omit(outer.theme.colors, ['modes']),
+      'colors'
+    )
   }
 
   const context = {
