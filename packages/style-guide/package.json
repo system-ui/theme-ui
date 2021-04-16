@@ -15,8 +15,7 @@
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0",
-    "theme-ui": "^0.5.0-alpha.0"
+    "react": "^16.14.0 || ^17.0.0"
   },
   "devDependencies": {
     "react": "^17.0.1",
