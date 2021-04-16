@@ -1,4 +1,10 @@
-import React, { Dispatch, useEffect, useState, SetStateAction } from 'react'
+import React, {
+  Dispatch,
+  useEffect,
+  useState,
+  useMemo,
+  SetStateAction,
+} from 'react'
 import {
   jsx,
   useThemeUI,
@@ -186,11 +192,13 @@ export const ColorModeProvider: React.FC = ({ children }) => {
     // We could save custom properties to `theme.colorVars`,
     // But it's infeasible to do this because of how the packages are split.
 
-    theme.rawColors = assembleColorModes(theme, initialTheme)
-    theme.colors = toCustomProperties(
-      omitModes(initialTheme.colors || {}),
-      'colors'
-    )
+    useMemo(() => {
+      theme.rawColors = assembleColorModes(theme, initialTheme)
+      theme.colors = toCustomProperties(
+        omitModes(initialTheme.colors || {}),
+        'colors'
+      )
+    }, [colorMode])
   }
 
   const context = {
