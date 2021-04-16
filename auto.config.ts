@@ -1,4 +1,4 @@
-import { AutoRc } from 'auto'
+import { AutoRc } from '@auto-it/core'
 import { INpmConfig } from '@auto-it/npm'
 import { IAllContributorsPluginOptions } from '@auto-it/all-contributors'
 
