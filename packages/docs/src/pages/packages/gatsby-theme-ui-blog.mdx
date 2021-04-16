@@ -53,7 +53,7 @@ module.exports = {
 // shadow src/gatsby-plugin-theme-ui/index.js
 import base from 'gatsby-theme-ui-blog/src/gatsby-plugin-theme-ui'
 
-export default {
+const theme = {
   ...base,
   colors: {
     text: 'white',
@@ -62,6 +62,8 @@ export default {
     secondary: 'magenta',
   },
 }
+
+export default theme
 ```
 
 ## Options
