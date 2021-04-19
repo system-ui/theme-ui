@@ -1,6 +1,5 @@
 import * as React from 'react'
+
 import { WrapPageElement } from './src'
 
-export const wrapPageElement = ({ element }) => (
-  <WrapPageElement element={element} />
-)
+export const wrapPageElement = (props) => <WrapPageElement {...props} />

@@ -39,10 +39,11 @@ const getModeName = (mode) => {
   }
 }
 
-export default (props) => {
+export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
   const [mode, setMode] = useColorMode()
+
   const fullwidth =
     (props.pageContext.frontmatter &&
       props.pageContext.frontmatter.fullwidth) ||
