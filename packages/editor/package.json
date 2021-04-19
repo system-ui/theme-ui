@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/editor",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "main": "dist/theme-ui-editor.cjs.js",
   "module": "dist/theme-ui-editor.esm.js",
   "types": "dist/theme-ui-editor.cjs.d.ts",
@@ -8,10 +8,10 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/components": "0.7.0",
-    "@theme-ui/core": "0.7.0",
-    "@theme-ui/css": "0.7.0",
-    "@theme-ui/style-guide": "0.7.0",
+    "@theme-ui/components": "0.7.2",
+    "@theme-ui/core": "0.7.2",
+    "@theme-ui/css": "0.7.2",
+    "@theme-ui/style-guide": "0.7.2",
     "@types/react-color": "^2.17.3",
     "@types/tinycolor": "^1.1",
     "color": "^3.1.2",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "react": "^17.0.1",
-    "theme-ui": "0.7.0"
+    "theme-ui": "0.7.2"
   },
   "publishConfig": {
     "access": "public"
