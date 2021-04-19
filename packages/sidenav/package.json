@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "dist/theme-ui-sidenav.cjs.js",
   "module": "dist/theme-ui-sidenav.esm.js",
   "types": "dist/theme-ui-sidenav.cjs.d.ts",
@@ -21,7 +21,7 @@
     "@mdx-js/react": "^1.6.22",
     "@types/mdx-js__react": "^1.5.3",
     "deepmerge": "^4.0.0",
-    "theme-ui": "0.7.0"
+    "theme-ui": "0.7.1"
   },
   "keywords": [
     "theme-ui",
