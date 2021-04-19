@@ -1,36 +1,38 @@
-# v0.7.1 (Mon Apr 19 2021)
+# Changelog
+
+## v0.7.2 (Mon Apr 19 2021)
 
 :tada: This release contains work from a new contributor! :tada:
 
-Thank you, Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm)), for all your work!
+Thank you, Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm)), for all
+your work!
 
-#### 🐛 Bug Fix
+### 🐛 Bug Fix
 
 - `gatsby-plugin-theme-ui`
-  - fix(gatsby-plugin-theme-ui): Fast Refresh Compatibility [#1659](https://github.com/system-ui/theme-ui/pull/1659) ([@LekoArts](https://github.com/LekoArts) [@hasparus](https://github.com/hasparus))
+  - fix(gatsby-plugin-theme-ui): Fast Refresh Compatibility
+    [#1659](https://github.com/system-ui/theme-ui/pull/1659)
+    ([@LekoArts](https://github.com/LekoArts)
+    [@hasparus](https://github.com/hasparus))
 - `@theme-ui/components`
-  - fix(components): Allow styled-system space props on Paragraph [#1658](https://github.com/system-ui/theme-ui/pull/1658) ([@vanbujm](https://github.com/vanbujm))
-
-#### ⚠️ Pushed to `stable`
-
-- chore: clean up changelog ([@hasparus](https://github.com/hasparus))
+  - fix(components): Allow styled-system space props on Paragraph
+    [#1658](https://github.com/system-ui/theme-ui/pull/1658)
+    ([@vanbujm](https://github.com/vanbujm))
 
 #### 🔩 Dependency Updates
 
-- chore(deps): bump ssri from 6.0.1 to 6.0.2 in /examples/next [#1661](https://github.com/system-ui/theme-ui/pull/1661) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps): [security] bump ssri from 6.0.1 to 6.0.2 [#1660](https://github.com/system-ui/theme-ui/pull/1660) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump ssri from 6.0.1 to 6.0.2 in /examples/next
+  [#1661](https://github.com/system-ui/theme-ui/pull/1661)
+  ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): [security] bump ssri from 6.0.1 to 6.0.2
+  [#1660](https://github.com/system-ui/theme-ui/pull/1660)
+  ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
 
-#### Authors: 5
+#### Authors: 3
 
-- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
-- [@dependabot[bot]](https://github.com/dependabot[bot])
 - Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm))
 - Lennart ([@LekoArts](https://github.com/LekoArts))
 - Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
-
----
-
-# Changelog
 
 ## v0.7.0 (Thu Apr 15 2021)
 
