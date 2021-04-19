@@ -1,3 +1,24 @@
+# v0.7.1 (Mon Apr 19 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix(components): Allow styled-system space props on Paragraph [#1658](https://github.com/system-ui/theme-ui/pull/1658) ([@vanbujm](https://github.com/vanbujm))
+- fix(components) Updated Paragraph component to allow overriding the margin using styled-system space props ([@vanbujm](https://github.com/vanbujm))
+
+#### Authors: 5
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.0 (Thu Apr 15 2021)
 
 #### 🚀 Enhancement
