@@ -16,7 +16,7 @@
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0",
-    "theme-ui": "^0.5.0-alpha.0"
+    "theme-ui": "*"
   },
   "devDependencies": {
     "react": "^17.0.1",
