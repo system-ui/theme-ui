@@ -6,8 +6,9 @@ const npmOptions: INpmConfig = {
   exact: true,
 }
 
+
 const allContributorsOptions: IAllContributorsPluginOptions = {
-  exclude: ['dependabot', 'dependabot-preview'],
+  exclude: ['dependabot[bot]', 'dependabot-preview[bot]'],
   types: {
     infra: ['./github/**/*'],
     example: ['examples/**/*'],
