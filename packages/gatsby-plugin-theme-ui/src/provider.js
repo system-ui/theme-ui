@@ -26,6 +26,6 @@ const Root = ({ children }) => {
   )
 }
 
-export const wrapRootElement = ({ element }) => {
+export const WrapRootElement = ({ element }) => {
   return <Root>{element}</Root>
 }
