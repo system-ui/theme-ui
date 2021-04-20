@@ -517,6 +517,9 @@ Array [
     style={
       Object {
         "display": "none",
+        "left": "100%",
+        "position": "fixed",
+        "top": "100%",
       }
     }
     tabIndex={-1}
