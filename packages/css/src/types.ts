@@ -303,6 +303,22 @@ interface AliasesCSSProperties {
    */
 
   /**
+   * The **`scrollMarginX`** is shorthand property for CSS properties **`scroll-margin-left`** and **`scroll-margin-right`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-right
+   */
+   scrollMarginX?: StandardCSSProperties['scrollMarginLeft']
+
+   /**
+    * The **`scrollMarginY`** is shorthand property for CSS properties **`scroll-margin-top`** and **`scroll-margin-bottom`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+    *
+    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top
+    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom
+    */
+   scrollMarginY?: StandardCSSProperties['scrollMarginTop']
+
+  /**
    * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
    *
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
