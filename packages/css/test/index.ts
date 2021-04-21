@@ -405,7 +405,7 @@ test('handles negative top, left, bottom, and right from scale', () => {
   })
 })
 
-test('handles negative margins from scale that is an object', () => {
+test.only('handles negative margins from scale that is an object and value is string', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
@@ -414,6 +414,18 @@ test('handles negative margins from scale that is an object', () => {
     marginTop: '-16px',
     marginLeft: '-32px',
     marginRight: '-32px',
+  })
+})
+
+test.only('handles negative margins from scale that is an object and value is number', () => {
+  const result = css({
+    mt: '-s',
+    mx: '-m',
+  })({ ...theme, space: { s: 16, m: 32 } })
+  expect(result).toEqual({
+    marginTop: -16,
+    marginLeft: -32,
+    marginRight: -32,
   })
 })
 

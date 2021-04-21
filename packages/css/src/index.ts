@@ -246,6 +246,9 @@ const positiveOrNegative = (scale: object, value: string | number) => {
     if (typeof value === 'string' && value.startsWith('-')) {
       const valueWithoutMinus = value.substring(1)
       const n = get(scale, valueWithoutMinus, valueWithoutMinus)
+      if (typeof n === 'number') {
+        return n * -1
+      }
       return `-${n}`
     }
     return get(scale, value, value)
