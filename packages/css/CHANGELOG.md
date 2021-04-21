@@ -1,3 +1,28 @@
+# v0.7.3 (Wed Apr 21 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: David Dios ([@dios-david](https://github.com/dios-david))
+
+:heart: Kenny ([@kenny-f](https://github.com/kenny-f))
+
+#### 🐛 Bug Fix
+
+- Adding `scroll-margin` props [#1664](https://github.com/system-ui/theme-ui/pull/1664) ([@dios-david](https://github.com/dios-david))
+- Return negative number from lookup if theme value is a number [#1665](https://github.com/system-ui/theme-ui/pull/1665) ([@kenny-f](https://github.com/kenny-f))
+- revert only tests ([@kenny-f](https://github.com/kenny-f))
+- Return negative number from lookup if theme value is a number ([@kenny-f](https://github.com/kenny-f))
+- adding scroll-margin props ([@dios-david](https://github.com/dios-david))
+
+#### Authors: 2
+
+- David Dios ([@dios-david](https://github.com/dios-david))
+- Kenny ([@kenny-f](https://github.com/kenny-f))
+
+---
+
 # v0.7.0 (Thu Apr 15 2021)
 
 :tada: This release contains work from a new contributor! :tada:

@@ -1,3 +1,16 @@
+# v0.7.3 (Wed Apr 21 2021)
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump reakit from 1.3.5 to 1.3.7 [#1644](https://github.com/system-ui/theme-ui/pull/1644) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]) [@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
 # v0.7.1 (Mon Apr 19 2021)
 
 :tada: This release contains work from a new contributor! :tada:
