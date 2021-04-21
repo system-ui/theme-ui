@@ -104,17 +104,16 @@ export default (props) => (
 
 #### With Theme UI context
 
-Use the `useThemeUI` hook to access the context object directly in a component.
+Use the [`useThemeUI`](/hooks#usethemeui) hook to access the context object
+directly in a component.
 
 ```jsx
 import { useThemeUI } from 'theme-ui'
 
 export default (props) => {
-  const context = useColorMode(null)
-  const { setColorMode } = context
-  const { rawColors: colors } = context.theme
+  const { theme: { rawColors }, setColorMode } = useThemeUI()
 
-  return Object.entries(colors?.modes).map(([mode, values]) => ({
+  return Object.entries(rawColors?.modes).map(([mode, values]) => ({
     <Button
       sx={{ bg: values.background, color: values.text }}
       onClick={() => setColorMode(mode)}
@@ -132,16 +131,11 @@ export default (props) => {
 // ...
 ```
 
-<Note>
-
-For more info, [see the migration guide](/migrating/#breaking-changes)
-
-</Note>
-
 ## Setting the color mode
 
-Use the `useColorMode` hook in your application to change the color mode. This
-value will be stored in `localStorage` and used whenever the page is loaded.
+Use the [`useColorMode`](/hooks#usecolormode) hook in your application to change
+the color mode. This value will be stored in `localStorage` and used whenever
+the page is loaded.
 
 ```jsx
 import { useColorMode } from 'theme-ui'
