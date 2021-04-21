@@ -405,7 +405,7 @@ test('handles negative top, left, bottom, and right from scale', () => {
   })
 })
 
-test.only('handles negative margins from scale that is an object and value is string', () => {
+test('handles negative margins from scale that is an object and value is string', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
@@ -417,7 +417,7 @@ test.only('handles negative margins from scale that is an object and value is st
   })
 })
 
-test.only('handles negative margins from scale that is an object and value is number', () => {
+test('handles negative margins from scale that is an object and value is number', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
