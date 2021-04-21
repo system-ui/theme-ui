@@ -30,7 +30,7 @@ Thanks for all your work!
     ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
     [@lachlanjc](https://github.com/lachlanjc))
 
-#### Authors: 4
+#### Authors: 3
 
 - David Dios ([@dios-david](https://github.com/dios-david))
 - Kenny ([@kenny-f](https://github.com/kenny-f))
