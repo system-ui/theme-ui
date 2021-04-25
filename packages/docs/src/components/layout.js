@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
+import PoweredByVercel from 'powered-by-vercel'
 
 import SkipLink from './skip-link'
 import Pagination from './pagination'
@@ -153,6 +154,7 @@ export default function DocsLayout(props) {
             {props.children}
             <EditLink />
             {!fullwidth && <Pagination />}
+            <PoweredByVercel />
           </main>
         </Box>
       </Flex>
