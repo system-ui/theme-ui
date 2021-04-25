@@ -70,6 +70,11 @@ const getModeFromClass = (): string | undefined => {
 
 const useColorModeState = (theme: Theme = {}) => {
   let [mode, setMode] = useState(() => {
+    const stored = theme.useLocalStorage !== false ? storage.get() : undefined
+    if (stored) {
+      return stored
+    }
+    
     const modeFromClass = getModeFromClass()
     if (modeFromClass) {
       return modeFromClass
@@ -78,9 +83,7 @@ const useColorModeState = (theme: Theme = {}) => {
     const preferredMode =
       theme.useColorSchemeMediaQuery !== false && getPreferredColorScheme()
 
-    const stored = theme.useLocalStorage !== false ? storage.get() : undefined;
-
-    return  stored || preferredMode || theme.initialColorModeName
+    return preferredMode || theme.initialColorModeName
   })
 
   // on first render, we clear the class on document element body
