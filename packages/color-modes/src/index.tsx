@@ -70,14 +70,6 @@ const getModeFromClass = (): string | undefined => {
 
 const useColorModeState = (theme: Theme = {}) => {
   let [mode, setMode] = useState(() => {
-    const stored = theme.useLocalStorage !== false ? storage.get() : undefined
-    if (stored) {
-      // on first render, we clear the class on document element body
-      document.documentElement.classList.remove('theme-ui-' + mode)
-      document.body.classList.remove('theme-ui-' + mode)
-      return stored
-    }
-
     const modeFromClass = getModeFromClass()
     if (modeFromClass) {
       return modeFromClass
@@ -88,6 +80,14 @@ const useColorModeState = (theme: Theme = {}) => {
 
     return preferredMode || theme.initialColorModeName
   })
+
+  React.useEffect(() => {
+    const classMode = getModeFromClass()
+    if (classMode) {
+      document.documentElement.classList.remove('theme-ui-' + classMode)
+      document.body.classList.remove('theme-ui-' + classMode)
+    }
+  }, [])
 
   // when mode changes, we save it to localStorage
   React.useEffect(() => {
