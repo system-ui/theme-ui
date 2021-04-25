@@ -81,7 +81,7 @@ const useColorModeState = (theme: Theme = {}) => {
     return preferredMode || theme.initialColorModeName
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     const classMode = getModeFromClass()
     if (classMode) {
       document.documentElement.classList.remove('theme-ui-' + classMode)
@@ -90,7 +90,7 @@ const useColorModeState = (theme: Theme = {}) => {
   }, [])
 
   // when mode changes, we save it to localStorage
-  React.useEffect(() => {
+  useEffect(() => {
     if (mode && theme.useLocalStorage !== false) {
       storage.set(mode)
     }
