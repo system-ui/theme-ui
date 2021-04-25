@@ -84,7 +84,6 @@ export const createColorStyles = (theme: Theme = {}) => {
     })(theme)
   }
 
-  const { initialColorModeName, printColorModeName } = theme
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
   Object.keys(modes).forEach((mode) => {
