@@ -1,6 +1,7 @@
 import * as CSS from 'csstype'
 
 import type {} from '../emotion-theme'
+import { ThemeUIConfig } from './options'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -308,15 +309,15 @@ interface AliasesCSSProperties {
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-left
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-right
    */
-   scrollMarginX?: StandardCSSProperties['scrollMarginLeft']
+  scrollMarginX?: StandardCSSProperties['scrollMarginLeft']
 
-   /**
-    * The **`scrollMarginY`** is shorthand property for CSS properties **`scroll-margin-top`** and **`scroll-margin-bottom`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
-    *
-    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top
-    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom
-    */
-   scrollMarginY?: StandardCSSProperties['scrollMarginTop']
+  /**
+   * The **`scrollMarginY`** is shorthand property for CSS properties **`scroll-margin-top`** and **`scroll-margin-bottom`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom
+   */
+  scrollMarginY?: StandardCSSProperties['scrollMarginTop']
 
   /**
    * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
@@ -662,52 +663,7 @@ export interface Theme {
   opacities?: Scale<CSS.Property.Opacity>
   transitions?: Scale<CSS.Property.Transition>
 
-  config?: {
-    /**
-     * Enable/disable custom CSS properties/variables if lower browser
-     * support is required (for eg. IE 11).
-     *
-     * References: https://theme-ui.com/color-modes/#turn-off-custom-properties
-     */
-    useCustomProperties?: boolean
-
-    /**
-     * Provide a value here to enable color modes
-     */
-    initialColorModeName?: string
-
-    /**
-     * Provide a value here to set a color mode for printing
-     */
-    printColorModeName?: string
-
-    /**
-     * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
-     */
-    useRootStyles?: boolean
-
-    /**
-     * @deprecated Deprecated in favor of `useRootStyles`.
-     *
-     * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
-     */
-    useBodyStyles?: boolean
-
-    /**
-     * Initializes the color mode based on the prefers-color-scheme media query
-     */
-    useColorSchemeMediaQuery?: boolean
-
-    /**
-     * Adds a global box-sizing: border-box style
-     */
-    useBorderBox?: boolean
-
-    /**
-     * If false, does not save color mode as a localStorage value.
-     */
-    useLocalStorage?: boolean
-  }
+  config?: ThemeUIConfig
 
   /**
    * @deprecated Deprecated in favor of nesting inside `config`
