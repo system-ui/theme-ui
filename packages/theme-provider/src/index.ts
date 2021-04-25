@@ -3,7 +3,6 @@ import {
   useThemeUI,
   ThemeProvider as CoreProvider,
   ThemeProviderProps as CoreThemeProviderProps,
-  IntrinsicSxElements,
   __internalGetUseRootStyles,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'

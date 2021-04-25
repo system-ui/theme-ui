@@ -1,47 +1,7 @@
 ---
-title: Migrating
+title: 'Migrating'
 ---
 
-# Migration Guides
+import Migrating from '../../../../MIGRATING.md'
 
-## v0.3
-
-### What's New
-
-- Components can now be imported directly from the `theme-ui` package. Be sure that treeshaking is enabled with your build tool.
-- Includes smart defaults for adding base styles to the `<body>` element.
-- Simplified color modes API.
-- New `@theme-ui/css`, `@theme-ui/core`, `@theme-ui/color-modes`, and `@theme-ui/mdx` packages allow for more bespoke ways to use the library.
-
-### Breaking Changes
-
-- `@emotion/react` and `@mdx-js/react` are now dependencies of `theme-ui` and should not be installed separately. If you'd like to use a particular version of each library, use [Yarn resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/).
-- Theme UI context no longer provides `context.components`. If you're using this object from context, use the MDX hook instead. E.g. `import { useMDXComponents } from '@mdx-js/react'`
-- If you'd like color mode to be initialized from the `prefers-color-scheme` media query, you must enable the `useColorSchemeMediaQuery: true` flag in your theme.
-- The `ColorMode` component is deprecated and no longer required to add color styles to the `<body>` element.
-- The following components have been removed in favor of using `Box` and `Flex` components: `Layout`, `Header`, `Main`, `Footer`
-- The `initialColorMode` flag no longer works, use `initialColorModeName` instead.
-- The `ThemeProvider` now adds global typographic styles to the `<body>` element based on `theme.styles.root`. To disable this behavior set the `useBodyStyles: false` flag in your theme.
-- Theme context is now stateless. If you've made use of `context.setTheme`, this no longer works. An alternative approach is available with the `@theme-ui/editor` package.
-- The `ThemeStateProvider` component is no longer avialable, see `@theme-ui/editor` as an alternative.
-- The `@theme-ui/editor` package has a completely new API. Please refer to the package's [README.md](https://github.com/system-ui/theme-ui/blob/stable/packages/editor/README.md) for more information.
-
-## v0.2
-
-### JSX Pragma
-
-If you were using the Theme UI custom JSX pragma, rename the `css` prop to `sx`. This does not apply if you were importing and using the `css` utility function manually.
-
-### `theme-ui-typography`
-
-If you were using the `theme-ui-typography` package, install the new package named `@theme-ui/typography` instead.
-The `toStyle` API is no longer included. Use the `toTheme` API instead, see the [Typography.js docs](/styling-mdx/#typographyjs) for how to use this utility.
-
-### `Box` and layout component
-
-If you were using Styled System style props on the `Box` component or any other layout component, replace these props with either the [`sx` prop](/sx-prop) or by using the `css` utility.
-
-### Other
-
-- Replace `ColorModeProvider` and `ComponentProvider` with the `ThemeProvider` component.
-- The `@emotion/styled` package is no longer required for Theme UI. If you are not using it directly in your application, you can remove it from your dependencies.
+<Migrating />

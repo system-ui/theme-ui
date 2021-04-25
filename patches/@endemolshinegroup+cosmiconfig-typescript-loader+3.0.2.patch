@@ -1,0 +1,17 @@
+diff --git a/node_modules/@endemolshinegroup/cosmiconfig-typescript-loader/dist/index.js b/node_modules/@endemolshinegroup/cosmiconfig-typescript-loader/dist/index.js
+index 785b1d9..2fd8fab 100644
+--- a/node_modules/@endemolshinegroup/cosmiconfig-typescript-loader/dist/index.js
++++ b/node_modules/@endemolshinegroup/cosmiconfig-typescript-loader/dist/index.js
+@@ -5,7 +5,11 @@ const lodash_get_1 = tslib_1.__importDefault(require("lodash.get"));
+ const TypeScriptCompileError_1 = tslib_1.__importDefault(require("./Errors/TypeScriptCompileError"));
+ const loader = (filePath) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+     try {
+-        require('ts-node/register');
++        const tsNode = require("ts-node");
++        tsNode.register({
++          compilerOptions: { module: "commonjs" },
++        });
++
+         const result = require(filePath);
+         return lodash_get_1.default(result, 'default', result);
+     }

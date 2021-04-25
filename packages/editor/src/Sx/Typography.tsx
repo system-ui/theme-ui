@@ -24,7 +24,7 @@ export interface TypographyProps {
   onChange: (arg: OnChangeArg) => void
 }
 
-export const SxTypography = ({
+export const Typography = ({
   tag,
   value: { fontFamily, fontSize, fontWeight, lineHeight } = {},
   theme: {
@@ -43,7 +43,7 @@ export const SxTypography = ({
         name={prefixName('fontFamily')}
         label="Font Family"
         value={fontFamily || ''}
-        onChange={fontFamily => {
+        onChange={(fontFamily) => {
           onChange({ fontFamily })
         }}
         options={['inherit', ...Object.keys(fonts)]}
@@ -59,7 +59,7 @@ export const SxTypography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={e => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
@@ -68,7 +68,7 @@ export const SxTypography = ({
           name={prefixName('fontWeight')}
           label="Font Weight"
           value={fontWeight || ''}
-          onChange={fontWeight => {
+          onChange={(fontWeight) => {
             onChange({ fontWeight })
           }}
           options={['inherit', ...Object.keys(fontWeights)]}
@@ -77,7 +77,7 @@ export const SxTypography = ({
           name={prefixName('lineHeight')}
           label="Line Height"
           value={lineHeight || ''}
-          onChange={lineHeight => {
+          onChange={(lineHeight) => {
             onChange({ lineHeight })
           }}
           options={['inherit', ...Object.keys(lineHeights)]}
@@ -86,5 +86,3 @@ export const SxTypography = ({
     </Fragment>
   )
 }
-
-export default SxTypography

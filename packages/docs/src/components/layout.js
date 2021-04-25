@@ -29,17 +29,21 @@ const getModeName = (mode) => {
       return 'Deep'
     case 'swiss':
       return 'Swiss'
+    case 'light':
     case 'default':
       return 'Light'
+    case undefined:
+      return '         '
     default:
       return mode
   }
 }
 
-export default (props) => {
+export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
   const [mode, setMode] = useColorMode()
+
   const fullwidth =
     (props.pageContext.frontmatter &&
       props.pageContext.frontmatter.fullwidth) ||
@@ -92,6 +96,7 @@ export default (props) => {
               <Button
                 sx={{
                   ml: 2,
+                  whiteSpace: 'pre',
                 }}
                 onClick={cycleMode}>
                 {getModeName(mode)}

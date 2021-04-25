@@ -1,30 +1,26 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.6.0-alpha.7",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "version": "0.7.3",
+  "main": "dist/theme-ui-style-guide.cjs.js",
+  "module": "dist/theme-ui-style-guide.esm.js",
+  "types": "dist/theme-ui-style-guide.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
-    "@theme-ui/presets": "0.6.0-alpha.7",
+    "@theme-ui/presets": "0.7.3",
     "@types/color": "^3.0.1",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0",
-    "theme-ui": "^0.5.0-alpha.0"
+    "theme-ui": "*"
   },
   "devDependencies": {
     "react": "^17.0.1",
-    "theme-ui": "0.6.0-alpha.7"
+    "theme-ui": "0.7.3"
   },
   "publishConfig": {
     "access": "public"

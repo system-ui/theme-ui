@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, ThemeUIStyleObject } from 'theme-ui'
 import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Field, Label, Checkbox } from '@theme-ui/components'
 
 export interface SpaceProps {
@@ -47,19 +47,29 @@ export const Space = ({
 }: SpaceProps) => {
   const [lock, setLock] = useState({ x: false, y: false })
   const key = property === 'margin' ? 'm' : 'p'
-  const x = value[key + 'x'] || value[property + 'X'] || ''
-  const y = value[key + 'y'] || value[property + 'Y'] || ''
-  const t = lock.y ? y : value[key + 't'] || value[property + 'Top'] || ''
-  const b = lock.y ? y : value[key + 'b'] || value[property + 'Bottom'] || ''
-  const l = lock.x ? x : value[key + 'l'] || value[property + 'Left'] || ''
-  const r = lock.x ? x : value[key + 'r'] || value[property + 'Right'] || ''
+  const x = value[`${key}x` as const] || value[`${property}X` as const] || ''
+  const y = value[`${key}y` as const] || value[`${property}Y` as const] || ''
+  const t = lock.y
+    ? y
+    : value[`${key}t` as const] || value[`${property}Top` as const] || ''
+  const b = lock.y
+    ? y
+    : value[`${key}b` as const] || value[`${property}Bottom` as const] || ''
+  const l = lock.x
+    ? x
+    : value[`${key}l` as const] || value[`${property}Left` as const] || ''
+  const r = lock.x
+    ? x
+    : value[`${key}r` as const] || value[`${property}Right` as const] || ''
 
   useEffect(() => {
     if (typeof x === 'number') setLock((lock) => ({ ...lock, x: true }))
     if (typeof y === 'number') setLock((lock) => ({ ...lock, y: true }))
   }, [])
 
-  const handleChange = (direction) => (e) => {
+  const handleChange = (direction: 't' | 'b' | 'l' | 'r') => (
+    e: React.ChangeEvent<any>
+  ) => {
     const n = e.target.value
     const val = n === '' ? undefined : parseInt(n)
     switch (direction) {
@@ -82,7 +92,7 @@ export const Space = ({
     }
   }
 
-  const onChangeLock = (dir) => (e) => {
+  const onChangeLock = (dir: 'x' | 'y') => (e: React.ChangeEvent<any>) => {
     const isX = dir === 'x'
     if (!lock[dir]) {
       setLock((lock) => ({ ...lock, [dir]: true }))
@@ -103,9 +113,9 @@ export const Space = ({
     }
   }
 
-  const prefixName = (name) =>
+  const prefixName = (name: string) =>
     tag ? `styles.${tag}.${key}${name}` : key + name
-  const label = (dir) =>
+  const label = (dir: string) =>
     property === 'margin' ? 'Margin ' + dir : 'Padding ' + dir
 
   return (
@@ -163,5 +173,3 @@ export const Space = ({
     </div>
   )
 }
-
-export default Space

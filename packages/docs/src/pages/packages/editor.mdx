@@ -8,6 +8,8 @@ import { TypeScale } from '@theme-ui/style-guide'
 import { useReducer } from 'react'
 import merge from 'lodash.merge'
 
+import { EditorPackageDemo } from '../../components/editor-demo'
+
 export const reducer = (state, next) => merge({}, state, next)
 
 export const State = (props) => {
@@ -25,23 +27,7 @@ npm i @theme-ui/editor
 
 ## Demo
 
-<EditorProvider>
-  <Box
-    sx={{
-      p: 4,
-      mb: 3,
-      color: 'text',
-      bg: 'background',
-    }}>
-    Demo Box
-  </Box>
-  <Theme.Colors />
-  <Theme.Fonts />
-  <b>Font Weights</b>
-  <Theme.FontWeights />
-  <b>Line Heights</b>
-  <Theme.LineHeights />
-</EditorProvider>
+<EditorPackageDemo />
 
 ## Sx Style Object Editor
 

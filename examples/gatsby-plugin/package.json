@@ -25,6 +25,6 @@
     "husky": ">=4.0.7",
     "jest": "^24.8.0",
     "lint-staged": "10",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^17.0.1"
   }
 }

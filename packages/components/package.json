@@ -1,34 +1,29 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.6.0-alpha.7",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "version": "0.7.3",
+  "main": "dist/theme-ui-components.cjs.js",
+  "module": "dist/theme-ui-components.esm.js",
   "types": "index.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress --jsx React.createElement",
-    "watch": "microbundle watch --no-compress --jsx React.createElement",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "0.6.0-alpha.7",
+    "@theme-ui/css": "0.7.3",
     "@types/styled-system": "^5.1.10"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0"
-  },
-  "devDependencies": {
-    "react": "^17.0.1"
   },
   "publishConfig": {
     "access": "public"
   },
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "devDependencies": {
+    "react": "^17.0.1"
+  }
 }

@@ -13,12 +13,21 @@ export const getColor = (theme: Theme, color: Color) => {
       : (color as Exclude<typeof color, string & {}>).__default
   }
 
-  const colorValue = get(theme, `colors.${color}`, color)
+  if (process.env.NODE_ENV !== 'production') {
+    if (color && /^var\(--theme-ui-colors-(.+)\)$/.test(color)) {
+      throw new Error(
+        'A CSS property was passed to `getColor`. ' +
+          '`theme.colors` contains CSS custom properties. ' +
+          'Use `theme.rawColors` instead.'
+      )
+    }
+  }
 
-  const isCustomProperty = /^var\(--/.test(colorValue)
-  return isCustomProperty
-    ? colorValue.replace(/^var\(--(\w+)(.*?), /, '').replace(/\)/, '')
-    : colorValue
+  return get(
+    theme,
+    'rawColors' in theme ? `rawColors.${color}` : `colors.${color}`,
+    color
+  )
 }
 
 /**
@@ -60,7 +69,7 @@ export const desaturate = (c: Color, n: number) => (t: Theme) =>
 /**
  * Saturate a color by an amount 0–1
  */
-export const saturate = (c: Color, n: number) => (t: Theme) =>
+export const saturate = (c: Color, n: number) => (t: Theme) => 
   P.saturate(n, getColor(t, c))
 
 /**

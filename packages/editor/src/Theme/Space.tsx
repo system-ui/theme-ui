@@ -36,7 +36,7 @@ const Space = () => {
             type="number"
             label={key}
             name={'space.' + key}
-            value={space[key]}
+            value={space[key as keyof typeof space] as string}
             onChange={onChange(key)}
           />
         </div>

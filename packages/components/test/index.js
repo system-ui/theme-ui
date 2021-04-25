@@ -67,6 +67,8 @@ const theme = {
       fontSize: 3,
     },
     block: {
+      my: 0,
+      maxWidth: [0, '48em'],
       variant: 'default',
       textAlign: 'justify',
       textAlignLast: 'start',
@@ -329,6 +331,16 @@ describe('Paragraph', () => {
         sx={{
           margin,
         }}
+      />
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
+
+  test('renders with space prop overrides', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <Paragraph
+        m={margin}
       />
     )
     expect(json).toHaveStyleRule('margin', margin)

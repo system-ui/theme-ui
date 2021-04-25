@@ -22,7 +22,7 @@ const heading = (Tag) => (props) =>
     <Tag {...props} />
   )
 
-export default {
+const components = {
   code,
   pre: (props) => props.children,
   h2: heading('h2'),
@@ -33,3 +33,5 @@ export default {
   // "shortcodes"
   Note,
 }
+
+export default components

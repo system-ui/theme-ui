@@ -1,4 +1,4 @@
-import { css, NestedScale, NestedScaleDict, Theme } from '../src'
+import { css, NestedScale, NestedScaleDict, Theme, ThemeUIExtendedCSSProperties } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -183,6 +183,8 @@ test('handles all core styled system props', () => {
     mx: 'auto',
     p: 3,
     py: 4,
+    scrollMargin: 5,
+    scrollMarginY: 6,
     scrollPadding: 1,
     scrollPaddingY: 2,
     fontSize: 3,
@@ -205,6 +207,9 @@ test('handles all core styled system props', () => {
     padding: 16,
     paddingTop: 32,
     paddingBottom: 32,
+    scrollMargin: 64,
+    scrollMarginTop: 128,
+    scrollMarginBottom: 128,
     scrollPadding: 4,
     scrollPaddingTop: 8,
     scrollPaddingBottom: 8,
@@ -405,7 +410,7 @@ test('handles negative top, left, bottom, and right from scale', () => {
   })
 })
 
-test('handles negative margins from scale that is an object', () => {
+test('handles negative margins from scale that is an object and value is string', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
@@ -414,6 +419,18 @@ test('handles negative margins from scale that is an object', () => {
     marginTop: '-16px',
     marginLeft: '-32px',
     marginRight: '-32px',
+  })
+})
+
+test('handles negative margins from scale that is an object and value is number', () => {
+  const result = css({
+    mt: '-s',
+    mx: '-m',
+  })({ ...theme, space: { s: 16, m: 32 } })
+  expect(result).toEqual({
+    marginTop: -16,
+    marginLeft: -32,
+    marginRight: -32,
   })
 })
 
@@ -577,6 +594,8 @@ test('multiples are transformed', () => {
     marginY: 2,
     paddingX: 2,
     paddingY: 2,
+    scrollMarginX: 2,
+    scrollMarginY: 2,
     scrollPaddingX: 2,
     scrollPaddingY: 2,
 
@@ -591,6 +610,10 @@ test('multiples are transformed', () => {
     paddingRight: 8,
     paddingTop: 8,
     paddingBottom: 8,
+    scrollMarginLeft: 8,
+    scrollMarginRight: 8,
+    scrollMarginTop: 8,
+    scrollMarginBottom: 8,
     scrollPaddingLeft: 8,
     scrollPaddingRight: 8,
     scrollPaddingTop: 8,
@@ -660,6 +683,38 @@ test('returns correct media query order 2', () => {
   ])
 })
 
+test('returns custom media queries', () => {
+  const result = css({
+    fontSize: [2, 3, 4],
+    color: 'primary',
+  })({
+    theme: {
+      ...theme,
+      breakpoints: [
+        '32em',
+        '@media screen and (orientation: landscape) and (min-width: 40rem)',
+      ],
+    },
+  })
+  const keys = Object.keys(result)
+  expect(keys).toEqual([
+    'fontSize',
+    '@media screen and (min-width: 32em)',
+    '@media screen and (orientation: landscape) and (min-width: 40rem)',
+    'color',
+  ])
+  expect(result).toEqual({
+    fontSize: 16,
+    '@media screen and (min-width: 32em)': {
+      fontSize: 24,
+    },
+    '@media screen and (orientation: landscape) and (min-width: 40rem)': {
+      fontSize: 36,
+    },
+    color: 'tomato',
+  })
+})
+
 test('supports vendor properties', () => {
   expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
     WebkitOverflowScrolling: 'touch',
@@ -675,4 +730,20 @@ test('omits empty values', () => {
       border: '1px solid black',
     })(theme)
   ).toStrictEqual({ border: '1px solid black' })
+})
+
+test('borderTopWidth accepts number', () => {
+  expect(css({
+    borderTopWidth: 7,
+  })(theme)).toEqual({
+    borderTopWidth: 7,
+  })
+
+  expect(css({
+    borderTopWidth: 1,
+  })({
+    borderWidths: ['10px', '20px']
+  })).toEqual({
+    borderTopWidth: '20px',
+  })
 })

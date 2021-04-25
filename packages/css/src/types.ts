@@ -303,6 +303,22 @@ interface AliasesCSSProperties {
    */
 
   /**
+   * The **`scrollMarginX`** is shorthand property for CSS properties **`scroll-margin-left`** and **`scroll-margin-right`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-right
+   */
+   scrollMarginX?: StandardCSSProperties['scrollMarginLeft']
+
+   /**
+    * The **`scrollMarginY`** is shorthand property for CSS properties **`scroll-margin-top`** and **`scroll-margin-bottom`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+    *
+    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top
+    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom
+    */
+   scrollMarginY?: StandardCSSProperties['scrollMarginTop']
+
+  /**
    * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
    *
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
@@ -361,18 +377,6 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
    */
   borderTopStyle?: CSS.Property.BorderTopStyle | string
-  /**
-   * The **`border-top-width`** CSS property sets the width of the top border of an element.
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
-   */
-  borderTopWidth?: CSS.Property.BorderTopWidth<never> | string
   /**
    * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
@@ -768,6 +772,14 @@ export interface Theme {
    * Define the colors that are available through this theme
    */
   colors?: ColorModesScale
+
+  /**
+   * Colors are transformed into CSS custom properties.
+   *
+   * If you need to read their raw values to pass them somewhere where CSS
+   * custom properties are not supported, use `rawColors`.
+   */
+  rawColors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
