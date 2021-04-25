@@ -169,7 +169,7 @@ test('does not renders global styles', () => {
     <ThemeProvider
       theme={{
         config: {
-          useBodyStyles: false,
+          useRootStyles: false,
         },
         fonts: {
           body: 'Georgia,serif',
