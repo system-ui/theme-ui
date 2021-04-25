@@ -164,7 +164,7 @@ test('does not render invalid global styles', () => {
   expect(style.lineHeight).toBe('')
 })
 
-test('does not renders global styles', () => {
+test('does not render global styles', () => {
   const root = render(
     <ThemeProvider
       theme={{
