@@ -69,6 +69,9 @@ const getModeFromClass = (): string | undefined => {
 }
 
 const useColorModeState = (theme: Theme = {}) => {
+  const { initialColorModeName, useColorSchemeMediaQuery, useLocalStorage } =
+    theme.config || theme
+
   let [mode, setMode] = useState(() => {
     const modeFromClass = getModeFromClass()
     if (modeFromClass) {
@@ -76,16 +79,15 @@ const useColorModeState = (theme: Theme = {}) => {
     }
 
     const preferredMode =
-      theme.config?.useColorSchemeMediaQuery !== false &&
-      getPreferredColorScheme()
+      useColorSchemeMediaQuery !== false && getPreferredColorScheme()
 
-    return preferredMode || theme.config?.initialColorModeName || theme.initialColorModeName
+    return preferredMode || initialColorModeName
   })
 
   // on first render, we read the color mode from localStorage and
   // clear the class on document element body
   useEffect(() => {
-    const stored = theme.useLocalStorage !== false && storage.get()
+    const stored = useLocalStorage !== false && storage.get()
 
     if (typeof document !== 'undefined') {
       document.documentElement.classList.remove('theme-ui-' + stored)
@@ -100,7 +102,7 @@ const useColorModeState = (theme: Theme = {}) => {
 
   // when mode changes, we save it to localStorage
   React.useEffect(() => {
-    if (mode && (useLocalStorage) !== false) {
+    if (mode && useLocalStorage !== false) {
       storage.set(mode)
     }
   }, [mode])
@@ -108,13 +110,11 @@ const useColorModeState = (theme: Theme = {}) => {
   if (process.env.NODE_ENV !== 'production') {
     if (
       theme.colors?.modes &&
-      theme.config?.initialColorModeName &&
-      Object.keys(theme.colors.modes).indexOf(
-        theme.config?.initialColorModeName
-      ) > -1
+      initialColorModeName &&
+      Object.keys(theme.colors.modes).indexOf(initialColorModeName) > -1
     ) {
       console.warn(
-        'The `initialColorModeName` value should be a unique name' +
+        '[theme-ui] The `initialColorModeName` value should be a unique name' +
           ' and cannot reference a key in `theme.colors.modes`.'
       )
     }
@@ -152,8 +152,8 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
 
-  const { useCustomProperties = false } = theme.config || theme
   const theme = applyColorMode(outer.theme || {}, colorMode)
+  const { useCustomProperties = false } = theme.config || theme
 
   if (useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
