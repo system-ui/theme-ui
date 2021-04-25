@@ -81,6 +81,7 @@ const useColorModeState = (theme: Theme = {}) => {
     return preferredMode || theme.initialColorModeName
   })
 
+  // remove initial color mode classes from the document and body
   useEffect(() => {
     const classMode = getModeFromClass()
     if (classMode) {
