@@ -109,7 +109,7 @@ const useColorModeState = (theme: Theme = {}) => {
   }, [])
 
   // when mode changes, we save it to localStorage
-  React.useEffect(() => {
+  useEffect(() => {
     if (mode && theme.useLocalStorage !== false) {
       storage.set(mode)
     }
@@ -180,12 +180,24 @@ const assembleColorModes = (theme: Theme, outer: Theme) => {
   }
 }
 
+const fixSSRInitialMode = (
+  mode: string | undefined,
+  initial: string | undefined
+) => {
+  const keyFix = mode === undefined ? undefined : initial
+
+  return mode === keyFix ? initial : mode
+}
+
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
 
   const initialTheme = outer.theme || {}
   const theme = applyColorMode(initialTheme, colorMode)
+
+  const { initialColorModeName } = outer.theme
+  const [currentMode, setCurrentMode] = useState(initialColorModeName)
 
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
@@ -201,10 +213,16 @@ export const ColorModeProvider: React.FC = ({ children }) => {
     }, [colorMode])
   }
 
+  useEffect(() => {
+    if (currentMode !== colorMode) {
+      setCurrentMode(fixSSRInitialMode(colorMode, initialColorModeName))
+    }
+  }, [])
+
   const context = {
     ...outer,
     theme,
-    colorMode,
+    colorMode: colorMode || currentMode,
     setColorMode,
   }
 
