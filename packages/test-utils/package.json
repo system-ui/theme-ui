@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/test-utils",
-  "version": "0.6.0",
+  "version": "0.7.3",
   "private": true,
   "license": "MIT",
   "source": "src/index.ts",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@testing-library/react": "^11.0.1",
     "conditional-type-checks": "^1.0.5",
-    "ts-snippet": "^5.0.0",
-    "react-test-renderer": "17.0.1"
+    "react-test-renderer": "17.0.2",
+    "ts-snippet": "^5.0.0"
   }
 }

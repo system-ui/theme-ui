@@ -22,12 +22,14 @@ Create a theme file located at `src/gatsby-plugin-theme-ui/index.js`.
 
 ```js
 // example theme file
-export default {
+const theme = {
   colors: {
     text: '#000',
     background: '#fff',
   },
 }
+
+export default theme
 ```
 
 With `gatsby-plugin-theme-ui`, there is no need to manually use the `ThemeProvider` component.

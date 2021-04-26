@@ -51,12 +51,14 @@ To customize the theme used in your Gatsby site,
 shadow the `src/gatsby-plugin-theme-ui/index.js` module.
 
 ```js filename=src/gatsby-plugin-theme-ui/index.js
-export default {
+const theme = {
   colors: {
     text: '#111',
     background: '#fff',
   },
 }
+
+export default theme
 ```
 
 ### Load theme from custom path
@@ -95,7 +97,7 @@ To extend a Gatsby theme that uses Theme UI, import the base theme and export a 
 ```js filename=src/gatsby-plugin-theme-ui/index.js
 import baseTheme from 'gatsby-theme-blog/src/gatsby-plugin-theme-ui'
 
-export default {
+const theme = {
   ...baseTheme,
   colors: {
     ...baseTheme.colors,
@@ -103,6 +105,8 @@ export default {
     background: '#fff',
   },
 }
+
+export default theme
 ```
 
 You can also import and use presets from [@theme-ui/presets](https://theme-ui.com/packages/presets) to use as a starting point.
@@ -112,7 +116,7 @@ You can also import and use presets from [@theme-ui/presets](https://theme-ui.co
 To enable support for multiple color modes, add a nested `modes` object to `theme.colors`.
 
 ```js filename=src/gatsby-plugin-theme-ui/index.js
-export default {
+const theme = {
   colors: {
     text: '#000',
     background: '#fff',
@@ -124,6 +128,8 @@ export default {
     },
   },
 }
+
+export default theme
 ```
 
 ## Components
@@ -131,13 +137,15 @@ export default {
 Custom MDX components that will receive styles from the theme can be included by adding a `src/gatsby-plugin-theme-ui/components.js` module.
 
 ```js filename=src/gatsby-plugin-theme-ui/components.js
-export default {
+const components = {
   h1: (props) => (
     <h1 {...props}>
       <a href={`#${props.id}`}>{props.children}</a>
     </h1>
   ),
 }
+
+export default components
 ```
 
 MIT License

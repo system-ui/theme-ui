@@ -1,2 +1,4 @@
 // add custom MDX components here
-export default {}
+const components = {}
+
+export default components

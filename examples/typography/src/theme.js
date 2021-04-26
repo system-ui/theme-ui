@@ -4,7 +4,7 @@ import fairyGates from 'typography-theme-fairy-gates'
 
 const typography = toTheme(fairyGates)
 
-export default merge(typography, {
+const theme = merge(typography, {
   colors: {
     text: '#000',
     background: '#fff',
@@ -26,3 +26,5 @@ export default merge(typography, {
     },
   },
 })
+
+export default theme

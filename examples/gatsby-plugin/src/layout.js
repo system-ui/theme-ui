@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from 'theme-ui'
 
-export default (props) => (
+const Layout = (props) => (
   <Themed.root>
     <header>
       <h2>Theme UI Gatsby Example</h2>
@@ -11,3 +11,5 @@ export default (props) => (
     </main>
   </Themed.root>
 )
+
+export default Layout

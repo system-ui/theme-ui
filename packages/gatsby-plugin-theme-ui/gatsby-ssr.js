@@ -1,6 +1,6 @@
+import * as React from "react"
 import { jsx, InitializeColorMode } from 'theme-ui'
-
-export { wrapRootElement } from './src/provider'
+import { WrapRootElement } from './src/provider'
 
 export const onRenderBody = (
   { setPreBodyComponents },
@@ -12,3 +12,7 @@ export const onRenderBody = (
     ])
   }
 }
+
+export const wrapRootElement = ({ element }) => (
+  <WrapRootElement element={element} />
+)

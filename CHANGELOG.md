@@ -1,5 +1,100 @@
 # Changelog
 
+## v0.7.3 (Wed Apr 21 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+:heart: David Dios ([@dios-david](https://github.com/dios-david))
+
+Thanks for all your work!
+
+### ✨ New Features
+
+- `@theme-ui/css`
+  - Adding `scroll-margin` props
+    [#1664](https://github.com/system-ui/theme-ui/pull/1664)
+    ([@dios-david](https://github.com/dios-david))
+
+### 🐛 Bug Fix
+
+- `@theme-ui/css`
+  - Return negative number from lookup if theme value is a number
+    [#1665](https://github.com/system-ui/theme-ui/pull/1665)
+    ([@kenny-f](https://github.com/kenny-f))
+
+### 🔩 Dependency Updates
+
+- `@theme-ui/editor`
+  - chore(deps): bump reakit from 1.3.5 to 1.3.7
+    [#1644](https://github.com/system-ui/theme-ui/pull/1644)
+    ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+    [@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 3
+
+- David Dios ([@dios-david](https://github.com/dios-david))
+- Kenny ([@kenny-f](https://github.com/kenny-f))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
+## v0.7.2 (Mon Apr 19 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm)), for all
+your work!
+
+### 🐛 Bug Fix
+
+- `gatsby-plugin-theme-ui`
+  - fix(gatsby-plugin-theme-ui): Fast Refresh Compatibility
+    [#1659](https://github.com/system-ui/theme-ui/pull/1659)
+    ([@LekoArts](https://github.com/LekoArts)
+    [@hasparus](https://github.com/hasparus))
+- `@theme-ui/components`
+  - fix(components): Allow styled-system space props on Paragraph
+    [#1658](https://github.com/system-ui/theme-ui/pull/1658)
+    ([@vanbujm](https://github.com/vanbujm))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump ssri from 6.0.1 to 6.0.2 in /examples/next
+  [#1661](https://github.com/system-ui/theme-ui/pull/1661)
+  ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): [security] bump ssri from 6.0.1 to 6.0.2
+  [#1660](https://github.com/system-ui/theme-ui/pull/1660)
+  ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 3
+
+- Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+## v0.7.0 (Thu Apr 15 2021)
+
+### 🚀 Enhancement
+
+- Have `breakpoints` accept custom media queries
+  [#1653](https://github.com/system-ui/theme-ui/pull/1653)
+  [@carolinmaisenbacher](https://github.com/carolinmaisenbacher)
+
+### 🐛 Bug Fix
+
+- `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`,
+  `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`
+  - Set `gatsby` peerDependency more explicit to `^2.0.0 || ^3.0.0`.
+    [#1640](https://github.com/system-ui/theme-ui/pull/1640)
+    ([@LekoArts](https://github.com/LekoArts))
+
+### ⚙️ Internal
+
+- all packages -Build packages with Preconstruct 2
+  [#1423](https://github.com/system-ui/theme-ui/pull/1423)
+  ([@alexanderchan](https://github.com/alexanderchan)
+  [@hasparus](https://github.com/hasparus))
+
 ## v0.6.2 (Mon Apr 05 2021)
 
 ### 🐛 Bug Fix
