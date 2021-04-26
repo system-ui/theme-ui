@@ -33,7 +33,7 @@ const getModeName = (mode) => {
     case 'default':
       return 'Light'
     case undefined:
-      return '         '
+      return 'Light'
     default:
       return mode
   }
@@ -112,7 +112,7 @@ export default function DocsLayout(props) {
             height: '100%',
           }}>
           <Sidebar
-            ref={nav}
+            forwardref={nav}
             role="navigation"
             onFocus={(e) => {
               setMenuOpen(true)
