@@ -227,6 +227,7 @@ export const scales = {
   borderInlineWidth: 'borderWidths',
   borderStartEndRadius: 'radii',
   borderStartStartRadius: 'radii',
+  columnRuleWidth: 'borderWidths',
   outlineColor: 'colors',
   boxShadow: 'shadows',
   textShadow: 'shadows',
@@ -245,6 +246,7 @@ export const scales = {
   maxInlineSize: 'sizes',
   minBlockSize: 'sizes',
   minInlineSize: 'sizes',
+  columnWidth: 'sizes',
   // svg
   fill: 'colors',
   stroke: 'colors',
