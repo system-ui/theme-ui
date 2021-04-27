@@ -116,6 +116,7 @@ export const scales = {
   borderColor: 'colors',
   caretColor: 'colors',
   columnRuleColor: 'colors',
+  textDecorationColor: 'colors',
   opacity: 'opacities',
   transition: 'transitions',
   margin: 'space',
