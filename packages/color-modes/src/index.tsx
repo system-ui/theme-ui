@@ -210,7 +210,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         omitModes(initialTheme.colors || {}),
         'colors'
       )
-    }, [colorMode])
+    }, [colorMode, currentMode])
   }
 
   useEffect(() => {
