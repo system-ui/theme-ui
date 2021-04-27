@@ -1,3 +1,32 @@
+# v0.7.4 (Tue Apr 27 2021)
+
+#### 🐛 Bug Fix
+
+- Add new links to Resources page [#1670](https://github.com/system-ui/theme-ui/pull/1670) ([@lachlanjc](https://github.com/lachlanjc))
+- Add link to JSX Pragma page on Getting Started doc ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/css`
+  - Add 2 missing CSS column properties to scales [#1669](https://github.com/system-ui/theme-ui/pull/1669) ([@lachlanjc](https://github.com/lachlanjc))
+  - Add text-decoration-color to scales [#1667](https://github.com/system-ui/theme-ui/pull/1667) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump @preconstruct/cli from 2.0.1 to 2.0.7 [#1674](https://github.com/system-ui/theme-ui/pull/1674) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump polished from 4.1.1 to 4.1.2 [#1673](https://github.com/system-ui/theme-ui/pull/1673) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump auto from 10.25.0 to 10.25.1 [#1675](https://github.com/system-ui/theme-ui/pull/1675) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @babel/cli from 7.13.14 to 7.13.16 [#1676](https://github.com/system-ui/theme-ui/pull/1676) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @babel/core from 7.13.15 to 7.13.16 [#1677](https://github.com/system-ui/theme-ui/pull/1677) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @auto-it/first-time-contributor [#1678](https://github.com/system-ui/theme-ui/pull/1678) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump gatsby from 2.32.3 to 2.32.12 [#1680](https://github.com/system-ui/theme-ui/pull/1680) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @emotion/styled from 11.1.5 to 11.3.0 [#1681](https://github.com/system-ui/theme-ui/pull/1681) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @auto-it/magic-zero from 10.25.0 to 10.25.1 [#1682](https://github.com/system-ui/theme-ui/pull/1682) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
 # Changelog
 
 ## v0.7.3 (Wed Apr 21 2021)
