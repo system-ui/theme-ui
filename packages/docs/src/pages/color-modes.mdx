@@ -15,6 +15,7 @@ for optional color modes.
 ```js
 // example theme colors
 {
+  initialColorModeName: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -30,9 +31,37 @@ for optional color modes.
 }
 ```
 
-The colors defined at the root of the `colors` object will be accessible as
-`default`. All colors found in `colors.modes` will be referenced by their key.
-The above example will have two modes: `default` and `dark`.
+All colors found in `colors.modes` will be referenced by their key in the
+context object `rawColors.modes`. The above example will have two modes: `light`
+and `dark`.
+
+## Initial colors
+
+The colors defined at the root of the `colors` are tranformed upon `colorMode`
+change. This is to allow for reference like `theme.colors.primary` to return:
+
+- `colors.primary`, when the color mode is set to its initial mode
+- `colors.modes.dark.primary`, when the color mode is set to `dark`
+
+Because of this, we store those initial colors with the other modes. They will
+be accessible as
+
+- `rawColors.modes.__default` (if `initialColorModeName` is undefined)
+- `rawColors.modes.light` (using the value of `initialColorModeName`).
+
+```js
+{
+  initialColorModeName: 'light',
+  rawColors: {
+    primary: '#07c',
+    modes: {
+      // __default: {}, initialColorModeName is defined
+      light: { primary: '#07c' },
+      dark: { primary: '#0cf' }
+    }
+  }
+}
+```
 
 ## Colors Object
 
@@ -59,29 +88,6 @@ Canvas) won't work, use `rawColors`
     text: '#000',
     background: '#fff',
     primary: '#07c',
-  }
-}
-```
-
-## Default colors
-
-The default colors are tranformed upon `colorMode` change. This allows for the
-use the "current" colors. `theme.colors.primary` returns the primary key of the
-current mode.
-
-We also add those default colors inside `rawColors.modes` under the `__default`
-key (or `initialColorModeName` value, if it is defined).
-
-```js
-{
-  initialColorModeName: 'light',
-  rawColors: {
-    primary: '#07c',
-    modes: {
-      // __default: {}, initialColorModeName is defined
-      light: { primary: '#07c' },
-      dark: { primary: '#0cf' }
-    }
   }
 }
 ```
