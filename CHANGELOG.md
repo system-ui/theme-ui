@@ -10,7 +10,7 @@
 
   - **Deprecations:** `useRootStyles`, `useCustomProperties`,
     `useColorSchemeMediaQuery`, `useBorderBox`, and `useLocalStorage` options on
-    the theme object are now deprecated, and they will be removed in a future
+    the theme object are now scoped under a `config` object on the theme, and the root-level options, now deprecated, will be removed in a future
     release.
 
     All these options are still supported, but they're grouped under
