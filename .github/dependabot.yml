@@ -1,0 +1,96 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: babel-preset-gatsby
+    versions:
+    - ">= 0.11.a, < 0.12"
+  - dependency-name: gatsby-plugin-catch-links
+    versions:
+    - ">= 2.10.a, < 2.11"
+  - dependency-name: gatsby-plugin-catch-links
+    versions:
+    - ">= 2.9.a, < 2.10"
+  - dependency-name: gatsby-plugin-mdx
+    versions:
+    - "> 1.10.0, < 1.11"
+  - dependency-name: gatsby-plugin-mdx
+    versions:
+    - ">= 1.9.a, < 1.10"
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - ">= 3.10.a, < 3.11"
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - ">= 3.7.a, < 3.8"
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - ">= 3.9.a, < 3.10"
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - ">= 4.0.a, < 4.1"
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - ">= 4.a, < 5"
+  - dependency-name: gatsby-source-filesystem
+    versions:
+    - ">= 2.10.a, < 2.11"
+  - dependency-name: gatsby-source-filesystem
+    versions:
+    - "> 2.11.0, < 2.12"
+  - dependency-name: gatsby-source-filesystem
+    versions:
+    - ">= 3.a, < 4"
+  - dependency-name: tailwindcss
+    versions:
+    - ">= 2.a, < 3"
+  - dependency-name: babel-preset-gatsby
+    versions:
+    - 0.12.2
+    - 1.0.0
+    - 1.1.0
+    - 1.3.0
+  - dependency-name: "@testing-library/react"
+    versions:
+    - 11.2.6
+  - dependency-name: "@babel/plugin-transform-runtime"
+    versions:
+    - 7.12.15
+  - dependency-name: gatsby-plugin-catch-links
+    versions:
+    - 3.0.0
+    - 3.1.0
+  - dependency-name: ts-jest
+    versions:
+    - 26.5.4
+  - dependency-name: gatsby
+    versions:
+    - 3.1.1
+  - dependency-name: type-fest
+    versions:
+    - 1.0.0
+  - dependency-name: reakit
+    versions:
+    - 1.3.6
+  - dependency-name: "@auto-it/conventional-commits"
+    versions:
+    - 10.21.0
+  - dependency-name: lerna
+    versions:
+    - 4.0.0
+  - dependency-name: "@auto-it/first-time-contributor"
+    versions:
+    - 10.21.0
+  - dependency-name: prism-react-renderer
+    versions:
+    - 1.2.0
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.2
+  - dependency-name: gatsby-plugin-mdx
+    versions:
+    - 2.0.0
