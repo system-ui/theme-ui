@@ -717,6 +717,8 @@ export interface Theme {
    *
    * If you need to read their raw values to pass them somewhere where CSS
    * custom properties are not supported, use `rawColors`.
+   *
+   * Additionally, you can access all the color modes in this objects.
    */
   rawColors?: ColorModesScale
 

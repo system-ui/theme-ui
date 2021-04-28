@@ -23,6 +23,7 @@ test('renders with theme context', () => {
   const root = render(WrapRootElement({ element: <Consumer /> }, {}))
   expect(context.theme).toEqual({
     colors: {},
+    rawColors: {},
     styles: {
       pre: {},
     },

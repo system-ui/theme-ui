@@ -241,7 +241,7 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
 })
 
 test('retains initial context', () => {
-  let context: ThemeUIContextValue | undefined = undefined;
+  let context: ThemeUIContextValue | undefined = undefined
   const Consumer = () => {
     context = useThemeUI()
     return null
@@ -472,7 +472,12 @@ test('emotion useTheme with custom css vars', () => {
   expect(cssVarsColors?.text).toBe('var(--theme-ui-colors-text)')
   expect(cssVarsColors?.background).toBe('var(--theme-ui-colors-background)')
 
-  expect(orignalColors?.text).toBe('limegreen') 
+  expect(cssVarsColors).toStrictEqual({
+    text: 'var(--theme-ui-colors-text)',
+    background: 'var(--theme-ui-colors-background)',
+  })
+
+  expect(orignalColors?.text).toBe('limegreen')
   expect(orignalColors?.background).toBe('#111')
 })
 
@@ -636,6 +641,101 @@ test('raw color values are passed to theme-ui context when custom properties are
     </ThemeProvider>
   )
   expect(color).toBe('tomato')
+})
+
+test('raw color modes are passed to theme-ui context and include the default colors', () => {
+  let colors
+  const Grabber = () => {
+    const context = useThemeUI()
+    colors = context.theme?.rawColors
+    return null
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider>
+        <Grabber />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(colors).toStrictEqual({
+    primary: 'tomato',
+    modes: {
+      __default: { primary: 'tomato' },
+      dark: { primary: 'black' },
+    },
+  })
+})
+
+test('raw color modes are passed to theme-ui context and include the default colors under the initialColorModeName', () => {
+  let colors
+  const Grabber = () => {
+    const context = useThemeUI()
+    colors = context.theme?.rawColors
+    return null
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+        initialColorModeName: 'light',
+        colors: {
+          primary: 'tomato',
+          modes: {
+            dark: {
+              primary: 'black',
+            },
+          },
+        },
+      }}>
+      <ColorModeProvider>
+        <Grabber />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(colors).toStrictEqual({
+    primary: 'tomato',
+    modes: {
+      light: { primary: 'tomato' },
+      dark: { primary: 'black' },
+    },
+  })
+})
+
+test('raw color modes are are not passed to theme-ui context if modes are not defined', () => {
+  let colors
+  const Grabber = () => {
+    const context = useThemeUI()
+    colors = context.theme?.rawColors
+    return null
+  }
+  const root = render(
+    <ThemeProvider
+      theme={{
+        useColorSchemeMediaQuery: false,
+        initialColorModeName: 'light',
+        colors: {
+          primary: 'tomato',
+        },
+      }}>
+      <ColorModeProvider>
+        <Grabber />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+  expect(colors).toStrictEqual({
+    primary: 'tomato',
+  })
 })
 
 test('InitializeColorMode renders', () => {
