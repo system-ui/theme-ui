@@ -13,8 +13,7 @@
     the theme object are now scoped under a `config` object on the theme, and the root-level options, now deprecated, will be removed in a future
     release.
 
-    All these options are still supported, but they're grouped under
-    `theme.config` (e.g. `theme.config.useBorderBox`)
+   (e.g. you should be setting `theme.config.useBorderBox` instead of `theme.useBorderBox`)
 
   - ⚠ All config options should be migrated at once. If Theme UI sees
     `theme.config` exists, it won't look for options on the `theme`.
