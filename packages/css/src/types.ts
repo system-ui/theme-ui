@@ -1,5 +1,6 @@
 import * as CSS from 'csstype'
 
+import { ThemeUIConfig } from './options'
 import type {} from '../emotion-theme'
 import { ThemeUIConfig } from './options'
 

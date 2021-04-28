@@ -26,7 +26,7 @@ const RootStyles = () =>
         '*': {
           boxSizing,
         },
-        [use.scope]: {
+        html: {
           margin: 0,
           variant: 'styles.root',
         },

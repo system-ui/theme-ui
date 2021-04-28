@@ -1,5 +1,28 @@
 # Changelog
 
+## v0.8.0 UNRELEASED
+
+- **BREAKING:** `theme.config.useRootStyles` now defaults to `true` following
+  deprecation of `useBodyStyles`. Styles from `theme.styles.root` are now added
+  to `<html>` element by default.
+
+- Moved theme configuration options to `config` object in theme.
+
+  - **Deprecations:** `useRootStyles`, `useCustomProperties`,
+    `useColorSchemeMediaQuery`, `useBorderBox`, and `useLocalStorage` options on
+    the theme object are now deprecated, and they will be removed in a future
+    release.
+
+    All these options are still supported, but they're grouped under
+    `theme.config` (e.g. `theme.config.useBorderBox`)
+
+  - ⚠ All config options should be migrated at once. If Theme UI sees
+    `theme.config` exists, it won't look for options on the `theme`.
+
+- **Removed APIs deprecated in 0.6.0**
+  - `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
+  - `Styled` ⟶ `Themed`
+
 ## v0.7.3 (Wed Apr 21 2021)
 
 :tada: This release contains work from a new contributor! :tada:

@@ -183,7 +183,6 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         })
       : jsx('div', {
           className: 'theme-ui__nested-color-mode-provider',
-          // TODO: This could be refactored a bit.
           style: createColorStyles(theme)[
             __internalGetUseRootStyles(theme).scope
           ],
