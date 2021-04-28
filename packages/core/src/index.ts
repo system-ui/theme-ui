@@ -33,7 +33,6 @@ export type {
   VariantProperty,
 } from '@theme-ui/css'
 
-export { __internalGetUseRootStyles } from '@theme-ui/css'
 export * from './types'
 
 const __EMOTION_VERSION__ = packageInfo.version

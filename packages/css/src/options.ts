@@ -1,15 +1,5 @@
 import { Theme } from './types'
 
-export function __internalGetUseRootStyles(theme: Theme = {}) {
-  const { useRootStyles } = theme.config || theme
-  const root = 'useRootStyles' in theme && useRootStyles != null
-
-  return {
-    scope: root ? 'html' : 'body',
-    rootStyles: useRootStyles,
-  }
-}
-
 export interface ThemeUIConfig {
   /**
    * Enable/disable custom CSS properties/variables if lower browser

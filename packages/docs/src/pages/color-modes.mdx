@@ -56,7 +56,7 @@ export default (props) => {
 
 ## Applying colors
 
-The ThemeProvider component will automatically apply color mode styles to the `<body>` element.
+The ThemeProvider component will automatically apply color mode styles to the `<html>` element.
 
 ```jsx
 import { ThemeProvider } from 'theme-ui'
@@ -67,8 +67,7 @@ export default (props) => (
 )
 ```
 
-- To disable this behavior, add the `useBodyStyles: false` flag to your theme.
-- Additionally, to apply styles to the `<html>` element instead, add the `useRootStyles` flag. It works the same way as and will override `useBodyStyles`.
+- To disable this behavior, add the `useRootStyles: false` flag to your theme.
 
 ## Gatsby plugin
 

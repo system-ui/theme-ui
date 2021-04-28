@@ -72,7 +72,7 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      body: {
+      html: {
         color: 'var(--theme-ui-colors-text)',
         backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
@@ -105,7 +105,7 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      body: {
+      html: {
         color: 'var(--theme-ui-colors-text)',
         backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
@@ -149,7 +149,6 @@ describe('createColorStyles', () => {
   test('creates styles at the HTML root and override the body styles prop', () => {
     const styles = createColorStyles({
       useRootStyles: true,
-      useBodyStyles: false,
       colors: {
         text: 'white',
         background: 'tomato',
@@ -163,35 +162,6 @@ describe('createColorStyles', () => {
     })
     expect(styles).toEqual({
       html: {
-        color: 'var(--theme-ui-colors-text)',
-        backgroundColor: 'var(--theme-ui-colors-background)',
-        '--theme-ui-colors-text': 'white',
-        '--theme-ui-colors-background': 'tomato',
-        '&.theme-ui-light': {
-          '--theme-ui-colors-text': 'tomato',
-          '--theme-ui-colors-background': 'white',
-        },
-      },
-    })
-  })
-
-  test('creates styles at the BODY root while ignoring the root styles prop', () => {
-    const styles = createColorStyles({
-      useRootStyles: undefined,
-      useBodyStyles: true,
-      colors: {
-        text: 'white',
-        background: 'tomato',
-        modes: {
-          light: {
-            text: 'tomato',
-            background: 'white',
-          },
-        },
-      },
-    })
-    expect(styles).toEqual({
-      body: {
         color: 'var(--theme-ui-colors-text)',
         backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
@@ -221,7 +191,7 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      body: {
+      html: {
         color: 'var(--theme-ui-colors-text)',
         backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'white',
@@ -256,7 +226,7 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      body: {
+      html: {
         color: 'var(--theme-ui-colors-text)',
         backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
@@ -281,7 +251,7 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      body: {
+      html: {
         color: 'var(--theme-ui-colors-text)',
         backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',

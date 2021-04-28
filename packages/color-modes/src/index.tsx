@@ -5,7 +5,7 @@ import {
   merge,
   __ThemeUIInternalBaseThemeProvider,
 } from '@theme-ui/core'
-import { get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
+import { get, Theme } from '@theme-ui/css'
 import { Global } from '@emotion/react'
 
 import { toCustomProperties, createColorStyles } from './custom-properties'
@@ -183,9 +183,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         })
       : jsx('div', {
           className: 'theme-ui__nested-color-mode-provider',
-          style: createColorStyles(theme)[
-            __internalGetUseRootStyles(theme).scope
-          ],
+          style: createColorStyles(theme)['html'],
         }),
     children
   )

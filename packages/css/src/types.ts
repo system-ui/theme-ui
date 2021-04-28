@@ -1,8 +1,7 @@
 import * as CSS from 'csstype'
 
-import { ThemeUIConfig } from './options'
 import type {} from '../emotion-theme'
-import { ThemeUIConfig } from './options'
+import type { ThemeUIConfig } from './options'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
@@ -696,13 +695,6 @@ export interface Theme {
    * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
    */
   useRootStyles?: boolean
-
-  /**
-   * @deprecated Deprecated in favor of `config.useRootStyles`
-   *
-   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
-   */
-  useBodyStyles?: boolean
 
   /**
    * @deprecated Deprecated in favor of nesting inside `config`
