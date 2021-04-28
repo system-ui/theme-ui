@@ -153,7 +153,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
 
   const theme = applyColorMode(outer.theme || {}, colorMode)
-  const { useCustomProperties = false } = theme.config || theme
+  const { useCustomProperties } = theme.config || theme
 
   if (useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
