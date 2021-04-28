@@ -1,26 +1,22 @@
-# v0.7.5 (Wed Apr 28 2021)
+## v0.7.5 (Wed Apr 28 2021)
 
-#### 🐛 Bug Fix
+### 🐛 Bug Fix
 
 - `@theme-ui/css`
   - Add 6 border logical color properties to scales [#1668](https://github.com/system-ui/theme-ui/pull/1668) ([@lachlanjc](https://github.com/lachlanjc))
 
-#### ⚠️ Pushed to `stable`
+### 📝 Docs
 
 - docs: useColorSchemeMediaQuery defaults to true ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/css`
-  - Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
 
-#### Authors: 2
+### Authors: 2
 
 - Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
 - Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
 
----
+## v0.7.4 (Tue Apr 27 2021)
 
-# v0.7.4 (Tue Apr 27 2021)
-
-#### 🐛 Bug Fix
+### 🐛 Bug Fix
 
 - Add new links to Resources page [#1670](https://github.com/system-ui/theme-ui/pull/1670) ([@lachlanjc](https://github.com/lachlanjc))
 - Add link to JSX Pragma page on Getting Started doc ([@lachlanjc](https://github.com/lachlanjc))
@@ -28,7 +24,7 @@
   - Add 2 missing CSS column properties to scales [#1669](https://github.com/system-ui/theme-ui/pull/1669) ([@lachlanjc](https://github.com/lachlanjc))
   - Add text-decoration-color to scales [#1667](https://github.com/system-ui/theme-ui/pull/1667) ([@lachlanjc](https://github.com/lachlanjc))
 
-#### Authors: 1
+### Authors: 1
 
 - Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
 
