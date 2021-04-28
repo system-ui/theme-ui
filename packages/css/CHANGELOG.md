@@ -1,3 +1,22 @@
+# v0.7.5 (Wed Apr 28 2021)
+
+#### 🐛 Bug Fix
+
+- Add 6 border logical color properties to scales [#1668](https://github.com/system-ui/theme-ui/pull/1668) ([@lachlanjc](https://github.com/lachlanjc))
+- Add inline properties ([@lachlanjc](https://github.com/lachlanjc))
+- Add 3 border logical color properties to scales ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.4 (Tue Apr 27 2021)
 
 #### 🐛 Bug Fix
