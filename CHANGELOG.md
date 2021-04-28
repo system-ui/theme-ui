@@ -19,7 +19,7 @@
   - ⚠ All config options should be migrated at once. If Theme UI sees
     `theme.config` exists, it won't look for options on the `theme`.
 
-- **Removed APIs deprecated in 0.6.0**
+- **Removed APIs, previously deprecated in 0.6.0**
   - `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
   - `Styled` ⟶ `Themed`
 
