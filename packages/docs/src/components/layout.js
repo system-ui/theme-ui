@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, useColorMode } from 'theme-ui'
+import { jsx, Themed, useColorMode, useThemeUI } from 'theme-ui'
 import { useState, useRef } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
@@ -14,35 +14,22 @@ import NavLink from './nav-link'
 import Button from './button'
 import Sidebar from '../sidebar.mdx'
 
-const modes = ['default', 'dark', 'deep', 'swiss']
-
 const sidebar = {
   wrapper: AccordionNav,
   a: NavLink,
 }
 
-const getModeName = (mode) => {
-  switch (mode) {
-    case 'dark':
-      return 'Dark'
-    case 'deep':
-      return 'Deep'
-    case 'swiss':
-      return 'Swiss'
-    case 'light':
-    case 'default':
-      return 'Light'
-    case undefined:
-      return 'Light'
-    default:
-      return mode
-  }
-}
-
 export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
-  const [mode, setMode] = useColorMode()
+
+  const {
+    colorMode: mode,
+    setColorMode: setMode,
+    theme: { rawColors },
+  } = useThemeUI()
+
+  const modes = useRef(Object.keys(rawColors?.modes)).current
 
   const fullwidth =
     (props.pageContext.frontmatter &&
@@ -89,6 +76,14 @@ export default function DocsLayout(props) {
                 Theme UI
               </Link>
             </Flex>
+            <Flex
+              sx={{
+                bg: 'pink',
+                display: mode !== 'dark' && 'none',
+                width: 200,
+                height: 200,
+              }}
+            />
             <Flex>
               <NavLink href="https://github.com/system-ui/theme-ui">
                 GitHub
@@ -97,9 +92,10 @@ export default function DocsLayout(props) {
                 sx={{
                   ml: 2,
                   whiteSpace: 'pre',
+                  textTransform: 'capitalize',
                 }}
                 onClick={cycleMode}>
-                {getModeName(mode)}
+                {mode}
               </Button>
             </Flex>
           </Flex>

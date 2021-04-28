@@ -180,15 +180,6 @@ const assembleColorModes = (theme: Theme, outer: Theme) => {
   }
 }
 
-const fixSSRInitialMode = (
-  mode: string | undefined,
-  initial: string | undefined
-) => {
-  const keyFix = mode === undefined ? undefined : initial
-
-  return mode === keyFix ? initial : mode
-}
-
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
   const [colorMode, setColorMode] = useColorModeState(outer.theme)
@@ -197,7 +188,8 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const theme = applyColorMode(initialTheme, colorMode)
 
   const { initialColorModeName } = outer.theme
-  const [currentMode, setCurrentMode] = useState(initialColorModeName)
+  const [firstRender, setFirstRender] = useState(true)
+  const [firstColorMode, setFirstColorMode] = useState(initialColorModeName)
 
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
@@ -210,19 +202,24 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         omitModes(initialTheme.colors || {}),
         'colors'
       )
-    }, [colorMode, currentMode])
+    }, [colorMode, firstRender])
   }
 
+  // SSR Fix, first colorMode is not computed properly
   useEffect(() => {
-    if (currentMode !== colorMode) {
-      setCurrentMode(fixSSRInitialMode(colorMode, initialColorModeName))
+    const fixKey = colorMode === undefined ? undefined : initialColorModeName
+    const fixSSR = colorMode === fixKey ? initialColorModeName : colorMode
+
+    if (firstRender) {
+      setFirstColorMode(fixSSR)
+      setFirstRender(false)
     }
-  }, [])
+  }, [colorMode])
 
   const context = {
     ...outer,
     theme,
-    colorMode: colorMode || currentMode,
+    colorMode: firstRender ? firstColorMode : colorMode,
     setColorMode,
   }
 
