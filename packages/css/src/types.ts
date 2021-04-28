@@ -1,6 +1,5 @@
 import * as CSS from 'csstype'
 
-import type {} from '../emotion-theme'
 import type { ThemeUIConfig } from './options'
 
 type StandardCSSProperties = CSS.Properties<number | string>
