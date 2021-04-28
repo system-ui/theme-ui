@@ -136,7 +136,8 @@ test('renders global styles', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('Georgia,serif')
   expect(style.fontWeight).toBe('500')
   expect(style.lineHeight).toBe('1.5')
@@ -148,7 +149,7 @@ test('resets body margin', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.margin).toBe('0px')
 })
 
@@ -158,7 +159,7 @@ test('does not render invalid global styles', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('')
   expect(style.fontWeight).toBe('')
   expect(style.lineHeight).toBe('')

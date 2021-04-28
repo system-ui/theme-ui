@@ -247,7 +247,7 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
 })
 
 test('retains initial context', () => {
-  let context: ThemeUIContextValue | undefined = undefined;
+  let context: ThemeUIContextValue | undefined = undefined
   const Consumer = () => {
     context = useThemeUI()
     return null
@@ -399,7 +399,7 @@ test('ColorModeProvider renders with global colors', () => {
       </ColorModeProvider>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.color).toBe('tomato')
   expect(style.backgroundColor).toBe('black')
 })
@@ -490,7 +490,7 @@ test('emotion useTheme with custom css vars', () => {
   expect(cssVarsColors?.text).toBe('var(--theme-ui-colors-text)')
   expect(cssVarsColors?.background).toBe('var(--theme-ui-colors-background)')
 
-  expect(orignalColors?.text).toBe('limegreen') 
+  expect(orignalColors?.text).toBe('limegreen')
   expect(orignalColors?.background).toBe('#111')
 })
 
