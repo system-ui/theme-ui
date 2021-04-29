@@ -17,25 +17,24 @@ import { Switch } from 'theme-ui'
 ## Input state style `&:checked`
 
 The Switch component renders several elements, among other things an
-`<input type="checkbox" />` which state can be used to update the style.
+`<input type="checkbox" />`, the state of which can be used to update the style.
 
 However, since this input is hidden by CSS (the "visual switch" is a Box),
 applying for instance the `&:checked` CSS selector will not show any difference.
 
 To show different style based on the input state, you can use
-[Emotion's "&" selector](https://emotion.sh/docs/styled#nesting-components)
-instead
+[Emotion’s `&` selector](https://emotion.sh/docs/styled#nesting-components)
 
 ```jsx live=true
 <Switch
   label="Enable email alerts?"
   sx={{
     bakgroundColor: 'gray',
-    // This will not be shown since the input is hidden
+    // This will not be visible since the input is hidden
     // '&:checked': {
     //   backgroundColor: 'primary'
     // },
-    // This will be shown
+    // This will be visible
     'input:checked ~ &': {
       backgroundColor: 'primary',
     },
