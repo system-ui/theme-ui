@@ -10,10 +10,64 @@ Form switch input component
 import { Switch } from 'theme-ui'
 ```
 
-```js live=true
+```jsx live=true
 <Switch label="Enable email alerts?" />
+```
+
+## Input state style `&:checked`
+
+The Switch component renders several elements, among other things an
+`<input type="checkbox" />`, the state of which can be used to update the style.
+
+However, since this input is hidden by CSS (the "visual switch" is a Box),
+applying for instance the `&:checked` CSS selector will not show any difference.
+
+To show different style based on the input state, you can use
+[Emotion’s `&` selector](https://emotion.sh/docs/styled#nesting-components)
+
+```jsx live=true
+<Switch
+  label="Enable email alerts?"
+  sx={{
+    bakgroundColor: 'gray',
+    // This will not be visible since the input is hidden
+    // '&:checked': {
+    //   backgroundColor: 'primary'
+    // },
+    // This will be visible
+    'input:checked ~ &': {
+      backgroundColor: 'primary',
+    },
+  }}
+/>
+```
+
+## External label
+
+Even though the Switch component already renders a label, but you can also
+opt-in for an external label instead.
+
+```js
+import { Box, Flex, Label, Switch } from 'theme-ui'
+```
+
+```jsx live=true
+<Flex
+  sx={{
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    py: 4,
+  }}>
+  <Label htmlFor="enable-email-alerts" sx={{ flex: 1 }}>
+    Enable email alerts?
+  </Label>
+  <Box>
+    <Switch id="enable-email-alerts" />
+  </Box>
+</Flex>
 ```
 
 ## Variants
 
-Radio variants can be defined in `theme.forms` and the component uses the `theme.forms.switch` variant by default.
+Switch variants can be defined in `theme.forms` and the component uses the
+`theme.forms.switch` variant by default.
