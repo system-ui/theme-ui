@@ -109,7 +109,7 @@ const useColorModeState = (theme: Theme = {}) => {
   }, [])
 
   // when mode changes, we save it to localStorage
-  React.useEffect(() => {
+  useEffect(() => {
     if (mode && theme.useLocalStorage !== false) {
       storage.set(mode)
     }
@@ -187,6 +187,10 @@ export const ColorModeProvider: React.FC = ({ children }) => {
   const initialTheme = outer.theme || {}
   const theme = applyColorMode(initialTheme, colorMode)
 
+  const { initialColorModeName } = outer.theme
+  const [firstRender, setFirstRender] = useState(true)
+  const [firstColorMode, setFirstColorMode] = useState(initialColorModeName)
+
   if (theme.useCustomProperties !== false) {
     // TODO: This mutation is less than ideal
     // We could save custom properties to `theme.colorVars`,
@@ -198,13 +202,24 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         omitModes(initialTheme.colors || {}),
         'colors'
       )
-    }, [colorMode])
+    }, [colorMode, firstRender])
   }
+
+  // SSR Fix, first colorMode is not computed properly
+  useEffect(() => {
+    const fixKey = colorMode === undefined ? undefined : initialColorModeName
+    const fixSSR = colorMode === fixKey ? initialColorModeName : colorMode
+
+    if (firstRender) {
+      setFirstColorMode(fixSSR)
+      setFirstRender(false)
+    }
+  }, [colorMode])
 
   const context = {
     ...outer,
     theme,
-    colorMode,
+    colorMode: firstRender ? firstColorMode : colorMode,
     setColorMode,
   }
 

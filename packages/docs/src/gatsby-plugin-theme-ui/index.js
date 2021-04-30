@@ -10,6 +10,8 @@ const tableCellStyle = {
 }
 
 const theme = {
+  initialColorModeName: 'light',
+  useLocalStorage: false,
   colors: {
     text: '#000000',
     background: '#ffffff',
