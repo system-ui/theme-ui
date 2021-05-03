@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "gatsby-source-filesystem": "^2.1.11",
-    "unist-util-visit": "^2.0.0"
+    "unist-util-visit": "^3.0.0"
   },
   "devDependencies": {
     "react": "^17.0.1"
