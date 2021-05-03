@@ -16409,9 +16409,9 @@ reakit-warning@^0.6.1:
     reakit-utils "^0.15.1"
 
 reakit@^1.0.0-beta.14:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.3.7.tgz#739b0c1cbbe05623595154a13df610262387f22b"
-  integrity sha512-mqThE2pWDQNl2BBR8sUEsMqbs9OeqtzF0asGJLoZz55QncPk/cFF6ToQihoC6F2lUabMk/xJMJ2MYXj+ildnRg==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/reakit/-/reakit-1.3.8.tgz#717e1a3b7cc6da803362a0edc2c55d2b6a001baf"
+  integrity sha512-8SVejx6FUaFi2+Q9eXoDAd4wWi/xAn6v8JgXH8x2xnzye8pb6v5bYvegACVpYVZnrS5w/JUgMTGh1Xy8MkkPww==
   dependencies:
     "@popperjs/core" "^2.5.4"
     body-scroll-lock "^3.1.5"
