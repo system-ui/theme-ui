@@ -192,6 +192,51 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
+"@auto-it/core@10.26.0":
+  version "10.26.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.26.0.tgz#a1076cccff00f8a681a5c635bbea21575f4fd29f"
+  integrity sha512-n9DML7aDhuA2tlD+Az7Bo1fz7IfRqSUwQRRTedYB4ttEp79m+hpgMZ9LXSsSnvw7+3mGdOwFH798OcH0yCdcjg==
+  dependencies:
+    "@auto-it/bot-list" "10.26.0"
+    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
+    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
+    "@octokit/plugin-retry" "^3.0.1"
+    "@octokit/plugin-throttling" "^3.2.0"
+    "@octokit/rest" "^18.0.0"
+    await-to-js "^3.0.0"
+    chalk "^4.0.0"
+    cosmiconfig "7.0.0"
+    deepmerge "^4.0.0"
+    dotenv "^8.0.0"
+    endent "^2.0.1"
+    enquirer "^2.3.4"
+    env-ci "^5.0.1"
+    fast-glob "^3.1.1"
+    fp-ts "^2.5.3"
+    fromentries "^1.2.0"
+    gitlog "^4.0.3"
+    https-proxy-agent "^5.0.0"
+    import-cwd "^3.0.0"
+    import-from "^3.0.0"
+    io-ts "^2.1.2"
+    lodash.chunk "^4.2.0"
+    log-symbols "^4.0.0"
+    node-fetch "2.6.1"
+    parse-author "^2.0.0"
+    parse-github-url "1.0.2"
+    pretty-ms "^7.0.0"
+    requireg "^0.2.2"
+    semver "^7.0.0"
+    signale "^1.4.0"
+    tapable "^2.0.0-beta.2"
+    terminal-link "^2.1.1"
+    tinycolor2 "^1.4.1"
+    ts-node "^9.1.1"
+    tslib "2.1.0"
+    type-fest "^0.21.1"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+
 "@auto-it/first-time-contributor@^10.25.0":
   version "10.25.1"
   resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.25.1.tgz#f48629eb2e823781d1208593ef870719383a00e2"
@@ -243,13 +288,25 @@
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
-"@auto-it/released@10.25.2", "@auto-it/released@^10.25.0":
+"@auto-it/released@10.25.2":
   version "10.25.2"
   resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.25.2.tgz#2fd28ebff3b4efb9daa33e1a58d8615366ad5ede"
   integrity sha512-Pcam/Y5aej0x8dcj0HwvjnuCpGTzuZVDjBgGuHDoWr0RzXYNqxT86fKv/gsZKfOB/CKdk7Nmx1b0f2XM4OIK3w==
   dependencies:
     "@auto-it/bot-list" "10.25.2"
     "@auto-it/core" "10.25.2"
+    deepmerge "^4.0.0"
+    fp-ts "^2.5.3"
+    io-ts "^2.1.2"
+    tslib "2.1.0"
+
+"@auto-it/released@^10.25.0":
+  version "10.26.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-10.26.0.tgz#250c5fec640f68f505fae54aac4ce0313d4ff7dd"
+  integrity sha512-62rFbKM/9kMmTPn+MhNZw5n9XGufUzN/cdRbkFQucPFCBXN9zcZmwlRkjjI8rkluom6fSAkTSaXIev1yE40jww==
+  dependencies:
+    "@auto-it/bot-list" "10.26.0"
+    "@auto-it/core" "10.26.0"
     deepmerge "^4.0.0"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
