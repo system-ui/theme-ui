@@ -37,8 +37,9 @@ and `dark`.
 
 ## Initial colors
 
-The colors defined at the root of the `colors` are swapped out whenever the color mode changes
-change. This is to allow for reference like `theme.colors.primary` to return:
+The colors defined at the root of the `colors` are swapped out whenever the
+color mode changes change. This is to allow for reference like
+`theme.colors.primary` to return:
 
 - `colors.primary`, when the color mode is set to its initial mode
 - `colors.modes.dark.primary`, when the color mode is set to `dark`
@@ -164,7 +165,7 @@ export default (props) => {
 ## Applying colors
 
 The ThemeProvider component will automatically apply color mode styles to the
-`<body>` element.
+`<html>` element.
 
 ```jsx
 import { ThemeProvider } from 'theme-ui'
@@ -175,10 +176,7 @@ export default (props) => (
 )
 ```
 
-- To disable this behavior, add the `useBodyStyles: false` flag to your theme.
-- Additionally, to apply styles to the `<html>` element instead, add the
-  `useRootStyles` flag. It works the same way as and will override
-  `useBodyStyles`.
+- To disable this behavior, add the `useRootStyles: false` flag to your theme.
 
 ## Gatsby plugin
 
@@ -204,19 +202,21 @@ See the [Gatsby plugin docs](/packages/gatsby-plugin) for more info.
 
 ## Advanced
 
-Theme UI includes a few advanced usage options for color modes.
+Theme UI includes a few advanced configuration options for color modes.
 
 ### Turn off custom properties
 
 Theme UI uses [CSS custom properties](https://caniuse.com/#feat=css-variables)
-under the hood to help prevent the flash of color on load. If you're targeting
+under the hood to help prevent the flash of color on load. If you’re targeting
 browsers that don't support custom properties you can turn off this setting.
 This will cause the colors to flash on initial page load.
 
 ```js
 // example theme colors
 {
-  useCustomProperties: false,
+  config: {
+    useCustomProperties: false,
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -234,7 +234,7 @@ This will cause the colors to flash on initial page load.
 
 ### Responding to the `prefers-color-scheme` media query
 
-The `useColorSchemeMediaQuery` configuration option on the theme initializes a
+The `useColorSchemeMediaQuery` option on the theme configuration initializes a
 color mode based on the `prefers-color-scheme` media query. This will set the
 initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
 or `light` when `@media (prefers-color-scheme: light)` matches. If you do not
@@ -243,7 +243,9 @@ enabled by default.
 
 ```js
 {
-  useColorSchemeMediaQuery: false,
+  config: {
+    useColorSchemeMediaQuery: false,
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -259,11 +261,14 @@ enabled by default.
 
 ### Disable persisting color mode on `localStorage`
 
-To disable `localStorage` add the `useLocalStorage: false` flag to your theme.
+To disable `localStorage`, add the `useLocalStorage: false` flag to your theme
+configuration.
 
 ```js
 {
-  useLocalStorage: false,
+  config: {
+    useLocalStorage: false
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -291,8 +296,10 @@ no additional client-side JavaScript for printing.
 
 ```js
 {
-  initialColorModeName: 'light',
-  printColorModeName: 'light',
+  config: {
+    initialColorModeName: 'light',
+    printColorModeName: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',

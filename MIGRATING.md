@@ -1,5 +1,17 @@
 # Migration Guides
 
+## v0.8
+
+APIs deprecated in v0.6 were removed.
+
+- `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
+- `Styled` ⟶ `Themed`
+
+Following the deprecation of `useBodyStyles`, `useRootStyles` now defaults to
+true. This means that your styles from `theme.styles.root` are now applied to
+`<html>` element, not `<body>` element. Most use cases should be fine, but some
+styles may need adjustment.
+
 ## v0.6
 
 ### What's New

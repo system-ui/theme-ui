@@ -290,12 +290,13 @@ describe('colors inside ThemeProvider', () => {
       <ThemeProvider theme={theme}>
         <button
           sx={{
-            color: (theme) =>
+            color: (theme) => {
               // When read from Emotion theme, colors are CSS custom properties.
-              saturate(
+              return saturate(
                 (theme as MyTheme).rawColors.secondary.light,
                 0.1
-              )(theme),
+              )(theme)
+            },
           }}>
           Click me
         </button>

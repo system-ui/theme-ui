@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.8.0 UNRELEASED
+
+- **BREAKING:** `theme.config.useRootStyles` now defaults to `true` following
+  deprecation of `useBodyStyles`. Styles from `theme.styles.root` are now added
+  to `<html>` element by default.
+
+- Moved theme configuration options to `config` object in theme.
+
+  - **Deprecations:** `useRootStyles`, `useCustomProperties`,
+    `useColorSchemeMediaQuery`, `useBorderBox`, and `useLocalStorage` options on
+    the theme object are now scoped under a `config` object on the theme, and the root-level options, now deprecated, will be removed in a future
+    release.
+
+   (e.g. you should be setting `theme.config.useBorderBox` instead of `theme.useBorderBox`)
+
+  - ⚠ All config options should be migrated at once. If Theme UI sees
+    `theme.config` exists, it won't look for options on the `theme`.
+
+- **Removed APIs, previously deprecated in 0.6.0**
+  - `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
+  - `Styled` ⟶ `Themed`
+
 ## v0.7.3 (Wed Apr 21 2021)
 
 :tada: This release contains work from a new contributor! :tada:
@@ -280,6 +302,8 @@ Theme UI is now written in TypeScript, and the emitted types differ from
   [#1476](https://github.com/system-ui/theme-ui/issues/1476))
 - Fix issue where css custom vars are only added to body if modes is in the
   colors declaration of the theme.
+
+- **BREAKING**: Move theme configuration options to `config` object in theme.
 
 ## v0.6.0-alpha.7 2021-02-15
 

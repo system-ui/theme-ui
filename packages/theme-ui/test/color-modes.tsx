@@ -80,7 +80,9 @@ test('renders with initial color mode name', () => {
     renderer.create(
       <ThemeProvider
         theme={{
-          initialColorModeName: 'light',
+          config: {
+            initialColorModeName: 'light',
+          },
           colors: {
             modes: {
               dark: {},
@@ -138,7 +140,9 @@ test('color mode is passed through theme context', () => {
   const tree = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: '#000',
           modes: {
@@ -228,7 +232,9 @@ test('inherits color mode state from parent context', () => {
   render(
     <ThemeProvider
       theme={{
-        initialColorModeName: 'outer',
+        config: {
+          initialColorModeName: 'outer',
+        },
         colors: {
           modes: {
             dark: {},
@@ -237,7 +243,9 @@ test('inherits color mode state from parent context', () => {
       }}>
       <ThemeProvider
         theme={{
-          initialColorModeName: 'inner',
+          config: {
+            initialColorModeName: 'inner',
+          },
         }}>
         <Consumer />
       </ThemeProvider>
@@ -278,7 +286,9 @@ test('initializes mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <Consumer />
     </ThemeProvider>
@@ -302,7 +312,9 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <Consumer />
     </ThemeProvider>
@@ -327,7 +339,9 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: false,
+        config: {
+          useColorSchemeMediaQuery: false,
+        },
       }}>
       <Consumer />
     </ThemeProvider>
@@ -357,7 +371,9 @@ test('useThemeUI returns current color mode colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: 'tomato',
           background: 'black',
@@ -380,7 +396,9 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorModeName: 'dark',
+        config: {
+          initialColorModeName: 'dark',
+        },
         colors: {
           text: '#000',
           background: '#fff',
@@ -415,7 +433,9 @@ test('dot notation works with color modes', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           header: {
             title: 'blue',
