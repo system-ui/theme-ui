@@ -14,14 +14,29 @@ import {
   Theme,
 } from '../src'
 
+interface Mock {
+  implementation?: Function
+}
+
 jest.mock('@emotion/react', () => {
   const emotionReact = jest.requireActual('@emotion/react')
 
+  function MockCacheProvider(props) {
+    const implementation = (MockCacheProvider as Mock).implementation
+    if (implementation) {
+      return implementation(props)
+    }
+
+    return <emotionReact.CacheProvider {...props} />
+  }
+
   return {
     ...emotionReact,
-    CacheProvider: (props: {}) => jsx('mock-cache-provider', props),
+    CacheProvider: MockCacheProvider,
   }
 })
+
+import { CacheProvider } from '@emotion/react'
 
 afterEach(cleanup)
 
@@ -138,6 +153,9 @@ describe('ThemeProvider', () => {
    * @see https://codesandbox.io/s/theme-ui-next-ssr-number-of-emotion-style-tags-forked-ifum1
    */
   it('renders CacheProvider only on top level', () => {
+    ;(CacheProvider as Mock).implementation = (props: {}) =>
+      jsx('mock-cache-provider', props)
+
     const { baseElement } = render(
       <ThemeProvider theme={{}}>
         <ThemeProvider theme={{}}>
@@ -163,6 +181,8 @@ describe('ThemeProvider', () => {
     `)
 
     expect(baseElement.querySelector('mock-cache-provider')).toBeTruthy()
+
+    delete (CacheProvider as Mock).implementation
   })
 })
 
