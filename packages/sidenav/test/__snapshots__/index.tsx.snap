@@ -36,6 +36,41 @@ exports[`AccordionNav renders 1`] = `
   }
 }
 
+.emotion-0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  min-width: 0;
+  width: 256px;
+  max-height: 100vh;
+  overflow-x: visible;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
+  background-color: background;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    -webkit-position: sticky;
+    position: sticky;
+    bottom: auto;
+    max-height: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+    background-color: transparent;
+  }
+}
+
 .emotion-1 {
   list-style: none;
   padding: 0;
@@ -106,10 +141,53 @@ Array [
   left: 0;
 }
 
+.emotion-0 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 <div
     className="emotion-0"
   />,
   .emotion-0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  min-width: 0;
+  width: 256px;
+  max-height: 100vh;
+  overflow-x: visible;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  background-color: background;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    -webkit-position: sticky;
+    position: sticky;
+    bottom: auto;
+    max-height: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+    background-color: transparent;
+  }
+}
+
+.emotion-0 {
   position: fixed;
   top: 0;
   left: 0;
@@ -270,6 +348,41 @@ Array [
 `;
 
 exports[`AccordionNav renders with nested links 1`] = `
+.emotion-0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  min-width: 0;
+  width: 256px;
+  max-height: 100vh;
+  overflow-x: visible;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
+  background-color: background;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    -webkit-position: sticky;
+    position: sticky;
+    bottom: auto;
+    max-height: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+    background-color: transparent;
+  }
+}
+
 .emotion-0 {
   position: fixed;
   top: 0;
