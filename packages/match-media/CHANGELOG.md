@@ -1,3 +1,15 @@
+# v0.7.5 (Wed Apr 28 2021)
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.0 (Thu Apr 15 2021)
 
 #### 🚀 Enhancement

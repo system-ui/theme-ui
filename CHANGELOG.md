@@ -1,5 +1,3 @@
-# Changelog
-
 ## v0.8.0 UNRELEASED
 
 - **BREAKING:** `theme.config.useRootStyles` now defaults to `true` following
@@ -10,10 +8,11 @@
 
   - **Deprecations:** `useRootStyles`, `useCustomProperties`,
     `useColorSchemeMediaQuery`, `useBorderBox`, and `useLocalStorage` options on
-    the theme object are now scoped under a `config` object on the theme, and the root-level options, now deprecated, will be removed in a future
-    release.
+    the theme object are now scoped under a `config` object on the theme, and
+    the root-level options, now deprecated, will be removed in a future release.
 
-   (e.g. you should be setting `theme.config.useBorderBox` instead of `theme.useBorderBox`)
+  (e.g. you should be setting `theme.config.useBorderBox` instead of
+  `theme.useBorderBox`)
 
   - ⚠ All config options should be migrated at once. If Theme UI sees
     `theme.config` exists, it won't look for options on the `theme`.
@@ -21,6 +20,46 @@
 - **Removed APIs, previously deprecated in 0.6.0**
   - `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
   - `Styled` ⟶ `Themed`
+
+## v0.7.5 (Wed Apr 28 2021)
+
+### 🐛 Bug Fix
+
+- `@theme-ui/css`
+  - Add 6 border logical color properties to scales
+    [#1668](https://github.com/system-ui/theme-ui/pull/1668)
+    ([@lachlanjc](https://github.com/lachlanjc))
+
+### 📝 Docs
+
+- docs: useColorSchemeMediaQuery defaults to true
+  ([@hasparus](https://github.com/hasparus))
+
+### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+## v0.7.4 (Tue Apr 27 2021)
+
+### 🐛 Bug Fix
+
+- Add new links to Resources page
+  [#1670](https://github.com/system-ui/theme-ui/pull/1670)
+  ([@lachlanjc](https://github.com/lachlanjc))
+- Add link to JSX Pragma page on Getting Started doc
+  ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/css`
+  - Add 2 missing CSS column properties to scales
+    [#1669](https://github.com/system-ui/theme-ui/pull/1669)
+    ([@lachlanjc](https://github.com/lachlanjc))
+  - Add text-decoration-color to scales
+    [#1667](https://github.com/system-ui/theme-ui/pull/1667)
+    ([@lachlanjc](https://github.com/lachlanjc))
+
+### Authors: 1
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
 
 ## v0.7.3 (Wed Apr 21 2021)
 

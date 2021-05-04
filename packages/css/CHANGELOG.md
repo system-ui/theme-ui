@@ -1,3 +1,43 @@
+# v0.7.5 (Wed Apr 28 2021)
+
+#### 🐛 Bug Fix
+
+- Add 6 border logical color properties to scales [#1668](https://github.com/system-ui/theme-ui/pull/1668) ([@lachlanjc](https://github.com/lachlanjc))
+- Add inline properties ([@lachlanjc](https://github.com/lachlanjc))
+- Add 3 border logical color properties to scales ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.7.4 (Tue Apr 27 2021)
+
+#### 🐛 Bug Fix
+
+- Add 2 missing CSS column properties to scales [#1669](https://github.com/system-ui/theme-ui/pull/1669) ([@lachlanjc](https://github.com/lachlanjc))
+- Add text-decoration-color to scales [#1667](https://github.com/system-ui/theme-ui/pull/1667) ([@lachlanjc](https://github.com/lachlanjc))
+- Add 2 missing CSS column properties to scales ([@lachlanjc](https://github.com/lachlanjc))
+- Add test ([@lachlanjc](https://github.com/lachlanjc))
+- Add textDecorationColor to scales ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump @preconstruct/cli from 2.0.1 to 2.0.7 [#1674](https://github.com/system-ui/theme-ui/pull/1674) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
 # v0.7.3 (Wed Apr 21 2021)
 
 :tada: This release contains work from new contributors! :tada:

@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.7.3",
+  "version": "0.7.5",
   "main": "dist/theme-ui-presets.cjs.js",
   "module": "dist/theme-ui-presets.esm.js",
   "types": "dist/theme-ui-presets.cjs.d.ts",
@@ -9,20 +9,20 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/preset-base": "0.7.3",
-    "@theme-ui/preset-bootstrap": "0.7.3",
-    "@theme-ui/preset-bulma": "0.7.3",
-    "@theme-ui/preset-dark": "0.7.3",
-    "@theme-ui/preset-deep": "0.7.3",
-    "@theme-ui/preset-funk": "0.7.3",
-    "@theme-ui/preset-future": "0.7.3",
-    "@theme-ui/preset-polaris": "0.7.3",
-    "@theme-ui/preset-roboto": "0.7.3",
-    "@theme-ui/preset-sketchy": "0.7.3",
-    "@theme-ui/preset-swiss": "0.7.3",
-    "@theme-ui/preset-system": "0.7.3",
-    "@theme-ui/preset-tailwind": "0.7.3",
-    "@theme-ui/preset-tosh": "0.7.3"
+    "@theme-ui/preset-base": "0.7.5",
+    "@theme-ui/preset-bootstrap": "0.7.5",
+    "@theme-ui/preset-bulma": "0.7.5",
+    "@theme-ui/preset-dark": "0.7.5",
+    "@theme-ui/preset-deep": "0.7.5",
+    "@theme-ui/preset-funk": "0.7.5",
+    "@theme-ui/preset-future": "0.7.5",
+    "@theme-ui/preset-polaris": "0.7.5",
+    "@theme-ui/preset-roboto": "0.7.5",
+    "@theme-ui/preset-sketchy": "0.7.5",
+    "@theme-ui/preset-swiss": "0.7.5",
+    "@theme-ui/preset-system": "0.7.5",
+    "@theme-ui/preset-tailwind": "0.7.5",
+    "@theme-ui/preset-tosh": "0.7.5"
   },
   "publishConfig": {
     "access": "public"
