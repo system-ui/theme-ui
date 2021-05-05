@@ -1,16 +1,13 @@
-# v0.8.1 (Wed May 05 2021)
+## v0.8.1 (Wed May 05 2021)
 
-#### 🐛 Bug Fix
+### 🐛 Bug Fix
 
-- `@theme-ui/core`, `@theme-ui/sidenav`
-  - Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
+- Reverted `cache-provider` PR as it significantly complicates SSR setup and
+  breaks apps without explicit Emotion SSR config.
+  https://github.com/system-ui/theme-ui/pull/1717#issuecomment-832647180.
+  - See https://emotion.sh/docs/ssr#on-server
 
-#### ⚠️ Pushed to `stable`
-
-- chore(docs): add DEV_SSR Gatsby flag ([@hasparus](https://github.com/hasparus))
-- chore(migrating): add more info about theme.config to migrating.md ([@hasparus](https://github.com/hasparus))
-
-#### Authors: 2
+### Authors: 2
 
 - [@Zolwiastyl](https://github.com/Zolwiastyl)
 - Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
@@ -45,17 +42,26 @@
 ### 🚀 Enhancements
 
 - `@theme-ui/color-modes`, `@theme-ui/css`, `gatsby-plugin-theme-ui`
-  - Refactor color objects and expose default colors as a mode [#1639](https://github.com/system-ui/theme-ui/pull/1639) ([@fcisio](https://github.com/fcisio))
+  - Refactor color objects and expose default colors as a mode
+    [#1639](https://github.com/system-ui/theme-ui/pull/1639)
+    ([@fcisio](https://github.com/fcisio))
 
 ### 🐛 Bug Fix
 
-- `@theme-ui/core`, `@theme-ui/sidenav`
-  - Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
+- **(REVERTED in v0.8.1)** `@theme-ui/core`, `@theme-ui/sidenav`
+  - Wrap top level ThemeProvider in CacheProvider
+    [#1717](https://github.com/system-ui/theme-ui/pull/1717)
+    ([@hasparus](https://github.com/hasparus)
+    [@Zolwiastyl](https://github.com/Zolwiastyl))
 
 ### 📝 Documentation
 
-- Improve Switch component documentation [#1687](https://github.com/system-ui/theme-ui/pull/1687) ([@flo-sch](https://github.com/flo-sch))
-- Describe Preconstruct in Contributing.md [#1715](https://github.com/system-ui/theme-ui/pull/1715) ([@hasparus](https://github.com/hasparus))
+- Improve Switch component documentation
+  [#1687](https://github.com/system-ui/theme-ui/pull/1687)
+  ([@flo-sch](https://github.com/flo-sch))
+- Describe Preconstruct in Contributing.md
+  [#1715](https://github.com/system-ui/theme-ui/pull/1715)
+  ([@hasparus](https://github.com/hasparus))
 
 ### Authors: 5
 
