@@ -1,3 +1,29 @@
+# v0.8.0 (Wed May 05 2021)
+
+#### 🐛 Bug Fix
+
+- Revert "chore(deps): bump unist-util-visit from 2.0.3 to 3.0.0" [#1713](https://github.com/system-ui/theme-ui/pull/1713) ([@hasparus](https://github.com/hasparus))
+- Revert "chore(deps): bump unist-util-visit from 2.0.3 to 3.0.0" ([@hasparus](https://github.com/hasparus))
+- Merge branch 'config' into config-2 [#1421](https://github.com/system-ui/theme-ui/pull/1421) ([@hasparus](https://github.com/hasparus))
+- Merge branch 'develop' into config ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump unist-util-visit from 2.0.3 to 3.0.0 [#1712](https://github.com/system-ui/theme-ui/pull/1712) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Brent Jackson ([@jxnblk](https://github.com/jxnblk))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.0 (Thu Apr 15 2021)
 
 :tada: This release contains work from a new contributor! :tada:

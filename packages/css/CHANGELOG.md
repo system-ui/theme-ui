@@ -1,3 +1,45 @@
+# v0.8.0 (Wed May 05 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Francis Champagne ([@fcisio](https://github.com/fcisio)), for all your work!
+
+#### 🚀 Enhancement
+
+- v0.8 [#1688](https://github.com/system-ui/theme-ui/pull/1688) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+- Refactor color objects and expose default colors as a mode [#1639](https://github.com/system-ui/theme-ui/pull/1639) ([@fcisio](https://github.com/fcisio))
+- feat(css): remove deprecated theme.useBodyStyles ([@hasparus](https://github.com/hasparus))
+- feat: create the allColorModes object in the context ([@fcisio](https://github.com/fcisio))
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/develop' into v0.8 ([@hasparus](https://github.com/hasparus))
+- refactor(css): remove emotion-theme import that did not land in user projects ([@hasparus](https://github.com/hasparus))
+- Merge branch 'stable' into config-2 ([@hasparus](https://github.com/hasparus))
+- Merge branch 'config' into config-2 [#1421](https://github.com/system-ui/theme-ui/pull/1421) ([@hasparus](https://github.com/hasparus))
+- refactor: assemble the modes inside rawColors ([@fcisio](https://github.com/fcisio))
+- fix: jdoc typo ([@fcisio](https://github.com/fcisio))
+- Fix __internalGetUseRootStyles ([@lachlanjc](https://github.com/lachlanjc))
+- refactor(css): move ThemeUIConfig to separate file ([@lachlanjc](https://github.com/lachlanjc))
+- Merge branch 'develop' into config ([@lachlanjc](https://github.com/lachlanjc))
+- refactor(css): move ThemeUIConfig to separate file ([@hasparus](https://github.com/hasparus))
+- Re-add config options to root theme type as deprecated ([@lachlanjc](https://github.com/lachlanjc))
+- Make internal root styles non-breaking ([@lachlanjc](https://github.com/lachlanjc))
+- Begin moving theme config options ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 4
+
+- Brent Jackson ([@jxnblk](https://github.com/jxnblk))
+- Francis Champagne ([@fcisio](https://github.com/fcisio))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.5 (Wed Apr 28 2021)
 
 #### 🐛 Bug Fix

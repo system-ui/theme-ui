@@ -1,3 +1,39 @@
+# v0.8.0 (Wed May 05 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Francis Champagne ([@fcisio](https://github.com/fcisio)), for all your work!
+
+#### 🚀 Enhancement
+
+- v0.8 [#1688](https://github.com/system-ui/theme-ui/pull/1688) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+- Refactor color objects and expose default colors as a mode [#1639](https://github.com/system-ui/theme-ui/pull/1639) ([@fcisio](https://github.com/fcisio))
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/develop' into v0.8 ([@hasparus](https://github.com/hasparus))
+- Merge branch 'stable' into config-2 ([@hasparus](https://github.com/hasparus))
+- Merge branch 'config' into config-2 [#1421](https://github.com/system-ui/theme-ui/pull/1421) ([@hasparus](https://github.com/hasparus))
+- fix: gatsby-plugin-theme-ui coverage ([@fcisio](https://github.com/fcisio))
+- refactor: assemble the modes inside rawColors ([@fcisio](https://github.com/fcisio))
+- fix: test coverage ([@fcisio](https://github.com/fcisio))
+- Merge branch 'develop' into config ([@lachlanjc](https://github.com/lachlanjc))
+- Fix remaining issues ([@lachlanjc](https://github.com/lachlanjc))
+- Begin moving theme config options ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 4
+
+- Brent Jackson ([@jxnblk](https://github.com/jxnblk))
+- Francis Champagne ([@fcisio](https://github.com/fcisio))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.1 (Mon Apr 19 2021)
 
 :tada: This release contains work from a new contributor! :tada:

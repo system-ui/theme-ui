@@ -1,3 +1,29 @@
+# v0.8.0 (Wed May 05 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, null[@Zolwiastyl](https://github.com/Zolwiastyl), for all your work!
+
+#### 🐛 Bug Fix
+
+- Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
+- test(sidenav): update snapshots ([@hasparus](https://github.com/hasparus))
+- Merge branch 'config' into config-2 [#1421](https://github.com/system-ui/theme-ui/pull/1421) ([@hasparus](https://github.com/hasparus))
+- Merge branch 'develop' into config ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 4
+
+- [@Zolwiastyl](https://github.com/Zolwiastyl)
+- Brent Jackson ([@jxnblk](https://github.com/jxnblk))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.7.5 (Wed Apr 28 2021)
 
 #### ⚠️ Pushed to `stable`
