@@ -703,14 +703,20 @@ test('raw color modes are passed to theme-ui context and include the default col
   })
 })
 
-test('raw color modes are passed to theme-ui context and include the default colors under the initialColorModeName', () => {
-  let colors
+test('raw color modes are passed to theme-ui context and include the default colors under the initialColorModeName', async () => {
+  let rawColors: Theme['rawColors']
   const Grabber = () => {
     const context = useThemeUI()
-    colors = context.theme?.rawColors
+    rawColors = context.theme?.rawColors
     return null
   }
-  render(
+
+  const SetDarkColorMode = () => {
+    const [, setColorMode] = useColorMode()
+    return <button onClick={() => setColorMode('dark')}>set dark</button>
+  }
+
+  const { findByRole } = render(
     <ThemeProvider
       theme={{
         useColorSchemeMediaQuery: false,
@@ -726,11 +732,24 @@ test('raw color modes are passed to theme-ui context and include the default col
       }}>
       <ColorModeProvider>
         <Grabber />
+        <SetDarkColorMode />
       </ColorModeProvider>
     </ThemeProvider>
   )
-  expect(colors).toStrictEqual({
+
+  expect(rawColors).toStrictEqual({
     primary: 'tomato',
+    modes: {
+      light: { primary: 'tomato' },
+      dark: { primary: 'black' },
+    },
+  })
+
+  const button = await findByRole('button')
+  fireEvent.click(button)
+
+  expect(rawColors).toStrictEqual({
+    primary: 'black',
     modes: {
       light: { primary: 'tomato' },
       dark: { primary: 'black' },

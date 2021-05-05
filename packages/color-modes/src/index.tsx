@@ -195,10 +195,10 @@ export const ColorModeProvider: React.FC = ({ children }) => {
       }
     }
 
-    let { useCustomProperties, initialColorModeName = '__default' } =
+    const { useCustomProperties, initialColorModeName = '__default' } =
       outerTheme.config || outerTheme
 
-    let outerThemeRawColors = res.rawColors || res.colors || {}
+    let outerThemeRawColors = outerTheme.rawColors || outerTheme.colors || {}
 
     if (useCustomProperties !== false) {
       const alreadyHasRawColors = res.rawColors != null
