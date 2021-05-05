@@ -209,24 +209,31 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 
         copyRawColors(colors, outerThemeRawColors)
 
-        res.rawColors = outerThemeRawColors
-        res.rawColors.modes = {
-          ...res.rawColors.modes,
-          [initialColorModeName]: omitModes(outerThemeRawColors),
+        if ('modes' in outerThemeRawColors) {
+          res.rawColors = {
+            ...outerThemeRawColors,
+            modes: {
+              ...res.rawColors?.modes,
+              [initialColorModeName]: omitModes(outerThemeRawColors),
+            },
+          } as ColorModesScale
+        } else {
+          res.rawColors = outerThemeRawColors
         }
       } else {
         if (!('modes' in outerThemeRawColors)) {
           res.rawColors = colors
-        }
-        const modes: ColorModesScale['modes'] = {
-          [initialColorModeName]: omitModes(outerThemeRawColors),
-          ...outerThemeRawColors.modes,
-        }
+        } else {
+          const modes: ColorModesScale['modes'] = {
+            [initialColorModeName]: omitModes(outerThemeRawColors),
+            ...outerThemeRawColors.modes,
+          }
 
-        res.rawColors = {
-          ...colors,
-          modes,
-        } as ColorModesScale /* modes doesn't match index signature by design */
+          res.rawColors = {
+            ...colors,
+            modes,
+          } as ColorModesScale /* modes doesn't match index signature by design */
+        }
       }
 
       res.colors = toCustomProperties(omitModes(outerThemeRawColors), 'colors')

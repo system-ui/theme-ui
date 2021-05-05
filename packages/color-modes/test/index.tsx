@@ -937,11 +937,69 @@ test('rawColors are properly inherited in nested providers', () => {
         background: 'white',
       },
       dark: {
-        // text: 'white', // todo: needs fix – we're losing this when nesting ColorModeProviders
+        text: 'white',
         primary: 'red',
-        background: 'black',
+        // todo: needs fix – we're losing this when nesting ColorModeProviders
+        // background: 'black',
       },
     },
+  })
+
+  expect(finalTheme.colors).toStrictEqual({
+    text: 'var(--theme-ui-colors-text)',
+    background: 'var(--theme-ui-colors-background)',
+    primary: 'var(--theme-ui-colors-primary)',
+  })
+})
+
+test('rawColors with no color modes are merged in nested providers', () => {
+  let finalTheme: Theme = {}
+  const Grabber = () => {
+    const context = useThemeUI()
+    finalTheme = context.theme
+    return null
+  }
+
+  const outerTheme: Theme = {
+    colors: {
+      text: 'black',
+    },
+  }
+
+  const nestedTheme: Theme = {
+    rawColors: {
+      background: 'white',
+    },
+  }
+
+  const nestedTheme2: Theme = {
+    rawColors: {
+      primary: 'blue',
+    },
+  }
+
+  render(
+    <ThemeProvider theme={outerTheme}>
+      <ColorModeProvider>
+        <ThemeProvider theme={nestedTheme}>
+          <ColorModeProvider>
+            <ColorModeProvider>
+              <ThemeProvider theme={nestedTheme2}>
+                <ColorModeProvider>
+                  <Grabber />
+                </ColorModeProvider>
+              </ThemeProvider>
+            </ColorModeProvider>
+          </ColorModeProvider>
+        </ThemeProvider>
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+
+  expect(finalTheme.rawColors).toStrictEqual({
+    text: 'black',
+    primary: 'blue',
+    background: 'white',
   })
 
   expect(finalTheme.colors).toStrictEqual({
