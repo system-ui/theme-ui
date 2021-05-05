@@ -1,3 +1,22 @@
+# v0.8.1 (Wed May 05 2021)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/core`, `@theme-ui/sidenav`
+  - Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
+
+#### ⚠️ Pushed to `stable`
+
+- chore(docs): add DEV_SSR Gatsby flag ([@hasparus](https://github.com/hasparus))
+- chore(migrating): add more info about theme.config to migrating.md ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- [@Zolwiastyl](https://github.com/Zolwiastyl)
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 ## v0.8.0 (Wed May 05 2021)
 
 ### 🔥 Breaking Changes and Deprecations

@@ -1,3 +1,16 @@
+# v0.8.1 (Wed May 05 2021)
+
+#### 🐛 Bug Fix
+
+- Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
+
+#### Authors: 2
+
+- [@Zolwiastyl](https://github.com/Zolwiastyl)
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.8.0 (Wed May 05 2021)
 
 :tada: This release contains work from a new contributor! :tada:
