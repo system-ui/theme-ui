@@ -8,14 +8,9 @@ import React, {
 import {
   jsx,
   useThemeUI,
-  merge,
   __ThemeUIInternalBaseThemeProvider,
 } from '@theme-ui/core'
-import {
-  get,
-  Theme,
-  ColorModesScale,
-} from '@theme-ui/css'
+import { get, Theme, ColorModesScale } from '@theme-ui/css'
 import { Global } from '@emotion/react'
 
 import { toCustomProperties, createColorStyles } from './custom-properties'
@@ -105,6 +100,7 @@ const useColorModeState = (theme: Theme = {}) => {
     }
 
     if (stored && stored !== mode) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       mode = stored
       setMode(stored)
     }
@@ -115,7 +111,7 @@ const useColorModeState = (theme: Theme = {}) => {
     if (mode && useLocalStorage !== false) {
       storage.set(mode)
     }
-  }, [mode])
+  }, [mode, useLocalStorage])
 
   if (process.env.NODE_ENV !== 'production') {
     if (
@@ -150,14 +146,6 @@ export function useColorMode<T extends string = string>(): [
   ]
 }
 
-const applyColorMode = (theme: Theme, mode: string | undefined): Theme => {
-  if (!mode) return { ...theme }
-  const modes = get(theme, 'colors.modes', {})
-  return merge.all({}, theme, {
-    colors: get(modes, mode, {}),
-  })
-}
-
 const omitModes = (colors: ColorModesScale) => {
   const res = { ...colors }
   delete res.modes
@@ -165,7 +153,10 @@ const omitModes = (colors: ColorModesScale) => {
 }
 
 const assembleColorModes = (theme: Theme, outer: Theme) => {
-  const { colors = {}, initialColorModeName } = outer
+  const initialColorModeName =
+    (outer.config || outer).initialColorModeName || '__default'
+
+  const { colors = {} } = outer
 
   const mutatedColors = get(theme, 'colors', {})
   const modes = get(outer, 'colors.modes', {})
@@ -175,7 +166,7 @@ const assembleColorModes = (theme: Theme, outer: Theme) => {
   return {
     ...mutatedColors,
     modes: {
-      [initialColorModeName || '__default']: omitModes(colors),
+      [initialColorModeName]: omitModes(colors),
       ...modes,
     },
   }
@@ -183,25 +174,34 @@ const assembleColorModes = (theme: Theme, outer: Theme) => {
 
 export const ColorModeProvider: React.FC = ({ children }) => {
   const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorModeState(outer.theme)
+  const outerTheme = outer.theme
 
-  const initialTheme = outer.theme || {}
-  const theme = applyColorMode(initialTheme, colorMode) 
-  const { useCustomProperties } = theme.config || theme
+  const [colorMode, setColorMode] = useColorModeState(outerTheme)
 
-  if (useCustomProperties !== false) {
-    // TODO: This mutation is less than ideal
-    // We could save custom properties to `theme.colorVars`,
-    // But it's infeasible to do this because of how the packages are split.
+  const theme = useMemo(() => {
+    const res = { ...outerTheme }
 
-    useMemo(() => {
-      theme.rawColors = assembleColorModes(theme, initialTheme)
-      theme.colors = toCustomProperties(
-        omitModes(initialTheme.colors || {}),
+    if (colorMode) {
+      const modes = get(res, 'colors.modes', {})
+      const currentColorMode = get(modes, colorMode, {})
+      res.colors = {
+        ...res.colors,
+        ...currentColorMode,
+      }
+    }
+
+    const { useCustomProperties } = outerTheme.config || outerTheme
+
+    if (useCustomProperties !== false) {
+      res.rawColors = assembleColorModes(res, outerTheme)
+      res.colors = toCustomProperties(
+        omitModes(outerTheme.colors || {}),
         'colors'
       )
-    }, [colorMode])
-  }
+    }
+
+    return res
+  }, [colorMode, outerTheme])
 
   const context = {
     ...outer,
