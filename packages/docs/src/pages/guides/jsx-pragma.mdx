@@ -4,13 +4,15 @@ title: JSX Pragma
 
 # JSX Pragma
 
-Theme UI uses custom JSX functions and JSX import source comments to allow you to style elements with values from your theme using the [`sx` prop][].
+Theme UI uses custom JSX functions and JSX import source comments to allow you
+to style elements with values from your theme using the [`sx` prop][].
 
 ## What is JSX
 
-JSX is an XML-like syntax extension to JavaScript.
-It's a syntax sugar usually used for React's `jsx` function.
-You don't need to write JSX to use React, but it's meant to make code more readable, especially for tree structures with attributes.
+JSX is an XML-like syntax extension to JavaScript. It's a syntax sugar usually
+used for React's `jsx` function. You don't need to write JSX to use React, but
+it's meant to make code more readable, especially for tree structures with
+attributes.
 
 Given the following JSX:
 
@@ -34,19 +36,26 @@ jsx('div', {
 })
 ```
 
-Most apps use Babel to compile JSX syntax for use with React or other similar libraries.
-JSX can be compiled to _any_ function call. By default the Babel plugin will convert JSX into calls to the `jsx` function imported from `react/jsx-runtime`, but libraries like Preact, MDX, Emotion, and Vuejs use custom functions to create elements with JSX.
+Most apps use Babel to compile JSX syntax for use with React or other similar
+libraries. JSX can be compiled to _any_ function call. By default the Babel
+plugin will convert JSX into calls to the `jsx` function imported from
+`react/jsx-runtime`, but libraries like Preact, MDX, Emotion, and Vuejs use
+custom functions to create elements with JSX.
 
-Technically Babel also calls `jsxs` from `react/jsx-runtime` and `jsxDEV` from `react/jsx-dev-runtime` in some cases, but the concept still holds.
+Technically Babel also calls `jsxs` from `react/jsx-runtime` and `jsxDEV` from
+`react/jsx-dev-runtime` in some cases, but the concept still holds.
 
-To change the underlying create element functions, you can either add an option to the Babel plugin or you can set a _pragma comment_ at the beginning of a module.
-Changing the function import source in the Babel plugin will transform all JSX in an application into the same set of functions.
-Using a pragma comment limits the change to only the modules that it's added to.
-This lets you default to the React `jsx` function in most places and use custom functions only where you need it,
-giving the author more control over where it's used.
+To change the underlying create element functions, you can either add an option
+to the Babel plugin or you can set a _pragma comment_ at the beginning of a
+module. Changing the function import source in the Babel plugin will transform
+all JSX in an application into the same set of functions. Using a pragma comment
+limits the change to only the modules that it's added to. This lets you default
+to the React `jsx` function in most places and use custom functions only where
+you need it, giving the author more control over where it's used.
 
-Theme UI uses custom create element functions to add the `sx` and `css` props in React.
-The preferred way of using these functions is by adding the custom pragma comment to the top of your file.
+Theme UI uses custom create element functions to add the `sx` and `css` props in
+React. The preferred way of using these functions is by adding the custom pragma
+comment to the top of your file.
 
 ```js
 /** @jsxImportSource theme-ui */
@@ -55,3 +64,120 @@ The preferred way of using these functions is by adding the custom pragma commen
 See the [`sx` prop][] docs to learn more.
 
 [`sx` prop]: /sx-prop
+
+## Automatic JSX runtime
+
+React v17 introduced a
+[new JSX transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html),
+also called "automatic runtime" (backported to React v16.14.0) If you use any of
+those versions together with a configurable transpiler (such as Babel or
+TypeScript), you can configure JSX to use the automatic runtime (globally, for
+your entire app), and no longer need to use the custom pragma comments in your
+files to use `sx`.
+
+Here are a few examples showing how to do that depending how you build your
+application:
+
+### Using @babel/preset-react
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-react',
+      {
+        importSource: 'theme-ui', // or '@theme-ui/core'
+        runtime: 'automatic',
+        throwIfNamespace: false,
+      },
+    ],
+  ],
+  // ...
+}
+```
+
+NOTE: this requires
+[babel >= 7.9.0](https://babeljs.io/docs/en/babel-preset-react#react-automatic-runtime)
+
+### Using @babel/plugin-transform-react-jsx
+
+This plugin is included in the preset above, but can also used as a standalone
+babel plugin.
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    [
+      '@babel/plugin-transform-react-jsx',
+      {
+        importSource: 'theme-ui', // or '@theme-ui/core'
+        runtime: 'automatic',
+        throwIfNamespace: false,
+      },
+    ],
+  ],
+  // ...
+}
+```
+
+NOTE: this requires
+[babel >= 7.9.0](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx#react-automatic-runtime)
+
+### Using TypeScript
+
+If you use TypeScript to transpile your source code with `tsc` (or only
+typecheck), or for instance to run tests with `ts-jest`
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "theme-ui"
+  }
+  // ...
+}
+```
+
+NOTE: this requires
+[TypeScript >= 4.1](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#react-17-jsx-factories)
+
+NOTE: in order to typecheck `sx` using automatic runtime, you will also need to
+add `sx` manually to React types:
+
+```ts
+// To add `css` if you're using it somewhere
+/// <reference types="@emotion/react/types/css-prop" />
+
+import {} from 'react'
+import { ThemeUIStyleObject } from 'theme-ui' // or '@theme-ui/core'
+
+declare module 'react' {
+  interface Attributes {
+    sx?: ThemeUIStyleObject
+  }
+}
+```
+
+### Using next.js
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    [
+      'next/babel',
+      {
+        'preset-react': {
+          importSource: 'theme-ui', // or '@theme-ui/core'
+          runtime: 'automatic',
+          throwIfNamespace: false,
+        },
+      },
+    ],
+  ],
+  // ...
+}
+```
