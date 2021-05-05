@@ -7,10 +7,17 @@ import React, {
 } from 'react'
 import {
   jsx,
+  merge,
   useThemeUI,
   __ThemeUIInternalBaseThemeProvider,
 } from '@theme-ui/core'
-import { get, Theme, ColorModesScale } from '@theme-ui/css'
+import {
+  get,
+  Theme,
+  ColorModesScale,
+  ColorMode,
+  NestedScale,
+} from '@theme-ui/css'
 import { Global } from '@emotion/react'
 
 import { toCustomProperties, createColorStyles } from './custom-properties'
@@ -146,30 +153,49 @@ export function useColorMode<T extends string = string>(): [
   ]
 }
 
-const omitModes = (colors: ColorModesScale) => {
+const omitModes = (colors: ColorModesScale): ColorMode => {
   const res = { ...colors }
   delete res.modes
   return res
 }
 
-const assembleColorModes = (theme: Theme, outer: Theme) => {
-  const initialColorModeName =
-    (outer.config || outer).initialColorModeName || '__default'
+const assembleColorModes = (
+  mutatedColors: ColorModesScale,
+  outerRawColors: ColorModesScale,
+  initialColorModeName: string | null | undefined
+): ColorModesScale => {
+  if (!('modes' in outerRawColors)) return mutatedColors
 
-  const { colors = {} } = outer
+  initialColorModeName = initialColorModeName || '__default'
 
-  const mutatedColors = get(theme, 'colors', {})
-  const modes = get(outer, 'colors.modes', {})
-
-  if (!('modes' in colors)) return mutatedColors
+  const modes: ColorModesScale['modes'] = {
+    [initialColorModeName]: omitModes(outerRawColors),
+    ...outerRawColors.modes,
+  }
 
   return {
     ...mutatedColors,
-    modes: {
-      [initialColorModeName]: omitModes(colors),
-      ...modes,
-    },
+    modes,
+  } as ColorModesScale
+}
+
+function copyRawColors(
+  colors: ColorModesScale | NestedScale<string>,
+  outerThemeRawColors: ColorModesScale
+) {
+  for (const [key, value] of Object.entries(colors)) {
+    if (typeof value === 'string' && !value.startsWith('var(')) {
+      outerThemeRawColors[key] = value
+    }
+    if (typeof value === 'object') {
+      outerThemeRawColors[key] = {
+        ...(outerThemeRawColors[key] as object),
+        ...copyRawColors(value, {}),
+      }
+    }
   }
+
+  return outerThemeRawColors
 }
 
 export const ColorModeProvider: React.FC = ({ children }) => {
@@ -180,24 +206,43 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 
   const theme = useMemo(() => {
     const res = { ...outerTheme }
+    const modes = get(res, 'colors.modes', {})
+    const currentColorMode = get(modes, colorMode, {})
 
     if (colorMode) {
-      const modes = get(res, 'colors.modes', {})
-      const currentColorMode = get(modes, colorMode, {})
       res.colors = {
         ...res.colors,
         ...currentColorMode,
       }
     }
 
-    const { useCustomProperties } = outerTheme.config || outerTheme
+    const { useCustomProperties, initialColorModeName } =
+      outerTheme.config || outerTheme
+    let outerThemeRawColors = res.rawColors || res.colors || {}
 
     if (useCustomProperties !== false) {
-      res.rawColors = assembleColorModes(res, outerTheme)
-      res.colors = toCustomProperties(
-        omitModes(outerTheme.colors || {}),
-        'colors'
-      )
+      const alreadyHasRawColors = res.rawColors != null
+      const colors = res.colors || {}
+
+      if (alreadyHasRawColors) {
+        outerThemeRawColors = { ...outerThemeRawColors }
+
+        copyRawColors(colors, outerThemeRawColors)
+
+        res.rawColors = outerThemeRawColors
+        res.rawColors.modes = {
+          ...res.rawColors.modes,
+          __default: omitModes(outerThemeRawColors),
+        }
+      } else {
+        res.rawColors = assembleColorModes(
+          colors,
+          outerThemeRawColors,
+          initialColorModeName
+        )
+      }
+
+      res.colors = toCustomProperties(omitModes(outerThemeRawColors), 'colors')
     }
 
     return res

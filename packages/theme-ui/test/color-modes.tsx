@@ -66,7 +66,6 @@ test('renders with color modes', () => {
   })
   expect(mode).toBe(defaultColorMode)
   expect(rendered).toBe(null)
-  // expect(rendered).toHaveStyleRule('color', 'var(--theme-ui-color-black)')
 })
 
 test('renders with initial color mode name', () => {

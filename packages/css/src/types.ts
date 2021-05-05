@@ -601,7 +601,7 @@ export interface ColorMode extends ScaleDict<CSS.Property.Color> {
 export type ColorModesScale = ColorMode & {
   /**
    * Nested color modes can provide overrides when used in conjunction with
-   * `Theme.initialColorModeName and `useColorMode()`
+   * `Theme.initialColorModeName` and `useColorMode()`
    */
   modes?: {
     [k: string]: ColorMode
