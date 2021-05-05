@@ -2,7 +2,20 @@
 
 ## v0.8
 
-APIs deprecated in v0.6 were removed.
+**Theme configuration options were moved to `theme.config` object.**
+
+- **Deprecations:** `useRootStyles`, `useCustomProperties`,
+  `useColorSchemeMediaQuery`, `useBorderBox`, and `useLocalStorage` options on
+  the theme object are now scoped under a `config` object on the theme, and the
+  root-level options, now deprecated, will be removed in a future release.
+
+  (e.g. you should be setting `theme.config.useBorderBox` instead of
+  `theme.useBorderBox`)
+
+  - ⚠ All config options should be migrated at once. If Theme UI sees
+    `theme.config` exists, it won't look for options on the `theme`.
+
+**APIs deprecated in v0.6 were removed.**
 
 - `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
 - `Styled` ⟶ `Themed`
