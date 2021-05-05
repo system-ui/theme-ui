@@ -1,72 +1,6 @@
-# v0.8.0 (Wed May 05 2021)
+## v0.8.0 (Wed May 05 2021)
 
-:tada: This release contains work from a new contributor! :tada:
-
-Thank you, null[@Zolwiastyl](https://github.com/Zolwiastyl), for all your work!
-
-#### 🚀 Enhancement
-
-- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `@theme-ui/preset-system`, `@theme-ui/preset-tosh`, `@theme-ui/theme-provider`, `theme-ui`
-  - v0.8 [#1688](https://github.com/system-ui/theme-ui/pull/1688) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
-- `@theme-ui/color-modes`, `@theme-ui/css`, `gatsby-plugin-theme-ui`
-  - Refactor color objects and expose default colors as a mode [#1639](https://github.com/system-ui/theme-ui/pull/1639) ([@fcisio](https://github.com/fcisio))
-
-#### 🐛 Bug Fix
-
-- Describe Preconstruct in Contributing.md [#1715](https://github.com/system-ui/theme-ui/pull/1715) ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/core`, `@theme-ui/sidenav`
-  - Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
-- `gatsby-theme-code-recipes`
-  - Revert "chore(deps): bump unist-util-visit from 2.0.3 to 3.0.0" [#1713](https://github.com/system-ui/theme-ui/pull/1713) ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/color-modes`, `@theme-ui/css`, `@theme-ui/theme-provider`
-  - Merge branch 'config' into config-2 [#1421](https://github.com/system-ui/theme-ui/pull/1421) ([@hasparus](https://github.com/hasparus))
-
-#### ⚠️ Pushed to `stable`
-
-- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tachyons`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
-  - Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
-
-#### 📝 Documentation
-
-- Docs: improve Switch component documentation [#1687](https://github.com/system-ui/theme-ui/pull/1687) ([@flo-sch](https://github.com/flo-sch))
-
-#### 🔩 Dependency Updates
-
-- chore(deps-dev): bump @babel/preset-env from 7.13.15 to 7.14.0 [#1705](https://github.com/system-ui/theme-ui/pull/1705) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps): bump react-dom from 17.0.1 to 17.0.2 [#1709](https://github.com/system-ui/theme-ui/pull/1709) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps): bump reakit from 1.3.7 to 1.3.8 [#1704](https://github.com/system-ui/theme-ui/pull/1704) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @auto-it/released from 10.25.2 to 10.26.0 [#1706](https://github.com/system-ui/theme-ui/pull/1706) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @types/jest from 26.0.22 to 26.0.23 [#1707](https://github.com/system-ui/theme-ui/pull/1707) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @babel/runtime from 7.13.17 to 7.14.0 [#1708](https://github.com/system-ui/theme-ui/pull/1708) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @auto-it/all-contributors from 10.25.0 to 10.26.0 [#1710](https://github.com/system-ui/theme-ui/pull/1710) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @babel/core from 7.13.16 to 7.14.0 [#1711](https://github.com/system-ui/theme-ui/pull/1711) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump auto from 10.25.1 to 10.25.2 [#1694](https://github.com/system-ui/theme-ui/pull/1694) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps): bump gatsby-plugin-mdx from 2.1.0 to 2.4.0 [#1698](https://github.com/system-ui/theme-ui/pull/1698) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @types/react from 17.0.3 to 17.0.4 [#1697](https://github.com/system-ui/theme-ui/pull/1697) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps): bump type-fest from 1.0.1 to 1.0.2 [#1696](https://github.com/system-ui/theme-ui/pull/1696) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @auto-it/released from 10.25.1 to 10.25.2 [#1695](https://github.com/system-ui/theme-ui/pull/1695) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @types/node from 14.14.41 to 15.0.1 [#1693](https://github.com/system-ui/theme-ui/pull/1693) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump postcss from 8.2.10 to 8.2.13 [#1692](https://github.com/system-ui/theme-ui/pull/1692) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @babel/register from 7.13.8 to 7.13.16 [#1691](https://github.com/system-ui/theme-ui/pull/1691) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- chore(deps-dev): bump @auto-it/conventional-commits [#1690](https://github.com/system-ui/theme-ui/pull/1690) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-- Upgrade to GitHub-native Dependabot [#1689](https://github.com/system-ui/theme-ui/pull/1689) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
-- `gatsby-theme-code-recipes`
-  - chore(deps): bump unist-util-visit from 2.0.3 to 3.0.0 [#1712](https://github.com/system-ui/theme-ui/pull/1712) ([@dependabot[bot]](https://github.com/dependabot[bot]))
-
-#### Authors: 8
-
-- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
-- [@dependabot[bot]](https://github.com/dependabot[bot])
-- [@Zolwiastyl](https://github.com/Zolwiastyl)
-- Brent Jackson ([@jxnblk](https://github.com/jxnblk))
-- Florent SCHILDKNECHT ([@flo-sch](https://github.com/flo-sch))
-- Francis Champagne ([@fcisio](https://github.com/fcisio))
-- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
-- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
-
----
-
-## v0.8.0 UNRELEASED
+### 🔥 Breaking Changes and Deprecations
 
 - **BREAKING:** `theme.config.useRootStyles` now defaults to `true` following
   deprecation of `useBodyStyles`. Styles from `theme.styles.root` are now added
@@ -88,6 +22,35 @@ Thank you, null[@Zolwiastyl](https://github.com/Zolwiastyl), for all your work!
 - **Removed APIs, previously deprecated in 0.6.0**
   - `theme.useBodyStyles` ⟶ `theme.config.useRootStyles`
   - `Styled` ⟶ `Themed`
+
+### 🚀 Enhancements
+
+- `@theme-ui/color-modes`, `@theme-ui/css`, `gatsby-plugin-theme-ui`
+  - Refactor color objects and expose default colors as a mode [#1639](https://github.com/system-ui/theme-ui/pull/1639) ([@fcisio](https://github.com/fcisio))
+
+### 🐛 Bug Fix
+
+- `@theme-ui/core`, `@theme-ui/sidenav`
+  - Wrap top level ThemeProvider in CacheProvider [#1717](https://github.com/system-ui/theme-ui/pull/1717) ([@hasparus](https://github.com/hasparus) [@Zolwiastyl](https://github.com/Zolwiastyl))
+
+### 📝 Documentation
+
+- Improve Switch component documentation [#1687](https://github.com/system-ui/theme-ui/pull/1687) ([@flo-sch](https://github.com/flo-sch))
+- Describe Preconstruct in Contributing.md [#1715](https://github.com/system-ui/theme-ui/pull/1715) ([@hasparus](https://github.com/hasparus))
+
+### Authors: 5
+
+:tada: v0.8.0 contains work from a new contributor! :tada:
+
+Thank you, [@Zolwiastyl](https://github.com/Zolwiastyl), for all your work!
+
+- [@Zolwiastyl](https://github.com/Zolwiastyl)
+- Florent SCHILDKNECHT ([@flo-sch](https://github.com/flo-sch))
+- Francis Champagne ([@fcisio](https://github.com/fcisio))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
 
 ## v0.7.5 (Wed Apr 28 2021)
 
