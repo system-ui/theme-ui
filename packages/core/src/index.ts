@@ -1,5 +1,4 @@
 import {
-  CacheProvider,
   jsx as emotionJsx,
   ThemeContext as EmotionContext,
 } from '@emotion/react'
@@ -8,7 +7,7 @@ import * as React from 'react'
 import deepmerge from 'deepmerge'
 import packageInfo from '@emotion/react/package.json'
 import parseProps from '@theme-ui/parse-props'
-import createCache, { EmotionCache } from '@emotion/cache'
+
 import { ThemeUIJSX } from './jsx-namespace'
 export type { ThemeUIJSX } from './jsx-namespace'
 
@@ -75,15 +74,13 @@ export interface ThemeUIContextValue {
   theme: Theme
 }
 
-const defaultContextValue: ThemeUIContextValue = {
-  __EMOTION_VERSION__,
-  theme: {},
-}
-
 /**
  * @internal
  */
-export const __ThemeUIContext = React.createContext(defaultContextValue)
+export const __ThemeUIContext = React.createContext<ThemeUIContextValue>({
+  __EMOTION_VERSION__,
+  theme: {},
+})
 
 export const useThemeUI = () => React.useContext(__ThemeUIContext)
 
@@ -138,7 +135,6 @@ export const __ThemeUIInternalBaseThemeProvider: React.FC<__ThemeUIInternalBaseT
     })
   )
 
-const emotionCache: EmotionCache = createCache({ key: 'css' })
 export interface ThemeProviderProps {
   theme: Theme | ((outerTheme: Theme) => Theme)
   children?: React.ReactNode
@@ -161,16 +157,6 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
     typeof theme === 'function'
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
-
-  const isTopLevelProvider = outer === defaultContextValue
-
-  if (isTopLevelProvider) {
-    return jsx(
-      CacheProvider,
-      { value: emotionCache },
-      jsx(__ThemeUIInternalBaseThemeProvider, { context }, children)
-    )
-  }
 
   return jsx(__ThemeUIInternalBaseThemeProvider, { context }, children)
 }
