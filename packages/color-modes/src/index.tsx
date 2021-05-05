@@ -7,7 +7,6 @@ import React, {
 } from 'react'
 import {
   jsx,
-  merge,
   useThemeUI,
   __ThemeUIInternalBaseThemeProvider,
 } from '@theme-ui/core'
@@ -159,26 +158,6 @@ const omitModes = (colors: ColorModesScale): ColorMode => {
   return res
 }
 
-const assembleColorModes = (
-  mutatedColors: ColorModesScale,
-  outerRawColors: ColorModesScale,
-  initialColorModeName: string | null | undefined
-): ColorModesScale => {
-  if (!('modes' in outerRawColors)) return mutatedColors
-
-  initialColorModeName = initialColorModeName || '__default'
-
-  const modes: ColorModesScale['modes'] = {
-    [initialColorModeName]: omitModes(outerRawColors),
-    ...outerRawColors.modes,
-  }
-
-  return {
-    ...mutatedColors,
-    modes,
-  } as ColorModesScale
-}
-
 function copyRawColors(
   colors: ColorModesScale | NestedScale<string>,
   outerThemeRawColors: ColorModesScale
@@ -216,8 +195,9 @@ export const ColorModeProvider: React.FC = ({ children }) => {
       }
     }
 
-    const { useCustomProperties, initialColorModeName } =
+    let { useCustomProperties, initialColorModeName = '__default' } =
       outerTheme.config || outerTheme
+
     let outerThemeRawColors = res.rawColors || res.colors || {}
 
     if (useCustomProperties !== false) {
@@ -232,14 +212,21 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         res.rawColors = outerThemeRawColors
         res.rawColors.modes = {
           ...res.rawColors.modes,
-          __default: omitModes(outerThemeRawColors),
+          [initialColorModeName]: omitModes(outerThemeRawColors),
         }
       } else {
-        res.rawColors = assembleColorModes(
-          colors,
-          outerThemeRawColors,
-          initialColorModeName
-        )
+        if (!('modes' in outerThemeRawColors)) {
+          res.rawColors = colors
+        }
+        const modes: ColorModesScale['modes'] = {
+          [initialColorModeName]: omitModes(outerThemeRawColors),
+          ...outerThemeRawColors.modes,
+        }
+
+        res.rawColors = {
+          ...colors,
+          modes,
+        } as ColorModesScale /* modes doesn't match index signature by design */
       }
 
       res.colors = toCustomProperties(omitModes(outerThemeRawColors), 'colors')
