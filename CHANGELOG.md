@@ -1,23 +1,18 @@
-# v0.8.2 (Wed May 05 2021)
+## v0.8.2 (Wed May 05 2021)
 
-#### 🐛 Bug Fix
+### 🐛 Bug Fix
 
 - `@theme-ui/color-modes`
-  - fix(color-modes): merge rawColors even when there are no color modes ([@hasparus](https://github.com/hasparus))
-  - fix(color-modes): add initial color mode to a correct key ([@hasparus](https://github.com/hasparus))
-  - fix(color-modes): hotfix color modes provider to stop breaking rules of hooks ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/color-modes`, `@theme-ui/css`, `@theme-ui/custom-properties`, `theme-ui`
-  - fix(color-modes): merge rawColors from nested theme providers ([@hasparus](https://github.com/hasparus))
-
-#### ⚠️ Pushed to `stable`
-
-- chore(tooling): add ESLint ([@hasparus](https://github.com/hasparus))
-
-#### Authors: 1
-
-- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
-
----
+  - fix(color-modes): merge rawColors even when there are no color modes
+    ([@hasparus](https://github.com/hasparus))
+  - fix(color-modes): add initial color mode to a correct key
+    ([@hasparus](https://github.com/hasparus))
+  - fix(color-modes): hotfix color modes provider to stop breaking rules of
+    hooks ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/color-modes`, `@theme-ui/css`, `@theme-ui/custom-properties`,
+  `theme-ui`
+  - fix(color-modes): merge rawColors from nested theme providers
+    ([@hasparus](https://github.com/hasparus))
 
 ## v0.8.1 (Wed May 05 2021)
 
