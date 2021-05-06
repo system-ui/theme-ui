@@ -260,7 +260,6 @@ const theme = {
   },
   styles: {
     root: {
-      margin: 0,
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
