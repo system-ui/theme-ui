@@ -149,7 +149,7 @@ test('resets body margin', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement.parentElement!)
+  const style = window.getComputedStyle(root.baseElement)
   expect(style.margin).toBe('0px')
 })
 

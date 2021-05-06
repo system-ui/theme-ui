@@ -27,9 +27,11 @@ const RootStyles = () =>
           boxSizing,
         },
         html: {
-          margin: 0,
           variant: 'styles.root',
         },
+        body: {
+          margin: 0,
+        }
       })(theme)
     },
   })
