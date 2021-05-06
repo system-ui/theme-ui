@@ -1,3 +1,21 @@
+# v0.8.4 (Thu May 06 2021)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/theme-provider`
+  - fix(theme-provider): set body margin to 0 ([@hasparus](https://github.com/hasparus))
+
+#### ⚠️ Pushed to `stable`
+
+- `@theme-ui/theme-provider`
+  - Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.8.3 (Wed May 05 2021)
 
 #### 🐛 Bug Fix
