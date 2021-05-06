@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/test-utils",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "private": true,
   "license": "MIT",
   "source": "src/index.ts",

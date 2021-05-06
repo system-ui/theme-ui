@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-code-recipes",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "main": "dist/gatsby-theme-code-recipes.cjs.js",
   "license": "MIT",
   "peerDependencies": {
