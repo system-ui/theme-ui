@@ -12,6 +12,7 @@ import Head from './head'
 import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
+import SearchInput from './search-input'
 import Sidebar from '../sidebar.mdx'
 
 const modes = ['default', 'dark', 'deep', 'swiss']
@@ -57,7 +58,6 @@ export default function DocsLayout(props) {
     const next = modes[(i + 1) % modes.length]
     setMode(next)
   }
-
   return (
     <Themed.root>
       <Head {...props} />
@@ -89,18 +89,21 @@ export default function DocsLayout(props) {
                 Theme UI
               </Link>
             </Flex>
-            <Flex>
-              <NavLink href="https://github.com/system-ui/theme-ui">
-                GitHub
-              </NavLink>
-              <Button
-                sx={{
-                  ml: 2,
-                  whiteSpace: 'pre',
-                }}
-                onClick={cycleMode}>
-                {getModeName(mode)}
-              </Button>
+            <Flex sx={{ gap: [0, 2] }}>
+              <SearchInput />
+              <Flex sx={{ alignItems: 'center' }}>
+                <NavLink href="https://github.com/system-ui/theme-ui">
+                  GitHub
+                </NavLink>
+                <Button
+                  sx={{
+                    ml: 2,
+                    whiteSpace: 'pre',
+                  }}
+                  onClick={cycleMode}>
+                  {getModeName(mode)}
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
         )}

@@ -3,6 +3,7 @@
   "scripts": {
     "build": "preconstruct build",
     "build:docs": "yarn build && yarn workspace docs build",
+    "dev:docs": "yarn workspace docs start",
     "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
     "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
