@@ -38,6 +38,8 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.13.10",
+    "@codechecks/build-size-watcher": "^0.1.0",
+    "@codechecks/client": "0.1.10-beta",
     "@emotion/jest": "^11.3.0",
     "@preconstruct/cli": "^2",
     "@testing-library/react": "^11.2.6",

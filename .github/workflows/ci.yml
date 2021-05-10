@@ -28,6 +28,15 @@ jobs:
 
       - name: Typecheck
         run: yarn typecheck
+
+      - name: Build
+        run: yarn build
+
+      - name: Run Codechecks
+        run: yarn codechecks
+        env:
+          CC_SECRET: ${{ secrets.CC_SECRET }}
+
   release:
     runs-on: ubuntu-latest
     needs: [build]
