@@ -17,3 +17,7 @@ checks:
         - path: './packages/theme-provider/dist/theme-ui-theme-provider.esm.js'
         - path: './packages/theme-ui/dist/theme-ui.esm.js'
         - path: './packages/typography/dist/theme-ui-typography.esm.js'
+  - name: typecov
+    options:
+      strict: true
+      atLeast: 96
