@@ -1,3 +1,30 @@
+diff --git a/node_modules/@codechecks/client/dist/file-executors/moduleExecutor.js b/node_modules/@codechecks/client/dist/file-executors/moduleExecutor.js
+index e4d6a4c..ed23c23 100644
+--- a/node_modules/@codechecks/client/dist/file-executors/moduleExecutor.js
++++ b/node_modules/@codechecks/client/dist/file-executors/moduleExecutor.js
+@@ -22,7 +22,7 @@ async function moduleExecutor(module, options) {
+     if (hasDefaultCommonExport) {
+         fn = module;
+     }
+-    await fn(options);
++    return await fn(options);
+ }
+ exports.moduleExecutor = moduleExecutor;
+ //# sourceMappingURL=moduleExecutor.js.map
+\ No newline at end of file
+diff --git a/node_modules/@codechecks/client/dist/file-executors/tsExecutor.js b/node_modules/@codechecks/client/dist/file-executors/tsExecutor.js
+index 6dccf34..cb0be83 100644
+--- a/node_modules/@codechecks/client/dist/file-executors/tsExecutor.js
++++ b/node_modules/@codechecks/client/dist/file-executors/tsExecutor.js
+@@ -21,7 +21,7 @@ async function executeTs(filePath, options) {
+         logger_1.logger.error("Error while executing CodeChecks file!");
+         throw e;
+     }
+-    await moduleExecutor_1.moduleExecutor(codeChecksModule, options);
++    return await moduleExecutor_1.moduleExecutor(codeChecksModule, options);
+ }
+ exports.executeTs = executeTs;
+ function transpileTypescriptModule(path) {
 diff --git a/node_modules/@codechecks/client/dist/file-handling/settings.js b/node_modules/@codechecks/client/dist/file-handling/settings.js
 index 3b01117..fc471d2 100644
 --- a/node_modules/@codechecks/client/dist/file-handling/settings.js
