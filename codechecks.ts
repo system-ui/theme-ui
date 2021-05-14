@@ -56,7 +56,7 @@ export function main(): CodeChecksConfig {
       }),
     ],
     settings: {
-      speculativeBranchSelection: false,
+      speculativeBranchSelection: true,
       branches: ['develop', 'stable'],
     },
   }
