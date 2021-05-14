@@ -33,7 +33,7 @@ jobs:
         run: yarn build
 
       - name: Run Codechecks
-        run: DEBUG=codechecks:client yarn codechecks
+        run: yarn codechecks
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
 
