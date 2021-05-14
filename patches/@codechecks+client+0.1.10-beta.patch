@@ -1,0 +1,20 @@
+diff --git a/node_modules/@codechecks/client/dist/getExecutionContext.js b/node_modules/@codechecks/client/dist/getExecutionContext.js
+index a3b2d13..025a8d8 100644
+--- a/node_modules/@codechecks/client/dist/getExecutionContext.js
++++ b/node_modules/@codechecks/client/dist/getExecutionContext.js
+@@ -1,5 +1,6 @@
+ "use strict";
+ Object.defineProperty(exports, "__esModule", { value: true });
++const { logger } = require("@codechecks/client/dist/logger");
+ const path_1 = require("path");
+ const Local_1 = require("./ci-providers/Local");
+ const speculativeBranchSelection_1 = require("./speculativeBranchSelection");
+@@ -8,6 +9,8 @@ const errors_1 = require("./utils/errors");
+  * Better part of execution context stays the same for all codechecks files being executed so we just get it once.
+  */
+ async function getConstExecutionContext(api, ciProvider, settings, gitRepoRootPath, args) {
++    logger.debug('getConstExecutionContext', {settings})
++
+     const currentSha = await ciProvider.getCurrentSha();
+     const isFork = await ciProvider.isFork();
+     const pr = await ciProvider.getPullRequestID();
