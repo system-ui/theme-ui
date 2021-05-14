@@ -1,3 +1,33 @@
+diff --git a/node_modules/@codechecks/client/dist/file-handling/settings.js b/node_modules/@codechecks/client/dist/file-handling/settings.js
+index 3b01117..26e7671 100644
+--- a/node_modules/@codechecks/client/dist/file-handling/settings.js
++++ b/node_modules/@codechecks/client/dist/file-handling/settings.js
+@@ -4,8 +4,10 @@ const path_1 = require("path");
+ const fs_1 = require("fs");
+ const executeJson_1 = require("../file-executors/executeJson");
+ const executeYaml_1 = require("../file-executors/executeYaml");
++const executeTS_1 = require("../file-executors/tsExecutor");
+ const errors_1 = require("../utils/errors");
+-const CODECHECKS_SETTINGS_FILES_NAMES = ["codechecks.yml", "codechecks.yaml", "codechecks.json"];
++const { logger } = require("@codechecks/client/dist/logger");
++const CODECHECKS_SETTINGS_FILES_NAMES = ["codechecks.yml", "codechecks.yaml", "codechecks.json", "codechecks.ts"];
+ /**
+  * Always try loading settings from "codechecks.yml" or "codechecks.json" files.
+  */
+@@ -26,6 +28,13 @@ function loadSettingsFromFile(filePath) {
+         case "yml":
+         case "yaml":
+             return (executeYaml_1.loadYaml(filePath) || {}).settings;
++        case "ts": {
++            const config = (executeTS_1.executeTs(filePath) || {});
++
++            logger.debug('loadSettingsFromFile', { filePath, config })
++
++            return config.settings;
++        }
+         default:
+             throw errors_1.crash(`Unsupported file extension ${extension}`);
+     }
 diff --git a/node_modules/@codechecks/client/dist/getExecutionContext.js b/node_modules/@codechecks/client/dist/getExecutionContext.js
 index a3b2d13..025a8d8 100644
 --- a/node_modules/@codechecks/client/dist/getExecutionContext.js
