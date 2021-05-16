@@ -8,4 +8,7 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
   },
+  rules: {
+    'no-use-before-define': 'off',
+  },
 }

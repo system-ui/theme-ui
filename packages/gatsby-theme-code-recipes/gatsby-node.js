@@ -142,6 +142,8 @@ exports.onCreateNode = async ({
 }
 
 exports.createPages = async ({ actions, graphql, reporter }, opts) => {
+  console.log('gatsby-theme-code-recipes - createPages', { opts })
+
   if (!opts.basePath) return
   const result = await graphql(`
     {

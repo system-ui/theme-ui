@@ -1,4 +1,4 @@
-import React from 'react'
+import { createElement } from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Recipe from './recipe'
@@ -20,7 +20,7 @@ export default function Query(props) {
 
   const children = <MDXRenderer children={body} />
 
-  return React.createElement(Recipe, {
+  return createElement(Recipe, {
     ...props,
     name,
     slug,
