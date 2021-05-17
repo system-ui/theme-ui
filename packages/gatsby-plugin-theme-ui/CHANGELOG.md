@@ -1,3 +1,15 @@
+# v0.8.3 (Wed May 05 2021)
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.8.0 (Wed May 05 2021)
 
 :tada: This release contains work from a new contributor! :tada:
