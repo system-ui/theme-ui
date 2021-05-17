@@ -35,7 +35,7 @@
     "gatsby": "^2.26.1",
     "gatsby-plugin-catch-links": "^2.4.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
-    "gatsby-plugin-mdx": "^1",
+    "gatsby-plugin-mdx": "2.0.1",
     "gatsby-plugin-react-helmet": "^3.4.0",
     "gatsby-plugin-theme-ui": "0.8.4",
     "gatsby-theme-style-guide": "0.8.4",
