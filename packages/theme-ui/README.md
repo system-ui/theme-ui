@@ -25,7 +25,7 @@
     <img alt="npm (latest)" src="https://img.shields.io/npm/v/theme-ui/latest"/>
   </a>
   <a>
-    <img alt="npm (next)" src="https://img.shields.io/npm/v/theme-ui/next?color=%23e044aa"/>
+    <img alt="npm (develop)" src="https://img.shields.io/npm/v/theme-ui/develop?color=%23e044aa"/>
   </a>
   <br />
   <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">

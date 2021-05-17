@@ -1,88 +1,54 @@
 /** @jsx jsx */
 import { jsx, Themed } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
-import { LiveCode } from '../../components/code'
+
+import { Cards } from '../..'
 
 export const query = graphql`
-  query {
-    recipes: allMdxRecipe {
+  {
+    allSitePage(filter: { path: { glob: "/recipes/*" } }) {
       nodes {
         id
-        name
-        slug
-        snippets
+        path
+        context {
+          frontmatter {
+            name
+          }
+        }
       }
     }
   }
 `
 
-const Card = ({ name, slug, snippets }) => {
-  const [first] = snippets
-  if (!first) return false
-  const { value, props } = first
+const RecipeListItem = ({ id, context, path }) => {
+  const {
+    frontmatter: { name },
+  } = context
 
   return (
-    <Link
-      to={slug}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: 192,
-        color: 'inherit',
-        bg: 'muted',
-        textDecoration: 'none',
-        p: 2,
-        borderRadius: 4,
-        boxShadow: (t) => `0 0 3px ${t.colors.darken}`,
-        ':hover': {
-          boxShadow: (t) => `0 0 8px 1px ${t.colors.darken}`,
-        },
-      }}>
-      {props.live && (
-        <div
-          sx={{
-            zoom: 1 / 2,
-            // flex: '1 1 auto',
-            my: 'auto',
-            bg: 'background',
-            overflow: 'hidden',
-          }}>
-          <LiveCode preview children={value} />
-        </div>
-      )}
-      <div
-        sx={{
-          fontWeight: 'bold',
-          fontSize: 0,
-          mt: 2,
-        }}>
-        {name}
-      </div>
-    </Link>
+    <Themed.li>
+      {/* TODO: Cards with rendered recipes would be cool, but we'll need
+          some tests for them first.
+          Check out commit 67e112cb547f93e6b30a09d03e218e335742be76 for preview
+          card implementation.  */}
+      <Link to={path}>{name}</Link>
+    </Themed.li>
   )
 }
 
 export default function RecipesPage(props) {
-  const recipes = props.data.recipes.nodes
+  const recipes = props.data.allSitePage.nodes
 
   return (
     <div sx={{}}>
       <Themed.h1>Recipes</Themed.h1>
-      <ul
-        sx={{
-          listStyle: 'none',
-          p: 0,
-          m: 0,
-          display: 'grid',
-          gridGap: 4,
-          gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-        }}>
-        {recipes.map((r) => (
-          <li key={r.id}>
-            <Card {...r} />
-          </li>
-        ))}
-      </ul>
+      <Cards columns={2}>
+        <Themed.ul>
+          {recipes.map((recipe) => (
+            <RecipeListItem key={recipe.id} {...recipe} />
+          ))}
+        </Themed.ul>
+      </Cards>
     </div>
   )
 }
