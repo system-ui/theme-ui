@@ -47,7 +47,7 @@ Technically Babel also calls `jsxs` from `react/jsx-runtime` and `jsxDEV` from
 
 To change the underlying create element functions, you can either add an option
 to the Babel plugin or you can set a _pragma comment_ at the beginning of a
-module. Changing the function import source in the Babel plugin will transform
+module. Changing the function import source in Babel config will transform
 all JSX in an application into the same set of functions. Using a pragma comment
 limits the change to only the modules that it's added to. This lets you default
 to the React `jsx` function in most places and use custom functions only where
