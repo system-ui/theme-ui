@@ -1,6 +1,14 @@
 module.exports = {
   presets: [
-    [require.resolve('@babel/preset-env'), { loose: true }],
+    [
+      '@babel/preset-env',
+      {
+        bugfixes: true,
+        loose: true,
+        modules: false,
+        targets: '> 0.25%, not dead, not ie 11',
+      },
+    ],
     '@babel/react',
     '@babel/preset-typescript',
   ],
