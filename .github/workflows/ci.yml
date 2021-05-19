@@ -36,6 +36,7 @@ jobs:
         run: yarn codechecks
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
+        if: ${{ env.CC_SECRET != '' }}
 
   release:
     runs-on: ubuntu-latest
