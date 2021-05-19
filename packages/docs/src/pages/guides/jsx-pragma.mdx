@@ -9,10 +9,11 @@ to style elements with values from your theme using the [`sx` prop][].
 
 ## What is JSX
 
-[JSX](https://facebook.github.io/jsx/) is an XML-like syntax extension to JavaScript. It's a syntax sugar usually
-used for [React's `jsx`](https://reactjs.org/docs/introducing-jsx.html) function. You don't need to write JSX to use React, but
-it's meant to make code more readable, especially for tree structures with
-attributes.
+[JSX](https://facebook.github.io/jsx/) is an XML-like syntax extension to
+JavaScript. It's a syntax sugar usually used for
+[React's `jsx`](https://reactjs.org/docs/introducing-jsx.html) function. You
+don't need to write JSX to use React, but it's meant to make code more readable,
+especially for tree structures with attributes.
 
 Given the following JSX:
 
@@ -47,8 +48,8 @@ Technically Babel also calls `jsxs` from `react/jsx-runtime` and `jsxDEV` from
 
 To change the underlying create element functions, you can either add an option
 to the Babel plugin or you can set a _pragma comment_ at the beginning of a
-module. Changing the function import source in Babel config will transform
-all JSX in an application into the same set of functions. Using a pragma comment
+module. Changing the function import source in Babel config will transform all
+JSX in an application into the same set of functions. Using a pragma comment
 limits the change to only the modules that it's added to. This lets you default
 to the React `jsx` function in most places and use custom functions only where
 you need it, giving the author more control over where it's used.
@@ -144,23 +145,6 @@ typecheck), or for instance to run tests with `ts-jest`
 NOTE: this requires
 [TypeScript >= 4.1](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#react-17-jsx-factories)
 
-NOTE: in order to typecheck `sx` using automatic runtime, you will also need to
-add `sx` manually to React types:
-
-```ts
-// To add `css` if you're using it somewhere
-/// <reference types="@emotion/react/types/css-prop" />
-
-import {} from 'react'
-import { ThemeUIStyleObject } from 'theme-ui' // or '@theme-ui/core'
-
-declare module 'react' {
-  interface Attributes {
-    sx?: ThemeUIStyleObject
-  }
-}
-```
-
 ### Using next.js
 
 ```js
@@ -182,4 +166,5 @@ module.exports = {
 }
 ```
 
-You can read more about [customizing Babel config in Next.js docs](https://nextjs.org/docs/advanced-features/customizing-babel-config).
+You can read more about
+[customizing Babel config in Next.js docs](https://nextjs.org/docs/advanced-features/customizing-babel-config).
