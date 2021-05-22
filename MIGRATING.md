@@ -1,5 +1,18 @@
 # Migration Guides
 
+## v0.9
+
+All Theme UI package became on average 34% lighter! 🪶 It's 9.5kB if you sum all
+of them!
+
+The trade-off is, Babel config has changed and it no longer supports Internet
+Explorer 11. If you need to support legacy browsers, you can transpile
+node_modules (e.g. with
+[next-transpile-modules](https://github.com/martpie/next-transpile-modules)).
+
+- [See build raport with size comparison for each package.](https://github.com/system-ui/theme-ui/runs/2618450614)
+- [See updated Babel config.](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+
 ## v0.8
 
 **Theme configuration options were moved to `theme.config` object.**
