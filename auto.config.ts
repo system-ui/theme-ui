@@ -1,6 +1,7 @@
 import { AutoRc } from '@auto-it/core'
 import { INpmConfig } from '@auto-it/npm'
 import { IAllContributorsPluginOptions } from '@auto-it/all-contributors'
+import { IOmitCommitsPluginOptions } from '@auto-it/omit-commits'
 
 const npmOptions: INpmConfig = {
   exact: true,
@@ -31,6 +32,10 @@ const allContributorsOptions: IAllContributorsPluginOptions = {
   },
 }
 
+const omitCommitsOptions: IOmitCommitsPluginOptions = {
+  subject: ['Merge branch', 'chore(deps):', 'chore(deps-dev):'],
+}
+
 export default function config(): AutoRc {
   return {
     baseBranch: 'stable',
@@ -41,6 +46,7 @@ export default function config(): AutoRc {
       'first-time-contributor',
       'released',
       ['all-contributors', allContributorsOptions],
+      ['omit-commits', omitCommitsOptions],
       // 'magic-zero',
     ],
   }

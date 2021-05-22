@@ -29,6 +29,7 @@
     "@auto-it/conventional-commits": "^10.25.0",
     "@auto-it/first-time-contributor": "^10.25.0",
     "@auto-it/magic-zero": "^10.25.0",
+    "@auto-it/omit-commits": "^10.29.0",
     "@auto-it/released": "^10.25.0",
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.15",
