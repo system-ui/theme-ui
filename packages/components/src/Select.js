@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { get } from '@theme-ui/css'
+
 import Box from './Box'
 import SVG from './SVG'
 import { getMargin, omitMargin } from './util'
@@ -35,7 +38,7 @@ export const Select = React.forwardRef(function Select(
           border: '1px solid',
           borderRadius: 4,
           color: 'inherit',
-          bg: 'transparent',
+          backgroundColor: (theme) => get(theme, 'colors.background', null),
         }}
       />
       {arrow || (

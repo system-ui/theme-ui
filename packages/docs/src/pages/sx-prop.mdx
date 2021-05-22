@@ -55,8 +55,8 @@ The following CSS properties will use values defined in the theme, when availabl
 | `bg`, `backgroundColor`   | `colors`         |
 | `borderColor`             | `colors`         |
 | `caretColor`              | `colors`         |
-| `columnRuleColor`         | `colors`         |
 | `outlineColor`            | `colors`         |
+| `textDecorationColor`     | `colors`         |
 | `opacity`                 | `opacities`      |
 | `transition`              | `transitions`    |
 | `m`, `margin`             | `space`          |
@@ -73,6 +73,13 @@ The following CSS properties will use values defined in the theme, when availabl
 | `pl`, `paddingLeft`       | `space`          |
 | `px`, `paddingX`          | `space`          |
 | `py`, `paddingY`          | `space`          |
+| `scrollMargin`            | `space`          |
+| `scrollMarginTop`         | `space`          |
+| `scrollMarginRight`       | `space`          |
+| `scrollMarginBottom`      | `space`          |
+| `scrollMarginLeft`        | `space`          |
+| `scrollMarginX`           | `space`          |
+| `scrollMarginY`           | `space`          |
 | `scrollPadding`           | `space`          |
 | `scrollPaddingTop`        | `space`          |
 | `scrollPaddingRight`      | `space`          |
@@ -114,12 +121,15 @@ The following CSS properties will use values defined in the theme, when availabl
 | `borderRightWidth`        | `borderWidths`   |
 | `borderRightColor`        | `colors`         |
 | `borderRightStyle`        | `borderStyles`   |
+| `columnRuleColor`         | `colors`         |
+| `columnRuleWidth`         | `borderWidths`   |
 | `boxShadow`               | `shadows`        |
 | `textShadow`              | `shadows`        |
 | `zIndex`                  | `zIndices`       |
 | `width`                   | `sizes`          |
 | `minWidth`                | `sizes`          |
 | `maxWidth`                | `sizes`          |
+| `columnWidth`             | `sizes`          |
 | `height`                  | `sizes`          |
 | `minHeight`               | `sizes`          |
 | `maxHeight`               | `sizes`          |
@@ -161,10 +171,13 @@ which follow this structure:
 | `insetInlineEnd`         | `space`        |
 | `insetInlineStart`       | `space`        |
 | `borderBlock`            | `borders`      |
+| `borderBlockColor`       | `colors`       |
 | `borderBlockEnd`         | `borders`      |
+| `borderBlockEndColor`    | `colors`       |
 | `borderBlockEndStyle`    | `borderStyles` |
 | `borderBlockEndWidth`    | `borderWidths` |
 | `borderBlockStart`       | `borders`      |
+| `borderBlockStartColor`  | `colors`       |
 | `borderBlockStartStyle`  | `borderStyles` |
 | `borderBlockStartWidth`  | `borderWidths` |
 | `borderBlockStyle`       | `borderStyles` |
@@ -172,10 +185,13 @@ which follow this structure:
 | `borderEndEndRadius`     | `radii`        |
 | `borderEndStartRadius`   | `radii`        |
 | `borderInline`           | `borders`      |
+| `borderInlineColor`      | `colors`       |
 | `borderInlineEnd`        | `borders`      |
+| `borderInlineEndColor`   | `colors`       |
 | `borderInlineEndStyle`   | `borderStyles` |
 | `borderInlineEndWidth`   | `borderWidths` |
 | `borderInlineStart`      | `borders`      |
+| `borderInlineStartColor` | `colors`       |
 | `borderInlineStartStyle` | `borderStyles` |
 | `borderInlineStartWidth` | `borderWidths` |
 | `borderInlineStyle`      | `borderStyles` |

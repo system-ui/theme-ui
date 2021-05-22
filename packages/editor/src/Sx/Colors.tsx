@@ -1,14 +1,12 @@
 /** @jsx jsx */
-import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
-import { ColorState } from 'react-color'
-import { jsx, Theme } from 'theme-ui'
-import ThemeColorPicker from './ThemeColorPicker'
+import { jsx, Theme, ThemeUICSSProperties } from 'theme-ui'
+import { ThemeColorPicker } from './ThemeColorPicker'
 
-type Color = string | ColorState
+type Color = string
 type OnChangeArg = { color: Color } | { bg: Color }
 
 export interface ColorsProps {
-  value?: Pick<ThemeUIExtendedCSSProperties, 'color' | 'bg'>
+  value?: Pick<ThemeUICSSProperties, 'color' | 'bg'>
   theme?: Theme
   onChange: (arg: OnChangeArg) => void
 }
@@ -35,7 +33,7 @@ export const Colors = ({
           theme={theme}
           value={color || ''}
           onChange={(color) => {
-            onChange({ color })
+            onChange({ color: color as string })
           }}
         />
         <div sx={{ fontWeight: 'bold', ml: 2 }}>Color</div>
@@ -49,7 +47,7 @@ export const Colors = ({
           theme={theme}
           value={bg || ''}
           onChange={(bg) => {
-            onChange({ bg })
+            onChange({ bg: bg as string })
           }}
         />
         <div sx={{ fontWeight: 'bold', ml: 2 }}>Background Color</div>
@@ -57,5 +55,3 @@ export const Colors = ({
     </div>
   )
 }
-
-export default Colors

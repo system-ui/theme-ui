@@ -6,12 +6,13 @@ import type { ScaleProperty } from './scales-utility-types'
 export const colors: Record<keyof ColorScaleCSSProperties, 'colors'> = {
   color: 'colors',
   backgroundColor: 'colors',
-  borderColor: 'colors',
   caretColor: 'colors',
+  textDecorationColor: 'colors',
 
   fill: 'colors',
   stroke: 'colors',
 
+  borderColor: 'colors',
   borderTopColor: 'colors',
   borderBottomColor: 'colors',
   borderLeftColor: 'colors',
@@ -56,19 +57,6 @@ export interface ColorScaleCSSProperties {
   backgroundColor?: Color | Globals
 
   /**
-   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
-   *
-   * **Syntax**: `<color>{1,4}`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
-   */
-  borderColor?: Color | Globals
-
-  /**
    * The **`caret-color`** CSS property sets the color of the insertion caret, the visible marker where the next character typed will be inserted. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
    *
    * **Syntax**: `auto | <color>`
@@ -82,6 +70,36 @@ export interface ColorScaleCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
    */
   caretColor?: Color | Globals
+
+  /**
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
+   *
+   * **Syntax**: `<color>`
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **36**  | **12.1** | **79** | No  |
+   * |        |         | 8 _-x-_  |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-color
+   */
+  textDecorationColor?: Color | Globals
+
+  /**
+   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
+   *
+   * **Syntax**: `<color>{1,4}`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
+   */
+  borderColor?: Color | Globals
+
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *

@@ -7,11 +7,11 @@ import { renderJSON } from '@theme-ui/test-utils'
 
 import {
   ThemeProvider,
-  Context,
   jsx,
   useColorMode,
   BaseStyles,
   Theme,
+  __ThemeUIContext,
 } from '../src/index'
 
 expect.extend(matchers)
@@ -62,8 +62,8 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
-  const Beep = (props) => <h2 {...props} />
-  const Inner = (props) => mdx('Beep', props)
+  const Beep = (props: {}) => <h2 {...props} />
+  const Inner = (props: {}) => mdx('Beep', props)
 
   const json = renderJSON(
     <ThemeProvider
@@ -104,13 +104,13 @@ test('custom pragma adds styles', () => {
 test('warns when multiple versions of emotion are installed', () => {
   const restore = mockConsole()
   const json = renderJSON(
-    <Context.Provider
+    <__ThemeUIContext.Provider
       value={{
         __EMOTION_VERSION__: '9.0.0',
         theme: {},
       }}>
       <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
-    </Context.Provider>
+    </__ThemeUIContext.Provider>
   )
   expect(console.warn).toBeCalled()
   restore()
@@ -118,7 +118,9 @@ test('warns when multiple versions of emotion are installed', () => {
 
 test('functional themes receive outer theme', () => {
   const outer = {
-    useCustomProperties: false,
+    config: {
+      useCustomProperties: false,
+    },
     colors: {
       text: 'tomato',
       background: 'white',
@@ -153,7 +155,9 @@ test('functional themes can be used at the top level', () => {
         ThemeProvider,
         {
           theme: (_): Theme => ({
-            useCustomProperties: false,
+            config: {
+              useCustomProperties: false,
+            },
             colors: {
               primary: 'tomato',
               background: 'white',

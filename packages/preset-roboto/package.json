@@ -1,19 +1,15 @@
 {
   "name": "@theme-ui/preset-roboto",
-  "version": "0.6.0-canary.c5a716a.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "version": "0.8.4",
+  "main": "dist/theme-ui-preset-roboto.cjs.js",
+  "module": "dist/theme-ui-preset-roboto.esm.js",
+  "types": "dist/theme-ui-preset-roboto.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
-    "@theme-ui/preset-base": "0.6.0-canary.c5a716a.0"
+    "@theme-ui/preset-base": "0.8.4"
   },
   "publishConfig": {
     "access": "public"

@@ -21,15 +21,19 @@ Install dependencies and link local packages in the root directory:
 yarn
 ```
 
-After yarn has linked packages and installed dependencies in the repo you can run the docs or an
-example site in the workspace with this command:
+In `postinstall` script running after dependencies install, [Preconstruct][] links source files to dist directories.
+
+Depending on the part of the codebase you're working on, you'll want to run tests or docs development server.
+
+## Working on the docs
+
+The docs are using Gatsby. To start development server run
 
 ```sh
-yarn start <name-of-package>
+yarn workspace docs start
 ```
 
-Where name of package is something like `docs` or `gatsby-theme-ui-example` (one of the packages
-listed by yarn when you run the `yarn workspaces info` command)
+Changes to libraries will immediately hot reload the docs.
 
 ## Tests
 
@@ -47,6 +51,12 @@ Running tests in watch mode:
 yarn test --watch
 ```
 
+You can specify what tests to run by passing test path pattern as the first positional argument and test name pattern after `-t` flag.
+
+```sh
+yarn test core/test/react-jsx -t 'accepts sx prop'
+```
+
 ## Pull Requests
 
 When opening a pull request, please be sure to update any relevant documentation in the READMEs or in the `packages/docs` directory.
@@ -56,3 +66,4 @@ Also include a high-level list of changes in the [CHANGELOG.md](CHANGELOG.md) fi
 [yarn workspaces]: https://yarnpkg.com/en/docs/workspaces
 [lerna]: https://github.com/lerna/lerna
 [jest]: https://jestjs.io/
+[preconstruct]: https://preconstruct.tools/guides/using-preconstruct-dev-in-a-monorepo

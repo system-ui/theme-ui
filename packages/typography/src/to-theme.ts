@@ -8,7 +8,7 @@ import { Merge } from 'type-fest'
 
 import styles from './styles'
 
-declare module '@theme-ui/css/dist/types' {
+declare module '@theme-ui/css' {
   interface Theme {
     typography?: ThemeTypographyRhythm
   }

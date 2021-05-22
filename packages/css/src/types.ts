@@ -3,7 +3,7 @@ import type { AliasesCSSProperties } from './aliases'
 import type { ScalesCSSProperties } from './scales'
 import type { MultiplesCSSProperties } from './multiples'
 
-import type {} from '../emotion-theme'
+import type { ThemeUIConfig } from './options'
 
 export type { CSSObject } from '@emotion/react'
 
@@ -228,7 +228,7 @@ export interface ColorMode extends ScaleDict<ColorMode.ColorValue> {
 export type ColorModesScale = ColorMode & {
   /**
    * Nested color modes can provide overrides when used in conjunction with
-   * `Theme.initialColorModeName and `useColorMode()`
+   * `Theme.initialColorModeName` and `useColorMode()`
    */
   modes?: {
     [k: string]: ColorMode
@@ -289,7 +289,11 @@ export interface BaseTheme {
   opacities?: Scale<CSS.Property.Opacity>
   transitions?: Scale<CSS.Property.Transition>
 
+  config?: ThemeUIConfig
+
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
    *
@@ -298,38 +302,43 @@ export interface BaseTheme {
   useCustomProperties?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Provide a value here to enable color modes
    */
   initialColorModeName?: string
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Provide a value here to set a color mode for printing
    */
   printColorModeName?: string
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
    */
   useRootStyles?: boolean
 
   /**
-   * @deprecated Deprecated in favor of `useRootStyles`.
+   * @deprecated Deprecated in favor of nesting inside `config`
    *
-   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
-   */
-  useBodyStyles?: boolean
-
-  /**
    * Initializes the color mode based on the prefers-color-scheme media query
    */
   useColorSchemeMediaQuery?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Adds a global box-sizing: border-box style
    */
   useBorderBox?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * If false, does not save color mode as a localStorage value.
    */
   useLocalStorage?: boolean
@@ -352,6 +361,16 @@ export interface BaseTheme {
    * Define the colors that are available through this theme
    */
   colors?: ColorModesScale
+
+  /**
+   * Colors are transformed into CSS custom properties.
+   *
+   * If you need to read their raw values to pass them somewhere where CSS
+   * custom properties are not supported, use `rawColors`.
+   *
+   * Additionally, you can access all the color modes in this objects.
+   */
+  rawColors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles

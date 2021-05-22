@@ -10,6 +10,8 @@ export const spaceScaleMultiples = {
   paddingY: ['paddingTop', 'paddingBottom'],
   scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
   scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
+  scrollMarginX: ['scrollMarginLeft', 'scrollMarginRight'],
+  scrollMarginY: ['scrollMarginTop', 'scrollMarginBottom'],
 }
 type SpaceScaleKeys = keyof SpaceCSSProperties | keyof SpaceScaleMultiples
 

@@ -121,8 +121,12 @@ test('grayscale', () => {
 
 const themeCustomProps = {
   colors: {
-    primary: 'var(--theme-ui-colors-primary, #0cf)',
-    secondary: 'var(--theme-ui-colors-primary, #639)',
+    primary: 'var(--theme-ui-colors-primary)',
+    secondary: 'var(--theme-ui-colors-primary)',
+  },
+  rawColors: {
+    primary: '#0cf',
+    secondary: '#639',
   },
 } as Theme
 
@@ -201,44 +205,50 @@ test('grayscaleCustomProps', () => {
   expect(n).toBe('#808080')
 })
 
-const themeTomato = {
+const themeTomato: Theme = {
   colors: {
     primary: 'tomato',
   },
-} as Theme
+}
 
 test('darkenTomato', () => {
   const n = darken('primary', 0.25)(themeTomato)
   expect(n).toBe('#c61e00')
 })
 
-const themeTomatoCustomProps = {
+const themeTomatoCustomProps: Theme = {
   colors: {
-    primary: 'var(--theme-ui-colors-primary, tomato)',
+    primary: 'var(--theme-ui-colors-primary)',
   },
-} as Theme
+  rawColors: {
+    primary: 'tomato',
+  },
+}
 
 test('darkenTomatoCustomProps', () => {
   const n = darken('primary', 0.25)(themeTomatoCustomProps)
   expect(n).toBe('#c61e00')
 })
 
-const themeRgba = {
+const themeRgba: Theme = {
   colors: {
     primary: 'rgba(255, 0, 0, .5)',
   },
-} as Theme
+}
 
 test('alphaRgba', () => {
   const n = alpha('primary', 0.25)(themeRgba)
   expect(n).toBe('rgba(255,0,0,0.25)')
 })
 
-const themeRgbaCustomProps = {
+const themeRgbaCustomProps: Theme = {
   colors: {
-    primary: 'var(--theme-ui-colors-primary, rgba(255, 0, 0, .5))',
+    primary: 'var(--theme-ui-colors-primary)',
   },
-} as Theme
+  rawColors: {
+    primary: 'rgba(255, 0, 0, .5)',
+  },
+}
 
 test('alphaRgbaCustomProps', () => {
   const n = alpha('primary', 0.25)(themeRgbaCustomProps)
@@ -274,15 +284,19 @@ describe('colors inside ThemeProvider', () => {
       },
     }
 
-    type MyTheme = typeof theme
+    type MyTheme = typeof theme & { rawColors: typeof theme.colors }
 
     const tree = render(
       <ThemeProvider theme={theme}>
         <button
           sx={{
-            color: (theme) =>
+            color: (theme) => {
               // When read from Emotion theme, colors are CSS custom properties.
-              saturate((theme as MyTheme).colors.secondary.light, 0.1)(theme),
+              return saturate(
+                (theme as MyTheme).rawColors.secondary.light,
+                0.1
+              )(theme)
+            },
           }}>
           Click me
         </button>
@@ -302,20 +316,20 @@ describe('colors inside ThemeProvider', () => {
       },
     }
 
-    type MyTheme = typeof theme
+    type MyTheme = typeof theme & { rawColors: typeof theme.colors }
 
     const tree = render(
       <ThemeProvider theme={theme}>
         <button
           sx={{
-            color: (theme) => lighten(theme.colors.blue, 0.1)(theme),
+            color: (theme) => lighten(theme.rawColors?.blue, 0.1)(theme),
           }}>
           Click me
         </button>
         <p
           sx={{
             color: (theme) =>
-              lighten((theme as MyTheme).colors.blue.__default, 0.1)(theme),
+              lighten((theme as MyTheme).rawColors.blue.__default, 0.1)(theme),
           }}>
           Hello
         </p>

@@ -1,9 +1,7 @@
-import { css, get, Theme, __internalGetUseRootStyles } from '@theme-ui/css'
+import { css, Theme } from '@theme-ui/css'
 
-const stripKeyDefault = (key: string) => key.replace('-__default', '')
-const toVarName = (key: string) => `--theme-ui-${stripKeyDefault(key)}`
-const toVarValue = (key: string, value: string | number) =>
-  `var(${toVarName(key)}, ${value})`
+const toVarName = (key: string) => `--theme-ui-${key.replace('-__default', '')}`
+const toVarValue = (key: string) => `var(${toVarName(key)})`
 
 const join = (...args: (string | undefined)[]) => args.filter(Boolean).join('-')
 
@@ -45,7 +43,7 @@ export const toCustomProperties = (
       continue
     }
     const val = toPixel(themeKey || key, value)
-    next[key] = toVarValue(name, val)
+    next[key] = toVarValue(name)
   }
 
   return next
@@ -71,24 +69,31 @@ export const objectToVars = (parent: string, obj: Record<string, any>) => {
 
 // create root styles for color modes
 export const createColorStyles = (theme: Theme = {}) => {
-  const use = __internalGetUseRootStyles(theme)
-  if (!theme.colors || use.rootStyles === false) return {}
-  if (theme.useCustomProperties === false || !theme.colors.modes) {
+  const {
+    useCustomProperties,
+    initialColorModeName,
+    printColorModeName,
+    useRootStyles,
+  } = theme.config || theme || {}
+  const colors = theme.rawColors || theme.colors
+
+  if (!colors || useRootStyles === false) return {}
+  if (useCustomProperties === false) {
     return css({
-      [use.scope]: {
+      html: {
         color: 'text',
         bg: 'background',
       },
     })(theme)
   }
-  const { colors, initialColorModeName, printColorModeName } = theme
+
   const modes = colors.modes || {}
   const styles = objectToVars('colors', colors)
-
   Object.keys(modes).forEach((mode) => {
     const key = `&.theme-ui-${mode}`
     styles[key] = objectToVars('colors', modes[mode])
   })
+
   if (printColorModeName) {
     const mode =
       printColorModeName === 'initial' ||
@@ -97,11 +102,10 @@ export const createColorStyles = (theme: Theme = {}) => {
         : modes[printColorModeName]
     styles['@media print'] = objectToVars('colors', mode)
   }
-  const colorToVarValue = (color: string) =>
-    toVarValue(`colors-${color}`, get(theme, `colors.${color}`))
+  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`)
 
   return css({
-    [use.scope]: {
+    html: {
       ...styles,
       color: colorToVarValue('text'),
       bg: colorToVarValue('background'),

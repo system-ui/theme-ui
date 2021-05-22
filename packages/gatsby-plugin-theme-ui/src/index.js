@@ -1,2 +1,4 @@
 // add colors, fonts, fontSizes, space, etc
-export default {}
+const theme = {}
+
+export default theme

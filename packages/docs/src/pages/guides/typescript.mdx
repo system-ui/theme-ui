@@ -45,9 +45,9 @@ const lightBlue = theme.colors.blue.light
 You can then reexport `useThemeUI` hook with narrowed type.
 
 ```tsx
-import { ContextValue } from 'theme-ui'
+import { ThemeUIContextValue } from 'theme-ui'
 
-interface ExactContextValue extends Omit<ContextValue, 'theme'> {
+interface ExactContextValue extends Omit<ThemeUIContextValue, 'theme'> {
   theme: ExactTheme
 }
 

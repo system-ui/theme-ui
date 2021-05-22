@@ -2,6 +2,7 @@
 import { jsx, Theme } from 'theme-ui'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
+
 import Combobox from '../Combobox'
 
 type TypographyPropsValue = {
@@ -24,7 +25,7 @@ export interface TypographyProps {
   onChange: (arg: OnChangeArg) => void
 }
 
-export const SxTypography = ({
+export const Typography = ({
   tag,
   value: { fontFamily, fontSize, fontWeight, lineHeight } = {},
   theme: {
@@ -59,7 +60,7 @@ export const SxTypography = ({
           label="Font Size"
           value={fontSize || ''}
           type="number"
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const fontSize = Number(e.target.value)
             onChange({ fontSize })
           }}
@@ -86,5 +87,3 @@ export const SxTypography = ({
     </Fragment>
   )
 }
-
-export default SxTypography

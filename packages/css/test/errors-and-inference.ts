@@ -75,7 +75,7 @@ describe('Theme', () => {
 
       declare module 'theme-ui' {
         interface Theme {
-          syntaxHighlighting: MySyntaxHighlightingTheme
+          syntaxHighlighting?: MySyntaxHighlightingTheme
         }
       }
 
@@ -85,7 +85,7 @@ describe('Theme', () => {
         },
       }
 
-      const syntaxHighlighting = theme.syntaxHighlighting
+      const syntaxHighlighting = theme.syntaxHighlighting!
     `).toInfer('syntaxHighlighting', 'MySyntaxHighlightingTheme')
   })
 

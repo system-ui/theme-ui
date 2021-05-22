@@ -15,7 +15,7 @@ import {
 import Select from './select'
 import Lorem from './lorem.mdx'
 
-export default () => {
+export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
   const preset = presets[theme]
 

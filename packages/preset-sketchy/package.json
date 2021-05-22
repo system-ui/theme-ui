@@ -1,22 +1,18 @@
 {
   "name": "@theme-ui/preset-sketchy",
-  "version": "0.6.0-canary.c5a716a.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "version": "0.8.4",
+  "main": "dist/theme-ui-preset-sketchy.cjs.js",
+  "module": "dist/theme-ui-preset-sketchy.esm.js",
+  "types": "dist/theme-ui-preset-sketchy.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Aleksandra Sikora",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.6.0-canary.c5a716a.0"
+    "@theme-ui/css": "0.8.4"
   },
   "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }

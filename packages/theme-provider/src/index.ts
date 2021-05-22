@@ -3,8 +3,6 @@ import {
   useThemeUI,
   ThemeProvider as CoreProvider,
   ThemeProviderProps as CoreThemeProviderProps,
-  IntrinsicSxElements,
-  __internalGetUseRootStyles,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
@@ -15,21 +13,25 @@ const RootStyles = () =>
   jsx(Global, {
     styles: (emotionTheme) => {
       const theme = emotionTheme as Theme
-      const use = __internalGetUseRootStyles(theme)
+      const { useRootStyles } = theme.config || theme
 
-      if (use.rootStyles === false || (theme.styles && !theme.styles.root)) {
-        return false
+      if (useRootStyles === false || (theme.styles && !theme.styles.root)) {
+        return null
       }
-      const boxSizing = theme.useBorderBox === false ? undefined : 'border-box'
+
+      const boxSizing =
+        theme.config?.useBorderBox === false ? undefined : 'border-box'
 
       return css({
         '*': {
           boxSizing,
         },
-        [use.scope]: {
-          margin: 0,
+        html: {
           variant: 'styles.root',
         },
+        body: {
+          margin: 0,
+        }
       })(theme)
     },
   })

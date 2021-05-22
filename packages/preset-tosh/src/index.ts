@@ -5,8 +5,10 @@ const heading = {
 }
 
 export const tosh = {
-  useCustomProperties: true,
-  initialColorMode: 'light',
+  config: {
+    useCustomProperties: true,
+    initialColorMode: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',

@@ -7,7 +7,7 @@
     "packages/theme-ui/README.md"
   ],
   "imageSize": 63,
-  "contributorsPerLine": 11,
+  "contributorsPerLine": 8,
   "commit": true,
   "commitConvention": "angular",
   "contributors": [
@@ -132,7 +132,8 @@
       "contributions": [
         "code",
         "bug",
-        "doc"
+        "doc",
+        "example"
       ]
     },
     {
@@ -162,7 +163,8 @@
       "contributions": [
         "code",
         "bug",
-        "test"
+        "test",
+        "doc"
       ]
     },
     {
@@ -1043,6 +1045,38 @@
       "contributions": [
         "code",
         "bug"
+      ]
+    },
+    {
+      "login": "carolinmaisenbacher",
+      "name": "Carolin Maisenbacher",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32734844?v=4",
+      "profile": "https://github.com/carolinmaisenbacher",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "alexanderchan",
+      "name": "Alex Chan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1864372?v=4",
+      "profile": "https://twitter.com/alexandermchan",
+      "contributions": [
+        "doc",
+        "example",
+        "test",
+        "code"
+      ]
+    },
+    {
+      "login": "kenny-f",
+      "name": "Kenny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1841819?v=4",
+      "profile": "https://github.com/kenny-f",
+      "contributions": [
+        "code"
       ]
     }
   ]

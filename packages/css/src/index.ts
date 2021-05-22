@@ -16,7 +16,6 @@ export type { Scales } from './scales'
 
 export * from './types'
 export * from './exact-theme'
-export { __internalGetUseRootStyles } from './options'
 
 /**
  * Allows for nested scales with shorthand values
@@ -94,6 +93,9 @@ const positiveOrNegative = (scale: object, value: string | number) => {
     if (typeof value === 'string' && value.startsWith('-')) {
       const valueWithoutMinus = value.substring(1)
       const n = get(scale, valueWithoutMinus, valueWithoutMinus)
+      if (typeof n === 'number') {
+        return n * -1
+      }
       return `-${n}`
     }
     return get(scale, value, value)
@@ -152,7 +154,9 @@ function responsive(
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
     null,
-    ...breakpoints.map((n) => `@media screen and (min-width: ${n})`),
+    ...breakpoints.map((n) =>
+      n.includes('@media') ? n : `@media screen and (min-width: ${n})`
+    ),
   ]
 
   for (const k in styles) {

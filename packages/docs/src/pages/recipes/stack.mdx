@@ -1,0 +1,36 @@
+---
+name: 'Stack'
+---
+
+# Stack Layout
+
+Add vertical space between child elements using CSS Grid.
+
+```jsx live xray
+<div
+  sx={{
+    display: 'grid',
+    gridGap: 4,
+  }}>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+</div>
+```
+
+```jsx
+/** @jsxImportSource theme-ui */
+
+export default function Stack({ gap = 4, ...props }) => (
+  <div
+    {...props}
+    sx={{
+      display: 'grid',
+      gridGap: gap,
+    }}
+  />
+)
+```
+
+See also: [Grid component](/components/grid)

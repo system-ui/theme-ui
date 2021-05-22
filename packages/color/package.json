@@ -1,16 +1,13 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.6.0-canary.c5a716a.0",
+  "version": "0.8.4",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
-  },
+  "main": "dist/theme-ui-color.cjs.js",
+  "module": "dist/theme-ui-color.esm.js",
+  "types": "dist/theme-ui-color.cjs.d.ts",
+  "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.6.0-canary.c5a716a.0",
+    "@theme-ui/css": "0.8.4",
     "polished": "^4.0.5"
   },
   "publishConfig": {

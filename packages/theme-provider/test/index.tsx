@@ -24,7 +24,9 @@ test('renders with theme', () => {
   const json = renderJSON(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           primary: 'tomato',
           background: 'white',
@@ -41,7 +43,9 @@ test('renders with styles', () => {
   const json = renderJSON(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         styles: {
           h1: {
             color: 'tomato',
@@ -59,7 +63,9 @@ test('renders with nested provider', () => {
   const json = renderJSON(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         styles: {
           h1: {
             color: 'tomato',
@@ -90,7 +96,9 @@ test('renders with custom components', () => {
         h1,
       }}
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         styles: {
           h1: {
             color: 'tomato',
@@ -128,7 +136,8 @@ test('renders global styles', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('Georgia,serif')
   expect(style.fontWeight).toBe('500')
   expect(style.lineHeight).toBe('1.5')
@@ -150,17 +159,19 @@ test('does not render invalid global styles', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('')
   expect(style.fontWeight).toBe('')
   expect(style.lineHeight).toBe('')
 })
 
-test('does not renders global styles', () => {
+test('does not render global styles', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useBodyStyles: false,
+        config: {
+          useRootStyles: false,
+        },
         fonts: {
           body: 'Georgia,serif',
         },
@@ -203,7 +214,9 @@ test('does not add box-sizing: border-box', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useBorderBox: false,
+        config: {
+          useBorderBox: false,
+        },
       }}>
       <h1>Hello</h1>
     </ThemeProvider>

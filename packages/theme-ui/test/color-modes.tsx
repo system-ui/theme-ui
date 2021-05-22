@@ -7,7 +7,7 @@ import mockConsole, { RestoreConsole } from 'jest-mock-console'
 import packageInfo from '@emotion/react/package.json'
 
 import {
-  ContextValue,
+  ThemeUIContextValue,
   jsx,
   Theme,
   ThemeProvider,
@@ -17,6 +17,8 @@ import {
 
 const emotionVersion = packageInfo.version
 const STORAGE_KEY = 'theme-ui-color-mode'
+
+const defaultColorMode = undefined
 
 expect.extend(matchers)
 
@@ -33,29 +35,37 @@ afterEach(() => {
 
 test('renders with color modes', () => {
   let mode: string | undefined
+  let rendered:
+    | renderer.ReactTestRendererJSON
+    | renderer.ReactTestRendererJSON[]
+    | null = null
+
   const Mode = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
     return <div>Mode</div>
   }
   renderer.act(() => {
-    renderer.create(
-      <ThemeProvider
-        theme={{
-          colors: {
-            text: 'black',
-            modes: {
-              dark: {
-                text: 'white',
+    rendered = renderer
+      .create(
+        <ThemeProvider
+          theme={{
+            colors: {
+              text: 'black',
+              modes: {
+                dark: {
+                  text: 'white',
+                },
               },
             },
-          },
-        }}>
-        <Mode />
-      </ThemeProvider>
-    )
+          }}>
+          <Mode />
+        </ThemeProvider>
+      )
+      .toJSON()
   })
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
+  expect(rendered).toBe(null)
 })
 
 test('renders with initial color mode name', () => {
@@ -69,7 +79,9 @@ test('renders with initial color mode name', () => {
     renderer.create(
       <ThemeProvider
         theme={{
-          initialColorModeName: 'light',
+          config: {
+            initialColorModeName: 'light',
+          },
           colors: {
             modes: {
               dark: {},
@@ -127,7 +139,9 @@ test('color mode is passed through theme context', () => {
   const tree = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: '#000',
           modes: {
@@ -172,7 +186,7 @@ test('converts color modes to css custom properties', () => {
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
-    'var(--theme-ui-colors-text, #000)'
+    'var(--theme-ui-colors-text)'
   )
 })
 
@@ -188,7 +202,7 @@ test('uses default mode', () => {
       <Button />
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
 })
 
 test('initializes mode based on localStorage', () => {
@@ -217,7 +231,9 @@ test('inherits color mode state from parent context', () => {
   render(
     <ThemeProvider
       theme={{
-        initialColorModeName: 'outer',
+        config: {
+          initialColorModeName: 'outer',
+        },
         colors: {
           modes: {
             dark: {},
@@ -226,7 +242,9 @@ test('inherits color mode state from parent context', () => {
       }}>
       <ThemeProvider
         theme={{
-          initialColorModeName: 'inner',
+          config: {
+            initialColorModeName: 'inner',
+          },
         }}>
         <Consumer />
       </ThemeProvider>
@@ -236,7 +254,7 @@ test('inherits color mode state from parent context', () => {
 })
 
 test('retains initial context', () => {
-  let context: ContextValue | undefined
+  let context: ThemeUIContextValue | undefined
   const Consumer = () => {
     context = useThemeUI()
     return null
@@ -267,7 +285,9 @@ test('initializes mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <Consumer />
     </ThemeProvider>
@@ -291,12 +311,14 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: true,
+        config: {
+          useColorSchemeMediaQuery: true,
+        },
       }}>
       <Consumer />
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
 })
 
 test('does not initialize mode from prefers-color-scheme media query when useColorSchemeMediaQuery is set to `false`', () => {
@@ -316,12 +338,14 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
   render(
     <ThemeProvider
       theme={{
-        useColorSchemeMediaQuery: false,
+        config: {
+          useColorSchemeMediaQuery: false,
+        },
       }}>
       <Consumer />
     </ThemeProvider>
   )
-  expect(mode).toBe('default')
+  expect(mode).toBe(defaultColorMode)
 })
 
 test('useColorMode throws when there is no theme context', () => {
@@ -346,7 +370,9 @@ test('useThemeUI returns current color mode colors', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           text: 'tomato',
           background: 'black',
@@ -369,7 +395,9 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
   const root = render(
     <ThemeProvider
       theme={{
-        initialColorModeName: 'dark',
+        config: {
+          initialColorModeName: 'dark',
+        },
         colors: {
           text: '#000',
           background: '#fff',
@@ -404,7 +432,9 @@ test('dot notation works with color modes', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           header: {
             title: 'blue',
@@ -462,10 +492,7 @@ test('dot notation works with color modes and custom properties', () => {
   )
   const button = root.getByText('test')
   button.click()
-  expect(button).toHaveStyleRule(
-    'color',
-    'var(--theme-ui-colors-header-title, tomato)'
-  )
+  expect(button).toHaveStyleRule('color', 'var(--theme-ui-colors-header-title)')
 })
 
 test('raw color values are passed to theme-ui context when custom properties are enabled', () => {
@@ -479,7 +506,7 @@ test('raw color values are passed to theme-ui context when custom properties are
   let color
   const Grabber = () => {
     const context = useThemeUI()
-    color = context.theme.colors!.primary
+    color = context.theme.rawColors!.primary
     return null
   }
   const root = render(
@@ -501,6 +528,7 @@ test('raw color values are passed to theme-ui context when custom properties are
 })
 
 test('warns when localStorage is disabled', () => {
+  const restore = mockConsole()
   window.matchMedia = jest.fn().mockImplementation((query) => {
     return {
       matches: false,
@@ -526,5 +554,7 @@ test('warns when localStorage is disabled', () => {
     </ThemeProvider>
   )
 
-  expect(mode).toBe('default')
+  expect(mode).toBe(undefined)
+  expect(console.warn).toHaveBeenCalled()
+  restore()
 })

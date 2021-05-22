@@ -122,9 +122,9 @@ Styles within this object have access to other values in the theme object, such 
 }
 ```
 
-## Body Styles
+## Root Styles
 
-To add base, top-level styles to the `<body>` element, use `theme.styles.root`.
+To add base, top-level styles to the `<html>` element, use `theme.styles.root`.
 
 ```js
 // example with root styles
@@ -147,35 +147,35 @@ To add base, top-level styles to the `<body>` element, use `theme.styles.root`.
 }
 ```
 
-- To disable applying styles to the `<body>` element, add the `useBodyStyles: false` flag to your theme.
-- Additionally, to apply styles to the `<html>` element instead, add the `useRootStyles` flag. It works the same way as and will override `useBodyStyles`.
+- To disable applying styles to the `<html>` element, add the `config: { useRootStyles: false }` flag to your theme.
 
 ## Breakpoints
 
 To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
-Each breakpoint should be a string with a CSS length unit included.
-These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/sx-prop/#responsive-values).
+Each breakpoint should be a string with a CSS length unit included or a string including a CSS media query.
+String values with a CSS length unit will be used to generate a mobile-first (i.e. `min-width`) media query. 
+The breakpoints can then be used to apply [responsive styles](/sx-prop/#responsive-values).
 
 ```js
 // example custom breakpoints
 {
   breakpoints: [
-    '40em', '56em', '64em',
+    '40em', '@media (min-width: 56em) and (orientation: landscape)', '64em',
   ],
 }
 ```
 
 ## Configuration Flags
 
-The theme object can also include configuration options for Theme UI. The following keys can be used to enable and disable certain features.
+The theme object can also include configuration options for Theme UI, which are nested in the `config` object.
+The following keys can be used to enable and disable certain features.
 
 | Flag                       | Default             | Description                                                                                                                                 |
 | -------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `useCustomProperties`      | `true`              | Enables CSS custom properties to help mitigate a flash of unstyled content during rehydration                                               |
-| `useRootStyles`            | `false`             | Adds styles defined in `theme.styles.root` to the `<html>` element along with `color` and `background-color`                                |
-| `useBodyStyles`            | `true`              | (Will be deprecated in future) Adds styles defined in `theme.styles.root` to the `<body>` element along with `color` and `background-color` |
+| `useRootStyles`            | `true`              | Adds styles defined in `theme.styles.root` to the `<html>` element along with `color` and `background-color`                                |
 | `initialColorModeName`     | `'default'`         | The key used for the top-level color palette in `theme.colors`                                                                              |
-| `useColorSchemeMediaQuery` | `false`             | Initializes the color mode based on the `prefers-color-scheme` media query                                                                  |
+| `useColorSchemeMediaQuery` | `true`             | Initializes the color mode based on the `prefers-color-scheme` media query                                                                  |
 | `useBorderBox`             | `true`              | Adds a global `box-sizing: border-box` style                                                                                                |
 | `useLocalStorage`          | `true`              | Persists the color mode in `localStorage`                                                                                                   |
 
