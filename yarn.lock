@@ -27,11 +27,6 @@
     io-ts "^2.1.2"
     tslib "2.1.0"
 
-"@auto-it/bot-list@10.25.1":
-  version "10.25.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.25.1.tgz#9a1ff5831da81b47bfd518c34e9313c0373c36c6"
-  integrity sha512-udnjMZS31Vv+I30Fpowy9WN0MSLdRN1URPJISULmDKO6gPxUo0ksDZ5Tr/qeRuKlCtmkaLowW6u8wH0YWM2r7A==
-
 "@auto-it/bot-list@10.25.2":
   version "10.25.2"
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.25.2.tgz#85e9da1748943d3f0c0991d56447255280c91d39"
@@ -41,16 +36,6 @@
   version "10.26.0"
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.26.0.tgz#ef4628566676e1854ce75d8a037597c8882d7a4f"
   integrity sha512-bpqZ3/ka1jxw9yIbwpclQRQHUGVbKaLNjEpcIVo+dGbE4eFrI9hQL93dPB9St9XMOwL4mkPyP8beFM46V64nVg==
-
-"@auto-it/bot-list@10.27.1":
-  version "10.27.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.27.1.tgz#50a37a417483f2398b258a292e349dbafc56f801"
-  integrity sha512-2k311ZFy8GMABLS7GRN5MnE9DCoGkCi8h7LWvvIy/B6BAhW892WgyV2Lxcql3aP6B5GhOv+5UjB5wgKarwaCQA==
-
-"@auto-it/bot-list@10.27.1":
-  version "10.27.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.27.1.tgz#50a37a417483f2398b258a292e349dbafc56f801"
-  integrity sha512-2k311ZFy8GMABLS7GRN5MnE9DCoGkCi8h7LWvvIy/B6BAhW892WgyV2Lxcql3aP6B5GhOv+5UjB5wgKarwaCQA==
 
 "@auto-it/bot-list@10.27.1":
   version "10.27.1"
@@ -71,51 +56,6 @@
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
-
-"@auto-it/core@10.25.1":
-  version "10.25.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.25.1.tgz#12c9afec269eeb01bfb0f02f855a6e7c7cc26814"
-  integrity sha512-lYcjP81cNt3vHAxm1vmfClqwBHxNOhFSkP96CQNPwat2PN71WaYmxXoOUAfXlvv0zrGwZVYCR/4QPCwo3bg0pQ==
-  dependencies:
-    "@auto-it/bot-list" "10.25.1"
-    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
-    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
-    "@octokit/plugin-retry" "^3.0.1"
-    "@octokit/plugin-throttling" "^3.2.0"
-    "@octokit/rest" "^18.0.0"
-    await-to-js "^3.0.0"
-    chalk "^4.0.0"
-    cosmiconfig "7.0.0"
-    deepmerge "^4.0.0"
-    dotenv "^8.0.0"
-    endent "^2.0.1"
-    enquirer "^2.3.4"
-    env-ci "^5.0.1"
-    fast-glob "^3.1.1"
-    fp-ts "^2.5.3"
-    fromentries "^1.2.0"
-    gitlog "^4.0.3"
-    https-proxy-agent "^5.0.0"
-    import-cwd "^3.0.0"
-    import-from "^3.0.0"
-    io-ts "^2.1.2"
-    lodash.chunk "^4.2.0"
-    log-symbols "^4.0.0"
-    node-fetch "2.6.1"
-    parse-author "^2.0.0"
-    parse-github-url "1.0.2"
-    pretty-ms "^7.0.0"
-    requireg "^0.2.2"
-    semver "^7.0.0"
-    signale "^1.4.0"
-    tapable "^2.0.0-beta.2"
-    terminal-link "^2.1.1"
-    tinycolor2 "^1.4.1"
-    ts-node "^9.1.1"
-    tslib "2.1.0"
-    type-fest "^0.21.1"
-    typescript-memoize "^1.0.0-alpha.3"
-    url-join "^4.0.0"
 
 "@auto-it/core@10.25.2":
   version "10.25.2"
@@ -168,96 +108,6 @@
   integrity sha512-n9DML7aDhuA2tlD+Az7Bo1fz7IfRqSUwQRRTedYB4ttEp79m+hpgMZ9LXSsSnvw7+3mGdOwFH798OcH0yCdcjg==
   dependencies:
     "@auto-it/bot-list" "10.26.0"
-    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
-    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
-    "@octokit/plugin-retry" "^3.0.1"
-    "@octokit/plugin-throttling" "^3.2.0"
-    "@octokit/rest" "^18.0.0"
-    await-to-js "^3.0.0"
-    chalk "^4.0.0"
-    cosmiconfig "7.0.0"
-    deepmerge "^4.0.0"
-    dotenv "^8.0.0"
-    endent "^2.0.1"
-    enquirer "^2.3.4"
-    env-ci "^5.0.1"
-    fast-glob "^3.1.1"
-    fp-ts "^2.5.3"
-    fromentries "^1.2.0"
-    gitlog "^4.0.3"
-    https-proxy-agent "^5.0.0"
-    import-cwd "^3.0.0"
-    import-from "^3.0.0"
-    io-ts "^2.1.2"
-    lodash.chunk "^4.2.0"
-    log-symbols "^4.0.0"
-    node-fetch "2.6.1"
-    parse-author "^2.0.0"
-    parse-github-url "1.0.2"
-    pretty-ms "^7.0.0"
-    requireg "^0.2.2"
-    semver "^7.0.0"
-    signale "^1.4.0"
-    tapable "^2.0.0-beta.2"
-    terminal-link "^2.1.1"
-    tinycolor2 "^1.4.1"
-    ts-node "^9.1.1"
-    tslib "2.1.0"
-    type-fest "^0.21.1"
-    typescript-memoize "^1.0.0-alpha.3"
-    url-join "^4.0.0"
-
-"@auto-it/core@10.27.1":
-  version "10.27.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.27.1.tgz#07ad7a81072441ab5ef0542abe89983fce45b053"
-  integrity sha512-cT9kCoz0Jnu4xtQTGUSH6b59Fwc41Pt/X5T/3/XRF8NimpsUGAIZRIs/UCQMAWCHzfZIUdlFQjvrPFF9rjjfiA==
-  dependencies:
-    "@auto-it/bot-list" "10.27.1"
-    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
-    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
-    "@octokit/plugin-retry" "^3.0.1"
-    "@octokit/plugin-throttling" "^3.2.0"
-    "@octokit/rest" "^18.0.0"
-    await-to-js "^3.0.0"
-    chalk "^4.0.0"
-    cosmiconfig "7.0.0"
-    deepmerge "^4.0.0"
-    dotenv "^8.0.0"
-    endent "^2.0.1"
-    enquirer "^2.3.4"
-    env-ci "^5.0.1"
-    fast-glob "^3.1.1"
-    fp-ts "^2.5.3"
-    fromentries "^1.2.0"
-    gitlog "^4.0.3"
-    https-proxy-agent "^5.0.0"
-    import-cwd "^3.0.0"
-    import-from "^3.0.0"
-    io-ts "^2.1.2"
-    lodash.chunk "^4.2.0"
-    log-symbols "^4.0.0"
-    node-fetch "2.6.1"
-    parse-author "^2.0.0"
-    parse-github-url "1.0.2"
-    pretty-ms "^7.0.0"
-    requireg "^0.2.2"
-    semver "^7.0.0"
-    signale "^1.4.0"
-    tapable "^2.0.0-beta.2"
-    terminal-link "^2.1.1"
-    tinycolor2 "^1.4.1"
-    ts-node "^9.1.1"
-    tslib "2.1.0"
-    type-fest "^0.21.1"
-    typescript-memoize "^1.0.0-alpha.3"
-    url-join "^4.0.0"
-
-"@auto-it/core@10.27.1":
-  version "10.27.1"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.27.1.tgz#07ad7a81072441ab5ef0542abe89983fce45b053"
-  integrity sha512-cT9kCoz0Jnu4xtQTGUSH6b59Fwc41Pt/X5T/3/XRF8NimpsUGAIZRIs/UCQMAWCHzfZIUdlFQjvrPFF9rjjfiA==
-  dependencies:
-    "@auto-it/bot-list" "10.27.1"
     "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
     "@octokit/plugin-enterprise-compatibility" "^1.2.2"
     "@octokit/plugin-retry" "^3.0.1"
@@ -1640,10 +1490,10 @@
     source-map "^0.5.7"
     stylis "^4.0.3"
 
-"@emotion/cache@^11.1.3":
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.1.3.tgz#c7683a9484bcd38d5562f2b9947873cf66829afd"
-  integrity sha512-n4OWinUPJVaP6fXxWZD9OUeQ0lY7DvtmtSuqtRWT0Ofo/sBLCVSgb4/Oa0Q5eFxcwablRKjUXqXtNZVyEwCAuA==
+"@emotion/cache@^11.4.0":
+  version "11.4.0"
+  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.4.0.tgz#293fc9d9a7a38b9aad8e9337e5014366c3b09ac0"
+  integrity sha512-Zx70bjE7LErRO9OaZrhf22Qye1y4F7iDl+ITjet0J+i+B88PrAOBkKvaAWhxsZf72tDLajwCgfCjJ2dvH77C3g==
   dependencies:
     "@emotion/memoize" "^0.7.4"
     "@emotion/sheet" "^1.0.0"
@@ -1699,20 +1549,20 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
-"@emotion/react@11.1.5", "@emotion/react@^11.1.1":
-  version "11.1.5"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.1.5.tgz#15e78f9822894cdc296e6f4e0688bac8120dfe66"
-  integrity sha512-xfnZ9NJEv9SU9K2sxXM06lzjK245xSeHRpUh67eARBm3PBHjjKIZlfWZ7UQvD0Obvw6ZKjlC79uHrlzFYpOB/Q==
+"@emotion/react@11.4.0", "@emotion/react@^11.1.1":
+  version "11.4.0"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.4.0.tgz#2465ad7b073a691409b88dfd96dc17097ddad9b7"
+  integrity sha512-4XklWsl9BdtatLoJpSjusXhpKv9YVteYKh9hPKP1Sxl+mswEFoUe0WtmtWjxEjkA51DQ2QRMCNOvKcSlCQ7ivg==
   dependencies:
-    "@babel/runtime" "^7.7.2"
-    "@emotion/cache" "^11.1.3"
-    "@emotion/serialize" "^1.0.0"
+    "@babel/runtime" "^7.13.10"
+    "@emotion/cache" "^11.4.0"
+    "@emotion/serialize" "^1.0.2"
     "@emotion/sheet" "^1.0.1"
     "@emotion/utils" "^1.0.0"
     "@emotion/weak-memoize" "^0.2.5"
     hoist-non-react-statics "^3.3.1"
 
-"@emotion/serialize@^1.0.0", "@emotion/serialize@^1.0.2":
+"@emotion/serialize@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.0.2.tgz#77cb21a0571c9f68eb66087754a65fa97bfcd965"
   integrity sha512-95MgNJ9+/ajxU7QIAruiOAdYNjxZX7G2mhgrtDWswA21VviYIRP1R5QilZ/bDY42xiKsaktP4egJb3QdYQZi1A==
