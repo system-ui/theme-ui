@@ -2,6 +2,8 @@
 
 ## v0.9
 
+**Dropped support for legacy browsers**
+
 All Theme UI package became on average 34% lighter! 🪶 It's 9.5kB if you sum all
 of them!
 
@@ -12,6 +14,8 @@ node_modules (e.g. with
 
 - [See build raport with size comparison for each package.](https://github.com/system-ui/theme-ui/runs/2618450614)
 - [See updated Babel config.](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+
+**Internal package `gatsby-theme-code-recipes` was removed.**
 
 ## v0.8
 

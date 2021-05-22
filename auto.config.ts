@@ -33,7 +33,7 @@ const allContributorsOptions: IAllContributorsPluginOptions = {
 }
 
 const omitCommitsOptions: IOmitCommitsPluginOptions = {
-  subject: ['Merge branch', 'chore(deps):', 'chore(deps-dev):'],
+  subject: ['Merge branch', 'chore:', 'chore(', 'ci(', 'ci:', 'test:', 'test(', 'fix(ci):'],
 }
 
 export default function config(): AutoRc {
@@ -48,6 +48,12 @@ export default function config(): AutoRc {
       ['all-contributors', allContributorsOptions],
       ['omit-commits', omitCommitsOptions],
       // 'magic-zero',
+    ],
+    labels: [
+      {
+        name: 'pushToBaseBranch',
+        changelogTitle: '👨‍💻 Minor changes', // 😈
+      },
     ],
   }
 }
