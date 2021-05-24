@@ -19,6 +19,8 @@ export type {
   ThemeUIStyleObject,
   ThemeUICSSObject,
   Theme,
+  BaseTheme,
+  UserTheme,
   ThemeStyles,
   TLengthStyledSystem,
   StylePropertyValue,

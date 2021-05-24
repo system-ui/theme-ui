@@ -19073,12 +19073,17 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-ts-snippet@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-5.0.2.tgz#7416e22083c8b00d088a32168007dc63408d0135"
-  integrity sha512-4vZdRz2LXaA+PI3X7/tCsnunixhLkI/nbl105wOHmxo7vB/VL4MclEbV+JFRe9h+Be+wIFsJ1whrLY/bZo4AXQ==
+ts-snippet@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/ts-snippet/-/ts-snippet-5.0.1.tgz#e94117abebabc0b62279b0b469d6318c9f3dab3e"
+  integrity sha512-WHO9W4Wty9mfOU2K3Cmakw2ZqHMke5RhmBeeuh2aoLxvVxatWFBQD5AmfpwkvuNxXbNRA8FK/Jkg2yGNBnWiwQ==
   dependencies:
     tsutils "^3.0.0"
+
+ts-toolbelt@^8.0.7:
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-8.0.7.tgz#4dad2928831a811ee17dbdab6eb1919fc0a295bf"
+  integrity sha512-KICHyKxc5Nu34kyoODrEe2+zvuQQaubTJz7pnC5RQ19TH/Jged1xv+h8LBrouaSD310m75oAljYs59LNHkLDkQ==
 
 tsconfig-paths@^3.9.0:
   version "3.9.0"

@@ -116,7 +116,7 @@ const theme: Theme = {
       p: 2,
     },
     hr: {
-      border: 0,
+      border: 'none',
       borderBottom: 'thin',
     },
     img: {

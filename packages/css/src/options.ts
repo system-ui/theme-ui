@@ -1,5 +1,3 @@
-import { Theme } from './types'
-
 export interface ThemeUIConfig {
   /**
    * Enable/disable custom CSS properties/variables if lower browser

@@ -1,4 +1,4 @@
-import { css, NestedScale, NestedScaleDict, Theme, ThemeUIExtendedCSSProperties } from '../src'
+import { BaseTheme, css, NestedScaleDict, Theme } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -438,7 +438,7 @@ test('handles negative margins from scale that is an object and value is number'
 
 test('skip breakpoints', () => {
   const result = css({
-    width: ['100%', , '50%'],
+    width: ['100%', null, '50%'],
   })(theme)
   expect(result).toEqual({
     width: '100%',
@@ -636,7 +636,7 @@ test('returns outline color from theme', () => {
 
 test('returns correct media query order', () => {
   const result = css({
-    width: ['100%', , '50%'],
+    width: ['100%', undefined, '50%'],
     color: ['red', 'green', 'blue'],
   })(theme)
   const keys = Object.keys(result)
@@ -672,7 +672,6 @@ test('returns correct media query order 2', () => {
   const keys = Object.keys(result)
   expect(keys).toEqual([
     'flexDirection',
-    'justifyContent',
     '@media screen and (min-width: 40em)',
     '@media screen and (min-width: 52em)',
     'color',
@@ -724,6 +723,18 @@ test('supports vendor properties', () => {
 })
 
 test('omits empty values', () => {
+  const theme: BaseTheme = {
+    colors: {
+      gray: {
+        50: 'rgb(8, 8, 8)',
+        75: 'rgb(26, 26, 26)',
+        100: 'rgb(30, 30, 30),',
+        150: null as null,
+        200: undefined as undefined,
+      },
+    },
+  }
+
   expect(
     css({
       color: false && 'blue',

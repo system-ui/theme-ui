@@ -8,7 +8,7 @@ import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover'
 export interface ThemeColorPickerProps {
   children?: React.ReactNode
   theme?: Theme
-  value?: string
+  value?: string | number
   onChange: (color: string | ColorState) => void
 }
 

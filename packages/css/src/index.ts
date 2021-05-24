@@ -1,12 +1,21 @@
 import {
   CSSObject,
   ThemeUIStyleObject,
-  ThemeDerivedStyles,
-  Theme,
   ThemeUICSSObject,
+  Theme,
+  ResponsiveStyleTuple,
+  DerivedStylePropertyValue,
+  ObjectWithDefault,
 } from './types'
+import { scales, Scales } from './scales'
+import { multiples } from './multiples'
+import { Aliases, aliases } from './aliases'
+
+export { scales } from './scales'
+export type { Scales } from './scales'
 
 export * from './types'
+export * from './exact-theme'
 
 /**
  * Allows for nested scales with shorthand values
@@ -19,11 +28,9 @@ export * from './types'
  * css({ color: 'primary' }); // { color: '#00f' }
  * css({ color: 'primary.light' }) // { color: '#33f' }
  */
-export const THEME_UI_DEFAULT_KEY = '__default'
+export const THEME_UI_DEFAULT_KEY: keyof ObjectWithDefault<never> = '__default'
 
-const hasDefault = (
-  x: unknown
-): x is { [THEME_UI_DEFAULT_KEY]: string | number } => {
+const hasDefault = (x: unknown): x is ObjectWithDefault<unknown> => {
   return typeof x === 'object' && x !== null && THEME_UI_DEFAULT_KEY in x
 }
 
@@ -53,9 +60,12 @@ export function get(
   return hasDefault(obj) ? obj[THEME_UI_DEFAULT_KEY] : obj
 }
 
-export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
+export const getObjectWithVariants = (
+  obj: ThemeUICSSObject,
+  theme: Theme
+): ThemeUICSSObject => {
   if (obj && obj['variant']) {
-    let result: CSSObject = {}
+    let result: ThemeUICSSObject = {}
     for (const key in obj) {
       const x = obj[key]
       if (key === 'variant') {
@@ -63,12 +73,12 @@ export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
         const variant = getObjectWithVariants(get(theme, val as string), theme)
         result = { ...result, ...variant }
       } else {
-        result[key] = x as CSSObject
+        result[key] = x
       }
     }
     return result
   }
-  return obj as CSSObject
+  return obj
 }
 
 export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
@@ -77,186 +87,6 @@ const defaultTheme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 }
-
-const aliases = {
-  bg: 'backgroundColor',
-  m: 'margin',
-  mt: 'marginTop',
-  mr: 'marginRight',
-  mb: 'marginBottom',
-  ml: 'marginLeft',
-  mx: 'marginX',
-  my: 'marginY',
-  p: 'padding',
-  pt: 'paddingTop',
-  pr: 'paddingRight',
-  pb: 'paddingBottom',
-  pl: 'paddingLeft',
-  px: 'paddingX',
-  py: 'paddingY',
-} as const
-type Aliases = typeof aliases
-
-export const multiples = {
-  marginX: ['marginLeft', 'marginRight'],
-  marginY: ['marginTop', 'marginBottom'],
-  paddingX: ['paddingLeft', 'paddingRight'],
-  paddingY: ['paddingTop', 'paddingBottom'],
-  scrollMarginX: ['scrollMarginLeft', 'scrollMarginRight'],
-  scrollMarginY: ['scrollMarginTop', 'scrollMarginBottom'],
-  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
-  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
-  size: ['width', 'height'],
-}
-
-export const scales = {
-  color: 'colors',
-  backgroundColor: 'colors',
-  borderColor: 'colors',
-  caretColor: 'colors',
-  columnRuleColor: 'colors',
-  textDecorationColor: 'colors',
-  opacity: 'opacities',
-  transition: 'transitions',
-  margin: 'space',
-  marginTop: 'space',
-  marginRight: 'space',
-  marginBottom: 'space',
-  marginLeft: 'space',
-  marginX: 'space',
-  marginY: 'space',
-  marginBlock: 'space',
-  marginBlockEnd: 'space',
-  marginBlockStart: 'space',
-  marginInline: 'space',
-  marginInlineEnd: 'space',
-  marginInlineStart: 'space',
-  padding: 'space',
-  paddingTop: 'space',
-  paddingRight: 'space',
-  paddingBottom: 'space',
-  paddingLeft: 'space',
-  paddingX: 'space',
-  paddingY: 'space',
-  paddingBlock: 'space',
-  paddingBlockEnd: 'space',
-  paddingBlockStart: 'space',
-  paddingInline: 'space',
-  paddingInlineEnd: 'space',
-  paddingInlineStart: 'space',
-  scrollMargin: 'space',
-  scrollMarginTop: 'space',
-  scrollMarginRight: 'space',
-  scrollMarginBottom: 'space',
-  scrollMarginLeft: 'space',
-  scrollMarginX: 'space',
-  scrollMarginY: 'space',
-  scrollPadding: 'space',
-  scrollPaddingTop: 'space',
-  scrollPaddingRight: 'space',
-  scrollPaddingBottom: 'space',
-  scrollPaddingLeft: 'space',
-  scrollPaddingX: 'space',
-  scrollPaddingY: 'space',
-  inset: 'space',
-  insetBlock: 'space',
-  insetBlockEnd: 'space',
-  insetBlockStart: 'space',
-  insetInline: 'space',
-  insetInlineEnd: 'space',
-  insetInlineStart: 'space',
-  top: 'space',
-  right: 'space',
-  bottom: 'space',
-  left: 'space',
-  gridGap: 'space',
-  gridColumnGap: 'space',
-  gridRowGap: 'space',
-  gap: 'space',
-  columnGap: 'space',
-  rowGap: 'space',
-  fontFamily: 'fonts',
-  fontSize: 'fontSizes',
-  fontWeight: 'fontWeights',
-  lineHeight: 'lineHeights',
-  letterSpacing: 'letterSpacings',
-  border: 'borders',
-  borderTop: 'borders',
-  borderRight: 'borders',
-  borderBottom: 'borders',
-  borderLeft: 'borders',
-  borderWidth: 'borderWidths',
-  borderStyle: 'borderStyles',
-  borderRadius: 'radii',
-  borderTopRightRadius: 'radii',
-  borderTopLeftRadius: 'radii',
-  borderBottomRightRadius: 'radii',
-  borderBottomLeftRadius: 'radii',
-  borderTopWidth: 'borderWidths',
-  borderTopColor: 'colors',
-  borderTopStyle: 'borderStyles',
-  borderBottomWidth: 'borderWidths',
-  borderBottomColor: 'colors',
-  borderBottomStyle: 'borderStyles',
-  borderLeftWidth: 'borderWidths',
-  borderLeftColor: 'colors',
-  borderLeftStyle: 'borderStyles',
-  borderRightWidth: 'borderWidths',
-  borderRightColor: 'colors',
-  borderRightStyle: 'borderStyles',
-  borderBlock: 'borders',
-  borderBlockColor: 'colors',
-  borderBlockEnd: 'borders',
-  borderBlockEndColor: 'colors',
-  borderBlockEndStyle: 'borderStyles',
-  borderBlockEndWidth: 'borderWidths',
-  borderBlockStart: 'borders',
-  borderBlockStartColor: 'colors',
-  borderBlockStartStyle: 'borderStyles',
-  borderBlockStartWidth: 'borderWidths',
-  borderBlockStyle: 'borderStyles',
-  borderBlockWidth: 'borderWidths',
-  borderEndEndRadius: 'radii',
-  borderEndStartRadius: 'radii',
-  borderInline: 'borders',
-  borderInlineColor: 'colors',
-  borderInlineEnd: 'borders',
-  borderInlineEndColor: 'colors',
-  borderInlineEndStyle: 'borderStyles',
-  borderInlineEndWidth: 'borderWidths',
-  borderInlineStart: 'borders',
-  borderInlineStartColor: 'colors',
-  borderInlineStartStyle: 'borderStyles',
-  borderInlineStartWidth: 'borderWidths',
-  borderInlineStyle: 'borderStyles',
-  borderInlineWidth: 'borderWidths',
-  borderStartEndRadius: 'radii',
-  borderStartStartRadius: 'radii',
-  columnRuleWidth: 'borderWidths',
-  outlineColor: 'colors',
-  boxShadow: 'shadows',
-  textShadow: 'shadows',
-  zIndex: 'zIndices',
-  width: 'sizes',
-  minWidth: 'sizes',
-  maxWidth: 'sizes',
-  height: 'sizes',
-  minHeight: 'sizes',
-  maxHeight: 'sizes',
-  flexBasis: 'sizes',
-  size: 'sizes',
-  blockSize: 'sizes',
-  inlineSize: 'sizes',
-  maxBlockSize: 'sizes',
-  maxInlineSize: 'sizes',
-  minBlockSize: 'sizes',
-  minInlineSize: 'sizes',
-  columnWidth: 'sizes',
-  // svg
-  fill: 'colors',
-  stroke: 'colors',
-} as const
-type Scales = typeof scales
 
 const positiveOrNegative = (scale: object, value: string | number) => {
   if (typeof value !== 'number' || value >= 0) {
@@ -302,10 +132,24 @@ const transforms = [
   {}
 )
 
-const responsive = (
-  styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>
-) => (theme?: Theme) => {
-  const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
+type StyleObjectWithoutTuples = {
+  [P in keyof ThemeUICSSObject]:
+    | Exclude<
+        ThemeUICSSObject[P],
+        ResponsiveStyleTuple<any> | DerivedStylePropertyValue<any>
+      >
+    | ((theme: Theme) => string | number | null | false)
+}
+
+/**
+ * transform functions (satyles derived from theme) into their values
+ * and transforms responsive style tuples into media queries
+ */
+function responsive(
+  styles: ThemeUICSSObject,
+  theme: Theme
+): StyleObjectWithoutTuples {
+  const next: StyleObjectWithoutTuples = {}
   const breakpoints =
     (theme && (theme.breakpoints as string[])) || defaultBreakpoints
   const mediaQueries = [
@@ -319,7 +163,7 @@ const responsive = (
     const key = k as keyof typeof styles
     let value = styles[key]
     if (typeof value === 'function') {
-      value = value(theme || {})
+      value = value(theme)
     }
 
     if (value === false || value == null) {
@@ -332,7 +176,7 @@ const responsive = (
     for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
       const media = mediaQueries[i]
       if (!media) {
-        next[key] = value[i]
+        next[key] = value[i] as Exclude<typeof value[0], any[]>
         continue
       }
       next[media] = next[media] || {}
@@ -343,39 +187,43 @@ const responsive = (
   return next
 }
 
-type CssPropsArgument = { theme: Theme } | Theme
+type CssPropsArgument = { theme?: Theme } | Theme
 
 export const css = (args: ThemeUIStyleObject = {}) => (
   props: CssPropsArgument = {}
 ): CSSObject => {
-  const theme: Theme = {
+  const theme = {
     ...defaultTheme,
     ...('theme' in props ? props.theme : props),
-  }
+  } as Theme
   // insert variant props before responsive styles, so they can be merged
   // we need to maintain order of the style props, so if a variant is place in the middle
   // of other props, it will extends its props at that same location order.
 
-  const obj: CSSObject = getObjectWithVariants(
+  const obj = getObjectWithVariants(
     typeof args === 'function' ? args(theme) : args,
     theme
   )
 
-  const styles = responsive(obj as ThemeUICSSObject)(theme)
+  const styles = responsive(obj, theme)
   let result: CSSObject = {}
+
   for (const key in styles) {
     const x = styles[key as keyof typeof styles]
+
+    if (x === false || x == null) {
+      continue
+    }
+
     const val = typeof x === 'function' ? x(theme) : x
 
     if (val && typeof val === 'object') {
       if (hasDefault(val)) {
         result[key] = val[THEME_UI_DEFAULT_KEY]
-        continue
+      } else {
+        result[key] = css(val)(theme)
       }
 
-      // On type level, val can also be an array here,
-      // but we transform all arrays in `responsive` function.
-      result[key] = css(val as ThemeUICSSObject)(theme)
       continue
     }
 

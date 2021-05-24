@@ -1,15 +1,12 @@
 /** @jsx jsx */
-import { jsx, Theme } from 'theme-ui'
+import { jsx, Theme, ThemeUICSSProperties } from 'theme-ui'
 import { ThemeColorPicker } from './ThemeColorPicker'
 
 type Color = string
 type OnChangeArg = { color: Color } | { bg: Color }
 
 export interface ColorsProps {
-  value?: {
-    color?: string
-    bg?: string
-  }
+  value?: Pick<ThemeUICSSProperties, 'color' | 'bg'>
   theme?: Theme
   onChange: (arg: OnChangeArg) => void
 }

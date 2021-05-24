@@ -166,7 +166,7 @@ function copyRawColors(
     if (typeof value === 'string' && !value.startsWith('var(')) {
       outerThemeRawColors[key] = value
     }
-    if (typeof value === 'object') {
+    if (typeof value === 'object' && value) {
       outerThemeRawColors[key] = {
         ...(outerThemeRawColors[key] as object),
         ...copyRawColors(value, {}),

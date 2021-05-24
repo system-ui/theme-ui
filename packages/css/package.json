@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "csstype": "^3.0.5"
+    "csstype": "^3.0.5",
+    "ts-toolbelt": "^8.0.7"
   },
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  "gitHead": "c5a716a2e214d8c3762f917a57418bb995fb4c9a"
 }

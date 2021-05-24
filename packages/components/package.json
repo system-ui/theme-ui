@@ -1,6 +1,8 @@
 {
   "name": "@theme-ui/components",
   "version": "0.8.4",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
   "types": "index.d.ts",
@@ -21,8 +23,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Brent Jackson <jxnblk@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "react": "^17.0.1"
   }

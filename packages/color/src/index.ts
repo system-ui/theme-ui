@@ -1,16 +1,16 @@
 import * as P from 'polished'
-import { ColorModesScale, get, Theme } from '@theme-ui/css'
+import { ColorModesScale, get, Theme, ThemeUIEmpty } from '@theme-ui/css'
 
 type Color = ColorModesScale['primary']
 
 /**
  * Get color from theme.colors
  */
-export const getColor = (theme: Theme, color: Color) => {
+export const getColor = (theme: Theme, color: Color): string => {
   if (typeof color === 'object') {
     color = Array.isArray(color)
       ? color[0]
-      : (color as Exclude<typeof color, string & {}>).__default
+      : (color as Exclude<typeof color, string & {}>)?.__default
   }
 
   if (process.env.NODE_ENV !== 'production') {

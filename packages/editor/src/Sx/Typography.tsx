@@ -2,13 +2,14 @@
 import { jsx, Theme } from 'theme-ui'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
+
 import Combobox from '../Combobox'
 
 type TypographyPropsValue = {
-  fontFamily?: string
-  fontSize?: string | number
-  fontWeight?: string | number
-  lineHeight?: string | number
+  fontFamily?: string | number | null | false
+  fontSize?: string | number | null | false
+  fontWeight?: string | number | null | false
+  lineHeight?: string | number | null | false
 }
 
 type OnChangeArg = {
