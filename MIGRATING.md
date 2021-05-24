@@ -2,7 +2,7 @@
 
 ## v0.9
 
-**Dropped support for legacy browsers**
+**Dropped support for legacy browsers.**
 
 All Theme UI package became on average 34% lighter! 🪶 It's 9.5kB if you sum all
 of them!
