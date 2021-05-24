@@ -10,12 +10,12 @@
     tslib "~2.0.1"
 
 "@auto-it/all-contributors@^10.25.0":
-  version "10.26.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.26.0.tgz#be58adbfae33842ccca98ad79d1b4057b3a29f9c"
-  integrity sha512-UI1wm9LAsNMet/VmlhFn4yFuc4Y2ZzdNbpEv2PXKZ8dymwiX9TDJK5V8lvxAMVepP02VUeAG3KT1Fv6pposkSg==
+  version "10.29.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.29.0.tgz#d0e2a99c70611a9d9cfdf2bfb34bfe78e102fd69"
+  integrity sha512-WCB4DjMmjas/iCtouZyuEVCGBUmd1Qmq4A1OuiVvXT7e8imoFkEfWbEJVhZZv8FkGa2ZnaTt7iujDnElN+b9Gg==
   dependencies:
-    "@auto-it/bot-list" "10.26.0"
-    "@auto-it/core" "10.26.0"
+    "@auto-it/bot-list" "10.29.0"
+    "@auto-it/core" "10.29.0"
     "@octokit/rest" "^18.0.0"
     all-contributors-cli "6.19.0"
     anymatch "^3.1.1"
@@ -31,11 +31,6 @@
   version "10.25.2"
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.25.2.tgz#85e9da1748943d3f0c0991d56447255280c91d39"
   integrity sha512-dH/T2+P0gaOnyrZ36kCaXiit6Fm3wmEc4YQAcS+l/w/4NB2tWE+Bk6nq4+wcHB+jpdlsAzQWEBUY9Fz89D6Wgg==
-
-"@auto-it/bot-list@10.26.0":
-  version "10.26.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.26.0.tgz#ef4628566676e1854ce75d8a037597c8882d7a4f"
-  integrity sha512-bpqZ3/ka1jxw9yIbwpclQRQHUGVbKaLNjEpcIVo+dGbE4eFrI9hQL93dPB9St9XMOwL4mkPyP8beFM46V64nVg==
 
 "@auto-it/bot-list@10.27.1":
   version "10.27.1"
@@ -68,51 +63,6 @@
   integrity sha512-z1NllDMkHBUVMk3qSmCruTQiuZK6XqizjzaLs+U62TAw9FWtBHp15UuFtvr1l5J7/WKHPK5TlfAw4+MCI3mX5A==
   dependencies:
     "@auto-it/bot-list" "10.25.2"
-    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
-    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
-    "@octokit/plugin-retry" "^3.0.1"
-    "@octokit/plugin-throttling" "^3.2.0"
-    "@octokit/rest" "^18.0.0"
-    await-to-js "^3.0.0"
-    chalk "^4.0.0"
-    cosmiconfig "7.0.0"
-    deepmerge "^4.0.0"
-    dotenv "^8.0.0"
-    endent "^2.0.1"
-    enquirer "^2.3.4"
-    env-ci "^5.0.1"
-    fast-glob "^3.1.1"
-    fp-ts "^2.5.3"
-    fromentries "^1.2.0"
-    gitlog "^4.0.3"
-    https-proxy-agent "^5.0.0"
-    import-cwd "^3.0.0"
-    import-from "^3.0.0"
-    io-ts "^2.1.2"
-    lodash.chunk "^4.2.0"
-    log-symbols "^4.0.0"
-    node-fetch "2.6.1"
-    parse-author "^2.0.0"
-    parse-github-url "1.0.2"
-    pretty-ms "^7.0.0"
-    requireg "^0.2.2"
-    semver "^7.0.0"
-    signale "^1.4.0"
-    tapable "^2.0.0-beta.2"
-    terminal-link "^2.1.1"
-    tinycolor2 "^1.4.1"
-    ts-node "^9.1.1"
-    tslib "2.1.0"
-    type-fest "^0.21.1"
-    typescript-memoize "^1.0.0-alpha.3"
-    url-join "^4.0.0"
-
-"@auto-it/core@10.26.0":
-  version "10.26.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.26.0.tgz#a1076cccff00f8a681a5c635bbea21575f4fd29f"
-  integrity sha512-n9DML7aDhuA2tlD+Az7Bo1fz7IfRqSUwQRRTedYB4ttEp79m+hpgMZ9LXSsSnvw7+3mGdOwFH798OcH0yCdcjg==
-  dependencies:
-    "@auto-it/bot-list" "10.26.0"
     "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
     "@octokit/plugin-enterprise-compatibility" "^1.2.2"
     "@octokit/plugin-retry" "^3.0.1"
