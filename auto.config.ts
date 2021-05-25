@@ -1,10 +1,15 @@
 import { AutoRc } from '@auto-it/core'
 import { INpmConfig } from '@auto-it/npm'
+import { ConventionalCommitsOptions } from '@auto-it/conventional-commits'
 import { IAllContributorsPluginOptions } from '@auto-it/all-contributors'
 import { IOmitCommitsPluginOptions } from '@auto-it/omit-commits'
 
 const npmOptions: INpmConfig = {
   exact: true,
+}
+
+const conventionalCommitsOptions: ConventionalCommitsOptions = {
+  defaultReleaseType: 'none',
 }
 
 const allContributorsOptions: IAllContributorsPluginOptions = {
@@ -33,7 +38,16 @@ const allContributorsOptions: IAllContributorsPluginOptions = {
 }
 
 const omitCommitsOptions: IOmitCommitsPluginOptions = {
-  subject: ['Merge branch', 'chore:', 'chore(', 'ci(', 'ci:', 'test:', 'test(', 'fix(ci):'],
+  subject: [
+    'Merge branch',
+    'chore:',
+    'chore(',
+    'ci(',
+    'ci:',
+    'test:',
+    'test(',
+    'fix(ci):',
+  ],
 }
 
 export default function config(): AutoRc {
@@ -42,7 +56,7 @@ export default function config(): AutoRc {
     prereleaseBranches: ['develop'],
     plugins: [
       ['npm', npmOptions],
-      'conventional-commits',
+      ['conventional-commits', conventionalCommitsOptions],
       'first-time-contributor',
       'released',
       ['all-contributors', allContributorsOptions],
