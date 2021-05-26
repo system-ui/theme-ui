@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-tosh",
-  "version": "0.8.4",
+  "version": "0.9.0",
   "main": "dist/theme-ui-preset-tosh.cjs.js",
   "module": "dist/theme-ui-preset-tosh.esm.js",
   "types": "dist/theme-ui-preset-tosh.cjs.d.ts",

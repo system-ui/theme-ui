@@ -121,7 +121,8 @@
         "code",
         "question",
         "test",
-        "bug"
+        "bug",
+        "doc"
       ]
     },
     {

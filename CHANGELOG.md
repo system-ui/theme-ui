@@ -1,3 +1,47 @@
+# v0.9.0 (Tue May 25 2021)
+
+### Release Notes
+
+#### modernize Babel config ([#1721](https://github.com/system-ui/theme-ui/pull/1721))
+
+All Theme UI package became on average 34% lighter! 🪶 It's 9.5kB if you sum all of them!
+
+The trade-off is, Babel config has changed and it no longer supports Internet Explorer 11. 
+If you need to support legacy browsers, you can transpile node_modules (e.g. with [next-transpile-modules](https://github.com/martpie/next-transpile-modules)).
+
+- [See build raport with size comparison for each package.](https://github.com/system-ui/theme-ui/runs/2618450614)
+- [See updated Babel config.](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+
+---
+
+#### 🚀 Enhancement
+
+- `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/sidenav`, `@theme-ui/typography`
+  - modernize Babel config [#1721](https://github.com/system-ui/theme-ui/pull/1721) ([@hasparus](https://github.com/hasparus))
+- `gatsby-theme-style-guide`, `theme-ui`
+  - hotfix docs recipes [#1752](https://github.com/system-ui/theme-ui/pull/1752) ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- Stop dependabot from trying to run codechecks [#1753](https://github.com/system-ui/theme-ui/pull/1753) ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/components`
+  - fix(components): set Select's bgColor to "background" - fixes dark mode ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- docs(typescript): fix typo ([@hasparus](https://github.com/hasparus))
+
+#### 📝 Documentation
+
+- style DocSearch [#1714](https://github.com/system-ui/theme-ui/pull/1714) ([@atanasster](https://github.com/atanasster) [@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- Atanas Stoyanov ([@atanasster](https://github.com/atanasster))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.8.4 (Thu May 06 2021)
 
 #### 🐛 Bug Fix
