@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-funk",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "main": "dist/theme-ui-preset-funk.cjs.js",
   "module": "dist/theme-ui-preset-funk.esm.js",
   "source": "src/index.ts",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/preset-base": "0.9.0"
+    "@theme-ui/preset-base": "0.9.1"
   },
   "publishConfig": {
     "access": "public"

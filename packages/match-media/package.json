@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/match-media",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "React hooks for theme-ui breakpoints",
   "source": "src/index.ts",
   "main": "dist/theme-ui-match-media.cjs.js",
@@ -13,8 +13,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@theme-ui/core": "0.9.0",
-    "@theme-ui/css": "0.9.0",
+    "@theme-ui/core": "0.9.1",
+    "@theme-ui/css": "0.9.1",
     "react": "^17.0.1"
   },
   "peerDependencies": {
