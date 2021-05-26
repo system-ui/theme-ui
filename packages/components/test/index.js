@@ -341,6 +341,26 @@ describe('Paragraph', () => {
     const json = renderJSON(<Paragraph m={margin} />)
     expect(json).toHaveStyleRule('margin', margin)
   })
+
+  test('renders with theme override', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <ThemeProvider theme={{ text: { paragraph: { margin } } }}>
+        <Paragraph />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
+
+  test('renders with theme variant', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <ThemeProvider theme={{ text: { override: { margin } } }}>
+        <Paragraph variant="override" />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
 })
 
 describe('Text', () => {

@@ -1097,7 +1097,6 @@ exports[`Paragraph renders 1`] = `
   font-family: body;
   font-weight: body;
   line-height: body;
-  margin: 0;
 }
 
 <p
