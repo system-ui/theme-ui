@@ -43,9 +43,7 @@ jobs:
     needs: [build]
     if: >
       !contains(github.event.head_commit.message, 'ci skip') &&
-      !contains(github.event.head_commit.message, 'skip ci') &&
-      !startsWith(github.event.head_commit.message, 'chore') &&
-      !startsWith(github.event.pull_request.title, 'chore') && (
+      !contains(github.event.head_commit.message, 'skip ci') && (
         github.event_name == 'push' ||
         github.event.pull_request.head.repo.full_name == github.repository
       )
@@ -73,5 +71,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn release
