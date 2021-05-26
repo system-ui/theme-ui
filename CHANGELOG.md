@@ -1,3 +1,16 @@
+# v0.9.1 (Wed May 26 2021)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/components`
+  - fix: Allow overriding Paragraph margins via theme [#1775](https://github.com/system-ui/theme-ui/pull/1775) ([@bernharduw](https://github.com/bernharduw))
+
+#### Authors: 1
+
+- Bernhard Gschwantner ([@bernharduw](https://github.com/bernharduw))
+
+---
+
 # v0.9.0 (Tue May 25 2021)
 
 ### Release Notes
