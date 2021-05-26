@@ -4,13 +4,16 @@
 
 #### modernize Babel config ([#1721](https://github.com/system-ui/theme-ui/pull/1721))
 
-All Theme UI package became on average 34% lighter! 🪶 It's 9.5kB if you sum all of them!
+Theme UI packages became lighter! Built source code is now 9.5 kB (34%) smaller.
 
-The trade-off is, Babel config has changed and it no longer supports Internet Explorer 11. 
-If you need to support legacy browsers, you can transpile node_modules (e.g. with [next-transpile-modules](https://github.com/martpie/next-transpile-modules)).
+The trade-off is, Babel config has changed and it no longer supports Internet
+Explorer 11. If you need to support legacy browsers, you can transpile
+node_modules (e.g. with
+[next-transpile-modules](https://github.com/martpie/next-transpile-modules)).
 
-- [See build raport with size comparison for each package.](https://github.com/system-ui/theme-ui/runs/2618450614)
-- [See updated Babel config.](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+- [See build raport with size comparison for each package](https://github.com/system-ui/theme-ui/runs/2618450614)
+- [Inspect updated Babel config](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+- [Visit Bundlephobia](https://bundlephobia.com/result?p=theme-ui@0.9.0)
 
 ---
 
@@ -18,18 +21,11 @@ If you need to support legacy browsers, you can transpile node_modules (e.g. wit
 
 - `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/sidenav`, `@theme-ui/typography`
   - modernize Babel config [#1721](https://github.com/system-ui/theme-ui/pull/1721) ([@hasparus](https://github.com/hasparus))
-- `gatsby-theme-style-guide`, `theme-ui`
-  - hotfix docs recipes [#1752](https://github.com/system-ui/theme-ui/pull/1752) ([@hasparus](https://github.com/hasparus))
 
 #### 🐛 Bug Fix
 
-- Stop dependabot from trying to run codechecks [#1753](https://github.com/system-ui/theme-ui/pull/1753) ([@hasparus](https://github.com/hasparus))
 - `@theme-ui/components`
   - fix(components): set Select's bgColor to "background" - fixes dark mode ([@hasparus](https://github.com/hasparus))
-
-#### 👨‍💻 Minor changes
-
-- docs(typescript): fix typo ([@hasparus](https://github.com/hasparus))
 
 #### 📝 Documentation
 
@@ -47,12 +43,14 @@ If you need to support legacy browsers, you can transpile node_modules (e.g. wit
 #### 🐛 Bug Fix
 
 - `@theme-ui/theme-provider`
-  - fix(theme-provider): set body margin to 0 ([@hasparus](https://github.com/hasparus))
+  - fix(theme-provider): set body margin to 0
+    ([@hasparus](https://github.com/hasparus))
 
 #### ⚠️ Pushed to `stable`
 
 - `@theme-ui/theme-provider`
-  - Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
+  - Merge branch 'develop' into stable
+    ([@hasparus](https://github.com/hasparus))
 
 #### Authors: 1
 
@@ -65,12 +63,27 @@ If you need to support legacy browsers, you can transpile node_modules (e.g. wit
 #### 🐛 Bug Fix
 
 - `@theme-ui/color-modes`
-  - fix(color-modes): stop showing current color mode as initial mode in rawColors.modes ([@hasparus](https://github.com/hasparus))
+  - fix(color-modes): stop showing current color mode as initial mode in
+    rawColors.modes ([@hasparus](https://github.com/hasparus))
 
 #### ⚠️ Pushed to `stable`
 
-- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tachyons`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
-  - Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`,
+  `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`,
+  `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-code-recipes`,
+  `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`,
+  `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`,
+  `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`,
+  `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`,
+  `@theme-ui/preset-future`, `@theme-ui/preset-polaris`,
+  `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`,
+  `@theme-ui/preset-swiss`, `@theme-ui/preset-system`,
+  `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`,
+  `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`,
+  `@theme-ui/tachyons`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`,
+  `theme-ui`, `@theme-ui/typography`
+  - Merge branch 'stable' into develop
+    ([@hasparus](https://github.com/hasparus))
 
 #### Authors: 1
 

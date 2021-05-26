@@ -4,16 +4,16 @@
 
 **Dropped support for legacy browsers.**
 
-All Theme UI package became on average 34% lighter! 🪶 It's 9.5kB if you sum all
-of them!
+Theme UI packages became lighter! Built source code is now 9.5 kB (34%) smaller.
 
 The trade-off is, Babel config has changed and it no longer supports Internet
 Explorer 11. If you need to support legacy browsers, you can transpile
 node_modules (e.g. with
 [next-transpile-modules](https://github.com/martpie/next-transpile-modules)).
 
-- [See build raport with size comparison for each package.](https://github.com/system-ui/theme-ui/runs/2618450614)
-- [See updated Babel config.](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+- [See build raport with size comparison for each package](https://github.com/system-ui/theme-ui/runs/2618450614)
+- [Inspect updated Babel config](https://github.com/system-ui/theme-ui/blob/develop/babel.config.js)
+- [Visit Bundlephobia](https://bundlephobia.com/result?p=theme-ui@0.9.0)
 
 **Internal package `gatsby-theme-code-recipes` was removed.**
 
