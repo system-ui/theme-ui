@@ -7,6 +7,7 @@
   "module": "dist/theme-ui-custom-properties.esm.js",
   "author": "Alex Page <alex@alexpage.com.au>",
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "scripts": {},
   "publishConfig": {
     "access": "public"

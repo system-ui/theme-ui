@@ -23,6 +23,7 @@
   },
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "devDependencies": {
     "react": "^17.0.1"
   }

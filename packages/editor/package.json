@@ -6,6 +6,7 @@
   "types": "dist/theme-ui-editor.cjs.d.ts",
   "author": "Brent Jackson",
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
     "@theme-ui/components": "0.9.1",
