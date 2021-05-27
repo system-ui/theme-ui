@@ -14,5 +14,6 @@
     "access": "public"
   },
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
