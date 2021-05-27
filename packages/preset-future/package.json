@@ -6,6 +6,7 @@
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
     "@theme-ui/preset-base": "0.9.0"
