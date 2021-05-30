@@ -48,8 +48,7 @@ export default function DocsLayout(props) {
   const fullwidth =
     (props.pageContext.frontmatter &&
       props.pageContext.frontmatter.fullwidth) ||
-    props.location.pathname === '/home' ||
-    props.location.pathname === '/home/'
+    props.location.pathname === '/'
 
   const showNav = !props.pageContext?.frontmatter?.hidenav
 
