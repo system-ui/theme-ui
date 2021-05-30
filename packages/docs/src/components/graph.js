@@ -4,7 +4,19 @@ import { useState, useEffect } from 'react'
 import merge from 'deepmerge'
 import Logo from './logo'
 
-const colors = ['background', 'primary', 'secondary', 'accent']
+const colors = [
+  '#d21718',
+  '#f67f3f',
+  '#fac701',
+  '#55d39d',
+  '#1870c3',
+  '#4d1866',
+  '#6f3828',
+  '#271818',
+  '#eaeaea',
+  '#9ac8f2',
+  '#fcc7c5'
+]
 
 const initialState = {
   0: {
