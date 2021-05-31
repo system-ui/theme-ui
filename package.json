@@ -59,7 +59,7 @@
     "jest-canvas-mock": "^2.3.1",
     "jest-mock-console": "^1.0.1",
     "lerna": "^4.0.0",
-    "lint-staged": "10.5.4",
+    "lint-staged": "11.0.0",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
