@@ -27,11 +27,6 @@
     io-ts "^2.1.2"
     tslib "2.1.0"
 
-"@auto-it/bot-list@10.25.2":
-  version "10.25.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.25.2.tgz#85e9da1748943d3f0c0991d56447255280c91d39"
-  integrity sha512-dH/T2+P0gaOnyrZ36kCaXiit6Fm3wmEc4YQAcS+l/w/4NB2tWE+Bk6nq4+wcHB+jpdlsAzQWEBUY9Fz89D6Wgg==
-
 "@auto-it/bot-list@10.29.0":
   version "10.29.0"
   resolved "https://registry.npmjs.org/@auto-it/bot-list/-/bot-list-10.29.0.tgz#176db2073c76b13a11df605451b627ffdf870cba"
@@ -43,11 +38,11 @@
   integrity sha512-dkrzfeIxN1QBXHmV93DfMEMu2dXG9Op0fjUqKKWSgDp7JYCRHvC6Qp0GpDf5OQfS6JC50ClLq7+1feYlzVtbqg==
 
 "@auto-it/conventional-commits@^10.25.0":
-  version "10.25.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-10.25.2.tgz#fbc7dd373c2bf0f79ca810ff380e7debe19494ac"
-  integrity sha512-QDugDlexfsfE7yxFNvjsWIToXn64UW9m3vDQ25SXGjT1rKLzQ0ejV3+tNsJO9iuDRBnmMDxpLq0U0N+MlJjmnw==
+  version "10.29.2"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-10.29.2.tgz#dec1e5093ac47244a2b7acc4ca99b0a91af28f05"
+  integrity sha512-/q2W4AfWRcO5HFmQq6G7lRVxhUw8YlC4z0e9GPab2etHK8baSAUnFhwvNj8NGdsr47lPb0K77nRHhNY4JEmdPw==
   dependencies:
-    "@auto-it/core" "10.25.2"
+    "@auto-it/core" "10.29.2"
     array.prototype.flatmap "^1.2.2"
     conventional-changelog-core "^4.2.0"
     conventional-changelog-preset-loader "^2.3.4"
@@ -56,51 +51,6 @@
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
-
-"@auto-it/core@10.25.2":
-  version "10.25.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.25.2.tgz#d31e23d618cae47f5458bf0ed0e326d10a298208"
-  integrity sha512-z1NllDMkHBUVMk3qSmCruTQiuZK6XqizjzaLs+U62TAw9FWtBHp15UuFtvr1l5J7/WKHPK5TlfAw4+MCI3mX5A==
-  dependencies:
-    "@auto-it/bot-list" "10.25.2"
-    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
-    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
-    "@octokit/plugin-retry" "^3.0.1"
-    "@octokit/plugin-throttling" "^3.2.0"
-    "@octokit/rest" "^18.0.0"
-    await-to-js "^3.0.0"
-    chalk "^4.0.0"
-    cosmiconfig "7.0.0"
-    deepmerge "^4.0.0"
-    dotenv "^8.0.0"
-    endent "^2.0.1"
-    enquirer "^2.3.4"
-    env-ci "^5.0.1"
-    fast-glob "^3.1.1"
-    fp-ts "^2.5.3"
-    fromentries "^1.2.0"
-    gitlog "^4.0.3"
-    https-proxy-agent "^5.0.0"
-    import-cwd "^3.0.0"
-    import-from "^3.0.0"
-    io-ts "^2.1.2"
-    lodash.chunk "^4.2.0"
-    log-symbols "^4.0.0"
-    node-fetch "2.6.1"
-    parse-author "^2.0.0"
-    parse-github-url "1.0.2"
-    pretty-ms "^7.0.0"
-    requireg "^0.2.2"
-    semver "^7.0.0"
-    signale "^1.4.0"
-    tapable "^2.0.0-beta.2"
-    terminal-link "^2.1.1"
-    tinycolor2 "^1.4.1"
-    ts-node "^9.1.1"
-    tslib "2.1.0"
-    type-fest "^0.21.1"
-    typescript-memoize "^1.0.0-alpha.3"
-    url-join "^4.0.0"
 
 "@auto-it/core@10.29.0":
   version "10.29.0"
@@ -18794,7 +18744,7 @@ tapable@^1.0.0, tapable@^1.1.3:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
 
-tapable@^2.0.0-beta.2, tapable@^2.2.0:
+tapable@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
   integrity sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==
