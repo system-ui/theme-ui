@@ -286,11 +286,11 @@
     user-home "^2.0.0"
 
 "@auto-it/omit-commits@^10.29.0":
-  version "10.29.0"
-  resolved "https://registry.npmjs.org/@auto-it/omit-commits/-/omit-commits-10.29.0.tgz#6b58f86024f11d881c12b326e28720b8ef9a7f24"
-  integrity sha512-7Ga64GoajyFiOGNmaLNufL3f8uRofEaFlmmz1XWBAv2qAmuCtGhmgmbBzAzgji5uO4poz4+kbqrSE0oWzwON+A==
+  version "10.29.2"
+  resolved "https://registry.yarnpkg.com/@auto-it/omit-commits/-/omit-commits-10.29.2.tgz#f646197b41b2674324253349b2fe9049f26d26f2"
+  integrity sha512-rp2cneA4M2HDqzHBq38/EOH2gtNz76pwIBF2Brqiqv1h3Oxb23n+8IdxwcZSY381ypMJPUxByLq86fhWUioZTw==
   dependencies:
-    "@auto-it/core" "10.29.0"
+    "@auto-it/core" "10.29.2"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
