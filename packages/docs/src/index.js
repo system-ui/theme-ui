@@ -41,27 +41,29 @@ export const setDocSearchComponents = ({
       type="text/javascript"
       dangerouslySetInnerHTML={{
         __html: `
+
+          var lastSearchInput = null; 
           var observer = new MutationObserver(function () {
-          var searchSelector = "#algolia-docs-search";
-          var searchInput = document.querySelector(searchSelector);
-          if (searchInput) {
-            docsearch({
-              apiKey: "84ed820927eee5fa5018c9f1abe70390",
-              indexName: "theme-ui",
-              inputSelector: searchSelector,
-              debug: true
-            })
-            observer.disconnect()
-            observer = null
-          }
-        });
-        // start observing
-        document.addEventListener("DOMContentLoaded", function() {
-          observer.observe(document, {
-            childList: true,
-            subtree: true
+            var searchSelector = "#algolia-docs-search";
+            var searchInput = document.querySelector(searchSelector);
+
+            if (lastSearchInput !== searchInput) {
+              docsearch({
+                apiKey: "84ed820927eee5fa5018c9f1abe70390",
+                indexName: "theme-ui",
+                inputSelector: searchSelector,
+                debug: true
+              })
+              lastSearchInput = searchInput;
+            }
           });
-        });        
+
+          document.addEventListener("DOMContentLoaded", function() {
+            observer.observe(document, {
+              childList: true,
+              subtree: true
+            });
+          });        
       `,
       }}
     />,

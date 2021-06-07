@@ -38,6 +38,7 @@ const algoliaStyles = {
       color: 'primary',
       '--shadow-color': (theme) => theme.colors.muted,
       boxShadow: 'inset 0 -2px 0 0 var(--shadow-color)',
+      padding: 0,
     },
     '.algolia-docsearch-suggestion--subcategory-column-text': {},
     '.algolia-docsearch-suggestion--text': {
@@ -48,9 +49,6 @@ const algoliaStyles = {
       fontWeight: 'bold',
       color: 'text',
       fontSize: 1,
-      '.algolia-docsearch-suggestion--highlight': {
-        verticalAlign: 'middle',
-      },
     },
     '.algolia-docsearch-suggestion--category-header': {
       display: 'none !important',
@@ -65,9 +63,10 @@ const algoliaStyles = {
     '.algolia-docsearch-suggestion--subcategory-column:before': {
       display: 'none',
     },
-    '.ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion:not(.suggestion-layout-simple) .algolia-docsearch-suggestion--content': {
-      backgroundColor: 'muted',
-    },
+    '.ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion:not(.suggestion-layout-simple) .algolia-docsearch-suggestion--content':
+      {
+        backgroundColor: 'muted',
+      },
     '@media (max-width: 768px)': {
       // todo: make docsearch autocomplete dropdown responsive
     },
