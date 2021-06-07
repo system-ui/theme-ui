@@ -7,6 +7,7 @@ on:
     branches:
       - develop
       - stable
+      - ci/*
 
 jobs:
   build:
@@ -45,15 +46,20 @@ jobs:
     runs-on: ubuntu-latest
     # needs: [build]
     steps:
-      - run: echo "::set-output name=CAN_RELEASE::${{ env.CAN_RELEASE }}"
+      - id: can_release
+        run: echo '::set-output name=CAN_RELEASE::${{ env.CAN_RELEASE }}'
+      - run: echo "${{ toJSON(steps) }}"
     env:
       CAN_RELEASE: ${{ secrets.AUTO_RELEASE_GH_TOKEN != '' }}
+    outputs:
+      CAN_RELEASE: ${{ steps.can_release.outputs.CAN_RELEASE }}
 
   test:
     runs-on: ubuntu-latest
     needs: [release_check]
     steps:
       - run: echo "${{ toJSON(needs) }}"
+      - run: echo "${{ toJSON(needs.release_check.outputs.CAN_RELEASE) }}"
 
   release:
     runs-on: ubuntu-latest
