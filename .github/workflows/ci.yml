@@ -38,12 +38,13 @@ jobs:
           CC_SECRET: ${{ secrets.CC_SECRET }}
         if: ${{ env.CC_SECRET != '' }}
 
-  # Dependabot and PRs from forks should not release canaries
+  # Dependabot and PRs from forks should not release canaries,
+  # but secrets and env vars cannot be read in `job.if`, so we check if
+  # GH_TOKEN is present before attempting to release.
   release_check:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - run: echo ${{ env.CAN_RELEASE }}
       - run: echo "::set-output name=CAN_RELEASE::${{ env.CAN_RELEASE }}"
     env:
       CAN_RELEASE: ${{ secrets.AUTO_RELEASE_GH_TOKEN != '' }}
