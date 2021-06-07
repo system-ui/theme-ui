@@ -41,7 +41,6 @@ export const setDocSearchComponents = ({
       type="text/javascript"
       dangerouslySetInnerHTML={{
         __html: `
-
           var lastSearchInput = null; 
           var observer = new MutationObserver(function () {
             var searchSelector = "#algolia-docs-search";
@@ -52,7 +51,15 @@ export const setDocSearchComponents = ({
                 apiKey: "84ed820927eee5fa5018c9f1abe70390",
                 indexName: "theme-ui",
                 inputSelector: searchSelector,
-                debug: true
+                debug: true,
+                transformData: function(hits) {
+                  for (const hit of hits) {
+                    hit.url = hit.url.replace(
+                      "https://theme-ui.com",
+                      window.location.origin
+                    )
+                  }
+                }
               })
               lastSearchInput = searchInput;
             }
