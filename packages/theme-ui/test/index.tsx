@@ -2,7 +2,7 @@
 import { mdx } from '@mdx-js/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import { renderJSON } from '@theme-ui/test-utils'
+import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
 
 import {
   ThemeProvider,
@@ -10,6 +10,7 @@ import {
   BaseStyles,
   Theme,
   __ThemeUIContext,
+  useThemeUI,
 } from '../src/index'
 
 expect.extend(matchers)
@@ -215,4 +216,107 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('margin-right', 'auto')
   expect(json).toHaveStyleRule('padding', '8px')
   expect(json).toHaveStyleRule('background-color', 'tomato')
+})
+
+test('nested ThemeProviders combine colors', async () => {
+  const DarkModeButton = () => {
+    const { setColorMode } = useThemeUI()
+
+    return jsx(
+      'button',
+      {
+        sx: { color: 'primary', bg: 'background' },
+        onClick: () => setColorMode!('dark'),
+      },
+      'Dark Mode'
+    )
+  }
+
+  const root = render(
+    <ThemeProvider
+      theme={{
+        config: { useCustomProperties: true },
+        colors: { primary: 'blue' },
+      }}>
+      <ThemeProvider
+        theme={{
+          colors: {
+            background: 'white',
+            modes: { dark: { background: 'black' } },
+          },
+        }}>
+        <DarkModeButton />
+      </ThemeProvider>
+    </ThemeProvider>
+  )
+
+  let button = await root.findByRole('button')
+
+  expect(button.parentElement).toMatchInlineSnapshot(`
+    .emotion-0 {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: white;
+      color: var(--theme-ui-colors-text);
+      background-color: var(--theme-ui-colors-background);
+    }
+
+    .emotion-0.theme-ui-dark {
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-0.theme-ui-__default {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: white;
+    }
+
+    .emotion-1 {
+      color: var(--theme-ui-colors-primary);
+      background-color: var(--theme-ui-colors-background);
+    }
+
+    <div
+      class="theme-ui__nested-color-mode-provider emotion-0"
+    >
+      <button
+        class="emotion-1"
+      >
+        Dark Mode
+      </button>
+    </div>
+  `)
+
+  fireEvent.click(button)
+
+  expect(button.parentElement).toMatchInlineSnapshot(`
+    .emotion-0 {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: black;
+      color: var(--theme-ui-colors-text);
+      background-color: var(--theme-ui-colors-background);
+    }
+
+    .emotion-0.theme-ui-dark {
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-0.theme-ui-__default {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-1 {
+      color: var(--theme-ui-colors-primary);
+      background-color: var(--theme-ui-colors-background);
+    }
+
+    <div
+      class="theme-ui__nested-color-mode-provider emotion-0"
+    >
+      <button
+        class="emotion-1"
+      >
+        Dark Mode
+      </button>
+    </div>
+  `)
 })
