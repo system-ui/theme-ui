@@ -1,9 +1,11 @@
 # see https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     ignore:
-      - dependency-name: "@codechecks/client"
+      - dependency-name: '@codechecks/client'
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']
