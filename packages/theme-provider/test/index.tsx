@@ -59,8 +59,8 @@ test('renders with styles', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('renders with nested provider', () => {
-  const json = renderJSON(
+test('renders with nested provider', async () => {
+  const tree = render(
     <ThemeProvider
       theme={{
         config: {
@@ -84,7 +84,10 @@ test('renders with nested provider', () => {
       </ThemeProvider>
     </ThemeProvider>
   )
-  expect(json).toHaveStyleRule('color', 'cyan')
+
+  const style = global.getComputedStyle(await tree.findByText('Hello'))
+
+  expect(style.color).toBe('cyan')
 })
 
 test('renders with custom components', () => {

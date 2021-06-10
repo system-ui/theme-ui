@@ -146,7 +146,7 @@ export function useColorMode<T extends string = string>(): [
   }
 
   // We're allowing the user to specify a narrower type for its color mode name.
-  return ([colorMode, setColorMode] as unknown) as [
+  return [colorMode, setColorMode] as unknown as [
     T,
     Dispatch<SetStateAction<T>>
   ]
@@ -262,7 +262,7 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         })
       : jsx('div', {
           className: 'theme-ui__nested-color-mode-provider',
-          style: createColorStyles(theme)['html'],
+          css: createColorStyles(theme)['html'],
         }),
     children
   )

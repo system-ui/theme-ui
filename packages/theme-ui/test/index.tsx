@@ -1,6 +1,5 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -8,7 +7,6 @@ import { renderJSON } from '@theme-ui/test-utils'
 import {
   ThemeProvider,
   jsx,
-  useColorMode,
   BaseStyles,
   Theme,
   __ThemeUIContext,
@@ -103,7 +101,7 @@ test('custom pragma adds styles', () => {
 
 test('warns when multiple versions of emotion are installed', () => {
   const restore = mockConsole()
-  const json = renderJSON(
+  renderJSON(
     <__ThemeUIContext.Provider
       value={{
         __EMOTION_VERSION__: '9.0.0',
