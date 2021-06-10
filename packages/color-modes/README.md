@@ -4,7 +4,8 @@ Adds support for user-controlled color modes
 
 https://theme-ui.com
 
-**Note:** _This package is included in the main `theme-ui` package, and generally should not be used on its own._
+**Note:** _This package is included in the main `theme-ui` package, and
+generally should not be used on its own._
 
 ```sh
 npm i @theme-ui/color-modes

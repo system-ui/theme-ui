@@ -125,7 +125,10 @@ test('functional themes receive outer theme', () => {
       primary: 'black',
     },
   }
-  const theme = jest.fn<Theme, [Theme]>(() => ({}))
+  const theme = jest.fn<Theme, [Theme]>((t) => ({
+    ...t,
+    colors: { text: t.colors?.primary },
+  }))
   const json = renderJSON(
     jsx(
       ThemeProvider,
@@ -142,7 +145,7 @@ test('functional themes receive outer theme', () => {
     )
   )
   expect(theme).toHaveBeenCalledWith(outer)
-  expect(json).toHaveStyleRule('color', 'text')
+  expect(json).toHaveStyleRule('color', 'black')
 })
 
 test('functional themes can be used at the top level', () => {
