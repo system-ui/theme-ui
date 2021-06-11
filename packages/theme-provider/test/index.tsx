@@ -1,7 +1,13 @@
 /** @jsx jsx */
-import { jsx } from '@theme-ui/core'
+import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
-import { render, cleanup } from '@testing-library/react'
+import {
+  render,
+  cleanup,
+  fireEvent,
+  waitFor,
+  waitForElementToBeRemoved,
+} from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'
 
@@ -226,4 +232,43 @@ test('does not add box-sizing: border-box', () => {
   )
   const style = window.getComputedStyle(root.baseElement)
   expect(style.boxSizing).toBe('')
+})
+
+test('updates CSS Custom Properties on root element', async () => {
+  const DarkModeButton = () => {
+    const { colorMode, setColorMode } = useThemeUI()
+
+    if (colorMode === 'dark') return null
+
+    return <button onClick={() => setColorMode!('dark')}>Dark Mode</button>
+  }
+
+  const root = render(
+    <ThemeProvider
+      theme={{
+        config: {
+          // useCustomProperties defaults to `true`
+        },
+        colors: {
+          text: '#000',
+          modes: {
+            dark: { text: '#fff' },
+          },
+        },
+      }}>
+      <DarkModeButton />
+    </ThemeProvider>
+  )
+
+  const html = root.baseElement.parentElement!
+
+  expect(
+    window.getComputedStyle(html).getPropertyValue('--theme-ui-colors-text')
+  ).toBe('#000')
+
+  fireEvent.click(root.getByText('Dark Mode'))
+
+  expect(
+    window.getComputedStyle(html).getPropertyValue('--theme-ui-colors-text')
+  ).toBe('#fff')
 })
