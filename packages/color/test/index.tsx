@@ -6,8 +6,6 @@ import { ThemeProvider } from '@theme-ui/theme-provider'
 import { render } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 
-expect.extend(matchers)
-
 import {
   darken,
   lighten,
@@ -26,6 +24,8 @@ import {
   invert,
   grayscale,
 } from '../src'
+
+expect.extend(matchers)
 
 const theme = {
   colors: {
