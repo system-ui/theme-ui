@@ -193,11 +193,11 @@ test('converts color modes to css custom properties', () => {
 test('uses default mode', () => {
   let mode
   const Button = () => {
-    const [colorMode, setMode] = useColorMode()
+    const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
-  const tree = render(
+  render(
     <ThemeProvider theme={{}}>
       <Button />
     </ThemeProvider>
@@ -209,11 +209,11 @@ test('initializes mode based on localStorage', () => {
   window.localStorage.setItem(STORAGE_KEY, 'dark')
   let mode
   const Button = () => {
-    const [colorMode, setMode] = useColorMode()
+    const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
-  const tree = render(
+  render(
     <ThemeProvider theme={{}}>
       <Button />
     </ThemeProvider>
@@ -351,7 +351,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
 test('useColorMode throws when there is no theme context', () => {
   expect(() => {
     const Consumer = () => {
-      const _ = useColorMode()
+      useColorMode()
       return null
     }
     render(<Consumer />)
@@ -367,7 +367,7 @@ test('useThemeUI returns current color mode colors', () => {
     colors = theme.colors
     return null
   }
-  const root = render(
+  render(
     <ThemeProvider
       theme={{
         config: {
@@ -392,7 +392,7 @@ test('useThemeUI returns current color mode colors', () => {
 })
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
-  const root = render(
+  render(
     <ThemeProvider
       theme={{
         config: {
@@ -416,7 +416,7 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
 
 test('dot notation works with color modes', () => {
   const Button = () => {
-    const [colorMode, setMode] = useColorMode()
+    const [, setMode] = useColorMode()
     return (
       <button
         sx={{
@@ -458,7 +458,7 @@ test('dot notation works with color modes', () => {
 
 test('dot notation works with color modes and custom properties', () => {
   const Button = () => {
-    const [colorMode, setMode] = useColorMode()
+    const [, setMode] = useColorMode()
     return (
       <button
         sx={{
@@ -509,7 +509,7 @@ test('raw color values are passed to theme-ui context when custom properties are
     color = context.theme.rawColors!.primary
     return null
   }
-  const root = render(
+  render(
     <ThemeProvider
       theme={{
         colors: {
