@@ -18,5 +18,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/no-redeclare': 'off',
   },
 }

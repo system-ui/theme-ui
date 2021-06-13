@@ -491,7 +491,13 @@ export interface ThemeDerivedStyles {
   (theme: Theme): ThemeUICSSObject
 }
 
-export type Label = {
+export interface Label {
+  /**
+   * String appended to generated class name.
+   * @see https://emotion.sh/docs/labels
+   *
+   * You can style HTML <label> elements with `"& label": {}`.
+   */
   label?: string
 }
 
