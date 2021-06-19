@@ -25,5 +25,5 @@ export const EditorProvider = ({
     setTheme,
   }
 
-  return jsx(__ThemeUIInternalBaseThemeProvider, { context, children })
+  return jsx(__ThemeUIInternalBaseThemeProvider, { context }, children)
 }

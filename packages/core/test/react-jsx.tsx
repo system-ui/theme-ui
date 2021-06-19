@@ -1,7 +1,5 @@
-/* eslint-disable no-lone-blocks */
-
 /** @jsx jsx */
-import { renderJSON, NotHas, Assert } from '@theme-ui/test-utils'
+import { renderJSON, NotHas, Assert, IsExact } from '@theme-ui/test-utils'
 
 import { jsx, SxProp, ThemeUIJSX } from '../src'
 
@@ -19,7 +17,7 @@ describe('JSX', () => {
           <input
             onChange={(e) => console.log(e.target.value)}
             sx={{
-              bg: 'primary',
+              bgColor: 'primary',
             }}
           />
         </div>

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup } from '@testing-library/react'
+import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import mockConsole, { RestoreConsole } from 'jest-mock-console'
 import packageInfo from '@emotion/react/package.json'

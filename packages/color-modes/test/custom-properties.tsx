@@ -72,19 +72,21 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'tomato',
-      '--theme-ui-colors-background': 'white',
-      '--theme-ui-colors-primary': '#3333ee',
-      '--theme-ui-colors-primary-light': '#7373f7',
-      '--theme-ui-colors-primary-dark': '#00008f',
-      '&.theme-ui-dark': {
-        '--theme-ui-colors-text': 'white',
-        '--theme-ui-colors-background': 'black',
-        '--theme-ui-colors-primary': '#ee4933',
-        '--theme-ui-colors-primary-light': '#fd6d5a',
-        '--theme-ui-colors-primary-dark': '#962415',
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+        '--theme-ui-colors-primary': '#3333ee',
+        '--theme-ui-colors-primary-light': '#7373f7',
+        '--theme-ui-colors-primary-dark': '#00008f',
+        '&.theme-ui-dark': {
+          '--theme-ui-colors-text': 'white',
+          '--theme-ui-colors-background': 'black',
+          '--theme-ui-colors-primary': '#ee4933',
+          '--theme-ui-colors-primary-light': '#fd6d5a',
+          '--theme-ui-colors-primary-dark': '#962415',
+        },
       },
     })
   })
@@ -103,13 +105,15 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'tomato',
-      '--theme-ui-colors-background': 'white',
-      '&.theme-ui-dark': {
-        '--theme-ui-colors-text': 'white',
-        '--theme-ui-colors-background': 'black',
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+        '&.theme-ui-dark': {
+          '--theme-ui-colors-text': 'white',
+          '--theme-ui-colors-background': 'black',
+        },
       },
     })
   })
@@ -129,13 +133,15 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'white',
-      '--theme-ui-colors-background': 'tomato',
-      '&.theme-ui-light': {
-        '--theme-ui-colors-text': 'tomato',
-        '--theme-ui-colors-background': 'white',
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'white',
+        '--theme-ui-colors-background': 'tomato',
+        '&.theme-ui-light': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
       },
     })
   })
@@ -155,13 +161,15 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'white',
-      '--theme-ui-colors-background': 'tomato',
-      '&.theme-ui-light': {
-        '--theme-ui-colors-text': 'tomato',
-        '--theme-ui-colors-background': 'white',
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'white',
+        '--theme-ui-colors-background': 'tomato',
+        '&.theme-ui-light': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
       },
     })
   })
@@ -183,17 +191,19 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'white',
-      '--theme-ui-colors-background': 'tomato',
-      '&.theme-ui-light': {
-        '--theme-ui-colors-text': 'tomato',
-        '--theme-ui-colors-background': 'white',
-      },
-      '@media print': {
-        '--theme-ui-colors-text': 'tomato',
-        '--theme-ui-colors-background': 'white',
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'white',
+        '--theme-ui-colors-background': 'tomato',
+        '&.theme-ui-light': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
+        '@media print': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
       },
     })
   })
@@ -216,17 +226,19 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'tomato',
-      '--theme-ui-colors-background': 'white',
-      '&.theme-ui-dark': {
-        '--theme-ui-colors-text': 'white',
-        '--theme-ui-colors-background': 'black',
-      },
-      '@media print': {
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
+        '&.theme-ui-dark': {
+          '--theme-ui-colors-text': 'white',
+          '--theme-ui-colors-background': 'black',
+        },
+        '@media print': {
+          '--theme-ui-colors-text': 'tomato',
+          '--theme-ui-colors-background': 'white',
+        },
       },
     })
   })
@@ -239,10 +251,12 @@ describe('createColorStyles', () => {
       },
     })
     expect(styles).toEqual({
-      color: 'var(--theme-ui-colors-text)',
-      backgroundColor: 'var(--theme-ui-colors-background)',
-      '--theme-ui-colors-text': 'tomato',
-      '--theme-ui-colors-background': 'white',
+      html: {
+        color: 'var(--theme-ui-colors-text)',
+        backgroundColor: 'var(--theme-ui-colors-background)',
+        '--theme-ui-colors-text': 'tomato',
+        '--theme-ui-colors-background': 'white',
+      },
     })
   })
 })

@@ -1,16 +1,17 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
+import renderer from 'react-test-renderer'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
+import { renderJSON } from '@theme-ui/test-utils'
 
 import {
   ThemeProvider,
   jsx,
+  useColorMode,
   BaseStyles,
   Theme,
   __ThemeUIContext,
-  useThemeUI,
 } from '../src/index'
 
 expect.extend(matchers)
@@ -102,7 +103,7 @@ test('custom pragma adds styles', () => {
 
 test('warns when multiple versions of emotion are installed', () => {
   const restore = mockConsole()
-  renderJSON(
+  const json = renderJSON(
     <__ThemeUIContext.Provider
       value={{
         __EMOTION_VERSION__: '9.0.0',
@@ -126,10 +127,7 @@ test('functional themes receive outer theme', () => {
       primary: 'black',
     },
   }
-  const theme = jest.fn<Theme, [Theme]>((t) => ({
-    ...t,
-    colors: { text: t.colors?.primary },
-  }))
+  const theme = jest.fn<Theme, [Theme]>(() => ({}))
   const json = renderJSON(
     jsx(
       ThemeProvider,
@@ -146,7 +144,7 @@ test('functional themes receive outer theme', () => {
     )
   )
   expect(theme).toHaveBeenCalledWith(outer)
-  expect(json).toHaveStyleRule('color', 'black')
+  expect(json).toHaveStyleRule('color', 'text')
 })
 
 test('functional themes can be used at the top level', () => {
@@ -216,107 +214,4 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('margin-right', 'auto')
   expect(json).toHaveStyleRule('padding', '8px')
   expect(json).toHaveStyleRule('background-color', 'tomato')
-})
-
-test('nested ThemeProviders combine colors', async () => {
-  const DarkModeButton = () => {
-    const { setColorMode } = useThemeUI()
-
-    return jsx(
-      'button',
-      {
-        sx: { color: 'primary', bg: 'background' },
-        onClick: () => setColorMode!('dark'),
-      },
-      'Dark Mode'
-    )
-  }
-
-  const root = render(
-    <ThemeProvider
-      theme={{
-        config: { useCustomProperties: true },
-        colors: { primary: 'blue' },
-      }}>
-      <ThemeProvider
-        theme={{
-          colors: {
-            background: 'white',
-            modes: { dark: { background: 'black' } },
-          },
-        }}>
-        <DarkModeButton />
-      </ThemeProvider>
-    </ThemeProvider>
-  )
-
-  let button = await root.findByRole('button')
-
-  expect(button.parentElement).toMatchInlineSnapshot(`
-    .emotion-0 {
-      --theme-ui-colors-primary: blue;
-      --theme-ui-colors-background: white;
-      color: var(--theme-ui-colors-text);
-      background-color: var(--theme-ui-colors-background);
-    }
-
-    .emotion-0.theme-ui-dark {
-      --theme-ui-colors-background: black;
-    }
-
-    .emotion-0.theme-ui-__default {
-      --theme-ui-colors-primary: blue;
-      --theme-ui-colors-background: white;
-    }
-
-    .emotion-1 {
-      color: var(--theme-ui-colors-primary);
-      background-color: var(--theme-ui-colors-background);
-    }
-
-    <div
-      class="theme-ui__nested-color-mode-provider emotion-0"
-    >
-      <button
-        class="emotion-1"
-      >
-        Dark Mode
-      </button>
-    </div>
-  `)
-
-  fireEvent.click(button)
-
-  expect(button.parentElement).toMatchInlineSnapshot(`
-    .emotion-0 {
-      --theme-ui-colors-primary: blue;
-      --theme-ui-colors-background: black;
-      color: var(--theme-ui-colors-text);
-      background-color: var(--theme-ui-colors-background);
-    }
-
-    .emotion-0.theme-ui-dark {
-      --theme-ui-colors-background: black;
-    }
-
-    .emotion-0.theme-ui-__default {
-      --theme-ui-colors-primary: blue;
-      --theme-ui-colors-background: black;
-    }
-
-    .emotion-1 {
-      color: var(--theme-ui-colors-primary);
-      background-color: var(--theme-ui-colors-background);
-    }
-
-    <div
-      class="theme-ui__nested-color-mode-provider emotion-0"
-    >
-      <button
-        class="emotion-1"
-      >
-        Dark Mode
-      </button>
-    </div>
-  `)
 })

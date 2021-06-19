@@ -80,8 +80,10 @@ export const createColorStyles = (theme: Theme = {}) => {
   if (!colors || useRootStyles === false) return {}
   if (useCustomProperties === false) {
     return css({
-      color: 'text',
-      bg: 'background',
+      html: {
+        color: 'text',
+        bg: 'background',
+      },
     })(theme)
   }
 
@@ -103,8 +105,10 @@ export const createColorStyles = (theme: Theme = {}) => {
   const colorToVarValue = (color: string) => toVarValue(`colors-${color}`)
 
   return css({
-    ...styles,
-    color: colorToVarValue('text'),
-    bg: colorToVarValue('background'),
+    html: {
+      ...styles,
+      color: colorToVarValue('text'),
+      bg: colorToVarValue('background'),
+    },
   })(theme)
 }

@@ -1,10 +1,8 @@
-import React from 'react'
 import {
   jsx,
   useThemeUI,
   ThemeProvider as CoreProvider,
   ThemeProviderProps as CoreThemeProviderProps,
-  __themeUiDefaultContextValue,
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
@@ -33,7 +31,7 @@ const RootStyles = () =>
         },
         body: {
           margin: 0,
-        },
+        }
       })(theme)
     },
   })
@@ -50,14 +48,28 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 }) => {
   const outer = useThemeUI()
 
-  const isTopLevel = outer === __themeUiDefaultContextValue
+  if (typeof outer.setColorMode === 'function') {
+    return jsx(
+      CoreProvider,
+      { theme },
+      jsx(MDXProvider, {
+        components,
+        children,
+      })
+    )
+  }
 
-  return (
-    <CoreProvider theme={theme}>
-      <ColorModeProvider>
-        {isTopLevel && <RootStyles />}
-        <MDXProvider components={components}>{children}</MDXProvider>
-      </ColorModeProvider>
-    </CoreProvider>
+  return jsx(
+    CoreProvider,
+    { theme },
+    jsx(
+      ColorModeProvider,
+      null,
+      jsx(RootStyles),
+      jsx(MDXProvider, {
+        components,
+        children,
+      })
+    )
   )
 }
