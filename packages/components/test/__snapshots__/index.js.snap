@@ -617,6 +617,32 @@ exports[`Field renders 1`] = `
   background-color: transparent;
 }
 
+.emotion-2:autofill,
+.emotion-2:autofill:hover,
+.emotion-2:autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:autofill:first-line,
+.emotion-2:autofill:hover:first-line,
+.emotion-2:autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+.emotion-2:-webkit-autofill,
+.emotion-2:-webkit-autofill:hover,
+.emotion-2:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:-webkit-autofill:first-line,
+.emotion-2:-webkit-autofill:hover:first-line,
+.emotion-2:-webkit-autofill:focus:first-line {
+  font-size: 1rem;
+}
+
 <div
   className="emotion-0"
 >
@@ -664,6 +690,32 @@ exports[`Field renders with id prop 1`] = `
   border-radius: 4px;
   color: inherit;
   background-color: transparent;
+}
+
+.emotion-2:autofill,
+.emotion-2:autofill:hover,
+.emotion-2:autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:autofill:first-line,
+.emotion-2:autofill:hover:first-line,
+.emotion-2:autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+.emotion-2:-webkit-autofill,
+.emotion-2:-webkit-autofill:hover,
+.emotion-2:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:-webkit-autofill:first-line,
+.emotion-2:-webkit-autofill:hover:first-line,
+.emotion-2:-webkit-autofill:focus:first-line {
+  font-size: 1rem;
 }
 
 <div
@@ -945,6 +997,32 @@ exports[`Input renders 1`] = `
   border-radius: 4px;
   color: inherit;
   background-color: transparent;
+}
+
+.emotion-0:autofill,
+.emotion-0:autofill:hover,
+.emotion-0:autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-0:autofill:first-line,
+.emotion-0:autofill:hover:first-line,
+.emotion-0:autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+.emotion-0:-webkit-autofill,
+.emotion-0:-webkit-autofill:hover,
+.emotion-0:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill:first-line,
+.emotion-0:-webkit-autofill:hover:first-line,
+.emotion-0:-webkit-autofill:focus:first-line {
+  font-size: 1rem;
 }
 
 <input

@@ -13,7 +13,9 @@ export default (props) => {
     .filter(Boolean)
     .join(' – ')
 
-  const { theme } = useThemeUI()
+  const { theme, colorMode } = useThemeUI()
+
+  const isColorModeDark = ['dark', 'deep'].includes(colorMode)
 
   return (
     <Helmet htmlAttributes={{ lang: 'en-US' }}>
@@ -32,7 +34,10 @@ export default (props) => {
       <meta name="twitter:image" content="https://theme-ui.com/card.png" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={pkg.description} />
+
       <meta name="theme-color" content={theme.colors.background} />
+      <meta name="color-scheme" content={isColorModeDark ? 'dark' : 'light'} />
+
       <script
         src="https://unpkg.com/favicon-switcher@1.2.2/dist/index.js"
         crossOrigin="anonymous"
