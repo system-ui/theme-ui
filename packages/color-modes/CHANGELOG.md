@@ -1,3 +1,38 @@
+# v0.10.0 (Sat Jun 19 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Vlad Shcherbin ([@vladshcherbin](https://github.com/vladshcherbin)), for all your work!
+
+### Release Notes
+
+#### Allow easy styling autofilled of Inputs ([#1811](https://github.com/system-ui/theme-ui/pull/1811))
+
+Background color of autofilled inputs will now default to `theme.colors.background`. It can be changed by setting `autofillBackgroundColor` prop.
+
+---
+
+#### 🚀 Enhancement
+
+
+#### 🐛 Bug Fix
+
+- Allow easy styling autofilled of Inputs [#1811](https://github.com/system-ui/theme-ui/pull/1811) ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- Docs: update JSX pragma guide with automatic runtime section [#1718](https://github.com/system-ui/theme-ui/pull/1718) ([@flo-sch](https://github.com/flo-sch) [@hasparus](https://github.com/hasparus))
+- docs: set <meta name='color-scheme' ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Florent SCHILDKNECHT ([@flo-sch](https://github.com/flo-sch))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Vlad Shcherbin ([@vladshcherbin](https://github.com/vladshcherbin))
+
+---
+
 # v0.8.3 (Wed May 05 2021)
 
 #### 🐛 Bug Fix
