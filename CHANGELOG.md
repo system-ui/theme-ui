@@ -32,12 +32,10 @@ Background color of autofilled inputs will now default to `theme.colors.backgrou
 - docs: fix DocSearch not loading in SSR ([@hasparus](https://github.com/hasparus))
 - Docs: Move homepage to root path [#1783](https://github.com/system-ui/theme-ui/pull/1783) ([@lachlanjc](https://github.com/lachlanjc))
 - `@theme-ui/components`
-  - docs(components): fix Paragraph default variant [#1807](https://github.com/system-ui/theme-ui/pull/1807) ([@bernharduw](https://github.com/bernharduw))
   - docs(components): fix Paragraph default variant [#1795](https://github.com/system-ui/theme-ui/pull/1795) ([@bernharduw](https://github.com/bernharduw))
 
-#### Authors: 7
+#### Authors: 6
 
-- [@dependabot[bot]](https://github.com/dependabot[bot])
 - Aaron Adams ([@aaronadamsCA](https://github.com/aaronadamsCA))
 - Bernhard Gschwantner ([@bernharduw](https://github.com/bernharduw))
 - Florent SCHILDKNECHT ([@flo-sch](https://github.com/flo-sch))
