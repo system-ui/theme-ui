@@ -173,6 +173,7 @@ exports[`multiple highlights start and end 1`] = `
       className="token plain emotion-1"
     >
       
+
     </span>
   </div>
   <div
@@ -201,6 +202,7 @@ exports[`multiple highlights start and end 1`] = `
       className="token plain emotion-1"
     >
       
+
     </span>
   </div>
   <div
@@ -248,6 +250,7 @@ exports[`multiple highlights start and end 1`] = `
       className="token plain emotion-1"
     >
       
+
     </span>
   </div>
   <div
@@ -365,44 +368,9 @@ exports[`renders with other languages 1`] = `
     className="token-line"
   >
     <span
-      className="token operator"
-    >
-      &lt;
-    </span>
-    <span
       className="token plain"
     >
-      h1
-    </span>
-    <span
-      className="token operator"
-    >
-      &gt;
-    </span>
-    <span
-      className="token plain"
-    >
-      Hello
-    </span>
-    <span
-      className="token operator"
-    >
-      &lt;
-    </span>
-    <span
-      className="token operator"
-    >
-      /
-    </span>
-    <span
-      className="token plain"
-    >
-      h1
-    </span>
-    <span
-      className="token operator"
-    >
-      &gt;
+      &lt;h1&gt;Hello&lt;/h1&gt;
     </span>
   </div>
 </pre>
