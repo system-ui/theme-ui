@@ -70,7 +70,7 @@ const getPreferredColorScheme = (): 'dark' | 'light' | null => {
 const getModeFromClass = (): string | undefined => {
   let mode: string | undefined
   if (typeof document !== 'undefined') {
-    document.documentElement.classList.forEach((className) => {
+    Array.from(document.documentElement.classList).forEach((className: string) => {
       if (className.startsWith('theme-ui-')) {
         mode = className.replace('theme-ui-', '')
       }
