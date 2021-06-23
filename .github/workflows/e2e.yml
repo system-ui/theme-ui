@@ -35,6 +35,6 @@ jobs:
           record: false # todo: true
           parallel: false # todo: true
           config-file: packages/e2e/cypress.json
-          # spec: packages/e2e/integration/**/*.ts
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
