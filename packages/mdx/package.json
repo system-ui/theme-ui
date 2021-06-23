@@ -17,7 +17,7 @@
     "react": "^17.0.1"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0"
+    "react": "^16 || ^17"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",

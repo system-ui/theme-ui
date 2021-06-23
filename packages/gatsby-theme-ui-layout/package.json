@@ -5,8 +5,8 @@
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
     "gatsby": "^2.0.0 || ^3.0.0",
-    "react": "^16.14.0 || ^17.0.0",
-    "react-dom": "^16.14.0 || ^17.0.0"
+    "react": "^16 || ^17",
+    "react-dom": "^16 || ^17"
   },
   "license": "MIT"
 }

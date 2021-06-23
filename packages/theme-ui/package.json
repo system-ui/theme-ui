@@ -25,7 +25,7 @@
     "@theme-ui/theme-provider": "0.10.0"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0"
+    "react": "^16 || ^17"
   },
   "keywords": [
     "theme-ui",
