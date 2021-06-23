@@ -1,4 +1,5 @@
 // @ts-check
+// @see https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
 
 import * as React from 'react'
 
