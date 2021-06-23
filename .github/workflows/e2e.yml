@@ -30,11 +30,15 @@ jobs:
         with:
           install-command: yarn --pure-lockfile --non-interactive
 
+      - run: yarn build:docs
+
       - uses: cypress-io/github-action@v2
         with:
           record: false # todo: true
           parallel: false # todo: true
-          config-file: packages/e2e/cypress.json
+          working-directory: packages/e2e
+          start: cd ../.. && yarn workspace docs serve
+          wait: 'http://localhost:9000'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
