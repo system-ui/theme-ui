@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:9000",
+  "pluginsFile": "plugins.js",
+  "supportFile": "support.ts",
+  "screenshotsFolder": "screenshots",
+  "videosFolder": "videos",
+  "downloadsFolder": "downloads",
+  "fixturesFolder": "fixtures",
+  "integrationFolder": "integration",
+  "testFiles": "**/*.*",
+  "retries": {
+    "runMode": 1,
+    "openMode": 3
+  }
+}
