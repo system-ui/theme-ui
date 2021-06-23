@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "types": ["cypress", "node", "@percy/cypress", "@testing-library/cypress"]
   },
@@ -10,7 +10,8 @@
     "../../node_modules/@percy/cypress",
     "./integration/**/*.ts",
     "./support.ts",
-    "./plugins.js"
-, "integration/docs-color-modes.ts"  ],
+    "./plugins.js",
+    "integration/docs-color-modes.ts"
+  ],
   "exclude": ["../../node_modules/@types/jest"]
 }
