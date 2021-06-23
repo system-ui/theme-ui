@@ -1,0 +1,77 @@
+{
+  "redirects": [
+    {
+      "source": "/use-theme-ui",
+      "destination": "/hooks",
+      "permanent": false
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/guides/how-it-works",
+      "permanent": false
+    },
+    {
+      "source": "/jsx-pragma",
+      "destination": "/guides/jsx-pragma",
+      "permanent": false
+    },
+    {
+      "source": "/motivation",
+      "destination": "/guides/motivation",
+      "permanent": false
+    },
+    {
+      "source": "/object-styles",
+      "destination": "/guides/object-styles",
+      "permanent": false
+    },
+    {
+      "source": "/presets",
+      "destination": "/packages/presets"
+    },
+    {
+      "source": "/prism",
+      "destination": "/packages/prism"
+    },
+    {
+      "source": "/color",
+      "destination": "/packages/color"
+    },
+    {
+      "source": "/style-guide",
+      "destination": "/packages/style-guide"
+    },
+    {
+      "source": "/editor",
+      "destination": "/packages/editor"
+    },
+    {
+      "source": "/gatsby-plugin",
+      "destination": "/packages/gatsby-plugin"
+    },
+    {
+      "source": "/gatsby-theme-ui-blog",
+      "destination": "/packages/gatsby-theme-ui-blog"
+    },
+    {
+      "source": "/gatsby-theme-style-guide",
+      "destination": "/packages/gatsby-theme-style-guide"
+    },
+    {
+      "source": "/typography",
+      "destination": "/packages/typography"
+    },
+    {
+      "source": "/match-media",
+      "destination": "/packages/match-media"
+    },
+    {
+      "source": "/css/tachyons",
+      "destination": "/packages/tachyons"
+    },
+    {
+      "source": "/css/tailwind",
+      "destination": "/packages/tailwind"
+    }
+  ]
+}

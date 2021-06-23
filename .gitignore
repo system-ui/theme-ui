@@ -12,3 +12,5 @@ coverage
 .publish-log.txt
 .yarn-error.log
 
+
+.vercel
