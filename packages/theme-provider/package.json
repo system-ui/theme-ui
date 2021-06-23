@@ -14,7 +14,7 @@
     "@theme-ui/mdx": "0.10.0"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0"
+    "react": "^16 || ^17"
   },
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",

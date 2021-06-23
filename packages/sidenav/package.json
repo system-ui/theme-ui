@@ -11,7 +11,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0"
+    "react": "^16 || ^17"
   },
   "devDependencies": {
     "react": "^17.0.1"
