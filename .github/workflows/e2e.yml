@@ -9,8 +9,8 @@ on:
       - ci/*
 jobs:
   run-cypress:
-    runs-on: ubuntu-20.04
-    container: cypress/browsers:node12.13.0-chrome78-ff70
+    runs-on: ubuntu-latest
+    # container: cypress/browsers:node12.13.0-chrome78-ff70
     strategy:
       # when one test fails, DO NOT cancel the other
       # containers, because this will kill Cypress processes
@@ -39,6 +39,12 @@ jobs:
           working-directory: packages/e2e
           start: yarn serve-docs
           wait-on: 'http://localhost:9000'
+          tag: ${{ github.event_name }}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_INFO_MESSAGE:
+            ${{ github.event.pull_request.title && format('{PR {0} - {1}}',
+            github.event.pull_request.number, github.event.pull_request.title)
+            }}
