@@ -18,7 +18,7 @@ jobs:
       # https://github.com/cypress-io/github-action/issues/48
       fail-fast: false
       matrix:
-        containers: [1, 2]
+        containers: [1] # todo: change to [1, 2] - there's only 1 test file now
     steps:
       - uses: actions/checkout@v2
 
