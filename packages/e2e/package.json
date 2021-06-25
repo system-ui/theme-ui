@@ -5,7 +5,8 @@
   "description": "Cypress tests ran against Theme UI docs and examples",
   "scripts": {
     "open": "cypress open",
-    "start": "percy exec -- cypress run"
+    "start": "percy exec -- cypress run",
+    "serve-docs": "cd ../.. && yarn workspace docs serve"
   },
   "optionalDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.0",

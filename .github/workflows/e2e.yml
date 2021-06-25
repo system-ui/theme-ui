@@ -37,8 +37,8 @@ jobs:
           record: false # todo: true
           parallel: false # todo: true
           working-directory: packages/e2e
-          start: cd ../.. && yarn workspace docs serve
-          wait: 'http://localhost:9000'
+          start: yarn serve-docs
+          wait-on: 'http://localhost:9000'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

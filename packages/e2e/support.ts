@@ -9,8 +9,6 @@ if (typeof global === 'undefined') {
 
 require('@testing-library/cypress/add-commands')
 require('@percy/cypress')
-const { default: userEvent } =
-  require('@testing-library/user-event') as typeof import('@testing-library/user-event')
 
 declare global {
   namespace Cypress {
