@@ -6,7 +6,6 @@ on:
     branches:
       - develop
       - stable
-      - ci/*
 jobs:
   run-cypress:
     runs-on: ubuntu-latest
