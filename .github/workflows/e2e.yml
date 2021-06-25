@@ -18,7 +18,7 @@ jobs:
       # https://github.com/cypress-io/github-action/issues/48
       fail-fast: false
       matrix:
-        containers: [1]
+        containers: [1, 2]
     steps:
       - uses: actions/checkout@v2
 
@@ -34,8 +34,8 @@ jobs:
 
       - uses: cypress-io/github-action@v2
         with:
-          record: false # todo: true
-          parallel: false # todo: true
+          record: true
+          parallel: true
           working-directory: packages/e2e
           start: yarn serve-docs
           wait-on: 'http://localhost:9000'
