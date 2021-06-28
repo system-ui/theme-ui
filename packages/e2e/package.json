@@ -6,6 +6,7 @@
   "scripts": {
     "open": "cypress open",
     "start": "percy exec -- cypress run",
+    "record": "percy exec -- cypress run --record",
     "serve-docs": "cd ../.. && yarn workspace docs serve"
   },
   "optionalDependencies": {

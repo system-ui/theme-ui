@@ -36,7 +36,7 @@ jobs:
           record: true
           parallel: true
           working-directory: packages/e2e
-          command: yarn start
+          command: yarn record
           start: yarn serve-docs
           wait-on: 'http://localhost:9000'
           tag: ${{ github.event_name }}
