@@ -63,7 +63,7 @@
   <a href="https://dashboard.cypress.io/projects/fmfid1/runs">
     <img src="https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/fmfid1/stable&logo=cypress" alt="This project is using Cypress for end-to-end tests." />
   </a>
-  <a href="https://percy.io/ed0286e0/theme-ui">
+  <a href="https://percy.io/95212972/theme-ui">
     <img src="https://percy.io/static/images/percy-badge.svg" alt="This project is using Percy.io for visual regression testing." />
   </a>
 </p>
