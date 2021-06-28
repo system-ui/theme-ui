@@ -89,7 +89,6 @@ jobs:
 
       - name: Create release
         if: steps.turnstyle.outcome == 'success'
-        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
