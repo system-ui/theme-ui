@@ -28,14 +28,19 @@ const colorModeSwitchByText = (...args: Parameters<typeof cy.findByText>) =>
     .parent({ log: false })
     .findByText(...args)
 
-const removeGraph = () =>
-  cy
-    .get('svg', { log: false })
+const removeDynamicElements = () => {
+  cy.get('svg', { log: false })
     .then((graph) => graph.remove())
     .log('removed graph')
 
+  // tests failing because somebody became online on Discord aren't funny...
+  cy.findByAltText('Join our Discord community')
+    .then((img) => img.remove())
+    .log('removed Discord badge')
+}
+
 const screenshot = (message?: string) => {
-  removeGraph()
+  removeDynamicElements()
   cy.percySnapshot(message)
 }
 
