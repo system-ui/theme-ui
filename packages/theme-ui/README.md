@@ -59,6 +59,9 @@
   <a href="https://discord.gg/theme-ui">
     <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
   </a>
+  <a href="https://percy.io/ed0286e0/theme-ui">
+    <img src="https://percy.io/static/images/percy-badge.svg" alt="This project is using Percy.io for visual regression testing." />
+  </a>
 </p>
 
 \
@@ -132,8 +135,7 @@ custom color palettes, typographic scales, fonts, and more. Read more about
 // example theme.js
 export default {
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: '"Avenir Next", sans-serif',
     monospace: 'Menlo, monospace',
   },
