@@ -29,7 +29,7 @@
   </a>
   <br />
   <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
-    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg" alt="Build Status"/>
+    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg?branch=stable" alt="Build Status"/>
   </a>
   <a href="https://github.com/system-ui/theme-ui/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/system-ui/theme-ui" alt="Contributors" />
