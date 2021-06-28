@@ -34,9 +34,9 @@ const removeDynamicElements = () => {
     .log('removed graph')
 
   // tests failing because somebody became online on Discord aren't funny...
-  cy.findByAltText('Join our Discord community')
-    .then((img) => img.remove())
-    .log('removed Discord badge')
+  cy.findByTestId('readme-badges')
+    .then((badges) => badges.remove())
+    .log('removed readme badges')
 }
 
 const screenshot = (message?: string) => {
