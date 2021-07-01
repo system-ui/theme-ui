@@ -19,5 +19,8 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-redeclare': 'off',
+
+    // TypeScript checks this
+    'no-undef': 'off',
   },
 }

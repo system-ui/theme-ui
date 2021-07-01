@@ -52,11 +52,8 @@ export default function DocsLayout(props) {
 
   const showNav = !props.pageContext?.frontmatter?.hidenav
 
-  const cycleMode = (e) => {
-    const i = modes.indexOf(mode)
-    const next = modes[(i + 1) % modes.length]
-    setMode(next)
-  }
+  const nextColorMode = modes[(modes.indexOf(mode) + 1) % modes.length]
+
   return (
     <Themed.root>
       <Head {...props} />
@@ -95,11 +92,12 @@ export default function DocsLayout(props) {
                   GitHub
                 </NavLink>
                 <Button
+                  aria-label={`Change color mode to ${nextColorMode}`}
                   sx={{
                     ml: 2,
                     whiteSpace: 'pre',
                   }}
-                  onClick={cycleMode}>
+                  onClick={() => setMode(nextColorMode)}>
                   {getModeName(mode)}
                 </Button>
               </Flex>

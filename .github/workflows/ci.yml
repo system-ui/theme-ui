@@ -7,7 +7,7 @@ on:
     branches:
       - develop
       - stable
-      - ci/*
+      # - ci/* # uncomment this when workin on CI without PR
 
 jobs:
   build:
@@ -22,7 +22,8 @@ jobs:
       - uses: bahmutov/npm-install@v1
         with:
           # By default, bahmutov/npm-install uses --frozen-lockfile
-          install-command: yarn
+          install-command:
+            yarn --ignore-optional --pure-lockfile --non-interactive
 
       - name: Run tests and collect coverage
         run: yarn test --coverage
@@ -75,6 +76,9 @@ jobs:
           node-version: 14.x
 
       - uses: bahmutov/npm-install@v1
+        with:
+          install-command:
+            yarn --ignore-optional --pure-lockfile --non-interactive
 
       - name: Queue in release turnstile
         id: turnstyle

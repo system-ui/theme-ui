@@ -5,6 +5,7 @@
     "node_modules",
     "./packages/*/dist",
     "./packages/*/node_modules",
-    "./packages/*/test"
+    "./packages/*/test",
+    "./packages/e2e"
   ]
 }

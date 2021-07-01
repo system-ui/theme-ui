@@ -1,7 +1,10 @@
 import { Container, Box, Button } from 'theme-ui'
+
 import { Banner, Tiles } from '..'
-import Testimonials from './testimonials'
 import Graph from '../components/graph'
+import ReadmeBadges from '../components/readme-badges'
+
+import Testimonials from './testimonials'
 
 <Banner>
 
@@ -9,9 +12,10 @@ import Graph from '../components/graph'
 
 # Theme UI: The Design Graph Framework
 
-Theme UI is a library for creating themeable user interfaces based on constraint-based design principles.
-Build custom component libraries, design systems, web applications, Gatsby themes, and more
-with a flexible API for best-in-class developer ergonomics.
+Theme UI is a library for creating themeable user interfaces based on
+constraint-based design principles. Build custom component libraries, design
+systems, web applications, Gatsby themes, and more with a flexible API for
+best-in-class developer ergonomics.
 
 [Documentation](/getting-started)
 [GitHub](https://github.com/system-ui/theme-ui)
@@ -20,16 +24,7 @@ with a flexible API for best-in-class developer ergonomics.
 
 <Container>
 
-[![GitHub Stars](https://badgen.net/github/stars/system-ui/theme-ui)](https://github.com/system-ui/theme-ui/stargazers)
-![npm (latest)](https://img.shields.io/npm/v/theme-ui/latest)
-![npm (next)](https://img.shields.io/npm/v/theme-ui/next?color=%23e044aa)
-[![Build Status](https://github.com/system-ui/theme-ui/workflows/CI/badge.svg)](https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI)
-[![Contributors](https://img.shields.io/github/contributors/system-ui/theme-ui)](https://github.com/system-ui/theme-ui/graphs/contributors)
-[![Activity](https://img.shields.io/github/commit-activity/m/system-ui/theme-ui)](https://github.com/badges/shields/pulse) <br/>
-[![Size](https://badgen.net/bundlephobia/minzip/theme-ui)](https://badgen.net/bundlephobia/minzip/theme-ui)
-[![Tree Shaking](https://badgen.net/bundlephobia/tree-shaking/theme-ui)](https://bundlephobia.com/result?p=theme-ui)
-[![MIT license](https://badgen.net/badge/license/MIT/blue)](https://github.com/system-ui/theme-ui/blob/stable/LICENSE.md)
-[![Join our Discord community](https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord)](https://discord.gg/theme-ui)
+<ReadmeBadges />
 
 <Tiles columns={2}>
 
@@ -70,15 +65,14 @@ export default (props) => (
 <Tiles>
 
 - ## Ergonomic
-  Best-in-class developer ergonomics let you style
-  your application quickly and consistently
-  based on your theme
+  Best-in-class developer ergonomics let you style your application quickly and
+  consistently based on your theme
 - ## Themeable
-  Quickly and easily reference values from your theme
-  throughout your entire application, on any component
+  Quickly and easily reference values from your theme throughout your entire
+  application, on any component
 - ## Constraint-based
-  Use color, typography, and layout scales
-  rooted in constraint-based design principles
+  Use color, typography, and layout scales rooted in constraint-based design
+  principles
 
 </Tiles>
 
