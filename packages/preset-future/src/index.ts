@@ -1,7 +1,6 @@
-import type { Theme } from '@theme-ui/css'
 import base from '@theme-ui/preset-base'
 
-export const future: Theme = {
+export const future = {
   ...base,
   colors: {
     text: '#000',

@@ -1,7 +1,6 @@
-import type { Theme } from '@theme-ui/css'
 import base from '@theme-ui/preset-base'
 
-export const roboto: Theme = {
+export const roboto = {
   ...base,
   colors: {
     text: '#202124',
