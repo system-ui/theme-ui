@@ -1,13 +1,15 @@
+import type { Theme } from '@theme-ui/css'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const system = {
+export const system: Theme = {
   config: {
     useCustomProperties: true,
-    initialColorMode: 'system',
+    initialColorModeName: 'light',
   },
   colors: {
     text: '#000',
@@ -52,8 +54,7 @@ export const system = {
     },
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -67,10 +68,10 @@ export const system = {
     body: 1.5,
     heading: 1.25,
   },
-  textStyles: {
+  text: {
     heading,
     display: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: [5, 6],
       fontWeight: 'display',
       letterSpacing: '-0.03em',
@@ -88,26 +89,26 @@ export const system = {
       fontWeight: 'body',
     },
     h1: {
-      variant: 'textStyles.display',
+      variant: 'text.display',
     },
     h2: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 5,
     },
     h3: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 4,
     },
     h4: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 3,
     },
     h5: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 2,
     },
     h6: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 1,
     },
     a: {
