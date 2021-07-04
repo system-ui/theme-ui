@@ -16,8 +16,7 @@ export const dark = {
     purple: '#c0f',
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -31,10 +30,10 @@ export const dark = {
     body: 1.5,
     heading: 1.25,
   },
-  textStyles: {
+  text: {
     heading,
     display: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: [5, 6],
       fontWeight: 'display',
       letterSpacing: '-0.03em',
@@ -52,26 +51,26 @@ export const dark = {
       fontWeight: 'body',
     },
     h1: {
-      variant: 'textStyles.display',
+      variant: 'text.display',
     },
     h2: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 5,
     },
     h3: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 4,
     },
     h4: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 3,
     },
     h5: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 2,
     },
     h6: {
-      variant: 'textStyles.heading',
+      variant: 'text.heading',
       fontSize: 1,
     },
     a: {
@@ -140,9 +139,10 @@ export const dark = {
     '.comment': {
       fontStyle: 'italic',
     },
-    '.property,.tag,.boolean,.number,.constant,.symbol,.deleted,.function,.class-name,.regex,.important,.variable': {
-      color: 'purple',
-    },
+    '.property,.tag,.boolean,.number,.constant,.symbol,.deleted,.function,.class-name,.regex,.important,.variable':
+      {
+        color: 'purple',
+      },
     '.atrule,.attr-value,.keyword': {
       color: 'primary',
     },

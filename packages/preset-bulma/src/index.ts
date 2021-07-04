@@ -2,7 +2,9 @@
 // https://github.com/jgthms/bulma/blob/master/sass/base/minireset.sass
 // https://github.com/jgthms/bulma/blob/master/sass/base/generic.sass
 
-export const baseColors = {
+import type { Theme } from '@theme-ui/css'
+
+export const baseColors: Theme['colors'] = {
   black: 'hsl(0, 0%, 4%)',
   blackBis: 'hsl(0, 0%, 7%)',
   blackTer: 'hsl(0, 0%, 14%)',
@@ -25,7 +27,7 @@ export const baseColors = {
   red: 'hsl(348, 100%, 61%)',
 }
 
-export const colors = {
+export const colors: Theme['colors'] = {
   ...baseColors,
   text: baseColors.greyDark,
   background: baseColors.white,
@@ -43,14 +45,13 @@ export const colors = {
   },
 }
 
-export const fonts = {
-  body:
-    'BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+export const fonts: Theme['fonts'] = {
+  body: 'BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
   heading: 'inherit',
   monospace: 'monospace',
 }
 
-export const fontSizes = [
+export const fontSizes: Theme['fontSizes'] = [
   '0.75rem',
   '0.875rem', // tweener
   '1rem',
@@ -62,7 +63,7 @@ export const fontSizes = [
   '3rem',
 ]
 
-export const fontWeights = {
+export const fontWeights: Theme['fontWeights'] = {
   body: 400,
   heading: 700,
   bold: 700,
@@ -71,13 +72,15 @@ export const fontWeights = {
   semibold: 500,
 }
 
-export const lineHeights = {
+export const lineHeights: Theme['lineHeights'] = {
   body: 1.5,
   heading: 1.125,
 }
 
 // guesstimate
-export const space = [0, 0.5, 1, 1.5, 2, 2.5, 3].map(n => n + 'rem')
+export const space: Theme['space'] = [0, 0.5, 1, 1.5, 2, 2.5, 3].map(
+  (n) => n + 'rem'
+)
 
 const heading = {
   fontFamily: 'heading',
@@ -88,7 +91,7 @@ const heading = {
 }
 
 // needs works
-export const styles = {
+export const styles: Theme['styles'] = {
   root: {
     fontFamily: 'body',
     lineHeight: 'body',
@@ -139,7 +142,7 @@ export const styles = {
   },
 }
 
-export const bulma = {
+export const bulma: Theme = {
   colors,
   fonts,
   fontSizes,

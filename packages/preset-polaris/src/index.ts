@@ -1,9 +1,10 @@
+import type { Theme } from '@theme-ui/css'
 import base from '@theme-ui/preset-base'
 
 const text =
   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
 
-export const polaris = {
+export const polaris: Theme = {
   ...base,
   colors: {
     text: '#454f5b',
