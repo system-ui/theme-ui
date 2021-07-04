@@ -1,15 +1,13 @@
-import type { Theme } from '@theme-ui/css'
-
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const tosh: Theme = {
+export const tosh = {
   config: {
     useCustomProperties: true,
-    initialColorModeName: 'light',
+    initialColorMode: 'light',
   },
   colors: {
     text: '#000',
@@ -158,7 +156,7 @@ export const tosh: Theme = {
       borderBottom: '8px solid',
       borderColor: 'text',
     },
-  },
+  } as const,
 }
 
 export default tosh

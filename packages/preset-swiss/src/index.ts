@@ -131,7 +131,7 @@ export const swiss = {
     img: {
       maxWidth: '100%',
     },
-  },
+  } as const,
   prism: {
     '.comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url': {
       color: 'gray',

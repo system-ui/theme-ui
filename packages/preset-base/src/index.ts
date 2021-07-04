@@ -1,5 +1,3 @@
-import type { Theme } from '@theme-ui/css'
-
 const heading = {
   color: 'text',
   fontFamily: 'heading',
@@ -7,7 +5,7 @@ const heading = {
   fontWeight: 'heading',
 }
 
-export const base: Theme = {
+export const base = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -97,7 +95,7 @@ export const base: Theme = {
     img: {
       maxWidth: '100%',
     },
-  },
+  } as const,
 }
 
 export default base

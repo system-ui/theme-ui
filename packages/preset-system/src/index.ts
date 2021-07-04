@@ -1,15 +1,13 @@
-import type { Theme } from '@theme-ui/css'
-
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const system: Theme = {
+export const system = {
   config: {
     useCustomProperties: true,
-    initialColorModeName: 'light',
+    initialColorMode: 'system',
   },
   colors: {
     text: '#000',
@@ -164,7 +162,7 @@ export const system: Theme = {
       borderBottom: '1px solid',
       borderColor: 'muted',
     },
-  },
+  } as const,
 }
 
 export default system
