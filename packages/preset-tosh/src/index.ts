@@ -1,10 +1,12 @@
+import { makeTheme } from '@theme-ui/css/utils'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const tosh = {
+export const tosh = makeTheme({
   config: {
     useCustomProperties: true,
     initialColorMode: 'light',
@@ -156,7 +158,7 @@ export const tosh = {
       borderBottom: '8px solid',
       borderColor: 'text',
     },
-  } as const,
-}
+  },
+})
 
 export default tosh

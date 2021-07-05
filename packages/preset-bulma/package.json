@@ -11,6 +11,9 @@
   "dependencies": {
     "@theme-ui/preset-base": "0.10.0"
   },
+  "peerDependencies": {
+    "@theme-ui/css": ">=0.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },

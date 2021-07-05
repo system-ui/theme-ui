@@ -1,10 +1,12 @@
+import { makeTheme } from '@theme-ui/css/utils'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const deep = {
+export const deep = makeTheme({
   colors: {
     text: 'hsl(210, 50%, 96%)',
     background: 'hsl(230, 25%, 18%)',
@@ -150,6 +152,6 @@ export const deep = {
       color: 'secondary',
     },
   },
-}
+})
 
 export default deep

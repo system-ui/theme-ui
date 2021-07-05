@@ -1,10 +1,12 @@
+import { makeTheme } from '@theme-ui/css/utils'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const swiss = {
+export const swiss = makeTheme({
   colors: {
     text: 'hsl(10, 20%, 20%)',
     background: 'hsl(10, 10%, 98%)',
@@ -150,6 +152,6 @@ export const swiss = {
       color: 'secondary',
     },
   },
-}
+})
 
 export default swiss

@@ -1,3 +1,5 @@
+import { makeStyles, makeTheme } from '@theme-ui/css/utils'
+
 export const baseColors = {
   white: '#fff',
   black: '#000',
@@ -131,7 +133,7 @@ const text = {
   display,
 }
 
-export const styles = {
+export const styles = makeStyles({
   root: {
     fontFamily: 'body',
     lineHeight: 'body',
@@ -208,9 +210,9 @@ export const styles = {
     maxWidth: '100%',
     height: 'auto',
   },
-} as const
+})
 
-export const bootstrap = {
+export const bootstrap = makeTheme({
   breakpoints,
   colors,
   space,
@@ -223,6 +225,6 @@ export const bootstrap = {
   radii,
   text,
   styles,
-}
+})
 
 export default bootstrap

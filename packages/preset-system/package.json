@@ -9,6 +9,9 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {},
+  "peerDependencies": {
+    "@theme-ui/css": ">=0.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },

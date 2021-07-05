@@ -1,10 +1,12 @@
+import { makeTheme } from '@theme-ui/css/utils'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const dark = {
+export const dark = makeTheme({
   colors: {
     text: '#fff',
     background: '#060606',
@@ -150,6 +152,6 @@ export const dark = {
       color: 'secondary',
     },
   },
-}
+})
 
 export default dark
