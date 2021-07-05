@@ -61,6 +61,7 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
+  // eslint-disable-next-line jsx-a11y/heading-has-content
   const Beep = (props: {}) => <h2 {...props} />
   const Inner = (props: {}) => mdx('Beep', props)
 
@@ -116,37 +117,42 @@ test('warns when multiple versions of emotion are installed', () => {
 })
 
 test('functional themes receive outer theme', () => {
-  const outer = {
+  const outer: Theme = {
     config: {
       useCustomProperties: false,
     },
     colors: {
       text: 'tomato',
       background: 'white',
-      primary: 'black',
+      primary: 'rgb(12, 34, 56)',
     },
   }
   const theme = jest.fn<Theme, [Theme]>((t) => ({
     ...t,
     colors: { text: t.colors?.primary },
   }))
-  const json = renderJSON(
+
+  const tree = render(
     jsx(
       ThemeProvider,
       { theme: outer },
       jsx(
         ThemeProvider,
         { theme },
-        jsx('div', {
+        jsx('article', {
           sx: {
             color: 'text',
+            textDecoration: 'underline',
           },
         })
       )
     )
   )
   expect(theme).toHaveBeenCalledWith(outer)
-  expect(json).toHaveStyleRule('color', 'black')
+
+  const article = tree.baseElement.querySelector('article')!
+
+  expect(window.getComputedStyle(article).color).toBe('rgb(12, 34, 56)')
 })
 
 test('functional themes can be used at the top level', () => {
@@ -256,15 +262,15 @@ test('nested ThemeProviders combine colors', async () => {
     .emotion-0 {
       --theme-ui-colors-primary: blue;
       --theme-ui-colors-background: white;
-      color: var(--theme-ui-colors-text);
-      background-color: var(--theme-ui-colors-background);
     }
 
-    .emotion-0.theme-ui-dark {
+    .emotion-0.theme-ui-dark,
+    .theme-ui-dark .emotion-0 {
       --theme-ui-colors-background: black;
     }
 
-    .emotion-0.theme-ui-__default {
+    .emotion-0.theme-ui-__default,
+    .theme-ui-__default .emotion-0 {
       --theme-ui-colors-primary: blue;
       --theme-ui-colors-background: white;
     }
@@ -275,7 +281,8 @@ test('nested ThemeProviders combine colors', async () => {
     }
 
     <div
-      class="theme-ui__nested-color-mode-provider emotion-0"
+      class="emotion-0"
+      data-themeui-nested-provider="true"
     >
       <button
         class="emotion-1"
@@ -291,15 +298,15 @@ test('nested ThemeProviders combine colors', async () => {
     .emotion-0 {
       --theme-ui-colors-primary: blue;
       --theme-ui-colors-background: black;
-      color: var(--theme-ui-colors-text);
-      background-color: var(--theme-ui-colors-background);
     }
 
-    .emotion-0.theme-ui-dark {
+    .emotion-0.theme-ui-dark,
+    .theme-ui-dark .emotion-0 {
       --theme-ui-colors-background: black;
     }
 
-    .emotion-0.theme-ui-__default {
+    .emotion-0.theme-ui-__default,
+    .theme-ui-__default .emotion-0 {
       --theme-ui-colors-primary: blue;
       --theme-ui-colors-background: black;
     }
@@ -310,7 +317,8 @@ test('nested ThemeProviders combine colors', async () => {
     }
 
     <div
-      class="theme-ui__nested-color-mode-provider emotion-0"
+      class="emotion-0"
+      data-themeui-nested-provider="true"
     >
       <button
         class="emotion-1"

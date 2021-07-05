@@ -8,7 +8,6 @@ exports[`InitializeColorMode renders 1`] = `
   var mode = localStorage.getItem('theme-ui-color-mode');
   if (!mode) return
   document.documentElement.classList.add('theme-ui-' + mode);
-  document.body.classList.add('theme-ui-' + mode);
 } catch (e) {} })();",
     }
   }

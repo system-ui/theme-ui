@@ -1,4 +1,7 @@
-import { toCustomProperties, createColorStyles } from '../src/custom-properties'
+import {
+  toCustomProperties,
+  __createColorStyles,
+} from '../src/custom-properties'
 
 describe('toCustomProperties', () => {
   test('converts theme object to custom properties', () => {
@@ -47,9 +50,9 @@ describe('toCustomProperties', () => {
   })
 })
 
-describe('createColorStyles', () => {
+describe('__createColorStyles', () => {
   test('creates styles from color palette', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       colors: {
         text: 'tomato',
         background: 'white',
@@ -79,7 +82,7 @@ describe('createColorStyles', () => {
       '--theme-ui-colors-primary': '#3333ee',
       '--theme-ui-colors-primary-light': '#7373f7',
       '--theme-ui-colors-primary-dark': '#00008f',
-      '&.theme-ui-dark': {
+      '&.theme-ui-dark, .theme-ui-dark &': {
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'black',
         '--theme-ui-colors-primary': '#ee4933',
@@ -90,7 +93,7 @@ describe('createColorStyles', () => {
   })
 
   test('creates styles from simple theme', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       colors: {
         text: 'tomato',
         background: 'white',
@@ -107,7 +110,7 @@ describe('createColorStyles', () => {
       backgroundColor: 'var(--theme-ui-colors-background)',
       '--theme-ui-colors-text': 'tomato',
       '--theme-ui-colors-background': 'white',
-      '&.theme-ui-dark': {
+      '&.theme-ui-dark, .theme-ui-dark &': {
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'black',
       },
@@ -115,7 +118,7 @@ describe('createColorStyles', () => {
   })
 
   test('creates styles at the HTML root', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       useRootStyles: true,
       colors: {
         text: 'white',
@@ -133,7 +136,7 @@ describe('createColorStyles', () => {
       backgroundColor: 'var(--theme-ui-colors-background)',
       '--theme-ui-colors-text': 'white',
       '--theme-ui-colors-background': 'tomato',
-      '&.theme-ui-light': {
+      '&.theme-ui-light, .theme-ui-light &': {
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
       },
@@ -141,7 +144,7 @@ describe('createColorStyles', () => {
   })
 
   test('creates styles at the HTML root and override the body styles prop', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       useRootStyles: true,
       colors: {
         text: 'white',
@@ -159,7 +162,7 @@ describe('createColorStyles', () => {
       backgroundColor: 'var(--theme-ui-colors-background)',
       '--theme-ui-colors-text': 'white',
       '--theme-ui-colors-background': 'tomato',
-      '&.theme-ui-light': {
+      '&.theme-ui-light, .theme-ui-light &': {
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
       },
@@ -167,7 +170,7 @@ describe('createColorStyles', () => {
   })
 
   test('creates styles for print color mode', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       config: {
         printColorModeName: 'light',
       },
@@ -187,7 +190,7 @@ describe('createColorStyles', () => {
       backgroundColor: 'var(--theme-ui-colors-background)',
       '--theme-ui-colors-text': 'white',
       '--theme-ui-colors-background': 'tomato',
-      '&.theme-ui-light': {
+      '&.theme-ui-light, .theme-ui-light &': {
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
       },
@@ -199,7 +202,7 @@ describe('createColorStyles', () => {
   })
 
   test('creates styles for initial print color mode', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       config: {
         initialColorModeName: 'tomato',
         printColorModeName: 'tomato',
@@ -220,7 +223,7 @@ describe('createColorStyles', () => {
       backgroundColor: 'var(--theme-ui-colors-background)',
       '--theme-ui-colors-text': 'tomato',
       '--theme-ui-colors-background': 'white',
-      '&.theme-ui-dark': {
+      '&.theme-ui-dark, .theme-ui-dark &': {
         '--theme-ui-colors-text': 'white',
         '--theme-ui-colors-background': 'black',
       },
@@ -232,7 +235,7 @@ describe('createColorStyles', () => {
   })
 
   test('creates styles from color palette', () => {
-    const styles = createColorStyles({
+    const styles = __createColorStyles({
       colors: {
         text: 'tomato',
         background: 'white',

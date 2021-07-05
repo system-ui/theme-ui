@@ -1,6 +1,7 @@
 import React, {
   Dispatch,
   useEffect,
+  useLayoutEffect,
   useState,
   useMemo,
   SetStateAction,
@@ -17,10 +18,15 @@ import {
   ColorModesScale,
   ColorMode,
   NestedScale,
+  css,
 } from '@theme-ui/css'
 import { Global } from '@emotion/react'
 
-import { toCustomProperties, createColorStyles } from './custom-properties'
+import {
+  toCustomProperties,
+  __createColorStyles,
+  __createColorProperties,
+} from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
@@ -68,17 +74,8 @@ const getPreferredColorScheme = (): 'dark' | 'light' | null => {
   return null
 }
 
-const getModeFromClass = (): string | undefined => {
-  let mode: string | undefined
-  if (typeof document !== 'undefined') {
-    document.documentElement.classList.forEach((className) => {
-      if (className.startsWith('theme-ui-')) {
-        mode = className.replace('theme-ui-', '')
-      }
-    })
-  }
-  return mode
-}
+const useClientsideEffect =
+  typeof window === 'undefined' ? () => {} : useLayoutEffect
 
 const TopLevelColorModeProvider = ({
   outerCtx,
@@ -92,11 +89,6 @@ const TopLevelColorModeProvider = ({
     outerTheme.config || outerTheme
 
   let [colorMode, setColorMode] = useState(() => {
-    const modeFromClass = getModeFromClass()
-    if (modeFromClass) {
-      return modeFromClass
-    }
-
     const preferredMode =
       useColorSchemeMediaQuery !== false && getPreferredColorScheme()
 
@@ -105,23 +97,21 @@ const TopLevelColorModeProvider = ({
 
   // on first render, we read the color mode from localStorage and
   // clear the class on document element body
-  useEffect(() => {
+  useClientsideEffect(() => {
     const stored = useLocalStorage !== false && storage.get()
 
     if (typeof document !== 'undefined') {
       document.documentElement.classList.remove('theme-ui-' + stored)
-      document.body.classList.remove('theme-ui-' + stored)
     }
 
     if (stored && stored !== colorMode) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       colorMode = stored
       setColorMode(stored)
     }
   }, [])
 
   // when mode changes, we save it to localStorage
-  React.useEffect(() => {
+  useEffect(() => {
     if (colorMode && useLocalStorage !== false) {
       storage.set(colorMode)
     }
@@ -260,7 +250,7 @@ function useThemeWithAppliedColorMode({
 function GlobalColorStyles({ theme }: { theme: Theme }) {
   return jsx(Global, {
     styles: () => {
-      return { html: createColorStyles(theme) }
+      return { html: __createColorStyles(theme) }
     },
   })
 }
@@ -277,13 +267,40 @@ function NestedColorModeProvider({
     colorMode: outerCtx.colorMode,
   })
 
+  // Nested theme providers need to be rerendered after hydration for the correct
+  // color mode to apply.
+  const [needsRerender, setNeedsRerender] = useState(
+    // Note: we could also check some "ssr-enabled" flag as an optimization for
+    // SPAs, as deeply nested theme providers will also pay a performance penalty
+    // for this SSR bug fix
+    () => newTheme.config?.useLocalStorage !== false
+  )
+
+  useClientsideEffect(() => void setNeedsRerender(false), [])
+
+  const themeColors = newTheme.rawColors || newTheme.colors
+  const useCustomProperties = newTheme.config?.useCustomProperties
+
+  const colorVars = useMemo(() => {
+    if (useCustomProperties === false) {
+      return {}
+    }
+    const colors = themeColors || {}
+
+    return css(__createColorProperties(colors, colors.modes || {}))(newTheme)
+  }, [newTheme, themeColors, useCustomProperties])
+
   return (
     <ThemeUIInternalBaseThemeProvider
       context={{ ...outerCtx, theme: newTheme }}>
       {/* Changed CSS Variables will cascade from the wrapping div */}
       {jsx('div', {
-        className: 'theme-ui__nested-color-mode-provider',
-        css: createColorStyles(newTheme),
+        'data-themeui-nested-provider': true,
+        // the key here ensures that children will be rerendered after color
+        // mode is read from localStorage
+        key: Number(needsRerender),
+        suppressHydrationWarning: true,
+        css: colorVars,
         children,
       })}
     </ThemeUIInternalBaseThemeProvider>
@@ -315,7 +332,6 @@ const noflash = `(function() { try {
   var mode = localStorage.getItem('theme-ui-color-mode');
   if (!mode) return
   document.documentElement.classList.add('theme-ui-' + mode);
-  document.body.classList.add('theme-ui-' + mode);
 } catch (e) {} })();`
 
 export const InitializeColorMode = () =>

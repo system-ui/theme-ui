@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
