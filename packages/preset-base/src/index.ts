@@ -8,8 +8,7 @@ const heading = {
 export const base = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -96,7 +95,7 @@ export const base = {
     img: {
       maxWidth: '100%',
     },
-  },
+  } as const,
 }
 
 export default base

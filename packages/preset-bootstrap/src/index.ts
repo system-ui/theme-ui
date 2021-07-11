@@ -43,13 +43,12 @@ export const colors = {
   textMuted: baseColors.gray[6],
 }
 
-export const space = [0, 0.25, 0.5, 1, 1.5, 3].map(n => n + 'rem')
+export const space = [0, 0.25, 0.5, 1, 1.5, 3].map((n) => n + 'rem')
 
 export const breakpoints = ['576px', '768px', '992px', '1200px']
 
 export const fonts = {
-  body:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   heading: 'inherit',
   monospace:
     'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
@@ -127,7 +126,7 @@ const display = {
 }
 
 // variants
-const typeStyles = {
+const text = {
   heading,
   display,
 }
@@ -209,7 +208,7 @@ export const styles = {
     maxWidth: '100%',
     height: 'auto',
   },
-}
+} as const
 
 export const bootstrap = {
   breakpoints,
@@ -222,7 +221,7 @@ export const bootstrap = {
   sizes,
   shadows,
   radii,
-  typeStyles,
+  text,
   styles,
 }
 
