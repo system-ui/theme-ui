@@ -1,7 +1,7 @@
 import * as P from 'polished'
 import { ColorModesScale, get, Theme } from '@theme-ui/css'
 
-type Color = ColorModesScale['primary']
+type Color = ColorModesScale[string]
 
 /**
  * Get color from theme.colors
@@ -69,7 +69,7 @@ export const desaturate = (c: Color, n: number) => (t: Theme) =>
 /**
  * Saturate a color by an amount 0–1
  */
-export const saturate = (c: Color, n: number) => (t: Theme) => 
+export const saturate = (c: Color, n: number) => (t: Theme) =>
   P.saturate(n, getColor(t, c))
 
 /**
@@ -94,8 +94,10 @@ export const alpha = (c: Color, n: number) => (t: Theme) =>
 /**
  * Mix two colors by a specific ratio
  */
-export const mix = (a: Color, b: Color, n = 0.5) => (t: Theme) =>
-  P.mix(n, getColor(t, a), getColor(t, b))
+export const mix =
+  (a: Color, b: Color, n = 0.5) =>
+  (t: Theme) =>
+    P.mix(n, getColor(t, a), getColor(t, b))
 
 /**
  * Get the complement of a color

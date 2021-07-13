@@ -1,0 +1,4 @@
+{
+  "main": "dist/theme-ui-css-utils.cjs.js",
+  "module": "dist/theme-ui-css-utils.esm.js"
+}

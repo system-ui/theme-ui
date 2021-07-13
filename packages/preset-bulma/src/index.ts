@@ -2,6 +2,8 @@
 // https://github.com/jgthms/bulma/blob/master/sass/base/minireset.sass
 // https://github.com/jgthms/bulma/blob/master/sass/base/generic.sass
 
+import { makeTheme } from '@theme-ui/css/utils'
+
 export const baseColors = {
   black: 'hsl(0, 0%, 4%)',
   blackBis: 'hsl(0, 0%, 7%)',
@@ -44,8 +46,7 @@ export const colors = {
 }
 
 export const fonts = {
-  body:
-    'BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+  body: 'BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
   heading: 'inherit',
   monospace: 'monospace',
 }
@@ -77,7 +78,7 @@ export const lineHeights = {
 }
 
 // guesstimate
-export const space = [0, 0.5, 1, 1.5, 2, 2.5, 3].map(n => n + 'rem')
+export const space = [0, 0.5, 1, 1.5, 2, 2.5, 3].map((n) => n + 'rem')
 
 const heading = {
   fontFamily: 'heading',
@@ -88,7 +89,7 @@ const heading = {
 }
 
 // needs works
-export const styles = {
+export const styles = makeStyles({
   root: {
     fontFamily: 'body',
     lineHeight: 'body',
@@ -137,15 +138,15 @@ export const styles = {
     height: '1px',
     m: 3,
   },
-}
+})
 
-export const bulma = {
+export const bulma = makeTheme({
   colors,
   fonts,
   fontSizes,
   fontWeights,
   space,
   styles,
-}
+})
 
 export default bulma

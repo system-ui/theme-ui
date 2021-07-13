@@ -12,7 +12,13 @@ module.exports = {
     'no-use-before-define': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-redeclare': 'off',
-
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     // TypeScript checks this
     'no-undef': 'off',
   },
