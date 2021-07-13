@@ -48,6 +48,10 @@ const theme = {
       p: 4,
       bg: 'highlight',
     },
+    bop: {
+      m: 1,
+      bg: 'muted',
+    },
   },
   cards: {
     primary: {
@@ -141,6 +145,131 @@ describe('Box', () => {
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')
     expect(json).toHaveStyleRule('padding', '32px')
+  })
+  it('renders with variant prop as a function', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variant={(theme) => `boxes.${Object.keys(theme.boxes)[0]}`} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('background-color', 'highlight')
+    expect(json).toHaveStyleRule('padding', '32px')
+  })
+  test('renders with variant array', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variant={['boxes.beep', 'boxes.bop']} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('background-color', 'muted')
+    expect(json).toHaveStyleRule('padding', '32px')
+    expect(json).toHaveStyleRule('margin', '4px')
+  })
+
+  test('renders with variant array function merge', () => {
+    const json = renderJSON(
+      <ThemeProvider
+        theme={{
+          colors: {
+            shadow: '#333333',
+          },
+          boxes: {
+            beep: {
+              border: (t) => `1px solid ${t.colors.shadow}`,
+            },
+            bop: {
+              border: (t) => `2px solid ${t.colors.shadow}`,
+            },
+          },
+        }}>
+        <Box variant={['boxes.beep', 'boxes.bop']} />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule(
+      'border',
+      '2px solid var(--theme-ui-colors-shadow, #333333)'
+    )
+  })
+
+  test('renders with variant array derived variant from theme merge', () => {
+    jest.spyOn(global.Math, 'random').mockReturnValue(0.4)
+
+    const lighten = (color, amount) => {
+      if (color === '#0cf' && amount === 0.25) {
+        return '#80e5ff'
+      }
+    }
+
+    const sketchyBorders = [
+      {
+        borderBottomLeftRadius: '5px 85px',
+        borderBottomRightRadius: '75px 5px',
+        borderTopLeftRadius: '85px 5px',
+        borderTopRightRadius: '5px 75px',
+      },
+      {
+        borderBottomLeftRadius: '61px 8px',
+        borderBottomRightRadius: '6px 68px',
+        borderTopLeftRadius: '41px 8px',
+        borderTopRightRadius: '3px 68px',
+      },
+      {
+        borderBottomLeftRadius: '75px 5px',
+        borderBottomRightRadius: '5px 85px',
+        borderTopLeftRadius: '5px 75px',
+        borderTopRightRadius: '85px 5px',
+      },
+    ]
+    const randomNumber = () => 0.321
+    const borderIndex = Math.floor(randomNumber() * sketchyBorders.length)
+    const json = renderJSON(
+      <ThemeProvider
+        theme={{
+          colors: {
+            primary: '#0cf',
+            text: '#000',
+            background: '#fefefe',
+          },
+          buttons: {
+            primary: (t) => {
+              const backgroundColor = lighten(t?.colors?.primary, 0.25)
+
+              return {
+                color: 'background',
+                border: `2px solid ${backgroundColor}`,
+                backgroundColor,
+              }
+            },
+            ghost: {
+              backgroundColor: 'transparent',
+            },
+            sketchy: (t) => {
+              return sketchyBorders[borderIndex]
+            },
+          },
+        }}>
+        <Button variant={['primary', 'ghost', 'sketchy']} />
+      </ThemeProvider>
+    )
+
+    expect(json).toMatchSnapshot()
+
+    expect(json).toHaveStyleRule(
+      'border-bottom-left-radius',
+      sketchyBorders[borderIndex].borderBottomLeftRadius
+    )
+    expect(json).toHaveStyleRule(
+      'border-bottom-right-radius',
+      sketchyBorders[borderIndex].borderBottomRightRadius
+    )
+
+    expect(json).toHaveStyleRule(
+      'color',
+      'var(--theme-ui-colors-background, #fefefe)'
+    )
+    expect(json).toHaveStyleRule('background-color', 'transparent')
+
+    jest.spyOn(global.Math, 'random').mockRestore()
   })
 
   test('renders with base styles', () => {

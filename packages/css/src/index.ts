@@ -1,9 +1,11 @@
+import deepmerge from 'deepmerge'
 import {
   CSSObject,
   ThemeUIStyleObject,
   ThemeDerivedStyles,
   Theme,
   ThemeUICSSObject,
+  VariantProperty,
 } from './types'
 
 export * from './types'
@@ -53,14 +55,41 @@ export function get(
   return hasDefault(obj) ? obj[THEME_UI_DEFAULT_KEY] : obj
 }
 
+export const getValue = (
+  theme: Theme,
+  key: string,
+  _themeKey?: string
+): ThemeUICSSObject => {
+  const defValue = _themeKey ? get(theme, key) : undefined
+  const value = get(
+    theme,
+    _themeKey ? `${_themeKey}.${key}` : key,
+    typeof defValue === 'function' ? defValue(theme) : defValue
+  )
+  return typeof value === 'function' ? value(theme) : value
+}
+export const getVariantValue = (
+  theme: Theme,
+  variant: VariantProperty.Variant,
+  _themeKey?: string
+): ThemeUICSSObject => {
+  const key = typeof variant === 'function' ? variant(theme) : variant
+  if (Array.isArray(key)) {
+    return deepmerge.all(
+      key.map((v) => getValue(theme, v, _themeKey) || {}),
+      { arrayMerge: (_dest, src) => src }
+    ) as ThemeUICSSObject
+  }
+  return getValue(theme, key, _themeKey)
+}
+
 export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
   if (obj && obj['variant']) {
     let result: CSSObject = {}
     for (const key in obj) {
       const x = obj[key]
       if (key === 'variant') {
-        const val = typeof x === 'function' ? x(theme) : x
-        const variant = getObjectWithVariants(get(theme, val as string), theme)
+        const variant = getObjectWithVariants(getVariantValue(theme, x), theme)
         result = { ...result, ...variant }
       } else {
         result[key] = x as CSSObject
@@ -360,7 +389,6 @@ export const css = (args: ThemeUIStyleObject = {}) => (
     typeof args === 'function' ? args(theme) : args,
     theme
   )
-
   const styles = responsive(obj as ThemeUICSSObject)(theme)
   let result: CSSObject = {}
   for (const key in styles) {

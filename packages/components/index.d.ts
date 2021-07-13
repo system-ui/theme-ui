@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyledComponent } from '@emotion/styled'
 import { Interpolation } from '@emotion/react'
 import { SpaceProps, ColorProps, MarginProps } from 'styled-system'
-import { ResponsiveStyleValue, ThemeUIStyleObject } from '@theme-ui/css'
+import { ResponsiveStyleValue, ThemeUIStyleObject, VariantProperty } from '@theme-ui/css'
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
@@ -20,7 +20,7 @@ type ForwardRef<T, P> = React.ForwardRefExoticComponent<
 
 export interface BoxOwnProps extends SpaceProps, ColorProps {
   as?: React.ElementType
-  variant?: string
+  variant?: VariantProperty.Variant
   css?: Interpolation<any>
   sx?: ThemeUIStyleObject
 }

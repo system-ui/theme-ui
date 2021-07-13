@@ -776,6 +776,7 @@ Theme UI is now written in TypeScript, and the emitted types differ from
 
 ### `@theme-ui/core`
 
+- Add ability to use arrays to merge variants. Issues #1209 #1208, PR #1226
 - Make ThemeProvider `theme` prop required
 
 ### `@theme-ui/editor`

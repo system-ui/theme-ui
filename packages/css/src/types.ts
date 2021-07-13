@@ -462,6 +462,10 @@ export type ThemeUICSSProperties = {
   >
 }
 
+export declare namespace VariantProperty {
+  export type Variant = string | string[] | ((theme: Theme) => string)
+}
+
 export interface VariantProperty {
   /**
    * **`Variants`** can be useful for applying complex styles to a component based on a single prop.
@@ -484,7 +488,7 @@ export interface VariantProperty {
    *
    * @see https://styled-system.com/variants
    */
-  variant?: string
+  variant?: VariantProperty.Variant
 }
 
 export interface ThemeDerivedStyles {
