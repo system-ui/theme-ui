@@ -10,12 +10,7 @@
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
-  "scripts": {
-    "build": "yarn build:index && yarn build:jsx-runtime && yarn build:jsx-dev-runtime",
-    "build:jsx-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-runtime",
-    "build:jsx-dev-runtime": "microbundle --no-compress --tsconfig tsconfig.json --cwd jsx-dev-runtime",
-    "build:index": "microbundle --no-compress --tsconfig tsconfig.json"
-  },
+  "scripts": {},
   "dependencies": {
     "@theme-ui/color-modes": "0.10.0",
     "@theme-ui/components": "0.10.0",

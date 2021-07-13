@@ -19,5 +19,7 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
+    // TypeScript checks this
+    'no-undef': 'off',
   },
 }

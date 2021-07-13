@@ -28,9 +28,6 @@
     <img alt="npm (develop)" src="https://img.shields.io/npm/v/theme-ui/develop?color=%23e044aa"/>
   </a>
   <br />
-  <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
-    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg" alt="Build Status"/>
-  </a>
   <a href="https://github.com/system-ui/theme-ui/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/system-ui/theme-ui" alt="Contributors" />
   </a>
@@ -58,6 +55,16 @@
   </a>
   <a href="https://discord.gg/theme-ui">
     <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
+  </a>
+  <br />
+  <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
+    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg?branch=stable" alt="Build Status" />
+  </a>
+  <a href="https://dashboard.cypress.io/projects/fmfid1/runs">
+    <img src="https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/fmfid1/stable&logo=cypress" alt="This project is using Cypress for end-to-end tests." />
+  </a>
+  <a href="https://percy.io/95212972/theme-ui">
+    <img src="https://percy.io/static/images/percy-badge.svg" alt="This project is using Percy.io for visual regression testing." />
   </a>
 </p>
 
@@ -132,8 +139,7 @@ custom color palettes, typographic scales, fonts, and more. Read more about
 // example theme.js
 export default {
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: '"Avenir Next", sans-serif',
     monospace: 'Menlo, monospace',
   },
