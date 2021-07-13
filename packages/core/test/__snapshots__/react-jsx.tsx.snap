@@ -10,7 +10,7 @@ exports[`JSX accepts sx prop 1`] = `
 }
 
 .emotion-1 {
-  bg-color: primary;
+  background-color: primary;
 }
 
 <div

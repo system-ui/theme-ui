@@ -898,7 +898,57 @@ test('warns when localStorage is disabled', () => {
   restoreConsole()
 })
 
-test('rawColors are properly inherited in nested providers', () => {
+test('rawColors are properly inherited in nested providers #1', () => {
+  let finalTheme: Theme = {}
+  const Grabber = () => {
+    const context = useThemeUI()
+    finalTheme = context.theme
+    return null
+  }
+
+  const outerTheme: Theme = {
+    colors: {
+      text: 'black',
+      modes: { dark: { text: 'white' } },
+    },
+  }
+
+  const nestedTheme: Theme = {
+    colors: {
+      background: 'white',
+      modes: { dark: { background: 'black' } },
+    },
+  }
+
+  render(
+    <ThemeProvider theme={outerTheme}>
+      <ColorModeProvider>
+        <ThemeProvider theme={nestedTheme}>
+          <ColorModeProvider>
+            <Grabber />
+          </ColorModeProvider>
+        </ThemeProvider>
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+
+  expect(finalTheme.rawColors).toStrictEqual({
+    text: 'black',
+    background: 'white',
+    modes: {
+      __default: {
+        text: 'black',
+        background: 'white',
+      },
+      dark: {
+        text: 'white',
+        background: 'black',
+      },
+    },
+  })
+})
+
+test('rawColors are properly inherited in nested providers #2', () => {
   let finalTheme: Theme = {}
   const Grabber = () => {
     const context = useThemeUI()
@@ -958,8 +1008,7 @@ test('rawColors are properly inherited in nested providers', () => {
       dark: {
         text: 'white',
         primary: 'red',
-        // todo: needs fix – we're losing this when nesting ColorModeProviders
-        // background: 'black',
+        background: 'black',
       },
     },
   })

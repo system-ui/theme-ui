@@ -7,7 +7,8 @@
     "open": "cypress open",
     "start": "percy exec -- cypress run",
     "record": "percy exec -- cypress run --record",
-    "serve-docs": "cd ../.. && yarn workspace docs serve"
+    "serve-docs": "cd ../.. && yarn workspace docs serve",
+    "build-and-serve-docs": "cd ../.. && yarn workspace docs build && yarn workspace docs serve"
   },
   "optionalDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.0",
