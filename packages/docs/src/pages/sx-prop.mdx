@@ -6,12 +6,15 @@ import { Note } from '..'
 
 # The `sx` Prop
 
-The `sx` prop lets you style elements inline, using values from your theme.
-To use the `sx` prop, add the custom `/** @jsxImportSource theme-ui */` pragma comment to the top of your module.
+The `sx` prop lets you style elements inline, using values from your theme. To
+use the `sx` prop, add the custom `/** @jsxImportSource theme-ui */` pragma
+comment to the top of your module or configure
+[automatic JSX runtime](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
+in your transpiler.
 
-The `sx` prop lets you add any valid CSS to an element,
-while using values from your theme to keep styles consistent.
-You can think of the style object that the `sx` prop accepts as a _superset_ of CSS.
+The `sx` prop lets you add any valid CSS to an element, while using values from
+your theme to keep styles consistent. You can think of the style object that the
+`sx` prop accepts as a _superset_ of CSS.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -33,16 +36,20 @@ export default (props) => (
 
 <Note>
 
-Under the hood, Theme UI uses a [custom pragma comment](/guides/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to Emotion's `jsx` functions.
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default React `jsx` functions.
-This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
-This is intended as a complete replacement for the Emotion custom JSX pragma.
+Under the hood, Theme UI uses a [custom pragma comment](/guides/jsx-pragma) that
+converts a theme-aware `sx` prop into a style object and passes it to Emotion's
+`jsx` functions. The `sx` prop only works in modules that have defined a custom
+pragma at the top of the file, which replaces the default React `jsx` functions.
+This means you can control which modules in your application opt into this
+feature without the need for a Babel plugin or additional configuration. This is
+intended as a complete replacement for the Emotion custom JSX pragma.
 
 </Note>
 
 ## Theme-Aware Properties
 
-The following CSS properties will use values defined in the theme, when available.
+The following CSS properties will use values defined in the theme, when
+available.
 
 | Property                  | Theme Key        |
 | ------------------------- | ---------------- |
@@ -138,7 +145,8 @@ The following CSS properties will use values defined in the theme, when availabl
 | `fill`                    | `colors`         |
 | `stroke`                  | `colors`         |
 
-Theme UI also supports [CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties),
+Theme UI also supports
+[CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties),
 which follow this structure:
 
 - `margin-{block,inline}-{start,end}`
@@ -209,8 +217,10 @@ which follow this structure:
 
 ## Responsive Values
 
-Theme UI, like Styled System, includes a shorthand syntax for writing mobile-first responsive styles using arrays as values.
-This is useful when you want to change a single property across multiple breakpoints without needing to write verbose media query syntax.
+Theme UI, like Styled System, includes a shorthand syntax for writing
+mobile-first responsive styles using arrays as values. This is useful when you
+want to change a single property across multiple breakpoints without needing to
+write verbose media query syntax.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -227,7 +237,8 @@ export default (props) => (
 
 ### Skipping Breakpoints
 
-If you want to skip a breakpoint, you can use the value `null`. This is useful if you want to set a value for only the largest breakpoint, for example.
+If you want to skip a breakpoint, you can use the value `null`. This is useful
+if you want to set a value for only the largest breakpoint, for example.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -244,7 +255,8 @@ export default (props) => (
 
 ### Media Queries
 
-If you prefer standard CSS media query syntax, you can use nested objects for responsive styles as well.
+If you prefer standard CSS media query syntax, you can use nested objects for
+responsive styles as well.
 
 ```jsx
 <div
@@ -259,10 +271,12 @@ If you prefer standard CSS media query syntax, you can use nested objects for re
 
 ## Margin and Padding
 
-Margin and padding are treated as first-class citizens in Theme UI,
-using values defined in the `theme.space` scale, and include an optional shorthand syntax for using negative space in your application.
+Margin and padding are treated as first-class citizens in Theme UI, using values
+defined in the `theme.space` scale, and include an optional shorthand syntax for
+using negative space in your application.
 
-In addition to shorthands for applying margin and padding on the x- and y-axes, a terse naming convention can be used to quickly edit styles.
+In addition to shorthands for applying margin and padding on the x- and y-axes,
+a terse naming convention can be used to quickly edit styles.
 
 ```jsx
 // example of using margin and padding shorthand syntax
@@ -278,8 +292,9 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 
 ## Functional Values
 
-For shorthand CSS properties or ones that are not automatically mapped to values in the theme,
-use an inline function to reference values from the `theme` object.
+For shorthand CSS properties or ones that are not automatically mapped to values
+in the theme, use an inline function to reference values from the `theme`
+object.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -320,14 +335,16 @@ export default (props) => (
 
 <Note>
 
-If you’re looking to style text content like Markdown or from a CMS using your theme,
-check out the [`BaseStyles`](/api#basestyles) component.
+If you’re looking to style text content like Markdown or from a CMS using your
+theme, check out the [`BaseStyles`](/api#basestyles) component.
 
 </Note>
 
-If you want to reference the current class selector of the component, such as for
+If you want to reference the current class selector of the component, such as
+for
 [psuedo-classes & psuedo-elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements),
-you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
+you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors)
+symbol.
 
 ```jsx
 /** @jsx jsx */
@@ -350,7 +367,8 @@ export default (props) => (
 
 ## Raw CSS
 
-To opt-out of using theme-based CSS, use the `css` prop to render raw CSS values.
+To opt-out of using theme-based CSS, use the `css` prop to render raw CSS
+values.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -369,9 +387,10 @@ export default (props) => (
 
 ## Using the `sx` Prop in MDX
 
-Because MDX uses its own custom pragma and `createElement` function, the Theme UI pragma will not work in MDX files.
-You can use any of the [Theme UI components](/components),
-which support the `sx` prop, in an MDX file as a workaround.
+Because MDX uses its own custom pragma and `createElement` function, the Theme
+UI pragma will not work in MDX files. You can use any of the
+[Theme UI components](/components), which support the `sx` prop, in an MDX file
+as a workaround.
 
 ```mdx
 import { Box } from 'theme-ui'
@@ -390,4 +409,5 @@ import { Box } from 'theme-ui'
 
 ## Object Styles
 
-If you're new to using JavaScript object notation for authoring styles, see the [guide to using objects for styling](/guides/object-styles).
+If you're new to using JavaScript object notation for authoring styles, see the
+[guide to using objects for styling](/guides/object-styles).
