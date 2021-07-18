@@ -10,7 +10,7 @@ export default function ReadmeBadges() {
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '2px',
+        gap: '4px',
         '> a': { height: '20px' },
       }}>
       <a href="https://github.com/system-ui/theme-ui">
