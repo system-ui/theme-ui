@@ -92,6 +92,8 @@ export default function DocsLayout(props) {
                   GitHub
                 </NavLink>
                 <Button
+                  // color mode can be read from localStorage
+                  suppressHydrationWarning
                   aria-label={`Change color mode to ${nextColorMode}`}
                   sx={{
                     ml: 2,
