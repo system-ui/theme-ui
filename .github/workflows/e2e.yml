@@ -29,6 +29,7 @@ jobs:
         with:
           install-command: yarn --pure-lockfile --non-interactive
 
+      - run: yarn build # build preconstruct libs
       - run: yarn build:docs
 
       - uses: cypress-io/github-action@v2

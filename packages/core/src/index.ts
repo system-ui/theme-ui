@@ -57,10 +57,8 @@ export declare namespace jsx {
       extends ThemeUIJSX.ElementAttributesProperty {}
     export interface ElementChildrenAttribute
       extends ThemeUIJSX.ElementChildrenAttribute {}
-    export type LibraryManagedAttributes<
-      C,
-      P
-    > = ThemeUIJSX.LibraryManagedAttributes<C, P>
+    export type LibraryManagedAttributes<C, P> =
+      ThemeUIJSX.LibraryManagedAttributes<C, P>
     export interface IntrinsicAttributes
       extends ThemeUIJSX.IntrinsicAttributes {}
     export interface IntrinsicClassAttributes<T>
@@ -77,10 +75,17 @@ export interface ThemeUIContextValue {
 /**
  * @internal
  */
-export const __ThemeUIContext = React.createContext<ThemeUIContextValue>({
+export const __themeUiDefaultContextValue: ThemeUIContextValue = {
   __EMOTION_VERSION__,
   theme: {},
-})
+}
+
+/**
+ * @internal
+ */
+export const __ThemeUIContext = React.createContext(
+  __themeUiDefaultContextValue
+)
 
 export const useThemeUI = () => React.useContext(__ThemeUIContext)
 
@@ -118,14 +123,15 @@ merge.all = mergeAll
 
 export interface __ThemeUIInternalBaseThemeProviderProps {
   context: ThemeUIContextValue
+  children: React.ReactNode
 }
 /**
  * @internal
  */
-export const __ThemeUIInternalBaseThemeProvider: React.FC<__ThemeUIInternalBaseThemeProviderProps> = ({
+export const __ThemeUIInternalBaseThemeProvider = ({
   context,
   children,
-}) =>
+}: __ThemeUIInternalBaseThemeProviderProps) =>
   jsx(
     EmotionContext.Provider,
     { value: context.theme },
@@ -158,5 +164,5 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
 
-  return jsx(__ThemeUIInternalBaseThemeProvider, { context }, children)
+  return jsx(__ThemeUIInternalBaseThemeProvider, { context, children })
 }

@@ -1,17 +1,16 @@
 /** @jsx mdx */
 import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import { renderJSON } from '@theme-ui/test-utils'
+import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
 
 import {
   ThemeProvider,
   jsx,
-  useColorMode,
   BaseStyles,
   Theme,
   __ThemeUIContext,
+  useThemeUI,
 } from '../src/index'
 
 expect.extend(matchers)
@@ -62,6 +61,7 @@ test('creates non-standard components', () => {
 })
 
 test('styles React components', () => {
+  // eslint-disable-next-line jsx-a11y/heading-has-content
   const Beep = (props: {}) => <h2 {...props} />
   const Inner = (props: {}) => mdx('Beep', props)
 
@@ -103,7 +103,7 @@ test('custom pragma adds styles', () => {
 
 test('warns when multiple versions of emotion are installed', () => {
   const restore = mockConsole()
-  const json = renderJSON(
+  renderJSON(
     <__ThemeUIContext.Provider
       value={{
         __EMOTION_VERSION__: '9.0.0',
@@ -117,34 +117,42 @@ test('warns when multiple versions of emotion are installed', () => {
 })
 
 test('functional themes receive outer theme', () => {
-  const outer = {
+  const outer: Theme = {
     config: {
       useCustomProperties: false,
     },
     colors: {
       text: 'tomato',
       background: 'white',
-      primary: 'black',
+      primary: 'rgb(12, 34, 56)',
     },
   }
-  const theme = jest.fn<Theme, [Theme]>(() => ({}))
-  const json = renderJSON(
+  const theme = jest.fn<Theme, [Theme]>((t) => ({
+    ...t,
+    colors: { text: t.colors?.primary },
+  }))
+
+  const tree = render(
     jsx(
       ThemeProvider,
       { theme: outer },
       jsx(
         ThemeProvider,
         { theme },
-        jsx('div', {
+        jsx('article', {
           sx: {
             color: 'text',
+            textDecoration: 'underline',
           },
         })
       )
     )
   )
   expect(theme).toHaveBeenCalledWith(outer)
-  expect(json).toHaveStyleRule('color', 'text')
+
+  const article = tree.baseElement.querySelector('article')!
+
+  expect(window.getComputedStyle(article).color).toBe('rgb(12, 34, 56)')
 })
 
 test('functional themes can be used at the top level', () => {
@@ -214,4 +222,109 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('margin-right', 'auto')
   expect(json).toHaveStyleRule('padding', '8px')
   expect(json).toHaveStyleRule('background-color', 'tomato')
+})
+
+test('nested ThemeProviders combine colors', async () => {
+  const DarkModeButton = () => {
+    const { setColorMode } = useThemeUI()
+
+    return jsx(
+      'button',
+      {
+        sx: { color: 'primary', bg: 'background' },
+        onClick: () => setColorMode!('dark'),
+      },
+      'Dark Mode'
+    )
+  }
+
+  const root = render(
+    <ThemeProvider
+      theme={{
+        config: { useCustomProperties: true },
+        colors: { primary: 'blue' },
+      }}>
+      <ThemeProvider
+        theme={{
+          colors: {
+            background: 'white',
+            modes: { dark: { background: 'black' } },
+          },
+        }}>
+        <DarkModeButton />
+      </ThemeProvider>
+    </ThemeProvider>
+  )
+
+  let button = await root.findByRole('button')
+
+  expect(button.parentElement).toMatchInlineSnapshot(`
+    .emotion-0 {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: white;
+    }
+
+    .emotion-0.theme-ui-dark,
+    .theme-ui-dark .emotion-0 {
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-0.theme-ui-__default,
+    .theme-ui-__default .emotion-0 {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: white;
+    }
+
+    .emotion-1 {
+      color: var(--theme-ui-colors-primary);
+      background-color: var(--theme-ui-colors-background);
+    }
+
+    <div
+      class="emotion-0"
+      data-themeui-nested-provider="true"
+    >
+      <button
+        class="emotion-1"
+      >
+        Dark Mode
+      </button>
+    </div>
+  `)
+
+  fireEvent.click(button)
+
+  expect(button.parentElement).toMatchInlineSnapshot(`
+    .emotion-0 {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-0.theme-ui-dark,
+    .theme-ui-dark .emotion-0 {
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-0.theme-ui-__default,
+    .theme-ui-__default .emotion-0 {
+      --theme-ui-colors-primary: blue;
+      --theme-ui-colors-background: black;
+    }
+
+    .emotion-1 {
+      color: var(--theme-ui-colors-primary);
+      background-color: var(--theme-ui-colors-background);
+    }
+
+    <div
+      class="emotion-0"
+      data-themeui-nested-provider="true"
+    >
+      <button
+        class="emotion-1"
+      >
+        Dark Mode
+      </button>
+    </div>
+  `)
 })
