@@ -114,6 +114,8 @@ scales help you build UI rooted in constraint-based design principles.
 
 ```sh
 npm install theme-ui
+
+npm install @emotion/react # peer dependencies
 ```
 
 Any styles in your app can reference values from the global `theme` object. To

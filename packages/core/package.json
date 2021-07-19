@@ -14,13 +14,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.1",
     "@theme-ui/css": "0.10.0",
     "@theme-ui/parse-props": "0.10.0",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^16 || ^17"
+    "react": "^16 || ^17",
+    "@emotion/react": "^11"
   },
   "preconstruct": {
     "entrypoints": [

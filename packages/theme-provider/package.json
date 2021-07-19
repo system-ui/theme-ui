@@ -1,26 +1,25 @@
 {
   "name": "@theme-ui/theme-provider",
   "version": "0.10.0",
+  "repository": "system-ui/theme-ui",
   "main": "dist/theme-ui-theme-provider.cjs.js",
   "module": "dist/theme-ui-theme-provider.esm.js",
   "source": "src/index.ts",
+  "author": "Brent Jackson",
+  "license": "MIT",
   "sideEffects": false,
-  "scripts": {},
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@emotion/react": "^11.1.1",
     "@theme-ui/color-modes": "0.10.0",
     "@theme-ui/core": "0.10.0",
     "@theme-ui/css": "0.10.0",
     "@theme-ui/mdx": "0.10.0"
   },
   "peerDependencies": {
-    "react": "^16 || ^17"
-  },
-  "repository": "system-ui/theme-ui",
-  "author": "Brent Jackson",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+    "react": "^16 || ^17",
+    "@emotion/react": "^11"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

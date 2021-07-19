@@ -7,8 +7,6 @@
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@emotion/react": "^11.1.1",
-    "@emotion/styled": "^11.0.0",
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
@@ -16,7 +14,9 @@
     "@types/styled-system": "^5.1.10"
   },
   "peerDependencies": {
-    "react": "^16 || ^17"
+    "react": "^16 || ^17",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11"
   },
   "publishConfig": {
     "access": "public"
