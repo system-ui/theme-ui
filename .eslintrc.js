@@ -22,5 +22,6 @@ module.exports = {
 
     // TypeScript checks this
     'no-undef': 'off',
+    'no-lone-blocks': 'off',
   },
 }

@@ -302,99 +302,100 @@ const transforms = [
   {}
 )
 
-const responsive = (
-  styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>
-) => (theme?: Theme) => {
-  const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
-  const breakpoints =
-    (theme && (theme.breakpoints as string[])) || defaultBreakpoints
-  const mediaQueries = [
-    null,
-    ...breakpoints.map((n) =>
-      n.includes('@media') ? n : `@media screen and (min-width: ${n})`
-    ),
-  ]
+const responsive =
+  (styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>) =>
+  (theme?: Theme) => {
+    const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
+    const breakpoints =
+      (theme && (theme.breakpoints as string[])) || defaultBreakpoints
+    const mediaQueries = [
+      null,
+      ...breakpoints.map((n) =>
+        n.includes('@media') ? n : `@media screen and (min-width: ${n})`
+      ),
+    ]
 
-  for (const k in styles) {
-    const key = k as keyof typeof styles
-    let value = styles[key]
-    if (typeof value === 'function') {
-      value = value(theme || {})
-    }
+    for (const k in styles) {
+      const key = k as keyof typeof styles
+      let value = styles[key]
+      if (typeof value === 'function') {
+        value = value(theme || {})
+      }
 
-    if (value === false || value == null) {
-      continue
-    }
-    if (!Array.isArray(value)) {
-      next[key] = value
-      continue
-    }
-    for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
-      const media = mediaQueries[i]
-      if (!media) {
-        next[key] = value[i]
+      if (value === false || value == null) {
         continue
       }
-      next[media] = next[media] || {}
-      if (value[i] == null) continue
-      ;(next[media] as Record<string, any>)[key] = value[i]
+      if (!Array.isArray(value)) {
+        next[key] = value
+        continue
+      }
+      for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
+        const media = mediaQueries[i]
+        if (!media) {
+          next[key] = value[i]
+          continue
+        }
+        next[media] = next[media] || {}
+        if (value[i] == null) continue
+        ;(next[media] as Record<string, any>)[key] = value[i]
+      }
     }
+    return next
   }
-  return next
-}
 
 type CssPropsArgument = { theme: Theme } | Theme
 
-export const css = (args: ThemeUIStyleObject = {}) => (
-  props: CssPropsArgument = {}
-): CSSObject => {
-  const theme: Theme = {
-    ...defaultTheme,
-    ...('theme' in props ? props.theme : props),
-  }
-  // insert variant props before responsive styles, so they can be merged
-  // we need to maintain order of the style props, so if a variant is place in the middle
-  // of other props, it will extends its props at that same location order.
+export const css =
+  (args: ThemeUIStyleObject = {}) =>
+  (props: CssPropsArgument = {}): CSSObject => {
+    const theme: Theme = {
+      ...defaultTheme,
+      ...('theme' in props ? props.theme : props),
+    }
+    // insert variant props before responsive styles, so they can be merged
+    // we need to maintain order of the style props, so if a variant is place in the middle
+    // of other props, it will extends its props at that same location order.
 
-  const obj: CSSObject = getObjectWithVariants(
-    typeof args === 'function' ? args(theme) : args,
-    theme
-  )
+    const obj: CSSObject = getObjectWithVariants(
+      typeof args === 'function' ? args(theme) : args,
+      theme
+    )
 
-  const styles = responsive(obj as ThemeUICSSObject)(theme)
-  let result: CSSObject = {}
-  for (const key in styles) {
-    const x = styles[key as keyof typeof styles]
-    const val = typeof x === 'function' ? x(theme) : x
+    const styles = responsive(obj as ThemeUICSSObject)(theme)
+    let result: CSSObject = {}
+    for (const key in styles) {
+      const x = styles[key as keyof typeof styles]
+      const val = typeof x === 'function' ? x(theme) : x
 
-    if (val && typeof val === 'object') {
-      if (hasDefault(val)) {
-        result[key] = val[THEME_UI_DEFAULT_KEY]
+      if (val && typeof val === 'object') {
+        if (hasDefault(val)) {
+          result[key] = val[THEME_UI_DEFAULT_KEY]
+          continue
+        }
+
+        // On type level, val can also be an array here,
+        // but we transform all arrays in `responsive` function.
+        result[key] = css(val as ThemeUICSSObject)(theme)
         continue
       }
 
-      // On type level, val can also be an array here,
-      // but we transform all arrays in `responsive` function.
-      result[key] = css(val as ThemeUICSSObject)(theme)
-      continue
-    }
+      const prop = key in aliases ? aliases[key as keyof Aliases] : key
+      const scaleName =
+        prop in scales ? scales[prop as keyof Scales] : undefined
+      const scale = scaleName ? theme?.[scaleName] : get(theme, prop, {})
+      const transform = get(transforms, prop, get)
+      const value = transform(scale, val, val)
 
-    const prop = key in aliases ? aliases[key as keyof Aliases] : key
-    const scaleName = prop in scales ? scales[prop as keyof Scales] : undefined
-    const scale = scaleName ? theme?.[scaleName] : get(theme, prop, {})
-    const transform = get(transforms, prop, get)
-    const value = transform(scale, val, val)
+      if (prop in multiples) {
+        const dirs = multiples[prop as keyof typeof multiples]
 
-    if (prop in multiples) {
-      const dirs = multiples[prop as keyof typeof multiples]
-
-      for (let i = 0; i < dirs.length; i++) {
-        result[dirs[i]] = value
+        for (let i = 0; i < dirs.length; i++) {
+          result[dirs[i]] = value
+        }
+      } else {
+        result[prop] = value
       }
-    } else {
-      result[prop] = value
     }
-  }
 
-  return result
-}
+    return result
+  }
