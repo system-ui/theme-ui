@@ -1,5 +1,6 @@
 // Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 // and https://tailwindcss.com/components
+import { makeTheme, makeColorsScale } from '@theme-ui/css/utils'
 
 export const borderWidths = {
   px: '1px',
@@ -11,12 +12,12 @@ export const borderWidths = {
 
 export const breakpoints = ['640px', '768px', '1024px', '1280px']
 
-export const baseColors = {
+export const baseColors = makeColorsScale({
   transparent: 'transparent',
   black: '#000',
   white: '#fff',
   gray: [
-    null,
+    '',
     '#f7fafc',
     '#edf2f7',
     '#e2e8f0',
@@ -28,7 +29,7 @@ export const baseColors = {
     '#1a202c',
   ],
   red: [
-    null,
+    '',
     '#fff5f5',
     '#fed7d7',
     '#feb2b2',
@@ -40,7 +41,7 @@ export const baseColors = {
     '#742a2a',
   ],
   orange: [
-    null,
+    '',
     '#fffaf0',
     '#feebc8',
     '#fbd38d',
@@ -52,7 +53,7 @@ export const baseColors = {
     '#7b341e',
   ],
   yellow: [
-    null,
+    '',
     '#fffff0',
     '#fefcbf',
     '#faf089',
@@ -64,7 +65,7 @@ export const baseColors = {
     '#744210',
   ],
   green: [
-    null,
+    '',
     '#f0fff4',
     '#c6f6d5',
     '#9ae6b4',
@@ -76,7 +77,7 @@ export const baseColors = {
     '#22543d',
   ],
   teal: [
-    null,
+    '',
     '#e6fffa',
     '#b2f5ea',
     '#81e6d9',
@@ -88,7 +89,7 @@ export const baseColors = {
     '#234e52',
   ],
   blue: [
-    null,
+    '',
     '#ebf8ff',
     '#bee3f8',
     '#90cdf4',
@@ -100,7 +101,7 @@ export const baseColors = {
     '#2a4365',
   ],
   indigo: [
-    null,
+    '',
     '#ebf4ff',
     '#c3dafe',
     '#a3bffa',
@@ -112,7 +113,7 @@ export const baseColors = {
     '#3c366b',
   ],
   purple: [
-    null,
+    '',
     '#faf5ff',
     '#e9d8fd',
     '#d6bcfa',
@@ -124,7 +125,7 @@ export const baseColors = {
     '#44337a',
   ],
   pink: [
-    null,
+    '',
     '#fff5f7',
     '#fed7e2',
     '#fbb6ce',
@@ -135,7 +136,7 @@ export const baseColors = {
     '#97266d',
     '#702459',
   ],
-}
+})
 
 const commonButtonStyles = {
   py: 2,
@@ -237,7 +238,7 @@ export const buttons = {
   },
 }
 
-export const colors = {
+export const colors = makeColorsScale({
   ...baseColors,
   grayDark: baseColors.gray[8],
   text: baseColors.gray[8],
@@ -253,11 +254,10 @@ export const colors = {
   light: baseColors.gray[1],
   dark: baseColors.gray[8],
   textMuted: baseColors.gray[6],
-}
+})
 
 export const baseFonts = {
-  sans:
-    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+  sans: 'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
   mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
 }
@@ -282,15 +282,15 @@ export const fontSizes = [
 ]
 
 export const baseFontWeights = {
-  hairline: '100',
-  thin: '200',
-  light: '300',
-  normal: '400',
-  medium: '500',
-  semibold: '600',
-  bold: '700',
-  extrabold: '800',
-  black: '900',
+  hairline: 100,
+  thin: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
 }
 
 export const fontWeights = {
@@ -461,8 +461,7 @@ export const shadows = {
   default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
   md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
   lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-  xl:
-    '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+  xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
   inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
   outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
@@ -470,7 +469,7 @@ export const shadows = {
 }
 
 export const space = [
-  "0",
+  '0',
   '0.25rem',
   '0.5rem',
   '1rem',
@@ -483,13 +482,13 @@ export const space = [
 
 export const zIndices = {
   auto: 'auto',
-  '0': '0',
-  '10': '10',
-  '20': '20',
-  '30': '30',
-  '40': '40',
-  '50': '50',
-}
+  '0': 0,
+  '10': 10,
+  '20': 20,
+  '30': 30,
+  '40': 40,
+  '50': 50,
+} as const
 
 const heading = {
   fontFamily: 'heading',
@@ -605,7 +604,8 @@ export const transitions = {
   property: {
     none: 'none',
     all: 'all',
-    default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+    default:
+      'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
     colors: 'background-color, border-color, color, fill, stroke',
     opacity: 'opacity',
     shadow: 'box-shadow',
@@ -629,7 +629,7 @@ export const transitions = {
   },
 }
 
-export const tailwind = {
+export const tailwind = makeTheme({
   borderWidths,
   breakpoints,
   colors,
@@ -648,6 +648,6 @@ export const tailwind = {
   inputs,
   transforms,
   transitions,
-}
+})
 
 export default tailwind
