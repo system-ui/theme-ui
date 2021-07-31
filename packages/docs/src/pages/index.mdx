@@ -3,6 +3,7 @@ import { Container, Box, Button } from 'theme-ui'
 import { Banner, Tiles } from '..'
 import Graph from '../components/graph'
 import ReadmeBadges from '../components/readme-badges'
+import IntroCodeSamples from '../components/intro-code-samples'
 
 import Testimonials from './testimonials'
 
@@ -30,35 +31,11 @@ best-in-class developer ergonomics.
 
 1. ## Create your theme
 
-```js
-export default {
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: 'tomato',
-  },
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: '"Avenir Next", sans-serif',
-  },
-}
-```
+<IntroCodeSamples.ThemeCreation />
 
 2. ## Style your UI
 
-```jsx
-/** @jsxImportSource theme-ui */
-
-export default (props) => (
-  <h1
-    sx={{
-      color: 'primary',
-      fontFamily: 'heading',
-    }}>
-    Hello
-  </h1>
-)
-```
+<IntroCodeSamples.BasicUsage />
 
 </Tiles>
 

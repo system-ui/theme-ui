@@ -37,12 +37,10 @@ const posts = [
 ]
 
 const images = {
-  nyc:
-    'https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
+  nyc: 'https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
   flatiron:
     'https://images.unsplash.com/photo-1520222984843-df35ebc0f24d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
-  logo:
-    'https://raw.githubusercontent.com/system-ui/theme-ui/stable/packages/docs/static/icon.png',
+  logo: 'https://raw.githubusercontent.com/system-ui/theme-ui/stable/packages/docs/static/icon.png',
 }
 
 const scope = {
@@ -120,6 +118,13 @@ export const LiveCode = ({ children, preview, xray }) => {
   )
 }
 
+/**
+ * @param {{
+ *   live?: boolean;
+ *   filename?: string;
+ * } | import("react").ComponentProps<typeof LiveCode>
+ *   | import('@theme-ui/prism').ThemeUIPrismProps} props
+ */
 const Code = (props) => {
   if (props.live) {
     return <LiveCode {...props} />
