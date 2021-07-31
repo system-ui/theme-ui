@@ -2,58 +2,41 @@
 title: Getting Started
 ---
 
+import IntroCodeSamples from '../../components/intro-code-samples'
+
 # Getting Started
 
 Install Theme UI.
 
 ```sh
-npm i theme-ui
+npm install theme-ui
 ```
 
 Create a theme object to include custom color, typography, and layout values.
 
-```js
-// example theme.js
-export default {
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: '"Avenir Next", sans-serif',
-    monospace: 'Menlo, monospace',
-  },
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#33e',
-  },
-}
-```
+<IntroCodeSamples.ThemeCreation />
+
+Pass your `theme` object to `ThemeProvider`.
+
+<IntroCodeSamples.BasicUsage />
 
 <Note>
 
-If you’re using Gatsby, see the [Getting Started with Gatsby](/getting-started/gatsby) page.
+If you’re using Gatsby, see the
+[Getting Started with Gatsby](/getting-started/gatsby) page.
 
 </Note>
 
-Add the theme to your application with the `ThemeProvider`, passing in the `theme` object as a prop.
-
-```jsx
-// basic usage
-import { ThemeProvider } from 'theme-ui'
-import theme from './theme'
-
-export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-)
-```
-
 ## `sx` prop
 
-Use the `sx` prop throughout your application to add styles based on your theme to any component.
-Enable the `sx` prop by adding the `/** @jsxImportSource theme-ui */` comment to the top of your file.
+Use the `sx` prop throughout your application to add styles based on your theme
+to any component. Enable the `sx` prop by adding the
+`/** @jsxImportSource theme-ui */` comment to the top of your file or
+configuring `jsxImportSource` in your Babel config.
 
-The `sx` prop lets you add any valid CSS to an element,
-while using values from your theme to keep styles consistent.
-You can think of the style object that the `sx` prop accepts as a _superset_ of CSS.
+The `sx` prop lets you add any valid CSS to an element, while using values from
+your theme to keep styles consistent. You can think of the style object that the
+`sx` prop accepts as a _superset_ of CSS.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -72,14 +55,16 @@ export default (props) => (
 
 <Note>
 
-Confused about this `@jsxImportSource` comment? Read more about [JSX Pragma](/guides/jsx-pragma).
+Confused about this `@jsxImportSource` comment? Read more about
+[JSX Pragma](/guides/jsx-pragma).
 
 </Note>
 
 ### Classic JSX runtime
 
-If you use the classic JSX runtime, the `/** @jsxImportSource theme-ui */` comment has no effect.
-In this case enable the `sx` prop by adding the `/** @jsx jsx */` comment instead and importing `jsx` from Theme UI.
+If you use the classic JSX runtime, the `/** @jsxImportSource theme-ui */`
+comment has no effect. In this case enable the `sx` prop by adding the
+`/** @jsx jsx */` comment instead and importing `jsx` from Theme UI.
 
 ```jsx
 /** @jsx jsx */
@@ -88,7 +73,8 @@ import { jsx } from 'theme-ui'
 
 ## Responsive styles
 
-The `sx` prop also supports using arrays as values to change properties responsively with a mobile-first approach.
+The `sx` prop also supports using arrays as values to change properties
+responsively with a mobile-first approach.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -107,12 +93,15 @@ export default (props) => (
 
 <Note>
 
-This API originated in [Styled System][] and is intended as [a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props) across a singular dimension.
-The values used for media queries can be defined in a [`theme.breakpoints`](/theming/#breakpoints) array.
+This API originated in [Styled System][] and is intended as
+[a terser syntax for applying responsive styles](https://styled-system.com/guides/array-props)
+across a singular dimension. The values used for media queries can be defined in
+a [`theme.breakpoints`](/theming/#breakpoints) array.
 
 </Note>
 
-If you prefer standard CSS syntax, you can use nested objects for responsive styles as well.
+If you prefer standard CSS syntax, you can use nested objects for responsive
+styles as well.
 
 ```jsx
 <div
@@ -127,9 +116,11 @@ If you prefer standard CSS syntax, you can use nested objects for responsive sty
 
 ## Components
 
-Theme UI includes a library of primitive UI components, which can be completely customized with your theme and include support for [variants](/components/variants).
-You can use variants to encapsulate more complex, component-specific styles that can be changed with props.
-Import and use these components to handle layout, images, forms, and more.
+Theme UI includes a library of primitive UI components, which can be completely
+customized with your theme and include support for
+[variants](/components/variants). You can use variants to encapsulate more
+complex, component-specific styles that can be changed with props. Import and
+use these components to handle layout, images, forms, and more.
 
 ```jsx
 /** @jsxImportSource theme-ui */
