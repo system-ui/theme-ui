@@ -97,6 +97,8 @@ export const base = makeTheme({
     img: {
       maxWidth: '100%',
     },
+  } as const,
+}
   },
 })
 

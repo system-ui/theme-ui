@@ -210,6 +210,7 @@ export const styles = makeStyles({
     maxWidth: '100%',
     height: 'auto',
   },
+
 })
 
 export const bootstrap = makeTheme({
