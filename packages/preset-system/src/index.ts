@@ -1,10 +1,12 @@
+import { makeTheme } from '@theme-ui/css/utils'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
 }
 
-export const system = {
+export const system = makeTheme({
   config: {
     useCustomProperties: true,
     initialColorMode: 'system',
@@ -163,6 +165,6 @@ export const system = {
       borderColor: 'muted',
     },
   } as const,
-}
+})
 
 export default system

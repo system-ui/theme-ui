@@ -8,6 +8,9 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "source": "src/index.ts",
+  "peerDependencies": {
+    "@theme-ui/css": ">=0.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },
