@@ -14,7 +14,7 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.0",
     "@percy/cypress": "^3.1.0",
     "@percy/cli": "^1.0.0-beta.54",
-    "@testing-library/cypress": "^7.0.6",
+    "@testing-library/cypress": "^8.0.0",
     "cypress": "7.5.0",
     "esbuild": "^0.12.9"
   }
