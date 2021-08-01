@@ -12,7 +12,7 @@
   "dependencies": {
     "@theme-ui/presets": "0.10.0",
     "@types/color": "^3.0.1",
-    "color": "^3.1.2",
+    "color": "^4.0.0",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
