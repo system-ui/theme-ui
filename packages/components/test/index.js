@@ -67,6 +67,8 @@ const theme = {
       fontSize: 3,
     },
     block: {
+      my: 0,
+      maxWidth: [0, '48em'],
       variant: 'default',
       textAlign: 'justify',
       textAlignLast: 'start',
@@ -217,6 +219,7 @@ describe('Grid', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
         <Grid />
+        <Grid width="1fr" repeat="fit" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
@@ -332,6 +335,32 @@ describe('Paragraph', () => {
     )
     expect(json).toHaveStyleRule('margin', margin)
   })
+
+  test('renders with space prop overrides', () => {
+    const margin = '8px'
+    const json = renderJSON(<Paragraph m={margin} />)
+    expect(json).toHaveStyleRule('margin', margin)
+  })
+
+  test('renders with theme override', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <ThemeProvider theme={{ text: { paragraph: { margin } } }}>
+        <Paragraph />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
+
+  test('renders with theme variant', () => {
+    const margin = '8px'
+    const json = renderJSON(
+      <ThemeProvider theme={{ text: { override: { margin } } }}>
+        <Paragraph variant="override" />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('margin', margin)
+  })
 })
 
 describe('Text', () => {
@@ -399,6 +428,19 @@ describe('Select', () => {
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
+  })
+
+  test('renders with background-color', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={{ colors: { background: 'blueviolet' } }}>
+        <Select />
+      </ThemeProvider>
+    )
+
+    expect(json.children[0]).toHaveStyleRule(
+      'background-color',
+      'var(--theme-ui-colors-background)'
+    )
   })
 })
 
@@ -480,7 +522,7 @@ describe('Donut', () => {
   test('renders', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Donut />
+        <Donut title="Donut" />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()

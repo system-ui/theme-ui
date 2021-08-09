@@ -1,21 +1,22 @@
 {
   "name": "gatsby-theme-style-guide",
-  "version": "0.6.0-alpha.3",
-  "main": "index.js",
+  "version": "0.10.0",
+  "main": "dist/gatsby-theme-style-guide.cjs.js",
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "peerDependencies": {
-    "gatsby": "^2.13.1",
-    "react": "^16.14.0 || ^17.0.0",
-    "react-dom": "^16.14.0 || ^17.0.0"
+    "gatsby": "^2.0.0 || ^3.0.0",
+    "react": "^16 || ^17",
+    "react-dom": "^16 || ^17"
   },
   "devDependencies": {
     "gatsby": "^2.26.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@theme-ui/style-guide": "^0.6.0-alpha.3",
-    "theme-ui": "^0.6.0-alpha.3"
+    "@theme-ui/style-guide": "0.10.0",
+    "theme-ui": "0.10.0"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

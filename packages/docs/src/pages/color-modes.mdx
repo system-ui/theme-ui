@@ -4,15 +4,18 @@ title: Color Modes
 
 # Color Modes
 
-Color modes can be used to create a user-configurable _dark mode_ or any number of other color modes.
+Color modes can be used to create a user-configurable _dark mode_ or any number
+of other color modes.
 
 ## Defining colors
 
-In the `theme.colors` object, add a nested `modes` object that will contain keys for optional color modes.
+In the `theme.colors` object, add a nested `modes` object that will contain keys
+for optional color modes.
 
 ```js
 // example theme colors
 {
+  initialColorModeName: 'light',
   colors: {
     text: '#000',
     background: '#fff',
@@ -28,13 +31,118 @@ In the `theme.colors` object, add a nested `modes` object that will contain keys
 }
 ```
 
-The colors defined at the root of the `colors` object will be accessible as `default`. All colors
-found in `colors.modes` will be referenced by their key. The above example will have two modes: `default` and `dark`.
+All colors found in `colors.modes` will be referenced by their key in the
+context object `rawColors.modes`. The above example will have two modes: `light`
+and `dark`.
+
+## Initial colors
+
+The colors defined at the root of the `colors` are swapped out whenever the
+color mode changes change. This is to allow for reference like
+`theme.colors.primary` to return:
+
+- `colors.primary`, when the color mode is set to its initial mode
+- `colors.modes.dark.primary`, when the color mode is set to `dark`
+
+Because of this, we store those initial colors with the other modes. They will
+be accessible as
+
+- `rawColors.modes.__default` (if `initialColorModeName` is undefined)
+- `rawColors.modes.light` (using the value of `initialColorModeName`).
+
+```js
+{
+  initialColorModeName: 'light',
+  rawColors: {
+    primary: '#07c',
+    modes: {
+      // __default: {}, no '__default' here as initialColorModeName is defined
+      light: { primary: '#07c' },
+      dark: { primary: '#0cf' }
+    }
+  }
+}
+```
+
+## Colors Object
+
+The `colors` object contains Custom CSS Properties
+
+```js
+{
+  colors: {
+    text: 'var(--theme-ui-colors-text)',
+    background: 'var(--theme-ui-colors-background)',
+    primary: 'var(--theme-ui-colors-primary)',
+  }
+}
+```
+
+## rawColors Object
+
+If you need to pass original value somewhere where CSS Properties (e.g. WebGL
+Canvas) won't work, use `rawColors`
+
+```js
+{
+  rawColors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+  }
+}
+```
+
+### Use specific modes
+
+#### With the `sx` prop
+
+```jsx
+export default (props) => (
+  <div
+    sx={(theme) => ({
+      color: theme.rawColors.modes?.dark?.text
+      bg: theme.rawColors.modes?.dark?.bg
+    })}
+  />
+)
+
+```
+
+#### With Theme UI context
+
+Use the [`useThemeUI`](/hooks#usethemeui) hook to access the context object
+directly in a component.
+
+```jsx
+import { useThemeUI } from 'theme-ui'
+
+export default (props) => {
+  const { theme: { rawColors }, setColorMode } = useThemeUI()
+
+  return Object.entries(rawColors?.modes).map(([mode, values]) => ({
+    <Button
+      sx={{ bg: values.background, color: values.text }}
+      onClick={() => setColorMode(mode)}
+    >
+      {mode}
+    </Button>
+  }))
+}
+
+// OUTPUT
+
+<Button>light</Button>
+<Button>dark</Button>
+<Button>deep</Button>
+// ...
+```
 
 ## Setting the color mode
 
-Use the `useColorMode` hook in your application to change the color mode.
-This value will be stored in `localStorage` and used whenever the page is loaded.
+Use the [`useColorMode`](/hooks#usecolormode) hook in your application to change
+the color mode. This value will be stored in `localStorage` and used whenever
+the page is loaded.
 
 ```jsx
 import { useColorMode } from 'theme-ui'
@@ -56,7 +164,8 @@ export default (props) => {
 
 ## Applying colors
 
-The ThemeProvider component will automatically apply color mode styles to the `<body>` element.
+The ThemeProvider component will automatically apply color mode styles to the
+`<html>` element.
 
 ```jsx
 import { ThemeProvider } from 'theme-ui'
@@ -67,21 +176,23 @@ export default (props) => (
 )
 ```
 
-To disable this behavior, add the `useBodyStyles: false` flag to your theme.
+- To disable this behavior, add the `useRootStyles: false` flag to your theme.
 
 ## Gatsby plugin
 
-For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the ThemeProvider to the root of your application.
-The plugin will also help prevent the flash of colors that can happen during page load when a user has a non-default color mode set.
+For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the
+ThemeProvider to the root of your application. The plugin will also help prevent
+the flash of colors that can happen during page load when a user has a
+non-default color mode set.
 
 ```sh
 npm i gatsby-plugin-theme-ui
 ```
 
-This plugin will look for a `src/gatsby-plugin-theme-ui/index.js` file to import and pass to the ThemeProvider.
+This plugin will look for a `src/gatsby-plugin-theme-ui/index.js` file to import
+and pass to the ThemeProvider.
 
-```js
-// gatsby-config.js
+```js filename=gatsby-config.js
 module.exports = {
   plugins: ['gatsby-plugin-theme-ui'],
 }
@@ -91,20 +202,21 @@ See the [Gatsby plugin docs](/packages/gatsby-plugin) for more info.
 
 ## Advanced
 
-Theme UI includes a few advanced usage options for color modes.
+Theme UI includes a few advanced configuration options for color modes.
 
 ### Turn off custom properties
 
-Theme UI uses
-[CSS custom properties](https://caniuse.com/#feat=css-variables)
-under the hood to help prevent the flash of color on load.
-If you're targeting browsers that don't support custom properties you can turn off this setting.
+Theme UI uses [CSS custom properties](https://caniuse.com/#feat=css-variables)
+under the hood to help prevent the flash of color on load. If you’re targeting
+browsers that don't support custom properties you can turn off this setting.
 This will cause the colors to flash on initial page load.
 
 ```js
 // example theme colors
 {
-  useCustomProperties: false,
+  config: {
+    useCustomProperties: false,
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -120,16 +232,20 @@ This will cause the colors to flash on initial page load.
 }
 ```
 
-### Initialize mode with `prefers-color-scheme` media query
+### Responding to the `prefers-color-scheme` media query
 
-To initialize a color mode based on the `prefers-color-scheme` media query, add the `useColorSchemeMediaQuery` flag to your theme.
-This will set the initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
-or `light` when `@media (prefers-color-scheme: light)` matches.
-If you do not have a color mode named `dark` or `light`, this will have no effect.
+The `useColorSchemeMediaQuery` option on the theme configuration initializes a
+color mode based on the `prefers-color-scheme` media query. This will set the
+initial color mode to `dark` when `@media (prefers-color-scheme: dark)` matches,
+or `light` when `@media (prefers-color-scheme: light)` matches. If you do not
+have a color mode named `dark` or `light`, this will have no effect. This is
+enabled by default.
 
 ```js
 {
-  useColorSchemeMediaQuery: true,
+  config: {
+    useColorSchemeMediaQuery: false,
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -145,11 +261,14 @@ If you do not have a color mode named `dark` or `light`, this will have no effec
 
 ### Disable persisting color mode on `localStorage`
 
-To disable `localStorage` add the `useLocalStorage: false` flag to your theme.
+To disable `localStorage`, add the `useLocalStorage: false` flag to your theme
+configuration.
 
 ```js
 {
-  useLocalStorage: false,
+  config: {
+    useLocalStorage: false
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -172,13 +291,15 @@ mode to be used on printing, set that color mode with the configuration option
 `printColorModeName`, set to one of your `colors.modes` names, the
 `initialColorModeName` value, or the string `'initial'`.
 
-This option sets your color mode in the `@media (print)` media query, so there’s no
-additional client-side JavaScript for printing.
+This option sets your color mode in the `@media print` media query, so there’s
+no additional client-side JavaScript for printing.
 
 ```js
 {
-  initialColorModeName: 'light',
-  printColorModeName: 'light',
+  config: {
+    initialColorModeName: 'light',
+    printColorModeName: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',

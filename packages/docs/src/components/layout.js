@@ -12,6 +12,7 @@ import Head from './head'
 import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
+import SearchInput from './search-input'
 import Sidebar from '../sidebar.mdx'
 
 const modes = ['default', 'dark', 'deep', 'swiss']
@@ -29,30 +30,29 @@ const getModeName = (mode) => {
       return 'Deep'
     case 'swiss':
       return 'Swiss'
+    case 'light':
     case 'default':
       return 'Light'
+    case undefined:
+      return '         '
     default:
       return mode
   }
 }
 
-export default (props) => {
+export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
   const [mode, setMode] = useColorMode()
+
   const fullwidth =
     (props.pageContext.frontmatter &&
       props.pageContext.frontmatter.fullwidth) ||
-    props.location.pathname === '/home' ||
-    props.location.pathname === '/home/'
+    props.location.pathname === '/'
 
   const showNav = !props.pageContext?.frontmatter?.hidenav
 
-  const cycleMode = (e) => {
-    const i = modes.indexOf(mode)
-    const next = modes[(i + 1) % modes.length]
-    setMode(next)
-  }
+  const nextColorMode = modes[(modes.indexOf(mode) + 1) % modes.length]
 
   return (
     <Themed.root>
@@ -85,17 +85,24 @@ export default (props) => {
                 Theme UI
               </Link>
             </Flex>
-            <Flex>
-              <NavLink href="https://github.com/system-ui/theme-ui">
-                GitHub
-              </NavLink>
-              <Button
-                sx={{
-                  ml: 2,
-                }}
-                onClick={cycleMode}>
-                {getModeName(mode)}
-              </Button>
+            <Flex sx={{ gap: [0, 2] }}>
+              <SearchInput />
+              <Flex sx={{ alignItems: 'center' }}>
+                <NavLink href="https://github.com/system-ui/theme-ui">
+                  GitHub
+                </NavLink>
+                <Button
+                  // color mode can be read from localStorage
+                  suppressHydrationWarning
+                  aria-label={`Change color mode to ${nextColorMode}`}
+                  sx={{
+                    ml: 2,
+                    whiteSpace: 'pre',
+                  }}
+                  onClick={() => setMode(nextColorMode)}>
+                  {getModeName(mode)}
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
         )}

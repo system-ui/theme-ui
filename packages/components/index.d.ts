@@ -92,7 +92,7 @@ export interface ParagraphProps
  * Primitive typographic component.
  *
  * Text style variants can be defined in the theme.text object.
- * The Paragraph component uses theme.text.default as its default variant style.
+ * The Paragraph component uses theme.text.paragraph as its default variant style.
  * @see https://theme-ui.com/components/paragraph
  */
 export const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps>
@@ -268,7 +268,7 @@ export const Avatar: ForwardRef<HTMLImageElement, AvatarProps>
 export type BadgeProps = BoxProps
 export const Badge: ForwardRef<HTMLDivElement, BadgeProps>
 
-interface CloseProps extends Omit<IconButtonProps, 'children'> {}
+export interface CloseProps extends Omit<IconButtonProps, 'children'> {}
 /**
  * Button with close (×) icon.
  *

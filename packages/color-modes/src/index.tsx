@@ -1,97 +1,149 @@
-import React, { Dispatch, SetStateAction } from 'react'
-import { jsx, useThemeUI, merge, Context } from '@theme-ui/core'
-import { get, Theme } from '@theme-ui/css'
-import { Global, ThemeContext as EmotionContext } from '@emotion/react'
-import { toCustomProperties, createColorStyles } from './custom-properties'
+import React, {
+  Dispatch,
+  useEffect,
+  useLayoutEffect,
+  useState,
+  useMemo,
+  SetStateAction,
+} from 'react'
+import {
+  jsx,
+  ThemeUIContextValue,
+  useThemeUI,
+  __ThemeUIInternalBaseThemeProvider as ThemeUIInternalBaseThemeProvider,
+} from '@theme-ui/core'
+import {
+  get,
+  Theme,
+  ColorModesScale,
+  ColorMode,
+  NestedScale,
+  css,
+} from '@theme-ui/css'
+import { Global } from '@emotion/react'
+
+import {
+  toCustomProperties,
+  __createColorStyles,
+  __createColorProperties,
+} from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 declare module '@theme-ui/core' {
-  export interface ContextValue {
+  export interface ThemeUIContextValue {
     colorMode?: string
-    setColorMode?: (colorMode: SetStateAction<string>) => void
+    setColorMode?: (colorMode: SetStateAction<string | undefined>) => void
   }
 }
 
 const storage = {
-  get: (init?: string) => {
+  get: () => {
     try {
-      return window.localStorage.getItem(STORAGE_KEY) || init
-    } catch (e) {
+      return window.localStorage.getItem(STORAGE_KEY)
+    } catch (err) {
       console.warn(
         'localStorage is disabled and color mode might not work as expected.',
         'Please check your Site Settings.',
-        e
+        err
       )
     }
   },
   set: (value: string) => {
     try {
       window.localStorage.setItem(STORAGE_KEY, value)
-    } catch (e) {
+    } catch (err) {
       console.warn(
         'localStorage is disabled and color mode might not work as expected.',
         'Please check your Site Settings.',
-        e
+        err
       )
     }
   },
 }
 
-const getMediaQuery = () => {
-  const darkQuery = '(prefers-color-scheme: dark)'
-  const lightQuery = '(prefers-color-scheme: light)'
-  const darkMQL = window.matchMedia
-    ? window.matchMedia(darkQuery)
-    : { media: false }
-  const lightMQL = window.matchMedia
-    ? window.matchMedia(lightQuery)
-    : { media: false }
-  const dark = darkMQL.media === darkQuery && darkMQL.matches
-  if (dark) return 'dark'
-  const light = lightMQL.media === lightQuery && lightMQL.matches
-  if (light) return 'light'
-  return 'default'
+const getPreferredColorScheme = (): 'dark' | 'light' | null => {
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light'
+    }
+  }
+  return null
 }
 
-const useColorModeState = (theme: Theme = {}) => {
-  const [mode, setMode] = React.useState(
-    theme.initialColorModeName || 'default'
-  )
+const useClientsideEffect =
+  typeof window === 'undefined' ? () => {} : useLayoutEffect
 
-  // initialize state
-  React.useEffect(() => {
-    const stored = theme.useLocalStorage !== false && storage.get()
-    document.body.classList.remove('theme-ui-' + stored)
-    if (!stored && theme.useColorSchemeMediaQuery) {
-      const query = getMediaQuery()
-      setMode(query)
-      return
+const TopLevelColorModeProvider = ({
+  outerCtx,
+  children,
+}: {
+  outerCtx: ThemeUIContextValue
+  children: React.ReactNode
+}) => {
+  const outerTheme = outerCtx.theme || {}
+  const { initialColorModeName, useColorSchemeMediaQuery, useLocalStorage } =
+    outerTheme.config || outerTheme
+
+  let [colorMode, setColorMode] = useState(() => {
+    const preferredMode =
+      useColorSchemeMediaQuery !== false && getPreferredColorScheme()
+
+    return preferredMode || initialColorModeName
+  })
+
+  // on first render, we read the color mode from localStorage and
+  // clear the class on document element body
+  useClientsideEffect(() => {
+    const stored = useLocalStorage !== false && storage.get()
+
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.remove('theme-ui-' + stored)
     }
-    if (!stored || stored === mode) return
-    setMode(stored)
+
+    if (stored && stored !== colorMode) {
+      colorMode = stored
+      setColorMode(stored)
+    }
   }, [])
 
-  React.useEffect(() => {
-    if (!mode || theme.useLocalStorage === false) return
-    storage.set(mode)
-  }, [mode])
+  // when mode changes, we save it to localStorage
+  useEffect(() => {
+    if (colorMode && useLocalStorage !== false) {
+      storage.set(colorMode)
+    }
+  }, [colorMode, useLocalStorage])
 
   if (process.env.NODE_ENV !== 'production') {
     if (
-      theme.colors &&
-      theme.colors.modes &&
-      theme.initialColorModeName &&
-      Object.keys(theme.colors.modes).indexOf(theme.initialColorModeName) > -1
+      outerTheme.colors?.modes &&
+      initialColorModeName &&
+      Object.keys(outerTheme.colors.modes).indexOf(initialColorModeName) > -1
     ) {
       console.warn(
-        'The `initialColorModeName` value should be a unique name' +
+        '[theme-ui] The `initialColorModeName` value should be a unique name' +
           ' and cannot reference a key in `theme.colors.modes`.'
       )
     }
   }
 
-  return [mode, setMode] as const
+  const newTheme = useThemeWithAppliedColorMode({ colorMode, outerTheme })
+  const newCtx = {
+    ...outerCtx,
+    theme: newTheme,
+    colorMode,
+    setColorMode,
+  }
+
+  return (
+    <ThemeUIInternalBaseThemeProvider context={newCtx}>
+      <GlobalColorStyles theme={newTheme} />
+      {children}
+    </ThemeUIInternalBaseThemeProvider>
+  )
 }
 
 export function useColorMode<T extends string = string>(): [
@@ -105,59 +157,181 @@ export function useColorMode<T extends string = string>(): [
   }
 
   // We're allowing the user to specify a narrower type for its color mode name.
-  return ([colorMode, setColorMode] as unknown) as [
+  return [colorMode, setColorMode] as unknown as [
     T,
     Dispatch<SetStateAction<T>>
   ]
 }
 
-const applyColorMode = (theme: Theme, mode: string): Theme => {
-  if (!mode) return theme
-  const modes = get(theme, 'colors.modes', {})
-  return merge.all({}, theme, {
-    colors: get(modes, mode, {}),
+const omitModes = (colors: ColorModesScale): ColorMode => {
+  const res = { ...colors }
+  delete res.modes
+  return res
+}
+
+function copyRawColors(
+  colors: ColorModesScale | NestedScale<string>,
+  outerThemeRawColors: ColorModesScale
+): void {
+  for (const [key, value] of Object.entries(colors)) {
+    if (typeof value === 'string' && !value.startsWith('var(')) {
+      outerThemeRawColors[key] = value
+    } else if (typeof value === 'object') {
+      const newValue = { ...(outerThemeRawColors[key] as object) }
+      copyRawColors(value, newValue)
+      outerThemeRawColors[key] = newValue
+    }
+  }
+}
+
+function useThemeWithAppliedColorMode({
+  outerTheme,
+  colorMode,
+}: {
+  outerTheme: Theme
+  colorMode: string | undefined
+}) {
+  const theme = useMemo(() => {
+    const res = { ...outerTheme }
+    const modes = get(res, 'colors.modes', {})
+    const currentColorMode = get(modes, colorMode, {})
+
+    if (colorMode) {
+      res.colors = {
+        ...res.colors,
+        ...currentColorMode,
+      }
+    }
+
+    const { useCustomProperties, initialColorModeName = '__default' } =
+      outerTheme.config || outerTheme
+
+    let outerThemeRawColors = outerTheme.rawColors || outerTheme.colors || {}
+
+    if (useCustomProperties !== false) {
+      const alreadyHasRawColors = res.rawColors != null
+      const colors = res.colors || {}
+
+      if (alreadyHasRawColors) {
+        outerThemeRawColors = { ...outerThemeRawColors }
+
+        copyRawColors(colors, outerThemeRawColors)
+
+        if (outerThemeRawColors.modes) {
+          outerThemeRawColors.modes[initialColorModeName] =
+            omitModes(outerThemeRawColors)
+        }
+        res.rawColors = outerThemeRawColors
+      } else {
+        if (!('modes' in outerThemeRawColors)) {
+          res.rawColors = colors
+        } else {
+          const modes: ColorModesScale['modes'] = {
+            [initialColorModeName]: omitModes(outerThemeRawColors),
+            ...outerThemeRawColors.modes,
+          }
+
+          res.rawColors = {
+            ...colors,
+            modes,
+          } as ColorModesScale /* modes doesn't match index signature by design */
+        }
+      }
+
+      res.colors = toCustomProperties(omitModes(outerThemeRawColors), 'colors')
+    }
+
+    return res
+  }, [colorMode, outerTheme])
+
+  return theme
+}
+
+function GlobalColorStyles({ theme }: { theme: Theme }) {
+  return jsx(Global, {
+    styles: () => {
+      return { html: __createColorStyles(theme) }
+    },
   })
 }
 
-const BodyStyles = ({ theme }: { theme: Theme}) =>
-  jsx(Global, {
-    styles: () => {
-      return createColorStyles(theme);
-    },
+function NestedColorModeProvider({
+  outerCtx,
+  children,
+}: {
+  outerCtx: ThemeUIContextValue
+  children: React.ReactNode
+}) {
+  const newTheme = useThemeWithAppliedColorMode({
+    outerTheme: outerCtx.theme,
+    colorMode: outerCtx.colorMode,
   })
 
-export const ColorModeProvider: React.FC = ({ children }) => {
-  const outer = useThemeUI()
-  const [colorMode, setColorMode] = useColorModeState(outer.theme)
-  const theme = applyColorMode(outer.theme || {}, colorMode)
-  const emotionTheme = { ...theme }
+  // Nested theme providers need to be rerendered after hydration for the correct
+  // color mode to apply.
+  const [needsRerender, setNeedsRerender] = useState(
+    // Note: we could also check some "ssr-enabled" flag as an optimization for
+    // SPAs, as deeply nested theme providers will also pay a performance penalty
+    // for this SSR bug fix
+    () => newTheme.config?.useLocalStorage !== false
+  )
 
-  if (theme.useCustomProperties !== false) {
-    emotionTheme.colors = toCustomProperties(emotionTheme.colors, 'colors')
-  }
+  useClientsideEffect(() => void setNeedsRerender(false), [])
 
-  const context = {
-    ...outer,
-    theme,
-    colorMode,
-    setColorMode,
-  }
-  return jsx(
-    EmotionContext.Provider,
-    { value: emotionTheme },
-    jsx(
-      Context.Provider,
-      { value: context },
-      jsx(BodyStyles, { key: 'color-mode', theme }),
-      children
-    )
+  const themeColors = newTheme.rawColors || newTheme.colors
+  const useCustomProperties = newTheme.config?.useCustomProperties
+
+  const colorVars = useMemo(() => {
+    if (useCustomProperties === false) {
+      return {}
+    }
+    const colors = themeColors || {}
+
+    return css(__createColorProperties(colors, colors.modes || {}))(newTheme)
+  }, [newTheme, themeColors, useCustomProperties])
+
+  return (
+    <ThemeUIInternalBaseThemeProvider
+      context={{ ...outerCtx, theme: newTheme }}>
+      {/* Changed CSS Variables will cascade from the wrapping div */}
+      {jsx('div', {
+        'data-themeui-nested-provider': true,
+        // the key here ensures that children will be rerendered after color
+        // mode is read from localStorage
+        key: Number(needsRerender),
+        suppressHydrationWarning: true,
+        css: colorVars,
+        children,
+      })}
+    </ThemeUIInternalBaseThemeProvider>
+  )
+}
+
+export const ColorModeProvider = ({
+  children,
+}: {
+  children?: React.ReactNode
+}) => {
+  const outerCtx = useThemeUI()
+
+  const isTopLevelColorModeProvider =
+    typeof outerCtx.setColorMode !== 'function'
+
+  return isTopLevelColorModeProvider ? (
+    <TopLevelColorModeProvider outerCtx={outerCtx}>
+      {children}
+    </TopLevelColorModeProvider>
+  ) : (
+    <NestedColorModeProvider outerCtx={outerCtx}>
+      {children}
+    </NestedColorModeProvider>
   )
 }
 
 const noflash = `(function() { try {
   var mode = localStorage.getItem('theme-ui-color-mode');
   if (!mode) return
-  document.body.classList.add('theme-ui-' + mode);
+  document.documentElement.classList.add('theme-ui-' + mode);
 } catch (e) {} })();`
 
 export const InitializeColorMode = () =>

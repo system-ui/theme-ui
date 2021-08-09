@@ -1,8 +1,11 @@
 import React from 'react'
 import Box from './Box'
 
-export const AspectRatio = React.forwardRef(
-  ({ ratio = 4 / 3, children, ...props }, ref) => (
+export const AspectRatio = React.forwardRef(function AspectRatio(
+  { ratio = 4 / 3, children, ...props },
+  ref
+) {
+  return (
     <Box
       ref={ref}
       sx={{
@@ -29,4 +32,4 @@ export const AspectRatio = React.forwardRef(
       </Box>
     </Box>
   )
-)
+})

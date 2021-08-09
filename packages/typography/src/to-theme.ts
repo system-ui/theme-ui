@@ -8,7 +8,7 @@ import { Merge } from 'type-fest'
 
 import styles from './styles'
 
-declare module '@theme-ui/css/dist/types' {
+declare module '@theme-ui/css' {
   interface Theme {
     typography?: ThemeTypographyRhythm
   }
@@ -132,7 +132,9 @@ export const getFontSizes = (
   return [-1.5 / 5, -1 / 5, 0, 2 / 5, 3 / 5, 1].map(scale)
 }
 
-export type ThemeLineHeights = Scale<CSS.Property.LineHeight<string | number>> & {
+export type ThemeLineHeights = Scale<
+  CSS.Property.LineHeight<string | number>
+> & {
   body: CSS.Property.LineHeight<string | number>
   heading: CSS.Property.LineHeight<string | number>
 }
@@ -185,7 +187,7 @@ const toUnitlessOptions = (
   // Or opts with nullish baseFontSize (intentional override)
   // Or opts with unset baseFontSize (just not defined)
   if (opts == null || opts.baseFontSize == null) {
-    return opts as Partial<CustomTypographyOptions>
+    return (opts as unknown) as Partial<CustomTypographyOptions>
   }
 
   return {

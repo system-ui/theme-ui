@@ -32,6 +32,7 @@ export type {
   ThemeUIStyleObject,
   VariantProperty,
 } from '@theme-ui/css'
+
 export * from './types'
 
 const __EMOTION_VERSION__ = packageInfo.version
@@ -42,6 +43,12 @@ export const jsx: typeof React.createElement = <P extends {}>(
   ...children: React.ReactNode[]
 ): any => emotionJsx(type, parseProps(props), ...children)
 
+/**
+ * @internal for Babel JSX pragma
+ * @see https://github.com/system-ui/theme-ui/issues/1603
+ */
+export const createElement: unknown = jsx
+
 export declare namespace jsx {
   export namespace JSX {
     export interface Element extends ThemeUIJSX.Element {}
@@ -50,10 +57,8 @@ export declare namespace jsx {
       extends ThemeUIJSX.ElementAttributesProperty {}
     export interface ElementChildrenAttribute
       extends ThemeUIJSX.ElementChildrenAttribute {}
-    export type LibraryManagedAttributes<
-      C,
-      P
-    > = ThemeUIJSX.LibraryManagedAttributes<C, P>
+    export type LibraryManagedAttributes<C, P> =
+      ThemeUIJSX.LibraryManagedAttributes<C, P>
     export interface IntrinsicAttributes
       extends ThemeUIJSX.IntrinsicAttributes {}
     export interface IntrinsicClassAttributes<T>
@@ -62,17 +67,27 @@ export declare namespace jsx {
   }
 }
 
-export interface ContextValue {
+export interface ThemeUIContextValue {
   __EMOTION_VERSION__: string
   theme: Theme
 }
 
-export const Context = React.createContext<ContextValue>({
+/**
+ * @internal
+ */
+export const __themeUiDefaultContextValue: ThemeUIContextValue = {
   __EMOTION_VERSION__,
   theme: {},
-})
+}
 
-export const useThemeUI = () => React.useContext(Context)
+/**
+ * @internal
+ */
+export const __ThemeUIContext = React.createContext(
+  __themeUiDefaultContextValue
+)
+
+export const useThemeUI = () => React.useContext(__ThemeUIContext)
 
 const canUseSymbol = typeof Symbol === 'function' && Symbol.for
 
@@ -106,14 +121,21 @@ function mergeAll<T = Theme>(...args: Partial<T>[]) {
 
 merge.all = mergeAll
 
-interface BaseProviderProps {
-  context: ContextValue
+export interface __ThemeUIInternalBaseThemeProviderProps {
+  context: ThemeUIContextValue
+  children: React.ReactNode
 }
-const BaseProvider: React.FC<BaseProviderProps> = ({ context, children }) =>
+/**
+ * @internal
+ */
+export const __ThemeUIInternalBaseThemeProvider = ({
+  context,
+  children,
+}: __ThemeUIInternalBaseThemeProviderProps) =>
   jsx(
     EmotionContext.Provider,
     { value: context.theme },
-    jsx(Context.Provider, {
+    jsx(__ThemeUIContext.Provider, {
       value: context,
       children,
     })
@@ -142,5 +164,5 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
       ? { ...outer, theme: theme(outer.theme) }
       : merge.all({}, outer, { theme })
 
-  return jsx(BaseProvider, { context }, children)
+  return jsx(__ThemeUIInternalBaseThemeProvider, { context, children })
 }

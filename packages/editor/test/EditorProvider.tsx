@@ -11,7 +11,9 @@ afterEach(cleanup)
 expect.extend(matchers)
 
 const theme = {
-  useCustomProperties: false,
+  config: {
+    useCustomProperties: false,
+  },
   colors: {
     text: 'black',
     background: 'white',
@@ -71,5 +73,3 @@ test('setTheme updates theme context', () => {
   expect(context.theme.colors.text).toBe('tomato')
   expect(context.theme.colors.background).toBe('white')
 })
-
-test.todo('works with custom properties')

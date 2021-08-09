@@ -1,5 +1,7 @@
+/* eslint-disable no-lone-blocks */
+
 /** @jsx jsx */
-import { renderJSON, NotHas, Assert, IsExact } from '@theme-ui/test-utils'
+import { renderJSON, NotHas, Assert, expecter } from '@theme-ui/test-utils'
 
 import { jsx, SxProp, ThemeUIJSX } from '../src'
 
@@ -17,12 +19,46 @@ describe('JSX', () => {
           <input
             onChange={(e) => console.log(e.target.value)}
             sx={{
-              bgColor: 'primary',
+              bg: 'primary',
             }}
           />
         </div>
       )
     ).toMatchSnapshot()
+  })
+
+  test('accepts css prop', () => {
+    const expectSnippet = expecter(
+      `/** @jsxImportSource @theme-ui/core */
+
+      export {}`,
+      { jsx: false }
+    )
+
+    expectSnippet(`const _1 = <div css={{ color: 'red' }} />`).toSucceed()
+
+    // Theme UI theme can be injected to @emotion/react module in userspace
+    expectSnippet(
+      `
+      import { Theme as ThemeUITheme } from '@theme-ui/css'
+
+      declare module '@emotion/react' {
+        export interface Theme extends ThemeUITheme {}
+      }
+
+      <div
+         css={(t) => {
+           const _t = t;
+           return {}
+         }}
+       />`
+    ).toInfer('_t', 'Theme')
+
+    expectSnippet(
+      `import { css } from '@emotion/react'
+
+       const TestComponent = () => <div css={css\`display: block;\`} />`
+    ).toSucceed()
   })
 })
 

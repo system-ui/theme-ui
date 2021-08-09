@@ -7,7 +7,6 @@
 **/types.ts @hasparus
 **/types.tsx @hasparus
 
-# packages/chrome DEPRECATED
 packages/color @hasparus
 packages/color-modes @hasparus
 packages/components @atanasster
@@ -17,9 +16,7 @@ packages/custom-properties @hasparus
 packages/docs @lachlanjc @hasparus
 # packages/editor looking for maintainers!
 # packages/gatsby-plugin-theme-ui looking for maintainers! 
-# packages/gatsby-theme-code-recipes looking for maintainers!
 # packages/gatsby-theme-style-guide looking for maintainers!
-# packages/gatsby-theme-ui-blog looking for maintainers!
 # packages/gatsby-theme-ui-layout looking for maintainers!
 packages/match-media @hasparus
 packages/mdx @hasparus

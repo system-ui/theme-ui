@@ -1,11 +1,5 @@
 {
-  "name": "@theme-ui/theme-ui-jsx-runtime",
-  "source": "../src/jsx-runtime.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/jsx-runtime.d.ts",
-  "dependencies": {
-    "@theme-ui/core": "*",
-    "react": "*"
-  }
+  "main": "dist/theme-ui-jsx-runtime.cjs.js",
+  "module": "dist/theme-ui-jsx-runtime.esm.js",
+  "types": "dist/theme-ui-jsx-runtime.cjs.d.ts"
 }
