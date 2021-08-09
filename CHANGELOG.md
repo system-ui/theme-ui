@@ -642,7 +642,6 @@ Theme UI is now written in TypeScript, and the emitted types differ from
   `color: 'primary'` resolves to `color: '#00f'`.
 
 ## v0.6.0-alpha.4
-
 - Extract objects with nested variant props. Issue #1357
 - Add ability for MDX styling, and fix mdx table align styles. Issue #654
 - Remove recursive default values from CSS custom properties. PR #1327
