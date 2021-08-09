@@ -1,13 +1,7 @@
 /** @jsx jsx */
 import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
-import {
-  render,
-  cleanup,
-  fireEvent,
-  waitFor,
-  waitForElementToBeRemoved,
-} from '@testing-library/react'
+import { render, cleanup, fireEvent } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'
 
