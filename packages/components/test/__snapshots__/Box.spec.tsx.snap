@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 8px;
+}
+
+<div
+  className="emotion-0"
+>
+  Hello
+</div>
+`;

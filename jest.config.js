@@ -17,6 +17,7 @@ const config = {
     '/style-guide/',
     'tailwind.config.js',
     '/dist/',
+    '/__test-utils__/',
   ],
   coverageReporters: ['lcov', 'text', 'html'],
   collectCoverageFrom: [

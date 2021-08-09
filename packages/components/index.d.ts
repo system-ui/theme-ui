@@ -53,6 +53,7 @@ export interface GridProps extends BoxProps {
    * Space between child elements
    */
   gap?: ResponsiveStyleValue<string | number>
+  repeat?: 'fit' | 'fill'
 }
 /**
  * CSS grid layout component to arrange direct child elements in a tiled grid layout.

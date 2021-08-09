@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with mixed columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 2fr;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with mixed columns prop 2`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with repeat and responsive width props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(auto-fill, minmax(512px, 1fr));
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with repeat and width props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with responsive columns prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-0 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with responsive width prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Grid renders with width prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+}
+
+<div
+  className="emotion-0"
+/>
+`;

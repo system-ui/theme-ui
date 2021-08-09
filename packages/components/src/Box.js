@@ -55,7 +55,7 @@ export const Box = forwardRef(function Box(props, ref) {
     () => cssProp
   )
 
-  internalProps.forEach((name) => {
+  boxSystemProps.forEach((name) => {
     delete rest[name]
   })
 

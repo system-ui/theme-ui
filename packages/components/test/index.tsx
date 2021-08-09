@@ -1,13 +1,9 @@
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { matchers } from '@emotion/jest'
 import { ThemeProvider } from 'theme-ui'
 import {
-  Box,
-  Button,
   Card,
   Flex,
-  Grid,
   Heading,
   Image,
   Link,
@@ -38,159 +34,9 @@ import {
   IconButton,
   MenuButton,
   Switch,
-} from '../src'
+} from '..'
 
-expect.extend(matchers)
-
-const theme = {
-  boxes: {
-    beep: {
-      p: 4,
-      bg: 'highlight',
-    },
-  },
-  cards: {
-    primary: {
-      p: 3,
-      bg: 'muted',
-      borderRadius: 4,
-    },
-  },
-  buttons: {
-    primary: {
-      color: 'background',
-      bg: 'primary',
-    },
-  },
-  text: {
-    default: {
-      fontSize: 3,
-    },
-    block: {
-      my: 0,
-      maxWidth: [0, '48em'],
-      variant: 'default',
-      textAlign: 'justify',
-      textAlignLast: 'start',
-      textJustify: 'auto',
-    },
-    heading: {
-      fontSize: 5,
-    },
-  },
-  images: {
-    avatar: {
-      width: 48,
-      height: 48,
-      borderRadius: 99999,
-    },
-  },
-  links: {
-    nav: {
-      textDecoration: 'none',
-      color: 'inherit',
-      fontWeight: 'normal',
-    },
-  },
-}
-
-describe('Box', () => {
-  test('renders', () => {
-    const json = renderJSON(<Box p={2}>Hello</Box>)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with padding props', () => {
-    const json = renderJSON(<Box px={2} py={4} />)
-    expect(json).toHaveStyleRule('padding-left', '8px')
-    expect(json).toHaveStyleRule('padding-right', '8px')
-    expect(json).toHaveStyleRule('padding-top', '32px')
-    expect(json).toHaveStyleRule('padding-bottom', '32px')
-  })
-
-  test('renders with margin props', () => {
-    const json = renderJSON(<Box m={3} mb={4} />)
-    expect(json).toHaveStyleRule('margin', '16px')
-    expect(json).toHaveStyleRule('margin-bottom', '32px')
-  })
-
-  test('renders with color props', () => {
-    const json = renderJSON(<Box color="tomato" bg="black" />)
-    expect(json).toHaveStyleRule('color', 'tomato')
-    expect(json).toHaveStyleRule('background-color', 'black')
-  })
-
-  test('renders with sx prop', () => {
-    const json = renderJSON(
-      <Box
-        sx={{
-          bg: 'tomato',
-          borderRadius: 4,
-        }}
-      />
-    )
-    expect(json).toHaveStyleRule('background-color', 'tomato')
-    expect(json).toHaveStyleRule('border-radius', '4px')
-  })
-
-  test('renders with variant prop', () => {
-    const json = renderJSON(
-      <ThemeProvider theme={theme}>
-        <Box variant="boxes.beep" />
-      </ThemeProvider>
-    )
-    expect(json).toHaveStyleRule('background-color', 'highlight')
-    expect(json).toHaveStyleRule('padding', '32px')
-  })
-
-  test('renders with base styles', () => {
-    const json = renderJSON(
-      <Box
-        __css={{
-          p: 4,
-          color: 'black',
-          bg: 'white',
-        }}
-        bg="cyan"
-        sx={{
-          color: 'tomato',
-        }}
-      />
-    )
-    expect(json).toHaveStyleRule('padding', '32px')
-    expect(json).toHaveStyleRule('color', 'tomato')
-    expect(json).toHaveStyleRule('background-color', 'cyan')
-  })
-
-  test('renders with __themeKey variant', () => {
-    const json = renderJSON(
-      <ThemeProvider theme={theme}>
-        <Box __themeKey="boxes" variant="beep" />
-      </ThemeProvider>
-    )
-    expect(json).toHaveStyleRule('background-color', 'highlight')
-    expect(json).toHaveStyleRule('padding', '32px')
-  })
-})
-
-describe('Button', () => {
-  test('renders', () => {
-    const json = renderJSON(
-      <ThemeProvider theme={theme}>
-        <Button />
-      </ThemeProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-  test('hidden', () => {
-    const json = renderJSON(
-      <ThemeProvider theme={theme}>
-        <Button hidden />
-      </ThemeProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-})
+import { theme } from './__test-utils__'
 
 describe('Card', () => {
   test('renders', () => {
@@ -210,58 +56,6 @@ describe('Flex', () => {
         <Flex />
       </ThemeProvider>
     )
-    expect(json).toMatchSnapshot()
-  })
-})
-
-describe('Grid', () => {
-  test('renders', () => {
-    const json = renderJSON(
-      <ThemeProvider theme={theme}>
-        <Grid />
-        <Grid width="1fr" repeat="fit" />
-      </ThemeProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with width prop', () => {
-    const json = renderJSON(<Grid width={256} />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with responsive width prop', () => {
-    const json = renderJSON(<Grid width={[256, 512]} />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with repeat and width props', () => {
-    const json = renderJSON(<Grid repeat="fill" width={256} />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with repeat and responsive width props', () => {
-    const json = renderJSON(<Grid repeat="fill" width={[256, 512]} />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with columns prop', () => {
-    const json = renderJSON(<Grid columns={2} />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with mixed columns prop', () => {
-    const json = renderJSON(<Grid columns="1fr 2fr" />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with responsive columns prop', () => {
-    const json = renderJSON(<Grid columns={[2, 3, 4]} />)
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with mixed columns prop', () => {
-    const json = renderJSON(<Grid columns={[null, '1fr 2fr']} />)
     expect(json).toMatchSnapshot()
   })
 })
@@ -435,9 +229,9 @@ describe('Select', () => {
       <ThemeProvider theme={{ colors: { background: 'blueviolet' } }}>
         <Select />
       </ThemeProvider>
-    )
+    )!
 
-    expect(json.children[0]).toHaveStyleRule(
+    expect(json.children?.[0]).toHaveStyleRule(
       'background-color',
       'var(--theme-ui-colors-background)'
     )
@@ -522,7 +316,7 @@ describe('Donut', () => {
   test('renders', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Donut title="Donut" />
+        <Donut title="Donut" value={0} />
       </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
