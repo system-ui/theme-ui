@@ -113,10 +113,11 @@ scales help you build UI rooted in constraint-based design principles.
 ## Getting Started
 
 ```sh
-npm install theme-ui
-
-npm install @emotion/react # peer dependencies
+npm install theme-ui @emotion/react @mdx-js/react
 ```
+
+_If you don't need color modes, components and MDX support, you can install
+[**@theme-ui/core**](https://github.com/system-ui/theme-ui/tree/develop/packages/core)_.
 
 Any styles in your app can reference values from the global `theme` object. To
 provide the theme in context, wrap your application with the `ThemeProvider`
