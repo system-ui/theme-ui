@@ -202,11 +202,11 @@ export interface FieldOwnProps extends MarginProps {
   /**
    * Text for Label component
    */
-  label: string
+  label?: string
   /**
    * Used for the for, id, and name attributes
    */
-  name: string
+  name?: string
 }
 export type FieldProps<T extends React.ElementType> = FieldOwnProps &
   Omit<React.ComponentPropsWithRef<T>, 'as' | keyof FieldOwnProps> & {
