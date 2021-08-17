@@ -3,15 +3,12 @@
   "version": "0.10.0",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/theme-ui-components.cjs.d.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@styled-system/color": "^5.1.2",
-    "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "0.10.0",
-    "@types/styled-system": "^5.1.10"
+    "@theme-ui/css": "0.10.0"
   },
   "peerDependencies": {
     "react": "^16 || ^17"

@@ -1,12 +1,10 @@
 import * as React from 'react'
 import { StyledComponent } from '@emotion/styled'
-import { Interpolation } from '@emotion/react'
-import { SpaceProps, ColorProps, MarginProps } from 'styled-system'
-import { ResponsiveStyleValue, ThemeUIStyleObject } from '@theme-ui/css'
+import { ResponsiveStyleValue, ThemeUICSSProperties } from '@theme-ui/css'
 
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
+import { BoxOwnProps, BoxProps } from './Box'
 
-type Assign<T, U> = {
+export type Assign<T, U> = {
   [P in keyof (T & U)]: P extends keyof T
     ? T[P]
     : P extends keyof U
@@ -14,31 +12,10 @@ type Assign<T, U> = {
     : never
 }
 
-type ForwardRef<T, P> = React.ForwardRefExoticComponent<
+export type ForwardRef<T, P> = React.ForwardRefExoticComponent<
   React.PropsWithoutRef<P> & React.RefAttributes<T>
 >
 
-export interface BoxOwnProps extends SpaceProps, ColorProps {
-  as?: React.ElementType
-  variant?: string
-  css?: Interpolation<any>
-  sx?: ThemeUIStyleObject
-}
-export interface BoxProps
-  extends Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps> {}
-/**
- * Use the Box component as a layout primitive to add margin, padding, and colors to content.
- * @see https://theme-ui.com/components/box
- */
-export const Box: StyledComponent<BoxOwnProps, BoxProps>
-
-export type FlexOwnProps = BoxOwnProps
-export type FlexProps = BoxProps
-/**
- * Use the Flex component to create flexbox layouts.
- * @see https://theme-ui.com/components/flex
- */
-export const Flex: StyledComponent<FlexOwnProps, FlexProps>
 
 export interface GridProps extends BoxProps {
   /**
@@ -59,7 +36,7 @@ export interface GridProps extends BoxProps {
  * CSS grid layout component to arrange direct child elements in a tiled grid layout.
  * @see https://theme-ui.com/components/grid
  */
-export const Grid: ForwardRef<HTMLDivElement, GridProps>
+export declare const Grid: ForwardRef<HTMLDivElement, GridProps>
 
 export interface ButtonProps
   extends Assign<React.ComponentPropsWithRef<'button'>, BoxOwnProps> {}
@@ -67,7 +44,7 @@ export interface ButtonProps
  * Primitive button component with variants
  * @see https://theme-ui.com/components/button
  */
-export const Button: ForwardRef<HTMLButtonElement, ButtonProps>
+export declare const Button: ForwardRef<HTMLButtonElement, ButtonProps>
 
 export interface LinkProps
   extends Assign<React.ComponentPropsWithRef<'a'>, BoxOwnProps> {}
@@ -76,7 +53,7 @@ export interface LinkProps
  * By default the Link component will use styles defined in `theme.styles.a`.
  * @see https://theme-ui.com/components/link
  */
-export const Link: ForwardRef<HTMLAnchorElement, LinkProps>
+export declare const Link: ForwardRef<HTMLAnchorElement, LinkProps>
 
 export type TextProps = BoxProps
 /**
@@ -85,7 +62,7 @@ export type TextProps = BoxProps
  * Text style variants can be defined in the theme.text object.
  * @see https://theme-ui.com/components/text
  */
-export const Text: ForwardRef<HTMLDivElement, BoxProps>
+export declare const Text: ForwardRef<HTMLDivElement, BoxProps>
 
 export interface ParagraphProps
   extends Assign<React.ComponentPropsWithRef<'p'>, BoxOwnProps> {}
@@ -96,7 +73,7 @@ export interface ParagraphProps
  * The Paragraph component uses theme.text.paragraph as its default variant style.
  * @see https://theme-ui.com/components/paragraph
  */
-export const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps>
+export declare const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps>
 
 export interface HeadingProps
   extends Assign<React.ComponentPropsWithRef<'h2'>, BoxOwnProps> {}
@@ -107,7 +84,7 @@ export interface HeadingProps
  * The Heading component uses theme.text.heading as its default variant style.
  * @see https://theme-ui.com/components/heading
  */
-export const Heading: ForwardRef<HTMLHeadingElement, HeadingProps>
+export declare const Heading: ForwardRef<HTMLHeadingElement, HeadingProps>
 
 export interface ImageProps
   extends Assign<React.ComponentPropsWithRef<'img'>, BoxOwnProps> {}
@@ -115,7 +92,7 @@ export interface ImageProps
  * Image style variants can be defined in the theme.images object.
  * @see https://theme-ui.com/components/image/
  */
-export const Image: ForwardRef<HTMLImageElement, ImageProps>
+export declare const Image: ForwardRef<HTMLImageElement, ImageProps>
 
 export type CardProps = BoxProps
 /**
@@ -123,7 +100,7 @@ export type CardProps = BoxProps
  * By default the Card component uses the `theme.cards.primary` variant.
  * @see https://theme-ui.com/components/card
  */
-export const Card: ForwardRef<HTMLDivElement, CardProps>
+export declare const Card: ForwardRef<HTMLDivElement, CardProps>
 
 export interface LabelProps
   extends Assign<React.ComponentPropsWithRef<'label'>, BoxOwnProps> {}
@@ -132,7 +109,7 @@ export interface LabelProps
  * and the component uses the `theme.forms.label` variant by default.
  * @see https://theme-ui.com/components/label/
  */
-export const Label: ForwardRef<HTMLLabelElement, LabelProps>
+export declare const Label: ForwardRef<HTMLLabelElement, LabelProps>
 
 export interface InputProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
@@ -141,7 +118,7 @@ export interface InputProps
  * and the component uses the `theme.forms.input` variant by default.
  * @see https://theme-ui.com/components/input/
  */
-export const Input: ForwardRef<HTMLInputElement, InputProps>
+export declare const Input: ForwardRef<HTMLInputElement, InputProps>
 
 export interface SelectProps
   extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
@@ -152,7 +129,7 @@ export interface SelectProps
  * and the component uses the `theme.forms.select` variant by default.
  * @see https://theme-ui.com/components/select/
  */
-export const Select: ForwardRef<HTMLSelectElement, SelectProps>
+export declare const Select: ForwardRef<HTMLSelectElement, SelectProps>
 
 export interface TextareaProps
   extends Assign<React.ComponentPropsWithRef<'textarea'>, BoxOwnProps> {}
@@ -163,7 +140,7 @@ export interface TextareaProps
  * and the component uses the `theme.forms.textarea` variant by default.
  * @see https://theme-ui.com/components/textarea/
  */
-export const Textarea: ForwardRef<HTMLTextAreaElement, TextareaProps>
+export declare const Textarea: ForwardRef<HTMLTextAreaElement, TextareaProps>
 
 export interface RadioProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
@@ -174,7 +151,7 @@ export interface RadioProps
  * component uses the `theme.forms.radio variant` by default.
  * @see https://theme-ui.com/components/radio/
  */
-export const Radio: ForwardRef<HTMLInputElement, RadioProps>
+export declare const Radio: ForwardRef<HTMLInputElement, RadioProps>
 
 export interface CheckboxProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
@@ -185,7 +162,7 @@ export interface CheckboxProps
  * component uses the `theme.forms.checkbox` variant by default.
  * @see https://theme-ui.com/components/checkbox/
  */
-export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps>
+export declare const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps>
 
 export interface SliderProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
@@ -196,7 +173,9 @@ export interface SliderProps
  * The Slider component uses `theme.forms.slider` as its default variant style.
  * @see https://theme-ui.com/components/slider/
  */
-export const Slider: ForwardRef<HTMLInputElement, SliderProps>
+export declare const Slider: ForwardRef<HTMLInputElement, SliderProps>
+
+interface MarginProps extends Pick<ThemeUICSSProperties, 'm'> {}
 
 export interface FieldOwnProps extends MarginProps {
   /**
@@ -216,9 +195,7 @@ export type FieldProps<T extends React.ElementType> = FieldOwnProps &
     as?: T
   }
 
-// `T` is far from unnecessary. We derive component props from it.
-// tslint:disable-next-line no-unnecessary-generics
-export function Field<
+export declare function Field<
   T extends React.ElementType = React.ComponentType<InputProps>
 >(props: FieldProps<T>): JSX.Element
 
@@ -227,7 +204,7 @@ export interface ProgressProps
 /**
  * @see https://theme-ui.com/components/progress/
  */
-export const Progress: ForwardRef<HTMLProgressElement, ProgressProps>
+export declare const Progress: ForwardRef<HTMLProgressElement, ProgressProps>
 
 export interface DonutProps
   extends Assign<
@@ -247,7 +224,7 @@ export interface DonutProps
  * Single value SVG donut chart
  * @see https://theme-ui.com/components/donut/
  */
-export const Donut: ForwardRef<SVGSVGElement, DonutProps>
+export declare const Donut: ForwardRef<SVGSVGElement, DonutProps>
 
 export interface SpinnerProps
   extends Assign<
@@ -259,15 +236,15 @@ export interface SpinnerProps
   > {
   size?: number | string
 }
-export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps>
+export declare const Spinner: ForwardRef<SVGSVGElement, SpinnerProps>
 
 export interface AvatarProps extends ImageProps {
   size?: number | string
 }
-export const Avatar: ForwardRef<HTMLImageElement, AvatarProps>
+export declare const Avatar: ForwardRef<HTMLImageElement, AvatarProps>
 
 export type BadgeProps = BoxProps
-export const Badge: ForwardRef<HTMLDivElement, BadgeProps>
+export declare const Badge: ForwardRef<HTMLDivElement, BadgeProps>
 
 export interface CloseProps extends Omit<IconButtonProps, 'children'> {}
 /**
@@ -279,7 +256,7 @@ export interface CloseProps extends Omit<IconButtonProps, 'children'> {}
  * Close component variants can be defined in the theme.buttons object.
  * The Close component uses theme.buttons.close as its default variant style.
  */
-export const Close: ForwardRef<HTMLButtonElement, CloseProps>
+export declare const Close: ForwardRef<HTMLButtonElement, CloseProps>
 
 export type AlertProps = BoxProps
 /**
@@ -288,13 +265,13 @@ export type AlertProps = BoxProps
  * Alert variants can be defined in `theme.alerts`.
  * The Alert component uses `theme.alerts.primary` as its default variant.
  */
-export const Alert: ForwardRef<HTMLDivElement, AlertProps>
+export declare const Alert: ForwardRef<HTMLDivElement, AlertProps>
 
 export type DividerProps = BoxProps
 /**
  * The Divider component reuses styles from `theme.styles.hr` as its default variant.
  */
-export const Divider: ForwardRef<HTMLDivElement, DividerProps>
+export declare const Divider: ForwardRef<HTMLDivElement, DividerProps>
 
 export interface EmbedProps
   extends Assign<React.ComponentPropsWithRef<'iframe'>, BoxOwnProps> {
@@ -312,7 +289,7 @@ export interface EmbedProps
  *
  * @see https://theme-ui.com/components/embed
  */
-export const Embed: ForwardRef<HTMLIFrameElement, EmbedProps>
+export declare const Embed: ForwardRef<HTMLIFrameElement, EmbedProps>
 
 export interface AspectRatioProps extends BoxProps {
   ratio?: number
@@ -321,7 +298,7 @@ export interface AspectRatioProps extends BoxProps {
  * Component for maintaining a fluid-width aspect ratio
  * @see https://theme-ui.com/components/aspect-ratio
  */
-export const AspectRatio: ForwardRef<HTMLDivElement, AspectRatioProps>
+export declare const AspectRatio: ForwardRef<HTMLDivElement, AspectRatioProps>
 
 export interface AspectImageProps extends ImageProps {
   ratio?: number
@@ -330,7 +307,7 @@ export interface AspectImageProps extends ImageProps {
  * Image component constrained by as aspect ratio.
  * @see https://theme-ui.com/components/aspect-image
  */
-export const AspectImage: ForwardRef<HTMLImageElement, AspectImageProps>
+export declare const AspectImage: ForwardRef<HTMLImageElement, AspectImageProps>
 
 export type ContainerProps = BoxProps
 /**
@@ -340,7 +317,7 @@ export type ContainerProps = BoxProps
  * The Container component uses `theme.layout.container` as its default variant style.
  * @see https://theme-ui.com/components/container
  */
-export const Container: ForwardRef<HTMLDivElement, ContainerProps>
+export declare const Container: ForwardRef<HTMLDivElement, ContainerProps>
 
 export type NavLinkProps = LinkProps
 /**
@@ -350,7 +327,7 @@ export type NavLinkProps = LinkProps
  * By default the NavLink component will use styles defined in `theme.links.nav`.
  * @see https://theme-ui.com/components/nav-link
  */
-export const NavLink: ForwardRef<HTMLAnchorElement, NavLinkProps>
+export declare const NavLink: ForwardRef<HTMLAnchorElement, NavLinkProps>
 
 export type MessageProps = BoxProps
 /**
@@ -359,7 +336,7 @@ export type MessageProps = BoxProps
  * Message variants can be defined in the theme.messages object.
  * @see https://theme-ui.com/components/message
  */
-export const Message: ForwardRef<HTMLDivElement, MessageProps>
+export declare const Message: ForwardRef<HTMLDivElement, MessageProps>
 
 export interface IconButtonProps
   extends Assign<React.ComponentPropsWithRef<'button'>, BoxOwnProps> {}
@@ -371,7 +348,7 @@ export interface IconButtonProps
  *
  * @see https://theme-ui.com/components/icon-button
  */
-export const IconButton: ForwardRef<HTMLButtonElement, IconButtonProps>
+export declare const IconButton: ForwardRef<HTMLButtonElement, IconButtonProps>
 
 export type MenuButtonProps = IconButtonProps
 /**
@@ -380,7 +357,7 @@ export type MenuButtonProps = IconButtonProps
  *
  * @see https://theme-ui.com/components/menu-button
  */
-export const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps>
+export declare const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps>
 
 /**
  * Form switch component
@@ -388,7 +365,7 @@ export const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps>
  * Switch variants can be defined in `theme.forms`
  * and the component uses the `theme.forms.switch` variant by default.
  */
-export const Switch: ForwardRef<HTMLInputElement, SwitchProps>
+export declare const Switch: ForwardRef<HTMLInputElement, SwitchProps>
 
 export interface SwitchProps
   extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {

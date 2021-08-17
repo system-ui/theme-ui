@@ -14,7 +14,7 @@ import {
   ThemeUICSSProperties,
   ThemeUIStyleObject,
 } from '@theme-ui/css'
-import type { Assign } from '..'
+import type { Assign } from './types'
 
 const boxSystemProps = [
   // space scale props (inherited from @styled-system/space)
