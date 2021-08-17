@@ -1,66 +1,148 @@
 /** @jsx jsx */
-import { jsx, useTheme } from '@emotion/react'
+import {
+  ArrayInterpolation,
+  CSSObject,
+  Interpolation,
+  jsx,
+  useTheme,
+} from '@emotion/react'
 import { forwardRef } from 'react'
-import { css, get } from '@theme-ui/css'
-import space from '@styled-system/space'
-import color from '@styled-system/color'
+import {
+  css,
+  get,
+  ThemeUICSSObject,
+  ThemeUICSSProperties,
+  ThemeUIStyleObject,
+} from '@theme-ui/css'
+import type { Assign } from '..'
 
-const boxSystemProps = [...space.propNames, ...color.propNames]
+const boxSystemProps = [
+  // space scale props (inherited from @styled-system/space)
+  'margin',
+  'marginTop',
+  'marginRight',
+  'marginBottom',
+  'marginLeft',
+  'marginX',
+  'marginY',
+  'm',
+  'mt',
+  'mr',
+  'mb',
+  'ml',
+  'mx',
+  'my',
+  'padding',
+  'paddingTop',
+  'paddingRight',
+  'paddingBottom',
+  'paddingLeft',
+  'paddingX',
+  'paddingY',
+  'p',
+  'pt',
+  'pr',
+  'pb',
+  'pl',
+  'px',
+  'py',
+  // color props (inherited from @styled-system/color)
+  'color',
+  'backgroundColor',
+  'bg',
+  'opacity',
+] as const
+
+type BoxSystemPropsKeys = typeof boxSystemProps[number]
+type BoxSystemProps = Pick<ThemeUICSSProperties, BoxSystemPropsKeys>
+
+export interface BoxOwnProps extends BoxSystemProps {
+  as?: React.ElementType
+  variant?: string
+  css?: Interpolation<any>
+  sx?: ThemeUIStyleObject
+}
+
+export interface BoxProps
+  extends Omit<
+    Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps>,
+    'ref'
+  > {}
 
 /**
  * @internal
- * @type {(prop: string) => boolean}
  */
-export const __isBoxStyledSystemProp = (prop) => boxSystemProps.includes(prop)
+export const __isBoxStyledSystemProp = (prop: string) =>
+  (boxSystemProps as readonly string[]).includes(prop)
 
-const sx = (props) => css(props.sx)(props.theme)
-const base = (props) => css(props.__css)(props.theme)
-const variant = ({ theme, variant, __themeKey = 'variants' }) =>
-  css(get(theme, __themeKey + '.' + variant, get(theme, variant)))(theme)
-
-const objToArray = (obj) =>
-  obj ? Object.keys(obj).map((key) => ({ [key]: obj[key] })) : []
-
-const mergeProps = (props, initial, ...args) => {
-  return args.reduce(
-    (acc, fn) => [...acc, ...objToArray(fn(props))],
-    objToArray(initial)
-  )
+const pickSystemProps = (props: BoxOwnProps) => {
+  const res: Pick<BoxOwnProps, typeof boxSystemProps[number]> = {}
+  for (const key of boxSystemProps) {
+    ;(res as Record<string, unknown>)[key] = props[key]
+  }
+  return res
 }
-export const Box = forwardRef(function Box(props, ref) {
+
+const __Box = forwardRef<any, BoxProps>(function Box(props, ref) {
   const theme = useTheme()
 
+  interface __BoxInternalProps {
+    __css: ThemeUICSSObject
+    __themeKey?: string
+  }
+
   const {
-    variant: variantProp,
     __themeKey = 'variants',
     __css,
+    variant,
     css: cssProp,
-    sx: sxProp,
+    sx,
     as: Component = 'div',
     ...rest
-  } = props
+  } = props as BoxProps & __BoxInternalProps
 
-  const style = mergeProps(
-    { theme, ...props },
-    {
-      boxSizing: 'border-box',
-      margin: 0,
-      minWidth: 0,
-    },
-    base,
-    variant,
-    space,
-    color,
-    sx,
-    () => cssProp
-  )
+  const baseStyles: CSSObject = {
+    boxSizing: 'border-box',
+    margin: 0,
+    minWidth: 0,
+  }
+
+  const __cssStyles = css(__css)(theme)
+
+  const variantInTheme =
+    get(theme, `${__themeKey}.${variant}`) || get(theme, variant)
+  const variantStyles = variantInTheme && css(variantInTheme)(theme)
+
+  const sxPropStyles = css(sx)(theme)
+
+  const systemPropsStyles = css(pickSystemProps(rest))(theme)
+
+  const style: ArrayInterpolation<unknown> = [
+    baseStyles,
+    __cssStyles,
+    variantStyles,
+    sxPropStyles,
+    systemPropsStyles,
+    cssProp,
+  ]
 
   boxSystemProps.forEach((name) => {
-    delete rest[name]
+    delete (rest as Record<string, unknown>)[name]
   })
 
   return <Component ref={ref} css={style} {...rest} />
 })
+
+/**
+ * Use the Box component as a layout primitive to add margin, padding, and colors to content.
+ * @see https://theme-ui.com/components/box
+ */
+export const Box = __Box as typeof __Box & {
+  /**
+   * @deprecated
+   */
+  withComponent: (Component: React.ElementType) => React.ComponentType<BoxProps>
+}
 
 Box.withComponent =
   (component) =>
