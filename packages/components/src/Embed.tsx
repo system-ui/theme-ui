@@ -28,6 +28,7 @@ export const Embed = React.forwardRef(function Embed(
     <Box
       variant={variant}
       sx={sx}
+      // @ts-expect-error
       __css={{
         width: '100%',
         height: 0,
@@ -46,6 +47,7 @@ export const Embed = React.forwardRef(function Embed(
         allowFullScreen={allowFullScreen}
         allow={allow}
         {...getIframeProps(rest)}
+        // @ts-expect-error
         __css={{
           position: 'absolute',
           width: '100%',

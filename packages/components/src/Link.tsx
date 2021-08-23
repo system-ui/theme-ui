@@ -3,6 +3,13 @@ import Box from './Box'
 
 export const Link = React.forwardRef(function Link(props, ref) {
   return (
-    <Box ref={ref} as="a" variant="styles.a" {...props} __themeKey="links" />
+    <Box
+      ref={ref}
+      as="a"
+      variant="styles.a"
+      {...props}
+      // @ts-expect-error
+      __themeKey="links"
+    />
   )
 })

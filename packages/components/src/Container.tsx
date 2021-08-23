@@ -7,6 +7,7 @@ export const Container = React.forwardRef(function Container(props, ref) {
       ref={ref}
       variant="container"
       {...props}
+      // @ts-expect-error
       __themeKey="layout"
       __css={{
         width: '100%',

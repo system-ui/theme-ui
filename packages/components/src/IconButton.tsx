@@ -11,8 +11,10 @@ export const IconButton = React.forwardRef(function IconButton(
       as="button"
       variant="icon"
       {...props}
+      // @ts-expect-error
       __themeKey="buttons"
       __css={{
+        // @ts-expect-error
         label: props.__css?.label || 'IconButton',
         appearance: 'none',
         display: 'inline-flex',

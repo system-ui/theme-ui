@@ -12,6 +12,7 @@ export const Avatar = React.forwardRef(function Avatar(
       height={size}
       variant="avatar"
       {...props}
+      // @ts-expect-error
       __css={{
         borderRadius: 9999,
       }}

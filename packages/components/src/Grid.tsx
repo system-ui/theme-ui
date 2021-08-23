@@ -25,6 +25,7 @@ export const Grid = React.forwardRef(function Grid(
     <Box
       ref={ref}
       {...props}
+      // @ts-expect-error
       __themeKey="grids"
       __css={{
         display: 'grid',

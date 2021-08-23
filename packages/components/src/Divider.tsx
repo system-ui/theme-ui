@@ -8,6 +8,7 @@ export const Divider = React.forwardRef(function Divider(props, ref) {
       as="hr"
       variant="styles.hr"
       {...props}
+      // @ts-expect-error
       __css={{
         color: 'gray',
         m: 0,

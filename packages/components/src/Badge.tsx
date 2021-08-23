@@ -7,6 +7,7 @@ export const Badge = React.forwardRef(function Badge(props, ref) {
       ref={ref}
       variant="primary"
       {...props}
+      // @ts-expect-error
       __themeKey="badges"
       __css={{
         display: 'inline-block',

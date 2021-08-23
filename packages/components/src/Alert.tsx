@@ -7,6 +7,7 @@ export const Alert = React.forwardRef(function Alert(props, ref) {
       ref={ref}
       variant="primary"
       {...props}
+      // @ts-expect-error
       __themeKey="alerts"
       __css={{
         display: 'flex',

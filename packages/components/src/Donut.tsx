@@ -24,6 +24,7 @@ export const Donut = React.forwardRef(function Donut(
       aria-valuemin={min}
       aria-valuemax={max}
       {...props}
+      // @ts-expect-error
       __css={{
         color: 'primary',
       }}>

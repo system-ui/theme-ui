@@ -8,6 +8,7 @@ export const Label = React.forwardRef(function Label(props, ref) {
       as="label"
       variant="label"
       {...props}
+      // @ts-expect-error
       __themeKey="forms"
       __css={{
         width: '100%',

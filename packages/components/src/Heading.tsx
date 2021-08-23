@@ -8,6 +8,7 @@ export const Heading = React.forwardRef(function Heading(props, ref) {
       as="h2"
       variant="heading"
       {...props}
+      // @ts-expect-error
       __themeKey="text"
       __css={{
         fontFamily: 'heading',

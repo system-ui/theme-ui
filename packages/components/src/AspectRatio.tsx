@@ -21,6 +21,7 @@ export const AspectRatio = React.forwardRef(function AspectRatio(
       />
       <Box
         {...props}
+        // @ts-expect-error
         __css={{
           position: 'absolute',
           top: 0,

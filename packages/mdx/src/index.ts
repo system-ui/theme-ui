@@ -1,5 +1,6 @@
 import { jsx, IntrinsicSxElements } from '@theme-ui/core'
 import { css, get, Theme } from '@theme-ui/css'
+import { css as emotion } from '@emotion/react'
 import {
   ComponentType,
   FC,
@@ -11,7 +12,6 @@ import {
   createElement,
   useEffect,
 } from 'react'
-import styled, { StyledComponent } from '@emotion/styled'
 import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
 
 type MDXProviderComponentsKnownKeys = {
@@ -98,25 +98,25 @@ const propOverrides: {
     align: 'textAlign',
   },
 }
-export const themed = (key: ThemedComponentName) => ({
-  theme,
-  ...rest
-}: ThemedProps) => {
-  const propsStyle = propOverrides[key]
+export const themed =
+  (key: ThemedComponentName) =>
+  ({ theme, ...rest }: ThemedProps) => {
+    const propsStyle = propOverrides[key]
 
-  const extraStyles = propsStyle
-    ? Object.keys(rest)
-        .filter((prop) => propsStyle[prop] !== undefined)
-        .reduce(
-          (acc, prop) => ({
-            ...acc,
-            [propsStyle[prop]]: (rest as Record<string, string>)[prop],
-          }),
-          {}
-        )
-    : undefined
-  return css({ ...get(theme, `styles.${key}`), ...extraStyles })(theme)
-}
+    const extraStyles = propsStyle
+      ? Object.keys(rest)
+          .filter((prop) => propsStyle[prop] !== undefined)
+          .reduce(
+            (acc, prop) => ({
+              ...acc,
+              [propsStyle[prop]]: (rest as Record<string, string>)[prop],
+            }),
+            {}
+          )
+      : undefined
+
+    return css({ ...get(theme, `styles.${key}`), ...extraStyles })(theme)
+  }
 
 // opt out of typechecking whenever `as` prop is used
 interface AnyComponentProps extends JSX.IntrinsicAttributes {
@@ -167,16 +167,18 @@ export const Styled: ThemedDiv & ThemedComponentsDict = styled('div')(
   themed('div')
 ) as ThemedDiv & ThemedComponentsDict
 
-const warnStyled = (tag: keyof IntrinsicSxElements): FC => (props) => {
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn(
-        '[theme-ui] The Styled component from "@theme-ui/mdx" is deprecated and will be removed in a future version. It has been renamed to Themed with the same API.'
-      )
-    }
-  }, [])
-  return createElement(alias(tag), props)
-}
+const warnStyled =
+  (tag: keyof IntrinsicSxElements): FC =>
+  (props) => {
+    useEffect(() => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(
+          '[theme-ui] The Styled component from "@theme-ui/mdx" is deprecated and will be removed in a future version. It has been renamed to Themed with the same API.'
+        )
+      }
+    }, [])
+    return createElement(alias(tag), props)
+  }
 
 export const components = {} as ThemedComponentsDict
 

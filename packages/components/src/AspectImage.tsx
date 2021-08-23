@@ -11,6 +11,7 @@ export const AspectImage = React.forwardRef(function AspectImage(
       <Image
         ref={ref}
         {...props}
+        // @ts-expect-error
         __css={{
           objectFit: 'cover',
         }}

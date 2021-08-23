@@ -8,6 +8,7 @@ export const Button = React.forwardRef(function Button(props, ref) {
       as="button"
       variant="primary"
       {...props}
+      // @ts-expect-error
       __themeKey="buttons"
       __css={{
         appearance: 'none',
