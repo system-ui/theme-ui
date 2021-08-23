@@ -1,6 +1,6 @@
+/** @jsx jsx */
 import { jsx, IntrinsicSxElements } from '@theme-ui/core'
-import { css, get, Theme } from '@theme-ui/css'
-import { css as emotion } from '@emotion/react'
+import { css, CSSObject, get, Theme } from '@theme-ui/css'
 import {
   ComponentType,
   FC,
@@ -81,39 +81,24 @@ const aliases = {
 type Aliases = typeof aliases
 const isAlias = (x: string): x is keyof Aliases => x in aliases
 
-export type ThemedComponentName =
-  | keyof IntrinsicSxElements
-  | keyof JSX.IntrinsicElements
+export type ThemedComponentName = keyof IntrinsicSxElements
 
 const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
-const propOverrides: {
-  [key in Partial<ThemedComponentName>]?: Record<string, string>
-} = {
-  th: {
-    align: 'textAlign',
-  },
-  td: {
-    align: 'textAlign',
-  },
-}
 export const themed =
-  (key: ThemedComponentName) =>
+  (key: ThemedComponentName | (string & {})) =>
   ({ theme, ...rest }: ThemedProps) => {
-    const propsStyle = propOverrides[key]
+    const extraStyles: CSSObject = {}
 
-    const extraStyles = propsStyle
-      ? Object.keys(rest)
-          .filter((prop) => propsStyle[prop] !== undefined)
-          .reduce(
-            (acc, prop) => ({
-              ...acc,
-              [propsStyle[prop]]: (rest as Record<string, string>)[prop],
-            }),
-            {}
-          )
-      : undefined
+    if (key === 'th' || key === 'td') {
+      const { align } = rest as DetailedHTMLProps<
+        React.ThHTMLAttributes<HTMLTableHeaderCellElement>,
+        HTMLTableHeaderCellElement
+      >
+
+      if (align !== 'char') extraStyles.textAlign = align
+    }
 
     return css({ ...get(theme, `styles.${key}`), ...extraStyles })(theme)
   }
@@ -134,9 +119,12 @@ export type WithPoorAsProp<
     : AnyComponentProps
   : AnyComponentProps)
 
-export interface ThemedComponent<Name extends ElementType> {
+export interface ThemedComponent<Name extends string> {
   <As extends ElementType | undefined = undefined>(
-    props: WithPoorAsProp<ComponentProps<Name>, As>
+    props: WithPoorAsProp<
+      Name extends keyof JSX.IntrinsicElements ? ComponentProps<Name> : {},
+      As
+    >
   ): JSX.Element
 }
 
@@ -148,46 +136,40 @@ export type ThemedComponentsDict = {
     : never
 }
 
-type ThemedDiv = StyledComponent<
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-  ThemedProps,
-  Theme
->
+const createThemedComponent = <Name extends string>(
+  name: Name,
+  variant: ThemedComponentName
+): ThemedComponent<Name> => {
+  const variantStyles = themed(variant)
 
-export const Themed: ThemedDiv & ThemedComponentsDict = styled('div')(
-  themed('div')
-) as ThemedDiv & ThemedComponentsDict
+  return (props) => {
+    // todo: handle `as` prop
+    const css = (props as any)['css']
 
-/**
- * @deprecated since 0.6.0.
- *
- * `Styled` was renamed to `Themed` to avoid confusion with styled components.
- */
-export const Styled: ThemedDiv & ThemedComponentsDict = styled('div')(
-  themed('div')
-) as ThemedDiv & ThemedComponentsDict
-
-const warnStyled =
-  (tag: keyof IntrinsicSxElements): FC =>
-  (props) => {
-    useEffect(() => {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn(
-          '[theme-ui] The Styled component from "@theme-ui/mdx" is deprecated and will be removed in a future version. It has been renamed to Themed with the same API.'
-        )
-      }
-    }, [])
-    return createElement(alias(tag), props)
+    return jsx(name, {
+      ...props,
+      css: css ? [css, variantStyles] : variantStyles,
+    })
   }
+}
+
+interface ThemedDivProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+
+interface ThemedDiv {
+  (props: ThemedDivProps): JSX.Element
+}
+
+const _Themed: ThemedDiv = createThemedComponent('div', 'div')
 
 export const components = {} as ThemedComponentsDict
+
+export const Themed = _Themed as ThemedDiv & ThemedComponentsDict
 
 tags.forEach((tag) => {
   // fixme?
   components[tag] = styled(alias(tag))(themed(tag)) as any
   Themed[tag] = components[tag] as any
-
-  Styled[tag] = styled(warnStyled(tag))(themed(tag)) as any
 })
 
 const createComponents = (comps: MDXProviderComponents) => {
