@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/typography",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "main": "dist/theme-ui-typography.cjs.js",
   "module": "dist/theme-ui-typography.esm.js",
   "source": "src/index.ts",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.10.0",
+    "@theme-ui/css": "0.11.0",
     "@types/compass-vertical-rhythm": "^1.4.1",
     "@types/modularscale": "^2.0.0",
     "@types/typography": "^0.16.3",
