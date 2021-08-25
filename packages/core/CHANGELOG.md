@@ -1,3 +1,26 @@
+# v0.11.0 (Wed Aug 25 2021)
+
+#### 🚀 Enhancement
+
+- fix(color-modes): combine colors in nested providers [#1838](https://github.com/system-ui/theme-ui/pull/1838) ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- add types for css prop back [#1866](https://github.com/system-ui/theme-ui/pull/1866) ([@hasparus](https://github.com/hasparus))
+- fix(core): add `css` prop back to JSX types ([@hasparus](https://github.com/hasparus))
+- 0.10 chores [#1842](https://github.com/system-ui/theme-ui/pull/1842) ([@hasparus](https://github.com/hasparus))
+- fix(color-modes): properly combine colors from nested providers ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs(css): add usage examples for core packages [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.10.0 (Sat Jun 19 2021)
 
 #### 🏠 Internal

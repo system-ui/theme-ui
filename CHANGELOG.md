@@ -1,3 +1,72 @@
+# v0.11.0 (Wed Aug 25 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Torne Wuff ([@tornewuff](https://github.com/tornewuff))
+
+:heart: Jordie Bodlay ([@jordie23](https://github.com/jordie23))
+
+### Release Notes
+
+#### Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types ([#1862](https://github.com/system-ui/theme-ui/pull/1862))
+
+- Added TypeScript [Constrained identity functions](https://kentcdodds.com/blog/how-to-write-a-constrained-identity-function-in-typescript) `makeTheme`, `makeStyles` and `makeColorsScale` which can be imported from _@theme-ui/css/utils_.
+- Used aformentioned functions to properly define types of presets. Exported themes are now assignable to _Theme_ but their types narrowly describe their exact values.
+
+---
+
+---
+
+#### 🚀 Enhancement
+
+- `@theme-ui/color`, `@theme-ui/css`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`
+  - Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types [#1862](https://github.com/system-ui/theme-ui/pull/1862) ([@tornewuff](https://github.com/tornewuff) [@hasparus](https://github.com/hasparus))
+- `@theme-ui/color-modes`, `@theme-ui/core`, `@theme-ui/editor`, `@theme-ui/theme-provider`, `theme-ui`
+  - fix(color-modes): combine colors in nested providers [#1838](https://github.com/system-ui/theme-ui/pull/1838) ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- Update global-styles.mdx [#1858](https://github.com/system-ui/theme-ui/pull/1858) ([@jordie23](https://github.com/jordie23))
+- `@theme-ui/core`, `@theme-ui/css`
+  - add types for css prop back [#1866](https://github.com/system-ui/theme-ui/pull/1866) ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/editor`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/theme-provider`, `theme-ui`
+  - 0.10 chores [#1842](https://github.com/system-ui/theme-ui/pull/1842) ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Remove dependabot from the changelog ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: add `@theme-ui/css` to sidebar and packages page [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+- docs: change intro code snippets to TypeScript [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/css`
+  - refactor(css): remove unused imports [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/core`, `@theme-ui/css`
+  - docs(css): add usage examples for core packages [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+- `theme-ui`
+  - Setup Cypress [#1845](https://github.com/system-ui/theme-ui/pull/1845) ([@hasparus](https://github.com/hasparus))
+
+#### 📝 Documentation
+
+- Add redirects back to docs. [#1841](https://github.com/system-ui/theme-ui/pull/1841) ([@hasparus](https://github.com/hasparus))
+
+#### 🔩 Dependency Updates
+
+- `@theme-ui/prism`
+  - Update snapshots [#1768](https://github.com/system-ui/theme-ui/pull/1768) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 4
+
+- Jordie Bodlay ([@jordie23](https://github.com/jordie23))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Torne Wuff ([@tornewuff](https://github.com/tornewuff))
+
+---
+
 # v0.10.0 (Sat Jun 19 2021)
 
 :tada: This release contains work from a new contributor! :tada:

@@ -1,3 +1,19 @@
+# v0.11.0 (Wed Aug 25 2021)
+
+#### 🚀 Enhancement
+
+- fix(color-modes): combine colors in nested providers [#1838](https://github.com/system-ui/theme-ui/pull/1838) ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- 0.10 chores [#1842](https://github.com/system-ui/theme-ui/pull/1842) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.10.0 (Sat Jun 19 2021)
 
 :tada: This release contains work from a new contributor! :tada:
