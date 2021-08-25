@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
   "types": "index.d.ts",
@@ -12,7 +12,7 @@
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "0.11.0",
+    "@theme-ui/css": "0.11.1",
     "@types/styled-system": "^5.1.10"
   },
   "peerDependencies": {
