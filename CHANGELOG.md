@@ -10,10 +10,17 @@ Thanks for all your work!
 
 ### Release Notes
 
-#### Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types ([#1862](https://github.com/system-ui/theme-ui/pull/1862))
+#### Fixed a long-standing bug with color modes in nested providers ([#1456](https://github.com/system-ui/theme-ui/issues/1456))
 
-- Added TypeScript [Constrained identity functions](https://kentcdodds.com/blog/how-to-write-a-constrained-identity-function-in-typescript) `makeTheme`, `makeStyles` and `makeColorsScale` which can be imported from _@theme-ui/css/utils_.
-- Used aformentioned functions to properly define types of presets. Exported themes are now assignable to _Theme_ but their types narrowly describe their exact values.
+#### Added @theme-ui/css/utils with TypeScript CIF functions and fix preset types ([#1862](https://github.com/system-ui/theme-ui/pull/1862))
+
+- Added TypeScript
+  [Constrained identity functions](https://kentcdodds.com/blog/how-to-write-a-constrained-identity-function-in-typescript)
+  `makeTheme`, `makeStyles` and `makeColorsScale` which can be imported from
+  _@theme-ui/css/utils_.
+- Used aformentioned functions to properly define types of presets. Exported
+  themes are now assignable to _Theme_ but their types narrowly describe their
+  exact values.
 
 ---
 
@@ -21,42 +28,76 @@ Thanks for all your work!
 
 #### 🚀 Enhancement
 
-- `@theme-ui/color`, `@theme-ui/css`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`
-  - Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types [#1862](https://github.com/system-ui/theme-ui/pull/1862) ([@tornewuff](https://github.com/tornewuff) [@hasparus](https://github.com/hasparus))
-- `@theme-ui/color-modes`, `@theme-ui/core`, `@theme-ui/editor`, `@theme-ui/theme-provider`, `theme-ui`
-  - fix(color-modes): combine colors in nested providers [#1838](https://github.com/system-ui/theme-ui/pull/1838) ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/color`, `@theme-ui/css`, `@theme-ui/preset-base`,
+  `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`,
+  `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`,
+  `@theme-ui/preset-future`, `@theme-ui/preset-polaris`,
+  `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`,
+  `@theme-ui/preset-swiss`, `@theme-ui/preset-system`,
+  `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`
+  - Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types
+    [#1862](https://github.com/system-ui/theme-ui/pull/1862)
+    ([@tornewuff](https://github.com/tornewuff)
+    [@hasparus](https://github.com/hasparus))
+- `@theme-ui/color-modes`, `@theme-ui/core`, `@theme-ui/editor`,
+  `@theme-ui/theme-provider`, `theme-ui`
+  - fix(color-modes): combine colors in nested providers
+    [#1838](https://github.com/system-ui/theme-ui/pull/1838)
+    ([@hasparus](https://github.com/hasparus))
 
 #### 🐛 Bug Fix
 
-- Update global-styles.mdx [#1858](https://github.com/system-ui/theme-ui/pull/1858) ([@jordie23](https://github.com/jordie23))
+- Update global-styles.mdx
+  [#1858](https://github.com/system-ui/theme-ui/pull/1858)
+  ([@jordie23](https://github.com/jordie23))
 - `@theme-ui/core`, `@theme-ui/css`
-  - add types for css prop back [#1866](https://github.com/system-ui/theme-ui/pull/1866) ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/editor`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/theme-provider`, `theme-ui`
-  - 0.10 chores [#1842](https://github.com/system-ui/theme-ui/pull/1842) ([@hasparus](https://github.com/hasparus))
+  - add types for css prop back
+    [#1866](https://github.com/system-ui/theme-ui/pull/1866)
+    ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`,
+  `@theme-ui/editor`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`,
+  `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`,
+  `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/theme-provider`,
+  `theme-ui`
+  - 0.10 chores [#1842](https://github.com/system-ui/theme-ui/pull/1842)
+    ([@hasparus](https://github.com/hasparus))
 
 #### 👨‍💻 Minor changes
 
-- Remove dependabot from the changelog ([@hasparus](https://github.com/hasparus))
+- Remove dependabot from the changelog
+  ([@hasparus](https://github.com/hasparus))
 
 #### 🏠 Internal
 
-- docs: add `@theme-ui/css` to sidebar and packages page [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
-- docs: change intro code snippets to TypeScript [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+- docs: add `@theme-ui/css` to sidebar and packages page
+  [#1877](https://github.com/system-ui/theme-ui/pull/1877)
+  ([@hasparus](https://github.com/hasparus))
+- docs: change intro code snippets to TypeScript
+  [#1877](https://github.com/system-ui/theme-ui/pull/1877)
+  ([@hasparus](https://github.com/hasparus))
 - `@theme-ui/css`
-  - refactor(css): remove unused imports [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+  - refactor(css): remove unused imports
+    [#1877](https://github.com/system-ui/theme-ui/pull/1877)
+    ([@hasparus](https://github.com/hasparus))
 - `@theme-ui/core`, `@theme-ui/css`
-  - docs(css): add usage examples for core packages [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+  - docs(css): add usage examples for core packages
+    [#1877](https://github.com/system-ui/theme-ui/pull/1877)
+    ([@hasparus](https://github.com/hasparus))
 - `theme-ui`
-  - Setup Cypress [#1845](https://github.com/system-ui/theme-ui/pull/1845) ([@hasparus](https://github.com/hasparus))
+  - Setup Cypress [#1845](https://github.com/system-ui/theme-ui/pull/1845)
+    ([@hasparus](https://github.com/hasparus))
 
 #### 📝 Documentation
 
-- Add redirects back to docs. [#1841](https://github.com/system-ui/theme-ui/pull/1841) ([@hasparus](https://github.com/hasparus))
+- Add redirects back to docs.
+  [#1841](https://github.com/system-ui/theme-ui/pull/1841)
+  ([@hasparus](https://github.com/hasparus))
 
 #### 🔩 Dependency Updates
 
 - `@theme-ui/prism`
-  - Update snapshots [#1768](https://github.com/system-ui/theme-ui/pull/1768) ([@lachlanjc](https://github.com/lachlanjc))
+  - Update snapshots [#1768](https://github.com/system-ui/theme-ui/pull/1768)
+    ([@lachlanjc](https://github.com/lachlanjc))
 
 #### Authors: 4
 
@@ -71,37 +112,64 @@ Thanks for all your work!
 
 :tada: This release contains work from a new contributor! :tada:
 
-Thank you, Vlad Shcherbin ([@vladshcherbin](https://github.com/vladshcherbin)), for all your work!
+Thank you, Vlad Shcherbin ([@vladshcherbin](https://github.com/vladshcherbin)),
+for all your work!
 
 ### Release Notes
 
 #### Allow easy styling autofilled of Inputs ([#1811](https://github.com/system-ui/theme-ui/pull/1811))
 
-Background color of autofilled inputs will now default to `theme.colors.background`. It can be changed by setting `autofillBackgroundColor` prop.
+Background color of autofilled inputs will now default to
+`theme.colors.background`. It can be changed by setting
+`autofillBackgroundColor` prop.
 
 ---
 
 #### 🚀 Enhancement
 
-
 #### 🐛 Bug Fix
 
-- Fix typo [#1835](https://github.com/system-ui/theme-ui/pull/1835) ([@vladshcherbin](https://github.com/vladshcherbin))
-- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/editor`, `theme-ui`
-  - Allow easy styling autofilled of Inputs [#1811](https://github.com/system-ui/theme-ui/pull/1811) ([@hasparus](https://github.com/hasparus))
+- Fix typo [#1835](https://github.com/system-ui/theme-ui/pull/1835)
+  ([@vladshcherbin](https://github.com/vladshcherbin))
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/editor`,
+  `theme-ui`
+  - Allow easy styling autofilled of Inputs
+    [#1811](https://github.com/system-ui/theme-ui/pull/1811)
+    ([@hasparus](https://github.com/hasparus))
 - `@theme-ui/color`, `@theme-ui/css`
-  - fix(css): add JSDoc comment to sx.label [#1813](https://github.com/system-ui/theme-ui/pull/1813) ([@hasparus](https://github.com/hasparus))
-- `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-theme-style-guide`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/style-guide`
-  - Add missing meta repository to published packages [#1807](https://github.com/system-ui/theme-ui/pull/1807) ([@aaronadamsCA](https://github.com/aaronadamsCA))
-  - Add missing repository metadata to published packages [#1779](https://github.com/system-ui/theme-ui/pull/1779) ([@aaronadamsCA](https://github.com/aaronadamsCA))
+  - fix(css): add JSDoc comment to sx.label
+    [#1813](https://github.com/system-ui/theme-ui/pull/1813)
+    ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/css`,
+  `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-theme-style-guide`,
+  `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`,
+  `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`,
+  `@theme-ui/preset-future`, `@theme-ui/preset-polaris`,
+  `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`,
+  `@theme-ui/preset-swiss`, `@theme-ui/preset-system`,
+  `@theme-ui/preset-tailwind`, `@theme-ui/style-guide`
+  - Add missing meta repository to published packages
+    [#1807](https://github.com/system-ui/theme-ui/pull/1807)
+    ([@aaronadamsCA](https://github.com/aaronadamsCA))
+  - Add missing repository metadata to published packages
+    [#1779](https://github.com/system-ui/theme-ui/pull/1779)
+    ([@aaronadamsCA](https://github.com/aaronadamsCA))
 
 #### 🏠 Internal
 
-- Docs: update JSX pragma guide with automatic runtime section [#1718](https://github.com/system-ui/theme-ui/pull/1718) ([@flo-sch](https://github.com/flo-sch) [@hasparus](https://github.com/hasparus))
-- docs: fix DocSearch not loading in SSR ([@hasparus](https://github.com/hasparus))
-- Docs: Move homepage to root path [#1783](https://github.com/system-ui/theme-ui/pull/1783) ([@lachlanjc](https://github.com/lachlanjc))
+- Docs: update JSX pragma guide with automatic runtime section
+  [#1718](https://github.com/system-ui/theme-ui/pull/1718)
+  ([@flo-sch](https://github.com/flo-sch)
+  [@hasparus](https://github.com/hasparus))
+- docs: fix DocSearch not loading in SSR
+  ([@hasparus](https://github.com/hasparus))
+- Docs: Move homepage to root path
+  [#1783](https://github.com/system-ui/theme-ui/pull/1783)
+  ([@lachlanjc](https://github.com/lachlanjc))
 - `@theme-ui/components`
-  - docs(components): fix Paragraph default variant [#1795](https://github.com/system-ui/theme-ui/pull/1795) ([@bernharduw](https://github.com/bernharduw))
+  - docs(components): fix Paragraph default variant
+    [#1795](https://github.com/system-ui/theme-ui/pull/1795)
+    ([@bernharduw](https://github.com/bernharduw))
 
 #### Authors: 6
 
@@ -119,7 +187,9 @@ Background color of autofilled inputs will now default to `theme.colors.backgrou
 #### 🐛 Bug Fix
 
 - `@theme-ui/components`
-  - fix: Allow overriding Paragraph margins via theme [#1775](https://github.com/system-ui/theme-ui/pull/1775) ([@bernharduw](https://github.com/bernharduw))
+  - fix: Allow overriding Paragraph margins via theme
+    [#1775](https://github.com/system-ui/theme-ui/pull/1775)
+    ([@bernharduw](https://github.com/bernharduw))
 
 #### Authors: 1
 
@@ -148,17 +218,23 @@ node_modules (e.g. with
 
 #### 🚀 Enhancement
 
-- `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/sidenav`, `@theme-ui/typography`
-  - modernize Babel config [#1721](https://github.com/system-ui/theme-ui/pull/1721) ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/sidenav`,
+  `@theme-ui/typography`
+  - modernize Babel config
+    [#1721](https://github.com/system-ui/theme-ui/pull/1721)
+    ([@hasparus](https://github.com/hasparus))
 
 #### 🐛 Bug Fix
 
 - `@theme-ui/components`
-  - fix(components): set Select's bgColor to "background" - fixes dark mode ([@hasparus](https://github.com/hasparus))
+  - fix(components): set Select's bgColor to "background" - fixes dark mode
+    ([@hasparus](https://github.com/hasparus))
 
 #### 📝 Documentation
 
-- style DocSearch [#1714](https://github.com/system-ui/theme-ui/pull/1714) ([@atanasster](https://github.com/atanasster) [@hasparus](https://github.com/hasparus))
+- style DocSearch [#1714](https://github.com/system-ui/theme-ui/pull/1714)
+  ([@atanasster](https://github.com/atanasster)
+  [@hasparus](https://github.com/hasparus))
 
 #### Authors: 2
 
