@@ -1080,6 +1080,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jordie23",
+      "name": "Jordie Bodlay",
+      "avatar_url": "https://avatars.githubusercontent.com/u/712360?v=4",
+      "profile": "https://www.jordie.net/",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
