@@ -1,3 +1,9 @@
+# v0.11.1 (Wed Aug 25 2021)
+
+
+
+---
+
 # v0.11.0 (Wed Aug 25 2021)
 
 :tada: This release contains work from new contributors! :tada:
