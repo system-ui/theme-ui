@@ -32,6 +32,11 @@
   resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.30.0.tgz#3b639873155722ef707624149bb28c6c89a5ceef"
   integrity sha512-ZOWmFpIPid7bRA065e1YwA5iaJITZH5HoINvUz258kSG9+LFd+9EzDeUl4+Lygqy7MRwPC0TpHv2siv25Sw7Hg==
 
+"@auto-it/bot-list@10.31.0":
+  version "10.31.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/bot-list/-/bot-list-10.31.0.tgz#e2f66cb3cc859fee5e6b293ef6f797772ca5a15a"
+  integrity sha512-w1eyJmwIxgmh1k9g9Ke0BcDhAACxmanjzP9nBNeGtPev86lj8RexAzaHVyngqHT4fyXG9tJ1IuCOIWTYD1UIaQ==
+
 "@auto-it/conventional-commits@^10.25.0":
   version "10.30.0"
   resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-10.30.0.tgz#a58f17de7c214ea0750860813d7d9bf8518a2d5d"
@@ -92,13 +97,58 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/first-time-contributor@^10.25.0":
-  version "10.30.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.30.0.tgz#ee533567a8b170b947a02d8dc34cf3195aef400e"
-  integrity sha512-jgRmw7dMTdPQbCgDLx2RfMFNMPeqLsQrl/TX6c/CfC4iLbcLhjGYTRKThGIsloWnxWOzHVyVroN7ySm5qPnmzw==
+"@auto-it/core@10.31.0":
+  version "10.31.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-10.31.0.tgz#96f76fcec80bf7a3ebb8eee12e902967f0c72d61"
+  integrity sha512-en6FO4MDR1r4NiZkY3cY5IItLoG0YokeIUdnYJGhEnCmnjoJF7LxDg6XEhGQq1ngbZbqTGUnnpGc6VR46R6dSA==
   dependencies:
-    "@auto-it/bot-list" "10.30.0"
-    "@auto-it/core" "10.30.0"
+    "@auto-it/bot-list" "10.31.0"
+    "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
+    "@octokit/plugin-enterprise-compatibility" "^1.2.2"
+    "@octokit/plugin-retry" "^3.0.1"
+    "@octokit/plugin-throttling" "^3.2.0"
+    "@octokit/rest" "^18.0.0"
+    await-to-js "^3.0.0"
+    chalk "^4.0.0"
+    cosmiconfig "7.0.0"
+    deepmerge "^4.0.0"
+    dotenv "^8.0.0"
+    endent "^2.0.1"
+    enquirer "^2.3.4"
+    env-ci "^5.0.1"
+    fast-glob "^3.1.1"
+    fp-ts "^2.5.3"
+    fromentries "^1.2.0"
+    gitlog "^4.0.3"
+    https-proxy-agent "^5.0.0"
+    import-cwd "^3.0.0"
+    import-from "^3.0.0"
+    io-ts "^2.1.2"
+    lodash.chunk "^4.2.0"
+    log-symbols "^4.0.0"
+    node-fetch "2.6.1"
+    parse-author "^2.0.0"
+    parse-github-url "1.0.2"
+    pretty-ms "^7.0.0"
+    requireg "^0.2.2"
+    semver "^7.0.0"
+    signale "^1.4.0"
+    tapable "^2.2.0"
+    terminal-link "^2.1.1"
+    tinycolor2 "^1.4.1"
+    ts-node "^9.1.1"
+    tslib "2.1.0"
+    type-fest "^0.21.1"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+
+"@auto-it/first-time-contributor@^10.25.0":
+  version "10.31.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/first-time-contributor/-/first-time-contributor-10.31.0.tgz#241c00377d5eee10ed6326ab3051c28ef83a2f51"
+  integrity sha512-3PWGvAwG12SeLU0VDFa/jRx83tGpSim4zTV5vB6o+pDXOpl8uADJqw7a1cgbuXlIxTJWh4ew+JxtEbkYbrmfeQ==
+  dependencies:
+    "@auto-it/bot-list" "10.31.0"
+    "@auto-it/core" "10.31.0"
     array.prototype.flatmap "^1.2.2"
     endent "^2.0.1"
     tslib "2.1.0"
@@ -6526,7 +6576,7 @@ color-convert@0.5.x, color-convert@^0.5.2:
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-0.5.3.tgz#bdb6c69ce660fadffe0b0007cc447e1b9f7282bd"
   integrity sha1-vbbGnOZg+t/+CwAHzER+G59ygr0=
 
-color-convert@^1.3.0, color-convert@^1.9.0, color-convert@^1.9.1:
+color-convert@^1.3.0, color-convert@^1.9.0, color-convert@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
   integrity sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==
@@ -6569,10 +6619,10 @@ color-string@^0.3.0:
   dependencies:
     color-name "^1.0.0"
 
-color-string@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.5.4.tgz#dd51cd25cfee953d138fe4002372cc3d0e504cb6"
-  integrity sha512-57yF5yt8Xa3czSEW1jfQDE79Idk0+AkN/4KWad6tbdxUmAs3MvjxlWSWD4deYytcRfoZ9nhKyFl1kj5tBvidbw==
+color-string@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.6.0.tgz#c3915f61fe267672cb7e1e064c9d692219f6c312"
+  integrity sha512-c/hGS+kRWJutUBEngKKmk4iH3sD59MBkoxVapS/0wgpCz2u7XsNloxknyvBhzwEs1IbV36D9PwqLPJ2DTu3vMA==
   dependencies:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
@@ -6595,12 +6645,12 @@ color@^0.7.3:
     color-string "0.2.x"
 
 color@^3.0.0, color@^3.1.2:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/color/-/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
-  integrity sha512-xgXAcTHa2HeFCGLE9Xs/R82hujGtu9Jd9x4NW3T34+OMs7VoPsjwzRczKHvTAHeJwWFwX5j15+MgAppE8ztObQ==
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/color/-/color-3.2.1.tgz#3544dc198caf4490c3ecc9a790b54fe9ff45e164"
+  integrity sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA==
   dependencies:
-    color-convert "^1.9.1"
-    color-string "^1.5.4"
+    color-convert "^1.9.3"
+    color-string "^1.6.0"
 
 colorable@^1.0.5:
   version "1.0.5"
