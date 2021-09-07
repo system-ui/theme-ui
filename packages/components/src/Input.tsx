@@ -1,10 +1,10 @@
 import React from 'react'
-import Box from './Box'
 
-import { get } from '@theme-ui/css'
+import { Box, BoxOwnProps } from './Box'
+import { get, ThemeUIStyleObject } from '@theme-ui/css'
+import type { Assign, ForwardRef } from './types'
 
-/** @type {import('theme-ui').ThemeUIStyleObject} */
-const autofillStyles = {
+const autofillStyles: ThemeUIStyleObject = {
   boxShadow: 'inset 0 0 0 1000px var(--theme-ui-input-autofill-bg)',
   fontSize: 'inherit',
   ':first-line': {
@@ -12,8 +12,7 @@ const autofillStyles = {
   },
 }
 
-/** @type {import('theme-ui').ThemeUIStyleObject} */
-const defaultInputStyles = {
+const defaultInputStyles: ThemeUIStyleObject = {
   display: 'block',
   width: '100%',
   p: 2,
@@ -30,23 +29,33 @@ const defaultInputStyles = {
     autofillStyles,
 }
 
-export const Input = React.forwardRef(function Input(
-  { sx, autofillBackgroundColor = 'background', ...rest },
-  ref
-) {
-  return (
-    <Box
-      ref={ref}
-      as="input"
-      variant="input"
-      sx={{
-        '--theme-ui-input-autofill-bg': (theme) =>
-          get(theme.colors, autofillBackgroundColor, null),
-        ...sx,
-      }}
-      {...rest}
-      __themeKey="forms"
-      __css={defaultInputStyles}
-    />
-  )
-})
+export interface InputProps
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
+  autofillBackgroundColor?: string
+}
+
+/**
+ * Input variants can be defined in `theme.forms`
+ * and the component uses the `theme.forms.input` variant by default.
+ * @see https://theme-ui.com/components/input/
+ */
+export const Input: ForwardRef<HTMLInputElement, InputProps> = React.forwardRef(
+  function Input({ sx, autofillBackgroundColor = 'background', ...rest }, ref) {
+    return (
+      <Box
+        ref={ref}
+        as="input"
+        variant="input"
+        sx={{
+          '--theme-ui-input-autofill-bg': (theme) =>
+            theme.colors && get(theme.colors, autofillBackgroundColor, null),
+          ...sx,
+        }}
+        {...rest}
+        // @ts-expect-error
+        __themeKey="forms"
+        __css={defaultInputStyles}
+      />
+    )
+  }
+)

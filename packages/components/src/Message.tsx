@@ -1,21 +1,36 @@
 import React from 'react'
-import Box from './Box'
+import { ThemeUICSSObject } from '@theme-ui/css'
 
-export const Message = React.forwardRef(function Message(props, ref) {
-  return (
-    <Box
-      ref={ref}
-      {...props}
-      __themeKey="messages"
-      __css={{
-        padding: 3,
-        paddingLeft: (t) => t.space[3] - t.space[1],
-        borderLeftWidth: (t) => t.space[1],
-        borderLeftStyle: 'solid',
-        borderLeftColor: 'primary',
-        borderRadius: 4,
-        bg: 'highlight',
-      }}
-    />
-  )
-})
+import { Box, BoxProps } from './Box'
+import { ForwardRef } from './types'
+
+export type MessageProps = BoxProps
+
+/**
+ * Styled Box component for callouts and inline messages
+ *
+ * Message variants can be defined in the theme.messages object.
+ * @see https://theme-ui.com/components/message
+ */
+export const Message: ForwardRef<HTMLDivElement, MessageProps> =
+  React.forwardRef(function Message(props, ref) {
+    const __css: ThemeUICSSObject = {
+      padding: 3,
+      paddingLeft: (t) => t.space && Number(t.space[3]) - Number(t.space[1]),
+      borderLeftWidth: (t) => t.space && Number(t.space![1]),
+      borderLeftStyle: 'solid',
+      borderLeftColor: 'primary',
+      borderRadius: 4,
+      bg: 'highlight',
+    }
+
+    return (
+      <Box
+        ref={ref}
+        {...props}
+        // @ts-expect-error internal prop
+        __themeKey="messages"
+        __css={__css}
+      />
+    )
+  })

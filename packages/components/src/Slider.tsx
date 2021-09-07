@@ -1,7 +1,11 @@
 import React from 'react'
-import Box from './Box'
 
-const thumb = {
+import { ThemeUICSSObject } from '@theme-ui/css'
+
+import { Box, BoxOwnProps } from './Box'
+import { Assign, ForwardRef } from './types'
+
+const thumbStyle: ThemeUICSSObject = {
   appearance: 'none',
   width: 16,
   height: 16,
@@ -11,33 +15,47 @@ const thumb = {
   variant: 'forms.slider.thumb',
 }
 
-export const Slider = React.forwardRef(function Slider(props, ref) {
-  return (
-    <Box
-      ref={ref}
-      as="input"
-      type="range"
-      variant="slider"
-      {...props}
-      __themeKey="forms"
-      __css={{
-        display: 'block',
-        width: '100%',
-        height: 4,
-        my: 2,
-        cursor: 'pointer',
-        appearance: 'none',
-        borderRadius: 9999,
-        color: 'inherit',
-        bg: 'gray',
-        ':focus': {
-          outline: 'none',
-          color: 'primary',
-        },
-        '&::-webkit-slider-thumb': thumb,
-        '&::-moz-range-thumb': thumb,
-        '&::-ms-thumb': thumb,
-      }}
-    />
-  )
-})
+const sliderStyle: ThemeUICSSObject = {
+  display: 'block',
+  width: '100%',
+  height: 4,
+  my: 2,
+  cursor: 'pointer',
+  appearance: 'none',
+  borderRadius: 9999,
+  color: 'inherit',
+  bg: 'gray',
+  ':focus': {
+    outline: 'none',
+    color: 'primary',
+  },
+  '&::-webkit-slider-thumb': thumbStyle,
+  '&::-moz-range-thumb': thumbStyle,
+  '&::-ms-thumb': thumbStyle,
+}
+
+export interface SliderProps
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
+
+/**
+ * Range input element
+ *
+ * Slider variants can be defined in the `theme.forms` object.
+ * The Slider component uses `theme.forms.slider` as its default variant style.
+ * @see https://theme-ui.com/components/slider/
+ */
+export const Slider: ForwardRef<HTMLInputElement, SliderProps> =
+  React.forwardRef(function Slider(props, ref) {
+    return (
+      <Box
+        ref={ref}
+        as="input"
+        type="range"
+        variant="slider"
+        {...props}
+        // @ts-expect-error internal prop
+        __themeKey="forms"
+        __css={sliderStyle}
+      />
+    )
+  })

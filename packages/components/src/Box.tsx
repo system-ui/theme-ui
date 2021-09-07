@@ -154,5 +154,3 @@ Box.withComponent =
     }
     return <Box as={component} {...props} />
   }
-
-export default Box

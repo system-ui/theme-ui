@@ -1,21 +1,28 @@
 import React from 'react'
-import { AspectRatio } from './AspectRatio'
-import { Image } from './Image'
 
-export const AspectImage = React.forwardRef(function AspectImage(
-  { ratio, ...props },
-  ref
-) {
-  return (
-    <AspectRatio ratio={ratio}>
-      <Image
-        ref={ref}
-        {...props}
-        // @ts-expect-error
-        __css={{
-          objectFit: 'cover',
-        }}
-      />
-    </AspectRatio>
-  )
-})
+import { AspectRatio } from './AspectRatio'
+import { Image, ImageProps } from './Image'
+import type { ForwardRef } from './types'
+
+export interface AspectImageProps extends ImageProps {
+  ratio?: number
+}
+/**
+ * Image component constrained by as aspect ratio.
+ * @see https://theme-ui.com/components/aspect-image
+ */
+export const AspectImage: ForwardRef<HTMLImageElement, AspectImageProps> =
+  React.forwardRef(function AspectImage({ ratio, ...props }, ref) {
+    return (
+      <AspectRatio ratio={ratio}>
+        <Image
+          ref={ref}
+          {...props}
+          // @ts-expect-error
+          __css={{
+            objectFit: 'cover',
+          }}
+        />
+      </AspectRatio>
+    )
+  })

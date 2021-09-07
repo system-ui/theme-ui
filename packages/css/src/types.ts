@@ -4,7 +4,10 @@ import type { ThemeUIConfig } from './options'
 
 type StandardCSSProperties = CSS.Properties<number | string>
 
-type Empty = undefined | null | false
+/**
+ * Style properties with value of undefined, null or false are ignored.
+ */
+export type ThemeUIEmpty = undefined | null | false
 
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
@@ -13,7 +16,7 @@ type Empty = undefined | null | false
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | Empty | Array<T | Empty>
+export type ResponsiveStyleValue<T> = T | ThemeUIEmpty | Array<T | ThemeUIEmpty>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
@@ -454,7 +457,7 @@ export type StylePropertyValue<T> =
   | ThemeUIStyleValue<Exclude<T, undefined>>
   | ((theme: Theme) => ThemeUIStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
-  | Empty
+  | ThemeUIEmpty
 
 export type ThemeUICSSProperties = {
   [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<

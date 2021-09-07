@@ -1,13 +1,13 @@
-import { ThemeUICSSProperties } from '@theme-ui/core'
+import { ThemeUICSSProperties } from '@theme-ui/css'
 
 export const getProps =
   (test: (k: string) => boolean) =>
-  (props: Record<string, unknown>): Record<string, unknown> => {
-    const next: Record<string, unknown> = {}
+  <T extends object>(props: T): T => {
+    const next: Partial<T> = {}
     for (const key in props) {
       if (test(key || '')) next[key] = props[key]
     }
-    return next
+    return next as T
   }
 
 const MRE = /^m[trblxy]?$/
@@ -18,5 +18,7 @@ export interface MarginProps
     'm' | 'mt' | 'mr' | 'mb' | 'ml' | 'mx' | 'my'
   > {}
 
-export const getMargin = getProps((k) => MRE.test(k))
+export const getMargin: (props: MarginProps) => MarginProps = getProps((k) =>
+  MRE.test(k)
+)
 export const omitMargin = getProps((k) => !MRE.test(k))

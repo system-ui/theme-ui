@@ -1,55 +1,67 @@
 import React from 'react'
 
-import { get } from '@theme-ui/css'
+import { get, ThemeUICSSObject } from '@theme-ui/css'
 
-import Box from './Box'
-import SVG from './SVG'
+import { Box, BoxOwnProps } from './Box'
+import { SVG, SVGProps } from './SVG'
 import { getMargin, omitMargin } from './util'
+import { Assign, ForwardRef } from './types'
 
-const DownArrow = (props) => (
+const DownArrow = (props: SVGProps) => (
   <SVG {...props}>
     <path d="M7 10l5 5 5-5z" />
   </SVG>
 )
 
-export const Select = React.forwardRef(function Select(
-  { arrow, ...props },
-  ref
-) {
-  return (
-    <Box
-      {...getMargin(props)}
-      sx={{
-        display: 'flex',
-      }}>
+export interface SelectProps
+  extends Assign<React.ComponentPropsWithRef<'select'>, BoxOwnProps> {
+  arrow?: React.ReactElement
+}
+
+/**
+ * Select variants can be defined in `theme.forms`
+ * and the component uses the `theme.forms.select` variant by default.
+ * @see https://theme-ui.com/components/select/
+ */
+export const Select: ForwardRef<HTMLSelectElement, SelectProps> =
+  React.forwardRef(function Select({ arrow, ...props }, ref) {
+    const __css: ThemeUICSSObject = {
+      display: 'block',
+      width: '100%',
+      p: 2,
+      appearance: 'none',
+      fontSize: 'inherit',
+      lineHeight: 'inherit',
+      border: '1px solid',
+      borderRadius: 4,
+      color: 'inherit',
+      backgroundColor: (theme) => get(theme, 'colors.background', null),
+    }
+
+    return (
       <Box
-        ref={ref}
-        as="select"
-        variant="select"
-        {...omitMargin(props)}
-        __themeKey="forms"
-        __css={{
-          display: 'block',
-          width: '100%',
-          p: 2,
-          appearance: 'none',
-          fontSize: 'inherit',
-          lineHeight: 'inherit',
-          border: '1px solid',
-          borderRadius: 4,
-          color: 'inherit',
-          backgroundColor: (theme) => get(theme, 'colors.background', null),
-        }}
-      />
-      {arrow || (
-        <DownArrow
-          sx={{
-            ml: -28,
-            alignSelf: 'center',
-            pointerEvents: 'none',
-          }}
+        {...getMargin(props)}
+        sx={{
+          display: 'flex',
+        }}>
+        <Box
+          ref={ref}
+          as="select"
+          variant="select"
+          {...omitMargin(props)}
+          // @ts-expect-error internal prop
+          __themeKey="forms"
+          __css={__css}
         />
-      )}
-    </Box>
-  )
-})
+        {arrow || (
+          <DownArrow
+            sx={{
+              ml: -28,
+              alignSelf: 'center',
+              pointerEvents: 'none',
+            }}
+          />
+        )}
+      </Box>
+    )
+  })
