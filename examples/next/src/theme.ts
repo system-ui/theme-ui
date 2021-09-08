@@ -40,11 +40,6 @@ export const theme = makeTheme({
     },
   },
 
-  text: {
-    heading: {
-      textDecoration: 'underline',
-    },
-  },
   buttons: {
     primary: {
       cursor: 'pointer',

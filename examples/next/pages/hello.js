@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { Heading } from '@theme-ui/components'
+import { jsx, Heading } from 'theme-ui'
 
 export default function Hello() {
   return (
