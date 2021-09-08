@@ -4,6 +4,20 @@
     "start": "tsc"
   },
   "dependencies": {
-    "theme-ui": "latest"
+    "theme-ui": "file:../../packages/theme-ui",
+    "@theme-ui/preset-base": "file:../../packages/preset-base",
+    "@theme-ui/preset-bootstrap": "file:../../packages/preset-bootstrap",
+    "@theme-ui/preset-bulma": "file:../../packages/preset-bulma",
+    "@theme-ui/preset-dark": "file:../../packages/preset-dark",
+    "@theme-ui/preset-deep": "file:../../packages/preset-deep",
+    "@theme-ui/preset-funk": "file:../../packages/preset-funk",
+    "@theme-ui/preset-future": "file:../../packages/preset-future",
+    "@theme-ui/preset-polaris": "file:../../packages/preset-polaris",
+    "@theme-ui/preset-roboto": "file:../../packages/preset-roboto",
+    "@theme-ui/preset-sketchy": "file:../../packages/preset-sketchy",
+    "@theme-ui/preset-swiss": "file:../../packages/preset-swiss",
+    "@theme-ui/preset-system": "file:../../packages/preset-system",
+    "@theme-ui/preset-tailwind": "file:../../packages/preset-tailwind",
+    "@theme-ui/preset-tosh": "file:../../packages/preset-tosh"
   }
 }
