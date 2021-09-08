@@ -1,6 +1,8 @@
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
 /* eslint-disable no-lone-blocks */
-
-/** @jsx jsx */
 import { renderJSON, NotHas, Assert, expecter } from '@theme-ui/test-utils'
 
 import { jsx, SxProp, ThemeUIJSX } from '../src'
@@ -15,7 +17,8 @@ describe('JSX', () => {
             mt: 10,
             px: 2,
             scrollPaddingY: 2,
-          }}>
+          }}
+        >
           <input
             onChange={(e) => console.log(e.target.value)}
             sx={{

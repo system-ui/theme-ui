@@ -1,3 +1,5 @@
+/** @jest-environment jsdom */
+
 import React from 'react'
 import { cleanup } from '@testing-library/react'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -34,7 +36,8 @@ describe('ThemeProvider', () => {
         value={{
           __EMOTION_VERSION__: '9.0.0',
           theme: {},
-        }}>
+        }}
+      >
         <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
       </__ThemeUIContext.Provider>
     )
@@ -349,7 +352,8 @@ describe('useThemeUI', () => {
           colors: {
             text: 'tomato',
           },
-        }}>
+        }}
+      >
         <GetContext />
       </ThemeProvider>
     )

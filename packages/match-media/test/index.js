@@ -1,4 +1,8 @@
-/** @jsx jsx */
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
+
 import { render, cleanup, act } from '@testing-library/react'
 import { jsx, ThemeProvider } from 'theme-ui'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
@@ -79,7 +83,8 @@ test('reads breakpoints from theme', () => {
     <ThemeProvider
       theme={{
         breakpoints: ['30em', '45em', '55em'],
-      }}>
+      }}
+    >
       <Component />
     </ThemeProvider>
   )
