@@ -1,3 +1,15 @@
+# v0.11.0 (Wed Aug 25 2021)
+
+#### 🔩 Dependency Updates
+
+- Update snapshots [#1768](https://github.com/system-ui/theme-ui/pull/1768) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 1
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
 # v0.10.0 (Sat Jun 19 2021)
 
 #### 🏠 Internal
