@@ -10,7 +10,8 @@ const Chevron = () => (
     height="12"
     sx={{
       pointerEvents: 'none',
-    }}>
+    }}
+  >
     <path
       stroke="currentcolor"
       strokeWidth="2"
@@ -63,10 +64,12 @@ const Combobox = <T extends string | number>({
     return () => {
       document.removeEventListener('click', handleOutsideClick)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [root.current])
 
   useEffect(() => {
     resetIndex()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
 
   const popup = name + '-popup'
@@ -132,13 +135,15 @@ const Combobox = <T extends string | number>({
       }}
       sx={{
         zIndex: 2,
-      }}>
+      }}
+    >
       <Label htmlFor={name}>{label || name}</Label>
       <div
         sx={{
           display: 'flex',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <Input
           {...props}
           ref={input}
@@ -168,7 +173,8 @@ const Combobox = <T extends string | number>({
             bg: 'transparent',
             border: 0,
             ml: -32,
-          }}>
+          }}
+        >
           <Chevron />
         </button>
       </div>
@@ -195,7 +201,8 @@ const Combobox = <T extends string | number>({
           border: '1px solid',
           borderTop: 0,
           borderColor: 'lightgray',
-        }}>
+        }}
+      >
         {open &&
           options.map((option, i) => (
             <li
@@ -209,7 +216,8 @@ const Combobox = <T extends string | number>({
                 '&[aria-selected=true],:hover': {
                   bg: 'highlight',
                 },
-              }}>
+              }}
+            >
               {option}
             </li>
           ))}

@@ -1,4 +1,7 @@
-/** @jsx jsx */
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
 
 import { jsx } from '@theme-ui/core'
 import { Theme, ThemeUICSSObject } from '@theme-ui/css'
@@ -266,7 +269,8 @@ describe('colors inside ThemeProvider', () => {
               light: 'skyblue',
             },
           },
-        }}>
+        }}
+      >
         <button sx={{ color: darken('primary', 0.1) }}>Click me</button>
       </ThemeProvider>
     )
@@ -297,7 +301,8 @@ describe('colors inside ThemeProvider', () => {
                 0.1
               )(theme)
             },
-          }}>
+          }}
+        >
           Click me
         </button>
       </ThemeProvider>
@@ -323,14 +328,16 @@ describe('colors inside ThemeProvider', () => {
         <button
           sx={{
             color: (theme) => lighten(theme.rawColors?.blue, 0.1)(theme),
-          }}>
+          }}
+        >
           Click me
         </button>
         <p
           sx={{
             color: (theme) =>
               lighten((theme as MyTheme).rawColors.blue.__default, 0.1)(theme),
-          }}>
+          }}
+        >
           Hello
         </p>
       </ThemeProvider>

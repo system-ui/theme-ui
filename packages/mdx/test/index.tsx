@@ -1,4 +1,8 @@
-/** @jsx mdx */
+/**
+ * @jest-environment jsdom
+ * @jsx mdx
+ */
+
 import React from 'react'
 import { mdx } from '@mdx-js/react'
 import { render } from '@testing-library/react'
@@ -26,11 +30,13 @@ test('styles React components', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <MDXProvider
         components={{
           Beep,
-        }}>
+        }}
+      >
         <Inner />
       </MDXProvider>
     </ThemeProvider>
@@ -51,7 +57,8 @@ test('components accept an `as` prop', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <MDXProvider>
         <Themed.h1 as={Beep}>Beep boop</Themed.h1>
       </MDXProvider>
@@ -203,7 +210,8 @@ test('Warn deprecated Styled', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <MDXProvider>
         <Styled.inlineCode>styled</Styled.inlineCode>
       </MDXProvider>
@@ -219,7 +227,7 @@ test('Warn deprecated Styled', () => {
 `)
   expect(console.warn).toHaveBeenCalled()
   restore()
-})  
+})
 
 test('Deprecated Styled test', () => {
   const json = renderJSON(
@@ -230,11 +238,10 @@ test('Deprecated Styled test', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <MDXProvider>
-        <Styled.h1>
-          H1
-        </Styled.h1>
+        <Styled.h1>H1</Styled.h1>
       </MDXProvider>
     </ThemeProvider>
   )!

@@ -1,14 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {
-  render,
-  fireEvent,
-  act,
-  findAllByRole,
-  cleanup,
-  waitFor,
-  screen,
-} from '@testing-library/react'
+import { render, fireEvent, cleanup, screen } from '@testing-library/react'
 import Combobox from '../src/Combobox'
 
 const noop = () => {}
