@@ -1,0 +1,9 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc"
+  },
+  "dependencies": {
+    "theme-ui": "latest"
+  }
+}
