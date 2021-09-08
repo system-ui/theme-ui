@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/parse-props",
   "description": "Internal package — You don't want to consume this directly.",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "source": "src/index.ts",
   "main": "dist/theme-ui-parse-props.cjs.js",
   "module": "dist/theme-ui-parse-props.esm.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/css": "0.11.1"
+    "@theme-ui/css": "0.11.2"
   },
   "peerDependencies": {
     "react": "^16 || ^17"
