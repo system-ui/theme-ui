@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
 import { ThemeProvider } from 'theme-ui'

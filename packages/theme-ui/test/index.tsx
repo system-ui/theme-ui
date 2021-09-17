@@ -1,4 +1,8 @@
-/** @jsx mdx */
+/**
+ * @jest-environment jsdom
+ * @jsx mdx
+ */
+
 import { mdx } from '@mdx-js/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
@@ -33,7 +37,8 @@ test('renders with styles', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -52,7 +57,8 @@ test('creates non-standard components', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <sup>hey</sup>
     </ThemeProvider>
   )
@@ -76,7 +82,8 @@ test('styles React components', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <Inner />
     </ThemeProvider>
   )
@@ -108,7 +115,8 @@ test('warns when multiple versions of emotion are installed', () => {
       value={{
         __EMOTION_VERSION__: '9.0.0',
         theme: {},
-      }}>
+      }}
+    >
       <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
     </__ThemeUIContext.Provider>
   )
@@ -201,7 +209,8 @@ test('BaseStyles renders', () => {
         fontWeights: {
           body: 400,
         },
-      }}>
+      }}
+    >
       <BaseStyles />
     </ThemeProvider>
   )
@@ -243,14 +252,16 @@ test('nested ThemeProviders combine colors', async () => {
       theme={{
         config: { useCustomProperties: true },
         colors: { primary: 'blue' },
-      }}>
+      }}
+    >
       <ThemeProvider
         theme={{
           colors: {
             background: 'white',
             modes: { dark: { background: 'black' } },
           },
-        }}>
+        }}
+      >
         <DarkModeButton />
       </ThemeProvider>
     </ThemeProvider>

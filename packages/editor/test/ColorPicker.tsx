@@ -1,8 +1,13 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup } from '@testing-library/react'
 import { Provider } from 'reakit/Provider'
 import mockConsole from 'jest-mock-console'
+
 import { ColorPicker } from '../src'
 
 const { act } = renderer
@@ -11,14 +16,14 @@ afterEach(cleanup)
 
 if ((global as any).document) {
   document.createRange = () =>
-    (({
+    ({
       setStart: () => {},
       setEnd: () => {},
       commonAncestorContainer: {
         nodeName: 'BODY',
         ownerDocument: document,
       },
-    } as unknown) as Range)
+    } as unknown as Range)
 }
 
 test('renders with styles', () => {

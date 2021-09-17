@@ -1,7 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup, act } from '@testing-library/react'
-import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
+import { render, cleanup, act } from '@testing-library/react'
+import { ThemeProvider, useThemeUI } from 'theme-ui'
 import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'
 

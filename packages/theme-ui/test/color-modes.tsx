@@ -1,4 +1,8 @@
-/** @jsx jsx */
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
+
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
@@ -57,7 +61,8 @@ test('renders with color modes', () => {
                 },
               },
             },
-          }}>
+          }}
+        >
           <Mode />
         </ThemeProvider>
       )
@@ -86,7 +91,8 @@ test('renders with initial color mode name', () => {
               dark: {},
             },
           },
-        }}>
+        }}
+      >
         <Mode />
       </ThemeProvider>
     )
@@ -149,7 +155,8 @@ test('color mode is passed through theme context', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <Button />
     </ThemeProvider>
   )
@@ -179,7 +186,8 @@ test('converts color modes to css custom properties', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <Box />
     </ThemeProvider>
   )
@@ -238,13 +246,15 @@ test('inherits color mode state from parent context', () => {
             dark: {},
           },
         },
-      }}>
+      }}
+    >
       <ThemeProvider
         theme={{
           config: {
             initialColorModeName: 'inner',
           },
-        }}>
+        }}
+      >
         <Consumer />
       </ThemeProvider>
     </ThemeProvider>
@@ -287,7 +297,8 @@ test('initializes mode from prefers-color-scheme media query', () => {
         config: {
           useColorSchemeMediaQuery: true,
         },
-      }}>
+      }}
+    >
       <Consumer />
     </ThemeProvider>
   )
@@ -313,7 +324,8 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
         config: {
           useColorSchemeMediaQuery: true,
         },
-      }}>
+      }}
+    >
       <Consumer />
     </ThemeProvider>
   )
@@ -340,7 +352,8 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
         config: {
           useColorSchemeMediaQuery: false,
         },
-      }}>
+      }}
+    >
       <Consumer />
     </ThemeProvider>
   )
@@ -382,7 +395,8 @@ test('useThemeUI returns current color mode colors', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <GetColors />
     </ThemeProvider>
   )
@@ -446,7 +460,8 @@ test('dot notation works with color modes', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <Button />
     </ThemeProvider>
   )
@@ -485,7 +500,8 @@ test('dot notation works with color modes and custom properties', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <Button />
     </ThemeProvider>
   )
@@ -519,7 +535,8 @@ test('raw color values are passed to theme-ui context when custom properties are
             },
           },
         },
-      }}>
+      }}
+    >
       <Grabber />
     </ThemeProvider>
   )

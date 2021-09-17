@@ -40,6 +40,7 @@ const allContributorsOptions: IAllContributorsPluginOptions = {
 const omitCommitsOptions: IOmitCommitsPluginOptions = {
   subject: [
     'Merge branch',
+    `Merge remote-tracking branch 'origin/stable' into develop`,
     'chore:',
     'chore(',
     'ci(',
