@@ -1,3 +1,16 @@
+# v0.11.3 (Fri Sep 24 2021)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/components`
+  - Patch GridProps [#1933](https://github.com/system-ui/theme-ui/pull/1933) ([@aaronadamsCA](https://github.com/aaronadamsCA))
+
+#### Authors: 1
+
+- Aaron Adams ([@aaronadamsCA](https://github.com/aaronadamsCA))
+
+---
+
 # v0.11.2 (Wed Sep 08 2021)
 
 :tada: This release contains work from a new contributor! :tada:
