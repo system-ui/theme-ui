@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { screen, render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 

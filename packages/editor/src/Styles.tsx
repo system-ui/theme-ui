@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
-import { ThemeUIExtendedCSSProperties, ThemeUIStyleObject } from '@theme-ui/css'
+import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
 import { Fragment } from 'react'
+
 import * as Sx from './Sx'
 import { EditorContextValue } from './types'
 

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import { render, fireEvent, cleanup } from '@testing-library/react'
 import { useThemeUI } from 'theme-ui'
@@ -7,14 +11,14 @@ afterEach(cleanup)
 
 if ((global as any).document) {
   document.createRange = () =>
-    (({
+    ({
       setStart: () => {},
       setEnd: () => {},
       commonAncestorContainer: {
         nodeName: 'BODY',
         ownerDocument: document,
       },
-    } as unknown) as Range)
+    } as unknown as Range)
 }
 
 const theme = {
