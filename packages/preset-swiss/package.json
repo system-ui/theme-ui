@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-swiss",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "main": "dist/theme-ui-preset-swiss.cjs.js",
   "module": "dist/theme-ui-preset-swiss.esm.js",
   "types": "dist/theme-ui-preset-swiss.cjs.d.ts",
