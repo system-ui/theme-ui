@@ -16,6 +16,6 @@
     "@percy/cypress": "^3.1.0",
     "@testing-library/cypress": "^8.0.0",
     "cypress": "8.5.0",
-    "esbuild": "^0.12.9"
+    "esbuild": "^0.13.3"
   }
 }
