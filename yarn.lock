@@ -10,12 +10,12 @@
     tslib "~2.0.1"
 
 "@auto-it/all-contributors@^10.25.0":
-  version "10.30.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.30.0.tgz#0fb5c3987664b59ad88d1ba403e2383da257fddb"
-  integrity sha512-K7LaDNt3QP2bU0RPOKB4S9YOwLnfh0zR1pkd0l3iAPsNdo5fkQNqgjbJkguIXT3PHPLHTdmog2rapy026tJxPw==
+  version "10.32.1"
+  resolved "https://registry.yarnpkg.com/@auto-it/all-contributors/-/all-contributors-10.32.1.tgz#e8d8e461ed116180b3e258943f446f9d614137e2"
+  integrity sha512-CVanz/jpVDvsZX2OdJNkMsJAKtrlIfzRWQPIdxcXryzWp/Cn05kWCTLBel9iQyKjj1LeP2efpS7L/0r+u4XFaA==
   dependencies:
-    "@auto-it/bot-list" "10.30.0"
-    "@auto-it/core" "10.30.0"
+    "@auto-it/bot-list" "10.32.1"
+    "@auto-it/core" "10.32.1"
     "@octokit/rest" "^18.0.0"
     all-contributors-cli "6.19.0"
     anymatch "^3.1.1"
