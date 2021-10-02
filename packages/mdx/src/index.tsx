@@ -9,8 +9,7 @@ import {
   HTMLAttributes,
   ElementType,
   ComponentProps,
-  createElement,
-  useEffect,
+  useMemo,
 } from 'react'
 import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
 
@@ -143,7 +142,7 @@ const createThemedComponent = <Name extends string>(
   const variantStyles = themed(variant)
 
   return (props) => {
-    // todo: handle `as` prop
+    // todo: handle `as` prop or deprecate it on Themed.X?
     const css = (props as any)['css']
 
     return jsx(name, {
@@ -167,20 +166,25 @@ export const components = {} as ThemedComponentsDict
 export const Themed = _Themed as ThemedDiv & ThemedComponentsDict
 
 tags.forEach((tag) => {
-  // fixme?
-  components[tag] = styled(alias(tag))(themed(tag)) as any
-  Themed[tag] = components[tag] as any
+  const component = createThemedComponent(alias(tag), tag)
+
+  components[tag] = component
+  Themed[tag] = component
 })
 
 const createComponents = (comps: MDXProviderComponents) => {
-  const next = { ...components }
-
   const componentKeys = Object.keys(comps) as Array<keyof IntrinsicSxElements>
 
+  const next = { ...components }
+
+  // We enrich user's components with the styles from theme.styles.
+  // Example: `components.p` will get the styles from `theme.styles.p` as className.
+  // todo: test this behaviour
   componentKeys.forEach((key) => {
-    ;(next[key] as ThemedComponentsDict[typeof key]) = styled<any>(comps[key])(
-      themed(key)
-    ) as ThemedComponentsDict[typeof key]
+    const componentAtKey = comps[key]
+    if (componentAtKey) {
+      next[key] = (props) => jsx(componentAtKey, { ...props, css: themed(key) })
+    }
   })
   return next
 }
@@ -188,8 +192,9 @@ const createComponents = (comps: MDXProviderComponents) => {
 export const MDXProvider: FC<MdxProviderProps> = ({ components, children }) => {
   const outer = useMDXComponents() as MDXProviderComponents
 
-  return jsx(_MDXProvider, {
-    components: createComponents({ ...outer, ...components }),
-    children,
-  })
+  const themedComponents = useMemo(() => {
+    return createComponents({ ...outer, ...components })
+  }, [components, outer])
+
+  return jsx(_MDXProvider, { components: themedComponents, children })
 }

@@ -11,7 +11,7 @@ import mockConsole from 'jest-mock-console'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
-import { themed, Themed, Styled, components, MDXProvider } from '../src'
+import { themed, Themed, components, MDXProvider } from '../src'
 
 expect.extend(matchers)
 
@@ -213,7 +213,7 @@ test('Warn deprecated Styled', () => {
       }}
     >
       <MDXProvider>
-        <Styled.inlineCode>styled</Styled.inlineCode>
+        <Themed.inlineCode>styled</Themed.inlineCode>
       </MDXProvider>
     </ThemeProvider>
   )!
@@ -241,7 +241,7 @@ test('Deprecated Styled test', () => {
       }}
     >
       <MDXProvider>
-        <Styled.h1>H1</Styled.h1>
+        <Themed.h1>H1</Themed.h1>
       </MDXProvider>
     </ThemeProvider>
   )!

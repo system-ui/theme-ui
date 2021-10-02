@@ -24,7 +24,7 @@ export type {
   StylePropertyValue,
 } from '@theme-ui/core'
 export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
-export { Themed, Styled, components } from '@theme-ui/mdx'
+export { Themed, components } from '@theme-ui/mdx'
 export { ThemeProvider } from '@theme-ui/theme-provider'
 export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
@@ -50,10 +50,8 @@ export declare namespace jsx {
       extends ThemeUIJSX.ElementAttributesProperty {}
     export interface ElementChildrenAttribute
       extends ThemeUIJSX.ElementChildrenAttribute {}
-    export type LibraryManagedAttributes<
-      C,
-      P
-    > = ThemeUIJSX.LibraryManagedAttributes<C, P>
+    export type LibraryManagedAttributes<C, P> =
+      ThemeUIJSX.LibraryManagedAttributes<C, P>
     export interface IntrinsicAttributes
       extends ThemeUIJSX.IntrinsicAttributes {}
     export interface IntrinsicClassAttributes<T>
