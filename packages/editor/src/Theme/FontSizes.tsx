@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import * as CSS from 'csstype'
 import { jsx, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import { Field } from '@theme-ui/components'
@@ -34,7 +35,9 @@ const FontSizes = () => {
             type="number"
             label={key}
             name={'fontSizes.' + key}
-            value={fontSizes[key]}
+            value={
+              fontSizes[key as keyof typeof fontSizes] as CSS.Property.FontSize
+            }
             onChange={onChange(key)}
           />
         </div>

@@ -1,13 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {
-  render,
-  fireEvent,
-  act,
-  findAllByRole,
-  cleanup,
-  waitFor,
-} from '@testing-library/react'
+import { render, fireEvent, cleanup, screen } from '@testing-library/react'
 import Combobox from '../src/Combobox'
 
 const noop = () => {}
@@ -22,7 +19,7 @@ test('renders', () => {
 })
 
 test('clicking chevron button shows menu', async () => {
-  const tree = render(
+  render(
     <Combobox
       label="Beep"
       name="beep"
@@ -31,9 +28,9 @@ test('clicking chevron button shows menu', async () => {
       onChange={noop}
     />
   )
-  const button = await tree.getByRole('button')
+  const button = screen.getByRole('button')
   fireEvent.click(button)
-  const options = await findAllByRole(tree.container, 'option')
+  const options = await screen.findAllByRole('option')
   expect(options.length).toBe(2)
 })
 
@@ -50,7 +47,7 @@ test('clicking item updates value', async () => {
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
-  const [option] = await findAllByRole(tree.container, 'option')
+  const [option] = await screen.findAllByRole('option')
   fireEvent.click(option)
   expect(onChange).toHaveBeenCalledWith('beep')
 })

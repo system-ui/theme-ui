@@ -21,12 +21,16 @@ const FontWeights = () => {
 
   return (
     <Fragment>
-      {Object.keys(fontWeights).map(key => (
+      {Object.keys(fontWeights).map((key) => (
         <div key={key}>
-          <Combobox
+          <Combobox<string | number>
             label={key}
             name={'fontWeights.' + key}
-            value={fontWeights[key]}
+            value={
+              fontWeights[
+                key as keyof typeof fontWeights
+              ] as CSS.Property.FontWeight
+            }
             onChange={onChange(key)}
             options={weights}
           />

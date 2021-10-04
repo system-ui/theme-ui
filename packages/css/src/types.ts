@@ -1,7 +1,10 @@
 import * as CSS from 'csstype'
-import '@emotion/react'
+
+import type { ThemeUIConfig } from './options'
 
 type StandardCSSProperties = CSS.Properties<number | string>
+
+type Empty = undefined | null | false
 
 /**
  * The `css` function accepts arrays as values for mobile-first responsive styles.
@@ -10,7 +13,7 @@ type StandardCSSProperties = CSS.Properties<number | string>
  *
  * For more information see: https://styled-system.com/responsive-styles
  */
-export type ResponsiveStyleValue<T> = T | Array<T | null | undefined>
+export type ResponsiveStyleValue<T> = T | Empty | Array<T | Empty>
 
 /**
  * All non-vendor-prefixed CSS properties. (Allow `number` to support CSS-in-JS libs,
@@ -300,6 +303,22 @@ interface AliasesCSSProperties {
    */
 
   /**
+   * The **`scrollMarginX`** is shorthand property for CSS properties **`scroll-margin-left`** and **`scroll-margin-right`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-left
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-right
+   */
+  scrollMarginX?: StandardCSSProperties['scrollMarginLeft']
+
+  /**
+   * The **`scrollMarginY`** is shorthand property for CSS properties **`scroll-margin-top`** and **`scroll-margin-bottom`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom
+   */
+  scrollMarginY?: StandardCSSProperties['scrollMarginTop']
+
+  /**
    * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
    *
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
@@ -358,18 +377,6 @@ interface OverwriteCSSProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
    */
   borderTopStyle?: CSS.Property.BorderTopStyle | string
-  /**
-   * The **`border-top-width`** CSS property sets the width of the top border of an element.
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
-   */
-  borderTopWidth?: CSS.Property.BorderTopWidth<never> | string
   /**
    * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
@@ -441,10 +448,13 @@ export interface ThemeUIExtendedCSSProperties
     AliasesCSSProperties,
     OverwriteCSSProperties {}
 
+type ThemeUIStyleValue<T> = ResponsiveStyleValue<T | ObjectWithDefault<T> | T[]>
+
 export type StylePropertyValue<T> =
-  | ResponsiveStyleValue<Exclude<T, undefined>>
-  | ((theme: Theme) => ResponsiveStyleValue<Exclude<T, undefined>> | undefined)
+  | ThemeUIStyleValue<Exclude<T, undefined>>
+  | ((theme: Theme) => ThemeUIStyleValue<Exclude<T, undefined>> | undefined)
   | ThemeUIStyleObject
+  | Empty
 
 export type ThemeUICSSProperties = {
   [K in keyof ThemeUIExtendedCSSProperties]: StylePropertyValue<
@@ -485,7 +495,13 @@ export interface ThemeDerivedStyles {
   (theme: Theme): ThemeUICSSObject
 }
 
-export type Label = {
+export interface Label {
+  /**
+   * String appended to generated class name.
+   * @see https://emotion.sh/docs/labels
+   *
+   * You can style HTML <label> elements with `"& label": {}`.
+   */
   label?: string
 }
 
@@ -493,7 +509,7 @@ export interface CSSOthersObject {
   // we want to match CSS selectors
   // but index signature needs to be a supertype
   // so as a side-effect we allow unknown CSS properties (Emotion does too)
-  [k: string]: StylePropertyValue<string | number> | undefined | null
+  [k: string]: StylePropertyValue<string | number>
 }
 
 export interface ThemeUICSSObject
@@ -510,62 +526,92 @@ export interface ThemeUICSSObject
  */
 export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
 
+export type TLengthStyledSystem = string | 0 | number
+
+export interface ScaleDict<T> {
+  [K: string]: T | T[] | NestedScaleDict<T> | undefined
+  [I: number]: T
+}
+
+export interface ObjectWithDefault<T> {
+  /**
+   * Default value in nested scale.
+   *
+   * Given theme
+   * ```
+   * {
+   *   colors: {
+   *     primary: { __default: '#00f', light: '#33f' }
+   *   }
+   * }
+   * ```
+   * `sx={{ color: 'primary' }}` resolves to `color: #00f`.
+   */
+  __default?: T
+}
+
+export interface NestedScaleDict<T>
+  extends ScaleDict<T>,
+    ObjectWithDefault<T> {}
+
 /**
  * An array or object (possibly nested) of related CSS properties
  * @see https://theme-ui.com/theme-spec#theme-scales
  */
-export type Scale<T> = T[] | { [K: string]: T | Scale<T>; [I: number]: T }
+export type Scale<T> = T[] | ScaleDict<T>
 
-export type TLengthStyledSystem = string | 0 | number
+export type NestedScale<T> = T[] | NestedScaleDict<T>
+
+export type ColorOrNestedColorScale =
+  | CSS.Property.Color
+  | NestedScale<CSS.Property.Color>
 
 /**
  * Color modes can be used to create a user-configurable dark mode
  * or any number of other color modes.
  */
-export interface ColorMode {
+export interface ColorMode extends ScaleDict<CSS.Property.Color> {
   /**
    * Body background color
    */
-  background?: CSS.Property.Color
+  background?: ColorOrNestedColorScale
 
   /**
    * Body foreground color
    */
-  text?: CSS.Property.Color
+  text?: ColorOrNestedColorScale
 
   /**
    * Primary brand color for links, buttons, etc.
    */
-  primary?: CSS.Property.Color
+  primary?: ColorOrNestedColorScale
 
   /**
    * A secondary brand color for alternative styling
    */
-  secondary?: CSS.Property.Color
+  secondary?: ColorOrNestedColorScale
 
   /**
    * A contrast color for emphasizing UI
    */
-  accent?: CSS.Property.Color
+  accent?: ColorOrNestedColorScale
 
   /**
    * A background color for highlighting text
    */
-  highlight?: CSS.Property.Color
+  highlight?: ColorOrNestedColorScale
 
   /**
    * A faint color for backgrounds, borders, and accents that do not require
    * high contrast with the background color
    */
-  muted?: CSS.Property.Color
-
-  [k: string]: CSS.Property.Color | Scale<CSS.Property.Color> | undefined
+  muted?: ColorOrNestedColorScale
 }
 
 export type ColorModesScale = ColorMode & {
   /**
    * Nested color modes can provide overrides when used in conjunction with
-   * `Theme.initialColorModeName and `useColorMode()`
+   * `Theme.initialColorModeName` and `useColorMode()`
    */
   modes?: {
     [k: string]: ColorMode
@@ -626,7 +672,11 @@ export interface Theme {
   opacities?: Scale<CSS.Property.Opacity>
   transitions?: Scale<CSS.Property.Transition>
 
+  config?: ThemeUIConfig
+
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Enable/disable custom CSS properties/variables if lower browser
    * support is required (for eg. IE 11).
    *
@@ -635,31 +685,43 @@ export interface Theme {
   useCustomProperties?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Provide a value here to enable color modes
    */
   initialColorModeName?: string
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Provide a value here to set a color mode for printing
    */
   printColorModeName?: string
 
   /**
-   * Adds styles defined in theme.styles.root to the <body> element along with color and background-color
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
+   * Adds styles defined in theme.styles.root to the <html> element along with color and background-color
    */
-  useBodyStyles?: boolean
+  useRootStyles?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Initializes the color mode based on the prefers-color-scheme media query
    */
   useColorSchemeMediaQuery?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * Adds a global box-sizing: border-box style
    */
   useBorderBox?: boolean
 
   /**
+   * @deprecated Deprecated in favor of nesting inside `config`
+   *
    * If false, does not save color mode as a localStorage value.
    */
   useLocalStorage?: boolean
@@ -668,6 +730,16 @@ export interface Theme {
    * Define the colors that are available through this theme
    */
   colors?: ColorModesScale
+
+  /**
+   * Colors are transformed into CSS custom properties.
+   *
+   * If you need to read their raw values to pass them somewhere where CSS
+   * custom properties are not supported, use `rawColors`.
+   *
+   * Additionally, you can access all the color modes in this objects.
+   */
+  rawColors?: ColorModesScale
 
   /**
    * Styles for elements rendered in MDX can be added to the theme.styles
@@ -811,10 +883,4 @@ export interface Theme {
    * @see https://theme-ui.com/components/message#variants
    */
   messages?: Record<string, ThemeUIStyleObject>
-}
-
-interface ThemeUITheme extends Theme {}
-
-declare module '@emotion/react' {
-  export interface Theme extends ThemeUITheme {}
 }

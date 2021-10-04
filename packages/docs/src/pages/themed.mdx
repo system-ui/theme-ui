@@ -4,9 +4,10 @@ title: Themed
 
 # Themed component
 
-Use the `Themed` component to render UI with styles from [`theme.styles`](/theming#styles) _outside_ of MDX.
-For example, if you'd like to reuse heading styles in a React component,
-you can use the `Themed.h1` component to render an `<h1>` element with styles from `theme.styles.h1`.
+Use the `Themed` components dict to render UI with styles from
+[`theme.styles`](/theming#styles) _outside_ of MDX. For example, if you'd like
+to reuse heading styles in a React component, you can use the `Themed.h1`
+component to render an `<h1>` element with styles from `theme.styles.h1`.
 
 ```jsx
 // example
@@ -19,13 +20,15 @@ export default (props) => (
 )
 ```
 
-For a full list of keys available, see the [Theme Specification docs](/theme-spec#styles).
+For a full list of keys available, see the
+[Theme Specification docs](/theme-spec#styles).
 
 ## Changing the HTML element or component
 
-The rendered HTML element can be changed for each `Themed` component.
-This can be useful for ensuring accessible, SEO-friendly, and semantically-correct HTML is rendered while leveraging styles from the theme.
-This API originated in Rebass and is similar to the `@emotion/styled` API.
+The rendered HTML element can be changed for each `Themed` component. This can
+be useful for ensuring accessible, SEO-friendly, and semantically-correct HTML
+is rendered while leveraging styles from the theme. This API originated in
+Rebass and is similar to the `@emotion/styled` API.
 
 The following example renders a `<div>` that is styled like an `<h2>` element.
 
@@ -34,7 +37,8 @@ The following example renders a `<div>` that is styled like an `<h2>` element.
 <Themed.h2 as="div">Hello!</Themed.h2>
 ```
 
-This can also be used to style components like the Gatsby `Link` component to match other links.
+This can also be used to style components like the Gatsby `Link` component to
+match other links.
 
 ```jsx
 <Themed.a as={Link} to="/about">
@@ -42,8 +46,8 @@ This can also be used to style components like the Gatsby `Link` component to ma
 </Themed.a>
 ```
 
-## Body Styles
+## Global Styles
 
-To add base typographic styles to the `<body>` element, add styles to `theme.styles.root`.
-Previous versions of Theme UI used the `Themed.root` component.
-See the [theming docs](/theming/#body-styles) for more information.
+To add base typographic styles to the `<html>` element, add styles to
+`theme.styles.root`. Previous versions of Theme UI used the `Themed.root`
+component. See the [theming docs](/theming/#root-styles) for more information.

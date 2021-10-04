@@ -1,13 +1,14 @@
 {
   "name": "@theme-ui/parse-props",
-  "version": "0.6.0-alpha.1",
+  "description": "Internal package — You don't want to consume this directly.",
+  "version": "0.11.1",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/theme-ui-parse-props.cjs.js",
+  "module": "dist/theme-ui-parse-props.esm.js",
+  "types": "dist/theme-ui-parse-props.cjs.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
+    "build": "microbundle --no-compress --tsconfig tsconfig.json",
     "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
@@ -18,13 +19,10 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.1",
-    "@theme-ui/css": "0.6.0-alpha.1"
+    "@theme-ui/css": "0.11.1"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0"
+    "react": "^16 || ^17"
   },
-  "devDependencies": {
-    "@types/react": "^16.14.1",
-    "react": "^16.14.0"
-  }
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

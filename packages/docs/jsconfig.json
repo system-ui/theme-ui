@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve"
+  },
+  "exclude": [".cache", "node_modules", "public"],
+  "include": ["**/*.js", "./declarations.d.ts"]
+}

@@ -21,12 +21,8 @@ module.exports = {
         basePath: '/style-guide-demo',
       },
     },
-    {
-      resolve: 'gatsby-theme-code-recipes',
-      options: {
-        path: 'src/recipes',
-        basePath: '/recipes',
-      },
-    },
   ],
+  flags: {
+    DEV_SSR: true,
+  },
 }

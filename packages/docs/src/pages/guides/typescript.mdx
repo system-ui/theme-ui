@@ -45,9 +45,9 @@ const lightBlue = theme.colors.blue.light
 You can then reexport `useThemeUI` hook with narrowed type.
 
 ```tsx
-import { ContextValue } from 'theme-ui'
+import { ThemeUIContextValue } from 'theme-ui'
 
-interface ExactContextValue extends Omit<ContextValue, 'theme'> {
+interface ExactContextValue extends Omit<ThemeUIContextValue, 'theme'> {
   theme: ExactTheme
 }
 
@@ -93,7 +93,7 @@ const parse = (x: unknown) => parseInt(String(x))
 
 return (
   <div sx={{
-    size: size: (t) => parse(t.space?.[3]) + parse(t.sizes?.[5]) }}
+    size: (t) => parse(t.space?.[3]) + parse(t.sizes?.[5]) }}
   />
 )
 ```

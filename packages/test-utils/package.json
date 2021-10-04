@@ -1,20 +1,23 @@
 {
   "name": "@theme-ui/test-utils",
-  "version": "0.6.0-alpha.0",
+  "version": "0.11.1",
   "private": true,
   "license": "MIT",
+  "repository": "system-ui/theme-ui",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/theme-ui-test-utils.cjs.js",
+  "module": "dist/theme-ui-test-utils.esm.js",
+  "types": "dist/theme-ui-test-utils.cjs.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "tsc",
+    "build": "tsc",
     "watch": "tsc -w",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@testing-library/react": "^12.1.1",
     "conditional-type-checks": "^1.0.5",
+    "react-test-renderer": "17.0.2",
     "ts-snippet": "^5.0.0"
   }
 }

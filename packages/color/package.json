@@ -1,21 +1,19 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.6.0-alpha.1",
+  "version": "0.11.1",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
-  },
+  "main": "dist/theme-ui-color.cjs.js",
+  "module": "dist/theme-ui-color.esm.js",
+  "types": "dist/theme-ui-color.cjs.d.ts",
+  "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.6.0-alpha.1",
+    "@theme-ui/css": "0.11.1",
     "polished": "^4.0.5"
   },
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "repository": "system-ui/theme-ui",
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

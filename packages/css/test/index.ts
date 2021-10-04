@@ -1,4 +1,4 @@
-import { css, Theme } from '../src'
+import { css, NestedScale, NestedScaleDict, Theme, ThemeUIExtendedCSSProperties } from '../src'
 
 const theme: Theme = {
   colors: {
@@ -7,7 +7,7 @@ const theme: Theme = {
     background: 'white',
     text: 'black',
     purple: {
-      default: 'darkviolet',
+      __default: 'darkviolet',
       100: 'rebeccapurple',
       500: 'darkviolet',
       900: 'violet',
@@ -35,7 +35,7 @@ const theme: Theme = {
     sidebar: 320,
   },
   buttons: {
-    default: {
+    __default: {
       px: 4,
       py: 2,
       fontWeight: 'bold',
@@ -70,6 +70,9 @@ const theme: Theme = {
       letterSpacing: ['-0.01em', '-0.02em'],
     },
   },
+  borders: {
+    body: '3px solid #000000',
+  },
   borderWidths: {
     thin: 1,
   },
@@ -82,6 +85,14 @@ const theme: Theme = {
   opacities: [0, '50%'],
   transitions: {
     standard: '0.3s ease-in-out',
+  },
+  shadows: {
+    card: '5px 5px 15px 5px #000000',
+  },
+  zIndices: {
+    below: -1,
+    body: 1,
+    nav: 2,
   },
 }
 
@@ -172,8 +183,11 @@ test('handles all core styled system props', () => {
     mx: 'auto',
     p: 3,
     py: 4,
+    scrollMargin: 5,
+    scrollMarginY: 6,
     scrollPadding: 1,
     scrollPaddingY: 2,
+    textDecorationColor: 'secondary',
     fontSize: 3,
     fontWeight: 'bold',
     color: 'primary',
@@ -182,6 +196,9 @@ test('handles all core styled system props', () => {
     transition: 'standard',
     fontFamily: 'monospace',
     lineHeight: 'body',
+    border: 'body',
+    boxShadow: 'card',
+    zIndex: 'nav',
   })({ theme })
   expect(result).toEqual({
     margin: 0,
@@ -191,9 +208,13 @@ test('handles all core styled system props', () => {
     padding: 16,
     paddingTop: 32,
     paddingBottom: 32,
+    scrollMargin: 64,
+    scrollMarginTop: 128,
+    scrollMarginBottom: 128,
     scrollPadding: 4,
     scrollPaddingTop: 8,
     scrollPaddingBottom: 8,
+    textDecorationColor: 'cyan',
     color: 'tomato',
     backgroundColor: 'cyan',
     opacity: '50%',
@@ -202,6 +223,9 @@ test('handles all core styled system props', () => {
     fontSize: 24,
     fontWeight: 600,
     lineHeight: 1.5,
+    border: '3px solid #000000',
+    boxShadow: '5px 5px 15px 5px #000000',
+    zIndex: 2,
   })
 })
 
@@ -255,7 +279,7 @@ test('supports functional values', () => {
   })
 })
 
-test('returns `default` key when accessing object value with default', () => {
+test('returns `__default` key when accessing object value with default', () => {
   const result = css({
     color: 'purple',
   })(theme)
@@ -264,7 +288,7 @@ test('returns `default` key when accessing object value with default', () => {
   })
 })
 
-test('returns nested key when accessing key from object value with default', () => {
+test('returns nested key when accessing key from object value with __default', () => {
   const result = css({
     color: 'purple.100',
   })(theme)
@@ -273,7 +297,7 @@ test('returns nested key when accessing key from object value with default', () 
   })
 })
 
-test('variant prop returns `default` key when accessing variant object with default', () => {
+test('variant prop returns `__default` key when accessing variant object with default', () => {
   const result = css({
     variant: 'buttons',
   })(theme)
@@ -415,7 +439,7 @@ test('handles negative top, left, bottom, and right from scale', () => {
   })
 })
 
-test('handles negative margins from scale that is an object', () => {
+test('handles negative margins from scale that is an object and value is string', () => {
   const result = css({
     mt: '-s',
     mx: '-m',
@@ -424,6 +448,18 @@ test('handles negative margins from scale that is an object', () => {
     marginTop: '-16px',
     marginLeft: '-32px',
     marginRight: '-32px',
+  })
+})
+
+test('handles negative margins from scale that is an object and value is number', () => {
+  const result = css({
+    mt: '-s',
+    mx: '-m',
+  })({ ...theme, space: { s: 16, m: 32 } })
+  expect(result).toEqual({
+    marginTop: -16,
+    marginLeft: -32,
+    marginRight: -32,
   })
 })
 
@@ -485,6 +521,38 @@ test('functional values can return responsive arrays', () => {
       color: 'cyan',
     },
     color: 'tomato',
+  })
+})
+
+test('object with __default key is accepted as style value', () => {
+  const actual = css({
+    width: { __default: 2 },
+    color: (t) => t.colors?.primary,
+    backgroundColor: (t) => [
+      t.colors?.background,
+      (t.colors?.background as NestedScaleDict<string>).inverted,
+    ],
+  })({
+    sizes: ['10px', '20px', '40px'],
+    colors: {
+      primary: {
+        __default: 'blue',
+        light: 'lightblue',
+      },
+      background: {
+        __default: 'whitesmoke',
+        inverted: 'black',
+      },
+    },
+  })
+
+  expect(actual).toEqual({
+    '@media screen and (min-width: 40em)': {
+      backgroundColor: 'black',
+    },
+    backgroundColor: 'whitesmoke',
+    color: 'blue',
+    width: 2, // yes, 2 not 40px
   })
 })
 
@@ -555,6 +623,8 @@ test('multiples are transformed', () => {
     marginY: 2,
     paddingX: 2,
     paddingY: 2,
+    scrollMarginX: 2,
+    scrollMarginY: 2,
     scrollPaddingX: 2,
     scrollPaddingY: 2,
 
@@ -569,6 +639,10 @@ test('multiples are transformed', () => {
     paddingRight: 8,
     paddingTop: 8,
     paddingBottom: 8,
+    scrollMarginLeft: 8,
+    scrollMarginRight: 8,
+    scrollMarginTop: 8,
+    scrollMarginBottom: 8,
     scrollPaddingLeft: 8,
     scrollPaddingRight: 8,
     scrollPaddingTop: 8,
@@ -638,8 +712,67 @@ test('returns correct media query order 2', () => {
   ])
 })
 
+test('returns custom media queries', () => {
+  const result = css({
+    fontSize: [2, 3, 4],
+    color: 'primary',
+  })({
+    theme: {
+      ...theme,
+      breakpoints: [
+        '32em',
+        '@media screen and (orientation: landscape) and (min-width: 40rem)',
+      ],
+    },
+  })
+  const keys = Object.keys(result)
+  expect(keys).toEqual([
+    'fontSize',
+    '@media screen and (min-width: 32em)',
+    '@media screen and (orientation: landscape) and (min-width: 40rem)',
+    'color',
+  ])
+  expect(result).toEqual({
+    fontSize: 16,
+    '@media screen and (min-width: 32em)': {
+      fontSize: 24,
+    },
+    '@media screen and (orientation: landscape) and (min-width: 40rem)': {
+      fontSize: 36,
+    },
+    color: 'tomato',
+  })
+})
+
 test('supports vendor properties', () => {
   expect(css({ WebkitOverflowScrolling: 'touch' })(theme)).toStrictEqual({
     WebkitOverflowScrolling: 'touch',
+  })
+})
+
+test('omits empty values', () => {
+  expect(
+    css({
+      color: false && 'blue',
+      backgroundColor: undefined && 'whitesmoke',
+      textDecoration: null && 'underline',
+      border: '1px solid black',
+    })(theme)
+  ).toStrictEqual({ border: '1px solid black' })
+})
+
+test('borderTopWidth accepts number', () => {
+  expect(css({
+    borderTopWidth: 7,
+  })(theme)).toEqual({
+    borderTopWidth: 7,
+  })
+
+  expect(css({
+    borderTopWidth: 1,
+  })({
+    borderWidths: ['10px', '20px']
+  })).toEqual({
+    borderTopWidth: '20px',
   })
 })

@@ -1,33 +1,30 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.6.0-alpha.3",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "version": "0.11.1",
+  "main": "dist/theme-ui-style-guide.cjs.js",
+  "module": "dist/theme-ui-style-guide.esm.js",
+  "types": "dist/theme-ui-style-guide.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress",
-    "typecheck": "tsc --noEmit"
-  },
+  "repository": "system-ui/theme-ui",
+  "scripts": {},
   "dependencies": {
-    "@theme-ui/presets": "0.6.0-alpha.1",
+    "@theme-ui/presets": "0.11.1",
     "@types/color": "^3.0.1",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0",
-    "theme-ui": "^0.5.0-alpha.0"
+    "react": "^16 || ^17",
+    "theme-ui": "*"
   },
   "devDependencies": {
-    "react": "^16.14.0",
-    "theme-ui": "^0.6.0-alpha.3"
+    "react": "^17.0.1",
+    "theme-ui": "0.11.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

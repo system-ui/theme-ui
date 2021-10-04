@@ -1,5 +1,5 @@
-import { Theme, ContextValue } from 'theme-ui'
+import { Theme, ThemeUIContextValue } from '@theme-ui/core'
 
-export interface EditorContextValue extends ContextValue {
+export interface EditorContextValue extends ThemeUIContextValue {
   setTheme: React.Dispatch<Theme>
 }
