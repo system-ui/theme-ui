@@ -7,13 +7,13 @@
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@emotion/react": "^11.1.1",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.0.0",
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
     "@theme-ui/css": "0.11.3",
-    "@types/styled-system": "^5.1.10"
+    "@types/styled-system": "^5.1.13"
   },
   "peerDependencies": {
     "react": "^16 || ^17"
