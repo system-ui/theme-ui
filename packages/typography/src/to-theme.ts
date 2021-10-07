@@ -3,7 +3,10 @@ import verticalRhythm from 'compass-vertical-rhythm'
 import { Theme, Scale, ThemeStyles } from '@theme-ui/css'
 import ms from 'modularscale'
 import CSS from 'csstype'
-import { TypographyOptions } from 'typography'
+import {
+  TypographyOptions,
+  VerticalRhythm as TypographyJSVerticalRhythm,
+} from 'typography'
 import { Merge } from 'type-fest'
 
 import styles from './styles'
@@ -72,9 +75,10 @@ const defaults: CustomTypographyOptions = {
 
 export const toUnitless = parseFloat
 
-export const getScale = (opts: CustomTypographyOptions) => (
-  value: number
-): number => ms(value, opts.scaleRatio) * opts.baseFontSize
+export const getScale =
+  (opts: CustomTypographyOptions) =>
+  (value: number): number =>
+    ms(value, opts.scaleRatio) * opts.baseFontSize
 
 export type ThemeSpace = number[]
 export const getSpace = (
@@ -172,7 +176,6 @@ const pruneOptionsFromUnwanted = (
   if (opts == null) {
     return opts
   }
-
   const res = { ...opts }
   for (const k of unwantedTypographyOptions) {
     delete res[k]
@@ -187,7 +190,7 @@ const toUnitlessOptions = (
   // Or opts with nullish baseFontSize (intentional override)
   // Or opts with unset baseFontSize (just not defined)
   if (opts == null || opts.baseFontSize == null) {
-    return (opts as unknown) as Partial<CustomTypographyOptions>
+    return opts as unknown as Partial<CustomTypographyOptions>
   }
 
   return {
@@ -227,6 +230,21 @@ export const toTheme = (
   }
 
   const rhythm: verticalRhythm.VerticalRhythm = verticalRhythm(rhythmOpts)
+
+  // typography.js types are outdated
+  const overrideStyles = options?.overrideStyles as any
+  if (overrideStyles) {
+    const overrides = overrideStyles(
+      {
+        adjustFontSizeTo: rhythm.adjustFontSizeTo,
+        rhythm: rhythm.rhythm,
+        scale: getScale(opts),
+      },
+      options
+    )
+
+    console.log({ overrides })
+  }
 
   return {
     space: getSpace(rhythm, opts),
