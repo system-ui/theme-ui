@@ -16,7 +16,13 @@ const KEY_MAPPING: {
   zIndices: 'zIndex',
 }
 
-export default (theme: Theme) => {
+/**
+ * @deprecated
+ *
+ * This package is no longer maintained as its dependencies (postcss-rtl) are
+ * not maintained. Feel free to copy the code to your project — it's just 44 LoC
+ */
+export default function themeToTachyons(theme: Theme) {
   const transformedTheme = Object.entries(theme).reduce<{
     [Key: string]: unknown
   }>((acc, [key, value]) => {
@@ -27,7 +33,7 @@ export default (theme: Theme) => {
         [key]: value,
       }
     } else if (Array.isArray(matchingKey)) {
-      matchingKey.forEach(tachyonsKey => {
+      matchingKey.forEach((tachyonsKey) => {
         acc[tachyonsKey] = value
       })
 
