@@ -4261,10 +4261,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/readable-stream@^2.3.9":
-  version "2.3.9"
-  resolved "https://registry.npmjs.org/@types/readable-stream/-/readable-stream-2.3.9.tgz#40a8349e6ace3afd2dd1b6d8e9b02945de4566a9"
-  integrity sha512-sqsgQqFT7HmQz/V5jH1O0fvQQnXAJO46Gg9LRO/JPfjmVmGUlcx831TZZO3Y3HtWhIkzf3kTsNT0Z0kzIhIvZw==
+"@types/readable-stream@2.3.11", "@types/readable-stream@^2.3.9":
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-2.3.11.tgz#942bc4574a1d7ca4368cb9cb4352e3d2b4b51dea"
+  integrity sha512-0z+/apYJwKFz/RHp6mOMxz/y7xOvWPYPevuCEyAY3gXsjtaac02E26RvxA+I96rfvmVH/dEMGXNvyJfViR1FSQ==
   dependencies:
     "@types/node" "*"
     safe-buffer "*"
@@ -18434,7 +18434,7 @@ tachyons-generator@^0.23.0:
   version "0.23.0"
   resolved "https://registry.yarnpkg.com/tachyons-generator/-/tachyons-generator-0.23.0.tgz#eb0f90f6d2ec548330bdc57da334f748e069daa4"
   integrity sha512-IR7+Ha2Ua5GXztwkkcmoNkUmjeRNjKbQz+9AeVYPkDxsz0N0wQ1sWPhexXwj8CRGrRnJfMiwLH4kjuhvqK3kmQ==
-  dependencies: 
+  dependencies:
     camelcase "^4.1.0"
     colorable "^1.0.5"
     cxs "^6.0.0"

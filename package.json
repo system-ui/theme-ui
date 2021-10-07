@@ -85,5 +85,8 @@
     ]
   },
   "name": "@theme-ui/monorepo",
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "@types/readable-stream": "2.3.11"
+  }
 }
