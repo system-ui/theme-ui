@@ -20,7 +20,7 @@ import {
   NestedScale,
   css,
 } from '@theme-ui/css'
-import { Global } from '@emotion/react'
+import { Global, Interpolation } from '@emotion/react'
 
 import {
   toCustomProperties,
@@ -292,7 +292,8 @@ function NestedColorModeProvider({
 
   return (
     <ThemeUIInternalBaseThemeProvider
-      context={{ ...outerCtx, theme: newTheme }}>
+      context={{ ...outerCtx, theme: newTheme }}
+    >
       {/* Changed CSS Variables will cascade from the wrapping div */}
       {jsx('div', {
         'data-themeui-nested-provider': true,
