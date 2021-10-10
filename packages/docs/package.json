@@ -48,7 +48,7 @@
     "react-helmet": "^6.1.0",
     "react-live": "^2.1.2",
     "theme-ui": "0.11.3",
-    "remark-slug": "^6",
+    "remark-slug": "^7",
     "stringify-object": "^4.0.0",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
