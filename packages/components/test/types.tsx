@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { expecter } from '@theme-ui/test-utils'
+import { expecter, AssertTrue, IsExact } from '@theme-ui/test-utils'
 
 import {
   Alert,
@@ -86,7 +86,12 @@ describe('components type check', () => {
         css={{ background: '#eee' }}
         sx={{ py: [1, 2, 3], paddingBlockStart: '2em' }}
         px={[3, 2, 1]}
-        ref={(ref) => ref}>
+        ref={(ref) => {
+          console.log(ref?.style?.alignItems)
+          const _ref = ref!
+          type _ = AssertTrue<IsExact<typeof _ref, HTMLElement>>
+        }}
+      >
         <Box
           onPointerEnter={(e) => e.pointerType}
           ref={(ref) => ref}
@@ -100,7 +105,11 @@ describe('components type check', () => {
         <Grid
           width={[128, null, 192]}
           backgroundColor="#eee"
-          ref={(ref) => ref}>
+          ref={(ref) => {
+            const _ref = ref!
+            type _ = AssertTrue<IsExact<typeof _ref, HTMLDivElement>>
+          }}
+        >
           <Box bg="primary" ref={(primaryBox) => primaryBox}>
             Box
           </Box>
@@ -136,7 +145,12 @@ describe('components type check', () => {
           <option>Boop</option>
         </Select>
         <Textarea defaultValue="Hello" rows={8} />
-        <Label ref={(ref) => ref}>
+        <Label
+          ref={(ref) => {
+            const _ref = ref!
+            type _ = AssertTrue<IsExact<typeof _ref, HTMLLabelElement>>
+          }}
+        >
           <Radio name="dark-mode" value="true" defaultChecked={true} />
           Dark Mode
         </Label>
@@ -233,7 +247,8 @@ describe('components type check', () => {
             justifyContent: 'center',
             color: 'background',
             bg: 'primary',
-          }}>
+          }}
+        >
           <Heading>Aspect Ratio</Heading>
         </AspectRatio>
         <AspectImage ratio={4 / 3} src="./example.png" />
@@ -258,7 +273,8 @@ describe('components type check', () => {
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            fill="currentcolor">
+            fill="currentcolor"
+          >
             <circle
               r={11}
               cx={12}

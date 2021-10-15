@@ -21,6 +21,7 @@ export const Textarea: ForwardRef<HTMLTextAreaElement, TextareaProps> =
         as="textarea"
         variant="textarea"
         {...props}
+        // @ts-expect-error internal prop
         __themeKey="forms"
         __css={{
           display: 'block',

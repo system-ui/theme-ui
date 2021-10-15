@@ -6,7 +6,7 @@ import {
   jsx,
   useTheme,
 } from '@emotion/react'
-import { forwardRef } from 'react'
+import React, { ComponentProps, ComponentPropsWithRef, forwardRef } from 'react'
 import {
   css,
   get,
@@ -141,16 +141,28 @@ export const Box = __Box as typeof __Box & {
   /**
    * @deprecated
    */
-  withComponent: (Component: React.ElementType) => React.ComponentType<BoxProps>
+  withComponent: <A>(
+    Component: A extends React.ElementType ? A : never
+  ) => React.ForwardRefExoticComponent<
+    BoxProps &
+      React.RefAttributes<
+        A extends React.ElementType
+          ? NonNullable<
+              React.ComponentPropsWithRef<A>['ref']
+            > extends React.Ref<infer R>
+            ? R
+            : never
+          : never
+      >
+  >
 }
 
-Box.withComponent =
-  (component) =>
-  ({ as, ...props }) => {
+Box.withComponent = (component) =>
+  forwardRef(({ as, ...props }, ref) => {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
         '[theme-ui] You’re using the `.withComponent` API on a Theme UI component. This API will be deprecated in the next version; pass the `as` prop instead.'
       )
     }
-    return <Box as={component} {...props} />
-  }
+    return <Box as={component} ref={ref} {...props} />
+  })

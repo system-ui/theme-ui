@@ -132,45 +132,6 @@ test('keys of components match snapshot', () => {
   `)
 })
 
-test('opt out of typechecking props whenever `as` prop is used', () => {
-  expect(
-    renderJSON(
-      <div>
-        {/* no error */}
-        <Themed.img
-          as="button"
-          src={2}
-          onClick={(_event) => {
-            // @ts-ignore todo: this fails in tests, but it shouldn't.
-            _event.x = 2
-          }}
-        />
-        <Themed.img
-          // @ts-expect-error Type 'number' is not assignable to type 'string'.ts(2322)
-          src={2}
-          onClick={(_event) => {
-            // @ts-expect-error Property 'y' does not exist on type 'MouseEvent<HTMLImageElement, MouseEvent>'.ts(2339)
-            _event.y = 2
-          }}
-        />
-      </div>
-    )
-  ).toMatchInlineSnapshot(`
-    <div>
-      <button
-        className="emotion-0"
-        onClick={[Function]}
-        src={2}
-      />
-      <img
-        className="emotion-0"
-        onClick={[Function]}
-        src={2}
-      />
-    </div>
-  `)
-})
-
 test('table columns align', () => {
   const tree = render(
     <MDXProvider>
@@ -198,53 +159,4 @@ test('table columns align', () => {
   expect(tree.getByText('TextLeft')).toHaveStyleRule('text-align', 'left')
   expect(tree.getByText('TextCenter')).toHaveStyleRule('text-align', 'center')
   expect(tree.getByText('TextRight')).toHaveStyleRule('text-align', 'right')
-})
-
-test('Warn deprecated Styled', () => {
-  const restore = mockConsole()
-  const tree = render(
-    <ThemeProvider
-      theme={{
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <MDXProvider>
-        <Themed.inlineCode>styled</Themed.inlineCode>
-      </MDXProvider>
-    </ThemeProvider>
-  )!
-  const code = tree.getByText('styled')
-  expect(code).toMatchInlineSnapshot(`
-  <code
-    class="emotion-0"
-  >
-    styled
-  </code>
-`)
-  expect(console.warn).toHaveBeenCalled()
-  restore()
-})
-
-test('Deprecated Styled test', () => {
-  const json = renderJSON(
-    <ThemeProvider
-      theme={{
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <MDXProvider>
-        <Themed.h1>H1</Themed.h1>
-      </MDXProvider>
-    </ThemeProvider>
-  )!
-  expect(json.type).toBe('h1')
-  expect(json).toHaveStyleRule('color', 'tomato')
 })
