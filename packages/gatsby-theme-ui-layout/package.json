@@ -4,7 +4,7 @@
   "main": "dist/gatsby-theme-ui-layout.cjs.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
-    "gatsby": "^2.0.0 || ^3.0.0",
+    "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0",
     "react": "^16 || ^17",
     "react-dom": "^16 || ^17"
   },
