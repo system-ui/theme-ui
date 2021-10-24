@@ -25,7 +25,7 @@ export interface ThemeUIConfig {
   /**
    * Initializes the color mode based on the prefers-color-scheme media query
    */
-  useColorSchemeMediaQuery?: boolean
+  useColorSchemeMediaQuery?: 'system' | 'initial' | boolean
 
   /**
    * Adds a global box-sizing: border-box style
