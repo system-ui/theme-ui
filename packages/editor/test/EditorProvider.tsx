@@ -1,17 +1,22 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup, act } from '@testing-library/react'
-import { jsx, ThemeProvider, useThemeUI } from 'theme-ui'
-import { matchers } from 'jest-emotion'
+import { render, cleanup, act } from '@testing-library/react'
+import { ThemeProvider, useThemeUI } from 'theme-ui'
+import { matchers } from '@emotion/jest'
+import { renderJSON } from '@theme-ui/test-utils'
+
 import { EditorProvider } from '../src'
 
 afterEach(cleanup)
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
-
 const theme = {
-  useCustomProperties: false,
+  config: {
+    useCustomProperties: false,
+  },
   colors: {
     text: 'black',
     background: 'white',
@@ -71,5 +76,3 @@ test('setTheme updates theme context', () => {
   expect(context.theme.colors.text).toBe('tomato')
   expect(context.theme.colors.background).toBe('white')
 })
-
-test.todo('works with custom properties')

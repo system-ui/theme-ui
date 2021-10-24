@@ -1,0 +1,91 @@
+# v0.8.3 (Wed May 05 2021)
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.8.0 (Wed May 05 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Francis Champagne ([@fcisio](https://github.com/fcisio)), for all your work!
+
+#### 🚀 Enhancement
+
+- v0.8 [#1688](https://github.com/system-ui/theme-ui/pull/1688) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+- Refactor color objects and expose default colors as a mode [#1639](https://github.com/system-ui/theme-ui/pull/1639) ([@fcisio](https://github.com/fcisio))
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/develop' into v0.8 ([@hasparus](https://github.com/hasparus))
+- Merge branch 'stable' into config-2 ([@hasparus](https://github.com/hasparus))
+- Merge branch 'config' into config-2 [#1421](https://github.com/system-ui/theme-ui/pull/1421) ([@hasparus](https://github.com/hasparus))
+- fix: gatsby-plugin-theme-ui coverage ([@fcisio](https://github.com/fcisio))
+- refactor: assemble the modes inside rawColors ([@fcisio](https://github.com/fcisio))
+- fix: test coverage ([@fcisio](https://github.com/fcisio))
+- Merge branch 'develop' into config ([@lachlanjc](https://github.com/lachlanjc))
+- Fix remaining issues ([@lachlanjc](https://github.com/lachlanjc))
+- Begin moving theme config options ([@lachlanjc](https://github.com/lachlanjc))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 4
+
+- Brent Jackson ([@jxnblk](https://github.com/jxnblk))
+- Francis Champagne ([@fcisio](https://github.com/fcisio))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.7.1 (Mon Apr 19 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix(gatsby-plugin-theme-ui): Fast Refresh Compatibility [#1659](https://github.com/system-ui/theme-ui/pull/1659) ([@LekoArts](https://github.com/LekoArts) [@hasparus](https://github.com/hasparus))
+- chore: update internal peerDependencies ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 5
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jonathan Van Buren ([@vanbujm](https://github.com/vanbujm))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.7.0 (Thu Apr 15 2021)
+
+#### 🚀 Enhancement
+
+- WIP: Build packages with Preconstruct 2 [#1423](https://github.com/system-ui/theme-ui/pull/1423) ([@alexanderchan](https://github.com/alexanderchan) [@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- chore: More explicit Gatsby peer dep [#1640](https://github.com/system-ui/theme-ui/pull/1640) ([@LekoArts](https://github.com/LekoArts))
+- Merge branch 'develop' into preconstruct-2 ([@hasparus](https://github.com/hasparus))
+- Merge branch 'add/preconstruct' into preconstruct-2 ([@hasparus](https://github.com/hasparus))
+- Run preconstruct fix to update main ([@alexanderchan](https://github.com/alexanderchan))
+
+#### ⚠️ Pushed to `stable`
+
+- Merge branch 'develop' into stable ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 3
+
+- Alex Chan ([@alexanderchan](https://github.com/alexanderchan))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))

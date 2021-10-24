@@ -4,13 +4,16 @@ title: How it Works
 
 # How it Works
 
-Theme UI combines several libraries together to form a mini-framework for styling applications.
+Theme UI combines several libraries together to form a mini-framework for
+styling applications.
 
 Theme UI is built with:
 
 - [Emotion][]: used to generate isolated CSS with theming context
-- [MDX][]: used to provide custom Emotion styled components to MDX documents, without polluting the global CSS scope
-- [Typography.js][]: optionally used for creating rich typographic styles with a simple, high-level API
+- [MDX][]: used to provide custom Emotion styled components to MDX documents,
+  without polluting the global CSS scope
+- [Typography.js][]: optionally used for creating rich typographic styles with a
+  simple, high-level API
 
 [emotion]: https://emotion.sh
 [mdx]: https://mdxjs.com
@@ -19,24 +22,26 @@ Theme UI is built with:
 ## ThemeProvider
 
 The Theme UI `ThemeProvider` component is a wrapper around MDX's `MDXProvider`,
-which adds custom React components to context,
-and Emotion's `ThemeProvider`, which adds the `theme` object to context for use with Emotion.
+which adds custom React components to context, and Emotion's `ThemeProvider`,
+which adds the `theme` object to context for use with Emotion.
 
-The Theme UI `ThemeProvider` includes a default `components` object with styled components that pick up values from the `theme.styles` object.
-For example, `theme.styles.h1` will be used in its `components.h1` component and rendered in MDX documents.
+The Theme UI `ThemeProvider` includes a default `components` object with styled
+components that pick up values from the `theme.styles` object. For example,
+`theme.styles.h1` will be used in its `components.h1` component and rendered in
+MDX documents.
 
-For illustrative purposes, the `ThemeProvider` renders something like the following:
+For illustrative purposes, the `ThemeProvider` renders something like the
+following:
 
 ```jsx
 // for demonstration only – this does not reflect the actual source code
-import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'emotion-theming'
 import styled from '@emotion/styled'
 
 const themeUIComponents = {
-  h1: styled('h1')(props => props.theme.styles.h1),
-  h2: styled('h2')(props => props.theme.styles.h2),
+  h1: styled('h1')((props) => props.theme.styles.h1),
+  h2: styled('h2')((props) => props.theme.styles.h2),
   // other MDX components
 }
 
@@ -51,22 +56,23 @@ export default ({ components, theme, children }) => (
 
 ## Custom Components
 
-When using the `components` prop to add custom MDX components,
-each component is wrapped with the `sx` prop to allow the component to pick up values from the `theme.styles` object.
+When using the `components` prop to add custom MDX components, each component is
+wrapped with the `sx` prop to allow the component to pick up values from the
+`theme.styles` object.
 
 ## JSX Pragma
 
-The Theme UI JSX function wraps the Emotion JSX function, converting the `sx` prop to a call to `@theme-ui/css`.
-The two examples below yield the same results:
+The Theme UI JSX function wraps the Emotion JSX function, converting the `sx`
+prop to a call to `@theme-ui/css`. The two examples below yield the same
+results:
 
 ```jsx
 // with Emotion's JSX function
 // this is typically handled with the Emotion Babel preset
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+/** @jsxImportSource @emotion/react */
 import { css } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     css={css({
@@ -80,10 +86,9 @@ export default props => (
 
 ```jsx
 // with Theme UI's JSX function
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -94,3 +99,10 @@ export default props => (
   />
 )
 ```
+
+<Note>
+
+Confused about this `@jsxImportSource` comment? Read more about
+[JSX Pragma](/guides/jsx-pragma).
+
+</Note>

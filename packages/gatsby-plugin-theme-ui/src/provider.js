@@ -1,5 +1,6 @@
-/** @jsx jsx */
-import { jsx, ThemeProvider, merge } from 'theme-ui'
+import { ThemeProvider, merge } from 'theme-ui'
+import React from 'react'
+
 import localTheme from './index'
 import components from './components'
 import useThemeUiConfig from './hooks/configOptions'
@@ -25,6 +26,6 @@ const Root = ({ children }) => {
   )
 }
 
-export const wrapRootElement = ({ element }) => {
+export const WrapRootElement = ({ element }) => {
   return <Root>{element}</Root>
 }

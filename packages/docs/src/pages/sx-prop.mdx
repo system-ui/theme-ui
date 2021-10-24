@@ -2,21 +2,24 @@
 title: 'The `sx` Prop'
 ---
 
+import { Note } from '..'
 
 # The `sx` Prop
 
-The `sx` prop lets you style elements inline, using values from your theme.
-To use the `sx` prop, add the custom `/** @jsx jsx */` pragma comment to the top of your module and import the `jsx` function.
+The `sx` prop lets you style elements inline, using values from your theme. To
+use the `sx` prop, add the custom `/** @jsxImportSource theme-ui */` pragma
+comment to the top of your module or configure
+[automatic JSX runtime](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
+in your transpiler.
 
-The `sx` prop lets you add any valid CSS to an element,
-while using values from your theme to keep styles consistent.
-You can think of the style object that the `sx` prop accepts as a *superset* of CSS.
+The `sx` prop lets you add any valid CSS to an element, while using values from
+your theme to keep styles consistent. You can think of the style object that the
+`sx` prop accepts as a _superset_ of CSS.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -33,74 +36,196 @@ export default props => (
 
 <Note>
 
-Under the hood, Theme UI uses a [custom pragma comment](/jsx-pragma) that converts a theme-aware `sx` prop into a style object and passes it to Emotion's `jsx` function.
-The `sx` prop only works in modules that have defined a custom pragma at the top of the file, which replaces the default `React.createElement` function.
-This means you can control which modules in your application opt into this feature without the need for a Babel plugin or additional configuration.
-This is intended as a complete replacement for the Emotion custom JSX pragma.
+Under the hood, Theme UI uses a [custom pragma comment](/guides/jsx-pragma) that
+converts a theme-aware `sx` prop into a style object and passes it to Emotion's
+`jsx` functions. The `sx` prop only works in modules that have defined a custom
+pragma at the top of the file, which replaces the default React `jsx` functions.
+This means you can control which modules in your application opt into this
+feature without the need for a Babel plugin or additional configuration. This is
+intended as a complete replacement for the Emotion custom JSX pragma.
 
 </Note>
 
 ## Theme-Aware Properties
 
-The following CSS properties will use values defined in the theme, when available.
+The following CSS properties will use values defined in the theme, when
+available.
 
-Property  | Theme Key
----|---
-`fontFamily` | `fonts`
-`fontSize` | `fontSizes`
-`fontWeight` | `fontWeights`
-`lineHeight` | `lineHeights`
-`letterSpacing` | `letterSpacings`
-`color` | `colors`
-`backgroundColor`, `bg` | `colors`
-`margin`, `m` | `space`
-`marginTop`, `mt` | `space`
-`marginRight`, `mr` | `space`
-`marginBottom`, `mb` | `space`
-`marginLeft`, `ml` | `space`
-`marginX`, `mx` | `space`
-`marginY`, `my` | `space`
-`padding`, `p` | `space`
-`paddingTop`, `pt` | `space`
-`paddingRight`, `pr` | `space`
-`paddingBottom`, `pb` | `space`
-`paddingLeft`, `pl` | `space`
-`paddingX`, `px` | `space`
-`paddingY`, `py` | `space`
-`top` | `space`
-`bottom` | `space`
-`left` | `space`
-`right` | `space`
-`border` | `borders`
-`borderTop` | `borders`
-`borderRight` | `borders`
-`borderBottom` | `borders`
-`borderLeft` | `borders`
-`borderColor` | `colors`
-`borderWidth` | `borderWidths`
-`borderStyle` | `borderStyles`
-`borderRadius` | `radii`
-`boxShadow` | `shadows`
-`textShadow` | `shadows`
-`zIndex` | `zIndices`
-`width` | `sizes`
-`minWidth` | `sizes`
-`maxWidth` | `sizes`
-`height` | `sizes`
-`minHeight` | `sizes`
-`maxHeight` | `sizes`
-`size` | `sizes`
+| Property                  | Theme Key        |
+| ------------------------- | ---------------- |
+| `fontFamily`              | `fonts`          |
+| `fontSize`                | `fontSizes`      |
+| `fontWeight`              | `fontWeights`    |
+| `lineHeight`              | `lineHeights`    |
+| `letterSpacing`           | `letterSpacings` |
+| `color`                   | `colors`         |
+| `bg`, `backgroundColor`   | `colors`         |
+| `borderColor`             | `colors`         |
+| `caretColor`              | `colors`         |
+| `outlineColor`            | `colors`         |
+| `textDecorationColor`     | `colors`         |
+| `opacity`                 | `opacities`      |
+| `transition`              | `transitions`    |
+| `m`, `margin`             | `space`          |
+| `mt`, `marginTop`         | `space`          |
+| `mr`, `marginRight`       | `space`          |
+| `mb`, `marginBottom`      | `space`          |
+| `ml`, `marginLeft`        | `space`          |
+| `mx`, `marginX`           | `space`          |
+| `my`, `marginY`           | `space`          |
+| `p`, `padding`            | `space`          |
+| `pt`, `paddingTop`        | `space`          |
+| `pr`, `paddingRight`      | `space`          |
+| `pb`, `paddingBottom`     | `space`          |
+| `pl`, `paddingLeft`       | `space`          |
+| `px`, `paddingX`          | `space`          |
+| `py`, `paddingY`          | `space`          |
+| `scrollMargin`            | `space`          |
+| `scrollMarginTop`         | `space`          |
+| `scrollMarginRight`       | `space`          |
+| `scrollMarginBottom`      | `space`          |
+| `scrollMarginLeft`        | `space`          |
+| `scrollMarginX`           | `space`          |
+| `scrollMarginY`           | `space`          |
+| `scrollPadding`           | `space`          |
+| `scrollPaddingTop`        | `space`          |
+| `scrollPaddingRight`      | `space`          |
+| `scrollPaddingBottom`     | `space`          |
+| `scrollPaddingLeft`       | `space`          |
+| `scrollPaddingX`          | `space`          |
+| `scrollPaddingY`          | `space`          |
+| `top`                     | `space`          |
+| `right`                   | `space`          |
+| `bottom`                  | `space`          |
+| `left`                    | `space`          |
+| `gridGap`                 | `space`          |
+| `gridColumnGap`           | `space`          |
+| `gridRowGap`              | `space`          |
+| `gap`                     | `space`          |
+| `columnGap`               | `space`          |
+| `rowGap`                  | `space`          |
+| `border`                  | `borders`        |
+| `borderTop`               | `borders`        |
+| `borderRight`             | `borders`        |
+| `borderBottom`            | `borders`        |
+| `borderLeft`              | `borders`        |
+| `borderWidth`             | `borderWidths`   |
+| `borderStyle`             | `borderStyles`   |
+| `borderRadius`            | `radii`          |
+| `borderTopRightRadius`    | `radii`          |
+| `borderTopLeftRadius`     | `radii`          |
+| `borderBottomRightRadius` | `radii`          |
+| `borderBottomLeftRadius`  | `radii`          |
+| `borderTopWidth`          | `borderWidths`   |
+| `borderTopColor`          | `colors`         |
+| `borderTopStyle`          | `borderStyles`   |
+| `borderBottomWidth`       | `borderWidths`   |
+| `borderBottomColor`       | `colors`         |
+| `borderBottomStyle`       | `borderStyles`   |
+| `borderLeftWidth`         | `borderWidths`   |
+| `borderLeftColor`         | `colors`         |
+| `borderLeftStyle`         | `borderStyles`   |
+| `borderRightWidth`        | `borderWidths`   |
+| `borderRightColor`        | `colors`         |
+| `borderRightStyle`        | `borderStyles`   |
+| `columnRuleColor`         | `colors`         |
+| `columnRuleWidth`         | `borderWidths`   |
+| `boxShadow`               | `shadows`        |
+| `textShadow`              | `shadows`        |
+| `zIndex`                  | `zIndices`       |
+| `width`                   | `sizes`          |
+| `minWidth`                | `sizes`          |
+| `maxWidth`                | `sizes`          |
+| `columnWidth`             | `sizes`          |
+| `height`                  | `sizes`          |
+| `minHeight`               | `sizes`          |
+| `maxHeight`               | `sizes`          |
+| `flexBasis`               | `sizes`          |
+| `size`                    | `sizes`          |
+| `fill`                    | `colors`         |
+| `stroke`                  | `colors`         |
+
+Theme UI also supports
+[CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties),
+which follow this structure:
+
+- `margin-{block,inline}-{start,end}`
+- `padding-{block,inline}-{start,end}`
+- `border-{block,inline}-{start,end}-{width,style,color}`
+- `inset-{block,inline}-{start,end}`
+
+<details>
+  <summary>See the full list</summary>
+
+| Property                 | Theme Key      |
+| ------------------------ | -------------- |
+| `marginBlock`            | `space`        |
+| `marginBlockEnd`         | `space`        |
+| `marginBlockStart`       | `space`        |
+| `marginInline`           | `space`        |
+| `marginInlineEnd`        | `space`        |
+| `marginInlineStart`      | `space`        |
+| `paddingBlock`           | `space`        |
+| `paddingBlockEnd`        | `space`        |
+| `paddingBlockStart`      | `space`        |
+| `paddingInline`          | `space`        |
+| `paddingInlineEnd`       | `space`        |
+| `paddingInlineStart`     | `space`        |
+| `inset`                  | `space`        |
+| `insetBlock`             | `space`        |
+| `insetBlockEnd`          | `space`        |
+| `insetBlockStart`        | `space`        |
+| `insetInline`            | `space`        |
+| `insetInlineEnd`         | `space`        |
+| `insetInlineStart`       | `space`        |
+| `borderBlock`            | `borders`      |
+| `borderBlockColor`       | `colors`       |
+| `borderBlockEnd`         | `borders`      |
+| `borderBlockEndColor`    | `colors`       |
+| `borderBlockEndStyle`    | `borderStyles` |
+| `borderBlockEndWidth`    | `borderWidths` |
+| `borderBlockStart`       | `borders`      |
+| `borderBlockStartColor`  | `colors`       |
+| `borderBlockStartStyle`  | `borderStyles` |
+| `borderBlockStartWidth`  | `borderWidths` |
+| `borderBlockStyle`       | `borderStyles` |
+| `borderBlockWidth`       | `borderWidths` |
+| `borderEndEndRadius`     | `radii`        |
+| `borderEndStartRadius`   | `radii`        |
+| `borderInline`           | `borders`      |
+| `borderInlineColor`      | `colors`       |
+| `borderInlineEnd`        | `borders`      |
+| `borderInlineEndColor`   | `colors`       |
+| `borderInlineEndStyle`   | `borderStyles` |
+| `borderInlineEndWidth`   | `borderWidths` |
+| `borderInlineStart`      | `borders`      |
+| `borderInlineStartColor` | `colors`       |
+| `borderInlineStartStyle` | `borderStyles` |
+| `borderInlineStartWidth` | `borderWidths` |
+| `borderInlineStyle`      | `borderStyles` |
+| `borderInlineWidth`      | `borderWidths` |
+| `borderStartEndRadius`   | `radii`        |
+| `borderStartStartRadius` | `radii`        |
+| `blockSize`              | `sizes`        |
+| `inlineSize`             | `sizes`        |
+| `maxBlockSize`           | `sizes`        |
+| `maxInlineSize`          | `sizes`        |
+| `minBlockSize`           | `sizes`        |
+| `minInlineSize`          | `sizes`        |
+
+</details>
 
 ## Responsive Values
 
-Theme UI, like Styled System, includes a shorthand syntax for writing mobile-first responsive styles using arrays as values.
-This is useful when you want to change a single property across multiple breakpoints without needing to write verbose media query syntax.
+Theme UI, like Styled System, includes a shorthand syntax for writing
+mobile-first responsive styles using arrays as values. This is useful when you
+want to change a single property across multiple breakpoints without needing to
+write verbose media query syntax.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -112,13 +237,13 @@ export default props => (
 
 ### Skipping Breakpoints
 
-If you want to skip a breakpoint, you can use the value `null`. This is useful if you want to set a value for only the largest breakpoint, for example.
+If you want to skip a breakpoint, you can use the value `null`. This is useful
+if you want to set a value for only the largest breakpoint, for example.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
@@ -130,7 +255,8 @@ export default props => (
 
 ### Media Queries
 
-If you prefer standard CSS media query syntax, you can use nested objects for responsive styles as well.
+If you prefer standard CSS media query syntax, you can use nested objects for
+responsive styles as well.
 
 ```jsx
 <div
@@ -138,17 +264,19 @@ If you prefer standard CSS media query syntax, you can use nested objects for re
     width: '100%',
     '@media screen and (min-width: 40em)': {
       width: '50%',
-    }
+    },
   }}
 />
 ```
 
 ## Margin and Padding
 
-Margin and padding are treated as first-class citizens in Theme UI,
-using values defined in the `theme.space` scale, and include an optional shorthand syntax for using negative space in your application.
+Margin and padding are treated as first-class citizens in Theme UI, using values
+defined in the `theme.space` scale, and include an optional shorthand syntax for
+using negative space in your application.
 
-In addition to shorthands for applying margin and padding on the x- and y-axes, a terse naming convention can be used to quickly edit styles.
+In addition to shorthands for applying margin and padding on the x- and y-axes,
+a terse naming convention can be used to quickly edit styles.
 
 ```jsx
 // example of using margin and padding shorthand syntax
@@ -164,18 +292,18 @@ In addition to shorthands for applying margin and padding on the x- and y-axes, 
 
 ## Functional Values
 
-For shorthand CSS properties or ones that are not automatically mapped to values in the theme,
-use an inline function to reference values from the `theme` object.
+For shorthand CSS properties or ones that are not automatically mapped to values
+in the theme, use an inline function to reference values from the `theme`
+object.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
-      boxShadow: theme => `0 0 4px ${theme.colors.primary}`,
+      boxShadow: (theme) => `0 0 4px ${theme.colors.primary}`,
     }}
   />
 )
@@ -186,22 +314,52 @@ export default props => (
 In some cases you might want to apply styles to children of the current element.
 You can do so with Emotion's [nested selectors](https://emotion.sh/docs/nested).
 
-If you want to reference the current class selector of the component, you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors) symbol.
+```jsx
+/** @jsxImportSource theme-ui */
+
+export default (props) => (
+  <div
+    {...props}
+    sx={{
+      h1: {
+        backgroundColor: 'tomato',
+        'a, span': {
+          backgroundColor: 'white',
+          color: 'tomato',
+        },
+      },
+    }}
+  />
+)
+```
+
+<Note>
+
+If you’re looking to style text content like Markdown or from a CMS using your
+theme, check out the [`BaseStyles`](/api#basestyles) component.
+
+</Note>
+
+If you want to reference the current class selector of the component, such as
+for
+[psuedo-classes & psuedo-elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements),
+you can use the [`&`](https://emotion.sh/docs/object-styles#child-selectors)
+symbol.
 
 ```jsx
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     sx={{
-      h1: {
-        backgroundColor: 'tomato'
+      '& > p': {
+        fontSize: [2, 3, 4],
       },
-      '& > div': {
-        fontSize: [2, 3, 4]
-      }
+      '&:hover': {
+        color: 'accent',
+      },
     }}
   />
 )
@@ -209,13 +367,13 @@ export default props => (
 
 ## Raw CSS
 
-To opt-out of using theme-based CSS, use the `css` prop to render raw CSS values.
+To opt-out of using theme-based CSS, use the `css` prop to render raw CSS
+values.
 
 ```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
-export default props => (
+export default (props) => (
   <div
     {...props}
     css={{
@@ -229,20 +387,20 @@ export default props => (
 
 ## Using the `sx` Prop in MDX
 
-Because MDX uses its own custom pragma and `createElement` function, the Theme UI pragma will not work in MDX files.
-You can use any of the [Theme UI components](/components),
-which support the `sx` prop, in an MDX file as a workaround.
+Because MDX uses its own custom pragma and `createElement` function, the Theme
+UI pragma will not work in MDX files. You can use any of the
+[Theme UI components](/components), which support the `sx` prop, in an MDX file
+as a workaround.
 
-```js
-<!-- Example -->
-
+```mdx
 import { Box } from 'theme-ui'
 
 <Box
   sx={{
     padding: 3,
     bg: 'highlight',
-  }}>
+  }}
+>
 
 # Hello
 
@@ -251,5 +409,5 @@ import { Box } from 'theme-ui'
 
 ## Object Styles
 
-If you're new to using JavaScript object notation for authoring styles, see the [guide to using objects for styling](/guides/object-styles).
-
+If you're new to using JavaScript object notation for authoring styles, see the
+[guide to using objects for styling](/guides/object-styles).

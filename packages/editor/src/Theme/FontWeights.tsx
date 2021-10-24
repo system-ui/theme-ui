@@ -14,19 +14,23 @@ const FontWeights = () => {
   const onChange = (key: string) => (val: string | number) => {
     context.setTheme({
       fontWeights: {
-        [key]: val as CSS.FontWeightProperty,
+        [key]: val as CSS.Property.FontWeight,
       },
     })
   }
 
   return (
     <Fragment>
-      {Object.keys(fontWeights).map(key => (
+      {Object.keys(fontWeights).map((key) => (
         <div key={key}>
-          <Combobox
+          <Combobox<string | number>
             label={key}
             name={'fontWeights.' + key}
-            value={fontWeights[key]}
+            value={
+              fontWeights[
+                key as keyof typeof fontWeights
+              ] as CSS.Property.FontWeight
+            }
             onChange={onChange(key)}
             options={weights}
           />

@@ -1,17 +1,14 @@
 {
   "name": "@theme-ui/custom-properties",
   "description": "Generate CSS custom properties for use with Theme UI",
-  "version": "0.4.0-alpha.3",
+  "version": "0.11.3",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/theme-ui-custom-properties.cjs.js",
+  "module": "dist/theme-ui-custom-properties.esm.js",
   "author": "Alex Page <alex@alexpage.com.au>",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
-  },
+  "repository": "system-ui/theme-ui",
+  "scripts": {},
   "publishConfig": {
     "access": "public"
   },
@@ -19,7 +16,8 @@
     "pluralize": "^8.0.0"
   },
   "devDependencies": {
-    "@theme-ui/css": "^0.4.0-alpha.3",
+    "@theme-ui/css": "0.11.3",
     "@types/pluralize": "^0.0.29"
-  }
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

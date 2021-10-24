@@ -1,0 +1,28 @@
+{
+  "name": "@theme-ui/parse-props",
+  "description": "Internal package — You don't want to consume this directly.",
+  "version": "0.11.3",
+  "source": "src/index.ts",
+  "main": "dist/theme-ui-parse-props.cjs.js",
+  "module": "dist/theme-ui-parse-props.esm.js",
+  "types": "dist/theme-ui-parse-props.cjs.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle --no-compress --tsconfig tsconfig.json",
+    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": "system-ui/theme-ui",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@theme-ui/css": "0.11.3",
+    "@emotion/react": "^11.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17"
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+}

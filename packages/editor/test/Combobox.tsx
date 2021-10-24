@@ -1,13 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {
-  render,
-  fireEvent,
-  act,
-  waitForElement,
-  waitForDomChange,
-  cleanup,
-} from '@testing-library/react'
+import { render, fireEvent, cleanup, screen } from '@testing-library/react'
 import Combobox from '../src/Combobox'
 
 const noop = () => {}
@@ -22,7 +19,7 @@ test('renders', () => {
 })
 
 test('clicking chevron button shows menu', async () => {
-  const tree = render(
+  render(
     <Combobox
       label="Beep"
       name="beep"
@@ -31,9 +28,9 @@ test('clicking chevron button shows menu', async () => {
       onChange={noop}
     />
   )
-  const button = await tree.getByRole('button')
+  const button = screen.getByRole('button')
   fireEvent.click(button)
-  const options = await waitForElement(() => tree.findAllByRole('option'))
+  const options = await screen.findAllByRole('option')
   expect(options.length).toBe(2)
 })
 
@@ -50,7 +47,7 @@ test('clicking item updates value', async () => {
   )
   const button = await tree.getByRole('button')
   fireEvent.click(button)
-  const [option] = await waitForElement(() => tree.findAllByRole('option'))
+  const [option] = await screen.findAllByRole('option')
   fireEvent.click(option)
   expect(onChange).toHaveBeenCalledWith('beep')
 })
@@ -217,9 +214,8 @@ test('ignores return key when closed', async () => {
   expect(listbox.style.visibility).toBe('hidden')
 })
 
-// todo
 test.skip('blur closes listbox', async () => {
-  ;(global as any).requestAnimationFrame = jest.fn(fn => setTimeout(fn, 1))
+  ;(global as any).requestAnimationFrame = jest.fn((fn) => setTimeout(fn, 1))
   const tree = render(
     <Combobox
       label="Beep"
@@ -237,7 +233,5 @@ test.skip('blur closes listbox', async () => {
     hidden: true,
   })
   expect((global as any).requestAnimationFrame).toHaveBeenCalled()
-  // not sure how to use testing-library here
-  await waitForDomChange({ container: (tree as unknown) as HTMLElement })
   expect(listbox.style.visibility).toBe('hidden')
 })

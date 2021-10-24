@@ -13,7 +13,7 @@ import { Alert } from 'theme-ui'
 ```jsx live=true
 <Alert>
   Beep boop, this is an alert!
-  <Close ml='auto' mr={-2} />
+  <Close ml="auto" mr={-2} />
 </Alert>
 ```
 
@@ -22,6 +22,9 @@ import { Alert } from 'theme-ui'
 <Alert variant='accent' mb={2}>Accent</Alert>
 <Alert variant='highlight' mb={2}>Highlight</Alert>
 ```
+
+If screen readers should immediately start reading the alert aloud,
+[add `role="alert"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Alert_Role).
 
 ## Variants
 

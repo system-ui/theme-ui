@@ -32,7 +32,7 @@ const Fonts = ({ options = defaultFonts }) => {
   const context = useThemeUI() as EditorContextValue
   const { fonts = {} } = context.theme || {}
 
-  const onChange = (key: string) => (val: CSS.FontFamilyProperty) => {
+  const onChange = (key: string) => (val: CSS.Property.FontFamily) => {
     context.setTheme({
       fonts: {
         [key]: val,
@@ -42,12 +42,12 @@ const Fonts = ({ options = defaultFonts }) => {
 
   return (
     <Fragment>
-      {Object.keys(fonts).map(key => (
+      {Object.keys(fonts).map((key) => (
         <div key={key}>
           <Combobox
             label={key}
             name={'fonts.' + key}
-            value={fonts[key]}
+            value={fonts[key as keyof typeof fonts] as CSS.Property.FontFamily}
             onChange={onChange(key)}
             options={options}
           />

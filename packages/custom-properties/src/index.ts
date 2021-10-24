@@ -5,7 +5,7 @@ interface CustomProperties {
   [key: string]: string | number
 }
 
-export default (theme: Theme, prefix?: string) => {
+export default function makeCustomProperties(theme: Theme, prefix?: string) {
   const customProperties: CustomProperties = {}
 
   const generateProperties = (object: object, previousKey?: string) => {

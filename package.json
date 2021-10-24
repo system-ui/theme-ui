@@ -1,111 +1,92 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "lerna run prepare",
-    "start": "yarn workspace docs start",
-    "build": "yarn workspace docs build",
-    "serve": "yarn workspace docs serve --port 8000",
-    "clean": "lerna run clean",
-    "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
+    "build": "preconstruct build",
+    "build:docs": "yarn build && yarn workspace docs build",
+    "serve:docs": "yarn build:docs && yarn workspace docs serve",
+    "dev:docs": "yarn workspace docs start",
+    "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
+    "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",
     "logo": "yarn workspace docs logo",
-    "dev:chrome": "yarn workspace @theme-ui/chrome dev",
-    "dev:editor": "yarn workspace @theme-ui/editor dev"
+    "postinstall": "preconstruct dev && patch-package",
+    "version:bump": "lerna version",
+    "version:bump-next": "lerna version prerelease --preid alpha --exact",
+    "release": "yarn clean && yarn build && auto shipit -v",
+    "release-manual": "yarn prerelease-manual && lerna publish from-package --dist-tag next --pre-dist-tag next",
+    "prerelease-manual": "yarn clean && yarn build && yarn typecheck && yarn test --coverage",
+    "bump-version": "lerna version",
+    "bump-version-next": "lerna version prerelease --preid alpha --exact --force-publish",
+    "all-contributors:check": "./scripts/all-contributors-check.js",
+    "all-contributors:add": "npx all-contributors add"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/helper-validator-identifier": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.8.3",
-    "@babel/runtime": "^7.7.7",
-    "@testing-library/react": "^9.1.3",
-    "@types/jest": "^25.1.2",
-    "@types/lodash.debounce": "^4.0.6",
-    "@types/lodash.merge": "^4.6.6",
-    "@types/react-test-renderer": "^16.9.2",
-    "babel-jest": "^25.3.0",
-    "husky": ">=4.0.7",
-    "jest": "^24.8.0",
-    "jest-canvas-mock": "^2.2.0",
-    "jest-emotion": "^10.0.11",
-    "jest-mock-console": "^1.0.0",
-    "lerna": "^3.14.1",
-    "lint-staged": "10",
-    "microbundle": "^0.11.0",
-    "prettier": "^2.0.5",
-    "react-test-renderer": "^16.8.6",
-    "ts-jest": "^25.2.0"
-  },
-  "resolutions": {},
-  "jest": {
-    "preset": "ts-jest/presets/js-with-babel",
-    "globals": {
-      "ts-jest": {
-        "tsConfig": {
-          "module": "commonjs",
-          "esModuleInterop": true,
-          "resolveJsonModule": true,
-          "jsx": "react",
-          "alwaysStrict": true,
-          "noImplicitThis": true,
-          "noImplicitAny": false,
-          "strictBindCallApply": false
-        }
-      }
-    },
-    "testMatch": [
-      "**/packages/**/test/*.{js,ts,tsx}"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/fixtures/",
-      "/presets/",
-      "/style-guide/",
-      "tailwind.config.js",
-      "/dist/"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "html"
-    ],
-    "collectCoverageFrom": [
-      "packages/**/src/**/*.{js,ts,tsx}",
-      "!packages/docs/**/*",
-      "!packages/presets/**/*",
-      "!packages/style-guide/**/*",
-      "!packages/gatsby-theme-style-guide/**/*",
-      "!packages/chrome/**/*",
-      "!packages/gatsby-theme-*/**/*",
-      "!packages/preset-*/**/*"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
-    "snapshotSerializers": [
-      "jest-emotion"
-    ],
-    "setupFiles": [
-      "jest-canvas-mock"
-    ],
-    "transform": {
-      "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js"
-    }
+    "@auto-it/all-contributors": "^10.25.0",
+    "@auto-it/conventional-commits": "^10.25.0",
+    "@auto-it/first-time-contributor": "^10.25.0",
+    "@auto-it/magic-zero": "^10.25.0",
+    "@auto-it/omit-commits": "^10.29.0",
+    "@auto-it/released": "^10.25.0",
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.15.8",
+    "@babel/helper-validator-identifier": "^7.12.11",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@babel/runtime": "^7.13.10",
+    "@codechecks/build-size-watcher": "^0.1.0",
+    "@codechecks/client": "0.1.10-beta",
+    "@emotion/jest": "^11.3.0",
+    "@preconstruct/cli": "^2.1.4",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.3",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "auto": "^10.25.0",
+    "babel-jest": "^27.1.1",
+    "babel-preset-gatsby": "^1.8.0",
+    "egzek": "^1.2.0",
+    "husky": ">=7.0.2",
+    "jest": "^27.1.1",
+    "jest-canvas-mock": "^2.3.1",
+    "jest-mock-console": "^1.0.1",
+    "lerna": "^4.0.0",
+    "lint-staged": "11.2.0",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-toolbelt": "^9.6.0",
+    "typecov": "^0.2.3",
+    "typescript": "^4.4.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*",
+      "!packages/docs",
+      "!packages/e2e",
+      "!packages/tachyons"
+    ]
+  },
+  "name": "@theme-ui/monorepo",
+  "dependencies": {},
+  "resolutions": {
+    "@types/readable-stream": "2.3.11"
   }
 }

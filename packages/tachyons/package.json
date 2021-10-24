@@ -1,21 +1,18 @@
 {
   "name": "@theme-ui/tachyons",
-  "description": "Generate static CSS for use outside of React with Theme UI and Tachyons",
-  "version": "0.4.0-alpha.3",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "description": "⚠ DEPRECATED: Generate static CSS for use outside of React with Theme UI and Tachyons",
+  "version": "0.11.4",
+  "private": true,
+  "main": "dist/theme-ui-tachyons.cjs.js",
+  "module": "dist/theme-ui-tachyons.esm.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "author": "John Otander <johnotander@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
-  },
+  "scripts": {},
   "devDependencies": {
-    "@theme-ui/css": "^0.4.0-alpha.3",
+    "@theme-ui/css": "0.11.3",
     "babel-polyfill": "^6.26.0",
-    "execa": "^4.0.0"
+    "execa": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -32,5 +29,5 @@
     "style"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "bfd026cae085f377ca537de897dc43233d50f5d5"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

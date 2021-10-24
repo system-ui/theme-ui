@@ -1,6 +1,7 @@
 import base from '@theme-ui/preset-base'
+import { makeTheme } from '@theme-ui/css/utils'
 
-export const future = {
+export const future = makeTheme({
   ...base,
   colors: {
     text: '#000',
@@ -34,6 +35,6 @@ export const future = {
     body: 1.75,
     heading: 1.25,
   },
-}
+})
 
 export default future

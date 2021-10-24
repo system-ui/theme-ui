@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders with styles 1`] = `
-.emotion-9 {
+.emotion-0 {
   display: grid;
   padding: 8px;
   gap: 8px;
@@ -18,14 +18,15 @@ exports[`renders with styles 1`] = `
   padding-bottom: 75%;
 }
 
-.emotion-0 {
+.emotion-2 {
   width: 16px;
   height: 16px;
   border-radius: 9999px;
   border: 1px solid white;
-  -webkit-transform: translate(-8px,-8px);
-  -ms-transform: translate(-8px,-8px);
-  transform: translate(-8px,-8px);
+  -webkit-transform: translate(-8px, -8px);
+  -moz-transform: translate(-8px, -8px);
+  -ms-transform: translate(-8px, -8px);
+  transform: translate(-8px, -8px);
 }
 
 .emotion-3 {
@@ -34,37 +35,38 @@ exports[`renders with styles 1`] = `
   height: 8px;
 }
 
-.emotion-2 {
+.emotion-4 {
   width: 12px;
   height: 12px;
   border-radius: 9999px;
   background-color: white;
   box-shadow: 0 0 2px rgba(0,0,0,.25);
-  -webkit-transform: translate(-6px,-2px);
-  -ms-transform: translate(-6px,-2px);
-  transform: translate(-6px,-2px);
+  -webkit-transform: translate(-6px, -2px);
+  -moz-transform: translate(-6px, -2px);
+  -ms-transform: translate(-6px, -2px);
+  transform: translate(-6px, -2px);
 }
 
-.emotion-8 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.emotion-6 {
   display: block;
   width: 100%;
   font-size: 10px;
 }
 
-.emotion-4 input:focus {
+.emotion-6 input:focus {
   color: primary;
   background-color: highlight;
 }
 
 <div
-  className="emotion-9"
+  className="emotion-0"
 >
   <div
     className="emotion-1"
@@ -151,7 +153,7 @@ exports[`renders with styles 1`] = `
           }
         >
           <div
-            className="emotion-0"
+            className="emotion-2"
           />
         </div>
       </div>
@@ -225,17 +227,17 @@ exports[`renders with styles 1`] = `
           }
         >
           <div
-            className="emotion-2"
+            className="emotion-4"
           />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="emotion-8"
+    className="emotion-5"
   >
     <label
-      className="emotion-4"
+      className="emotion-6"
     >
       Hex
       <div
@@ -246,6 +248,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-1"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -264,7 +267,8 @@ exports[`renders with styles 1`] = `
           }
           value="#FF0000"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-1"
           onMouseDown={[Function]}
           style={
             Object {
@@ -273,11 +277,11 @@ exports[`renders with styles 1`] = `
           }
         >
           hex
-        </span>
+        </label>
       </div>
     </label>
     <label
-      className="emotion-4"
+      className="emotion-6"
     >
       Hue
       <div
@@ -288,6 +292,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-2"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -306,7 +311,8 @@ exports[`renders with styles 1`] = `
           }
           value="0"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-2"
           onMouseDown={[Function]}
           style={
             Object {
@@ -315,11 +321,11 @@ exports[`renders with styles 1`] = `
           }
         >
           h
-        </span>
+        </label>
       </div>
     </label>
     <label
-      className="emotion-4"
+      className="emotion-6"
     >
       Saturation
       <div
@@ -330,6 +336,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-3"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -348,7 +355,8 @@ exports[`renders with styles 1`] = `
           }
           value="100"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-3"
           onMouseDown={[Function]}
           style={
             Object {
@@ -357,11 +365,11 @@ exports[`renders with styles 1`] = `
           }
         >
           s
-        </span>
+        </label>
       </div>
     </label>
     <label
-      className="emotion-4"
+      className="emotion-6"
     >
       Lightness
       <div
@@ -372,6 +380,7 @@ exports[`renders with styles 1`] = `
         }
       >
         <input
+          id="rc-editable-input-4"
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
@@ -390,7 +399,8 @@ exports[`renders with styles 1`] = `
           }
           value="50"
         />
-        <span
+        <label
+          htmlFor="rc-editable-input-4"
           onMouseDown={[Function]}
           style={
             Object {
@@ -399,7 +409,7 @@ exports[`renders with styles 1`] = `
           }
         >
           l
-        </span>
+        </label>
       </div>
     </label>
   </div>
@@ -413,16 +423,23 @@ Array [
     aria-expanded={false}
     aria-haspopup="dialog"
     onClick={[Function]}
+    onClickCapture={[Function]}
     onKeyDown={[Function]}
+    onKeyPressCapture={[Function]}
     onKeyUp={[Function]}
     onMouseDown={[Function]}
+    onMouseDownCapture={[Function]}
     type="button"
   >
     <button>
       Edit color
     </button>
   </div>,
-  .emotion-9 {
+  .emotion-0 {
+  outline: none;
+}
+
+.emotion-1 {
   display: grid;
   padding: 8px;
   gap: 8px;
@@ -432,84 +449,86 @@ Array [
   box-shadow: 0 2px 8px 1px rgba(0,0,0,.125);
 }
 
-.emotion-1 {
+.emotion-2 {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 75%;
 }
 
-.emotion-0 {
+.emotion-3 {
   width: 16px;
   height: 16px;
   border-radius: 9999px;
   border: 1px solid white;
-  -webkit-transform: translate(-8px,-8px);
-  -ms-transform: translate(-8px,-8px);
-  transform: translate(-8px,-8px);
+  -webkit-transform: translate(-8px, -8px);
+  -moz-transform: translate(-8px, -8px);
+  -ms-transform: translate(-8px, -8px);
+  transform: translate(-8px, -8px);
 }
 
-.emotion-3 {
+.emotion-4 {
   position: relative;
   width: 100%;
   height: 8px;
 }
 
-.emotion-2 {
+.emotion-5 {
   width: 12px;
   height: 12px;
   border-radius: 9999px;
   background-color: white;
   box-shadow: 0 0 2px rgba(0,0,0,.25);
-  -webkit-transform: translate(-6px,-2px);
-  -ms-transform: translate(-6px,-2px);
-  transform: translate(-6px,-2px);
+  -webkit-transform: translate(-6px, -2px);
+  -moz-transform: translate(-6px, -2px);
+  -ms-transform: translate(-6px, -2px);
+  transform: translate(-6px, -2px);
 }
 
-.emotion-8 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.emotion-7 {
   display: block;
   width: 100%;
   font-size: 10px;
 }
 
-.emotion-4 input:focus {
+.emotion-7 input:focus {
   color: primary;
   background-color: highlight;
 }
 
-.emotion-10 {
-  outline: none;
-}
-
 <div
     aria-label="Edit color"
-    className="emotion-10"
+    className="emotion-0"
     data-dialog={true}
     hidden={true}
     id="id-1"
     onAnimationEnd={[Function]}
+    onBlur={[Function]}
     onKeyDown={[Function]}
     onTransitionEnd={[Function]}
     role="dialog"
     style={
       Object {
         "display": "none",
+        "left": "100%",
+        "position": "fixed",
+        "top": "100%",
       }
     }
     tabIndex={-1}
   >
     <div
-      className="emotion-9"
+      className="emotion-1"
     >
       <div
-        className="emotion-1"
+        className="emotion-2"
       >
         <div
           onMouseDown={[Function]}
@@ -593,14 +612,14 @@ Array [
               }
             >
               <div
-                className="emotion-0"
+                className="emotion-3"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        className="emotion-3"
+        className="emotion-4"
       >
         <div
           style={
@@ -667,17 +686,17 @@ Array [
               }
             >
               <div
-                className="emotion-2"
+                className="emotion-5"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        className="emotion-8"
+        className="emotion-6"
       >
         <label
-          className="emotion-4"
+          className="emotion-7"
         >
           Hex
           <div
@@ -688,6 +707,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-5"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -706,7 +726,8 @@ Array [
               }
               value="#FF0000"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-5"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -715,11 +736,11 @@ Array [
               }
             >
               hex
-            </span>
+            </label>
           </div>
         </label>
         <label
-          className="emotion-4"
+          className="emotion-7"
         >
           Hue
           <div
@@ -730,6 +751,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-6"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -748,7 +770,8 @@ Array [
               }
               value="0"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-6"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -757,11 +780,11 @@ Array [
               }
             >
               h
-            </span>
+            </label>
           </div>
         </label>
         <label
-          className="emotion-4"
+          className="emotion-7"
         >
           Saturation
           <div
@@ -772,6 +795,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-7"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -790,7 +814,8 @@ Array [
               }
               value="100"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-7"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -799,11 +824,11 @@ Array [
               }
             >
               s
-            </span>
+            </label>
           </div>
         </label>
         <label
-          className="emotion-4"
+          className="emotion-7"
         >
           Lightness
           <div
@@ -814,6 +839,7 @@ Array [
             }
           >
             <input
+              id="rc-editable-input-8"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -832,7 +858,8 @@ Array [
               }
               value="50"
             />
-            <span
+            <label
+              htmlFor="rc-editable-input-8"
               onMouseDown={[Function]}
               style={
                 Object {
@@ -841,7 +868,7 @@ Array [
               }
             >
               l
-            </span>
+            </label>
           </div>
         </label>
       </div>

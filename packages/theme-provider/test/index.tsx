@@ -1,16 +1,19 @@
-/** @jsx jsx */
-import { jsx } from '@theme-ui/core'
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
+
+import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
-import renderer from 'react-test-renderer'
-import { render, cleanup } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { render, cleanup, fireEvent } from '@testing-library/react'
+import { matchers } from '@emotion/jest'
+import { renderJSON } from '@theme-ui/test-utils'
+
 import { ThemeProvider } from '../src'
 
 expect.extend(matchers)
 
 afterEach(cleanup)
-
-const renderJSON = el => renderer.create(el).toJSON()
 
 test('renders', () => {
   const json = renderJSON(
@@ -25,13 +28,16 @@ test('renders with theme', () => {
   const json = renderJSON(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         colors: {
           primary: 'tomato',
           background: 'white',
           text: 'black',
         },
-      }}>
+      }}
+    >
       <h1 sx={{ color: 'primary' }}>Hello</h1>
     </ThemeProvider>
   )
@@ -42,13 +48,16 @@ test('renders with styles', () => {
   const json = renderJSON(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         styles: {
           h1: {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       {mdx('h1', null, 'Hello')}
     </ThemeProvider>
   )
@@ -56,17 +65,20 @@ test('renders with styles', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('renders with nested provider', () => {
-  const json = renderJSON(
+test('renders with nested provider', async () => {
+  const tree = render(
     <ThemeProvider
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         styles: {
           h1: {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <ThemeProvider
         theme={{
           styles: {
@@ -74,12 +86,16 @@ test('renders with nested provider', () => {
               color: 'cyan',
             },
           },
-        }}>
+        }}
+      >
         {mdx('h1', null, 'Hello')}
       </ThemeProvider>
     </ThemeProvider>
   )
-  expect(json).toHaveStyleRule('color', 'cyan')
+
+  const style = global.getComputedStyle(await tree.findByText('Hello'))
+
+  expect(style.color).toBe('cyan')
 })
 
 test('renders with custom components', () => {
@@ -91,13 +107,16 @@ test('renders with custom components', () => {
         h1,
       }}
       theme={{
-        useCustomProperties: false,
+        config: {
+          useCustomProperties: false,
+        },
         styles: {
           h1: {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       {mdx('h1', null, 'Hello')}
     </ThemeProvider>
   )
@@ -125,11 +144,13 @@ test('renders global styles', () => {
             lineHeight: 'body',
           },
         },
-      }}>
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('Georgia,serif')
   expect(style.fontWeight).toBe('500')
   expect(style.lineHeight).toBe('1.5')
@@ -151,17 +172,19 @@ test('does not render invalid global styles', () => {
       <h1>Hello</h1>
     </ThemeProvider>
   )
-  const style = window.getComputedStyle(root.baseElement)
+  const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('')
   expect(style.fontWeight).toBe('')
   expect(style.lineHeight).toBe('')
 })
 
-test('does not renders global styles', () => {
+test('does not render global styles', () => {
   const root = render(
     <ThemeProvider
       theme={{
-        useBodyStyles: false,
+        config: {
+          useRootStyles: false,
+        },
         fonts: {
           body: 'Georgia,serif',
         },
@@ -176,7 +199,8 @@ test('does not renders global styles', () => {
             fontFamily: 'body',
           },
         },
-      }}>
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -197,16 +221,61 @@ test('adds box-sizing: border-box', () => {
 })
 
 test('does not add box-sizing: border-box', () => {
-  const styles: HTMLStyleElement[] = [].slice.call(document.querySelectorAll('style'))
-  styles.forEach(style => (style.innerHTML = ''))
+  const styles: HTMLStyleElement[] = [].slice.call(
+    document.querySelectorAll('style')
+  )
+  styles.forEach((style) => (style.innerHTML = ''))
   const root = render(
     <ThemeProvider
       theme={{
-        useBorderBox: false,
-      }}>
+        config: {
+          useBorderBox: false,
+        },
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
   const style = window.getComputedStyle(root.baseElement)
   expect(style.boxSizing).toBe('')
+})
+
+test('updates CSS Custom Properties on root element', async () => {
+  const DarkModeButton = () => {
+    const { colorMode, setColorMode } = useThemeUI()
+
+    if (colorMode === 'dark') return null
+
+    return <button onClick={() => setColorMode!('dark')}>Dark Mode</button>
+  }
+
+  const root = render(
+    <ThemeProvider
+      theme={{
+        config: {
+          // useCustomProperties defaults to `true`
+        },
+        colors: {
+          text: '#000',
+          modes: {
+            dark: { text: '#fff' },
+          },
+        },
+      }}
+    >
+      <DarkModeButton />
+    </ThemeProvider>
+  )
+
+  const html = root.baseElement.parentElement!
+
+  expect(
+    window.getComputedStyle(html).getPropertyValue('--theme-ui-colors-text')
+  ).toBe('#000')
+
+  fireEvent.click(root.getByText('Dark Mode'))
+
+  expect(
+    window.getComputedStyle(html).getPropertyValue('--theme-ui-colors-text')
+  ).toBe('#fff')
 })

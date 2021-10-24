@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "typography-js-theme-ui-example",
-  "version": "0.4.0-alpha.3",
+  "version": "0.4.0-rc.0",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -11,15 +11,15 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.0.19",
-    "@mdx-js/react": "^1.0.16",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "gatsby": "^2.6.3",
     "gatsby-plugin-google-fonts": "^1.0.0",
-    "gatsby-plugin-mdx": "^1.0.4",
+    "gatsby-plugin-mdx": "^1.6.0",
     "lodash.merge": "^4.6.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "theme-ui": "^0.4.0-alpha.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "theme-ui": "^0.4.0-rc.0",
     "theme-ui-typography": "^0.1.7",
     "typography-theme-fairy-gates": "^0.16.19"
   }

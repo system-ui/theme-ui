@@ -1,31 +1,28 @@
 {
   "name": "@theme-ui/presets",
-  "version": "0.4.0-alpha.3",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "version": "0.11.3",
+  "main": "dist/theme-ui-presets.cjs.js",
+  "module": "dist/theme-ui-presets.esm.js",
+  "types": "dist/theme-ui-presets.cjs.d.ts",
   "source": "src/index.ts",
   "author": "Brent Jackson",
   "license": "MIT",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
-  },
+  "scripts": {},
   "dependencies": {
-    "@theme-ui/preset-base": "^0.4.0-alpha.0",
-    "@theme-ui/preset-bootstrap": "^0.4.0-alpha.0",
-    "@theme-ui/preset-bulma": "^0.4.0-alpha.0",
-    "@theme-ui/preset-dark": "^0.4.0-alpha.3",
-    "@theme-ui/preset-deep": "^0.4.0-alpha.3",
-    "@theme-ui/preset-funk": "^0.4.0-alpha.0",
-    "@theme-ui/preset-future": "^0.4.0-alpha.0",
-    "@theme-ui/preset-polaris": "^0.4.0-alpha.0",
-    "@theme-ui/preset-roboto": "^0.4.0-alpha.0",
-    "@theme-ui/preset-sketchy": "^0.4.0-alpha.3",
-    "@theme-ui/preset-swiss": "^0.4.0-alpha.3",
-    "@theme-ui/preset-system": "^0.4.0-alpha.3",
-    "@theme-ui/preset-tailwind": "^0.4.0-alpha.3",
-    "@theme-ui/preset-tosh": "^0.4.0-alpha.3"
+    "@theme-ui/preset-base": "0.11.3",
+    "@theme-ui/preset-bootstrap": "0.11.3",
+    "@theme-ui/preset-bulma": "0.11.3",
+    "@theme-ui/preset-dark": "0.11.3",
+    "@theme-ui/preset-deep": "0.11.3",
+    "@theme-ui/preset-funk": "0.11.3",
+    "@theme-ui/preset-future": "0.11.3",
+    "@theme-ui/preset-polaris": "0.11.3",
+    "@theme-ui/preset-roboto": "0.11.3",
+    "@theme-ui/preset-sketchy": "0.11.3",
+    "@theme-ui/preset-swiss": "0.11.3",
+    "@theme-ui/preset-system": "0.11.3",
+    "@theme-ui/preset-tailwind": "0.11.3",
+    "@theme-ui/preset-tosh": "0.11.3"
   },
   "publishConfig": {
     "access": "public"
@@ -38,5 +35,5 @@
     "emotion"
   ],
   "repository": "system-ui/theme-ui",
-  "gitHead": "5681b24d36f81fddd0d1d82cbb85136cc15dcd4c"
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

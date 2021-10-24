@@ -1,55 +1,52 @@
-import { ThemeUIStyleObject } from '@theme-ui/css'
+import { Interpolation } from '@emotion/react'
+import { ThemeUIStyleObject, Theme as ThemeUITheme } from '@theme-ui/css'
 
-/**
- * The `sx` prop accepts a `SxStyleProp` object and properties that are part of
- * the `Theme` will be transformed to their corresponding values. Other valid
- * CSS properties are also allowed.
- */
-export type SxStyleProp = ThemeUIStyleObject
+import { ThemeUIJSX } from './jsx-namespace'
 
-export interface SxProps {
+export interface SxProp {
   /**
    * The sx prop lets you style elements inline, using values from your
-   * theme. To use the sx prop, add the custom pragma as a comment to the
-   * top of your module and import the jsx function.
+   * theme.
    *
-   * ```ts
-   * // @jsx jsx
-   *
-   * import { jsx } from 'theme-ui'
-   * ```
+   * @see https://theme-ui.com/sx-prop/
    */
-  sx?: SxStyleProp
+  sx?: ThemeUIStyleObject
+  /**
+   * Theme UI uses Emotion's JSX function. You can pass styles to it directly
+   * using `css` prop.
+   * @see https://theme-ui.com/sx-prop/#raw-css
+   */
+  css?: Interpolation<ThemeUITheme>
 }
 
 export interface IntrinsicSxElements {
-  p: JSX.IntrinsicElements['p'] & SxProps
-  b: JSX.IntrinsicElements['b'] & SxProps
-  i: JSX.IntrinsicElements['i'] & SxProps
-  a: JSX.IntrinsicElements['a'] & SxProps
-  h1: JSX.IntrinsicElements['h1'] & SxProps
-  h2: JSX.IntrinsicElements['h2'] & SxProps
-  h3: JSX.IntrinsicElements['h3'] & SxProps
-  h4: JSX.IntrinsicElements['h4'] & SxProps
-  h5: JSX.IntrinsicElements['h5'] & SxProps
-  h6: JSX.IntrinsicElements['h6'] & SxProps
-  img: JSX.IntrinsicElements['img'] & SxProps
-  pre: JSX.IntrinsicElements['pre'] & SxProps
-  code: JSX.IntrinsicElements['code'] & SxProps
-  ol: JSX.IntrinsicElements['ol'] & SxProps
-  ul: JSX.IntrinsicElements['ul'] & SxProps
-  li: JSX.IntrinsicElements['li'] & SxProps
-  blockquote: JSX.IntrinsicElements['blockquote'] & SxProps
-  hr: JSX.IntrinsicElements['hr'] & SxProps
-  table: JSX.IntrinsicElements['table'] & SxProps
-  tr: JSX.IntrinsicElements['tr'] & SxProps
-  th: JSX.IntrinsicElements['th'] & SxProps
-  td: JSX.IntrinsicElements['td'] & SxProps
-  em: JSX.IntrinsicElements['em'] & SxProps
-  strong: JSX.IntrinsicElements['strong'] & SxProps
-  div: JSX.IntrinsicElements['div'] & SxProps
-  delete: JSX.IntrinsicElements['div'] & SxProps
-  inlineCode: JSX.IntrinsicElements['div'] & SxProps
-  thematicBreak: JSX.IntrinsicElements['div'] & SxProps
-  root: JSX.IntrinsicElements['div'] & SxProps
+  p: ThemeUIJSX.IntrinsicElements['p']
+  b: ThemeUIJSX.IntrinsicElements['b']
+  i: ThemeUIJSX.IntrinsicElements['i']
+  a: ThemeUIJSX.IntrinsicElements['a']
+  h1: ThemeUIJSX.IntrinsicElements['h1']
+  h2: ThemeUIJSX.IntrinsicElements['h2']
+  h3: ThemeUIJSX.IntrinsicElements['h3']
+  h4: ThemeUIJSX.IntrinsicElements['h4']
+  h5: ThemeUIJSX.IntrinsicElements['h5']
+  h6: ThemeUIJSX.IntrinsicElements['h6']
+  img: ThemeUIJSX.IntrinsicElements['img']
+  pre: ThemeUIJSX.IntrinsicElements['pre']
+  code: ThemeUIJSX.IntrinsicElements['code']
+  ol: ThemeUIJSX.IntrinsicElements['ol']
+  ul: ThemeUIJSX.IntrinsicElements['ul']
+  li: ThemeUIJSX.IntrinsicElements['li']
+  blockquote: ThemeUIJSX.IntrinsicElements['blockquote']
+  hr: ThemeUIJSX.IntrinsicElements['hr']
+  table: ThemeUIJSX.IntrinsicElements['table']
+  tr: ThemeUIJSX.IntrinsicElements['tr']
+  th: ThemeUIJSX.IntrinsicElements['th']
+  td: ThemeUIJSX.IntrinsicElements['td']
+  em: ThemeUIJSX.IntrinsicElements['em']
+  strong: ThemeUIJSX.IntrinsicElements['strong']
+  div: ThemeUIJSX.IntrinsicElements['div']
+  del: ThemeUIJSX.IntrinsicElements['div']
+  inlineCode: ThemeUIJSX.IntrinsicElements['div']
+  thematicBreak: ThemeUIJSX.IntrinsicElements['div']
+  root: ThemeUIJSX.IntrinsicElements['div']
 }

@@ -17,7 +17,6 @@ context via the `ThemeProvider`.
 
 ```js
 // src/components/layout.js
-import React from 'react'
 import { ThemeProvider } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 
@@ -29,9 +28,7 @@ const components = {
 }
 
 export default ({ children }) => (
-  <ThemeProvider
-    theme={theme}
-    components={components}>
+  <ThemeProvider theme={theme} components={components}>
     {children}
   </ThemeProvider>
 )
@@ -48,7 +45,7 @@ When using `gatsby-plugin-theme-ui`, shadow the `src/gatsby-plugin-theme-ui/comp
 import Prism from '@theme-ui/prism'
 
 export default {
-  pre: props => props.children,
+  pre: (props) => props.children,
   code: Prism,
 }
 ```
@@ -67,12 +64,12 @@ export default {
   styles: {
     code: {
       ...nightOwl,
-    }
-  }
+    },
+  },
 }
 ```
 
-The following themes are available and can be found in the [`presets/`](https://github.com/system-ui/theme-ui/tree/master/packages/prism/presets) directory.
+The following themes are available and can be found in the [`presets/`](https://github.com/system-ui/theme-ui/tree/stable/packages/prism/presets) directory.
 
 - `dracula.json`
 - `duotone-dark.json`
@@ -119,8 +116,8 @@ export default {
   styles: {
     code: {
       ...prism,
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -128,22 +125,28 @@ export default {
 
 This package supports highlighting inside code blocks. The following two syntaxes are supported:
 
+Single-line highlight by placing `// highlight-line` at the end of the line.
 ```js
-  let str = "highlight" // highlight-line
+let singleLineHighlight = 'there is a // highlight-line comment here ->' // highlight-line
 ```
 
+Multi-line highlights by wrapping lines with `// highlight-start` and `// highlight-end`. Multiple highlight wrappers are supported in a single code block.
 ```js
-  // highlight-start
-  let str = "highlight"
-  // highlight-end
+// highlight-start
+let multiLineHighlight = `
+  this multiline string is wrapped by 
+  // highlight-start and // highlight-end 
+  comments
+`
+// highlight-end
 ```
 
 The highlight styling is controlled in `styles.pre` under `.highlight`. For example:
 
 ```json
-  ".highlight": {
-    "background": "hsla(0, 0%, 30%, .5)"
-  }
+".highlight": {
+  "background": "hsla(0, 0%, 30%, .5)"
+}
 ```
 
 ## Additional Languages
@@ -154,16 +157,14 @@ For example, to add support for the `R` language, import the language and pass a
 
 ```js
 // src/gatsby-plugin-theme-ui/components.js
-import React from 'react'
 import ThemeUIPrism from '@theme-ui/prism'
 import PrismCore from 'prismjs/components/prism-core'
 import 'prismjs/components/prism-r'
 
 export default {
-  pre: props => props.children,
-  code: props => <ThemeUIPrism {...props} Prism={PrismCore} />,
+  pre: (props) => props.children,
+  code: (props) => <ThemeUIPrism {...props} Prism={PrismCore} />,
 }
 ```
 
 See the [Theme UI docs](https://theme-ui.com/theming/#syntax-highlighting) for more.
-

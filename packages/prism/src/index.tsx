@@ -1,8 +1,6 @@
 /** @jsx jsx */
-/* eslint react/jsx-key: 0 */
-import { ComponentProps } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
 const aliases: Record<string, Language | undefined> = {
   js: 'javascript',
@@ -25,7 +23,7 @@ const checkRanges = (range: number[], num: number) => {
   return false
 }
 
-type HighlightProps = ComponentProps<typeof Highlight>
+type HighlightProps = React.ComponentPropsWithoutRef<typeof Highlight>
 // prism-react-renderer doesn't export `Token` type
 type Tokens = Parameters<HighlightProps['children']>[0]['tokens']
 type Token = Tokens[number][number]
@@ -47,22 +45,32 @@ export default function ThemeUIPrism({
   const [language] = outerClassName.replace(/language-/, '').split(' ')
   const lang = aliases[language] || language
   let startEndRangesToHighlight: number[] = []
+  let countHighlightCommentsRemoved: number = 0;
 
   const findStartAndEndHighlights = (tokens: Token[][]) => {
     const tokensWithoutHighlightComments = tokens.filter((item, index) => {
       const removeLine = item
         .map(({ content }) => {
-          if (content === '// highlight-start') {
-            startEndRangesToHighlight.push(index) // track our highlighted lines
+          if (content.trim() === '// highlight-start') {
+            /**
+             * Track highlighted lines, including countHighlightCommentsRemoved 
+             * so we can keep track of multiple highlight-start and highlight-end blocks. 
+             * */
+            startEndRangesToHighlight.push(index - countHighlightCommentsRemoved)
+            countHighlightCommentsRemoved += 1; 
             return true
           }
-          if (content === '// highlight-end') {
-            startEndRangesToHighlight.push(index - 2) // since we're removing start and end lines, we'll shorten the range by 2 lines
+          if (content.trim() === '// highlight-end') {
+            /**
+             * Subtract by (countHighlightCommentsRemoved + 1) to account for 
+             * the current highlight-end block being removed.
+             * */
+            startEndRangesToHighlight.push(index - (countHighlightCommentsRemoved + 1))
+            countHighlightCommentsRemoved += 1; 
             return true
           }
         })
         .filter(Boolean)[0]
-
       if (!removeLine) {
         return item
       }
@@ -99,7 +107,7 @@ export default function ThemeUIPrism({
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         const tokensWithoutHighlightComments = findStartAndEndHighlights(tokens)
         return (
-          <Styled.pre
+          <Themed.pre
             className={`${outerClassName} ${className}`}
             style={style}>
             {tokensWithoutHighlightComments.map((line, i) => {
@@ -118,7 +126,7 @@ export default function ThemeUIPrism({
                 </div>
               )
             })}
-          </Styled.pre>
+          </Themed.pre>
         )
       }}
     </Highlight>

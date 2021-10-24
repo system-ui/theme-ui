@@ -1,10 +1,14 @@
-/** @jsx jsx */
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
+
 import { render, cleanup, act } from '@testing-library/react'
 import { jsx, ThemeProvider } from 'theme-ui'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
-const mockMediaQueries = matches =>
-  jest.fn().mockImplementation(query => ({
+const mockMediaQueries = (matches) =>
+  jest.fn().mockImplementation((query) => ({
     matches: matches.includes(query),
   }))
 
@@ -15,7 +19,7 @@ describe('renders correct initial values and uses default breakpoints', () => {
     window.matchMedia = mockMediaQueries([])
 
     let value
-    const Component = props => {
+    const Component = (props) => {
       value = useResponsiveValue(['a', 'b', 'c'])
       return null
     }
@@ -32,7 +36,7 @@ describe('renders correct initial values and uses default breakpoints', () => {
     ])
 
     let value
-    const Component = props => {
+    const Component = (props) => {
       value = useResponsiveValue(['a', 'b', 'c', 'd'])
       return null
     }
@@ -49,7 +53,7 @@ describe('renders correct initial values and uses default breakpoints', () => {
 
     let value
     let index
-    const Component = props => {
+    const Component = (props) => {
       value = useResponsiveValue(['a', 'b'])
       index = useBreakpointIndex()
       return null
@@ -69,7 +73,7 @@ test('reads breakpoints from theme', () => {
 
   let value
   let index
-  const Component = props => {
+  const Component = (props) => {
     value = useResponsiveValue(['a', 'b'])
     index = useBreakpointIndex()
     return null
@@ -79,7 +83,8 @@ test('reads breakpoints from theme', () => {
     <ThemeProvider
       theme={{
         breakpoints: ['30em', '45em', '55em'],
-      }}>
+      }}
+    >
       <Component />
     </ThemeProvider>
   )
@@ -100,7 +105,7 @@ test('responds to resize event', () => {
   })
 
   let value
-  const Component = props => {
+  const Component = (props) => {
     value = useResponsiveValue(['a', 'b', 'c', 'd'])
     return null
   }

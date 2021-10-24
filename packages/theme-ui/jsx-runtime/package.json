@@ -1,0 +1,5 @@
+{
+  "main": "dist/theme-ui-jsx-runtime.cjs.js",
+  "module": "dist/theme-ui-jsx-runtime.esm.js",
+  "types": "dist/theme-ui-jsx-runtime.cjs.d.ts"
+}

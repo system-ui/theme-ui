@@ -1,8 +1,8 @@
 // for development only
 import { useEffect, useContext } from 'react'
-import { Context } from 'theme-ui'
+import { useThemeUI } from 'theme-ui'
 
-const parseTypographyGoogleFonts = typography => {
+const parseTypographyGoogleFonts = (typography) => {
   const { googleFonts } = typography.options
   if (!googleFonts) return null
   const families = googleFonts
@@ -14,8 +14,8 @@ const parseTypographyGoogleFonts = typography => {
   return href
 }
 
-export default props => {
-  const { theme } = useContext(Context)
+export default (props) => {
+  const { theme } = useThemeUI()
   if (!theme.typography) return false
   const href = parseTypographyGoogleFonts(theme.typography)
   useEffect(() => {

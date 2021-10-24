@@ -1,0 +1,12 @@
+{
+  "name": "@theme-ui/core-jsx-runtime",
+  "source": "../src/jsx-runtime.ts",
+  "main": "dist/theme-ui-core-jsx-runtime.cjs.js",
+  "module": "dist/theme-ui-core-jsx-runtime.esm.js",
+  "types": "dist/theme-ui-core-jsx-runtime.cjs.d.ts",
+  "dependencies": {
+    "@emotion/react": "*",
+    "@theme-ui/parse-props": "*",
+    "react": "*"
+  }
+}

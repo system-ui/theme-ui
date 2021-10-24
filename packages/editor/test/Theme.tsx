@@ -1,26 +1,30 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
-import renderer from 'react-test-renderer'
 import {
   render,
   fireEvent,
   cleanup,
-  waitForElement,
+  waitFor,
+  act,
 } from '@testing-library/react'
-import { ThemeProvider, useThemeUI, Context } from 'theme-ui'
+import { useThemeUI, ThemeUIContextValue, __ThemeUIContext } from 'theme-ui'
 import { EditorProvider, Theme } from '../src'
 
 afterEach(cleanup)
 
 if ((global as any).document) {
   document.createRange = () =>
-    (({
+    ({
       setStart: () => {},
       setEnd: () => {},
       commonAncestorContainer: {
         nodeName: 'BODY',
         ownerDocument: document,
       },
-    } as unknown) as Range)
+    } as unknown as Range)
 }
 
 const theme = {
@@ -51,8 +55,8 @@ const theme = {
 }
 
 test('edits theme.colors', async () => {
-  let context
-  const GetContext = props => {
+  let context: ThemeUIContextValue
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -64,47 +68,50 @@ test('edits theme.colors', async () => {
   )
   const swatch = tree.getByText('text')
   fireEvent.click(swatch)
-  const [input] = await waitForElement(() =>
-    tree.getAllByPlaceholderText('hex')
-  )
+  const [input] = await waitFor(() => tree.getAllByPlaceholderText('hex'))
   fireEvent.change(input, {
     target: {
       value: '#ff0000',
     },
   })
-  expect(context.theme.colors.text).toBe('#ff0000')
+  expect(context!.theme!.colors!.text).toBe('#ff0000')
 })
 
 test('edits theme.colors within a color mode', async () => {
-  let context
+  let context: ThemeUIContextValue
   const GetContext = () => {
     context = useThemeUI()
     return null
   }
   const tree = render(
-    // TODO: Remove any after @theme-ui/color-mode was transformed to TypeScript
-    <Context.Provider value={{ colorMode: 'dark' } as any}>
+    <__ThemeUIContext.Provider
+      value={{
+        colorMode: 'dark',
+        theme: {},
+        __EMOTION_VERSION__: undefined as any,
+      }}
+    >
       <EditorProvider theme={theme}>
         <Theme.Colors />
         <GetContext />
       </EditorProvider>
-    </Context.Provider>
+    </__ThemeUIContext.Provider>
   )
   const swatch = tree.getByText('text')
   fireEvent.click(swatch)
-  const [input] = await waitForElement(() =>
-    tree.getAllByPlaceholderText('hex')
-  )
-  fireEvent.change(input, {
-    target: {
-      value: '#ff0000',
-    },
+  const [input] = await waitFor(() => tree.getAllByPlaceholderText('hex'))
+  act(() => {
+    fireEvent.change(input, {
+      target: {
+        value: '#ff0000',
+      },
+    })
   })
-  expect(context.theme.colors.modes.dark.text).toBe('#ff0000')
+  expect(context!.theme!.colors!.modes!.dark.text).toBe('#ff0000')
 })
 
 test('edits theme.fontSizes', async () => {
-  let context
+  let context: ThemeUIContextValue
   const GetContext = () => {
     context = useThemeUI()
     return null
@@ -115,18 +122,18 @@ test('edits theme.fontSizes', async () => {
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('0'))
+  const input = await waitFor(() => tree.getByLabelText('0'))
   fireEvent.change(input, {
     target: {
       value: '11',
     },
   })
-  expect(context.theme.fontSizes[0]).toBe(11)
+  expect(context!.theme!.fontSizes![0]).toBe(11)
 })
 
 test('supports non-array theme.fontSizes objects', async () => {
-  let context
-  const GetContext = props => {
+  let context: any
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -138,23 +145,24 @@ test('supports non-array theme.fontSizes objects', async () => {
           normal: 16,
           large: 24,
         },
-      }}>
+      }}
+    >
       <Theme.FontSizes />
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('small'))
+  const input = await waitFor(() => tree.getByLabelText('small'))
   fireEvent.change(input, {
     target: {
       value: '11',
     },
   })
-  expect(context.theme.fontSizes.small).toBe(11)
+  expect(context!.theme!.fontSizes!.small!).toBe(11)
 })
 
 test('renders without a theme', () => {
-  let context
-  const GetContext = props => {
+  let context: ThemeUIContextValue
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -168,12 +176,12 @@ test('renders without a theme', () => {
       <GetContext />
     </EditorProvider>
   )
-  expect(context.theme).toEqual({})
+  expect(context!.theme).toEqual({})
 })
 
 test('edits theme.fontWeights', async () => {
-  let context
-  const GetContext = props => {
+  let context: any
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -183,7 +191,7 @@ test('edits theme.fontWeights', async () => {
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('body'))
+  const input = await waitFor(() => tree.getByLabelText('body'))
   fireEvent.change(input, {
     target: {
       value: '500',
@@ -193,8 +201,8 @@ test('edits theme.fontWeights', async () => {
 })
 
 test('edits theme.lineHeights', async () => {
-  let context
-  const GetContext = props => {
+  let context: any
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -204,7 +212,7 @@ test('edits theme.lineHeights', async () => {
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('body'))
+  const input = await waitFor(() => tree.getByLabelText('body'))
   fireEvent.change(input, {
     target: {
       value: '1.625',
@@ -214,8 +222,8 @@ test('edits theme.lineHeights', async () => {
 })
 
 test('edits theme.fonts', async () => {
-  let context
-  const GetContext = props => {
+  let context: any
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -225,7 +233,7 @@ test('edits theme.fonts', async () => {
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('body'))
+  const input = await waitFor(() => tree.getByLabelText('body'))
   fireEvent.change(input, {
     target: {
       value: 'Georgia',
@@ -236,8 +244,8 @@ test('edits theme.fonts', async () => {
 })
 
 test('edits theme.space', async () => {
-  let context
-  const GetContext = props => {
+  let context: any
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -247,19 +255,19 @@ test('edits theme.space', async () => {
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('0'))
+  const input = await waitFor(() => tree.getByLabelText('0'))
   fireEvent.change(input, {
     target: {
       value: '2',
     },
   })
-  expect(context.theme.space[0]).toBe(2)
-  expect(context.theme.space[1]).toBe(4)
+  expect(context!.theme.space[0]).toBe(2)
+  expect(context!.theme.space[1]).toBe(4)
 })
 
 test('supports non-array theme.space objects', async () => {
-  let context
-  const GetContext = props => {
+  let context: any
+  const GetContext = () => {
     context = useThemeUI()
     return null
   }
@@ -271,16 +279,17 @@ test('supports non-array theme.space objects', async () => {
           normal: 8,
           large: 16,
         },
-      }}>
+      }}
+    >
       <Theme.Space />
       <GetContext />
     </EditorProvider>
   )
-  const input = await waitForElement(() => tree.getByLabelText('small'))
+  const input = await waitFor(() => tree.getByLabelText('small'))
   fireEvent.change(input, {
     target: {
       value: '3',
     },
   })
-  expect(context.theme.space.small).toBe(3)
+  expect(context!.theme.space.small).toBe(3)
 })

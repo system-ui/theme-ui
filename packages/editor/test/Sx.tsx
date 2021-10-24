@@ -1,11 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
-import {
-  render,
-  fireEvent,
-  cleanup,
-  waitForElement,
-  act,
-} from '@testing-library/react'
+import { render, fireEvent, cleanup, waitFor } from '@testing-library/react'
 import { ThemeProvider } from 'theme-ui'
 import { ThemeUIExtendedCSSProperties } from '@theme-ui/css'
 
@@ -17,14 +15,14 @@ afterEach(cleanup)
 
 if ((global as any).document) {
   document.createRange = () =>
-    (({
+    ({
       setStart: () => {},
       setEnd: () => {},
       commonAncestorContainer: {
         nodeName: 'BODY',
         ownerDocument: document,
       },
-    } as unknown) as Range)
+    } as unknown as Range)
 }
 
 const theme = {
@@ -53,9 +51,7 @@ describe('Sx.Typography', () => {
     const tree = render(
       <Sx.Typography theme={theme} value={style} onChange={onChange} />
     )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Font Family')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Font Family'))
     fireEvent.change(input, {
       target: {
         value: 'Georgia',
@@ -69,7 +65,7 @@ describe('Sx.Typography', () => {
     const tree = render(
       <Sx.Typography theme={theme} value={style} onChange={onChange} />
     )
-    const input = await waitForElement(() => tree.findByLabelText('Font Size'))
+    const input = await waitFor(() => tree.findByLabelText('Font Size'))
     fireEvent.change(input, {
       target: {
         value: '2',
@@ -83,9 +79,7 @@ describe('Sx.Typography', () => {
     const tree = render(
       <Sx.Typography theme={theme} value={style} onChange={onChange} />
     )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Font Weight')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Font Weight'))
     fireEvent.change(input, {
       target: {
         value: '500',
@@ -99,9 +93,7 @@ describe('Sx.Typography', () => {
     const tree = render(
       <Sx.Typography theme={theme} value={style} onChange={onChange} />
     )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Line Height')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Line Height'))
     fireEvent.change(input, {
       target: {
         value: '1.625',
@@ -112,15 +104,13 @@ describe('Sx.Typography', () => {
 
   test('renders without props', async () => {
     const tree = render(<Sx.Typography onChange={noop} />)
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Line Height')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Line Height'))
     expect(input).toBeTruthy()
   })
 
   test('adds tag name to input name', async () => {
     const tree = render(<Sx.Typography tag="h1" onChange={noop} />)
-    const input = (await waitForElement(() =>
+    const input = (await waitFor(() =>
       tree.findByLabelText('Font Family')
     )) as HTMLInputElement
     expect(input.name).toBe('styles.h1.fontFamily')
@@ -131,9 +121,7 @@ describe('Sx.Margin', () => {
   test('edits sx.ml', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Left')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Margin Left'))
     fireEvent.change(input, {
       target: {
         value: '2',
@@ -145,9 +133,7 @@ describe('Sx.Margin', () => {
   test('edits sx.mr', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Right')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Margin Right'))
     fireEvent.change(input, {
       target: {
         value: '2',
@@ -159,7 +145,7 @@ describe('Sx.Margin', () => {
   test('edits sx.mt', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const input = await waitForElement(() => tree.findByLabelText('Margin Top'))
+    const input = await waitFor(() => tree.findByLabelText('Margin Top'))
     fireEvent.change(input, {
       target: {
         value: '2',
@@ -171,9 +157,7 @@ describe('Sx.Margin', () => {
   test('edits sx.mb', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Bottom')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Margin Bottom'))
     fireEvent.change(input, {
       target: {
         value: '2',
@@ -185,12 +169,8 @@ describe('Sx.Margin', () => {
   test('edits sx.mx with margin left input', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const checkbox = await waitForElement(() =>
-      tree.findByLabelText('Lock x-axis')
-    )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Left')
-    )
+    const checkbox = await waitFor(() => tree.findByLabelText('Lock x-axis'))
+    const input = await waitFor(() => tree.findByLabelText('Margin Left'))
     fireEvent.click(checkbox)
     fireEvent.change(input, {
       target: {
@@ -203,12 +183,8 @@ describe('Sx.Margin', () => {
   test('edits sx.mx with margin right input', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const checkbox = await waitForElement(() =>
-      tree.findByLabelText('Lock x-axis')
-    )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Right')
-    )
+    const checkbox = await waitFor(() => tree.findByLabelText('Lock x-axis'))
+    const input = await waitFor(() => tree.findByLabelText('Margin Right'))
     fireEvent.click(checkbox)
     fireEvent.change(input, {
       target: {
@@ -221,10 +197,8 @@ describe('Sx.Margin', () => {
   test('edits sx.my with margin top input', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const checkbox = await waitForElement(() =>
-      tree.findByLabelText('Lock y-axis')
-    )
-    const input = await waitForElement(() => tree.findByLabelText('Margin Top'))
+    const checkbox = await waitFor(() => tree.findByLabelText('Lock y-axis'))
+    const input = await waitFor(() => tree.findByLabelText('Margin Top'))
     fireEvent.click(checkbox)
     fireEvent.change(input, {
       target: {
@@ -237,12 +211,8 @@ describe('Sx.Margin', () => {
   test('edits sx.my with margin bottom input', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Margin value={style} onChange={onChange} />)
-    const checkbox = await waitForElement(() =>
-      tree.findByLabelText('Lock y-axis')
-    )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Bottom')
-    )
+    const checkbox = await waitFor(() => tree.findByLabelText('Lock y-axis'))
+    const input = await waitFor(() => tree.findByLabelText('Margin Bottom'))
     fireEvent.click(checkbox)
     fireEvent.change(input, {
       target: {
@@ -262,7 +232,7 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    const checkbox = (await waitForElement(() =>
+    const checkbox = (await waitFor(() =>
       tree.findByLabelText('Lock x-axis')
     )) as HTMLInputElement
     expect(checkbox.checked).toBe(true)
@@ -278,7 +248,7 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    const checkbox = (await waitForElement(() =>
+    const checkbox = (await waitFor(() =>
       tree.findByLabelText('Lock y-axis')
     )) as HTMLInputElement
     expect(checkbox.checked).toBe(true)
@@ -294,12 +264,10 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    const checkbox = (await waitForElement(() =>
+    const checkbox = (await waitFor(() =>
       tree.findByLabelText('Lock x-axis')
     )) as HTMLInputElement
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Right')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Margin Right'))
     fireEvent.change(input, {
       target: {
         value: '4',
@@ -319,10 +287,10 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    const checkbox = (await waitForElement(() =>
+    const checkbox = (await waitFor(() =>
       tree.findByLabelText('Lock y-axis')
     )) as HTMLInputElement
-    const input = await waitForElement(() => tree.findByLabelText('Margin Top'))
+    const input = await waitFor(() => tree.findByLabelText('Margin Top'))
     fireEvent.change(input, {
       target: {
         value: '1',
@@ -343,7 +311,7 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    checkbox = await waitForElement(() => tree.findByLabelText('Lock x-axis'))
+    checkbox = await waitFor(() => tree.findByLabelText('Lock x-axis'))
     fireEvent.click(checkbox)
     expect(onChange).toHaveBeenCalledWith({ mx: undefined, mr: 3, ml: 3 })
   })
@@ -359,7 +327,7 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    checkbox = await waitForElement(() => tree.findByLabelText('Lock y-axis'))
+    checkbox = await waitFor(() => tree.findByLabelText('Lock y-axis'))
     fireEvent.click(checkbox)
     expect(onChange).toHaveBeenCalledWith({ my: undefined, mt: 4, mb: 4 })
   })
@@ -374,9 +342,7 @@ describe('Sx.Margin', () => {
         onChange={onChange}
       />
     )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Margin Left')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Margin Left'))
     fireEvent.change(input, {
       target: {
         value: '',
@@ -387,7 +353,7 @@ describe('Sx.Margin', () => {
 
   test('prefixes input name with tag name', async () => {
     const tree = render(<Sx.Margin tag="h1" onChange={noop} />)
-    const input = (await waitForElement(() =>
+    const input = (await waitFor(() =>
       tree.findByLabelText('Margin Left')
     )) as HTMLInputElement
     expect(input.name).toBe('styles.h1.ml')
@@ -398,9 +364,7 @@ describe('Sx.Padding', () => {
   test('edits sx.pl', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Padding value={style} onChange={onChange} />)
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Padding Left')
-    )
+    const input = await waitFor(() => tree.findByLabelText('Padding Left'))
     fireEvent.change(input, {
       target: {
         value: '4',
@@ -412,12 +376,8 @@ describe('Sx.Padding', () => {
   test('edits sx.px', async () => {
     const onChange = jest.fn()
     const tree = render(<Sx.Padding value={style} onChange={onChange} />)
-    const checkbox = await waitForElement(() =>
-      tree.findByLabelText('Lock x-axis')
-    )
-    const input = await waitForElement(() =>
-      tree.findByLabelText('Padding Right')
-    )
+    const checkbox = await waitFor(() => tree.findByLabelText('Lock x-axis'))
+    const input = await waitFor(() => tree.findByLabelText('Padding Right'))
     fireEvent.click(checkbox)
     fireEvent.change(input, {
       target: {
@@ -434,10 +394,10 @@ describe('Sx.Colors', () => {
     const tree = render(
       <Sx.Colors theme={theme} value={style} onChange={onChange} />
     )
-    const [button] = await waitForElement(() => tree.findAllByRole('button'))
+    const [button] = await waitFor(() => tree.findAllByRole('button'))
     fireEvent.click(button)
     // not ideal labeling - only works with hex?
-    const [swatch] = await waitForElement(() => tree.findAllByTitle('#0c7'))
+    const [swatch] = await waitFor(() => tree.findAllByTitle('#0c7'))
     fireEvent.click(swatch)
     expect(onChange).toHaveBeenCalledWith({ color: 'secondary' })
   })
@@ -448,7 +408,7 @@ describe('Sx.Colors', () => {
       <Sx.Colors theme={theme} value={style} onChange={onChange} />
     )
     // dialog is hidden with css
-    const [, swatch] = await waitForElement(() => tree.findAllByTitle('#0c7'))
+    const [, swatch] = await waitFor(() => tree.findAllByTitle('#0c7'))
     fireEvent.click(swatch)
     expect(onChange).toHaveBeenCalledWith({ bg: 'secondary' })
   })
@@ -459,15 +419,15 @@ describe('Sx.Colors', () => {
         <Sx.Colors value={style} onChange={noop} />
       </ThemeProvider>
     )
-    const [button] = await waitForElement(() => tree.findAllByRole('button'))
+    const [button] = await waitFor(() => tree.findAllByRole('button'))
     fireEvent.click(button)
-    const [swatch] = await waitForElement(() => tree.findAllByTitle('#0c7'))
+    const [swatch] = await waitFor(() => tree.findAllByTitle('#0c7'))
     expect(swatch).toBeTruthy()
   })
 
   test('renders without value', async () => {
     const tree = render(<Sx.Colors onChange={noop} />)
-    const [button] = await waitForElement(() => tree.findAllByRole('button'))
+    const [button] = await waitFor(() => tree.findAllByRole('button'))
     expect(button).toBeTruthy()
   })
 })

@@ -1,22 +1,77 @@
-import { CSSObject, ThemeUIStyleObject, UseThemeFunction, Theme } from './types'
+import type {
+  CSSObject,
+  ThemeUIStyleObject,
+  ThemeDerivedStyles,
+  Theme,
+  ThemeUICSSObject,
+} from './types'
 
 export * from './types'
 
+/**
+ * Allows for nested scales with shorthand values
+ * @example
+ * {
+ *   colors: {
+ *     primary: { __default: '#00f', light: '#33f' }
+ *   }
+ * }
+ * css({ color: 'primary' }); // { color: '#00f' }
+ * css({ color: 'primary.light' }) // { color: '#33f' }
+ */
+export const THEME_UI_DEFAULT_KEY = '__default'
+
+const hasDefault = (
+  x: unknown
+): x is { [THEME_UI_DEFAULT_KEY]: string | number } => {
+  return typeof x === 'object' && x !== null && THEME_UI_DEFAULT_KEY in x
+}
+
+/**
+ * Extracts value under path from a deeply nested object.
+ * Used for Themes, variants and Theme UI style objects.
+ * Given a path to object with `__default` key, returns the value under that key.
+ *
+ * @param obj a theme, variant or style object
+ * @param path path separated with dots (`.`)
+ * @param fallback default value returned if get(obj, path) is not found
+ */
 export function get(
   obj: object,
-  key: string | number,
-  def?: unknown,
+  path: string | number | undefined,
+  fallback?: unknown,
   p?: number,
   undef?: unknown
 ): any {
-  const path = key && typeof key === 'string' ? key.split('.') : [key]
-  for (p = 0; p < path.length; p++) {
-    obj = obj ? (obj as any)[path[p]] : undef
+  const pathArray = path && typeof path === 'string' ? path.split('.') : [path]
+  for (p = 0; p < pathArray.length; p++) {
+    obj = obj ? (obj as any)[pathArray[p]!] : undef
   }
-  return obj === undef ? def : obj
+
+  if (obj === undef) return fallback
+
+  return hasDefault(obj) ? obj[THEME_UI_DEFAULT_KEY] : obj
 }
 
-export const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
+export const getObjectWithVariants = (obj: any, theme: Theme): CSSObject => {
+  if (obj && obj['variant']) {
+    let result: CSSObject = {}
+    for (const key in obj) {
+      const x = obj[key]
+      if (key === 'variant') {
+        const val = typeof x === 'function' ? x(theme) : x
+        const variant = getObjectWithVariants(get(theme, val as string), theme)
+        result = { ...result, ...variant }
+      } else {
+        result[key] = x as CSSObject
+      }
+    }
+    return result
+  }
+  return obj as CSSObject
+}
+
+export const defaultBreakpoints = [40, 52, 64].map((n) => n + 'em')
 
 const defaultTheme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -47,6 +102,10 @@ export const multiples = {
   marginY: ['marginTop', 'marginBottom'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
+  scrollMarginX: ['scrollMarginLeft', 'scrollMarginRight'],
+  scrollMarginY: ['scrollMarginTop', 'scrollMarginBottom'],
+  scrollPaddingX: ['scrollPaddingLeft', 'scrollPaddingRight'],
+  scrollPaddingY: ['scrollPaddingTop', 'scrollPaddingBottom'],
   size: ['width', 'height'],
 }
 
@@ -55,7 +114,10 @@ export const scales = {
   backgroundColor: 'colors',
   borderColor: 'colors',
   caretColor: 'colors',
+  columnRuleColor: 'colors',
+  textDecorationColor: 'colors',
   opacity: 'opacities',
+  transition: 'transitions',
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -82,6 +144,20 @@ export const scales = {
   paddingInline: 'space',
   paddingInlineEnd: 'space',
   paddingInlineStart: 'space',
+  scrollMargin: 'space',
+  scrollMarginTop: 'space',
+  scrollMarginRight: 'space',
+  scrollMarginBottom: 'space',
+  scrollMarginLeft: 'space',
+  scrollMarginX: 'space',
+  scrollMarginY: 'space',
+  scrollPadding: 'space',
+  scrollPaddingTop: 'space',
+  scrollPaddingRight: 'space',
+  scrollPaddingBottom: 'space',
+  scrollPaddingLeft: 'space',
+  scrollPaddingX: 'space',
+  scrollPaddingY: 'space',
   inset: 'space',
   insetBlock: 'space',
   insetBlockEnd: 'space',
@@ -129,10 +205,13 @@ export const scales = {
   borderRightColor: 'colors',
   borderRightStyle: 'borderStyles',
   borderBlock: 'borders',
+  borderBlockColor: 'colors',
   borderBlockEnd: 'borders',
+  borderBlockEndColor: 'colors',
   borderBlockEndStyle: 'borderStyles',
   borderBlockEndWidth: 'borderWidths',
   borderBlockStart: 'borders',
+  borderBlockStartColor: 'colors',
   borderBlockStartStyle: 'borderStyles',
   borderBlockStartWidth: 'borderWidths',
   borderBlockStyle: 'borderStyles',
@@ -140,16 +219,20 @@ export const scales = {
   borderEndEndRadius: 'radii',
   borderEndStartRadius: 'radii',
   borderInline: 'borders',
+  borderInlineColor: 'colors',
   borderInlineEnd: 'borders',
+  borderInlineEndColor: 'colors',
   borderInlineEndStyle: 'borderStyles',
   borderInlineEndWidth: 'borderWidths',
   borderInlineStart: 'borders',
+  borderInlineStartColor: 'colors',
   borderInlineStartStyle: 'borderStyles',
   borderInlineStartWidth: 'borderWidths',
   borderInlineStyle: 'borderStyles',
   borderInlineWidth: 'borderWidths',
   borderStartEndRadius: 'radii',
   borderStartStartRadius: 'radii',
+  columnRuleWidth: 'borderWidths',
   outlineColor: 'colors',
   boxShadow: 'shadows',
   textShadow: 'shadows',
@@ -168,6 +251,7 @@ export const scales = {
   maxInlineSize: 'sizes',
   minBlockSize: 'sizes',
   minInlineSize: 'sizes',
+  columnWidth: 'sizes',
   // svg
   fill: 'colors',
   stroke: 'colors',
@@ -179,6 +263,9 @@ const positiveOrNegative = (scale: object, value: string | number) => {
     if (typeof value === 'string' && value.startsWith('-')) {
       const valueWithoutMinus = value.substring(1)
       const n = get(scale, valueWithoutMinus, valueWithoutMinus)
+      if (typeof n === 'number') {
+        return n * -1
+      }
       return `-${n}`
     }
     return get(scale, value, value)
@@ -215,85 +302,100 @@ const transforms = [
   {}
 )
 
-const responsive = (styles: Exclude<ThemeUIStyleObject, UseThemeFunction>) => (
-  theme?: Theme
-) => {
-  const next: Exclude<ThemeUIStyleObject, UseThemeFunction> = {}
-  const breakpoints =
-    (theme && (theme.breakpoints as string[])) || defaultBreakpoints
-  const mediaQueries = [
-    null,
-    ...breakpoints.map(n => `@media screen and (min-width: ${n})`),
-  ]
+const responsive =
+  (styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>) =>
+  (theme?: Theme) => {
+    const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
+    const breakpoints =
+      (theme && (theme.breakpoints as string[])) || defaultBreakpoints
+    const mediaQueries = [
+      null,
+      ...breakpoints.map((n) =>
+        n.includes('@media') ? n : `@media screen and (min-width: ${n})`
+      ),
+    ]
 
-  for (const key in styles) {
-    const value =
-      typeof styles[key] === 'function' ? styles[key](theme) : styles[key]
+    for (const k in styles) {
+      const key = k as keyof typeof styles
+      let value = styles[key]
+      if (typeof value === 'function') {
+        value = value(theme || {})
+      }
 
-    if (value == null) continue
-    if (!Array.isArray(value)) {
-      next[key] = value
-      continue
-    }
-    for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
-      const media = mediaQueries[i]
-      if (!media) {
-        next[key] = value[i]
+      if (value === false || value == null) {
         continue
       }
-      next[media] = next[media] || {}
-      if (value[i] == null) continue
-      next[media][key] = value[i]
+      if (!Array.isArray(value)) {
+        next[key] = value
+        continue
+      }
+      for (let i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
+        const media = mediaQueries[i]
+        if (!media) {
+          next[key] = value[i]
+          continue
+        }
+        next[media] = next[media] || {}
+        if (value[i] == null) continue
+        ;(next[media] as Record<string, any>)[key] = value[i]
+      }
     }
+    return next
   }
-
-  return next
-}
 
 type CssPropsArgument = { theme: Theme } | Theme
 
-export const css = (args: ThemeUIStyleObject = {}) => (
-  props: CssPropsArgument = {}
-): CSSObject => {
-  const theme: Theme = {
-    ...defaultTheme,
-    ...('theme' in props ? props.theme : props),
-  }
-  let result = {}
-  const obj = typeof args === 'function' ? args(theme) : args
-  const styles = responsive(obj)(theme)
-
-  for (const key in styles) {
-    const x = styles[key]
-    const val = typeof x === 'function' ? x(theme) : x
-
-    if (key === 'variant') {
-      const variant = css(get(theme, val))(theme)
-      result = { ...result, ...variant }
-      continue
+export const css =
+  (args: ThemeUIStyleObject = {}) =>
+  (props: CssPropsArgument = {}): CSSObject => {
+    const theme: Theme = {
+      ...defaultTheme,
+      ...('theme' in props ? props.theme : props),
     }
+    // insert variant props before responsive styles, so they can be merged
+    // we need to maintain order of the style props, so if a variant is place in the middle
+    // of other props, it will extends its props at that same location order.
 
-    if (val && typeof val === 'object') {
-      result[key] = css(val)(theme)
-      continue
-    }
+    const obj: CSSObject = getObjectWithVariants(
+      typeof args === 'function' ? args(theme) : args,
+      theme
+    )
 
-    const prop = key in aliases ? aliases[key as keyof Aliases] : key
-    const scaleName = prop in scales ? scales[prop as keyof Scales] : undefined
-    const scale = get(theme, scaleName as any, get(theme, prop, {}))
-    const transform: any = get(transforms, prop, get)
-    const value = transform(scale, val, val)
+    const styles = responsive(obj as ThemeUICSSObject)(theme)
+    let result: CSSObject = {}
+    for (const key in styles) {
+      const x = styles[key as keyof typeof styles]
+      const val = typeof x === 'function' ? x(theme) : x
 
-    if (multiples[prop]) {
-      const dirs = multiples[prop]
+      if (val && typeof val === 'object') {
+        if (hasDefault(val)) {
+          result[key] = val[THEME_UI_DEFAULT_KEY]
+          continue
+        }
 
-      for (let i = 0; i < dirs.length; i++) {
-        result[dirs[i]] = value
+        // On type level, val can also be an array here,
+        // but we transform all arrays in `responsive` function.
+        result[key] = css(val as ThemeUICSSObject)(theme)
+        continue
       }
-    } else {
-      result[prop] = value
-    }
-  }
 
-  return result
-}
+      const prop = key in aliases ? aliases[key as keyof Aliases] : key
+      const scaleName =
+        prop in scales ? scales[prop as keyof Scales] : undefined
+      const scale = scaleName ? theme?.[scaleName] : get(theme, prop, {})
+      const transform = get(transforms, prop, get)
+      const value = transform(scale, val, val)
+
+      if (prop in multiples) {
+        const dirs = multiples[prop as keyof typeof multiples]
+
+        for (let i = 0; i < dirs.length; i++) {
+          result[dirs[i]] = value
+        }
+      } else {
+        result[prop] = value
+      }
+    }
+
+    return result
+  }

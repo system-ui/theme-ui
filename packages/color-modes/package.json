@@ -1,13 +1,12 @@
 {
   "name": "@theme-ui/color-modes",
-  "version": "0.4.0-alpha.3",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "version": "0.11.3",
+  "main": "dist/theme-ui-color-modes.cjs.js",
+  "module": "dist/theme-ui-color-modes.esm.js",
+  "types": "dist/theme-ui-color-modes.cjs.d.ts",
+  "source": "src/index.tsx",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
-  },
+  "scripts": {},
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -15,15 +14,16 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@theme-ui/core": "^0.4.0-alpha.3",
-    "@theme-ui/css": "^0.4.0-alpha.3",
+    "@theme-ui/core": "0.11.3",
+    "@theme-ui/css": "0.11.3",
+    "@emotion/react": "^11.4.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^16.11.0"
+    "react": "^16 || ^17"
   },
   "devDependencies": {
-    "react": "^16.11.0"
-  }
+    "react": "^17.0.1"
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

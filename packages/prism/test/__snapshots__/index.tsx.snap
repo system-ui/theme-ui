@@ -2,7 +2,7 @@
 
 exports[`highlight start and end 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -88,7 +88,7 @@ exports[`highlight start and end 1`] = `
 
 exports[`highlights inline comment 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -138,9 +138,141 @@ exports[`highlights inline comment 1`] = `
 </pre>
 `;
 
+exports[`multiple highlights start and end 1`] = `
+.emotion-1 {
+  display: inline-block;
+}
+
+<pre
+  className="language-js prism-code language-javascript emotion-0"
+  style={Object {}}
+>
+  <div
+    className="token-line highlight"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // i am highlighted!
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain emotion-1"
+    >
+      
+
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // no highlight here ...
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain emotion-1"
+    >
+      
+
+    </span>
+  </div>
+  <div
+    className="token-line highlight"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // i am highlighted, and
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line highlight"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // so am i!
+    </span>
+    <span
+      className="token plain"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain emotion-1"
+    >
+      
+
+    </span>
+  </div>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain"
+    >
+        
+    </span>
+    <span
+      className="token comment"
+    >
+      // no highlight here either ...
+    </span>
+  </div>
+</pre>
+`;
+
 exports[`no highlight 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -187,7 +319,7 @@ exports[`no highlight 1`] = `
 
 exports[`renders a code block 1`] = `
 <pre
-  className="language-js prism-code language-javascript css-0"
+  className="language-js prism-code language-javascript emotion-0"
   style={Object {}}
 >
   <div
@@ -229,51 +361,16 @@ exports[`renders a code block 1`] = `
 
 exports[`renders with other languages 1`] = `
 <pre
-  className="language-php prism-code language-php css-0"
+  className="language-php prism-code language-php emotion-0"
   style={Object {}}
 >
   <div
     className="token-line"
   >
     <span
-      className="token operator"
-    >
-      &lt;
-    </span>
-    <span
       className="token plain"
     >
-      h1
-    </span>
-    <span
-      className="token operator"
-    >
-      &gt;
-    </span>
-    <span
-      className="token plain"
-    >
-      Hello
-    </span>
-    <span
-      className="token operator"
-    >
-      &lt;
-    </span>
-    <span
-      className="token operator"
-    >
-      /
-    </span>
-    <span
-      className="token plain"
-    >
-      h1
-    </span>
-    <span
-      className="token operator"
-    >
-      &gt;
+      &lt;h1&gt;Hello&lt;/h1&gt;
     </span>
   </div>
 </pre>

@@ -1,9 +1,11 @@
 {
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "react"
-  }
+  "extends": "./tsconfig.options.json",
+  "include": ["./packages"],
+  "exclude": [
+    "node_modules",
+    "./packages/*/dist",
+    "./packages/*/node_modules",
+    "./packages/*/test",
+    "./packages/e2e"
+  ]
 }

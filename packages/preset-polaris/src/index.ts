@@ -1,9 +1,10 @@
 import base from '@theme-ui/preset-base'
+import { makeTheme } from '@theme-ui/css/utils'
 
 const text =
   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
 
-export const polaris = {
+export const polaris = makeTheme({
   ...base,
   colors: {
     text: '#454f5b',
@@ -40,6 +41,6 @@ export const polaris = {
     body: 1.75,
     heading: 1.25,
   },
-}
+})
 
 export default polaris

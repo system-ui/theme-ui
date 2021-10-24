@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, useColorMode, Layout, Header, Main, Container } from 'theme-ui'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 
-export default props => {
+const Layout = (props) => {
   const [mode, setMode] = useColorMode()
-  const toggleMode = e => {
+  const toggleMode = (e) => {
     setMode(mode === 'dark' ? 'light' : 'dark')
   }
 
@@ -20,8 +20,7 @@ export default props => {
       <Header
         css={{
           p: 4,
-        }}
-      >
+        }}>
         <button title="Toggle Dark Mode" onClick={toggleMode}>
           {mode}
         </button>
@@ -32,3 +31,5 @@ export default props => {
     </Layout>
   )
 }
+
+export default Layout

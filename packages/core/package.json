@@ -1,15 +1,12 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.4.0-alpha.3",
+  "version": "0.11.3",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/theme-ui-core.cjs.js",
+  "module": "dist/theme-ui-core.esm.js",
+  "types": "dist/theme-ui-core.cjs.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "prepare": "microbundle --no-compress --tsconfig tsconfig.json",
-    "watch": "microbundle watch --no-compress --tsconfig tsconfig.json"
-  },
+  "scripts": {},
   "repository": "system-ui/theme-ui",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -17,15 +14,19 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0",
-    "@theme-ui/css": "^0.4.0-alpha.3",
+    "@theme-ui/css": "0.11.3",
+    "@theme-ui/parse-props": "0.11.3",
+    "@emotion/react": "^11.4.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^16.11.0"
+    "react": "^16 || ^17"
   },
-  "devDependencies": {
-    "@types/react": "^16.9.19",
-    "react": "^16.11.0"
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "jsx-dev-runtime.ts",
+      "jsx-runtime.ts"
+    ]
   }
 }

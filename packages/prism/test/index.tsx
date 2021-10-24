@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React, { ReactElement } from 'react'
 import renderer from 'react-test-renderer'
 import Prism from '../src'
@@ -52,6 +56,29 @@ const NO_HIGHLIGHT = `
 
 test('no highlight', () => {
   const result = render(<Prism className="language-js">{NO_HIGHLIGHT}</Prism>)
+
+  expect(result).toMatchSnapshot()
+})
+
+const MULTIPLE_HIGHLIGHTS_START_END = `
+  // highlight-start
+  // i am highlighted!
+  // highlight-end
+
+  // no highlight here ...
+
+  // highlight-start 
+  // i am highlighted, and
+  // so am i!
+  // highlight-end
+
+  // no highlight here either ...
+`
+
+test('multiple highlights start and end', () => {
+  const result = render(
+    <Prism className="language-js">{MULTIPLE_HIGHLIGHTS_START_END}</Prism>
+  )
 
   expect(result).toMatchSnapshot()
 })

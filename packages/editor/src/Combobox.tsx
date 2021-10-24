@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, SxProp } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
 import { Label, Input, InputProps } from '@theme-ui/components'
 
@@ -10,7 +10,8 @@ const Chevron = () => (
     height="12"
     sx={{
       pointerEvents: 'none',
-    }}>
+    }}
+  >
     <path
       stroke="currentcolor"
       strokeWidth="2"
@@ -31,17 +32,16 @@ type ComboboxOwnProps<T> = {
   type?: string
   name: string
   label?: React.ReactNode
-  value: T
+  value: T | undefined
   onChange: (val: string | T) => void
   options?: T[]
 }
 export interface ComboboxProps<T>
   extends ComboboxOwnProps<T>,
-    Omit<InputProps, keyof ComboboxOwnProps<T>> {}
+    Omit<InputProps, keyof ComboboxOwnProps<T> | keyof SxProp>,
+    SxProp {}
 
-const Combobox: <T extends string | number>(
-  props: ComboboxProps<T>
-) => JSX.Element = ({
+const Combobox = <T extends string | number>({
   type = 'text',
   name,
   label,
@@ -49,7 +49,7 @@ const Combobox: <T extends string | number>(
   onChange,
   options = [],
   ...props
-}) => {
+}: ComboboxProps<T>) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(-1)
   const root = useRef<HTMLDivElement>(null)
@@ -64,16 +64,18 @@ const Combobox: <T extends string | number>(
     return () => {
       document.removeEventListener('click', handleOutsideClick)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [root.current])
 
   useEffect(() => {
     resetIndex()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
 
   const popup = name + '-popup'
 
   const resetIndex = () => {
-    const i = options.indexOf(value)
+    const i = options.indexOf(value!)
     setIndex(i)
   }
 
@@ -133,13 +135,15 @@ const Combobox: <T extends string | number>(
       }}
       sx={{
         zIndex: 2,
-      }}>
+      }}
+    >
       <Label htmlFor={name}>{label || name}</Label>
       <div
         sx={{
           display: 'flex',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <Input
           {...props}
           ref={input}
@@ -169,7 +173,8 @@ const Combobox: <T extends string | number>(
             bg: 'transparent',
             border: 0,
             ml: -32,
-          }}>
+          }}
+        >
           <Chevron />
         </button>
       </div>
@@ -192,10 +197,12 @@ const Combobox: <T extends string | number>(
           maxHeight: 512,
           overflowY: 'auto',
           bg: 'white',
+          color: 'black',
           border: '1px solid',
           borderTop: 0,
           borderColor: 'lightgray',
-        }}>
+        }}
+      >
         {open &&
           options.map((option, i) => (
             <li
@@ -209,7 +216,8 @@ const Combobox: <T extends string | number>(
                 '&[aria-selected=true],:hover': {
                   bg: 'highlight',
                 },
-              }}>
+              }}
+            >
               {option}
             </li>
           ))}

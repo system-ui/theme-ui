@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
-import { CustomPicker, CustomPickerProps, HSLColor } from 'react-color'
+import { CustomPicker, CustomPickerProps } from 'react-color'
 import {
   EditableInput,
   Hue,
@@ -101,14 +101,16 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
           borderRadius: 4,
           bg: 'white',
           boxShadow: '0 2px 8px 1px rgba(0,0,0,.125)',
-        }}>
+        }}
+      >
         <div
           sx={{
             position: 'relative',
             width: '100%',
             height: 0,
             paddingBottom: '75%',
-          }}>
+          }}
+        >
           <Saturation {...props} pointer={Lens} />
         </div>
         <div
@@ -116,13 +118,15 @@ export const Picker = CustomPicker<CustomPickerForwardedProps>(
             position: 'relative',
             width: '100%',
             height: 8,
-          }}>
+          }}
+        >
           <Hue {...props} pointer={Handle} />
         </div>
         <div
           sx={{
             display: 'flex',
-          }}>
+          }}
+        >
           <Label>
             Hex
             <Input
@@ -203,7 +207,8 @@ export const ColorPicker = ({ children, ...props }: ColorPickerProps) => {
         aria-label="Edit color"
         sx={{
           outline: 'none',
-        }}>
+        }}
+      >
         <Picker {...props} />
       </Popover>
     </React.Fragment>

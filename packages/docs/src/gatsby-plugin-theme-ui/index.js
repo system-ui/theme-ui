@@ -1,6 +1,22 @@
+// @ts-check
 import prism from '@theme-ui/prism/presets/theme-ui'
 
-export default {
+/**
+ * @type {import("theme-ui").ThemeUIStyleObject}
+ */
+const tableCellStyle = {
+  textAlign: 'left',
+  py: '4px',
+  pr: '4px',
+  pl: 0,
+  borderColor: 'muted',
+  borderBottomStyle: 'solid',
+}
+
+/**
+ * @type {import("theme-ui").Theme & { prism: typeof prism }}
+ */
+const theme = {
   colors: {
     text: '#000000',
     background: '#ffffff',
@@ -70,6 +86,12 @@ export default {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
+    },
+    block: {
+      variant: 'default',
+      my: 2,
+      textAlign: 'justify',
+      textJustify: 'auto',
     },
     display: {
       variant: 'text.heading',
@@ -195,7 +217,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -203,7 +225,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -211,7 +233,7 @@ export default {
       borderColor: 'gray',
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -244,7 +266,6 @@ export default {
   },
   styles: {
     root: {
-      margin: 0,
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
@@ -308,22 +329,16 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
-        textAlign: 'left',
-        py: '4px',
-        pr: '4px',
-        pl: 0,
-        borderColor: 'muted',
-        borderBottomStyle: 'solid',
-      },
     },
     th: {
       verticalAlign: 'bottom',
       borderBottomWidth: '2px',
+      ...tableCellStyle,
     },
     td: {
       verticalAlign: 'top',
       borderBottomWidth: '1px',
+      ...tableCellStyle,
     },
     hr: {
       border: 0,
@@ -347,3 +362,5 @@ export default {
   },
   prism,
 }
+
+export default theme
