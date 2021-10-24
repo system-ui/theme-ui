@@ -5,6 +5,7 @@ import React, {
   useState,
   useMemo,
   SetStateAction,
+  useCallback,
 } from 'react'
 import {
   jsx,
@@ -29,6 +30,8 @@ import {
 } from './custom-properties'
 
 const STORAGE_KEY = 'theme-ui-color-mode'
+const DARK_QUERY = '(prefers-color-scheme: dark)'
+const LIGHT_QUERY = '(prefers-color-scheme: light)'
 
 declare module '@theme-ui/core' {
   export interface ThemeUIContextValue {
@@ -64,10 +67,10 @@ const storage = {
 
 const getPreferredColorScheme = (): 'dark' | 'light' | null => {
   if (typeof window !== 'undefined' && window.matchMedia) {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia(DARK_QUERY).matches) {
       return 'dark'
     }
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    if (window.matchMedia(LIGHT_QUERY).matches) {
       return 'light'
     }
   }
@@ -104,7 +107,7 @@ const TopLevelColorModeProvider = ({
       document.documentElement.classList.remove('theme-ui-' + stored)
     }
 
-    if (stored && stored !== colorMode) {
+    if (!useColorSchemeMediaQuery && stored && stored !== colorMode) {
       colorMode = stored
       setColorMode(stored)
     }
@@ -116,6 +119,35 @@ const TopLevelColorModeProvider = ({
       storage.set(colorMode)
     }
   }, [colorMode, useLocalStorage])
+
+  const setPreferredColorScheme = useCallback(() => {
+    const preferredColorScheme = getPreferredColorScheme()
+    setColorMode(preferredColorScheme || initialColorModeName)
+  }, [initialColorModeName])
+
+  useEffect(() => {
+    if (useColorSchemeMediaQuery === 'system' && window.matchMedia) {
+      // It doesn't matter if we add the listener only to the dark media query
+      // Because in our callback function we'll check for both media queries (light and dark).
+      const darkMQL = window.matchMedia(DARK_QUERY)
+      if (typeof darkMQL.addEventListener === 'function') {
+        darkMQL.addEventListener('change', setPreferredColorScheme)
+      } else if (typeof darkMQL.addListener === 'function') {
+        darkMQL.addListener(setPreferredColorScheme)
+      }
+    }
+
+    return () => {
+      if (useColorSchemeMediaQuery === 'system' && window.matchMedia) {
+        const darkMQL = window.matchMedia(DARK_QUERY)
+        if (typeof darkMQL.removeEventListener === 'function') {
+          darkMQL.removeEventListener('change', setPreferredColorScheme)
+        } else if (typeof darkMQL.removeListener === 'function') {
+          darkMQL.removeListener(setPreferredColorScheme)
+        }
+      }
+    }
+  }, [useColorSchemeMediaQuery, setPreferredColorScheme])
 
   if (process.env.NODE_ENV !== 'production') {
     if (
