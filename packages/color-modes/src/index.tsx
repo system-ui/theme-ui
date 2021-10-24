@@ -107,7 +107,11 @@ const TopLevelColorModeProvider = ({
       document.documentElement.classList.remove('theme-ui-' + stored)
     }
 
-    if (!useColorSchemeMediaQuery && stored && stored !== colorMode) {
+    if (
+      useColorSchemeMediaQuery !== 'system' &&
+      stored &&
+      stored !== colorMode
+    ) {
       colorMode = stored
       setColorMode(stored)
     }
