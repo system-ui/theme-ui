@@ -1,10 +1,7 @@
 import React from 'react'
 import Box from './Box'
 
-export const Flex = React.forwardRef(function Flex(
-  { gap, ...props },
-  ref
-) {
+export const Flex = React.forwardRef(function Flex({ gap, ...props }, ref) {
   return (
     <Box
       ref={ref}

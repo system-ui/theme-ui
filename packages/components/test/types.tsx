@@ -86,7 +86,8 @@ describe('components type check', () => {
         css={{ background: '#eee' }}
         sx={{ py: [1, 2, 3], paddingBlockStart: '2em' }}
         px={[3, 2, 1]}
-        ref={(ref) => ref}>
+        ref={(ref) => ref}
+      >
         <Box
           onPointerEnter={(e) => e.pointerType}
           ref={(ref) => ref}
@@ -100,7 +101,8 @@ describe('components type check', () => {
         <Grid
           width={[128, null, 192]}
           backgroundColor="#eee"
-          ref={(ref) => ref}>
+          ref={(ref) => ref}
+        >
           <Box bg="primary" ref={(primaryBox) => primaryBox}>
             Box
           </Box>
@@ -233,7 +235,8 @@ describe('components type check', () => {
             justifyContent: 'center',
             color: 'background',
             bg: 'primary',
-          }}>
+          }}
+        >
           <Heading>Aspect Ratio</Heading>
         </AspectRatio>
         <AspectImage ratio={4 / 3} src="./example.png" />
@@ -258,7 +261,8 @@ describe('components type check', () => {
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            fill="currentcolor">
+            fill="currentcolor"
+          >
             <circle
               r={11}
               cx={12}
@@ -397,11 +401,10 @@ describe('components type check', () => {
       `).toInfer('_ref', 'HTMLDivElement | null')
     })
 
-    it("Flex.withComponent('form')#ref infers HTMLFormElement | null", () => {
+    it("Flex as='form'#ref infers HTMLFormElement | null", () => {
       expectSnippet(`    
-        const FormFlex = Flex.withComponent('form');
-  
-        <FormFlex
+        <Flex
+          as="form"
           ref={ref => {
             const _ref = ref;
           }}
