@@ -1,17 +1,17 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.11.1",
+  "version": "0.11.3",
   "source": "src/index.ts",
   "main": "dist/theme-ui-mdx.cjs.js",
   "module": "dist/theme-ui-mdx.esm.js",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@emotion/react": "^11.1.1",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.0.0",
     "@mdx-js/react": "^1.6.22",
-    "@theme-ui/core": "0.11.1",
-    "@theme-ui/css": "0.11.1"
+    "@theme-ui/core": "0.11.3",
+    "@theme-ui/css": "0.11.3"
   },
   "devDependencies": {
     "react": "^17.0.1"

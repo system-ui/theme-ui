@@ -1,17 +1,17 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.11.1",
+  "version": "0.11.3",
   "main": "dist/theme-ui-theme-provider.cjs.js",
   "module": "dist/theme-ui-theme-provider.esm.js",
   "source": "src/index.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@emotion/react": "^11.1.1",
-    "@theme-ui/color-modes": "0.11.1",
-    "@theme-ui/core": "0.11.1",
-    "@theme-ui/css": "0.11.1",
-    "@theme-ui/mdx": "0.11.1"
+    "@theme-ui/core": "0.11.3",
+    "@theme-ui/css": "0.11.3",
+    "@theme-ui/mdx": "0.11.3",
+    "@emotion/react": "^11.4.1",
+    "@theme-ui/color-modes": "0.11.3"
   },
   "peerDependencies": {
     "react": "^16 || ^17"

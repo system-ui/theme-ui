@@ -368,6 +368,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://twitter.com/alexandermchan"><img src="https://avatars.githubusercontent.com/u/1864372?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Alex Chan</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=alexanderchan" title="Documentation">📖</a> <a href="#example-alexanderchan" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=alexanderchan" title="Tests">⚠️</a> <a href="https://github.com/system-ui/theme-ui/commits?author=alexanderchan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/kenny-f"><img src="https://avatars.githubusercontent.com/u/1841819?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Kenny</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=kenny-f" title="Code">💻</a></td>
     <td align="center"><a href="https://www.jordie.net/"><img src="https://avatars.githubusercontent.com/u/712360?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Jordie Bodlay</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=jordie23" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://mattglei.ch/"><img src="https://avatars.githubusercontent.com/u/43759105?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Matt Gleich</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=gleich" title="Documentation">📖</a></td>
   </tr>
 </table>
 

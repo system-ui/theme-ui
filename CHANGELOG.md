@@ -1,3 +1,45 @@
+# v0.11.3 (Fri Sep 24 2021)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/components`
+  - Patch GridProps [#1933](https://github.com/system-ui/theme-ui/pull/1933) ([@aaronadamsCA](https://github.com/aaronadamsCA))
+
+#### Authors: 1
+
+- Aaron Adams ([@aaronadamsCA](https://github.com/aaronadamsCA))
+
+---
+
+# v0.11.2 (Wed Sep 08 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Matt Gleich ([@gleich](https://github.com/gleich)), for all your work!
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/preset-sketchy`
+  - fix(preset-sketchy): fix emitted types [#1924](https://github.com/system-ui/theme-ui/pull/1924) ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tachyons`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
+  - Merge remote-tracking branch 'origin/stable' into develop ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs(examples/next): showcase automatic runtime pragma comment in document.js [#1923](https://github.com/system-ui/theme-ui/pull/1923) ([@hasparus](https://github.com/hasparus))
+- docs(examples/next): use TS, variants and improve contrast [#1923](https://github.com/system-ui/theme-ui/pull/1923) ([@hasparus](https://github.com/hasparus))
+- docs: correct location of `initialColorModeName: 'light'` [#1922](https://github.com/system-ui/theme-ui/pull/1922) ([@gleich](https://github.com/gleich))
+
+#### Authors: 2
+
+- Matt Gleich ([@gleich](https://github.com/gleich))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.11.1 (Wed Aug 25 2021)
 
 

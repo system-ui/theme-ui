@@ -1089,6 +1089,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "gleich",
+      "name": "Matt Gleich",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43759105?v=4",
+      "profile": "https://mattglei.ch/",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
