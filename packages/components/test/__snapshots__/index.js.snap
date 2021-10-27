@@ -748,6 +748,29 @@ exports[`Flex renders 1`] = `
 />
 `;
 
+exports[`Flex renders with gap prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    gap: 16px;
+  }
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
 exports[`Grid renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
