@@ -969,8 +969,6 @@ Theme UI is now written in TypeScript, and the emitted types differ from
 
 ### `@theme-ui/core`
 
-> > > > > > > develop
-
 - Make ThemeProvider `theme` prop required
 
 ### `@theme-ui/editor`
