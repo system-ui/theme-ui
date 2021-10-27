@@ -32,13 +32,17 @@ export interface BoxProps
  */
 export const Box: StyledComponent<BoxOwnProps, BoxProps>
 
-export type FlexOwnProps = BoxOwnProps
-export type FlexProps = BoxProps
+export interface FlexProps extends BoxProps {
+  /**
+   * Space between child elements
+   */
+  gap?: ResponsiveStyleValue<string | number>
+}
 /**
  * Use the Flex component to create flexbox layouts.
  * @see https://theme-ui.com/components/flex
  */
-export const Flex: StyledComponent<FlexOwnProps, FlexProps>
+export const Flex: ForwardRef<HTMLDivElement, FlexProps>
 
 export interface GridProps extends BoxProps {
   /**
