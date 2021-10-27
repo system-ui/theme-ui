@@ -1,7 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { useThemeUI } from 'theme-ui'
-import { wrapRootElement } from '../src/provider'
+import { WrapRootElement } from '../src/provider'
 import theme from '../src/index'
 import renderer from 'react-test-renderer'
 
@@ -10,7 +13,7 @@ let context
 afterEach(() => {
   cleanup()
   context = null
-  delete theme.initialColorMode
+  delete theme.config?.initialColorMode
   delete theme.colors
 })
 
@@ -20,9 +23,10 @@ const Consumer = (props) => {
 }
 
 test('renders with theme context', () => {
-  const root = render(wrapRootElement({ element: <Consumer /> }, {}))
+  const root = render(WrapRootElement({ element: <Consumer /> }, {}))
   expect(context.theme).toEqual({
     colors: {},
+    rawColors: {},
     styles: {
       pre: {},
     },
@@ -39,7 +43,7 @@ test.skip('renders with ColorMode component', () => {
     },
   }
   const root = renderer.create(
-    wrapRootElement(
+    WrapRootElement(
       {
         element: <Consumer />,
       },

@@ -1,14 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Themed } from 'theme-ui'
+import { jsx, Heading } from 'theme-ui'
 
-export default () => (
-  <div
-    sx={{
-      maxWidth: 1024,
-      mx: 'auto',
-      p: 3,
-    }}>
-    <Themed.h1>Hello</Themed.h1>
-  </div>
-)
+export default function Hello() {
+  return (
+    <div sx={{ py: 3 }}>
+      <Heading>Hello</Heading>
+    </div>
+  )
+}

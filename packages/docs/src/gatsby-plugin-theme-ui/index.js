@@ -1,5 +1,9 @@
+// @ts-check
 import prism from '@theme-ui/prism/presets/theme-ui'
 
+/**
+ * @type {import("theme-ui").ThemeUIStyleObject}
+ */
 const tableCellStyle = {
   textAlign: 'left',
   py: '4px',
@@ -9,7 +13,10 @@ const tableCellStyle = {
   borderBottomStyle: 'solid',
 }
 
-export default {
+/**
+ * @type {import("theme-ui").Theme & { prism: typeof prism }}
+ */
+const theme = {
   colors: {
     text: '#000000',
     background: '#ffffff',
@@ -84,7 +91,6 @@ export default {
       variant: 'default',
       my: 2,
       textAlign: 'justify',
-      textAlignLast: 'last',
       textJustify: 'auto',
     },
     display: {
@@ -260,7 +266,6 @@ export default {
   },
   styles: {
     root: {
-      margin: 0,
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
@@ -357,3 +362,5 @@ export default {
   },
   prism,
 }
+
+export default theme

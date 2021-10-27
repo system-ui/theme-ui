@@ -46,13 +46,17 @@ export interface GridProps extends BoxProps {
    */
   width?: ResponsiveStyleValue<string | number>
   /**
-   * 	Number of columns to use for the layout (cannot be used in conjunction with the width prop)
+   * Number of columns to use for the layout (cannot be used in conjunction with the width prop)
    */
   columns?: ResponsiveStyleValue<string | number>
   /**
    * Space between child elements
    */
   gap?: ResponsiveStyleValue<string | number>
+  /**
+   * Auto-repeat track behaviour (default is fit)
+   */
+  repeat?: 'fit' | 'fill'
 }
 /**
  * CSS grid layout component to arrange direct child elements in a tiled grid layout.
@@ -92,7 +96,7 @@ export interface ParagraphProps
  * Primitive typographic component.
  *
  * Text style variants can be defined in the theme.text object.
- * The Paragraph component uses theme.text.default as its default variant style.
+ * The Paragraph component uses theme.text.paragraph as its default variant style.
  * @see https://theme-ui.com/components/paragraph
  */
 export const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps>
@@ -268,7 +272,7 @@ export const Avatar: ForwardRef<HTMLImageElement, AvatarProps>
 export type BadgeProps = BoxProps
 export const Badge: ForwardRef<HTMLDivElement, BadgeProps>
 
-interface CloseProps extends Omit<IconButtonProps, 'children'> {}
+export interface CloseProps extends Omit<IconButtonProps, 'children'> {}
 /**
  * Button with close (×) icon.
  *

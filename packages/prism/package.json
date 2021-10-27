@@ -1,23 +1,20 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.6.0-alpha.4",
-  "main": "dist/prism.js",
-  "module": "dist/prism.esm.js",
-  "types": "dist/index.d.ts",
+  "version": "0.11.3",
+  "main": "dist/theme-ui-prism.cjs.js",
+  "module": "dist/theme-ui-prism.esm.js",
+  "types": "dist/theme-ui-prism.cjs.d.ts",
   "source": "src/index.tsx",
   "author": "John Otander",
   "license": "MIT",
   "scripts": {
-    "prepare": "microbundle --no-compress -o dist",
-    "watch": "microbundle watch --no-compress -o dist",
-    "build-presets": "node build-presets.js",
-    "typecheck": "tsc --noEmit"
+    "build-presets": "node build-presets.js"
   },
   "dependencies": {
     "prism-react-renderer": "^1.1.1"
   },
   "peerDependencies": {
-    "theme-ui": "^0.5.0-alpha.0"
+    "theme-ui": ">=0.7.0"
   },
   "publishConfig": {
     "access": "public"
@@ -32,11 +29,11 @@
     "css-in-js",
     "style"
   ],
-  "gitHead": "87e9ebb0cc66d8a5e1fcde7bb60f2077266aa437",
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8",
   "devDependencies": {
-    "param-case": "^3.0.3",
+    "param-case": "^3.0.4",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
-    "theme-ui": "0.6.0-alpha.4"
+    "theme-ui": "0.11.3"
   }
 }

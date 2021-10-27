@@ -1,3 +1,5 @@
+/** @jest-environment jsdom */
+
 import React from 'react'
 import { cleanup } from '@testing-library/react'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -5,11 +7,12 @@ import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import {
   jsx,
-  Context,
+  __ThemeUIContext,
   useThemeUI,
   merge,
   ThemeProvider,
-  ContextValue,
+  ThemeUIContextValue,
+  Theme,
 } from '../src'
 
 afterEach(cleanup)
@@ -29,13 +32,14 @@ describe('ThemeProvider', () => {
   test('warns when multiple versions of emotion are installed', () => {
     const restore = mockConsole()
     const json = renderJSON(
-      <Context.Provider
+      <__ThemeUIContext.Provider
         value={{
           __EMOTION_VERSION__: '9.0.0',
           theme: {},
-        }}>
+        }}
+      >
         <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
-      </Context.Provider>
+      </__ThemeUIContext.Provider>
     )
     expect(console.warn).toBeCalled()
     restore()
@@ -69,7 +73,9 @@ describe('ThemeProvider', () => {
 
   test('functional themes can be used at the top level', () => {
     const theme = jest.fn(() => ({
-      useCustomProperties: false,
+      config: {
+        useCustomProperties: false,
+      },
       colors: {
         primary: 'tomato',
       },
@@ -96,13 +102,13 @@ describe('ThemeProvider', () => {
   })
 
   test('variants support functional values', () => {
-    const theme = {
+    const theme: Theme = {
       colors: {
         primary: 'tomato',
       },
       cards: {
         default: {
-          border: (t) => `1px solid ${t.colors.primary}`,
+          border: (t) => `1px solid ${t.colors!.primary}`,
         },
       },
     }
@@ -196,7 +202,9 @@ describe('jsx', () => {
         ThemeProvider,
         {
           theme: {
-            useCustomProperties: false,
+            config: {
+              useCustomProperties: false,
+            },
             colors: {
               text: 'black',
               base: {
@@ -333,7 +341,7 @@ describe('merge', () => {
 
 describe('useThemeUI', () => {
   test('returns theme context', () => {
-    let context: ContextValue | undefined
+    let context: ThemeUIContextValue | undefined
     const GetContext = () => {
       context = useThemeUI()
       return null
@@ -344,7 +352,8 @@ describe('useThemeUI', () => {
           colors: {
             text: 'tomato',
           },
-        }}>
+        }}
+      >
         <GetContext />
       </ThemeProvider>
     )

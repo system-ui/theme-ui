@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.options.json",
   "compilerOptions": {
     "target": "es2018",
     "module": "commonjs",

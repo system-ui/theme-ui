@@ -1,6 +1,7 @@
 import base from '@theme-ui/preset-base'
+import { makeTheme } from '@theme-ui/css/utils'
 
-export const roboto = {
+export const roboto = makeTheme({
   ...base,
   colors: {
     text: '#202124',
@@ -19,6 +20,6 @@ export const roboto = {
     heading: 600,
     bold: 600,
   },
-}
+})
 
 export default roboto

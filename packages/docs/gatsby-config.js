@@ -1,4 +1,5 @@
-const remarkPlugins = [require('remark-slug')]
+const remarkSlug = require('remark-slug')
+const remarkPlugins = [remarkSlug]
 
 module.exports = {
   siteMetadata: {
@@ -21,12 +22,8 @@ module.exports = {
         basePath: '/style-guide-demo',
       },
     },
-    {
-      resolve: 'gatsby-theme-code-recipes',
-      options: {
-        path: 'src/recipes',
-        basePath: '/recipes',
-      },
-    },
   ],
+  flags: {
+    DEV_SSR: true,
+  },
 }

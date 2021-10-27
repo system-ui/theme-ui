@@ -14,7 +14,7 @@ import {
 import Select from './select'
 import Components from './components.mdx'
 
-export default () => {
+export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
   const preset = presets[theme]
 

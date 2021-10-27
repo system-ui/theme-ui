@@ -3,13 +3,14 @@
 import { renderToString } from 'react-dom/server'
 import { jsx, ThemeProvider, useColorMode } from '../src'
 
-test('does note initializes mode based on localStorage', () => {
+test('does not initialize mode based on localStorage', () => {
   let mode
   const Button = () => {
     const [colorMode] = useColorMode()
     mode = colorMode
     return <button children="test" />
   }
+
   expect(() => {
     renderToString(
       <ThemeProvider theme={{}}>
@@ -17,5 +18,7 @@ test('does note initializes mode based on localStorage', () => {
       </ThemeProvider>
     )
   }).not.toThrow()
-  expect(mode).toBe('default')
+
+  // server doesn't know user's color mode, so the value is `undefined`
+  expect(mode).toBe(undefined)
 })
