@@ -11,7 +11,7 @@ import { Flex } from 'theme-ui'
 ```
 
 ```jsx live=true
-<Flex>
+<Flex gap={2}>
   <Box p={2} bg="primary" sx={{ flex: '1 1 auto' }}>
     Flex
   </Box>
@@ -20,6 +20,10 @@ import { Flex } from 'theme-ui'
   </Box>
 </Flex>
 ```
+
+Supports the `gap` prop for space between child elements, which can be a [responsive array][].
+
+[responsive array]: /sx-prop#responsive-values
 
 <Note>
 
