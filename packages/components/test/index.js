@@ -216,6 +216,15 @@ describe('Flex', () => {
     )
     expect(json).toMatchSnapshot()
   })
+
+  test('renders with gap prop', () => {
+    const json = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Flex gap={[2, 3]} />
+      </ThemeProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Grid', () => {
