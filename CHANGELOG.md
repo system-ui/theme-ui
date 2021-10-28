@@ -1,3 +1,34 @@
+# v0.12.0 (Thu Oct 28 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, William Pei ([@draekien](https://github.com/draekien)), for all your work!
+
+#### 🚀 Enhancement
+
+- `@theme-ui/color-modes`, `@theme-ui/css`
+  - Use media query value when useColorSchemeMediaQuery is set to 'system' [#1981](https://github.com/system-ui/theme-ui/pull/1981) ([@julianbenegas](https://github.com/julianbenegas) [@draekien](https://github.com/draekien))
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
+  - Merge remote-tracking branch 'upstream/develop' into fix/color-scheme-media-query-api-update [#981](https://github.com/system-ui/theme-ui/pull/981) ([@draekien](https://github.com/draekien))
+
+#### 🏠 Internal
+
+- docs(components): Include form control color names [#1982](https://github.com/system-ui/theme-ui/pull/1982) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 6
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Julian Benegas ([@julianbenegas](https://github.com/julianbenegas))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- William Pei ([@draekien](https://github.com/draekien))
+
+---
+
 # v0.11.3 (Fri Sep 24 2021)
 
 #### 🐛 Bug Fix
