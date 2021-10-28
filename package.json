@@ -33,34 +33,34 @@
     "@auto-it/omit-commits": "^10.29.0",
     "@auto-it/released": "^10.25.0",
     "@babel/cli": "^7.13.14",
-    "@babel/core": "^7.13.15",
+    "@babel/core": "^7.15.8",
     "@babel/helper-validator-identifier": "^7.12.11",
-    "@babel/plugin-transform-runtime": "^7.13.15",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.13.10",
     "@codechecks/build-size-watcher": "^0.1.0",
     "@codechecks/client": "0.1.10-beta",
     "@emotion/jest": "^11.3.0",
-    "@preconstruct/cli": "^2",
-    "@testing-library/react": "^12.0.0",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.4.10",
-    "@types/react-dom": "^17.0.8",
+    "@preconstruct/cli": "^2.1.4",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.3",
+    "@types/react-dom": "^17.0.9",
     "@types/react-test-renderer": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.22.1",
-    "@typescript-eslint/parser": "^4.22.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "auto": "^10.25.0",
     "babel-jest": "^27.1.1",
     "babel-preset-gatsby": "^1.8.0",
     "egzek": "^1.2.0",
-    "husky": ">=6.0.0",
+    "husky": ">=7.0.2",
     "jest": "^27.1.1",
     "jest-canvas-mock": "^2.3.1",
     "jest-mock-console": "^1.0.1",
     "lerna": "^4.0.0",
-    "lint-staged": "11.1.1",
+    "lint-staged": "11.2.0",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
@@ -69,7 +69,7 @@
     "ts-jest": "^27.0.5",
     "ts-toolbelt": "^9.6.0",
     "typecov": "^0.2.3",
-    "typescript": "^4"
+    "typescript": "^4.4.3"
   },
   "husky": {
     "hooks": {
@@ -80,9 +80,13 @@
     "packages": [
       "packages/*",
       "!packages/docs",
-      "!packages/e2e"
+      "!packages/e2e",
+      "!packages/tachyons"
     ]
   },
   "name": "@theme-ui/monorepo",
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "@types/readable-stream": "2.3.11"
+  }
 }
