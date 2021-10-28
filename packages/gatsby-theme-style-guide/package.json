@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-style-guide",
-  "version": "0.11.3",
+  "version": "0.12.0",
   "main": "dist/gatsby-theme-style-guide.cjs.js",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
@@ -15,8 +15,8 @@
     "react-dom": "^17"
   },
   "dependencies": {
-    "@theme-ui/style-guide": "0.11.3",
-    "theme-ui": "0.11.3"
+    "@theme-ui/style-guide": "0.12.0",
+    "theme-ui": "0.12.0"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
