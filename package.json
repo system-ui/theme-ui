@@ -53,7 +53,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "auto": "^10.25.0",
     "babel-jest": "^27.1.1",
-    "babel-preset-gatsby": "^1.8.0",
+    "babel-preset-gatsby": "^2.0.0",
     "egzek": "^1.2.0",
     "husky": ">=7.0.2",
     "jest": "^27.1.1",
