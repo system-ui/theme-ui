@@ -1922,15 +1922,15 @@
     "@emotion/memoize" "^0.7.4"
 
 "@emotion/jest@^11.3.0":
-  version "11.3.0"
-  resolved "https://registry.npmjs.org/@emotion/jest/-/jest-11.3.0.tgz#43bed6dcb47c8691b346cee231861ebc8f9b0016"
-  integrity sha512-LZqYc3yerhic1IvAcEwBLRs1DsUt3oY7Oz6n+e+HU32iYOK/vpfzlhgmQURE94BHfv6eCOj6DV38f3jSnIkBkQ==
+  version "11.5.0"
+  resolved "https://registry.yarnpkg.com/@emotion/jest/-/jest-11.5.0.tgz#db156dbb2f9b482893647cff841d7ad2b9efde80"
+  integrity sha512-bz791yTD1I9lyB+h0+nDahmMv4kf3d+hGj85QncY3qB8VwGe03zVxdKutgaTNg7gvsRFh3ovhQGbsbwOJZMXqQ==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@emotion/css-prettifier" "^1.0.0"
     chalk "^4.1.0"
     specificity "^0.4.1"
-    stylis "^4.0.3"
+    stylis "^4.0.10"
 
 "@emotion/memoize@0.7.4", "@emotion/memoize@^0.7.1", "@emotion/memoize@^0.7.4":
   version "0.7.4"
@@ -18334,10 +18334,10 @@ stylehacks@^5.0.1:
     browserslist "^4.16.0"
     postcss-selector-parser "^6.0.4"
 
-stylis@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.3.tgz#0d714765f3f694a685550f0c45411ebf90a9bded"
-  integrity sha512-iAxdFyR9cHKp4H5M2dJlDnvcb/3TvPprzlKjvYVbH7Sh+y8hjY/mUu/ssdcvVz6Z4lKI3vsoS0jAkMYmX7ozfA==
+stylis@^4.0.10, stylis@^4.0.3:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.10.tgz#446512d1097197ab3f02fb3c258358c3f7a14240"
+  integrity sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg==
 
 subscriptions-transport-ws@0.9.18:
   version "0.9.18"
