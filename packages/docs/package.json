@@ -35,7 +35,7 @@
     "eslint-config-react-app": "^6.0.0",
     "gatsby-plugin-theme-ui": "0.11.3",
     "gatsby-theme-style-guide": "0.11.3",
-    "gatsby": "^3",
+    "gatsby": "^4",
     "gatsby-plugin-catch-links": "^3.14.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.1",
     "gatsby-plugin-mdx": "2.14.0",

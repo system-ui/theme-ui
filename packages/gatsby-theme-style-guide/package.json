@@ -10,7 +10,7 @@
     "react-dom": "^16 || ^17"
   },
   "devDependencies": {
-    "gatsby": "^3",
+    "gatsby": "^4",
     "react": "^17",
     "react-dom": "^17"
   },
