@@ -1,4 +1,7 @@
-/** @jsx jsx */
+/**
+ * @jsx jsx
+ * @jest-environment jsdom
+ */
 import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { useTheme } from '@emotion/react'
@@ -45,7 +48,8 @@ test('renders with color modes', () => {
               },
             },
           },
-        }}>
+        }}
+      >
         <ColorModeProvider>
           <Mode />
         </ColorModeProvider>
@@ -74,7 +78,8 @@ test('renders with initial color mode name', () => {
               dark: {},
             },
           },
-        }}>
+        }}
+      >
         <ColorModeProvider>
           <Mode />
         </ColorModeProvider>
@@ -141,7 +146,8 @@ test('color mode is passed through theme context', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -173,7 +179,8 @@ test('converts color modes to css custom properties', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Box />
       </ColorModeProvider>
@@ -237,7 +244,8 @@ test('does not initialize mode based on localStorage if useLocalStorage is set t
         config: {
           useLocalStorage: false,
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -281,9 +289,10 @@ test('initializes mode from prefers-color-scheme media query', () => {
     <ThemeProvider
       theme={{
         config: {
-          useColorSchemeMediaQuery: true,
+          useColorSchemeMediaQuery: 'initial',
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -311,7 +320,8 @@ test('initializes light mode from prefers-color-scheme media query', () => {
         config: {
           useColorSchemeMediaQuery: true,
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -339,7 +349,8 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
         config: {
           useColorSchemeMediaQuery: true,
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -367,7 +378,8 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
         config: {
           useColorSchemeMediaQuery: false,
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Consumer />
       </ColorModeProvider>
@@ -393,7 +405,8 @@ test('ColorModeProvider renders with global colors', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <h1>Hello</h1>
       </ColorModeProvider>
@@ -443,7 +456,8 @@ test('useThemeUI returns current color mode colors', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <GetColors />
       </ColorModeProvider>
@@ -480,7 +494,8 @@ test('emotion useTheme with custom css vars', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <GetColors />
       </ColorModeProvider>
@@ -517,7 +532,8 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider />
     </ThemeProvider>
   )
@@ -545,7 +561,8 @@ test('does not warn in production', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider />
     </ThemeProvider>
   )
@@ -587,7 +604,8 @@ test('dot notation works with color modes', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -628,7 +646,8 @@ test('dot notation works with color modes and custom properties', () => {
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Button />
       </ColorModeProvider>
@@ -660,7 +679,8 @@ test('raw color values are passed to theme-ui context when custom properties are
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Grabber />
       </ColorModeProvider>
@@ -688,7 +708,8 @@ test('raw color modes are passed to theme-ui context and include the default col
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Grabber />
       </ColorModeProvider>
@@ -729,7 +750,8 @@ test('raw color modes are passed to theme-ui context and include the default col
             },
           },
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Grabber />
         <SetDarkColorMode />
@@ -772,7 +794,8 @@ test('raw color modes are are not passed to theme-ui context if modes are not de
         colors: {
           primary: 'tomato',
         },
-      }}>
+      }}
+    >
       <ColorModeProvider>
         <Grabber />
       </ColorModeProvider>
@@ -828,7 +851,8 @@ test('colorMode accepts function from previous state to new one', () => {
               (colorModes.indexOf(previous) + 1) % colorModes.length
             ]
           })
-        }}>
+        }}
+      >
         next color mode
       </button>
     )
@@ -1075,4 +1099,84 @@ test('rawColors with no color modes are merged in nested providers', () => {
     background: 'var(--theme-ui-colors-background)',
     primary: 'var(--theme-ui-colors-primary)',
   })
+})
+
+function mockMatchMedia(pattern: string) {
+  const listeners: Function[] = []
+
+  const callListeners = (init: MediaQueryListEventInit) => {
+    for (const listener of listeners) {
+      listener(new Event('change', init))
+    }
+  }
+
+  const setPattern = (media: string) => {
+    const matches = pattern === media
+    pattern = media
+    callListeners({ media, matches })
+  }
+
+  const impl = (query: string) => {
+    const matches = query.includes(pattern)
+
+    return {
+      matches,
+      media: query,
+      addEventListener(
+        _type: 'change',
+        listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void,
+        _options?: boolean | AddEventListenerOptions
+      ) {
+        listeners.push(listener)
+      },
+      removeEventListener(
+        _type: 'change',
+        listener: (ev: MediaQueryListEvent) => void
+      ) {
+        listeners.splice(listeners.indexOf(listener), 1)
+      },
+    } as MediaQueryList
+  }
+
+  return { callListeners, setPattern, impl }
+}
+
+test('when useColorSchemeMediaQuery is set to "system", color mode aligns to user preference', () => {
+  const matchMedia = mockMatchMedia('(prefers-color-scheme: dark)')
+  window.matchMedia = jest.fn().mockImplementation(matchMedia.impl)
+
+  const theme: Theme = {
+    config: {
+      useColorSchemeMediaQuery: 'system',
+    },
+    colors: {
+      background: 'white',
+      modes: {
+        dark: { background: 'black' },
+      },
+    },
+  }
+
+  let colorMode: string | undefined
+  const GetColorMode = () => {
+    const context = useThemeUI()
+    colorMode = context.colorMode
+    return null
+  }
+
+  render(
+    <ThemeProvider theme={theme}>
+      <ColorModeProvider>
+        <GetColorMode />
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+
+  expect(colorMode).toBe('dark')
+
+  act(() => {
+    matchMedia.setPattern('(prefers-color-scheme: light)')
+  })
+
+  expect(colorMode).toBe('light')
 })

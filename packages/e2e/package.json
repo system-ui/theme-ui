@@ -1,7 +1,7 @@
 {
   "name": "e2e",
   "private": true,
-  "version": "0.10.0",
+  "version": "0.11.3",
   "description": "Cypress tests ran against Theme UI docs and examples",
   "scripts": {
     "open": "cypress open",
@@ -12,10 +12,10 @@
   },
   "optionalDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.0",
-    "@percy/cypress": "^3.1.0",
     "@percy/cli": "^1.0.0-beta.54",
+    "@percy/cypress": "^3.1.0",
     "@testing-library/cypress": "^8.0.0",
-    "cypress": "8.1.0",
-    "esbuild": "^0.12.9"
+    "cypress": "8.7.0",
+    "esbuild": "^0.13.3"
   }
 }

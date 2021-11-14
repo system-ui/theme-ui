@@ -6,7 +6,8 @@ const Header = () => {
   return (
     <header>
       <Button
-        onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+        onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
+      >
         Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
       </Button>
     </header>

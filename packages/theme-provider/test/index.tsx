@@ -1,4 +1,8 @@
-/** @jsx jsx */
+/**
+ * @jest-environment jsdom
+ * @jsx jsx
+ */
+
 import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
 import { mdx } from '@mdx-js/react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
@@ -32,7 +36,8 @@ test('renders with theme', () => {
           background: 'white',
           text: 'black',
         },
-      }}>
+      }}
+    >
       <h1 sx={{ color: 'primary' }}>Hello</h1>
     </ThemeProvider>
   )
@@ -51,7 +56,8 @@ test('renders with styles', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       {mdx('h1', null, 'Hello')}
     </ThemeProvider>
   )
@@ -71,7 +77,8 @@ test('renders with nested provider', async () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       <ThemeProvider
         theme={{
           styles: {
@@ -79,7 +86,8 @@ test('renders with nested provider', async () => {
               color: 'cyan',
             },
           },
-        }}>
+        }}
+      >
         {mdx('h1', null, 'Hello')}
       </ThemeProvider>
     </ThemeProvider>
@@ -107,7 +115,8 @@ test('renders with custom components', () => {
             color: 'tomato',
           },
         },
-      }}>
+      }}
+    >
       {mdx('h1', null, 'Hello')}
     </ThemeProvider>
   )
@@ -135,7 +144,8 @@ test('renders global styles', () => {
             lineHeight: 'body',
           },
         },
-      }}>
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -189,7 +199,8 @@ test('does not render global styles', () => {
             fontFamily: 'body',
           },
         },
-      }}>
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -220,7 +231,8 @@ test('does not add box-sizing: border-box', () => {
         config: {
           useBorderBox: false,
         },
-      }}>
+      }}
+    >
       <h1>Hello</h1>
     </ThemeProvider>
   )
@@ -249,7 +261,8 @@ test('updates CSS Custom Properties on root element', async () => {
             dark: { text: '#fff' },
           },
         },
-      }}>
+      }}
+    >
       <DarkModeButton />
     </ThemeProvider>
   )

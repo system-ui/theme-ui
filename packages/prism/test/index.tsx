@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React, { ReactElement } from 'react'
 import renderer from 'react-test-renderer'
 import Prism from '../src'

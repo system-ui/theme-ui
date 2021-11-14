@@ -1080,6 +1080,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jordie23",
+      "name": "Jordie Bodlay",
+      "avatar_url": "https://avatars.githubusercontent.com/u/712360?v=4",
+      "profile": "https://www.jordie.net/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "gleich",
+      "name": "Matt Gleich",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43759105?v=4",
+      "profile": "https://mattglei.ch/",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }

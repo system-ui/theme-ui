@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/css",
-  "version": "0.10.0",
+  "version": "0.11.3",
   "source": "src/index.ts",
   "main": "dist/theme-ui-css.cjs.js",
   "module": "dist/theme-ui-css.esm.js",
@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "csstype": "^3.0.5"
+    "csstype": "^3.0.9"
   },
   "peerDependencies": {
     "@emotion/react": "^11"

@@ -1,3 +1,42 @@
+# v0.11.0 (Wed Aug 25 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Torne Wuff ([@tornewuff](https://github.com/tornewuff)), for all your work!
+
+### Release Notes
+
+#### Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types ([#1862](https://github.com/system-ui/theme-ui/pull/1862))
+
+- Added TypeScript [Constrained identity functions](https://kentcdodds.com/blog/how-to-write-a-constrained-identity-function-in-typescript) `makeTheme`, `makeStyles` and `makeColorsScale` which can be imported from _@theme-ui/css/utils_.
+- Used aformentioned functions to properly define types of presets. Exported themes are now assignable to _Theme_ but their types narrowly describe their exact values.
+
+---
+
+---
+
+#### 🚀 Enhancement
+
+- Add @theme-ui/css/utils with TypeScript CIF functions and fix preset types [#1862](https://github.com/system-ui/theme-ui/pull/1862) ([@tornewuff](https://github.com/tornewuff) [@hasparus](https://github.com/hasparus))
+- feat(css): add makeTheme constrained identity function ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- add types for css prop back [#1866](https://github.com/system-ui/theme-ui/pull/1866) ([@hasparus](https://github.com/hasparus))
+- fix(core): add `css` prop back to JSX types ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- refactor(css): remove unused imports [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+- docs(css): add usage examples for core packages [#1877](https://github.com/system-ui/theme-ui/pull/1877) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Torne Wuff ([@tornewuff](https://github.com/tornewuff))
+
+---
+
 # v0.10.0 (Sat Jun 19 2021)
 
 :tada: This release contains work from a new contributor! :tada:
