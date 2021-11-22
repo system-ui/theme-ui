@@ -1,3 +1,35 @@
+# v0.12.0 (Thu Oct 28 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Julian Benegas ([@julianbenegas](https://github.com/julianbenegas))
+
+:heart: William Pei ([@draekien](https://github.com/draekien))
+
+#### 🚀 Enhancement
+
+- Use media query value when useColorSchemeMediaQuery is set to 'system' [#1981](https://github.com/system-ui/theme-ui/pull/1981) ([@julianbenegas](https://github.com/julianbenegas) [@draekien](https://github.com/draekien))
+- feat(usecolorschememediaquery): added 'system' and 'initial' as valid types ([@draekien](https://github.com/draekien))
+
+#### 🐛 Bug Fix
+
+- Update packages/css/src/options.ts ([@draekien](https://github.com/draekien))
+- Merge remote-tracking branch 'upstream/develop' into fix/color-scheme-media-query-api-update [#981](https://github.com/system-ui/theme-ui/pull/981) ([@draekien](https://github.com/draekien))
+- fix(css): reexport CSSObject from @emotion/react ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 6
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Julian Benegas ([@julianbenegas](https://github.com/julianbenegas))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- William Pei ([@draekien](https://github.com/draekien))
+
+---
+
 # v0.11.0 (Wed Aug 25 2021)
 
 :tada: This release contains work from a new contributor! :tada:
