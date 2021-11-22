@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "main": "dist/theme-ui-theme-provider.cjs.js",
   "module": "dist/theme-ui-theme-provider.esm.js",
   "source": "src/index.ts",
@@ -8,10 +8,10 @@
   "scripts": {},
   "dependencies": {
     "@emotion/react": "^11.6.0",
-    "@theme-ui/color-modes": "0.12.0",
-    "@theme-ui/core": "0.12.0",
-    "@theme-ui/css": "0.12.0",
-    "@theme-ui/mdx": "0.12.0"
+    "@theme-ui/color-modes": "0.12.1",
+    "@theme-ui/core": "0.12.1",
+    "@theme-ui/css": "0.12.1",
+    "@theme-ui/mdx": "0.12.1"
   },
   "peerDependencies": {
     "react": "^16 || ^17"

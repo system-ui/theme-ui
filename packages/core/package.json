@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "source": "src/index.ts",
   "main": "dist/theme-ui-core.cjs.js",
   "module": "dist/theme-ui-core.esm.js",
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
-    "@theme-ui/css": "0.12.0",
-    "@theme-ui/parse-props": "0.12.0",
+    "@theme-ui/css": "0.12.1",
+    "@theme-ui/parse-props": "0.12.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-sketchy",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "main": "dist/theme-ui-preset-sketchy.cjs.js",
   "module": "dist/theme-ui-preset-sketchy.esm.js",
   "types": "dist/theme-ui-preset-sketchy.cjs.d.ts",
@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.12.0"
+    "@theme-ui/css": "0.12.1"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
