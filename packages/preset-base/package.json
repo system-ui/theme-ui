@@ -9,7 +9,7 @@
   "scripts": {},
   "source": "src/index.ts",
   "peerDependencies": {
-    "@theme-ui/css": ">=0.10.0"
+    "@theme-ui/css": ">=0.12.0"
   },
   "publishConfig": {
     "access": "public"

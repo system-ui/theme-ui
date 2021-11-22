@@ -14,9 +14,9 @@
     "access": "public"
   },
   "dependencies": {
+    "@emotion/react": "^11.6.0",
     "@theme-ui/core": "0.11.3",
     "@theme-ui/css": "0.11.3",
-    "@emotion/react": "^11.4.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

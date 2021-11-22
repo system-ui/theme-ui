@@ -10,7 +10,7 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "peerDependencies": {
-    "@theme-ui/css": ">=0.10.0"
+    "@theme-ui/css": ">=0.12.0"
   },
   "publishConfig": {
     "access": "public"

@@ -18,8 +18,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.11.3",
-    "@emotion/react": "^11.4.1"
+    "@emotion/react": "^11.6.0",
+    "@theme-ui/css": "0.11.3"
   },
   "peerDependencies": {
     "react": "^16 || ^17"

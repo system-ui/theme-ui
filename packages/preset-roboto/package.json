@@ -13,7 +13,7 @@
     "@theme-ui/preset-base": "0.11.3"
   },
   "peerDependencies": {
-    "@theme-ui/css": ">=0.10.0"
+    "@theme-ui/css": ">=0.12.0"
   },
   "publishConfig": {
     "access": "public"

@@ -7,11 +7,11 @@
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@theme-ui/color-modes": "0.11.3",
     "@theme-ui/core": "0.11.3",
     "@theme-ui/css": "0.11.3",
-    "@theme-ui/mdx": "0.11.3",
-    "@emotion/react": "^11.4.1",
-    "@theme-ui/color-modes": "0.11.3"
+    "@theme-ui/mdx": "0.11.3"
   },
   "peerDependencies": {
     "react": "^16 || ^17"
