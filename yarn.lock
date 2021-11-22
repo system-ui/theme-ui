@@ -9688,7 +9688,7 @@ get-monorepo-packages@^1.1.0:
     globby "^7.1.1"
     load-json-file "^4.0.0"
 
-get-own-enumerable-property-symbols@^3.0.0, get-own-enumerable-property-symbols@^3.0.2:
+get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.2.tgz#b5fde77f22cbe35f390b4e089922c50bce6ef664"
   integrity sha512-I0UBV/XOz1XkIJHEUDMZAbzCThU/H8DxmSfmdGcKPnVhu2VfFqr34jr9777IyaTYvxjedWhqVIilEDsCdP5G6g==
@@ -11207,11 +11207,6 @@ is-obj@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-2.0.0.tgz#473fb05d973705e3fd9620545018ca8e22ef4982"
   integrity sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w==
 
-is-obj@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-3.0.0.tgz#b0889f1f9f8cb87e87df53a8d1230a2250f8b9be"
-  integrity sha512-IlsXEHOjtKhpN8r/tRFj2nDyTmHvcfNeu/nrRIcXE17ROeatXchkojffa1SpdqW4cr/Fj6QkEf/Gn4zf6KKvEQ==
-
 is-path-cwd@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/is-path-cwd/-/is-path-cwd-2.2.0.tgz#67d43b82664a7b5191fd9119127eb300048a9fdb"
@@ -11285,11 +11280,6 @@ is-regexp@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
   integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
-
-is-regexp@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-3.0.0.tgz#6f92c66ecd4206a9e41fbabbd63a8e05ba76fd0c"
-  integrity sha512-qbTM1elwEGoOK1GK2NngtLxRohdSgJME5vjQQaOoSWkzIHJVCxT+t+BO1/a7EhJixZOUUMda7Uj5gxjbJJhieA==
 
 is-relative-url@^3.0.0:
   version "3.0.0"
@@ -18157,7 +18147,7 @@ stringify-entities@^4.0.0:
     character-entities-html4 "^2.0.0"
     character-entities-legacy "^3.0.0"
 
-stringify-object@3.3.0:
+stringify-object@3.3.0, stringify-object@^3:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-3.3.0.tgz#703065aefca19300d3ce88af4f5b3956d7556629"
   integrity sha512-rHqiFh1elqCQ9WPLIC8I0Q/g/wj5J1eMkyoiD6eoQApWHP0FtlK7rqnhmabL5VUY9JQCcqwwvlOaSuutekgyrw==
@@ -18165,15 +18155,6 @@ stringify-object@3.3.0:
     get-own-enumerable-property-symbols "^3.0.0"
     is-obj "^1.0.1"
     is-regexp "^1.0.0"
-
-stringify-object@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-4.0.0.tgz#57a379dacb5355ab3dbe93693ce974f1234f7c88"
-  integrity sha512-MkMnWfxpZgZdd4z+EM7zmpPQZ6tCyC/vx+D1Mz6xbLHpzQwjHjSQCv7LEjDMArrnKCeMWn9KKeDEoifF2B6oaQ==
-  dependencies:
-    get-own-enumerable-property-symbols "^3.0.2"
-    is-obj "^3.0.0"
-    is-regexp "^3.0.0"
 
 strip-ansi@6.0.0:
   version "6.0.0"
