@@ -62,7 +62,7 @@
     "jest-canvas-mock": "^2.3.1",
     "jest-mock-console": "^1.0.1",
     "lerna": "^4.0.0",
-    "lint-staged": "11.2.0",
+    "lint-staged": "12.1.2",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.2",
