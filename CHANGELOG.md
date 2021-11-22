@@ -1,3 +1,22 @@
+# v0.12.1 (Mon Nov 22 2021)
+
+#### 🐛 Bug Fix
+
+- fix: bump dependency versions ([@hasparus](https://github.com/hasparus))
+- fix(docs): downgrade stringify-object to v3 ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Add .md to .eslintignore ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/prism`
+  - docs: use the @theme-ui/components Select in /demo page ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.12.0 (Thu Oct 28 2021)
 
 :tada: This release contains work from a new contributor! :tada:
