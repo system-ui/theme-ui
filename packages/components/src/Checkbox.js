@@ -2,13 +2,15 @@ import React from 'react'
 import Box from './Box'
 import SVG from './SVG'
 
-const CheckboxChecked = (props) => (
+const CheckboxChecked = ({icons, ...props}) => (
+  icons?.checked ? <SVG {...icons.checked.props} {...props}></SVG> :
   <SVG {...props}>
     <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
   </SVG>
 )
 
-const CheckboxUnchecked = (props) => (
+const CheckboxUnchecked = ({icons, ...props}) => (
+  icons?.unchecked ? <SVG {...icons.unchecked.props} {...props}></SVG> :
   <SVG {...props}>
     <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
   </SVG>
@@ -38,9 +40,38 @@ const CheckboxIcon = (props) => (
 )
 
 export const Checkbox = React.forwardRef(function Checkbox(
-  { className, sx, variant = 'checkbox', children, ...props },
+  { className, sx, variant = 'checkbox', children, icons, ...props },
   ref
 ) {
+
+  let CustomCheckboxIcon;
+  if (icons) {
+    CustomCheckboxIcon = (props) => (
+      <React.Fragment>
+        <CheckboxChecked
+          icons={icons}
+          {...props}
+          __css={{
+            display: 'none',
+            'input:checked ~ &': {
+              display: 'block',
+            },
+          }}
+        />
+        <CheckboxUnchecked
+          icons={icons}
+          {...props}
+          __css={{
+            display: 'block',
+            'input:checked ~ &': {
+              display: 'none',
+            },
+          }}
+        />
+      </React.Fragment>
+    )
+  }
+
   return (
     <Box sx={{ minWidth: 'min-content' }}>
       <Box
@@ -58,7 +89,7 @@ export const Checkbox = React.forwardRef(function Checkbox(
         }}
       />
       <Box
-        as={CheckboxIcon}
+        as={icons ? CustomCheckboxIcon : CheckboxIcon}
         aria-hidden="true"
         __themeKey="forms"
         variant={variant}
