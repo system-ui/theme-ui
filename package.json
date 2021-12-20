@@ -7,6 +7,7 @@
     "dev:docs": "yarn workspace docs start",
     "clean": "lerna run clean && rimraf packages/*/{dist,rts2_cache*}",
     "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
+    "lint": "eslint --ext .ts,.tsx,.js \"packages/**/*.{ts,tsx,js}\"",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",

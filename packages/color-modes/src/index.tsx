@@ -21,7 +21,7 @@ import {
   NestedScale,
   css,
 } from '@theme-ui/css'
-import { Global, Interpolation } from '@emotion/react'
+import { Global } from '@emotion/react'
 
 import {
   toCustomProperties,
