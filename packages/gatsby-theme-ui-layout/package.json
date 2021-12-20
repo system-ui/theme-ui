@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-ui-layout",
-  "version": "0.11.3",
+  "version": "0.12.0",
   "main": "dist/gatsby-theme-ui-layout.cjs.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {

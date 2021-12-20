@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/typography",
-  "version": "0.11.3",
+  "version": "0.12.0",
   "main": "dist/theme-ui-typography.cjs.js",
   "module": "dist/theme-ui-typography.esm.js",
   "source": "src/index.ts",
@@ -8,17 +8,17 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.11.3",
+    "@theme-ui/css": "0.12.0",
     "@types/compass-vertical-rhythm": "^1.4.2",
     "@types/modularscale": "^2.0.0",
-    "@types/typography": "^0.16.3",
+    "@types/typography": "^0.16.4",
     "compass-vertical-rhythm": "^1.4.5",
-    "csstype": "^3.0.9",
+    "csstype": "^3.0.10",
     "modularscale": "^2.0.1",
-    "type-fest": "^2.3.4"
+    "type-fest": "^2.5.4"
   },
   "devDependencies": {
-    "typography": "^0.16.19",
+    "typography": "^0.16.21",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",

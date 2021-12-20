@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.11.3",
+  "version": "0.12.0",
   "main": "dist/theme-ui-prism.cjs.js",
   "module": "dist/theme-ui-prism.esm.js",
   "types": "dist/theme-ui-prism.cjs.d.ts",
@@ -14,7 +14,7 @@
     "prism-react-renderer": "^1.1.1"
   },
   "peerDependencies": {
-    "theme-ui": ">=0.7.0"
+    "theme-ui": "^0.11"
   },
   "publishConfig": {
     "access": "public"
@@ -34,6 +34,6 @@
     "param-case": "^3.0.4",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
-    "theme-ui": "0.11.3"
+    "theme-ui": "0.12.0"
   }
 }

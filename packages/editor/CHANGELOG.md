@@ -1,3 +1,27 @@
+# v0.12.0 (Thu Oct 28 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, William Pei ([@draekien](https://github.com/draekien)), for all your work!
+
+#### 🚀 Enhancement
+
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'upstream/develop' into fix/color-scheme-media-query-api-update [#981](https://github.com/system-ui/theme-ui/pull/981) ([@draekien](https://github.com/draekien))
+
+#### Authors: 6
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Julian Benegas ([@julianbenegas](https://github.com/julianbenegas))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- William Pei ([@draekien](https://github.com/draekien))
+
+---
+
 # v0.11.0 (Wed Aug 25 2021)
 
 #### 🚀 Enhancement

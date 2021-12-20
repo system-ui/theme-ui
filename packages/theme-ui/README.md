@@ -373,6 +373,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://www.jordie.net/"><img src="https://avatars.githubusercontent.com/u/712360?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Jordie Bodlay</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=jordie23" title="Documentation">📖</a></td>
     <td align="center"><a href="https://mattglei.ch/"><img src="https://avatars.githubusercontent.com/u/43759105?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Matt Gleich</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=gleich" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://www.wpei.me/"><img src="https://avatars.githubusercontent.com/u/8390477?v=4?s=63" width="63px;" alt=""/><br /><sub><b>William Pei</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Documentation">📖</a> <a href="#example-draekien" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Tests">⚠️</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
