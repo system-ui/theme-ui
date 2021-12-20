@@ -43,7 +43,7 @@ export const Progress: ForwardRef<HTMLProgressElement, ProgressProps> =
         variant="styles.progress"
         {...props}
         // @ts-expect-error internal prop
-        __css={}
+        __css={__css}
       />
     )
   })
