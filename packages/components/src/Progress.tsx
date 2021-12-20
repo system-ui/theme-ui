@@ -9,6 +9,7 @@ export interface ProgressProps
   extends Assign<React.ComponentPropsWithRef<'progress'>, BoxOwnProps> {}
 
 /**
+ * Horizontal `<progress />` bar
  * @see https://theme-ui.com/components/progress/
  */
 export const Progress: ForwardRef<HTMLProgressElement, ProgressProps> =
