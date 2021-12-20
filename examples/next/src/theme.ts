@@ -1,8 +1,10 @@
 import { makeTheme } from '@theme-ui/css/utils'
 
 export const theme = makeTheme({
-  initialColorModeName: 'light',
-  useColorSchemeMediaQuery: true,
+  config: {
+    initialColorModeName: 'light',
+    useColorSchemeMediaQuery: true,
+  },
 
   colors: {
     text: '#000',

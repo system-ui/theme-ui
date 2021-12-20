@@ -81,18 +81,15 @@ updates:
       - dependency-name: reakit
         versions:
           - 1.3.6
-      - dependency-name: '@auto-it/conventional-commits'
-        versions:
-          - 10.21.0
       - dependency-name: lerna
         versions:
           - 4.0.0
-      - dependency-name: '@auto-it/first-time-contributor'
-        versions:
-          - 10.21.0
       - dependency-name: prism-react-renderer
         versions:
           - 1.2.0
       - dependency-name: '@types/react-dom'
         versions:
           - 17.0.2
+      - dependency-name: 'stringify-object'
+        versions:
+          - '>= 3'

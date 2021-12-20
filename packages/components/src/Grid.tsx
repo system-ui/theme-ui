@@ -39,6 +39,9 @@ export interface GridProps extends BoxProps {
    * Space between child elements
    */
   gap?: ResponsiveStyleValue<string | number>
+  /**
+   * Auto-repeat track behaviour (default is fit)
+   */
   repeat?: 'fit' | 'fill'
 }
 

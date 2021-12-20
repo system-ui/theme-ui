@@ -1,3 +1,4 @@
+// @ts-check
 /** @jsx jsx */
 import { jsx, Themed } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
@@ -10,20 +11,16 @@ export const query = graphql`
       nodes {
         id
         path
-        context {
-          frontmatter {
-            name
-          }
-        }
+        pageContext
       }
     }
   }
 `
 
-const RecipeListItem = ({ id, context, path }) => {
+const RecipeListItem = ({ id, pageContext, path }) => {
   const {
     frontmatter: { name },
-  } = context
+  } = pageContext
 
   return (
     <Themed.li>

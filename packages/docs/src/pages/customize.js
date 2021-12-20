@@ -4,13 +4,10 @@ import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
 import { EditorProvider, Theme } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
 import React from 'react'
-import merge from 'lodash.merge'
 import * as presets from '@theme-ui/presets'
 import copy from 'copy-to-clipboard'
 import stringify from 'stringify-object'
 import Button from '../components/button'
-
-const reducer = (state, next) => merge({}, state, next)
 
 const ThemeOutput = () => {
   const context = useThemeUI()
@@ -22,7 +19,8 @@ const ThemeOutput = () => {
       <Button
         onClick={(e) => {
           copy(output)
-        }}>
+        }}
+      >
         Copy Theme
       </Button>
       <Themed.pre
@@ -53,12 +51,14 @@ export default function CustomizePage(props) {
             fontWeight: 'body',
             color: 'text',
             bg: 'background',
-          }}>
+          }}
+        >
           <TypeStyle
             fontFamily="heading"
             lineHeight="heading"
             fontWeight="heading"
-            fontSize={[5, 6]}>
+            fontSize={[5, 6]}
+          >
             Aa <FontFamily name="heading" />
           </TypeStyle>
           <TypeStyle fontSize={3}>

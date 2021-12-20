@@ -1,4 +1,5 @@
-const remarkPlugins = [require('remark-slug')]
+const remarkSlug = require('remark-slug')
+const remarkPlugins = [remarkSlug]
 
 module.exports = {
   siteMetadata: {
@@ -22,7 +23,4 @@ module.exports = {
       },
     },
   ],
-  flags: {
-    DEV_SSR: true,
-  },
 }

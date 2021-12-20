@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-swiss",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "main": "dist/theme-ui-preset-swiss.cjs.js",
   "module": "dist/theme-ui-preset-swiss.esm.js",
   "types": "dist/theme-ui-preset-swiss.cjs.d.ts",
@@ -10,7 +10,7 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "peerDependencies": {
-    "@theme-ui/css": ">=0.10.0"
+    "@theme-ui/css": ">=0.12.0"
   },
   "publishConfig": {
     "access": "public"

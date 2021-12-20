@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-bootstrap",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "main": "dist/theme-ui-preset-bootstrap.cjs.js",
   "module": "dist/theme-ui-preset-bootstrap.esm.js",
   "types": "dist/theme-ui-preset-bootstrap.cjs.d.ts",
@@ -13,7 +13,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@theme-ui/css": ">=0.10.0"
+    "@theme-ui/css": ">=0.12.0"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

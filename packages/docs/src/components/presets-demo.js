@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, components } from 'theme-ui'
+import { jsx, Themed, components, Select } from 'theme-ui'
 import { ThemeContext } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
@@ -12,7 +12,6 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Select from './select'
 import Lorem from './lorem.mdx'
 
 export default function PresetsDemo() {
@@ -32,20 +31,27 @@ export default function PresetsDemo() {
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}>
+        }}
+      >
         <label
           htmlFor="theme"
           sx={{
-            display: 'block',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
             mb: 4,
-          }}>
-          Preset:
+            gap: 2,
+          }}
+        >
+          <span>Preset:</span>
           <Select
             id="theme"
+            sx={{ display: 'inline-flex' }}
             value={theme}
             onChange={(e) => {
               setTheme(e.target.value)
-            }}>
+            }}
+          >
             {Object.keys(presets).map((key) => (
               <option key={key} children={key} />
             ))}
@@ -63,7 +69,8 @@ export default function PresetsDemo() {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}>
+              fontSize={7}
+            >
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Themed.h2>Type Scale</Themed.h2>
@@ -83,6 +90,7 @@ export default function PresetsDemo() {
                 bg: 'muted',
                 border: 0,
                 borderRadius: 4,
+                color: 'text'
               }}
             />
           </Themed.root>

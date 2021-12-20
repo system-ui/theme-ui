@@ -158,7 +158,8 @@ export default (props) => {
       <button
         onClick={(e) => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default')
-        }}>
+        }}
+      >
         Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
       </button>
     </header>
@@ -262,6 +263,10 @@ enabled by default.
   }
 }
 ```
+
+- To enable the color mode to update when a user's current
+  `prefers-color-scheme` media query value changes, set
+  `useColorSchemeMediaQuery` to `'system'`.
 
 ### Disable persisting color mode on `localStorage`
 

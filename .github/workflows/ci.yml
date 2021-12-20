@@ -25,6 +25,9 @@ jobs:
           install-command:
             yarn --ignore-optional --pure-lockfile --non-interactive
 
+      - name: Run linter
+        run: yarn lint --quiet
+
       - name: Run tests and collect coverage
         run: yarn test --coverage
 
