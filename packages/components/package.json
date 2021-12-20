@@ -15,8 +15,7 @@
   },
   "peerDependencies": {
     "react": "^16 || ^17",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11"
+    "@emotion/react": "^11"
   },
   "publishConfig": {
     "access": "public"

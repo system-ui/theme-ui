@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
-    "@emotion/styled": "^11.6.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@theme-ui/color": "0.12.0",
