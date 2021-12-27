@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-bulma",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "main": "dist/theme-ui-preset-bulma.cjs.js",
   "module": "dist/theme-ui-preset-bulma.esm.js",
   "source": "src/index.ts",
@@ -9,7 +9,7 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/preset-base": "0.12.1"
+    "@theme-ui/preset-base": "0.13.0"
   },
   "peerDependencies": {
     "@theme-ui/css": ">=0.12.0"

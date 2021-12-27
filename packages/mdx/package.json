@@ -1,23 +1,23 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "source": "src/index.ts",
   "main": "dist/theme-ui-mdx.cjs.js",
   "module": "dist/theme-ui-mdx.esm.js",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@theme-ui/core": "0.12.1",
-    "@theme-ui/css": "0.12.1"
+    "@theme-ui/core": "0.13.0",
+    "@theme-ui/css": "0.13.0"
   },
   "devDependencies": {
     "react": "^17.0.1"
   },
   "peerDependencies": {
-    "react": "^16 || ^17",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@mdx-js/react": "^1 || ^2"
+    "@mdx-js/react": "^1 || ^2",
+    "react": "^16 || ^17"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",
