@@ -13,8 +13,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/react": "^11.6.0",
     "csstype": "^3.0.10"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11"
   },
   "preconstruct": {
     "entrypoints": [

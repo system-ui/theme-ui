@@ -10,18 +10,18 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "deepmerge": "^4.0.0",
+    "theme-ui": "0.10.0"
+  },
   "peerDependencies": {
-    "react": "^16 || ^17"
+    "react": "^16 || ^17",
+    "@emotion/react": "^11",
+    "@mdx-js/react": "^1 || ^2",
+    "@types/mdx-js__react": "^1 || ^2"
   },
   "devDependencies": {
     "react": "^17.0.1"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.6.0",
-    "@mdx-js/react": "^1.6.22",
-    "@types/mdx-js__react": "^1.5.5",
-    "deepmerge": "^4.2.2",
-    "theme-ui": "0.12.1"
   },
   "keywords": [
     "theme-ui",

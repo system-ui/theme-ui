@@ -2,10 +2,11 @@
 
 Primitive layout, typographic, and other components for use with Theme UI.
 
-**Note:** _This package is included in the main `theme-ui` package and a separate installation is not required._
+**Note:** _This package is included in the main `theme-ui` package and a
+separate installation is not required._
 
 ```sh
-npm i @theme-ui/components
+npm i @theme-ui/components @emotion/react @emotion/styled
 ```
 
 https://theme-ui.com/components

@@ -35,7 +35,7 @@ describe('Theme', () => {
       })
     `).toFail(
       new RegExp(
-        `Error snippet\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; whiteSpace: "banana"; }'` +
+        `Error snippet\\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; whiteSpace: "banana"; }'` +
           ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
           `Types of property 'whiteSpace' are incompatible.\\n\\s+` +
           `Type '"banana"' is not assignable to type [\\s\\S]+`

@@ -90,6 +90,7 @@ export default function PresetsDemo() {
                 bg: 'muted',
                 border: 0,
                 borderRadius: 4,
+                color: 'text'
               }}
             />
           </Themed.root>
