@@ -376,6 +376,7 @@ Thanks goes to these wonderful people
   </tr>
   <tr>
     <td align="center"><a href="https://www.wpei.me/"><img src="https://avatars.githubusercontent.com/u/8390477?v=4?s=63" width="63px;" alt=""/><br /><sub><b>William Pei</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Documentation">📖</a> <a href="#example-draekien" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://twitter.com/gpoole_is_taken"><img src="https://avatars.githubusercontent.com/u/2898433?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Greg Poole</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=gpoole" title="Documentation">📖</a></td>
   </tr>
 </table>
 

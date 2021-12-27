@@ -1110,6 +1110,15 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "gpoole",
+      "name": "Greg Poole",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2898433?v=4",
+      "profile": "https://twitter.com/gpoole_is_taken",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
