@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@theme-ui/css": "0.12.1",
-    "@theme-ui/parse-props": "0.12.1"
+    "@theme-ui/parse-props": "0.12.1",
+    "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
     "react": "^16 || ^17",
