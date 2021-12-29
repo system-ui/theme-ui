@@ -12,7 +12,7 @@
     "@theme-ui/css": "0.13.0",
     "babel-polyfill": "^6.26.0",
     "execa": "^5.0.0",
-    "tailwindcss": "^1.0.4"
+    "tailwindcss": "^3.0.8"
   },
   "publishConfig": {
     "access": "public"
