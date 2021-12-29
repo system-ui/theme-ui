@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, components, Select } from 'theme-ui'
-import { ThemeContext } from '@emotion/react'
+import { jsx, Themed, components, Select, ThemeProvider } from 'theme-ui'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
@@ -16,7 +15,8 @@ import Lorem from './lorem.mdx'
 
 export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
-  const preset = presets[theme]
+  const preset = presets[theme]   
+
 
   return (
     <div>
@@ -57,7 +57,7 @@ export default function PresetsDemo() {
             ))}
           </Select>
         </label>
-        <ThemeContext.Provider value={preset}>
+        <ThemeProvider theme={() => ({...preset})}>
           <Themed.root sx={{ bg: 'background', color: 'text', p: 3 }}>
             <Themed.h2>Colors</Themed.h2>
             <ColorPalette omit={['modes', 'header']} />
@@ -94,7 +94,7 @@ export default function PresetsDemo() {
               }}
             />
           </Themed.root>
-        </ThemeContext.Provider>
+        </ThemeProvider>
       </div>
     </div>
   )
