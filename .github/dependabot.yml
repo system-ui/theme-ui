@@ -93,3 +93,6 @@ updates:
       - dependency-name: 'stringify-object'
         versions:
           - '>= 3'
+      - dependency-name: 'cypress'
+        versions:
+          - '> 9.0.0, < 10'
