@@ -5254,9 +5254,9 @@ babel-preset-current-node-syntax@^1.0.0:
     "@babel/plugin-syntax-top-level-await" "^7.8.3"
 
 babel-preset-gatsby@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.2.0.tgz#7d819c704b5d8c2a3d54e5352cea4785305323f8"
-  integrity sha512-SFlilnVwNFVEwbgz0vsLe3ckCN6PW0XUvSNJlnzkuClKSx9BcPItNXRQtpYKkVHA4W1XZX5Qm9NaIOflP2i9tw==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.4.0.tgz#5e6c57165c25705299ac79e0b79103c23f3d2024"
+  integrity sha512-kgSs6zyG6Uba5RxRu8QgzhKMCOLpDJ5XDCAINaZZpn0jNKHx+FyCEjtIjWTMREOn4lPInv6G8+NcrHw6zn6y+g==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.14.5"
@@ -5271,8 +5271,8 @@ babel-preset-gatsby@^2.2.0:
     babel-plugin-dynamic-import-node "^2.3.3"
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    gatsby-core-utils "^3.2.0"
-    gatsby-legacy-polyfills "^2.2.0"
+    gatsby-core-utils "^3.4.0"
+    gatsby-legacy-polyfills "^2.4.0"
 
 babel-preset-jest@^27.4.0:
   version "27.4.0"
@@ -9327,17 +9327,17 @@ gatsby-cli@^4.2.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.2.0.tgz#4dbf67f016c27345fc4a8f3c140ef9fcd9d2918b"
-  integrity sha512-gPz02QD1kOGQmu49TZL8Fdo9rX8QBsA7XID0oXyIkZqkK80Tm1Uq1pOOfPE3cWSMEkzc71M79iKISCntk/wNuw==
+gatsby-core-utils@^3.2.0, gatsby-core-utils@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.4.0.tgz#6d5658dc045dcf60a314d4f2d0bc85e260659837"
+  integrity sha512-dYQpyo1BLGJzxQOXgGs1Fbj7jzGj5cKAIPYz2hz2l4Aus6skwjjaUlOjZlrWIahNHoLkx3mH0f5y6E8205T/aQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
     configstore "^5.0.1"
     file-type "^16.5.3"
     fs-extra "^10.0.0"
-    got "^11.8.2"
+    got "^11.8.3"
     node-object-hash "^2.3.10"
     proper-lockfile "^4.1.2"
     tmp "^0.2.1"
@@ -9350,10 +9350,10 @@ gatsby-graphiql-explorer@^2.2.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-legacy-polyfills@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.2.0.tgz#08b81a5c8eee0a10d8acc78c350776f42af1da00"
-  integrity sha512-4WICOoxdsfjfVK369m/fjcTvneUC0noTvdFwWNSItfKnCau4MGNPyXJRP74xgfOIC/ST3KasO6XFdTnGdlWy0A==
+gatsby-legacy-polyfills@^2.2.0, gatsby-legacy-polyfills@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.4.0.tgz#73325b747e42c2a66ef2448045b02ff360e2065b"
+  integrity sha512-dnSu7fz+a7kaCLNYz0DV0IZ+6Fu/wvsT/sOrPIwFat9c/NiioBMyZe5O2q7Vh7EGs496AsZLfkcvZ0LaDSDeTQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     core-js-compat "3.9.0"
@@ -10124,7 +10124,7 @@ globby@^7.1.1:
     pify "^3.0.0"
     slash "^1.0.0"
 
-got@^11.8.2:
+got@^11.8.2, got@^11.8.3:
   version "11.8.3"
   resolved "https://registry.yarnpkg.com/got/-/got-11.8.3.tgz#f496c8fdda5d729a90b4905d2b07dbd148170770"
   integrity sha512-7gtQ5KiPh1RtGS9/Jbv1ofDpBFuq42gyfEib+ejaRBJuj/3tQFeR5+gw57e4ipaU8c/rCjvX6fkQz2lyDlGAOg==
