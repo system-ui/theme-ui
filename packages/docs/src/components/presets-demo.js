@@ -46,7 +46,7 @@ export default function PresetsDemo() {
           <span>Preset:</span>
           <Select
             id="theme"
-            sx={{ display: 'inline-flex', paddingRight: 24 }}
+            sx={{ display: 'inline-flex', paddingRight: 32 }}
             value={theme}
             onChange={(e) => {
               setTheme(e.target.value)
