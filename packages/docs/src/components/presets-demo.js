@@ -46,7 +46,7 @@ export default function PresetsDemo() {
           <span>Preset:</span>
           <Select
             id="theme"
-            sx={{ display: 'inline-flex' }}
+            sx={{ display: 'inline-flex', paddingRight: 24 }}
             value={theme}
             onChange={(e) => {
               setTheme(e.target.value)
@@ -57,7 +57,7 @@ export default function PresetsDemo() {
             ))}
           </Select>
         </label>
-        <ThemeProvider theme={() => ({...preset})}>
+        <ThemeProvider theme={preset}>
           <Themed.root sx={{ bg: 'background', color: 'text', p: 3 }}>
             <Themed.h2>Colors</Themed.h2>
             <ColorPalette omit={['modes', 'header']} />
