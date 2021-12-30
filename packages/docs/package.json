@@ -32,7 +32,7 @@
     "@theme-ui/style-guide": "0.13.0",
     "@theme-ui/typography": "0.13.0",
     "copy-to-clipboard": "^3.2.0",
-    "eslint-config-react-app": "^6.0.0",
+    "eslint-config-react-app": "^7.0.0",
     "gatsby": "^4.2.0",
     "gatsby-plugin-catch-links": "^4.2.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.1",
