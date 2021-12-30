@@ -345,7 +345,6 @@ const PaginationLink: FunctionComponent<{
 export const Pagination: FunctionComponent<{ pathname: string }> = ({
   pathname = '',
   children,
-  sx,
   ...props
 }) => {
   const links = flattenLinks(children)
@@ -361,7 +360,6 @@ export const Pagination: FunctionComponent<{ pathname: string }> = ({
     <div
       sx={{
         display: 'flex',
-        ...sx
       }}>
       {hasPagination && previous && React.isValidElement(previous) && (
         <PaginationLink {...previous.props} label="Previous:" />
