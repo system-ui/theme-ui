@@ -37,6 +37,7 @@ export const Select = React.forwardRef(function Select(
           lineHeight: 'inherit',
           border: '1px solid',
           borderRadius: 4,
+          paddingRight: 32,
           color: 'inherit',
           backgroundColor: (theme) => get(theme, 'colors.background', null),
         }}
