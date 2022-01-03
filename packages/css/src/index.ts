@@ -111,10 +111,12 @@ export const multiples = {
 
 export const scales = {
   color: 'colors',
+  background: 'colors',
   backgroundColor: 'colors',
   borderColor: 'colors',
   caretColor: 'colors',
   columnRuleColor: 'colors',
+  outlineColor: 'colors',
   textDecorationColor: 'colors',
   opacity: 'opacities',
   transition: 'transitions',
@@ -233,7 +235,6 @@ export const scales = {
   borderStartEndRadius: 'radii',
   borderStartStartRadius: 'radii',
   columnRuleWidth: 'borderWidths',
-  outlineColor: 'colors',
   boxShadow: 'shadows',
   textShadow: 'shadows',
   zIndex: 'zIndices',
