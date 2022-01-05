@@ -1119,6 +1119,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "appsparkler",
+      "name": "Akash",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12084821?v=4",
+      "profile": "http://www.appsparkler.com/",
+      "contributions": [
+        "doc",
+        "code"
+      ]
     }
   ]
 }
