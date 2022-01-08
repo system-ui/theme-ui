@@ -37,6 +37,7 @@ export const Switch = React.forwardRef(function Switch(
         sx={sx}
         __css={{
           position: 'relative',
+          flexShrink: 0,
           bg: 'gray',
           borderRadius: SIZE,
           height: SIZE + GUTTER * 2,
@@ -64,7 +65,8 @@ export const Switch = React.forwardRef(function Switch(
               transform: 'translateX(100%)',
             },
           },
-        }}>
+        }}
+      >
         <Box />
       </Box>
       <span>{label}</span>

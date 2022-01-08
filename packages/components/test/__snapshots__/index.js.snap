@@ -1668,6 +1668,9 @@ exports[`Switch renders 1`] = `
   margin: 0;
   min-width: 0;
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   background-color: gray;
   border-radius: 18px;
   height: 22px;
