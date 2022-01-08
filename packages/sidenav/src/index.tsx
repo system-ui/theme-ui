@@ -110,7 +110,8 @@ export const Sidenav = forwardRef<
           },
           styles
         ),
-      }}>
+      }}
+    >
       {open && <Overlay {...props} />}
       <MDXProvider components={components}>
         <div
@@ -170,14 +171,16 @@ export const AccordionButton = (props: {
         '&:disabled': {
           opacity: 0.25,
         },
-      }}>
+      }}
+    >
       <svg viewBox="0 0 16 16" width="12" height="12">
         <g
           sx={{
             transformOrigin: '8 8',
             transition: 'transform .1s ease-out',
           }}
-          transform={transform}>
+          transform={transform}
+        >
           <path
             stroke="currentcolor"
             strokeWidth="2"
@@ -205,7 +208,8 @@ const NavLinks: FunctionComponent<{
         listStyle: 'none',
         m: 0,
         p: 0,
-      }}>
+      }}
+    >
       {links.map((link, j) => (
         <li key={j}>
           <Link
@@ -269,20 +273,23 @@ export const AccordionNav = forwardRef<
             transform: [open ? 'translateX(0)' : 'translate(-100%)', 'none'],
             bg: ['background', 'transparent'],
             WebkitOverflowScrolling: 'touch',
-          }}>
+          }}
+        >
           <ul
             sx={{
               listStyle: 'none',
               p: 0,
               m: 0,
-            }}>
+            }}
+          >
             {links.map((link: any, i: number) => (
               <li key={i}>
                 <div
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                  }}>
+                  }}
+                >
                   <Link
                     href={link.props.href}
                     children={link.props.children}
@@ -331,22 +338,23 @@ const PaginationLink: FunctionComponent<{
       color: 'inherit',
       textDecoration: 'none',
       fontWeight: 'bold',
-    }}>
+    }}
+  >
     <div>{label}</div>
     <div
       sx={{
         fontSize: 3,
-      }}>
+      }}
+    >
       {children}
     </div>
   </a>
 )
 
-export const Pagination: FunctionComponent<{ pathname: string }> = ({
-  pathname = '',
-  children,
-  ...props
-}) => {
+export const Pagination: FunctionComponent<{
+  pathname: string
+  components?: any
+}> = ({ pathname = '', children, components, ...props }) => {
   const links = flattenLinks(children)
   const index = links.findIndex(
     (link) =>
@@ -358,9 +366,11 @@ export const Pagination: FunctionComponent<{ pathname: string }> = ({
 
   return (
     <div
+      {...props}
       sx={{
         display: 'flex',
-      }}>
+      }}
+    >
       {hasPagination && previous && React.isValidElement(previous) && (
         <PaginationLink {...previous.props} label="Previous:" />
       )}
