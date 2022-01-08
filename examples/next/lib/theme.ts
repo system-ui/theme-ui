@@ -24,6 +24,7 @@ export const theme = makeTheme({
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'sans-serif',
   },
+  radii: [0, 4],
 
   styles: {
     root: {
@@ -34,6 +35,7 @@ export const theme = makeTheme({
     },
     a: {
       color: 'primary',
+      fontWeight: 'bold',
       textDecoration: 'none',
       ':hover': {
         color: 'secondary',

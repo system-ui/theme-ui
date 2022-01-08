@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, useColorMode } from 'theme-ui'
 
 const Header = () => {
