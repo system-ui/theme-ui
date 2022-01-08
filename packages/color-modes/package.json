@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color-modes",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "main": "dist/theme-ui-color-modes.cjs.js",
   "module": "dist/theme-ui-color-modes.esm.js",
   "types": "dist/theme-ui-color-modes.cjs.d.ts",
@@ -14,13 +14,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/core": "0.12.0",
-    "@theme-ui/css": "0.12.0",
+    "@theme-ui/core": "0.13.0",
+    "@theme-ui/css": "0.13.0",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "react": "^16 || ^17",
-    "@emotion/react": "^11"
+    "@emotion/react": "^11",
+    "react": "^16 || ^17"
   },
   "devDependencies": {
     "react": "^17.0.1"

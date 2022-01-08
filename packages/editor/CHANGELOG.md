@@ -1,3 +1,15 @@
+# v0.13.0 (Mon Dec 27 2021)
+
+#### 🚀 Enhancement
+
+- feat(deps): move Emotion to peerDeps ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.12.0 (Thu Oct 28 2021)
 
 :tada: This release contains work from a new contributor! :tada:

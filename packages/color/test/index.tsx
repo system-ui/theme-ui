@@ -26,6 +26,7 @@ import {
   complement,
   invert,
   grayscale,
+  getColor,
 } from '../src'
 
 expect.extend(matchers)
@@ -372,4 +373,12 @@ test('typechecks', () => {
     },
   }
   //#endregion
+})
+
+describe('getColor', () => {
+  test('throws error if given CSS custom property', () => {
+    expect(() => getColor({}, 'var(--theme-ui-colors-primary)')).toThrow(
+      'A CSS property was passed to `getColor`.'
+    )
+  })
 })

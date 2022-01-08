@@ -1,3 +1,80 @@
+# v0.13.0 (Mon Dec 27 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Simen A. W. Olsen ([@cobraz](https://github.com/cobraz))
+
+:heart: Akash ([@appsparkler](https://github.com/appsparkler))
+
+:heart: Greg Poole ([@gpoole](https://github.com/gpoole))
+
+### Release Notes
+
+#### Move Emotion and MDX packages to peerDeps ([#1867](https://github.com/system-ui/theme-ui/pull/1867))
+
+**BREAKING CHANGE:** `@emotion/react` and `@mdx-js/react`  were moved to peerDependencies of `theme-ui`, `@theme-ui/mdx` and `@theme-ui/sidenav` and must be installed separately. This is a revert of change from Theme UI v0.3, and it's meant to help solve version clashes and context mismatch bugs on user side. Connected issues: [#1793](https://github.com/system-ui/theme-ui/issues/1793), [#1531](https://github.com/system-ui/theme-ui/issues/1531), [#1530](https://github.com/system-ui/theme-ui/issues/1530), [#1388](https://github.com/system-ui/theme-ui/issues/1388), [#1345](https://github.com/system-ui/theme-ui/issues/1345#issuecomment-742225675), [#1130](https://github.com/system-ui/theme-ui/issues/1130).
+
+---
+
+---
+
+#### 🚀 Enhancement
+
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `gatsby-plugin-theme-ui`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/sidenav`, `@theme-ui/theme-provider`, `theme-ui`
+  - Move Emotion and MDX packages to peerDeps [#1867](https://github.com/system-ui/theme-ui/pull/1867) ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- fix(docs): Set text color on Demo page JSON code [#2024](https://github.com/system-ui/theme-ui/pull/2024) ([@appsparkler](https://github.com/appsparkler))
+- `@theme-ui/core`
+  - fix: add missing deepmerge dependency ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Try out CodeQL ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/core`, `theme-ui`
+  - docs: Write migration notes for v0.13 ([@hasparus](https://github.com/hasparus))
+- `gatsby-plugin-theme-ui`
+  - Bump peerDependency in `gatsby-plugin-theme-ui` ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: Add 3 new projects to Resources page [#2044](https://github.com/system-ui/theme-ui/pull/2044) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Add indivorg/theme to resources [#2040](https://github.com/system-ui/theme-ui/pull/2040) ([@cobraz](https://github.com/cobraz))
+- docs: Add next-theme-ui [#2041](https://github.com/system-ui/theme-ui/pull/2041) ([@cobraz](https://github.com/cobraz))
+- docs(pragma): add SWC instructions for Next.js [#2020](https://github.com/system-ui/theme-ui/pull/2020) ([@gpoole](https://github.com/gpoole))
+
+#### Authors: 5
+
+- Akash ([@appsparkler](https://github.com/appsparkler))
+- Greg Poole ([@gpoole](https://github.com/gpoole))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Simen A. W. Olsen ([@cobraz](https://github.com/cobraz))
+
+---
+
+# v0.12.1 (Mon Nov 22 2021)
+
+#### 🐛 Bug Fix
+
+- fix: bump dependency versions ([@hasparus](https://github.com/hasparus))
+- fix(docs): downgrade stringify-object to v3 ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Add .md to .eslintignore ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/prism`
+  - docs: use the @theme-ui/components Select in /demo page ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.12.0 (Thu Oct 28 2021)
 
 :tada: This release contains work from a new contributor! :tada:
