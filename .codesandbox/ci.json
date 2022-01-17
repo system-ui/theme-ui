@@ -1,0 +1,7 @@
+{
+  "installCommand": "install",
+  "buildCommand": "build",
+  "packages": ["packages/*"],
+  "sandboxes": ["/examples/next", "/examples/gatsby-plugin"],
+  "node": "16"
+}
