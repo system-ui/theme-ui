@@ -6,6 +6,7 @@ const KEY_MAPPING: {
   space: 'spacing',
   radii: 'borderRadius',
   fonts: 'fontFamily',
+  breakpoints: 'screens',
   borderStyles: 'borderStyle',
   shadows: 'boxShadow',
   fontSizes: 'fontSize',
@@ -21,21 +22,24 @@ export default (theme: Theme, config: { [Key: string]: unknown } = {}) => {
     [Key: string]: unknown
   }>((acc, [key, value]) => {
     const matchingKey = KEY_MAPPING[key]
+    const valueAsObj = Array.isArray(value)
+      ? Object.fromEntries(Object.entries(value))
+      : value
     if (!matchingKey) {
       return {
         ...acc,
-        [key]: value,
+        [key]: valueAsObj,
       }
     } else if (Array.isArray(matchingKey)) {
-      matchingKey.forEach(twKey => {
-        acc[twKey] = value
+      matchingKey.forEach((twKey) => {
+        acc[twKey] = valueAsObj
       })
 
       return acc
     } else {
       return {
         ...acc,
-        [matchingKey]: value,
+        [matchingKey]: valueAsObj,
       }
     }
   }, {})
