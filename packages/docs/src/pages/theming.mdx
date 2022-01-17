@@ -20,7 +20,7 @@ In order to ensure color palettes are as interoperable as possible, the followin
 
 Beyond these base colors, any additional values can be added to a theme to augment the base color palette.
 
-### Color Modes
+### Color modes
 
 Multiple color modes, i.e. _dark mode_, can be handled with a nested `modes` object that matches the shape of the default colors.
 
@@ -90,7 +90,7 @@ For other units, use string values, e.g. `'1em'`.
 ## Styles
 
 Styles for elements rendered in MDX can be added to the `theme.styles` object.
-This is the primary API for applying typographic styles in markdown content.
+This is the primary API for applying typographic styles in Markdown content.
 Styles within this object have access to other values in the theme object, such as colors, fonts, and space.
 
 ```js
@@ -122,7 +122,13 @@ Styles within this object have access to other values in the theme object, such 
 }
 ```
 
-## Root Styles
+<Note>
+
+To use these styles arbitrarily, such as for markup from a CMS, see the [BaseStyles component](/api#basestyles).
+
+</Note>
+
+## Root styles
 
 To add base, top-level styles to the `<html>` element, use `theme.styles.root`.
 
@@ -147,7 +153,11 @@ To add base, top-level styles to the `<html>` element, use `theme.styles.root`.
 }
 ```
 
-- To disable applying styles to the `<html>` element, add the `config: { useRootStyles: false }` flag to your theme.
+<Note>
+
+To disable applying styles to the `<html>` element, add the `config: { useRootStyles: false }` flag to your theme.
+
+</Note>
 
 ## Breakpoints
 
@@ -165,7 +175,7 @@ The breakpoints can then be used to apply [responsive styles](/sx-prop/#responsi
 }
 ```
 
-## Configuration Flags
+## Configuration flags
 
 The theme object can also include configuration options for Theme UI, which are nested in the `config` object.
 The following keys can be used to enable and disable certain features.
@@ -179,7 +189,19 @@ The following keys can be used to enable and disable certain features.
 | `useBorderBox`             | `true`              | Adds a global `box-sizing: border-box` style                                                                                                |
 | `useLocalStorage`          | `true`              | Persists the color mode in `localStorage`                                                                                                   |
 
-## Example Theme
+## Default theme
+
+If your custom theme doesn’t override these properties, Theme UI will use these default values.
+
+```js
+{
+  breakpoints: [40, 52, 64].map((n) => n + 'em'),
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+}
+```
+
+## Example theme
 
 The following example is from the [Base Preset][example].
 
@@ -276,6 +298,8 @@ export const theme = {
 }
 ```
 
+For alternative pre-made themes, check out the [presets package](/packages/presets),
+and to see open source custom themes, check out [this collection](/resources#custom-themes).
 For more information on the Theme UI `theme` object, see the [Theme Specification docs](/theme-spec).
 
 [example]: https://github.com/system-ui/theme-ui/tree/develop/packages/preset-base/src/index.ts
