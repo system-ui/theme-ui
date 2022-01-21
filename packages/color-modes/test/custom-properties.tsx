@@ -185,6 +185,7 @@ describe('__createColorStyles', () => {
         },
       },
     })
+
     expect(styles).toEqual({
       color: 'var(--theme-ui-colors-text)',
       backgroundColor: 'var(--theme-ui-colors-background)',
@@ -198,6 +199,31 @@ describe('__createColorStyles', () => {
         '--theme-ui-colors-text': 'tomato',
         '--theme-ui-colors-background': 'white',
       },
+    })
+  })
+
+  test('creates styles for print color mode if its name is the same as initialColorModeName', () => {
+    const styles = __createColorStyles({
+      config: {
+        initialColorModeName: 'light',
+        useColorSchemeMediaQuery: true,
+        printColorModeName: 'light',
+      },
+      colors: {
+        text: '#fff',
+        background: '#000',
+        modes: {
+          light: {
+            text: '#000',
+            background: '#fff',
+          },
+        },
+      },
+    })
+
+    expect(styles['@media print']).toEqual({
+      '--theme-ui-colors-text': '#000',
+      '--theme-ui-colors-background': '#fff',
     })
   })
 
