@@ -178,7 +178,9 @@ In `jsconfig.json` or `tsconfig.json` (since Next.js 12.0.4):
 ```json
 {
   "compilerOptions": {
-    "jsxImportSource": "theme-ui"
+    "jsx": "preserve",
+    "jsxImportSource": "@theme-ui/core" // or "theme-ui"
+    // ... the rest of your compilerOptions redacted for brevity
   }
 }
 ```
