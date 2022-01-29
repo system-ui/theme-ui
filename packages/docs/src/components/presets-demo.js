@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, Select } from 'theme-ui'
-import { ThemeContext } from '@emotion/react'
+import { jsx, ThemeProvider, Themed, Select } from 'theme-ui'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
