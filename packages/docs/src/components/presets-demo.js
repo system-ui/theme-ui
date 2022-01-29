@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed } from 'theme-ui'
+import { jsx, Themed, Select } from 'theme-ui'
 import { ThemeContext } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
@@ -12,7 +12,6 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Select from './select'
 import Components from './components.mdx'
 
 export default function PresetsDemo() {
