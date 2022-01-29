@@ -4,3 +4,4 @@ public
 node_modules
 components
 *.esm.js
+**/*.md

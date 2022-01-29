@@ -6,7 +6,7 @@
 you write style objects with responsive, theme-aware ergonomic shortcuts.
 
 ```sh
-npm i @theme-ui/css
+npm i @theme-ui/css @emotion/react
 ```
 
 ## Usage

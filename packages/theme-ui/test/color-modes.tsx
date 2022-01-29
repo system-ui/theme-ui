@@ -107,7 +107,7 @@ test('useColorMode updates color mode state', () => {
     mode = colorMode
     return (
       <button
-        onClick={(e) => {
+        onClick={(_e) => {
           setMode('dark')
         }}
         children="test"
@@ -134,9 +134,7 @@ test('color mode is passed through theme context', () => {
         sx={{
           color: 'text',
         }}
-        onClick={(e) => {
-          setMode('dark')
-        }}
+        onClick={() => setMode('dark')}
         children="test"
       />
     )

@@ -5,7 +5,7 @@
 `@theme-ui/core` provides minimal React support for lightweight usage.
 
 ```sh
-npm i @theme-ui/core
+npm i @theme-ui/core @emotion/react
 ```
 
 ## Usage

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from 'theme-ui'
 import { ThemeContext } from '@emotion/react'
+import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import * as presets from '@theme-ui/presets'
@@ -16,7 +17,7 @@ import Components from './components.mdx'
 
 export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
-  const preset = presets[theme]
+  const preset = presets[theme]   
 
   return (
     <div>
@@ -31,26 +32,33 @@ export default function PresetsDemo() {
           '*': {
             transition: 'all .2s ease-out',
           },
-        }}>
+        }}
+      >
         <label
           htmlFor="theme"
           sx={{
-            display: 'block',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
             mb: 4,
-          }}>
-          Preset:
+            gap: 2,
+          }}
+        >
+          <span>Preset:</span>
           <Select
             id="theme"
+            sx={{ display: 'inline-flex', paddingRight: 32 }}
             value={theme}
             onChange={(e) => {
               setTheme(e.target.value)
-            }}>
+            }}
+          >
             {Object.keys(presets).map((key) => (
               <option key={key} children={key} />
             ))}
           </Select>
         </label>
-        <ThemeContext.Provider value={preset}>
+        <ThemeProvider theme={preset}>
           <Themed.root sx={{ bg: 'background', color: 'text', p: 3 }}>
             <Themed.h2>Colors</Themed.h2>
             <ColorPalette omit={['modes', 'header']} />
@@ -62,7 +70,8 @@ export default function PresetsDemo() {
               fontFamily="heading"
               fontWeight="heading"
               lineHeight="heading"
-              fontSize={7}>
+              fontSize={7}
+            >
               Heading: <FontFamily name="heading" />
             </HeadingStyle>
             <Themed.h2>Type Scale</Themed.h2>
@@ -81,10 +90,11 @@ export default function PresetsDemo() {
                 bg: 'muted',
                 border: 0,
                 borderRadius: 4,
+                color: 'text'
               }}
             />
           </Themed.root>
-        </ThemeContext.Provider>
+        </ThemeProvider>
       </div>
     </div>
   )

@@ -1,3 +1,111 @@
+# v0.13.0 (Mon Dec 27 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Simen A. W. Olsen ([@cobraz](https://github.com/cobraz))
+
+:heart: Akash ([@appsparkler](https://github.com/appsparkler))
+
+:heart: Greg Poole ([@gpoole](https://github.com/gpoole))
+
+### Release Notes
+
+#### Move Emotion and MDX packages to peerDeps ([#1867](https://github.com/system-ui/theme-ui/pull/1867))
+
+**BREAKING CHANGE:** `@emotion/react` and `@mdx-js/react`  were moved to peerDependencies of `theme-ui`, `@theme-ui/mdx` and `@theme-ui/sidenav` and must be installed separately. This is a revert of change from Theme UI v0.3, and it's meant to help solve version clashes and context mismatch bugs on user side. Connected issues: [#1793](https://github.com/system-ui/theme-ui/issues/1793), [#1531](https://github.com/system-ui/theme-ui/issues/1531), [#1530](https://github.com/system-ui/theme-ui/issues/1530), [#1388](https://github.com/system-ui/theme-ui/issues/1388), [#1345](https://github.com/system-ui/theme-ui/issues/1345#issuecomment-742225675), [#1130](https://github.com/system-ui/theme-ui/issues/1130).
+
+---
+
+---
+
+#### 🚀 Enhancement
+
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `gatsby-plugin-theme-ui`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/sidenav`, `@theme-ui/theme-provider`, `theme-ui`
+  - Move Emotion and MDX packages to peerDeps [#1867](https://github.com/system-ui/theme-ui/pull/1867) ([@hasparus](https://github.com/hasparus))
+
+#### 🐛 Bug Fix
+
+- fix(docs): Set text color on Demo page JSON code [#2024](https://github.com/system-ui/theme-ui/pull/2024) ([@appsparkler](https://github.com/appsparkler))
+- `@theme-ui/core`
+  - fix: add missing deepmerge dependency ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Try out CodeQL ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/core`, `theme-ui`
+  - docs: Write migration notes for v0.13 ([@hasparus](https://github.com/hasparus))
+- `gatsby-plugin-theme-ui`
+  - Bump peerDependency in `gatsby-plugin-theme-ui` ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: Add 3 new projects to Resources page [#2044](https://github.com/system-ui/theme-ui/pull/2044) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Add indivorg/theme to resources [#2040](https://github.com/system-ui/theme-ui/pull/2040) ([@cobraz](https://github.com/cobraz))
+- docs: Add next-theme-ui [#2041](https://github.com/system-ui/theme-ui/pull/2041) ([@cobraz](https://github.com/cobraz))
+- docs(pragma): add SWC instructions for Next.js [#2020](https://github.com/system-ui/theme-ui/pull/2020) ([@gpoole](https://github.com/gpoole))
+
+#### Authors: 5
+
+- Akash ([@appsparkler](https://github.com/appsparkler))
+- Greg Poole ([@gpoole](https://github.com/gpoole))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Simen A. W. Olsen ([@cobraz](https://github.com/cobraz))
+
+---
+
+# v0.12.1 (Mon Nov 22 2021)
+
+#### 🐛 Bug Fix
+
+- fix: bump dependency versions ([@hasparus](https://github.com/hasparus))
+- fix(docs): downgrade stringify-object to v3 ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Add .md to .eslintignore ([@hasparus](https://github.com/hasparus))
+- `@theme-ui/prism`
+  - docs: use the @theme-ui/components Select in /demo page ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.12.0 (Thu Oct 28 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, William Pei ([@draekien](https://github.com/draekien)), for all your work!
+
+#### 🚀 Enhancement
+
+- `@theme-ui/color-modes`, `@theme-ui/css`
+  - Use media query value when useColorSchemeMediaQuery is set to 'system' [#1981](https://github.com/system-ui/theme-ui/pull/1981) ([@julianbenegas](https://github.com/julianbenegas) [@draekien](https://github.com/draekien))
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/color-modes`, `@theme-ui/color`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/css`, `@theme-ui/custom-properties`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/preset-base`, `@theme-ui/preset-bootstrap`, `@theme-ui/preset-bulma`, `@theme-ui/preset-dark`, `@theme-ui/preset-deep`, `@theme-ui/preset-funk`, `@theme-ui/preset-future`, `@theme-ui/preset-polaris`, `@theme-ui/preset-roboto`, `@theme-ui/preset-sketchy`, `@theme-ui/preset-swiss`, `@theme-ui/preset-system`, `@theme-ui/preset-tailwind`, `@theme-ui/preset-tosh`, `@theme-ui/presets`, `@theme-ui/prism`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/tailwind`, `@theme-ui/theme-provider`, `theme-ui`, `@theme-ui/typography`
+  - Merge remote-tracking branch 'upstream/develop' into fix/color-scheme-media-query-api-update [#981](https://github.com/system-ui/theme-ui/pull/981) ([@draekien](https://github.com/draekien))
+
+#### 🏠 Internal
+
+- docs(components): Include form control color names [#1982](https://github.com/system-ui/theme-ui/pull/1982) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 6
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Julian Benegas ([@julianbenegas](https://github.com/julianbenegas))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- William Pei ([@draekien](https://github.com/draekien))
+
+---
+
 # v0.11.3 (Fri Sep 24 2021)
 
 #### 🐛 Bug Fix

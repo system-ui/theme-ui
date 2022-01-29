@@ -11,16 +11,16 @@ describe('Theme', () => {
     expectSnippet(`
       css({
         bg: 'salmon',
-        widows: 'foo',
+        whiteSpace: 'no-works',
         '> form': {
           color: 'blue',
           widows: 'bar',
           // unknown CSS property is accepted
-          windows: 'baz',
+          whitePace: 'this-works',
         },
       })
     `).toFail(
-      /Error snippet\.tsx \(\d+,\d+\): Type '"foo"' is not assignable to type [\s\S]+'./
+      /Error snippet\.tsx \(\d+,\d+\): Type '"no-works"' is not assignable to type [\s\S]+'./
     )
   })
 
@@ -30,15 +30,15 @@ describe('Theme', () => {
         bg: 'salmon',
         '> form': {
           color: 'blue',
-          widows: 'bar',
+          whiteSpace: 'banana',
         },
       })
     `).toFail(
       new RegExp(
-        `Error snippet\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; widows: "bar"; }'` +
+        `Error snippet\\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; whiteSpace: "banana"; }'` +
           ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
-          `Types of property 'widows' are incompatible.\\n\\s+` +
-          `Type '"bar"' is not assignable to type [\\s\\S]+`
+          `Types of property 'whiteSpace' are incompatible.\\n\\s+` +
+          `Type '"banana"' is not assignable to type [\\s\\S]+`
       )
     )
   })

@@ -35,7 +35,8 @@ export const setDocSearchComponents = ({
     <script
       key="algolia-cdn"
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>,
+      src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+    ></script>,
     <script
       key="algolia-script"
       type="text/javascript"
@@ -46,7 +47,7 @@ export const setDocSearchComponents = ({
             var searchSelector = "#algolia-docs-search";
             var searchInput = document.querySelector(searchSelector);
 
-            if (lastSearchInput !== searchInput) {
+            if (searchInput && (lastSearchInput !== searchInput)) {
               docsearch({
                 apiKey: "84ed820927eee5fa5018c9f1abe70390",
                 indexName: "theme-ui",

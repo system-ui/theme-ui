@@ -147,6 +147,8 @@ NOTE: this requires
 
 ### Using next.js
 
+#### With Babel
+
 ```js
 // babel.config.js
 module.exports = {
@@ -168,3 +170,15 @@ module.exports = {
 
 You can read more about
 [customizing Babel config in Next.js docs](https://nextjs.org/docs/advanced-features/customizing-babel-config).
+
+#### With SWC
+
+In `jsconfig.json` or `tsconfig.json` (since Next.js 12.0.4):
+
+```json
+{
+  "compilerOptions": {
+    "jsxImportSource": "theme-ui"
+  }
+}
+```

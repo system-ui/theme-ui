@@ -1,21 +1,21 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.11.3",
+  "version": "0.13.0",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.0.0",
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "0.11.3",
+    "@theme-ui/css": "0.13.0",
     "@types/styled-system": "^5.1.13"
   },
   "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "react": "^16 || ^17"
   },
   "publishConfig": {

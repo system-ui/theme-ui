@@ -15,10 +15,10 @@
     "@mdx-js/react": "^1.6.22",
     "gatsby": "^2.6.3",
     "gatsby-plugin-mdx": "^1.6.0",
-    "gatsby-plugin-theme-ui": "^0.4.0-rc.0",
+    "gatsby-plugin-theme-ui": "latest",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "theme-ui": "^0.4.0-rc.0"
+    "theme-ui": "latest"
   },
   "devDependencies": {
     "@testing-library/react": "^9.1.3",

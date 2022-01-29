@@ -217,6 +217,21 @@ test('BaseStyles renders', () => {
   expect(json).toMatchSnapshot()
 })
 
+test('BaseStyles renders sx prop styles', () => {
+  const json = renderJSON(
+    <ThemeProvider
+      theme={{
+        colors: {
+          custom: 'tomato',
+        },
+      }}
+    >
+      <BaseStyles sx={{ color: 'custom' }} />
+    </ThemeProvider>
+  )
+  expect(json).toMatchSnapshot()
+})
+
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {

@@ -42,7 +42,7 @@ const toJS = (theme: { [Key: string]: unknown }) => `
 module.exports = ${JSON.stringify(theme, null, 2)}
 `
 
-jest.setTimeout(10000)
+jest.setTimeout(15000)
 
 it('transforms a theme config to a Tailwind config', () => {
   const result = toTailwind(theme)

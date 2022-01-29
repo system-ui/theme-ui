@@ -24,7 +24,7 @@ exports[`AccordionNav renders 1`] = `
 
 @media screen and (min-width: 40em) {
   .emotion-0 {
-    -webkit-position: sticky;
+    position: -webkit-sticky;
     position: sticky;
     bottom: auto;
     max-height: none;
@@ -132,7 +132,7 @@ Array [
 
 @media screen and (min-width: 40em) {
   .emotion-0 {
-    -webkit-position: sticky;
+    position: -webkit-sticky;
     position: sticky;
     bottom: auto;
     max-height: none;
@@ -293,7 +293,7 @@ exports[`AccordionNav renders with nested links 1`] = `
 
 @media screen and (min-width: 40em) {
   .emotion-0 {
-    -webkit-position: sticky;
+    position: -webkit-sticky;
     position: sticky;
     bottom: auto;
     max-height: none;
@@ -500,7 +500,7 @@ exports[`Sidenav renders 1`] = `
 
 @media screen and (min-width: 40em) {
   .emotion-0 {
-    -webkit-position: sticky;
+    position: -webkit-sticky;
     position: sticky;
     bottom: auto;
     max-height: none;
@@ -580,7 +580,7 @@ Array [
 
 @media screen and (min-width: 40em) {
   .emotion-0 {
-    -webkit-position: sticky;
+    position: -webkit-sticky;
     position: sticky;
     bottom: auto;
     max-height: none;

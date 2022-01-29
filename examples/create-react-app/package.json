@@ -5,7 +5,8 @@
   "dependencies": {
     "mdx.macro": "^0.2.8",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "theme-ui": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

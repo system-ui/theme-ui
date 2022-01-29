@@ -1,5 +1,37 @@
 # Migration Guides
 
+## v0.13
+
+**Moved Emotion and `@mdx-js/react` to peerDependencies to solve context
+mismatch bugs**
+
+You now install `theme-ui` umbrella package like this:
+
+```
+npm install theme-ui @emotion/react @emotion/styled @mdx-js/react
+```
+
+- `@emotion/react` is now a peer dependency of the majority of Theme UI
+  libraries
+- `@emotion/styled` is now a peer dependency of `@theme-ui/components`,
+  `@theme-ui/mdx`, and `theme-ui`
+- `@mdx-js/react` is now a peer dependency of `@theme-ui/mdx` and `theme-ui`
+
+This is a revert of change from Theme UI v0.3, and it's meant to help solve
+version clashes and context mismatch bugs on user side. Connected issues:
+[#1793](https://github.com/system-ui/theme-ui/pull/1793),
+[#1531](https://github.com/system-ui/theme-ui/pull/1531),
+[#1530](https://github.com/system-ui/theme-ui/pull/1530),
+[#1388](https://github.com/system-ui/theme-ui/pull/1388),
+[#1345](https://github.com/system-ui/theme-ui/pull/1345),
+[#1130](https://github.com/system-ui/theme-ui/pull/1130).
+
+_Disclaimer: You might still encounter this problem if other libraries install
+clashing Emotion versions._
+
+Learn more at
+[#1867](https://github.com/system-ui/theme-ui/pull/1867#issue-948084198).
+
 ## v0.9
 
 **Dropped support for legacy browsers.**

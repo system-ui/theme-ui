@@ -113,8 +113,11 @@ scales help you build UI rooted in constraint-based design principles.
 ## Getting Started
 
 ```sh
-npm install theme-ui
+npm install theme-ui @emotion/react @emotion/styled @mdx-js/react
 ```
+
+_If you don't need color modes, components and MDX support, you can install
+[**@theme-ui/core**](https://github.com/system-ui/theme-ui/tree/develop/packages/core)_.
 
 Any styles in your app can reference values from the global `theme` object. To
 provide the theme in context, wrap your application with the `ThemeProvider`
@@ -173,7 +176,8 @@ export default (props) => (
       fontWeight: 'bold',
       fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    }}>
+    }}
+  >
     Hello
   </div>
 )
@@ -369,6 +373,10 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/kenny-f"><img src="https://avatars.githubusercontent.com/u/1841819?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Kenny</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=kenny-f" title="Code">💻</a></td>
     <td align="center"><a href="https://www.jordie.net/"><img src="https://avatars.githubusercontent.com/u/712360?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Jordie Bodlay</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=jordie23" title="Documentation">📖</a></td>
     <td align="center"><a href="https://mattglei.ch/"><img src="https://avatars.githubusercontent.com/u/43759105?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Matt Gleich</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=gleich" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.wpei.me/"><img src="https://avatars.githubusercontent.com/u/8390477?v=4?s=63" width="63px;" alt=""/><br /><sub><b>William Pei</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Documentation">📖</a> <a href="#example-draekien" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=draekien" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://twitter.com/gpoole_is_taken"><img src="https://avatars.githubusercontent.com/u/2898433?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Greg Poole</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=gpoole" title="Documentation">📖</a></td>
   </tr>
 </table>
 

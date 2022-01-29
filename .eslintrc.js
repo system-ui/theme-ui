@@ -20,8 +20,23 @@ module.exports = {
     ],
     '@typescript-eslint/no-redeclare': 'off',
 
+    // Ensure peerDependencies and dependencies are properly configured
+    'import/no-extraneous-dependencies': 'error',
+
     // TypeScript checks this
     'no-undef': 'off',
     'no-lone-blocks': 'off',
   },
+  overrides: [
+    {
+      files: [
+        'packages/**/test/**/*.{ts,tsx,js,jsx}',
+        'packages/e2e/**/*.{ts,tsx}',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+        'react/jsx-pascal-case': 'off',
+      },
+    },
+  ],
 }
