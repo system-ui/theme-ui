@@ -3,7 +3,7 @@ const path = require('path')
 const withMDX = require('@next/mdx')()
 
 module.exports = withMDX({
-  pageExtensions: ['js', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   webpack(config) {
     // This is just for the sake of example app.
     // yarn link doesn't play well with React hooks.

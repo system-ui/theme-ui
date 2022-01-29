@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "deepmerge": "^4.0.0",
-    "theme-ui": "0.10.0"
+    "theme-ui": "latest"
   },
   "peerDependencies": {
     "@emotion/react": "^11",

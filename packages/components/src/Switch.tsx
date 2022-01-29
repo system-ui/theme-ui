@@ -27,6 +27,7 @@ export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
   ) {
     const __css: ThemeUICSSObject = {
       position: 'relative',
+      flexShrink: 0,
       bg: 'gray',
       borderRadius: SIZE,
       height: SIZE + GUTTER * 2,

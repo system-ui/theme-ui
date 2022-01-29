@@ -1,4 +1,8 @@
-import { jsx as coreJsx, ThemeUIJSX } from '@theme-ui/core'
+import {
+  jsx as coreJsx,
+  ThemeUIJSX,
+  type ThemeUIStyleObject,
+} from '@theme-ui/core'
 export {
   __ThemeUIContext,
   merge,
@@ -29,7 +33,9 @@ export { ThemeProvider } from '@theme-ui/theme-provider'
 export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
 
-export const BaseStyles = (props: Record<string, unknown>) =>
+export const BaseStyles = (
+  props: Record<string, unknown> & { sx?: ThemeUIStyleObject }
+) =>
   jsx('div', {
     ...props,
     sx: {
@@ -37,6 +43,7 @@ export const BaseStyles = (props: Record<string, unknown>) =>
       lineHeight: 'body',
       fontWeight: 'body',
       variant: 'styles',
+      ...props.sx,
     },
   })
 
