@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed, components, Select, ThemeProvider } from 'theme-ui'
+import { jsx, ThemeProvider, Themed, Select } from 'theme-ui'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
@@ -11,12 +11,11 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Lorem from './lorem.mdx'
+import Components from './components.mdx'
 
 export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
   const preset = presets[theme]   
-
 
   return (
     <div>
@@ -75,11 +74,10 @@ export default function PresetsDemo() {
             </HeadingStyle>
             <Themed.h2>Type Scale</Themed.h2>
             <TypeScale />
-            <MDXProvider components={components}>
-              <Lorem />
-            </MDXProvider>
-            <Themed.h2 id="json">Raw JSON</Themed.h2>
+            <Components />
+            <label htmlFor="json">Raw JSON</label>
             <textarea
+              id="json"
               value={JSON.stringify(preset, null, 2)}
               rows={16}
               readOnly
