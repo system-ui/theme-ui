@@ -222,6 +222,9 @@ mobile-first responsive styles using arrays as values. This is useful when you
 want to change a single property across multiple breakpoints without needing to
 write verbose media query syntax.
 
+If you use array, the 0-th element is for every device, and the i-th element
+means that it is for (i - 1)-th breakpoint.
+
 ```jsx
 /** @jsxImportSource theme-ui */
 
@@ -234,6 +237,10 @@ export default (props) => (
   />
 )
 ```
+
+For example, its width is defaultly 100%. Then if it is at the 0-th
+breakpoint's range, its width will be 50%. Then if it is at the 1-st
+breakpoint's range, its width will be 25%.
 
 ### Skipping Breakpoints
 
