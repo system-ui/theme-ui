@@ -186,3 +186,21 @@ In `jsconfig.json` or `tsconfig.json` (since Next.js 12.0.4):
   }
 }
 ```
+
+### Use Vite
+
+Vite use `esbuild` to deal with source files. To handle it, you can see what [here](https://vitejs.dev/guide/features.html#jsx)([中文文档](https://cn.vitejs.dev/guide/features.html#jsx)) says.
+
+``` javascript
+// vite.config.js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  esbuild: {
+    jsxFactory: 'jsx',
+    jsxInject: `import { jsx } from 'theme-ui'`,
+  },
+});
+```
+
+It will use `theme-ui`'s `jsx` to build component. And add `import { jsx } from 'theme-ui'` for every file that using JSX.
