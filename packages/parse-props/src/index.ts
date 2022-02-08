@@ -9,6 +9,8 @@ const getCSS = (props: any) => (theme: any) => {
 
 const parseProps = (props: any) => {
   if (!props || (!props.sx && !props.css)) return props
+
+  // Now props should be a object with `sx` and/or with `css` prop.
   const next: typeof props & { css: Interpolation<any> } = {}
   for (let key in props) {
     if (key === 'sx') continue
