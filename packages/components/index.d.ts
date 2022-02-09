@@ -365,7 +365,9 @@ export type MessageProps = BoxProps
 export const Message: ForwardRef<HTMLDivElement, MessageProps>
 
 export interface IconButtonProps
-  extends Assign<React.ComponentPropsWithRef<'button'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'button'>, BoxOwnProps> {
+  size?: number | string
+}
 /**
  * Transparent button for SVG icons
  *
