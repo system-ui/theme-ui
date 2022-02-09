@@ -235,6 +235,13 @@ export default (props) => (
 )
 ```
 
+With responsive arrays, the 0-th element maps to all breakpoints, and the n-th
+element maps to the (n - 1)-th breakpoint. For example:
+
+- The default width is 100%
+- At the 0th breakpoint & larger, width is 50%
+- At the 1st breakpoint & larger, width is 25%
+
 ### Skipping Breakpoints
 
 If you want to skip a breakpoint, you can use the value `null`. This is useful
