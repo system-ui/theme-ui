@@ -186,3 +186,22 @@ In `jsconfig.json` or `tsconfig.json` (since Next.js 12.0.4):
   }
 }
 ```
+
+### Using Vite
+
+Vite use [`esbuild`](https://esbuild.github.io) to bundle source files.
+[Per Vite documentation](https://vitejs.dev/guide/features.html#jsx), configure the pragma project-wide like this:
+
+```js filename=vite.config.js
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  esbuild: {
+    jsxFactory: 'jsx',
+    jsxInject: `import { jsx } from 'theme-ui'`,
+  },
+})
+```
+
+`esbuild` will use `theme-ui`’s `jsx` for every component by programatically injecting `import { jsx } from 'theme-ui'`
+to the start of every JSX file.
