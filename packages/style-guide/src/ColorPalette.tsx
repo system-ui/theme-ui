@@ -30,7 +30,6 @@ export const ColorRow = ({
     <div>
       <div
         sx={{
-          fontSize: 0,
           display: 'flex',
           flexWrap: 'wrap',
         }}>
