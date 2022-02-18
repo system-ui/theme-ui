@@ -2,6 +2,8 @@
 title: Switch
 ---
 
+import Note from '../../components/note.js';
+
 # Switch
 
 Form switch input component
@@ -42,7 +44,24 @@ To show different style based on the input state, you can use
 />
 ```
 
+## `labelPosition`
+
+May you want to change the label's position, so there are props
+`labelPosition`. Its value can be `'start'`, `'end'`(default).
+
+```jsx live=true
+<Switch label="Click Me!" labelPosition='start' />
+```
+
+```jsx live=true
+<Switch label="Do Not Click Me!" labelPosition='end' />
+```
+
 ## External label
+
+<Note>
+Try to use `labelPosition` prop rather than another Label layer!
+</Note>
 
 Even though the Switch component already renders a label, but you can also
 opt-in for an external label instead.
