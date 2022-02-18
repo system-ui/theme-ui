@@ -1390,6 +1390,7 @@ exports[`Switch renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  gap: 8px;
 }
 
 .emotion-1 {
@@ -1416,7 +1417,6 @@ exports[`Switch renders 1`] = `
   border-radius: 18px;
   height: 22px;
   width: 40px;
-  margin-right: 8px;
   padding: 2px;
 }
 
@@ -1479,7 +1479,6 @@ input:checked~.emotion-2>div {
       className="emotion-3"
     />
   </div>
-  <span />
 </label>
 `;
 
