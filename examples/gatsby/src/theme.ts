@@ -1,7 +1,9 @@
 import type { Theme } from 'theme-ui'
 
 const theme: Theme = {
-  initialColorModeName: 'light',
+  config: {
+    initialColorModeName: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',

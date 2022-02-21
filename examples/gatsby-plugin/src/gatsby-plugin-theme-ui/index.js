@@ -1,5 +1,7 @@
 const theme = {
-  initialColorModeName: 'light',
+  config: {
+    initialColorModeName: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',
