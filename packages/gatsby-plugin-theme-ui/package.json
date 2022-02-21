@@ -7,7 +7,10 @@
   "peerDependencies": {
     "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0",
     "react": "^16 || ^17",
-    "theme-ui": ">=0.12.0"
+    "theme-ui": ">=0.12.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@mdx-js/react": "^1"
   },
   "keywords": [
     "gatsby",
