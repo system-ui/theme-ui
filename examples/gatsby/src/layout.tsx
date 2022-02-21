@@ -1,11 +1,8 @@
 /** @jsx jsx */
 import { FC } from 'react'
-import { jsx, Box, Container } from 'theme-ui'
-import { useBreakpointIndex } from '@theme-ui/match-media'
+import { Box, Container } from 'theme-ui'
 
 export const Layout: FC = ({ children }) => {
-  const index = useBreakpointIndex({ defaultIndex: 2 })
-  console.log('breakpoint index', index)
   return (
     <Box sx={{ py: 2, px: 4 }}>
       <Box as="header">
