@@ -1,7 +1,7 @@
-import type { FC } from 'react'
+import * as React from "react"
 import { Box, Container } from 'theme-ui'
 
-export const Layout: FC = ({ children }) => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <Box sx={{ py: 2, px: 4 }}>
       <Box as="header">
