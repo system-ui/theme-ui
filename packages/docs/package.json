@@ -93,6 +93,6 @@
     "@babel/register": "^7.8.6"
   },
   "resolutions": {
-    "@emotion/react": "11.7.1"
+    "@emotion/react": "11.8.1"
   }
 }
