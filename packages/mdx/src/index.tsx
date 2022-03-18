@@ -107,23 +107,9 @@ interface AnyComponentProps extends JSX.IntrinsicAttributes {
   [key: string]: unknown
 }
 
-export type WithPoorAsProp<
-  Props,
-  As extends ElementType | undefined = undefined
-> = {
-  as?: As
-} & (undefined extends As
-  ? As extends undefined
-    ? Props
-    : AnyComponentProps
-  : AnyComponentProps)
-
 export interface ThemedComponent<Name extends string> {
-  <As extends ElementType | undefined = undefined>(
-    props: WithPoorAsProp<
-      Name extends keyof JSX.IntrinsicElements ? ComponentProps<Name> : {},
-      As
-    >
+  (
+    props: Name extends keyof JSX.IntrinsicElements ? ComponentProps<Name> : {}
   ): JSX.Element
 }
 
@@ -142,7 +128,6 @@ const createThemedComponent = <Name extends string>(
   const variantStyles = themed(variant)
 
   return (props) => {
-    // todo: handle `as` prop or deprecate it on Themed.X?
     const css = (props as any)['css']
 
     return jsx(name, {

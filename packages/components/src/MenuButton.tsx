@@ -13,7 +13,13 @@ export const MenuIcon = ({ size = 24 }) => {
       width={size}
       height={size}
       fill="currentColor"
-      css={{ display: 'block', margin: 0 }}>
+      css={{
+        display: 'block',
+        margin: 0,
+        boxSizing: 'border-box',
+        minWidth: 0,
+      }}
+    >
       <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
     </svg>
   )
@@ -34,7 +40,8 @@ export const MenuButton: ForwardRef<HTMLButtonElement, MenuButtonProps> =
         title="Menu"
         aria-label="Toggle Menu"
         variant="menu"
-        {...props}>
+        {...props}
+      >
         <MenuIcon />
       </IconButton>
     )

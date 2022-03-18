@@ -1,5 +1,14 @@
 # Migration Guides
 
+## v0.14
+
+- `@theme-ui/components` and other Theme UI packagss no longe depends on
+  `@emotion/styled`.
+
+- Previously deprecated `.withComponent` API was removed.
+
+- `as` prop was removed from Themed.X components from `@theme-ui/mdx`.
+
 ## v0.13
 
 **Moved Emotion and `@mdx-js/react` to peerDependencies to solve context

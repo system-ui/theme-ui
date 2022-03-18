@@ -45,38 +45,6 @@ test('styles React components', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('components accept an `as` prop', () => {
-  const Beep = (props: React.ComponentPropsWithoutRef<'h2'>) => (
-    <h2 {...props} />
-  )
-  const json = renderJSON(
-    <ThemeProvider
-      theme={{
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <MDXProvider>
-        <Themed.h1 as={Beep}>Beep boop</Themed.h1>
-      </MDXProvider>
-    </ThemeProvider>
-  )!
-  expect(json.type).toBe('h2')
-  expect(json).toHaveStyleRule('color', 'tomato')
-})
-
-test('components with `as` prop receive all props', () => {
-  const Beep = (props: React.ComponentPropsWithoutRef<'div'>) => (
-    <div {...props} />
-  )
-  const json = renderJSON(<Themed.a as={Beep} activeClassName="active" />)!
-  expect(json.type).toBe('div')
-  expect(json.props.activeClassName).toBe('active')
-})
-
 test('cleans up style props', () => {
   const json = renderJSON(
     // @ts-expect-error

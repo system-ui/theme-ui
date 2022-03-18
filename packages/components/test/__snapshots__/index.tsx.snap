@@ -271,9 +271,9 @@ input:focus~.emotion-3 {
     aria-hidden="true"
     className="emotion-2"
     fill="currentcolor"
-    height="24"
+    height={24}
     viewBox="0 0 24 24"
-    width="24"
+    width={24}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -284,9 +284,9 @@ input:focus~.emotion-3 {
     aria-hidden="true"
     className="emotion-3"
     fill="currentcolor"
-    height="24"
+    height={24}
     viewBox="0 0 24 24"
-    width="24"
+    width={24}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -332,7 +332,7 @@ exports[`Close renders 1`] = `
   title="Close"
 >
   <svg
-    fill="currentcolor"
+    fill="currentolor"
     height="24"
     viewBox="0 0 24 24"
     width="24"
@@ -397,7 +397,7 @@ exports[`Donut renders 1`] = `
   role="img"
   stroke="currentcolor"
   strokeWidth={2}
-  viewBox="0 0 32 32"
+  viewBo="0 0 32 32"
   width={128}
 >
   <title>
@@ -852,11 +852,10 @@ exports[`MenuButton renders 1`] = `
 }
 
 .emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
   display: block;
   margin: 0;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 <button
@@ -866,7 +865,7 @@ exports[`MenuButton renders 1`] = `
 >
   <svg
     className="emotion-1"
-    fill="currentcolor"
+    fill="currentColor"
     height={24}
     viewBox="0 0 24 24"
     width={24}
@@ -1067,9 +1066,9 @@ input:focus~.emotion-3 {
     aria-hidden="true"
     className="emotion-2"
     fill="currentcolor"
-    height="24"
+    height={24}
     viewBox="0 0 24 24"
-    width="24"
+    width={24}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -1080,9 +1079,9 @@ input:focus~.emotion-3 {
     aria-hidden="true"
     className="emotion-3"
     fill="currentcolor"
-    height="24"
+    height={24}
     viewBox="0 0 24 24"
-    width="24"
+    width={24}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -1141,9 +1140,9 @@ exports[`Select renders 1`] = `
   <svg
     className="emotion-2"
     fill="currentcolor"
-    height="24"
+    height={24}
     viewBox="0 0 24 24"
-    width="24"
+    width={24}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -1247,9 +1246,9 @@ exports[`Select renders with style props 1`] = `
   <svg
     className="emotion-2"
     fill="currentcolor"
-    height="24"
+    height={24}
     viewBox="0 0 24 24"
-    width="24"
+    width={24}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -1371,7 +1370,7 @@ exports[`Spinner renders 1`] = `
   fill="none"
   height={48}
   role="img"
-  stroke="currentcolor"
+  stroke="currentColor"
   strokeWidth={4}
   viewBox="0 0 32 32"
   width={48}

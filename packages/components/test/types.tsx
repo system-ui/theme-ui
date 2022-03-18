@@ -70,6 +70,7 @@ import {
   Textarea,
   TextareaProps,
 } from '../'
+import { useRef } from 'react'
 
 /**
  * This isn't technically a Jest test, as Jest won't catch any type errors.
@@ -86,8 +87,6 @@ describe('components type check', () => {
         px={[3, 2, 1]}
         ref={(ref) => {
           console.log(ref?.style?.alignItems)
-          const _ref = ref!
-          type _ = AssertTrue<IsExact<typeof _ref, HTMLElement>>
         }}
       >
         <Box
@@ -396,19 +395,9 @@ describe('components type check', () => {
     ;((props: TextareaProps) => <Textarea {...props} />)({})
   })
 
-  describe('ref types inference', () => {
-    const expectSnippet = expecter(`
-      import { Box, Flex } from './packages/components'
-    `)
+  function __test__any_ref_is_assignable_to_Box_ref_prop() {
+    const ref = useRef<HTMLSelectElement>()
 
-    it('Box#ref infers HTMLDivElement | null', () => {
-      expectSnippet(`    
-        <Box
-          ref={ref => {
-            const _ref = ref;
-          }}
-        />
-      `).toInfer('_ref', 'HTMLDivElement | null')
-    })
-  })
+    const _ = <Box as="select" ref={ref} />
+  }
 })
