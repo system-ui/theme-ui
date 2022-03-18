@@ -17,8 +17,10 @@ expect.extend(matchers)
 
 test('styles React components', () => {
   const Beep = (props: React.ComponentPropsWithoutRef<'h2'>) => (
+    // eslint-disable-next-line jsx-a11y/heading-has-content
     <h2 {...props} />
   )
+
   const Inner = (props: React.ComponentPropsWithoutRef<typeof Beep>) =>
     mdx('Beep', props)
 
@@ -45,22 +47,9 @@ test('styles React components', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
-test('cleans up style props', () => {
-  const json = renderJSON(
-    // @ts-expect-error
-    <Themed.h1 mx={2} id="test">
-      Hello
-    </Themed.h1>
-  )!
-  expect(json.props.id).toBe('test')
-  expect(json.props.mx).not.toBeDefined()
-})
-
 test('themed extracts styles from the theme', () => {
   expect(
-    themed('footer')({
-      theme: { styles: { footer: { background: 'skyblue' } } },
-    })
+    themed('footer')({ styles: { footer: { background: 'skyblue' } } })
   ).toStrictEqual({ background: 'skyblue' })
 })
 

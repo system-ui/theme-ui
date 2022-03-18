@@ -7,7 +7,6 @@ import {
   ReactNode,
   DetailedHTMLProps,
   HTMLAttributes,
-  ElementType,
   ComponentProps,
   useMemo,
 } from 'react'
@@ -86,21 +85,8 @@ const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
 export const themed =
-  (key: ThemedComponentName | (string & {})) =>
-  ({ theme, ...rest }: ThemedProps) => {
-    const extraStyles: CSSObject = {}
-
-    if (key === 'th' || key === 'td') {
-      const { align } = rest as DetailedHTMLProps<
-        React.ThHTMLAttributes<HTMLTableHeaderCellElement>,
-        HTMLTableHeaderCellElement
-      >
-
-      if (align !== 'char') extraStyles.textAlign = align
-    }
-
-    return css({ ...get(theme, `styles.${key}`), ...extraStyles })(theme)
-  }
+  (key: ThemedComponentName | (string & {})) => (theme: Theme) =>
+    css(get(theme, `styles.${key}`))(theme)
 
 // opt out of typechecking whenever `as` prop is used
 interface AnyComponentProps extends JSX.IntrinsicAttributes {
@@ -109,8 +95,11 @@ interface AnyComponentProps extends JSX.IntrinsicAttributes {
 
 export interface ThemedComponent<Name extends string> {
   (
-    props: Name extends keyof JSX.IntrinsicElements ? ComponentProps<Name> : {}
+    props: (Name extends keyof JSX.IntrinsicElements
+      ? ComponentProps<Name>
+      : {}) & { css?: CSSObject }
   ): JSX.Element
+  displayName: string
 }
 
 export type ThemedComponentsDict = {
@@ -127,14 +116,30 @@ const createThemedComponent = <Name extends string>(
 ): ThemedComponent<Name> => {
   const variantStyles = themed(variant)
 
-  return (props) => {
+  const component: ThemedComponent<Name> = (props) => {
+    const extraStyles: { textAlign?: 'left' | 'right' | 'center' | 'justify' } =
+      {}
+
+    if (name === 'th' || name === 'td') {
+      const { align } = props as DetailedHTMLProps<
+        React.ThHTMLAttributes<HTMLTableHeaderCellElement>,
+        HTMLTableHeaderCellElement
+      >
+
+      if (align !== 'char') extraStyles.textAlign = align
+    }
+
     const css = (props as any)['css']
 
     return jsx(name, {
       ...props,
-      css: css ? [css, variantStyles] : variantStyles,
+      css: [props.css, variantStyles, extraStyles].filter(Boolean),
     })
   }
+
+  component.displayName = `Themed(${name})`
+
+  return component
 }
 
 interface ThemedDivProps
@@ -167,10 +172,18 @@ const createComponents = (comps: MDXProviderComponents) => {
   // todo: test this behaviour
   componentKeys.forEach((key) => {
     const componentAtKey = comps[key]
+
     if (componentAtKey) {
-      next[key] = (props) => jsx(componentAtKey, { ...props, css: themed(key) })
+      const component: ThemedComponent<string> = (props) => {
+        return jsx(componentAtKey, { ...props, css: themed(key) })
+      }
+
+      component.displayName = "MdxComponents('" + key + "')"
+
+      next[key] = component
     }
   })
+
   return next
 }
 
