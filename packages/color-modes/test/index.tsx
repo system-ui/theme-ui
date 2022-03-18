@@ -541,6 +541,30 @@ test('warns when initialColorModeName matches a key in theme.colors.modes', () =
   restore()
 })
 
+test('warns when a key in theme.colors.modes has leading/trailing whitespace', () => {
+  const restore = mockConsole()
+  render(
+    <ThemeProvider
+      theme={{
+        colors: {
+          text: '#000',
+          background: '#fff',
+          modes: {
+            dark: {
+              ' text ': '#fff',
+              background: '#000',
+            },
+          },
+        },
+      }}
+    >
+      <ColorModeProvider />
+    </ThemeProvider>
+  )
+  expect(console.warn).toBeCalled()
+  restore()
+})
+
 test('does not warn in production', () => {
   const restore = mockConsole()
   const init = process.env.NODE_ENV
@@ -557,7 +581,7 @@ test('does not warn in production', () => {
           modes: {
             dark: {
               text: '#fff',
-              background: '#000',
+              ' background': '#000',
             },
           },
         },

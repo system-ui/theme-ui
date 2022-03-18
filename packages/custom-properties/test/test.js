@@ -1,4 +1,5 @@
 import toCustomProperties from '../src'
+import mockConsole from 'jest-mock-console'
 
 const theme = {
   colors: {
@@ -18,8 +19,7 @@ const theme = {
     },
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     monospace: 'Menlo, monospace',
@@ -35,13 +35,25 @@ const theme = {
 }
 
 it('transforms a theme config to CSS custom properties', () => {
+  mockConsole()
   const result = toCustomProperties(theme)
 
   expect(result).toMatchSnapshot()
+  expect(console.warn).toHaveBeenCalledTimes(0)
 })
 
 it('transforms a theme config to CSS custom properties with prefix', () => {
   const result = toCustomProperties(theme, '🍭')
 
   expect(result).toMatchSnapshot()
+})
+
+it('warns on invalid CSS custom property key', () => {
+  mockConsole()
+  toCustomProperties({ sizes: { '1/4': 1 / 4, '1/2': 1 / 2 } })
+
+  expect(console.warn).toHaveBeenCalledTimes(2)
+  expect(console.warn).toHaveBeenLastCalledWith(
+    '[theme-ui] Theme key "0.5" found will produce an invalid CSS custom property. Keys must only contain the following: A-Z, a-z, 0-9, hyphen, underscore.'
+  )
 })

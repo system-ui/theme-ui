@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Themed, components } from 'theme-ui'
+import { Helmet } from 'react-helmet'
+import { jsx, Themed } from 'theme-ui'
 import { ThemeContext } from '@emotion/react'
-import { MDXProvider } from '@mdx-js/react'
 import * as presets from '@theme-ui/presets'
 import {
   TypeScale,
@@ -10,13 +10,19 @@ import {
   ColorPalette,
   FontFamily,
 } from '@theme-ui/style-guide'
-import Lorem from './lorem.mdx'
+import Components from './components.mdx'
 
 export default ({ preset: presetName }) => {
   const preset = presets[presetName]
 
   return (
     <div>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700,900|Roboto:400,600|Architects+Daughter"
+        />
+      </Helmet>
       <ThemeContext.Provider value={preset}>
         <Themed.root>
           <Themed.h2>Colors</Themed.h2>
@@ -34,10 +40,10 @@ export default ({ preset: presetName }) => {
           </HeadingStyle>
           <Themed.h2>Type Scale</Themed.h2>
           <TypeScale />
-          <MDXProvider components={components}>
-            <Lorem />
-          </MDXProvider>
-          <Themed.h2 id="json">Raw JSON</Themed.h2>
+          <Components />
+          <Themed.h2 id="json">
+            Raw JSON
+          </Themed.h2>
           <textarea
             value={JSON.stringify(preset, null, 2)}
             rows={16}

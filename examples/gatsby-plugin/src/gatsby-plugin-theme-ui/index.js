@@ -1,6 +1,7 @@
 const theme = {
-  useCustomProperties: true,
-  initialColorMode: 'light',
+  config: {
+    initialColorModeName: 'light',
+  },
   colors: {
     text: '#000',
     background: '#fff',
@@ -26,6 +27,8 @@ const theme = {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
+      py: 2,
+      px: 4,
     },
     a: {
       color: 'primary',
