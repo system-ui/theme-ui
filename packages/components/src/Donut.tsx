@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface DonutProps
   extends Assign<
@@ -40,25 +41,31 @@ export const Donut: ForwardRef<SVGSVGElement, DonutProps> = React.forwardRef(
     const C = 2 * r * Math.PI
     const offset = C - ((value - min) / (max - min)) * C
 
+    const svgProps = {
+      strokeWidth,
+
+      viewBo: '0 0 32 32',
+      width: size,
+      height: size,
+
+      fill: 'none',
+      stroke: 'currentcolor',
+    }
+
     return (
       <Box
         ref={ref}
         as="svg"
-        viewBox="0 0 32 32"
-        width={size}
-        height={size}
-        strokeWidth={strokeWidth}
-        fill="none"
-        stroke="currentcolor"
         role="img"
         aria-valuenow={value}
         aria-valuemin={min}
         aria-valuemax={max}
-        {...props}
-        // @ts-expect-error
-        __css={{
-          color: 'primary',
-        }}>
+        {...(svgProps as {})}
+        {...(props as BoxProps)}
+        {...__internalProps({
+          __css: { color: 'primary' },
+        })}
+      >
         {title && <title>{title}</title>}
         <circle cx={16} cy={16} r={r} opacity={1 / 8} />
         <circle

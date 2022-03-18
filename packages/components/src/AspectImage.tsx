@@ -3,6 +3,7 @@ import React from 'react'
 import { AspectRatio } from './AspectRatio'
 import { Image, ImageProps } from './Image'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface AspectImageProps extends ImageProps {
   ratio?: number
@@ -18,10 +19,11 @@ export const AspectImage: ForwardRef<HTMLImageElement, AspectImageProps> =
         <Image
           ref={ref}
           {...props}
-          // @ts-expect-error
-          __css={{
-            objectFit: 'cover',
-          }}
+          {...__internalProps({
+            __css: {
+              objectFit: 'cover',
+            },
+          })}
         />
       </AspectRatio>
     )

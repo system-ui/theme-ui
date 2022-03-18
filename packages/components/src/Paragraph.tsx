@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxOwnProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface ParagraphProps
   extends Assign<React.ComponentPropsWithRef<'p'>, BoxOwnProps> {}
@@ -21,13 +22,14 @@ export const Paragraph: ForwardRef<HTMLParagraphElement, ParagraphProps> =
         as="p"
         variant="paragraph"
         {...props}
-        // @ts-expect-error internal prop
-        __themeKey="text"
-        __css={{
-          fontFamily: 'body',
-          fontWeight: 'body',
-          lineHeight: 'body',
-        }}
+        {...__internalProps({
+          __themeKey: 'text',
+          __css: {
+            fontFamily: 'body',
+            fontWeight: 'body',
+            lineHeight: 'body',
+          },
+        })}
       />
     )
   })

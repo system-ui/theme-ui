@@ -7,6 +7,7 @@ import React from 'react'
 
 import { Box, BoxProps } from './Box'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const px = (n: number | string) => (typeof n === 'number' ? n + 'px' : n)
 
@@ -65,9 +66,10 @@ export const Grid: ForwardRef<HTMLDivElement, GridProps> = React.forwardRef(
       <Box
         ref={ref}
         {...props}
-        // @ts-expect-error internal prop
-        __themeKey="grids"
-        __css={__css}
+        {...__internalProps({
+          __themeKey: 'grids',
+          __css,
+        })}
       />
     )
   }

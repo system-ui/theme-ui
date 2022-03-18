@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface LabelProps
   extends Assign<React.ComponentPropsWithRef<'label'>, BoxOwnProps> {}
@@ -18,13 +19,11 @@ export const Label: ForwardRef<HTMLLabelElement, LabelProps> = React.forwardRef(
         ref={ref}
         as="label"
         variant="label"
-        {...props}
-        // @ts-expect-error
-        __themeKey="forms"
-        __css={{
-          width: '100%',
-          display: 'flex',
-        }}
+        {...(props as BoxProps)}
+        {...__internalProps({
+          __themeKey: 'forms',
+          __css: { width: '100%', display: 'flex' },
+        })}
       />
     )
   }

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxProps } from './Box'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface AspectRatioProps extends BoxProps {
   ratio?: number
@@ -22,7 +23,8 @@ export const AspectRatio: ForwardRef<HTMLDivElement, AspectRatioProps> =
         sx={{
           position: 'relative',
           overflow: 'hidden',
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -32,14 +34,16 @@ export const AspectRatio: ForwardRef<HTMLDivElement, AspectRatioProps> =
         />
         <Box
           {...props}
-          // @ts-expect-error
-          __css={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-          }}>
+          {...__internalProps({
+            __css: {
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+            },
+          })}
+        >
           {children}
         </Box>
       </Box>

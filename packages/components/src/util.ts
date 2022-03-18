@@ -1,4 +1,4 @@
-import { ThemeUICSSProperties } from '@theme-ui/css'
+import type { ThemeUICSSObject, ThemeUICSSProperties } from '@theme-ui/css'
 
 export const getProps =
   (test: (k: string) => boolean) =>
@@ -22,3 +22,16 @@ export const getMargin: (props: MarginProps) => MarginProps = getProps((k) =>
   MRE.test(k)
 )
 export const omitMargin = getProps((k) => !MRE.test(k))
+
+/** @internal */
+export function __internalProps(props: __ThemeUIComponentsInternalProps) {
+  return props as {}
+}
+
+/**
+ * @internal Props used by Theme UI Components not intended for user code.
+ */
+export interface __ThemeUIComponentsInternalProps {
+  __css?: ThemeUICSSObject
+  __themeKey?: string
+}

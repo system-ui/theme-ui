@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxProps } from './Box'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export type ContainerProps = BoxProps
 
@@ -19,13 +20,14 @@ export const Container: ForwardRef<HTMLDivElement, ContainerProps> =
         ref={ref}
         variant="container"
         {...props}
-        // @ts-expect-error
-        __themeKey="layout"
-        __css={{
-          width: '100%',
-          maxWidth: 'container',
-          mx: 'auto',
-        }}
+        {...__internalProps({
+          __themeKey: 'layout',
+          __css: {
+            width: '100%',
+            maxWidth: 'container',
+            mx: 'auto',
+          },
+        })}
       />
     )
   })

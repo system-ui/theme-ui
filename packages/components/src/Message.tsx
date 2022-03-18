@@ -3,6 +3,7 @@ import { ThemeUICSSObject } from '@theme-ui/css'
 
 import { Box, BoxProps } from './Box'
 import { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export type MessageProps = BoxProps
 
@@ -28,9 +29,7 @@ export const Message: ForwardRef<HTMLDivElement, MessageProps> =
       <Box
         ref={ref}
         {...props}
-        // @ts-expect-error internal prop
-        __themeKey="messages"
-        __css={__css}
+        {...__internalProps({ __themeKey: 'messages', __css })}
       />
     )
   })

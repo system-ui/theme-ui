@@ -4,6 +4,7 @@ import { ThemeUICSSObject } from '@theme-ui/css'
 
 import { Box, BoxOwnProps } from './Box'
 import { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const thumbStyle: ThemeUICSSObject = {
   appearance: 'none',
@@ -53,9 +54,7 @@ export const Slider: ForwardRef<HTMLInputElement, SliderProps> =
         type="range"
         variant="slider"
         {...props}
-        // @ts-expect-error internal prop
-        __themeKey="forms"
-        __css={sliderStyle}
+        {...__internalProps({ __themeKey: 'forms', __css: sliderStyle })}
       />
     )
   })

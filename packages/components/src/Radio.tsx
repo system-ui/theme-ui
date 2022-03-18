@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, BoxOwnProps } from './Box'
 import { SVG, SVGProps } from './SVG'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const RadioChecked = (props: SVGProps) => (
   <SVG {...props}>
@@ -20,23 +21,25 @@ const RadioIcon = (props: SVGProps) => (
   <React.Fragment>
     <RadioChecked
       {...props}
-      // @ts-expect-error internal prop
-      __css={{
-        display: 'none',
-        'input:checked ~ &': {
-          display: 'block',
+      {...__internalProps({
+        __css: {
+          display: 'none',
+          'input:checked ~ &': {
+            display: 'block',
+          },
         },
-      }}
+      })}
     />
     <RadioUnchecked
       {...props}
-      // @ts-expect-error internal prop
-      __css={{
-        display: 'block',
-        'input:checked ~ &': {
-          display: 'none',
+      {...__internalProps({
+        __css: {
+          display: 'block',
+          'input:checked ~ &': {
+            display: 'none',
+          },
         },
-      }}
+      })}
     />
   </React.Fragment>
 )
@@ -74,20 +77,21 @@ export const Radio: ForwardRef<HTMLInputElement, RadioProps> = React.forwardRef(
           variant={variant}
           className={className}
           sx={sx}
-          // @ts-expect-error internal prop
-          __themeKey="forms"
-          __css={{
-            mr: 2,
-            borderRadius: 9999,
-            color: 'gray',
-            flexShrink: 0,
-            'input:checked ~ &': {
-              color: 'primary',
+          {...__internalProps({
+            __themeKey: 'forms',
+            __css: {
+              mr: 2,
+              borderRadius: 9999,
+              color: 'gray',
+              flexShrink: 0,
+              'input:checked ~ &': {
+                color: 'primary',
+              },
+              'input:focus ~ &': {
+                bg: 'highlight',
+              },
             },
-            'input:focus ~ &': {
-              bg: 'highlight',
-            },
-          }}
+          })}
         />
       </Box>
     )

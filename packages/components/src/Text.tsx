@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxProps } from './Box'
 import { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export type TextProps = BoxProps
 
@@ -19,8 +20,9 @@ export const Text: ForwardRef<HTMLDivElement, TextProps> = React.forwardRef(
         ref={ref}
         variant="default"
         {...props}
-        // @ts-expect-error internal prop
-        __themeKey="text"
+        {...__internalProps({
+          __themeKey: 'text',
+        })}
       />
     )
   }

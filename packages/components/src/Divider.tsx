@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxProps } from './Box'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export type DividerProps = BoxProps
 
@@ -16,14 +17,15 @@ export const Divider: ForwardRef<HTMLDivElement, DividerProps> =
         as="hr"
         variant="styles.hr"
         {...props}
-        // @ts-expect-error
-        __css={{
-          color: 'gray',
-          m: 0,
-          my: 2,
-          border: 0,
-          borderBottom: '1px solid',
-        }}
+        {...__internalProps({
+          __css: {
+            color: 'gray',
+            m: 0,
+            my: 2,
+            border: 0,
+            borderBottom: '1px solid',
+          },
+        })}
       />
     )
   })

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Image, ImageProps } from './Image'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface AvatarProps extends ImageProps {
   size?: number | string
@@ -16,10 +17,11 @@ export const Avatar: ForwardRef<HTMLImageElement, AvatarProps> =
         height={size}
         variant="avatar"
         {...props}
-        // @ts-expect-error
-        __css={{
-          borderRadius: 9999,
-        }}
+        {...__internalProps({
+          __css: {
+            borderRadius: 9999,
+          },
+        })}
       />
     )
   })

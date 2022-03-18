@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps, __ThemeUIComponentsInternalProps } from './util'
 
 export interface IconButtonProps
   extends Assign<React.ComponentPropsWithRef<'button'>, BoxOwnProps> {
@@ -21,29 +22,32 @@ export const IconButton: ForwardRef<HTMLButtonElement, IconButtonProps> =
     { size = 32, ...props }: IconButtonProps,
     ref
   ) {
+    const emotionCssLabel =
+      (props as __ThemeUIComponentsInternalProps).__css?.label || 'IconButton'
+
     return (
       <Box
         ref={ref}
         as="button"
         variant="icon"
-        {...props}
-        // @ts-expect-error
-        __themeKey="buttons"
-        __css={{
-          // @ts-expect-error
-          label: props.__css?.label || 'IconButton',
-          appearance: 'none',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: 1,
-          width: size,
-          height: size,
-          color: 'inherit',
-          bg: 'transparent',
-          border: 'none',
-          borderRadius: 4,
-        }}
+        {...(props as BoxProps)}
+        {...__internalProps({
+          __themeKey: 'buttons',
+          __css: {
+            label: emotionCssLabel,
+            appearance: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 1,
+            width: size,
+            height: size,
+            color: 'inherit',
+            bg: 'transparent',
+            border: 'none',
+            borderRadius: 4,
+          },
+        })}
       />
     )
   })

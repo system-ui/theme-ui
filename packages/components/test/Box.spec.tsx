@@ -9,6 +9,7 @@ import { ThemeProvider } from 'theme-ui'
 import { Box } from '..'
 
 import { theme } from './__test-utils__'
+import { __internalProps } from '../src/util'
 
 describe('Box', () => {
   test('renders', () => {
@@ -62,16 +63,15 @@ describe('Box', () => {
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box
-        // @ts-expect-error `__css` is not public API, use `sx` instead
-        __css={{
-          p: 4,
-          color: 'black',
-          bg: 'white',
-        }}
         bg="cyan"
-        sx={{
-          color: 'tomato',
-        }}
+        sx={{ color: 'tomato' }}
+        {...__internalProps({
+          __css: {
+            p: 4,
+            color: 'black',
+            bg: 'white',
+          },
+        })}
       />
     )
     expect(json).toHaveStyleRule('padding', '32px')

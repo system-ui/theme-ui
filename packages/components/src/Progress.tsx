@@ -2,8 +2,9 @@ import React from 'react'
 
 import { ThemeUICSSObject } from '@theme-ui/css'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface ProgressProps
   extends Assign<React.ComponentPropsWithRef<'progress'>, BoxOwnProps> {}
@@ -42,9 +43,8 @@ export const Progress: ForwardRef<HTMLProgressElement, ProgressProps> =
         ref={ref}
         as="progress"
         variant="styles.progress"
-        {...props}
-        // @ts-expect-error internal prop
-        __css={__css}
+        {...(props as BoxProps)}
+        {...__internalProps({ __css })}
       />
     )
   })

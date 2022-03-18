@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxOwnProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface HeadingProps
   extends Assign<React.ComponentPropsWithRef<'h2'>, BoxOwnProps> {}
@@ -21,13 +22,14 @@ export const Heading: ForwardRef<HTMLHeadingElement, HeadingProps> =
         as="h2"
         variant="heading"
         {...props}
-        // @ts-expect-error
-        __themeKey="text"
-        __css={{
-          fontFamily: 'heading',
-          fontWeight: 'heading',
-          lineHeight: 'heading',
-        }}
+        {...__internalProps({
+          __themeKey: 'text',
+          __css: {
+            fontFamily: 'heading',
+            fontWeight: 'heading',
+            lineHeight: 'heading',
+          },
+        })}
       />
     )
   })

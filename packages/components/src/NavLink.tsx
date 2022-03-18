@@ -3,6 +3,7 @@ import type { ThemeUICSSObject } from '@theme-ui/css'
 
 import { Link, LinkProps } from './Link'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export type NavLinkProps = LinkProps
 /**
@@ -29,8 +30,7 @@ export const NavLink: ForwardRef<HTMLAnchorElement, NavLinkProps> =
         ref={ref}
         variant="nav"
         {...props}
-        // @ts-expect-error internal prop
-        __css={__css}
+        {...__internalProps({ __css })}
       />
     )
   })

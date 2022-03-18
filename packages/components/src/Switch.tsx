@@ -5,6 +5,7 @@ import type { ThemeUICSSObject } from '@theme-ui/css'
 import { Box, BoxOwnProps } from './Box'
 import { Label } from './Label'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const GUTTER = 2
 const SIZE = 18
@@ -73,19 +74,15 @@ export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
             height: 1,
             overflow: 'hidden',
           }}
-          // @ts-expect-error internal prop
-          __themeKey="forms"
+          {...__internalProps({ __themeKey: 'forms' })}
         />
         <Box
-          css={{
-            padding: GUTTER,
-          }}
+          css={{ padding: GUTTER }}
           variant={variant}
           className={className}
           sx={sx}
-          // @ts-expect-error internal prop
-          __themeKey="forms"
-          __css={__css}>
+          {...__internalProps({ __themeKey: 'forms', __css })}
+        >
           <Box />
         </Box>
         <span>{label}</span>

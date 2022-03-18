@@ -2,9 +2,9 @@ import React from 'react'
 
 import { get, ThemeUICSSObject } from '@theme-ui/css'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import { SVG, SVGProps } from './SVG'
-import { getMargin, omitMargin } from './util'
+import { getMargin, omitMargin, __internalProps } from './util'
 import { Assign, ForwardRef } from './types'
 
 const DownArrow = (props: SVGProps) => (
@@ -43,15 +43,14 @@ export const Select: ForwardRef<HTMLSelectElement, SelectProps> =
         {...getMargin(props)}
         sx={{
           display: 'flex',
-        }}>
+        }}
+      >
         <Box
           ref={ref}
           as="select"
           variant="select"
-          {...omitMargin(props)}
-          // @ts-expect-error internal prop
-          __themeKey="forms"
-          __css={__css}
+          {...(omitMargin(props) as BoxProps)}
+          {...__internalProps({ __themeKey: 'forms', __css })}
         />
         {arrow || (
           <DownArrow

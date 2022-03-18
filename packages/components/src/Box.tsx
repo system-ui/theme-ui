@@ -10,11 +10,11 @@ import React, { forwardRef } from 'react'
 import {
   css,
   get,
-  ThemeUICSSObject,
   ThemeUICSSProperties,
   ThemeUIStyleObject,
 } from '@theme-ui/css'
 import type { Assign } from './types'
+import type { __ThemeUIComponentsInternalProps } from './util'
 
 const boxSystemProps = [
   // space scale props (inherited from @styled-system/space)
@@ -77,7 +77,10 @@ export const __isBoxStyledSystemProp = (prop: string) =>
 
 const pickSystemProps = (props: BoxOwnProps) => {
   const res: Partial<Pick<BoxOwnProps, typeof boxSystemProps[number]>> = {}
-  for (const key of boxSystemProps) res[key] = props[key]
+  for (const key of boxSystemProps) {
+    // ts2590: union is too large
+    ;(res as any)[key] = props[key]
+  }
 
   return res
 }
@@ -86,13 +89,8 @@ const pickSystemProps = (props: BoxOwnProps) => {
  * Use the Box component as a layout primitive to add margin, padding, and colors to content.
  * @see https://theme-ui.com/components/box
  */
-export const Box = forwardRef<HTMLElement, BoxProps>(function Box(props, ref) {
+export const Box = forwardRef<any, BoxProps>(function Box(props, ref) {
   const theme = useTheme()
-
-  interface __BoxInternalProps {
-    __css: ThemeUICSSObject
-    __themeKey?: string
-  }
 
   const {
     __themeKey = 'variants',
@@ -102,7 +100,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(props, ref) {
     sx,
     as: Component = 'div',
     ...rest
-  } = props as BoxProps & __BoxInternalProps
+  } = props as BoxProps & __ThemeUIComponentsInternalProps
 
   const baseStyles: CSSObject = {
     boxSizing: 'border-box',

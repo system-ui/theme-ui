@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, BoxOwnProps } from './Box'
 import { SVG, SVGProps } from './SVG'
 import { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const CheckboxChecked = (props: SVGProps) => (
   <SVG {...props}>
@@ -20,23 +21,25 @@ const CheckboxIcon = (props: SVGProps) => (
   <React.Fragment>
     <CheckboxChecked
       {...props}
-      // @ts-expect-error internal prop
-      __css={{
-        display: 'none',
-        'input:checked ~ &': {
-          display: 'block',
+      {...__internalProps({
+        __css: {
+          display: 'none',
+          'input:checked ~ &': {
+            display: 'block',
+          },
         },
-      }}
+      })}
     />
     <CheckboxUnchecked
       {...props}
-      // @ts-expect-error internal prop
-      __css={{
-        display: 'block',
-        'input:checked ~ &': {
-          display: 'none',
+      {...__internalProps({
+        __css: {
+          display: 'block',
+          'input:checked ~ &': {
+            display: 'none',
+          },
         },
-      }}
+      })}
     />
   </React.Fragment>
 )
@@ -78,21 +81,22 @@ export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> =
           variant={variant}
           className={className}
           sx={sx}
-          // @ts-expect-error internal prop
-          __themeKey="forms"
-          __css={{
-            mr: 2,
-            borderRadius: 4,
-            color: 'gray',
-            flexShrink: 0,
-            'input:checked ~ &': {
-              color: 'primary',
+          {...__internalProps({
+            __themeKey: 'forms',
+            __css: {
+              mr: 2,
+              borderRadius: 4,
+              color: 'gray',
+              flexShrink: 0,
+              'input:checked ~ &': {
+                color: 'primary',
+              },
+              'input:focus ~ &': {
+                color: 'primary',
+                bg: 'highlight',
+              },
             },
-            'input:focus ~ &': {
-              color: 'primary',
-              bg: 'highlight',
-            },
-          }}
+          })}
         />
         {children}
       </Box>

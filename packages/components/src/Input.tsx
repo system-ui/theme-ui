@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, BoxOwnProps } from './Box'
 import { get, ThemeUIStyleObject } from '@theme-ui/css'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const autofillStyles: ThemeUIStyleObject = {
   boxShadow: 'inset 0 0 0 1000px var(--theme-ui-input-autofill-bg)',
@@ -52,9 +53,10 @@ export const Input: ForwardRef<HTMLInputElement, InputProps> = React.forwardRef(
           ...sx,
         }}
         {...rest}
-        // @ts-expect-error
-        __themeKey="forms"
-        __css={defaultInputStyles}
+        {...__internalProps({
+          __themeKey: 'forms',
+          __css: defaultInputStyles,
+        })}
       />
     )
   }

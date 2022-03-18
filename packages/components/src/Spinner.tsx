@@ -3,8 +3,9 @@ import { keyframes } from '@emotion/react'
 
 import type { ThemeUICSSObject } from '@theme-ui/css'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 const spin = keyframes({
   from: {
@@ -64,27 +65,34 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
       animationIterationCount: 'infinite',
     }
 
+    const svgProps = {
+      strokeWidth,
+
+      viewBox: '0 0 32 32',
+      width: size,
+      height: size,
+
+      fill: 'none',
+      stroke: 'currentColor',
+      role: 'img',
+    }
+
     return (
       <Box
         ref={ref}
         as="svg"
-        viewBox="0 0 32 32"
-        width={size}
-        height={size}
-        strokeWidth={strokeWidth}
-        fill="none"
-        stroke="currentcolor"
-        role="img"
-        {...props}
-        // @ts-expect-error internal prop
-        __css={__css}>
+        {...(svgProps as {})}
+        {...(props as BoxProps)}
+        {...__internalProps({ __css })}
+      >
         <title>{title}</title>
         <circle cx={16} cy={16} r={r} opacity={1 / 8} />
         <Box
           as="circle"
           {...(circleProps as {})}
-          // @ts-expect-error internal prop
-          __css={__circleCss}
+          {...__internalProps({
+            __css: __circleCss,
+          })}
         />
       </Box>
     )

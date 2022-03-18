@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box, BoxProps } from './Box'
 import type { ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export type CardProps = BoxProps
 /**
@@ -16,8 +17,7 @@ export const Card: ForwardRef<HTMLDivElement, CardProps> = React.forwardRef(
         ref={ref}
         variant="primary"
         {...props}
-        // @ts-expect-error
-        __themeKey="cards"
+        {...__internalProps({ __themeKey: 'cards' })}
       />
     )
   }

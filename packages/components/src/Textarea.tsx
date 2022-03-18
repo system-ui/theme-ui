@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Box, BoxOwnProps } from './Box'
+import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { Assign, ForwardRef } from './types'
+import { __internalProps } from './util'
 
 export interface TextareaProps
   extends Assign<React.ComponentPropsWithRef<'textarea'>, BoxOwnProps> {}
@@ -20,21 +21,22 @@ export const Textarea: ForwardRef<HTMLTextAreaElement, TextareaProps> =
         ref={ref}
         as="textarea"
         variant="textarea"
-        {...props}
-        // @ts-expect-error internal prop
-        __themeKey="forms"
-        __css={{
-          display: 'block',
-          width: '100%',
-          p: 2,
-          appearance: 'none',
-          fontSize: 'inherit',
-          lineHeight: 'inherit',
-          border: '1px solid',
-          borderRadius: 4,
-          color: 'inherit',
-          bg: 'transparent',
-        }}
+        {...(props as BoxProps)}
+        {...__internalProps({
+          __themeKey: 'forms',
+          __css: {
+            display: 'block',
+            width: '100%',
+            p: 2,
+            appearance: 'none',
+            fontSize: 'inherit',
+            lineHeight: 'inherit',
+            border: '1px solid',
+            borderRadius: 4,
+            color: 'inherit',
+            bg: 'transparent',
+          },
+        })}
       />
     )
   })
