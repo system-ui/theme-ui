@@ -6,7 +6,7 @@ import {
   jsx,
   useTheme,
 } from '@emotion/react'
-import React, { ComponentProps, ComponentPropsWithRef, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import {
   css,
   get,
@@ -76,14 +76,17 @@ export const __isBoxStyledSystemProp = (prop: string) =>
   (boxSystemProps as readonly string[]).includes(prop)
 
 const pickSystemProps = (props: BoxOwnProps) => {
-  const res: Pick<BoxOwnProps, typeof boxSystemProps[number]> = {}
-  for (const key of boxSystemProps) {
-    ;(res as Record<string, unknown>)[key] = props[key]
-  }
+  const res: Partial<Pick<BoxOwnProps, typeof boxSystemProps[number]>> = {}
+  for (const key of boxSystemProps) res[key] = props[key]
+
   return res
 }
 
-const __Box = forwardRef<any, BoxProps>(function Box(props, ref) {
+/**
+ * Use the Box component as a layout primitive to add margin, padding, and colors to content.
+ * @see https://theme-ui.com/components/box
+ */
+export const Box = forwardRef<HTMLElement, BoxProps>(function Box(props, ref) {
   const theme = useTheme()
 
   interface __BoxInternalProps {
@@ -130,39 +133,7 @@ const __Box = forwardRef<any, BoxProps>(function Box(props, ref) {
     delete (rest as Record<string, unknown>)[name]
   })
 
+  console.log('>> Box', { style })
+
   return <Component ref={ref} css={style} {...rest} />
 })
-
-/**
- * Use the Box component as a layout primitive to add margin, padding, and colors to content.
- * @see https://theme-ui.com/components/box
- */
-export const Box = __Box as typeof __Box & {
-  /**
-   * @deprecated
-   */
-  withComponent: <A>(
-    Component: A extends React.ElementType ? A : never
-  ) => React.ForwardRefExoticComponent<
-    BoxProps &
-      React.RefAttributes<
-        A extends React.ElementType
-          ? NonNullable<
-              React.ComponentPropsWithRef<A>['ref']
-            > extends React.Ref<infer R>
-            ? R
-            : never
-          : never
-      >
-  >
-}
-
-Box.withComponent = (component) =>
-  forwardRef(({ as, ...props }, ref) => {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn(
-        '[theme-ui] You’re using the `.withComponent` API on a Theme UI component. This API will be deprecated in the next version; pass the `as` prop instead.'
-      )
-    }
-    return <Box as={component} ref={ref} {...props} />
-  })

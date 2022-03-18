@@ -79,10 +79,8 @@ import {
  */
 describe('components type check', () => {
   it('should pass type check for Elements', () => {
-    const SectionBox = Box.withComponent('section')
-
     const _ = (
-      <SectionBox
+      <Box
         css={{ background: '#eee' }}
         sx={{ py: [1, 2, 3], paddingBlockStart: '2em' }}
         px={[3, 2, 1]}
@@ -286,7 +284,7 @@ describe('components type check', () => {
           </svg>
         </IconButton>
         <MenuButton aria-label="Toggle Menu" />
-      </SectionBox>
+      </Box>
     )
   })
 
@@ -411,30 +409,6 @@ describe('components type check', () => {
           }}
         />
       `).toInfer('_ref', 'HTMLDivElement | null')
-    })
-
-    it("Flex.withComponent('form')#ref infers HTMLFormElement | null", () => {
-      expectSnippet(`    
-        const FormFlex = Flex.withComponent('form');
-  
-        <FormFlex
-          ref={ref => {
-            const _ref = ref;
-          }}
-        />
-      `).toInfer('_ref', 'HTMLFormElement | null')
-    })
-
-    it("Box.withComponent('button')#ref infers HTMLButtonElement | null", () => {
-      expectSnippet(`    
-        const ButtonBox = Box.withComponent('button');
-  
-        <ButtonBox
-          ref={ref => {
-            const _ref = ref;
-          }}
-        />
-      `).toInfer('_ref', 'HTMLButtonElement | null')
     })
   })
 })
