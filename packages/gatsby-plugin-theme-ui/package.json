@@ -9,7 +9,6 @@
     "react": "^16 || ^17",
     "theme-ui": ">=0.12.0",
     "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@mdx-js/react": "^1"
   },
   "keywords": [
