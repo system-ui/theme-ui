@@ -76,7 +76,8 @@ export const LiveCode = ({ children, preview, xray }) => {
         theme={liveTheme}
         code={code}
         scope={scope}
-        transformCode={transformCode}>
+        transformCode={transformCode}
+      >
         <LivePreview />
       </LiveProvider>
     )
@@ -87,13 +88,15 @@ export const LiveCode = ({ children, preview, xray }) => {
       theme={liveTheme}
       code={code}
       scope={scope}
-      transformCode={transformCode}>
+      transformCode={transformCode}
+    >
       <div
         sx={{
           p: 3,
           variant: xray ? 'styles.xray' : null,
           border: (t) => `1px solid ${t.colors.muted}`,
-        }}>
+        }}
+      >
         <LivePreview />
         <LiveError
           sx={{
@@ -106,12 +109,7 @@ export const LiveCode = ({ children, preview, xray }) => {
           }}
         />
       </div>
-      <Themed.pre
-        sx={{
-          p: 0,
-          mt: 0,
-          mb: 3,
-        }}>
+      <Themed.pre sx={{ p: 0, mt: 0, mb: 3 }}>
         <LiveEditor padding="1rem" />
       </Themed.pre>
     </LiveProvider>
@@ -141,7 +139,8 @@ const Code = (props) => {
             px: 3,
             py: 2,
             fontWeight: 'bold',
-          }}>
+          }}
+        >
           {props.filename}
         </Text>
         <Prism {...props} sx={{ mt: 0 }} />

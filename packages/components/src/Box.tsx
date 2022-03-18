@@ -133,7 +133,5 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(props, ref) {
     delete (rest as Record<string, unknown>)[name]
   })
 
-  console.log('>> Box', { style })
-
   return <Component ref={ref} css={style} {...rest} />
 })
