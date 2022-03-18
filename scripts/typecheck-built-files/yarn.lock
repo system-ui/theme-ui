@@ -127,10 +127,8 @@
     "@theme-ui/css" "0.13.0"
     deepmerge "^4.2.2"
 
-"@theme-ui/components@0.13.0":
+"@theme-ui/components@0.13.0", "@theme-ui/components@file:../../packages/components":
   version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.13.0.tgz#fe6e11fd8b2a4335973bdda826aafdbf4cd0d00e"
-  integrity sha512-LTp7EEq/naH3IPKj9p/3KYdkXRTuv0A7Bka+MFYCSAgI+eozItGMDddIo66NJaGXlwGZ3oiC8VhLs6kOgkYBMA==
   dependencies:
     "@styled-system/color" "^5.1.2"
     "@styled-system/should-forward-prop" "^5.1.2"
@@ -154,10 +152,8 @@
   dependencies:
     csstype "^3.0.10"
 
-"@theme-ui/mdx@0.13.0":
+"@theme-ui/mdx@0.13.0", "@theme-ui/mdx@file:../../packages/mdx":
   version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@theme-ui/mdx/-/mdx-0.13.0.tgz#3ef70b30aeb928b6bd6e446ed131e4c2e5a1540d"
-  integrity sha512-l1+j15YPqmw3GelXu04iBkXDfJnO54MFVlTRoHw76x7QRosLCoMHRi7hIT7S7Qm2wgijpYoeapkhJF9c48hARw==
   dependencies:
     "@theme-ui/core" "0.13.0"
     "@theme-ui/css" "0.13.0"
@@ -288,3 +284,8 @@ styled-system@^5.1.5:
     "@theme-ui/css" "0.13.0"
     "@theme-ui/mdx" "0.13.0"
     "@theme-ui/theme-provider" "0.13.0"
+
+typescript@^4:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.2.tgz#fe12d2727b708f4eef40f51598b3398baa9611d4"
+  integrity sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==
