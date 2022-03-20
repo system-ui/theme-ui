@@ -2,7 +2,7 @@
 
 ## v0.14
 
-- `@theme-ui/components` and other Theme UI packagss no longe depends on
+- `@theme-ui/components` and other Theme UI packages no longer depend on
   `@emotion/styled`.
 
 - Previously deprecated `.withComponent` API was removed.
