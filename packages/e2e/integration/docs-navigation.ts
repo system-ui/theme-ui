@@ -62,6 +62,12 @@ describe('docs navigation', () => {
 
     cy.percySnapshot('@theme-ui/color docs')
   })
+
+  it('displays 404 page', () => {
+    cy.visit(`/not-found-${Math.random()}`, { failOnStatusCode: false })
+    cy.findByRole('heading').should('have.text', '404')
+    cy.findByText('Page not found')
+  })
 })
 
 export {}
