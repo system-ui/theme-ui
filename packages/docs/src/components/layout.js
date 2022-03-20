@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Themed, useColorMode } from 'theme-ui'
-import { useState, useRef } from 'react'
+import { css, jsx, Themed, useColorMode } from 'theme-ui'
+import { useState, useRef, useEffect } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
@@ -45,10 +45,12 @@ export default function DocsLayout(props) {
   const nav = useRef(null)
   const [mode, setMode] = useColorMode()
 
+  const { pathname } = props.location
+  const isLanding = pathname === '/'
+
   const fullwidth =
-    (props.pageContext.frontmatter &&
-      props.pageContext.frontmatter.fullwidth) ||
-    props.location.pathname === '/'
+    isLanding ||
+    (props.pageContext.frontmatter && props.pageContext.frontmatter.fullwidth)
 
   const showNav = !props.pageContext?.frontmatter?.hidenav
 
@@ -62,16 +64,22 @@ export default function DocsLayout(props) {
         sx={{
           flexDirection: 'column',
           minHeight: '100vh',
-        }}>
+        }}
+      >
         {showNav && (
           <Flex
             as="header"
             sx={{
+              zIndex: 1,
               height: 64,
               px: 3,
               alignItems: 'center',
               justifyContent: 'space-between',
-            }}>
+              position: isLanding ? 'initial' : 'sticky',
+              top: 0,
+              background: 'background',
+            }}
+          >
             <Flex sx={{ alignItems: 'center' }}>
               <MenuButton
                 onClick={(e) => {
@@ -99,7 +107,8 @@ export default function DocsLayout(props) {
                     ml: 2,
                     whiteSpace: 'pre',
                   }}
-                  onClick={() => setMode(nextColorMode)}>
+                  onClick={() => setMode(nextColorMode)}
+                >
                   {getModeName(mode)}
                 </Button>
               </Flex>
@@ -112,7 +121,8 @@ export default function DocsLayout(props) {
             alignItems: 'flex-start',
             display: ['block', 'flex'],
             height: '100%',
-          }}>
+          }}
+        >
           <Sidebar
             ref={nav}
             role="navigation"
@@ -130,8 +140,9 @@ export default function DocsLayout(props) {
             }}
             open={menuOpen}
             components={sidebar}
-            pathname={props.location.pathname}
+            pathname={pathname}
             sx={{
+              background: 'background',
               display: [null, fullwidth ? 'none' : 'block'],
               width: 256,
               flex: 'none',
@@ -141,23 +152,68 @@ export default function DocsLayout(props) {
               pt: 3,
               pb: 4,
               mt: [64, 0],
+              position: [null, 'sticky'],
+              top: [null, '64px'],
             }}
           />
-          <main
-            id="content"
+          <div
             sx={{
               width: '100%',
               minWidth: 0,
-              maxWidth: fullwidth ? 'none' : 768,
-              mx: 'auto',
-              px: fullwidth ? 0 : 3,
-            }}>
-            {props.children}
-            <EditLink />
-            {!fullwidth && <Pagination />}
-          </main>
+
+              position: 'relative',
+            }}
+          >
+            {!isLanding && <HeaderScrollShadow />}
+            <main
+              id="content"
+              sx={{
+                maxWidth: fullwidth ? 'none' : 768,
+                mx: 'auto',
+                px: fullwidth ? 0 : 3,
+              }}
+            >
+              {props.children}
+              <EditLink />
+              {!fullwidth && <Pagination />}
+            </main>
+          </div>
         </Box>
       </Flex>
     </Themed.root>
+  )
+}
+
+function HeaderScrollShadow() {
+  const ref = useRef()
+
+  useEffect(() => {
+    const onScroll = () => {
+      const { current } = ref
+      if (current) {
+        current.style.opacity = window.scrollY > 0 ? 1 : 0
+      }
+    }
+
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      sx={{
+        content: "''",
+        top: '64px',
+        transform: 'translateY(-64px)',
+        left: 0,
+        right: 0,
+        height: '64px',
+        position: 'sticky',
+        boxShadow: '0 12px 18px -3px rgb(0 0 0 / 0.03)',
+        transition: 'opacity 250ms linear',
+        opacity: 0,
+      }}
+    />
   )
 }
