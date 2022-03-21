@@ -88,13 +88,20 @@ export const __createColorStyles = (theme: Theme = {}) => {
   const styles = __createColorProperties(colors, modes)
 
   if (printColorModeName) {
-    const mode =
-      printColorModeName === 'initial' ||
-      printColorModeName === initialColorModeName
-        ? colors
-        : modes[printColorModeName]
-    styles['@media print'] = __objectToVars('colors', mode)
+    let printMode = modes[printColorModeName]
+    if (!printMode && printColorModeName === initialColorModeName)
+      printMode = colors
+
+    if (printMode) {
+      styles['@media print'] = __objectToVars('colors', printMode)
+    } else {
+      console.error(
+        `Theme UI \`printColorModeName\` was not found in colors scale`,
+        { colors, printColorModeName }
+      )
+    }
   }
+
   const colorToVarValue = (color: string) => toVarValue(`colors-${color}`)
 
   return css({
