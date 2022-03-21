@@ -332,7 +332,7 @@ exports[`Close renders 1`] = `
   title="Close"
 >
   <svg
-    fill="currentolor"
+    fill="currentColor"
     height="24"
     viewBox="0 0 24 24"
     width="24"
