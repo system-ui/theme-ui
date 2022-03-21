@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { expecter } from '@theme-ui/test-utils'
+import { expecter, AssertTrue, IsExact } from '@theme-ui/test-utils'
 
 import {
   Alert,
@@ -70,6 +70,7 @@ import {
   Textarea,
   TextareaProps,
 } from '../'
+import { useRef } from 'react'
 
 /**
  * This isn't technically a Jest test, as Jest won't catch any type errors.
@@ -79,14 +80,15 @@ import {
  */
 describe('components type check', () => {
   it('should pass type check for Elements', () => {
-    const SectionBox = Box.withComponent('section')
-
     const _ = (
-      <SectionBox
+      <Box
         css={{ background: '#eee' }}
         sx={{ py: [1, 2, 3], paddingBlockStart: '2em' }}
         px={[3, 2, 1]}
-        ref={(ref) => ref}>
+        ref={(ref) => {
+          console.log(ref?.style?.alignItems)
+        }}
+      >
         <Box
           onPointerEnter={(e) => e.pointerType}
           ref={(ref) => ref}
@@ -100,7 +102,11 @@ describe('components type check', () => {
         <Grid
           width={[128, null, 192]}
           backgroundColor="#eee"
-          ref={(ref) => ref}>
+          ref={(ref) => {
+            const _ref = ref!
+            type _ = AssertTrue<IsExact<typeof _ref, HTMLDivElement>>
+          }}
+        >
           <Box bg="primary" ref={(primaryBox) => primaryBox}>
             Box
           </Box>
@@ -136,7 +142,12 @@ describe('components type check', () => {
           <option>Boop</option>
         </Select>
         <Textarea defaultValue="Hello" rows={8} />
-        <Label ref={(ref) => ref}>
+        <Label
+          ref={(ref) => {
+            const _ref = ref!
+            type _ = AssertTrue<IsExact<typeof _ref, HTMLLabelElement>>
+          }}
+        >
           <Radio name="dark-mode" value="true" defaultChecked={true} />
           Dark Mode
         </Label>
@@ -233,7 +244,8 @@ describe('components type check', () => {
             justifyContent: 'center',
             color: 'background',
             bg: 'primary',
-          }}>
+          }}
+        >
           <Heading>Aspect Ratio</Heading>
         </AspectRatio>
         <AspectImage ratio={4 / 3} src="./example.png" />
@@ -258,7 +270,8 @@ describe('components type check', () => {
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            fill="currentcolor">
+            fill="currentcolor"
+          >
             <circle
               r={11}
               cx={12}
@@ -270,7 +283,7 @@ describe('components type check', () => {
           </svg>
         </IconButton>
         <MenuButton aria-label="Toggle Menu" />
-      </SectionBox>
+      </Box>
     )
   })
 
@@ -382,43 +395,9 @@ describe('components type check', () => {
     ;((props: TextareaProps) => <Textarea {...props} />)({})
   })
 
-  describe('ref types inference', () => {
-    const expectSnippet = expecter(`
-      import { Box, Flex } from './packages/components'
-    `)
+  function __test__any_ref_is_assignable_to_Box_ref_prop() {
+    const ref = useRef<HTMLSelectElement>()
 
-    it('Box#ref infers HTMLDivElement | null', () => {
-      expectSnippet(`    
-        <Box
-          ref={ref => {
-            const _ref = ref;
-          }}
-        />
-      `).toInfer('_ref', 'HTMLDivElement | null')
-    })
-
-    it("Flex.withComponent('form')#ref infers HTMLFormElement | null", () => {
-      expectSnippet(`    
-        const FormFlex = Flex.withComponent('form');
-  
-        <FormFlex
-          ref={ref => {
-            const _ref = ref;
-          }}
-        />
-      `).toInfer('_ref', 'HTMLFormElement | null')
-    })
-
-    it("Box.withComponent('button')#ref infers HTMLButtonElement | null", () => {
-      expectSnippet(`    
-        const ButtonBox = Box.withComponent('button');
-  
-        <ButtonBox
-          ref={ref => {
-            const _ref = ref;
-          }}
-        />
-      `).toInfer('_ref', 'HTMLButtonElement | null')
-    })
-  })
+    const _ = <Box as="select" ref={ref} />
+  }
 })

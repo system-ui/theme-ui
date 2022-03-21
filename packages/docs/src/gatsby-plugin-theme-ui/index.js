@@ -61,8 +61,7 @@ const theme = {
     },
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -102,7 +101,7 @@ const theme = {
     },
     caps: {
       textTransform: 'uppercase',
-      letterSpacing: '0.2em',
+      letterSpacing: '0.5px',
     },
   },
   buttons: {

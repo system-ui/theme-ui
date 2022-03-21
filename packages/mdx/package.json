@@ -15,7 +15,6 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@mdx-js/react": "^1 || ^2",
     "react": "^16 || ^17"
   },

@@ -13,6 +13,7 @@
     "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",
     "logo": "yarn workspace docs logo",
     "postinstall": "preconstruct dev",
+    "dev": "preconstruct dev",
     "version:bump": "lerna version",
     "version:bump-next": "lerna version prerelease --preid alpha --exact",
     "release": "yarn clean && yarn build && yarn shipit",

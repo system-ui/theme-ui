@@ -1,0 +1,1538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+  color: white;
+  background-color: primary;
+  border-radius: 4px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`AspectImage renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+<div
+  className="emotion-0"
+>
+  <div
+    className="emotion-1"
+  />
+  <div
+    className="emotion-2"
+  >
+    <img
+      className="emotion-3"
+    />
+  </div>
+</div>
+`;
+
+exports[`AspectRatio renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+<div
+  className="emotion-0"
+>
+  <div
+    className="emotion-1"
+  />
+  <div
+    className="emotion-2"
+  />
+</div>
+`;
+
+exports[`Avatar renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: 9999px;
+  width: 48px;
+  height: 48px;
+  border-radius: 99999px;
+}
+
+<img
+  className="emotion-0"
+  height={48}
+  width={48}
+/>
+`;
+
+exports[`Badge renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: inline-block;
+  vertical-align: baseline;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 2px;
+  color: white;
+  background-color: primary;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Card renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 16px;
+  background-color: muted;
+  border-radius: 4px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Checkbox renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  color: primary;
+  background-color: highlight;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-3 {
+  display: none;
+}
+
+input:checked~.emotion-3 {
+  color: primary;
+}
+
+input:focus~.emotion-3 {
+  color: primary;
+  background-color: highlight;
+}
+
+<div
+  className="emotion-0"
+>
+  <input
+    className="emotion-1"
+    type="checkbox"
+  />
+  <svg
+    aria-hidden="true"
+    className="emotion-2"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="emotion-3"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Close renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+}
+
+<button
+  aria-label="Close"
+  className="emotion-0"
+  title="Close"
+>
+  <svg
+    fill="currentColor"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Container renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: container;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Divider renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  color: gray;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 0;
+  border-bottom: 1px solid;
+}
+
+<hr
+  className="emotion-0"
+/>
+`;
+
+exports[`Donut renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  color: primary;
+}
+
+<svg
+  aria-valuemax={1}
+  aria-valuemin={0}
+  aria-valuenow={0}
+  className="emotion-0"
+  fill="none"
+  height={128}
+  role="img"
+  stroke="currentcolor"
+  strokeWidth={2}
+  viewBo="0 0 32 32"
+  width={128}
+>
+  <title>
+    Donut
+  </title>
+  <circle
+    cx={16}
+    cy={16}
+    opacity={0.125}
+    r={14}
+  />
+  <circle
+    cx={16}
+    cy={16}
+    r={14}
+    strokeDasharray={87.96459430051421}
+    strokeDashoffset={87.96459430051421}
+    transform="rotate(-90 16 16)"
+  />
+</svg>
+`;
+
+exports[`Embed renders with box system props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+}
+
+<div
+  className="emotion-0"
+>
+  <iframe
+    allowFullScreen={true}
+    className="emotion-1"
+    frameBorder={0}
+    height={315}
+    width={560}
+  />
+</div>
+`;
+
+exports[`Embed renders with title 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+}
+
+<div
+  className="emotion-0"
+>
+  <iframe
+    allowFullScreen={true}
+    className="emotion-1"
+    frameBorder={0}
+    height={315}
+    title="Embed"
+    width={560}
+  />
+</div>
+`;
+
+exports[`Field renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-2:autofill,
+.emotion-2:autofill:hover,
+.emotion-2:autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:autofill:first-line,
+.emotion-2:autofill:hover:first-line,
+.emotion-2:autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+.emotion-2:-webkit-autofill,
+.emotion-2:-webkit-autofill:hover,
+.emotion-2:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:-webkit-autofill:first-line,
+.emotion-2:-webkit-autofill:hover:first-line,
+.emotion-2:-webkit-autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+<div
+  className="emotion-0"
+>
+  <label
+    className="emotion-1"
+  />
+  <input
+    className="emotion-2"
+  />
+</div>
+`;
+
+exports[`Field renders with id prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-2:autofill,
+.emotion-2:autofill:hover,
+.emotion-2:autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:autofill:first-line,
+.emotion-2:autofill:hover:first-line,
+.emotion-2:autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+.emotion-2:-webkit-autofill,
+.emotion-2:-webkit-autofill:hover,
+.emotion-2:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-2:-webkit-autofill:first-line,
+.emotion-2:-webkit-autofill:hover:first-line,
+.emotion-2:-webkit-autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+<div
+  className="emotion-0"
+>
+  <label
+    className="emotion-1"
+    htmlFor="test-field"
+  />
+  <input
+    className="emotion-2"
+    id="test-field"
+  />
+</div>
+`;
+
+exports[`Flex renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`Heading renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: heading;
+  font-weight: heading;
+  line-height: heading;
+  font-size: 32px;
+}
+
+<h2
+  className="emotion-0"
+/>
+`;
+
+exports[`IconButton renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+}
+
+<button
+  className="emotion-0"
+/>
+`;
+
+exports[`Image renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 99999px;
+}
+
+<img
+  className="emotion-0"
+/>
+`;
+
+exports[`Input renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-0:autofill,
+.emotion-0:autofill:hover,
+.emotion-0:autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-0:autofill:first-line,
+.emotion-0:autofill:hover:first-line,
+.emotion-0:autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+.emotion-0:-webkit-autofill,
+.emotion-0:-webkit-autofill:hover,
+.emotion-0:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 1000px var(--theme-ui-input-autofill-bg);
+  font-size: inherit;
+}
+
+.emotion-0:-webkit-autofill:first-line,
+.emotion-0:-webkit-autofill:hover:first-line,
+.emotion-0:-webkit-autofill:focus:first-line {
+  font-size: 1rem;
+}
+
+<input
+  className="emotion-0"
+/>
+`;
+
+exports[`Label renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<label
+  className="emotion-0"
+/>
+`;
+
+exports[`Link renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  font-weight: normal;
+}
+
+<a
+  className="emotion-0"
+/>
+`;
+
+exports[`MenuButton renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+<button
+  aria-label="Toggle Menu"
+  className="emotion-0"
+  title="Menu"
+>
+  <svg
+    className="emotion-1"
+    fill="currentColor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Message renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding: 16px;
+  padding-left: 12px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: primary;
+  border-radius: 4px;
+  background-color: highlight;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`NavLink renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  font-weight: normal;
+}
+
+.emotion-0:hover,
+.emotion-0:focus,
+.emotion-0.active {
+  color: primary;
+}
+
+<a
+  className="emotion-0"
+/>
+`;
+
+exports[`Paragraph renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: body;
+  font-weight: body;
+  line-height: body;
+}
+
+<p
+  className="emotion-0"
+/>
+`;
+
+exports[`Progress renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  color: primary;
+  background-color: gray;
+  border-radius: 9999px;
+  border: none;
+}
+
+.emotion-0::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.emotion-0::-webkit-progress-value {
+  background-color: currentcolor;
+}
+
+.emotion-0::-moz-progress-bar {
+  background-color: currentcolor;
+}
+
+<progress
+  className="emotion-0"
+/>
+`;
+
+exports[`Radio renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 9999px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  background-color: highlight;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 9999px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-3 {
+  display: none;
+}
+
+input:checked~.emotion-3 {
+  color: primary;
+}
+
+input:focus~.emotion-3 {
+  background-color: highlight;
+}
+
+<div
+  className="emotion-0"
+>
+  <input
+    className="emotion-1"
+    type="radio"
+  />
+  <svg
+    aria-hidden="true"
+    className="emotion-2"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="emotion-3"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Select renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -28px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  pointer-events: none;
+}
+
+<div
+  className="emotion-0"
+>
+  <select
+    className="emotion-1"
+  />
+  <svg
+    className="emotion-2"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Select renders with custom icon 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+}
+
+<div
+  className="emotion-0"
+>
+  <select
+    className="emotion-1"
+  />
+  <svg>
+    <path
+      d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Select renders with style props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -28px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  pointer-events: none;
+}
+
+<div
+  className="emotion-0"
+>
+  <select
+    className="emotion-1"
+    value="hello"
+  />
+  <svg
+    className="emotion-2"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Slider renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 9999px;
+  color: inherit;
+  background-color: gray;
+}
+
+.emotion-0:focus {
+  outline: none;
+  color: primary;
+}
+
+.emotion-0::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 9999px;
+}
+
+.emotion-0::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 9999px;
+}
+
+.emotion-0::-ms-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 9999px;
+}
+
+<input
+  className="emotion-0"
+  type="range"
+/>
+`;
+
+exports[`Spinner renders 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  color: primary;
+  overflow: visible;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  transform-origin: 50% 50%;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+<svg
+  className="emotion-0"
+  fill="none"
+  height={48}
+  role="img"
+  stroke="currentColor"
+  strokeWidth={4}
+  viewBox="0 0 32 32"
+  width={48}
+>
+  <title>
+    Loading...
+  </title>
+  <circle
+    cx={16}
+    cy={16}
+    opacity={0.125}
+    r={12}
+  />
+  <circle
+    className="emotion-1"
+    cx={16}
+    cy={16}
+    r={12}
+    strokeDasharray={75.39822368615503}
+    strokeDashoffset={56.548667764616276}
+  />
+</svg>
+`;
+
+exports[`Switch renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: gray;
+  border-radius: 18px;
+  height: 22px;
+  width: 40px;
+  margin-right: 8px;
+  padding: 2px;
+}
+
+input:disabled~.emotion-2 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emotion-2>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transition: -webkit-transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transition: transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+input:checked~.emotion-2 {
+  background-color: primary;
+}
+
+input:checked~.emotion-2>div {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<label
+  className="emotion-0"
+>
+  <input
+    className="emotion-1"
+    type="checkbox"
+  />
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-3"
+    />
+  </div>
+  <span />
+</label>
+`;
+
+exports[`Text renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-size: 20px;
+}
+
+<span
+  className="emotion-0"
+/>
+`;
+
+exports[`Textarea renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
+
+<textarea
+  className="emotion-0"
+/>
+`;

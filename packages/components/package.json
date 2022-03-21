@@ -3,7 +3,7 @@
   "version": "0.13.0",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/theme-ui-components.cjs.d.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
@@ -15,7 +15,6 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "react": "^16 || ^17"
   },
   "publishConfig": {

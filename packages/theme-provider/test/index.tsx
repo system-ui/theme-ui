@@ -61,8 +61,8 @@ test('renders with styles', () => {
       {mdx('h1', null, 'Hello')}
     </ThemeProvider>
   )
-  expect(json).toMatchSnapshot()
   expect(json).toHaveStyleRule('color', 'tomato')
+  expect(json).toMatchSnapshot()
 })
 
 test('renders with nested provider', async () => {
