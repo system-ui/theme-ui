@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color-modes",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "main": "dist/theme-ui-color-modes.cjs.js",
   "module": "dist/theme-ui-color-modes.esm.js",
   "types": "dist/theme-ui-color-modes.cjs.d.ts",
@@ -14,8 +14,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/core": "0.13.0",
-    "@theme-ui/css": "0.13.0",
+    "@theme-ui/core": "0.13.1",
+    "@theme-ui/css": "0.13.1",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

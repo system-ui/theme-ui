@@ -1,3 +1,17 @@
+# v0.13.1 (Wed Jan 05 2022)
+
+#### 🐛 Bug Fix
+
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Akash ([@appsparkler](https://github.com/appsparkler))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.12.0 (Thu Oct 28 2021)
 
 :tada: This release contains work from a new contributor! :tada:

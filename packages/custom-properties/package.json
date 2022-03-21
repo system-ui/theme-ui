@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/custom-properties",
   "description": "Generate CSS custom properties for use with Theme UI",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "source": "src/index.ts",
   "main": "dist/theme-ui-custom-properties.cjs.js",
   "module": "dist/theme-ui-custom-properties.esm.js",
@@ -16,7 +16,7 @@
     "pluralize": "^8.0.0"
   },
   "devDependencies": {
-    "@theme-ui/css": "0.13.0",
+    "@theme-ui/css": "0.13.1",
     "@types/pluralize": "^0.0.29"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"

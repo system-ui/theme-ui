@@ -1,3 +1,22 @@
+# v0.13.1 (Wed Jan 05 2022)
+
+#### 🐛 Bug Fix
+
+- css: Make background a theme-aware property [#2056](https://github.com/system-ui/theme-ui/pull/2056) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- css: Make background a theme-aware property ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Akash ([@appsparkler](https://github.com/appsparkler))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.13.0 (Mon Dec 27 2021)
 
 ### Release Notes
