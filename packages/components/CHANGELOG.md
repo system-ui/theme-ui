@@ -1,3 +1,15 @@
+# v0.14.1 (Tue Mar 22 2022)
+
+#### 🐛 Bug Fix
+
+- fix(components): add missing forwardRef and fix Switch props ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.13.0 (Mon Dec 27 2021)
 
 ### Release Notes

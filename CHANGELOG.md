@@ -1,3 +1,16 @@
+# v0.14.1 (Tue Mar 22 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/components`
+  - fix(components): add missing forwardRef and fix Switch props ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.14.0 (Mon Mar 21 2022)
 
 :tada: This release contains work from new contributors! :tada:
