@@ -3,7 +3,8 @@
  */
 
 import React from 'react'
-import { renderJSON } from '@theme-ui/test-utils'
+import { renderJSON, render, waitFor } from '@theme-ui/test-utils'
+
 import { ThemeProvider } from 'theme-ui'
 
 import { Box } from '..'
@@ -91,5 +92,17 @@ describe('Box', () => {
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')
     expect(json).toHaveStyleRule('padding', '32px')
+  })
+})
+
+test('accepts ref', async () => {
+  let ref: HTMLElement | null = null
+  render(
+    <ThemeProvider theme={theme}>
+      <Box ref={(r) => (ref = r)} />
+    </ThemeProvider>
+  )
+  await waitFor(() => {
+    expect(ref).toBeTruthy()
   })
 })
