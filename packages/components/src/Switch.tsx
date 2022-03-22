@@ -11,7 +11,7 @@ const GUTTER = 2
 const SIZE = 18
 
 export interface SwitchProps
-  extends Assign<React.ComponentProps<'input'>, BoxOwnProps> {
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
   label?: string
 }
 
