@@ -9,7 +9,7 @@
 
 - `as` prop was removed from Themed.X components from `@theme-ui/mdx`.
 
-  - All occurences of `<Themed.X as="element">` can be changed to
+  - All occurrences of `<Themed.X as="element">` can be changed to
     `<element sx={t => t.styles.X} />`.
 
 ## v0.13
