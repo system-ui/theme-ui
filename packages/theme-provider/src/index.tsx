@@ -17,7 +17,7 @@ const RootStyles = () =>
       const theme = emotionTheme as Theme
       const { useRootStyles } = theme.config || theme
 
-      if (useRootStyles === false || !theme.styles?.root) {
+      if (!useRootStyles || !theme.styles?.root) {
         return null
       }
 
