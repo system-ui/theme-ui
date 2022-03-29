@@ -1,13 +1,19 @@
 /** @jsx jsx */
-import { jsx, Layout, Header, Main, Container } from 'theme-ui'
+import { BaseStyles, jsx } from 'theme-ui'
 
-export default (props) => (
-  <Layout>
-    <Header>
-      <h2>Theme UI Gatsby Example</h2>
-    </Header>
-    <Main>
-      <Container>{props.children}</Container>
-    </Main>
-  </Layout>
+const Layout = (props) => (
+  <BaseStyles>
+    <article
+      sx={{
+        maxWidth: 768,
+        px: 2,
+        py: 4,
+        mx: 'auto',
+      }}
+    >
+      {props.children}
+    </article>
+  </BaseStyles>
 )
+
+export default Layout
