@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { css, jsx, Themed, useColorMode } from 'theme-ui'
+import { Fragment } from 'react'
+import { jsx, useColorMode } from 'theme-ui'
 import { useState, useRef, useEffect } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
@@ -57,7 +58,7 @@ export default function DocsLayout(props) {
   const nextColorMode = modes[(modes.indexOf(mode) + 1) % modes.length]
 
   return (
-    <Themed.root>
+    <Fragment>
       <Head {...props} />
       <SkipLink>Skip to content</SkipLink>
       <Flex
@@ -180,7 +181,7 @@ export default function DocsLayout(props) {
           </div>
         </Box>
       </Flex>
-    </Themed.root>
+    </Fragment>
   )
 }
 

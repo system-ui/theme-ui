@@ -16,7 +16,7 @@ export default ({ preset: presetName }) => {
   const preset = presets[presetName]
 
   return (
-    <div>
+    <>
       <Helmet>
         <link
           rel="stylesheet"
@@ -59,6 +59,6 @@ export default ({ preset: presetName }) => {
           />
         </Themed.root>
       </ThemeContext.Provider>
-    </div>
+    </>
   )
 }
