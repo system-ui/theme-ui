@@ -1,4 +1,4 @@
-export default {
+const theme = {
   colors: {
     text: '#000',
     background: '#fff',
@@ -6,8 +6,7 @@ export default {
     secondary: '#609',
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -30,7 +29,13 @@ export default {
       },
     },
     code: {
+      borderRadius: 2,
+      bg: '#eee',
+      px: 1,
       fontFamily: 'monospace',
+      fontSize: 'inherit',
     },
   },
 }
+
+export default theme
