@@ -16,7 +16,7 @@
   "peerDependencies": {
     "@emotion/react": "^11",
     "@mdx-js/react": "^1 || ^2",
-    "react": "^16 || ^17"
+    "react": ">16"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",

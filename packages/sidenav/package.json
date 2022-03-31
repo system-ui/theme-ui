@@ -18,7 +18,7 @@
     "@emotion/react": "^11",
     "@mdx-js/react": "^1 || ^2",
     "@types/mdx-js__react": "^1 || ^2",
-    "react": "^16 || ^17"
+    "react": ">16"
   },
   "devDependencies": {
     "react": "^17.0.1"

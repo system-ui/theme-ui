@@ -20,8 +20,8 @@
     "@theme-ui/theme-provider": "0.14.1"
   },
   "peerDependencies": {
-    "react": "^16 || ^17",
-    "react-dom": "^16 || ^17"
+    "react": ">16",
+    "react-dom": ">16"
   },
   "keywords": [
     "theme-ui",

@@ -20,7 +20,7 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "react": "^16 || ^17"
+    "react": ">16"
   },
   "devDependencies": {
     "react": "^17.0.1"
