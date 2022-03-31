@@ -17,8 +17,8 @@
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^12.0.7",
     "next": "^12.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18",
+    "react-dom": "^18",
     "theme-ui": "latest"
   },
   "devDependencies": {
