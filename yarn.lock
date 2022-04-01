@@ -45,16 +45,16 @@
   integrity sha512-nEXcOa8UVHYzVdszPKTGldoE2h1mI2RvrHpqtOpjTNuUOy3eb8QuaAu8nSI2AsUPEWFToPLgdxgz90iAeDInRg==
 
 "@auto-it/conventional-commits@^10.32.3":
-  version "10.32.3"
-  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-10.32.3.tgz#fadc7d2ab44a08e1d6769727f168136a7ffe9df3"
-  integrity sha512-+qRKv6EYft0R18UO6qc9CcssmDe2w4snR0bg5r40xj5jsAEwtHqgbCSxwUjA8Es/X9l1QskfiWh4/isfJ5sdRQ==
+  version "10.36.5"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-10.36.5.tgz#53262c6c097a7baf340fc985de382ad57c320a6e"
+  integrity sha512-FCYdDsgYTvv1oUDcrZl0PFxTRfPLCwmLQAl8ulDH3mVAqssro+HITh2Z1+SZ/b/AaCJQZIc+cD2pMELQasuVUQ==
   dependencies:
-    "@auto-it/core" "10.32.3"
+    "@auto-it/core" "10.36.5"
     array.prototype.flatmap "^1.2.2"
     conventional-changelog-core "^4.2.0"
     conventional-changelog-preset-loader "^2.3.4"
     conventional-commits-parser "^3.1.0"
-    endent "^2.0.1"
+    endent "^2.1.0"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
@@ -7795,15 +7795,6 @@ endent@^2.0.1, endent@^2.1.0:
     fast-json-parse "^1.0.3"
     objectorarray "^1.0.5"
 
-endent@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/endent/-/endent-2.1.0.tgz#5aaba698fb569e5e18e69e1ff7a28ff35373cd88"
-  integrity sha512-r8VyPX7XL8U01Xgnb1CjZ3XV+z90cXIJ9JPE/R9SEC9vpw2P6CfsRPJmp20DppC5N7ZAMCmjYkJIa744Iyg96w==
-  dependencies:
-    dedent "^0.7.0"
-    fast-json-parse "^1.0.3"
-    objectorarray "^1.0.5"
-
 engine.io-client@~4.1.0:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-4.1.4.tgz#0bda5ba4bd87bced2ad00b93c67e133d0fb981ba"
@@ -13980,11 +13971,6 @@ object.values@^1.1.5:
     call-bind "^1.0.2"
     define-properties "^1.1.3"
     es-abstract "^1.19.1"
-
-objectorarray@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/objectorarray/-/objectorarray-1.0.5.tgz#2c05248bbefabd8f43ad13b41085951aac5e68a5"
-  integrity sha512-eJJDYkhJFFbBBAxeh8xW+weHlkI28n2ZdQV/J/DNfWfSKlGEf2xcfAbZTv3riEXHAhL9SVOTs2pRmXiSTf78xg==
 
 objectorarray@^1.0.5:
   version "1.0.5"
