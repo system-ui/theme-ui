@@ -48,7 +48,7 @@
     "@codechecks/client": "0.1.10-beta",
     "@emotion/jest": "^11.6.0",
     "@preconstruct/cli": "^2.1.5",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^13.0.0",
     "@types/jest": "^27.0.3",
     "@types/node": "^17.0.5",
     "@types/react-dom": "^17.0.11",
