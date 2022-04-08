@@ -3,7 +3,7 @@
  * @jsx jsx
  */
 
-import { jsx } from 'theme-ui'
+import { jsx, Theme } from 'theme-ui'
 import { cleanup, act, renderHook } from '@theme-ui/test-utils'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
@@ -57,27 +57,62 @@ describe('renders correct initial values and uses default breakpoints', () => {
   })
 })
 
-test('reads breakpoints from theme', () => {
-  window.matchMedia = mockMediaQueries([
-    'screen and (min-width: 30em)',
-    'screen and (min-width: 45em)',
-  ])
+describe('reads breakpoints from theme', () => {
+  test('simple breakpoints', () => {
+    window.matchMedia = mockMediaQueries([
+      'screen and (min-width: 30em)',
+      'screen and (min-width: 45em)',
+    ])
 
-  const { result } = renderHook(
-    () => {
-      return {
-        value: useResponsiveValue(['a', 'b']),
-        index: useBreakpointIndex(),
-      }
-    },
-    {
-      theme: {
-        breakpoints: ['30em', '45em', '55em'],
+    const { result } = renderHook(
+      () => {
+        return {
+          value: useResponsiveValue(['a', 'b']),
+          index: useBreakpointIndex(),
+        }
       },
-    }
-  )
+      {
+        theme: {
+          breakpoints: ['30em', '45em', '55em'],
+        },
+      }
+    )
 
-  expect(result).toEqual({ value: 'b', index: 2 })
+    expect(result).toEqual({ value: 'b', index: 2 })
+  })
+
+  test('breakpoints containing media queries', () => {
+    const matchMedia = (window.matchMedia = mockMediaQueries([
+      'screen and (min-width: 300px)',
+      'screen and (min-width: 500px) and (max-width: 899px)',
+    ]))
+
+    const theme: Theme = {
+      breakpoints: [
+        '300px',
+        '@media screen and (min-width: 500px) and (max-width: 899px)',
+        '@media screen and (min-width: 900px)',
+      ],
+    }
+
+    const { result } = renderHook(
+      () => {
+        return {
+          value: useResponsiveValue(['a', 'b', 'c', 'd']),
+          index: useBreakpointIndex(),
+        }
+      },
+      { theme }
+    )
+
+    expect(matchMedia).toHaveBeenCalledWith('screen and (min-width: 300px)')
+    expect(matchMedia).toHaveBeenCalledWith(
+      'screen and (min-width: 500px) and (max-width: 899px)'
+    )
+    expect(matchMedia).toHaveBeenCalledWith('screen and (min-width: 900px)')
+
+    expect(result).toEqual({ value: 'c', index: 2 })
+  })
 })
 
 test('responds to resize event', () => {
