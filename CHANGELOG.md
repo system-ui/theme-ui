@@ -1,3 +1,20 @@
+# v0.14.2 (Thu Mar 31 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/theme-provider`, `theme-ui`
+  - fix: change react and react-dom peer dependency to >16 ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: expand docs on meta `theme-color` [#2134](https://github.com/system-ui/theme-ui/pull/2134) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.14.1 (Tue Mar 22 2022)
 
 #### 🐛 Bug Fix
