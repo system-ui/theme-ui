@@ -3,11 +3,11 @@
  * @jsx jsx
  */
 
-import { render, cleanup, act } from '@testing-library/react'
-import { jsx, ThemeProvider } from 'theme-ui'
+import { jsx } from 'theme-ui'
+import { cleanup, act, renderHook } from '@theme-ui/test-utils'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
-const mockMediaQueries = (matches) =>
+const mockMediaQueries = (matches: string[]) =>
   jest.fn().mockImplementation((query) => ({
     matches: matches.includes(query),
   }))
@@ -18,14 +18,9 @@ describe('renders correct initial values and uses default breakpoints', () => {
   test('no breakpoints matched', () => {
     window.matchMedia = mockMediaQueries([])
 
-    let value
-    const Component = (props) => {
-      value = useResponsiveValue(['a', 'b', 'c'])
-      return null
-    }
+    const { result } = renderHook(() => useResponsiveValue(['a', 'b', 'c']))
 
-    render(<Component />)
-    expect(value).toEqual('a')
+    expect(result).toEqual('a')
   })
 
   test('all breakpoints matched', () => {
@@ -35,14 +30,11 @@ describe('renders correct initial values and uses default breakpoints', () => {
       'screen and (min-width: 64em)',
     ])
 
-    let value
-    const Component = (props) => {
-      value = useResponsiveValue(['a', 'b', 'c', 'd'])
-      return null
-    }
+    const { result } = renderHook(() =>
+      useResponsiveValue(['a', 'b', 'c', 'd'])
+    )
 
-    render(<Component />)
-    expect(value).toEqual('d')
+    expect(result).toEqual('d')
   })
 
   test('uses the last value provided', () => {
@@ -51,15 +43,15 @@ describe('renders correct initial values and uses default breakpoints', () => {
       'screen and (min-width: 52em)',
     ])
 
-    let value
-    let index
-    const Component = (props) => {
-      value = useResponsiveValue(['a', 'b'])
-      index = useBreakpointIndex()
-      return null
-    }
+    const {
+      result: { value, index },
+    } = renderHook(() => {
+      return {
+        value: useResponsiveValue(['a', 'b']),
+        index: useBreakpointIndex(),
+      }
+    })
 
-    render(<Component />)
     expect(value).toEqual('b')
     expect(index).toEqual(2)
   })
@@ -71,25 +63,21 @@ test('reads breakpoints from theme', () => {
     'screen and (min-width: 45em)',
   ])
 
-  let value
-  let index
-  const Component = (props) => {
-    value = useResponsiveValue(['a', 'b'])
-    index = useBreakpointIndex()
-    return null
-  }
-
-  render(
-    <ThemeProvider
-      theme={{
+  const { result } = renderHook(
+    () => {
+      return {
+        value: useResponsiveValue(['a', 'b']),
+        index: useBreakpointIndex(),
+      }
+    },
+    {
+      theme: {
         breakpoints: ['30em', '45em', '55em'],
-      }}
-    >
-      <Component />
-    </ThemeProvider>
+      },
+    }
   )
-  expect(value).toEqual('b')
-  expect(index).toEqual(2)
+
+  expect(result).toEqual({ value: 'b', index: 2 })
 })
 
 test('responds to resize event', () => {
@@ -99,33 +87,27 @@ test('responds to resize event', () => {
     'screen and (min-width: 64em)',
   ])
 
-  let resizeCb
+  let onResize: () => void
   window.addEventListener = jest.fn().mockImplementation((event, cb) => {
-    if (event === 'resize') resizeCb = cb
+    if (event === 'resize') onResize = cb
   })
 
-  let value
-  const Component = (props) => {
-    value = useResponsiveValue(['a', 'b', 'c', 'd'])
-    return null
-  }
+  const rendered = renderHook(() => useResponsiveValue(['a', 'b', 'c', 'd']))
 
-  render(<Component />)
-
-  expect(value).toEqual('d')
+  expect(rendered.result).toEqual('d')
 
   window.matchMedia = mockMediaQueries([
     'screen and (min-width: 40em)',
     'screen and (min-width: 52em)',
   ])
-  act(() => resizeCb())
-  expect(value).toEqual('c')
+  act(() => onResize())
+  expect(rendered.result).toEqual('c')
 
   window.matchMedia = mockMediaQueries(['screen and (min-width: 40em)'])
-  act(() => resizeCb())
-  expect(value).toEqual('b')
+  act(() => onResize())
+  expect(rendered.result).toEqual('b')
 
   window.matchMedia = mockMediaQueries([])
-  act(() => resizeCb())
-  expect(value).toEqual('a')
+  act(() => onResize())
+  expect(rendered.result).toEqual('a')
 })
