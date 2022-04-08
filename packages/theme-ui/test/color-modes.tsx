@@ -433,7 +433,7 @@ test('dot notation works with color modes', () => {
         sx={{
           color: 'header.title',
         }}
-        onClick={(e) => {
+        onClick={() => {
           setMode('dark')
         }}
         children="test"
