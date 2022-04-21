@@ -1,3 +1,16 @@
+# v0.14.3 (Thu Apr 21 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/editor`, `@theme-ui/match-media`, `theme-ui`
+  - Support full media queries in `theme.breakpoints` in @theme-ui/match-media hooks [#2199](https://github.com/system-ui/theme-ui/pull/2199) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.14.2 (Thu Mar 31 2022)
 
 #### 🐛 Bug Fix
