@@ -16,7 +16,7 @@ export default ({ preset: presetName }) => {
   const preset = presets[presetName]
 
   return (
-    <>
+    <div>
       <Helmet>
         <link
           rel="stylesheet"
@@ -35,15 +35,14 @@ export default ({ preset: presetName }) => {
             fontFamily="heading"
             fontWeight="heading"
             lineHeight="heading"
-            fontSize={7}>
+            fontSize={7}
+          >
             Heading: <FontFamily name="heading" />
           </HeadingStyle>
           <Themed.h2>Type Scale</Themed.h2>
           <TypeScale />
           <Components />
-          <Themed.h2 id="json">
-            Raw JSON
-          </Themed.h2>
+          <Themed.h2 id="json">Raw JSON</Themed.h2>
           <textarea
             value={JSON.stringify(preset, null, 2)}
             rows={16}
@@ -59,6 +58,6 @@ export default ({ preset: presetName }) => {
           />
         </Themed.root>
       </ThemeContext.Provider>
-    </>
+    </div>
   )
 }
