@@ -1138,6 +1138,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "kamatte-me",
+      "name": "kamatte",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16129027?v=4",
+      "profile": "https://kamatte.me/",
+      "contributions": [
+        "doc",
+        "code"
+      ]
     }
   ]
 }

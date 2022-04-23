@@ -379,6 +379,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://twitter.com/gpoole_is_taken"><img src="https://avatars.githubusercontent.com/u/2898433?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Greg Poole</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=gpoole" title="Documentation">📖</a></td>
     <td align="center"><a href="http://www.appsparkler.com/"><img src="https://avatars.githubusercontent.com/u/12084821?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Akash</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=appsparkler" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=appsparkler" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/CannonLock"><img src="https://avatars.githubusercontent.com/u/49032265?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Cannon Lock</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=CannonLock" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://kamatte.me/"><img src="https://avatars.githubusercontent.com/u/16129027?v=4?s=63" width="63px;" alt=""/><br /><sub><b>kamatte</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=kamatte-me" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=kamatte-me" title="Code">💻</a></td>
   </tr>
 </table>
 
