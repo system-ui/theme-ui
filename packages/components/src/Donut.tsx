@@ -44,7 +44,7 @@ export const Donut: ForwardRef<SVGSVGElement, DonutProps> = React.forwardRef(
     const svgProps = {
       strokeWidth,
 
-      viewBo: '0 0 32 32',
+      viewBox: '0 0 32 32',
       width: size,
       height: size,
 

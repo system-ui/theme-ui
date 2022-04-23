@@ -397,7 +397,7 @@ exports[`Donut renders 1`] = `
   role="img"
   stroke="currentcolor"
   strokeWidth={2}
-  viewBo="0 0 32 32"
+  viewBox="0 0 32 32"
   width={128}
 >
   <title>
