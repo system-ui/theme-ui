@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "description": "The Design Graph Framework",
   "source": "src/index.ts",
   "main": "dist/theme-ui.cjs.js",
@@ -12,12 +12,12 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/color-modes": "0.14.3",
-    "@theme-ui/components": "0.14.3",
-    "@theme-ui/core": "0.14.3",
-    "@theme-ui/css": "0.14.3",
-    "@theme-ui/mdx": "0.14.3",
-    "@theme-ui/theme-provider": "0.14.3"
+    "@theme-ui/color-modes": "0.14.4",
+    "@theme-ui/components": "0.14.4",
+    "@theme-ui/core": "0.14.4",
+    "@theme-ui/css": "0.14.4",
+    "@theme-ui/mdx": "0.14.4",
+    "@theme-ui/theme-provider": "0.14.4"
   },
   "peerDependencies": {
     "react": ">16",
