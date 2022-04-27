@@ -96,3 +96,8 @@ updates:
       - dependency-name: 'cypress'
         versions:
           - '> 9.0.0, < 10'
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 10
