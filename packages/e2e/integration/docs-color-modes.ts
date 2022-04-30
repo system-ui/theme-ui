@@ -57,7 +57,7 @@ describe('docs color modes', () => {
     colorModeSwitchByText('Dark')
     colorModeSwitch().click()
 
-    screenshot('"Dark mode" switched to from "Light"')
+    screenshot('"Deep mode" switched to from "Light"')
 
     colorModeSwitchByText('Deep', { timeout: 10_000 })
     colorModeSwitch().click()
