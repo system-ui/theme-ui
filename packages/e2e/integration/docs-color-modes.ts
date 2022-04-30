@@ -48,52 +48,50 @@ describe('docs color modes', () => {
   it('color mode is changed, loaded from local storage on reload and changed again', () => {
     visit({ preferredColorScheme: 'light' })
 
-    colorModeSwitchByText('Light')
+    colorModeSwitchByText('Light', { timeout: 10_000 })
     // no idea why calling click() just once here doesn't work
     colorModeSwitch().click().click()
 
-    colorModeSwitch()
-      .parent({ log: false })
-      .findByText('Dark', { timeout: 6000 })
+    colorModeSwitchByText('Dark', { timeout: 10_000 })
     colorModeSwitch().click()
 
     screenshot()
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
     colorModeSwitch().click()
 
-    colorModeSwitchByText('Swiss')
+    colorModeSwitchByText('Swiss', { timeout: 10_000 })
     colorModeSwitch().click()
 
-    colorModeSwitchByText('Light')
+    colorModeSwitchByText('Light', { timeout: 10_000 })
     colorModeSwitch().click()
     colorModeSwitch().click()
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
 
     cy.reload()
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
 
     visit({ preferredColorScheme: 'light' })
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
 
     screenshot('"deep" loaded from localStorage')
 
     colorModeSwitch().click()
-    colorModeSwitchByText('Swiss')
+    colorModeSwitchByText('Swiss', { timeout: 10_000 })
   })
 
   it('visited with preferred color scheme "light" matches snapshot', () => {
     visit({ preferredColorScheme: 'light' })
-    colorModeSwitchByText('Light')
+    colorModeSwitchByText('Light', { timeout: 10_000 })
     screenshot("preferred 'light")
   })
 
   it('visited with preferred color scheme "dark" matches snapshot', () => {
     visit({ preferredColorScheme: 'dark' })
-    colorModeSwitchByText('Dark')
+    colorModeSwitchByText('Dark', { timeout: 10_000 })
     screenshot("preferred 'dark'")
   })
 })
