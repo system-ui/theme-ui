@@ -1,3 +1,16 @@
+# v0.14.5 (Sat Apr 30 2022)
+
+#### 🐛 Bug Fix
+
+- `gatsby-plugin-theme-ui`
+  - fix(gatsby-plugin-theme-ui): Stop using JSX in gatsby-browser.js and gatsby-ssr.js ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.14.4 (Sat Apr 23 2022)
 
 :tada: This release contains work from a new contributor! :tada:
