@@ -6,8 +6,8 @@
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
     "gatsby": "^2 || ^3 || ^4",
-    "react": ">16",
-    "react-dom": ">16"
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "gatsby": "^4.2.0",
