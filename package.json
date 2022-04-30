@@ -68,7 +68,7 @@
     "lint-staged": "12.3.2",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
-    "react-test-renderer": "^17.0.2",
+    "react-test-renderer": "^18.1.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.7",
     "ts-toolbelt": "^9.6.0",
