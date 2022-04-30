@@ -21,7 +21,7 @@ const visit = ({
     },
   })
 
-const colorModeSwitch = () => cy.findByLabelText(/Change color mode to \w+/)
+const colorModeSwitch = () => cy.findAllByLabelText(/Change color mode to \w+/)
 
 const colorModeSwitchByText = (...args: Parameters<typeof cy.findByText>) =>
   colorModeSwitch()
@@ -44,11 +44,19 @@ const screenshot = (message?: string) => {
   cy.percySnapshot(message)
 }
 
+const tryTwice = (f: () => void): void => {
+  try {
+    return f()
+  } catch {}
+  cy.wait(100)
+  return f()
+}
+
 describe('docs color modes', () => {
   it('color mode is changed, loaded from local storage on reload and changed again', () => {
     visit({ preferredColorScheme: 'light' })
 
-    colorModeSwitch().invoke('text').should('eq', 'Light')
+    tryTwice(() => colorModeSwitchByText('Light'))
 
     // no idea why calling click() just once here doesn't work
     colorModeSwitch().click().click()
@@ -88,13 +96,13 @@ describe('docs color modes', () => {
 
   it('visited with preferred color scheme "light" matches snapshot', () => {
     visit({ preferredColorScheme: 'light' })
-    colorModeSwitchByText('Light')
+    tryTwice(() => colorModeSwitchByText('Light'))
     screenshot("preferred 'light")
   })
 
   it('visited with preferred color scheme "dark" matches snapshot', () => {
     visit({ preferredColorScheme: 'dark' })
-    colorModeSwitchByText('Dark')
+    tryTwice(() => colorModeSwitchByText('Dark'))
     screenshot("preferred 'dark'")
   })
 })
