@@ -5,9 +5,10 @@
 
 import { jsx } from 'theme-ui'
 import renderer from 'react-test-renderer'
-import { render, cleanup } from '@testing-library/react'
-import { Sidenav, Pagination, AccordionNav } from '../src'
+import { render, cleanup, act } from '@theme-ui/test-utils'
 import { FunctionComponent } from 'react'
+
+import { Sidenav, Pagination, AccordionNav } from '../src'
 
 afterEach(cleanup)
 
@@ -107,7 +108,9 @@ test('AccordionNav renders open', () => {
 test('AccordionNav button toggles open state', () => {
   const root = render(<AccordionNav children={nestedLinks} />)
   const button = root.getByTitle('Expand Section')
-  button.click()
+  act(() => {
+    button.click()
+  })
   const nested = root.getByText('Hi')
   expect(nested).toBeTruthy()
 })
