@@ -43,7 +43,6 @@ const getModeName = (mode) => {
 
 export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const nav = useRef(null)
   const [mode, setMode] = useColorMode()
 
   const { pathname } = props.location
