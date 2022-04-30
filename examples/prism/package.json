@@ -13,7 +13,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "gatsby": "^2.6.3",
+    "gatsby": "^4.13.1",
     "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-remark-prismjs": "^3.2.9",
     "prismjs": "^1.16.0",
