@@ -85,9 +85,6 @@ export default function DocsLayout(props) {
               <MenuButton
                 onClick={(e) => {
                   setMenuOpen(!menuOpen)
-                  if (!nav.current) return
-                  const navLink = nav.current.querySelector('a')
-                  if (navLink) navLink.focus()
                 }}
               />
               <Link to="/" sx={{ variant: 'links.nav' }}>
@@ -125,7 +122,6 @@ export default function DocsLayout(props) {
           }}
         >
           <Sidebar
-            ref={nav}
             role="navigation"
             onFocus={(e) => {
               setMenuOpen(true)
