@@ -17,11 +17,11 @@
   },
   "peerDependencies": {
     "react": ">16",
-    "theme-ui": "^0.11"
+    "theme-ui": "^0.14.4"
   },
   "devDependencies": {
-    "react": "^17.0.1",
-    "theme-ui": "0.14.4"
+    "react": "^18.0.0",
+    "theme-ui": "^0.14.4"
   },
   "publishConfig": {
     "access": "public"

@@ -17,8 +17,8 @@
     "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-remark-prismjs": "^3.2.9",
     "prismjs": "^1.16.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "theme-ui": "latest"
   }
 }
