@@ -23,4 +23,10 @@ module.exports = {
       },
     },
   ],
+  flags: {
+    PARALLEL_SOURCING: true,
+    FAST_DEV: true,
+    DEV_SSR: true,
+    DEV_WEBPACK_CACHE: true,
+  },
 }

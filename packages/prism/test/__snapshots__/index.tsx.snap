@@ -131,9 +131,7 @@ exports[`highlights inline comment 1`] = `
     </span>
     <span
       className="token comment"
-    >
-      
-    </span>
+    />
   </div>
 </pre>
 `;
@@ -162,9 +160,7 @@ exports[`multiple highlights start and end 1`] = `
     </span>
     <span
       className="token plain"
-    >
-      
-    </span>
+    />
   </div>
   <div
     className="token-line"
@@ -191,9 +187,7 @@ exports[`multiple highlights start and end 1`] = `
     </span>
     <span
       className="token plain"
-    >
-      
-    </span>
+    />
   </div>
   <div
     className="token-line"
@@ -220,9 +214,7 @@ exports[`multiple highlights start and end 1`] = `
     </span>
     <span
       className="token plain"
-    >
-      
-    </span>
+    />
   </div>
   <div
     className="token-line highlight"
@@ -239,9 +231,7 @@ exports[`multiple highlights start and end 1`] = `
     </span>
     <span
       className="token plain"
-    >
-      
-    </span>
+    />
   </div>
   <div
     className="token-line"

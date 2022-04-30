@@ -43,7 +43,6 @@ const getModeName = (mode) => {
 
 export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const nav = useRef(null)
   const [mode, setMode] = useColorMode()
 
   const { pathname } = props.location
@@ -85,9 +84,6 @@ export default function DocsLayout(props) {
               <MenuButton
                 onClick={(e) => {
                   setMenuOpen(!menuOpen)
-                  if (!nav.current) return
-                  const navLink = nav.current.querySelector('a')
-                  if (navLink) navLink.focus()
                 }}
               />
               <Link to="/" sx={{ variant: 'links.nav' }}>
@@ -125,7 +121,6 @@ export default function DocsLayout(props) {
           }}
         >
           <Sidebar
-            ref={nav}
             role="navigation"
             onFocus={(e) => {
               setMenuOpen(true)

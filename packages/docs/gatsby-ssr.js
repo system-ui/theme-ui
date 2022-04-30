@@ -5,7 +5,11 @@ import * as React from 'react'
 
 import { WrapPageElement, setDocSearchComponents } from './src'
 
-export const wrapPageElement = (props) => <WrapPageElement {...props} />
+export const wrapPageElement = (props) => (
+  <React.StrictMode>
+    <WrapPageElement {...props} />
+  </React.StrictMode>
+)
 
 export const onRenderBody = (args) => {
   setDocSearchComponents(args)

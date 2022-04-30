@@ -15,12 +15,12 @@
   "devDependencies": {
     "@theme-ui/core": "0.14.4",
     "@theme-ui/css": "0.14.4",
-    "react": "^17.0.1"
+    "react": "^18.1.0"
   },
   "peerDependencies": {
-    "@theme-ui/core": ">=0.6.0",
-    "@theme-ui/css": ">=0.6.0",
-    "react": ">16"
+    "@theme-ui/core": ">=0.14.4",
+    "@theme-ui/css": ">=0.14.4",
+    "react": ">=18"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

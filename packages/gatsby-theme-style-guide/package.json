@@ -5,14 +5,14 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
-    "gatsby": "^2 || ^3 || ^4",
-    "react": ">16",
-    "react-dom": ">16"
+    "gatsby": "^4",
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
-    "gatsby": "^4.2.0",
-    "react": "^17",
-    "react-dom": "^17"
+    "gatsby": "^4.13.1",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "dependencies": {
     "@theme-ui/style-guide": "0.14.4",

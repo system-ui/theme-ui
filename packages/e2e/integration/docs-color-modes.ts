@@ -2,7 +2,7 @@ const visit = ({
   preferredColorScheme,
 }: {
   preferredColorScheme: 'dark' | 'light' | null
-}) =>
+}) => {
   cy.visit('/', {
     onBeforeLoad(win) {
       const _matchMedia = win.matchMedia
@@ -20,8 +20,10 @@ const visit = ({
       }
     },
   })
+  cy.wait(1000) // <- temporary
+}
 
-const colorModeSwitch = () => cy.findByLabelText(/Change color mode to \w+/)
+const colorModeSwitch = () => cy.findAllByLabelText(/Change color mode to \w+/)
 
 const colorModeSwitchByText = (...args: Parameters<typeof cy.findByText>) =>
   colorModeSwitch()
@@ -48,19 +50,16 @@ describe('docs color modes', () => {
   it('color mode is changed, loaded from local storage on reload and changed again', () => {
     visit({ preferredColorScheme: 'light' })
 
-    colorModeSwitch().invoke('text').should('eq', 'Light')
-
+    colorModeSwitchByText('Light')
     // no idea why calling click() just once here doesn't work
     colorModeSwitch().click().click()
 
-    colorModeSwitch()
-      .parent({ log: false })
-      .findByText('Dark', { timeout: 6000 })
+    colorModeSwitchByText('Dark')
     colorModeSwitch().click()
 
-    screenshot()
+    screenshot('"Deep mode" switched to from "Light"')
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
     colorModeSwitch().click()
 
     colorModeSwitchByText('Swiss')
@@ -73,28 +72,29 @@ describe('docs color modes', () => {
     colorModeSwitchByText('Deep')
 
     cy.reload()
+    cy.wait(1000)
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
 
     visit({ preferredColorScheme: 'light' })
 
-    colorModeSwitchByText('Deep')
+    colorModeSwitchByText('Deep', { timeout: 10_000 })
 
     screenshot('"deep" loaded from localStorage')
 
     colorModeSwitch().click()
-    colorModeSwitchByText('Swiss')
+    colorModeSwitchByText('Swiss', { timeout: 10_000 })
   })
 
   it('visited with preferred color scheme "light" matches snapshot', () => {
     visit({ preferredColorScheme: 'light' })
-    colorModeSwitchByText('Light')
+    colorModeSwitchByText('Light', { timeout: 10_000 })
     screenshot("preferred 'light")
   })
 
   it('visited with preferred color scheme "dark" matches snapshot', () => {
     visit({ preferredColorScheme: 'dark' })
-    colorModeSwitchByText('Dark')
+    colorModeSwitchByText('Dark', { timeout: 10_000 })
     screenshot("preferred 'dark'")
   })
 })
