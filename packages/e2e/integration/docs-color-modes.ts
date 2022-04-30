@@ -48,7 +48,7 @@ const tryTwice = (f: () => void): void => {
   try {
     return f()
   } catch {}
-  cy.wait(100)
+  cy.wait(1000) // temporary
   return f()
 }
 
