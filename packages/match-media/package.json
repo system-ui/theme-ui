@@ -15,7 +15,7 @@
   "devDependencies": {
     "@theme-ui/core": "0.14.4",
     "@theme-ui/css": "0.14.4",
-    "react": "^18.0.0"
+    "react": "^18.1.0"
   },
   "peerDependencies": {
     "@theme-ui/core": ">=0.14.4",

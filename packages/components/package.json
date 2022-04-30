@@ -24,6 +24,6 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "devDependencies": {
-    "react": "^18.0.0"
+    "react": "^18.1.0"
   }
 }

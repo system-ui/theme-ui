@@ -18,8 +18,8 @@
     "gatsby": "^4.7.2",
     "gatsby-plugin-mdx": "^3.7.1",
     "gatsby-plugin-theme-ui": "latest",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "theme-ui": "latest"
   }
 }
