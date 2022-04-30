@@ -50,28 +50,29 @@ describe('docs color modes', () => {
   it('color mode is changed, loaded from local storage on reload and changed again', () => {
     visit({ preferredColorScheme: 'light' })
 
-    colorModeSwitchByText('Light', { timeout: 10_000 })
+    colorModeSwitchByText('Light')
     // no idea why calling click() just once here doesn't work
     colorModeSwitch().click().click()
 
-    colorModeSwitchByText('Dark', { timeout: 10_000 })
+    colorModeSwitchByText('Dark')
     colorModeSwitch().click()
 
-    screenshot()
-
-    colorModeSwitchByText('Deep', { timeout: 10_000 })
-    colorModeSwitch().click()
-
-    colorModeSwitchByText('Swiss', { timeout: 10_000 })
-    colorModeSwitch().click()
-
-    colorModeSwitchByText('Light', { timeout: 10_000 })
-    colorModeSwitch().click()
-    colorModeSwitch().click()
+    screenshot('"Dark mode" switched to from "Light"')
 
     colorModeSwitchByText('Deep', { timeout: 10_000 })
+    colorModeSwitch().click()
+
+    colorModeSwitchByText('Swiss')
+    colorModeSwitch().click()
+
+    colorModeSwitchByText('Light')
+    colorModeSwitch().click()
+    colorModeSwitch().click()
+
+    colorModeSwitchByText('Deep')
 
     cy.reload()
+    cy.wait(1000)
 
     colorModeSwitchByText('Deep', { timeout: 10_000 })
 
