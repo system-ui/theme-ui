@@ -2,7 +2,7 @@ const visit = ({
   preferredColorScheme,
 }: {
   preferredColorScheme: 'dark' | 'light' | null
-}) =>
+}) => {
   cy.visit('/', {
     onBeforeLoad(win) {
       const _matchMedia = win.matchMedia
@@ -20,6 +20,8 @@ const visit = ({
       }
     },
   })
+  cy.wait(1000) // <- temporary
+}
 
 const colorModeSwitch = () => cy.findAllByLabelText(/Change color mode to \w+/)
 
