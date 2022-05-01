@@ -59,7 +59,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "auto": "^10.32.3",
-    "babel-jest": "^27.1.1",
+    "babel-jest": "^28.0.3",
     "babel-preset-gatsby": "^2.2.0",
     "cross-env": "^7.0.3",
     "egzek": "^1.2.0",
