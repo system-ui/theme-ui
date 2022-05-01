@@ -193,11 +193,11 @@
     user-home "^2.0.0"
 
 "@auto-it/omit-commits@^10.32.3":
-  version "10.32.3"
-  resolved "https://registry.yarnpkg.com/@auto-it/omit-commits/-/omit-commits-10.32.3.tgz#2f67c667ef539a3da36d01296618af1513d2f3a1"
-  integrity sha512-a4S+yBIdDPloVPUUMKsMPMxE760wzyjN74X/dcEfCeYMdxLGvIK/aw7AakCg7e6rNPkCiOUm24mtWC7uNz+Sdg==
+  version "10.36.5"
+  resolved "https://registry.yarnpkg.com/@auto-it/omit-commits/-/omit-commits-10.36.5.tgz#0a10b517f791b5ae941d748b79377c08f8edc3de"
+  integrity sha512-P5u3s4TVcJDqm/m4NdNvaBXSIgZR1/YiJ6x1TLrZtiHHdUwZNcde2fzF1FBawrhTFcureScmU2FMaPRiHBxh0g==
   dependencies:
-    "@auto-it/core" "10.32.3"
+    "@auto-it/core" "10.36.5"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
@@ -17433,13 +17433,6 @@ react-test-renderer@^18.0.0:
     react-is "^18.1.0"
     react-shallow-renderer "^16.15.0"
     scheduler "^0.22.0"
-
-react@>16:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
-  integrity sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==
-  dependencies:
-    loose-envify "^1.1.0"
 
 react@^15.6.1:
   version "15.7.0"
