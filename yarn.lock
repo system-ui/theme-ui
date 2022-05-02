@@ -162,11 +162,11 @@
     url-join "^4.0.0"
 
 "@auto-it/magic-zero@^10.32.3":
-  version "10.32.3"
-  resolved "https://registry.yarnpkg.com/@auto-it/magic-zero/-/magic-zero-10.32.3.tgz#e241cea7c498a50e3234a085f7d187e8a5033a0f"
-  integrity sha512-41AcWNI8NRVAC9xobitEQNV5KzMsWYSzZ4FctOkCw6Q0PMKU+51tSSwEHdDvr/RxT5mkduC1TMEipFoNJXU1bg==
+  version "10.36.5"
+  resolved "https://registry.yarnpkg.com/@auto-it/magic-zero/-/magic-zero-10.36.5.tgz#268a85f70f6cc98b2ed04b8802c2026b34ca09bb"
+  integrity sha512-YVs/5VumO/TACvjUaitRPgyt6R6y6xPUZaUIUY1vn7IxtBJ+2q+QalkBtnaYyCn7nmAdgFSW/6yj6Fwh9FFHkA==
   dependencies:
-    "@auto-it/core" "10.32.3"
+    "@auto-it/core" "10.36.5"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     semver "^7.0.0"
