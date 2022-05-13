@@ -113,7 +113,7 @@ scales help you build UI rooted in constraint-based design principles.
 ## Getting Started
 
 ```sh
-npm install theme-ui @emotion/react @mdx-js/react
+npm install theme-ui @emotion/react @mdx-js/react@1
 ```
 
 _If you don't need color modes, components and MDX support, you can install
