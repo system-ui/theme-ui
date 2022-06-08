@@ -7,7 +7,6 @@ import React from 'react'
 import { mdx } from '@mdx-js/react'
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
-import mockConsole from 'jest-mock-console'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
@@ -45,6 +44,19 @@ test('styles React components', () => {
   )!
   expect(json.type).toBe('h2')
   expect(json).toHaveStyleRule('color', 'tomato')
+})
+
+test('Themed.div accepts .sx prop', async () => {
+  const tree = render(
+    <ThemeProvider theme={{ colors: { primary: 'blue' } }}>
+      <Themed.div sx={{ color: 'primary' }}>blue text</Themed.div>
+    </ThemeProvider>
+  )!
+
+  const div = await tree.findByText('blue text')
+  const style = global.getComputedStyle(div)
+
+  expect(style.color).toBe('blue')
 })
 
 test('themed extracts styles from the theme', () => {
