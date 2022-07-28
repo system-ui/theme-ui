@@ -1,13 +1,13 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.14.6",
+  "version": "0.14.7",
   "source": "src/index.ts",
   "main": "dist/theme-ui-color.cjs.js",
   "module": "dist/theme-ui-color.esm.js",
   "types": "dist/theme-ui-color.cjs.d.ts",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.14.6",
+    "@theme-ui/css": "0.14.7",
     "polished": "^4.0.5"
   },
   "publishConfig": {
