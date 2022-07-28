@@ -1,3 +1,15 @@
+# v0.14.7 (Thu Jul 28 2022)
+
+#### 👨‍💻 Minor changes
+
+- Update index.mdx ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.14.6 (Wed Jun 15 2022)
 
 #### 🐛 Bug Fix
