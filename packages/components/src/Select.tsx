@@ -29,6 +29,7 @@ export const Select: ForwardRef<HTMLSelectElement, SelectProps> =
       display: 'block',
       width: '100%',
       p: 2,
+      paddingRight: 4,
       appearance: 'none',
       fontSize: 'inherit',
       lineHeight: 'inherit',
