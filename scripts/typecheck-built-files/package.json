@@ -4,7 +4,8 @@
     "start": "tsc"
   },
   "dependencies": {
-    "theme-ui": "file:../../packages/theme-ui",
+    "@theme-ui/components": "file:../../packages/components",
+    "@theme-ui/mdx": "file:../../packages/mdx",
     "@theme-ui/preset-base": "file:../../packages/preset-base",
     "@theme-ui/preset-bootstrap": "file:../../packages/preset-bootstrap",
     "@theme-ui/preset-bulma": "file:../../packages/preset-bulma",
@@ -18,6 +19,12 @@
     "@theme-ui/preset-swiss": "file:../../packages/preset-swiss",
     "@theme-ui/preset-system": "file:../../packages/preset-system",
     "@theme-ui/preset-tailwind": "file:../../packages/preset-tailwind",
-    "@theme-ui/preset-tosh": "file:../../packages/preset-tosh"
+    "@theme-ui/preset-tosh": "file:../../packages/preset-tosh",
+    "theme-ui": "file:../../packages/theme-ui",
+    "typescript": "^4"
+  },
+  "resolutions": {
+    "@theme-ui/components": "file:../../packages/components",
+    "@theme-ui/mdx": "file:../../packages/mdx"
   }
 }

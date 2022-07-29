@@ -4,7 +4,7 @@
  */
 
 import renderer from 'react-test-renderer'
-import { render, fireEvent, cleanup } from '@testing-library/react'
+import { render, fireEvent, cleanup, act } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 import mockConsole, { RestoreConsole } from 'jest-mock-console'
 import packageInfo from '@emotion/react/package.json'
@@ -159,7 +159,7 @@ test('color mode is passed through theme context', () => {
     </ThemeProvider>
   )
   const button = tree.getByText('test')
-  button.click()
+  act(() => button.click())
   expect(mode).toBe('dark')
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
 })
@@ -433,7 +433,7 @@ test('dot notation works with color modes', () => {
         sx={{
           color: 'header.title',
         }}
-        onClick={(e) => {
+        onClick={() => {
           setMode('dark')
         }}
         children="test"
@@ -464,7 +464,7 @@ test('dot notation works with color modes', () => {
     </ThemeProvider>
   )
   const button = root.getByText('test')
-  button.click()
+  act(() => button.click())
   expect(button).toHaveStyleRule('color', 'tomato')
 })
 
@@ -504,7 +504,7 @@ test('dot notation works with color modes and custom properties', () => {
     </ThemeProvider>
   )
   const button = root.getByText('test')
-  button.click()
+  act(() => button.click())
   expect(button).toHaveStyleRule('color', 'var(--theme-ui-colors-header-title)')
 })
 

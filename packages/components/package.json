@@ -1,22 +1,21 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.13.0",
+  "version": "0.14.5",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/theme-ui-components.cjs.d.ts",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
     "@styled-system/color": "^5.1.2",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
-    "@theme-ui/css": "0.13.0",
+    "@theme-ui/css": "0.14.5",
     "@types/styled-system": "^5.1.13"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "react": "^16 || ^17"
+    "react": ">=18"
   },
   "publishConfig": {
     "access": "public"
@@ -25,6 +24,6 @@
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "devDependencies": {
-    "react": "^17.0.1"
+    "react": "^18.1.0"
   }
 }

@@ -1,3 +1,178 @@
+# v0.14.5 (Sat Apr 30 2022)
+
+#### 🐛 Bug Fix
+
+- `gatsby-plugin-theme-ui`
+  - fix(gatsby-plugin-theme-ui): Stop using JSX in gatsby-browser.js and gatsby-ssr.js ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.14.4 (Sat Apr 23 2022)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, kamatte ([@kamatte-me](https://github.com/kamatte-me)), for all your work!
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/components`
+  - fix: Donut component's `viewBox` svg property [#2209](https://github.com/system-ui/theme-ui/pull/2209) ([@kamatte-me](https://github.com/kamatte-me))
+
+#### Authors: 3
+
+- kamatte ([@kamatte-me](https://github.com/kamatte-me))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.14.3 (Thu Apr 21 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/editor`, `@theme-ui/match-media`, `theme-ui`
+  - Support full media queries in `theme.breakpoints` in @theme-ui/match-media hooks [#2199](https://github.com/system-ui/theme-ui/pull/2199) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.14.2 (Thu Mar 31 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/color-modes`, `@theme-ui/components`, `@theme-ui/core`, `@theme-ui/editor`, `gatsby-plugin-theme-ui`, `gatsby-theme-style-guide`, `gatsby-theme-ui-layout`, `@theme-ui/match-media`, `@theme-ui/mdx`, `@theme-ui/parse-props`, `@theme-ui/sidenav`, `@theme-ui/style-guide`, `@theme-ui/theme-provider`, `theme-ui`
+  - fix: change react and react-dom peer dependency to >16 ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: expand docs on meta `theme-color` [#2134](https://github.com/system-ui/theme-ui/pull/2134) ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.14.1 (Tue Mar 22 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/components`
+  - fix(components): add missing forwardRef and fix Switch props ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.14.0 (Mon Mar 21 2022)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Brage ([@braaar](https://github.com/braaar))
+
+:heart: peterlits zo ([@PeterlitsZo](https://github.com/PeterlitsZo))
+
+:heart: Ryan Turner ([@rtturner](https://github.com/rtturner))
+
+:heart: Cannon Lock ([@CannonLock](https://github.com/CannonLock))
+
+#### 🚀 Enhancement
+
+- feat(examples/next): Add new deps, fully use TSX, rebuild [#2068](https://github.com/system-ui/theme-ui/pull/2068) ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/components`, `@theme-ui/css`, `gatsby-plugin-theme-ui`, `@theme-ui/mdx`, `@theme-ui/sidenav`, `@theme-ui/theme-provider`, `theme-ui`
+  - Remove @emotion/styled usage [#2043](https://github.com/system-ui/theme-ui/pull/2043) ([@atanasster](https://github.com/atanasster) [@hasparus](https://github.com/hasparus) [@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/tailwind`
+  - feat(tailwind): Upgrade Tailwind theme conversion for v3.0 [#2082](https://github.com/system-ui/theme-ui/pull/2082) ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/custom-properties`
+  - feat(custom-properties): Warn in development on invalid theme keys [#2080](https://github.com/system-ui/theme-ui/pull/2080) ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/color-modes`
+  - feat(color-modes): Warn when theme color keys have leading/trailing whitespace [#2099](https://github.com/system-ui/theme-ui/pull/2099) ([@lachlanjc](https://github.com/lachlanjc))
+- `theme-ui`
+  - feat(theme-ui): Add sx prop to BaseStyles component [#2081](https://github.com/system-ui/theme-ui/pull/2081) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🐛 Bug Fix
+
+- fix(docs): make layout more consistent [#2168](https://github.com/system-ui/theme-ui/pull/2168) ([@hasparus](https://github.com/hasparus))
+- feat(docs): Add custom content for sketchy preset demo [#1236](https://github.com/system-ui/theme-ui/pull/1236) ([@atanasster](https://github.com/atanasster) [@hasparus](https://github.com/hasparus) [@lachlanjc](https://github.com/lachlanjc))
+- fix(docs): Update recommendations in Keyframes doc [#2079](https://github.com/system-ui/theme-ui/pull/2079) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: add dependencies to "getting started" [#2075](https://github.com/system-ui/theme-ui/pull/2075) ([@braaar](https://github.com/braaar))
+- `@theme-ui/color-modes`
+  - fix(color-modes): properly use print mode even if its name is `initialColorModeName` [#2090](https://github.com/system-ui/theme-ui/pull/2090) ([@hasparus](https://github.com/hasparus))
+- `gatsby-plugin-theme-ui`
+  - fix(gatsby-plugin-theme-ui,docs): Dependency Updates [#2138](https://github.com/system-ui/theme-ui/pull/2138) ([@LekoArts](https://github.com/LekoArts))
+- `@theme-ui/style-guide`
+  - fix(style-guide): use inherited fontSize for ColorPalette color labels [#2135](https://github.com/system-ui/theme-ui/pull/2135) ([@braaar](https://github.com/braaar))
+- `@theme-ui/components`
+  - fix(components): Update IconButton type definition to include size prop [#2121](https://github.com/system-ui/theme-ui/pull/2121) ([@rtturner](https://github.com/rtturner))
+  - components: Fix visual collapsing bug with Switch component [#2067](https://github.com/system-ui/theme-ui/pull/2067) ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/sidenav`
+  - fix(sidenav): Build with latest theme-ui version [#2084](https://github.com/system-ui/theme-ui/pull/2084) ([@lachlanjc](https://github.com/lachlanjc))
+  - Make change non-breaking [#2075](https://github.com/system-ui/theme-ui/pull/2075) ([@lachlanjc](https://github.com/lachlanjc))
+  - Remove sx prop [#2075](https://github.com/system-ui/theme-ui/pull/2075) ([@lachlanjc](https://github.com/lachlanjc))
+  - sidenav: Fix props leaking to DOM on Pagination component [#2075](https://github.com/system-ui/theme-ui/pull/2075) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 👨‍💻 Minor changes
+
+- Update jsx-pragma.mdx ([@hasparus](https://github.com/hasparus))
+- docs(examples/next): fix case insensitive import ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs(sx-prop): add more detail for responsive values. [#2116](https://github.com/system-ui/theme-ui/pull/2116) ([@PeterlitsZo](https://github.com/PeterlitsZo) [@lachlanjc](https://github.com/lachlanjc))
+- docs(jsx-pragma): Add section on using with vite [#2119](https://github.com/system-ui/theme-ui/pull/2119) ([@PeterlitsZo](https://github.com/PeterlitsZo) [@lachlanjc](https://github.com/lachlanjc))
+- docs: Clarify usage of theme prop in MDX Layout docs [#2100](https://github.com/system-ui/theme-ui/pull/2100) ([@CannonLock](https://github.com/CannonLock))
+- docs(jsx): add some more detail to #with-swc section in jsx-pragma docs [#2094](https://github.com/system-ui/theme-ui/pull/2094) ([@hasparus](https://github.com/hasparus) [@lachlanjc](https://github.com/lachlanjc))
+- e2e: Upgrade dependencies [#2098](https://github.com/system-ui/theme-ui/pull/2098) ([@lachlanjc](https://github.com/lachlanjc))
+- Set up CodeSandbox CI [#2085](https://github.com/system-ui/theme-ui/pull/2085) ([@lachlanjc](https://github.com/lachlanjc))
+- examples: Remove CodeSandbox starter example [#2086](https://github.com/system-ui/theme-ui/pull/2086) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Document default theme values [#2087](https://github.com/system-ui/theme-ui/pull/2087) ([@lachlanjc](https://github.com/lachlanjc))
+- `@theme-ui/sidenav`
+  - sidenav: Fix props leaking to DOM on Pagination component [#2057](https://github.com/system-ui/theme-ui/pull/2057) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 📝 Documentation
+
+- Finish editing note [#2079](https://github.com/system-ui/theme-ui/pull/2079) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 8
+
+- Atanas Stoyanov ([@atanasster](https://github.com/atanasster))
+- Brage ([@braaar](https://github.com/braaar))
+- Cannon Lock ([@CannonLock](https://github.com/CannonLock))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- peterlits zo ([@PeterlitsZo](https://github.com/PeterlitsZo))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Ryan Turner ([@rtturner](https://github.com/rtturner))
+
+---
+
+# v0.13.1 (Wed Jan 05 2022)
+
+#### 🐛 Bug Fix
+
+- `@theme-ui/css`
+  - css: Make background a theme-aware property [#2056](https://github.com/system-ui/theme-ui/pull/2056) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Akash ([@appsparkler](https://github.com/appsparkler))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.13.0 (Mon Dec 27 2021)
 
 :tada: This release contains work from new contributors! :tada:

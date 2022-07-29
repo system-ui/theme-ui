@@ -3,7 +3,7 @@
 Gatsby plugin for adding Theme UI context
 
 ```sh
-npm i theme-ui gatsby-plugin-theme-ui
+npm i theme-ui gatsby-plugin-theme-ui @emotion/react @mdx-js/react@v1
 ```
 
 ```js
@@ -13,8 +13,8 @@ module.exports = {
 }
 ```
 
-In addition to providing context, this plugin will also
-prevent a flash of unstyled colors when using color modes.
+In addition to providing context, this plugin will also prevent a flash of
+unstyled colors when using color modes.
 
 ## Options
 
@@ -26,7 +26,8 @@ prevent a flash of unstyled colors when using color modes.
 
 > Note that this plugin assumes the theme object is exported as `default`.
 
-The theme module you include in options is considered your base theme. Any further customization and shadowing will be merged with it.
+The theme module you include in options is considered your base theme. Any
+further customization and shadowing will be merged with it.
 
 ### Using options
 
@@ -47,8 +48,8 @@ module.exports = {
 
 ## Customizing the theme
 
-To customize the theme used in your Gatsby site,
-shadow the `src/gatsby-plugin-theme-ui/index.js` module.
+To customize the theme used in your Gatsby site, shadow the
+`src/gatsby-plugin-theme-ui/index.js` module.
 
 ```js filename=src/gatsby-plugin-theme-ui/index.js
 const theme = {
@@ -63,8 +64,9 @@ export default theme
 
 ### Load theme from custom path
 
-If you prefer to load your theme from a custom path (instead of the standard `src/gatsby-plugin-theme-ui/index.js`),
-you can require it in your `gatsby-config.js` file:
+If you prefer to load your theme from a custom path (instead of the standard
+`src/gatsby-plugin-theme-ui/index.js`), you can require it in your
+`gatsby-config.js` file:
 
 ```js filename=gatsby-config.js
 module.exports = {
@@ -79,7 +81,8 @@ module.exports = {
 }
 ```
 
-Note that `gatsby-config.js` does not support ES6 modules, so you should use `module.exports` in your theme file:
+Note that `gatsby-config.js` does not support ES6 modules, so you should use
+`module.exports` in your theme file:
 
 ```js filename=src/theme.js
 module.exports = {
@@ -92,7 +95,8 @@ module.exports = {
 
 ## Extending a theme
 
-To extend a Gatsby theme that uses Theme UI, import the base theme and export a new theme object.
+To extend a Gatsby theme that uses Theme UI, import the base theme and export a
+new theme object.
 
 ```js filename=src/gatsby-plugin-theme-ui/index.js
 import baseTheme from 'gatsby-theme-blog/src/gatsby-plugin-theme-ui'
@@ -109,11 +113,14 @@ const theme = {
 export default theme
 ```
 
-You can also import and use presets from [@theme-ui/presets](https://theme-ui.com/packages/presets) to use as a starting point.
+You can also import and use presets from
+[@theme-ui/presets](https://theme-ui.com/packages/presets) to use as a starting
+point.
 
 ## Color Modes
 
-To enable support for multiple color modes, add a nested `modes` object to `theme.colors`.
+To enable support for multiple color modes, add a nested `modes` object to
+`theme.colors`.
 
 ```js filename=src/gatsby-plugin-theme-ui/index.js
 const theme = {
@@ -134,7 +141,8 @@ export default theme
 
 ## Components
 
-Custom MDX components that will receive styles from the theme can be included by adding a `src/gatsby-plugin-theme-ui/components.js` module.
+Custom MDX components that will receive styles from the theme can be included by
+adding a `src/gatsby-plugin-theme-ui/components.js` module.
 
 ```js filename=src/gatsby-plugin-theme-ui/components.js
 const components = {

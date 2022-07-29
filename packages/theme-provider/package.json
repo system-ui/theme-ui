@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/theme-provider",
-  "version": "0.13.0",
+  "version": "0.14.5",
   "repository": "system-ui/theme-ui",
   "main": "dist/theme-ui-theme-provider.cjs.js",
   "module": "dist/theme-ui-theme-provider.esm.js",
@@ -12,14 +12,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/color-modes": "0.13.0",
-    "@theme-ui/core": "0.13.0",
-    "@theme-ui/css": "0.13.0",
-    "@theme-ui/mdx": "0.13.0"
+    "@theme-ui/color-modes": "0.14.5",
+    "@theme-ui/core": "0.14.5",
+    "@theme-ui/css": "0.14.5",
+    "@theme-ui/mdx": "0.14.5"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "react": "^16 || ^17"
+    "react": ">=18"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

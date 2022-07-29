@@ -6,7 +6,7 @@ Primitive layout, typographic, and other components for use with Theme UI.
 separate installation is not required._
 
 ```sh
-npm i @theme-ui/components @emotion/react @emotion/styled
+npm i @theme-ui/components @emotion/react
 ```
 
 https://theme-ui.com/components

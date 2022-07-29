@@ -1,3 +1,34 @@
+# v0.14.4 (Sat Apr 23 2022)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, kamatte ([@kamatte-me](https://github.com/kamatte-me)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix: Donut component's `viewBox` svg property [#2209](https://github.com/system-ui/theme-ui/pull/2209) ([@kamatte-me](https://github.com/kamatte-me))
+- fix: Donut component's `viewBox` svg property ([@kamatte-me](https://github.com/kamatte-me))
+
+#### Authors: 3
+
+- kamatte ([@kamatte-me](https://github.com/kamatte-me))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.14.1 (Tue Mar 22 2022)
+
+#### 🐛 Bug Fix
+
+- fix(components): add missing forwardRef and fix Switch props ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.13.0 (Mon Dec 27 2021)
 
 ### Release Notes

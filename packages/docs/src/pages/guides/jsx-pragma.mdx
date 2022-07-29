@@ -145,12 +145,11 @@ typecheck), or for instance to run tests with `ts-jest`
 NOTE: this requires
 [TypeScript >= 4.1](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#react-17-jsx-factories)
 
-### Using next.js
+### Using Next.js
 
 #### With Babel
 
-```js
-// babel.config.js
+```js filename=babel.config.js
 module.exports = {
   presets: [
     [
@@ -173,12 +172,36 @@ You can read more about
 
 #### With SWC
 
+Next.js is [gradually migrating to SWC](https://nextjs.org/docs/advanced-features/compiler#why-swc),
+and recommends using it for all new projects.
+
 In `jsconfig.json` or `tsconfig.json` (since Next.js 12.0.4):
 
 ```json
 {
   "compilerOptions": {
-    "jsxImportSource": "theme-ui"
+    "jsx": "preserve",
+    "jsxImportSource": "theme-ui" // or "@theme-ui/core"
+    // ... the rest of your compilerOptions redacted for brevity
   }
 }
 ```
+
+### Using Vite
+
+Vite transpiles JSX using [`esbuild`](https://esbuild.github.io).
+[Per Vite documentation](https://vitejs.dev/guide/features.html#jsx), configure the pragma project-wide like this:
+
+```js filename=vite.config.js
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  esbuild: {
+    jsxFactory: 'jsx',
+    jsxInject: `import { jsx } from 'theme-ui'`,
+  },
+})
+```
+
+`esbuild` will use `theme-ui`’s `jsx` for every component by programatically injecting `import { jsx } from 'theme-ui'`
+to the start of every JSX file.

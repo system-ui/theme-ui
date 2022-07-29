@@ -4,12 +4,13 @@ title: 'Styled Components'
 
 # Styled Components
 
-Theme UI itself doesn’t expose an API for styled components, but works seamlessly with
-the `styled` API from the [@emotion/styled][] package. Components written with it
-should have access to the same theming context that Theme UI uses.
+Theme UI itself doesn’t expose an API for styled components, but works
+seamlessly with the `styled` API from the [@emotion/styled][] package.
+Components written with it should have access to the same theming context that
+Theme UI uses.
 
-Instead of using the `ThemeProvider` component from `@emotion/react`,
-import and use the Theme UI provider at your app’s root level.
+Instead of using the `ThemeProvider` component from `@emotion/react`, import and
+use the Theme UI provider at your app’s root level.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -24,8 +25,8 @@ export default (props) => (
 )
 ```
 
-If you’re using the [Styled Components][] library, these can usually be converted to use Emotion
-with a single line change to the `import` statement.
+If you’re using the [Styled Components][] library, these can usually be
+converted to use Emotion with a single line change to the `import` statement.
 
 ```js
 // before
@@ -42,9 +43,11 @@ import styled from '@emotion/styled'
 
 ## Using the `sx` prop
 
-Theme UI is actively working on removing its internal dependency on `@emotion/styled` to reduce bundle size.
-While Styled Components made with the package will continue to work into the future, we recommend using the
-[`sx` prop](/sx-prop) instead for simpler styling with [object styles](/guides/object-styles).
+Theme UI is actively working on removing its internal dependency on
+`@emotion/styled` to reduce bundle size. While Styled Components made with the
+package will continue to work into the future, we recommend using the
+[`sx` prop](/sx-prop) instead for simpler styling with
+[object styles](/guides/object-styles).
 
 ```jsx
 /** @jsxImportSource theme-ui */

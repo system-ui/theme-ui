@@ -9,7 +9,7 @@ import IntroCodeSamples from '../../components/intro-code-samples'
 Install Theme UI.
 
 ```sh
-npm install theme-ui
+npm install theme-ui @emotion/react @mdx-js/react@1
 ```
 
 Create a theme object to include custom color, typography, and layout values.
@@ -47,7 +47,8 @@ export default (props) => (
       fontWeight: 'bold',
       fontSize: 4, // picks up value from `theme.fontSizes[4]`
       color: 'primary', // picks up value from `theme.colors.primary`
-    }}>
+    }}
+  >
     Hello
   </div>
 )

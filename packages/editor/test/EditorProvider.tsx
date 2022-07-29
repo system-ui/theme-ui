@@ -59,14 +59,14 @@ test('setTheme updates theme context', () => {
     context = useThemeUI()
     return null
   }
+  render(
+    <ThemeProvider theme={theme}>
+      <EditorProvider>
+        <GetContext />
+      </EditorProvider>
+    </ThemeProvider>
+  )
   act(() => {
-    const tree = render(
-      <ThemeProvider theme={theme}>
-        <EditorProvider>
-          <GetContext />
-        </EditorProvider>
-      </ThemeProvider>
-    )
     context.setTheme({
       colors: {
         text: 'tomato',

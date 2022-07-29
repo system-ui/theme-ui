@@ -11,20 +11,22 @@ import { Text } from 'theme-ui'
 ```
 
 ```jsx live=true
+<Text variant='caps'>Hello</Text>
 <Text
   sx={{
-    fontSize: 4,
+    fontSize: 2,
     fontWeight: 'bold',
-  }}>
-  Hello
+    display: 'block'
+  }}
+>
+  How's it going?
 </Text>
-<Text variant='caps'>Hello</Text>
 ```
 
 ## Variants
 
-Text style variants can be defined in the `theme.text` object.
-The Text component uses `theme.text.default` as its default variant style.
+Text style variants can be defined in the `theme.text` object. The Text
+component uses `theme.text.default` as its default variant style.
 
 ```js
 // example theme variants

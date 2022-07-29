@@ -36,13 +36,12 @@ following:
 ```jsx
 // for demonstration only – this does not reflect the actual source code
 import { MDXProvider } from '@mdx-js/react'
-import { ThemeProvider } from 'emotion-theming'
-import styled from '@emotion/styled'
+import { ThemeProvider, useTheme } from '@emotion/react'
 
 const themeUIComponents = {
-  h1: styled('h1')((props) => props.theme.styles.h1),
-  h2: styled('h2')((props) => props.theme.styles.h2),
-  // other MDX components
+  h1: (props) => <h1 css={useTheme().styles.h1} {...props} />,
+  h2: (props) => <h2 css={useTheme().styles.h2} {...props} />,
+  // ... other MDX components
 }
 
 export default ({ components, theme, children }) => (

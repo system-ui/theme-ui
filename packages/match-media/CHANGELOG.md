@@ -1,3 +1,16 @@
+# v0.14.3 (Thu Apr 21 2022)
+
+#### 🐛 Bug Fix
+
+- Support full media queries in `theme.breakpoints` in @theme-ui/match-media hooks [#2199](https://github.com/system-ui/theme-ui/pull/2199) ([@hasparus](https://github.com/hasparus))
+- fix(match-media): handle full media queries in breakpoints in useResponsiveValue and useBreakpointIndex hooks ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.12.0 (Thu Oct 28 2021)
 
 :tada: This release contains work from a new contributor! :tada:

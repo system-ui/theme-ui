@@ -164,6 +164,24 @@ const TopLevelColorModeProvider = ({
           ' and cannot reference a key in `theme.colors.modes`.'
       )
     }
+    const allColorKeys: Array<string> = []
+    const flattenKeys = (obj: Record<string, any>) => {
+      Object.keys(obj).forEach((key) => {
+        allColorKeys.push(key)
+        if (typeof obj[key] === 'object') {
+          flattenKeys(obj[key])
+        }
+      })
+      return allColorKeys
+    }
+    flattenKeys(outerTheme.colors ?? {}).forEach((color) => {
+      if (color !== color.trim()) {
+        console.warn(
+          `[theme-ui] Key \`${color}\` in theme.colors contains leading/trailing ` +
+            'whitespace, which can cause bugs in your project.'
+        )
+      }
+    })
   }
 
   const newTheme = useThemeWithAppliedColorMode({ colorMode, outerTheme })
