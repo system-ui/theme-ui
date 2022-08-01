@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, IntrinsicSxElements } from '@theme-ui/core'
-import { css, CSSObject, get, Theme } from '@theme-ui/css'
+import { jsx, IntrinsicSxElements, SxProp } from '@theme-ui/core'
+import { css, get, Theme } from '@theme-ui/css'
 import {
   ComponentType,
   FC,
@@ -88,16 +88,10 @@ export const themed =
   (key: ThemedComponentName | (string & {})) => (theme: Theme) =>
     css(get(theme, `styles.${key}`))(theme)
 
-// opt out of typechecking whenever `as` prop is used
-interface AnyComponentProps extends JSX.IntrinsicAttributes {
-  [key: string]: unknown
-}
-
 export interface ThemedComponent<Name extends string> {
   (
-    props: (Name extends keyof JSX.IntrinsicElements
-      ? ComponentProps<Name>
-      : {}) & { css?: CSSObject }
+    props: SxProp &
+      (Name extends keyof JSX.IntrinsicElements ? ComponentProps<Name> : {})
   ): JSX.Element
   displayName: string
 }
@@ -128,8 +122,6 @@ const createThemedComponent = <Name extends string>(
 
       if (align !== 'char') extraStyles.textAlign = align
     }
-
-    const css = (props as any)['css']
 
     return jsx(name, {
       ...props,
