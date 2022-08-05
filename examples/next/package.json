@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
-    "@mdx-js/loader": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/loader": "^2.1.2",
+    "@mdx-js/react": "^2.1.2",
     "@next/mdx": "^12.0.7",
     "next": "^12.1.0",
     "react": "^18",

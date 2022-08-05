@@ -15,7 +15,7 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@mdx-js/react": "^1 || ^2",
+    "@mdx-js/react": "^2.1.2",
     "react": ">=18"
   },
   "author": "Brent Jackson",

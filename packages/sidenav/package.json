@@ -16,14 +16,13 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@mdx-js/react": "^1 || ^2",
-    "@types/mdx-js__react": "^1 || ^2",
+    "@mdx-js/react": "^2.1.2",
     "react": ">=18"
   },
   "devDependencies": {
     "react": "^18.1.0"
   },
-  "keywords": [
+  "keywords": [ 
     "theme-ui",
     "mdx",
     "emotion",
