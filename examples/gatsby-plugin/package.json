@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",
-    "@mdx-js/mdx": "^2.1.2",
-    "@mdx-js/react": "^2.1.2",
     "gatsby": "^4.13.1",
     "gatsby-plugin-mdx": "^3.7.1",
     "gatsby-plugin-theme-ui": "latest",

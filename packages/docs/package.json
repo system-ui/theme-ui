@@ -18,8 +18,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
-    "@mdx-js/mdx": "^2.1.2",
-    "@mdx-js/react": "^2.1.2",
     "@theme-ui/color": "0.14.5",
     "@theme-ui/components": "0.14.5",
     "@theme-ui/css": "0.14.5",

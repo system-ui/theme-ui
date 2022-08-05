@@ -4,46 +4,59 @@
  */
 
 import React from 'react'
-import { mdx } from '@mdx-js/react'
+// @ts-expect-error you're not supposed to import those two usually
+import { jsx, jsxs, Fragment } from 'react/jsx-runtime'
+import * as mdx from '@mdx-js/mdx'
+import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
-import { themed, Themed, components, MDXProvider } from '../src'
+import { themed, Themed, components, useThemedStylesWithMdx } from '../src'
 
 expect.extend(matchers)
 
-test('styles React components', () => {
-  const Beep = (props: React.ComponentPropsWithoutRef<'h2'>) => (
-    // eslint-disable-next-line jsx-a11y/heading-has-content
-    <h2 {...props} />
-  )
+const evalMdx = (str: string) =>
+  mdx.evaluate(str, { useMDXComponents, jsx, jsxs, Fragment })
 
-  const Inner = (props: React.ComponentPropsWithoutRef<typeof Beep>) =>
-    mdx('Beep', props)
+describe(useThemedStylesWithMdx.name, () => {
+  it.only('styles React components used in MDX', async () => {
+    const Beep = (props: React.ComponentPropsWithoutRef<'p'>) => (
+      <p {...props} />
+    )
 
-  const json = renderJSON(
-    <ThemeProvider
-      theme={{
-        styles: {
-          Beep: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <MDXProvider
-        components={{
-          Beep,
-        }}
-      >
-        <Inner />
-      </MDXProvider>
-    </ThemeProvider>
-  )!
-  expect(json.type).toBe('h2')
-  expect(json).toHaveStyleRule('color', 'tomato')
+    const { default: BlogPost } = await evalMdx(`
+      # The Heading
+
+      <Beep />
+    `)
+
+    function MyProvider({ children }) {
+      const components = useThemedStylesWithMdx(useMDXComponents({ Beep }))
+
+      return (
+        <ThemeProvider
+          theme={{
+            styles: { Beep: { color: 'tomato' } },
+          }}
+        >
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </ThemeProvider>
+      )
+    }
+
+    const json = renderJSON(
+      <MyProvider>
+        <BlogPost />
+      </MyProvider>
+    )!
+
+    console.log('>>', json.children)
+
+    expect(json.type).toBe('p')
+    expect(json).toHaveStyleRule('color', 'tomato')
+  })
 })
 
 test('Themed.div accepts .sx prop', async () => {

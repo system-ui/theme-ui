@@ -10,7 +10,7 @@ import {
   ComponentProps,
   useMemo,
 } from 'react'
-import { MDXProvider as _MDXProvider, useMDXComponents } from '@mdx-js/react'
+import type { MDXComponents } from 'mdx/types'
 
 type MDXProviderComponentsKnownKeys = {
   [key in keyof IntrinsicSxElements]?: ComponentType<any> | string
@@ -154,37 +154,49 @@ tags.forEach((tag) => {
   Themed[tag] = component
 })
 
-const createComponents = (comps: MDXProviderComponents) => {
-  const componentKeys = Object.keys(comps) as Array<keyof IntrinsicSxElements>
-
-  const next = { ...components }
+const createComponents = (comps: MDXComponents) => {
+  const next: MDXComponents = { ...components }
 
   // We enrich user's components with the styles from theme.styles.
   // Example: `components.p` will get the styles from `theme.styles.p` as className.
-  // todo: test this behaviour
-  componentKeys.forEach((key) => {
-    const componentAtKey = comps[key]
+  for (const key of Object.keys(comps)) {
+    const value = comps[key]
 
-    if (componentAtKey) {
-      const component: ThemedComponent<string> = (props) => {
-        return jsx(componentAtKey, { ...props, css: themed(key) })
-      }
-
-      component.displayName = "MdxComponents('" + key + "')"
-
-      next[key] = component
-    }
-  })
+    next[key as string] =
+      typeof value === 'object'
+        ? createComponents(value)
+        : wrapComponent(value, key)
+  }
 
   return next
 }
 
-export const MDXProvider: FC<MdxProviderProps> = ({ components, children }) => {
-  const outer = useMDXComponents() as MDXProviderComponents
+function wrapComponent(
+  value: ComponentType<any> | string,
+  key: string
+): ThemedComponent<string> {
+  const component: ThemedComponent<string> = (props) => {
+    return jsx(value, { ...props, css: themed(key) })
+  }
 
-  const themedComponents = useMemo(() => {
-    return createComponents({ ...outer, ...components })
-  }, [components, outer])
+  component.displayName = "MdxComponents('" + key + "')"
+  return component
+}
 
-  return jsx(_MDXProvider, { components: themedComponents, children })
+/**
+ * @example
+ * import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+ *
+ * function MyMdxProvider({ children }) {
+ *   const components = useThemedStylesWithMdx(useMDXComponents())
+ *
+ *   return <MDXProvider components={components}>{children}</MDXProvider>
+ * }
+ *
+ */
+export function useThemedStylesWithMdx(outerComponents: MDXComponents) {
+  return useMemo(
+    () => createComponents({ ...components, ...outerComponents }),
+    [outerComponents]
+  )
 }
