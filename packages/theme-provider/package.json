@@ -14,8 +14,7 @@
   "dependencies": {
     "@theme-ui/color-modes": "0.14.5",
     "@theme-ui/core": "0.14.5",
-    "@theme-ui/css": "0.14.5",
-    "@theme-ui/mdx": "0.14.5"
+    "@theme-ui/css": "0.14.5"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
