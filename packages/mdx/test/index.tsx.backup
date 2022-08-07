@@ -1,27 +1,34 @@
 /**
  * @jest-environment jsdom
- * @jsx mdx
  */
 
 import React from 'react'
 // @ts-expect-error you're not supposed to import those two usually
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime'
-import * as mdx from '@mdx-js/mdx'
-import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
 import { renderJSON } from '@theme-ui/test-utils'
 
 import { themed, Themed, components, useThemedStylesWithMdx } from '../src'
+// import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+// import * as mdx from '@mdx-js/mdx'
 
 expect.extend(matchers)
 
-const evalMdx = (str: string) =>
-  mdx.evaluate(str, { useMDXComponents, jsx, jsxs, Fragment })
+const evalMdx = async (str: string) => {
+  const mdx = await import('@mdx-js/mdx')
+  const { MDXProvider, useMDXComponents } = await import('@mdx-js/react')
+
+  return mdx.evaluate(str, { useMDXComponents, jsx, jsxs, Fragment })
+}
 
 describe(useThemedStylesWithMdx.name, () => {
   it.only('styles React components used in MDX', async () => {
+    const mdx = await import('@mdx-js/mdx')
+    const { MDXProvider, useMDXComponents } = await import('@mdx-js/react')
+
     const Beep = (props: React.ComponentPropsWithoutRef<'p'>) => (
       <p {...props} />
     )
@@ -51,8 +58,6 @@ describe(useThemedStylesWithMdx.name, () => {
         <BlogPost />
       </MyProvider>
     )!
-
-    console.log('>>', json.children)
 
     expect(json.type).toBe('p')
     expect(json).toHaveStyleRule('color', 'tomato')
@@ -114,7 +119,9 @@ test('keys of components match snapshot', () => {
   `)
 })
 
-test('table columns align', () => {
+test('table columns align', async () => {
+  const { MDXProvider } = await import('@mdx-js/react')
+
   const tree = render(
     <MDXProvider>
       <Themed.table>

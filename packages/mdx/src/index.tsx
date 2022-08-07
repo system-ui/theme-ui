@@ -154,7 +154,7 @@ tags.forEach((tag) => {
   Themed[tag] = component
 })
 
-const createComponents = (comps: MDXComponents) => {
+export const wrapComponentsWithThemeStyles = (comps: MDXComponents) => {
   const next: MDXComponents = { ...components }
 
   // We enrich user's components with the styles from theme.styles.
@@ -164,7 +164,7 @@ const createComponents = (comps: MDXComponents) => {
 
     next[key as string] =
       typeof value === 'object'
-        ? createComponents(value)
+        ? wrapComponentsWithThemeStyles(value)
         : wrapComponent(value, key)
   }
 
@@ -196,7 +196,7 @@ function wrapComponent(
  */
 export function useThemedStylesWithMdx(outerComponents: MDXComponents) {
   return useMemo(
-    () => createComponents({ ...components, ...outerComponents }),
+    () => wrapComponentsWithThemeStyles({ ...components, ...outerComponents }),
     [outerComponents]
   )
 }
