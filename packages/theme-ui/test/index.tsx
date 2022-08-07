@@ -1,9 +1,7 @@
 /**
  * @jest-environment jsdom
- * @jsx mdx
  */
 
-import { mdx } from '@mdx-js/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
@@ -63,32 +61,6 @@ test('creates non-standard components', () => {
     </ThemeProvider>
   )
   expect(json).toMatchSnapshot()
-  expect(json).toHaveStyleRule('color', 'tomato')
-})
-
-test('styles React components', () => {
-  // eslint-disable-next-line jsx-a11y/heading-has-content
-  const Beep = (props: {}) => <h2 {...props} />
-  const Inner = (props: {}) => mdx('Beep', props)
-
-  const json = renderJSON(
-    <ThemeProvider
-      components={{
-        Beep,
-      }}
-      theme={{
-        styles: {
-          Beep: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <Inner />
-    </ThemeProvider>
-  )
-
-  expect(json!.type).toBe('h2')
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
