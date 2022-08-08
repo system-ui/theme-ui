@@ -1109,6 +1109,7 @@ exports[`Select renders 1`] = `
   display: block;
   width: 100%;
   padding: 8px;
+  padding-right: 32px;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -1170,6 +1171,7 @@ exports[`Select renders with custom icon 1`] = `
   display: block;
   width: 100%;
   padding: 8px;
+  padding-right: 32px;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -1214,6 +1216,7 @@ exports[`Select renders with style props 1`] = `
   display: block;
   width: 100%;
   padding: 8px;
+  padding-right: 32px;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
