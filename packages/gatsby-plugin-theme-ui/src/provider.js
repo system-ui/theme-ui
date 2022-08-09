@@ -1,9 +1,13 @@
+// @ts-check
 import { ThemeProvider, merge } from 'theme-ui'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import React from 'react'
 
 import localTheme from './index'
 import components from './components'
 import useThemeUiConfig from './hooks/configOptions'
+
+import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 
 const Root = ({ children }) => {
   const themeUiConfig = useThemeUiConfig()
@@ -20,8 +24,17 @@ const Root = ({ children }) => {
   const fullTheme = merge(themeWithPrism, localTheme)
 
   return (
-    <ThemeProvider theme={fullTheme} components={components}>
-      {children}
+    <ThemeProvider theme={fullTheme}>
+      <MDXProvider
+        components={useThemedStylesWithMdx(
+          useMDXComponents(
+            /** @type {import("mdx/types").MDXComponents} */
+            (components)
+          )
+        )}
+      >
+        {children}
+      </MDXProvider>
     </ThemeProvider>
   )
 }
