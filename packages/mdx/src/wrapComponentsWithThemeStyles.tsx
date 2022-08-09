@@ -1,7 +1,7 @@
 import { jsx } from '@theme-ui/core'
 import { ComponentType } from 'react'
 import { MDXComponents } from 'mdx/types'
-import { components, ThemedComponent, themed } from './Themed'
+import { defaultMdxComponents, ThemedComponent, themed } from './Themed'
 
 function wrapComponent(
   value: ComponentType<any> | string,
@@ -17,7 +17,7 @@ function wrapComponent(
 
 /** @internal */
 export const wrapComponentsWithThemeStyles = (comps: MDXComponents) => {
-  const next: MDXComponents = { ...components }
+  const next: MDXComponents = { ...defaultMdxComponents }
 
   // We enrich user's components with the styles from theme.styles.
   // Example: `components.p` will get the styles from `theme.styles.p` as className.
