@@ -8,6 +8,9 @@
     "noEmit": true,
     "module": "es2015",
     "isolatedModules": true,
-    "target": "es2018"
+    "target": "es2018",
+
+    // @types/reactcss required by @types/react-color is broken
+    "skipLibCheck": true
   }
 }
