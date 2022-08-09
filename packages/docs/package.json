@@ -23,6 +23,7 @@
     "@theme-ui/css": "0.14.5",
     "@theme-ui/editor": "0.14.5",
     "@theme-ui/match-media": "0.14.5",
+    "@theme-ui/mdx": "0.14.5",
     "@theme-ui/presets": "0.14.5",
     "@theme-ui/prism": "0.14.5",
     "@theme-ui/sidenav": "0.14.5",
