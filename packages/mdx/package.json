@@ -11,10 +11,11 @@
     "@theme-ui/css": "0.14.5"
   },
   "devDependencies": {
+    "@mdx-js/mdx-v2@npm:@mdx-js/mdx": "^2.1.2",
+    "@mdx-js/react-v2@npm:@mdx-js/react": "^2.1.2",
     "@types/mdx": "^2.0.2",
-    "@mdx-js/mdx": "^2.1.2",
-    "@mdx-js/react": "^2.1.2",
-    "react": "^18.1.0"
+    "react": "^18.1.0",
+    "remark-gfm": "^3.0.1"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
