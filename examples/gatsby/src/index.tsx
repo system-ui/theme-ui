@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
-import { ThemeProvider, Themed } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import theme from './theme'
 
 export const WrapRootElement: FC<{ element: ReactNode }> = ({ element }) => (
