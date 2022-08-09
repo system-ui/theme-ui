@@ -1,6 +1,7 @@
 /** @jsx jsx */
 /** @jsxFrag React.Fragment */
-import { jsx, Themed, Grid, useThemeUI } from 'theme-ui'
+import { jsx, Grid, useThemeUI } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import { EditorProvider, Theme } from '@theme-ui/editor'
 import { TypeStyle, FontFamily } from '@theme-ui/style-guide'
 import React from 'react'
