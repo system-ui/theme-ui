@@ -1,4 +1,3 @@
-// @ts-check
 import { ThemeProvider, merge } from 'theme-ui'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import React from 'react'
@@ -26,12 +25,7 @@ const Root = ({ children }) => {
   return (
     <ThemeProvider theme={fullTheme}>
       <MDXProvider
-        components={useThemedStylesWithMdx(
-          useMDXComponents(
-            /** @type {import("mdx/types").MDXComponents} */
-            (components)
-          )
-        )}
+        components={useThemedStylesWithMdx(useMDXComponents(components))}
       >
         {children}
       </MDXProvider>
