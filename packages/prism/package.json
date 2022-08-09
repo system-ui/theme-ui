@@ -14,7 +14,8 @@
     "prism-react-renderer": "^1.1.1"
   },
   "peerDependencies": {
-    "theme-ui": ">=0.14.0"
+    "theme-ui": ">=0.14.0",
+    "@theme-ui/mdx": ">=0.14.0"
   },
   "publishConfig": {
     "access": "public"
@@ -31,6 +32,7 @@
   ],
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8",
   "devDependencies": {
+    "@theme-ui/mdx": "0.14.5",
     "param-case": "^3.0.4",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
