@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import type { MDXComponents } from 'mdx/types'
-import { components } from './Themed'
+import { defaultMdxComponents } from './Themed'
 import { wrapComponentsWithThemeStyles } from './wrapComponentsWithThemeStyles'
 
 /**
@@ -16,7 +16,11 @@ import { wrapComponentsWithThemeStyles } from './wrapComponentsWithThemeStyles'
  */
 export function useThemedStylesWithMdx(outerComponents: MDXComponents) {
   return useMemo(
-    () => wrapComponentsWithThemeStyles({ ...components, ...outerComponents }),
+    () =>
+      wrapComponentsWithThemeStyles({
+        ...defaultMdxComponents,
+        ...outerComponents,
+      }),
     [outerComponents]
   )
 }

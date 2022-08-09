@@ -8,7 +8,5 @@ export type {
   ThemedComponentsDict,
   ThemedProps,
 } from './Themed'
-export { Themed, components, themed } from './Themed'
-
+export { Themed, defaultMdxComponents, themed } from './Themed'
 export { useThemedStylesWithMdx } from './useThemeStylesWithMdx'
-export { wrapComponentsWithThemeStyles } from './wrapComponentsWithThemeStyles'

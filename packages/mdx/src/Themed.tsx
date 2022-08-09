@@ -140,13 +140,13 @@ interface ThemedDiv {
 
 const _Themed: ThemedDiv = createThemedComponent('div', 'div')
 
-export const components = {} as ThemedComponentsDict
+export const defaultMdxComponents = {} as ThemedComponentsDict
 
 export const Themed = _Themed as ThemedDiv & ThemedComponentsDict
 
 tags.forEach((tag) => {
   const component = createThemedComponent(alias(tag), tag)
 
-  components[tag] = component
+  defaultMdxComponents[tag] = component
   Themed[tag] = component
 })
