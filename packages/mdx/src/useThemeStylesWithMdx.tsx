@@ -12,7 +12,6 @@ import { wrapComponentsWithThemeStyles } from './wrapComponentsWithThemeStyles'
  *
  *   return <MDXProvider components={components}>{children}</MDXProvider>
  * }
- *
  */
 export function useThemedStylesWithMdx(outerComponents: MDXComponents) {
   return useMemo(

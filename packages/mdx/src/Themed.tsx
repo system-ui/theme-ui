@@ -81,6 +81,9 @@ export type ThemedComponentName = keyof IntrinsicSxElements
 const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
+/**
+ * Extracts styles from `theme.styles` object
+ */
 export const themed =
   (key: ThemedComponentName | (string & {})) => (theme: Theme) =>
     css(get(theme, `styles.${key}`))(theme)
