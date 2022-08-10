@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { scales, multiples } from '@theme-ui/css'
-import { Themed } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 
 const camelDash = (string) =>
   string.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`)
