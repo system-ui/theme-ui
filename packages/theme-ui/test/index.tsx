@@ -18,53 +18,6 @@ import {
 
 expect.extend(matchers)
 
-test('renders', () => {
-  const json = renderJSON(
-    <ThemeProvider theme={{}}>
-      <h1>Hello</h1>
-    </ThemeProvider>
-  )
-  expect(json).toMatchSnapshot()
-})
-
-test('renders with styles', () => {
-  const json = renderJSON(
-    <ThemeProvider
-      theme={{
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <h1>Hello</h1>
-    </ThemeProvider>
-  )
-  expect(json).toMatchSnapshot()
-})
-
-test('creates non-standard components', () => {
-  const json = renderJSON(
-    <ThemeProvider
-      components={{
-        sup: 'sup',
-      }}
-      theme={{
-        styles: {
-          sup: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <sup>hey</sup>
-    </ThemeProvider>
-  )
-  expect(json).toMatchSnapshot()
-  expect(json).toHaveStyleRule('color', 'tomato')
-})
-
 test('custom pragma adds styles', () => {
   const json = renderJSON(
     jsx('div', {
