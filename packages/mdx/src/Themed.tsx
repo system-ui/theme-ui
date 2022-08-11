@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, IntrinsicSxElements, SxProp } from '@theme-ui/core'
+import { jsx, SxProp } from '@theme-ui/core'
 import { css, get, Theme } from '@theme-ui/css'
 import {
   ComponentType,
@@ -9,29 +9,8 @@ import {
   ComponentProps,
 } from 'react'
 
-type MDXProviderComponentsKnownKeys = {
-  [key in keyof IntrinsicSxElements]?: ComponentType<any> | string
-}
-export interface MDXProviderComponents extends MDXProviderComponentsKnownKeys {
-  [key: string]: ComponentType<any> | string | undefined
-}
-export type MdxAliases = {
-  [key in keyof IntrinsicSxElements]: keyof JSX.IntrinsicElements
-}
-
-export type MdxAliasesKeys = 'inlineCode' | 'thematicBreak' | 'root'
-
-export type ThemedProps = {
-  theme: Theme
-}
-
-export interface MdxProviderProps {
-  components?: MDXProviderComponents
-  children: ReactNode
-}
-
 // mdx components
-const tags: Array<keyof IntrinsicSxElements> = [
+const tags = [
   'p',
   'b',
   'i',
@@ -65,7 +44,9 @@ const tags: Array<keyof IntrinsicSxElements> = [
   'div',
   // theme-ui
   'root',
-]
+] as const
+
+export type ThemeUIMdxIntrinsics = typeof tags[number]
 
 const aliases = {
   inlineCode: 'code',
@@ -73,19 +54,38 @@ const aliases = {
   root: 'div',
 } as const
 
+export type MdxAliasesKeys = keyof typeof aliases
+
+type MDXProviderComponentsKnownKeys = {
+  [key in ThemeUIMdxIntrinsics]?: ComponentType<any> | string
+}
+export interface MDXProviderComponents extends MDXProviderComponentsKnownKeys {
+  [key: string]: ComponentType<any> | string | undefined
+}
+export type MdxAliases = {
+  [key in ThemeUIMdxIntrinsics]: keyof JSX.IntrinsicElements
+}
+
+export type ThemedProps = {
+  theme: Theme
+}
+
+export interface MdxProviderProps {
+  components?: MDXProviderComponents
+  children: ReactNode
+}
+
 type Aliases = typeof aliases
 const isAlias = (x: string): x is keyof Aliases => x in aliases
 
-export type ThemedComponentName = keyof IntrinsicSxElements
-
-const alias = (n: ThemedComponentName): keyof JSX.IntrinsicElements =>
+const alias = (n: ThemeUIMdxIntrinsics): keyof JSX.IntrinsicElements =>
   isAlias(n) ? aliases[n] : n
 
 /**
  * Extracts styles from `theme.styles` object
  */
 export const themed =
-  (key: ThemedComponentName | (string & {})) => (theme: Theme) =>
+  (key: ThemeUIMdxIntrinsics | (string & {})) => (theme: Theme) =>
     css(get(theme, `styles.${key}`))(theme)
 
 export interface ThemedComponent<Name extends string> {
@@ -97,7 +97,7 @@ export interface ThemedComponent<Name extends string> {
 }
 
 export type ThemedComponentsDict = {
-  [K in keyof IntrinsicSxElements]: K extends keyof Aliases
+  [K in ThemeUIMdxIntrinsics]: K extends keyof Aliases
     ? ThemedComponent<Aliases[K]>
     : K extends keyof JSX.IntrinsicElements
     ? ThemedComponent<K>
@@ -106,7 +106,7 @@ export type ThemedComponentsDict = {
 
 const createThemedComponent = <Name extends string>(
   name: Name,
-  variant: ThemedComponentName
+  variant: ThemeUIMdxIntrinsics
 ): ThemedComponent<Name> => {
   const variantStyles = themed(variant)
 

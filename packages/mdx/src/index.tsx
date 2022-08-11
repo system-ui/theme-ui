@@ -4,7 +4,7 @@ export type {
   MdxProviderProps,
   ThemedComponent,
   MdxAliasesKeys,
-  ThemedComponentName,
+  ThemeUIMdxIntrinsics,
   ThemedComponentsDict,
   ThemedProps,
 } from './Themed'

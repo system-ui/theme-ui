@@ -11,7 +11,6 @@ export {
 } from '@theme-ui/core'
 export type {
   ThemeUIContextValue,
-  IntrinsicSxElements,
   SxProp,
   ColorMode,
   ColorModesScale,
