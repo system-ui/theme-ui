@@ -15,7 +15,7 @@
     "compass-vertical-rhythm": "^1.4.5",
     "csstype": "^3.0.10",
     "modularscale": "^2.0.1",
-    "type-fest": "^2.5.4"
+    "type-fest": "^2.18.0"
   },
   "devDependencies": {
     "typography": "^0.16.21",
