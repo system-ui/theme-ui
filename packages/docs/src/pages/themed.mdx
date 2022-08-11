@@ -5,19 +5,46 @@ title: Themed
 # Themed component
 
 Use the `Themed` components dict to render UI with styles from
-[`theme.styles`](/theming#styles) _outside_ of MDX. For example, if you'd like
-to reuse heading styles in a React component, you can use the `Themed.h1`
-component to render an `<h1>` element with styles from `theme.styles.h1`.
+[`theme.styles`](/theming#styles) _outside_ of MDX. Useful for consistent
+styling in components meant for embedding in MDX.
 
-```jsx
-// example
+For example, if you'd like to reuse heading styles in a React component, you can
+use the `Themed.h1` component to render an `<h1>` element with styles from
+`theme.styles.h1`.
+
+```tsx
+import type { ComponentPropsWithoutRef } from 'react'
 import { Themed } from '@theme-ui/mdx'
 
-export default (props) => (
-  <div>
-    <Themed.h1>Hello, styled heading!</Themed.h1>
-  </div>
-)
+const createHeadingWithLink =
+  (Level: 'h2' | 'h3' | 'h4' | 'h5' | 'h6') =>
+  (props: ComponentPropsWithoutRef<'h2'>) =>
+    (
+      <Level {...props}>
+        {props.id && (
+          <a
+            href={`#${props.id}`}
+            sx={{
+              color: 'inherit',
+              textDecoration: 'none',
+              ':hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
+            {props.children}
+          </a>
+        )}
+      </Level>
+    )
+
+export const components = {
+  h2: createHeadingWithLink('h2'),
+  h3: createHeadingWithLink('h3'),
+  h4: createHeadingWithLink('h4'),
+  h5: createHeadingWithLink('h5'),
+  h6: createHeadingWithLink('h6'),
+}
 ```
 
 For a full list of keys available, see the
