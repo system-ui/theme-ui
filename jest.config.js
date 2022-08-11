@@ -24,6 +24,7 @@ const config = {
     '/__test-utils__/',
   ],
   coverageReporters: ['lcov', 'text', 'html'],
+  coverageProvider: 'v8',
   collectCoverageFrom: [
     'packages/**/src/**/*.{js,ts,tsx}',
     '!packages/docs/**/*',
