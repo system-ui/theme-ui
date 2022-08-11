@@ -1,5 +1,58 @@
 # Migration Guides
 
+## v0.15
+
+**MDX is now opt-in.**
+
+_If your project is not using MDX or importing `Themed`, you shouldn't need to
+change anything._
+
+- `MDXProvider` is no longer included in Theme UI `ThemeProvider`, and has been
+  removed in favour of an `useThemedStylesWithMdx` hook.
+
+  - **Migration:** Use `useThemedStylesWithMdx` together with `MDXProvider` and
+    `useMDXComponents` from `@mdx-js/react`.
+
+    ```tsx
+    import {
+      MDXProvider,
+      useMDXComponents,
+      Components as MDXComponents,
+      MergeComponents as MergeMDXComponents,
+    } from '@mdx-js/react'
+    import { useThemedStylesWithMdx } from '@theme-ui/mdx'
+    import { ThemeProvider, Theme } from 'theme-ui'
+
+    interface MyProviderProps {
+      theme: Theme
+      components?: MDXComponents | MergeMDXComponents
+      children: React.ReactNode
+    }
+    function MyProvider({ theme, components, children }: MyProviderProps) {
+      const componentsWithStyles = useThemedStylesWithMdx(
+        useMDXComponents(components)
+      )
+
+      return (
+        <ThemeProvider theme={theme}>
+          <MDXProvider components={componentsWithStyles}>
+            {children}
+          </MDXProvider>
+        </ThemeProvider>
+      )
+    }
+    ```
+
+- `Themed` components dict and other exports from `@theme-ui/mdx` are no longer
+  reexported from `theme-ui`.
+
+  - **Migration:** Import it from `@theme-ui/mdx` instead.
+
+    ```diff
+    -  import { Themed } from 'theme-ui'
+    +  import { Themed } from '@theme-ui/mdx'
+    ```
+
 ## v0.14
 
 - `theme-ui`, `@theme-ui/components` and `@theme-ui/mdx` packages no longer
