@@ -29,4 +29,6 @@ module.exports = {
     DEV_SSR: true,
     DEV_WEBPACK_CACHE: true,
   },
+  // https://www.gatsbyjs.com/docs/reference/release-notes/v4.7/#trailingslash-option
+  trailingSlash: 'never', // We currently have duplicate Algolia results. This __may__ fix them.
 }
