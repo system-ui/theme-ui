@@ -31,12 +31,12 @@ const theme = {
       dark: {
         text: '#ffffff',
         background: '#060606',
-        primary: '#33ccff',
-        secondary: '#ee00ff',
+        primary: '#45ffbe',
+        secondary: '#e782ff',
         muted: '#191919',
-        highlight: '#29112c',
+        highlight: '#0c1a1f',
         gray: '#999999',
-        accent: '#cc00ff',
+        accent: '#ffcd4f',
       },
       deep: {
         text: 'hsl(210, 50%, 96%)',
