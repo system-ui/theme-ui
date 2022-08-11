@@ -6,7 +6,6 @@ import { render, cleanup } from '@theme-ui/test-utils'
 import { useThemeUI } from 'theme-ui'
 import { WrapRootElement } from '../src/provider'
 import _theme from '../src/index'
-import renderer from 'react-test-renderer'
 
 /** @type {import("theme-ui").Theme} */
 const theme = _theme
