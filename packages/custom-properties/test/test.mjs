@@ -1,5 +1,10 @@
-import toCustomProperties from '../src'
+// @ts-check
+import themeUICustomProperties from '..'
 import mockConsole from 'jest-mock-console'
+
+const toCustomProperties = /** @type {{ default: import('..').default }} */ (
+  /** @type {any} */ (themeUICustomProperties)
+).default
 
 const theme = {
   colors: {
