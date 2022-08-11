@@ -52,8 +52,6 @@ const config = {
   moduleNameMapper: {
     '@theme-ui/css/dist/types': '@theme-ui/css/src/types',
   },
-  // extensionsToTreatAsEsm: ['.tsx', '.ts'],
-  // resolver: 'jest-ts-webcompat-resolver',
 }
 
 module.exports = config
