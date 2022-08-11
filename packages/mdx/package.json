@@ -19,7 +19,8 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "react": ">=18"
+    "react": ">=18",
+    "@types/mdx": "^2.0.2"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",
