@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/test-utils",
-  "version": "0.14.5",
+  "version": "0.14.7",
   "private": true,
   "license": "MIT",
   "repository": "system-ui/theme-ui",
@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "react": "^18",
-    "theme-ui": "^0.14.5"
+    "theme-ui": "^0.14.7"
   }
 }
