@@ -33,7 +33,7 @@
   "devDependencies": {
     "param-case": "^3.0.4",
     "postcss": "^8.1.10",
-    "postcss-js": "^3.0.3",
+    "postcss-js": "^4.0.0",
     "theme-ui": "0.14.7"
   }
 }
