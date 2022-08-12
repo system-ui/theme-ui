@@ -14,7 +14,6 @@ packages/core @hasparus
 packages/css @hasparus
 packages/custom-properties @hasparus
 packages/docs @lachlanjc @hasparus
-# packages/editor looking for maintainers!
 # packages/gatsby-plugin-theme-ui looking for maintainers! 
 # packages/gatsby-theme-style-guide looking for maintainers!
 # packages/gatsby-theme-ui-layout looking for maintainers!
