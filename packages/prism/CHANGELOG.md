@@ -1,3 +1,15 @@
+# v0.14.6 (Wed Jun 15 2022)
+
+#### 🐛 Bug Fix
+
+- fix(prism): fix peer dependency version ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.12.0 (Thu Oct 28 2021)
 
 :tada: This release contains work from a new contributor! :tada:

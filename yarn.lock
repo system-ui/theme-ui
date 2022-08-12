@@ -4461,9 +4461,9 @@
     source-map "^0.7.3"
 
 "@popperjs/core@^2.5.4":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.6.0.tgz#f022195afdfc942e088ee2101285a1d31c7d727f"
-  integrity sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw==
+  version "2.11.6"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
+  integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
 "@preconstruct/cli@^2.1.5":
   version "2.2.1"
@@ -4803,6 +4803,53 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.5.0"
     "@types/react-dom" "^18.0.0"
+
+"@theme-ui/core@0.14.5":
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/@theme-ui/core/-/core-0.14.5.tgz#a12ea2c7c73d4328da5762272a24edca52513f27"
+  integrity sha512-fyllFax0hnABTMS3ryKP0w1oa2oHCE4xUKRZMwyA46ldV3pe3C4to8SmlF7x6RgSlsyrwdpEm34aB1ZgHsWrQg==
+  dependencies:
+    "@theme-ui/css" "0.14.5"
+    "@theme-ui/parse-props" "0.14.5"
+    deepmerge "^4.2.2"
+
+"@theme-ui/css@0.14.5":
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/@theme-ui/css/-/css-0.14.5.tgz#ac2bf57ee8f7ed1e960b175d2e76b43f04fde20d"
+  integrity sha512-EZztsPXJEg8rceTRGwWDD++d9QFSwEkl5913BvWmWTmB/Ips91ZIpnTbhfVRbG3bgUa+9lc1VwSEHOsHkN5mgw==
+  dependencies:
+    csstype "^3.0.10"
+
+"@theme-ui/editor@0.14.7":
+  version "0.14.7"
+  resolved "https://registry.yarnpkg.com/@theme-ui/editor/-/editor-0.14.7.tgz#f14e16910fdf6fb1597fdc5d62a9ad8c167ec516"
+  integrity sha512-ctgiHUtlztJgYZ0zUcfAbxSWgKiCyMQ9Q6/zJrLjkDTU6edNv54Ayu82OspU/tNmHwkJv2gtkMW05+0QwKd4RQ==
+  dependencies:
+    "@theme-ui/components" "0.14.7"
+    "@theme-ui/core" "0.14.7"
+    "@theme-ui/css" "0.14.7"
+    "@theme-ui/style-guide" "0.14.7"
+    "@types/react-color" "^2.17.3"
+    "@types/tinycolor" "^1.1"
+    color "^3.1.2"
+    react-color "^2.18.0"
+    reakit "^1.3.11"
+    tinycolor2 "^1.4.1"
+
+"@theme-ui/mdx@0.14.5":
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/@theme-ui/mdx/-/mdx-0.14.5.tgz#a462cf378d5a8ef4a03369a75e3b258bbab6d566"
+  integrity sha512-iYYsvo6TZAxc9frXJWUijEYLmZltbsv3xFfBptA2iaw8iDj/Aw2ggtHpVyGVXGAgS09vfgH+ebFuzup61ADdDw==
+  dependencies:
+    "@theme-ui/core" "0.14.5"
+    "@theme-ui/css" "0.14.5"
+
+"@theme-ui/parse-props@0.14.5":
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/@theme-ui/parse-props/-/parse-props-0.14.5.tgz#abdcca2a7c83dcd899b35b2488582b592b065825"
+  integrity sha512-VB4/eH3v+1hXkzVWW0pahNdooG8gEreUXMyizR5TsJffy8KwjW6CsZJheoDJhyRfFk2nLhi1M0PjA+01lxL1qg==
+  dependencies:
+    "@theme-ui/css" "0.14.5"
 
 "@tokenizer/token@^0.3.0":
   version "0.3.0"
@@ -5299,9 +5346,9 @@
     csstype "^3.0.2"
 
 "@types/reactcss@*":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@types/reactcss/-/reactcss-1.2.3.tgz#af28ae11bbb277978b99d04d1eedfd068ca71834"
-  integrity sha512-d2gQQ0IL6hXLnoRfVYZukQNWHuVsE75DzFTLPUuyyEhJS8G2VvlE+qfQQ91SJjaMqlURRCNIsX7Jcsw6cEuJlA==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@types/reactcss/-/reactcss-1.2.6.tgz#133c1e7e896f2726370d1d5a26bf06a30a038bcc"
+  integrity sha512-qaIzpCuXNWomGR1Xq8SCFTtF4v8V27Y6f+b9+bzHiv087MylI/nTCqqdChNeWS7tslgROmYB7yeiruWX7WnqNg==
   dependencies:
     "@types/react" "*"
 
@@ -5372,7 +5419,7 @@
 "@types/tinycolor@^1.1":
   version "1.1.27"
   resolved "https://registry.yarnpkg.com/@types/tinycolor/-/tinycolor-1.1.27.tgz#d01d05a681d0ce28923b021d5f3d752ea0478089"
-  integrity sha1-0B0FpoHQziiSOwIdXz11LqBHgIk=
+  integrity sha512-DNAOEbg5kYu02NSSzGPxkkmk5gx5OrnD6JlOJuoN2st3Abnzt54jrKYpiJfOgqeWcwNWBJBcj8FMyO+++E3Pyg==
 
 "@types/tmp@^0.0.33":
   version "0.0.33"
@@ -12200,9 +12247,9 @@ humanize-ms@^1.2.1:
     ms "^2.0.0"
 
 husky@>=7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.4.tgz#242048245dc49c8fb1bf0cc7cfb98dd722531535"
-  integrity sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
+  integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
 
 iconv-lite@0.4.15:
   version "0.4.15"

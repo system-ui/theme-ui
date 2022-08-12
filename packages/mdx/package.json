@@ -1,14 +1,14 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.14.5",
+  "version": "0.14.7",
   "source": "src/index.ts",
   "main": "dist/theme-ui-mdx.cjs.js",
   "module": "dist/theme-ui-mdx.esm.js",
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@theme-ui/core": "0.14.5",
-    "@theme-ui/css": "0.14.5"
+    "@theme-ui/core": "0.14.7",
+    "@theme-ui/css": "0.14.7"
   },
   "devDependencies": {
     "@mdx-js/mdx-v2@npm:@mdx-js/mdx": "^2.1.2",

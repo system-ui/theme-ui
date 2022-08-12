@@ -42,10 +42,6 @@
       "destination": "/packages/style-guide"
     },
     {
-      "source": "/editor",
-      "destination": "/packages/editor"
-    },
-    {
       "source": "/gatsby-plugin",
       "destination": "/packages/gatsby-plugin"
     },
