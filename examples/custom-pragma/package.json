@@ -11,7 +11,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^4.13.1",
+    "gatsby": "^4.20.0",
     "gatsby-plugin-mdx": "^3.10.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

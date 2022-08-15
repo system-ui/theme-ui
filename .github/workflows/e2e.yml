@@ -32,7 +32,7 @@ jobs:
       - run: yarn build # build preconstruct libs
       - run: yarn build:docs
 
-      - uses: cypress-io/github-action@v2
+      - uses: cypress-io/github-action@v4
         with:
           record: true
           parallel: true

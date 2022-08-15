@@ -10,7 +10,7 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "gatsby": "^4.13.1",
+    "gatsby": "^4.20.0",
     "react": "^18",
     "react-dom": "^18"
   },

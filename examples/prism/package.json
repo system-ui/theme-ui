@@ -11,7 +11,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^4.13.1",
+    "gatsby": "^4.20.0",
     "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-remark-prismjs": "^3.2.9",
     "prismjs": "^1.16.0",

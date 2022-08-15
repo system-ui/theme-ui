@@ -11,7 +11,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^4.13.1",
+    "gatsby": "^4.20.0",
     "gatsby-plugin-google-fonts": "^1.0.0",
     "gatsby-plugin-mdx": "^1.6.0",
     "lodash.merge": "^4.6.1",
