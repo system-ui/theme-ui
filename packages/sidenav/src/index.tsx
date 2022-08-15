@@ -50,9 +50,10 @@ const flattenLinks = (children: ReactNode): ReactNode[] =>
     return acc
   }, [])
 
-const Overlay: FunctionComponent<{
+interface OverlayProps {
   onClick?: EventHandler<MouseEvent<HTMLDivElement>>
-}> = ({ onClick }) => (
+}
+const Overlay = ({ onClick }: OverlayProps) => (
   <React.Fragment>
     <div
       onClick={onClick}
@@ -80,7 +81,7 @@ export const Sidenav = forwardRef<
     open?: boolean
     components?: MDXProviderComponents
     styles?: ThemeStyles
-    children: ReactNode
+    children?: ReactNode
   }
 >(({ open, styles = {}, components = {}, ...props }, ref) => {
   return (
@@ -112,7 +113,7 @@ export const Sidenav = forwardRef<
         ),
       }}
     >
-      {open && <Overlay {...props} />}
+      {open && <Overlay />}
       <MDXProvider components={components}>
         <div
           {...props}
@@ -198,7 +199,11 @@ const NavLinks: FunctionComponent<{
   pathname: string
   links: ReactComponentElement<'a'>[]
   href: string
-  Link: React.FunctionComponent<{ href?: string; className?: string }>
+  Link: React.FunctionComponent<{
+    href?: string
+    className?: string
+    children?: ReactNode
+  }>
 }> = ({ open, pathname = '', links, href, Link }) => {
   if (!links) return null
   if (!open && !pathname.includes(href)) return null
@@ -325,12 +330,22 @@ export const AccordionNav = forwardRef<
 const removeSlash = (str: string) =>
   str.length > 1 ? str.replace(/\/$/, '') : str
 
-const PaginationLink: FunctionComponent<{
+interface PaginationLinkProps {
   label: string
   mdxType: string
   originalType: string
   parentName: string
-}> = ({ label, children, mdxType, originalType, parentName, ...props }) => (
+  children: ReactNode
+}
+
+const PaginationLink = ({
+  label,
+  children,
+  mdxType,
+  originalType,
+  parentName,
+  ...props
+}: PaginationLinkProps) => (
   <a
     {...props}
     sx={{
@@ -351,10 +366,18 @@ const PaginationLink: FunctionComponent<{
   </a>
 )
 
-export const Pagination: FunctionComponent<{
+export interface PaginationProps {
   pathname: string
   components?: any
-}> = ({ pathname = '', children, components, ...props }) => {
+  children?: ReactNode
+}
+
+export const Pagination = ({
+  pathname = '',
+  children,
+  components,
+  ...props
+}: PaginationProps) => {
   const links = flattenLinks(children)
   const index = links.findIndex(
     (link) =>

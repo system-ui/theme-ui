@@ -6,21 +6,18 @@
 import { jsx } from 'theme-ui'
 import renderer from 'react-test-renderer'
 import { render, cleanup, act } from '@theme-ui/test-utils'
-import { FunctionComponent } from 'react'
+import { ReactNode } from 'react'
 
 import { Sidenav, Pagination, AccordionNav } from '../src'
 
 afterEach(cleanup)
 
-const Link: FunctionComponent<{
-  href: string
-  mdxType: 'a'
-}> = (props) => {
+const Link = (props: { href: string; mdxType: 'a'; children: ReactNode }) => {
   const { children, ...rest } = props
   return <a {...rest}>{children}</a>
 }
 
-const Ul: FunctionComponent<{ mdxType: 'ul' }> = (props) => {
+const Ul = (props: { mdxType: 'ul'; children: ReactNode }) => {
   const { children, ...rest } = props
   return <ul {...rest}>{children}</ul>
 }
