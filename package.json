@@ -55,6 +55,7 @@
     "@auto-it/released": "^10.32.3",
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.15.8",
+    "@babel/helper-string-parser": "^7.18.10",
     "@babel/helper-validator-identifier": "^7.12.11",
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
