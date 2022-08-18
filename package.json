@@ -22,7 +22,12 @@
     "all-contributors:add": "npx all-contributors add"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
+  ],
+  "nohoist": [
+    "**/@mdx-js/react",
+    "**/@mdx-js/mdx"
   ],
   "husky": {
     "hooks": {
