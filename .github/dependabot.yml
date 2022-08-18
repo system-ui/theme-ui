@@ -81,9 +81,6 @@ updates:
       - dependency-name: reakit
         versions:
           - 1.3.6
-      - dependency-name: lerna
-        versions:
-          - 4.0.0
       - dependency-name: prism-react-renderer
         versions:
           - 1.2.0
