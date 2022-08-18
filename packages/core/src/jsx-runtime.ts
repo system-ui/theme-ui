@@ -4,8 +4,8 @@ import {
   // @ts-ignore
   jsxs as emotionJsxs,
 } from '@emotion/react/jsx-runtime'
-import parseProps from '@theme-ui/parse-props'
 import { ThemeUIJSX } from './jsx-namespace'
+import { parseProps } from './parseProps'
 
 export { Fragment } from 'react'
 export type { ThemeUIJSX as JSX } from './jsx-namespace'

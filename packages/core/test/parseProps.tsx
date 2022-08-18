@@ -1,4 +1,4 @@
-import parseProps from '../src'
+import { parseProps } from '../src/parseProps'
 
 describe('parseProps', () => {
   test('does not touch props if not relevant', () => {
