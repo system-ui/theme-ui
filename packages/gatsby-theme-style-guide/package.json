@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-style-guide",
-  "version": "0.14.7",
+  "version": "0.15.0-rc.1",
   "main": "dist/gatsby-theme-style-guide.cjs.js",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
@@ -10,14 +10,14 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "gatsby": "^4.20.0",
+    "gatsby": "^4.21.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "dependencies": {
-    "@theme-ui/mdx": "0.14.7",
-    "@theme-ui/style-guide": "0.14.7",
-    "theme-ui": "0.14.7"
+    "@theme-ui/mdx": "0.15.0-rc.1",
+    "@theme-ui/style-guide": "0.15.0-rc.1",
+    "theme-ui": "0.15.0-rc.1"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
