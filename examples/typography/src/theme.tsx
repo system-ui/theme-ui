@@ -1,5 +1,7 @@
+// @ts-ignore no types
 import { toTheme } from 'theme-ui-typography'
 import merge from 'lodash.merge'
+// @ts-ignore no types
 import fairyGates from 'typography-theme-fairy-gates'
 
 const typography = toTheme(fairyGates)
