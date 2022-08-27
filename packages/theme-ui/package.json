@@ -12,17 +12,18 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/color-modes": "0.15.0-rc.1",
-    "@theme-ui/components": "0.15.0-rc.1",
-    "@theme-ui/core": "0.15.0-rc.1",
-    "@theme-ui/css": "0.15.0-rc.1",
-    "@theme-ui/mdx": "0.15.0-rc.1",
-    "@theme-ui/theme-provider": "0.15.0-rc.1"
+    "@theme-ui/color-modes": "workspace:^",
+    "@theme-ui/components": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/css": "workspace:^",
+    "@theme-ui/mdx": "workspace:^",
+    "@theme-ui/theme-provider": "workspace:^"
   },
   "peerDependencies": {
     "react": ">=18"
   },
   "devDependencies": {
+    "react": ">=18",
     "react-dom": ">=18"
   },
   "keywords": [

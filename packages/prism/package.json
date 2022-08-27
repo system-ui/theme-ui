@@ -7,20 +7,10 @@
   "source": "src/index.tsx",
   "author": "John Otander",
   "license": "MIT",
-  "scripts": {
-    "build-presets": "node build-presets.js"
-  },
-  "dependencies": {
-    "prism-react-renderer": "^1.1.1"
-  },
-  "peerDependencies": {
-    "theme-ui": ">=0.14.0",
-    "@theme-ui/mdx": ">=0.14.0"
-  },
+  "repository": "system-ui/theme-ui",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "system-ui/theme-ui",
   "keywords": [
     "theme-ui",
     "prism",
@@ -30,12 +20,23 @@
     "css-in-js",
     "style"
   ],
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8",
+  "scripts": {
+    "build-presets": "node build-presets.js"
+  },
+  "dependencies": {
+    "prism-react-renderer": "^1.1.1"
+  },
+  "peerDependencies": {
+    "theme-ui": "workspace:^",
+    "@theme-ui/mdx": "workspace:^"
+  },
   "devDependencies": {
-    "@theme-ui/mdx": "0.14.5",
+    "@theme-ui/mdx": "workspace:^",
     "param-case": "^3.0.4",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
-    "theme-ui": "0.15.0-rc.1"
-  }
+    "theme-ui": "workspace:^",
+    "react": "^18"
+  },
+  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

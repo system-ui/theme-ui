@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.15.0-rc.1",
+    "@theme-ui/css": "workspace:^",
     "@types/compass-vertical-rhythm": "^1.4.2",
     "@types/modularscale": "^2.0.0",
     "@types/typography": "^0.16.4",

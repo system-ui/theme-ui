@@ -10,18 +10,18 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/presets": "0.15.0-rc.1",
+    "@theme-ui/presets": "workspace:^",
     "@types/color": "^3.0.3",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
     "react": ">=18",
-    "theme-ui": ">=0.14.0"
+    "theme-ui": "workspace:^"
   },
   "devDependencies": {
     "react": "^18.1.0",
-    "theme-ui": "^0.14.7"
+    "theme-ui": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

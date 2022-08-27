@@ -12,9 +12,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/color-modes": "0.15.0-rc.1",
-    "@theme-ui/core": "0.15.0-rc.1",
-    "@theme-ui/css": "0.15.0-rc.1"
+    "@theme-ui/color-modes": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/css": "workspace:^"
   },
   "peerDependencies": {
     "@emotion/react": "^11",

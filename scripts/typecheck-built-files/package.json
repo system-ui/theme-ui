@@ -21,7 +21,7 @@
     "@theme-ui/preset-tailwind": "file:../../packages/preset-tailwind",
     "@theme-ui/preset-tosh": "file:../../packages/preset-tosh",
     "theme-ui": "file:../../packages/theme-ui",
-    "typescript": "^4"
+    "typescript": ">=4"
   },
   "resolutions": {
     "@theme-ui/components": "file:../../packages/components",
