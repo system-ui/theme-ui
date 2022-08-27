@@ -14,7 +14,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.15.0-rc.1",
+    "@theme-ui/css": "workspace:^",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {

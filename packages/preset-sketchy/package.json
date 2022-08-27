@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.15.0-rc.1"
+    "@theme-ui/css": "workspace:^"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

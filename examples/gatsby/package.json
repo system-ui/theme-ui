@@ -17,13 +17,15 @@
     "gatsby-plugin-mdx": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "@theme-ui/mdx": "^0.15.0-rc.1",
-    "theme-ui": "^0.15.0-rc.1",
+    "@theme-ui/mdx": "workspace:^",
+    "theme-ui": "workspace:^",
     "@mdx-js/react": "^2",
     "gatsby-source-filesystem": "latest"
   },
   "devDependencies": {
     "@types/react": "^17.0.39",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "@babel/core": "^7.15.8",
+    "babel-eslint": "^10"
   }
 }

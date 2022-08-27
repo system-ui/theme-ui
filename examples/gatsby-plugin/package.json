@@ -15,9 +15,9 @@
     "@emotion/react": "^11.8.1",
     "gatsby": "^4.21.0",
     "gatsby-plugin-mdx": "^3.7.1",
-    "gatsby-plugin-theme-ui": "latest",
+    "gatsby-plugin-theme-ui": "workspace:^",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "theme-ui": "latest"
+    "theme-ui": "workspace:^"
   }
 }

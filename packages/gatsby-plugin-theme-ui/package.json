@@ -7,11 +7,11 @@
   "peerDependencies": {
     "@emotion/react": "^11",
     "@mdx-js/react": "^1 || ^2",
-    "@theme-ui/mdx": ">=0.14.0",
-    "@theme-ui/css": ">=0.14.0",
+    "@theme-ui/mdx": "workspace:^",
+    "@theme-ui/css": "workspace:^",
     "gatsby": "^4",
     "react": ">=18",
-    "theme-ui": ">=0.14.0"
+    "theme-ui": "workspace:^"
   },
   "keywords": [
     "gatsby",

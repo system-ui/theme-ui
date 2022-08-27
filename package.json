@@ -21,10 +21,6 @@
     "all-contributors:check": "./scripts/all-contributors-check.js",
     "all-contributors:add": "npx all-contributors add"
   },
-  "workspaces": [
-    "packages/*",
-    "examples/*"
-  ],
   "nohoist": [
     "**/@mdx-js/react",
     "**/@mdx-js/mdx"

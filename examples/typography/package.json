@@ -17,7 +17,7 @@
     "lodash.merge": "^4.6.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "theme-ui": "latest",
+    "theme-ui": "workspace:^",
     "theme-ui-typography": "^0.1.7",
     "typography-theme-fairy-gates": "^0.16.19"
   }

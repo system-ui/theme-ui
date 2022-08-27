@@ -7,12 +7,12 @@
   "sideEffects": false,
   "scripts": {},
   "dependencies": {
-    "@theme-ui/core": "0.15.0-rc.1",
-    "@theme-ui/css": "0.15.0-rc.1"
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/css": "workspace:^"
   },
   "devDependencies": {
-    "@mdx-js/mdx-v2@npm:@mdx-js/mdx": "^2.1.2",
-    "@mdx-js/react-v2@npm:@mdx-js/react": "^2.1.2",
+    "@mdx-js/mdx-v2": "npm:@mdx-js/mdx@^2.1.2",
+    "@mdx-js/react-v2": "npm:@mdx-js/react@^2.1.2",
     "@types/mdx": "^2.0.2",
     "react": "^18.1.0",
     "remark-gfm": "^3.0.1"

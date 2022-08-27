@@ -15,9 +15,9 @@
     "react-dom": "^18"
   },
   "dependencies": {
-    "@theme-ui/mdx": "0.15.0-rc.1",
-    "@theme-ui/style-guide": "0.15.0-rc.1",
-    "theme-ui": "0.15.0-rc.1"
+    "@theme-ui/mdx": "workspace:^",
+    "@theme-ui/style-guide": "workspace:^",
+    "theme-ui": "workspace:^"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
