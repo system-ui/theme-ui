@@ -355,14 +355,16 @@ importers:
 
   packages/css:
     specifiers:
+      '@babel/core': ^7
       '@emotion/react': ^11
       '@theme-ui/test-utils': workspace:^
       '@types/react': ^18
       csstype: ^3.0.10
     dependencies:
-      '@emotion/react': 11.10.0_ug65io7jkbhmo4fihdmbrh3ina
+      '@emotion/react': 11.10.0_tu23i5xxn6kbev62oblybgbdem
       csstype: 3.1.0
     devDependencies:
+      '@babel/core': 7.18.13
       '@theme-ui/test-utils': link:../test-utils
       '@types/react': 18.0.17
 
@@ -617,12 +619,14 @@ importers:
       '@theme-ui/core': workspace:^
       '@theme-ui/css': workspace:^
       '@theme-ui/test-utils': workspace:^
+      '@types/react': ^18
       react: ^18.1.0
       theme-ui: workspace:^
     devDependencies:
       '@theme-ui/core': link:../core
       '@theme-ui/css': link:../css
       '@theme-ui/test-utils': link:../test-utils
+      '@types/react': 18.0.17
       react: 18.2.0
       theme-ui: link:../theme-ui
 
@@ -828,9 +832,10 @@ importers:
     specifiers:
       '@theme-ui/presets': workspace:^
       '@types/color': ^3.0.3
+      '@types/react': ^18
       color: ^3.1.2
       lodash.get: ^4.4.2
-      react: ^18.1.0
+      react: ^18
       theme-ui: workspace:^
     dependencies:
       '@theme-ui/presets': link:../presets
@@ -838,6 +843,7 @@ importers:
       color: 3.2.1
       lodash.get: 4.4.2
     devDependencies:
+      '@types/react': 18.0.17
       react: 18.2.0
       theme-ui: link:../theme-ui
 
@@ -869,6 +875,7 @@ importers:
   packages/test-utils:
     specifiers:
       '@testing-library/react': ^13.3.0
+      '@types/react': ^18
       conditional-type-checks: ^1.0.6
       react: ^18
       react-dom: '>=18'
@@ -882,6 +889,7 @@ importers:
       react-test-renderer: 18.2.0_react@18.2.0
       ts-snippet: 5.0.2_typescript@4.8.2
     devDependencies:
+      '@types/react': 18.0.17
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       theme-ui: link:../theme-ui
@@ -917,6 +925,7 @@ importers:
       '@theme-ui/mdx': workspace:^
       '@theme-ui/test-utils': workspace:^
       '@theme-ui/theme-provider': workspace:^
+      '@types/react': ^18
       react: '>=18'
       react-dom: '>=18'
     dependencies:
@@ -928,6 +937,7 @@ importers:
       '@theme-ui/theme-provider': link:../theme-provider
     devDependencies:
       '@theme-ui/test-utils': link:../test-utils
+      '@types/react': 18.0.17
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -1932,15 +1942,6 @@ packages:
       '@babel/helper-plugin-utils': 7.18.9
     dev: false
 
-  /@babel/plugin-syntax-jsx/7.18.6:
-    resolution: {integrity: sha512-6mmljtAedFGTWu2p/8WIORGwy+61PLgOMPOdazc7YoJ9ZCWUyFy3A6CpPkRKLKD1ToAesxX8KGEViAiLo9N+7Q==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/helper-plugin-utils': 7.18.9
-    dev: false
-
   /@babel/plugin-syntax-jsx/7.18.6_@babel+core@7.18.13:
     resolution: {integrity: sha512-6mmljtAedFGTWu2p/8WIORGwy+61PLgOMPOdazc7YoJ9ZCWUyFy3A6CpPkRKLKD1ToAesxX8KGEViAiLo9N+7Q==}
     engines: {node: '>=6.9.0'}
@@ -2765,25 +2766,6 @@ packages:
     dev: false
     optional: true
 
-  /@emotion/babel-plugin/11.10.2:
-    resolution: {integrity: sha512-xNQ57njWTFVfPAc3cjfuaPdsgLp5QOSuRsj9MA6ndEhH/AzuZM86qIQzt6rq+aGBwj3n5/TkLmU5lhAfdRmogA==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/helper-module-imports': 7.18.6
-      '@babel/plugin-syntax-jsx': 7.18.6
-      '@babel/runtime': 7.18.9
-      '@emotion/hash': 0.9.0
-      '@emotion/memoize': 0.8.0
-      '@emotion/serialize': 1.1.0
-      babel-plugin-macros: 3.1.0
-      convert-source-map: 1.8.0
-      escape-string-regexp: 4.0.0
-      find-root: 1.1.0
-      source-map: 0.5.7
-      stylis: 4.0.13
-    dev: false
-
   /@emotion/babel-plugin/11.10.2_@babel+core@7.18.13:
     resolution: {integrity: sha512-xNQ57njWTFVfPAc3cjfuaPdsgLp5QOSuRsj9MA6ndEhH/AzuZM86qIQzt6rq+aGBwj3n5/TkLmU5lhAfdRmogA==}
     peerDependencies:
@@ -2876,29 +2858,6 @@ packages:
       '@babel/core': 7.18.13
       '@babel/runtime': 7.18.9
       '@emotion/babel-plugin': 11.10.2_@babel+core@7.18.13
-      '@emotion/cache': 11.10.3
-      '@emotion/serialize': 1.1.0
-      '@emotion/utils': 1.2.0
-      '@emotion/weak-memoize': 0.3.0
-      '@types/react': 18.0.17
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-    dev: false
-
-  /@emotion/react/11.10.0_ug65io7jkbhmo4fihdmbrh3ina:
-    resolution: {integrity: sha512-K6z9zlHxxBXwN8TcpwBKcEsBsOw4JWCCmR+BeeOWgqp8GIU1yA2Odd41bwdAAr0ssbQrbJbVnndvv7oiv1bZeQ==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/react': '*'
-      react: '>=16.8.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.18.9
-      '@emotion/babel-plugin': 11.10.2
       '@emotion/cache': 11.10.3
       '@emotion/serialize': 1.1.0
       '@emotion/utils': 1.2.0
