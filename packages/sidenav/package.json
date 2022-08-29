@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "react": "^18.1.0",
-    "@types/mdx-js__react": "^1"
+    "@types/mdx-js__react": "^1",
+    "@babel/core": "^7"
   },
   "keywords": [
     "theme-ui",

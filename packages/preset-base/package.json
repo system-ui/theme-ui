@@ -11,6 +11,9 @@
   "peerDependencies": {
     "@theme-ui/css": "workspace:^"
   },
+  "devDependencies": {
+    "@theme-ui/css": "workspace:^"
+  },
   "publishConfig": {
     "access": "public"
   },

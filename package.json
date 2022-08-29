@@ -5,7 +5,7 @@
     "build": "preconstruct build",
     "build:docs": "yarn build && yarn workspace docs build",
     "serve:docs": "yarn build:docs && yarn workspace docs serve",
-    "dev:docs": "yarn workspace docs start",
+    "dev:docs": "pnpm run --filter docs start",
     "clean": "rimraf packages/*/{dist,rts2_cache*}",
     "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "lint": "eslint --ext .ts,.tsx,.js \"packages/**/*.{ts,tsx,js,mtsx,mts}\"",
