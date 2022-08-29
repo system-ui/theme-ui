@@ -92,9 +92,12 @@
     "typecov": "^0.2.3",
     "typescript": "^4"
   },
-  "resolutions": {
-    "@types/readable-stream": "2.3.11",
-    "@types/eslint": "7.29.0",
-    "@types/react": "^18"
+  "pnpm": {
+    "overrides": {
+      "@types/readable-stream": "2.3.11",
+      "@types/eslint": "7.29.0",
+      "@types/react": "^18",
+      "@emotion/react": "11.10.0"
+    }
   }
 }
