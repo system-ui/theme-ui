@@ -8,6 +8,7 @@
   "repository": "system-ui/theme-ui",
   "scripts": {
     "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -18,10 +19,11 @@
   },
   "dependencies": {
     "@babel/helper-string-parser": "^7.18.10",
-    "@emotion/react": "^11.9.0",
+    "@emotion/react": "^11",
     "@mdx-js/mdx": "^1",
     "@mdx-js/react": "^1",
     "@theme-ui/color": "workspace:^",
+    "@theme-ui/core": "workspace:^",
     "@theme-ui/components": "workspace:^",
     "@theme-ui/css": "workspace:^",
     "@theme-ui/match-media": "workspace:^",
@@ -30,15 +32,19 @@
     "@theme-ui/prism": "workspace:^",
     "@theme-ui/sidenav": "workspace:^",
     "@theme-ui/style-guide": "workspace:^",
+    "@theme-ui/tachyons": "workspace:^",
+    "@theme-ui/tailwind": "workspace:^",
     "@theme-ui/typography": "workspace:^",
     "copy-to-clipboard": "^3.2.0",
     "gatsby": "^4.21.0",
     "gatsby-plugin-catch-links": "^4.2.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.1",
-    "gatsby-plugin-mdx": "3.2.0",
+    "gatsby-plugin-mdx": "^3",
+    "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-react-helmet": "^5.2.0",
     "gatsby-plugin-theme-ui": "workspace:^",
     "gatsby-theme-style-guide": "workspace:^",
+    "is-absolute-url": "^4.0.1",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "prismjs": "^1.16.0",
@@ -86,16 +92,19 @@
     "typography-theme-wordpress-2015": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
-    "typography-theme-zacklive": "^1.0.2"
+    "typography-theme-zacklive": "^1.0.2",
+    "@types/react": "^18"
   },
   "devDependencies": {
-    "@babel/register": "^7.8.6",
     "@babel/core": "^7",
-    "typescript": "^4",
+    "@babel/register": "^7.8.6",
     "babel-eslint": "^10",
-    "eslint": "^8"
+    "eslint": "^8",
+    "typescript": "^4"
   },
-  "resolutions": {
-    "@emotion/react": "11.9.0"
+  "pnpm": {
+    "overrides": {
+      "@mdx-js/react": "^1"
+    }
   }
 }

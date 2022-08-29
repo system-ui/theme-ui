@@ -18,6 +18,9 @@
   "peerDependencies": {
     "@emotion/react": "^11"
   },
+  "devDependencies": {
+    "@types/react": "^18"
+  },
   "preconstruct": {
     "entrypoints": [
       "index.ts",

@@ -1,7 +1,11 @@
 const PACKAGES_WITH_ENFORCED_SINGLE_VERSION = ['@emotion/react']
 
+/**
+ * @author remorses
+ * @see https://github.com/pnpm/pnpm/issues/2713#issuecomment-1141000426
+ */
 function afterAllResolved(lockfile, context) {
-  context.log(`Checking duplicate packages`)
+  context.log('Checking duplicate packages...')
 
   const packagesKeys = Object.keys(lockfile.packages)
   const found = {}
@@ -26,9 +30,7 @@ function afterAllResolved(lockfile, context) {
     }
   }
 
-  if (msg) {
-    throw new Error(msg)
-  }
+  if (msg) console.warn('\n\n\n', '🔥', msg, '\n\n\n')
 
   return lockfile
 }

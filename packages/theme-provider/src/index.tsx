@@ -12,7 +12,7 @@ import { Global } from '@emotion/react'
 
 const RootStyles = () =>
   jsx(Global, {
-    styles: (emotionTheme) => {
+    styles: (emotionTheme: unknown) => {
       const theme = emotionTheme as Theme
       const { useRootStyles } = theme.config || theme
 

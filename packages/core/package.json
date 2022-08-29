@@ -21,6 +21,10 @@
     "@emotion/react": "^11",
     "react": ">=18"
   },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@babel/core": "^7"
+  },
   "preconstruct": {
     "entrypoints": [
       "index.ts",

@@ -1,4 +1,6 @@
 const presets = require('@theme-ui/presets')
+const fs = require('fs')
+const path = require('path')
 
 const Preset = require.resolve('./src/templates/preset')
 
@@ -23,5 +25,16 @@ module.exports.createPages = ({ actions }) => {
       component: Preset,
       context: { preset },
     })
+  })
+}
+
+module.exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [
+        path.resolve(fs.realpathSync('node_modules/gatsby'), '..'),
+        'node_modules',
+      ],
+    },
   })
 }
