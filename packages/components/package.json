@@ -20,7 +20,10 @@
   "devDependencies": {
     "react": "^18.1.0",
     "@types/react": "^18",
-    "@babel/core": "^7"
+    "@babel/core": "^7",
+    "theme-ui": "workspace:^",
+    "@theme-ui/test-utils": "workspace:^",
+    "@theme-ui/core": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

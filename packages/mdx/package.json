@@ -22,7 +22,8 @@
     "react": "^18.1.0",
     "remark-gfm": "^3.0.1",
     "@babel/core": "^7",
-    "@types/react": "^18"
+    "@types/react": "^18",
+    "@theme-ui/test-utils": "workspace:^"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",

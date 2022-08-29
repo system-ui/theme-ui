@@ -22,7 +22,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@types/react": "^18"
+    "@types/react": "^18",
+    "@theme-ui/test-utils": "workspace:^"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

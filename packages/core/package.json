@@ -23,7 +23,8 @@
   },
   "devDependencies": {
     "@types/react": "^18",
-    "@babel/core": "^7"
+    "@babel/core": "^7",
+    "@theme-ui/test-utils": "workspace:^"
   },
   "preconstruct": {
     "entrypoints": [

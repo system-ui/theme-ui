@@ -10,6 +10,11 @@
     "@theme-ui/css": "workspace:^",
     "polished": "^4.0.5"
   },
+  "devDependencies": {
+    "@theme-ui/test-utils": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/theme-provider": "workspace:^"
+  },
   "publishConfig": {
     "access": "public"
   },

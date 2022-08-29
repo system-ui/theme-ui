@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "@theme-ui/test-utils": "workspace:^"
   },
   "keywords": [
     "theme-ui",
