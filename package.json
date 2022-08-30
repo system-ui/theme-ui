@@ -20,7 +20,8 @@
     "shipit": "cross-env TS_NODE_COMPILER_OPTIONS=\"{ \\\"module\\\": \\\"commonjs\\\", \\\"isolatedModules\\\": false }\" auto shipit -v",
     "auto:version": "cross-env TS_NODE_COMPILER_OPTIONS=\"{ \\\"module\\\": \\\"commonjs\\\", \\\"isolatedModules\\\": false }\" auto version -v",
     "all-contributors:check": "./scripts/all-contributors-check.js",
-    "all-contributors:add": "npx all-contributors add"
+    "all-contributors:add": "npx all-contributors add",
+    "codesandbox-ci:install": "pnpm install --no-frozen-lockfile"
   },
   "nohoist": [
     "**/@mdx-js/react",
