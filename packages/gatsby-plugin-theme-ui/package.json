@@ -15,7 +15,8 @@
   "devDependencies": {
     "@types/react": "^18",
     "@theme-ui/test-utils": "workspace:^",
-    "typescript": "^4"
+    "typescript": "^4",
+    "@babel/core": "^7"
   },
   "keywords": [
     "gatsby",

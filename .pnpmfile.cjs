@@ -30,7 +30,7 @@ function afterAllResolved(lockfile, context) {
     }
   }
 
-  if (msg) console.warn('\n\n\n', '🔥', msg, '\n\n\n')
+  if (msg) console.warn('\n\n\n🔥\n', '🔥', msg, '\n🔥\n\n\n')
 
   return lockfile
 }
