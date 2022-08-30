@@ -7,6 +7,8 @@
 _If your project is not using MDX or importing `Themed`, you shouldn't need to
 change anything._
 
+If you are using MDX, this change enables you to use Theme UI together with [MDX v2](https://mdxjs.com/blog/v2/).
+
 - `MDXProvider` is no longer included in Theme UI `ThemeProvider`, and has been
   removed in favour of an `useThemedStylesWithMdx` hook.
 
