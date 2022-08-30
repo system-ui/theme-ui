@@ -18,5 +18,9 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "theme-ui": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^4",
+    "babel-eslint": "^10"
   }
 }

@@ -98,6 +98,16 @@
       "@types/eslint": "7.29.0",
       "@types/react": "^18",
       "@emotion/react": "11.10.0"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "babel-eslint"
+      ],
+      "allowedVersions": {
+        "react": "18",
+        "eslint": "8",
+        "gatsby": "4"
+      }
     }
   }
 }
