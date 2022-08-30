@@ -1,8 +1,6 @@
 import { Interpolation } from '@emotion/react'
 import { ThemeUIStyleObject, Theme as ThemeUITheme } from '@theme-ui/css'
 
-import { ThemeUIJSX } from './jsx-namespace'
-
 export interface SxProp {
   /**
    * The sx prop lets you style elements inline, using values from your

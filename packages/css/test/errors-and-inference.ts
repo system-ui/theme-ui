@@ -87,7 +87,7 @@ describe('Theme', () => {
   })
 
   test('works as described in the docs', () => {
-    const theme: Theme = {
+    const _theme: Theme = {
       colors: { background: 'white', text: 'black', primary: '#07f' },
       space: [0, 8, 16, 32, 64, 128, 256],
       sizes: [0, 8, 16, 32, 64, 128, 256],

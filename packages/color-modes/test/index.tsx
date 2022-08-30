@@ -91,7 +91,7 @@ test('renders with initial color mode name', () => {
 
 test('useColorMode updates color mode state', () => {
   let mode
-  const Button = (props) => {
+  const Button = () => {
     const [colorMode, setMode] = useColorMode()
     mode = colorMode
     return (
