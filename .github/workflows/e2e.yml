@@ -21,24 +21,28 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - uses: actions/setup-node@v2
         with:
           node-version: 18.x
+          cache: 'pnpm'
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          install-command: yarn --pure-lockfile --non-interactive
+      - name: Install
+        run: pnpm install
 
-      - run: yarn build # build preconstruct libs
-      - run: yarn build:docs
+      - run: pnpm build
+      - run: pnpm build:docs
 
       - uses: cypress-io/github-action@v4
         with:
           record: true
           parallel: true
           working-directory: packages/e2e
-          command: yarn record
-          start: yarn serve-docs
+          command: pnpm record
+          start: pnpm serve-docs
           wait-on: 'http://localhost:9000'
           tag: ${{ github.event_name }}
         env:
