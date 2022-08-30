@@ -31,7 +31,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - run: pnpm build
       - run: pnpm build:docs

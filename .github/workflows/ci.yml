@@ -25,7 +25,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install
-        run: pnpm install --no-optional
+        run: pnpm install --no-optional --no-frozen-lockfile
 
       - name: Run linter
         run: pnpm lint --quiet
@@ -42,7 +42,7 @@ jobs:
       - name: Typecheck built files
         run: |
           cd scripts/typecheck-built-files
-          pnpm install
+          pnpm install --no-frozen-lockfile
           pnpm start
 
       - name: Run Codechecks
@@ -92,7 +92,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install
-        run: pnpm install --no-optional
+        run: pnpm install --no-optional --no-frozen-lockfile
 
       - name: Queue in release turnstile
         id: turnstyle
