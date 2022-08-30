@@ -16,7 +16,8 @@
     "@types/react": "^18",
     "@theme-ui/test-utils": "workspace:^",
     "typescript": "^4",
-    "@babel/core": "^7"
+    "@babel/core": "^7",
+    "@mdx-js/react": "^1"
   },
   "keywords": [
     "gatsby",

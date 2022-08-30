@@ -579,6 +579,7 @@ importers:
     specifiers:
       '@babel/core': ^7
       '@emotion/react': ^11
+      '@mdx-js/react': ^1
       '@theme-ui/css': workspace:^
       '@theme-ui/mdx': workspace:^
       '@theme-ui/test-utils': workspace:^
@@ -594,6 +595,7 @@ importers:
       theme-ui: link:../theme-ui
     devDependencies:
       '@babel/core': 7.18.13
+      '@mdx-js/react': 1.6.22_react@18.2.0
       '@theme-ui/test-utils': link:../test-utils
       '@types/react': 18.0.17
       gatsby: 4.21.1_szel5ggy6oiqgqxwc4a6yc2j34
@@ -841,11 +843,11 @@ importers:
       theme-ui: workspace:^
     dependencies:
       '@emotion/react': 11.10.0_tu23i5xxn6kbev62oblybgbdem
-      '@mdx-js/react': 1.6.22_react@18.2.0
       deepmerge: 4.2.2
       theme-ui: link:../theme-ui
     devDependencies:
       '@babel/core': 7.18.13
+      '@mdx-js/react': 1.6.22_react@18.2.0
       '@theme-ui/test-utils': link:../test-utils
       '@types/mdx-js__react': 1.5.5
       '@types/react': 18.0.17
@@ -3821,7 +3823,6 @@ packages:
       react: ^16.13.1 || ^17.0.0 || 18
     dependencies:
       react: 18.2.0
-    dev: false
 
   /@mdx-js/react/2.1.3_react@18.2.0:
     resolution: {integrity: sha512-11n4lTvvRyxq3OYbWJwEYM+7q6PE0GxKbk0AwYIIQmrRkxDeljIsjDQkKOgdr/orgRRbYy5zi+iERdnwe01CHQ==}
