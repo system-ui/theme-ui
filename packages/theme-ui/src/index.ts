@@ -3,6 +3,7 @@ import {
   ThemeUIJSX,
   type ThemeUIStyleObject,
 } from '@theme-ui/core'
+import React from 'react'
 export {
   __ThemeUIContext,
   merge,
@@ -33,7 +34,7 @@ export { css, get } from '@theme-ui/css'
 
 export const BaseStyles = (
   props: Record<string, unknown> & { sx?: ThemeUIStyleObject }
-) =>
+): JSX.Element =>
   jsx('div', {
     ...props,
     sx: {
