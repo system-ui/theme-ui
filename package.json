@@ -10,6 +10,7 @@
     "format": "prettier --write \"**/*.{ts,js,json}\" \"**/*.md\"  \"**/*.mdx\"",
     "lint": "eslint --ext .ts,.tsx,.js \"packages/**/*.{ts,tsx,js,mtsx,mts}\"",
     "test": "cross-env \"NODE_OPTIONS=--experimental-vm-modules --no-warnings\" jest",
+    "test:coverage": "cross-env \"NODE_OPTIONS=--experimental-vm-modules --no-warnings\" jest --coverage",
     "typecheck": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",
     "logo": "pnpm run --filter docs docs logo",

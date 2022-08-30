@@ -31,7 +31,7 @@ jobs:
         run: pnpm lint --quiet
 
       - name: Run tests and collect coverage
-        run: pnpm test --coverage
+        run: pnpm test:coverage
 
       - name: Typecheck
         run: pnpm typecheck
