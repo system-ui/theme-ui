@@ -99,7 +99,7 @@
     "overrides": {
       "@types/readable-stream": "2.3.11",
       "@types/eslint": "7.29.0",
-      "@types/react": "^18",
+      "@types/react": "^18.0.8",
       "@emotion/react": "11.10.0"
     },
     "peerDependencyRules": {

@@ -1,30 +1,43 @@
 {
+  "description": "Ensure that prerelease was published correctly and typechecks",
   "license": "MIT",
   "scripts": {
-    "start": "tsc"
+    "start": "pnpm install --no-frozen-lockfile && tsc"
   },
   "dependencies": {
-    "@theme-ui/components": "file:../../packages/components",
-    "@theme-ui/mdx": "file:../../packages/mdx",
-    "@theme-ui/preset-base": "file:../../packages/preset-base",
-    "@theme-ui/preset-bootstrap": "file:../../packages/preset-bootstrap",
-    "@theme-ui/preset-bulma": "file:../../packages/preset-bulma",
-    "@theme-ui/preset-dark": "file:../../packages/preset-dark",
-    "@theme-ui/preset-deep": "file:../../packages/preset-deep",
-    "@theme-ui/preset-funk": "file:../../packages/preset-funk",
-    "@theme-ui/preset-future": "file:../../packages/preset-future",
-    "@theme-ui/preset-polaris": "file:../../packages/preset-polaris",
-    "@theme-ui/preset-roboto": "file:../../packages/preset-roboto",
-    "@theme-ui/preset-sketchy": "file:../../packages/preset-sketchy",
-    "@theme-ui/preset-swiss": "file:../../packages/preset-swiss",
-    "@theme-ui/preset-system": "file:../../packages/preset-system",
-    "@theme-ui/preset-tailwind": "file:../../packages/preset-tailwind",
-    "@theme-ui/preset-tosh": "file:../../packages/preset-tosh",
-    "theme-ui": "file:../../packages/theme-ui",
+    "@theme-ui/components": "develop",
+    "@theme-ui/mdx": "develop",
+    "@theme-ui/preset-base": "develop",
+    "@theme-ui/preset-bootstrap": "develop",
+    "@theme-ui/preset-bulma": "develop",
+    "@theme-ui/preset-dark": "develop",
+    "@theme-ui/preset-deep": "develop",
+    "@theme-ui/preset-funk": "develop",
+    "@theme-ui/preset-future": "develop",
+    "@theme-ui/preset-polaris": "develop",
+    "@theme-ui/preset-roboto": "develop",
+    "@theme-ui/preset-sketchy": "develop",
+    "@theme-ui/preset-swiss": "develop",
+    "@theme-ui/preset-system": "develop",
+    "@theme-ui/preset-tailwind": "develop",
+    "@theme-ui/preset-tosh": "develop",
+    "@theme-ui/css": "develop",
+    "theme-ui": "develop",
+    "@emotion/react": "^11",
+    "react": "^18",
     "typescript": ">=4"
   },
-  "resolutions": {
-    "@theme-ui/components": "file:../../packages/components",
-    "@theme-ui/mdx": "file:../../packages/mdx"
+  "devDependencies": {
+    "@types/react": "^18.0.8",
+    "react-dom": "^18",
+    "@types/react-dom": "^18.0.6"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/core",
+        "@mdx-js/react"
+      ]
+    }
   }
 }
