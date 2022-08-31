@@ -36,7 +36,7 @@ jobs:
       - run: pnpm build
       - run: pnpm build:docs
 
-      - uses: cypress-io/github-action@v4
+      - uses: cypress-io/github-action@v4.2.0
         with:
           record: true
           parallel: true
@@ -45,6 +45,7 @@ jobs:
           start: pnpm serve-docs
           wait-on: 'http://localhost:9000'
           tag: ${{ github.event_name }}
+          install-command: echo dependencies are already installed
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
