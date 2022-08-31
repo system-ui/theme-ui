@@ -45,7 +45,7 @@ jobs:
           start: pnpm serve-docs
           wait-on: 'http://localhost:9000'
           tag: ${{ github.event_name }}
-          install-command: echo dependencies are already installed
+          install: false
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
