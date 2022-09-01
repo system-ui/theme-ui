@@ -5,8 +5,8 @@ title: Themed
 # Themed component
 
 Use the `Themed` components dict to render UI with styles from
-[`theme.styles`](/theming#styles) _outside_ of MDX. Useful for consistent
-styling in components meant for embedding in MDX.
+[`theme.styles`](/theming#styles) _outside_ of MDX or inside of more complex
+components meant for embedding in MDX.
 
 For example, if you'd like to reuse heading styles in a React component, you can
 use the `Themed.h1` component to render an `<h1>` element with styles from
@@ -16,34 +16,26 @@ use the `Themed.h1` component to render an `<h1>` element with styles from
 import type { ComponentPropsWithoutRef } from 'react'
 import { Themed } from '@theme-ui/mdx'
 
-const createHeadingWithLink =
-  (Level: 'h2' | 'h3' | 'h4' | 'h5' | 'h6') =>
-  (props: ComponentPropsWithoutRef<'h2'>) =>
-    (
-      <Level {...props}>
-        {props.id && (
-          <a
-            href={`#${props.id}`}
-            sx={{
-              color: 'inherit',
-              textDecoration: 'none',
-              ':hover': {
-                textDecoration: 'underline',
-              },
-            }}
-          >
-            {props.children}
-          </a>
-        )}
-      </Level>
-    )
-
 export const components = {
-  h2: createHeadingWithLink('h2'),
-  h3: createHeadingWithLink('h3'),
-  h4: createHeadingWithLink('h4'),
-  h5: createHeadingWithLink('h5'),
-  h6: createHeadingWithLink('h6'),
+  h2: (props: ComponentPropsWithoutRef<'h2'>) => (
+    <h2 {...props}>
+      {props.id ? (
+        <Themed.a href={`#${props.id}`}>{props.children}</a>
+      ) : (
+        props.children
+      )}
+    </h2>
+  ),
+}
+
+export const theme = {
+  styles: {
+    a: {
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      },
+    },
 }
 ```
 
