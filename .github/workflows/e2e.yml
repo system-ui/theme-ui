@@ -33,7 +33,6 @@ jobs:
       - name: Install
         run: pnpm install --no-frozen-lockfile
 
-      - run: pnpm build
       - run: pnpm build:docs
 
       - uses: cypress-io/github-action@v4.2.0
@@ -43,7 +42,6 @@ jobs:
           working-directory: packages/e2e
           command: pnpm record
           start: pnpm serve-docs
-          wait-on: 'http://localhost:9000'
           tag: ${{ github.event_name }}
           install: false
         env:
