@@ -414,6 +414,45 @@ import { Box } from 'theme-ui'
 </Box>
 ```
 
+## Work with `className`
+
+`theme-ui` has its own function to build JSX with sx prop. How does it works?
+`theme-ui` will use `praseProps` to deal with all props. it will firstly deal
+with `sx` and/or `css` props, to get the **new** `css` prop with original props
+except the **old** `sx` and/or **old** `css` props. Then it will let
+`emtion`'s `jsx` function to finish the other works.
+
+You can click [emotion css-prop][] to get more infomation.
+
+[emotion]: https://emotion.sh/docs/css-prop#style-precedence
+
+So, emtion will deal with the **new** `css` prop and `className`(for example,
+`'bar'`) prop. Then make **new** style class with new name(for example,
+`'foo'`), and replace old `className` with new `className`.
+
+``` jsx
+const Comp = (props) => {
+  // - theme-ui will turn `sx` prop into `css` prop.
+  // - emtion will mixin `css` prop and `className` prop to get new `className`
+  // prop
+  <div className={props.className} sx={{width: 1}}/>
+}
+
+<Comp />
+// => <div class="bar" />
+// => .bar {
+//   width: 1px;
+// }
+
+// sx prop with turn into `className` prop.
+<Comp sx={{height: 1}} />
+// => <div class="foo" />
+// => .foo {
+//   width: 1px;
+//   height: 1px;
+// }
+```
+
 ## Object Styles
 
 If you're new to using JavaScript object notation for authoring styles, see the
