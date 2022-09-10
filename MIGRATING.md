@@ -54,6 +54,13 @@ If you are using MDX, this change enables you to use Theme UI together with
   +  import { Themed } from '@theme-ui/mdx'
   ```
 
+**`Themed` object is no longer a component**
+
+_Previously, it was an alias for `Themed.div`._
+
+- **Migration:** Whenever you're using `<Themed />`, use `<Themed.div />`
+  instead.
+
 ## v0.14
 
 - `theme-ui`, `@theme-ui/components` and `@theme-ui/mdx` packages no longer

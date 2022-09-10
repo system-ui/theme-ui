@@ -10,8 +10,6 @@ import { Themed } from '../src'
 
 expect.extend(matchers)
 
-const _ = <Themed /> // <- TODO: Remove this API. This is totally redundant.
-
 describe(Themed.div.name, () => {
   it('accepts .sx prop', async () => {
     const tree = render(

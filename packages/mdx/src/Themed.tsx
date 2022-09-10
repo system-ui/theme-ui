@@ -134,18 +134,8 @@ const createThemedComponent = <Name extends string>(
   return component
 }
 
-interface ThemedDivProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
-
-interface ThemedDiv {
-  (props: ThemedDivProps): JSX.Element
-}
-
-const _Themed: ThemedDiv = createThemedComponent('div', 'div')
-
 export const defaultMdxComponents = {} as ThemedComponentsDict
-
-export const Themed = _Themed as ThemedDiv & ThemedComponentsDict
+export const Themed: ThemedComponentsDict = {} as ThemedComponentsDict
 
 tags.forEach((tag) => {
   const component = createThemedComponent(alias(tag), tag)

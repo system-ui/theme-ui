@@ -10,5 +10,5 @@ coverage
 .envrc
 .envrc.ps1
 .publish-log.txt
-
+yarn.lock
 .vercel
