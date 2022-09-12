@@ -22,33 +22,33 @@ importers:
       '@theme-ui/preset-system': develop
       '@theme-ui/preset-tailwind': develop
       '@theme-ui/preset-tosh': develop
-      '@types/react': ^18.0.8
-      '@types/react-dom': ^18.0.6
+      '@types/react': ^18
+      '@types/react-dom': ^18
       react: ^18
       react-dom: ^18
       theme-ui: develop
       typescript: '>=4'
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
-      '@theme-ui/components': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/mdx': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/preset-base': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-bootstrap': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-bulma': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-dark': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-deep': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-funk': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-future': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-polaris': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-roboto': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-sketchy': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/preset-swiss': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-system': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-tailwind': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
-      '@theme-ui/preset-tosh': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
+      '@theme-ui/components': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/mdx': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/preset-base': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-bootstrap': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-bulma': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-dark': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-deep': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-funk': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-future': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-polaris': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-roboto': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-sketchy': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/preset-swiss': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-system': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-tailwind': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
+      '@theme-ui/preset-tosh': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
       react: 18.2.0
-      theme-ui: 0.15.0-develop.21_7xbt6cqxny5okm7nuwm4cfiesq
+      theme-ui: 0.15.0-develop.22_7xbt6cqxny5okm7nuwm4cfiesq
       typescript: 4.8.2
     devDependencies:
       '@types/react': 18.0.18
@@ -100,6 +100,9 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
     dependencies:
       '@babel/helper-plugin-utils': 7.18.9
     dev: false
@@ -124,6 +127,9 @@ packages:
     resolution: {integrity: sha512-xNQ57njWTFVfPAc3cjfuaPdsgLp5QOSuRsj9MA6ndEhH/AzuZM86qIQzt6rq+aGBwj3n5/TkLmU5lhAfdRmogA==}
     peerDependencies:
       '@babel/core': ^7.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
     dependencies:
       '@babel/helper-module-imports': 7.18.6
       '@babel/plugin-syntax-jsx': 7.18.6
@@ -314,21 +320,21 @@ packages:
       '@styled-system/css': 5.1.5
     dev: false
 
-  /@theme-ui/color-modes/0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq:
-    resolution: {integrity: sha512-rUJYyVG0enCy2nNWT/g3z/5Cgf3IHQr3m1NN5RoFVYLRFPkqqjRZqfsFBoJRytS8JAtavuUt72GLUiwY8PwvSQ==}
+  /@theme-ui/color-modes/0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq:
+    resolution: {integrity: sha512-BNp6keC3iqYIWUMl6+Xyypeba4zRGsv2C3hdspCckzcSzRKixcIfEAYi6Pc6DmbIZuNYvCqWLbeHWKq2d15Kww==}
     peerDependencies:
       '@emotion/react': ^11
       react: '>=18'
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
-      '@theme-ui/core': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/core': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
       deepmerge: 4.2.2
       react: 18.2.0
     dev: false
 
-  /@theme-ui/components/0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq:
-    resolution: {integrity: sha512-W4rjUVQXeamXrL6rMrElKrAaS+wRapaGBvcnziBEAqjRln9sr8gWnDX1iXtGruuPz+r2ZhrgWgWzbdTEEHvWRg==}
+  /@theme-ui/components/0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq:
+    resolution: {integrity: sha512-fhr+kovQGEc8D2Xm0cElbGZvnm6hVjdTDieBBRpq83IBbVYg/vNP68B0Hz0MUIDRu8snLLteGfMEH5tf+QH/tg==}
     peerDependencies:
       '@emotion/react': ^11
       react: '>=18'
@@ -337,26 +343,26 @@ packages:
       '@styled-system/color': 5.1.2
       '@styled-system/should-forward-prop': 5.1.5
       '@styled-system/space': 5.1.2
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
       '@types/styled-system': 5.1.15
       react: 18.2.0
     dev: false
 
-  /@theme-ui/core/0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq:
-    resolution: {integrity: sha512-yxnSAvIju5M1vDue/PaqLxmvC3hAhORRWb5z47+1OMX4Zm7WNFhworkO4UPk96siBserNxKzpL5tZNstRN6yEw==}
+  /@theme-ui/core/0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq:
+    resolution: {integrity: sha512-VRD5E2ajWyMnZ9JNqRHQH0eqiqz9Vhr/l8gxwI8FXOG1wM1VjIsrAXd6lvOpPBqSAKAATEx2i/81xjHCLgbwcw==}
     peerDependencies:
       '@emotion/react': ^11
       react: '>=18'
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/parse-props': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/parse-props': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
       deepmerge: 4.2.2
       react: 18.2.0
     dev: false
 
-  /@theme-ui/css/0.15.0-develop.21_@emotion+react@11.10.4:
-    resolution: {integrity: sha512-TjaKESWRwrhos2gH6OYMvqCmdfWldNQG4O90FxwKP9SMeJ63uXOweBKhczZKsoFnnQu/Z08iqP9HIgUwpI9ncQ==}
+  /@theme-ui/css/0.15.0-develop.22_@emotion+react@11.10.4:
+    resolution: {integrity: sha512-9wVZNZ7cbZ8p9vYZFdBTuEM/4iRGZPc017ChNCQURxKsxA8g+AVWrP8NNj78f6+cvseVK/cPHXoZsEi5T85uVw==}
     peerDependencies:
       '@emotion/react': ^11
     dependencies:
@@ -364,158 +370,161 @@ packages:
       csstype: 3.1.0
     dev: false
 
-  /@theme-ui/mdx/0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq:
-    resolution: {integrity: sha512-3tvYkdRZ45VKRhllUjhVqgyMdlgkfcugVBX4xsfLvqXSIGEoO5TByW27F3yX3JLXuTBl8/xBZuQqwbIRcNB8og==}
+  /@theme-ui/mdx/0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq:
+    resolution: {integrity: sha512-PkgLG4CaFQ3zYziIU6BbwP7KzMHBJKGCRg7/2t4DuiJztWjuQNOicbi8Z+Bs/Qidbo2kv4IV6ZMNtSIeQ3ELHw==}
     peerDependencies:
       '@emotion/react': ^11
       '@mdx-js/react': ^1 || ^2
       react: '>=18'
+    peerDependenciesMeta:
+      '@mdx-js/react':
+        optional: true
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
-      '@theme-ui/core': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/core': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
       react: 18.2.0
     dev: false
 
-  /@theme-ui/parse-props/0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq:
-    resolution: {integrity: sha512-vkO73PacSzFi1MFLXnZJJO/n/7+TiJumY9cnDhXvsfkl+xFEMVjRaF06xjzCeqWvNMkibdACJ+1E8QW3AkjNNA==}
+  /@theme-ui/parse-props/0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq:
+    resolution: {integrity: sha512-DD0f4P5stOY1C8dZTpWfSXpOI+LYXeSvqSvPEgGwi86td0e2BWZIufJDWuQ+LEBAfT87Dt1S2fQkJD4dd4Jplg==}
     peerDependencies:
       '@emotion/react': ^11
       react: '>=18'
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
       react: 18.2.0
     dev: false
 
-  /@theme-ui/preset-base/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-F/B00p1IdAUJgHs7oWdlF6CQvWSmrRvQPRu752COAzN4r9/O37o6ajHhN4YsniX0NKG6CMm7b9/UYphhIk4GwA==}
+  /@theme-ui/preset-base/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-D3rPvqR/QTeeALQJ/qjzqDQYznRr2Lq4Y/289Mq4BTDVW+VFv62shJ6nhBWQT4dTdhkpP3p4WM8GRYDUy7ho3g==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-bootstrap/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-YuSP1cZxCBiKk0qVsewvUiC0vuwCOeQCiSin+yWO3Ne7ulgXs58XlN219KEqFehSfZi7cteL3l9UtQOcjhpGFQ==}
+  /@theme-ui/preset-bootstrap/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-og2cKrU5cj21hShvtyhtWUxG499OUTw/qKPsckvxctphoYaE+6xqPG6jmUB2lBurWVGd0MolVz0YcnSbh89U4g==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-bulma/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-3+AIAYoBCbYxuTIN36M7yLE02v2fXuwQzffTmktjolZlgAKoTTyF4cFRnqZDZZZfXhSbFWUUD0UBk/hrJU27dQ==}
+  /@theme-ui/preset-bulma/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-MsnfuURD1b5BGSf2kgUEzbkeKop7qnEx8Z65hMybITmb8j8aY8Uz1mYcafIHWAp3XbYMUrqjKCPT3eKNzX9PrA==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/preset-base': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/preset-base': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
     dev: false
 
-  /@theme-ui/preset-dark/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-QFcL94+/iwv7yL2lRTMzNkBGjQqnUWXXAExUvkIlUQsf+CEPUUK/qy4cVunPabblMwsTzC++uTNcoe7OZwxLtA==}
+  /@theme-ui/preset-dark/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-B9Qte6EOm+QeTSq9hfeE+ordoStCxLcHue8OFip0G9GFze9XlsO4cDOFHqsWqFrKtBLWJd+jvbqzpKE4Wqt0dQ==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-deep/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-WSGC689jJBuwuU7BUnuy3yljRiEuS0j0LjxTONqGZC6KlYtuKvXwZ6ZU1duiGdV6PjcBAMIBBTyV/EVmhXi0cw==}
+  /@theme-ui/preset-deep/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-oet3hBHZ6vO9e+qvi9b6BJNaydVEIjmARnY4bfI8LjumekDTdGdzrwyOYGlcIwIqTQYp8S2WXsQzF2mhvhEaug==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-funk/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-gOQ3a1kymRsP03EnvOSOXHhGoYsWrfQerJVAND9J3drhY3u7znQsPq8ZKpOaeWtWfigktDvMJ3tR2+RGw+ohTg==}
+  /@theme-ui/preset-funk/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-NK8KAhXM89FXXZ/Os2n1TrC4ovSzHsSz8RWk1RTwzArgdEgXxkO8rmafZ8ub+5vBZoZuIV5r0+O3/Qw/Sfjniw==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/preset-base': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/preset-base': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
     dev: false
 
-  /@theme-ui/preset-future/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-8SC0J4QBbAGIrGpdgDEjCQQkxIDGrTER5OD4WpvbgrKm777TMs+dMB4+/A/t48N3eHtIbPHEIGCsZHq7bbL3FQ==}
+  /@theme-ui/preset-future/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-+dGH5lslf7EXU3xfvdsQdTdp6Q8RoWttv39BL0GOl6wsmObloCrY5YYyijNq8cy7EUxxdIIuA/CwUEcQMXjeRA==}
     peerDependencies:
       '@theme-ui/css': '>=0.12.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/preset-base': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/preset-base': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
     dev: false
 
-  /@theme-ui/preset-polaris/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-SHvpm2OsjumK8Ozcjyc4g5foHB8vb/CVox3X+vy5saBkOK1/ITBFhjKtDpBVjzV2P0UkNPhzR0hgqwioJO9HIQ==}
+  /@theme-ui/preset-polaris/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-3KW+vkTZ/FR0bgCvNr1UKQbIrKMhAxsSqLgdJ9YUalBCV+4Oxfzd4bLX4JAxDiXxCOg9E9bL6jgzC/zH4lHXoQ==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/preset-base': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/preset-base': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
     dev: false
 
-  /@theme-ui/preset-roboto/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-hO4aeVCqAXFMJOchEw2hadSGjT8SNO4ZEQwyobh+xYhNnO4+aHHrN+3cOb1eQ08DcqfBx9tl8ydzs6ATjuunYA==}
+  /@theme-ui/preset-roboto/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-po+S1UZpevK8/ax4Ahm1tq4Wgw7PFnMF7i2eWioix3IIpkyYWOG2VDTtUR1dFf5Q5H6Kz1E9VHqAkMOZiR2g+Q==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/preset-base': 0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/preset-base': 0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe
     dev: false
 
-  /@theme-ui/preset-sketchy/0.15.0-develop.21_@emotion+react@11.10.4:
-    resolution: {integrity: sha512-VNxRaHt0M6N4VGday+wPUNQq6HZrzheg+SNijb0dQnuHx6mkDpeMVcKE9dXyZvzSgmTLv17uyzfy2kRwpwH8cg==}
+  /@theme-ui/preset-sketchy/0.15.0-develop.22_@emotion+react@11.10.4:
+    resolution: {integrity: sha512-PwOvVEOQeb4jOoRgXDIjtemZa/MDhuCVBkGO2eIxVom8h9lVsuw7tFCNyDimbnBt8xG4KjvmshgJVJ+RZPthsA==}
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     transitivePeerDependencies:
       - '@emotion/react'
     dev: false
 
-  /@theme-ui/preset-swiss/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-dHJR/5ZBGkejP4m0DzeHI7QAWwKIN3uorluxenLTgNrrvjxDWnXIROLcKbugCpmoWUKDc6reS07DvrP+QuRnhQ==}
+  /@theme-ui/preset-swiss/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-qBfPkxg4JR7hO0JAL3q/qOEp3npqoDMtCuEzsD4GMBq1Vuc9tU+GcFPy5Cz11hknmJNElDX8kOfDbb6eXDEUbw==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-system/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-XcvEtvzGuELBr8LXGBb34008MU9bk/1Nyd7fNnH8R8bTcz3/Ju+3BVgGlqPwQmTLNy8cKfarXt455E8IkSjMOg==}
+  /@theme-ui/preset-system/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-0acU8ArpMNXrpcqm/ImWCZMcvIy2KoEW0pGjrC2kAVLOH4gXsyUdD7si3e55Feme3hOW8bpJSzbu7xfiX1wlYQ==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-tailwind/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-EoulS/TVv7o3uMR6OmJXR4IJ/3+y+5PVzN1pNPOJmE8gJB9Sfu3os4JEcqk9qo9ZnEW0eyqyN40cvhP2YBkFVQ==}
+  /@theme-ui/preset-tailwind/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-jOTJLeABMmcCDeYmKTfBSEXfyYPB+NDWJ1xPs982D4+tkLk9zBregOBAez7BEBIiO+wT/lmm8eIfAzx97t2MrA==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/preset-tosh/0.15.0-develop.21_yhhkuouwai6kcc3jta7jsfeb5a:
-    resolution: {integrity: sha512-DE6PVfF53r3gnqv8Egvvxmg/I9wmPjO1OEixR9yfa1SObZSxnQoB8fuK+ilaMY3snYTFCzIQn3tDOaXHDspCgA==}
+  /@theme-ui/preset-tosh/0.15.0-develop.22_7k5fjk5riad5p23tz7kwh46upe:
+    resolution: {integrity: sha512-IinPtBlXr5tc5y1NjjcElqJDiHr+mzfflQnGOACkl3OfJCP8fPkjDLmZg6G/KCuqHeNos+2phsLjYjrfDMlNGA==}
     peerDependencies:
       '@theme-ui/css': '>=0.14.0'
     dependencies:
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
     dev: false
 
-  /@theme-ui/theme-provider/0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq:
-    resolution: {integrity: sha512-JrwKlMyYsZisfhFZ6ZVOwPDhBgLff+5OXizgyTPT3gBVacOQlSlCYjEgLVXg5/1cLUiVljUED4tmlJAlgtXw1w==}
+  /@theme-ui/theme-provider/0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq:
+    resolution: {integrity: sha512-HCH3XhtUmLB1dPeIRf2V/ho6K0rQcT8CPpxzt1pmhmm/oZIMrQmENwwrKZjQ2g4ungkQVdpRO1BYUvi1UhtDzQ==}
     peerDependencies:
       '@emotion/react': ^11
       react: '>=18'
     dependencies:
       '@emotion/react': 11.10.4_7v64pk2mkrohwh22gx7lrz5ive
-      '@theme-ui/color-modes': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/core': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/mdx': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/color-modes': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/core': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/mdx': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
       react: 18.2.0
     transitivePeerDependencies:
       - '@mdx-js/react'
@@ -808,18 +817,18 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /theme-ui/0.15.0-develop.21_7xbt6cqxny5okm7nuwm4cfiesq:
-    resolution: {integrity: sha512-QdH2SBtmBoQr6cEOUtTEKTbahDzqItIByNW6+OM+04Dv1rLzUKH+WHX3j60c49GYc94bobI+2BATUvVgq79E5Q==}
+  /theme-ui/0.15.0-develop.22_7xbt6cqxny5okm7nuwm4cfiesq:
+    resolution: {integrity: sha512-YPnlgIVCcsL5MzFw/h70/veZ2N7cjSG+hr7UptGObAOhEr6XbOGsod9reLp+8WTQJznVPGGMTVs+6SiHC8CktQ==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
-      '@theme-ui/color-modes': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/components': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/core': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/css': 0.15.0-develop.21_@emotion+react@11.10.4
-      '@theme-ui/mdx': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
-      '@theme-ui/theme-provider': 0.15.0-develop.21_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/color-modes': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/components': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/core': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/css': 0.15.0-develop.22_@emotion+react@11.10.4
+      '@theme-ui/mdx': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
+      '@theme-ui/theme-provider': 0.15.0-develop.22_gyryel6m34lsxtsejhafetjriq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     transitivePeerDependencies:
