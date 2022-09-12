@@ -5,19 +5,39 @@ title: Themed
 # Themed component
 
 Use the `Themed` components dict to render UI with styles from
-[`theme.styles`](/theming#styles) _outside_ of MDX. For example, if you'd like
-to reuse heading styles in a React component, you can use the `Themed.h1`
-component to render an `<h1>` element with styles from `theme.styles.h1`.
+[`theme.styles`](/theming#styles) _outside_ of MDX or inside of more complex
+components meant for embedding in MDX.
 
-```jsx
-// example
-import { Themed } from 'theme-ui'
+For example, if you'd like to reuse heading styles in a React component, you can
+use the `Themed.h1` component to render an `<h1>` element with styles from
+`theme.styles.h1`.
 
-export default (props) => (
-  <div>
-    <Themed.h1>Hello, styled heading!</Themed.h1>
-  </div>
-)
+```tsx
+import type { ComponentPropsWithoutRef } from 'react'
+import { Themed } from '@theme-ui/mdx'
+
+export const components = {
+  h2: (props: ComponentPropsWithoutRef<'h2'>) => (
+    <h2 {...props}>
+      {props.id ? (
+        <Themed.a href={`#${props.id}`}>{props.children}</a>
+      ) : (
+        props.children
+      )}
+    </h2>
+  ),
+}
+
+export const theme = {
+  styles: {
+    a: {
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      },
+    },
+  },
+}
 ```
 
 For a full list of keys available, see the

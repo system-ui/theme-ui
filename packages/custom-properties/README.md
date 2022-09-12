@@ -7,7 +7,7 @@ https://theme-ui.com
 ## Installation
 
 ```
-yarn add @theme-ui/custom-properties
+npm i @theme-ui/custom-properties
 ```
 
 ## Usage

@@ -5,8 +5,10 @@
   "module": "dist/theme-ui-core-jsx-dev-runtime.esm.js",
   "types": "dist/theme-ui-core-jsx-dev-runtime.cjs.d.ts",
   "dependencies": {
-    "@emotion/react": "*",
-    "@theme-ui/parse-props": "*",
-    "react": "*"
+    "@emotion/react": "^11",
+    "react": "^18"
+  },
+  "devDependencies": {
+    "@types/react": "^18"
   }
 }

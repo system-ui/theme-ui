@@ -6,23 +6,27 @@
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby clean && gatsby develop",
     "start": "gatsby develop",
     "clean": "gatsby clean",
     "build": "gatsby build"
   },
   "dependencies": {
-    "@emotion/react": "^11.8.1",
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "gatsby": "^4.20.0",
-    "gatsby-plugin-mdx": "^3.7.1",
+    "@emotion/react": "^11",
+    "gatsby": "^4.21.0",
+    "gatsby-plugin-mdx": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "theme-ui": "latest"
+    "@theme-ui/mdx": "workspace:^",
+    "theme-ui": "workspace:^",
+    "@mdx-js/react": "^2",
+    "gatsby-source-filesystem": "latest"
   },
   "devDependencies": {
-    "@types/react": "^17.0.39",
-    "typescript": "^4.5.5"
+    "@types/react": "^18",
+    "typescript": "^4",
+    "@babel/core": "^7.15.8",
+    "babel-eslint": "^10",
+    "graphql": "^15"
   }
 }

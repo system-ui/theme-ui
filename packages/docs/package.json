@@ -1,13 +1,14 @@
 {
   "private": true,
   "name": "docs",
-  "version": "0.14.7",
+  "version": "0.15.0-rc.1",
   "main": "dist/docs.cjs.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
   "scripts": {
     "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -17,28 +18,33 @@
     "icon": "npx repng src/components/logo.js -d static -f icon.png -w=32 -h=32 --props='{\"size\":32}'"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "@theme-ui/color": "0.14.7",
-    "@theme-ui/components": "0.14.7",
-    "@theme-ui/css": "0.14.7",
-    "@theme-ui/editor": "0.14.7",
-    "@theme-ui/match-media": "0.14.7",
-    "@theme-ui/presets": "0.14.7",
-    "@theme-ui/prism": "0.14.7",
-    "@theme-ui/sidenav": "0.14.7",
-    "@theme-ui/style-guide": "0.14.7",
-    "@theme-ui/typography": "0.14.7",
+    "@babel/helper-string-parser": "^7.18.10",
+    "@emotion/react": "^11",
+    "@mdx-js/mdx": "^1",
+    "@mdx-js/react": "^1",
+    "@theme-ui/color": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/components": "workspace:^",
+    "@theme-ui/css": "workspace:^",
+    "@theme-ui/match-media": "workspace:^",
+    "@theme-ui/mdx": "workspace:^",
+    "@theme-ui/presets": "workspace:^",
+    "@theme-ui/prism": "workspace:^",
+    "@theme-ui/sidenav": "workspace:^",
+    "@theme-ui/style-guide": "workspace:^",
+    "@theme-ui/tachyons": "workspace:^",
+    "@theme-ui/tailwind": "workspace:^",
+    "@theme-ui/typography": "workspace:^",
     "copy-to-clipboard": "^3.2.0",
-    "eslint-config-react-app": "^6.0.0",
-    "gatsby": "^4.20.0",
+    "gatsby": "^4.21.0",
     "gatsby-plugin-catch-links": "^4.2.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.1",
-    "gatsby-plugin-mdx": "3.2.0",
+    "gatsby-plugin-mdx": "^3",
+    "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-react-helmet": "^5.2.0",
-    "gatsby-plugin-theme-ui": "0.14.7",
-    "gatsby-theme-style-guide": "0.14.7",
+    "gatsby-plugin-theme-ui": "workspace:^",
+    "gatsby-theme-style-guide": "workspace:^",
+    "is-absolute-url": "^4.0.1",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "prismjs": "^1.16.0",
@@ -48,7 +54,7 @@
     "react-live": "^2.1.2",
     "remark-slug": "^6",
     "stringify-object": "^3",
-    "theme-ui": "0.14.7",
+    "theme-ui": "workspace:^",
     "typography-theme-alton": "^0.16.19",
     "typography-theme-anonymous": "^0.15.10",
     "typography-theme-bootstrap": "^0.16.19",
@@ -86,12 +92,19 @@
     "typography-theme-wordpress-2015": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19",
     "typography-theme-wordpress-kubrick": "^0.16.19",
-    "typography-theme-zacklive": "^1.0.2"
+    "typography-theme-zacklive": "^1.0.2",
+    "@types/react": "^18"
   },
   "devDependencies": {
-    "@babel/register": "^7.8.6"
+    "@babel/core": "^7",
+    "@babel/register": "^7.8.6",
+    "babel-eslint": "^10",
+    "eslint": "^8",
+    "typescript": "^4"
   },
-  "resolutions": {
-    "@emotion/react": "11.9.0"
+  "pnpm": {
+    "overrides": {
+      "@mdx-js/react": "^1"
+    }
   }
 }

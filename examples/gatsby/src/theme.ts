@@ -7,12 +7,12 @@ const theme: Theme = {
   colors: {
     text: '#000',
     background: '#fff',
-    primary: '#07c',
+    primary: 'rgb(0 0 255)',
+    primary05: 'rgb(0 0 255 / 0.05)',
     secondary: '#609',
   },
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
   },
   styles: {
@@ -24,9 +24,13 @@ const theme: Theme = {
     a: {
       color: 'primary',
       textDecoration: 'none',
+      bg: 'primary05',
+      p: 1,
+      borderRadius: '2px',
       ':hover': {
-        color: 'secondary',
-        textDecoration: 'underline',
+        p: 2,
+        m: -1,
+        borderRadius: '4px',
       },
     },
   },

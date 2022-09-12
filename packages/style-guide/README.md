@@ -7,7 +7,7 @@ npm i @theme-ui/style-guide
 ```
 
 ```jsx
-import { Themed } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import { TypeScale, TypeStyle, ColorPalette } from '@theme-ui/style-guide'
 
 export default (props) => (

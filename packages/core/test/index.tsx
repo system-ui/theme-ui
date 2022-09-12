@@ -31,7 +31,7 @@ describe('ThemeProvider', () => {
 
   test('warns when multiple versions of emotion are installed', () => {
     const restore = mockConsole()
-    const json = renderJSON(
+    const _ = renderJSON(
       <__ThemeUIContext.Provider
         value={{
           __EMOTION_VERSION__: '9.0.0',
@@ -282,12 +282,13 @@ describe('merge', () => {
 
   test('does not attempt to merge React components', () => {
     const h1 = React.forwardRef<HTMLHeadingElement, {}>((props, ref) => (
+      // eslint-disable-next-line jsx-a11y/heading-has-content
       <h1 ref={ref} {...props} />
     ))
-    const result = merge(
+    const result = (merge as any)(
       {
-        //@ts-ignore
-        h1: (props) => <h1 {...props} />,
+        // eslint-disable-next-line jsx-a11y/heading-has-content
+        h1: (props: {}) => <h1 {...props} />,
       },
       {
         h1,

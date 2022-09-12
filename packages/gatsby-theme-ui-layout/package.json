@@ -1,12 +1,16 @@
 {
   "name": "gatsby-theme-ui-layout",
-  "version": "0.14.7",
+  "version": "0.15.0-rc.1",
   "main": "dist/gatsby-theme-ui-layout.cjs.js",
   "repository": "system-ui/theme-ui",
   "peerDependencies": {
     "gatsby": "^4",
     "react": ">=18",
     "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^4",
+    "babel-eslint": "^10"
   },
   "license": "MIT"
 }

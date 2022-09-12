@@ -6,7 +6,7 @@ import { Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
 import packageInfo from '@emotion/react/package.json'
-import parseProps from '@theme-ui/parse-props'
+import { parseProps } from './parseProps'
 
 import { ThemeUIJSX } from './jsx-namespace'
 export type { ThemeUIJSX } from './jsx-namespace'

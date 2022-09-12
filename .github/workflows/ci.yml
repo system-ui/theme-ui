@@ -15,36 +15,32 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 18.x
+          cache: 'pnpm'
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          # By default, bahmutov/npm-install uses --frozen-lockfile
-          install-command:
-            yarn --ignore-optional --pure-lockfile --non-interactive
+      - name: Install
+        run: pnpm install --no-optional --no-frozen-lockfile
 
       - name: Run linter
-        run: yarn lint --quiet
+        run: pnpm lint --quiet
 
       - name: Run tests and collect coverage
-        run: yarn test --coverage
+        run: pnpm test:coverage
 
       - name: Typecheck
-        run: yarn typecheck
+        run: pnpm typecheck
 
       - name: Build
-        run: yarn build
-
-      - name: Typecheck built files
-        run: |
-          cd scripts/typecheck-built-files
-          yarn
-          yarn start
+        run: pnpm build
 
       - name: Run Codechecks
-        run: yarn codechecks
+        run: pnpm codechecks
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
         if: ${{ env.CC_SECRET != '' }}
@@ -80,14 +76,17 @@ jobs:
       - name: Prepare repository
         run: git fetch --unshallow --tags
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
       - uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 18.x
+          cache: 'pnpm'
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          install-command:
-            yarn --ignore-optional --pure-lockfile --non-interactive
+      - name: Install
+        run: pnpm install --no-optional --no-frozen-lockfile
 
       - name: Queue in release turnstile
         id: turnstyle
@@ -104,4 +103,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+        run: pnpm release
+
+      - name: Check published prerelease
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          cd scripts/typecheck-built-files
+          pnpm start

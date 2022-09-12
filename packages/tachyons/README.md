@@ -18,7 +18,7 @@ Tachyons expects. The best of both worlds.
 ## Installation
 
 ```
-yarn add @theme-ui/tachyons
+npm i @theme-ui/tachyons
 ```
 
 ## Usage

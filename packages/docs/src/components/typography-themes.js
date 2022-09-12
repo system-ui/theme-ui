@@ -80,7 +80,3 @@ export const themes = {
 }
 
 export default themes
-
-/* install
-yarn add typography-theme-alton typography-theme-bootstrap typography-theme-de-young typography-theme-doelger typography-theme-elk-glen typography-theme-fairy-gates typography-theme-funston typography-theme-github typography-theme-grand-view typography-theme-irving typography-theme-judah typography-theme-lawton typography-theme-legible typography-theme-lincoln typography-theme-kirkham typography-theme-moraga typography-theme-noriega typography-theme-ocean-beach typography-theme-parnassus typography-theme-stardust typography-theme-st-annes typography-theme-stern-grove typography-theme-stow-lake typography-theme-sutro typography-theme-twin-peaks typography-theme-us-web-design-standards typography-theme-wikipedia typography-theme-wordpress-kubrick typography-theme-wordpress-2010 typography-theme-wordpress-2011 typography-theme-wordpress-2012 typography-theme-wordpress-2013 typography-theme-wordpress-2014 typography-theme-wordpress-2015 typography-theme-wordpress-2016 typography-theme-trajan typography-theme-zacklive typography-theme-anonymous
-*/

@@ -111,7 +111,7 @@ const searchFormStyles = {
 
 export default function SearchInput() {
   return (
-    <form sx={searchFormStyles} suppressHydrationWarning>
+    <form sx={searchFormStyles}>
       <Input
         type="search"
         id="algolia-docs-search"

@@ -51,7 +51,7 @@ describe('Theme', () => {
 
   test('infers Theme argument in computed style function', () => {
     expectSnippet(`
-      import { get } from 'theme-ui'
+      import { get } from './packages/css'
 
       css({
         p: t => {
@@ -64,13 +64,13 @@ describe('Theme', () => {
 
   test('accepts additional properties by declaration merging', () => {
     expectSnippet(`
-      import { Theme } from 'theme-ui';
+      import { Theme } from './packages/css';
 
       interface MySyntaxHighlightingTheme {
         foreground: string
       }
 
-      declare module 'theme-ui' {
+      declare module './packages/css' {
         interface Theme {
           syntaxHighlighting?: MySyntaxHighlightingTheme
         }
@@ -87,7 +87,7 @@ describe('Theme', () => {
   })
 
   test('works as described in the docs', () => {
-    const theme: Theme = {
+    const _theme: Theme = {
       colors: { background: 'white', text: 'black', primary: '#07f' },
       space: [0, 8, 16, 32, 64, 128, 256],
       sizes: [0, 8, 16, 32, 64, 128, 256],
@@ -124,7 +124,7 @@ test('inferred type `string` is too wide for `whiteSpace`', () => {
   )
 
   expectSnippet(`
-    import { ThemeUICSSObject } from 'theme-ui'
+    import { ThemeUICSSObject } from './packages/css'
 
     const style: ThemeUICSSObject = {
       whiteSpace: 'pre-line'

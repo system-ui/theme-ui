@@ -1,5 +1,5 @@
 import React from 'react'
-import { Themed } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import { ColorPalette } from '@theme-ui/style-guide'
 
 export default function ColorsDemo() {

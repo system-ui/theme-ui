@@ -3,6 +3,7 @@ import {
   ThemeUIJSX,
   type ThemeUIStyleObject,
 } from '@theme-ui/core'
+import React from 'react'
 export {
   __ThemeUIContext,
   merge,
@@ -11,7 +12,6 @@ export {
 } from '@theme-ui/core'
 export type {
   ThemeUIContextValue,
-  IntrinsicSxElements,
   SxProp,
   ColorMode,
   ColorModesScale,
@@ -28,14 +28,13 @@ export type {
   StylePropertyValue,
 } from '@theme-ui/core'
 export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
-export { Themed, components } from '@theme-ui/mdx'
 export { ThemeProvider } from '@theme-ui/theme-provider'
 export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
 
 export const BaseStyles = (
   props: Record<string, unknown> & { sx?: ThemeUIStyleObject }
-) =>
+): JSX.Element =>
   jsx('div', {
     ...props,
     sx: {

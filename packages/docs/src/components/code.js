@@ -1,5 +1,7 @@
+// @ts-check
 /** @jsx jsx */
-import { jsx, Themed, Text } from 'theme-ui'
+import { jsx, Text } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'

@@ -9,7 +9,7 @@ const dir = {
 }
 
 const RE = {
-  ignore: /^(pre|code|@media|\:not)/,
+  ignore: /^(pre|code|@media|:not)/,
 }
 
 // hard-coded because prismjs css selectors

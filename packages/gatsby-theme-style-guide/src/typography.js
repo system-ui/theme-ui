@@ -1,5 +1,7 @@
+// @ts-check
 import React from 'react'
-import { Flex, Themed, useThemeUI } from 'theme-ui'
+import { Flex, useThemeUI } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import { TypeScale, TypeStyle } from '@theme-ui/style-guide'
 
 const Row = (props) => (
@@ -16,7 +18,7 @@ const Row = (props) => (
   />
 )
 
-export default (props) => {
+export default function Typography() {
   const { theme } = useThemeUI()
   const { fonts, fontWeights, lineHeights } = theme
 

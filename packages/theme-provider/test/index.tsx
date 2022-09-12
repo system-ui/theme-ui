@@ -4,7 +4,6 @@
  */
 
 import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
-import { mdx } from '@mdx-js/react'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -42,86 +41,6 @@ test('renders with theme', () => {
     </ThemeProvider>
   )
   expect(json).toHaveStyleRule('color', 'tomato')
-})
-
-test('renders with styles', () => {
-  const json = renderJSON(
-    <ThemeProvider
-      theme={{
-        config: {
-          useCustomProperties: false,
-        },
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      {mdx('h1', null, 'Hello')}
-    </ThemeProvider>
-  )
-  expect(json).toHaveStyleRule('color', 'tomato')
-  expect(json).toMatchSnapshot()
-})
-
-test('renders with nested provider', async () => {
-  const tree = render(
-    <ThemeProvider
-      theme={{
-        config: {
-          useCustomProperties: false,
-        },
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <ThemeProvider
-        theme={{
-          styles: {
-            h1: {
-              color: 'cyan',
-            },
-          },
-        }}
-      >
-        {mdx('h1', null, 'Hello')}
-      </ThemeProvider>
-    </ThemeProvider>
-  )
-
-  const style = global.getComputedStyle(await tree.findByText('Hello'))
-
-  expect(style.color).toBe('cyan')
-})
-
-test('renders with custom components', () => {
-  const h1 = (props: any) => <pre {...props} />
-
-  const json = renderJSON(
-    <ThemeProvider
-      components={{
-        h1,
-      }}
-      theme={{
-        config: {
-          useCustomProperties: false,
-        },
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      {mdx('h1', null, 'Hello')}
-    </ThemeProvider>
-  )
-  expect(json).toHaveStyleRule('color', 'tomato')
-  expect(json!.type).toBe('pre')
 })
 
 test('renders global styles', () => {

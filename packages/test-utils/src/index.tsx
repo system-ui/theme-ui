@@ -22,7 +22,13 @@ export type {
 export const renderHook = <T,>(
   useHook: () => T,
   options: { theme?: Theme } = {}
-) => {
+): {
+  unmount: () => void
+  rerender: (
+    ui: React.ReactElement<any, string | React.JSXElementConstructor<any>>
+  ) => void
+  readonly result: NonNullable<T>
+} => {
   let value: T | undefined = undefined
 
   const Component = () => {

@@ -2,38 +2,30 @@
  * @jest-environment jsdom
  */
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup } from '@theme-ui/test-utils'
 import { useThemeUI } from 'theme-ui'
 import { WrapRootElement } from '../src/provider'
-import theme from '../src/index'
-import renderer from 'react-test-renderer'
+import _theme from '../src/index'
+
+/** @type {import("theme-ui").Theme} */
+const theme = _theme
 
 let context
 
 afterEach(() => {
   cleanup()
   context = null
-  delete theme.config?.initialColorMode
   delete theme.colors
+  delete theme.config
 })
 
-const Consumer = (props) => {
+const Consumer = () => {
   context = useThemeUI()
   return false
 }
 
 test('renders with theme context', () => {
-  const root = render(WrapRootElement({ element: <Consumer /> }, {}))
-  expect(context.theme).toEqual({
-    colors: {},
-    rawColors: {},
-    styles: {
-      pre: {},
-    },
-  })
-})
-
-test.skip('renders with ColorMode component', () => {
+  theme.config = { useCustomProperties: false }
   theme.colors = {
     primary: 'tomato',
     modes: {
@@ -42,16 +34,17 @@ test.skip('renders with ColorMode component', () => {
       },
     },
   }
-  const root = renderer.create(
-    WrapRootElement(
-      {
-        element: <Consumer />,
+  render(WrapRootElement({ element: <Consumer /> }, {}))
+  expect(context.theme).toEqual({
+    config: { useCustomProperties: false },
+    colors: {
+      primary: 'tomato',
+      modes: {
+        dark: { primary: 'magenta' },
       },
-      {}
-    )
-  )
-  expect(context.theme.colors.primary).toEqual('tomato')
-  const tree = root.toTree()
-  const { children } = tree.props.children.props
-  expect(children[0].key).toEqual('theme-ui-color-mode')
+    },
+    styles: {
+      pre: {},
+    },
+  })
 })
