@@ -6,6 +6,7 @@ import { IOmitCommitsPluginOptions } from '@auto-it/omit-commits'
 
 const npmOptions: INpmConfig = {
   exact: true,
+  commitNextVersion: true,
 }
 
 const conventionalCommitsOptions: ConventionalCommitsOptions = {

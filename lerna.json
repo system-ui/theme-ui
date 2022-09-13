@@ -1,0 +1,10 @@
+{
+  "version": "0.14.7",
+  "npmClient": "npm",
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "verifyAccess": false
+    }
+  }
+}

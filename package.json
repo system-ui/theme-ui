@@ -46,8 +46,10 @@
   "devDependencies": {
     "@auto-it/all-contributors": "^10.32.3",
     "@auto-it/conventional-commits": "^10.32.3",
+    "@auto-it/core": "^10.37.4",
     "@auto-it/first-time-contributor": "^10.32.3",
     "@auto-it/magic-zero": "^10.32.3",
+    "@auto-it/npm": "^10.37.4",
     "@auto-it/omit-commits": "^10.32.3",
     "@auto-it/released": "^10.32.3",
     "@babel/cli": "^7.13.14",
