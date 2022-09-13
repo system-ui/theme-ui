@@ -16,7 +16,7 @@
     "pluralize": "^8.0.0"
   },
   "devDependencies": {
-    "@theme-ui/css": "0.15.0-rc.1",
+    "@theme-ui/css": "workspace:^",
     "@types/pluralize": "^0.0.29"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
