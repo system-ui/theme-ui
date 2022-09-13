@@ -31,11 +31,11 @@ async function setVersions() {
 
 function commitAndPush() {
   exec(`
-    git config --global user.name 'Piotr Monwid-Olechnowicz'
-    git config --global user.email 'hasparus@gmail.com'
+    git config user.name 'Piotr Monwid-Olechnowicz'
+    git config user.email 'hasparus@gmail.com'
     git commit -am "Bump version to: v${version} [skip ci]"
+    git push
   `)
-  // # git push
 }
 
 function getPackageJsonPaths() {
