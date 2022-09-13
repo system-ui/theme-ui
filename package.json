@@ -28,11 +28,6 @@
     "**/@mdx-js/react",
     "**/@mdx-js/mdx"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "preconstruct": {
     "packages": [
       "packages/*",
@@ -82,13 +77,11 @@
     "egzek": "^1.2.0",
     "eslint": "^8",
     "eslint-config-react-app": "^7.0.1",
-    "husky": ">=7.0.4",
     "jest": "^28.0.3",
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^28.0.2",
     "jest-mock-console": "^2.0.0",
     "jest-ts-webcompat-resolver": "^1.0.0",
-    "lint-staged": "12.4.1",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
     "react-test-renderer": "^18.0.0",
