@@ -79,7 +79,7 @@
     "eslint-config-react-app": "^7.0.1",
     "jest": "^28.0.3",
     "jest-canvas-mock": "^2.4.0",
-    "jest-environment-jsdom": "^28.0.2",
+    "jest-environment-jsdom": "^29.0.3",
     "jest-mock-console": "^2.0.0",
     "jest-ts-webcompat-resolver": "^1.0.0",
     "postinstall-postinstall": "^2.1.0",
