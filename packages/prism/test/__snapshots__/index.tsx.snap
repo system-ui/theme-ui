@@ -349,6 +349,23 @@ exports[`renders a code block 1`] = `
 </pre>
 `;
 
+exports[`renders with no className 1`] = `
+<pre
+  className=" prism-code language- emotion-0"
+  style={Object {}}
+>
+  <div
+    className="token-line"
+  >
+    <span
+      className="token plain"
+    >
+      &lt;h1&gt;Hello&lt;/h1&gt;
+    </span>
+  </div>
+</pre>
+`;
+
 exports[`renders with other languages 1`] = `
 <pre
   className="language-php prism-code language-php emotion-0"
