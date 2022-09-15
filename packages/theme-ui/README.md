@@ -116,7 +116,7 @@ scales help you build UI rooted in constraint-based design principles.
 npm install theme-ui @emotion/react
 ```
 
-_If you don't need color modes, components and MDX support, you can install
+_If you don't need color modes, components, or MDX support, you can install
 [**@theme-ui/core**](https://github.com/system-ui/theme-ui/tree/develop/packages/core)_.
 
 Any styles in your app can reference values from the global `theme` object. To
