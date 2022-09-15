@@ -4,14 +4,21 @@
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
   preset: 'ts-jest/presets/js-with-ts',
-  globals: {
-    'ts-jest': {
-      tsconfig: './tsconfig.test.json',
-      useESM: true,
-      diagnostics: {
-        exclude: ['**'],
+  transform: {
+    '^.+.tsx?$': [
+      'ts-jest',
+      {
+        isolatedModules: true,
+        tsconfig: {
+          tsconfig: './tsconfig.test.json',
+          useESM: true,
+          diagnostics: {
+            exclude: ['**'],
+          },
+        },
       },
-    },
+    ],
+    '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
   },
   testMatch: ['**/packages/**/test/*.{js,ts,tsx,mjs}'],
   testPathIgnorePatterns: [
@@ -47,9 +54,6 @@ const config = {
   modulePathIgnorePatterns: ['packages/.*/dist'],
   snapshotSerializers: ['@emotion/jest/serializer'],
   setupFiles: ['jest-canvas-mock'],
-  transform: {
-    '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
-  },
   moduleNameMapper: {
     '@theme-ui/css/dist/types': '@theme-ui/css/src/types',
   },

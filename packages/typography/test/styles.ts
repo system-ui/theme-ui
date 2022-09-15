@@ -2,20 +2,20 @@ import { styles } from '../src'
 
 test('snapshot', () => {
   expect(styles).toMatchInlineSnapshot(`
-    Object {
-      "b": Object {
+    {
+      "b": {
         "fontWeight": "bold",
       },
-      "blockquote": Object {
+      "blockquote": {
         "margin": 0,
         "marginBottom": 3,
         "mx": 3,
         "padding": 0,
       },
-      "code": Object {
+      "code": {
         "fontSize": "85%",
       },
-      "h1": Object {
+      "h1": {
         "fontFamily": "heading",
         "fontSize": 5,
         "fontWeight": "heading",
@@ -24,7 +24,7 @@ test('snapshot', () => {
         "marginBottom": 3,
         "padding": 0,
       },
-      "h2": Object {
+      "h2": {
         "fontFamily": "heading",
         "fontSize": 4,
         "fontWeight": "heading",
@@ -33,7 +33,7 @@ test('snapshot', () => {
         "marginBottom": 3,
         "padding": 0,
       },
-      "h3": Object {
+      "h3": {
         "fontFamily": "heading",
         "fontSize": 3,
         "fontWeight": "heading",
@@ -42,7 +42,7 @@ test('snapshot', () => {
         "marginBottom": 3,
         "padding": 0,
       },
-      "h4": Object {
+      "h4": {
         "fontFamily": "heading",
         "fontSize": 2,
         "fontWeight": "heading",
@@ -51,7 +51,7 @@ test('snapshot', () => {
         "marginBottom": 3,
         "padding": 0,
       },
-      "h5": Object {
+      "h5": {
         "fontFamily": "heading",
         "fontSize": 1,
         "fontWeight": "heading",
@@ -60,7 +60,7 @@ test('snapshot', () => {
         "marginBottom": 3,
         "padding": 0,
       },
-      "h6": Object {
+      "h6": {
         "fontFamily": "heading",
         "fontSize": 0,
         "fontWeight": "heading",
@@ -69,7 +69,7 @@ test('snapshot', () => {
         "marginBottom": 3,
         "padding": 0,
       },
-      "hr": Object {
+      "hr": {
         "border": 0,
         "borderBottom": "1px solid",
         "margin": 0,
@@ -78,28 +78,28 @@ test('snapshot', () => {
         "mt": "-1px",
         "padding": 0,
       },
-      "img": Object {
+      "img": {
         "margin": 0,
         "marginBottom": 3,
         "maxWidth": "100%",
         "padding": 0,
       },
-      "li": Object {
+      "li": {
         "mb": 2,
-        "ol": Object {
+        "ol": {
           "ml": 3,
           "my": 2,
         },
-        "p": Object {
+        "p": {
           "mb": 2,
         },
         "pl": 0,
-        "ul": Object {
+        "ul": {
           "ml": 3,
           "my": 2,
         },
       },
-      "ol": Object {
+      "ol": {
         "listStyleImage": "none",
         "listStylePosition": "outside",
         "margin": 0,
@@ -107,38 +107,38 @@ test('snapshot', () => {
         "ml": 3,
         "padding": 0,
       },
-      "p": Object {
+      "p": {
         "margin": 0,
         "marginBottom": 3,
         "padding": 0,
       },
-      "pre": Object {
+      "pre": {
         "fontSize": "85%",
         "margin": 0,
         "marginBottom": 3,
         "padding": 3,
       },
-      "root": Object {
+      "root": {
         "fontFamily": "body",
         "fontSize": 2,
         "fontWeight": "body",
         "lineHeight": "body",
       },
-      "strong": Object {
+      "strong": {
         "fontWeight": "bold",
       },
-      "table": Object {
+      "table": {
         "borderCollapse": "collapse",
         "margin": 0,
         "marginBottom": 3,
         "padding": 0,
         "width": "100%",
       },
-      "td": Object {
-        ":first-child": Object {
+      "td": {
+        ":first-child": {
           "pl": 0,
         },
-        ":last-child": Object {
+        ":last-child": {
           "pr": 0,
         },
         "borderBottom": "1px solid",
@@ -147,11 +147,11 @@ test('snapshot', () => {
         "py": 1,
         "textAlign": "left",
       },
-      "th": Object {
-        ":first-child": Object {
+      "th": {
+        ":first-child": {
           "pl": 0,
         },
-        ":last-child": Object {
+        ":last-child": {
           "pr": 0,
         },
         "borderBottom": "1px solid",
@@ -159,7 +159,7 @@ test('snapshot', () => {
         "py": 1,
         "textAlign": "left",
       },
-      "ul": Object {
+      "ul": {
         "listStyleImage": "none",
         "listStylePosition": "outside",
         "margin": 0,

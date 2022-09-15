@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import React, { ReactElement } from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
 import Prism from '../src'
 
@@ -10,7 +10,8 @@ const CODE = `
   console.log('hello, world!')
 `
 
-const render = (el: ReactElement) => renderer.create(el).toJSON()
+const render = (el: typeof renderer.create.arguments[0]) =>
+  renderer.create(el).toJSON()
 
 test('renders a code block', () => {
   const result = render(<Prism className="language-js">{CODE}</Prism>)

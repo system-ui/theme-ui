@@ -167,8 +167,8 @@ describe('jsx', () => {
           },
         },
         jsx('div', {
-          css: (t) => ({
-            color: t.colors.primary,
+          css: (t: Theme) => ({
+            color: t.colors?.primary,
           }),
         })
       )
