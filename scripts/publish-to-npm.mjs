@@ -1,7 +1,7 @@
 // @ts-check
 import { exec } from 'egzek'
 import { readFile, writeFile } from 'fs/promises'
-import * as semver from 'semver'
+import semver from 'semver'
 import packageJson from '../package.json' assert { type: 'json' }
 
 {
@@ -51,7 +51,9 @@ async function setVersions({ version }) {
 function getVersion(packageJson) {
   const latestTagVersion = exec(`git describe --abbrev=0 --match "v*"`, {
     stdio: 'pipe',
-  })[0].trim()
+  })[0]
+    .trim()
+    .slice(1) // remove leading "v"
 
   const version = semver.gt(packageJson.version, latestTagVersion)
     ? packageJson.version
