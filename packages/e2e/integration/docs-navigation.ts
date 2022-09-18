@@ -3,7 +3,7 @@ describe('docs navigation', () => {
     cy.visit('/')
     cy.findByText('Documentation').click()
     cy.location().should('have.property', 'pathname', '/getting-started')
-    cy.findByText('Theming').click()
+    cy.findByText('Theming').click({ force: true })
     cy.get('h1').should('have.text', 'Theming')
     cy.findAllByRole('link').then(($links) => {
       const links = $links.get()
