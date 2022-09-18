@@ -18,8 +18,9 @@
     "postinstall": "preconstruct dev",
     "dev": "preconstruct dev",
     "release": "pnpm clean && pnpm build && pnpm shipit && node scripts/publish-to-npm.mjs",
-    "shipit": "cross-env TS_NODE_COMPILER_OPTIONS=\"{ \\\"module\\\": \\\"commonjs\\\", \\\"isolatedModules\\\": false }\" auto shipit -v",
-    "auto:version": "cross-env TS_NODE_COMPILER_OPTIONS=\"{ \\\"module\\\": \\\"commonjs\\\", \\\"isolatedModules\\\": false }\" auto version -v",
+    "auto": "cross-env TS_NODE_COMPILER_OPTIONS=\"{ \\\"module\\\": \\\"commonjs\\\", \\\"isolatedModules\\\": false }\" auto",
+    "shipit": "pnpm auto shipit -v",
+    "auto:version": "pnpm auto version -v",
     "all-contributors:check": "./scripts/all-contributors-check.js",
     "all-contributors:add": "npx all-contributors add",
     "codesandbox-ci:install": "pnpm install --no-frozen-lockfile"
