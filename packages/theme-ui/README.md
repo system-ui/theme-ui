@@ -91,17 +91,17 @@ scales help you build UI rooted in constraint-based design principles.
 - The next evolution of Styled System
 - From the creators of utility-based, atomic CSS methodologies
 - Theme-based styling with the `sx` prop
-- Style [MDX][] content with a simple, expressive API
-- Works with [Typography.js][] themes
 - Compatible with virtually any UI component library
 - Works with existing [Styled System][] components
 - Quick mobile-first responsive styles
 - Built-in support for dark modes
 - Primitive page layout components
-- Plugin for use in [Gatsby][] sites and themes
 - Completely customizable with robust theming
 - Built with a standard [Theme Specification][] for interoperability
 - Built with [Emotion][] for scoped styles
+- Plugin for use in [Gatsby][] sites and themes
+- Style [MDX][] content with a simple, expressive API
+- Works with [Typography.js][] themes
 
 [emotion]: https://emotion.sh
 [mdx]: https://mdxjs.com
@@ -217,9 +217,9 @@ export default (props) => (
 - [The `sx` Prop](https://theme-ui.com/sx-prop)
 - [Layout](https://theme-ui.com/layout)
 - [Color Modes](https://theme-ui.com/color-modes)
+- [Theme Spec](https://theme-ui.com/theme-spec)
 - [Themed](https://theme-ui.com/themed)
 - [MDX Components](https://theme-ui.com/mdx-components)
-- [Theme Spec](https://theme-ui.com/theme-spec)
 - [Gatsby Plugin](https://theme-ui.com/packages/gatsby-plugin)
 - [API](https://theme-ui.com/api)
 
