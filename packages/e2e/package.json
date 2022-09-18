@@ -1,7 +1,7 @@
 {
   "name": "e2e",
   "private": true,
-  "version": "0.15.0-develop.28",
+  "version": "0.15.0-develop.29",
   "description": "Cypress tests ran against Theme UI docs and examples",
   "scripts": {
     "open": "cypress open",
