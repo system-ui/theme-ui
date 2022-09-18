@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/color",
-  "version": "v0.15.0-develop.27",
+  "version": "0.15.0-develop.28",
   "source": "src/index.ts",
   "main": "dist/theme-ui-color.cjs.js",
   "module": "dist/theme-ui-color.esm.js",

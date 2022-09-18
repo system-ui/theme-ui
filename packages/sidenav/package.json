@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "v0.15.0-develop.27",
+  "version": "0.15.0-develop.28",
   "main": "dist/theme-ui-sidenav.cjs.js",
   "module": "dist/theme-ui-sidenav.esm.js",
   "types": "dist/theme-ui-sidenav.cjs.d.ts",

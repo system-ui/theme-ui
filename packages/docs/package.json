@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "docs",
-  "version": "v0.15.0-develop.27",
+  "version": "0.15.0-develop.28",
   "main": "dist/docs.cjs.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",

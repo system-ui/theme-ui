@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-future",
-  "version": "v0.15.0-develop.27",
+  "version": "0.15.0-develop.28",
   "main": "dist/theme-ui-preset-future.cjs.js",
   "module": "dist/theme-ui-preset-future.esm.js",
   "source": "src/index.ts",

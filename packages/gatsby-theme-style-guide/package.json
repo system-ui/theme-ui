@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-style-guide",
-  "version": "v0.15.0-develop.27",
+  "version": "0.15.0-develop.28",
   "main": "dist/gatsby-theme-style-guide.cjs.js",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
