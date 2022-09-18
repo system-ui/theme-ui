@@ -108,5 +108,9 @@
         "gatsby": "4"
       }
     }
+  },
+  "dependencies": {
+    "@types/semver": "^7.3.12",
+    "semver": "^7.3.7"
   }
 }
