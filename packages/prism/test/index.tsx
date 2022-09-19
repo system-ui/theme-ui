@@ -20,6 +20,7 @@ test('renders a code block', () => {
 })
 
 test('renders with no className', () => {
+  // @ts-expect-error className is required by the type definition
   const json = render(<Prism children="<h1>Hello</h1>" />)
   expect(json).toMatchSnapshot()
 })
