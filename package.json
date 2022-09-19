@@ -107,7 +107,7 @@
         "react": "18",
         "eslint": "8",
         "gatsby": "4",
-        "@emotion/jest": "29"
+        "@types/jest": "29"
       }
     }
   },
