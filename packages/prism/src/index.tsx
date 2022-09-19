@@ -40,7 +40,7 @@ export interface ThemeUIPrismProps
 }
 export default function ThemeUIPrism({
   children,
-  className: outerClassName,
+  className: outerClassName = '',
   ...props
 }: ThemeUIPrismProps) {
   const [language] = outerClassName.replace(/language-/, '').split(' ')

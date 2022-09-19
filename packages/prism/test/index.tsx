@@ -19,6 +19,11 @@ test('renders a code block', () => {
   expect(result).toMatchSnapshot()
 })
 
+test('renders with no className', () => {
+  const json = render(<Prism children="<h1>Hello</h1>" />)
+  expect(json).toMatchSnapshot()
+})
+
 test('renders with other languages', () => {
   const json = render(
     <Prism className="language-php" children="<h1>Hello</h1>" />

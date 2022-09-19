@@ -25,7 +25,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install
-        run: pnpm install --no-optional --no-frozen-lockfile
+        run: pnpm install --no-optional
 
       - name: Run linter
         run: pnpm lint --quiet
@@ -98,7 +98,7 @@ jobs:
       - name: Create release
         if: steps.turnstyle.outcome == 'success'
         # failing to release a canary because of network problems or duplicate tag shouldn't give the same message as failing tests
-        continue-on-error: true
+        # continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
