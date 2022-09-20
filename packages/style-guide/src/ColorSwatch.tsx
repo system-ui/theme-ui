@@ -1,6 +1,7 @@
 /** @jsx jsx */
+import { getColor } from '@theme-ui/color'
 import { ComponentProps } from 'react'
-import { jsx, get, ResponsiveStyleValue } from 'theme-ui'
+import { jsx, ResponsiveStyleValue } from 'theme-ui'
 import { toHex } from './color'
 import { useTheme } from './context'
 
@@ -17,8 +18,8 @@ export const ColorSwatch = ({
   label = true,
   ...props
 }: ColorSwatchProps) => {
-  const { colors } = useTheme()!
-  const value = get(colors!, color)
+  const theme = useTheme()!
+  const value = getColor(theme, color)
   return (
     <div {...props} title={`${toHex(value)}`}>
       <div

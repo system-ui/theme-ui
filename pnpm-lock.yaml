@@ -844,6 +844,7 @@ importers:
 
   packages/style-guide:
     specifiers:
+      '@theme-ui/color': workspace:^
       '@theme-ui/presets': workspace:^
       '@types/color': ^3.0.3
       '@types/react': ^18.0.8
@@ -852,6 +853,7 @@ importers:
       react: ^18
       theme-ui: workspace:^
     dependencies:
+      '@theme-ui/color': link:../color
       '@theme-ui/presets': link:../presets
       '@types/color': 3.0.3
       color: 3.2.1
