@@ -95,7 +95,6 @@ input:checked~.emotion-3 {
 >
   <input
     className="emotion-1"
-    label="Subscribe for email updates"
     type="checkbox"
   />
   <svg
