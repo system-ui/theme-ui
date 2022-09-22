@@ -1,11 +1,8 @@
 import React, { ComponentPropsWithoutRef } from 'react'
 
-import { Box, BoxOwnProps, __isBoxStyledSystemProp } from './Box'
+import { Box, BoxOwnProps } from './Box'
 import { Assign, ForwardRef } from './types'
-import { getProps, __internalProps } from './util'
-
-const getContainerProps = getProps(__isBoxStyledSystemProp)
-const getIframeProps = getProps((str) => !__isBoxStyledSystemProp(str))
+import { __internalProps } from './util'
 
 export interface EmbedProps
   extends Assign<React.ComponentPropsWithRef<'iframe'>, BoxOwnProps> {
@@ -47,14 +44,13 @@ export const Embed: ForwardRef<HTMLIFrameElement, EmbedProps> =
       frameBorder,
       allowFullScreen,
       allow,
-      ...getIframeProps(rest),
+      ...rest,
     }
 
     return (
       <Box
         variant={variant}
         sx={sx}
-        {...getContainerProps(rest)}
         {...__internalProps({
           __css: {
             width: '100%',

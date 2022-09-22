@@ -83,8 +83,7 @@ describe('components type check', () => {
     const _ = (
       <Box
         css={{ background: '#eee' }}
-        sx={{ py: [1, 2, 3], paddingBlockStart: '2em' }}
-        px={[3, 2, 1]}
+        sx={{ py: [1, 2, 3], px: [3, 2, 1], paddingBlockStart: '2em' }}
         ref={(ref) => {
           console.log(ref?.style?.alignItems)
         }}
@@ -101,24 +100,24 @@ describe('components type check', () => {
         <Flex />
         <Grid
           width={[128, null, 192]}
-          backgroundColor="#eee"
+          sx={{ bg: '#eee' }}
           ref={(ref) => {
             const _ref = ref!
             type _ = AssertTrue<IsExact<typeof _ref, HTMLDivElement>>
           }}
         >
-          <Box bg="primary" ref={(primaryBox) => primaryBox}>
+          <Box sx={{ bg: 'primary' }} ref={(primaryBox) => primaryBox}>
             Box
           </Box>
-          <Box bg="muted">Box</Box>
-          <Box bg="primary">Box</Box>
-          <Box bg="muted">Box</Box>
+          <Box sx={{ bg: 'muted' }}>Box</Box>
+          <Box sx={{ bg: 'primary' }}>Box</Box>
+          <Box sx={{ bg: 'muted' }}>Box</Box>
         </Grid>
-        <Grid gap={2} columns={[2, null, 4]} color="#111">
-          <Box bg="primary">Box</Box>
-          <Box bg="muted">Box</Box>
-          <Box bg="primary">Box</Box>
-          <Box bg="muted">Box</Box>
+        <Grid gap={2} columns={[2, null, 4]} sx={{ color: '#111' }}>
+          <Box sx={{ bg: 'primary' }}>Box</Box>
+          <Box sx={{ bg: 'muted' }}>Box</Box>
+          <Box sx={{ bg: 'primary' }}>Box</Box>
+          <Box sx={{ bg: 'muted' }}>Box</Box>
         </Grid>
         <Button
           ref={(ref) => ref}
@@ -128,9 +127,9 @@ describe('components type check', () => {
             },
           }}
         />
-        <Link href="#" target="_self" bg="blue" ref={(r) => r} />
-        <Text backgroundColor="red" sx={{ py: 1 }} px={[3, 2, 1]} />
-        <Heading contentEditable="true" m="1em" />
+        <Link href="#" target="_self" sx={{ bg: 'blue' }} ref={(r) => r} />
+        <Text sx={{ backgroundColor: 'red', py: 1, px: [3, 2, 1] }} />
+        <Heading contentEditable="true" sx={{ fontSize: '1em' }} />
         <Image />
         <Card />
         <Label />
@@ -155,8 +154,8 @@ describe('components type check', () => {
           <Radio name="dark-mode" value="false" />
           Light Mode
         </Label>
-        <Checkbox mx={[1, 2, 3]} defaultChecked={true} />
-        <Slider my={[1, 2, 3]} bg="gray" defaultValue={25} />
+        <Checkbox sx={{ mx: [1, 2, 3] }} defaultChecked={true} />
+        <Slider sx={{ my: [1, 2, 3], bg: 'gray' }} defaultValue={25} />
         <Field
           label="Email"
           name="email"
@@ -164,7 +163,7 @@ describe('components type check', () => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             console.log(e.target.value)
           }
-          mx={[1, 2, 3]}
+          sx={{ mx: [1, 2, 3] }}
         />
         <Field
           as="textarea"
@@ -175,7 +174,7 @@ describe('components type check', () => {
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             console.log(e.target.value)
           }
-          mx={[1, 2, 3]}
+          sx={{ mx: [1, 2, 3] }}
         />
         <Field
           as={Textarea}
@@ -186,28 +185,28 @@ describe('components type check', () => {
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             console.log(e.target.value)
           }
-          px={[1, 2, 3]}
+          sx={{ px: [1, 2, 3] }}
         />
         <Box as="form" onSubmit={(e) => e.preventDefault()}>
           <Label htmlFor="username">Username</Label>
-          <Input name="username" mb={3} />
+          <Input name="username" sx={{ mb: 3 }} />
           <Label htmlFor="password">Password</Label>
-          <Input type="password" name="password" mb={3} />
+          <Input type="password" name="password" sx={{ mb: 3 }} />
           <Box>
-            <Label mb={3}>
+            <Label sx={{ mb: 3 }}>
               <Checkbox />
               Remember me
             </Label>
           </Box>
           <Label htmlFor="sound">Sound</Label>
-          <Select name="sound" mb={3}>
+          <Select name="sound" sx={{ mb: 3 }}>
             <option>Beep</option>
             <option>Boop</option>
             <option>Blip</option>
           </Select>
           <Label htmlFor="comment">Comment</Label>
-          <Textarea name="comment" rows={6} mb={3} />
-          <Flex mb={3}>
+          <Textarea name="comment" rows={6} sx={{ mb: 3 }} />
+          <Flex sx={{ mb: 3 }}>
             <Label>
               <Radio name="letter" /> Alpha
             </Label>
@@ -219,7 +218,7 @@ describe('components type check', () => {
             </Label>
           </Flex>
           <Label>Slider</Label>
-          <Slider mb={3} />
+          <Slider sx={{ mb: 3 }} />
           <Button>Submit</Button>
         </Box>
         <Progress max={1} value={1 / 2}>
@@ -231,7 +230,7 @@ describe('components type check', () => {
         <Close />
         <Alert>
           Beep boop, this is an alert!
-          <Close ml="auto" mr={-2} />
+          <Close sx={{ ml: 'auto', mr: -2 }} />
         </Alert>{' '}
         <Divider />
         <Embed src="https://www.youtube.com/embed/GNCd_ERZvZM" />{' '}
@@ -249,21 +248,21 @@ describe('components type check', () => {
           <Heading>Aspect Ratio</Heading>
         </AspectRatio>
         <AspectImage ratio={4 / 3} src="./example.png" />
-        <Container p={4} bg="muted">
-          Centered container
-        </Container>
+        <Container sx={{ p: 4, bg: 'muted' }}>Centered container</Container>
         <Flex as="nav">
-          <NavLink href="#!" p={2}>
+          <NavLink href="#!" sx={{ p: 2 }}>
             Home
           </NavLink>
-          <NavLink href="#!" p={2}>
+          <NavLink href="#!" sx={{ p: 2 }}>
             Blog
           </NavLink>
-          <NavLink href="#!" p={2}>
+          <NavLink href="#!" sx={{ p: 2 }}>
             About
           </NavLink>
         </Flex>{' '}
-        <Message mt={1}>This is just a message for someone to read</Message>{' '}
+        <Message sx={{ mt: 1 }}>
+          This is just a message for someone to read
+        </Message>{' '}
         <IconButton aria-label="Toggle dark mode" onClick={() => {}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

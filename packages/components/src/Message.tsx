@@ -1,8 +1,8 @@
 import React from 'react'
-import { ThemeUICSSObject } from '@theme-ui/css'
+import type { ThemeUICSSObject } from '@theme-ui/css'
 
 import { Box, BoxProps } from './Box'
-import { ForwardRef } from './types'
+import type { ForwardRef } from './types'
 import { __internalProps } from './util'
 
 export type MessageProps = BoxProps

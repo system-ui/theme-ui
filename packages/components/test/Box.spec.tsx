@@ -14,28 +14,8 @@ import { __internalProps } from '../src/util'
 
 describe('Box', () => {
   test('renders', () => {
-    const json = renderJSON(<Box p={2}>Hello</Box>)
+    const json = renderJSON(<Box>Hello</Box>)
     expect(json).toMatchSnapshot()
-  })
-
-  test('renders with padding props', () => {
-    const json = renderJSON(<Box px={2} py={4} />)
-    expect(json).toHaveStyleRule('padding-left', '8px')
-    expect(json).toHaveStyleRule('padding-right', '8px')
-    expect(json).toHaveStyleRule('padding-top', '32px')
-    expect(json).toHaveStyleRule('padding-bottom', '32px')
-  })
-
-  test('renders with margin props', () => {
-    const json = renderJSON(<Box m={3} mb={4} />)
-    expect(json).toHaveStyleRule('margin', '16px')
-    expect(json).toHaveStyleRule('margin-bottom', '32px')
-  })
-
-  test('renders with color props', () => {
-    const json = renderJSON(<Box color="tomato" bg="black" />)
-    expect(json).toHaveStyleRule('color', 'tomato')
-    expect(json).toHaveStyleRule('background-color', 'black')
   })
 
   test('renders with sx prop', () => {
@@ -64,8 +44,7 @@ describe('Box', () => {
   test('renders with base styles', () => {
     const json = renderJSON(
       <Box
-        bg="cyan"
-        sx={{ color: 'tomato' }}
+        sx={{ bg: 'cyan', color: 'tomato' }}
         {...__internalProps({
           __css: {
             p: 4,

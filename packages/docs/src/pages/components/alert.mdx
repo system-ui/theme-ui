@@ -13,14 +13,14 @@ import { Alert } from 'theme-ui'
 ```jsx live=true
 <Alert>
   Beep boop, this is an alert!
-  <Close ml="auto" mr={-2} />
+  <Close sx={{ ml: 'auto', mr: -2 }} />
 </Alert>
 ```
 
 ```jsx live=true
-<Alert variant='secondary' mb={2}>Secondary</Alert>
-<Alert variant='accent' mb={2}>Accent</Alert>
-<Alert variant='highlight' mb={2}>Highlight</Alert>
+<Alert variant='secondary' sx={{ mb: 2 }}>Secondary</Alert>
+<Alert variant='accent' sx={{ mb: 2 }}>Accent</Alert>
+<Alert variant='highlight' sx={{ mb: 2 }}>Highlight</Alert>
 ```
 
 If screen readers should immediately start reading the alert aloud,
@@ -28,8 +28,8 @@ If screen readers should immediately start reading the alert aloud,
 
 ## Variants
 
-Alert variants can be defined in `theme.alerts`.
-The Alert component uses `theme.alerts.primary` as its default variant.
+Alert variants can be defined in `theme.alerts`. The Alert component uses
+`theme.alerts.primary` as its default variant.
 
 ```js
 // example theme variants

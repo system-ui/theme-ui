@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeUICSSObject } from '@theme-ui/css'
+import type { ThemeUICSSObject } from '@theme-ui/css'
 
 import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { Assign, ForwardRef } from './types'

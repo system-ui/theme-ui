@@ -37,15 +37,16 @@ export const Radii = () => {
           {Object.keys(theme.radii).map((key) => (
             <Box
               key={`border_${key}`}
-              p={3}
-              m={2}
-              color="text"
-              bg="muted"
               sx={{
+                p: 3,
+                m: 2,
+                color: 'text',
+                bg: 'muted',
                 border: '2px solid black',
                 borderRadius: { key },
                 minWidth: '100px',
-              }}>
+              }}
+            >
               {key}
             </Box>
           ))}
@@ -90,7 +91,8 @@ export const Buttons = () => {
   as="form"
   pb={3}
   onSubmit={(e) => e.preventDefault()}
-  sx={{ width: '100%', maxWidth: '500px' }}>
+  sx={{ width: '100%', maxWidth: '500px' }}
+>
   <Label htmlFor="username">Username</Label>
   <Input id="username" mb={3} />
   <Label htmlFor="password">Password</Label>
@@ -220,7 +222,8 @@ export const Alerts = () => {
   sx={{
     maxWidth: 400,
     padding: '30px',
-  }}>
+  }}
+>
   <Paragraph>
     Cupcake ipsum dolor sit amet chocolate bar. Apple pie macaroon muffin jelly
     candy cake soufflé muffin croissant. Gummies jelly beans cotton candy

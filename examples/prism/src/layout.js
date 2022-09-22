@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Layout, Header, Main, Container } from 'theme-ui'
 
-const Layout = (props) => (
+const PageLayout = (props) => (
   <Layout>
     <Header>
       <h2>Theme UI Gatsby Example</h2>
@@ -12,4 +12,4 @@ const Layout = (props) => (
   </Layout>
 )
 
-export default Layout
+export default PageLayout

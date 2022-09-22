@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`undefined containerSx and sx 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  color: primary;
+  background-color: highlight;
+}
+
+input:checked~.emotion-2 {
+  background-color: primary;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+input:checked~.emotion-3 {
+  display: none;
+}
+
+input:checked~.emotion-3 {
+  color: primary;
+}
+
+input:focus~.emotion-3 {
+  color: primary;
+  background-color: highlight;
+}
+
+input:checked~.emotion-3 {
+  background-color: primary;
+}
+
+<div
+  className="emotion-0"
+>
+  <input
+    className="emotion-1"
+    label="Subscribe for email updates"
+    type="checkbox"
+  />
+  <svg
+    aria-hidden="true"
+    className="emotion-2"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="emotion-3"
+    fill="currentcolor"
+    height={24}
+    viewBox="0 0 24 24"
+    width={24}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+    />
+  </svg>
+</div>
+`;
