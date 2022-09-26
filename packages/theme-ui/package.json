@@ -16,7 +16,6 @@
     "@theme-ui/components": "workspace:^",
     "@theme-ui/core": "workspace:^",
     "@theme-ui/css": "workspace:^",
-    "@theme-ui/mdx": "workspace:^",
     "@theme-ui/theme-provider": "workspace:^"
   },
   "peerDependencies": {
