@@ -15,6 +15,9 @@ import packageJson from '../package.json' assert { type: 'json' }
   const branch = exec('git branch --show-current', { stdio: 'pipe' })[0].trim()
 
   await setVersions({ version })
+
+  if (checkStatus() === 'clear') process.exit(0)
+
   commitAndPush({ version })
   publishToNPM({
     tag:
@@ -42,7 +45,17 @@ async function setVersions({ version }) {
     })
   )
   console.log(`Updated all package.json files to version ${version}.`)
-  exec('git status', { stdio: 'inherit' })
+}
+
+function checkStatus() {
+  const status = exec('git status', { stdio: 'pipe' })[0].trim()
+  if (status.includes('nothing to commit, working tree clean')) {
+    console.log('No changes to commit. Skipping release.')
+    return 'clear'
+  } else {
+    console.log(status)
+    return 'dirty'
+  }
 }
 
 /**
