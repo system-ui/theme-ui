@@ -635,6 +635,7 @@ importers:
       '@theme-ui/test-utils': workspace:^
       '@types/react': ^18.0.8
       react: ^18.1.0
+      react-dom: ^18
       theme-ui: workspace:^
     devDependencies:
       '@theme-ui/core': link:../core
@@ -642,6 +643,7 @@ importers:
       '@theme-ui/test-utils': link:../test-utils
       '@types/react': 18.0.17
       react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       theme-ui: link:../theme-ui
 
   packages/mdx:
@@ -938,7 +940,6 @@ importers:
       '@theme-ui/components': workspace:^
       '@theme-ui/core': workspace:^
       '@theme-ui/css': workspace:^
-      '@theme-ui/mdx': workspace:^
       '@theme-ui/test-utils': workspace:^
       '@theme-ui/theme-provider': workspace:^
       '@types/react': ^18.0.8
@@ -949,7 +950,6 @@ importers:
       '@theme-ui/components': link:../components
       '@theme-ui/core': link:../core
       '@theme-ui/css': link:../css
-      '@theme-ui/mdx': link:../mdx
       '@theme-ui/theme-provider': link:../theme-provider
     devDependencies:
       '@theme-ui/test-utils': link:../test-utils
@@ -974,7 +974,6 @@ importers:
       typography-theme-de-young: ^0.16.19
       typography-theme-doelger: ^0.16.19
       typography-theme-elk-glen: ^0.16.19
-      typography-theme-fairy-gates: ^0.16.19
       typography-theme-funston: ^0.16.19
       typography-theme-github: ^0.16.19
       typography-theme-grand-view: ^0.16.19
@@ -983,7 +982,6 @@ importers:
       typography-theme-kirkham: ^0.16.19
       typography-theme-lawton: ^0.16.19
       typography-theme-legible: ^0.16.19
-      typography-theme-lincoln: ^0.16.19
       typography-theme-moraga: ^0.16.19
       typography-theme-noriega: ^0.16.19
       typography-theme-ocean-beach: ^0.16.19
@@ -1023,7 +1021,6 @@ importers:
       typography-theme-de-young: 0.16.19
       typography-theme-doelger: 0.16.19
       typography-theme-elk-glen: 0.16.19
-      typography-theme-fairy-gates: 0.16.19
       typography-theme-funston: 0.16.19
       typography-theme-github: 0.16.19
       typography-theme-grand-view: 0.16.19
@@ -1032,7 +1029,6 @@ importers:
       typography-theme-kirkham: 0.16.19
       typography-theme-lawton: 0.16.19
       typography-theme-legible: 0.16.19
-      typography-theme-lincoln: 0.16.19
       typography-theme-moraga: 0.16.19
       typography-theme-noriega: 0.16.19
       typography-theme-ocean-beach: 0.16.19
@@ -20944,6 +20940,7 @@ packages:
     dependencies:
       gray-percentage: 2.0.0
       typography-breakpoint-constants: 0.16.19
+    dev: false
 
   /typography-theme-funston/0.16.19:
     resolution: {integrity: sha512-0C6PAfgZju6is1Dys3sK06huefxFFhf+Y+1l+5G3TVXjJds27IrHSggdUDmTS/nxtTLo1v4zbNtu1Z1W5UNb/g==}
@@ -20996,6 +20993,7 @@ packages:
     dependencies:
       gray-percentage: 2.0.0
       typography-breakpoint-constants: 0.16.19
+    dev: false
 
   /typography-theme-moraga/0.16.19:
     resolution: {integrity: sha512-POIMoW6xqRTGeBtT0cbrrzL+eKj7Z+A+Wzu5kvtgJFY7lZ7KA9TcJBB2YuspLd2yHq5YMxiUBDQiHedb19ttww==}
