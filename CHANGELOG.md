@@ -1,3 +1,116 @@
+# v0.15.0 (Mon Sep 26 2022)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Luke Watts ([@thisislawatts](https://github.com/thisislawatts))
+
+:heart: Valto Savi ([@pointlessrapunzel](https://github.com/pointlessrapunzel))
+
+:heart: Brage Sekse Aarset ([@braaar](https://github.com/braaar))
+
+### Release Notes
+
+#### Pull out MDX to be opt-in ([#2288](https://github.com/system-ui/theme-ui/pull/2288))
+
+#### Breaking: `theme-ui` no longer includes `@theme-ui/mdx` — MDX is now opt-in.
+
+_If your project is not using MDX or importing `Themed`, you shouldn't need to
+change anything._
+ 
+ - `MDXProvider` is no longer included in Theme UI `ThemeProvider`, and has been
+  removed in favour of an `useThemedStylesWithMdx` hook.
+   - **Migration:** Use `useThemedStylesWithMdx` together with `MDXProvider` and `useMDXComponents` from `@mdx-js/react`.
+ 
+      ```tsx
+      import {
+        MDXProvider,
+        useMDXComponents,
+        Components as MDXComponents,
+        MergeComponents as MergeMDXComponents,
+      } from '@mdx-js/react'
+      import { useThemedStylesWithMdx } from '@theme-ui/mdx'
+      import { ThemeProvider, Theme } from 'theme-ui'
+      
+      interface MyProviderProps {
+        theme: Theme
+        components?: MDXComponents | MergeMDXComponents
+        children: React.ReactNode
+      }
+      function MyProvider({ theme, components, children }: MyProviderProps) {
+        const componentsWithStyles = useThemedStylesWithMdx(useMDXComponents(components))
+      
+        return (
+          <ThemeProvider theme={theme}>
+            <MDXProvider components={componentsWithStyles}>
+              {children}
+            </MDXProvider>
+          </ThemeProvider>
+        )
+      }
+      ```
+     
+     
+ 
+- `Themed` components dict and other exports from `@theme-ui/mdx` are no longer reexported from `theme-ui`.
+  - **Migration:** Import it from `@theme-ui/mdx` instead.
+   
+     ```diff
+     -  import { Themed } from 'theme-ui'
+     +  import { Themed } from '@theme-ui/mdx'
+     ```
+
+#### Remove @theme-ui/editor ([#2292](https://github.com/system-ui/theme-ui/pull/2292))
+
+- **Breaking:** `@theme-ui/editor` was removed. Use [CSS GUI](https://components.ai/css-gui/properties) instead.
+  - `/customize` page in Theme UI docs has been removed. Use [Components.ai Theme Builder](https://components.ai/theme) or an alternative instead.
+
+#### Drop support for React 16 + 17 ([#2215](https://github.com/system-ui/theme-ui/pull/2215))
+
+Theme UI **0.15.0** drops support for React 16 and React 17. Your use case may still work, but we don't guarantee it.
+
+#### refactor: setting padding-right to size 4 for dynamic value ([#2058](https://github.com/system-ui/theme-ui/pull/2058))
+
+`Select` component default `paddingRight` style has increased to `spaces[4]` (32px by default), to avoid text flowing behind the chevron icon.
+
+---
+
+#### 🚀 Enhancement
+
+- Pull out MDX to be opt-in [#2288](https://github.com/system-ui/theme-ui/pull/2288) ([@hasparus](https://github.com/hasparus) [@beerose](https://github.com/beerose) [@lachlanjc](https://github.com/lachlanjc) hasparus@Piotrs-MacBook.local)
+- Drop support for React 16 + 17 [#2215](https://github.com/system-ui/theme-ui/pull/2215) ([@hasparus](https://github.com/hasparus))
+- refactor: setting padding-right to size 4 for dynamic value [#2058](https://github.com/system-ui/theme-ui/pull/2058) ([@appsparkler](https://github.com/appsparkler))
+
+#### 🐛 Bug Fix
+
+- Remove @theme-ui/editor [#2292](https://github.com/system-ui/theme-ui/pull/2292) ([@hasparus](https://github.com/hasparus))
+- fix(mdx): add .sx props to Themed.X styles [#2250](https://github.com/system-ui/theme-ui/pull/2250) ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs(size-scales): Add reference of sizing scales in documentation [#2327](https://github.com/system-ui/theme-ui/pull/2327) ([@cobraz](https://github.com/cobraz) [@lachlanjc](https://github.com/lachlanjc))
+- docs: Update Contributing doc with pnpm info [#2320](https://github.com/system-ui/theme-ui/pull/2320) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+- prism: Fix crash when className prop is missing [#2322](https://github.com/system-ui/theme-ui/pull/2322) ([@lachlanjc](https://github.com/lachlanjc))
+- Docs: Group project templates by framework, add Remix [#2276](https://github.com/system-ui/theme-ui/pull/2276) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: re-order sidebar components into alphabetical order [#2232](https://github.com/system-ui/theme-ui/pull/2232) ([@thisislawatts](https://github.com/thisislawatts))
+- docs:  Specify MDX React version [#2233](https://github.com/system-ui/theme-ui/pull/2233) ([@pointlessrapunzel](https://github.com/pointlessrapunzel))
+
+#### Authors: 10
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Akash ([@appsparkler](https://github.com/appsparkler))
+- Aleksandra ([@beerose](https://github.com/beerose))
+- Brage Sekse Aarset ([@braaar](https://github.com/braaar))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Luke Watts ([@thisislawatts](https://github.com/thisislawatts))
+- Piotr (hasparus@Piotrs-MacBook.local)
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Simen A. W. Olsen ([@cobraz](https://github.com/cobraz))
+- Valto Savi ([@pointlessrapunzel](https://github.com/pointlessrapunzel))
+
+---
+
 # v0.14.7 (Thu Jul 28 2022)
 
 #### 👨‍💻 Minor changes
