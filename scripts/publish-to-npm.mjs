@@ -82,7 +82,7 @@ function commitAndPush({ version }) {
   exec(`
     git config user.name 'Piotr Monwid-Olechnowicz'
     git config user.email 'hasparus@gmail.com'
-    git commit -am "Bump version to: v${version} [skip ci]"
+    git commit -am "Bump versions to: ${version} [skip ci]"
     git push
   `)
 }
