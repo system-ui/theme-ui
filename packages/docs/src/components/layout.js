@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Fragment } from 'react'
 import { jsx, useColorMode } from 'theme-ui'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, Suspense, useTransition } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'
@@ -43,7 +43,6 @@ const getModeName = (mode) => {
 
 export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const nav = useRef(null)
   const [mode, setMode] = useColorMode()
 
   const { pathname } = props.location
@@ -85,35 +84,32 @@ export default function DocsLayout(props) {
               <MenuButton
                 onClick={(e) => {
                   setMenuOpen(!menuOpen)
-                  if (!nav.current) return
-                  const navLink = nav.current.querySelector('a')
-                  if (navLink) navLink.focus()
                 }}
               />
               <Link to="/" sx={{ variant: 'links.nav' }}>
                 Theme UI
               </Link>
             </Flex>
-            <Flex sx={{ gap: [0, 2] }}>
-              <SearchInput />
-              <Flex sx={{ alignItems: 'center' }}>
-                <NavLink href="https://github.com/system-ui/theme-ui">
-                  GitHub
-                </NavLink>
-                <Button
-                  // color mode can be read from localStorage
-                  suppressHydrationWarning
-                  aria-label={`Change color mode to ${nextColorMode}`}
-                  sx={{
-                    ml: 2,
-                    whiteSpace: 'pre',
-                  }}
-                  onClick={() => setMode(nextColorMode)}
-                >
-                  {getModeName(mode)}
-                </Button>
+            <Suspense>
+              <Flex sx={{ gap: [0, 2] }}>
+                <SearchInput />
+                <Flex sx={{ alignItems: 'center' }}>
+                  <NavLink href="https://github.com/system-ui/theme-ui">
+                    GitHub
+                  </NavLink>
+                  <Button
+                    aria-label={`Change color mode to ${nextColorMode}`}
+                    sx={{
+                      ml: 2,
+                      whiteSpace: 'pre',
+                    }}
+                    onClick={() => setMode(nextColorMode)}
+                  >
+                    {getModeName(mode)}
+                  </Button>
+                </Flex>
               </Flex>
-            </Flex>
+            </Suspense>
           </Flex>
         )}
         <Box
@@ -125,7 +121,6 @@ export default function DocsLayout(props) {
           }}
         >
           <Sidebar
-            ref={nav}
             role="navigation"
             onFocus={(e) => {
               setMenuOpen(true)

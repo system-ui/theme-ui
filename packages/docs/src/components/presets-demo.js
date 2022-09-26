@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Themed, Select } from 'theme-ui'
+import { jsx, ThemeProvider, Select } from 'theme-ui'
+import { Themed } from '@theme-ui/mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
@@ -45,7 +46,7 @@ export default function PresetsDemo() {
           <span>Preset:</span>
           <Select
             id="theme"
-            sx={{ display: 'inline-flex', paddingRight: 32 }}
+            sx={{ display: 'inline-flex' }}
             value={theme}
             onChange={(e) => {
               setTheme(e.target.value)

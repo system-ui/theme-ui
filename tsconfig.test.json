@@ -1,8 +1,8 @@
 {
   "extends": "./tsconfig.options.json",
   "compilerOptions": {
-    "target": "es2018",
-    "module": "commonjs",
+    "target": "es2021",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "react",

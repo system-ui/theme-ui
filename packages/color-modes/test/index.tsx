@@ -91,7 +91,7 @@ test('renders with initial color mode name', () => {
 
 test('useColorMode updates color mode state', () => {
   let mode
-  const Button = (props) => {
+  const Button = () => {
     const [colorMode, setMode] = useColorMode()
     mode = colorMode
     return (
@@ -154,7 +154,7 @@ test('color mode is passed through theme context', () => {
     </ThemeProvider>
   )
   const button = tree.getByText('test')
-  button.click()
+  act(() => button.click())
   expect(mode).toBe('dark')
   expect(tree.getByText('test')).toHaveStyleRule('color', 'cyan')
 })
@@ -636,7 +636,7 @@ test('dot notation works with color modes', () => {
     </ThemeProvider>
   )
   const button = root.getByText('test')
-  button.click()
+  act(() => button.click())
   expect(button).toHaveStyleRule('color', 'tomato')
 })
 
@@ -678,7 +678,7 @@ test('dot notation works with color modes and custom properties', () => {
     </ThemeProvider>
   )
   const button = root.getByText('test')
-  button.click()
+  act(() => button.click())
   expect(button).toHaveStyleRule('color', 'var(--theme-ui-colors-header-title)')
 })
 

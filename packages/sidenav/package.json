@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/sidenav",
-  "version": "0.14.7",
+  "version": "0.15.0-develop.30",
   "main": "dist/theme-ui-sidenav.cjs.js",
   "module": "dist/theme-ui-sidenav.esm.js",
   "types": "dist/theme-ui-sidenav.cjs.d.ts",
@@ -12,16 +12,19 @@
   },
   "dependencies": {
     "deepmerge": "^4.0.0",
-    "theme-ui": "0.14.7"
+    "theme-ui": "workspace:^"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@mdx-js/react": "^1 || ^2",
-    "@types/mdx-js__react": "^1 || ^2",
-    "react": ">16"
+    "@mdx-js/react": "^1",
+    "react": ">=18"
   },
   "devDependencies": {
-    "react": "^17.0.1"
+    "react": "^18.1.0",
+    "@types/mdx-js__react": "^1",
+    "@babel/core": "^7",
+    "@types/react": "^18",
+    "@theme-ui/test-utils": "workspace:^"
   },
   "keywords": [
     "theme-ui",

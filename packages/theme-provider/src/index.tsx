@@ -8,12 +8,11 @@ import {
 } from '@theme-ui/core'
 import { css, Theme } from '@theme-ui/css'
 import { ColorModeProvider } from '@theme-ui/color-modes'
-import { MDXProvider, MDXProviderComponents } from '@theme-ui/mdx'
 import { Global } from '@emotion/react'
 
 const RootStyles = () =>
   jsx(Global, {
-    styles: (emotionTheme) => {
+    styles: (emotionTheme: unknown) => {
       const theme = emotionTheme as Theme
       const { useRootStyles } = theme.config || theme
 
@@ -40,12 +39,10 @@ const RootStyles = () =>
 
 interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
-  components?: MDXProviderComponents
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   theme,
-  components,
   children,
 }) => {
   const outer = useThemeUI()
@@ -56,7 +53,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     <CoreProvider theme={theme}>
       <ColorModeProvider>
         {isTopLevel && <RootStyles />}
-        <MDXProvider components={components}>{children}</MDXProvider>
+        {children}
       </ColorModeProvider>
     </CoreProvider>
   )

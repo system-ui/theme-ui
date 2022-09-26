@@ -4,23 +4,47 @@ title: MDX Components
 
 # MDX Components
 
-To provide custom components to MDX context, but still apply styles from your theme, pass an object of custom components to the `ThemeProvider` component.
-For a list of keys that can be used in the `components` object, see the [MDX docs for components](https://mdxjs.com/getting-started/#table-of-components).
+To enrich components you're passing to MDX context with styles defined in
+[`theme.styles`](./styling-mdx), use `useThemedStylesWithMdx` with your
+[`MDXProvider`](https://mdxjs.com/packages/react/#use).
 
-```jsx
+```tsx
+import { MDXProvider, useMDXComponents, MDXComponents } from '@mdx-js/react'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { ThemeProvider } from 'theme-ui'
-import theme from './theme'
-import components from './components'
+import { h2, Note, TweetEmbed } from './components'
 
-export default (props) => (
-  <ThemeProvider theme={theme} components={components}>
-    {props.children}
-  </ThemeProvider>
-)
+const components: MDXComponents = {
+  h2,
+  Note,
+  TweetEmbed,
+}
+
+const theme = {
+  styles: {
+    h2: {
+      fontWeight: 700,
+    },
+  },
+}
+
+function Provider({ children }: { children: React.ReactNode }) {
+  const componentsWithStyles = useThemedStylesWithMdx(
+    useMDXComponents(components)
+  )
+
+  return (
+    <ThemeProvider theme={theme}>
+      <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
+    </ThemeProvider>
+  )
+}
 ```
 
 <Note>
 
-If you do not need to reuse theme styles in your application, the official [`MDXProvider`](https://mdxjs.com/advanced/components#mdxprovider) component can be used instead.
+For a list of keys that can be used in the `components` object, see the
+[MDX docs for components](https://mdxjs.com/getting-started/#table-of-components).
 
 </Note>

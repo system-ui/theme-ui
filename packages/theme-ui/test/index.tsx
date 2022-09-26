@@ -1,9 +1,8 @@
 /**
  * @jest-environment jsdom
- * @jsx mdx
  */
 
-import { mdx } from '@mdx-js/react'
+import React from 'react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
 import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
@@ -18,79 +17,6 @@ import {
 } from '../src/index'
 
 expect.extend(matchers)
-
-test('renders', () => {
-  const json = renderJSON(
-    <ThemeProvider theme={{}}>
-      <h1>Hello</h1>
-    </ThemeProvider>
-  )
-  expect(json).toMatchSnapshot()
-})
-
-test('renders with styles', () => {
-  const json = renderJSON(
-    <ThemeProvider
-      theme={{
-        styles: {
-          h1: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <h1>Hello</h1>
-    </ThemeProvider>
-  )
-  expect(json).toMatchSnapshot()
-})
-
-test('creates non-standard components', () => {
-  const json = renderJSON(
-    <ThemeProvider
-      components={{
-        sup: 'sup',
-      }}
-      theme={{
-        styles: {
-          sup: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <sup>hey</sup>
-    </ThemeProvider>
-  )
-  expect(json).toMatchSnapshot()
-  expect(json).toHaveStyleRule('color', 'tomato')
-})
-
-test('styles React components', () => {
-  // eslint-disable-next-line jsx-a11y/heading-has-content
-  const Beep = (props: {}) => <h2 {...props} />
-  const Inner = (props: {}) => mdx('Beep', props)
-
-  const json = renderJSON(
-    <ThemeProvider
-      components={{
-        Beep,
-      }}
-      theme={{
-        styles: {
-          Beep: {
-            color: 'tomato',
-          },
-        },
-      }}
-    >
-      <Inner />
-    </ThemeProvider>
-  )
-
-  expect(json!.type).toBe('h2')
-  expect(json).toHaveStyleRule('color', 'tomato')
-})
 
 test('custom pragma adds styles', () => {
   const json = renderJSON(

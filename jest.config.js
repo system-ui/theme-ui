@@ -3,13 +3,17 @@
 /** @typedef {import('ts-jest/dist/types')} */
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
-  preset: 'ts-jest/presets/js-with-babel',
+  preset: 'ts-jest/presets/js-with-ts',
   globals: {
     'ts-jest': {
       tsconfig: './tsconfig.test.json',
+      useESM: true,
+      diagnostics: {
+        exclude: ['**'],
+      },
     },
   },
-  testMatch: ['**/packages/**/test/*.{js,ts,tsx}'],
+  testMatch: ['**/packages/**/test/*.{js,ts,tsx,mjs}'],
   testPathIgnorePatterns: [
     '/node_modules/',
     '/fixtures/',
@@ -20,6 +24,7 @@ const config = {
     '/__test-utils__/',
   ],
   coverageReporters: ['lcov', 'text', 'html'],
+  coverageProvider: 'v8',
   collectCoverageFrom: [
     'packages/**/src/**/*.{js,ts,tsx}',
     '!packages/docs/**/*',
@@ -40,11 +45,10 @@ const config = {
     },
   },
   modulePathIgnorePatterns: ['packages/.*/dist'],
-  // projects: ['<rootDir>/packages/*'],
   snapshotSerializers: ['@emotion/jest/serializer'],
   setupFiles: ['jest-canvas-mock'],
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/jest-preprocess.js',
+    '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
   },
   moduleNameMapper: {
     '@theme-ui/css/dist/types': '@theme-ui/css/src/types',

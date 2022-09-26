@@ -5,21 +5,19 @@
 
 import { jsx } from 'theme-ui'
 import renderer from 'react-test-renderer'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup, act } from '@theme-ui/test-utils'
+import { ReactNode } from 'react'
+
 import { Sidenav, Pagination, AccordionNav } from '../src'
-import { FunctionComponent } from 'react'
 
 afterEach(cleanup)
 
-const Link: FunctionComponent<{
-  href: string
-  mdxType: 'a'
-}> = (props) => {
+const Link = (props: { href: string; mdxType: 'a'; children: ReactNode }) => {
   const { children, ...rest } = props
   return <a {...rest}>{children}</a>
 }
 
-const Ul: FunctionComponent<{ mdxType: 'ul' }> = (props) => {
+const Ul = (props: { mdxType: 'ul'; children: ReactNode }) => {
   const { children, ...rest } = props
   return <ul {...rest}>{children}</ul>
 }
@@ -107,7 +105,9 @@ test('AccordionNav renders open', () => {
 test('AccordionNav button toggles open state', () => {
   const root = render(<AccordionNav children={nestedLinks} />)
   const button = root.getByTitle('Expand Section')
-  button.click()
+  act(() => {
+    button.click()
+  })
   const nested = root.getByText('Hi')
   expect(nested).toBeTruthy()
 })

@@ -1,14 +1,19 @@
 {
   "name": "@theme-ui/color",
-  "version": "0.14.7",
+  "version": "0.15.0-develop.30",
   "source": "src/index.ts",
   "main": "dist/theme-ui-color.cjs.js",
   "module": "dist/theme-ui-color.esm.js",
   "types": "dist/theme-ui-color.cjs.d.ts",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/css": "0.14.7",
+    "@theme-ui/css": "workspace:^",
     "polished": "^4.0.5"
+  },
+  "devDependencies": {
+    "@theme-ui/test-utils": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/theme-provider": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

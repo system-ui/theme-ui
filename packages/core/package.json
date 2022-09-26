@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.14.7",
+  "version": "0.15.0-develop.30",
   "source": "src/index.ts",
   "main": "dist/theme-ui-core.cjs.js",
   "module": "dist/theme-ui-core.esm.js",
@@ -14,13 +14,17 @@
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/css": "0.14.7",
-    "@theme-ui/parse-props": "0.14.7",
+    "@theme-ui/css": "workspace:^",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "react": ">16"
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@babel/core": "^7",
+    "@theme-ui/test-utils": "workspace:^"
   },
   "preconstruct": {
     "entrypoints": [

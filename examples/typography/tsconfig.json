@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "theme-ui",
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}

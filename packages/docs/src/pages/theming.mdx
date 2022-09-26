@@ -87,6 +87,47 @@ For other units, use string values, e.g. `'1em'`.
 }
 ```
 
+## Value scales
+
+The following theme keys are used to define scales for values that can be used in other parts of a theme:
+
+- `space` (margin, padding, gap, etc)
+- `sizes` (width, height, etc)
+- `borders` (border)
+- `borderWidths` (border-width)
+- `borderStyles` (border-style)
+- `radii` (border-radius)
+- `shadows` (box-shadow)
+- `zIndices` (z-index)
+
+For example, after setting `space` like this in your theme:
+
+```js
+space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+```
+
+You can reference the array values in your theme styles, by index:
+
+```js
+<Box
+  sx={{
+    padding: 2 // Equals 8px
+  }}
+/>
+```
+
+The values can also be named using an object, like this:
+
+```js
+sizes: {
+  wide: 2048,
+  container: 1024,
+  narrow: 512,
+},
+```
+
+Then used by name, such as `sx={{ maxWidth: 'narrow' /* 512px */ }}`.
+
 ## Styles
 
 Styles for elements rendered in MDX can be added to the `theme.styles` object.

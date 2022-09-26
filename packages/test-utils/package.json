@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/test-utils",
-  "version": "0.14.7",
+  "version": "0.15.0-develop.30",
   "private": true,
   "license": "MIT",
   "repository": "system-ui/theme-ui",
@@ -15,17 +15,20 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@testing-library/react": "^12.1.2",
-    "conditional-type-checks": "^1.0.5",
-    "react-test-renderer": "17.0.2",
+    "@testing-library/react": "^13.3.0",
+    "conditional-type-checks": "^1.0.6",
+    "react-test-renderer": "^18.2.0",
     "ts-snippet": "^5.0.0"
   },
   "peerDependencies": {
-    "react": ">16",
-    "theme-ui": "0.14.2"
+    "react": ">=18",
+    "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "react": ">16",
-    "theme-ui": "0.14.7"
+    "@types/react": "^18",
+    "react": "^18",
+    "react-dom": ">=18",
+    "typescript": ">=4",
+    "theme-ui": "workspace:^"
   }
 }

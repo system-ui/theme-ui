@@ -4,15 +4,15 @@ Generate static CSS for use outside of React with Theme UI and Tailwind.css.
 
 ## Why?
 
-Though Theme UI comes with its own implementation, project constraints might require
-pure utility CSS output. This library allows you to leverage a Theme UI theme that
-is used elsewhere and transforms it to the configuration that Tailwind expects. The
-best of both worlds.
+Though Theme UI comes with its own implementation, project constraints might
+require pure utility CSS output. This library allows you to leverage a Theme UI
+theme that is used elsewhere and transforms it to the configuration that
+Tailwind expects. The best of both worlds.
 
 ## Installation
 
 ```sh
-yarn add @theme-ui/tailwind
+npm i @theme-ui/tailwind
 ```
 
 ## Usage

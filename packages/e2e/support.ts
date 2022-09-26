@@ -28,3 +28,9 @@ type Chainables<T extends object> = {
       ) => Cypress.Chainable<ReturnType<T[K]>>
     : never
 }
+
+Cypress.on('uncaught:exception', (_err, _runnable) => {
+  // returning false here prevents Cypress from
+  // failing the test
+  return false
+})

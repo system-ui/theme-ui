@@ -6,13 +6,13 @@ project.
 
 ```sh
 # ensure Theme UI packages are built
-cd ../.. && yarn build
+cd ../.. && pnpm build
 
 # install dependencies -- package.json contains relative paths to package directories
-yarn
+pnpm install
 
 # run the script
-yarn start
+pnpm start
 ```
 
 # Maintenance

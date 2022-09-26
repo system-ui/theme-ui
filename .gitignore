@@ -1,6 +1,5 @@
 .cache
 public
-package-lock.json
 node_modules
 dist
 coverage
@@ -8,11 +7,9 @@ coverage
 .rts2_cache*
 .idea
 .vscode
+.env
 .envrc
 .envrc.ps1
 .publish-log.txt
-.yarn-error.log
-yarn-error.log
-
+yarn.lock
 .vercel
-/examples/**/yarn.lock

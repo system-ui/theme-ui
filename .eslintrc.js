@@ -26,6 +26,8 @@ module.exports = {
     // TypeScript checks this
     'no-undef': 'off',
     'no-lone-blocks': 'off',
+
+    'react/jsx-pascal-case': 'off', // needs a fix in @theme-ui/mdx
   },
   overrides: [
     {

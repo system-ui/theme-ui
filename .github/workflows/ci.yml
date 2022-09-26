@@ -13,38 +13,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 14.x
+          version: 7
 
-      - uses: bahmutov/npm-install@v1
+      - uses: actions/setup-node@v3
         with:
-          # By default, bahmutov/npm-install uses --frozen-lockfile
-          install-command:
-            yarn --ignore-optional --pure-lockfile --non-interactive
+          node-version: 18.x
+          cache: 'pnpm'
+
+      - name: Install
+        run: pnpm install --no-optional
 
       - name: Run linter
-        run: yarn lint --quiet
+        run: pnpm lint --quiet
 
       - name: Run tests and collect coverage
-        run: yarn test --coverage
+        run: pnpm test:coverage
 
       - name: Typecheck
-        run: yarn typecheck
+        run: pnpm typecheck
 
       - name: Build
-        run: yarn build
-
-      - name: Typecheck built files
-        run: |
-          cd scripts/typecheck-built-files
-          yarn
-          yarn start
+        run: pnpm build
 
       - name: Run Codechecks
-        run: yarn codechecks
+        run: pnpm codechecks
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
         if: ${{ env.CC_SECRET != '' }}
@@ -75,19 +71,22 @@ jobs:
         needs.release_check.outputs.CAN_RELEASE == 'true'
       )
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Prepare repository
         run: git fetch --unshallow --tags
 
-      - uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 14.x
+          version: 7
 
-      - uses: bahmutov/npm-install@v1
+      - uses: actions/setup-node@v3
         with:
-          install-command:
-            yarn --ignore-optional --pure-lockfile --non-interactive
+          node-version: 18.x
+          cache: 'pnpm'
+
+      - name: Install
+        run: pnpm install --no-optional --no-frozen-lockfile
 
       - name: Queue in release turnstile
         id: turnstyle
@@ -99,9 +98,15 @@ jobs:
       - name: Create release
         if: steps.turnstyle.outcome == 'success'
         # failing to release a canary because of network problems or duplicate tag shouldn't give the same message as failing tests
-        continue-on-error: true
+        # continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+        run: pnpm release
+
+      - name: Check published prerelease
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          cd scripts/typecheck-built-files
+          pnpm start
