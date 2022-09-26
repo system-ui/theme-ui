@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/react": "^18",
+    "react-dom": "^18",
     "@theme-ui/core": "workspace:^",
     "@theme-ui/css": "workspace:^",
     "@theme-ui/test-utils": "workspace:^",
