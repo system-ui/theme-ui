@@ -46,7 +46,7 @@ function Provider({ children, theme, components }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <MDXProvider components={useThemedStylesWithMdx(components)}>
+      <MDXProvider components={componentsWithStyles}>
         {children}
       </MDXProvider>
     </ThemeProvider>
