@@ -10,7 +10,8 @@
     "@theme-ui/css": "workspace:^",
     "gatsby": "^4",
     "react": ">=18",
-    "theme-ui": "workspace:^"
+    "theme-ui": "workspace:^",
+    "@mdx-js/react": "^1 || ^2"
   },
   "devDependencies": {
     "@types/react": "^18",
