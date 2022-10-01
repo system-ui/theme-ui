@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/match-media",
-  "version": "0.15.0-develop.30",
+  "version": "0.15.2-develop.0",
   "description": "React hooks for theme-ui breakpoints",
   "source": "src/index.ts",
   "main": "dist/theme-ui-match-media.cjs.js",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/react": "^18",
+    "react-dom": "^18",
     "@theme-ui/core": "workspace:^",
     "@theme-ui/css": "workspace:^",
     "@theme-ui/test-utils": "workspace:^",
