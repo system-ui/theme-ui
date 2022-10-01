@@ -1148,6 +1148,18 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "cobraz",
+      "name": "Simen A. W. Olsen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3726815?v=4",
+      "profile": "https://github.com/cobraz",
+      "contributions": [
+        "doc",
+        "example",
+        "test",
+        "code"
+      ]
     }
   ]
 }

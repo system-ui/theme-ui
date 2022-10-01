@@ -5,7 +5,6 @@ import bootstrap from 'typography-theme-bootstrap'
 import deYoung from 'typography-theme-de-young'
 import doelger from 'typography-theme-doelger'
 import elkGlen from 'typography-theme-elk-glen'
-import fairyGates from 'typography-theme-fairy-gates'
 import funston from 'typography-theme-funston'
 import github from 'typography-theme-github'
 import grandView from 'typography-theme-grand-view'
@@ -13,7 +12,6 @@ import irving from 'typography-theme-irving'
 import judah from 'typography-theme-judah'
 import lawton from 'typography-theme-lawton'
 import legible from 'typography-theme-legible'
-import lincoln from 'typography-theme-lincoln'
 import kirkham from 'typography-theme-kirkham'
 import moraga from 'typography-theme-moraga'
 import noriega from 'typography-theme-noriega'
@@ -45,7 +43,6 @@ export const themes = {
   deYoung,
   doelger,
   elkGlen,
-  fairyGates,
   funston,
   github,
   grandView,
@@ -53,7 +50,6 @@ export const themes = {
   judah,
   lawton,
   legible,
-  lincoln,
   kirkham,
   moraga,
   noriega,

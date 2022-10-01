@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/monorepo",
-  "version": "0.15.0-develop.30",
+  "version": "0.15.1",
   "private": true,
   "scripts": {
     "build": "preconstruct build",
@@ -19,7 +19,8 @@
     "dev": "preconstruct dev",
     "release": "pnpm clean && pnpm build && pnpm shipit && node scripts/publish-to-npm.mjs",
     "auto": "cross-env TS_NODE_COMPILER_OPTIONS=\"{ \\\"module\\\": \\\"commonjs\\\", \\\"isolatedModules\\\": false }\" auto",
-    "shipit": "pnpm auto shipit -v",
+    "shipit": "pnpm auto shipit",
+    "shipit:verbose": "pnpm auto shipit -v",
     "auto:version": "pnpm auto version -v",
     "all-contributors:check": "./scripts/all-contributors-check.js",
     "all-contributors:add": "npx all-contributors add",
