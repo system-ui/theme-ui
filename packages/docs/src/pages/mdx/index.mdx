@@ -1,0 +1,38 @@
+---
+title: MDX
+---
+
+import { Cards } from '../..'
+
+# MDX
+
+Theme UI is designed to work seamlessly with [MDX](https://mdxjs.com/), a format
+allowing you to write JSX in your Markdown files & use Markdown files as React
+components. This makes it easy to style text content with Theme UI and add
+themed, interactive components like charts or sliders to content without writing
+prose in JSX.
+
+While many Theme UI projects use MDX, as of `v0.15` it’s not included in the
+default `theme-ui` package to reduce bundle size. Install the `@theme-ui/mdx`
+package alongside `theme-ui` to use MDX with Theme UI.
+
+```sh
+npm i @theme-ui/mdx @mdx-js/react
+```
+
+<Cards width={320}>
+
+- [Styling MDX Content](/mdx/styling) Overview of using Theme UI components with
+  MDX
+- [Themed](/mdx/themed) Use Theme UI text styles outside MDX directly
+- [MDX Components](/mdx/components) Add custom React components to the MDX
+- [MDX Layout Components](/mdx/layout-components) Use Theme UI to create MDX
+  layouts
+- [Syntax Highlighting](/mdx/syntax-highlighting) Add syntax highlighting to MDX
+  code blocks
+- [Linked Headings](/mdx/linked-headings) Add linked headings to MDX
+
+</Cards>
+
+For the full API reference,
+[visit the `@theme-ui/mdx` package docs](/packages/mdx).

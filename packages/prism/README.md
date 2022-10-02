@@ -18,6 +18,8 @@ The syntax highlighting component needs to be passed to Theme UI context via the
 ```js
 // src/components/layout.js
 import { ThemeProvider } from 'theme-ui'
+import { MDXProvider } from '@mdx-js/react'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import Prism from '@theme-ui/prism'
 
 import theme from './theme'
@@ -27,17 +29,25 @@ const components = {
   code: Prism,
 }
 
-export default ({ children }) => (
-  <ThemeProvider theme={theme} components={components}>
-    {children}
-  </ThemeProvider>
-)
+function Provider({ children }) {
+  const componentsWithStyles = useThemedStylesWithMdx(
+    useMDXComponents(components)
+  )
+
+  return (
+    <ThemeProvider theme={theme}>
+      <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
+    </ThemeProvider>
+  )
+}
+
+export default Provider
 ```
 
 Then, all code blocks in MDX documents wrapped by Layout will be syntax
 highlighted.
 
-### Gatsby Plugin
+### Gatsby plugin
 
 When using `gatsby-plugin-theme-ui`, shadow the
 `src/gatsby-plugin-theme-ui/components.js` module to add the Prism component to
@@ -53,7 +63,7 @@ export default {
 }
 ```
 
-## Syntax Themes
+## Syntax themes
 
 This package includes the default syntax color themes from the `prismjs` and
 `prism-react-renderer` packages. To add these to your Theme UI `theme` object,
@@ -63,7 +73,7 @@ import a preset and add the styles to `theme.styles.code`.
 // theme.js
 import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 
-export default {
+const theme = {
   // ...theme
   styles: {
     code: {
@@ -96,7 +106,7 @@ directory.
 - `ultramin.json`
 - `vs-dark.json`
 
-### Theme UI Colors
+### Theme UI colors
 
 To theme the prism styles based on the colors defined in your `theme.colors`
 object, use the `theme-ui` preset, which will use the following color keys for
@@ -162,7 +172,7 @@ example:
 }
 ```
 
-## Additional Languages
+## Additional languages
 
 Please note that `@theme-ui/prism` uses
 [`prism-react-renderer`](https://github.com/FormidableLabs/prism-react-renderer),
@@ -184,6 +194,3 @@ export default {
   code: (props) => <ThemeUIPrism {...props} Prism={PrismCore} />,
 }
 ```
-
-See the [Theme UI docs](https://theme-ui.com/theming/#syntax-highlighting) for
-more.

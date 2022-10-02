@@ -10,8 +10,13 @@ The core `theme-ui` package exports the following modules.
 
 ### `/jsx-runtime`
 
-While not being available in the `theme-ui` package directly, there are two separate entry points for React create element functions intended to be used in the [automatic JSX runtime](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) with a custom pragma comment.
-They add support for the `sx` prop, which uses Emotion's create element functions internally and parse style objects with the Theme UI `css` utility.
+While not being available in the `theme-ui` package directly, there are two
+separate entry points for React create element functions intended to be used in
+the
+[automatic JSX runtime](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
+with a custom pragma comment. They add support for the `sx` prop, which uses
+Emotion's create element functions internally and parse style objects with the
+Theme UI `css` utility.
 
 **Usage:**
 
@@ -37,8 +42,9 @@ import { jsxDEV } from 'theme-ui/jsx-dev-runtime'
 
 ### `jsx`
 
-The `jsx` export is a React create element function for the classic JSX runtime intended for use with a custom pragma comment.
-It adds support for the `sx` prop in the same way like the `/jsx-runtime` entrypoint.
+The `jsx` export is a React create element function for the classic JSX runtime
+intended for use with a custom pragma comment. It adds support for the `sx` prop
+in the same way like the `/jsx-runtime` entrypoint.
 
 **Usage:**
 
@@ -58,9 +64,9 @@ export default (props) => (
 
 ### `ThemeProvider`
 
-The `ThemeProvider` component is a wrapper around Emotion's `ThemeProvider` and MDX's `MDXProvider`.
-It provides default styled components to MDX content that pick up values from `theme.styles`.
-It also handles color mode state.
+The `ThemeProvider` component is a wrapper around Emotion's `ThemeProvider` and
+MDX's `MDXProvider`. It provides default styled components to MDX content that
+pick up values from `theme.styles`. It also handles color mode state.
 
 | Prop         | Type   | Description                    |
 | ------------ | ------ | ------------------------------ |
@@ -70,7 +76,8 @@ It also handles color mode state.
 
 ### `useThemeUI`
 
-The `useThemeUI` hook returns the full Theme UI context object, which includes `theme`, and color mode.
+The `useThemeUI` hook returns the full Theme UI context object, which includes
+`theme`, and color mode.
 
 ```js
 const context = useThemeUI()
@@ -82,35 +89,26 @@ The React context used in Theme UI.
 
 ### `useColorMode`
 
-The `useColorMode` hook returns an array with two values: the current color mode state and an updater function.
-The color mode state can be any string and should match the name of a color mode defined in `theme.colors.modes` or be a name for the default color mode.
+The `useColorMode` hook returns an array with two values: the current color mode
+state and an updater function. The color mode state can be any string and should
+match the name of a color mode defined in `theme.colors.modes` or be a name for
+the default color mode.
 
 ```js
 const [colorMode, setColorMode] = useColorMode()
 ```
 
-### `Themed`
-
-The [`Themed`](/themed) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
-Each component will pick up styles from its corresponding theme object.
-These are primarily meant to be used as a mechanism to use styles defined in a `theme` object outside of MDX.
-
-```jsx
-// picks up styles from `theme.styles.h1`
-<Themed.h1 />
-```
-
-| Prop | Type                | Description                             |
-| ---- | ------------------- | --------------------------------------- |
-| `as` | String or Component | Changes the underlying rendered element |
-
 ### `BaseStyles`
 
-The `BaseStyles` component can be used to style child content that isn't generated from MDX.
+The `BaseStyles` component can be used to style child content that isn’t
+generated from MDX. This can be useful with content from a CMS or Markdown.
 
 <Note>
 
-Note that this will increase the CSS specificity of child elements, and you may run into issues with the cascade (i.e. specificity) when using this component.
+Note that this will increase the CSS specificity of child elements, and you may
+run into issues with the cascade (i.e. specificity) when using this component.
+This component should _not_ be used at the root of your application, as it will
+override custom & component styling.
 
 </Note>
 
@@ -124,8 +122,10 @@ Note that this will increase the CSS specificity of child elements, and you may 
 
 ### `css`
 
-As an alternative to using the `sx` prop, the `css` utility is intended for use with the Emotion `css` prop.
-It will attempt to use values from the `theme` object for many common CSS properties, and will fall back to raw values when there is no corresponding theme value.
+As an alternative to using the `sx` prop, the `css` utility is intended for use
+with the Emotion `css` prop. It will attempt to use values from the `theme`
+object for many common CSS properties, and will fall back to raw values when
+there is no corresponding theme value.
 
 To see a list of supported CSS properties, see the [`sx` prop docs](/sx-prop).
 
@@ -146,11 +146,13 @@ css(styleObject)(theme)
 
 ### `get`
 
-An existential getter function used internally to extract a field (or object) from a theme object.
+An existential getter function used internally to extract a field (or object)
+from a theme object.
 
 ### `getObjectWithVariants`
 
-Similar to the `get` function above, but will also resolve any `variant` field if found inside the object.
+Similar to the `get` function above, but will also resolve any `variant` field
+if found inside the object.
 
 ### `merge`
 
@@ -172,7 +174,8 @@ const theme = merge(dark, {
 
 ### `InitializeColorMode`
 
-Used internally by [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin), this component can be rendered in HTML before the main application to help prevent the flash of colors that can occur during rehydration.
+this component can be rendered in HTML before the main application to help
+prevent the flash of colors that can occur during rehydration.
 
 **Usage**
 
@@ -180,12 +183,13 @@ Used internally by [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin), this com
 <InitializeColorMode />
 ```
 
-### `components`
-
-An object of styled MDX components for use with `MDXProvider`.
+This component is used internally by
+[`gatsby-plugin-theme-ui`](/packages/gatsby-plugin), but if you’re using Next.js
+or another React framework with static or server-side rendering, you’ll want to
+add it to the root level of your application.
 
 ## Components
 
-For component API docs, see [Components](/components)
+For component API docs, see [Components](/components).
 
 [styled-system/css]: https://styled-system.com/css

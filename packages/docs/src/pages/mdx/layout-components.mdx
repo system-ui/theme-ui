@@ -5,15 +5,16 @@ title: 'MDX Layout Components'
 # MDX Layout Components
 
 The `ThemeProvider` component can be nested within a parent `ThemeProvider`,
-allowing you to contextually adjust styles in certain parts of a UI.
-This functionality can be leveraged to create custom layout components that
-take MDX content as children to create uniquely styled blocks of content.
-For example this site's [landing page](/) uses this approach to style its content,
-which is written in MDX.
+allowing you to contextually adjust styles in certain parts of a UI. This
+functionality can be leveraged to create custom layout components that take MDX
+content as children to create uniquely styled blocks of content. For example,
+this site's [landing page](/) uses this approach to style its content, which is
+written in MDX.
 
-As an example, create a new component with the `ThemeProvider` and a wrapping `<div>`.
+As an example, create a new component with the `ThemeProvider` and a wrapping
+`<div>`.
 
-```jsx filename=Layout.js
+```jsx filename=MyLayout.js
 /** @jsxImportSource theme-ui */
 import { ThemeProvider } from 'theme-ui'
 
@@ -24,13 +25,14 @@ export default (props) => (
 )
 ```
 
-To add styles to this component, augment the required `theme` prop and add an `sx` prop to the `div`.
+To add styles to this component, augment the required `theme` prop and add an
+`sx` prop to the `div`.
 
-```jsx filename=Layout.js
+```jsx filename=InvertedBanner.js
 /** @jsxImportSource theme-ui */
 import { ThemeProvider } from 'theme-ui'
 
-export default (props) => (
+const InvertedBanner = (props) => (
   <ThemeProvider
     theme={{
       styles: {
@@ -39,7 +41,8 @@ export default (props) => (
           fontSize: [5, 6, 7],
         },
       },
-    }}>
+    }}
+  >
     <div
       {...props}
       sx={{
@@ -52,20 +55,22 @@ export default (props) => (
     />
   </ThemeProvider>
 )
+
+export default InvertedBanner
 ```
 
 The component above can then be imported and used within an MDX document.
 
 ```md
-import MyLayout from './MyLayout'
+import InvertedBanner from './InvertedBanner'
 
-<MyLayout>
+<InvertedBanner>
 
 # Hello
 
 This section has custom styles
 
-</MyLayout>
+</InvertedBanner>
 
 This part of the document uses default styles
 ```
