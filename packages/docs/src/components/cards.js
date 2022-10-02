@@ -6,6 +6,7 @@ export default (props) => (
   <Tiles
     {...props}
     sx={{
+      my: 4,
       p: {
         m: 0,
       },
