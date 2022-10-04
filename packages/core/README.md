@@ -35,6 +35,11 @@ node_modules, and `theme-ui` reexports everything from it.
 - `useThemeUI` — a hook to access your theme
 - `merge` — an utility function to deeply merge themes together
 
+Note that `@theme-ui/core` doesn’t add global or root styles to
+`<html>`/`<body>`. Refer to the
+[Global Styles docs](https://theme-ui.com/guides/global-styles) for how to add
+global styles.
+
 ## JSX Runtime
 
 As `@theme-ui/core` defines `jsx` function and types for it, you can use it to
