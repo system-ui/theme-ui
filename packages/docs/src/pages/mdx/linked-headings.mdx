@@ -1,0 +1,116 @@
+---
+name: 'Linked Headings'
+---
+
+# Linked Headings
+
+Create anchor-linked headings in MDX.
+
+Use `remark-slug` with MDX to create IDs based on the heading’s content. If
+you’re using Gatsby, add this to your `gatsby-plugin-mdx` options.
+
+```js filename=gatsby-config.js
+const remarkSlug = require('remark-slug')
+
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        remarkPlugins: [remarkSlug],
+      },
+    },
+  ],
+}
+```
+
+If you’re using [Contentlayer](https://contentlayer.io), you can use the
+`remarkSlug` plugin in your `contentlayer.config.js` file.
+
+```js filename=contentlayer.config.js
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import remarkSlug from 'remark-slug'
+
+export const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: '*.mdx',
+  contentType: 'mdx',
+  fields: {},
+}))
+
+export default makeSource({
+  contentDirPath: 'posts',
+  documentTypes: [Post],
+  mdx: {
+    remarkPlugins: [remarkSlug],
+    rehypePlugins: [],
+  },
+})
+```
+
+Next, create a components module to pass to MDX context. If you’re using
+`gatsby-plugin-theme-ui`, add a `src/gatsby-plugin-theme-ui/components.js` file.
+If you’re not using Gatsby, pass these components to the
+[`MDXProvider` component](https://mdxjs.com/packages/react/#use).
+
+```jsx filename=src/gatsby-plugin-theme-ui/components.js
+/** @jsxImportSource theme-ui */
+
+const heading = (Tag) => (props) => {
+  if (!props.id) return <Tag {...props} />
+
+  return (
+    <Tag {...props}>
+      <a href={`#${props.id}`}>{props.children}</a>
+    </Tag>
+  )
+}
+
+const components = {
+  h1: heading('h1'),
+  h2: heading('h2'),
+  h3: heading('h3'),
+  h4: heading('h4'),
+  h5: heading('h5'),
+  h6: heading('h6'),
+}
+
+export default components
+```
+
+Or with TypeScript:
+
+```tsx filename=components.tsx
+import type { ComponentPropsWithoutRef } from 'react'
+import { Themed } from '@theme-ui/mdx'
+
+const createHeadingWithLink =
+  (Level: 'h2' | 'h3' | 'h4' | 'h5' | 'h6') =>
+  (props: ComponentPropsWithoutRef<'h2'>) =>
+    (
+      <Level {...props}>
+        {props.id && (
+          <a
+            href={`#${props.id}`}
+            sx={{
+              color: 'inherit',
+              textDecoration: 'none',
+              ':hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
+            {props.children}
+          </a>
+        )}
+      </Level>
+    )
+
+export const components = {
+  h2: createHeadingWithLink('h2'),
+  h3: createHeadingWithLink('h3'),
+  h4: createHeadingWithLink('h4'),
+  h5: createHeadingWithLink('h5'),
+  h6: createHeadingWithLink('h6'),
+}
+```

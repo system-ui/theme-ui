@@ -128,7 +128,7 @@ use these components to handle layout, images, forms, and more.
 import { Box, Label, Input, Button } from 'theme-ui'
 
 export default (props) => (
-  <Box sx={{ mb: 4 }}>
+  <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
     <Label htmlFor="search">Search</Label>
     <Input id="search" name="search" {...props} />
     <Button>Go</Button>
