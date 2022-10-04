@@ -26,6 +26,31 @@
       "permanent": false
     },
     {
+      "source": "/styling-mdx",
+      "destination": "/mdx/styling",
+      "permanent": false
+    },
+    {
+      "source": "/mdx-components",
+      "destination": "/mdx/components",
+      "permanent": false
+    },
+    {
+      "source": "/themed",
+      "destination": "/mdx/themed",
+      "permanent": false
+    },
+    {
+      "source": "/guides/linked-headings",
+      "destination": "/mdx/linked-headings",
+      "permanent": false
+    },
+    {
+      "source": "/guides/syntax-highlighting",
+      "destination": "/mdx/syntax-highlighting",
+      "permanent": false
+    },
+    {
       "source": "/presets",
       "destination": "/packages/presets"
     },

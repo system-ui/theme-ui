@@ -4,10 +4,14 @@ title: Styling MDX Content
 
 # Styling MDX Content
 
-The `theme.styles` object combined with `useThemeStylesWithMdx` function is the
+The `theme.styles` object combined with `useThemeStylesWithMdx` hook is the
 primary way to style content in MDX documents. This allows you to add
-typographic styles to markdown without the need to pollute the global scope.
+typographic styles to Markdown without the need to pollute the global scope.
 Styles within this object have access to other values in the theme object.
+
+Use the [`MDXProvider`](https://mdxjs.com/packages/react/#use) above the level
+of MDX pages, or at the root level of your project, such as in `pages/_app.js`
+for Next.js.
 
 ```jsx
 import { MDXProvider } from '@mdx-js/react'
@@ -46,9 +50,7 @@ function Provider({ children, theme, components }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <MDXProvider components={componentsWithStyles}>
-        {children}
-      </MDXProvider>
+      <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
     </ThemeProvider>
   )
 }
@@ -57,7 +59,7 @@ function Provider({ children, theme, components }) {
 <Note>
 
 These styles will **not** apply to HTML elements used outside of MDX. To reuse
-these styles outside of MDX, see the [Themed component](/themed) docs.
+these styles outside of MDX, see the [Themed component](/mdx/themed) docs.
 
 </Note>
 
@@ -99,38 +101,9 @@ Theme UI does not currently use colors from Typography.js.
 
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
-## Syntax Highlighting
-
-To support syntax highlighting libraries like [Prism.js][], colors and other
-styles can be added to `theme.styles.pre` to target child elements with class
-selectors. Prism.js adds `<span>` elements with class names that can be used as
-child selectors.
-
-To enable syntax highlighting in MDX, see the
-[`@theme-ui/prism`](/packages/prism) package.
-
-[prism.js]: https://github.com/PrismJS/prism
-
-```js
-{
-  colors: {
-    gray: '#666',
-  },
-  styles: {
-    pre: {
-      '.comment': {
-        // theme.colors and other values can be referenced
-        color: 'gray',
-      }
-    }
-  }
-}
-}
-```
-
 <Note>
 
-To style content that is not generated with MDX with `theme.styles`, see the
-[`BaseStyles`](/api/#base-styles) component.
+To style content that is not generated with MDX with `theme.styles`, such as
+from a CMS or Markdown, see the [`BaseStyles`](/api/#base-styles) component.
 
 </Note>
