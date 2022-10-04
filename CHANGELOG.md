@@ -1,3 +1,26 @@
+# v0.15.1 (Tue Oct 04 2022)
+
+#### 🐛 Bug Fix
+
+- Add `@mdx-js/react` to peerDeps for `gatsby-plugin-theme-ui` [#2331](https://github.com/system-ui/theme-ui/pull/2331) ([@hasparus](https://github.com/hasparus))
+- Fix MDXProvider example [#2329](https://github.com/system-ui/theme-ui/pull/2329) ([@shawnbot](https://github.com/shawnbot))
+- fix(typography): drop broken dev dependencies ([@hasparus](https://github.com/hasparus))
+- fix(match-media): add dev dependency on react-dom ([@hasparus](https://github.com/hasparus))
+- fix(theme-ui): remove redundant dependency on @theme-ui/mdx from package.json ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: Mention that /core doesn't add global styles [#2333](https://github.com/system-ui/theme-ui/pull/2333) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Group & update all MDX-related docs [#2339](https://github.com/system-ui/theme-ui/pull/2339) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 3
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Shawn Allen ([@shawnbot](https://github.com/shawnbot))
+
+---
+
 # v0.15.0 (Mon Sep 26 2022)
 
 :tada: This release contains work from new contributors! :tada:
