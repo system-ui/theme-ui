@@ -6,8 +6,10 @@ title: 'Global Styles'
 
 Use the Emotion `Global` component to add global CSS with theme-based values.
 
-By default, the `ThemeProvider` component will apply styles in `theme.styles.root` to the `<html>` element.
-It will also apply `color` and `background-color` styles based on `theme.colors.text` and `theme.colors.background` respectively.
+By default, the `ThemeUIProvider` component will apply styles in
+`theme.styles.root` to the `<html>` element. It will also apply `color` and
+`background-color` styles based on `theme.colors.text` and
+`theme.colors.background` respectively.
 
 <Note>
   Generally, you should try to avoid adding CSS to global scope. Many styles can
@@ -30,8 +32,9 @@ export default (props) => (
 
 <Note>
 
-  If you are upgrading from a version of theme-ui older that v0.6.0, be aware the import
-  package has changed from `@emotion/core` to `@emotion/react`. For more information see
-  the [Migration Notes for 0.6](https://theme-ui.com/migrating/#breaking-changes).
+If you are upgrading from a version of theme-ui older that v0.6.0, be aware the
+import package has changed from `@emotion/core` to `@emotion/react`. For more
+information see the
+[Migration Notes for 0.6](https://theme-ui.com/migrating/#breaking-changes).
 
 </Note>

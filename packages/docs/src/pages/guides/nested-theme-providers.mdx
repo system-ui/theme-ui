@@ -4,28 +4,38 @@ title: 'Nested Theme Providers'
 
 # Nested Theme Providers
 
-While in most cases, you'll be using a `ThemeProvider` component at the root of your application to set a site-wide theme,
-nested Theme Providers are a powerful way to adjust styles contextually.
+While in most cases, you'll be using a `ThemeUIProvider` component at the root
+of your application to set a site-wide theme, nested Theme Providers are a
+powerful way to adjust styles contextually.
 
-For example, when building a Gatsby theme, you may want to set some base thematic values
-that the user can easily override to match their site,
-but keep some theme-specific styles for use only in the pages that your Gatsby theme generates.
-Or, you might want to have a global theme, but adjust styles in a small section of a page to render with a dark color scheme.
+For example, when building a Gatsby theme, you may want to set some base
+thematic values that the user can easily override to match their site, but keep
+some theme-specific styles for use only in the pages that your Gatsby theme
+generates. Or, you might want to have a global theme, but adjust styles in a
+small section of a page to render with a dark color scheme.
 
 ## How contexts merge
 
-When adding a nested Theme Provider, it will inherit the `theme` and `components` object from its parent.
-The `theme` object will be deeply merged with the outer context's theme.
-The `components` object will override any outer context components, but apply styling based on `theme.styles`.
-The inner Theme Provider will not create a new color mode state, but inherit this from the parent.
+When adding a nested Theme Provider, it will inherit the `theme` and
+`components` object from its parent. The `theme` object will be deeply merged
+with the outer context's theme. The `components` object will override any outer
+context components, but apply styling based on `theme.styles`. The inner Theme
+Provider will not create a new color mode state, but inherit this from the
+parent.
 
 ## Functional Themes
 
-The nested `ThemeProvider` component can use a functional theme to avoid deep merging the objects or to control the way the two objects are merged in a more granular way.
+The nested `ThemeUIProvider` component can use a functional theme to avoid deep
+merging the objects or to control the way the two objects are merged in a more
+granular way.
 
 ## Gatsby themes
 
-When building a Gatsby theme, you should use [`gatsby-plugin-theme-ui`](/packages/gatsby-plugin) for parts of your theme that should be overridden or merged with other themes.
-If you need to specify a Gatsby theme-specific subtheme, use a nested Theme Provider in a layout component that only renders around pages that you control.
-This allows the end user to change their site-level theme without affecting custom styles you might need in your theme.
-The end user can still shadow any components in your theme if they need to.
+When building a Gatsby theme, you should use
+[`gatsby-plugin-theme-ui`](/packages/gatsby-plugin) for parts of your theme that
+should be overridden or merged with other themes. If you need to specify a
+Gatsby theme-specific subtheme, use a nested Theme Provider in a layout
+component that only renders around pages that you control. This allows the end
+user to change their site-level theme without affecting custom styles you might
+need in your theme. The end user can still shadow any components in your theme
+if they need to.

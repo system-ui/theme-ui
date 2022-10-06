@@ -169,15 +169,15 @@ export default (props) => {
 
 ## Applying colors
 
-The ThemeProvider component will automatically apply color mode styles to the
+The ThemeUIProvider component will automatically apply color mode styles to the
 `<html>` element.
 
 ```jsx
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import theme from './theme'
 
 export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+  <ThemeUIProvider theme={theme}>{props.children}</ThemeUIProvider>
 )
 ```
 
@@ -186,8 +186,8 @@ export default (props) => (
 ## Gatsby plugin
 
 For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the
-ThemeProvider to the root of your application. The plugin will also help prevent
-the flash of colors that can happen during page load when a user has a
+ThemeUIProvider to the root of your application. The plugin will also help
+prevent the flash of colors that can happen during page load when a user has a
 non-default color mode set.
 
 ```sh
@@ -195,7 +195,7 @@ npm i gatsby-plugin-theme-ui
 ```
 
 This plugin will look for a `src/gatsby-plugin-theme-ui/index.js` file to import
-and pass to the ThemeProvider.
+and pass to the ThemeUIProvider.
 
 ```js filename=gatsby-config.js
 module.exports = {
