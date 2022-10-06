@@ -17,7 +17,7 @@ The syntax highlighting component needs to be passed to Theme UI context via the
 
 ```js
 // src/components/layout.js
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { MDXProvider } from '@mdx-js/react'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import Prism from '@theme-ui/prism'

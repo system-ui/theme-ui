@@ -3,7 +3,7 @@
 Utilities for integrating Typography.js themes with Theme UI
 
 ```js
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { toTheme } from '@theme-ui/typography'
 import wordpress2016 from 'typography-theme-wordpress-2016'
 

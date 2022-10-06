@@ -1,9 +1,9 @@
 import React from 'react'
-import { ThemeProvider, Themed } from 'theme-ui'
+import { ThemeUIProvider, Themed } from 'theme-ui'
 import theme from './theme'
 
 export const WrapRootElement = ({ element }) => (
-  <ThemeProvider theme={theme}>
+  <ThemeUIProvider theme={theme}>
     <Themed.root>{element}</Themed.root>
-  </ThemeProvider>
+  </ThemeUIProvider>
 )

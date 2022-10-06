@@ -120,16 +120,16 @@ _If you don't need color modes or components you can install
 [**@theme-ui/core**](https://github.com/system-ui/theme-ui/tree/develop/packages/core)_.
 
 Any styles in your app can reference values from the global `theme` object. To
-provide the theme in context, wrap your application with the `ThemeProvider`
+provide the theme in context, wrap your application with the `ThemeUIProvider`
 component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import theme from './theme'
 
 export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+  <ThemeUIProvider theme={theme}>{props.children}</ThemeUIProvider>
 )
 ```
 
