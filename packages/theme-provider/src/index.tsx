@@ -37,7 +37,8 @@ const RootStyles = () =>
     },
   })
 
-interface ThemeProviderProps extends Pick<CoreThemeProviderProps, 'theme'> {
+export interface ThemeProviderProps
+  extends Pick<CoreThemeProviderProps, 'theme'> {
   children?: React.ReactNode
 }
 

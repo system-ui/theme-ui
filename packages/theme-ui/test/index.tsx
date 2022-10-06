@@ -8,7 +8,8 @@ import mockConsole from 'jest-mock-console'
 import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
 
 import {
-  ThemeProvider,
+  ThemeProvider as DeprecatedThemeProvider,
+  ThemeUIProvider as ThemeProvider,
   jsx,
   BaseStyles,
   Theme,
@@ -47,6 +48,17 @@ test('warns when multiple versions of emotion are installed', () => {
     </__ThemeUIContext.Provider>
   )
   expect(console.warn).toBeCalled()
+  restore()
+})
+
+test('warns deprecated ThemeProvider', () => {
+  const restore = mockConsole()
+  render(
+    <DeprecatedThemeProvider>
+      <div />
+    </DeprecatedThemeProvider>
+  )
+  expect(console.warn).toHaveBeenCalled()
   restore()
 })
 
