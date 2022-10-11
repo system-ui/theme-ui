@@ -3,7 +3,7 @@ import { defaultMdxComponents } from '../src'
 describe('defaultMdxComponents', () => {
   it('has keys matching inline snapshot', () => {
     expect(Object.keys(defaultMdxComponents)).toMatchInlineSnapshot(`
-      Array [
+      [
         "p",
         "b",
         "i",
