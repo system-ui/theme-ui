@@ -352,7 +352,7 @@ exports[`renders a code block 1`] = `
 exports[`renders with no className 1`] = `
 <pre
   className=" prism-code language- emotion-0"
-  style={Object {}}
+  style={{}}
 >
   <div
     className="token-line"
