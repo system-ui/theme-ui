@@ -36,7 +36,8 @@
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
     "theme-ui": "workspace:^",
-    "react": "^18"
+    "react": "^18",
+    "@types/react": "^18"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }
