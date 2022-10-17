@@ -1,3 +1,23 @@
+# v0.15.3 (Mon Oct 17 2022)
+
+#### 🐛 Bug Fix
+
+- Update snapshot [#2321](https://github.com/system-ui/theme-ui/pull/2321) ([@hasparus](https://github.com/hasparus))
+- fix: Move NPM env vars up ([@hasparus](https://github.com/hasparus))
+- fix: append NPM_AUTH_TOKEN to .npmrc for publish ([@hasparus](https://github.com/hasparus))
+- Update to-theme.ts.snap [#2321](https://github.com/system-ui/theme-ui/pull/2321) ([@lachlanjc](https://github.com/lachlanjc))
+- Suppress unnecessary TS error in Prism test [#2321](https://github.com/system-ui/theme-ui/pull/2321) ([@lachlanjc](https://github.com/lachlanjc))
+- Use correct dependency override [#2321](https://github.com/system-ui/theme-ui/pull/2321) ([@lachlanjc](https://github.com/lachlanjc))
+- Use specific peer dependency override [#2321](https://github.com/system-ui/theme-ui/pull/2321) ([@lachlanjc](https://github.com/lachlanjc))
+- Upgrade to Jest 29 [#2321](https://github.com/system-ui/theme-ui/pull/2321) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.15.1 (Tue Oct 04 2022)
 
 #### 🐛 Bug Fix
