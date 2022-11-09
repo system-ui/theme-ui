@@ -81,11 +81,8 @@ The `useThemeUI` hook returns the full Theme UI context object, which includes
 
 ```js
 const context = useThemeUI()
+const { theme, components, colorMode, setColorMode } = context
 ```
-
-### `Context`
-
-The React context used in Theme UI.
 
 ### `useColorMode`
 
@@ -119,6 +116,10 @@ override custom & component styling.
   </h1>
 </BaseStyles>
 ```
+
+### `Context`
+
+The React context used in Theme UI.
 
 ### `css`
 
