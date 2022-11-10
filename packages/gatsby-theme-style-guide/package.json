@@ -10,7 +10,7 @@
     "theme-ui": "workspace:^"
   },
   "peerDependencies": {
-    "gatsby": "^4",
+    "gatsby": "^4 || ^5",
     "react": ">=18",
     "react-dom": ">=18"
   },

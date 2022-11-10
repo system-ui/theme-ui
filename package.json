@@ -107,7 +107,7 @@
       "allowedVersions": {
         "react": "18",
         "eslint": "8",
-        "gatsby": "4",
+        "gatsby": "^4 || ^5",
         "@types/jest": "29"
       }
     }
