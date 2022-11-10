@@ -70,17 +70,43 @@ be accessible as
 
 ## Colors Object
 
-The `colors` object contains Custom CSS Properties
+The `colors` object can contain plain hex color like:
+
+``` js
+{
+  colors: {
+    text: '#000', // black, use 'text' in sx prop.
+    background: 'white', // use 'background' in sx prop.
+  }
+}
+```
+
+The `colors` object can contain Custom CSS Properties
 
 ```js
 {
   colors: {
-    text: 'var(--theme-ui-colors-text)',
-    background: 'var(--theme-ui-colors-background)',
-    primary: 'var(--theme-ui-colors-primary)',
+    text: 'var(--theme-ui-colors-text)', // use 'text' in sx prop.
+    background: 'var(--theme-ui-colors-background)', // use 'background' in sx prop.
+    primary: 'var(--theme-ui-colors-primary)', // use 'primary' in sx prop.
   }
 }
 ```
+
+And the `colors` object also can contain array or object:
+{
+  colors: {
+    text: {
+      __default: 'black', // use 'text' in sx prop.
+      danger: 'red', // use 'text.danger' in sx prop.
+      warning: 'yellow', // use 'text.warning' in sx prop.
+    },
+    background: [
+      'red', // use 'background' or 'background.0' in sx prop.
+      'white', // use 'background.1' in sx prop.
+    ]
+  }
+}
 
 ## rawColors Object
 
