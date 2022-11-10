@@ -1,3 +1,22 @@
+# v0.15.4 (Thu Nov 10 2022)
+
+#### 🐛 Bug Fix
+
+- lock file [#2358](https://github.com/system-ui/theme-ui/pull/2358) ([@LekoArts](https://github.com/LekoArts))
+- add peerDep change [#2359](https://github.com/system-ui/theme-ui/pull/2359) ([@LekoArts](https://github.com/LekoArts))
+- Update preset-tailwind for Tailwind v3 (breaking) [#2357](https://github.com/system-ui/theme-ui/pull/2357) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- docs: Add destructuring example to useThemeUI API [#2359](https://github.com/system-ui/theme-ui/pull/2359) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+
+---
+
 # v0.15.1 (Tue Oct 04 2022)
 
 #### 🐛 Bug Fix
