@@ -4,7 +4,8 @@ import {
   type ThemeUIStyleObject,
 } from '@theme-ui/core'
 import React from 'react'
-import BaseThemeProvider, {
+import {
+  ThemeProvider as BaseThemeProvider,
   type ThemeProviderProps,
 } from '@theme-ui/theme-provider'
 export {
