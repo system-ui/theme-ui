@@ -54,7 +54,7 @@ test('warns when multiple versions of emotion are installed', () => {
 test('warns deprecated ThemeUIProvider', () => {
   const restore = mockConsole()
   render(
-    <DeprecatedThemeProvider>
+    <DeprecatedThemeProvider theme={{}}>
       <div />
     </DeprecatedThemeProvider>
   )

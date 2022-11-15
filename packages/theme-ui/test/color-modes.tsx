@@ -476,7 +476,7 @@ test('dot notation works with color modes and custom properties', () => {
         sx={{
           color: 'header.title',
         }}
-        onClick={(e) => {
+        onClick={() => {
           setMode('dark')
         }}
         children="test"

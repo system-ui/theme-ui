@@ -10,7 +10,7 @@ import {
   __ThemeUIContext,
   useThemeUI,
   merge,
-  ThemeUIProvider,
+  ThemeProvider,
   ThemeUIContextValue,
   Theme,
 } from '../src'
@@ -19,12 +19,12 @@ afterEach(cleanup)
 
 expect.extend(matchers)
 
-describe('ThemeUIProvider', () => {
+describe('ThemeProvider', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeUIProvider theme={{}}>
+      <ThemeProvider theme={{}}>
         <h1>Hello</h1>
-      </ThemeUIProvider>
+      </ThemeProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -38,7 +38,7 @@ describe('ThemeUIProvider', () => {
           theme: {},
         }}
       >
-        <ThemeUIProvider theme={{}}>Conflicting versions</ThemeUIProvider>
+        <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
       </__ThemeUIContext.Provider>
     )
     expect(console.warn).toBeCalled()
@@ -54,10 +54,10 @@ describe('ThemeUIProvider', () => {
     const theme = jest.fn(() => ({}))
     const json = renderJSON(
       jsx(
-        ThemeUIProvider,
+        ThemeProvider,
         { theme: outer },
         jsx(
-          ThemeUIProvider,
+          ThemeProvider,
           { theme },
           jsx('div', {
             sx: {
@@ -84,7 +84,7 @@ describe('ThemeUIProvider', () => {
     expect(() => {
       json = renderJSON(
         jsx(
-          ThemeUIProvider,
+          ThemeProvider,
           { theme },
           jsx(
             'div',
@@ -114,7 +114,7 @@ describe('ThemeUIProvider', () => {
     }
     const json = renderJSON(
       jsx(
-        ThemeUIProvider,
+        ThemeProvider,
         { theme },
         jsx('div', {
           sx: {
@@ -158,7 +158,7 @@ describe('jsx', () => {
   test('css prop accepts functions', () => {
     const json = renderJSON(
       jsx(
-        ThemeUIProvider,
+        ThemeProvider,
         {
           theme: {
             colors: {
@@ -199,7 +199,7 @@ describe('jsx', () => {
   test('sx prop supports dot notation', () => {
     const json = renderJSON(
       jsx(
-        ThemeUIProvider,
+        ThemeProvider,
         {
           theme: {
             config: {
@@ -348,7 +348,7 @@ describe('useThemeUI', () => {
       return null
     }
     renderJSON(
-      <ThemeUIProvider
+      <ThemeProvider
         theme={{
           colors: {
             text: 'tomato',
@@ -356,7 +356,7 @@ describe('useThemeUI', () => {
         }}
       >
         <GetContext />
-      </ThemeUIProvider>
+      </ThemeProvider>
     )
     expect(context).toBeTruthy()
     expect(context?.theme.colors?.text).toBe('tomato')
