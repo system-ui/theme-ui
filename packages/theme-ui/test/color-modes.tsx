@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer'
 import { render, fireEvent, cleanup, act } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 import mockConsole, { RestoreConsole } from 'jest-mock-console'
-import packageInfo from '@emotion/react/package.json'
+import { version as emotionVersion } from '@emotion/react/package.json'
 
 import {
   ThemeUIContextValue,
@@ -18,7 +18,6 @@ import {
   useThemeUI,
 } from '../src'
 
-const emotionVersion = packageInfo.version
 const STORAGE_KEY = 'theme-ui-color-mode'
 
 const defaultColorMode = undefined

@@ -5,7 +5,7 @@ import {
 import { Theme } from '@theme-ui/css'
 import * as React from 'react'
 import deepmerge from 'deepmerge'
-import packageInfo from '@emotion/react/package.json'
+import { version as __EMOTION_VERSION__ } from '@emotion/react/package.json'
 import { parseProps } from './parseProps'
 
 import { ThemeUIJSX } from './jsx-namespace'
@@ -34,8 +34,6 @@ export type {
 } from '@theme-ui/css'
 
 export * from './types'
-
-const __EMOTION_VERSION__ = packageInfo.version
 
 export const jsx: typeof React.createElement = <P extends {}>(
   type: React.FunctionComponent<P> | React.ComponentClass<P> | string,
