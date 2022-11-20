@@ -182,6 +182,7 @@ importers:
       '@mdx-js/loader': ^2.1.2
       '@mdx-js/react': ^2.1.2
       '@next/mdx': ^12.0.7
+      '@theme-ui/css': workspace:^
       '@types/react': ^18.0.8
       next: ^12.1.0
       react: ^18
@@ -194,6 +195,7 @@ importers:
       '@mdx-js/loader': 2.1.3_webpack@4.46.0
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@next/mdx': 12.2.5_hbo3tj2k5fhsh63l2ltjrymaq4
+      '@theme-ui/css': link:../../packages/css
       next: 12.2.5_rlaikcoslzwwtqyk7brpdzej5y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -628,6 +630,25 @@ importers:
       babel-eslint: 10.1.0_eslint@8.23.0
       typescript: 4.8.2
 
+  packages/global:
+    specifiers:
+      '@babel/core': ^7.0.0
+      '@emotion/react': ^11
+      '@theme-ui/core': workspace:^
+      '@theme-ui/css': workspace:^
+      '@theme-ui/test-utils': workspace:^
+      '@types/react': ^18.0.8
+      react: '>=18 || 18'
+    dependencies:
+      '@emotion/react': 11.10.0_tu23i5xxn6kbev62oblybgbdem
+      '@theme-ui/core': link:../core
+      '@theme-ui/css': link:../css
+      react: 18.2.0
+    devDependencies:
+      '@babel/core': 7.18.13
+      '@theme-ui/test-utils': link:../test-utils
+      '@types/react': 18.0.17
+
   packages/match-media:
     specifiers:
       '@theme-ui/core': workspace:^
@@ -942,6 +963,7 @@ importers:
       '@theme-ui/components': workspace:^
       '@theme-ui/core': workspace:^
       '@theme-ui/css': workspace:^
+      '@theme-ui/global': workspace:^
       '@theme-ui/test-utils': workspace:^
       '@theme-ui/theme-provider': workspace:^
       '@types/react': ^18.0.8
@@ -952,6 +974,7 @@ importers:
       '@theme-ui/components': link:../components
       '@theme-ui/core': link:../core
       '@theme-ui/css': link:../css
+      '@theme-ui/global': link:../global
       '@theme-ui/theme-provider': link:../theme-provider
     devDependencies:
       '@theme-ui/test-utils': link:../test-utils
@@ -12023,7 +12046,7 @@ packages:
       fs-exists-cached: 1.0.0
       fs-extra: 10.1.0
       gatsby-cli: 4.21.0
-      gatsby-core-utils: 3.24.0
+      gatsby-core-utils: 3.21.0
       gatsby-graphiql-explorer: 2.21.0
       gatsby-legacy-polyfills: 2.21.0
       gatsby-link: 4.21.0_jrmehtgkntpgvrzvp7eiismjfa

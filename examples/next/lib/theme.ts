@@ -1,6 +1,6 @@
-import { makeTheme } from '@theme-ui/css/utils'
+// import { makeTheme } from '@theme-ui/css/utils'
 
-export const theme = makeTheme({
+export const theme = {
   config: {
     initialColorModeName: 'light',
     useColorSchemeMediaQuery: true,
@@ -49,4 +49,4 @@ export const theme = makeTheme({
       cursor: 'pointer',
     },
   },
-})
+}

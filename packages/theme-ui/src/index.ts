@@ -29,6 +29,7 @@ export type {
 } from '@theme-ui/core'
 export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
 export { ThemeProvider } from '@theme-ui/theme-provider'
+export { default as Global } from '@theme-ui/global'
 export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
 
