@@ -93,6 +93,9 @@
     "typecov": "^0.2.3",
     "typescript": "^4"
   },
+  "peerDependencies": {
+    "@emotion/react": "^11"
+  },
   "pnpm": {
     "overrides": {
       "@types/readable-stream": "2.3.11",
