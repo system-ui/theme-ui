@@ -23,7 +23,7 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
       size = 48,
       strokeWidth = 4,
       max = 1,
-      title = 'Loading…',
+      title = 'Loading',
       duration = 750,
       ...props
     },
@@ -37,7 +37,7 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
     const svgProps = {
       strokeWidth,
 
-      viewBox: `0 0 ${size} ${size}`,
+      viewBox: '0 0 32 32',
       width: size,
       height: size,
 
@@ -46,13 +46,11 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
       role: 'img',
     }
 
-    const radius = size / 2 - strokeWidth
-    const center = radius + strokeWidth
     const circleProps = {
       strokeWidth,
-      r: radius,
-      cx: radius + strokeWidth,
-      cy: radius + strokeWidth,
+      r: 16 - strokeWidth,
+      cx: 16,
+      cy: 16,
       fill: 'none',
     }
 
@@ -66,13 +64,13 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
       >
         <title>{title}</title>
         <circle {...circleProps} opacity={1 / 8} />
-        <circle {...circleProps} strokeDasharray="20 180">
+        <circle {...circleProps} strokeDasharray="20 110">
           <animateTransform
             attributeName="transform"
             attributeType="XML"
             type="rotate"
-            from={`0 ${center} ${center}`}
-            to={`360 ${center} ${center}`}
+            from="0 16 16"
+            to="360 16 16"
             dur={`${duration}ms`}
             repeatCount="indefinite"
           />
