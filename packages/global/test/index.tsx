@@ -13,10 +13,15 @@ import Global from '../src'
 
 expect.extend(matchers)
 
+beforeEach(() => {
+  document.head.innerHTML = ''
+  jest.resetAllMocks()
+})
+
 afterEach(cleanup)
 
 test('renders global styles', async () => {
-  const root = render(
+  const root = (
     <ThemeProvider
       theme={{
         config: {
@@ -25,6 +30,9 @@ test('renders global styles', async () => {
         fonts: {
           body: 'Georgia,serif',
         },
+        colors: {
+          primary: 'salmon',
+        },
       }}
     >
       <Global
@@ -32,12 +40,12 @@ test('renders global styles', async () => {
           '@font-face': {
             fontFamily: 'some-name',
           },
-          h1: {
-            color: 'salmon',
-            fontFamily: 'body',
-          },
           body: {
+            fontFamily: 'body',
             margin: 0,
+          },
+          h1: {
+            color: 'primary',
           },
         }}
       />
@@ -45,12 +53,32 @@ test('renders global styles', async () => {
     </ThemeProvider>
   )
 
-  const style = window.getComputedStyle(root.baseElement)
-  expect(style.margin).toBe('0px')
+  const document = render(root)
+  expect(document.baseElement.parentElement).toMatchSnapshot()
 
-  // const h1 = root.baseElement.querySelector('h1')!
-  // const style = global.getComputedStyle(h1)
-  // console.log(style)
+  // const style = window.getComputedStyle(document.baseElement.parentElement!)
   // expect(style.fontFamily).toBe('Georgia,serif')
-  // expect(style.color).toBe('salmon')
+  // expect(style.margin).toBe('0px')
+
+  // const h1 = document.baseElement.querySelector('h1')!
+  // const h1Style = global.getComputedStyle(h1)
+  // expect(h1Style.fontFamily).toBe('Georgia,serif')
+  // expect(h1Style.color).toBe('salmon')
+})
+
+test('renders global and component styles', () => {
+  const root = (
+    <header>
+      <Global
+        sx={{
+          html: {
+            backgroundColor: 'hotpink',
+          },
+        }}
+      />
+      <div sx={{ color: 'pink' }} />
+    </header>
+  )
+  const { baseElement } = render(root)
+  expect(baseElement.parentElement).toMatchSnapshot()
 })
