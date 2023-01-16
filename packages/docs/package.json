@@ -26,6 +26,7 @@
     "@theme-ui/core": "workspace:^",
     "@theme-ui/components": "workspace:^",
     "@theme-ui/css": "workspace:^",
+    "@theme-ui/global": "workspace:^",
     "@theme-ui/match-media": "workspace:^",
     "@theme-ui/mdx": "workspace:^",
     "@theme-ui/presets": "workspace:^",
