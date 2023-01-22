@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/prism",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "main": "dist/theme-ui-prism.cjs.js",
   "module": "dist/theme-ui-prism.esm.js",
   "types": "dist/theme-ui-prism.cjs.d.ts",

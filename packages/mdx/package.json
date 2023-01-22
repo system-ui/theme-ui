@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "source": "src/index.ts",
   "main": "dist/theme-ui-mdx.cjs.js",
   "module": "dist/theme-ui-mdx.esm.js",

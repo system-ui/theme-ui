@@ -1,7 +1,7 @@
 {
   "name": "@theme-ui/tachyons",
   "description": "⚠ DEPRECATED: Generate static CSS for use outside of React with Theme UI and Tachyons",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "private": true,
   "main": "dist/theme-ui-tachyons.cjs.js",
   "module": "dist/theme-ui-tachyons.esm.js",

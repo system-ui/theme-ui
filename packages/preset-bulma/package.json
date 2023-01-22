@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-bulma",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "main": "dist/theme-ui-preset-bulma.cjs.js",
   "module": "dist/theme-ui-preset-bulma.esm.js",
   "source": "src/index.ts",

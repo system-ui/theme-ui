@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-sketchy",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "main": "dist/theme-ui-preset-sketchy.cjs.js",
   "module": "dist/theme-ui-preset-sketchy.esm.js",
   "types": "dist/theme-ui-preset-sketchy.cjs.d.ts",

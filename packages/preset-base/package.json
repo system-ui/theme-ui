@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-base",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "main": "dist/theme-ui-preset-base.cjs.js",
   "module": "dist/theme-ui-preset-base.esm.js",
   "author": "Brent Jackson",

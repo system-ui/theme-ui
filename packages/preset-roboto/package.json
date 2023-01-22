@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-roboto",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "main": "dist/theme-ui-preset-roboto.cjs.js",
   "module": "dist/theme-ui-preset-roboto.esm.js",
   "types": "dist/theme-ui-preset-roboto.cjs.d.ts",

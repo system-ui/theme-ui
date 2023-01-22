@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-funk",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.5-develop.1",
   "main": "dist/theme-ui-preset-funk.cjs.js",
   "module": "dist/theme-ui-preset-funk.esm.js",
   "source": "src/index.ts",
