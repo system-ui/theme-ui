@@ -8,7 +8,7 @@ export default function Page() {
       <Head>
         <title>Next.js Theme UI</title>
       </Head>
-      <Global sx={{ h1: { color: 'salmon !important' } }} />
+      <Global styles={{ h1: { color: 'salmon !important' } }} />
       <About />
     </>
   )
