@@ -36,7 +36,7 @@ test.only('renders global styles', async () => {
       }}
     >
       <Global
-        sx={{
+        styles={{
           '@font-face': {
             fontFamily: 'some-name',
           },
@@ -70,7 +70,7 @@ test('renders global and component styles', () => {
   const root = (
     <header>
       <Global
-        sx={{
+        styles={{
           html: {
             backgroundColor: 'hotpink',
           },

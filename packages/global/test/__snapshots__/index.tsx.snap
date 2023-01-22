@@ -45,32 +45,25 @@ exports[`renders global styles 1`] = `
 <html>
   <head>
     <style
-      data-emotion="css"
-      data-s=""
-    >
-      
-      .css-ck0s41{}
-    </style>
-    <style
-      data-emotion="css"
+      data-emotion="css-global"
       data-s=""
     >
       
       @font-face{font-family:some-name;}
     </style>
     <style
-      data-emotion="css"
+      data-emotion="css-global"
       data-s=""
     >
       
-      .css-ck0s41 body{font-family:Georgia,serif;margin:0;}
+      body{font-family:Georgia,serif;margin:0;}
     </style>
     <style
-      data-emotion="css"
+      data-emotion="css-global"
       data-s=""
     >
       
-      .css-ck0s41 h1{color:salmon;}
+      h1{color:salmon;}
     </style>
   </head>
   <body>
