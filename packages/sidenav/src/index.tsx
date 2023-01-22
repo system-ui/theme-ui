@@ -65,7 +65,7 @@ const Overlay = ({ onClick }: OverlayProps) => (
       }}
     />
     <Global
-      sx={{
+      styles={{
         body: {
           overflow: ['hidden', 'auto'],
         },
