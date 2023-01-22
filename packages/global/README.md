@@ -14,7 +14,7 @@ import Global from '@theme-ui/global'
 
 export default (props) => (
   <Global
-    sx={{
+    styles={{
       button: {
         m: 0,
         bg: 'primary',
