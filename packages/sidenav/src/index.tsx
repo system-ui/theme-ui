@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Theme, ThemeStyles } from 'theme-ui'
+import { jsx, ThemeProvider, Theme, ThemeStyles, Global } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {
   useState,
@@ -11,7 +11,6 @@ import React, {
   ReactComponentElement,
   ReactElement,
 } from 'react'
-import { Global } from '@emotion/react'
 import merge from 'deepmerge'
 
 const createNestedLinks = (

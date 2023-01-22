@@ -16,6 +16,7 @@
     "@mdx-js/loader": "^2.1.2",
     "@mdx-js/react": "^2.1.2",
     "@next/mdx": "^12.0.7",
+    "@theme-ui/css": "workspace:^",
     "next": "^12.1.0",
     "react": "^18",
     "react-dom": "^18",
