@@ -1,20 +1,9 @@
-import React, { SVGAttributes } from 'react'
-import { keyframes } from '@emotion/react'
-
+import React from 'react'
 import type { ThemeUICSSObject } from '@theme-ui/css'
 
 import { Box, BoxOwnProps, BoxProps } from './Box'
 import type { ForwardRef } from './types'
 import { __internalProps } from './util'
-
-const spin = keyframes({
-  from: {
-    transform: 'rotate(0deg)',
-  },
-  to: {
-    transform: 'rotate(360deg)',
-  },
-})
 
 export interface SpinnerProps
   extends Omit<
@@ -22,7 +11,7 @@ export interface SpinnerProps
       'opacity' | 'color' | 'css' | 'sx' | 'strokeWidth'
     >,
     BoxOwnProps {
-  size?: number | string
+  size?: number
   strokeWidth?: number
   title?: string
   duration?: number
@@ -34,35 +23,15 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
       size = 48,
       strokeWidth = 4,
       max = 1,
-      title = 'Loading...',
-      duration = 500,
+      title = 'Loading',
+      duration = 750,
       ...props
     },
     ref
   ) {
-    const r = 16 - strokeWidth
-    const C = 2 * r * Math.PI
-    const offset = C - (1 / 4) * C
-
     const __css: ThemeUICSSObject = {
       color: 'primary',
       overflow: 'visible',
-    }
-
-    const circleProps: SVGAttributes<SVGCircleElement> = {
-      cx: 16,
-      cy: 16,
-      r,
-      strokeDasharray: C,
-      strokeDashoffset: offset,
-    }
-
-    const __circleCss: ThemeUICSSObject = {
-      transformOrigin: '50% 50%',
-      animationName: spin.toString(),
-      animationTimingFunction: 'linear',
-      animationDuration: duration + 'ms',
-      animationIterationCount: 'infinite',
     }
 
     const svgProps = {
@@ -77,6 +46,14 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
       role: 'img',
     }
 
+    const circleProps = {
+      strokeWidth,
+      r: 16 - strokeWidth,
+      cx: 16,
+      cy: 16,
+      fill: 'none',
+    }
+
     return (
       <Box
         ref={ref}
@@ -86,14 +63,18 @@ export const Spinner: ForwardRef<SVGSVGElement, SpinnerProps> =
         {...__internalProps({ __css })}
       >
         <title>{title}</title>
-        <circle cx={16} cy={16} r={r} opacity={1 / 8} />
-        <Box
-          as="circle"
-          {...(circleProps as {})}
-          {...__internalProps({
-            __css: __circleCss,
-          })}
-        />
+        <circle {...circleProps} opacity={1 / 8} />
+        <circle {...circleProps} strokeDasharray="20 110">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 16 16"
+            to="360 16 16"
+            dur={`${duration}ms`}
+            repeatCount="indefinite"
+          />
+        </circle>
       </Box>
     )
   })
