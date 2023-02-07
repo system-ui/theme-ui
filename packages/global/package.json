@@ -1,18 +1,17 @@
 {
-  "name": "@theme-ui/theme-provider",
+  "name": "@theme-ui/global",
   "version": "0.15.5-develop.2",
   "repository": "system-ui/theme-ui",
-  "main": "dist/theme-ui-theme-provider.cjs.js",
-  "module": "dist/theme-ui-theme-provider.esm.js",
-  "source": "src/index.ts",
-  "author": "Brent Jackson",
+  "main": "dist/theme-ui-global.cjs.js",
+  "module": "dist/theme-ui-global.esm.js",
+  "source": "src/index.tsx",
+  "author": "Lachlan Campbell",
   "license": "MIT",
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@theme-ui/color-modes": "workspace:^",
     "@theme-ui/core": "workspace:^",
     "@theme-ui/css": "workspace:^"
   },
@@ -24,6 +23,5 @@
     "@babel/core": "^7.0.0",
     "@types/react": "^18",
     "@theme-ui/test-utils": "workspace:^"
-  },
-  "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
+  }
 }

@@ -14,7 +14,7 @@
     "test:coverage": "cross-env \"NODE_OPTIONS=--experimental-vm-modules --no-warnings\" jest --coverage",
     "typecheck": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -P ./tsconfig.test.json",
-    "logo": "pnpm run --filter docs docs logo",
+    "logo": "pnpm run --filter docs logo",
     "postinstall": "preconstruct dev",
     "dev": "preconstruct dev",
     "release": "pnpm clean && pnpm build && pnpm shipit && node scripts/publish-to-npm.mjs",
