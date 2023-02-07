@@ -14,7 +14,7 @@ export default function makeCustomProperties(theme: Theme, prefix?: string) {
 
   const generateProperties = (object: object, previousKey?: string) => {
     Object.entries(object).forEach(([key, value]) => {
-      let formattedKey = pluralize(key, 1)
+      let formattedKey = pluralize(key, 1) || key
 
       if (
         process.env.NODE_ENV !== 'production' &&
