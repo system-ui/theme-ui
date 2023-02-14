@@ -1,9 +1,7 @@
-import {
-  jsx as coreJsx,
-  ThemeUIJSX,
-  type ThemeUIStyleObject,
-} from '@theme-ui/core'
+import { jsx as coreJsx } from '@theme-ui/core'
+import type { ThemeUIJSX, ThemeUIStyleObject } from '@theme-ui/core'
 import React from 'react'
+
 export {
   __ThemeUIContext,
   merge,
