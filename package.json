@@ -64,7 +64,7 @@
     "@emotion/jest": "^11.10.0",
     "@jest/types": "^29",
     "@preconstruct/cli": "^2.1.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.0.0",
     "@types/eslint": "8.21.1",
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
