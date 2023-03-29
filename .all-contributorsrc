@@ -1171,6 +1171,15 @@
         "example",
         "code"
       ]
+    },
+    {
+      "login": "JustinotherGitter",
+      "name": "Justin Cooper",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49234323?v=4",
+      "profile": "https://github.com/JustinotherGitter",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
