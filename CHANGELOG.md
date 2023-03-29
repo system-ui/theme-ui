@@ -1,3 +1,30 @@
+# v0.15.6 (Wed Mar 29 2023)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Ben ([@benchilds](https://github.com/benchilds))
+
+:heart: Justin Cooper ([@JustinotherGitter](https://github.com/JustinotherGitter))
+
+#### 🐛 Bug Fix
+
+- Update variants.mdx [#2408](https://github.com/system-ui/theme-ui/pull/2408) ([@benchilds](https://github.com/benchilds))
+- fix: Use `type` imports on src/index [#2392](https://github.com/system-ui/theme-ui/pull/2392) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- docs: Fix color modes code sample typo [#2399](https://github.com/system-ui/theme-ui/pull/2399) ([@JustinotherGitter](https://github.com/JustinotherGitter))
+
+#### Authors: 3
+
+- Ben ([@benchilds](https://github.com/benchilds))
+- Justin Cooper ([@JustinotherGitter](https://github.com/JustinotherGitter))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
 # v0.15.5 (Tue Feb 07 2023)
 
 :tada: This release contains work from new contributors! :tada:
