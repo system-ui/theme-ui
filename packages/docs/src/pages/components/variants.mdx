@@ -62,6 +62,13 @@ For example, a secondary button style can be added to `theme.buttons.secondary` 
 <Button variant="secondary">Secondary</Button>
 ```
 
+Components that don't have a dedicated variant group can reference a custom group or any existing variant using `group.variant`.
+
+```jsx
+// example using a variant for a component without a dedicated variant group
+<Box variant="boxes.shout">This Box will standout!</Button>
+```
+
 ## Example Theme
 
 ```js
@@ -101,6 +108,13 @@ For example, a secondary button style can be added to `theme.buttons.secondary` 
       padding: 2,
       borderRadius: 4,
       boxShadow: '0 0 4px 1px rgba(0, 0, 0, 0.5)',
+    },
+  },
+  boxes: {
+    // Components without a dedicated variant group can reference a custom group or any existing variant using group.variant
+    shout: {
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
     },
   },
 }
