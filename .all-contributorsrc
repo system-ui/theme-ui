@@ -1160,6 +1160,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "wahidrahim",
+      "name": "Wahid Rahim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7417976?v=4",
+      "profile": "https://github.com/wahidrahim",
+      "contributions": [
+        "doc",
+        "example",
+        "code"
+      ]
     }
   ]
 }
