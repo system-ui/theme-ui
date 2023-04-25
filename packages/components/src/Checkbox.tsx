@@ -28,7 +28,9 @@ export interface CheckboxIconProps extends SVGProps {
 }
 
 const CheckboxIcon = (props: CheckboxIconProps) => {
-  const Component = props.isIndeterminate ? CheckboxIndeterminate : CheckboxChecked
+  const Component = props.isIndeterminate
+    ? CheckboxIndeterminate
+    : CheckboxChecked
   return (
     <React.Fragment>
       <Component
@@ -57,7 +59,8 @@ const CheckboxIcon = (props: CheckboxIconProps) => {
   )
 }
 
-export interface CheckboxProps extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
+export interface CheckboxProps
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
   isIndeterminate?: boolean
 }
 
@@ -68,47 +71,58 @@ export interface CheckboxProps extends Assign<React.ComponentPropsWithRef<'input
  * component uses the `theme.forms.checkbox` variant by default.
  * @see https://theme-ui.com/components/checkbox/
  */
-export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> = React.forwardRef(function Checkbox({ className, sx, variant = 'checkbox', isIndeterminate, children, ...props }, ref) {
-  return (
-    <Box sx={{ minWidth: 'min-content' }}>
-      <Box
-        ref={ref}
-        as="input"
-        type="checkbox"
-        {...props}
-        sx={{
-          position: 'absolute',
-          opacity: 0,
-          zIndex: -1,
-          width: 1,
-          height: 1,
-          overflow: 'hidden',
-        }}
-      />
-      <Box
-        as={(SVGProps) => CheckboxIcon({ isIndeterminate, ...SVGProps })}
-        aria-hidden="true"
-        variant={variant}
-        className={className}
-        sx={sx}
-        {...__internalProps({
-          __themeKey: 'forms',
-          __css: {
-            mr: 2,
-            borderRadius: 4,
-            color: 'gray',
-            flexShrink: 0,
-            'input:checked ~ &': {
-              color: 'primary',
+export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> =
+  React.forwardRef(function Checkbox(
+    {
+      className,
+      sx,
+      variant = 'checkbox',
+      isIndeterminate,
+      children,
+      ...props
+    },
+    ref
+  ) {
+    return (
+      <Box sx={{ minWidth: 'min-content' }}>
+        <Box
+          ref={ref}
+          as="input"
+          type="checkbox"
+          {...props}
+          sx={{
+            position: 'absolute',
+            opacity: 0,
+            zIndex: -1,
+            width: 1,
+            height: 1,
+            overflow: 'hidden',
+          }}
+        />
+        <Box
+          as={(SVGProps) => CheckboxIcon({ isIndeterminate, ...SVGProps })}
+          aria-hidden="true"
+          variant={variant}
+          className={className}
+          sx={sx}
+          {...__internalProps({
+            __themeKey: 'forms',
+            __css: {
+              mr: 2,
+              borderRadius: 4,
+              color: 'gray',
+              flexShrink: 0,
+              'input:checked ~ &': {
+                color: 'primary',
+              },
+              'input:focus ~ &': {
+                color: 'primary',
+                bg: 'highlight',
+              },
             },
-            'input:focus ~ &': {
-              color: 'primary',
-              bg: 'highlight',
-            },
-          },
-        })}
-      />
-      {children}
-    </Box>
-  )
-})
+          })}
+        />
+        {children}
+      </Box>
+    )
+  })
