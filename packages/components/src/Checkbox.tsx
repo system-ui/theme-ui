@@ -24,11 +24,11 @@ const CheckboxUnchecked = (props: SVGProps) => (
 )
 
 export interface CheckboxIconProps extends SVGProps {
-  isIndeterminate?: boolean
+  indeterminate?: boolean
 }
 
 const CheckboxIcon = (props: CheckboxIconProps) => {
-  const Component = props.isIndeterminate
+  const Component = props.indeterminate
     ? CheckboxIndeterminate
     : CheckboxChecked
   return (
@@ -61,7 +61,7 @@ const CheckboxIcon = (props: CheckboxIconProps) => {
 
 export interface CheckboxProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
-  isIndeterminate?: boolean
+  indeterminate?: boolean
 }
 
 /**
@@ -73,14 +73,7 @@ export interface CheckboxProps
  */
 export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> =
   React.forwardRef(function Checkbox(
-    {
-      className,
-      sx,
-      variant = 'checkbox',
-      isIndeterminate,
-      children,
-      ...props
-    },
+    { className, sx, variant = 'checkbox', indeterminate, children, ...props },
     ref
   ) {
     return (
@@ -100,7 +93,7 @@ export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> =
           }}
         />
         <Box
-          as={(SVGProps) => CheckboxIcon({ isIndeterminate, ...SVGProps })}
+          as={(SVGProps) => CheckboxIcon({ indeterminate, ...SVGProps })}
           aria-hidden="true"
           variant={variant}
           className={className}
