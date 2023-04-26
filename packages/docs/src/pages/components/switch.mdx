@@ -29,7 +29,7 @@ To show different style based on the input state, you can use
 <Switch
   label="Enable email alerts?"
   sx={{
-    bakgroundColor: 'gray',
+    backgroundColor: 'gray',
     // This will not be visible since the input is hidden
     // '&:checked': {
     //   backgroundColor: 'primary'
@@ -57,7 +57,8 @@ import { Box, Flex, Label, Switch } from 'theme-ui'
     justifyContent: 'space-between',
     alignItems: 'center',
     py: 4,
-  }}>
+  }}
+>
   <Label htmlFor="enable-email-alerts" sx={{ flex: 1 }}>
     Enable email alerts?
   </Label>
