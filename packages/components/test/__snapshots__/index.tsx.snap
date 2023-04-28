@@ -207,9 +207,6 @@ exports[`Checkbox renders 1`] = `
   margin: 0;
   min-width: 0;
   display: none;
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
   margin-right: 8px;
   border-radius: 4px;
   color: gray;
@@ -220,9 +217,6 @@ exports[`Checkbox renders 1`] = `
 
 input:checked~.emotion-2 {
   display: block;
-}
-
-input:checked~.emotion-2 {
   color: primary;
 }
 
@@ -236,9 +230,6 @@ input:focus~.emotion-2 {
   margin: 0;
   min-width: 0;
   display: block;
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
   margin-right: 8px;
   border-radius: 4px;
   color: gray;
@@ -249,9 +240,6 @@ input:focus~.emotion-2 {
 
 input:checked~.emotion-3 {
   display: none;
-}
-
-input:checked~.emotion-3 {
   color: primary;
 }
 
