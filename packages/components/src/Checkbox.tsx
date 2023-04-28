@@ -36,10 +36,20 @@ const CheckboxIcon = (props: CheckboxIconProps) => {
       <Component
         {...props}
         {...__internalProps({
+          __themeKey: 'forms',
           __css: {
             display: 'none',
             'input:checked ~ &': {
               display: 'block',
+              color: 'primary',
+            },
+            mr: 2,
+            borderRadius: 4,
+            color: 'gray',
+            flexShrink: 0,
+            'input:focus ~ &': {
+              color: 'primary',
+              bg: 'highlight',
             },
           },
         })}
@@ -47,10 +57,20 @@ const CheckboxIcon = (props: CheckboxIconProps) => {
       <CheckboxUnchecked
         {...props}
         {...__internalProps({
+          __themeKey: 'forms',
           __css: {
             display: 'block',
             'input:checked ~ &': {
               display: 'none',
+              color: 'primary',
+            },
+            mr: 2,
+            borderRadius: 4,
+            color: 'gray',
+            flexShrink: 0,
+            'input:focus ~ &': {
+              color: 'primary',
+              bg: 'highlight',
             },
           },
         })}
@@ -92,28 +112,12 @@ export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> =
             overflow: 'hidden',
           }}
         />
-        <Box
-          as={(SVGProps) => CheckboxIcon({ indeterminate, ...SVGProps })}
+        <CheckboxIcon
           aria-hidden="true"
           variant={variant}
           className={className}
           sx={sx}
-          {...__internalProps({
-            __themeKey: 'forms',
-            __css: {
-              mr: 2,
-              borderRadius: 4,
-              color: 'gray',
-              flexShrink: 0,
-              'input:checked ~ &': {
-                color: 'primary',
-              },
-              'input:focus ~ &': {
-                color: 'primary',
-                bg: 'highlight',
-              },
-            },
-          })}
+          indeterminate={indeterminate}
         />
         {children}
       </Box>
