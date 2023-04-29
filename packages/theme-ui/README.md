@@ -384,6 +384,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/wahidrahim"><img src="https://avatars.githubusercontent.com/u/7417976?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Wahid Rahim</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=wahidrahim" title="Documentation">📖</a> <a href="#example-wahidrahim" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=wahidrahim" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/JustinotherGitter"><img src="https://avatars.githubusercontent.com/u/49234323?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Justin Cooper</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=JustinotherGitter" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://devcj.in/"><img src="https://avatars.githubusercontent.com/u/47112778?v=4?s=63" width="63px;" alt=""/><br /><sub><b>CJ</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=dev-cj" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=dev-cj" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
