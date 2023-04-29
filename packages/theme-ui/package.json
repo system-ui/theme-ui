@@ -1,6 +1,6 @@
 {
   "name": "theme-ui",
-  "version": "0.15.7",
+  "version": "0.15.8",
   "description": "The Design Graph Framework",
   "source": "src/index.ts",
   "main": "dist/theme-ui.cjs.js",
