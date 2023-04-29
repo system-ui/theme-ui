@@ -20,7 +20,8 @@
     "@theme-ui/theme-provider": "workspace:^"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "@emotion/react": "^11"
   },
   "devDependencies": {
     "react": ">=18",
