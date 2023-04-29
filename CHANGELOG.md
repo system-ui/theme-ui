@@ -1,3 +1,25 @@
+# v0.15.8 (Sat Apr 29 2023)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, CJ ([@dev-cj](https://github.com/dev-cj)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix(theme-ui): add transitive peer dependency on `@emotion/react` [#2421](https://github.com/system-ui/theme-ui/pull/2421) ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- components: Added indeterminate checkbox [#2419](https://github.com/system-ui/theme-ui/pull/2419) ([@dev-cj](https://github.com/dev-cj))
+- docs: Fix typo in "switch" [#2420](https://github.com/system-ui/theme-ui/pull/2420) ([@dev-cj](https://github.com/dev-cj))
+
+#### Authors: 2
+
+- CJ ([@dev-cj](https://github.com/dev-cj))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.15.7 (Thu Mar 30 2023)
 
 
