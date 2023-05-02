@@ -61,7 +61,7 @@
     "@babel/runtime": "^7.16.3",
     "@codechecks/build-size-watcher": "^0.1.0",
     "@codechecks/client": "0.1.10-beta",
-    "@emotion/jest": "^11.10.0",
+    "@emotion/jest": "^11",
     "@jest/types": "^29",
     "@preconstruct/cli": "^2.1.5",
     "@testing-library/react": "^13.4.0",
