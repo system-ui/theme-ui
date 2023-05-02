@@ -1,16 +1,13 @@
-import {
-  jsx as coreJsx,
-  ThemeUIJSX,
-  type ThemeUIStyleObject,
-} from '@theme-ui/core'
+import { jsx as coreJsx } from '@theme-ui/core'
+import type { ThemeUIJSX, ThemeUIStyleObject } from '@theme-ui/core'
 import React from 'react'
+
 export {
   __ThemeUIContext,
   merge,
   useThemeUI,
   createElement,
 } from '@theme-ui/core'
-export { ThemeProvider, ThemeUIProvider } from '@theme-ui/theme-provider'
 export type {
   ThemeUIContextValue,
   SxProp,
@@ -29,6 +26,8 @@ export type {
   StylePropertyValue,
 } from '@theme-ui/core'
 export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
+export { ThemeUIProvider } from '@theme-ui/theme-provider'
+export { default as Global } from '@theme-ui/global'
 export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
 

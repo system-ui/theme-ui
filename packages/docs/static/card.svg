@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" style="color:white;max-width:100%;height:auto"><rect width="1280" height="720" fill="black"></rect><g transform="translate(512 232)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" style="font-family:Inter, sans-serif;font-size:12px;letter-spacing:0.1em;fill:currentcolor;color:inherit"><defs><style type="text/css">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" style="display:block;color:white;width:1280px;height:720px"><rect width="1280" height="720" fill="black"></rect><g transform="translate(512 232)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" style="font-family:Inter, sans-serif;font-size:12px;letter-spacing:0.1em;fill:currentcolor;color:inherit;pointer-events:none"><defs><style type="text/css">
 <![CDATA[
 @font-face {
   font-family: 'Inter';

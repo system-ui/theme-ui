@@ -1,3 +1,67 @@
+# v0.15.7 (Thu Mar 30 2023)
+
+
+
+---
+
+# v0.15.6 (Wed Mar 29 2023)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Ben ([@benchilds](https://github.com/benchilds))
+
+:heart: Justin Cooper ([@JustinotherGitter](https://github.com/JustinotherGitter))
+
+#### 🐛 Bug Fix
+
+- Update variants.mdx [#2408](https://github.com/system-ui/theme-ui/pull/2408) ([@benchilds](https://github.com/benchilds))
+- fix: Use `type` imports on src/index [#2392](https://github.com/system-ui/theme-ui/pull/2392) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- docs: Fix color modes code sample typo [#2399](https://github.com/system-ui/theme-ui/pull/2399) ([@JustinotherGitter](https://github.com/JustinotherGitter))
+
+#### Authors: 3
+
+- Ben ([@benchilds](https://github.com/benchilds))
+- Justin Cooper ([@JustinotherGitter](https://github.com/JustinotherGitter))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
+# v0.15.5 (Tue Feb 07 2023)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Nischal Shakya ([@Nischal2015](https://github.com/Nischal2015))
+
+:heart: Wahid Rahim ([@wahidrahim](https://github.com/wahidrahim))
+
+#### 🐛 Bug Fix
+
+- fix(custom-properties): use default key name if pluralize returns empty [#2389](https://github.com/system-ui/theme-ui/pull/2389) ([@wahidrahim](https://github.com/wahidrahim))
+- Add theme-aware Global component [#2385](https://github.com/system-ui/theme-ui/pull/2385) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- components: Rewrite Spinner for better performance [#2384](https://github.com/system-ui/theme-ui/pull/2384) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Add missing `useMDXComponents` import [#2370](https://github.com/system-ui/theme-ui/pull/2370) ([@Nischal2015](https://github.com/Nischal2015))
+- docs: Reorganize Color Modes doc for clarity [#2365](https://github.com/system-ui/theme-ui/pull/2365) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 5
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Nischal Shakya ([@Nischal2015](https://github.com/Nischal2015))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Wahid Rahim ([@wahidrahim](https://github.com/wahidrahim))
+
+---
+
 # v0.15.4 (Thu Nov 10 2022)
 
 #### 🐛 Bug Fix

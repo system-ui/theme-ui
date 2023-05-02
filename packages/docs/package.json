@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "docs",
-  "version": "0.15.5-develop.0",
+  "version": "0.15.9-develop.0",
   "main": "dist/docs.cjs.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
@@ -26,6 +26,7 @@
     "@theme-ui/core": "workspace:^",
     "@theme-ui/components": "workspace:^",
     "@theme-ui/css": "workspace:^",
+    "@theme-ui/global": "workspace:^",
     "@theme-ui/match-media": "workspace:^",
     "@theme-ui/mdx": "workspace:^",
     "@theme-ui/presets": "workspace:^",

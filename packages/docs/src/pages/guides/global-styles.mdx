@@ -4,9 +4,13 @@ title: 'Global Styles'
 
 # Global Styles
 
-Use the Emotion `Global` component to add global CSS with theme-based values.
+Theme UI offers a `Global` component (that wraps Emotion’s) for adding global
+CSS with theme-based values.
 
-By default, the `ThemeUIProvider` component will apply styles in
+
+By default (or, unless the
+[`useRootStyles` configuration option](/theming#configuration-flags)is
+disabled), the `ThemeUIProvider` component will apply styles in
 `theme.styles.root` to the `<html>` element. It will also apply `color` and
 `background-color` styles based on `theme.colors.text` and
 `theme.colors.background` respectively.
@@ -17,15 +21,18 @@ By default, the `ThemeUIProvider` component will apply styles in
 </Note>
 
 ```jsx
-import { Global } from '@emotion/react'
+import { Global } from 'theme-ui'
 
 export default (props) => (
   <Global
-    styles={(theme) => ({
-      '*': {
-        boxSizing: 'border-box',
+    styles={{
+      button: {
+        m: 0,
+        bg: 'primary',
+        color: 'background',
+        border: 0,
       },
-    })}
+    }}
   />
 )
 ```

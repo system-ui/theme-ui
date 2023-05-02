@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/monorepo",
-  "version": "0.15.4",
+  "version": "0.15.7",
   "private": true,
   "scripts": {
     "build": "preconstruct build",
@@ -65,7 +65,7 @@
     "@jest/types": "^29",
     "@preconstruct/cli": "^2.1.5",
     "@testing-library/react": "^13.4.0",
-    "@types/eslint": "8.4.6",
+    "@types/eslint": "8.37.0",
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
     "@types/react-dom": "^18.0.6",
@@ -74,7 +74,7 @@
     "@typescript-eslint/parser": "^5.37.0",
     "auto": "^10.37.6",
     "babel-jest": "^29.0.3",
-    "babel-preset-gatsby": "^2.2.0",
+    "babel-preset-gatsby": "^3.9.0",
     "cross-env": "^7.0.3",
     "egzek": "^1.2.0",
     "eslint": "^8",
@@ -87,11 +87,11 @@
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
     "react-test-renderer": "^18.2.0",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.0",
     "ts-jest": "^29.0.1",
     "ts-toolbelt": "^9.6.0",
     "typecov": "^0.2.3",
-    "typescript": "^4"
+    "typescript": "^5"
   },
   "pnpm": {
     "overrides": {
