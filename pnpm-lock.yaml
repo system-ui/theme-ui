@@ -4,7 +4,7 @@ overrides:
   '@types/readable-stream': 2.3.11
   '@types/eslint': 7.29.0
   '@types/react': ^18.0.8
-  '@emotion/react': 11.10.8
+  '@emotion/react': 11.10.0
 
 importers:
 
@@ -75,7 +75,7 @@ importers:
         specifier: 0.1.10-beta
         version: 0.1.10-beta(typescript@5.0.2)
       '@emotion/jest':
-        specifier: ^11.10.8
+        specifier: ^11
         version: 11.10.8(@types/jest@29.0.3)
       '@jest/types':
         specifier: ^29
@@ -171,8 +171,8 @@ importers:
   examples/gatsby:
     dependencies:
       '@emotion/react':
-        specifier: 11.10.8
-        version: 11.10.8(@types/react@18.0.17)(react@18.2.0)
+        specifier: 11.10.0
+        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.0.17)(react@18.2.0)
       '@mdx-js/react':
         specifier: ^2
         version: 2.1.3(react@18.2.0)
@@ -217,8 +217,8 @@ importers:
   examples/gatsby-plugin:
     dependencies:
       '@emotion/react':
-        specifier: 11.10.8
-        version: 11.10.8(@types/react@18.0.17)(react@18.2.0)
+        specifier: 11.10.0
+        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.0.17)(react@18.2.0)
       gatsby:
         specifier: ^4.21.0
         version: 4.21.1(@types/node@18.7.18)(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@4.8.2)
@@ -251,8 +251,8 @@ importers:
   examples/next:
     dependencies:
       '@emotion/react':
-        specifier: 11.10.8
-        version: 11.10.8(@types/react@18.0.17)(react@18.2.0)
+        specifier: 11.10.0
+        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.0.17)(react@18.2.0)
       '@mdx-js/loader':
         specifier: ^2.1.2
         version: 2.1.3(webpack@4.46.0)
@@ -530,8 +530,8 @@ importers:
         specifier: ^7.18.10
         version: 7.18.10
       '@emotion/react':
-        specifier: 11.10.8
-        version: 11.10.8(@types/react@18.0.17)(react@18.2.0)
+        specifier: 11.10.0
+        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.0.17)(react@18.2.0)
       '@mdx-js/mdx':
         specifier: ^1
         version: 1.6.22
@@ -3860,26 +3860,6 @@ packages:
     dev: false
     optional: true
 
-  /@emotion/babel-plugin@11.10.2(@babel/core@7.18.13):
-    resolution: {integrity: sha512-xNQ57njWTFVfPAc3cjfuaPdsgLp5QOSuRsj9MA6ndEhH/AzuZM86qIQzt6rq+aGBwj3n5/TkLmU5lhAfdRmogA==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/core': 7.18.13
-      '@babel/helper-module-imports': 7.18.6
-      '@babel/plugin-syntax-jsx': 7.18.6(@babel/core@7.18.13)
-      '@babel/runtime': 7.20.7
-      '@emotion/hash': 0.9.0
-      '@emotion/memoize': 0.8.0
-      '@emotion/serialize': 1.1.0
-      babel-plugin-macros: 3.1.0
-      convert-source-map: 1.8.0
-      escape-string-regexp: 4.0.0
-      find-root: 1.1.0
-      source-map: 0.5.7
-      stylis: 4.0.13
-    dev: false
-
   /@emotion/babel-plugin@11.10.8:
     resolution: {integrity: sha512-gxNky50AJL3AlkbjvTARiwAqei6/tNUxDZPSKd+3jqWVM3AmdVTTdpjHorR/an/M0VJqdsuq5oGcFH+rjtyujQ==}
     dependencies:
@@ -3894,16 +3874,6 @@ packages:
       find-root: 1.1.0
       source-map: 0.5.7
       stylis: 4.1.4
-    dev: false
-
-  /@emotion/cache@11.10.3:
-    resolution: {integrity: sha512-Psmp/7ovAa8appWh3g51goxu/z3iVms7JXOreq136D8Bbn6dYraPnmL6mdM8GThEx9vwSn92Fz+mGSjBzN8UPQ==}
-    dependencies:
-      '@emotion/memoize': 0.8.0
-      '@emotion/sheet': 1.2.0
-      '@emotion/utils': 1.2.0
-      '@emotion/weak-memoize': 0.3.0
-      stylis: 4.0.13
     dev: false
 
   /@emotion/cache@11.10.8:
@@ -3976,46 +3946,15 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.18.13
-      '@babel/runtime': 7.18.9
-      '@emotion/babel-plugin': 11.10.2(@babel/core@7.18.13)
-      '@emotion/cache': 11.10.3
-      '@emotion/serialize': 1.1.0
-      '@emotion/utils': 1.2.0
-      '@emotion/weak-memoize': 0.3.0
-      '@types/react': 18.0.17
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-    dev: false
-
-  /@emotion/react@11.10.8(@types/react@18.0.17)(react@18.2.0):
-    resolution: {integrity: sha512-ZfGfiABtJ1P1OXqOBsW08EgCDp5fK6C5I8hUJauc/VcJBGSzqAirMnFslhFWnZJ/w5HxPI36XbvMV0l4KZHl+w==}
-    peerDependencies:
-      '@types/react': '*'
-      react: '>=16.8.0 || 18'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
       '@babel/runtime': 7.21.5
       '@emotion/babel-plugin': 11.10.8
       '@emotion/cache': 11.10.8
       '@emotion/serialize': 1.1.1
-      '@emotion/use-insertion-effect-with-fallbacks': 1.0.0(react@18.2.0)
       '@emotion/utils': 1.2.0
       '@emotion/weak-memoize': 0.3.0
       '@types/react': 18.0.17
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
-    dev: false
-
-  /@emotion/serialize@1.1.0:
-    resolution: {integrity: sha512-F1ZZZW51T/fx+wKbVlwsfchr5q97iW8brAnXmsskz4d0hVB4O3M/SiA3SaeH06x02lSNzkkQv+n3AX3kCXKSFA==}
-    dependencies:
-      '@emotion/hash': 0.9.0
-      '@emotion/memoize': 0.8.0
-      '@emotion/unitless': 0.8.0
-      '@emotion/utils': 1.2.0
-      csstype: 3.1.0
     dev: false
 
   /@emotion/serialize@1.1.1:
@@ -4028,24 +3967,12 @@ packages:
       csstype: 3.1.0
     dev: false
 
-  /@emotion/sheet@1.2.0:
-    resolution: {integrity: sha512-OiTkRgpxescko+M51tZsMq7Puu/KP55wMT8BgpcXVG2hqXc0Vo0mfymJ/Uj24Hp0i083ji/o0aLddh08UEjq8w==}
-    dev: false
-
   /@emotion/sheet@1.2.1:
     resolution: {integrity: sha512-zxRBwl93sHMsOj4zs+OslQKg/uhF38MB+OMKoCrVuS0nyTkqnau+BM3WGEoOptg9Oz45T/aIGs1qbVAsEFo3nA==}
     dev: false
 
   /@emotion/unitless@0.8.0:
     resolution: {integrity: sha512-VINS5vEYAscRl2ZUDiT3uMPlrFQupiKgHz5AA4bCH1miKBg4qtwkim1qPmJj/4WG6TreYMY111rEFsjupcOKHw==}
-    dev: false
-
-  /@emotion/use-insertion-effect-with-fallbacks@1.0.0(react@18.2.0):
-    resolution: {integrity: sha512-1eEgUGmkaljiBnRMTdksDV1W4kUnmwgp7X9G8B++9GYwl1lUdqSndSriIrTJ0N7LQaoauY9JJ2yhiOYK5+NI4A==}
-    peerDependencies:
-      react: '>=16.8.0 || 18'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@emotion/utils@1.2.0:
@@ -21878,10 +21805,6 @@ packages:
       browserslist: 4.21.3
       postcss: 8.4.16
       postcss-selector-parser: 6.0.10
-
-  /stylis@4.0.13:
-    resolution: {integrity: sha512-xGPXiFVl4YED9Jh7Euv2V220mriG9u4B2TA6Ybjc1catrstKD2PpIdU3U0RKpkVBC2EhmL/F0sPCr9vrFTNRag==}
-    dev: false
 
   /stylis@4.1.4:
     resolution: {integrity: sha512-USf5pszRYwuE6hg9by0OkKChkQYEXfkeTtm0xKw+jqQhwyjCVLdYyMBK7R+n7dhzsblAWJnGxju4vxq5eH20GQ==}
