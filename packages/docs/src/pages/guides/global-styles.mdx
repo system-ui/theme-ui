@@ -7,9 +7,10 @@ title: 'Global Styles'
 Theme UI offers a `Global` component (that wraps Emotion’s) for adding global
 CSS with theme-based values.
 
+
 By default (or, unless the
 [`useRootStyles` configuration option](/theming#configuration-flags)is
-disabled), the `ThemeProvider` component will apply styles in
+disabled), the `ThemeUIProvider` component will apply styles in
 `theme.styles.root` to the `<html>` element. It will also apply `color` and
 `background-color` styles based on `theme.colors.text` and
 `theme.colors.background` respectively.
@@ -35,3 +36,12 @@ export default (props) => (
   />
 )
 ```
+
+<Note>
+
+If you are upgrading from a version of theme-ui older that v0.6.0, be aware the
+import package has changed from `@emotion/core` to `@emotion/react`. For more
+information see the
+[Migration Notes for 0.6](https://theme-ui.com/migrating/#breaking-changes).
+
+</Note>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Theme, ThemeStyles, Global } from 'theme-ui'
+import { jsx, ThemeUIProvider, Theme, ThemeStyles, Global } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {
   useState,
@@ -84,7 +84,7 @@ export const Sidenav = forwardRef<
   }
 >(({ open, styles = {}, components = {}, ...props }, ref) => {
   return (
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         styles: merge<Theme['styles']>(
           {
@@ -135,7 +135,7 @@ export const Sidenav = forwardRef<
           }}
         />
       </MDXProvider>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 })
 

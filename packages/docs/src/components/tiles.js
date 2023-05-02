@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { jsx, ThemeUIProvider } from 'theme-ui'
 
 export default ({ columns = 3, width, ...props }) => {
   const gridTemplateColumns = width
@@ -7,7 +7,7 @@ export default ({ columns = 3, width, ...props }) => {
     : ['auto', `repeat(${columns}, 1fr)`]
 
   return (
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         styles: {
           ol: {
@@ -27,8 +27,9 @@ export default ({ columns = 3, width, ...props }) => {
             m: 0,
           },
         },
-      }}>
+      }}
+    >
       <div {...props} />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 }

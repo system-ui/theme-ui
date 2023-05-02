@@ -9,8 +9,8 @@ export default TypographyLayout
 
 # @theme-ui/typography
 
-This page uses themes from Typography.js to populate the `theme` object.
-Select a theme from the controls above to view a live demo of each one.
+This page uses themes from Typography.js to populate the `theme` object. Select
+a theme from the controls above to view a live demo of each one.
 
 ## Usage
 
@@ -18,23 +18,25 @@ Select a theme from the controls above to view a live demo of each one.
 npm i @theme-ui/typography
 ```
 
-Use the `toTheme` function to create a base `theme` object based on Typography.js options or a preset Typography.js theme.
+Use the `toTheme` function to create a base `theme` object based on
+Typography.js options or a preset Typography.js theme.
 
 ```js
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { toTheme } from '@theme-ui/typography'
 import wp2016 from 'typography-theme-wordpress-2016'
 
 const theme = toTheme(wp2016)
 
 export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+  <ThemeUIProvider theme={theme}>{props.children}</ThemeUIProvider>
 )
 ```
 
 ## Extending the Typography.js theme
 
-Use a deep merge utility, like the `deepmerge` package, to extend or override the returned theme object.
+Use a deep merge utility, like the `deepmerge` package, to extend or override
+the returned theme object.
 
 ```js
 import { toTheme } from '@theme-ui/typography'

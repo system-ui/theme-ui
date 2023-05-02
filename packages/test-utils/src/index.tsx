@@ -2,7 +2,7 @@ import * as React from 'react'
 import { render } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import * as tsSnippet from 'ts-snippet'
-import { Theme, ThemeProvider } from 'theme-ui'
+import { Theme, ThemeUIProvider } from 'theme-ui'
 
 export * from '@testing-library/react'
 
@@ -38,7 +38,7 @@ export const renderHook = <T,>(
 
   const { theme } = options
   const { unmount, rerender } = render(<Component />, {
-    wrapper: theme && ((props) => <ThemeProvider theme={theme} {...props} />),
+    wrapper: theme && ((props) => <ThemeUIProvider theme={theme} {...props} />),
   })
 
   return {

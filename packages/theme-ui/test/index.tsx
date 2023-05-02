@@ -8,7 +8,8 @@ import mockConsole from 'jest-mock-console'
 import { fireEvent, render, renderJSON } from '@theme-ui/test-utils'
 
 import {
-  ThemeProvider,
+  ThemeProvider as DeprecatedThemeProvider,
+  ThemeUIProvider,
   jsx,
   BaseStyles,
   Theme,
@@ -43,10 +44,21 @@ test('warns when multiple versions of emotion are installed', () => {
         theme: {},
       }}
     >
-      <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
+      <ThemeUIProvider theme={{}}>Conflicting versions</ThemeUIProvider>
     </__ThemeUIContext.Provider>
   )
   expect(console.warn).toBeCalled()
+  restore()
+})
+
+test('warns deprecated ThemeUIProvider', () => {
+  const restore = mockConsole()
+  render(
+    <DeprecatedThemeProvider theme={{}}>
+      <div />
+    </DeprecatedThemeProvider>
+  )
+  expect(console.warn).toHaveBeenCalled()
   restore()
 })
 
@@ -68,10 +80,10 @@ test('functional themes receive outer theme', () => {
 
   const tree = render(
     jsx(
-      ThemeProvider,
+      ThemeUIProvider,
       { theme: outer },
       jsx(
-        ThemeProvider,
+        ThemeUIProvider,
         { theme },
         jsx('article', {
           sx: {
@@ -94,7 +106,7 @@ test('functional themes can be used at the top level', () => {
   expect(() => {
     json = renderJSON(
       jsx(
-        ThemeProvider,
+        ThemeUIProvider,
         {
           theme: (_): Theme => ({
             config: {
@@ -124,7 +136,7 @@ test('functional themes can be used at the top level', () => {
 
 test('BaseStyles renders', () => {
   const json = renderJSON(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         fonts: {
           body: 'system-ui, sans-serif',
@@ -138,14 +150,14 @@ test('BaseStyles renders', () => {
       }}
     >
       <BaseStyles />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(json).toMatchSnapshot()
 })
 
 test('BaseStyles renders sx prop styles', () => {
   const json = renderJSON(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         colors: {
           custom: 'tomato',
@@ -153,7 +165,7 @@ test('BaseStyles renders sx prop styles', () => {
       }}
     >
       <BaseStyles sx={{ color: 'custom' }} />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(json).toMatchSnapshot()
 })
@@ -174,7 +186,7 @@ test('custom pragma adds styles', () => {
   expect(json).toHaveStyleRule('background-color', 'tomato')
 })
 
-test('nested ThemeProviders combine colors', async () => {
+test('nested ThemeUIProviders combine colors', async () => {
   const DarkModeButton = () => {
     const { setColorMode } = useThemeUI()
 
@@ -189,13 +201,13 @@ test('nested ThemeProviders combine colors', async () => {
   }
 
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: { useCustomProperties: true },
         colors: { primary: 'blue' },
       }}
     >
-      <ThemeProvider
+      <ThemeUIProvider
         theme={{
           colors: {
             background: 'white',
@@ -204,8 +216,8 @@ test('nested ThemeProviders combine colors', async () => {
         }}
       >
         <DarkModeButton />
-      </ThemeProvider>
-    </ThemeProvider>
+      </ThemeUIProvider>
+    </ThemeUIProvider>
   )
 
   let button = await root.findByRole('button')

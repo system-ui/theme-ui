@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 import { Button } from '..'
 
@@ -13,17 +13,17 @@ import { theme } from './__test-utils__'
 describe('Button', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Button />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
   test('hidden', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Button hidden />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
