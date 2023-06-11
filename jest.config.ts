@@ -1,22 +1,25 @@
 // @ts-check
 
-/** @typedef {import('ts-jest/dist/types')} */
-/** @type {import('@jest/types').Config.InitialOptions} */
-const config = {
+import type { JestConfigWithTsJest } from 'ts-jest'
+
+const config: JestConfigWithTsJest = {
   preset: 'ts-jest/presets/js-with-ts',
   transform: {
     '^.+.tsx?$': [
       'ts-jest',
       {
-        isolatedModules: true,
-        tsconfig: {
-          tsconfig: './tsconfig.test.json',
-          useESM: true,
-          diagnostics: {
-            exclude: ['**'],
-          },
-        },
+        tsconfig: './tsconfig.test.json',
       },
+      // {
+      //   isolatedModules: true,
+      //   tsconfig: {
+      //     tsconfig: './tsconfig.test.json',
+      //     useESM: true,
+      //     diagnostics: {
+      //       exclude: ['**'],
+      //     },
+      //   },
+      // },
     ],
     '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
   },

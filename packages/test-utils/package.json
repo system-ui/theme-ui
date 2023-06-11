@@ -21,14 +21,12 @@
     "ts-snippet": "^5.0.0"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "theme-ui": "workspace:^"
+    "react": ">=18"
   },
   "devDependencies": {
     "@types/react": "^18",
     "react": "^18",
     "react-dom": ">=18",
-    "typescript": ">=4",
-    "theme-ui": "workspace:^"
+    "typescript": ">=4"
   }
 }
