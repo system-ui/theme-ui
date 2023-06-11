@@ -30,6 +30,6 @@
     "babel-eslint": "^10",
     "eslint": "^8",
     "graphql": "^15",
-    "typescript": "^4"
+    "typescript": "^5"
   }
 }

@@ -9,7 +9,7 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "typescript": "^4",
+    "typescript": "^5",
     "babel-eslint": "^10"
   },
   "license": "MIT"

@@ -25,7 +25,7 @@
     "theme-ui": "develop",
     "@emotion/react": "^11",
     "react": "^18",
-    "typescript": ">=4"
+    "typescript": ">=5"
   },
   "devDependencies": {
     "@types/react": "^18",

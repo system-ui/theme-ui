@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/react": "^18",
-    "typescript": "^4",
+    "typescript": "^5",
     "babel-eslint": "^10"
   }
 }
