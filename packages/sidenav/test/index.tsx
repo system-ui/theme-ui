@@ -1,9 +1,7 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx } from 'theme-ui'
 import renderer from 'react-test-renderer'
 import { render, cleanup, act } from '@theme-ui/test-utils'
 import { ReactNode } from 'react'

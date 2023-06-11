@@ -1,6 +1,5 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 /* eslint-disable no-lone-blocks */
 import { renderJSON, NotHas, Assert, expecter } from '@theme-ui/test-utils'

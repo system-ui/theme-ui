@@ -42,10 +42,7 @@ export interface ThemeProviderProps
   children?: React.ReactNode
 }
 
-export const ThemeUIProvider: React.FC<ThemeProviderProps> = ({
-  theme,
-  children,
-}) => {
+export const ThemeUIProvider = ({ theme, children }: ThemeProviderProps) => {
   const outer = useThemeUI()
 
   const isTopLevel = outer === __themeUiDefaultContextValue

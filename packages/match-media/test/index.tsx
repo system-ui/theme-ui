@@ -1,9 +1,8 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx, Theme } from 'theme-ui'
+import { Theme } from 'theme-ui'
 import { cleanup, act, renderHook } from '@theme-ui/test-utils'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 

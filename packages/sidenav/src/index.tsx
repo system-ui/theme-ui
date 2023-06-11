@@ -1,9 +1,9 @@
-/** @jsx jsx */
-import { jsx, ThemeUIProvider, Theme, ThemeStyles, Global } from 'theme-ui'
+/** @jsxRuntime automatic */
+/** @jsxImportSource theme-ui */
+import { ThemeUIProvider, Theme, ThemeStyles, Global } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {
   useState,
-  FunctionComponent,
   EventHandler,
   MouseEvent,
   forwardRef,
@@ -53,7 +53,7 @@ interface OverlayProps {
   onClick?: EventHandler<MouseEvent<HTMLDivElement>>
 }
 const Overlay = ({ onClick }: OverlayProps) => (
-  <React.Fragment>
+  <>
     <div
       onClick={onClick}
       sx={{
@@ -71,7 +71,7 @@ const Overlay = ({ onClick }: OverlayProps) => (
         },
       }}
     />
-  </React.Fragment>
+  </>
 )
 
 export const Sidenav = forwardRef<
@@ -193,17 +193,24 @@ export const AccordionButton = (props: {
   )
 }
 
-const NavLinks: FunctionComponent<{
+type NavLinksProps = {
   open: boolean
   pathname: string
   links: ReactComponentElement<'a'>[]
   href: string
-  Link: React.FunctionComponent<{
+  Link: (props: {
     href?: string
     className?: string
     children?: ReactNode
-  }>
-}> = ({ open, pathname = '', links, href, Link }) => {
+  }) => JSX.Element
+}
+const NavLinks = ({
+  open,
+  pathname = '',
+  links,
+  href,
+  Link,
+}: NavLinksProps) => {
   if (!links) return null
   if (!open && !pathname.includes(href)) return null
   return (
@@ -257,7 +264,7 @@ export const AccordionNav = forwardRef<
     }
 
     return (
-      <React.Fragment>
+      <>
         {open && <Overlay {...props} />}
         <div
           ref={ref}
@@ -321,7 +328,7 @@ export const AccordionNav = forwardRef<
             ))}
           </ul>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 )

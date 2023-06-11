@@ -429,7 +429,7 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       '@styled-system/color':
         specifier: ^5.1.2
         version: 5.1.2
@@ -446,9 +446,6 @@ importers:
         specifier: ^5.1.13
         version: 5.1.15
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@theme-ui/core':
         specifier: workspace:^
         version: link:../core
@@ -8386,15 +8383,9 @@ packages:
   /ci-info@2.0.0:
     resolution: {integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==}
 
-  /ci-info@3.3.2:
-    resolution: {integrity: sha512-xmDt/QIAdeZ9+nfdPsaBCpMvHNLFiLdjj59qjqn+6iPe6YmHGQ35sBnQ8uslRBXFmXkiZQOJRjvQeoGppoTjjg==}
-    dev: false
-    optional: true
-
   /ci-info@3.8.0:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
-    dev: true
 
   /cjs-module-lexer@1.2.3:
     resolution: {integrity: sha512-0TNiGstbQmCFwt4akjjBg5pLRTSyj/PkWQ1ZoO2zntmg9yLqSRxwEa4iCfQLGjqhiqBfOJa7W/E8wfGrTDmlZQ==}
@@ -14248,7 +14239,7 @@ packages:
     resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
     hasBin: true
     dependencies:
-      ci-info: 3.3.2
+      ci-info: 3.8.0
     dev: false
     optional: true
 

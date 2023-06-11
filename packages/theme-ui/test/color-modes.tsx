@@ -1,6 +1,5 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
 import renderer from 'react-test-renderer'

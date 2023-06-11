@@ -1,8 +1,7 @@
 /**
  * @jest-environment node
- * @jsx jsx
  */
-import { jsx, ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { Fragment } from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
