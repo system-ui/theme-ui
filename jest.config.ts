@@ -3,23 +3,13 @@
 import type { JestConfigWithTsJest } from 'ts-jest'
 
 const config: JestConfigWithTsJest = {
-  preset: 'ts-jest/presets/js-with-ts',
+  preset: 'ts-jest',
   transform: {
     '^.+.tsx?$': [
       'ts-jest',
       {
         tsconfig: './tsconfig.test.json',
       },
-      // {
-      //   isolatedModules: true,
-      //   tsconfig: {
-      //     tsconfig: './tsconfig.test.json',
-      //     useESM: true,
-      //     diagnostics: {
-      //       exclude: ['**'],
-      //     },
-      //   },
-      // },
     ],
     '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
   },

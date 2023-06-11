@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import { jsx } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 
 const aliases: Record<string, Language | undefined> = {

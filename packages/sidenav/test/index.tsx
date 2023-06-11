@@ -1,5 +1,7 @@
 /**
  * @jest-environment jsdom
+ * @jsxRuntime automatic
+ * @jsxImportSource theme-ui
  */
 
 import renderer from 'react-test-renderer'

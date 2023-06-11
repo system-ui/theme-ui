@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import {
   ArrayInterpolation,
   CSSObject,

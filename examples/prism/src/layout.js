@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Layout, Header, Main, Container } from 'theme-ui'
+import { Layout, Header, Main, Container } from 'theme-ui'
 
 const Layout = (props) => (
   <Layout>

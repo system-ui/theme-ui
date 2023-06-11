@@ -12,5 +12,11 @@
     "target": "es2018",
     // @types/reactcss required by @types/react-color is broken
     "skipLibCheck": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules",
+    "packages/*/dist",
+    "packages/*/node_modules"
+  ]
 }
