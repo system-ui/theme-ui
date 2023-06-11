@@ -1,10 +1,12 @@
 /**
+ * @jsxRuntime automatic
+ * @jsxImportSource @theme-ui/core
  * @jest-environment jsdom
  */
 /* eslint-disable no-lone-blocks */
 import { renderJSON, NotHas, Assert, expecter } from '@theme-ui/test-utils'
 
-import { jsx, SxProp, ThemeUIJSX } from '../src'
+import { SxProp, ThemeUIJSX } from '../src'
 
 describe('JSX', () => {
   test('accepts sx prop', () => {
