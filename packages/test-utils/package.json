@@ -21,7 +21,8 @@
     "ts-snippet": "^5.0.0"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "theme-ui": "workspace:^"
   },
   "devDependencies": {
     "@types/react": "^18",
