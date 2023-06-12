@@ -924,8 +924,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/mdx':
-        specifier: ^2.0.2
-        version: 2.0.2
+        specifier: ^2.0.5
+        version: 2.0.5
       '@types/react':
         specifier: ^18
         version: 18.2.11
@@ -6112,6 +6112,7 @@ packages:
 
   /@types/mdx@2.0.2:
     resolution: {integrity: sha512-mJGfgj4aWpiKb8C0nnJJchs1sHBHn0HugkVfqqyQi7Wn6mBRksLeQsPOFvih/Pu8L1vlDzfe/LidhVHBeUk3aQ==}
+    dev: false
 
   /@types/mdx@2.0.5:
     resolution: {integrity: sha512-76CqzuD6Q7LC+AtbPqrvD9AqsN0k8bsYo2bM2J8pmNldP1aIPAbzUQ7QbobyXL4eLr1wK5x8FZFe8eF/ubRuBg==}
