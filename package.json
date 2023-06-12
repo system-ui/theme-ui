@@ -51,7 +51,6 @@
     "@auto-it/omit-commits": "^10.46.0",
     "@auto-it/released": "^10.46.0",
     "@babel/cli": "^7.22.5",
-    "@babel/core": "^7.22.5",
     "@babel/helper-string-parser": "^7.22.5",
     "@babel/helper-validator-identifier": "^7.22.5",
     "@babel/plugin-transform-runtime": "^7.22.5",

@@ -17,7 +17,6 @@
     "@types/react": "^18",
     "@theme-ui/test-utils": "workspace:^",
     "typescript": "^5",
-    "@babel/core": "^7",
     "@mdx-js/react": "^1"
   },
   "keywords": [

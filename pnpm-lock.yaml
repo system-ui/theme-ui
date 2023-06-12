@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -45,9 +45,6 @@ importers:
       '@babel/cli':
         specifier: ^7.22.5
         version: 7.22.5(@babel/core@7.22.5)
-      '@babel/core':
-        specifier: ^7.22.5
-        version: 7.22.5
       '@babel/helper-string-parser':
         specifier: ^7.22.5
         version: 7.22.5
@@ -199,9 +196,6 @@ importers:
         specifier: workspace:^
         version: link:../../packages/theme-ui
     devDependencies:
-      '@babel/core':
-        specifier: ^7.22.5
-        version: 7.22.5
       '@types/react':
         specifier: ^18
         version: 18.2.11
@@ -279,9 +273,6 @@ importers:
         specifier: workspace:^
         version: link:../../packages/theme-ui
     devDependencies:
-      '@babel/core':
-        specifier: ^7.22.5
-        version: 7.22.5
       '@types/react':
         specifier: ^18.2.11
         version: 18.2.11
@@ -359,9 +350,6 @@ importers:
         specifier: ^0.16.19
         version: 0.16.19
     devDependencies:
-      '@babel/core':
-        specifier: ^7.22.5
-        version: 7.22.5
       '@types/lodash.merge':
         specifier: ^4.6.7
         version: 4.6.7
@@ -466,7 +454,7 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       '@theme-ui/css':
         specifier: workspace:^
         version: link:../css
@@ -477,9 +465,6 @@ importers:
         specifier: '>=18 || 18'
         version: 18.2.0
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
@@ -491,14 +476,11 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       csstype:
         specifier: ^3.0.10
         version: 3.1.0
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
@@ -526,7 +508,7 @@ importers:
         version: 7.18.10
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       '@mdx-js/mdx':
         specifier: ^1
         version: 1.6.22
@@ -753,12 +735,9 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@babel/register':
         specifier: ^7.8.6
-        version: 7.18.9(@babel/core@7.18.13)
+        version: 7.18.9(@babel/core@7.22.5)
       babel-eslint:
         specifier: ^10
         version: 10.1.0(eslint@8.23.0)
@@ -797,7 +776,7 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       '@theme-ui/css':
         specifier: workspace:^
         version: link:../css
@@ -814,9 +793,6 @@ importers:
         specifier: workspace:^
         version: link:../theme-ui
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@mdx-js/react':
         specifier: ^1
         version: 1.6.22(react@18.2.0)
@@ -895,9 +871,6 @@ importers:
         specifier: '>=18 || 18'
         version: 18.2.0
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.22.5
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
@@ -933,7 +906,7 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       '@theme-ui/core':
         specifier: workspace:^
         version: link:../core
@@ -941,9 +914,6 @@ importers:
         specifier: workspace:^
         version: link:../css
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@mdx-js/mdx-v2':
         specifier: npm:@mdx-js/mdx@^2.1.2
         version: /@mdx-js/mdx@2.1.2
@@ -1116,6 +1086,9 @@ importers:
 
   packages/prism:
     dependencies:
+      '@theme-ui/core':
+        specifier: workspace:^
+        version: link:../core
       prism-react-renderer:
         specifier: ^1.1.1
         version: 1.3.5(react@18.2.0)
@@ -1146,7 +1119,7 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11
-        version: 11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0)
+        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
       '@mdx-js/react':
         specifier: ^1
         version: 1.6.22(react@18.2.0)
@@ -1157,9 +1130,6 @@ importers:
         specifier: workspace:^
         version: link:../theme-ui
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.18.13
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
@@ -1178,6 +1148,9 @@ importers:
       '@theme-ui/color':
         specifier: workspace:^
         version: link:../color
+      '@theme-ui/core':
+        specifier: workspace:^
+        version: link:../core
       '@theme-ui/presets':
         specifier: workspace:^
         version: link:../presets
@@ -1237,6 +1210,9 @@ importers:
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.3.0(react-dom@18.2.0)(react@18.2.0)
+      '@theme-ui/core':
+        specifier: workspace:^
+        version: link:../core
       conditional-type-checks:
         specifier: ^1.0.6
         version: 1.0.6
@@ -1281,9 +1257,6 @@ importers:
         specifier: '>=18 || 18'
         version: 18.2.0
     devDependencies:
-      '@babel/core':
-        specifier: ^7
-        version: 7.22.5
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
@@ -1468,13 +1441,6 @@ importers:
         version: 1.0.2
 
 packages:
-
-  /@ampproject/remapping@2.2.0:
-    resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@jridgewell/gen-mapping': 0.1.1
-      '@jridgewell/trace-mapping': 0.3.18
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
@@ -1810,28 +1776,6 @@ packages:
       - supports-color
     dev: false
 
-  /@babel/core@7.18.13:
-    resolution: {integrity: sha512-ZisbOvRRusFktksHSG6pjj1CSvkPkcZq/KHD45LAkVP/oiHJkNBZWfpvlLmX8OtHDG8IuzsFlVRWo08w7Qxn0A==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@ampproject/remapping': 2.2.0
-      '@babel/code-frame': 7.18.6
-      '@babel/generator': 7.18.13
-      '@babel/helper-compilation-targets': 7.18.9(@babel/core@7.18.13)
-      '@babel/helper-module-transforms': 7.18.9
-      '@babel/helpers': 7.18.9
-      '@babel/parser': 7.18.13
-      '@babel/template': 7.18.10
-      '@babel/traverse': 7.18.13
-      '@babel/types': 7.18.13
-      convert-source-map: 1.8.0
-      debug: 4.3.4(supports-color@8.1.1)
-      gensync: 1.0.0-beta.2
-      json5: 2.2.1
-      semver: 6.3.0
-    transitivePeerDependencies:
-      - supports-color
-
   /@babel/core@7.22.5:
     resolution: {integrity: sha512-SBuTAjg91A3eKOvD+bPEz3LlhHZRNu1nFOVts9lzDJTXshHTjII0BAtDS3Y2DAkdZdDKWVZGVwkDfc4Clxn1dg==}
     engines: {node: '>=6.9.0'}
@@ -1888,6 +1832,7 @@ packages:
       '@babel/types': 7.22.5
       '@jridgewell/gen-mapping': 0.3.3
       jsesc: 2.5.2
+    dev: false
 
   /@babel/generator@7.22.5:
     resolution: {integrity: sha512-+lcUbnTRhd0jOewtFSedLyiPsD5tswKkbgcezOqqWFUVNEwoUTlpPOBmvhG7OXWLR4jMdv0czPGH5XbflnD1EA==}
@@ -1909,18 +1854,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.22.5
-
-  /@babel/helper-compilation-targets@7.18.9(@babel/core@7.18.13):
-    resolution: {integrity: sha512-tzLCyVmqUiFlcFoAPLA/gL9TeYrF61VLNtb+hvkuVaB5SUjW7jcfrglBIX1vUIoT7CLP3bBlIMeyEsIl2eFQNg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/compat-data': 7.22.5
-      '@babel/core': 7.18.13
-      '@babel/helper-validator-option': 7.22.5
-      browserslist: 4.21.3
-      semver: 6.3.0
 
   /@babel/helper-compilation-targets@7.22.5(@babel/core@7.22.5):
     resolution: {integrity: sha512-Ji+ywpHeuqxB8WDxraCiqR0xfhYjiDE/e6k7FuIaANnoOFxAHskHChz4vA1mJC9Lbm01s1PVAGhQY4FUKSkGZw==}
@@ -2026,21 +1959,6 @@ packages:
     dependencies:
       '@babel/types': 7.22.5
 
-  /@babel/helper-module-transforms@7.18.9:
-    resolution: {integrity: sha512-KYNqY0ICwfv19b31XzvmI/mfcylOzbLtowkw+mfvGPAQ3kfCnMLYbED3YecL5tPd8nAYFQFAd6JHp2LxZk/J1g==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-environment-visitor': 7.18.9
-      '@babel/helper-module-imports': 7.22.5
-      '@babel/helper-simple-access': 7.18.6
-      '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/helper-validator-identifier': 7.22.5
-      '@babel/template': 7.18.10
-      '@babel/traverse': 7.18.13
-      '@babel/types': 7.18.13
-    transitivePeerDependencies:
-      - supports-color
-
   /@babel/helper-module-transforms@7.22.5:
     resolution: {integrity: sha512-+hGKDt/Ze8GFExiVHno/2dvG5IdstpzCq0y4Qc9OJ25D4q3pKfiIP/4Vp3/JvhDkLKsDK2api3q3fpIgiIF5bw==}
     engines: {node: '>=6.9.0'}
@@ -2101,12 +2019,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/helper-simple-access@7.18.6:
-    resolution: {integrity: sha512-iNpIgTgyAvDQpDj76POqg+YEt8fPxx3yaNBg3S30dxNKm2SWfYhD0TGrK/Eu9wHpUW63VQU894TsTg+GLbUa1g==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.22.5
-
   /@babel/helper-simple-access@7.22.5:
     resolution: {integrity: sha512-n0H99E/K+Bika3++WNL17POvo4rKWZ7lZEp1Q+fStVbUi8nxPQEBOlTmCOxW/0JsS56SKKQ+ojAe2pHKJHN35w==}
     engines: {node: '>=6.9.0'}
@@ -2156,16 +2068,6 @@ packages:
       '@babel/template': 7.22.5
       '@babel/traverse': 7.22.5
       '@babel/types': 7.22.5
-    transitivePeerDependencies:
-      - supports-color
-
-  /@babel/helpers@7.18.9:
-    resolution: {integrity: sha512-Jf5a+rbrLoR4eNdUmnFu8cN5eNJT6qdTdOg5IHIzq87WwyRw9PwguLFOWYgktN/60IP4fgDUawJvs7PjQIzELQ==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/template': 7.18.10
-      '@babel/traverse': 7.18.13
-      '@babel/types': 7.18.13
     transitivePeerDependencies:
       - supports-color
 
@@ -3313,13 +3215,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/register@7.18.9(@babel/core@7.18.13):
+  /@babel/register@7.18.9(@babel/core@7.22.5):
     resolution: {integrity: sha512-ZlbnXDcNYHMR25ITwwNKT88JiaukkdVj/nG7r3wnuXkOTHc60Uy05PwMCPre0hSkY68E6zK3xz+vUJSP2jWmcw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.18.13
+      '@babel/core': 7.22.5
       clone-deep: 4.0.1
       find-cache-dir: 2.1.0
       make-dir: 2.1.0
@@ -3342,14 +3244,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-
-  /@babel/template@7.18.10:
-    resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/code-frame': 7.18.6
-      '@babel/parser': 7.18.13
-      '@babel/types': 7.18.13
 
   /@babel/template@7.22.5:
     resolution: {integrity: sha512-X7yV7eiwAxdj9k94NEylvbVHLiVG1nvzCV2EAowhxLTwODV1jl9UzZ48leOC0sH7OnuHrIkllaBgneUykIcZaw==}
@@ -3595,30 +3489,6 @@ packages:
 
   /@emotion/memoize@0.8.1:
     resolution: {integrity: sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==}
-
-  /@emotion/react@11.10.0(@babel/core@7.18.13)(@types/react@18.2.11)(react@18.2.0):
-    resolution: {integrity: sha512-K6z9zlHxxBXwN8TcpwBKcEsBsOw4JWCCmR+BeeOWgqp8GIU1yA2Odd41bwdAAr0ssbQrbJbVnndvv7oiv1bZeQ==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/react': '*'
-      react: '>=16.8.0 || 18'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/core': 7.18.13
-      '@babel/runtime': 7.22.5
-      '@emotion/babel-plugin': 11.11.0
-      '@emotion/cache': 11.11.0
-      '@emotion/serialize': 1.1.2
-      '@emotion/utils': 1.2.1
-      '@emotion/weak-memoize': 0.3.1
-      '@types/react': 18.2.11
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-    dev: false
 
   /@emotion/react@11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0):
     resolution: {integrity: sha512-K6z9zlHxxBXwN8TcpwBKcEsBsOw4JWCCmR+BeeOWgqp8GIU1yA2Odd41bwdAAr0ssbQrbJbVnndvv7oiv1bZeQ==}
@@ -4416,13 +4286,6 @@ packages:
       '@types/yargs': 17.0.24
       chalk: 4.1.2
     dev: true
-
-  /@jridgewell/gen-mapping@0.1.1:
-    resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.14
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -8914,11 +8777,6 @@ packages:
   /convert-hrtime@3.0.0:
     resolution: {integrity: sha512-7V+KqSvMiHp8yWDuwfww06XleMWVVB9b9tURBx+G7UTADuo5hYPuowKloz4OzOqbPezxgo+fdQ1522WzPG4OeA==}
     engines: {node: '>=8'}
-
-  /convert-source-map@1.8.0:
-    resolution: {integrity: sha512-+OQdjP49zViI/6i7nIJpA8rAl4sV/JdPfU9nZs3VqOwGIgizICvuN2ru6fMd+4llL0tar18UYJXfZ/TWtmhUjA==}
-    dependencies:
-      safe-buffer: 5.1.2
 
   /convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
@@ -15364,6 +15222,7 @@ packages:
     resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
     engines: {node: '>=6'}
     hasBin: true
+    dev: false
 
   /json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}

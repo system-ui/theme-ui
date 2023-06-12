@@ -22,7 +22,6 @@
   "devDependencies": {
     "react": "^18.1.0",
     "@types/mdx-js__react": "^1",
-    "@babel/core": "^7",
     "@types/react": "^18",
     "@theme-ui/test-utils": "workspace:^"
   },

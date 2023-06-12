@@ -23,7 +23,6 @@
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
     "@types/react": "^18.2.11",
     "typescript": "^5",
     "webpack": "^5.86.0"

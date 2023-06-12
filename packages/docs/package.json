@@ -97,7 +97,6 @@
     "@types/react": "^18"
   },
   "devDependencies": {
-    "@babel/core": "^7",
     "@babel/register": "^7.8.6",
     "babel-eslint": "^10",
     "eslint": "^8",

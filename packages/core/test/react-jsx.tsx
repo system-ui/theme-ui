@@ -1,7 +1,6 @@
 /**
- * @jsxRuntime automatic
- * @jsxImportSource @theme-ui/core
  * @jest-environment jsdom
+ * @jsxImportSource ../src
  */
 /* eslint-disable no-lone-blocks */
 import { renderJSON, NotHas, Assert, expecter } from '@theme-ui/test-utils'

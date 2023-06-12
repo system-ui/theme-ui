@@ -1,4 +1,7 @@
-/** @jest-environment jsdom */
+/**
+ * @jest-environment jsdom
+ * @jsxImportSource react
+ */
 
 import React from 'react'
 import { cleanup } from '@testing-library/react'
