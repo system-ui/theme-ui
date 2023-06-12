@@ -18,7 +18,7 @@
   "devDependencies": {
     "@mdx-js/mdx-v2": "npm:@mdx-js/mdx@^2.1.2",
     "@mdx-js/react-v2": "npm:@mdx-js/react@^2.1.2",
-    "@types/mdx": "^2.0.2",
+    "@types/mdx": "^2.0.5",
     "react": "^18.1.0",
     "remark-gfm": "^3.0.1",
     "@types/react": "^18",
