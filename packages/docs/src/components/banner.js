@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { jsx, ThemeUIProvider, Container } from 'theme-ui'
 
 export default (props) => (

@@ -1,6 +1,5 @@
 // @ts-check
-/** @jsx jsx */
-import { jsx, Text } from 'theme-ui'
+import { Text } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 import Prism from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
@@ -64,7 +63,7 @@ const stripTrailingNewline = (str) => {
 }
 
 const transformCode = (src) => {
-  return `/** @jsx jsx */\n<>${src}</>`
+  return `<>${src}</>`
 }
 
 const liveTheme = { styles: [] }

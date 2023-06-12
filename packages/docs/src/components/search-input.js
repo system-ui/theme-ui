@@ -1,7 +1,4 @@
 // @ts-check
-/** @jsx jsx */
-
-import { jsx } from 'theme-ui'
 import { Input } from '@theme-ui/components'
 
 /**

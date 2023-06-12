@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import { Location } from '@reach/router'
 import { Pagination } from '@theme-ui/sidenav'
 import Sidenav from '../sidebar.mdx'

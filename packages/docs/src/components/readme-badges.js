@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
 // Straight-up copied from README.md
 // We may extract it from that Markdown file in a fancy way some day. Maybe...
 export default function ReadmeBadges() {
@@ -12,7 +9,8 @@ export default function ReadmeBadges() {
         flexWrap: 'wrap',
         gap: '4px',
         '> a': { height: '20px' },
-      }}>
+      }}
+    >
       <a href="https://github.com/system-ui/theme-ui">
         <img
           src="https://badgen.net/badge/-/github?icon=github&label"

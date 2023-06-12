@@ -5,7 +5,8 @@ title: 'Keyframes'
 # CSS Keyframes
 
 Using keyframes with Theme UI is fully supported, but not part of the Theme UI
-library itself. Instead, use [the `keyframes` helper from Emotion](https://emotion.sh/docs/keyframes).
+library itself. Instead, use
+[the `keyframes` helper from Emotion](https://emotion.sh/docs/keyframes).
 
 ## Usage
 
@@ -16,8 +17,8 @@ library itself. Instead, use [the `keyframes` helper from Emotion](https://emoti
 
 <Note>
 
-`@emotion/react` is a peer dependency of Theme UI, so while required alongside Theme UI packages,
-it needs manual installation in your project.
+`@emotion/react` is a peer dependency of Theme UI, so while required alongside
+Theme UI packages, it needs manual installation in your project.
 
 </Note>
 
@@ -32,24 +33,21 @@ import { keyframes } from '@emotion/react'
 const fadeIn = keyframes({ from: { opacity: 0 }, to: { opacity: 1 } })
 
 export default (props) => (
-  <Box
-    {...props}
-    sx={{ animation: `${fadeIn} 1s backwards` }}
-  />
+  <Box {...props} sx={{ animation: `${fadeIn} 1s backwards` }} />
 )
 ```
 
 <Note>
 
-To directly set `animationName` using object syntax, append `.toString()` to the animation variable.
-This workaround is not needed when using the variable inside a template string, such as above.
+To directly set `animationName` using object syntax, append `.toString()` to the
+animation variable. This workaround is not needed when using the variable inside
+a template string, such as above.
 
 </Note>
 
 Using template literal syntax:
 
 ```js
-/** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { keyframes } from '@emotion/react'
 

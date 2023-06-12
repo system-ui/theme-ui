@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, ThemeUIProvider, Flex } from 'theme-ui'
+import { ThemeUIProvider, Flex } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 import { useState } from 'react'
 import { toTheme } from '@theme-ui/typography'

@@ -1,7 +1,6 @@
-/** @jsx jsx */
 import { Fragment } from 'react'
-import { jsx, useColorMode } from 'theme-ui'
-import { useState, useRef, useEffect, Suspense, useTransition } from 'react'
+import { useColorMode } from 'theme-ui'
+import { useState, useRef, useEffect, Suspense } from 'react'
 import { Flex, Box } from '@theme-ui/components'
 import { AccordionNav } from '@theme-ui/sidenav'
 import { Link } from 'gatsby'

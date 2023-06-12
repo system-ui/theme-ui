@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import code from '../components/code'
 import Note from '../components/note'
 
@@ -14,7 +12,8 @@ const heading = (Tag) => (props) =>
           ':hover': {
             textDecoration: 'underline',
           },
-        }}>
+        }}
+      >
         {props.children}
       </a>
     </Tag>

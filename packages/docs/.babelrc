@@ -1,3 +1,11 @@
 {
-  "presets": ["babel-preset-gatsby"]
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "reactRuntime": "automatic",
+        "importSource": "@theme-ui/core"
+      }
+    ]
+  ]
 }
