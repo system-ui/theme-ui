@@ -22,7 +22,8 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "theme-ui": "workspace:^"
+    "theme-ui": "workspace:^",
+    "@theme-ui/core": "workspace:^"
   },
   "devDependencies": {
     "@types/react": "^18",

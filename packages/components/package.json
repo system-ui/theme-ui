@@ -11,6 +11,7 @@
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
     "@theme-ui/css": "workspace:^",
+    "@theme-ui/core": "workspace:^",
     "@types/styled-system": "^5.1.13"
   },
   "peerDependencies": {

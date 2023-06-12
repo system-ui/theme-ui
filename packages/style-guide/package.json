@@ -10,8 +10,9 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/presets": "workspace:^",
     "@theme-ui/color": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/presets": "workspace:^",
     "@types/color": "^3.0.3",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"

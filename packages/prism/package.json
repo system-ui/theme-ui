@@ -24,7 +24,8 @@
     "build-presets": "node build-presets.js"
   },
   "dependencies": {
-    "prism-react-renderer": "^1.1.1"
+    "prism-react-renderer": "^1.1.1",
+    "@theme-ui/core": "workspace:^"
   },
   "peerDependencies": {
     "theme-ui": "workspace:^",
