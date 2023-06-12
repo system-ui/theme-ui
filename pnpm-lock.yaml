@@ -554,6 +554,9 @@ importers:
       '@theme-ui/tailwind':
         specifier: workspace:^
         version: link:../tailwind
+      '@theme-ui/test-utils':
+        specifier: workspace:^
+        version: link:../test-utils
       '@theme-ui/typography':
         specifier: workspace:^
         version: link:../typography
@@ -563,6 +566,9 @@ importers:
       copy-to-clipboard:
         specifier: ^3.2.0
         version: 3.3.2
+      deepmerge:
+        specifier: ^4.0.0
+        version: 4.2.2
       gatsby:
         specifier: ^4.21.0
         version: 4.21.1(@types/node@20.3.0)(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
@@ -9471,7 +9477,6 @@ packages:
   /deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /defer-to-connect@1.1.3:
     resolution: {integrity: sha512-0ISdNousHvZT2EiFlZeZAHBUvSxmKswVCEf8hW7KWgG4a8MVEu/3Vb6uWYozkjylyCxe0JBIiRB1jV45S70WVQ==}
@@ -11648,7 +11653,7 @@ packages:
       chalk: 4.1.2
       chokidar: 3.5.3
       cosmiconfig: 6.0.0
-      deepmerge: 4.2.2
+      deepmerge: 4.3.1
       eslint: 7.32.0
       fs-extra: 9.1.0
       glob: 7.2.3

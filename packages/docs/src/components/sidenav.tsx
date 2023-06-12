@@ -1,5 +1,3 @@
-/** @jsxRuntime automatic */
-/** @jsxImportSource theme-ui */
 import { ThemeUIProvider, Theme, ThemeStyles, Global } from 'theme-ui'
 import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
 import React, {

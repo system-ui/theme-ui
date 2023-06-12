@@ -1,5 +1,6 @@
+// @ts-check
 import { Location } from '@reach/router'
-import { Pagination } from '@theme-ui/sidenav'
+import { Pagination } from '../components/sidenav'
 import Sidenav from '../sidebar.mdx'
 
 export default (props) => (

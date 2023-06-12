@@ -13,7 +13,10 @@ const config: JestConfigWithTsJest = {
     ],
     '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
   },
-  testMatch: ['**/packages/**/test/*.{js,ts,tsx,mjs}'],
+  testMatch: [
+    '**/packages/**/test/*.{js,ts,tsx,mjs}',
+    '**/packages/*/src/**/*.spec.{js,ts,tsx,mjs}',
+  ],
   testPathIgnorePatterns: [
     '/node_modules/',
     '/fixtures/',

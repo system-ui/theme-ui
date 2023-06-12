@@ -13,7 +13,7 @@
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
-import { ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from '../../theme-ui'
 
 import { useMDXComponents, MDXProvider } from '@mdx-js/react-v2'
 

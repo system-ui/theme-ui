@@ -1,14 +1,12 @@
 /**
  * @jest-environment jsdom
- * @jsxRuntime automatic
- * @jsxImportSource theme-ui
  */
 
 import renderer from 'react-test-renderer'
 import { render, cleanup, act } from '@theme-ui/test-utils'
 import { ReactNode } from 'react'
 
-import { Sidenav, Pagination, AccordionNav } from '../src'
+import { Sidenav, Pagination, AccordionNav } from './sidenav'
 
 afterEach(cleanup)
 
