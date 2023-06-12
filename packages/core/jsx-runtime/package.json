@@ -5,7 +5,6 @@
   "module": "dist/theme-ui-core-jsx-runtime.esm.js",
   "types": "dist/theme-ui-core-jsx-runtime.cjs.d.ts",
   "browser": {
-    "./dist/theme-ui-core-jsx-runtime.cjs.js": "./dist/theme-ui-core-jsx-runtime.browser.cjs.js",
     "./dist/theme-ui-core-jsx-runtime.esm.js": "./dist/theme-ui-core-jsx-runtime.browser.esm.js"
   },
   "sideEffects": false,

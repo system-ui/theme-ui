@@ -1,12 +1,11 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.16.0-develop.0",
+  "version": "0.16.0-exports.0",
   "source": "src/index.ts",
   "main": "dist/theme-ui-core.cjs.js",
   "module": "dist/theme-ui-core.esm.js",
   "types": "dist/theme-ui-core.cjs.d.ts",
   "browser": {
-    "./dist/theme-ui-core.cjs.js": "./dist/theme-ui-core.browser.cjs.js",
     "./dist/theme-ui-core.esm.js": "./dist/theme-ui-core.browser.esm.js"
   },
   "exports": {
@@ -16,7 +15,6 @@
         "browser": "./dist/theme-ui-core.browser.esm.js",
         "default": "./dist/theme-ui-core.esm.js"
       },
-      "import": "./dist/theme-ui-core.cjs.mjs",
       "default": "./dist/theme-ui-core.cjs.js"
     },
     "./jsx-runtime": {
@@ -25,7 +23,6 @@
         "browser": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.browser.esm.js",
         "default": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.esm.js"
       },
-      "import": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.cjs.mjs",
       "default": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.cjs.js"
     },
     "./jsx-dev-runtime": {
@@ -34,7 +31,6 @@
         "browser": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.browser.esm.js",
         "default": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.esm.js"
       },
-      "import": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.cjs.mjs",
       "default": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.cjs.js"
     },
     "./package.json": "./package.json"
@@ -64,6 +60,12 @@
       "index.ts",
       "jsx-dev-runtime.ts",
       "jsx-runtime.ts"
-    ]
+    ],
+    "exports": {
+      "envConditions": [
+        "browser",
+        "worker"
+      ]
+    }
   }
 }
