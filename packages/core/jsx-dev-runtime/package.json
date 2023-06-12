@@ -4,6 +4,11 @@
   "main": "dist/theme-ui-core-jsx-dev-runtime.cjs.js",
   "module": "dist/theme-ui-core-jsx-dev-runtime.esm.js",
   "types": "dist/theme-ui-core-jsx-dev-runtime.cjs.d.ts",
+  "browser": {
+    "./dist/theme-ui-core-jsx-dev-runtime.cjs.js": "./dist/theme-ui-core-jsx-dev-runtime.browser.cjs.js",
+    "./dist/theme-ui-core-jsx-dev-runtime.esm.js": "./dist/theme-ui-core-jsx-dev-runtime.browser.esm.js"
+  },
+  "sideEffects": false,
   "dependencies": {
     "@emotion/react": "^11",
     "react": "^18"

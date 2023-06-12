@@ -5,6 +5,40 @@
   "main": "dist/theme-ui-core.cjs.js",
   "module": "dist/theme-ui-core.esm.js",
   "types": "dist/theme-ui-core.cjs.d.ts",
+  "browser": {
+    "./dist/theme-ui-core.cjs.js": "./dist/theme-ui-core.browser.cjs.js",
+    "./dist/theme-ui-core.esm.js": "./dist/theme-ui-core.browser.esm.js"
+  },
+  "exports": {
+    ".": {
+      "module": {
+        "worker": "./dist/theme-ui-core.worker.esm.js",
+        "browser": "./dist/theme-ui-core.browser.esm.js",
+        "default": "./dist/theme-ui-core.esm.js"
+      },
+      "import": "./dist/theme-ui-core.cjs.mjs",
+      "default": "./dist/theme-ui-core.cjs.js"
+    },
+    "./jsx-runtime": {
+      "module": {
+        "worker": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.worker.esm.js",
+        "browser": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.browser.esm.js",
+        "default": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.esm.js"
+      },
+      "import": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.cjs.mjs",
+      "default": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.cjs.js"
+    },
+    "./jsx-dev-runtime": {
+      "module": {
+        "worker": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.worker.esm.js",
+        "browser": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.browser.esm.js",
+        "default": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.esm.js"
+      },
+      "import": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.cjs.mjs",
+      "default": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "sideEffects": false,
   "scripts": {},
   "repository": "system-ui/theme-ui",

@@ -1,5 +1,3 @@
-import { jsx } from 'theme-ui'
-
 /**
  * @param {React.ComponentPropsWithoutRef<"button">} props
  */
