@@ -4,6 +4,8 @@ const path = require('path')
 
 const Preset = require.resolve('./src/templates/preset')
 
+const LOG_CONFIG = !!process.env.LOG_CONFIG
+
 module.exports.createPages = ({ actions }) => {
   actions.createRedirect({
     fromPath: '/custom-pragma',
@@ -60,5 +62,7 @@ module.exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
     },
   })
 
-  console.log(getConfig())
+  if (LOG_CONFIG) {
+    console.log(getConfig())
+  }
 }
