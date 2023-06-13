@@ -28,7 +28,7 @@ module.exports.createPages = ({ actions }) => {
   })
 }
 
-module.exports.onCreateWebpackConfig = ({ actions }) => {
+module.exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [
@@ -36,5 +36,29 @@ module.exports.onCreateWebpackConfig = ({ actions }) => {
         'node_modules',
       ],
     },
+    module: {
+      rules: [
+        {
+          test: /\.mdx?$/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: ['babel-preset-gatsby'],
+              },
+            },
+            {
+              loader: '@mdx-js/loader',
+              /** @type {import('@mdx-js/loader').Options} */
+              options: {
+                remarkPlugins: [require('remark-slug'), require('remark-gfm')],
+              },
+            },
+          ],
+        },
+      ],
+    },
   })
+
+  console.log(getConfig())
 }

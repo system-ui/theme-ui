@@ -33,6 +33,9 @@
     "@types/react-dom": "^18"
   },
   "pnpm": {
+    "overrides": {
+      "@babel/core": "7.22.5"
+    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "@babel/core",

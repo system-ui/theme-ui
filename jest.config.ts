@@ -25,6 +25,7 @@ const config: JestConfigWithTsJest = {
     'tailwind.config.js',
     '/dist/',
     '/__test-utils__/',
+    '/node_modules/(?!(@babel/runtime|gatsby))',
   ],
   coverageReporters: ['lcov', 'text', 'html'],
   coverageProvider: 'v8',

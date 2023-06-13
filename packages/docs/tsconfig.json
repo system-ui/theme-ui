@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@theme-ui/core",
     "resolveJsonModule": true
   },
   "exclude": [".cache", "node_modules", "public"],

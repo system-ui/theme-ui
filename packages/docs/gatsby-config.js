@@ -1,6 +1,10 @@
+const remarkGfm = require('remark-gfm')
 const remarkSlug = require('remark-slug')
 
 module.exports = {
+  jsxRuntime: 'automatic',
+  jsxImportSource: '@theme-ui/core',
+
   siteMetadata: {
     siteUrl: 'https://theme-ui.com',
   },
@@ -12,8 +16,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: ['.mdx', '.md'],
-        remarkPlugins: [remarkSlug],
+        extensions: ['mdx', 'md'],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm, remarkSlug],
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -31,12 +44,4 @@ module.exports = {
   },
   // https://www.gatsbyjs.com/docs/reference/release-notes/v4.7/#trailingslash-option
   trailingSlash: 'never', // We currently have duplicate Algolia results. This __may__ fix them.
-}
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [gatsbyNodeModules, 'node_modules'],
-    },
-  })
 }
