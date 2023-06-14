@@ -22,8 +22,8 @@
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "react": "^18",
     "@types/react": "^18.2.12",
+    "react": "^18.1.0",
     "theme-ui": "workspace:^"
   },
   "publishConfig": {

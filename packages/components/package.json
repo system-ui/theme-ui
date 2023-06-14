@@ -19,11 +19,11 @@
     "react": ">=18"
   },
   "devDependencies": {
-    "react": "^18.1.0",
-    "@types/react": "^18.2.12",
-    "theme-ui": "workspace:^",
+    "@emotion/react": "^11.11.1",
     "@theme-ui/test-utils": "workspace:^",
-    "@theme-ui/core": "workspace:^"
+    "@types/react": "^18.2.12",
+    "react": "^18.1.0",
+    "theme-ui": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

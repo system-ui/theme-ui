@@ -21,8 +21,10 @@
     "react": ">=18"
   },
   "devDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@theme-ui/test-utils": "workspace:^",
     "@types/react": "^18.2.12",
-    "@theme-ui/test-utils": "workspace:^"
+    "react": "^18.1.0"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

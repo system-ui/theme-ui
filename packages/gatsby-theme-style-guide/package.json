@@ -15,12 +15,12 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "gatsby": "^4.21.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "typescript": ">=5",
     "babel-eslint": "^10",
-    "eslint": "^8"
+    "eslint": "^8.42.0",
+    "gatsby": "^5",
+    "react": "^18.1.0",
+    "react-dom": "^18",
+    "typescript": "^5"
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

@@ -9,8 +9,11 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "babel-eslint": "^10"
+    "babel-eslint": "^10",
+    "gatsby": "^5",
+    "react": "^18.1.0",
+    "react-dom": "^18",
+    "typescript": "^5"
   },
   "license": "MIT"
 }

@@ -15,5 +15,8 @@
   "peerDependencies": {
     "@theme-ui/css": "workspace:^"
   },
+  "devDependencies": {
+    "@theme-ui/css": "workspace:^"
+  },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

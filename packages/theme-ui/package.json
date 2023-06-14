@@ -20,14 +20,15 @@
     "@theme-ui/theme-provider": "workspace:^"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "@emotion/react": ">=11.1.1"
+    "@emotion/react": ">=11.1.1",
+    "react": ">=18"
   },
   "devDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18",
+    "@emotion/react": "^11.11.1",
+    "@theme-ui/test-utils": "workspace:^",
     "@types/react": "^18.2.12",
-    "@theme-ui/test-utils": "workspace:^"
+    "react": "^18.1.0",
+    "react-dom": "^18"
   },
   "keywords": [
     "theme-ui",

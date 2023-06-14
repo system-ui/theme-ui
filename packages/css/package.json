@@ -19,8 +19,9 @@
     "@emotion/react": "^11.11.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.12",
-    "@theme-ui/test-utils": "workspace:^"
+    "@emotion/react": "^11.11.1",
+    "@theme-ui/test-utils": "workspace:^",
+    "@types/react": "^18.2.12"
   },
   "preconstruct": {
     "entrypoints": [

@@ -41,7 +41,24 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "devDependencies": {
+  "pnpm": {
+    "overrides": {
+      "@types/readable-stream": "2.3.11",
+      "@babel/core": "7.22.5"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "babel-eslint"
+      ],
+      "allowedVersions": {
+        "react": "18",
+        "eslint": "8",
+        "gatsby": "^4 || ^5",
+        "@types/jest": "29"
+      }
+    }
+  },
+  "dependencies": {
     "@auto-it/all-contributors": "^10.46.0",
     "@auto-it/conventional-commits": "^10.46.0",
     "@auto-it/core": "^10.46.0",
@@ -69,6 +86,7 @@
     "@types/node": "^20.3.1",
     "@types/react-dom": "^18.2.5",
     "@types/react-test-renderer": "^18.0.0",
+    "@types/semver": "^7.5.0",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.59.11",
     "auto": "^10.46.0",
@@ -87,30 +105,10 @@
     "prettier": "^2.8.8",
     "react-test-renderer": "^18.2.0",
     "rimraf": "^5.0.1",
+    "semver": "^7.5.1",
     "ts-jest": "^29.1.0",
     "ts-toolbelt": "^9.6.0",
     "typecov": "^0.2.3",
     "typescript": "^5"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/readable-stream": "2.3.11",
-      "@babel/core": "7.22.5"
-    },
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "babel-eslint"
-      ],
-      "allowedVersions": {
-        "react": "18",
-        "eslint": "8",
-        "gatsby": "^4 || ^5",
-        "@types/jest": "29"
-      }
-    }
-  },
-  "dependencies": {
-    "@types/semver": "^7.5.0",
-    "semver": "^7.5.1"
   }
 }
