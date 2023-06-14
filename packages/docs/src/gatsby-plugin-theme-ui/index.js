@@ -318,7 +318,6 @@ const theme = {
       fontFamily: 'monospace',
       color: 'secondary',
       bg: 'muted',
-      fontSize: 1,
     },
     table: {
       width: '100%',
