@@ -50,15 +50,15 @@
       "ignoreMissing": [
         "babel-eslint",
         "graphql",
-        "cypress",
-        "@typescript-eslint/parser",
-        "@typescript-eslint/eslint-plugin"
+        "cypress"
       ],
       "allowedVersions": {
         "react": "18",
         "eslint": "8",
         "gatsby": "^4 || ^5",
-        "@types/jest": "29"
+        "@types/jest": "29",
+        "@typescript-eslint/parser": "*",
+        "@typescript-eslint/eslint-plugin": "*"
       }
     }
   },

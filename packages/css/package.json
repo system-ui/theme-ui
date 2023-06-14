@@ -4,6 +4,26 @@
   "source": "src/index.ts",
   "main": "dist/theme-ui-css.cjs.js",
   "module": "dist/theme-ui-css.esm.js",
+  "browser": {
+    "./dist/theme-ui-css.esm.js": "./dist/theme-ui-css.browser.esm.js"
+  },
+  "exports": {
+    ".": {
+      "module": {
+        "browser": "./dist/theme-ui-css.browser.esm.js",
+        "default": "./dist/theme-ui-css.esm.js"
+      },
+      "default": "./dist/theme-ui-css.cjs.js"
+    },
+    "./utils": {
+      "module": {
+        "browser": "./utils/dist/theme-ui-css-utils.browser.esm.js",
+        "default": "./utils/dist/theme-ui-css-utils.esm.js"
+      },
+      "default": "./utils/dist/theme-ui-css-utils.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "sideEffects": false,
   "scripts": {},
   "author": "Brent Jackson",
@@ -27,7 +47,12 @@
     "entrypoints": [
       "index.ts",
       "utils.ts"
-    ]
+    ],
+    "exports": {
+      "envConditions": [
+        "browser"
+      ]
+    }
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { render } from '@theme-ui/test-utils'
-import { ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
 import { SVG } from '../src/SVG'
 
 test('accepts ref', async () => {

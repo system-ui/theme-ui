@@ -16,6 +16,7 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
+    "@theme-ui/theme-provider": "workspace:^",
     "react": ">=18"
   },
   "devDependencies": {

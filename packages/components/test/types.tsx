@@ -1,5 +1,5 @@
 /** @jsxRuntime automatic */
-/** @jsxImportSource theme-ui */
+/** @jsxImportSource @theme-ui/core */
 import { AssertTrue, IsExact } from '@theme-ui/test-utils'
 
 import {

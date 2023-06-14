@@ -8,7 +8,13 @@ function wrapComponent(
   key: string
 ): ThemedComponent<string> {
   const component: ThemedComponent<string> = (props) => {
-    return jsx(value, { ...props, css: themed(key) })
+    return jsx(value, {
+      ...props,
+      css: (th: any) => {
+        console.log(`>> Styles for MDX component ${key}`, themed(key)(th))
+        return themed(key)(th)
+      },
+    })
   }
 
   component.displayName = "MdxComponents('" + key + "')"
