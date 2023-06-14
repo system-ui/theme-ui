@@ -16,11 +16,11 @@
     "@theme-ui/css": "workspace:^"
   },
   "peerDependencies": {
-    "@emotion/react": "^11",
+    "@emotion/react": "^11.11.1",
     "react": ">=18"
   },
   "devDependencies": {
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "@theme-ui/test-utils": "workspace:^"
   }
 }

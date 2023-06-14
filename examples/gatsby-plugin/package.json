@@ -12,7 +12,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@emotion/react": "^11",
+    "@emotion/react": "^11.11.1",
     "gatsby": "^5",
     "gatsby-plugin-mdx": "^5",
     "gatsby-plugin-theme-ui": "workspace:^",
@@ -21,7 +21,7 @@
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "typescript": "^5",
     "babel-eslint": "^10"
   }

@@ -10,7 +10,6 @@ import packageInfo from '@emotion/react/package.json'
 
 import {
   ThemeUIContextValue,
-  jsx,
   Theme,
   ThemeUIProvider,
   useColorMode,

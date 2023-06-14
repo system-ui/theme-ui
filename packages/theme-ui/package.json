@@ -21,12 +21,12 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "@emotion/react": ">=11"
+    "@emotion/react": ">=11.1.1"
   },
   "devDependencies": {
     "react": ">=18",
     "react-dom": ">=18",
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "@theme-ui/test-utils": "workspace:^"
   },
   "keywords": [

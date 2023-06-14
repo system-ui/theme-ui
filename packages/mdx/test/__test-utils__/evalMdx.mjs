@@ -2,8 +2,8 @@
 // @ts-expect-error you're not supposed to import those usually
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime'
 
-import * as mdx from '@mdx-js/mdx-v2'
-import { useMDXComponents } from '@mdx-js/react-v2'
+import * as mdx from '@mdx-js/mdx'
+import { useMDXComponents } from '@mdx-js/react'
 import remarkGfm from 'remark-gfm'
 
 /**

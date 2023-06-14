@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "react": "^18",
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "theme-ui": "workspace:^"
   },
   "publishConfig": {

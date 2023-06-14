@@ -11,7 +11,7 @@ export const sidebar: Sidebar = [
     [['Getting Started with Gatsby', '/getting-started/gatsby']],
   ],
   ['Theming', '/theming'],
-  ['The `sx` Prop', '/sx-prop'],
+  ['The sx Prop', '/sx-prop'],
   ['Color Modes', '/color-modes'],
   ['Hooks', '/hooks'],
   ['API', '/api'],

@@ -11,17 +11,17 @@
     "@theme-ui/css": "workspace:^"
   },
   "peerDependencies": {
-    "@emotion/react": "^11",
+    "@emotion/react": "^11.11.1",
     "react": ">=18",
     "@types/mdx": "^2.0.2"
   },
   "devDependencies": {
-    "@mdx-js/mdx-v2": "npm:@mdx-js/mdx@^2.1.2",
-    "@mdx-js/react-v2": "npm:@mdx-js/react@^2.1.2",
+    "@mdx-js/mdx": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
     "@types/mdx": "^2.0.5",
     "react": "^18.1.0",
     "remark-gfm": "^3.0.1",
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "@theme-ui/test-utils": "workspace:^"
   },
   "author": "Brent Jackson",

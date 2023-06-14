@@ -170,11 +170,11 @@ importers:
   examples/gatsby:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@mdx-js/react':
-        specifier: ^2
-        version: 2.1.3(react@18.2.0)
+        specifier: ^2.3.0
+        version: 2.3.0(react@18.2.0)
       '@theme-ui/mdx':
         specifier: workspace:^
         version: link:../../packages/mdx
@@ -183,7 +183,7 @@ importers:
         version: 4.21.1(@types/node@20.3.1)(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
       gatsby-plugin-mdx:
         specifier: ^4.0.0
-        version: 4.0.0(@mdx-js/react@2.1.3)(gatsby-source-filesystem@5.10.0)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.10.0)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0)
       gatsby-source-filesystem:
         specifier: latest
         version: 5.10.0(gatsby@4.21.1)
@@ -198,8 +198,8 @@ importers:
         version: link:../../packages/theme-ui
     devDependencies:
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       babel-eslint:
         specifier: ^10
         version: 10.1.0(eslint@8.42.0)
@@ -213,8 +213,8 @@ importers:
   examples/gatsby-plugin:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       gatsby:
         specifier: ^5
         version: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
@@ -235,8 +235,8 @@ importers:
         version: link:../../packages/theme-ui
     devDependencies:
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       babel-eslint:
         specifier: ^10
         version: 10.1.0(eslint@8.42.0)
@@ -247,8 +247,8 @@ importers:
   examples/next:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@mdx-js/loader':
         specifier: ^2.3.0
         version: 2.3.0(webpack@5.86.0)
@@ -275,8 +275,8 @@ importers:
         version: link:../../packages/theme-ui
     devDependencies:
       '@types/react':
-        specifier: ^18.2.11
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       typescript:
         specifier: ^5
         version: 5.1.3
@@ -287,8 +287,8 @@ importers:
   examples/typography:
     dependencies:
       '@mdx-js/react':
-        specifier: ^2.0.0
-        version: 2.1.3(react@18.2.0)
+        specifier: ^2.3.0
+        version: 2.3.0(react@18.2.0)
       gatsby:
         specifier: ^4.21.0
         version: 4.21.1(@types/node@20.3.1)(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
@@ -297,7 +297,7 @@ importers:
         version: 1.0.1
       gatsby-plugin-mdx:
         specifier: ^4.0.0
-        version: 4.0.0(@mdx-js/react@2.1.3)(gatsby-source-filesystem@4.21.1)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@4.21.1)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0)
       gatsby-source-filesystem:
         specifier: ^4
         version: 4.21.1(gatsby@4.21.1)
@@ -361,8 +361,8 @@ importers:
   packages/color-modes:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/core':
         specifier: workspace:^
         version: link:../core
@@ -377,8 +377,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: ^18.0
         version: 18.2.0
@@ -386,8 +386,8 @@ importers:
   packages/components:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@styled-system/color':
         specifier: ^5.1.2
         version: 5.1.2
@@ -411,8 +411,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: ^18.1.0
         version: 18.2.0
@@ -423,8 +423,8 @@ importers:
   packages/core:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/css':
         specifier: workspace:^
         version: link:../css
@@ -439,14 +439,14 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
 
   packages/css:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       csstype:
         specifier: ^3.0.10
         version: 3.1.0
@@ -455,8 +455,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
 
   packages/custom-properties:
     dependencies:
@@ -483,7 +483,7 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(webpack@5.86.0)
       '@mdx-js/react':
-        specifier: ^2
+        specifier: ^2.3.0
         version: 2.3.0(react@18.2.0)
       '@theme-ui/color':
         specifier: workspace:^
@@ -757,8 +757,8 @@ importers:
   packages/gatsby-plugin-theme-ui:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/css':
         specifier: workspace:^
         version: link:../css
@@ -776,14 +776,14 @@ importers:
         version: link:../theme-ui
     devDependencies:
       '@mdx-js/react':
-        specifier: ^2
+        specifier: ^2.3.0
         version: 2.3.0(react@18.2.0)
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       typescript:
         specifier: ^5
         version: 5.1.3
@@ -841,8 +841,8 @@ importers:
   packages/global:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/core':
         specifier: workspace:^
         version: link:../core
@@ -857,8 +857,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
 
   packages/match-media:
     devDependencies:
@@ -872,8 +872,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: ^18.1.0
         version: 18.2.0
@@ -887,8 +887,8 @@ importers:
   packages/mdx:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/core':
         specifier: workspace:^
         version: link:../core
@@ -896,12 +896,12 @@ importers:
         specifier: workspace:^
         version: link:../css
     devDependencies:
-      '@mdx-js/mdx-v2':
-        specifier: npm:@mdx-js/mdx@^2.1.2
-        version: /@mdx-js/mdx@2.1.2
-      '@mdx-js/react-v2':
-        specifier: npm:@mdx-js/react@^2.1.2
-        version: /@mdx-js/react@2.3.0(react@18.2.0)
+      '@mdx-js/mdx':
+        specifier: ^2.3.0
+        version: 2.3.0
+      '@mdx-js/react':
+        specifier: ^2.3.0
+        version: 2.3.0(react@18.2.0)
       '@theme-ui/test-utils':
         specifier: workspace:^
         version: link:../test-utils
@@ -909,8 +909,8 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: ^18.1.0
         version: 18.2.0
@@ -1119,8 +1119,8 @@ importers:
         version: 4.4.2
     devDependencies:
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: ^18
         version: 18.2.0
@@ -1181,8 +1181,8 @@ importers:
         version: 5.0.2(typescript@5.1.3)
     devDependencies:
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: ^18
         version: 18.2.0
@@ -1196,8 +1196,8 @@ importers:
   packages/theme-provider:
     dependencies:
       '@emotion/react':
-        specifier: ^11
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/color-modes':
         specifier: workspace:^
         version: link:../color-modes
@@ -1215,14 +1215,14 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
 
   packages/theme-ui:
     dependencies:
       '@emotion/react':
-        specifier: '>=11'
-        version: 11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0)
+        specifier: '>=11.1.1'
+        version: 11.11.1(@types/react@18.2.12)(react@18.2.0)
       '@theme-ui/color-modes':
         specifier: workspace:^
         version: link:../color-modes
@@ -1246,8 +1246,8 @@ importers:
         specifier: workspace:^
         version: link:../test-utils
       '@types/react':
-        specifier: ^18
-        version: 18.2.11
+        specifier: ^18.2.12
+        version: 18.2.12
       react:
         specifier: '>=18'
         version: 18.2.0
@@ -1723,7 +1723,7 @@ packages:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/highlight': 7.18.6
+      '@babel/highlight': 7.22.5
 
   /@babel/code-frame@7.22.5:
     resolution: {integrity: sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ==}
@@ -1890,7 +1890,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.22.5
-      '@babel/types': 7.18.13
+      '@babel/types': 7.22.5
 
   /@babel/helper-function-name@7.22.5:
     resolution: {integrity: sha512-wtHSq6jMRE3uF2otvfuD3DIvVhOsSNshQl0Qrd7qC9oQJzHvOL4qQXlQn2916+CXGywIjpGuIkoyZRRxHPiNQQ==}
@@ -1903,7 +1903,7 @@ packages:
     resolution: {integrity: sha512-UlJQPkFqFULIcyW5sbzgbkxn2FKRgwWiRexcuaR8RNJRy8+LLveqPjwZV/bwrLZCN0eUHD/x8D0heK1ozuoo6Q==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.18.13
+      '@babel/types': 7.22.5
 
   /@babel/helper-hoist-variables@7.22.5:
     resolution: {integrity: sha512-wGjk9QZVzvknA6yKIUURb8zY3grXCcOZt+/7Wcy8O2uctxhplmUPkOdlgoNhmdVee2c92JXbf1xpMtVNbfoxRw==}
@@ -1995,7 +1995,7 @@ packages:
     resolution: {integrity: sha512-bde1etTx6ZyTmobl9LLMMQsaizFVZrquTEHOqKeQESMKo4PlObf+8+JA25ZsIpZhT/WEd39+vOdLXAFG/nELpA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.18.13
+      '@babel/types': 7.22.5
 
   /@babel/helper-split-export-declaration@7.22.5:
     resolution: {integrity: sha512-thqK5QFghPKWLhAV321lxF95yCg2K3Ob5yw+M3VHWfdia0IkPXUtoLH8x/6Fh486QUvzhb8YOWHChTVen2/PoQ==}
@@ -2036,14 +2036,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/highlight@7.18.6:
-    resolution: {integrity: sha512-u7stbOuYjaPezCuLj29hNW1v64M2Md2qupEKP1fHc7WdOA3DgLh37suiSrZYY7haUB7iBeQZ9P1uiRF359do3g==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-validator-identifier': 7.22.5
-      chalk: 2.4.2
-      js-tokens: 4.0.0
-
   /@babel/highlight@7.22.5:
     resolution: {integrity: sha512-BSKlD1hgnedS5XRnGOljZawtag7H1yPfQp0tdNJCHoH6AZ+Pcm9VvkrK59/Yy593Ypg0zMxH2BxD1VPYUQ7UIw==}
     engines: {node: '>=6.9.0'}
@@ -2057,7 +2049,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.18.13
+      '@babel/types': 7.22.5
 
   /@babel/parser@7.22.5:
     resolution: {integrity: sha512-DFZMC9LJUG9PLOclRC32G63UXwzqS2koQC8dkx+PLdmt1xSePYpbT/NbsrJy8Q/muXz7o/h/d4A7Fuyixm559Q==}
@@ -3173,14 +3165,14 @@ packages:
     resolution: {integrity: sha512-N6kt9X1jRMLPxxxPYWi7tgvJRH/rtoU+dbKAPDM44RFHiMH8igdsaSBgFeskhSl/kLWLDUvIh1RXCrTmg0/zvA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/code-frame': 7.18.6
+      '@babel/code-frame': 7.22.5
       '@babel/generator': 7.22.5
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-function-name': 7.18.9
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/parser': 7.18.13
-      '@babel/types': 7.18.13
+      '@babel/types': 7.22.5
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
@@ -3410,30 +3402,6 @@ packages:
 
   /@emotion/memoize@0.8.1:
     resolution: {integrity: sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==}
-
-  /@emotion/react@11.10.0(@babel/core@7.22.5)(@types/react@18.2.11)(react@18.2.0):
-    resolution: {integrity: sha512-K6z9zlHxxBXwN8TcpwBKcEsBsOw4JWCCmR+BeeOWgqp8GIU1yA2Odd41bwdAAr0ssbQrbJbVnndvv7oiv1bZeQ==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/react': '*'
-      react: '>=16.8.0 || 18'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/core': 7.22.5
-      '@babel/runtime': 7.22.5
-      '@emotion/babel-plugin': 11.11.0
-      '@emotion/cache': 11.11.0
-      '@emotion/serialize': 1.1.2
-      '@emotion/utils': 1.2.1
-      '@emotion/weak-memoize': 0.3.1
-      '@types/react': 18.2.11
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-    dev: false
 
   /@emotion/react@11.11.1(@types/react@18.2.12)(react@18.2.0):
     resolution: {integrity: sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA==}
@@ -4648,30 +4616,6 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/mdx@2.1.2:
-    resolution: {integrity: sha512-ASN1GUH0gXsgJ2UD/Td7FzJo1SwFkkQ5V1i9at5o/ROra7brkyMcBsotsOWJWRzmXZaLw2uXWn4aN8B3PMNFMA==}
-    dependencies:
-      '@types/estree-jsx': 0.0.1
-      '@types/mdx': 2.0.5
-      astring: 1.8.6
-      estree-util-build-jsx: 2.2.2
-      estree-util-is-identifier-name: 2.1.0
-      estree-walker: 3.0.3
-      hast-util-to-estree: 2.3.3
-      markdown-extensions: 1.1.1
-      periscopic: 3.1.0
-      remark-mdx: 2.3.0
-      remark-parse: 10.0.2
-      remark-rehype: 10.1.0
-      unified: 10.1.2
-      unist-util-position-from-estree: 1.1.2
-      unist-util-stringify-position: 3.0.3
-      unist-util-visit: 4.1.2
-      vfile: 5.3.7
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@mdx-js/mdx@2.3.0:
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
     dependencies:
@@ -4694,17 +4638,6 @@ packages:
       vfile: 5.3.7
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@mdx-js/react@2.1.3(react@18.2.0):
-    resolution: {integrity: sha512-11n4lTvvRyxq3OYbWJwEYM+7q6PE0GxKbk0AwYIIQmrRkxDeljIsjDQkKOgdr/orgRRbYy5zi+iERdnwe01CHQ==}
-    peerDependencies:
-      react: '>=16 || 18'
-    dependencies:
-      '@types/mdx': 2.0.2
-      '@types/react': 18.2.11
-      react: 18.2.0
-    dev: false
 
   /@mdx-js/react@2.3.0(react@18.2.0):
     resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
@@ -4726,23 +4659,9 @@ packages:
       '@lezer/lr': 0.15.8
       json5: 2.2.3
 
-  /@msgpackr-extract/msgpackr-extract-darwin-arm64@2.2.0:
-    resolution: {integrity: sha512-Z9LFPzfoJi4mflGWV+rv7o7ZbMU5oAU9VmzCgL240KnqDW65Y2HFCT3MW06/ITJSnbVLacmcEJA8phywK7JinQ==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    optional: true
-
   /@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.2:
     resolution: {integrity: sha512-9bfjwDxIDWmmOKusUcqdS4Rw+SETlp9Dy39Xui9BEGEk19dDwH0jhipwFzEff/pFg95NKymc6TOTbRKcWeRqyQ==}
     cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    optional: true
-
-  /@msgpackr-extract/msgpackr-extract-darwin-x64@2.2.0:
-    resolution: {integrity: sha512-vq0tT8sjZsy4JdSqmadWVw6f66UXqUCabLmUVHZwUFzMgtgoIIQjT4VVRHKvlof3P/dMCkbMJ5hB1oJ9OWHaaw==}
-    cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
@@ -4754,23 +4673,9 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@msgpackr-extract/msgpackr-extract-linux-arm64@2.2.0:
-    resolution: {integrity: sha512-hlxxLdRmPyq16QCutUtP8Tm6RDWcyaLsRssaHROatgnkOxdleMTgetf9JsdncL8vLh7FVy/RN9i3XR5dnb9cRA==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    optional: true
-
   /@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.2:
     resolution: {integrity: sha512-FU20Bo66/f7He9Fp9sP2zaJ1Q8L9uLPZQDub/WlUip78JlPeMbVL8546HbZfcW9LNciEXc8d+tThSJjSC+tmsg==}
     cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    optional: true
-
-  /@msgpackr-extract/msgpackr-extract-linux-arm@2.2.0:
-    resolution: {integrity: sha512-SaJ3Qq4lX9Syd2xEo9u3qPxi/OB+5JO/ngJKK97XDpa1C587H9EWYO6KD8995DAjSinWvdHKRrCOXVUC5fvGOg==}
-    cpu: [arm]
     os: [linux]
     requiresBuild: true
     optional: true
@@ -4782,24 +4687,10 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@msgpackr-extract/msgpackr-extract-linux-x64@2.2.0:
-    resolution: {integrity: sha512-94y5PJrSOqUNcFKmOl7z319FelCLAE0rz/jPCWS+UtdMZvpa4jrQd+cJPQCLp2Fes1yAW/YUQj/Di6YVT3c3Iw==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    optional: true
-
   /@msgpackr-extract/msgpackr-extract-linux-x64@3.0.2:
     resolution: {integrity: sha512-gsWNDCklNy7Ajk0vBBf9jEx04RUxuDQfBse918Ww+Qb9HCPoGzS+XJTLe96iN3BVK7grnLiYghP/M4L8VsaHeA==}
     cpu: [x64]
     os: [linux]
-    requiresBuild: true
-    optional: true
-
-  /@msgpackr-extract/msgpackr-extract-win32-x64@2.2.0:
-    resolution: {integrity: sha512-XrC0JzsqQSvOyM3t04FMLO6z5gCuhPE6k4FXuLK5xf52ZbdvcFe1yBmo7meCew9B8G2f0T9iu9t3kfTYRYROgA==}
-    cpu: [x64]
-    os: [win32]
     requiresBuild: true
     optional: true
 
@@ -5889,7 +5780,7 @@ packages:
       '@percy/logger': 1.1.0
       ajv: 8.12.0
       cosmiconfig: 7.1.0
-      yaml: 2.2.2
+      yaml: 2.3.1
     dev: false
     optional: true
 
@@ -6618,12 +6509,6 @@ packages:
       '@types/estree': 1.0.1
       '@types/json-schema': 7.0.12
 
-  /@types/estree-jsx@0.0.1:
-    resolution: {integrity: sha512-gcLAYiMfQklDCPjQegGn0TBAn9it05ISEsEhlKQUddIk7o2XDokOcTN7HBO8tznM0D9dGezvHEfRZBfZf6me0A==}
-    dependencies:
-      '@types/estree': 1.0.1
-    dev: true
-
   /@types/estree-jsx@1.0.0:
     resolution: {integrity: sha512-3qvGd0z8F2ENTGr/GG1yViqfiKmRfrXVx5sJyHGFu3z7m5g5utCQtGp/g29JnjflhtQJBv1WDQukHiT58xPcYQ==}
     dependencies:
@@ -6750,10 +6635,6 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
 
-  /@types/mdx@2.0.2:
-    resolution: {integrity: sha512-mJGfgj4aWpiKb8C0nnJJchs1sHBHn0HugkVfqqyQi7Wn6mBRksLeQsPOFvih/Pu8L1vlDzfe/LidhVHBeUk3aQ==}
-    dev: false
-
   /@types/mdx@2.0.5:
     resolution: {integrity: sha512-76CqzuD6Q7LC+AtbPqrvD9AqsN0k8bsYo2bM2J8pmNldP1aIPAbzUQ7QbobyXL4eLr1wK5x8FZFe8eF/ubRuBg==}
 
@@ -6844,6 +6725,7 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+    dev: true
 
   /@types/react@18.2.12:
     resolution: {integrity: sha512-ndmBMLCgn38v3SntMeoJaIrO6tGHYKMEBohCUmw8HoLLQdRMOIGXfeYaBTLe2lsFaSB3MOK1VXscYFnmLtTSmw==}
@@ -12004,7 +11886,6 @@ packages:
       '@types/estree-jsx': 1.0.0
       astring: 1.8.6
       source-map: 0.7.4
-    dev: false
 
   /estree-util-visit@1.2.1:
     resolution: {integrity: sha512-xbgqcrkIVbIG+lI/gzbvd9SGTJL4zqJKBFttUl5pP27KhAjtMKbX/mQXJ7qgyXpMgVy/zvpm0xoQQaGL8OloOw==}
@@ -13048,7 +12929,7 @@ packages:
     resolution: {integrity: sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==}
     dev: false
 
-  /gatsby-plugin-mdx@4.0.0(@mdx-js/react@2.1.3)(gatsby-source-filesystem@4.21.1)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-mdx@4.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@4.21.1)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-/n9ys4/n6cNZaQ/JmTukv3SuWorpbDCPnfilBlH/ZwmGrb7DIOnzk0Q1wSYaBXopZir8FAwq6JRTT1uCzfAxTQ==}
     peerDependencies:
       '@mdx-js/react': ^2.0.0
@@ -13058,7 +12939,7 @@ packages:
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/react': 2.1.3(react@18.2.0)
+      '@mdx-js/react': 2.3.0(react@18.2.0)
       acorn: 7.4.1
       acorn-jsx: 5.3.2(acorn@7.4.1)
       astring: 1.8.6
@@ -13085,7 +12966,7 @@ packages:
       - supports-color
     dev: false
 
-  /gatsby-plugin-mdx@4.0.0(@mdx-js/react@2.1.3)(gatsby-source-filesystem@5.10.0)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-mdx@4.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.10.0)(gatsby@4.21.1)(graphql@15.8.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-/n9ys4/n6cNZaQ/JmTukv3SuWorpbDCPnfilBlH/ZwmGrb7DIOnzk0Q1wSYaBXopZir8FAwq6JRTT1uCzfAxTQ==}
     peerDependencies:
       '@mdx-js/react': ^2.0.0
@@ -13095,7 +12976,7 @@ packages:
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/react': 2.1.3(react@18.2.0)
+      '@mdx-js/react': 2.3.0(react@18.2.0)
       acorn: 7.4.1
       acorn-jsx: 5.3.2(acorn@7.4.1)
       astring: 1.8.6
@@ -16593,10 +16474,10 @@ packages:
     resolution: {integrity: sha512-iBA0cb13CobBSoGJLfZgnrykLlfJipDAnvtf+YwIqqzBEsTeQYsXrHaSBkaHd5wCWeabwrNvhjZoFMUrlo+eLw==}
     requiresBuild: true
     dependencies:
-      msgpackr: 1.6.2
+      msgpackr: 1.9.5
       node-addon-api: 4.3.0
       node-gyp-build-optional-packages: 5.0.3
-      ordered-binary: 1.3.0
+      ordered-binary: 1.4.0
       weak-lru-cache: 1.2.2
     optionalDependencies:
       '@lmdb/lmdb-darwin-arm64': 2.5.3
@@ -17907,21 +17788,6 @@ packages:
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  /msgpackr-extract@2.2.0:
-    resolution: {integrity: sha512-0YcvWSv7ZOGl9Od6Y5iJ3XnPww8O7WLcpYMDwX+PAA/uXLDtyw94PJv9GLQV/nnp3cWlDhMoyKZIQLrx33sWog==}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      node-gyp-build-optional-packages: 5.0.3
-    optionalDependencies:
-      '@msgpackr-extract/msgpackr-extract-darwin-arm64': 2.2.0
-      '@msgpackr-extract/msgpackr-extract-darwin-x64': 2.2.0
-      '@msgpackr-extract/msgpackr-extract-linux-arm': 2.2.0
-      '@msgpackr-extract/msgpackr-extract-linux-arm64': 2.2.0
-      '@msgpackr-extract/msgpackr-extract-linux-x64': 2.2.0
-      '@msgpackr-extract/msgpackr-extract-win32-x64': 2.2.0
-    optional: true
-
   /msgpackr-extract@3.0.2:
     resolution: {integrity: sha512-SdzXp4kD/Qf8agZ9+iTu6eql0m3kWm1A2y1hkpTeVNENutaB0BwHlSvAIaMxwntmRUAUjon2V4L8Z/njd0Ct8A==}
     hasBin: true
@@ -17936,11 +17802,6 @@ packages:
       '@msgpackr-extract/msgpackr-extract-linux-x64': 3.0.2
       '@msgpackr-extract/msgpackr-extract-win32-x64': 3.0.2
     optional: true
-
-  /msgpackr@1.6.2:
-    resolution: {integrity: sha512-bqSQ0DYJbXbrJcrZFmMygUZmqQiDfI2ewFVWcrZY12w5XHWtPuW4WppDT/e63Uu311ajwkRRXSoF0uILroBeTA==}
-    optionalDependencies:
-      msgpackr-extract: 2.2.0
 
   /msgpackr@1.9.5:
     resolution: {integrity: sha512-/IJ3cFSN6Ci3eG2wLhbFEL6GT63yEaoN/R5My2QkV6zro+OJaVRLPlwvxY7EtHYSmDlQpk8stvOQTL2qJFkDRg==}
@@ -18439,9 +18300,6 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
       word-wrap: 1.2.3
-
-  /ordered-binary@1.3.0:
-    resolution: {integrity: sha512-knIeYepTI6BDAzGxqFEDGtI/iGqs57H32CInAIxEvAHG46vk1Di0CEpyc1A7iY39B1mfik3g3KLYwOTNnnMHLA==}
 
   /ordered-binary@1.4.0:
     resolution: {integrity: sha512-EHQ/jk4/a9hLupIKxTfUsQRej1Yd/0QLQs3vGvIqg5ZtCYSzNhkzHoZc7Zf4e4kUlDaC3Uw8Q/1opOLNN2OKRQ==}
@@ -19125,7 +18983,7 @@ packages:
       postcss: 8.4.24
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.1
+      resolve: 1.22.2
     dev: true
 
   /postcss-js@3.0.3:

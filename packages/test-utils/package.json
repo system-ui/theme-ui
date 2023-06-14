@@ -26,7 +26,7 @@
     "@theme-ui/core": "workspace:^"
   },
   "devDependencies": {
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "react": "^18",
     "react-dom": ">=18",
     "typescript": ">=5"

@@ -21,7 +21,7 @@
     "@babel/helper-string-parser": "^7.22.5",
     "@emotion/react": "^11.11.1",
     "@mdx-js/loader": "^2.3.0",
-    "@mdx-js/react": "^2",
+    "@mdx-js/react": "^2.3.0",
     "@theme-ui/color": "workspace:^",
     "@theme-ui/components": "workspace:^",
     "@theme-ui/core": "workspace:^",

@@ -5,7 +5,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "peerDependencies": {
-    "@emotion/react": "^11",
+    "@emotion/react": "^11.11.1",
     "@theme-ui/mdx": "workspace:^",
     "@theme-ui/css": "workspace:^",
     "gatsby": "^4 || ^5",
@@ -14,10 +14,10 @@
     "@mdx-js/react": "^1 || ^2"
   },
   "devDependencies": {
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
     "@theme-ui/test-utils": "workspace:^",
     "typescript": "^5",
-    "@mdx-js/react": "^2"
+    "@mdx-js/react": "^2.3.0"
   },
   "keywords": [
     "gatsby",
