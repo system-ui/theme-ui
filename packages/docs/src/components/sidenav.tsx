@@ -1,51 +1,29 @@
 import { ThemeUIProvider, Theme, ThemeStyles, Global } from 'theme-ui'
-import { MDXProvider, MDXProviderComponents } from '@mdx-js/react'
-import React, {
+import { MDXProvider } from '@mdx-js/react'
+import { useLocation } from '@reach/router'
+import {
   useState,
   EventHandler,
   MouseEvent,
   forwardRef,
   ReactNode,
-  ReactComponentElement,
-  ReactElement,
 } from 'react'
+import * as React from 'react'
 import merge from 'deepmerge'
 
-const createNestedLinks = (
-  children: ReactNode,
-  depth: number = 0
-): ReactNode[] =>
-  React.Children.toArray(children).reduce<ReactNode[]>((acc, child) => {
-    if (!React.isValidElement(child)) {
-      return acc
-    }
-    const type: string = child.props && child.props.mdxType
-    if (!child.props || !child.props.children) return acc
-    if (type === 'a') return [...acc, child]
-    if (depth > 0 && type === 'ul') {
-      const last = acc[acc.length - 1]
-      acc[acc.length - 1] = React.cloneElement(last as ReactElement, {
-        links: createNestedLinks(child.props.children),
-      })
-      return acc
-    }
-    return [...acc, ...createNestedLinks(child.props.children, depth + 1)]
-  }, [])
+import type { Sidebar, SidebarLink } from '../sidebar'
+import type { Components as MDXComponents } from '@mdx-js/react/lib'
 
-const flattenLinks = (children: ReactNode): ReactNode[] =>
-  React.Children.toArray(children).reduce<ReactNode[]>((acc, child) => {
-    if (React.isValidElement(child)) {
-      if (child.props && child.props.mdxType === 'a') {
-        return [...acc, child]
-      }
-      if (!child.props || !child.props.children) return acc
-      return React.Children.toArray([
-        ...acc,
-        ...flattenLinks(child.props.children),
-      ])
+const flattenLinks = (links: SidebarLink[]): [text: string, href: string][] => {
+  let res: [text: string, href: string][] = []
+  for (const [name, href, children] of links) {
+    res.push([name, href])
+    if (children) {
+      res = res.concat(flattenLinks(children))
     }
-    return acc
-  }, [])
+  }
+  return res
+}
 
 interface OverlayProps {
   onClick?: EventHandler<MouseEvent<HTMLDivElement>>
@@ -76,7 +54,7 @@ export const Sidenav = forwardRef<
   HTMLDivElement,
   {
     open?: boolean
-    components?: MDXProviderComponents
+    components?: MDXComponents
     styles?: ThemeStyles
     children?: ReactNode
   }
@@ -193,24 +171,16 @@ export const AccordionButton = (props: {
 
 type NavLinksProps = {
   open: boolean
-  pathname: string
-  links: ReactComponentElement<'a'>[]
-  href: string
+  links: Sidebar
   Link: (props: {
     href?: string
     className?: string
     children?: ReactNode
   }) => JSX.Element
 }
-const NavLinks = ({
-  open,
-  pathname = '',
-  links,
-  href,
-  Link,
-}: NavLinksProps) => {
+const NavLinks = ({ open, links, Link }: NavLinksProps) => {
   if (!links) return null
-  if (!open && !pathname.includes(href)) return null
+  if (!open) return null
   return (
     <ul
       sx={{
@@ -219,39 +189,31 @@ const NavLinks = ({
         p: 0,
       }}
     >
-      {links.map((link, j) => (
+      {links.map(([label, href], j) => (
         <li key={j}>
-          <Link
-            href={link.props.href}
-            children={link.props.children}
-            className={link.props.className}
-            sx={{
-              pl: 4,
-            }}
-          />
+          <Link href={href} sx={{ pl: 4 }}>
+            {label}
+          </Link>
         </li>
       ))}
     </ul>
   )
 }
 
-export const AccordionNav = forwardRef<
-  HTMLDivElement,
-  {
-    open?: boolean
-    components?: MDXProviderComponents
+export interface AccordionNavProps extends OverlayProps {
+  open?: boolean
+  className?: string
+  links: SidebarLink[]
+  navLink: (props: {
+    href?: string
     className?: string
-    pathname?: string
     children?: ReactNode
-  }
->(
-  (
-    { open, children, components = {}, className, pathname = '', ...props },
-    ref
-  ) => {
-    const links = createNestedLinks(children)
+  }) => JSX.Element
+}
+export const AccordionNav = forwardRef<HTMLDivElement, AccordionNavProps>(
+  ({ open, links, className, navLink: Link, ...props }, ref) => {
+    const { pathname } = useLocation()
     const [expanded, setExpanded] = useState<{ [k: number]: boolean }>({})
-    const Link = components.a || 'a'
 
     const toggle = (i: number) => (e: MouseEvent) => {
       e.stopPropagation()
@@ -267,6 +229,7 @@ export const AccordionNav = forwardRef<
         <div
           ref={ref}
           className={className}
+          role="navigation"
           sx={{
             position: ['fixed', 'sticky'],
             top: 0,
@@ -291,7 +254,7 @@ export const AccordionNav = forwardRef<
               m: 0,
             }}
           >
-            {links.map((link: any, i: number) => (
+            {links.map(([label, href, children], i: number) => (
               <li key={i}>
                 <div
                   sx={{
@@ -299,14 +262,10 @@ export const AccordionNav = forwardRef<
                     alignItems: 'center',
                   }}
                 >
-                  <Link
-                    href={link.props.href}
-                    children={link.props.children}
-                    className={link.props.className}
-                  />
-                  {link.props.links && (
+                  <Link href={href}>{label}</Link>
+                  {children && (
                     <AccordionButton
-                      href={link.props.href}
+                      href={href}
                       pathname={pathname}
                       open={expanded[i]}
                       sx={{
@@ -316,12 +275,9 @@ export const AccordionNav = forwardRef<
                     />
                   )}
                 </div>
-                <NavLinks
-                  {...link.props}
-                  open={expanded[i]}
-                  pathname={pathname}
-                  Link={Link}
-                />
+                {pathname.includes(href) && (
+                  <NavLinks open={expanded[i]} Link={Link} links={children} />
+                )}
               </li>
             ))}
           </ul>
@@ -334,22 +290,12 @@ export const AccordionNav = forwardRef<
 const removeSlash = (str: string) =>
   str.length > 1 ? str.replace(/\/$/, '') : str
 
-interface PaginationLinkProps {
+interface PaginationLinkProps extends React.ComponentPropsWithoutRef<'a'> {
   label: string
-  mdxType: string
-  originalType: string
-  parentName: string
   children: ReactNode
 }
 
-const PaginationLink = ({
-  label,
-  children,
-  mdxType,
-  originalType,
-  parentName,
-  ...props
-}: PaginationLinkProps) => (
+const PaginationLink = ({ label, children, ...props }: PaginationLinkProps) => (
   <a
     {...props}
     sx={{
@@ -372,21 +318,17 @@ const PaginationLink = ({
 
 export interface PaginationProps {
   pathname: string
-  components?: any
-  children?: ReactNode
+  links: Sidebar
 }
 
 export const Pagination = ({
   pathname = '',
-  children,
-  components,
+  links: propsLinks,
   ...props
 }: PaginationProps) => {
-  const links = flattenLinks(children)
-  const index = links.findIndex(
-    (link) =>
-      React.isValidElement(link) && link.props.href === removeSlash(pathname)
-  )
+  const links = flattenLinks(propsLinks)
+  const index = links.findIndex((link) => link[1] === removeSlash(pathname))
+
   const hasPagination = index > -1
   const previous = links[index - 1]
   const next = links[index + 1]
@@ -399,11 +341,13 @@ export const Pagination = ({
       }}
     >
       {hasPagination && previous && React.isValidElement(previous) && (
-        <PaginationLink {...previous.props} label="Previous:" />
+        <PaginationLink href={previous[1]} label="Previous:">
+          {previous[0]}
+        </PaginationLink>
       )}
       <div sx={{ mx: 'auto' }} />
       {hasPagination && next && React.isValidElement(next) && (
-        <PaginationLink {...next.props} label="Next:" />
+        <PaginationLink label="Next:">{next[0]}</PaginationLink>
       )}
     </div>
   )

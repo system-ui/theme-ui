@@ -8,5 +8,5 @@
     "noEmit": true
   },
   "exclude": [".cache", "node_modules", "public"],
-  "include": ["**/*.js", "./declarations.d.ts", "src/components/skip-link.js"]
+  "include": ["**/*.js", "src/**/*", "./declarations.d.ts"]
 }

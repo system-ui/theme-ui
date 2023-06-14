@@ -13,14 +13,9 @@ import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Button from './button'
 import SearchInput from './search-input'
-import Sidebar from '../sidebar.mdx'
+import { sidebar } from '../sidebar'
 
 const modes = ['default', 'dark', 'deep', 'swiss']
-
-const sidebar = {
-  wrapper: AccordionNav,
-  a: NavLink,
-}
 
 const getModeName = (mode) => {
   switch (mode) {
@@ -43,6 +38,11 @@ const getModeName = (mode) => {
 export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [mode, setMode] = useColorMode()
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
 
   const { pathname } = props.location
   const isLanding = pathname === '/'
@@ -89,26 +89,24 @@ export default function DocsLayout(props) {
                 Theme UI
               </Link>
             </Flex>
-            <Suspense>
-              <Flex sx={{ gap: [0, 2] }}>
-                <SearchInput />
-                <Flex sx={{ alignItems: 'center' }}>
-                  <NavLink href="https://github.com/system-ui/theme-ui">
-                    GitHub
-                  </NavLink>
-                  <Button
-                    aria-label={`Change color mode to ${nextColorMode}`}
-                    sx={{
-                      ml: 2,
-                      whiteSpace: 'pre',
-                    }}
-                    onClick={() => setMode(nextColorMode)}
-                  >
-                    {getModeName(mode)}
-                  </Button>
-                </Flex>
+            <Flex sx={{ gap: [0, 2] }}>
+              <SearchInput />
+              <Flex sx={{ alignItems: 'center' }}>
+                <NavLink href="https://github.com/system-ui/theme-ui">
+                  GitHub
+                </NavLink>
+                <Button
+                  aria-label={`Change color mode to ${nextColorMode}`}
+                  sx={{
+                    ml: 2,
+                    whiteSpace: 'pre',
+                  }}
+                  onClick={() => setMode(nextColorMode)}
+                >
+                  {getModeName(hydrated ? mode : undefined)}
+                </Button>
               </Flex>
-            </Suspense>
+            </Flex>
           </Flex>
         )}
         <Box
@@ -119,23 +117,22 @@ export default function DocsLayout(props) {
             height: '100%',
           }}
         >
-          <Sidebar
-            role="navigation"
-            onFocus={(e) => {
-              setMenuOpen(true)
-            }}
-            onBlur={(e) => {
-              setMenuOpen(false)
-            }}
-            onClick={(e) => {
-              setMenuOpen(false)
-            }}
-            onKeyPress={(e) => {
-              setMenuOpen(false)
-            }}
+          <AccordionNav
+            navLink={NavLink}
+            links={sidebar}
+            // onFocus={(e) => {
+            //   setMenuOpen(true)
+            // }}
+            // onBlur={(e) => {
+            //   setMenuOpen(false)
+            // }}
+            // onClick={(e) => {
+            //   setMenuOpen(false)
+            // }}
+            // onKeyPress={(e) => {
+            //   setMenuOpen(false)
+            // }}
             open={menuOpen}
-            components={sidebar}
-            pathname={pathname}
             sx={{
               background: 'background',
               display: [null, fullwidth ? 'none' : 'block'],
