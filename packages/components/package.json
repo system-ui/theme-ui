@@ -22,8 +22,7 @@
     "@emotion/react": "^11.11.1",
     "@theme-ui/test-utils": "workspace:^",
     "@types/react": "^18.2.12",
-    "react": "^18.1.0",
-    "theme-ui": "workspace:^"
+    "react": "^18.1.0"
   },
   "publishConfig": {
     "access": "public"

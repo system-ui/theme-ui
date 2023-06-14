@@ -48,7 +48,11 @@
     },
     "peerDependencyRules": {
       "ignoreMissing": [
-        "babel-eslint"
+        "babel-eslint",
+        "graphql",
+        "cypress",
+        "@typescript-eslint/parser",
+        "@typescript-eslint/eslint-plugin"
       ],
       "allowedVersions": {
         "react": "18",
