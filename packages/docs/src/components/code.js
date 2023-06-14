@@ -124,7 +124,7 @@ export const LiveCode = ({ children, preview, xray }) => {
  * } | import("react").ComponentProps<typeof LiveCode>
  *   | import('@theme-ui/prism').ThemeUIPrismProps} props
  */
-const Code = (props) => {
+const CodeBlock = (props) => {
   if (props.live) {
     return <LiveCode {...props} />
   }
@@ -151,4 +151,4 @@ const Code = (props) => {
   return <Prism {...props} />
 }
 
-export default Code
+export default CodeBlock

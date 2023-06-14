@@ -100,11 +100,20 @@ export default function ThemeUIPrism({
     return isStartEndHighlighted(index) || isInlineHighlighted(line)
   }
 
+  const code =
+    typeof children === 'string'
+      ? children.trim()
+      : typeof children === 'object' &&
+        'props' in children &&
+        typeof (children as any).props.children === 'string'
+      ? (children as any).props.children.trim()
+      : ''
+
   return (
     <Highlight
       {...defaultProps}
       {...props}
-      code={children.trim()}
+      code={code}
       language={lang as Language}
       theme={undefined}
     >

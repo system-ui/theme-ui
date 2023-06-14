@@ -1,4 +1,4 @@
-const remarkGfm = require('remark-gfm')
+const remarkGfm = require('remark-gfm-1')
 const remarkSlug = require('remark-slug')
 
 module.exports = {

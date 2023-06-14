@@ -53,7 +53,10 @@ module.exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
               loader: '@mdx-js/loader',
               /** @type {import('@mdx-js/loader').Options} */
               options: {
-                remarkPlugins: [require('remark-slug'), require('remark-gfm')],
+                remarkPlugins: [
+                  require('remark-slug'),
+                  require('remark-gfm-1'),
+                ],
               },
             },
           ],

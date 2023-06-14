@@ -4,7 +4,7 @@ import { jsx, jsxs, Fragment } from 'react/jsx-runtime'
 
 import * as mdx from '@mdx-js/mdx'
 import { useMDXComponents } from '@mdx-js/react'
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm-3'
 
 /**
  *
