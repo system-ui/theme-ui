@@ -2,8 +2,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "@theme-ui/core",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true
   },
   "exclude": [".cache", "node_modules", "public"],
-  "include": ["**/*.js", "./declarations.d.ts"]
+  "include": ["**/*.js", "./declarations.d.ts", "src/components/skip-link.js"]
 }

@@ -2,9 +2,6 @@ const remarkGfm = require('remark-gfm')
 const remarkSlug = require('remark-slug')
 
 module.exports = {
-  jsxRuntime: 'automatic',
-  jsxImportSource: '@theme-ui/core',
-
   siteMetadata: {
     siteUrl: 'https://theme-ui.com',
   },
