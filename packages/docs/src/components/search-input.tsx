@@ -1,11 +1,11 @@
-// @ts-check
 import { Input } from '@theme-ui/components'
+import { ThemeUICSSObject } from '@theme-ui/css'
+import { useEffect } from 'react'
 
 /**
- * @type {import("theme-ui").ThemeUIStyleObject}
  * @see https://docsearch.algolia.com/docs/styling/
  */
-const algoliaStyles = {
+const algoliaStyles: ThemeUICSSObject = {
   '.algolia-autocomplete': {
     color: 'text',
     '.ds-dropdown-menu': {
@@ -70,10 +70,7 @@ const algoliaStyles = {
   },
 }
 
-/**
- * @type {import("theme-ui").ThemeUIStyleObject}
- */
-const resetButtonStyles = {
+const resetButtonStyles: ThemeUICSSObject = {
   'input[type="search"]': {
     '&::-webkit-search-cancel-button': {
       WebkitAppearance: 'none',
@@ -96,7 +93,7 @@ const resetButtonStyles = {
   },
 }
 
-const searchFormStyles = {
+const searchFormStyles: ThemeUICSSObject = {
   ...resetButtonStyles,
   ...algoliaStyles,
 
@@ -107,11 +104,50 @@ const searchFormStyles = {
 }
 
 export default function SearchInput() {
+  const searchInputId = 'algolia-docs-search'
+
+  useEffect(() => {
+    let lastSearchInput = null
+    const observer = new MutationObserver(function () {
+      const searchInput = document.getElementById(searchInputId)
+      const docsearch = (window as any).docsearch
+
+      if (!docsearch) return
+      if (searchInput && lastSearchInput !== searchInput) {
+        docsearch({
+          apiKey: '84ed820927eee5fa5018c9f1abe70390',
+          indexName: 'theme-ui',
+          inputSelector: `#${searchInputId}`,
+          debug: true,
+          transformData: function (hits: { url: string }[]) {
+            for (const hit of hits) {
+              hit.url = hit.url.replace(
+                'https://theme-ui.com',
+                window.location.origin
+              )
+            }
+          },
+        })
+
+        lastSearchInput = searchInput
+      }
+    })
+
+    observer.observe(document, {
+      childList: true,
+      subtree: true,
+    })
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
     <form sx={searchFormStyles}>
       <Input
         type="search"
-        id="algolia-docs-search"
+        id={searchInputId}
         placeholder="Search the docs"
         aria-label="Search docs"
         autoComplete="off"
