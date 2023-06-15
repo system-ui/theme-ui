@@ -37,12 +37,6 @@ const getModeName = (mode) => {
 
 export default function DocsLayout(props) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [mode, setMode] = useColorMode()
-  const [hydrated, setHydrated] = useState(false)
-
-  useEffect(() => {
-    setHydrated(true)
-  }, [])
 
   const { pathname } = props.location
   const isLanding = pathname === '/'
@@ -52,8 +46,6 @@ export default function DocsLayout(props) {
     (props.pageContext.frontmatter && props.pageContext.frontmatter.fullwidth)
 
   const showNav = !props.pageContext?.frontmatter?.hidenav
-
-  const nextColorMode = modes[(modes.indexOf(mode) + 1) % modes.length]
 
   return (
     <Fragment>
@@ -95,16 +87,7 @@ export default function DocsLayout(props) {
                 <NavLink href="https://github.com/system-ui/theme-ui">
                   GitHub
                 </NavLink>
-                <Button
-                  aria-label={`Change color mode to ${nextColorMode}`}
-                  sx={{
-                    ml: 2,
-                    whiteSpace: 'pre',
-                  }}
-                  onClick={() => setMode(nextColorMode)}
-                >
-                  {getModeName(hydrated ? mode : undefined)}
-                </Button>
+                <ColorModeSwitcher />
               </Flex>
             </Flex>
           </Flex>
@@ -207,5 +190,29 @@ function HeaderScrollShadow() {
         opacity: 0,
       }}
     />
+  )
+}
+
+function ColorModeSwitcher() {
+  const [mode, setMode] = useColorMode()
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
+
+  const nextColorMode = modes[(modes.indexOf(mode) + 1) % modes.length]
+
+  return (
+    <Button
+      aria-label={`Change color mode to ${nextColorMode}`}
+      sx={{
+        ml: 2,
+        whiteSpace: 'pre',
+      }}
+      onClick={() => setMode(nextColorMode)}
+    >
+      {getModeName(hydrated ? mode : undefined)}
+    </Button>
   )
 }
