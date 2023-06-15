@@ -341,14 +341,16 @@ export const Pagination = ({
         display: 'flex',
       }}
     >
-      {hasPagination && previous && React.isValidElement(previous) && (
+      {hasPagination && previous && (
         <PaginationLink href={previous[1]} label="Previous:">
           {previous[0]}
         </PaginationLink>
       )}
       <div sx={{ mx: 'auto' }} />
-      {hasPagination && next && React.isValidElement(next) && (
-        <PaginationLink label="Next:">{next[0]}</PaginationLink>
+      {hasPagination && next && (
+        <PaginationLink href={next[1]} label="Next:">
+          {next[0]}
+        </PaginationLink>
       )}
     </div>
   )
