@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import { useTheme } from './context'
 import ColorSwatch, { ColorSwatchProps } from './ColorSwatch'
 
@@ -32,8 +30,9 @@ export const ColorRow = ({
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
-        }}>
-        {Object.keys(colors).map(key => {
+        }}
+      >
+        {Object.keys(colors).map((key) => {
           const color = colors[key]
           if (!color || omit.includes(key)) return false
           const id = join(name, key)
@@ -93,7 +92,8 @@ export const ColorPalette = ({ omit, mode, ...props }: ColorPaletteProps) => {
       style={{
         marginLeft: -8,
         marginRight: -8,
-      }}>
+      }}
+    >
       <ColorRow {...props} omit={omit} colors={colors as Colors} />
     </div>
   )

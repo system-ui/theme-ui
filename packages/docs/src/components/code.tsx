@@ -1,10 +1,11 @@
 // @ts-check
-/** @jsx jsx */
-import { jsx, Text } from 'theme-ui'
+import { Text } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
-import Prism from '@theme-ui/prism'
+import Prism, { ThemeUIPrismProps } from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
+import { ComponentPropsWithoutRef } from 'react'
+import { PrismTheme } from 'prism-react-renderer'
 
 const posts = [
   {
@@ -47,7 +48,7 @@ const images = {
 
 const scope = {
   ...themeUI,
-  Link: (props) => {
+  Link: (props: Record<string, any>) => {
     if (props.activeClassName)
       return <span className={props.activeClassName} {...props} />
     return <span {...props} sx={{ cursor: 'pointer' }} />
@@ -56,20 +57,28 @@ const scope = {
   images,
 }
 
-const stripTrailingNewline = (str) => {
+const stripTrailingNewline = (str: string) => {
   if (typeof str === 'string' && str[str.length - 1] === '\n') {
     return str.slice(0, -1)
   }
   return str
 }
 
-const transformCode = (src) => {
-  return `/** @jsx jsx */\n<>${src}</>`
+const transformCode = (src: string) => {
+  return `<>${src}</>`
 }
 
-const liveTheme = { styles: [] }
+const liveTheme: PrismTheme = { plain: {}, styles: [] }
 
-export const LiveCode = ({ children, preview, xray }) => {
+export const LiveCode = ({
+  children,
+  preview,
+  xray,
+}: {
+  children: string
+  preview?: boolean
+  xray?: boolean
+}) => {
   const code = stripTrailingNewline(children)
 
   if (preview) {
@@ -95,8 +104,8 @@ export const LiveCode = ({ children, preview, xray }) => {
       <div
         sx={{
           p: 3,
-          variant: xray ? 'styles.xray' : null,
-          border: (t) => `1px solid ${t.colors.muted}`,
+          variant: xray ? 'styles.xray' : undefined,
+          border: (t) => `1px solid ${t.colors!.muted}`,
         }}
       >
         <LivePreview />
@@ -112,44 +121,70 @@ export const LiveCode = ({ children, preview, xray }) => {
         />
       </div>
       <Themed.pre sx={{ p: 0, mt: 0, mb: 3 }}>
-        <LiveEditor padding="1rem" />
+        <LiveEditor
+          // @ts-expect-error
+          padding="1rem"
+          style={{
+            fontFamily: 'inherit',
+          }}
+        />
       </Themed.pre>
     </LiveProvider>
   )
 }
 
-/**
- * @param {{
- *   live?: boolean;
- *   filename?: string;
- * } | import("react").ComponentProps<typeof LiveCode>
- *   | import('@theme-ui/prism').ThemeUIPrismProps} props
- */
-const Code = (props) => {
+type LiveCodeBlockProps = {
+  live: true
+} & ComponentPropsWithoutRef<typeof LiveCode>
+type UsualCodeBlockProps = {
+  live?: false
+  filename?: string
+} & ThemeUIPrismProps
+type CodeBlockProps = LiveCodeBlockProps | UsualCodeBlockProps
+
+const CodeBlock = (props: CodeBlockProps) => {
+  if (typeof props.children === 'object' && props.children) {
+    props = {
+      ...props,
+      ...(props.children as any).props,
+    }
+  }
+
   if (props.live) {
-    return <LiveCode {...props} />
-  }
-  if (props.filename) {
     return (
-      <section>
-        <Text
-          as="span"
-          sx={{
-            display: 'block',
-            bg: 'gray',
-            color: 'background',
-            px: 3,
-            py: 2,
-            fontWeight: 'bold',
-          }}
-        >
-          {props.filename}
-        </Text>
-        <Prism {...props} sx={{ mt: 0 }} />
-      </section>
+      <LiveCode
+        {...props}
+        // @ts-expect-error
+        style={{
+          fontFamily: 'Menlo',
+        }}
+      />
     )
+  } else {
+    const { live: _, filename, ...rest } = props as UsualCodeBlockProps
+    if (filename) {
+      return (
+        <section>
+          <Text
+            as="span"
+            sx={{
+              display: 'block',
+              bg: 'gray',
+              color: 'background',
+              px: 3,
+              py: 2,
+              fontWeight: 'bold',
+            }}
+          >
+            {filename}
+          </Text>
+          <Prism {...rest} sx={{ mt: 0 }} />
+        </section>
+      )
+    } else {
+      return <Prism {...rest} />
+    }
   }
-  return <Prism {...props} />
 }
 
-export default Code
+export default CodeBlock

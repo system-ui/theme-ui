@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import Tiles from './tiles'
 
 export default (props) => (

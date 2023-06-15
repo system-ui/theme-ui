@@ -2,10 +2,9 @@
  * @jest-environment jsdom
  */
 
-import React from 'react'
 import { renderJSON, render, waitFor } from '@theme-ui/test-utils'
 
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
 
 import { Box } from '..'
 
@@ -53,9 +52,9 @@ describe('Box', () => {
 
   test('renders with variant prop', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Box variant="boxes.beep" />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')
     expect(json).toHaveStyleRule('padding', '32px')
@@ -82,13 +81,13 @@ describe('Box', () => {
 
   test('renders with __themeKey variant', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Box
           // @ts-expect-error
           __themeKey="boxes"
           variant="beep"
         />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toHaveStyleRule('background-color', 'highlight')
     expect(json).toHaveStyleRule('padding', '32px')
@@ -98,9 +97,9 @@ describe('Box', () => {
 test('accepts ref', async () => {
   let ref: HTMLElement | null = null
   render(
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <Box ref={(r) => (ref = r)} />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   await waitFor(() => {
     expect(ref).toBeTruthy()

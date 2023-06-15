@@ -16,7 +16,7 @@ Create a theme object to include custom color, typography, and layout values.
 
 <IntroCodeSamples.ThemeCreation />
 
-Pass your `theme` object to `ThemeProvider`.
+Pass your `theme` object to `ThemeUIProvider`.
 
 <IntroCodeSamples.BasicUsage />
 
@@ -60,17 +60,6 @@ Confused about this `@jsxImportSource` comment? Read more about
 [JSX Pragma](/guides/jsx-pragma).
 
 </Note>
-
-### Classic JSX runtime
-
-If you use the classic JSX runtime, the `/** @jsxImportSource theme-ui */`
-comment has no effect. In this case enable the `sx` prop by adding the
-`/** @jsx jsx */` comment instead and importing `jsx` from Theme UI.
-
-```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-```
 
 ## Responsive styles
 

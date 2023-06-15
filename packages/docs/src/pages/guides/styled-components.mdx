@@ -14,14 +14,14 @@ use the Theme UI provider at your app’s root level.
 
 ```jsx
 /** @jsxImportSource theme-ui */
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import theme from './theme'
 import SomeComponent from './SomeComponent'
 
 export default (props) => (
-  <ThemeProvider theme={theme}>
+  <ThemeUIProvider theme={theme}>
     <SomeComponent />
-  </ThemeProvider>
+  </ThemeUIProvider>
 )
 ```
 

@@ -16,7 +16,7 @@ for Next.js.
 ```jsx
 import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 const theme = {
   colors: {
@@ -49,9 +49,9 @@ function Provider({ children, theme, components }) {
   )
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 }
 ```

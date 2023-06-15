@@ -4,7 +4,7 @@
 
 import { ThemeProvider } from '@theme-ui/core'
 import { AssertTrue, IsExact, render } from '@theme-ui/test-utils'
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 
 import { Switch, SwitchProps } from '../src'
 

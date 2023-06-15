@@ -1,4 +1,7 @@
 {
   "main": "dist/theme-ui-css-utils.cjs.js",
-  "module": "dist/theme-ui-css-utils.esm.js"
+  "module": "dist/theme-ui-css-utils.esm.js",
+  "browser": {
+    "./dist/theme-ui-css-utils.esm.js": "./dist/theme-ui-css-utils.browser.esm.js"
+  }
 }

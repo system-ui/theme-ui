@@ -1,9 +1,7 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx } from '@theme-ui/core'
 import { cleanup } from '@testing-library/react'
 import { render } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'

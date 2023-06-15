@@ -1,14 +1,13 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
+import { useThemeUI, __ThemeUIContext } from '@theme-ui/core'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'
 
-import { ThemeProvider } from '../src'
+import { ThemeUIProvider } from '../src'
 
 expect.extend(matchers)
 
@@ -16,16 +15,16 @@ afterEach(cleanup)
 
 test('renders', () => {
   const json = renderJSON(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(json).toMatchSnapshot()
 })
 
 test('renders with theme', () => {
   const json = renderJSON(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useCustomProperties: false,
@@ -38,14 +37,14 @@ test('renders with theme', () => {
       }}
     >
       <h1 sx={{ color: 'primary' }}>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(json).toHaveStyleRule('color', 'tomato')
 })
 
 test('renders global styles', () => {
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         fonts: {
           body: 'Georgia,serif',
@@ -66,7 +65,7 @@ test('renders global styles', () => {
       }}
     >
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 
   const style = window.getComputedStyle(root.baseElement.parentElement!)
@@ -77,9 +76,9 @@ test('renders global styles', () => {
 
 test('resets body margin', () => {
   const root = render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const style = window.getComputedStyle(root.baseElement)
   expect(style.margin).toBe('0px')
@@ -87,9 +86,9 @@ test('resets body margin', () => {
 
 test('does not render invalid global styles', () => {
   const root = render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const style = window.getComputedStyle(root.baseElement.parentElement!)
   expect(style.fontFamily).toBe('')
@@ -99,7 +98,7 @@ test('does not render invalid global styles', () => {
 
 test('does not render global styles', () => {
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useRootStyles: false,
@@ -121,7 +120,7 @@ test('does not render global styles', () => {
       }}
     >
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const style = window.getComputedStyle(root.baseElement)
   expect(style.fontFamily).toBe('')
@@ -131,9 +130,9 @@ test('does not render global styles', () => {
 
 test('adds box-sizing: border-box', () => {
   const root = render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const style = window.getComputedStyle(root.baseElement)
   expect(style.boxSizing).toBe('border-box')
@@ -145,7 +144,7 @@ test('does not add box-sizing: border-box', () => {
   )
   styles.forEach((style) => (style.innerHTML = ''))
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useBorderBox: false,
@@ -153,7 +152,7 @@ test('does not add box-sizing: border-box', () => {
       }}
     >
       <h1>Hello</h1>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const style = window.getComputedStyle(root.baseElement)
   expect(style.boxSizing).toBe('')
@@ -169,7 +168,7 @@ test('updates CSS Custom Properties on root element', async () => {
   }
 
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           // useCustomProperties defaults to `true`
@@ -183,7 +182,7 @@ test('updates CSS Custom Properties on root element', async () => {
       }}
     >
       <DarkModeButton />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 
   const html = root.baseElement.parentElement!

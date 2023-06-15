@@ -31,9 +31,6 @@
   <a href="https://github.com/system-ui/theme-ui/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/system-ui/theme-ui" alt="Contributors" />
   </a>
-  <a href="https://github.com/badges/shields/pulse" >
-    <img src="https://img.shields.io/github/commit-activity/m/system-ui/theme-ui" alt="Activity" />        
-  </a>
   <br />
   <a href="https://badgen.net/bundlephobia/minzip/theme-ui">
     <img
@@ -57,9 +54,6 @@
     <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
   </a>
   <br />
-  <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
-    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg?branch=stable" alt="Build Status" />
-  </a>
   <a href="https://dashboard.cypress.io/projects/fmfid1/runs">
     <img src="https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/fmfid1/stable&logo=cypress" alt="This project is using Cypress for end-to-end tests." />
   </a>
@@ -120,16 +114,16 @@ _If you don't need color modes or components you can install
 [**@theme-ui/core**](https://github.com/system-ui/theme-ui/tree/develop/packages/core)_.
 
 Any styles in your app can reference values from the global `theme` object. To
-provide the theme in context, wrap your application with the `ThemeProvider`
+provide the theme in context, wrap your application with the `ThemeUIProvider`
 component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import theme from './theme'
 
 export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+  <ThemeUIProvider theme={theme}>{props.children}</ThemeUIProvider>
 )
 ```
 

@@ -11,25 +11,24 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@mdx-js/react": "^2.0.0",
-    "gatsby": "^4.21.0",
+    "@mdx-js/react": "^2.3.0",
+    "gatsby": "^5",
     "gatsby-plugin-google-fonts": "^1.0.0",
-    "gatsby-plugin-mdx": "^4.0.0",
-    "gatsby-source-filesystem": "^4",
+    "gatsby-plugin-mdx": "^5",
+    "gatsby-source-filesystem": "^5.10.0",
     "lodash.merge": "^4.6.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react-dom": "^18",
     "theme-ui": "workspace:^",
     "theme-ui-typography": "^0.1.7",
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
     "@types/lodash.merge": "^4.6.7",
-    "@types/react": "^17.0.39",
+    "@types/react": "^18.2.12",
     "babel-eslint": "^10",
-    "eslint": "^8",
+    "eslint": "^8.42.0",
     "graphql": "^15",
-    "typescript": "^4"
+    "typescript": "^5"
   }
 }

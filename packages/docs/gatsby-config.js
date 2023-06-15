@@ -1,4 +1,6 @@
+const remarkGfm = require('remark-gfm-1')
 const remarkSlug = require('remark-slug')
+const { rehypeMetaAsAttributes } = require('./src/rehype-meta-props.cjs')
 
 module.exports = {
   siteMetadata: {
@@ -12,8 +14,18 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: ['.mdx', '.md'],
-        remarkPlugins: [remarkSlug],
+        extensions: ['mdx', 'md'],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm, remarkSlug],
+          rehypePlugins: [rehypeMetaAsAttributes],
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -31,12 +43,4 @@ module.exports = {
   },
   // https://www.gatsbyjs.com/docs/reference/release-notes/v4.7/#trailingslash-option
   trailingSlash: 'never', // We currently have duplicate Algolia results. This __may__ fix them.
-}
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [gatsbyNodeModules, 'node_modules'],
-    },
-  })
 }

@@ -75,15 +75,15 @@ See our [guide to color mode toggles](/guides/color-mode-toggles) for more.
 
 ## Applying page-wide colors
 
-The `ThemeProvider` component will automatically apply color mode styles (by setting `color` and `background-color`) to the
+The `ThemeUIProvider` component will automatically apply color mode styles (by setting `color` and `background-color`) to the
 `<html>` element.
 
 ```jsx
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import theme from './theme'
 
 export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+  <ThemeUIProvider theme={theme}>{props.children}</ThemeUIProvider>
 )
 ```
 
@@ -94,12 +94,12 @@ If you’d like to apply your theme color to the browser, [see our guide to the 
 ### Gatsby plugin
 
 For use in a Gatsby site, install and use `gatsby-plugin-theme-ui` to add the
-ThemeProvider to the root of your application. The plugin will also help prevent
-the flash of colors that can happen during page load when a user has a
+ThemeUIProvider to the root of your application. The plugin will also help
+prevent the flash of colors that can happen during page load when a user has a
 non-default color mode set.
 
 This plugin will look for a `src/gatsby-plugin-theme-ui/index.js` file to import
-and pass to the ThemeProvider.
+and pass to the ThemeUIProvider.
 
 See the [Gatsby plugin docs](/packages/gatsby-plugin) for more info & examples.
 

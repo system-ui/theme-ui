@@ -1,15 +1,16 @@
 /** @jsxImportSource theme-ui */
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { theme } from './theme'
 
 export const App = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeUIProvider theme={theme}>
     <h1
       sx={{
         color: 'primary',
         fontFamily: 'heading',
-      }}>
+      }}
+    >
       Hello
     </h1>
-  </ThemeProvider>
+  </ThemeUIProvider>
 )

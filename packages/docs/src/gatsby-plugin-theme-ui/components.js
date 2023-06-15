@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import code from '../components/code'
+import CodeBlock from '../components/code'
 import Note from '../components/note'
 
 const heading = (Tag) => (props) =>
@@ -14,7 +12,8 @@ const heading = (Tag) => (props) =>
           ':hover': {
             textDecoration: 'underline',
           },
-        }}>
+        }}
+      >
         {props.children}
       </a>
     </Tag>
@@ -23,8 +22,7 @@ const heading = (Tag) => (props) =>
   )
 
 const components = {
-  code,
-  pre: (props) => props.children,
+  pre: CodeBlock,
   h2: heading('h2'),
   h3: heading('h3'),
   h4: heading('h4'),

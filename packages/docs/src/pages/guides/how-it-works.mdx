@@ -19,39 +19,10 @@ Theme UI is built with:
 [mdx]: https://mdxjs.com
 [typography.js]: https://github.com/KyleAMathews/typography.js
 
-## ThemeProvider
+## ThemeUIProvider
 
-The Theme UI `ThemeProvider` component is a wrapper around MDX's `MDXProvider`,
-which adds custom React components to context, and Emotion's `ThemeProvider`,
-which adds the `theme` object to context for use with Emotion.
-
-The Theme UI `ThemeProvider` includes a default `components` object with styled
-components that pick up values from the `theme.styles` object. For example,
-`theme.styles.h1` will be used in its `components.h1` component and rendered in
-MDX documents.
-
-For illustrative purposes, the `ThemeProvider` renders something like the
-following:
-
-```jsx
-// for demonstration only – this does not reflect the actual source code
-import { MDXProvider } from '@mdx-js/react'
-import { ThemeProvider, useTheme } from '@emotion/react'
-
-const themeUIComponents = {
-  h1: (props) => <h1 css={useTheme().styles.h1} {...props} />,
-  h2: (props) => <h2 css={useTheme().styles.h2} {...props} />,
-  // ... other MDX components
-}
-
-export default ({ components, theme, children }) => (
-  <ThemeProvider theme={theme}>
-    <MDXProvider components={merge(themeUIComponents, components)}>
-      {children}
-    </MDXProvider>
-  </ThemeProvider>
-)
-```
+The Theme UI `ThemeUIProvider` component wraps Emotion's `ThemeProvider`, which
+adds the `theme` object to context for use with Emotion.
 
 ## Custom Components
 

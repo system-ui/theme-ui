@@ -6,11 +6,11 @@ Color manipulation utilities for Theme UI
 npm i @theme-ui/color
 ```
 
-Import utilities from the `@theme-ui/color` package and use them with colors in the `sx` prop.
+Import utilities from the `@theme-ui/color` package and use them with colors in
+the `sx` prop.
 
 ```js
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import { darken, lighten } from '@theme-ui/color'
 
 export default (props) => (
@@ -179,9 +179,12 @@ import { grayscale } from '@theme-ui/color'
 
 ## Advanced Usage
 
-If you want to do something more complex, such as setting up gradients, you can do that with some extra workarounds.
+If you want to do something more complex, such as setting up gradients, you can
+do that with some extra workarounds.
 
-We can take the result of any of the above helper functions (which return a function) and call it with the theme object to generate a string in place. This is useful for interpolating values into complex CSS declarations:
+We can take the result of any of the above helper functions (which return a
+function) and call it with the theme object to generate a string in place. This
+is useful for interpolating values into complex CSS declarations:
 
 ```jsx
 <MyComponentWithBackground

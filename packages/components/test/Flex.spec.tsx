@@ -2,17 +2,17 @@
  * @jest-environment jsdom
  */
 
-import React from 'react'
 import { render } from '@theme-ui/test-utils'
-import { Flex, ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
+import { Flex } from '../src/Flex'
 
 test('accepts ref', async () => {
   let ref: HTMLElement | null = null
 
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <Flex ref={(r) => (ref = r)} />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 
   expect(ref).toBeInstanceOf(HTMLDivElement)

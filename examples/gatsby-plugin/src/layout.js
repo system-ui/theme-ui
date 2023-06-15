@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Themed } from 'theme-ui'
+/** @jsxImportSource theme-ui */
+import { Themed } from 'theme-ui'
 
 const Layout = (props) => (
   <Themed.root>

@@ -1,11 +1,10 @@
 {
   "extends": "./tsconfig.options.json",
-  "include": ["./packages"],
+  "include": ["./packages/**/*"],
   "exclude": [
     "node_modules",
     "./packages/*/dist",
     "./packages/*/node_modules",
-    "./packages/*/test",
     "./packages/e2e"
   ]
 }

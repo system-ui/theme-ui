@@ -1,6 +1,5 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
 import renderer from 'react-test-renderer'
@@ -11,9 +10,8 @@ import packageInfo from '@emotion/react/package.json'
 
 import {
   ThemeUIContextValue,
-  jsx,
   Theme,
-  ThemeProvider,
+  ThemeUIProvider,
   useColorMode,
   useThemeUI,
 } from '../src'
@@ -51,7 +49,7 @@ test('renders with color modes', () => {
   renderer.act(() => {
     rendered = renderer
       .create(
-        <ThemeProvider
+        <ThemeUIProvider
           theme={{
             colors: {
               text: 'black',
@@ -64,7 +62,7 @@ test('renders with color modes', () => {
           }}
         >
           <Mode />
-        </ThemeProvider>
+        </ThemeUIProvider>
       )
       .toJSON()
   })
@@ -81,7 +79,7 @@ test('renders with initial color mode name', () => {
   }
   renderer.act(() => {
     renderer.create(
-      <ThemeProvider
+      <ThemeUIProvider
         theme={{
           config: {
             initialColorModeName: 'light',
@@ -94,7 +92,7 @@ test('renders with initial color mode name', () => {
         }}
       >
         <Mode />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
   })
   expect(mode).toBe('light')
@@ -115,9 +113,9 @@ test('useColorMode updates color mode state', () => {
     )
   }
   const tree = render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <Button />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const button = tree.getByText('test')
   fireEvent.click(button)
@@ -140,7 +138,7 @@ test('color mode is passed through theme context', () => {
     )
   }
   const tree = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useCustomProperties: false,
@@ -156,7 +154,7 @@ test('color mode is passed through theme context', () => {
       }}
     >
       <Button />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const button = tree.getByText('test')
   act(() => button.click())
@@ -174,7 +172,7 @@ test('converts color modes to css custom properties', () => {
     />
   )
   const tree = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         colors: {
           text: '#000',
@@ -187,7 +185,7 @@ test('converts color modes to css custom properties', () => {
       }}
     >
       <Box />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(tree.getByText('test')).toHaveStyleRule(
     'color',
@@ -203,9 +201,9 @@ test('uses default mode', () => {
     return <button children="test" />
   }
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <Button />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(mode).toBe(defaultColorMode)
 })
@@ -219,9 +217,9 @@ test('initializes mode based on localStorage', () => {
     return <button children="test" />
   }
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <Button />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(mode).toBe('dark')
 })
@@ -234,7 +232,7 @@ test('inherits color mode state from parent context', () => {
     return null
   }
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           initialColorModeName: 'outer',
@@ -246,7 +244,7 @@ test('inherits color mode state from parent context', () => {
         },
       }}
     >
-      <ThemeProvider
+      <ThemeUIProvider
         theme={{
           config: {
             initialColorModeName: 'inner',
@@ -254,8 +252,8 @@ test('inherits color mode state from parent context', () => {
         }}
       >
         <Consumer />
-      </ThemeProvider>
-    </ThemeProvider>
+      </ThemeUIProvider>
+    </ThemeUIProvider>
   )
   expect(mode).toBe('outer')
 })
@@ -268,9 +266,9 @@ test('retains initial context', () => {
   }
 
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <Consumer />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(typeof context).toBe('object')
   expect(context!.__EMOTION_VERSION__).toBe(emotionVersion)
@@ -290,7 +288,7 @@ test('initializes mode from prefers-color-scheme media query', () => {
     return null
   }
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useColorSchemeMediaQuery: true,
@@ -298,7 +296,7 @@ test('initializes mode from prefers-color-scheme media query', () => {
       }}
     >
       <Consumer />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(mode).toBe('dark')
 })
@@ -317,7 +315,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
     return null
   }
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useColorSchemeMediaQuery: true,
@@ -325,7 +323,7 @@ test('does not initialize mode from prefers-color-scheme media query', () => {
       }}
     >
       <Consumer />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(mode).toBe(defaultColorMode)
 })
@@ -345,7 +343,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
     return null
   }
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useColorSchemeMediaQuery: false,
@@ -353,7 +351,7 @@ test('does not initialize mode from prefers-color-scheme media query when useCol
       }}
     >
       <Consumer />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(mode).toBe(defaultColorMode)
 })
@@ -378,7 +376,7 @@ test('useThemeUI returns current color mode colors', () => {
     return null
   }
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useCustomProperties: false,
@@ -396,7 +394,7 @@ test('useThemeUI returns current color mode colors', () => {
       }}
     >
       <GetColors />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(colors!.text).toBe('black')
   expect(colors!.background).toBe('tomato')
@@ -404,7 +402,7 @@ test('useThemeUI returns current color mode colors', () => {
 
 test('warns when initialColorModeName matches a key in theme.colors.modes', () => {
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           initialColorModeName: 'dark',
@@ -441,7 +439,7 @@ test('dot notation works with color modes', () => {
     )
   }
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         config: {
           useCustomProperties: false,
@@ -461,7 +459,7 @@ test('dot notation works with color modes', () => {
       }}
     >
       <Button />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const button = root.getByText('test')
   act(() => button.click())
@@ -476,7 +474,7 @@ test('dot notation works with color modes and custom properties', () => {
         sx={{
           color: 'header.title',
         }}
-        onClick={(e) => {
+        onClick={() => {
           setMode('dark')
         }}
         children="test"
@@ -484,7 +482,7 @@ test('dot notation works with color modes and custom properties', () => {
     )
   }
   const root = render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         colors: {
           header: {
@@ -501,7 +499,7 @@ test('dot notation works with color modes and custom properties', () => {
       }}
     >
       <Button />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   const button = root.getByText('test')
   act(() => button.click())
@@ -523,7 +521,7 @@ test('raw color values are passed to theme-ui context when custom properties are
     return null
   }
   render(
-    <ThemeProvider
+    <ThemeUIProvider
       theme={{
         colors: {
           primary: 'tomato',
@@ -536,7 +534,7 @@ test('raw color values are passed to theme-ui context when custom properties are
       }}
     >
       <Grabber />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
   expect(color).toBe('tomato')
 })
@@ -563,9 +561,9 @@ test('warns when localStorage is disabled', () => {
   }
 
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <Consumer />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 
   expect(mode).toBe(undefined)

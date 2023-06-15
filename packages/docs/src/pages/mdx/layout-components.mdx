@@ -4,24 +4,24 @@ title: 'MDX Layout Components'
 
 # MDX Layout Components
 
-The `ThemeProvider` component can be nested within a parent `ThemeProvider`,
+The `ThemeUIProvider` component can be nested within a parent `ThemeUIProvider`,
 allowing you to contextually adjust styles in certain parts of a UI. This
 functionality can be leveraged to create custom layout components that take MDX
 content as children to create uniquely styled blocks of content. For example,
 this site's [landing page](/) uses this approach to style its content, which is
 written in MDX.
 
-As an example, create a new component with the `ThemeProvider` and a wrapping
+As an example, create a new component with the `ThemeUIProvider` and a wrapping
 `<div>`.
 
 ```jsx
 /** @jsxImportSource theme-ui */
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 export default (props) => (
-  <ThemeProvider theme={{}}>
+  <ThemeUIProvider theme={{}}>
     <div {...props} />
-  </ThemeProvider>
+  </ThemeUIProvider>
 )
 ```
 
@@ -30,10 +30,10 @@ To add styles to this component, augment the required `theme` prop and add an
 
 ```jsx filename=InvertedBanner.js
 /** @jsxImportSource theme-ui */
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 const InvertedBanner = (props) => (
-  <ThemeProvider
+  <ThemeUIProvider
     theme={{
       styles: {
         // style child elements
@@ -53,7 +53,7 @@ const InvertedBanner = (props) => (
         py: 4,
       }}
     />
-  </ThemeProvider>
+  </ThemeUIProvider>
 )
 
 export default InvertedBanner

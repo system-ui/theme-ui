@@ -1,26 +1,22 @@
 // @ts-check
 
-/** @typedef {import('ts-jest/dist/types')} */
-/** @type {import('@jest/types').Config.InitialOptions} */
-const config = {
-  preset: 'ts-jest/presets/js-with-ts',
+import type { JestConfigWithTsJest } from 'ts-jest'
+
+const config: JestConfigWithTsJest = {
+  preset: 'ts-jest',
   transform: {
     '^.+.tsx?$': [
       'ts-jest',
       {
-        isolatedModules: true,
-        tsconfig: {
-          tsconfig: './tsconfig.test.json',
-          useESM: true,
-          diagnostics: {
-            exclude: ['**'],
-          },
-        },
+        tsconfig: './tsconfig.test.json',
       },
     ],
     '^.+\\.m?jsx?$': '<rootDir>/jest-preprocess.js',
   },
-  testMatch: ['**/packages/**/test/*.{js,ts,tsx,mjs}'],
+  testMatch: [
+    '**/packages/**/test/*.{js,ts,tsx,mjs}',
+    '**/packages/*/src/**/*.spec.{js,ts,tsx,mjs}',
+  ],
   testPathIgnorePatterns: [
     '/node_modules/',
     '/fixtures/',
@@ -29,6 +25,7 @@ const config = {
     'tailwind.config.js',
     '/dist/',
     '/__test-utils__/',
+    '/node_modules/(?!(@babel/runtime|gatsby))',
   ],
   coverageReporters: ['lcov', 'text', 'html'],
   coverageProvider: 'v8',

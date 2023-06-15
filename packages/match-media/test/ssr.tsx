@@ -1,8 +1,7 @@
 /**
  * @jest-environment node
- * @jsx jsx
  */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { Fragment } from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
@@ -49,13 +48,13 @@ test('requires default index be in range', () => {
   }
   const Example = () =>
     ReactDOMServer.renderToStaticMarkup(
-      <ThemeProvider
+      <ThemeUIProvider
         theme={{
           breakpoints: ['30em', '45em', '55em'],
         }}
       >
         <Component />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
   expect(Example).toThrowError(RangeError)
 })

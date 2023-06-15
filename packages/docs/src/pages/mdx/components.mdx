@@ -12,7 +12,7 @@ To enrich components you’re passing to MDX context with styles defined in
 import { MDXProvider, useMDXComponents, MDXComponents } from '@mdx-js/react'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { h2, Note, TweetEmbed } from './components'
 
 const components: MDXComponents = {
@@ -35,9 +35,9 @@ function Provider({ children }: { children: React.ReactNode }) {
   )
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 }
 ```

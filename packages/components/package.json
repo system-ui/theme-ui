@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.15.8",
+  "version": "0.16.0-develop.4",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
   "types": "dist/theme-ui-components.cjs.d.ts",
@@ -11,19 +11,19 @@
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
     "@theme-ui/css": "workspace:^",
+    "@theme-ui/core": "workspace:^",
     "@types/styled-system": "^5.1.13"
   },
   "peerDependencies": {
-    "@emotion/react": "^11",
+    "@emotion/react": "^11.11.1",
+    "@theme-ui/theme-provider": "workspace:^",
     "react": ">=18"
   },
   "devDependencies": {
-    "react": "^18.1.0",
-    "@types/react": "^18",
-    "@babel/core": "^7",
-    "theme-ui": "workspace:^",
+    "@emotion/react": "^11.11.1",
     "@theme-ui/test-utils": "workspace:^",
-    "@theme-ui/core": "workspace:^"
+    "@types/react": "^18.2.12",
+    "react": "^18.1.0"
   },
   "publishConfig": {
     "access": "public"

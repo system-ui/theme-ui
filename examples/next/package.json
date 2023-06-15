@@ -12,20 +12,19 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11",
-    "@mdx-js/loader": "^2.1.2",
-    "@mdx-js/react": "^2.1.2",
-    "@next/mdx": "^12.0.7",
+    "@emotion/react": "^11.11.1",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.4.5",
     "@theme-ui/css": "workspace:^",
-    "next": "^12.1.0",
-    "react": "^18",
+    "next": "^13.4.5",
+    "react": "^18.1.0",
     "react-dom": "^18",
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "typescript": "^4",
-    "@babel/core": "^7",
-    "webpack": "^4",
-    "@types/react": "^18"
+    "@types/react": "^18.2.12",
+    "typescript": "^5",
+    "webpack": "^5.86.0"
   }
 }

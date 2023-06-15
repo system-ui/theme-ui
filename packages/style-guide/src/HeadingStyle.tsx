@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import TypeStyle, { TypeStyleProps } from './TypeStyle'
 
 export const HeadingStyle = (props: TypeStyleProps) => (

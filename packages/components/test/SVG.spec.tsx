@@ -4,16 +4,16 @@
 
 import React from 'react'
 import { render } from '@theme-ui/test-utils'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
 import { SVG } from '../src/SVG'
 
 test('accepts ref', async () => {
   let ref: SVGSVGElement | null = null
 
   render(
-    <ThemeProvider theme={{}}>
+    <ThemeUIProvider theme={{}}>
       <SVG ref={(r) => (ref = r)} />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 
   expect(ref).toBeInstanceOf(SVGSVGElement)

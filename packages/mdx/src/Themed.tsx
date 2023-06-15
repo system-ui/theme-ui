@@ -1,11 +1,9 @@
-/** @jsx jsx */
 import { jsx, SxProp } from '@theme-ui/core'
 import { css, get, Theme } from '@theme-ui/css'
 import {
   ComponentType,
   ReactNode,
   DetailedHTMLProps,
-  HTMLAttributes,
   ComponentProps,
 } from 'react'
 
@@ -46,7 +44,7 @@ const tags = [
   'root',
 ] as const
 
-export type ThemeUIMdxIntrinsics = typeof tags[number]
+export type ThemeUIMdxIntrinsics = (typeof tags)[number]
 
 const aliases = {
   inlineCode: 'code',

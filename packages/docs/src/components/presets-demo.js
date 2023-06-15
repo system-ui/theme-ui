@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx, ThemeProvider, Select } from 'theme-ui'
+import { ThemeUIProvider, Select } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
-import { MDXProvider } from '@mdx-js/react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import * as presets from '@theme-ui/presets'
@@ -16,7 +14,7 @@ import Components from './components.mdx'
 
 export default function PresetsDemo() {
   const [theme, setTheme] = useState('base')
-  const preset = presets[theme]   
+  const preset = presets[theme]
 
   return (
     <div>
@@ -57,7 +55,7 @@ export default function PresetsDemo() {
             ))}
           </Select>
         </label>
-        <ThemeProvider theme={preset}>
+        <ThemeUIProvider theme={preset}>
           <Themed.root sx={{ bg: 'background', color: 'text', p: 3 }}>
             <Themed.h2>Colors</Themed.h2>
             <ColorPalette omit={['modes', 'header']} />
@@ -89,11 +87,11 @@ export default function PresetsDemo() {
                 bg: 'muted',
                 border: 0,
                 borderRadius: 4,
-                color: 'text'
+                color: 'text',
               }}
             />
           </Themed.root>
-        </ThemeProvider>
+        </ThemeUIProvider>
       </div>
     </div>
   )

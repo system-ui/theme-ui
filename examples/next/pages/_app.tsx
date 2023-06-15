@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 import Header from '../components/Header'
 import { theme } from '../lib/theme'
@@ -11,7 +11,7 @@ import type { AppProps } from 'next/app'
  */
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <main
         sx={{
           border: '1px solid',
@@ -25,6 +25,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Header />
         <Component {...pageProps} />
       </main>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 }

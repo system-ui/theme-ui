@@ -23,7 +23,7 @@ import {
   MergeComponents as MergeMDXComponents,
 } from '@mdx-js/react'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
-import { ThemeProvider, Theme } from 'theme-ui'
+import { ThemeUIProvider, Theme } from 'theme-ui'
 
 interface MyProviderProps {
   theme: Theme
@@ -36,9 +36,9 @@ function MyProvider({ theme, components, children }: MyProviderProps) {
   )
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 }
 ```

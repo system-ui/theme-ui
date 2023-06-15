@@ -1202,11 +1202,11 @@ exports[`Select renders with style props 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-bottom: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 16px;
 }
 
 .emotion-1 {
