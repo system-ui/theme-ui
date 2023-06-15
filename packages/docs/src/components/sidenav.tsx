@@ -277,7 +277,7 @@ export const AccordionNav = forwardRef<HTMLDivElement, AccordionNavProps>(
                 <NavLinks
                   open={pathname.includes(href) || expanded[i]}
                   Link={Link}
-                  links={children}
+                  links={children!}
                 />
               </li>
             ))}

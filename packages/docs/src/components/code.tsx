@@ -48,7 +48,7 @@ const images = {
 
 const scope = {
   ...themeUI,
-  Link: (props) => {
+  Link: (props: Record<string, any>) => {
     if (props.activeClassName)
       return <span className={props.activeClassName} {...props} />
     return <span {...props} sx={{ cursor: 'pointer' }} />
@@ -57,20 +57,28 @@ const scope = {
   images,
 }
 
-const stripTrailingNewline = (str) => {
+const stripTrailingNewline = (str: string) => {
   if (typeof str === 'string' && str[str.length - 1] === '\n') {
     return str.slice(0, -1)
   }
   return str
 }
 
-const transformCode = (src) => {
+const transformCode = (src: string) => {
   return `<>${src}</>`
 }
 
 const liveTheme: PrismTheme = { plain: {}, styles: [] }
 
-export const LiveCode = ({ children, preview, xray }) => {
+export const LiveCode = ({
+  children,
+  preview,
+  xray,
+}: {
+  children: string
+  preview?: boolean
+  xray?: boolean
+}) => {
   const code = stripTrailingNewline(children)
 
   if (preview) {
@@ -96,8 +104,8 @@ export const LiveCode = ({ children, preview, xray }) => {
       <div
         sx={{
           p: 3,
-          variant: xray ? 'styles.xray' : null,
-          border: (t) => `1px solid ${t.colors.muted}`,
+          variant: xray ? 'styles.xray' : undefined,
+          border: (t) => `1px solid ${t.colors!.muted}`,
         }}
       >
         <LivePreview />
@@ -114,6 +122,7 @@ export const LiveCode = ({ children, preview, xray }) => {
       </div>
       <Themed.pre sx={{ p: 0, mt: 0, mb: 3 }}>
         <LiveEditor
+          // @ts-expect-error
           padding="1rem"
           style={{
             fontFamily: 'inherit',
@@ -134,10 +143,10 @@ type UsualCodeBlockProps = {
 type CodeBlockProps = LiveCodeBlockProps | UsualCodeBlockProps
 
 const CodeBlock = (props: CodeBlockProps) => {
-  if (typeof props.children === 'object') {
+  if (typeof props.children === 'object' && props.children) {
     props = {
       ...props,
-      ...props.children.props,
+      ...(props.children as any).props,
     }
   }
 
@@ -145,6 +154,7 @@ const CodeBlock = (props: CodeBlockProps) => {
     return (
       <LiveCode
         {...props}
+        // @ts-expect-error
         style={{
           fontFamily: 'Menlo',
         }}
