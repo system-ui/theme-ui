@@ -1,5 +1,6 @@
 const remarkGfm = require('remark-gfm-1')
 const remarkSlug = require('remark-slug')
+const { rehypeMetaAsAttributes } = require('./src/rehype-meta-props.cjs')
 
 module.exports = {
   siteMetadata: {
@@ -16,6 +17,7 @@ module.exports = {
         extensions: ['mdx', 'md'],
         mdxOptions: {
           remarkPlugins: [remarkGfm, remarkSlug],
+          rehypePlugins: [rehypeMetaAsAttributes],
         },
       },
     },

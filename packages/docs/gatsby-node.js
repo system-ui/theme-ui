@@ -1,6 +1,7 @@
 const presets = require('@theme-ui/presets')
 const fs = require('fs')
 const path = require('path')
+const { rehypeMetaAsAttributes } = require('./src/rehype-meta-props.cjs')
 
 const Preset = require.resolve('./src/templates/preset')
 
@@ -58,6 +59,7 @@ module.exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
                   require('remark-slug'),
                   require('remark-gfm-1'),
                 ],
+                rehypePlugins: [rehypeMetaAsAttributes],
               },
             },
           ],

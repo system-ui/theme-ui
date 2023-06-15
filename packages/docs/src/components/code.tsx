@@ -5,6 +5,7 @@ import Prism, { ThemeUIPrismProps } from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
 import { ComponentPropsWithoutRef } from 'react'
+import { PrismTheme } from 'prism-react-renderer'
 
 const posts = [
   {
@@ -67,7 +68,7 @@ const transformCode = (src) => {
   return `<>${src}</>`
 }
 
-const liveTheme = { styles: [] }
+const liveTheme: PrismTheme = { plain: {}, styles: [] }
 
 export const LiveCode = ({ children, preview, xray }) => {
   const code = stripTrailingNewline(children)
@@ -112,7 +113,12 @@ export const LiveCode = ({ children, preview, xray }) => {
         />
       </div>
       <Themed.pre sx={{ p: 0, mt: 0, mb: 3 }}>
-        <LiveEditor padding="1rem" />
+        <LiveEditor
+          padding="1rem"
+          style={{
+            fontFamily: 'inherit',
+          }}
+        />
       </Themed.pre>
     </LiveProvider>
   )
@@ -136,7 +142,14 @@ const CodeBlock = (props: CodeBlockProps) => {
   }
 
   if (props.live) {
-    return <LiveCode {...props} />
+    return (
+      <LiveCode
+        {...props}
+        style={{
+          fontFamily: 'Menlo',
+        }}
+      />
+    )
   } else {
     const { live: _, filename, ...rest } = props as UsualCodeBlockProps
     if (filename) {
