@@ -1,20 +1,18 @@
-// @ts-check
-// import React from 'react'
-// import { render, cleanup } from '@theme-ui/test-utils'
+// @ts-nocheck
 import { useThemeUI } from 'theme-ui'
-// import { WrapRootElement } from '../src/provider'
-// import { jest } from '@jest/globals'
-// import _theme from '../src'
+import { WrapRootElement } from '../src/provider'
+import { jest } from '@jest/globals'
+import _theme from '../src'
 
-// jest.unstable_mockModule('gatsby', () => ({
-//   graphql: jest.fn(),
-//   useStaticQuery: jest.fn(() => ({
-//     themeUiConfig: {
-//       preset: {},
-//       prismPreset: {},
-//     },
-//   })),
-// }))
+jest.unstable_mockModule('gatsby', () => ({
+  graphql: jest.fn(),
+  useStaticQuery: jest.fn(() => ({
+    themeUiConfig: {
+      preset: {},
+      prismPreset: {},
+    },
+  })),
+}))
 
 /** @type {import("theme-ui").Theme} */
 const theme = {}
@@ -22,9 +20,6 @@ const theme = {}
 let context
 
 afterEach(async () => {
-  const { cleanup } = await import('@theme-ui/test-utils')
-
-  cleanup()
   context = null
   delete theme.colors
   delete theme.config
