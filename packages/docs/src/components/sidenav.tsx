@@ -179,8 +179,7 @@ type NavLinksProps = {
   }) => JSX.Element
 }
 const NavLinks = ({ open, links, Link }: NavLinksProps) => {
-  if (!links) return null
-  if (!open) return null
+  if (!links || !open) return null
   return (
     <ul
       sx={{
@@ -275,9 +274,11 @@ export const AccordionNav = forwardRef<HTMLDivElement, AccordionNavProps>(
                     />
                   )}
                 </div>
-                {pathname.includes(href) && (
-                  <NavLinks open={expanded[i]} Link={Link} links={children} />
-                )}
+                <NavLinks
+                  open={pathname.includes(href) || expanded[i]}
+                  Link={Link}
+                  links={children}
+                />
               </li>
             ))}
           </ul>
