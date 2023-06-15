@@ -1,9 +1,7 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx } from '@theme-ui/core'
 import { Theme, ThemeUICSSObject } from '@theme-ui/css'
 import { ThemeUIProvider } from '@theme-ui/theme-provider'
 import { render } from '@theme-ui/test-utils'

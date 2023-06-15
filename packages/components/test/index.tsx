@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
 import {
   Card,
   Flex,

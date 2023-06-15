@@ -5,7 +5,7 @@
 // @ts-check
 
 import { jest } from '@jest/globals'
-import { useMDXComponents, MDXProvider } from '@mdx-js/react-v2'
+import { useMDXComponents, MDXProvider } from '@mdx-js/react'
 import { render } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 

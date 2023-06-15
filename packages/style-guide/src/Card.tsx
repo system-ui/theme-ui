@@ -1,9 +1,7 @@
-/** @jsx jsx */
 import { ComponentProps } from 'react'
-import { jsx } from 'theme-ui'
 
 export interface CardProps extends ComponentProps<'div'> {}
-export const Card: React.FC<CardProps> = props => (
+export const Card = (props: CardProps) => (
   <div
     {...props}
     sx={{

@@ -40,28 +40,6 @@ import { jsx, jsxs } from 'theme-ui/jsx-runtime'
 import { jsxDEV } from 'theme-ui/jsx-dev-runtime'
 ```
 
-### `jsx`
-
-The `jsx` export is a React create element function for the classic JSX runtime
-intended for use with a custom pragma comment. It adds support for the `sx` prop
-in the same way like the `/jsx-runtime` entrypoint.
-
-**Usage:**
-
-```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
-export default (props) => (
-  <div
-    {...props}
-    sx={{
-      color: 'primary',
-    }}
-  />
-)
-```
-
 ### `ThemeUIProvider`
 
 The `ThemeUIProvider` component is a wrapper around Emotion's `ThemeUIProvider`

@@ -1,9 +1,8 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx, useThemeUI, __ThemeUIContext } from '@theme-ui/core'
+import { useThemeUI, __ThemeUIContext } from '@theme-ui/core'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { renderJSON } from '@theme-ui/test-utils'

@@ -12,21 +12,20 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@emotion/react": "^11",
-    "gatsby": "^4.21.0",
-    "gatsby-plugin-mdx": "^4.0.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "@emotion/react": "^11.11.1",
+    "@mdx-js/react": "^2.3.0",
     "@theme-ui/mdx": "workspace:^",
-    "theme-ui": "workspace:^",
-    "@mdx-js/react": "^2",
-    "gatsby-source-filesystem": "latest"
+    "gatsby": "^5",
+    "gatsby-plugin-mdx": "^5",
+    "gatsby-source-filesystem": "latest",
+    "react": "^18.1.0",
+    "react-dom": "^18",
+    "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "@types/react": "^18",
-    "typescript": "^4",
-    "@babel/core": "^7.15.8",
+    "@types/react": "^18.2.12",
     "babel-eslint": "^10",
-    "graphql": "^15"
+    "graphql": "^15",
+    "typescript": "^5"
   }
 }

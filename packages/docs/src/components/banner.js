@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, ThemeUIProvider, Container } from 'theme-ui'
+import { ThemeUIProvider, Container } from 'theme-ui'
 
 export default (props) => (
   <ThemeUIProvider

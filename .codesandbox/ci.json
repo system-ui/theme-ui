@@ -3,5 +3,5 @@
   "buildCommand": "build",
   "packages": ["packages/theme-ui", "packages/core"],
   "sandboxes": ["/examples/next", "/examples/gatsby-plugin"],
-  "node": "16"
+  "node": "18"
 }

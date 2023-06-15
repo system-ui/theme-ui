@@ -1,4 +1,7 @@
-/** @jest-environment jsdom */
+/**
+ * @jest-environment jsdom
+ * @jsxImportSource react
+ */
 
 import React from 'react'
 import { cleanup } from '@testing-library/react'
@@ -32,14 +35,15 @@ describe('ThemeProvider', () => {
   test('warns when multiple versions of emotion are installed', () => {
     const restore = mockConsole()
     const _ = renderJSON(
-      <__ThemeUIContext.Provider
-        value={{
+      jsx(__ThemeUIContext.Provider, {
+        value: {
           __EMOTION_VERSION__: '9.0.0',
           theme: {},
-        }}
-      >
-        <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
-      </__ThemeUIContext.Provider>
+        },
+        children: (
+          <ThemeProvider theme={{}}>Conflicting versions</ThemeProvider>
+        ),
+      })
     )
     expect(console.warn).toBeCalled()
     restore()

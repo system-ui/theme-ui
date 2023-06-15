@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 export default ({ columns = 3, width, ...props }) => {
   const gridTemplateColumns = width

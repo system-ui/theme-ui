@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
 import React from 'react'
 
 import { IconButton, IconButtonProps } from './IconButton'

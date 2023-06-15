@@ -1,19 +1,25 @@
-/**
- * @jest-environment jsdom
- */
-import React from 'react'
-import { render, cleanup } from '@theme-ui/test-utils'
+// @ts-nocheck
 import { useThemeUI } from 'theme-ui'
 import { WrapRootElement } from '../src/provider'
-import _theme from '../src/index'
+import { jest } from '@jest/globals'
+import _theme from '../src'
+
+jest.unstable_mockModule('gatsby', () => ({
+  graphql: jest.fn(),
+  useStaticQuery: jest.fn(() => ({
+    themeUiConfig: {
+      preset: {},
+      prismPreset: {},
+    },
+  })),
+}))
 
 /** @type {import("theme-ui").Theme} */
-const theme = _theme
+const theme = {}
 
 let context
 
-afterEach(() => {
-  cleanup()
+afterEach(async () => {
   context = null
   delete theme.colors
   delete theme.config
@@ -21,7 +27,7 @@ afterEach(() => {
 
 const Consumer = () => {
   context = useThemeUI()
-  return false
+  return null
 }
 
 test('renders with theme context', () => {

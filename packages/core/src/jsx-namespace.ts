@@ -1,4 +1,5 @@
-import { SxProp } from './types'
+import type { SxProp } from './types'
+import type { JSX as ReactJSX } from 'react'
 
 type WithConditionalSxProp<P> = 'className' extends keyof P
   ? string extends P['className']
@@ -6,22 +7,12 @@ type WithConditionalSxProp<P> = 'className' extends keyof P
     : P
   : P
 
-type ReactJSXElement = JSX.Element
-type ReactJSXElementClass = JSX.ElementClass
-type ReactJSXElementAttributesProperty = JSX.ElementAttributesProperty
-type ReactJSXElementChildrenAttribute = JSX.ElementChildrenAttribute
-type ReactJSXLibraryManagedAttributes<C, P> = JSX.LibraryManagedAttributes<C, P>
-type ReactJSXIntrinsicAttributes = JSX.IntrinsicAttributes
-type ReactJSXIntrinsicClassAttributes<T> = JSX.IntrinsicClassAttributes<T>
-type ReactJSXIntrinsicElements = JSX.IntrinsicElements
-
 export declare namespace ThemeUIJSX {
-  export interface Element extends ReactJSXElement {}
-  export interface ElementClass extends ReactJSXElementClass {}
-  export interface ElementAttributesProperty
-    extends ReactJSXElementAttributesProperty {}
-  export interface ElementChildrenAttribute
-    extends ReactJSXElementChildrenAttribute {}
+  export type Element = ReactJSX.Element
+  export type ElementType = ReactJSX.ElementType
+  export type ElementClass = ReactJSX.ElementClass
+  export type ElementAttributesProperty = ReactJSX.ElementAttributesProperty
+  export type ElementChildrenAttribute = ReactJSX.ElementChildrenAttribute
   export type LibraryManagedAttributes<C, P> = WithConditionalSxProp<P> &
     // We are not removing incompatible `sx` props, because touching this breaks
     // inference in generic components.
@@ -30,12 +21,11 @@ export declare namespace ThemeUIJSX {
     // our own Field, react-hook-form, and a bunch of other generic components.
     // Don't touch ReactJSXLibraryManagedAttributes or you'll spend hours
     // debugging and entirely spoil your day.
-    ReactJSXLibraryManagedAttributes<C, P>
-  export interface IntrinsicAttributes extends ReactJSXIntrinsicAttributes {}
-  export interface IntrinsicClassAttributes<T>
-    extends ReactJSXIntrinsicClassAttributes<T> {}
+    ReactJSX.LibraryManagedAttributes<C, P>
+  export type IntrinsicAttributes = ReactJSX.IntrinsicAttributes
+  export type IntrinsicClassAttributes<T> = ReactJSX.IntrinsicClassAttributes<T>
   export type IntrinsicElements = {
-    [K in keyof ReactJSXIntrinsicElements]: ReactJSXIntrinsicElements[K] &
+    [K in keyof ReactJSX.IntrinsicElements]: ReactJSX.IntrinsicElements[K] &
       SxProp
   }
 }

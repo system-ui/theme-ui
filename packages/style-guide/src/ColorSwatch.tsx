@@ -1,7 +1,6 @@
-/** @jsx jsx */
 import { getColor } from '@theme-ui/color'
 import { ComponentProps } from 'react'
-import { jsx, ResponsiveStyleValue } from 'theme-ui'
+import { ResponsiveStyleValue } from 'theme-ui'
 import { toHex } from './color'
 import { useTheme } from './context'
 
@@ -33,7 +32,8 @@ export const ColorSwatch = ({
         <div
           sx={{
             py: 2,
-          }}>
+          }}
+        >
           {name || color}
         </div>
       )}

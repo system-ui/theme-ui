@@ -10,8 +10,9 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/presets": "workspace:^",
     "@theme-ui/color": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/presets": "workspace:^",
     "@types/color": "^3.0.3",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
@@ -21,8 +22,8 @@
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "react": "^18",
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
+    "react": "^18.1.0",
     "theme-ui": "workspace:^"
   },
   "publishConfig": {

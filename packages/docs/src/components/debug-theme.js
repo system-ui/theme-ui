@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { useThemeUI } from 'theme-ui'
 
 export default () => {
   const theme = useThemeUI()

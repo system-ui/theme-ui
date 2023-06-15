@@ -61,17 +61,6 @@ Confused about this `@jsxImportSource` comment? Read more about
 
 </Note>
 
-### Classic JSX runtime
-
-If you use the classic JSX runtime, the `/** @jsxImportSource theme-ui */`
-comment has no effect. In this case enable the `sx` prop by adding the
-`/** @jsx jsx */` comment instead and importing `jsx` from Theme UI.
-
-```jsx
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-```
-
 ## Responsive styles
 
 The `sx` prop also supports using arrays as values to change properties

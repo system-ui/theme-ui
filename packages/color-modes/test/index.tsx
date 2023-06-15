@@ -1,5 +1,4 @@
 /**
- * @jsx jsx
  * @jest-environment jsdom
  */
 import renderer from 'react-test-renderer'
@@ -7,12 +6,7 @@ import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { useTheme } from '@emotion/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import {
-  jsx,
-  ThemeProvider,
-  ThemeUIContextValue,
-  useThemeUI,
-} from '@theme-ui/core'
+import { ThemeProvider, ThemeUIContextValue, useThemeUI } from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
 import { Theme } from '@theme-ui/css'
 import { renderJSON } from '@theme-ui/test-utils'

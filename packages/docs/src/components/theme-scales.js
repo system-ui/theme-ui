@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import { scales, multiples } from '@theme-ui/css'
 import { Themed } from '@theme-ui/mdx'
 
@@ -45,7 +43,8 @@ export default (props) => {
                   <Themed.inlineCode>
                     {!!index && ', '}
                     <Themed.a
-                      href={`https://developer.mozilla.org/en-US/docs/Web/CSS/${property}`}>
+                      href={`https://developer.mozilla.org/en-US/docs/Web/CSS/${property}`}
+                    >
                       {property}
                     </Themed.a>
                   </Themed.inlineCode>

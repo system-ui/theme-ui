@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, get, useThemeUI } from 'theme-ui'
+import { get, useThemeUI } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import merge from 'deepmerge'
 import Logo from './logo'
@@ -150,17 +149,19 @@ const Graph = ({ width = 32, height = 9, scale = 32 }) => {
     }
   }, [])
 
-  const handleClick = ({ x, y }) => (e) => {
-    const i = get(state, [y, x].join('.'), 0)
-    const n = (i + 1) % colors.length
-    setState((s) =>
-      merge(s, {
-        [y]: {
-          [x]: n,
-        },
-      })
-    )
-  }
+  const handleClick =
+    ({ x, y }) =>
+    (e) => {
+      const i = get(state, [y, x].join('.'), 0)
+      const n = (i + 1) % colors.length
+      setState((s) =>
+        merge(s, {
+          [y]: {
+            [x]: n,
+          },
+        })
+      )
+    }
 
   const logo = {}
   logo.key = get(colors, get(state, '2.0'))
@@ -182,7 +183,8 @@ const Graph = ({ width = 32, height = 9, scale = 32 }) => {
         height: 'auto',
         overflow: 'visible',
         userSelect: 'none',
-      }}>
+      }}
+    >
       <rect width={width} height={height} fill="none" />
       {rows.map((row) =>
         row.map(({ x, y }) => (

@@ -1,4 +1,4 @@
-<!-- original from https://github.com/beerose/theme-ui-sketchy/blob/master/src/components/components.mdx -->
+{/* original from https://github.com/beerose/theme-ui-sketchy/blob/master/src/components/components.mdx */}
 
 import { useTheme } from '@emotion/react'
 import {
@@ -30,7 +30,7 @@ export const Radii = () => {
   const theme = useTheme()
   if (typeof theme.radii === 'object') {
     return (
-      <React.Fragment>
+      <>
         <Divider />
         <h2>Borders</h2>
         <Flex sx={{ flexWrap: 'wrap' }}>
@@ -45,12 +45,13 @@ export const Radii = () => {
                 border: '2px solid black',
                 borderRadius: { key },
                 minWidth: '100px',
-              }}>
+              }}
+            >
               {key}
             </Box>
           ))}
         </Flex>
-      </React.Fragment>
+      </>
     )
   }
   return null
@@ -64,7 +65,7 @@ export const Buttons = () => {
   const theme = useTheme()
   if (typeof theme.buttons === 'object') {
     return (
-      <React.Fragment>
+      <>
         <Divider />
         <h2>Buttons</h2>
         <Flex sx={{ flexWrap: 'wrap' }}>
@@ -74,7 +75,7 @@ export const Buttons = () => {
             </Button>
           ))}
         </Flex>
-      </React.Fragment>
+      </>
     )
   }
   return null
@@ -90,7 +91,8 @@ export const Buttons = () => {
   as="form"
   pb={3}
   onSubmit={(e) => e.preventDefault()}
-  sx={{ width: '100%', maxWidth: '500px' }}>
+  sx={{ width: '100%', maxWidth: '500px' }}
+>
   <Label htmlFor="username">Username</Label>
   <Input id="username" mb={3} />
   <Label htmlFor="password">Password</Label>
@@ -135,7 +137,7 @@ export const Badges = () => {
   const theme = useTheme()
   if (typeof theme.badges === 'object') {
     return (
-      <React.Fragment>
+      <>
         <Divider />
         <h2>Badges</h2>
         <Flex sx={{ flexWrap: 'wrap' }}>
@@ -145,7 +147,7 @@ export const Badges = () => {
             </Badge>
           ))}
         </Flex>
-      </React.Fragment>
+      </>
     )
   }
   return null
@@ -157,7 +159,7 @@ export const Alerts = () => {
   const theme = useTheme()
   if (typeof theme.alerts === 'object') {
     return (
-      <React.Fragment>
+      <>
         <Divider />
         <h2>Alerts</h2>
         <Flex sx={{ flexDirection: 'column' }}>
@@ -167,7 +169,7 @@ export const Alerts = () => {
             </Alert>
           ))}
         </Flex>
-      </React.Fragment>
+      </>
     )
   }
   return null
@@ -220,7 +222,8 @@ export const Alerts = () => {
   sx={{
     maxWidth: 400,
     padding: '30px',
-  }}>
+  }}
+>
   <Paragraph>
     Cupcake ipsum dolor sit amet chocolate bar. Apple pie macaroon muffin jelly
     candy cake soufflé muffin croissant. Gummies jelly beans cotton candy

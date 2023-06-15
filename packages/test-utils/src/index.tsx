@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import * as React from 'react'
 import { render } from '@testing-library/react'
 import renderer from 'react-test-renderer'
@@ -87,7 +88,8 @@ export const expecter = (
       esModuleInterop: true,
       moduleResolution: 'node',
       strict: true,
-      jsx: 'react',
+      jsx: 'react-jsx',
+      jsxImportSource: '@theme-ui/core',
       isolatedModules: true,
 
       // for better error message snapshots
@@ -102,8 +104,7 @@ export const expecter = (
         ${
           options.jsx
             ? `
-            /** @jsx jsx **/
-            import { jsx } from './packages/theme-ui'
+            /** @jsxImportSource @theme-ui/core **/
           `
             : ''
         }

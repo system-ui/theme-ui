@@ -316,10 +316,6 @@ const theme = {
     },
     code: {
       fontFamily: 'monospace',
-      fontSize: 1,
-    },
-    inlineCode: {
-      fontFamily: 'monospace',
       color: 'secondary',
       bg: 'muted',
     },

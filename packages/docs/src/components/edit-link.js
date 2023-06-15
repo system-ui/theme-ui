@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { Location } from '@reach/router'
 import { jsx } from 'theme-ui'
 
@@ -33,7 +32,8 @@ export const EditLink = ({ base, children, ...props }) => (
             color: 'inherit',
             fontSize: 1,
             my: 4,
-          }}>
+          }}
+        >
           {children}
         </a>
       )

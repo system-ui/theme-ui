@@ -1,7 +1,6 @@
 /** @jest-environment node */
-/** @jsx jsx */
 import { renderToString } from 'react-dom/server'
-import { jsx, ThemeUIProvider, useColorMode } from '../src'
+import { ThemeUIProvider, useColorMode } from '../src'
 
 test('does not initialize mode based on localStorage', () => {
   let mode

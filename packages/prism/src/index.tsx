@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import { jsx } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 
 const aliases: Record<string, Language | undefined> = {
@@ -102,11 +100,20 @@ export default function ThemeUIPrism({
     return isStartEndHighlighted(index) || isInlineHighlighted(line)
   }
 
+  const code =
+    typeof children === 'string'
+      ? children.trim()
+      : typeof children === 'object' &&
+        'props' in children &&
+        typeof (children as any).props.children === 'string'
+      ? (children as any).props.children.trim()
+      : ''
+
   return (
     <Highlight
       {...defaultProps}
       {...props}
-      code={children.trim()}
+      code={code}
       language={lang as Language}
       theme={undefined}
     >

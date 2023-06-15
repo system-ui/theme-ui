@@ -1,6 +1,5 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
 import renderer from 'react-test-renderer'
@@ -11,7 +10,6 @@ import packageInfo from '@emotion/react/package.json'
 
 import {
   ThemeUIContextValue,
-  jsx,
   Theme,
   ThemeUIProvider,
   useColorMode,

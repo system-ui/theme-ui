@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
-import React from 'react'
 import { render } from '@theme-ui/test-utils'
-import { Flex, ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
+import { Flex } from '../src/Flex'
 
 test('accepts ref', async () => {
   let ref: HTMLElement | null = null

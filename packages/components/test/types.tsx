@@ -1,6 +1,6 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { expecter, AssertTrue, IsExact } from '@theme-ui/test-utils'
+/** @jsxRuntime automatic */
+/** @jsxImportSource @theme-ui/core */
+import { AssertTrue, IsExact } from '@theme-ui/test-utils'
 
 import {
   Alert,

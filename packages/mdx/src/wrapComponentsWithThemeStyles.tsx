@@ -7,9 +7,8 @@ function wrapComponent(
   value: ComponentType<any> | string,
   key: string
 ): ThemedComponent<string> {
-  const component: ThemedComponent<string> = (props) => {
-    return jsx(value, { ...props, css: themed(key) })
-  }
+  const component: ThemedComponent<string> = (props) =>
+    jsx(value, { ...props, css: themed(key) })
 
   component.displayName = "MdxComponents('" + key + "')"
   return component
