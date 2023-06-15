@@ -8,3 +8,6 @@ dist
 coverage
 examples/next/.next
 docs/src/pages/index.mdx
+
+# Prettier doesn't know how to format MDX2 and makes silly mistakes.
+*.mdx

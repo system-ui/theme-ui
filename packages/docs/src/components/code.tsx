@@ -1,9 +1,10 @@
 // @ts-check
 import { Text } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
-import Prism from '@theme-ui/prism'
+import Prism, { ThemeUIPrismProps } from '@theme-ui/prism'
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live'
 import * as themeUI from 'theme-ui'
+import { ComponentPropsWithoutRef } from 'react'
 
 const posts = [
   {
@@ -117,38 +118,50 @@ export const LiveCode = ({ children, preview, xray }) => {
   )
 }
 
-/**
- * @param {{
- *   live?: boolean;
- *   filename?: string;
- * } | import("react").ComponentProps<typeof LiveCode>
- *   | import('@theme-ui/prism').ThemeUIPrismProps} props
- */
-const CodeBlock = (props) => {
+type LiveCodeBlockProps = {
+  live: true
+} & ComponentPropsWithoutRef<typeof LiveCode>
+type UsualCodeBlockProps = {
+  live?: false
+  filename?: string
+} & ThemeUIPrismProps
+type CodeBlockProps = LiveCodeBlockProps | UsualCodeBlockProps
+
+const CodeBlock = (props: CodeBlockProps) => {
+  if (typeof props.children === 'object') {
+    props = {
+      ...props,
+      ...props.children.props,
+    }
+  }
+
   if (props.live) {
     return <LiveCode {...props} />
+  } else {
+    const { live: _, filename, ...rest } = props as UsualCodeBlockProps
+    if (filename) {
+      return (
+        <section>
+          <Text
+            as="span"
+            sx={{
+              display: 'block',
+              bg: 'gray',
+              color: 'background',
+              px: 3,
+              py: 2,
+              fontWeight: 'bold',
+            }}
+          >
+            {filename}
+          </Text>
+          <Prism {...rest} sx={{ mt: 0 }} />
+        </section>
+      )
+    } else {
+      return <Prism {...rest} />
+    }
   }
-  if (props.filename) {
-    return (
-      <section>
-        <Text
-          as="span"
-          sx={{
-            display: 'block',
-            bg: 'gray',
-            color: 'background',
-            px: 3,
-            py: 2,
-            fontWeight: 'bold',
-          }}
-        >
-          {props.filename}
-        </Text>
-        <Prism {...props} sx={{ mt: 0 }} />
-      </section>
-    )
-  }
-  return <Prism {...props} />
 }
 
 export default CodeBlock
