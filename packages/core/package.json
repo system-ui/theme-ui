@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@theme-ui/css": "workspace:^",
-    "deepmerge": "^4.2.2"
+    "deepmerge": "^4.3.1"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
