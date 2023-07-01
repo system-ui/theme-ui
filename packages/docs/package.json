@@ -42,7 +42,7 @@
     "copy-to-clipboard": "^3.3.3",
     "deepmerge": "^4.2.2",
     "gatsby": "^5",
-    "gatsby-plugin-catch-links": "^5.10.0",
+    "gatsby-plugin-catch-links": "^5.11.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.1",
     "gatsby-plugin-mdx": "^5",
     "gatsby-plugin-pnpm": "^1.2.10",
