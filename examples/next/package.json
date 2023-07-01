@@ -25,6 +25,6 @@
   "devDependencies": {
     "@types/react": "^18.2.12",
     "typescript": "^5",
-    "webpack": "^5.86.0"
+    "webpack": "^5.88.1"
   }
 }
