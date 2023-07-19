@@ -1,8 +1,15 @@
 <p align="center">
   <img
-    src="/packages/docs/static/logo.svg"
+    src="/packages/docs/static/logo-dark.png#gh-dark-mode-only"
     width="96"
     height="96"
+    alt="Theme UI logo"
+  />
+  <img
+    src="/packages/docs/static/logo.png#gh-light-mode-only"
+    width="96"
+    height="96"
+    alt="Theme UI logo"
   />
 </p>
 
