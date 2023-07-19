@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="/packages/docs/static/logo.png"
+    src="/packages/docs/static/logo.svg"
     width="96"
     height="96"
   />
