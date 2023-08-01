@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-theme-ui",
-  "version": "0.16.0-develop.4",
+  "version": "0.16.1-develop.0",
   "main": "dist/gatsby-plugin-theme-ui.cjs.js",
   "module": "dist/gatsby-plugin-theme-ui.esm.js",
   "browser": {
