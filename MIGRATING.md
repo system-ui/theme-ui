@@ -1,5 +1,29 @@
 # Migration Guides
 
+## v0.16
+
+**🔥 Breaking:** Theme UI now supports and **depends on** TypeScript newer than
+5.1.2 (because of breaking changes to JSX types, see
+https://github.com/system-ui/theme-ui/issues/2430#issuecomment-1586197881).
+
+- Update `@types/react` to a version published after June 1, 2023.
+- JSX Automatic Runtime is highly encouraged to minimize the friction and ensure
+  you don't get weird type errors.
+
+**`@theme-ui/sidenav` package was removed due to low usage and breaking changes
+in `@types/react`.**
+
+- Deps bumps for 0.16.0, support only new React and TypeScript to avoid type
+  errors [#2432](https://github.com/system-ui/theme-ui/pull/2432)
+  ([@hasparus](https://github.com/hasparus))
+
+**`ThemeProvider` was renamed to `ThemeUIProvider`**
+
+- Deprecate/rename ThemeProvider to ThemeUIProvider
+  [#2360](https://github.com/system-ui/theme-ui/pull/2360)
+  ([@lachlanjc](https://github.com/lachlanjc)
+  [@hasparus](https://github.com/hasparus))
+
 ## v0.15
 
 **MDX is now opt-in.**
