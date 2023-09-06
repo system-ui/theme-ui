@@ -65,7 +65,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   React.useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
-        '[theme-ui] The export ThemeUIProvider is deprecated and is now called ThemeProvider to reduce confusion with Emotion. Please update your import; ThemeUIProvider will be removed in a future version.'
+        '[theme-ui] The export ThemeProvider is deprecated and is now called ThemeUIProvider to reduce confusion with Emotion. Please update your import; ThemeProvider will be removed in a future version.'
       )
     }
   }, [])
