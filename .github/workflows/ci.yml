@@ -105,6 +105,7 @@ jobs:
         # continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: pnpm release
 
       - name: Check published prerelease
