@@ -19,7 +19,7 @@ import packageJson from '../package.json' assert { type: 'json' }
 
   if (checkStatus() === 'clear') process.exit(0)
 
-  commitAndPush({ version, branch })
+  commitAndPush({ version })
   publishToNPM({
     tag:
       branch === PRODUCTION_BRANCH
@@ -79,14 +79,14 @@ function getVersion(packageJson) {
 }
 
 /**
- * @param {{ version: string, branch: string }} params
+ * @param {{ version: string }} params
  */
-function commitAndPush({ version, branch }) {
+function commitAndPush({ version }) {
   exec(`
     git config user.name 'Piotr Monwid-Olechnowicz'
     git config user.email 'hasparus@gmail.com'
     git commit -am "Bump versions to: ${version} [skip ci]"
-    git push origin HEAD:${branch}
+    git push
   `)
 }
 
