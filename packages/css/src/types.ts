@@ -32,7 +32,9 @@ export interface CSSProperties
 /**
  * Map of all CSS pseudo selectors (`:hover`, `:focus`, ...)
  */
-export type CSSPseudoSelectorProps = { [K in CSS.Pseudos]?: ThemeUIStyleObject }
+export type CSSPseudoSelectorProps<TTheme> = {
+  [K in CSS.Pseudos]?: ThemeUIStyleObject<TTheme>
+}
 
 interface AliasesCSSProperties {
   /**
@@ -437,10 +439,10 @@ export interface ThemeUIExtendedCSSProperties
 
 type ThemeUIStyleValue<T> = ResponsiveStyleValue<T | ObjectWithDefault<T> | T[]>
 
-export type StylePropertyValue<T> =
+export type StylePropertyValue<T, TTheme extends Theme = Theme> =
   | ThemeUIStyleValue<Exclude<T, undefined>>
-  | ((theme: Theme) => ThemeUIStyleValue<Exclude<T, undefined>> | undefined)
-  | ThemeUIStyleObject
+  | ((theme: TTheme) => ThemeUIStyleValue<Exclude<T, undefined>> | undefined)
+  | ThemeUIStyleObject<TTheme>
   | ThemeUIEmpty
 
 export type ThemeUICSSProperties = {
@@ -474,8 +476,8 @@ export interface VariantProperty {
   variant?: string
 }
 
-export interface ThemeDerivedStyles {
-  (theme: Theme): ThemeUICSSObject
+export interface ThemeDerivedStyles<TTheme = Theme> {
+  (theme: TTheme): ThemeUICSSObject
 }
 
 export interface Label {
@@ -497,7 +499,7 @@ export interface CSSOthersObject {
 
 export interface ThemeUICSSObject
   extends ThemeUICSSProperties,
-    CSSPseudoSelectorProps,
+    CSSPseudoSelectorProps<Theme>,
     CSSOthersObject,
     VariantProperty,
     Label {}
@@ -507,7 +509,9 @@ export interface ThemeUICSSObject
  * such that properties that are part of the `Theme` will be transformed to
  * their corresponding values. Other valid CSS properties are also allowed.
  */
-export type ThemeUIStyleObject = ThemeUICSSObject | ThemeDerivedStyles
+export type ThemeUIStyleObject<TTheme = Theme> =
+  | ThemeUICSSObject
+  | ThemeDerivedStyles<TTheme>
 
 export type TLengthStyledSystem = string | 0 | number
 
@@ -565,7 +569,7 @@ export interface ColorMode extends ScaleDict<CSS.Property.Color> {
   text?: ColorOrNestedColorScale
 
   /**
-   * Primary brand color for links, buttons, etc.
+   * Primary brand coloThr for links, buttons, etc.
    */
   primary?: ColorOrNestedColorScale
 
@@ -601,40 +605,40 @@ export type ColorModesScale = ColorMode & {
   }
 }
 
-export interface ThemeStyles {
-  tr?: ThemeUIStyleObject
-  th?: ThemeUIStyleObject
-  td?: ThemeUIStyleObject
-  em?: ThemeUIStyleObject
-  strong?: ThemeUIStyleObject
-  div?: ThemeUIStyleObject
-  p?: ThemeUIStyleObject
-  b?: ThemeUIStyleObject
-  i?: ThemeUIStyleObject
-  a?: ThemeUIStyleObject
-  h1?: ThemeUIStyleObject
-  h2?: ThemeUIStyleObject
-  h3?: ThemeUIStyleObject
-  h4?: ThemeUIStyleObject
-  h5?: ThemeUIStyleObject
-  h6?: ThemeUIStyleObject
-  img?: ThemeUIStyleObject
-  pre?: ThemeUIStyleObject
-  code?: ThemeUIStyleObject
-  ol?: ThemeUIStyleObject
-  ul?: ThemeUIStyleObject
-  li?: ThemeUIStyleObject
-  blockquote?: ThemeUIStyleObject
-  hr?: ThemeUIStyleObject
-  table?: ThemeUIStyleObject
-  delete?: ThemeUIStyleObject
-  inlineCode?: ThemeUIStyleObject
-  thematicBreak?: ThemeUIStyleObject
-  root?: ThemeUIStyleObject
-  [key: string]: ThemeUIStyleObject | undefined
+export interface ThemeStyles<TTheme = Theme> {
+  tr?: ThemeUIStyleObject<TTheme>
+  th?: ThemeUIStyleObject<TTheme>
+  td?: ThemeUIStyleObject<TTheme>
+  em?: ThemeUIStyleObject<TTheme>
+  strong?: ThemeUIStyleObject<TTheme>
+  div?: ThemeUIStyleObject<TTheme>
+  p?: ThemeUIStyleObject<TTheme>
+  b?: ThemeUIStyleObject<TTheme>
+  i?: ThemeUIStyleObject<TTheme>
+  a?: ThemeUIStyleObject<TTheme>
+  h1?: ThemeUIStyleObject<TTheme>
+  h2?: ThemeUIStyleObject<TTheme>
+  h3?: ThemeUIStyleObject<TTheme>
+  h4?: ThemeUIStyleObject<TTheme>
+  h5?: ThemeUIStyleObject<TTheme>
+  h6?: ThemeUIStyleObject<TTheme>
+  img?: ThemeUIStyleObject<TTheme>
+  pre?: ThemeUIStyleObject<TTheme>
+  code?: ThemeUIStyleObject<TTheme>
+  ol?: ThemeUIStyleObject<TTheme>
+  ul?: ThemeUIStyleObject<TTheme>
+  li?: ThemeUIStyleObject<TTheme>
+  blockquote?: ThemeUIStyleObject<TTheme>
+  hr?: ThemeUIStyleObject<TTheme>
+  table?: ThemeUIStyleObject<TTheme>
+  delete?: ThemeUIStyleObject<TTheme>
+  inlineCode?: ThemeUIStyleObject<TTheme>
+  thematicBreak?: ThemeUIStyleObject<TTheme>
+  root?: ThemeUIStyleObject<TTheme>
+  [key: string]: ThemeUIStyleObject<TTheme> | undefined
 }
 
-export interface Theme {
+export interface Theme<TTheme = {}> {
   breakpoints?: Array<string>
   mediaQueries?: { [size: string]: string }
   space?: Scale<CSS.Property.Margin<number | string>>
@@ -742,7 +746,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/grid#variants
    */
-  grids?: Record<string, ThemeUIStyleObject>
+  grids?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Button variants can be defined in the `theme.buttons` object. The `Button`
@@ -752,7 +756,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/button#variants
    */
-  buttons?: Record<string, ThemeUIStyleObject>
+  buttons?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Text style variants can be defined in the `theme.text` object. The `Text`
@@ -762,7 +766,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/text#variants
    */
-  text?: Record<string, ThemeUIStyleObject>
+  text?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Link variants can be defined in the `theme.links` object. By default the
@@ -772,7 +776,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/link#variants
    */
-  links?: Record<string, ThemeUIStyleObject>
+  links?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Image style variants can be defined in the `theme.images` object.
@@ -781,7 +785,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/image#variants
    */
-  images?: Record<string, ThemeUIStyleObject>
+  images?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Card style variants can be defined in `the theme.cards` object. By default
@@ -791,7 +795,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/card#variants
    */
-  cards?: Record<string, ThemeUIStyleObject>
+  cards?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Container variants can be defined in the `theme.layout` object. The
@@ -802,7 +806,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/container#variants
    */
-  layout?: Record<string, ThemeUIStyleObject>
+  layout?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Label variants can be defined in `theme.forms` and the component uses the
@@ -836,7 +840,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/checkbox#variants
    * @see https://theme-ui.com/components/slider#variants
    */
-  forms?: Record<string, ThemeUIStyleObject>
+  forms?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Badge variants can be defined in `theme.badges`. The `Badge` component uses
@@ -846,7 +850,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/badge#variants
    */
-  badges?: Record<string, ThemeUIStyleObject>
+  badges?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Alert variants can be defined in `theme.alerts`. The `Alert` component uses
@@ -856,7 +860,7 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/alert#variants
    */
-  alerts?: Record<string, ThemeUIStyleObject>
+  alerts?: Record<string, ThemeUIStyleObject<TTheme>>
 
   /**
    * Message variants can be defined in the `theme.messages` object.
@@ -865,5 +869,5 @@ export interface Theme {
    * @see https://theme-ui.com/components/variants
    * @see https://theme-ui.com/components/message#variants
    */
-  messages?: Record<string, ThemeUIStyleObject>
+  messages?: Record<string, ThemeUIStyleObject<TTheme>>
 }

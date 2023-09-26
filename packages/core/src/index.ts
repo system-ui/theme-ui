@@ -23,7 +23,6 @@ export type {
   Scale,
   StylePropertyValue,
   TLengthStyledSystem,
-  Theme,
   ThemeDerivedStyles,
   ThemeStyles,
   ThemeUICSSObject,

@@ -59,7 +59,7 @@ describe('Theme', () => {
           return get(t, 'sizes.5')
         }
       })
-    `).toInfer('theme', 'Theme')
+    `).toInfer('theme', 'Theme<{}>')
   })
 
   test('accepts additional properties by declaration merging', () => {

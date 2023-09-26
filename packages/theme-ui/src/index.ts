@@ -1,5 +1,6 @@
 import { jsx as coreJsx } from '@theme-ui/core'
 import type { ThemeUIJSX, ThemeUIStyleObject } from '@theme-ui/core'
+import type { Theme } from '@theme-ui/core'
 
 export {
   __ThemeUIContext,
@@ -19,11 +20,12 @@ export type {
   ThemeUICSSProperties,
   ThemeUIStyleObject,
   ThemeUICSSObject,
-  Theme,
   ThemeStyles,
   TLengthStyledSystem,
   StylePropertyValue,
 } from '@theme-ui/core'
+export type { Theme } from '@theme-ui/core'
+
 export { useColorMode, InitializeColorMode } from '@theme-ui/color-modes'
 export { ThemeUIProvider, ThemeProvider } from '@theme-ui/theme-provider'
 export { default as Global } from '@theme-ui/global'
@@ -31,7 +33,7 @@ export * from '@theme-ui/components'
 export { css, get } from '@theme-ui/css'
 
 export const BaseStyles = (
-  props: Record<string, unknown> & { sx?: ThemeUIStyleObject }
+  props: Record<string, unknown> & { sx?: ThemeUIStyleObject<Theme> }
 ): JSX.Element =>
   jsx('div', {
     ...props,

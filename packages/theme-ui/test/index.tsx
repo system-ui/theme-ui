@@ -108,7 +108,7 @@ test('functional themes can be used at the top level', () => {
       jsx(
         ThemeUIProvider,
         {
-          theme: (_): Theme => ({
+          theme: (_) => ({
             config: {
               useCustomProperties: false,
             },

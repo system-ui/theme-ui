@@ -304,9 +304,12 @@ const transforms = [
 )
 
 const responsive =
-  (styles: Exclude<ThemeUIStyleObject, ThemeDerivedStyles>) =>
+  (styles: Exclude<ThemeUIStyleObject<Theme>, ThemeDerivedStyles<Theme>>) =>
   (theme?: Theme) => {
-    const next: Exclude<ThemeUIStyleObject, ThemeDerivedStyles> = {}
+    const next: Exclude<
+      ThemeUIStyleObject<Theme>,
+      ThemeDerivedStyles<Theme>
+    > = {}
     const breakpoints =
       (theme && (theme.breakpoints as string[])) || defaultBreakpoints
     const mediaQueries = [
@@ -347,12 +350,12 @@ const responsive =
 type CssPropsArgument = { theme: Theme } | Theme
 
 export const css =
-  (args: ThemeUIStyleObject = {}) =>
+  <TTheme extends Theme<{}>>(args: ThemeUIStyleObject<TTheme> = {}) =>
   (props: CssPropsArgument = {}): CSSObject => {
-    const theme: Theme = {
+    const theme = {
       ...defaultTheme,
       ...('theme' in props ? props.theme : props),
-    }
+    } as TTheme
     // insert variant props before responsive styles, so they can be merged
     // we need to maintain order of the style props, so if a variant is place in the middle
     // of other props, it will extends its props at that same location order.

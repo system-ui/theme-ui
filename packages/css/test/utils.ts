@@ -26,7 +26,7 @@ describe(makeTheme, () => {
     expecter('import { makeTheme } from "./packages/css/utils"', {
       jsx: false,
     })('const t = makeTheme("banana")').toFail(
-      /Type '"banana"' has no properties in common with type 'Theme'./
+      /Type '"banana"' has no properties in common with type 'Theme<{}>'./
     )
   })
 })
