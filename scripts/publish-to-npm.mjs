@@ -68,6 +68,8 @@ function getVersion(packageJson) {
     .trim()
     .slice(1) // remove leading "v"
 
+  console.log('Latest tag version:', latestTagVersion)
+  console.log('Root package.json version:', packageJson.version)
   const version = semver.gt(packageJson.version, latestTagVersion)
     ? packageJson.version
     : latestTagVersion
