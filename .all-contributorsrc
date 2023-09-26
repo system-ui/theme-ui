@@ -35,7 +35,8 @@
         "code",
         "doc",
         "test",
-        "review"
+        "review",
+        "example"
       ]
     },
     {
@@ -1179,6 +1180,16 @@
       "profile": "https://github.com/JustinotherGitter",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "dev-cj",
+      "name": "CJ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47112778?v=4",
+      "profile": "https://devcj.in/",
+      "contributions": [
+        "doc",
+        "code"
       ]
     }
   ]

@@ -1,3 +1,71 @@
+# v0.16.1 (Thu Sep 07 2023)
+
+#### 🐛 Bug Fix
+
+- fix: ThemeProvider warning message ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Add missing migration notes on 0.16 to docs ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.16.0 (Thu Jun 15 2023)
+
+### Release Notes
+
+#### Deps bumps for 0.16.0 ([#2432](https://github.com/system-ui/theme-ui/pull/2432))
+
+`@theme-ui/sidenav` package was removed due to low usage and breaking changes in `@types/react`.
+
+---
+
+#### 🚀 Enhancement
+
+- Deps bumps for 0.16.0 [#2432](https://github.com/system-ui/theme-ui/pull/2432) ([@hasparus](https://github.com/hasparus))
+- Deprecate/rename ThemeProvider to ThemeUIProvider [#2360](https://github.com/system-ui/theme-ui/pull/2360) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Trigger release again ([@hasparus](https://github.com/hasparus))
+- Trigger release ([@hasparus](https://github.com/hasparus))
+- Update lockfile ([@hasparus](https://github.com/hasparus))
+- Update Browserlist ([@hasparus](https://github.com/hasparus))
+- Update pnpm-lock.yaml ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.15.8 (Sat Apr 29 2023)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, CJ ([@dev-cj](https://github.com/dev-cj)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix(theme-ui): add transitive peer dependency on `@emotion/react` [#2421](https://github.com/system-ui/theme-ui/pull/2421) ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- components: Added indeterminate checkbox [#2419](https://github.com/system-ui/theme-ui/pull/2419) ([@dev-cj](https://github.com/dev-cj))
+- docs: Fix typo in "switch" [#2420](https://github.com/system-ui/theme-ui/pull/2420) ([@dev-cj](https://github.com/dev-cj))
+
+#### Authors: 2
+
+- CJ ([@dev-cj](https://github.com/dev-cj))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.15.7 (Thu Mar 30 2023)
 
 
