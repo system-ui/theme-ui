@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/preset-bulma",
-  "version": "0.16.1",
+  "version": "0.16.2-scale-tuples.0",
   "main": "dist/theme-ui-preset-bulma.cjs.js",
   "module": "dist/theme-ui-preset-bulma.esm.js",
   "source": "src/index.ts",
