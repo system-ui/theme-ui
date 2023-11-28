@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 
 import { Field } from '..'
 
@@ -13,25 +13,25 @@ import { theme } from './__test-utils__'
 describe('Field', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Field />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
   test('renders with id prop', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Field id="test-field" />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
   test('containerSx and sx', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Field label="Name" sx={{ color: 'primary' }} containerSx={{ my: 4 }} />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
