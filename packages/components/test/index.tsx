@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { renderJSON } from '@theme-ui/test-utils'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
 import {
   Card,
   Flex,
@@ -45,9 +45,9 @@ import { theme } from './__test-utils__'
 describe('Card', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Card />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -56,9 +56,9 @@ describe('Card', () => {
 describe('Flex', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Flex />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -67,9 +67,9 @@ describe('Flex', () => {
 describe('Heading', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Heading />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -78,9 +78,9 @@ describe('Heading', () => {
 describe('Image', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Image variant="avatar" />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -89,9 +89,9 @@ describe('Image', () => {
 describe('Link', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Link variant="nav" />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -100,9 +100,9 @@ describe('Link', () => {
 describe('Paragraph', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Paragraph />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -110,11 +110,11 @@ describe('Paragraph', () => {
   test('renders with variant prop', () => {
     const variant = 'block'
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Paragraph variant={variant}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Paragraph>
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     const style = theme.text[variant]
     expect(json).toHaveStyleRule('text-align', style.textAlign)
@@ -137,9 +137,9 @@ describe('Paragraph', () => {
   test('renders with theme override', () => {
     const margin = '8px'
     const json = renderJSON(
-      <ThemeProvider theme={{ text: { paragraph: { margin } } }}>
+      <ThemeUIProvider theme={{ text: { paragraph: { margin } } }}>
         <Paragraph />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toHaveStyleRule('margin', margin)
   })
@@ -147,9 +147,9 @@ describe('Paragraph', () => {
   test('renders with theme variant', () => {
     const margin = '8px'
     const json = renderJSON(
-      <ThemeProvider theme={{ text: { override: { margin } } }}>
+      <ThemeUIProvider theme={{ text: { override: { margin } } }}>
         <Paragraph variant="override" />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toHaveStyleRule('margin', margin)
   })
@@ -158,9 +158,9 @@ describe('Paragraph', () => {
 describe('Text', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Text />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -169,9 +169,9 @@ describe('Text', () => {
 describe('Label', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Label />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -180,9 +180,9 @@ describe('Label', () => {
 describe('Input', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Input />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -191,9 +191,9 @@ describe('Input', () => {
 describe('Textarea', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Textarea />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -202,9 +202,9 @@ describe('Textarea', () => {
 describe('Radio', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Radio />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -213,9 +213,9 @@ describe('Radio', () => {
 describe('Slider', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Slider />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -224,9 +224,9 @@ describe('Slider', () => {
 describe('Progress', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Progress />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -235,9 +235,9 @@ describe('Progress', () => {
 describe('Donut', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Donut title="Donut" value={0} />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -246,9 +246,9 @@ describe('Donut', () => {
 describe('Spinner', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Spinner />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -257,9 +257,9 @@ describe('Spinner', () => {
 describe('Avatar', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Avatar />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -268,9 +268,9 @@ describe('Avatar', () => {
 describe('Badge', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Badge />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -279,9 +279,9 @@ describe('Badge', () => {
 describe('Close', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Close />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -290,9 +290,9 @@ describe('Close', () => {
 describe('Alert', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Alert />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -301,9 +301,9 @@ describe('Alert', () => {
 describe('Divider', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Divider />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -321,9 +321,9 @@ describe('Embed', () => {
 
   test('renders with title', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Embed title="Embed" />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -332,9 +332,9 @@ describe('Embed', () => {
 describe('AspectRatio', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <AspectRatio />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -343,9 +343,9 @@ describe('AspectRatio', () => {
 describe('AspectImage', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <AspectImage />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -354,9 +354,9 @@ describe('AspectImage', () => {
 describe('Container', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Container />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -365,9 +365,9 @@ describe('Container', () => {
 describe('NavLink', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <NavLink />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -376,9 +376,9 @@ describe('NavLink', () => {
 describe('Message', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <Message />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -387,9 +387,9 @@ describe('Message', () => {
 describe('IconButton', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <IconButton />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })
@@ -398,9 +398,20 @@ describe('IconButton', () => {
 describe('MenuButton', () => {
   test('renders', () => {
     const json = renderJSON(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <MenuButton />
-      </ThemeProvider>
+      </ThemeUIProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
+
+describe('Switch', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <ThemeUIProvider theme={theme}>
+        <Switch />
+      </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
   })

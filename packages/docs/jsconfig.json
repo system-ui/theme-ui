@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "jsx": "preserve",
-    "resolveJsonModule": true
-  },
-  "exclude": [".cache", "node_modules", "public"],
-  "include": ["**/*.js", "./declarations.d.ts"]
-}

@@ -1,0 +1,50 @@
+---
+title: Custom MDX Components
+---
+
+# Custom MDX Components
+
+To enrich components you’re passing to MDX context with styles defined in
+[`theme.styles`](./styling), use `useThemedStylesWithMdx` with your
+[`MDXProvider`](https://mdxjs.com/packages/react/#use).
+
+```tsx
+import { MDXProvider, useMDXComponents, MDXComponents } from '@mdx-js/react'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { ThemeUIProvider } from 'theme-ui'
+import { h2, Note, TweetEmbed } from './components'
+
+const components: MDXComponents = {
+  h2,
+  Note,
+  TweetEmbed,
+}
+
+const theme = {
+  styles: {
+    h2: {
+      fontWeight: 700,
+    },
+  },
+}
+
+function Provider({ children }: { children: React.ReactNode }) {
+  const componentsWithStyles = useThemedStylesWithMdx(
+    useMDXComponents(components)
+  )
+
+  return (
+    <ThemeUIProvider theme={theme}>
+      <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
+    </ThemeUIProvider>
+  )
+}
+```
+
+<Note>
+
+For a list of keys that can be used in the `components` object, see the
+[MDX docs for components](https://mdxjs.com/table-of-components/).
+
+</Note>

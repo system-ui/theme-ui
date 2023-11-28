@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/mdx",
-  "version": "0.15.2-develop.0",
+  "version": "0.16.2-develop.0",
   "source": "src/index.ts",
   "main": "dist/theme-ui-mdx.cjs.js",
   "module": "dist/theme-ui-mdx.esm.js",
@@ -11,19 +11,19 @@
     "@theme-ui/css": "workspace:^"
   },
   "peerDependencies": {
-    "@emotion/react": "^11",
-    "react": ">=18",
-    "@types/mdx": "^2.0.2"
+    "@emotion/react": "^11.11.1",
+    "@types/mdx": "^2.0.2",
+    "react": ">=18"
   },
   "devDependencies": {
-    "@mdx-js/mdx-v2": "npm:@mdx-js/mdx@^2.1.2",
-    "@mdx-js/react-v2": "npm:@mdx-js/react@^2.1.2",
-    "@types/mdx": "^2.0.2",
+    "@emotion/react": "^11.11.1",
+    "@mdx-js/mdx": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@theme-ui/test-utils": "workspace:^",
+    "@types/mdx": "^2.0.5",
+    "@types/react": "^18.2.12",
     "react": "^18.1.0",
-    "remark-gfm": "^3.0.1",
-    "@babel/core": "^7",
-    "@types/react": "^18",
-    "@theme-ui/test-utils": "workspace:^"
+    "remark-gfm-3": "npm:remark-gfm@^3.0.1"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",

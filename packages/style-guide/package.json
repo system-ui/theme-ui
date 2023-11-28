@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.15.2-develop.0",
+  "version": "0.16.2-develop.0",
   "main": "dist/theme-ui-style-guide.cjs.js",
   "module": "dist/theme-ui-style-guide.esm.js",
   "types": "dist/theme-ui-style-guide.cjs.d.ts",
@@ -10,8 +10,9 @@
   "repository": "system-ui/theme-ui",
   "scripts": {},
   "dependencies": {
-    "@theme-ui/presets": "workspace:^",
     "@theme-ui/color": "workspace:^",
+    "@theme-ui/core": "workspace:^",
+    "@theme-ui/presets": "workspace:^",
     "@types/color": "^3.0.3",
     "color": "^3.1.2",
     "lodash.get": "^4.4.2"
@@ -21,8 +22,8 @@
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "react": "^18",
-    "@types/react": "^18",
+    "@types/react": "^18.2.12",
+    "react": "^18.1.0",
     "theme-ui": "workspace:^"
   },
   "publishConfig": {

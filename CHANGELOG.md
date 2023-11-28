@@ -1,3 +1,196 @@
+# v0.16.1 (Thu Sep 07 2023)
+
+#### 🐛 Bug Fix
+
+- fix: ThemeProvider warning message ([@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Add missing migration notes on 0.16 to docs ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.16.0 (Thu Jun 15 2023)
+
+### Release Notes
+
+#### Deps bumps for 0.16.0 ([#2432](https://github.com/system-ui/theme-ui/pull/2432))
+
+`@theme-ui/sidenav` package was removed due to low usage and breaking changes in `@types/react`.
+
+---
+
+#### 🚀 Enhancement
+
+- Deps bumps for 0.16.0 [#2432](https://github.com/system-ui/theme-ui/pull/2432) ([@hasparus](https://github.com/hasparus))
+- Deprecate/rename ThemeProvider to ThemeUIProvider [#2360](https://github.com/system-ui/theme-ui/pull/2360) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+
+#### 👨‍💻 Minor changes
+
+- Trigger release again ([@hasparus](https://github.com/hasparus))
+- Trigger release ([@hasparus](https://github.com/hasparus))
+- Update lockfile ([@hasparus](https://github.com/hasparus))
+- Update Browserlist ([@hasparus](https://github.com/hasparus))
+- Update pnpm-lock.yaml ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.15.8 (Sat Apr 29 2023)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, CJ ([@dev-cj](https://github.com/dev-cj)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix(theme-ui): add transitive peer dependency on `@emotion/react` [#2421](https://github.com/system-ui/theme-ui/pull/2421) ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- components: Added indeterminate checkbox [#2419](https://github.com/system-ui/theme-ui/pull/2419) ([@dev-cj](https://github.com/dev-cj))
+- docs: Fix typo in "switch" [#2420](https://github.com/system-ui/theme-ui/pull/2420) ([@dev-cj](https://github.com/dev-cj))
+
+#### Authors: 2
+
+- CJ ([@dev-cj](https://github.com/dev-cj))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.15.7 (Thu Mar 30 2023)
+
+
+
+---
+
+# v0.15.6 (Wed Mar 29 2023)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Ben ([@benchilds](https://github.com/benchilds))
+
+:heart: Justin Cooper ([@JustinotherGitter](https://github.com/JustinotherGitter))
+
+#### 🐛 Bug Fix
+
+- Update variants.mdx [#2408](https://github.com/system-ui/theme-ui/pull/2408) ([@benchilds](https://github.com/benchilds))
+- fix: Use `type` imports on src/index [#2392](https://github.com/system-ui/theme-ui/pull/2392) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- docs: Fix color modes code sample typo [#2399](https://github.com/system-ui/theme-ui/pull/2399) ([@JustinotherGitter](https://github.com/JustinotherGitter))
+
+#### Authors: 3
+
+- Ben ([@benchilds](https://github.com/benchilds))
+- Justin Cooper ([@JustinotherGitter](https://github.com/JustinotherGitter))
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+
+---
+
+# v0.15.5 (Tue Feb 07 2023)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Nischal Shakya ([@Nischal2015](https://github.com/Nischal2015))
+
+:heart: Wahid Rahim ([@wahidrahim](https://github.com/wahidrahim))
+
+#### 🐛 Bug Fix
+
+- fix(custom-properties): use default key name if pluralize returns empty [#2389](https://github.com/system-ui/theme-ui/pull/2389) ([@wahidrahim](https://github.com/wahidrahim))
+- Add theme-aware Global component [#2385](https://github.com/system-ui/theme-ui/pull/2385) ([@lachlanjc](https://github.com/lachlanjc) [@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- components: Rewrite Spinner for better performance [#2384](https://github.com/system-ui/theme-ui/pull/2384) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Add missing `useMDXComponents` import [#2370](https://github.com/system-ui/theme-ui/pull/2370) ([@Nischal2015](https://github.com/Nischal2015))
+- docs: Reorganize Color Modes doc for clarity [#2365](https://github.com/system-ui/theme-ui/pull/2365) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 5
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+- Nischal Shakya ([@Nischal2015](https://github.com/Nischal2015))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Wahid Rahim ([@wahidrahim](https://github.com/wahidrahim))
+
+---
+
+# v0.15.4 (Thu Nov 10 2022)
+
+#### 🐛 Bug Fix
+
+- lock file [#2358](https://github.com/system-ui/theme-ui/pull/2358) ([@LekoArts](https://github.com/LekoArts))
+- add peerDep change [#2359](https://github.com/system-ui/theme-ui/pull/2359) ([@LekoArts](https://github.com/LekoArts))
+- Update preset-tailwind for Tailwind v3 (breaking) [#2357](https://github.com/system-ui/theme-ui/pull/2357) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- docs: Add destructuring example to useThemeUI API [#2359](https://github.com/system-ui/theme-ui/pull/2359) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+
+---
+
+# v0.15.4 (Thu Nov 10 2022)
+
+#### 🐛 Bug Fix
+
+- lock file [#2358](https://github.com/system-ui/theme-ui/pull/2358) ([@LekoArts](https://github.com/LekoArts))
+- add peerDep change [#2359](https://github.com/system-ui/theme-ui/pull/2359) ([@LekoArts](https://github.com/LekoArts))
+- Update preset-tailwind for Tailwind v3 (breaking) [#2357](https://github.com/system-ui/theme-ui/pull/2357) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- docs: Add destructuring example to useThemeUI API [#2359](https://github.com/system-ui/theme-ui/pull/2359) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 2
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Lennart ([@LekoArts](https://github.com/LekoArts))
+
+---
+
+# v0.15.1 (Tue Oct 04 2022)
+
+#### 🐛 Bug Fix
+
+- Add `@mdx-js/react` to peerDeps for `gatsby-plugin-theme-ui` [#2331](https://github.com/system-ui/theme-ui/pull/2331) ([@hasparus](https://github.com/hasparus))
+- Fix MDXProvider example [#2329](https://github.com/system-ui/theme-ui/pull/2329) ([@shawnbot](https://github.com/shawnbot))
+- fix(typography): drop broken dev dependencies ([@hasparus](https://github.com/hasparus))
+- fix(match-media): add dev dependency on react-dom ([@hasparus](https://github.com/hasparus))
+- fix(theme-ui): remove redundant dependency on @theme-ui/mdx from package.json ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: Mention that /core doesn't add global styles [#2333](https://github.com/system-ui/theme-ui/pull/2333) ([@lachlanjc](https://github.com/lachlanjc))
+- docs: Group & update all MDX-related docs [#2339](https://github.com/system-ui/theme-ui/pull/2339) ([@lachlanjc](https://github.com/lachlanjc))
+
+#### Authors: 3
+
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Shawn Allen ([@shawnbot](https://github.com/shawnbot))
+
+---
+
 # v0.15.0 (Mon Sep 26 2022)
 
 :tada: This release contains work from new contributors! :tada:

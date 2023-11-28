@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
 // Straight-up copied from README.md
 // We may extract it from that Markdown file in a fancy way some day. Maybe...
 export default function ReadmeBadges() {
@@ -12,7 +9,8 @@ export default function ReadmeBadges() {
         flexWrap: 'wrap',
         gap: '4px',
         '> a': { height: '20px' },
-      }}>
+      }}
+    >
       <a href="https://github.com/system-ui/theme-ui">
         <img
           src="https://badgen.net/badge/-/github?icon=github&label"
@@ -43,12 +41,6 @@ export default function ReadmeBadges() {
           alt="Contributors"
         />
       </a>
-      <a href="https://github.com/badges/shields/pulse">
-        <img
-          src="https://img.shields.io/github/commit-activity/m/system-ui/theme-ui"
-          alt="Activity"
-        />
-      </a>
       <a href="https://badgen.net/bundlephobia/minzip/theme-ui">
         <img src="https://badgen.net/bundlephobia/minzip/theme-ui" alt="Size" />
       </a>
@@ -68,12 +60,6 @@ export default function ReadmeBadges() {
         <img
           src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord"
           alt="Join our Discord community"
-        />
-      </a>
-      <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
-        <img
-          src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg?branch=stable"
-          alt="Build Status"
         />
       </a>
       <a href="https://dashboard.cypress.io/projects/fmfid1/runs">

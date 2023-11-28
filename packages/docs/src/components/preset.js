@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import { Helmet } from 'react-helmet'
-import { jsx } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 import { ThemeContext } from '@emotion/react'
 import * as presets from '@theme-ui/presets'

@@ -1,7 +1,6 @@
 /** @jest-environment node */
-/** @jsx jsx */
 import { renderToString } from 'react-dom/server'
-import { jsx, ThemeProvider, useColorMode } from '../src'
+import { ThemeUIProvider, useColorMode } from '../src'
 
 test('does not initialize mode based on localStorage', () => {
   let mode
@@ -13,9 +12,9 @@ test('does not initialize mode based on localStorage', () => {
 
   expect(() => {
     renderToString(
-      <ThemeProvider theme={{}}>
+      <ThemeUIProvider theme={{}}>
         <Button />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
   }).not.toThrow()
 

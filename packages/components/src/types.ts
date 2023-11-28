@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 export type Assign<T, U> = {
   [P in keyof (T & U)]: P extends keyof T
     ? T[P]
@@ -8,6 +6,7 @@ export type Assign<T, U> = {
     : never
 }
 
-export type ForwardRef<T, P> = React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<P> & React.RefAttributes<T>
->
+export interface ForwardRef<T, P>
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<P> & React.RefAttributes<T>
+  > {}

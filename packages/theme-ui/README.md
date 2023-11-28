@@ -1,8 +1,15 @@
 <p align="center">
   <img
-    src="/packages/docs/static/logo.png"
+    src="/packages/docs/static/logo-dark.png#gh-dark-mode-only"
     width="96"
     height="96"
+    alt="Theme UI logo"
+  />
+  <img
+    src="/packages/docs/static/logo.png#gh-light-mode-only"
+    width="96"
+    height="96"
+    alt="Theme UI logo"
   />
 </p>
 
@@ -31,9 +38,6 @@
   <a href="https://github.com/system-ui/theme-ui/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/system-ui/theme-ui" alt="Contributors" />
   </a>
-  <a href="https://github.com/badges/shields/pulse" >
-    <img src="https://img.shields.io/github/commit-activity/m/system-ui/theme-ui" alt="Activity" />        
-  </a>
   <br />
   <a href="https://badgen.net/bundlephobia/minzip/theme-ui">
     <img
@@ -57,9 +61,6 @@
     <img src="https://img.shields.io/discord/778553042466635786?color=%237289da&logo=discord" alt="Join our Discord community"/>
   </a>
   <br />
-  <a href="https://github.com/system-ui/theme-ui/actions?query=workflow%3ACI">
-    <img src="https://github.com/system-ui/theme-ui/workflows/CI/badge.svg?branch=stable" alt="Build Status" />
-  </a>
   <a href="https://dashboard.cypress.io/projects/fmfid1/runs">
     <img src="https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/fmfid1/stable&logo=cypress" alt="This project is using Cypress for end-to-end tests." />
   </a>
@@ -120,16 +121,16 @@ _If you don't need color modes or components you can install
 [**@theme-ui/core**](https://github.com/system-ui/theme-ui/tree/develop/packages/core)_.
 
 Any styles in your app can reference values from the global `theme` object. To
-provide the theme in context, wrap your application with the `ThemeProvider`
+provide the theme in context, wrap your application with the `ThemeUIProvider`
 component and pass in a custom `theme` object.
 
 ```jsx
 // basic usage
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import theme from './theme'
 
 export default (props) => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+  <ThemeUIProvider theme={theme}>{props.children}</ThemeUIProvider>
 )
 ```
 
@@ -236,7 +237,7 @@ Thanks goes to these wonderful people
 <table>
   <tr>
     <td align="center"><a href="https://jxnblk.com/"><img src="https://avatars.githubusercontent.com/u/3451712?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Brent Jackson</b></sub></a><br /><a href="#ideas-jxnblk" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jxnblk" title="Code">💻</a> <a href="#design-jxnblk" title="Design">🎨</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jxnblk" title="Documentation">📖</a> <a href="#example-jxnblk" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jxnblk" title="Tests">⚠️</a> <a href="https://github.com/system-ui/theme-ui/pulls?q=is%3Apr+reviewed-by%3Ajxnblk" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://haspar.us/"><img src="https://avatars.githubusercontent.com/u/15332326?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Piotr Monwid-Olechnowicz</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=hasparus" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=hasparus" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=hasparus" title="Tests">⚠️</a> <a href="https://github.com/system-ui/theme-ui/pulls?q=is%3Apr+reviewed-by%3Ahasparus" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://haspar.us/"><img src="https://avatars.githubusercontent.com/u/15332326?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Piotr Monwid-Olechnowicz</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=hasparus" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=hasparus" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=hasparus" title="Tests">⚠️</a> <a href="https://github.com/system-ui/theme-ui/pulls?q=is%3Apr+reviewed-by%3Ahasparus" title="Reviewed Pull Requests">👀</a> <a href="#example-hasparus" title="Examples">💡</a></td>
     <td align="center"><a href="https://github.com/dcastil"><img src="https://avatars.githubusercontent.com/u/31006608?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Dany Castillo</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=dcastil" title="Code">💻</a> <a href="https://github.com/system-ui/theme-ui/commits?author=dcastil" title="Documentation">📖</a> <a href="#example-dcastil" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=dcastil" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://jordanoverbye.com/"><img src="https://avatars.githubusercontent.com/u/6265154?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Jordan Overbye</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=jordanoverbye" title="Code">💻</a> <a href="#example-jordanoverbye" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=jordanoverbye" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://lachlanjc.com/"><img src="https://avatars.githubusercontent.com/u/5074763?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Lachlan Campbell</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=lachlanjc" title="Code">💻</a> <a href="#example-lachlanjc" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=lachlanjc" title="Tests">⚠️</a> <a href="https://github.com/system-ui/theme-ui/pulls?q=is%3Apr+reviewed-by%3Alachlanjc" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/system-ui/theme-ui/commits?author=lachlanjc" title="Documentation">📖</a> <a href="#question-lachlanjc" title="Answering Questions">💬</a></td>
@@ -381,6 +382,11 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/CannonLock"><img src="https://avatars.githubusercontent.com/u/49032265?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Cannon Lock</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=CannonLock" title="Documentation">📖</a></td>
     <td align="center"><a href="https://kamatte.me/"><img src="https://avatars.githubusercontent.com/u/16129027?v=4?s=63" width="63px;" alt=""/><br /><sub><b>kamatte</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=kamatte-me" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=kamatte-me" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cobraz"><img src="https://avatars.githubusercontent.com/u/3726815?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Simen A. W. Olsen</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=cobraz" title="Documentation">📖</a> <a href="#example-cobraz" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=cobraz" title="Tests">⚠️</a> <a href="https://github.com/system-ui/theme-ui/commits?author=cobraz" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/wahidrahim"><img src="https://avatars.githubusercontent.com/u/7417976?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Wahid Rahim</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=wahidrahim" title="Documentation">📖</a> <a href="#example-wahidrahim" title="Examples">💡</a> <a href="https://github.com/system-ui/theme-ui/commits?author=wahidrahim" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/JustinotherGitter"><img src="https://avatars.githubusercontent.com/u/49234323?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Justin Cooper</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=JustinotherGitter" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://devcj.in/"><img src="https://avatars.githubusercontent.com/u/47112778?v=4?s=63" width="63px;" alt=""/><br /><sub><b>CJ</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=dev-cj" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=dev-cj" title="Code">💻</a></td>
   </tr>
 </table>
 

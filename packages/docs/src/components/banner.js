@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { jsx, ThemeProvider, Container } from 'theme-ui'
+import { ThemeUIProvider, Container } from 'theme-ui'
 
 export default (props) => (
-  <ThemeProvider
+  <ThemeUIProvider
     theme={{
       styles: {
         p: {
@@ -19,9 +18,10 @@ export default (props) => (
           mr: 3,
         },
       },
-    }}>
+    }}
+  >
     <div sx={{ pt: 4 }}>
       <Container>{props.children}</Container>
     </div>
-  </ThemeProvider>
+  </ThemeUIProvider>
 )

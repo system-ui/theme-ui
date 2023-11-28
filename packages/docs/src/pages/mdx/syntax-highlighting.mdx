@@ -1,0 +1,83 @@
+---
+title: 'Syntax Highlighting'
+---
+
+# Syntax Highlighting
+
+To support syntax highlighting libraries like [Prism.js][], colors and other
+styles can be added to `theme.styles.pre` to target child elements with class
+selectors. Prism.js adds `<span>` elements with class names that can be used as
+child selectors.
+
+[prism.js]: https://github.com/PrismJS/prism
+
+Install the Theme UI Prism component.
+
+```sh
+npm i @theme-ui/prism
+```
+
+Next, add the Prism component to your MDX components list. If you’re using
+Gatsby and `gatsby-plugin-theme-ui`, this file is
+`src/gatsby-plugin-theme-ui/components.js`.
+
+```jsx filename=components.js
+import Prism from '@theme-ui/prism'
+
+const components = {
+  pre: ({ children }) => <>{children}</>,
+  code: Prism,
+}
+
+export default components
+```
+
+In your theme, import and add a syntax theme from the Prism package.
+
+```js filename=src/gatsby-plugin-theme-ui/index.js
+import nightOwl from '@theme-ui/prism/presets/night-owl'
+
+const theme = {
+  styles: {
+    pre: {
+      ...nightOwl,
+    },
+  },
+}
+
+export default theme
+```
+
+You can also construct your own syntax theme inline, using theme colors:
+
+```js
+{
+  colors: {
+    red: '#ec3750',
+    green: '#33d6a6',
+    blue: '#338eda',
+    gray: '#666',
+  },
+  styles: {
+    pre: {
+      '.comment, .prolog, .doctype, .cdata, .punctuation, .operator, .entity, .url': {
+        // theme.colors and other values can be referenced
+        color: 'gray'
+      },
+      '.property, .tag, .boolean, .number, .constant, .symbol, .deleted, .function, .class-name, .regex, .important, .variable':
+        {
+          color: 'red'
+        },
+      '.atrule, .attr-value, .keyword': {
+        color: 'blue'
+      },
+      '.selector, .attr-name, .string, .char, .builtin, .inserted': {
+        color: 'green'
+      }
+    }
+  }
+}
+}
+```
+
+For more details, check out the [Prism package docs](/packages/prism).

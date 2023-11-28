@@ -6,14 +6,14 @@ title: Custom CacheProvider
 
 ## Style container
 
-You may come across a situation where you want to inject the generated styles into a
-different element than the current document head (an iframe perhaps).
+You may come across a situation where you want to inject the generated styles
+into a different element than the current document head (an iframe perhaps).
 
-By using the CacheProvider from `@emotion/react` and `createCache` from `@emotion/cache` you can
-specify the target container element.
+By using the CacheProvider from `@emotion/react` and `createCache` from
+`@emotion/cache` you can specify the target container element.
 
 ```jsx
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 
@@ -33,7 +33,7 @@ const theme = {
 export default ({ children }) => {
   return (
     <CacheProvider value={cache}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeUIProvider theme={theme}>{children}</ThemeUIProvider>
     </CacheProvider>
   )
 }
@@ -42,7 +42,7 @@ export default ({ children }) => {
 ### With react-frame-component
 
 ```jsx
-import { ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import Iframe, { FrameContextConsumer } from 'react-frame-component'
@@ -63,7 +63,7 @@ export default ({ children }) => {
           })
           return (
             <CacheProvider value={cache}>
-              <ThemeProvider theme={theme}>{children}</ThemeProvider>
+              <ThemeUIProvider theme={theme}>{children}</ThemeUIProvider>
             </CacheProvider>
           )
         }}

@@ -1,10 +1,40 @@
 {
   "name": "@theme-ui/core",
-  "version": "0.15.2-develop.0",
+  "version": "0.16.2-develop.0",
   "source": "src/index.ts",
   "main": "dist/theme-ui-core.cjs.js",
   "module": "dist/theme-ui-core.esm.js",
   "types": "dist/theme-ui-core.cjs.d.ts",
+  "browser": {
+    "./dist/theme-ui-core.esm.js": "./dist/theme-ui-core.browser.esm.js"
+  },
+  "exports": {
+    ".": {
+      "module": {
+        "worker": "./dist/theme-ui-core.worker.esm.js",
+        "browser": "./dist/theme-ui-core.browser.esm.js",
+        "default": "./dist/theme-ui-core.esm.js"
+      },
+      "default": "./dist/theme-ui-core.cjs.js"
+    },
+    "./jsx-runtime": {
+      "module": {
+        "worker": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.worker.esm.js",
+        "browser": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.browser.esm.js",
+        "default": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.esm.js"
+      },
+      "default": "./jsx-runtime/dist/theme-ui-core-jsx-runtime.cjs.js"
+    },
+    "./jsx-dev-runtime": {
+      "module": {
+        "worker": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.worker.esm.js",
+        "browser": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.browser.esm.js",
+        "default": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.esm.js"
+      },
+      "default": "./jsx-dev-runtime/dist/theme-ui-core-jsx-dev-runtime.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "sideEffects": false,
   "scripts": {},
   "repository": "system-ui/theme-ui",
@@ -18,19 +48,26 @@
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "@emotion/react": "^11",
+    "@emotion/react": "^11.11.1",
     "react": ">=18"
   },
   "devDependencies": {
-    "@types/react": "^18",
-    "@babel/core": "^7",
-    "@theme-ui/test-utils": "workspace:^"
+    "@emotion/react": "^11.11.1",
+    "@theme-ui/test-utils": "workspace:^",
+    "@types/react": "^18.2.12",
+    "react": "^18.1.0"
   },
   "preconstruct": {
     "entrypoints": [
       "index.ts",
       "jsx-dev-runtime.ts",
       "jsx-runtime.ts"
-    ]
+    ],
+    "exports": {
+      "envConditions": [
+        "browser",
+        "worker"
+      ]
+    }
   }
 }

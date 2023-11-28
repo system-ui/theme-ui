@@ -8,13 +8,14 @@
  */
 // @ts-check
 /* eslint-disable react/jsx-pascal-case */
+/* eslint-disable import/no-extraneous-dependencies */
 
 import { render } from '@testing-library/react'
 import { matchers } from '@emotion/jest'
 import { ThemeProvider } from '@theme-ui/core'
-import { ThemeProvider as ThemeUIProvider } from 'theme-ui'
+import { ThemeUIProvider } from '../../theme-ui'
 
-import { useMDXComponents, MDXProvider } from '@mdx-js/react-v2'
+import { useMDXComponents, MDXProvider } from '@mdx-js/react'
 
 import { useThemedStylesWithMdx } from '../src'
 

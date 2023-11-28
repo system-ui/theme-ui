@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import { ComponentProps } from 'react'
-import { jsx } from 'theme-ui'
 import Card from './Card'
 
 export interface TypeStyleProps extends ComponentProps<typeof Card> {

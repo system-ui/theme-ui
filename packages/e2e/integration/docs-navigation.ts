@@ -22,6 +22,7 @@ describe('docs navigation', () => {
         'Migrating',
         'Edit the page on GitHub',
         'Previous:Getting Started with Gatsby',
+        'Next:The sx Prop',
       ]
 
       for (const s of expectedLinkTexts) {

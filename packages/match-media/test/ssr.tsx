@@ -1,14 +1,13 @@
 /**
  * @jest-environment node
  */
-/**@jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { ThemeUIProvider } from 'theme-ui'
 import { Fragment } from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { useResponsiveValue, useBreakpointIndex } from '../src'
 
 test("falls back to user's default index", () => {
-  const Component = (props) => {
+  const Component = () => {
     const value = useResponsiveValue(['a', 'b'], { defaultIndex: 1 })
     const index = useBreakpointIndex({ defaultIndex: 2 })
     return (
@@ -26,7 +25,7 @@ test("falls back to user's default index", () => {
 test('defaults to first breakpoint without user input', () => {
   let value
   let index
-  const Component = (props) => {
+  const Component = () => {
     value = useResponsiveValue(['a', 'b'])
     index = useBreakpointIndex()
     return null
@@ -38,31 +37,40 @@ test('defaults to first breakpoint without user input', () => {
 })
 
 test('requires default index be in range', () => {
-  const Component = (props) => {
+  const Component = () => {
     const value = useResponsiveValue(['a', 'b'], { defaultIndex: 4 })
     const index = useBreakpointIndex({ defaultIndex: 4 })
-    return null
+    return (
+      <Fragment>
+        {value} {index}
+      </Fragment>
+    )
   }
   const Example = () =>
     ReactDOMServer.renderToStaticMarkup(
-      <ThemeProvider
+      <ThemeUIProvider
         theme={{
           breakpoints: ['30em', '45em', '55em'],
-        }}>
+        }}
+      >
         <Component />
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
   expect(Example).toThrowError(RangeError)
 })
 
 test('requires default index be a number', () => {
-  const Component = ({ index }) => {
+  const Component = ({ index }: { index: number }) => {
     const value = useResponsiveValue(['a', 'b'], { defaultIndex: index })
     const themeIndex = useBreakpointIndex({ defaultIndex: index })
-    return null
+    return (
+      <Fragment>
+        {value} {themeIndex}
+      </Fragment>
+    )
   }
 
-  const createRender = (defaultIndex) => () =>
+  const createRender = (defaultIndex: any) => () =>
     ReactDOMServer.renderToStaticMarkup(<Component index={defaultIndex} />)
 
   expect(createRender(() => 2)).toThrowError(TypeError)

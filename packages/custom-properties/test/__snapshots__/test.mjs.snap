@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`transforms a theme config to CSS custom properties 1`] = `
-Object {
+{
   "--color-accent": "#609",
   "--color-background": "#fff",
   "--color-dark-background-surface": "#fff",
@@ -10,14 +10,17 @@ Object {
   "--color-primary": "#07c",
   "--color-secondary": "#05a",
   "--color-text": "#000",
-  "--font-body": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", sans-serif",
-  "--font-heading": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", sans-serif",
+  "--font-body": "system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif",
+  "--font-heading": "system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif",
   "--font-monospace": "Menlo, monospace",
   "--fontWeight-body": 400,
   "--fontWeight-bold": 700,
   "--fontWeight-heading": 700,
   "--lineHeight-0": 1.5,
   "--lineHeight-1": 1.125,
+  "--radius-l": "0.5em",
+  "--radius-m": "0.25em",
+  "--radius-s": "0.125em",
   "--size-0": "10em",
   "--size-1": "20em",
   "--size-2": "30em",
@@ -32,7 +35,7 @@ Object {
 `;
 
 exports[`transforms a theme config to CSS custom properties with prefix 1`] = `
-Object {
+{
   "--🍭-color-accent": "#609",
   "--🍭-color-background": "#fff",
   "--🍭-color-dark-background-surface": "#fff",
@@ -41,14 +44,17 @@ Object {
   "--🍭-color-primary": "#07c",
   "--🍭-color-secondary": "#05a",
   "--🍭-color-text": "#000",
-  "--🍭-font-body": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", sans-serif",
-  "--🍭-font-heading": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", sans-serif",
+  "--🍭-font-body": "system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif",
+  "--🍭-font-heading": "system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif",
   "--🍭-font-monospace": "Menlo, monospace",
   "--🍭-fontWeight-body": 400,
   "--🍭-fontWeight-bold": 700,
   "--🍭-fontWeight-heading": 700,
   "--🍭-lineHeight-0": 1.5,
   "--🍭-lineHeight-1": 1.125,
+  "--🍭-radius-l": "0.5em",
+  "--🍭-radius-m": "0.25em",
+  "--🍭-radius-s": "0.125em",
   "--🍭-size-0": "10em",
   "--🍭-size-1": "20em",
   "--🍭-size-2": "30em",

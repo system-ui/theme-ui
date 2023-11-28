@@ -36,7 +36,7 @@ jobs:
       - run: pnpm build:docs
       - run: cd packages/e2e && pnpm cypress install
 
-      - uses: cypress-io/github-action@v4.2.0
+      - uses: cypress-io/github-action@v5.0.0
         with:
           record: true
           parallel: true

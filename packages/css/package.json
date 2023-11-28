@@ -1,9 +1,29 @@
 {
   "name": "@theme-ui/css",
-  "version": "0.15.2-develop.0",
+  "version": "0.16.2-develop.0",
   "source": "src/index.ts",
   "main": "dist/theme-ui-css.cjs.js",
   "module": "dist/theme-ui-css.esm.js",
+  "browser": {
+    "./dist/theme-ui-css.esm.js": "./dist/theme-ui-css.browser.esm.js"
+  },
+  "exports": {
+    ".": {
+      "module": {
+        "browser": "./dist/theme-ui-css.browser.esm.js",
+        "default": "./dist/theme-ui-css.esm.js"
+      },
+      "default": "./dist/theme-ui-css.cjs.js"
+    },
+    "./utils": {
+      "module": {
+        "browser": "./utils/dist/theme-ui-css-utils.browser.esm.js",
+        "default": "./utils/dist/theme-ui-css-utils.esm.js"
+      },
+      "default": "./utils/dist/theme-ui-css-utils.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "sideEffects": false,
   "scripts": {},
   "author": "Brent Jackson",
@@ -16,18 +36,23 @@
     "csstype": "^3.0.10"
   },
   "peerDependencies": {
-    "@emotion/react": "^11"
+    "@emotion/react": "^11.11.1"
   },
   "devDependencies": {
-    "@types/react": "^18",
-    "@babel/core": "^7",
-    "@theme-ui/test-utils": "workspace:^"
+    "@emotion/react": "^11.11.1",
+    "@theme-ui/test-utils": "workspace:^",
+    "@types/react": "^18.2.12"
   },
   "preconstruct": {
     "entrypoints": [
       "index.ts",
       "utils.ts"
-    ]
+    ],
+    "exports": {
+      "envConditions": [
+        "browser"
+      ]
+    }
   },
   "gitHead": "621199460fa3bdb0100748441e62517b7529b8c8"
 }

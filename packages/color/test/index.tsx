@@ -1,11 +1,9 @@
 /**
  * @jest-environment jsdom
- * @jsx jsx
  */
 
-import { jsx } from '@theme-ui/core'
 import { Theme, ThemeUICSSObject } from '@theme-ui/css'
-import { ThemeProvider } from '@theme-ui/theme-provider'
+import { ThemeUIProvider } from '@theme-ui/theme-provider'
 import { render } from '@theme-ui/test-utils'
 import { matchers } from '@emotion/jest'
 
@@ -259,10 +257,10 @@ test('alphaRgbaCustomProps', () => {
   expect(n).toBe('rgba(255,0,0,0.25)')
 })
 
-describe('colors inside ThemeProvider', () => {
+describe('colors inside ThemeUIProvider', () => {
   test('__default color is darkened', () => {
     const tree = render(
-      <ThemeProvider
+      <ThemeUIProvider
         theme={{
           colors: {
             primary: {
@@ -273,7 +271,7 @@ describe('colors inside ThemeProvider', () => {
         }}
       >
         <button sx={{ color: darken('primary', 0.1) }}>Click me</button>
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
 
     expect(tree.getByRole('button')).toHaveStyleRule('color', '#09c')
@@ -292,7 +290,7 @@ describe('colors inside ThemeProvider', () => {
     type MyTheme = typeof theme & { rawColors: typeof theme.colors }
 
     const tree = render(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <button
           sx={{
             color: (theme) => {
@@ -306,7 +304,7 @@ describe('colors inside ThemeProvider', () => {
         >
           Click me
         </button>
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
 
     expect(tree.getByRole('button')).toHaveStyleRule('color', '#80d1f2')
@@ -325,7 +323,7 @@ describe('colors inside ThemeProvider', () => {
     type MyTheme = typeof theme & { rawColors: typeof theme.colors }
 
     const tree = render(
-      <ThemeProvider theme={theme}>
+      <ThemeUIProvider theme={theme}>
         <button
           sx={{
             color: (theme) => lighten(theme.rawColors?.blue, 0.1)(theme),
@@ -341,7 +339,7 @@ describe('colors inside ThemeProvider', () => {
         >
           Hello
         </p>
-      </ThemeProvider>
+      </ThemeUIProvider>
     )
 
     expect(tree.getByRole('button')).toHaveStyleRule('color', '#33f')

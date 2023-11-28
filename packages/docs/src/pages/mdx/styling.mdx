@@ -1,0 +1,109 @@
+---
+title: Styling MDX Content
+---
+
+# Styling MDX Content
+
+The `theme.styles` object combined with `useThemeStylesWithMdx` hook is the
+primary way to style content in MDX documents. This allows you to add
+typographic styles to Markdown without the need to pollute the global scope.
+Styles within this object have access to other values in the theme object.
+
+Use the [`MDXProvider`](https://mdxjs.com/packages/react/#use) above the level
+of MDX pages, or at the root level of your project, such as in `pages/_app.js`
+for Next.js.
+
+```jsx
+import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
+import { ThemeUIProvider } from 'theme-ui'
+
+const theme = {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Georgia, serif',
+  },
+  fontWeights: {
+    heading: 700,
+  },
+  styles: {
+    h1: {
+      fontSize: 32,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      color: 'primary',
+      mt: 4,
+      mb: 2,
+    },
+  },
+}
+
+function Provider({ children, theme, components }) {
+  const componentsWithStyles = useThemedStylesWithMdx(
+    useMDXComponents(components)
+  )
+
+  return (
+    <ThemeUIProvider theme={theme}>
+      <MDXProvider components={componentsWithStyles}>{children}</MDXProvider>
+    </ThemeUIProvider>
+  )
+}
+```
+
+<Note>
+
+These styles will **not** apply to HTML elements used outside of MDX. To reuse
+these styles outside of MDX, see the [Themed component](/mdx/themed) docs.
+
+</Note>
+
+## Typography.js
+
+To use [Typography.js][] themes with Theme UI, install the
+`@theme-ui/typography` package and any Typography.js theme.
+
+```sh
+npm i @theme-ui/typography typography-theme-wordpress-2016
+```
+
+Use the `toTheme` utility to convert the theme for use in Theme UI.
+
+```js
+// example theme with Typography.js
+import { toTheme } from '@theme-ui/typography'
+import wordpress2016 from 'typography-theme-wordpress-2016'
+import merge from 'lodash.merge'
+
+const typography = toTheme(wordpress2016)
+
+export default merge(typography, {
+  // optional style overrides go here
+})
+```
+
+Content in MDX documents will be rendered with styles from the Typography.js
+theme. The `toTheme` function accepts the same
+[Typography.js configuration options](https://github.com/KyleAMathews/typography.js#configuration)
+as the core library, allowing you to create custom themes with this approach as
+well.
+
+<Note>
+
+Theme UI does not currently use colors from Typography.js.
+
+</Note>
+
+[typography.js]: https://github.com/KyleAMathews/typography.js
+
+<Note>
+
+To style content that is not generated with MDX with `theme.styles`, such as
+from a CMS or Markdown, see the [`BaseStyles`](/api/#base-styles) component.
+
+</Note>

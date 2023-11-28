@@ -70,6 +70,9 @@ jobs:
       ) && (
         needs.release_check.outputs.CAN_RELEASE == 'true'
       )
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v3
 
@@ -84,6 +87,7 @@ jobs:
         with:
           node-version: 18.x
           cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install
         run: pnpm install --no-optional --no-frozen-lockfile
@@ -101,8 +105,6 @@ jobs:
         # continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm release
 
       - name: Check published prerelease

@@ -9,7 +9,13 @@ module.exports = {
         targets: '> 0.25%, not dead, not ie 11',
       },
     ],
-    '@babel/react',
+    [
+      '@babel/react',
+      {
+        runtime: 'automatic',
+        importSource: '@theme-ui/core',
+      },
+    ],
     '@babel/preset-typescript',
   ],
   env: {

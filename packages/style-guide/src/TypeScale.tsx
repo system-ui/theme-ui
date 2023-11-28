@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import { useTheme } from './context'
 import TypeStyle from './TypeStyle'
 
@@ -21,7 +19,8 @@ export const TypeScale = ({ reverse = true, ...props }) => {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'baseline',
-      }}>
+      }}
+    >
       {fontSizeEntries.map(([key, val]) => {
         if (!val || typeof val === 'object') {
           // TODO: `theme.fontSizes` can be a deeply nested object.

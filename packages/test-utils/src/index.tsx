@@ -1,8 +1,9 @@
+/** @jsxImportSource react */
 import * as React from 'react'
 import { render } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import * as tsSnippet from 'ts-snippet'
-import { Theme, ThemeProvider } from 'theme-ui'
+import { Theme, ThemeUIProvider } from 'theme-ui'
 
 export * from '@testing-library/react'
 
@@ -38,7 +39,7 @@ export const renderHook = <T,>(
 
   const { theme } = options
   const { unmount, rerender } = render(<Component />, {
-    wrapper: theme && ((props) => <ThemeProvider theme={theme} {...props} />),
+    wrapper: theme && ((props) => <ThemeUIProvider theme={theme} {...props} />),
   })
 
   return {
@@ -87,7 +88,8 @@ export const expecter = (
       esModuleInterop: true,
       moduleResolution: 'node',
       strict: true,
-      jsx: 'react',
+      jsx: 'react-jsx',
+      jsxImportSource: '@theme-ui/core',
       isolatedModules: true,
 
       // for better error message snapshots
@@ -102,8 +104,7 @@ export const expecter = (
         ${
           options.jsx
             ? `
-            /** @jsx jsx **/
-            import { jsx } from './packages/theme-ui'
+            /** @jsxImportSource @theme-ui/core **/
           `
             : ''
         }

@@ -23,9 +23,11 @@ describe(makeTheme, () => {
   })
 
   it('is exposed from entrypoint /utils and validates Theme type', () => {
-    expecter('import { makeTheme } from "./packages/css/utils"')(
-      'const t = makeTheme("banana")'
-    ).toFail(/Type '"banana"' has no properties in common with type 'Theme'./)
+    expecter('import { makeTheme } from "./packages/css/utils"', {
+      jsx: false,
+    })('const t = makeTheme("banana")').toFail(
+      /Type '"banana"' has no properties in common with type 'Theme'./
+    )
   })
 })
 

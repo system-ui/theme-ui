@@ -5,7 +5,8 @@ name: 'CSS Grid'
 # CSS Grid
 
 CSS Grid Layout is a powerful way to handle complex two-dimensional layouts.
-Using Theme UI's `sx` prop gives you quick access to your space scale as well as a quick way to change styles responsively.
+Using Theme UI's `sx` prop gives you quick access to your space scale as well as
+a quick way to change styles responsively.
 
 ```jsx live
 <div
@@ -13,13 +14,15 @@ Using Theme UI's `sx` prop gives you quick access to your space scale as well as
     display: 'grid',
     gridGap: 4,
     gridTemplateColumns: ['auto', '1fr 256px'],
-  }}>
+  }}
+>
   <main>Main</main>
   <aside>Sidebar</aside>
 </div>
 ```
 
-Use a wrapping `<div>` element with the `sx` prop to control the layout of direct child elements.
+Use a wrapping `<div>` element with the `sx` prop to control the layout of
+direct child elements.
 
 ```jsx
 /** @jsxImportSource theme-ui */
@@ -34,7 +37,8 @@ export default (props) => (
         'auto', // default to a stacked layout on small screens
         '1fr 256px', // use columns for larger screens
       ],
-    }}>
+    }}
+  >
     <main>{props.children}</main>
     <div>Sidebar</div>
   </div>

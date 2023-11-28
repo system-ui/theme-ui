@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
 export default (props) => (
   <a
     children="Skip to content"

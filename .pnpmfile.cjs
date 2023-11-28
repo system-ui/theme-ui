@@ -13,9 +13,9 @@ function afterAllResolved(lockfile, context) {
     for (let x of PACKAGES_WITH_ENFORCED_SINGLE_VERSION) {
       if (p.startsWith(`/${x}/`)) {
         if (found[x]) {
-          found[x] += 1
+          found[x].push(p)
         } else {
-          found[x] = 1
+          found[x] = [p]
         }
       }
     }
@@ -24,9 +24,12 @@ function afterAllResolved(lockfile, context) {
   let msg = ''
 
   for (let p in found) {
-    const count = found[p]
+    const count = found[p].length
     if (count > 1) {
-      msg += `${p} found ${count} times\n`
+      msg +=
+        `${p} found ${count} times\n` +
+        found[p].map((s) => `- ${s}`).join('\n') +
+        '\n\n'
     }
   }
 

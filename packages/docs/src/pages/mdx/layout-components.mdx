@@ -1,0 +1,76 @@
+---
+title: 'MDX Layout Components'
+---
+
+# MDX Layout Components
+
+The `ThemeUIProvider` component can be nested within a parent `ThemeUIProvider`,
+allowing you to contextually adjust styles in certain parts of a UI. This
+functionality can be leveraged to create custom layout components that take MDX
+content as children to create uniquely styled blocks of content. For example,
+this site's [landing page](/) uses this approach to style its content, which is
+written in MDX.
+
+As an example, create a new component with the `ThemeUIProvider` and a wrapping
+`<div>`.
+
+```jsx
+/** @jsxImportSource theme-ui */
+import { ThemeUIProvider } from 'theme-ui'
+
+export default (props) => (
+  <ThemeUIProvider theme={{}}>
+    <div {...props} />
+  </ThemeUIProvider>
+)
+```
+
+To add styles to this component, augment the required `theme` prop and add an
+`sx` prop to the `div`.
+
+```jsx filename=InvertedBanner.js
+/** @jsxImportSource theme-ui */
+import { ThemeUIProvider } from 'theme-ui'
+
+const InvertedBanner = (props) => (
+  <ThemeUIProvider
+    theme={{
+      styles: {
+        // style child elements
+        h1: {
+          fontSize: [5, 6, 7],
+        },
+      },
+    }}
+  >
+    <div
+      {...props}
+      sx={{
+        // swap colors for an inverted effect
+        color: 'background',
+        bg: 'primary',
+        px: 3,
+        py: 4,
+      }}
+    />
+  </ThemeUIProvider>
+)
+
+export default InvertedBanner
+```
+
+The component above can then be imported and used within an MDX document.
+
+```md
+import InvertedBanner from './InvertedBanner'
+
+<InvertedBanner>
+
+# Hello
+
+This section has custom styles
+
+</InvertedBanner>
+
+This part of the document uses default styles
+```

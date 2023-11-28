@@ -1,6 +1,4 @@
 // @ts-check
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 import { graphql, Link } from 'gatsby'
 

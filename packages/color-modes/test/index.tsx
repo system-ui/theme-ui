@@ -1,5 +1,4 @@
 /**
- * @jsx jsx
  * @jest-environment jsdom
  */
 import renderer from 'react-test-renderer'
@@ -7,12 +6,7 @@ import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import { useTheme } from '@emotion/react'
 import { matchers } from '@emotion/jest'
 import mockConsole from 'jest-mock-console'
-import {
-  jsx,
-  ThemeProvider,
-  ThemeUIContextValue,
-  useThemeUI,
-} from '@theme-ui/core'
+import { ThemeProvider, ThemeUIContextValue, useThemeUI } from '@theme-ui/core'
 import { ColorModeProvider, useColorMode, InitializeColorMode } from '../src'
 import { Theme } from '@theme-ui/css'
 import { renderJSON } from '@theme-ui/test-utils'
@@ -912,7 +906,7 @@ test('warns when localStorage is disabled', () => {
   const localStorage = window.localStorage
   Object.defineProperty(window, 'localStorage', {
     get: jest.fn(() => {
-      throw 'SecurityError: The operation is insecure.'
+      throw new Error('SecurityError: The operation is insecure.')
     }),
   })
 
@@ -936,10 +930,10 @@ test('warns when localStorage is disabled', () => {
   Object.defineProperty(window, 'localStorage', { value: localStorage })
 
   expect((console.warn as jest.Mock).mock.calls[0]).toMatchInlineSnapshot(`
-    Array [
+    [
       "localStorage is disabled and color mode might not work as expected.",
       "Please check your Site Settings.",
-      "SecurityError: The operation is insecure.",
+      [Error: SecurityError: The operation is insecure.],
     ]
   `)
 
