@@ -17,7 +17,7 @@
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.5",
     "@theme-ui/css": "workspace:^",
-    "next": "^13.4.5",
+    "next": "^13.5.0",
     "react": "^18.1.0",
     "react-dom": "^18",
     "theme-ui": "workspace:^"
