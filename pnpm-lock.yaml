@@ -219,7 +219,7 @@ importers:
         version: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
       gatsby-plugin-mdx:
         specifier: ^5
-        version: 5.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.10.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 5.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.13.0)(gatsby@5.10.0)(react-dom@18.2.0)(react@18.2.0)
       gatsby-plugin-theme-ui:
         specifier: workspace:^
         version: link:../../packages/gatsby-plugin-theme-ui
@@ -11546,6 +11546,28 @@ packages:
       tmp: 0.2.1
       xdg-basedir: 4.0.0
 
+  /gatsby-core-utils@4.13.0:
+    resolution: {integrity: sha512-+oJJsADfcEnzpQpof+L5qtP4iSeMaEPn1QSjXENlg/go9Pi/4eqb+Nn3y3q8bC/zy4hMWFWrPdMJmdW581uNvA==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@babel/runtime': 7.22.15
+      ci-info: 2.0.0
+      configstore: 5.0.1
+      fastq: 1.15.0
+      file-type: 16.5.4
+      fs-extra: 11.1.1
+      got: 11.8.6
+      hash-wasm: 4.9.0
+      import-from: 4.0.0
+      lmdb: 2.5.3
+      lock: 1.1.0
+      node-object-hash: 2.3.10
+      proper-lockfile: 4.1.2
+      resolve-from: 5.0.0
+      tmp: 0.2.1
+      xdg-basedir: 4.0.0
+    dev: false
+
   /gatsby-graphiql-explorer@3.10.0:
     resolution: {integrity: sha512-KUYzObIk+W0zRlyVjOWdNLTTL4KyozygT54TOhbBMq4LgUf0mFtnA50UzwV/SqfjksUwE9Xtv7278K1z1Hjuiw==}
     engines: {node: '>=18.0.0'}
@@ -11743,7 +11765,7 @@ packages:
       - supports-color
     dev: false
 
-  /gatsby-plugin-mdx@5.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.10.0)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-mdx@5.0.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.13.0)(gatsby@5.10.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-4OkotIxp5rpQ1CNFoWrF2XtvwjK0wkvoJrLaHcO+ykQHAa0aU72MJl91RjpIA4iiSQJEMG8HBrSvqIQoKmo51w==}
     peerDependencies:
       '@mdx-js/react': ^2.0.0
@@ -11763,7 +11785,7 @@ packages:
       gatsby: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
       gatsby-core-utils: 4.10.0
       gatsby-plugin-utils: 4.10.0(gatsby@5.10.0)
-      gatsby-source-filesystem: 5.12.0(gatsby@5.10.0)
+      gatsby-source-filesystem: 5.13.0(gatsby@5.10.0)
       gray-matter: 4.0.3
       mdast-util-mdx: 2.0.1
       mdast-util-to-hast: 10.2.0
@@ -11973,6 +11995,24 @@ packages:
       fs-extra: 11.1.1
       gatsby: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
       gatsby-core-utils: 4.12.0
+      mime: 3.0.0
+      pretty-bytes: 5.6.0
+      valid-url: 1.0.9
+      xstate: 4.38.2
+    dev: false
+
+  /gatsby-source-filesystem@5.13.0(gatsby@5.10.0):
+    resolution: {integrity: sha512-yn4axQhIPHLQDMgrhEmerXyoawiTVB1haUz36BTlQers0HfMmODyjbnIK01Dt1IKAbYVfS0A2suBjBjIbNLwAg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      gatsby: ^5.0.0-next || ^4 || ^5
+    dependencies:
+      '@babel/runtime': 7.22.15
+      chokidar: 3.5.3
+      file-type: 16.5.4
+      fs-extra: 11.1.1
+      gatsby: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
+      gatsby-core-utils: 4.13.0
       mime: 3.0.0
       pretty-bytes: 5.6.0
       valid-url: 1.0.9

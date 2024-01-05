@@ -112,6 +112,7 @@ export const multiples = {
 export const scales = {
   color: 'colors',
   background: 'colors',
+  accentColor: 'colors',
   backgroundColor: 'colors',
   borderColor: 'colors',
   caretColor: 'colors',

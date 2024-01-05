@@ -577,16 +577,18 @@ test('flexBasis uses theme.sizes', () => {
   })
 })
 
-test('fill and stroke and caretColor use theme.colors', () => {
+test('fill, stroke, caretColor, and accentColor use theme.colors', () => {
   const style = css({
     fill: 'primary',
     stroke: 'secondary',
     caretColor: 'primary',
+    accentColor: 'secondary',
   })(theme)
   expect(style).toEqual({
     fill: 'tomato',
     stroke: 'cyan',
     caretColor: 'tomato',
+    accentColor: 'cyan',
   })
 })
 
