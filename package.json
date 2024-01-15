@@ -91,7 +91,7 @@
     "@types/react-dom": "^18.2.5",
     "@types/react-test-renderer": "^18.0.0",
     "@types/semver": "^7.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^5.59.11",
     "auto": "^10.46.0",
     "babel-jest": "^29.5.0",
