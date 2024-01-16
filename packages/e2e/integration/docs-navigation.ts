@@ -39,7 +39,7 @@ describe('docs navigation', () => {
         (link) => link.textContent === 'Packages'
       )!
 
-      packagesLink.click()
+      packagesLink.click({ force: true })
     })
 
     for (const packageName of [
