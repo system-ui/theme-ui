@@ -6,27 +6,25 @@ import { Note } from '../..'
 
 # Components
 
-A number of built-in UI components are available for layouts, grids, buttons, form elements, and more.
-Components can be used as an alternative to the [JSX pragma](/jsx-pragma) for using Theme UI features,
-or in parallel to provide specific UI components.
+A number of built-in UI components are available for layouts, grids, buttons,
+form elements, and more. Components can be used as an alternative to the
+[JSX pragma](/jsx-pragma) for using Theme UI features, or in parallel to provide
+specific UI components.
 
 ```jsx live=true
-<Box p={4} bg="highlight">
-  <Flex
-    sx={{
-      alignItems: 'center',
-    }}>
+<Box sx={{ p: 4, bg: 'highlight' }}>
+  <Flex sx={{ alignItems: 'center' }}>
     <Heading>Components</Heading>
-    <Button ml="auto">Beep</Button>
+    <Button sx={{ ml: 'auto' }}>Beep</Button>
   </Flex>
 </Box>
 ```
 
 ## Variants
 
-Theme UI components can be customized by adding styles to your theme.
-Each component accepts a `variant` prop to quickly
-change custom stylistic variations that you define.
+Theme UI components can be customized by adding styles to your theme. Each
+component accepts a `variant` prop to quickly change custom stylistic variations
+that you define.
 
 ```js
 {
@@ -85,16 +83,18 @@ All Theme UI components include the following props.
 
 <Note>
 
-The `sx` prop on Theme UI components can be used _without_ the `jsx` pragma comment and can be used in MDX files to apply theme-based styles.
+The `sx` prop on Theme UI components can be used _without_ the `jsx` pragma
+comment and can be used in MDX files to apply theme-based styles.
 
 </Note>
 
 <Note>
 
-If you’re using TypeScript, Theme UI merges prop types with the props of components passed
-in the `as` prop on [`Field`](/components/field).
-However, it’s tricky to get the `as` element props working on [`Box`](/components/box), especially with `svg`.
-You can work around this by using the [custom JSX pragma](/jsx-pragma), which can be transpiled by TypeScript.
+If you’re using TypeScript, Theme UI merges prop types with the props of
+components passed in the `as` prop on [`Field`](/components/field). However,
+it’s tricky to get the `as` element props working on [`Box`](/components/box),
+especially with `svg`. You can work around this by using the
+[custom JSX pragma](/jsx-pragma), which can be transpiled by TypeScript.
 
 </Note>
 
@@ -102,14 +102,9 @@ You can work around this by using the [custom JSX pragma](/jsx-pragma), which ca
 
 ### Style Props
 
-Each Theme UI component includes shorthand props for applying margin, padding, and color styles.
-These props work the same as properties within the `sx` prop, but allow for a more terse syntax for readability.
-
-<Note>
-
-If you’ve used [Styled System][] or [Rebass][] before, these props work the same way.
-
-</Note>
+Each Theme UI component includes shorthand props for applying margin, padding,
+and color styles. These props work the same as properties within the `sx` prop,
+but allow for a more terse syntax for readability.
 
 | Name                  | Description          |
 | --------------------- | -------------------- |
@@ -129,6 +124,3 @@ If you’ve used [Styled System][] or [Rebass][] before, these props work the sa
 | `paddingLeft`, `pl`   | Padding Left         |
 | `paddingX`, `px`      | Padding Left & Right |
 | `paddingY`, `py`      | Padding Top & Bottom |
-
-[styled system]: https://styled-system.com
-[rebass]: https://rebassjs.org

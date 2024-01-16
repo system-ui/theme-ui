@@ -4,7 +4,8 @@ title: Grid
 
 # Grid
 
-CSS grid layout component to arrange direct child elements in a tiled grid layout.
+CSS grid layout component to arrange direct child elements in a tiled grid
+layout.
 
 ```sh
 import { Grid } from 'theme-ui'
@@ -12,35 +13,35 @@ import { Grid } from 'theme-ui'
 
 ```jsx live=true
 <Grid width={[128, null, 192]}>
-  <Box bg="primary">Box</Box>
-  <Box bg="muted">Box</Box>
-  <Box bg="primary">Box</Box>
-  <Box bg="muted">Box</Box>
+  <Box sx={{ bg: 'primary' }}>Box</Box>
+  <Box sx={{ bg: 'muted' }}>Box</Box>
+  <Box sx={{ bg: 'primary' }}>Box</Box>
+  <Box sx={{ bg: 'muted' }}>Box</Box>
 </Grid>
 ```
 
 ```jsx live=true
 <Grid gap={2} columns={[2, null, 4]}>
-  <Box bg="primary">Box</Box>
-  <Box bg="muted">Box</Box>
-  <Box bg="primary">Box</Box>
-  <Box bg="muted">Box</Box>
+  <Box sx={{ bg: 'primary' }}>Box</Box>
+  <Box sx={{ bg: 'muted' }}>Box</Box>
+  <Box sx={{ bg: 'primary' }}>Box</Box>
+  <Box sx={{ bg: 'muted' }}>Box</Box>
 </Grid>
 ```
 
 ```jsx live=true
 <Grid gap={2} columns={[2, '1fr 2fr']}>
-  <Box bg="primary">Box</Box>
-  <Box bg="muted">Box</Box>
-  <Box bg="primary">Box</Box>
-  <Box bg="muted">Box</Box>
+  <Box sx={{ bg: 'primary' }}>Box</Box>
+  <Box sx={{ bg: 'muted' }}>Box</Box>
+  <Box sx={{ bg: 'primary' }}>Box</Box>
+  <Box sx={{ bg: 'muted' }}>Box</Box>
 </Grid>
 ```
 
 ## Props
 
-The `Grid` component includes custom props for adjusting the grid layout.
-Each prop can use the [responsive array][] syntax for mobile-first responsive styles.
+The `Grid` component includes custom props for adjusting the grid layout. Each
+prop can use the [responsive array][] syntax for mobile-first responsive styles.
 
 | Prop      | Description                                                                                                                                                                                                  |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -53,5 +54,6 @@ Each prop can use the [responsive array][] syntax for mobile-first responsive st
 
 ## Variants
 
-You can define additional CSS grid layouts by adding variants to the `theme.grids` object.
-These styles can be used to create a wide variety of different reusable layouts.
+You can define additional CSS grid layouts by adding variants to the
+`theme.grids` object. These styles can be used to create a wide variety of
+different reusable layouts.

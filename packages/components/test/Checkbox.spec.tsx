@@ -6,21 +6,21 @@ import { ThemeProvider } from '@theme-ui/core'
 import { AssertTrue, IsExact, render, renderJSON } from '@theme-ui/test-utils'
 import React, { forwardRef } from 'react'
 
-import { Switch, SwitchProps } from '../src'
+import { Checkbox, CheckboxProps } from '../src'
 
 import { theme } from './__test-utils__'
 
-describe(Switch.name, () => {
+describe(Checkbox.name, () => {
   test('accepts forwarded ref', () => {
-    const CustomSwitch = forwardRef<HTMLInputElement, SwitchProps>(
-      (props, ref) => <Switch ref={ref} {...props} />
+    const CustomCheckbox = forwardRef<HTMLInputElement, CheckboxProps>(
+      (props, ref) => <Checkbox ref={ref} {...props} />
     )
 
     let type: string | undefined
 
     render(
       <ThemeProvider theme={{}}>
-        <CustomSwitch
+        <CustomCheckbox
           ref={(ref) => {
             type _ = AssertTrue<IsExact<typeof ref, HTMLInputElement | null>>
             type = ref?.type
@@ -35,8 +35,7 @@ describe(Switch.name, () => {
   test('containerSx and sx', () => {
     const json = renderJSON(
       <ThemeProvider theme={theme}>
-        <Switch
-          label="Subscribe for email updates"
+        <Checkbox
           sx={{
             'input:checked ~ &': {
               backgroundColor: 'primary',

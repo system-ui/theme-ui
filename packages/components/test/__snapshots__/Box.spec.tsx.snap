@@ -5,7 +5,6 @@ exports[`Box renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  padding: 8px;
 }
 
 <div

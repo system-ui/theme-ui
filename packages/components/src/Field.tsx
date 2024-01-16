@@ -3,9 +3,9 @@ import React from 'react'
 import { Box } from './Box'
 import { Label } from './Label'
 import { Input, InputProps } from './Input'
-import { getMargin, MarginProps, omitMargin } from './util'
+import type { ThemeUICSSObject } from '@theme-ui/css'
 
-export interface FieldOwnProps extends MarginProps {
+export interface FieldOwnProps {
   /**
    * Text for Label component
    */
@@ -14,6 +14,7 @@ export interface FieldOwnProps extends MarginProps {
    * Used for the for, id, and name attributes
    */
   name?: string
+  containerSx?: ThemeUICSSObject
 }
 
 export type FieldProps<T extends React.ElementType> = FieldOwnProps &
@@ -39,6 +40,7 @@ export const Field = React.forwardRef(function Field<
     label,
     id,
     name,
+    containerSx,
     ...rest
   }: FieldProps<T>,
   ref: React.ForwardedRef<unknown>
@@ -49,11 +51,11 @@ export const Field = React.forwardRef(function Field<
     ref,
     name,
     id: fieldIdentifier,
-    ...omitMargin(rest),
+    ...rest,
   } as React.ComponentPropsWithRef<T>
 
   return (
-    <Box {...getMargin(rest)}>
+    <Box sx={containerSx}>
       <Label htmlFor={fieldIdentifier}>{label}</Label>
       <Control {...controlProps} />
     </Box>

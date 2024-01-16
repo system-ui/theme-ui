@@ -37,11 +37,11 @@ export const Radii = () => {
           {Object.keys(theme.radii).map((key) => (
             <Box
               key={`border_${key}`}
-              p={3}
-              m={2}
-              color="text"
-              bg="muted"
               sx={{
+                p: 3,
+                m: 2,
+                color: 'text',
+                bg: 'muted',
                 border: '2px solid black',
                 borderRadius: { key },
                 minWidth: '100px',

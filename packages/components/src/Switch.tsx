@@ -13,6 +13,7 @@ const SIZE = 18
 export interface SwitchProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
   label?: string
+  containerSx?: ThemeUICSSObject
 }
 
 /**
@@ -23,7 +24,7 @@ export interface SwitchProps
  */
 export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
   React.forwardRef(function Switch(
-    { className, label, sx, variant = 'switch', ...rest },
+    { className, label, sx, containerSx, variant = 'switch', ...rest },
     ref
   ) {
     const __css: ThemeUICSSObject = {
@@ -59,7 +60,7 @@ export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
     }
 
     return (
-      <Label sx={{ cursor: 'pointer' }}>
+      <Label sx={{ cursor: 'pointer', ...containerSx }}>
         <Box
           ref={ref}
           as="input"

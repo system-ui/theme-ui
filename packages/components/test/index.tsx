@@ -134,12 +134,6 @@ describe('Paragraph', () => {
     expect(json).toHaveStyleRule('margin', margin)
   })
 
-  test('renders with space prop overrides', () => {
-    const margin = '8px'
-    const json = renderJSON(<Paragraph m={margin} />)
-    expect(json).toHaveStyleRule('margin', margin)
-  })
-
   test('renders with theme override', () => {
     const margin = '8px'
     const json = renderJSON(
@@ -194,54 +188,6 @@ describe('Input', () => {
   })
 })
 
-describe('Select', () => {
-  test('renders', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={theme}>
-        <Select />
-      </ThemeUIProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with style props', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={theme}>
-        <Select mb={3} value="hello" />
-      </ThemeUIProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with custom icon', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={theme}>
-        <Select
-          arrow={
-            <svg>
-              <path d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z" />
-            </svg>
-          }
-        />
-      </ThemeUIProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-
-  test('renders with background-color', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={{ colors: { background: 'blueviolet' } }}>
-        <Select />
-      </ThemeUIProvider>
-    )!
-
-    expect(json.children?.[0]).toHaveStyleRule(
-      'background-color',
-      'var(--theme-ui-colors-background)'
-    )
-  })
-})
-
 describe('Textarea', () => {
   test('renders', () => {
     const json = renderJSON(
@@ -264,41 +210,11 @@ describe('Radio', () => {
   })
 })
 
-describe('Checkbox', () => {
-  test('renders', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={theme}>
-        <Checkbox />
-      </ThemeUIProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-})
-
 describe('Slider', () => {
   test('renders', () => {
     const json = renderJSON(
       <ThemeUIProvider theme={theme}>
         <Slider />
-      </ThemeUIProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-})
-
-describe('Field', () => {
-  test('renders', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={theme}>
-        <Field />
-      </ThemeUIProvider>
-    )
-    expect(json).toMatchSnapshot()
-  })
-  test('renders with id prop', () => {
-    const json = renderJSON(
-      <ThemeUIProvider theme={theme}>
-        <Field id="test-field" />
       </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()
@@ -397,7 +313,7 @@ describe('Embed', () => {
   test('renders with box system props', () => {
     const json = renderJSON(
       <ThemeUIProvider theme={theme}>
-        <Embed mx="auto" py={4} />
+        <Embed sx={{ mx: 'auto', py: 4 }} />
       </ThemeUIProvider>
     )
     expect(json).toMatchSnapshot()

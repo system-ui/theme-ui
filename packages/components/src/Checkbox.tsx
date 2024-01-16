@@ -2,7 +2,8 @@ import React from 'react'
 
 import { Box, BoxOwnProps } from './Box'
 import { SVG, SVGProps } from './SVG'
-import { Assign, ForwardRef } from './types'
+import type { Assign, ForwardRef } from './types'
+import type { ThemeUICSSObject } from '@theme-ui/css'
 import { __internalProps } from './util'
 
 const CheckboxChecked = (props: SVGProps) => (
@@ -45,7 +46,9 @@ const CheckboxIcon = (props: SVGProps) => (
 )
 
 export interface CheckboxProps
-  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
+  containerSx?: ThemeUICSSObject
+}
 
 /**
  * Form checkbox input component
@@ -56,11 +59,11 @@ export interface CheckboxProps
  */
 export const Checkbox: ForwardRef<HTMLInputElement, CheckboxProps> =
   React.forwardRef(function Checkbox(
-    { className, sx, variant = 'checkbox', children, ...props },
+    { className, sx, containerSx, variant = 'checkbox', children, ...props },
     ref
   ) {
     return (
-      <Box sx={{ minWidth: 'min-content' }}>
+      <Box sx={{ minWidth: 'min-content', ...containerSx }}>
         <Box
           ref={ref}
           as="input"

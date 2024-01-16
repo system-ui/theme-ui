@@ -11,14 +11,12 @@ import { Container } from 'theme-ui'
 ```
 
 ```jsx live=true
-<Container p={4} bg="muted">
-  Centered container
-</Container>
+<Container sx={{ p: 4, bg: 'muted' }}>Centered container</Container>
 ```
 
 The Container component's max-width can be defined in `theme.sizes.container`.
 
 ## Variants
 
-Container variants can be defined in the `theme.layout` object.
-The Container component uses `theme.layout.container` as its default variant style.
+Container variants can be defined in the `theme.layout` object. The Container
+component uses `theme.layout.container` as its default variant style.
