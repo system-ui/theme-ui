@@ -4,8 +4,11 @@
  */
 /* eslint-disable no-lone-blocks */
 import { renderJSON, NotHas, Assert, expecter } from '@theme-ui/test-utils'
+import { matchers } from '@emotion/jest'
 
-import { SxProp, ThemeUIJSX } from '../src'
+import { SxProp, ThemeProvider, ThemeUIJSX } from '../src'
+
+expect.extend(matchers)
 
 describe('JSX', () => {
   test('accepts sx prop', () => {
@@ -28,6 +31,24 @@ describe('JSX', () => {
         </div>
       )
     ).toMatchSnapshot()
+  })
+
+  test('sx prop gives a theme that can be read as array or object', () => {
+    const json = renderJSON(
+      <ThemeProvider
+        theme={{ shadows: { small: '0 0 4px rgba(0, 0, 0, .125)' } }}
+      >
+        <div
+          sx={(t) => ({
+            boxShadow: t.shadows?.small,
+            '&:hover': {
+              boxShadow: t.shadows?.[2],
+            },
+          })}
+        />
+      </ThemeProvider>
+    )
+    expect(json).toHaveStyleRule('box-shadow', '0 0 4px rgba(0, 0, 0, .125)')
   })
 
   test('accepts css prop', () => {

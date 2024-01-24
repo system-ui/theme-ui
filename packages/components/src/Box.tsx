@@ -2,7 +2,6 @@ import {
   ArrayInterpolation,
   CSSObject,
   Interpolation,
-  jsx,
   useTheme,
 } from '@emotion/react'
 import React, { forwardRef } from 'react'
@@ -12,6 +11,7 @@ import {
   ThemeUICSSProperties,
   ThemeUIStyleObject,
 } from '@theme-ui/css'
+import { Theme } from '@theme-ui/core'
 import type { Assign, ForwardRef } from './types'
 import type { __ThemeUIComponentsInternalProps } from './util'
 
@@ -59,7 +59,7 @@ export interface BoxOwnProps extends BoxSystemProps {
   as?: React.ElementType
   variant?: string
   css?: Interpolation<any>
-  sx?: ThemeUIStyleObject
+  sx?: ThemeUIStyleObject<Theme>
 }
 
 export interface BoxProps

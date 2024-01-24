@@ -12,7 +12,10 @@ import packageJson from '../package.json' assert { type: 'json' }
   const CANARY_NPM_TAG = 'canary'
 
   const version = getVersion(packageJson)
-  const branch = exec('git branch --show-current', { stdio: 'pipe' })[0].trim()
+  const branch =
+    exec('git branch --show-current', { stdio: 'pipe' })[0].trim() ||
+    process.env.BRANCH_NAME
+  console.log('Current branch:', branch)
 
   await setVersions({ version })
 
@@ -68,6 +71,8 @@ function getVersion(packageJson) {
     .trim()
     .slice(1) // remove leading "v"
 
+  console.log('Latest tag version:', latestTagVersion)
+  console.log('Root package.json version:', packageJson.version)
   const version = semver.gt(packageJson.version, latestTagVersion)
     ? packageJson.version
     : latestTagVersion
