@@ -53,7 +53,7 @@ jobs:
     needs: [build]
     steps:
       - id: can_release
-        run: echo '::set-output name=CAN_RELEASE::${{ env.CAN_RELEASE }}'
+        run: echo 'CAN_RELEASE=${{ env.CAN_RELEASE }}' >> $GITHUB_OUTPUT
     env:
       CAN_RELEASE: ${{ secrets.AUTO_RELEASE_GH_TOKEN != '' }}
     outputs:
