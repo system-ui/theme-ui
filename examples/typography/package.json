@@ -27,7 +27,7 @@
     "@types/lodash.merge": "^4.6.7",
     "@types/react": "^18.2.12",
     "babel-eslint": "^10",
-    "eslint": "^8.42.0",
+    "eslint": "^8.56.0",
     "graphql": "^15",
     "typescript": "^5"
   }
