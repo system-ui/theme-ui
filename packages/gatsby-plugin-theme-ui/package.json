@@ -9,6 +9,7 @@
   "exports": {
     ".": {
       "module": {
+        "worker": "./dist/gatsby-plugin-theme-ui.worker.esm.js",
         "browser": "./dist/gatsby-plugin-theme-ui.browser.esm.js",
         "default": "./dist/gatsby-plugin-theme-ui.esm.js"
       },
@@ -50,7 +51,8 @@
   "preconstruct": {
     "exports": {
       "envConditions": [
-        "browser"
+        "browser",
+        "worker"
       ]
     }
   }

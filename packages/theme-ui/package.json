@@ -5,6 +5,36 @@
   "source": "src/index.ts",
   "main": "dist/theme-ui.cjs.js",
   "module": "dist/theme-ui.esm.js",
+  "browser": {
+    "./dist/theme-ui.esm.js": "./dist/theme-ui.browser.esm.js"
+  },
+  "exports": {
+    ".": {
+      "module": {
+        "worker": "./dist/theme-ui.worker.esm.js",
+        "browser": "./dist/theme-ui.browser.esm.js",
+        "default": "./dist/theme-ui.esm.js"
+      },
+      "default": "./dist/theme-ui.cjs.js"
+    },
+    "./jsx-runtime": {
+      "module": {
+        "worker": "./jsx-runtime/dist/theme-ui-jsx-runtime.worker.esm.js",
+        "browser": "./jsx-runtime/dist/theme-ui-jsx-runtime.browser.esm.js",
+        "default": "./jsx-runtime/dist/theme-ui-jsx-runtime.esm.js"
+      },
+      "default": "./jsx-runtime/dist/theme-ui-jsx-runtime.cjs.js"
+    },
+    "./jsx-dev-runtime": {
+      "module": {
+        "worker": "./jsx-dev-runtime/dist/theme-ui-jsx-dev-runtime.worker.esm.js",
+        "browser": "./jsx-dev-runtime/dist/theme-ui-jsx-dev-runtime.browser.esm.js",
+        "default": "./jsx-dev-runtime/dist/theme-ui-jsx-dev-runtime.esm.js"
+      },
+      "default": "./jsx-dev-runtime/dist/theme-ui-jsx-dev-runtime.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "types": "dist/theme-ui.cjs.d.ts",
   "sideEffects": false,
   "author": "Brent Jackson <jxnblk@gmail.com>",
@@ -39,6 +69,12 @@
     "css-in-js"
   ],
   "preconstruct": {
+    "exports": {
+      "envConditions": [
+        "browser",
+        "worker"
+      ]
+    },
     "entrypoints": [
       "index.ts",
       "jsx-dev-runtime.ts",

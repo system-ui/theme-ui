@@ -10,6 +10,7 @@
   "exports": {
     ".": {
       "module": {
+        "worker": "./dist/theme-ui-css.worker.esm.js",
         "browser": "./dist/theme-ui-css.browser.esm.js",
         "default": "./dist/theme-ui-css.esm.js"
       },
@@ -17,6 +18,7 @@
     },
     "./utils": {
       "module": {
+        "worker": "./utils/dist/theme-ui-css-utils.worker.esm.js",
         "browser": "./utils/dist/theme-ui-css-utils.browser.esm.js",
         "default": "./utils/dist/theme-ui-css-utils.esm.js"
       },
@@ -50,7 +52,8 @@
     ],
     "exports": {
       "envConditions": [
-        "browser"
+        "browser",
+        "worker"
       ]
     }
   },

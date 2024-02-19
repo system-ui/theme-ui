@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/monorepo",
-  "version": "0.16.2-scale-tuples.0",
+  "version": "0.16.2-develop.1",
   "private": true,
   "scripts": {
     "build": "preconstruct build",
