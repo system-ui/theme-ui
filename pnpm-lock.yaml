@@ -542,8 +542,8 @@ importers:
         specifier: ^5
         version: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
       gatsby-plugin-catch-links:
-        specifier: ^5.10.0
-        version: 5.10.0(gatsby@5.10.0)
+        specifier: ^5.13.1
+        version: 5.13.1(gatsby@5.10.0)
       gatsby-plugin-compile-es6-packages:
         specifier: ^2.1.1
         version: 2.1.1(gatsby@5.10.0)
@@ -7455,7 +7455,7 @@ packages:
       '@babel/plugin-transform-spread': 7.22.5(@babel/core@7.22.5)
       '@babel/preset-env': 7.22.5(@babel/core@7.22.5)
       '@babel/preset-react': 7.22.5(@babel/core@7.22.5)
-      '@babel/runtime': 7.22.5
+      '@babel/runtime': 7.22.15
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-macros: 3.1.0
       babel-plugin-transform-react-remove-prop-types: 0.4.24
@@ -11703,13 +11703,13 @@ packages:
       '@parcel/transformer-js': 2.8.3(@parcel/core@2.8.3)
       '@parcel/transformer-json': 2.8.3(@parcel/core@2.8.3)
 
-  /gatsby-plugin-catch-links@5.10.0(gatsby@5.10.0):
-    resolution: {integrity: sha512-hVo5s1MQ3KyofvuAQgtU1neFdRNfkzMOLaqMU+e7JU3zaFAecc2Oa2WEQ429LQfP+wX9S8gJ9D7ixrZGS+vFPw==}
+  /gatsby-plugin-catch-links@5.13.1(gatsby@5.10.0):
+    resolution: {integrity: sha512-lU0AxsXWTEMzPhZZPSCQAAQyQkcfcrK1fVinxQ2Zc85A/d+3k76SsuH+G14LsqjhidknltwBddKtPdRE0DOSRA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next || ^4 || ^5
     dependencies:
-      '@babel/runtime': 7.22.5
+      '@babel/runtime': 7.22.15
       escape-string-regexp: 1.0.5
       gatsby: 5.10.0(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
     dev: false
