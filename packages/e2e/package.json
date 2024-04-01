@@ -12,7 +12,7 @@
   },
   "optionalDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.2",
-    "@percy/cli": "^1.1.0",
+    "@percy/cli": "^1.28.2",
     "@percy/cypress": "^3.1.1",
     "@testing-library/cypress": "^8.0.2",
     "cypress": "10.4.0",
