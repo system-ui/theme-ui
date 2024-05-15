@@ -12,6 +12,7 @@ const SIZE = 18
 
 export interface SwitchProps
   extends Assign<React.ComponentPropsWithRef<'input'>, BoxOwnProps> {
+  labelPosition?: 'start' | 'end',
   label?: string
 }
 
@@ -23,7 +24,7 @@ export interface SwitchProps
  */
 export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
   React.forwardRef(function Switch(
-    { className, label, sx, variant = 'switch', ...rest },
+    { className, label, sx, labelPosition = 'end', variant = 'switch', ...rest },
     ref
   ) {
     const __css: ThemeUICSSObject = {
@@ -33,7 +34,6 @@ export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
       borderRadius: SIZE,
       height: SIZE + GUTTER * 2,
       width: SIZE * 2 + GUTTER * 2,
-      mr: 2,
       'input:disabled ~ &': {
         opacity: 0.5,
         cursor: 'not-allowed',
@@ -58,34 +58,45 @@ export const Switch: ForwardRef<HTMLInputElement, SwitchProps> =
       },
     }
 
+    // Inner really checkbox (but hidden)
+    const reallyHiddenCheckbox = (
+      <Box
+        ref={ref}
+        as="input"
+        type="checkbox"
+        aria-label={label}
+        {...rest}
+        sx={{
+          position: 'absolute',
+          opacity: 0,
+          zIndex: -1,
+          width: 1,
+          height: 1,
+          overflow: 'hidden',
+        }}
+        {...__internalProps({ __themeKey: 'forms' })}
+      />
+    );
+
+    // Switch just for show
+    const switchForShow = (
+      <Box
+        css={{ padding: GUTTER }}
+        variant={variant}
+        className={className}
+        sx={sx}
+        {...__internalProps({ __themeKey: 'forms', __css })}
+      >
+        <Box />
+      </Box>
+    );
+
     return (
-      <Label sx={{ cursor: 'pointer' }}>
-        <Box
-          ref={ref}
-          as="input"
-          type="checkbox"
-          aria-label={label}
-          {...rest}
-          sx={{
-            position: 'absolute',
-            opacity: 0,
-            zIndex: -1,
-            width: 1,
-            height: 1,
-            overflow: 'hidden',
-          }}
-          {...__internalProps({ __themeKey: 'forms' })}
-        />
-        <Box
-          css={{ padding: GUTTER }}
-          variant={variant}
-          className={className}
-          sx={sx}
-          {...__internalProps({ __themeKey: 'forms', __css })}
-        >
-          <Box />
-        </Box>
-        <span>{label}</span>
+      <Label sx={{ cursor: 'pointer', gap: 2 }}>
+        { labelPosition === 'start' && label ? <span>{label}</span> : null }
+        {reallyHiddenCheckbox}
+        {switchForShow}
+        { labelPosition === 'end' && label ? <span>{label}</span> : null }
       </Label>
     )
   })

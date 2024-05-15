@@ -1390,6 +1390,7 @@ exports[`Switch renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  gap: 8px;
 }
 
 .emotion-1 {
@@ -1416,7 +1417,6 @@ exports[`Switch renders 1`] = `
   border-radius: 18px;
   height: 22px;
   width: 40px;
-  margin-right: 8px;
   padding: 2px;
 }
 
@@ -1479,7 +1479,327 @@ input:checked~.emotion-2>div {
       className="emotion-3"
     />
   </div>
-  <span />
+</label>
+`;
+
+exports[`Switch renders width labelPosition end 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: gray;
+  border-radius: 18px;
+  height: 22px;
+  width: 40px;
+  padding: 2px;
+}
+
+input:disabled~.emotion-2 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emotion-2>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transition: -webkit-transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transition: transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+input:checked~.emotion-2 {
+  background-color: primary;
+}
+
+input:checked~.emotion-2>div {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<label
+  className="emotion-0"
+>
+  <input
+    aria-label="Are you OK? Hello!"
+    className="emotion-1"
+    type="checkbox"
+  />
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-3"
+    />
+  </div>
+  <span>
+    Are you OK? Hello!
+  </span>
+</label>
+`;
+
+exports[`Switch renders width labelPosition start 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: gray;
+  border-radius: 18px;
+  height: 22px;
+  width: 40px;
+  padding: 2px;
+}
+
+input:disabled~.emotion-2 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emotion-2>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transition: -webkit-transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transition: transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+input:checked~.emotion-2 {
+  background-color: primary;
+}
+
+input:checked~.emotion-2>div {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<label
+  className="emotion-0"
+>
+  <span>
+    Thanks you! Thank you very much
+  </span>
+  <input
+    aria-label="Thanks you! Thank you very much"
+    className="emotion-1"
+    type="checkbox"
+  />
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-3"
+    />
+  </div>
+</label>
+`;
+
+exports[`Switch renders with label 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: gray;
+  border-radius: 18px;
+  height: 22px;
+  width: 40px;
+  padding: 2px;
+}
+
+input:disabled~.emotion-2 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emotion-2>div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transition: -webkit-transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transition: transform 240ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+input:checked~.emotion-2 {
+  background-color: primary;
+}
+
+input:checked~.emotion-2>div {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<label
+  className="emotion-0"
+>
+  <input
+    aria-label="Hello"
+    className="emotion-1"
+    type="checkbox"
+  />
+  <div
+    className="emotion-2"
+  >
+    <div
+      className="emotion-3"
+    />
+  </div>
+  <span>
+    Hello
+  </span>
 </label>
 `;
 

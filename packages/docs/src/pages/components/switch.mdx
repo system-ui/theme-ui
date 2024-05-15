@@ -2,6 +2,8 @@
 title: Switch
 ---
 
+import Note from '../../components/note.js'
+
 # Switch
 
 Form switch input component
@@ -42,7 +44,23 @@ To show different style based on the input state, you can use
 />
 ```
 
+## `labelPosition`
+
+By default, the switch comes first, with the label to the right of it. If you'd
+like to change the ordering, set the `labelPosition` prop to `"start"`, or the
+default value, `"end"`.
+
+```jsx live=true
+<Switch label="Use 24-Hour Time" labelPosition="start" />
+```
+
+```jsx live=true
+<Switch label="Auto-Correction" labelPosition="end" />
+```
+
 ## External label
+
+<Note>Try to use `labelPosition` prop rather than another Label layer.</Note>
 
 Even though the Switch component already renders a label, but you can also
 opt-in for an external label instead.
@@ -57,7 +75,8 @@ import { Box, Flex, Label, Switch } from 'theme-ui'
     justifyContent: 'space-between',
     alignItems: 'center',
     py: 4,
-  }}>
+  }}
+>
   <Label htmlFor="enable-email-alerts" sx={{ flex: 1 }}>
     Enable email alerts?
   </Label>

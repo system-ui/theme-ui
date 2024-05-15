@@ -499,4 +499,34 @@ describe('Switch', () => {
     )
     expect(json).toMatchSnapshot()
   })
+
+  test('renders with label', () => {
+    const json = renderJSON(
+      <ThemeUIProvider theme={theme}>
+        <Switch label="Hello" />
+      </ThemeUIProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders width labelPosition end', () => {
+    const json = renderJSON(
+      <ThemeUIProvider theme={theme}>
+        <Switch label="Are you OK? Hello!" labelPosition="end" />
+      </ThemeUIProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
+
+  test('renders width labelPosition start', () => {
+    const json = renderJSON(
+      <ThemeUIProvider theme={theme}>
+        <Switch
+          label="Thanks you! Thank you very much"
+          labelPosition="start"
+        />
+      </ThemeUIProvider>
+    )
+    expect(json).toMatchSnapshot()
+  })
 })
