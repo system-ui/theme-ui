@@ -372,7 +372,7 @@ export const css =
       const x = styles[key as keyof typeof styles]
       const val = typeof x === 'function' ? x(theme) : x
 
-      if (val && typeof val === 'object') {
+      if (val && typeof val === 'object' && key !== '@page') {
         if (hasDefault(val)) {
           result[key] = val[THEME_UI_DEFAULT_KEY]
           continue
