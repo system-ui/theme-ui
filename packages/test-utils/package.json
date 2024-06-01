@@ -17,7 +17,7 @@
   "dependencies": {
     "@testing-library/react": "^14.2.1",
     "conditional-type-checks": "^1.0.6",
-    "react-test-renderer": "^18.2.0",
+    "react-test-renderer": "^18.3.1",
     "ts-snippet": "^5.0.0"
   },
   "peerDependencies": {
