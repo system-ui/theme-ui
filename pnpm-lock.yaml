@@ -93,7 +93,14 @@ importers:
         specifier: ^18.2.5
         version: 18.3.1
       '@types/react-test-renderer':
+<<<<<<< HEAD
         specifier: ^18.0.0
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+        specifier: ^18.0.0
+        version: 18.0.0
+=======
+        specifier: ^18.3.0
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
         version: 18.3.0
       '@types/semver':
         specifier: ^7.5.8
@@ -148,7 +155,14 @@ importers:
         version: 2.8.8
       react-test-renderer:
         specifier: ^18.3.1
+<<<<<<< HEAD
         version: 18.3.1(react@18.3.1)
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+=======
+        version: 18.3.1(react@18.2.0)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       rimraf:
         specifier: ^5.0.1
         version: 5.0.10
@@ -1178,8 +1192,16 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6
       react-test-renderer:
+<<<<<<< HEAD
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+=======
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.2.0)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       theme-ui:
         specifier: workspace:^
         version: link:../theme-ui
@@ -14494,9 +14516,66 @@ snapshots:
     optionalDependencies:
       type-fest: 2.19.0
 
+<<<<<<< HEAD
   '@pnpm/config.env-replace@1.1.0': {}
 
   '@pnpm/network.ca-file@1.0.2':
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /@pmmmwh/react-refresh-webpack-plugin@0.5.10(react-refresh@0.14.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA==}
+    engines: {node: '>= 10.13'}
+    peerDependencies:
+      '@types/webpack': 4.x || 5.x
+      react-refresh: '>=0.10.0 <1.0.0'
+      sockjs-client: ^1.4.0
+      type-fest: '>=0.17.0 <4.0.0'
+      webpack: '>=4.43.0 <6.0.0'
+      webpack-dev-server: 3.x || 4.x
+      webpack-hot-middleware: 2.x
+      webpack-plugin-serve: 0.x || 1.x
+    peerDependenciesMeta:
+      '@types/webpack':
+        optional: true
+      sockjs-client:
+        optional: true
+      type-fest:
+        optional: true
+      webpack-dev-server:
+        optional: true
+      webpack-hot-middleware:
+        optional: true
+      webpack-plugin-serve:
+        optional: true
+    dependencies:
+      ansi-html-community: 0.0.8
+      common-path-prefix: 3.0.0
+      core-js-pure: 3.31.0
+      error-stack-parser: 2.1.4
+      find-up: 5.0.0
+      html-entities: 2.3.6
+      loader-utils: 2.0.4
+      react-refresh: 0.14.0
+      schema-utils: 3.3.0
+      source-map: 0.7.4
+      webpack: 5.91.0
+    dev: true
+
+  /@pnpm/config.env-replace@1.1.0:
+    resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
+    engines: {node: '>=12.22.0'}
+
+  /@pnpm/network.ca-file@1.0.2:
+    resolution: {integrity: sha512-YcPQ8a0jwYU9bTdJDpXjMi7Brhkr1mXsXrUJvjqM2mQDgkRiz8jFaQGOdaLxgjtUfQgZhKy/O3cG/YwmgKaxLA==}
+    engines: {node: '>=12.22.0'}
+=======
+  /@pnpm/config.env-replace@1.1.0:
+    resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
+    engines: {node: '>=12.22.0'}
+
+  /@pnpm/network.ca-file@1.0.2:
+    resolution: {integrity: sha512-YcPQ8a0jwYU9bTdJDpXjMi7Brhkr1mXsXrUJvjqM2mQDgkRiz8jFaQGOdaLxgjtUfQgZhKy/O3cG/YwmgKaxLA==}
+    engines: {node: '>=12.22.0'}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       graceful-fs: 4.2.10
 
@@ -15006,7 +15085,27 @@ snapshots:
     dependencies:
       '@types/react': 18.2.12
 
+<<<<<<< HEAD
   '@types/react@18.2.12':
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /@types/react-test-renderer@18.0.0:
+    resolution: {integrity: sha512-C7/5FBJ3g3sqUahguGi03O79b8afNeSD6T8/GU50oQrJCU0bVCCGQHaGKUbg2Ce8VQEEqTw8/HiS6lXHHdgkdQ==}
+    dependencies:
+      '@types/react': 18.2.12
+    dev: false
+
+  /@types/react@18.2.12:
+    resolution: {integrity: sha512-ndmBMLCgn38v3SntMeoJaIrO6tGHYKMEBohCUmw8HoLLQdRMOIGXfeYaBTLe2lsFaSB3MOK1VXscYFnmLtTSmw==}
+=======
+  /@types/react-test-renderer@18.3.0:
+    resolution: {integrity: sha512-HW4MuEYxfDbOHQsVlY/XtOvNHftCVEPhJF2pQXXwcUiUF+Oyb0usgp48HSgpK5rt8m9KZb22yqOeZm+rrVG8gw==}
+    dependencies:
+      '@types/react': 18.2.12
+    dev: false
+
+  /@types/react@18.2.12:
+    resolution: {integrity: sha512-ndmBMLCgn38v3SntMeoJaIrO6tGHYKMEBohCUmw8HoLLQdRMOIGXfeYaBTLe2lsFaSB3MOK1VXscYFnmLtTSmw==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -15847,9 +15946,38 @@ snapshots:
       schema-utils: 2.7.1
       webpack: 5.88.2
 
+<<<<<<< HEAD
   babel-plugin-add-module-exports@1.0.4: {}
 
   babel-plugin-dynamic-import-node@2.3.3:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /babel-loader@8.3.0(@babel/core@7.22.5)(webpack@5.91.0):
+    resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
+    engines: {node: '>= 8.9'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+      webpack: '>=2'
+    dependencies:
+      '@babel/core': 7.22.5
+      find-cache-dir: 3.3.2
+      loader-utils: 2.0.4
+      make-dir: 3.1.0
+      schema-utils: 2.7.1
+      webpack: 5.91.0
+    dev: true
+
+  /babel-plugin-add-module-exports@1.0.4:
+    resolution: {integrity: sha512-g+8yxHUZ60RcyaUpfNzy56OtWW+x9cyEe9j+CranqLiqbju2yf/Cy6ZtYK40EZxtrdHllzlVZgLmcOUCTlJ7Jg==}
+
+  /babel-plugin-dynamic-import-node@2.3.3:
+    resolution: {integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==}
+=======
+  /babel-plugin-add-module-exports@1.0.4:
+    resolution: {integrity: sha512-g+8yxHUZ60RcyaUpfNzy56OtWW+x9cyEe9j+CranqLiqbju2yf/Cy6ZtYK40EZxtrdHllzlVZgLmcOUCTlJ7Jg==}
+
+  /babel-plugin-dynamic-import-node@2.3.3:
+    resolution: {integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       object.assign: 4.1.5
 
@@ -16976,9 +17104,60 @@ snapshots:
       semver: 7.6.3
       webpack: 5.88.2
 
+<<<<<<< HEAD
   css-minimizer-webpack-plugin@2.0.0(webpack@5.88.2):
     dependencies:
       cssnano: 5.1.15(postcss@8.4.47)
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /css-loader@5.2.7(webpack@5.91.0):
+    resolution: {integrity: sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.27.0 || ^5.0.0
+    dependencies:
+      icss-utils: 5.1.0(postcss@8.4.31)
+      loader-utils: 2.0.4
+      postcss: 8.4.31
+      postcss-modules-extract-imports: 3.0.0(postcss@8.4.31)
+      postcss-modules-local-by-default: 4.0.3(postcss@8.4.31)
+      postcss-modules-scope: 3.0.0(postcss@8.4.31)
+      postcss-modules-values: 4.0.0(postcss@8.4.31)
+      postcss-value-parser: 4.2.0
+      schema-utils: 3.3.0
+      semver: 7.5.4
+      webpack: 5.91.0
+    dev: true
+
+  /css-minimizer-webpack-plugin@2.0.0(webpack@5.88.2):
+    resolution: {integrity: sha512-cG/uc94727tx5pBNtb1Sd7gvUPzwmcQi1lkpfqTpdkuNq75hJCw7bIVsCNijLm4dhDcr1atvuysl2rZqOG8Txw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      clean-css: '*'
+      csso: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      clean-css:
+        optional: true
+      csso:
+        optional: true
+    dependencies:
+      cssnano: 5.1.15(postcss@8.4.31)
+=======
+  /css-minimizer-webpack-plugin@2.0.0(webpack@5.88.2):
+    resolution: {integrity: sha512-cG/uc94727tx5pBNtb1Sd7gvUPzwmcQi1lkpfqTpdkuNq75hJCw7bIVsCNijLm4dhDcr1atvuysl2rZqOG8Txw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      clean-css: '*'
+      csso: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      clean-css:
+        optional: true
+      csso:
+        optional: true
+    dependencies:
+      cssnano: 5.1.15(postcss@8.4.31)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       jest-worker: 26.6.2
       p-limit: 3.1.0
       postcss: 8.4.47
@@ -16987,7 +17166,44 @@ snapshots:
       source-map: 0.6.1
       webpack: 5.88.2
 
+<<<<<<< HEAD
   css-mqpacker@6.0.2:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /css-minimizer-webpack-plugin@2.0.0(webpack@5.91.0):
+    resolution: {integrity: sha512-cG/uc94727tx5pBNtb1Sd7gvUPzwmcQi1lkpfqTpdkuNq75hJCw7bIVsCNijLm4dhDcr1atvuysl2rZqOG8Txw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      clean-css: '*'
+      csso: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      clean-css:
+        optional: true
+      csso:
+        optional: true
+    dependencies:
+      cssnano: 5.1.15(postcss@8.4.31)
+      jest-worker: 26.6.2
+      p-limit: 3.1.0
+      postcss: 8.4.31
+      schema-utils: 3.3.0
+      serialize-javascript: 5.0.1
+      source-map: 0.6.1
+      webpack: 5.91.0
+    dev: true
+
+  /css-mqpacker@6.0.2:
+    resolution: {integrity: sha512-01xogFCcK6KQmUS+EwSS5R5Sq/mp9rjLBw/7ej+xPZHKE0gzjsWk8uJpFuKOllQrVEOJqt7Y8H6rCNG+sMIg+Q==}
+    engines: {node: '>=5.0.0'}
+    deprecated: Package no longer supported. Contact support@npmjs.com for more info.
+    hasBin: true
+=======
+  /css-mqpacker@6.0.2:
+    resolution: {integrity: sha512-01xogFCcK6KQmUS+EwSS5R5Sq/mp9rjLBw/7ej+xPZHKE0gzjsWk8uJpFuKOllQrVEOJqt7Y8H6rCNG+sMIg+Q==}
+    engines: {node: '>=5.0.0'}
+    deprecated: Package no longer supported. Contact support@npmjs.com for more info.
+    hasBin: true
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       minimist: 1.2.8
       postcss: 6.0.23
@@ -18146,7 +18362,36 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   eslint@7.32.0:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /eslint-webpack-plugin@2.7.0(eslint@7.32.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-bNaVVUvU4srexGhVcayn/F4pJAz19CWBkKoMx7aSQ4wtTbZQCnG5O9LHCE42mM+JSKOUp7n6vd5CIwzj7lOVGA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0 || 8
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      '@types/eslint': 7.29.0
+      arrify: 2.0.1
+      eslint: 7.32.0
+      jest-worker: 27.5.1
+      micromatch: 4.0.5
+      normalize-path: 3.0.0
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /eslint@7.32.0:
+    resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    hasBin: true
+=======
+  /eslint@7.32.0:
+    resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    hasBin: true
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       '@babel/code-frame': 7.12.11
       '@eslint/eslintrc': 0.4.3
@@ -18591,7 +18836,28 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   file-type@16.5.4:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /file-loader@6.2.0(webpack@5.91.0):
+    resolution: {integrity: sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /file-type@16.5.4:
+    resolution: {integrity: sha512-/yFHK0aGjFEgDJjEKP0pWCplsPFPhwyfwevf/pVxiN0tmE4L9LmwWxWukdJSHdoCli4VgQLehjJtwQBnqmsKcw==}
+    engines: {node: '>=10'}
+=======
+  /file-type@16.5.4:
+    resolution: {integrity: sha512-/yFHK0aGjFEgDJjEKP0pWCplsPFPhwyfwevf/pVxiN0tmE4L9LmwWxWukdJSHdoCli4VgQLehjJtwQBnqmsKcw==}
+    engines: {node: '>=10'}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       readable-web-to-node-stream: 3.0.2
       strtok3: 6.3.0
@@ -18713,10 +18979,54 @@ snapshots:
       tapable: 1.1.3
       typescript: 5.6.3
       webpack: 5.88.2
+<<<<<<< HEAD
     optionalDependencies:
       eslint: 7.32.0
 
   form-data-encoder@2.1.4: {}
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+
+  /fork-ts-checker-webpack-plugin@6.5.3(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0):
+    resolution: {integrity: sha512-SbH/l9ikmMWycd5puHJKTkZJKddF4iRLyW3DeZ08HTI7NGyLS38MXd/KGgeWumQO7YNQbW2u/NtPT2YowbPaGQ==}
+    engines: {node: '>=10', yarn: '>=1.0.0'}
+    peerDependencies:
+      eslint: '>= 6 || 8'
+      typescript: '>= 2.7'
+      vue-template-compiler: '*'
+      webpack: '>= 4'
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+      vue-template-compiler:
+        optional: true
+    dependencies:
+      '@babel/code-frame': 7.22.5
+      '@types/json-schema': 7.0.13
+      chalk: 4.1.2
+      chokidar: 3.5.3
+      cosmiconfig: 6.0.0
+      deepmerge: 4.3.1
+      eslint: 7.32.0
+      fs-extra: 9.1.0
+      glob: 7.2.3
+      memfs: 3.5.3
+      minimatch: 3.1.2
+      schema-utils: 2.7.0
+      semver: 7.5.4
+      tapable: 1.1.3
+      typescript: 5.1.3
+      webpack: 5.91.0
+    dev: true
+
+  /form-data-encoder@2.1.4:
+    resolution: {integrity: sha512-yDYSgNMraqvnxiEXO4hi88+YZxaHC6QKzb5N84iRCTDeRO7ZALpir/lVmf/uXUhnwUr2O4HU8s/n6x+yNjQkHw==}
+    engines: {node: '>= 14.17'}
+=======
+
+  /form-data-encoder@2.1.4:
+    resolution: {integrity: sha512-yDYSgNMraqvnxiEXO4hi88+YZxaHC6QKzb5N84iRCTDeRO7ZALpir/lVmf/uXUhnwUr2O4HU8s/n6x+yNjQkHw==}
+    engines: {node: '>= 14.17'}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
 
   form-data@2.3.3:
     dependencies:
@@ -19522,8 +19832,14 @@ snapshots:
       '@nodelib/fs.walk': 1.2.8
       '@parcel/cache': 2.8.3(@parcel/core@2.8.3)
       '@parcel/core': 2.8.3
+<<<<<<< HEAD
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(type-fest@2.19.0)(webpack@5.88.2)
       '@sigmacomputing/babel-plugin-lodash': 3.3.5
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(webpack@5.91.0)
+=======
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(webpack@5.88.2)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       '@types/http-proxy': 1.17.11
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.6.3))(eslint@7.32.0)(typescript@5.6.3)
       '@typescript-eslint/parser': 5.62.0(eslint@7.32.0)(typescript@5.6.3)
@@ -19637,11 +19953,28 @@ snapshots:
       prop-types: 15.8.1
       query-string: 6.14.1
       raw-loader: 4.0.2(webpack@5.88.2)
+<<<<<<< HEAD
       react: 18.3.1
       react-dev-utils: 12.0.1(eslint@7.32.0)(typescript@5.6.3)(webpack@5.88.2)
       react-dom: 18.3.1(react@18.3.1)
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      raw-loader: 4.0.2(webpack@5.91.0)
+      react: 18.2.0
+      react-dev-utils: 12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0)
+      react-dom: 18.2.0(react@18.2.0)
+=======
+      react: 18.2.0
+      react-dev-utils: 12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.88.2)
+      react-dom: 18.2.0(react@18.2.0)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       react-refresh: 0.14.0
+<<<<<<< HEAD
       react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.3.1)(webpack@5.88.2)
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.91.0)
+=======
+      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.88.2)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       redux: 4.2.1
       redux-thunk: 2.4.2(redux@4.2.1)
       resolve-from: 5.0.0
@@ -19655,12 +19988,24 @@ snapshots:
       string-similarity: 1.2.2
       strip-ansi: 6.0.1
       style-loader: 2.0.0(webpack@5.88.2)
+<<<<<<< HEAD
       style-to-object: 0.4.4
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      style-loader: 2.0.0(webpack@5.91.0)
+      terser-webpack-plugin: 5.3.9(webpack@5.91.0)
+=======
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       terser-webpack-plugin: 5.3.9(webpack@5.88.2)
       tmp: 0.2.1
       true-case-path: 2.2.1
       type-of: 2.0.1
+<<<<<<< HEAD
       url-loader: 4.1.1(file-loader@6.2.0(webpack@5.88.2))(webpack@5.88.2)
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.91.0)
+=======
+      url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.88.2)
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       uuid: 8.3.2
       webpack: 5.88.2
       webpack-dev-middleware: 4.3.0(webpack@5.88.2)
@@ -22345,7 +22690,27 @@ snapshots:
       webpack: 5.88.2
       webpack-sources: 1.4.3
 
+<<<<<<< HEAD
   minimatch@3.1.2:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /mini-css-extract-plugin@1.6.2(webpack@5.91.0):
+    resolution: {integrity: sha512-WhDvO3SjGm40oV5y26GjMJYjd2UMqrLAGKy5YS2/3QKJy2F7jgynuHTir/tgUUOiNQu5saXHdc8reo7YuhhT4Q==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.4.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+      webpack-sources: 1.4.3
+    dev: true
+
+  /minimatch@3.1.2:
+    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
+=======
+  /minimatch@3.1.2:
+    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       brace-expansion: 1.1.11
 
@@ -22621,6 +22986,7 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   nullthrows@1.1.1: {}
 
   num2fraction@1.2.2: {}
@@ -22643,6 +23009,24 @@ snapshots:
       define-properties: 1.2.1
 
   object-keys@1.1.1: {}
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /null-loader@4.0.1(webpack@5.91.0):
+    resolution: {integrity: sha512-pxqVbi4U6N26lq+LmgIbB5XATP0VdZKOG25DhHi8btMmJJefGArFyDg1yc4U3hWCJbMqSrw0qyrz1UQX+qYXqg==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /nullthrows@1.1.1:
+    resolution: {integrity: sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==}
+=======
+  /nullthrows@1.1.1:
+    resolution: {integrity: sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
 
   object.assign@4.1.5:
     dependencies:
@@ -23186,7 +23570,29 @@ snapshots:
       semver: 7.6.3
       webpack: 5.88.2
 
+<<<<<<< HEAD
   postcss-merge-idents@2.1.7:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /postcss-loader@5.3.0(postcss@8.4.24)(webpack@5.91.0):
+    resolution: {integrity: sha512-/+Z1RAmssdiSLgIZwnJHwBMnlABPgF7giYzTN2NOfr9D21IJZ4mQC1R2miwp80zno9M4zMD/umGI8cR+2EL5zw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      postcss: ^7.0.0 || ^8.0.1
+      webpack: ^5.0.0
+    dependencies:
+      cosmiconfig: 7.1.0
+      klona: 2.0.5
+      postcss: 8.4.24
+      semver: 7.5.4
+      webpack: 5.91.0
+    dev: true
+
+  /postcss-merge-idents@2.1.7:
+    resolution: {integrity: sha512-9DHmfCZ7/hNHhIKnNkz4CU0ejtGen5BbTRJc13Z2uHfCedeCUsK2WEQoAJRBL+phs68iWK6Qf8Jze71anuysWA==}
+=======
+  /postcss-merge-idents@2.1.7:
+    resolution: {integrity: sha512-9DHmfCZ7/hNHhIKnNkz4CU0ejtGen5BbTRJc13Z2uHfCedeCUsK2WEQoAJRBL+phs68iWK6Qf8Jze71anuysWA==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       has: 1.0.3
       postcss: 5.2.18
@@ -23529,8 +23935,43 @@ snapshots:
       '@jest/schemas': 29.6.3
       ansi-styles: 5.2.0
       react-is: 18.3.1
+<<<<<<< HEAD
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      react-is: 18.2.0
+    dev: false
+=======
+    dev: false
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
 
+<<<<<<< HEAD
   pretty-ms@7.0.1:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /pretty-format@29.7.0:
+    resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      '@jest/schemas': 29.6.3
+      ansi-styles: 5.2.0
+      react-is: 18.2.0
+    dev: false
+
+  /pretty-ms@7.0.1:
+    resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==}
+    engines: {node: '>=10'}
+=======
+  /pretty-format@29.7.0:
+    resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      '@jest/schemas': 29.6.3
+      ansi-styles: 5.2.0
+      react-is: 18.3.1
+    dev: false
+
+  /pretty-ms@7.0.1:
+    resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==}
+    engines: {node: '>=10'}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       parse-ms: 2.1.0
 
@@ -23676,7 +24117,28 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   rc@1.2.8:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /raw-loader@4.0.2(webpack@5.91.0):
+    resolution: {integrity: sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /rc@1.2.8:
+    resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
+    hasBin: true
+=======
+  /rc@1.2.8:
+    resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
+    hasBin: true
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       deep-extend: 0.6.0
       ini: 1.3.8
@@ -23717,7 +24179,61 @@ snapshots:
       - supports-color
       - vue-template-compiler
 
+<<<<<<< HEAD
   react-dom@15.7.0(react@15.7.0):
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /react-dev-utils@12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0):
+    resolution: {integrity: sha512-84Ivxmr17KjUupyqzFode6xKhjwuEJDROWKJy/BthkL7Wn6NJ8h4WE6k/exAv6ImS+0oZLRRW5j/aINMHyeGeQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=2.7'
+      webpack: '>=4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@babel/code-frame': 7.22.5
+      address: 1.2.2
+      browserslist: 4.21.11
+      chalk: 4.1.2
+      cross-spawn: 7.0.3
+      detect-port-alt: 1.1.6
+      escape-string-regexp: 4.0.0
+      filesize: 8.0.7
+      find-up: 5.0.0
+      fork-ts-checker-webpack-plugin: 6.5.3(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0)
+      global-modules: 2.0.0
+      globby: 11.1.0
+      gzip-size: 6.0.0
+      immer: 9.0.21
+      is-root: 2.1.0
+      loader-utils: 3.2.1
+      open: 8.4.2
+      pkg-up: 3.1.0
+      prompts: 2.4.2
+      react-error-overlay: 6.0.11
+      recursive-readdir: 2.2.3
+      shell-quote: 1.8.1
+      strip-ansi: 6.0.1
+      text-table: 0.2.0
+      typescript: 5.1.3
+      webpack: 5.91.0
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - vue-template-compiler
+    dev: true
+
+  /react-dom@15.7.0(react@15.7.0):
+    resolution: {integrity: sha512-mpjXqC2t1FuYsILOLCj0kg6pbg460byZkVA/80VtDmKU/pYmoTdHOtaMcTRIDiyXLz4sIur0cQ04nOC6iGndJg==}
+    peerDependencies:
+      react: ^15.7.0 || 18
+=======
+  /react-dom@15.7.0(react@15.7.0):
+    resolution: {integrity: sha512-mpjXqC2t1FuYsILOLCj0kg6pbg460byZkVA/80VtDmKU/pYmoTdHOtaMcTRIDiyXLz4sIur0cQ04nOC6iGndJg==}
+    peerDependencies:
+      react: ^15.7.0 || 18
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       fbjs: 0.8.18
       loose-envify: 1.4.0
@@ -23747,7 +24263,17 @@ snapshots:
 
   react-is@17.0.2: {}
 
+<<<<<<< HEAD
   react-is@18.3.1: {}
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /react-is@18.2.0:
+    resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+=======
+  /react-is@18.3.1:
+    resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+    dev: false
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
 
   react-live@2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -23772,11 +24298,47 @@ snapshots:
       react: 18.3.1
       webpack: 5.88.2
 
+<<<<<<< HEAD
   react-shallow-renderer@16.15.0(react@18.3.1):
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-JyCjbp6ZvkH/T0EuVPdceYlC8u5WqWDSJr2KxDvc81H2eJ+7zYUN++IcEycnR2F+HmER8QVgxfotnIx352zi+w==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      react: 0.0.0-experimental-c8b778b7f-20220825 || 18
+      webpack: ^5.59.0
+    dependencies:
+      acorn: 6.4.2
+      loose-envify: 1.4.0
+      neo-async: 2.6.2
+      react: 18.2.0
+      webpack: 5.91.0
+    dev: true
+
+  /react-shallow-renderer@16.15.0(react@18.2.0):
+    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || 18
+=======
+  /react-shallow-renderer@16.15.0(react@18.2.0):
+    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || 18
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       object-assign: 4.1.1
+<<<<<<< HEAD
       react: 18.3.1
       react-is: 18.3.1
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      react: 18.2.0
+      react-is: 18.2.0
+    dev: false
+=======
+      react: 18.2.0
+      react-is: 18.3.1
+    dev: false
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
 
   react-side-effect@2.1.2(react@18.3.1):
     dependencies:
@@ -23787,12 +24349,38 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+<<<<<<< HEAD
   react-test-renderer@18.3.1(react@18.3.1):
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /react-test-renderer@18.2.0(react@18.2.0):
+    resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
+    peerDependencies:
+      react: ^18.2.0 || 18
+=======
+  /react-test-renderer@18.3.1(react@18.2.0):
+    resolution: {integrity: sha512-KkAgygexHUkQqtvvx/otwxtuFu5cVjfzTCtjXLH9boS19/Nbtg84zS7wIQn39G8IlrhThBpQsMKkq5ZHZIYFXA==}
+    peerDependencies:
+      react: ^18.3.1 || 18
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
+<<<<<<< HEAD
       react: 18.3.1
       react-is: 18.3.1
       react-shallow-renderer: 16.15.0(react@18.3.1)
       scheduler: 0.23.2
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+      react: 18.2.0
+      react-is: 18.2.0
+      react-shallow-renderer: 16.15.0(react@18.2.0)
+      scheduler: 0.23.0
+    dev: false
+=======
+      react: 18.2.0
+      react-is: 18.3.1
+      react-shallow-renderer: 16.15.0(react@18.2.0)
+      scheduler: 0.23.2
+    dev: false
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
 
   react@15.7.0:
     dependencies:
@@ -24286,7 +24874,23 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
+<<<<<<< HEAD
   schema-utils@2.7.0:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /schema-utils@2.7.0:
+    resolution: {integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==}
+    engines: {node: '>= 8.9.0'}
+=======
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
+  /schema-utils@2.7.0:
+    resolution: {integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==}
+    engines: {node: '>= 8.9.0'}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
@@ -24782,7 +25386,26 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   style-to-object@0.4.4:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /style-loader@2.0.0(webpack@5.91.0):
+    resolution: {integrity: sha512-Z0gYUJmzZ6ZdRUqpg1r8GsaFKypE+3xAzuFeMuoHgjc9KZv3wMyCRjQIWEbhoFSq7+7yoHXySDJyyWQaPajeiQ==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /style-to-object@0.4.1:
+    resolution: {integrity: sha512-HFpbb5gr2ypci7Qw+IOhnP2zOU7e77b+rzM+wTzXzfi1PrtBCX0E7Pk4wL4iTLnhzZ+JgEGAhX81ebTg/aYjQw==}
+=======
+  /style-to-object@0.4.1:
+    resolution: {integrity: sha512-HFpbb5gr2ypci7Qw+IOhnP2zOU7e77b+rzM+wTzXzfi1PrtBCX0E7Pk4wL4iTLnhzZ+JgEGAhX81ebTg/aYjQw==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       inline-style-parser: 0.1.1
 
@@ -25030,10 +25653,74 @@ snapshots:
       terser: 5.36.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   terser@5.36.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.13.0
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /terser-webpack-plugin@5.3.9(webpack@5.91.0):
+    resolution: {integrity: sha512-ZuXsqE07EcggTWQjXUj+Aot/OMcD0bMKGgF63f7UxYcu5/AJF53aIpK1YoP5xR9l6s/Hy2b+t1AM0bLNPRuhwA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@swc/core': '*'
+      esbuild: '*'
+      uglify-js: '*'
+      webpack: ^5.1.0
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      esbuild:
+        optional: true
+      uglify-js:
+        optional: true
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.25
+      jest-worker: 27.5.1
+      schema-utils: 3.3.0
+      serialize-javascript: 6.0.1
+      terser: 5.30.0
+      webpack: 5.91.0
+    dev: true
+
+  /terser@5.17.7:
+    resolution: {integrity: sha512-/bi0Zm2C6VAexlGgLlVxA0P2lru/sdLyfCVaRMfKVo9nWxbmz7f/sD8VPybPeSUJaJcwmCJis9pBIhcVcG1QcQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.3
+      acorn: 8.10.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
+    dev: false
+
+  /terser@5.30.0:
+    resolution: {integrity: sha512-Y/SblUl5kEyEFzhMAQdsxVHh+utAxd4IuRNJzKywY/4uzSogh3G219jqbDDxYu4MXO9CzY3tSEqmZvW6AoEDJw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.3
+      acorn: 8.10.0
+=======
+  /terser@5.17.7:
+    resolution: {integrity: sha512-/bi0Zm2C6VAexlGgLlVxA0P2lru/sdLyfCVaRMfKVo9nWxbmz7f/sD8VPybPeSUJaJcwmCJis9pBIhcVcG1QcQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.3
+      acorn: 8.10.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
+    dev: false
+
+  /terser@5.30.0:
+    resolution: {integrity: sha512-Y/SblUl5kEyEFzhMAQdsxVHh+utAxd4IuRNJzKywY/4uzSogh3G219jqbDDxYu4MXO9CzY3tSEqmZvW6AoEDJw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.3
+      acorn: 8.10.0
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -25712,7 +26399,32 @@ snapshots:
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.88.2)
 
+<<<<<<< HEAD
   url-parse@1.5.10:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /url-loader@4.1.1(file-loader@6.2.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      file-loader: '*'
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
+    dependencies:
+      file-loader: 6.2.0(webpack@5.91.0)
+      loader-utils: 2.0.4
+      mime-types: 2.1.35
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /url-parse@1.5.10:
+    resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
+=======
+  /url-parse@1.5.10:
+    resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
@@ -25827,7 +26539,32 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.88.2
 
+<<<<<<< HEAD
   webpack-merge@5.9.0:
+||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+  /webpack-dev-middleware@4.3.0(webpack@5.91.0):
+    resolution: {integrity: sha512-PjwyVY95/bhBh6VUqt6z4THplYcsvQ8YNNBTBM873xLVmw8FLeALn0qurHbs9EmcfhzQis/eoqypSnZeuUz26w==}
+    engines: {node: '>= v10.23.3'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      colorette: 1.4.0
+      mem: 8.1.1
+      memfs: 3.5.3
+      mime-types: 2.1.35
+      range-parser: 1.2.1
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+  /webpack-merge@5.9.0:
+    resolution: {integrity: sha512-6NbRQw4+Sy50vYNTw7EyOn41OZItPiXB8GNv3INSoe3PSFaHJEz3SHTrYVaRm2LilNGnFUzh0FAwqPEmU/CwDg==}
+    engines: {node: '>=10.0.0'}
+=======
+  /webpack-merge@5.9.0:
+    resolution: {integrity: sha512-6NbRQw4+Sy50vYNTw7EyOn41OZItPiXB8GNv3INSoe3PSFaHJEz3SHTrYVaRm2LilNGnFUzh0FAwqPEmU/CwDg==}
+    engines: {node: '>=10.0.0'}
+>>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
     dependencies:
       clone-deep: 4.0.1
       wildcard: 2.0.1
