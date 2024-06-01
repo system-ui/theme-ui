@@ -102,7 +102,7 @@
     "typography-theme-zacklive": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/register": "^7.23.7",
+    "@babel/register": "^7.24.6",
     "babel-eslint": "^10",
     "eslint": "^8.56.0",
     "typescript": "^5"

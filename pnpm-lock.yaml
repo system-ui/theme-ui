@@ -736,8 +736,16 @@ importers:
         version: unist-util-visit@5.0.0
     devDependencies:
       '@babel/register':
+<<<<<<< HEAD
         specifier: ^7.23.7
         version: 7.25.7(@babel/core@7.22.5)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+        specifier: ^7.23.7
+        version: 7.23.7(@babel/core@7.22.5)
+=======
+        specifier: ^7.24.6
+        version: 7.24.6(@babel/core@7.22.5)
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       babel-eslint:
         specifier: ^10
         version: 10.1.0(eslint@8.57.1)
@@ -1536,20 +1544,98 @@ packages:
   '@babel/core@7.22.5':
     resolution: {integrity: sha512-SBuTAjg91A3eKOvD+bPEz3LlhHZRNu1nFOVts9lzDJTXshHTjII0BAtDS3Y2DAkdZdDKWVZGVwkDfc4Clxn1dg==}
     engines: {node: '>=6.9.0'}
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+    dependencies:
+      '@ampproject/remapping': 2.2.1
+      '@babel/code-frame': 7.22.5
+      '@babel/generator': 7.22.5
+      '@babel/helper-compilation-targets': 7.22.5(@babel/core@7.22.5)
+      '@babel/helper-module-transforms': 7.22.5
+      '@babel/helpers': 7.22.5
+      '@babel/parser': 7.22.5
+      '@babel/template': 7.22.5
+      '@babel/traverse': 7.22.5
+      '@babel/types': 7.22.19
+      convert-source-map: 1.9.0
+      debug: 4.3.4(supports-color@8.1.1)
+      gensync: 1.0.0-beta.2
+      json5: 2.2.3
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+=======
+    dependencies:
+      '@ampproject/remapping': 2.2.1
+      '@babel/code-frame': 7.22.5
+      '@babel/generator': 7.22.5
+      '@babel/helper-compilation-targets': 7.22.5(@babel/core@7.22.5)
+      '@babel/helper-module-transforms': 7.22.5
+      '@babel/helpers': 7.22.5
+      '@babel/parser': 7.22.5
+      '@babel/template': 7.22.5
+      '@babel/traverse': 7.22.5
+      '@babel/types': 7.22.19
+      convert-source-map: 1.9.0
+      debug: 4.3.4(supports-color@8.1.1)
+      gensync: 1.0.0-beta.2
+      json5: 2.2.3
+      semver: 6.3.1
+    transitivePeerDependencies:
+      - supports-color
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   '@babel/eslint-parser@7.18.9':
     resolution: {integrity: sha512-KzSGpMBggz4fKbRbWLNyPVTuQr6cmCcBhOyXTw/fieOVaw5oYAwcAj4a7UKcDYCPxQq+CG1NCDZH9e2JTXquiQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': 7.22.5
+<<<<<<< HEAD
       eslint: ^7.5.0 || ^8.0.0
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      eslint: ^7.5.0 || ^8.0.0 || 8
+    dependencies:
+      '@babel/core': 7.22.5
+      eslint: 8.56.0
+      eslint-scope: 5.1.1
+      eslint-visitor-keys: 2.1.0
+      semver: 6.3.0
+    dev: false
+=======
+      eslint: ^7.5.0 || ^8.0.0 || 8
+    dependencies:
+      '@babel/core': 7.22.5
+      eslint: 8.56.0
+      eslint-scope: 5.1.1
+      eslint-visitor-keys: 2.1.0
+      semver: 6.3.1
+    dev: false
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   '@babel/eslint-parser@7.22.5':
     resolution: {integrity: sha512-C69RWYNYtrgIRE5CmTd77ZiLDXqgBipahJc/jHP3sLcAGj6AJzxNIuKNpVnICqbyK7X3pFUfEvL++rvtbQpZkQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': 7.22.5
+<<<<<<< HEAD
       eslint: ^7.5.0 || ^8.0.0
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      eslint: ^7.5.0 || ^8.0.0 || 8
+    dependencies:
+      '@babel/core': 7.22.5
+      '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
+      eslint: 7.32.0
+      eslint-visitor-keys: 2.1.0
+      semver: 6.3.0
+=======
+      eslint: ^7.5.0 || ^8.0.0 || 8
+    dependencies:
+      '@babel/core': 7.22.5
+      '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
+      eslint: 7.32.0
+      eslint-visitor-keys: 2.1.0
+      semver: 6.3.1
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   '@babel/generator@7.22.5':
     resolution: {integrity: sha512-+lcUbnTRhd0jOewtFSedLyiPsD5tswKkbgcezOqqWFUVNEwoUTlpPOBmvhG7OXWLR4jMdv0czPGH5XbflnD1EA==}
@@ -1576,18 +1662,140 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': 7.22.5
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+    dependencies:
+      '@babel/compat-data': 7.22.5
+      '@babel/core': 7.22.5
+      '@babel/helper-validator-option': 7.22.5
+      browserslist: 4.21.11
+      lru-cache: 5.1.1
+      semver: 6.3.0
+=======
+    dependencies:
+      '@babel/compat-data': 7.22.5
+      '@babel/core': 7.22.5
+      '@babel/helper-validator-option': 7.22.5
+      browserslist: 4.21.11
+      lru-cache: 5.1.1
+      semver: 6.3.1
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
+<<<<<<< HEAD
   '@babel/helper-create-regexp-features-plugin@7.22.5':
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /@babel/helper-compilation-targets@7.23.6:
+    resolution: {integrity: sha512-9JB548GZoQVmzrFgp8o7KxdgkTGm6xs9DW0o/Pim72UDjzr5ObUQ6ZzYPqA+g9OTS2bBQoctLJrky0RDCAWRgQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/compat-data': 7.24.1
+      '@babel/helper-validator-option': 7.23.5
+      browserslist: 4.23.0
+      lru-cache: 5.1.1
+      semver: 6.3.1
+    dev: false
+
+  /@babel/helper-create-class-features-plugin@7.22.5(@babel/core@7.22.5):
+    resolution: {integrity: sha512-xkb58MyOYIslxu3gKmVXmjTtUPvBU4odYzbiIQbWwLKIHCsx6UGZGX6F1IznMFVnDdirseUZopzN+ZRt8Xb33Q==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-annotate-as-pure': 7.22.5
+      '@babel/helper-environment-visitor': 7.22.5
+      '@babel/helper-function-name': 7.22.5
+      '@babel/helper-member-expression-to-functions': 7.22.5
+      '@babel/helper-optimise-call-expression': 7.22.5
+      '@babel/helper-replace-supers': 7.22.5
+      '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
+      '@babel/helper-split-export-declaration': 7.22.5
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+
+  /@babel/helper-create-regexp-features-plugin@7.22.5(@babel/core@7.22.5):
+=======
+  /@babel/helper-compilation-targets@7.23.6:
+    resolution: {integrity: sha512-9JB548GZoQVmzrFgp8o7KxdgkTGm6xs9DW0o/Pim72UDjzr5ObUQ6ZzYPqA+g9OTS2bBQoctLJrky0RDCAWRgQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/compat-data': 7.24.1
+      '@babel/helper-validator-option': 7.23.5
+      browserslist: 4.23.0
+      lru-cache: 5.1.1
+      semver: 6.3.1
+    dev: false
+
+  /@babel/helper-create-class-features-plugin@7.22.5(@babel/core@7.22.5):
+    resolution: {integrity: sha512-xkb58MyOYIslxu3gKmVXmjTtUPvBU4odYzbiIQbWwLKIHCsx6UGZGX6F1IznMFVnDdirseUZopzN+ZRt8Xb33Q==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-annotate-as-pure': 7.22.5
+      '@babel/helper-environment-visitor': 7.22.5
+      '@babel/helper-function-name': 7.22.5
+      '@babel/helper-member-expression-to-functions': 7.22.5
+      '@babel/helper-optimise-call-expression': 7.22.5
+      '@babel/helper-replace-supers': 7.22.5
+      '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
+      '@babel/helper-split-export-declaration': 7.22.5
+      semver: 6.3.1
+    transitivePeerDependencies:
+      - supports-color
+
+  /@babel/helper-create-regexp-features-plugin@7.22.5(@babel/core@7.22.5):
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
     resolution: {integrity: sha512-1VpEFOIbMRaXyDeUwUfmTIxExLwQ+zkW+Bh5zXpApA3oQedBx9v/updixWxnx/bZpKw7u8VxWjb/qWpIcmPq8A==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': 7.22.5
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-annotate-as-pure': 7.22.5
+      regexpu-core: 5.3.2
+      semver: 6.3.0
+=======
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-annotate-as-pure': 7.22.5
+      regexpu-core: 5.3.2
+      semver: 6.3.1
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   '@babel/helper-create-regexp-features-plugin@7.25.7':
     resolution: {integrity: sha512-byHhumTj/X47wJ6C6eLpK7wW/WBEcnUeb7D0FNc/jFQnQVw7DOso3Zz5u9x/zLrFVkHa89ZGDbkAa1D54NdrCQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': 7.22.5
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-compilation-targets': 7.22.5(@babel/core@7.22.5)
+      '@babel/helper-plugin-utils': 7.22.5
+      debug: 4.3.4(supports-color@8.1.1)
+      lodash.debounce: 4.0.8
+      resolve: 1.22.6
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+=======
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-compilation-targets': 7.22.5(@babel/core@7.22.5)
+      '@babel/helper-plugin-utils': 7.22.5
+      debug: 4.3.4(supports-color@8.1.1)
+      lodash.debounce: 4.0.8
+      resolve: 1.22.6
+      semver: 6.3.1
+    transitivePeerDependencies:
+      - supports-color
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   '@babel/helper-define-polyfill-provider@0.6.1':
     resolution: {integrity: sha512-o7SDgTJuvx5vLKD6SFvkydkSMBvahDKGiNJzG22IZYXhiqoe9efY7zocICBgzHV4IRg5wdgl2nEL/tulKIEIbA==}
@@ -2197,6 +2405,30 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': 7.22.5
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-module-imports': 7.22.15
+      '@babel/helper-plugin-utils': 7.22.5
+      babel-plugin-polyfill-corejs2: 0.4.3(@babel/core@7.22.5)
+      babel-plugin-polyfill-corejs3: 0.8.1(@babel/core@7.22.5)
+      babel-plugin-polyfill-regenerator: 0.5.0(@babel/core@7.22.5)
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+=======
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-module-imports': 7.22.15
+      '@babel/helper-plugin-utils': 7.22.5
+      babel-plugin-polyfill-corejs2: 0.4.3(@babel/core@7.22.5)
+      babel-plugin-polyfill-corejs3: 0.8.1(@babel/core@7.22.5)
+      babel-plugin-polyfill-regenerator: 0.5.0(@babel/core@7.22.5)
+      semver: 6.3.1
+    transitivePeerDependencies:
+      - supports-color
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   '@babel/plugin-transform-spread@7.25.7':
     resolution: {integrity: sha512-Mm6aeymI0PBh44xNIv/qvo8nmbkpZze1KvR8MkEqbIREDxoiWTi18Zr2jryfRMwDfVZF9foKh060fWgni44luw==}
@@ -2281,7 +2513,71 @@ packages:
     peerDependencies:
       '@babel/core': 7.22.5
 
+<<<<<<< HEAD
   '@babel/regjsgen@0.8.0':
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /@babel/preset-typescript@7.22.5(@babel/core@7.22.5):
+    resolution: {integrity: sha512-YbPaal9LxztSGhmndR46FmAbkJ/1fAsw293tSU+I5E5h+cnJ3d4GTwyUgGYmOXJYdGA+uNePle4qbaRzj2NISQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-plugin-utils': 7.22.5
+      '@babel/helper-validator-option': 7.22.5
+      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.22.5)
+      '@babel/plugin-transform-modules-commonjs': 7.22.5(@babel/core@7.22.5)
+      '@babel/plugin-transform-typescript': 7.22.5(@babel/core@7.22.5)
+    transitivePeerDependencies:
+      - supports-color
+
+  /@babel/register@7.23.7(@babel/core@7.22.5):
+    resolution: {integrity: sha512-EjJeB6+kvpk+Y5DAkEAmbOBEFkh9OASx0huoEkqYTFxAZHzOAX2Oh5uwAUuL2rUddqfM0SA+KPXV2TbzoZ2kvQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+    dependencies:
+      '@babel/core': 7.22.5
+      clone-deep: 4.0.1
+      find-cache-dir: 2.1.0
+      make-dir: 2.1.0
+      pirates: 4.0.6
+      source-map-support: 0.5.21
+    dev: true
+
+  /@babel/regjsgen@0.8.0:
+=======
+  /@babel/preset-typescript@7.22.5(@babel/core@7.22.5):
+    resolution: {integrity: sha512-YbPaal9LxztSGhmndR46FmAbkJ/1fAsw293tSU+I5E5h+cnJ3d4GTwyUgGYmOXJYdGA+uNePle4qbaRzj2NISQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/helper-plugin-utils': 7.22.5
+      '@babel/helper-validator-option': 7.22.5
+      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.22.5)
+      '@babel/plugin-transform-modules-commonjs': 7.22.5(@babel/core@7.22.5)
+      '@babel/plugin-transform-typescript': 7.22.5(@babel/core@7.22.5)
+    transitivePeerDependencies:
+      - supports-color
+
+  /@babel/register@7.24.6(@babel/core@7.22.5):
+    resolution: {integrity: sha512-WSuFCc2wCqMeXkz/i3yfAAsxwWflEgbVkZzivgAmXl/MxrXeoYFZOOPllbC8R8WTF7u61wSRQtDVZ1879cdu6w==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+    dependencies:
+      '@babel/core': 7.22.5
+      clone-deep: 4.0.1
+      find-cache-dir: 2.1.0
+      make-dir: 2.1.0
+      pirates: 4.0.6
+      source-map-support: 0.5.21
+    dev: true
+
+  /@babel/regjsgen@0.8.0:
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
 
   '@babel/runtime-corejs3@7.18.9':
@@ -14517,6 +14813,7 @@ snapshots:
       type-fest: 2.19.0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   '@pnpm/config.env-replace@1.1.0': {}
 
   '@pnpm/network.ca-file@1.0.2':
@@ -14560,6 +14857,48 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /@pmmmwh/react-refresh-webpack-plugin@0.5.10(react-refresh@0.14.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA==}
+    engines: {node: '>= 10.13'}
+    peerDependencies:
+      '@types/webpack': 4.x || 5.x
+      react-refresh: '>=0.10.0 <1.0.0'
+      sockjs-client: ^1.4.0
+      type-fest: '>=0.17.0 <4.0.0'
+      webpack: '>=4.43.0 <6.0.0'
+      webpack-dev-server: 3.x || 4.x
+      webpack-hot-middleware: 2.x
+      webpack-plugin-serve: 0.x || 1.x
+    peerDependenciesMeta:
+      '@types/webpack':
+        optional: true
+      sockjs-client:
+        optional: true
+      type-fest:
+        optional: true
+      webpack-dev-server:
+        optional: true
+      webpack-hot-middleware:
+        optional: true
+      webpack-plugin-serve:
+        optional: true
+    dependencies:
+      ansi-html-community: 0.0.8
+      common-path-prefix: 3.0.0
+      core-js-pure: 3.31.0
+      error-stack-parser: 2.1.4
+      find-up: 5.0.0
+      html-entities: 2.3.6
+      loader-utils: 2.0.4
+      react-refresh: 0.14.0
+      schema-utils: 3.3.0
+      source-map: 0.7.4
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /@pnpm/config.env-replace@1.1.0:
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
     engines: {node: '>=12.22.0'}
@@ -15947,6 +16286,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   babel-plugin-add-module-exports@1.0.4: {}
 
   babel-plugin-dynamic-import-node@2.3.3:
@@ -15966,6 +16306,24 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /babel-loader@8.3.0(@babel/core@7.22.5)(webpack@5.91.0):
+    resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
+    engines: {node: '>= 8.9'}
+    peerDependencies:
+      '@babel/core': 7.22.5
+      webpack: '>=2'
+    dependencies:
+      '@babel/core': 7.22.5
+      find-cache-dir: 3.3.2
+      loader-utils: 2.0.4
+      make-dir: 3.1.0
+      schema-utils: 2.7.1
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /babel-plugin-add-module-exports@1.0.4:
     resolution: {integrity: sha512-g+8yxHUZ60RcyaUpfNzy56OtWW+x9cyEe9j+CranqLiqbju2yf/Cy6ZtYK40EZxtrdHllzlVZgLmcOUCTlJ7Jg==}
 
@@ -16017,7 +16375,14 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.25.8
       '@babel/core': 7.22.5
+<<<<<<< HEAD
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.22.5)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      '@babel/helper-define-polyfill-provider': 0.4.0(@babel/core@7.22.5)
+      semver: 6.3.0
+=======
+      '@babel/helper-define-polyfill-provider': 0.4.0(@babel/core@7.22.5)
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -17105,6 +17470,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   css-minimizer-webpack-plugin@2.0.0(webpack@5.88.2):
     dependencies:
       cssnano: 5.1.15(postcss@8.4.47)
@@ -17128,6 +17494,28 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /css-loader@5.2.7(webpack@5.91.0):
+    resolution: {integrity: sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.27.0 || ^5.0.0
+    dependencies:
+      icss-utils: 5.1.0(postcss@8.4.31)
+      loader-utils: 2.0.4
+      postcss: 8.4.31
+      postcss-modules-extract-imports: 3.0.0(postcss@8.4.31)
+      postcss-modules-local-by-default: 4.0.3(postcss@8.4.31)
+      postcss-modules-scope: 3.0.0(postcss@8.4.31)
+      postcss-modules-values: 4.0.0(postcss@8.4.31)
+      postcss-value-parser: 4.2.0
+      schema-utils: 3.3.0
+      semver: 7.5.4
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /css-minimizer-webpack-plugin@2.0.0(webpack@5.88.2):
     resolution: {integrity: sha512-cG/uc94727tx5pBNtb1Sd7gvUPzwmcQi1lkpfqTpdkuNq75hJCw7bIVsCNijLm4dhDcr1atvuysl2rZqOG8Txw==}
     engines: {node: '>= 10.13.0'}
@@ -17167,6 +17555,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   css-mqpacker@6.0.2:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /css-minimizer-webpack-plugin@2.0.0(webpack@5.91.0):
@@ -17192,6 +17581,32 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /css-minimizer-webpack-plugin@2.0.0(webpack@5.91.0):
+    resolution: {integrity: sha512-cG/uc94727tx5pBNtb1Sd7gvUPzwmcQi1lkpfqTpdkuNq75hJCw7bIVsCNijLm4dhDcr1atvuysl2rZqOG8Txw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      clean-css: '*'
+      csso: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      clean-css:
+        optional: true
+      csso:
+        optional: true
+    dependencies:
+      cssnano: 5.1.15(postcss@8.4.31)
+      jest-worker: 26.6.2
+      p-limit: 3.1.0
+      postcss: 8.4.31
+      schema-utils: 3.3.0
+      serialize-javascript: 5.0.1
+      source-map: 0.6.1
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /css-mqpacker@6.0.2:
     resolution: {integrity: sha512-01xogFCcK6KQmUS+EwSS5R5Sq/mp9rjLBw/7ej+xPZHKE0gzjsWk8uJpFuKOllQrVEOJqt7Y8H6rCNG+sMIg+Q==}
     engines: {node: '>=5.0.0'}
@@ -18183,7 +18598,14 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.values: 1.1.6
+<<<<<<< HEAD
       resolve: 1.22.8
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      resolve: 1.22.6
+      semver: 6.3.0
+=======
+      resolve: 1.22.6
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       semver: 6.3.1
       tsconfig-paths: 3.14.2
     optionalDependencies:
@@ -18208,7 +18630,14 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.values: 1.1.6
+<<<<<<< HEAD
       resolve: 1.22.8
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      resolve: 1.22.6
+      semver: 6.3.0
+=======
+      resolve: 1.22.6
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       semver: 6.3.1
       tsconfig-paths: 3.14.2
     optionalDependencies:
@@ -18245,6 +18674,13 @@ snapshots:
       language-tags: 1.0.5
       minimatch: 3.1.2
       semver: 6.3.1
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      semver: 6.3.0
+    dev: false
+=======
+    dev: false
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   eslint-plugin-jsx-a11y@6.7.1(eslint@7.32.0):
     dependencies:
@@ -18265,8 +18701,77 @@ snapshots:
       object.entries: 1.1.6
       object.fromentries: 2.0.6
       semver: 6.3.1
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      semver: 6.3.0
+    dev: true
+=======
+    dev: true
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
+<<<<<<< HEAD
   eslint-plugin-react-hooks@4.6.0(eslint@7.32.0):
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /eslint-plugin-jsx-a11y@6.7.1(eslint@8.56.0):
+    resolution: {integrity: sha512-63Bog4iIethyo8smBklORknVjB0T2dwB8Mr/hIC+fBS0uyHdYYpzM/Ed+YC8VxTjlXHEWFOdmgwcDn1U2L9VCA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || 8
+    dependencies:
+      '@babel/runtime': 7.22.15
+      aria-query: 5.2.1
+      array-includes: 3.1.6
+      array.prototype.flatmap: 1.3.1
+      ast-types-flow: 0.0.7
+      axe-core: 4.7.2
+      axobject-query: 3.2.1
+      damerau-levenshtein: 1.0.8
+      emoji-regex: 9.2.2
+      eslint: 8.56.0
+      has: 1.0.3
+      jsx-ast-utils: 3.3.3
+      language-tags: 1.0.5
+      minimatch: 3.1.2
+      object.entries: 1.1.6
+      object.fromentries: 2.0.6
+      semver: 6.3.0
+
+  /eslint-plugin-react-hooks@4.6.0(eslint@7.32.0):
+    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || 8
+=======
+  /eslint-plugin-jsx-a11y@6.7.1(eslint@8.56.0):
+    resolution: {integrity: sha512-63Bog4iIethyo8smBklORknVjB0T2dwB8Mr/hIC+fBS0uyHdYYpzM/Ed+YC8VxTjlXHEWFOdmgwcDn1U2L9VCA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || 8
+    dependencies:
+      '@babel/runtime': 7.22.15
+      aria-query: 5.2.1
+      array-includes: 3.1.6
+      array.prototype.flatmap: 1.3.1
+      ast-types-flow: 0.0.7
+      axe-core: 4.7.2
+      axobject-query: 3.2.1
+      damerau-levenshtein: 1.0.8
+      emoji-regex: 9.2.2
+      eslint: 8.56.0
+      has: 1.0.3
+      jsx-ast-utils: 3.3.3
+      language-tags: 1.0.5
+      minimatch: 3.1.2
+      object.entries: 1.1.6
+      object.fromentries: 2.0.6
+      semver: 6.3.1
+
+  /eslint-plugin-react-hooks@4.6.0(eslint@7.32.0):
+    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || 8
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
     dependencies:
       eslint: 7.32.0
 
@@ -18307,7 +18812,62 @@ snapshots:
       object.hasown: 1.1.2
       object.values: 1.1.6
       prop-types: 15.8.1
+<<<<<<< HEAD
       resolve: 2.0.0-next.5
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      resolve: 2.0.0-next.4
+      semver: 6.3.0
+      string.prototype.matchall: 4.0.8
+    dev: true
+
+  /eslint-plugin-react@7.32.2(eslint@8.56.0):
+    resolution: {integrity: sha512-t2fBMa+XzonrrNkyVirzKlvn5RXzzPwRHtMvLAtVZrt8oxgnTQaYbU6SXTOO1mwQgp1y5+toMSKInnzGr0Knqg==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || 8
+    dependencies:
+      array-includes: 3.1.6
+      array.prototype.flatmap: 1.3.1
+      array.prototype.tosorted: 1.1.1
+      doctrine: 2.1.0
+      eslint: 8.56.0
+      estraverse: 5.3.0
+      jsx-ast-utils: 3.3.3
+      minimatch: 3.1.2
+      object.entries: 1.1.6
+      object.fromentries: 2.0.6
+      object.hasown: 1.1.2
+      object.values: 1.1.6
+      prop-types: 15.8.1
+      resolve: 2.0.0-next.4
+      semver: 6.3.0
+=======
+      resolve: 2.0.0-next.4
+      semver: 6.3.1
+      string.prototype.matchall: 4.0.8
+    dev: true
+
+  /eslint-plugin-react@7.32.2(eslint@8.56.0):
+    resolution: {integrity: sha512-t2fBMa+XzonrrNkyVirzKlvn5RXzzPwRHtMvLAtVZrt8oxgnTQaYbU6SXTOO1mwQgp1y5+toMSKInnzGr0Knqg==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || 8
+    dependencies:
+      array-includes: 3.1.6
+      array.prototype.flatmap: 1.3.1
+      array.prototype.tosorted: 1.1.1
+      doctrine: 2.1.0
+      eslint: 8.56.0
+      estraverse: 5.3.0
+      jsx-ast-utils: 3.3.3
+      minimatch: 3.1.2
+      object.entries: 1.1.6
+      object.fromentries: 2.0.6
+      object.hasown: 1.1.2
+      object.values: 1.1.6
+      prop-types: 15.8.1
+      resolve: 2.0.0-next.4
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       semver: 6.3.1
       string.prototype.matchall: 4.0.8
 
@@ -18363,6 +18923,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   eslint@7.32.0:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /eslint-webpack-plugin@2.7.0(eslint@7.32.0)(webpack@5.91.0):
@@ -18382,6 +18943,26 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /eslint-webpack-plugin@2.7.0(eslint@7.32.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-bNaVVUvU4srexGhVcayn/F4pJAz19CWBkKoMx7aSQ4wtTbZQCnG5O9LHCE42mM+JSKOUp7n6vd5CIwzj7lOVGA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0 || 8
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      '@types/eslint': 7.29.0
+      arrify: 2.0.1
+      eslint: 7.32.0
+      jest-worker: 27.5.1
+      micromatch: 4.0.5
+      normalize-path: 3.0.0
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /eslint@7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -18837,6 +19418,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   file-type@16.5.4:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /file-loader@6.2.0(webpack@5.91.0):
@@ -18850,6 +19432,20 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /file-loader@6.2.0(webpack@5.91.0):
+    resolution: {integrity: sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /file-type@16.5.4:
     resolution: {integrity: sha512-/yFHK0aGjFEgDJjEKP0pWCplsPFPhwyfwevf/pVxiN0tmE4L9LmwWxWukdJSHdoCli4VgQLehjJtwQBnqmsKcw==}
     engines: {node: '>=10'}
@@ -18985,38 +19581,6 @@ snapshots:
 
   form-data-encoder@2.1.4: {}
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
-
-  /fork-ts-checker-webpack-plugin@6.5.3(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0):
-    resolution: {integrity: sha512-SbH/l9ikmMWycd5puHJKTkZJKddF4iRLyW3DeZ08HTI7NGyLS38MXd/KGgeWumQO7YNQbW2u/NtPT2YowbPaGQ==}
-    engines: {node: '>=10', yarn: '>=1.0.0'}
-    peerDependencies:
-      eslint: '>= 6 || 8'
-      typescript: '>= 2.7'
-      vue-template-compiler: '*'
-      webpack: '>= 4'
-    peerDependenciesMeta:
-      eslint:
-        optional: true
-      vue-template-compiler:
-        optional: true
-    dependencies:
-      '@babel/code-frame': 7.22.5
-      '@types/json-schema': 7.0.13
-      chalk: 4.1.2
-      chokidar: 3.5.3
-      cosmiconfig: 6.0.0
-      deepmerge: 4.3.1
-      eslint: 7.32.0
-      fs-extra: 9.1.0
-      glob: 7.2.3
-      memfs: 3.5.3
-      minimatch: 3.1.2
-      schema-utils: 2.7.0
-      semver: 7.5.4
-      tapable: 1.1.3
-      typescript: 5.1.3
-      webpack: 5.91.0
-    dev: true
 
   /form-data-encoder@2.1.4:
     resolution: {integrity: sha512-yDYSgNMraqvnxiEXO4hi88+YZxaHC6QKzb5N84iRCTDeRO7ZALpir/lVmf/uXUhnwUr2O4HU8s/n6x+yNjQkHw==}
@@ -19833,6 +20397,7 @@ snapshots:
       '@parcel/cache': 2.8.3(@parcel/core@2.8.3)
       '@parcel/core': 2.8.3
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(type-fest@2.19.0)(webpack@5.88.2)
       '@sigmacomputing/babel-plugin-lodash': 3.3.5
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
@@ -19840,6 +20405,11 @@ snapshots:
 =======
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(webpack@5.88.2)
 >>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(webpack@5.91.0)
+=======
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(webpack@5.88.2)
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       '@types/http-proxy': 1.17.11
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.6.3))(eslint@7.32.0)(typescript@5.6.3)
       '@typescript-eslint/parser': 5.62.0(eslint@7.32.0)(typescript@5.6.3)
@@ -19954,13 +20524,18 @@ snapshots:
       query-string: 6.14.1
       raw-loader: 4.0.2(webpack@5.88.2)
 <<<<<<< HEAD
+<<<<<<< HEAD
       react: 18.3.1
       react-dev-utils: 12.0.1(eslint@7.32.0)(typescript@5.6.3)(webpack@5.88.2)
       react-dom: 18.3.1(react@18.3.1)
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       raw-loader: 4.0.2(webpack@5.91.0)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      raw-loader: 4.0.2(webpack@5.91.0)
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       react: 18.2.0
-      react-dev-utils: 12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0)
+      react-dev-utils: 12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.88.2)
       react-dom: 18.2.0(react@18.2.0)
 =======
       react: 18.2.0
@@ -19969,12 +20544,18 @@ snapshots:
 >>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       react-refresh: 0.14.0
 <<<<<<< HEAD
+<<<<<<< HEAD
       react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.3.1)(webpack@5.88.2)
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.91.0)
 =======
       react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.88.2)
 >>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.91.0)
+=======
+      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.88.2)
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       redux: 4.2.1
       redux-thunk: 2.4.2(redux@4.2.1)
       resolve-from: 5.0.0
@@ -19989,16 +20570,23 @@ snapshots:
       strip-ansi: 6.0.1
       style-loader: 2.0.0(webpack@5.88.2)
 <<<<<<< HEAD
+<<<<<<< HEAD
       style-to-object: 0.4.4
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
       style-loader: 2.0.0(webpack@5.91.0)
       terser-webpack-plugin: 5.3.9(webpack@5.91.0)
 =======
 >>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      style-loader: 2.0.0(webpack@5.91.0)
+      terser-webpack-plugin: 5.3.9(webpack@5.91.0)
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       terser-webpack-plugin: 5.3.9(webpack@5.88.2)
       tmp: 0.2.1
       true-case-path: 2.2.1
       type-of: 2.0.1
+<<<<<<< HEAD
 <<<<<<< HEAD
       url-loader: 4.1.1(file-loader@6.2.0(webpack@5.88.2))(webpack@5.88.2)
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
@@ -20006,6 +20594,11 @@ snapshots:
 =======
       url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.88.2)
 >>>>>>> bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.91.0)
+=======
+      url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.88.2)
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
       uuid: 8.3.2
       webpack: 5.88.2
       webpack-dev-middleware: 4.3.0(webpack@5.88.2)
@@ -20345,6 +20938,13 @@ snapshots:
     dependencies:
       meow: 8.1.2
       semver: 6.3.1
+<<<<<<< HEAD
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+      semver: 6.3.0
+    dev: false
+=======
+    dev: false
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   git-up@7.0.0:
     dependencies:
@@ -22691,6 +23291,7 @@ snapshots:
       webpack-sources: 1.4.3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   minimatch@3.1.2:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /mini-css-extract-plugin@1.6.2(webpack@5.91.0):
@@ -22705,6 +23306,21 @@ snapshots:
       webpack-sources: 1.4.3
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /mini-css-extract-plugin@1.6.2(webpack@5.91.0):
+    resolution: {integrity: sha512-WhDvO3SjGm40oV5y26GjMJYjd2UMqrLAGKy5YS2/3QKJy2F7jgynuHTir/tgUUOiNQu5saXHdc8reo7YuhhT4Q==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.4.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+      webpack-sources: 1.4.3
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 =======
@@ -22987,6 +23603,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   nullthrows@1.1.1: {}
 
   num2fraction@1.2.2: {}
@@ -23021,6 +23638,20 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /null-loader@4.0.1(webpack@5.91.0):
+    resolution: {integrity: sha512-pxqVbi4U6N26lq+LmgIbB5XATP0VdZKOG25DhHi8btMmJJefGArFyDg1yc4U3hWCJbMqSrw0qyrz1UQX+qYXqg==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /nullthrows@1.1.1:
     resolution: {integrity: sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==}
 =======
@@ -23571,6 +24202,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   postcss-merge-idents@2.1.7:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /postcss-loader@5.3.0(postcss@8.4.24)(webpack@5.91.0):
@@ -23587,6 +24219,23 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /postcss-loader@5.3.0(postcss@8.4.24)(webpack@5.91.0):
+    resolution: {integrity: sha512-/+Z1RAmssdiSLgIZwnJHwBMnlABPgF7giYzTN2NOfr9D21IJZ4mQC1R2miwp80zno9M4zMD/umGI8cR+2EL5zw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      postcss: ^7.0.0 || ^8.0.1
+      webpack: ^5.0.0
+    dependencies:
+      cosmiconfig: 7.1.0
+      klona: 2.0.5
+      postcss: 8.4.24
+      semver: 7.5.4
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /postcss-merge-idents@2.1.7:
     resolution: {integrity: sha512-9DHmfCZ7/hNHhIKnNkz4CU0ejtGen5BbTRJc13Z2uHfCedeCUsK2WEQoAJRBL+phs68iWK6Qf8Jze71anuysWA==}
 =======
@@ -24118,6 +24767,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   rc@1.2.8:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /raw-loader@4.0.2(webpack@5.91.0):
@@ -24131,6 +24781,20 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /raw-loader@4.0.2(webpack@5.91.0):
+    resolution: {integrity: sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
@@ -24180,6 +24844,7 @@ snapshots:
       - vue-template-compiler
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   react-dom@15.7.0(react@15.7.0):
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /react-dev-utils@12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0):
@@ -24224,6 +24889,51 @@ snapshots:
       - vue-template-compiler
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /react-dev-utils@12.0.1(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0):
+    resolution: {integrity: sha512-84Ivxmr17KjUupyqzFode6xKhjwuEJDROWKJy/BthkL7Wn6NJ8h4WE6k/exAv6ImS+0oZLRRW5j/aINMHyeGeQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=2.7'
+      webpack: '>=4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@babel/code-frame': 7.22.5
+      address: 1.2.2
+      browserslist: 4.21.11
+      chalk: 4.1.2
+      cross-spawn: 7.0.3
+      detect-port-alt: 1.1.6
+      escape-string-regexp: 4.0.0
+      filesize: 8.0.7
+      find-up: 5.0.0
+      fork-ts-checker-webpack-plugin: 6.5.3(eslint@7.32.0)(typescript@5.1.3)(webpack@5.91.0)
+      global-modules: 2.0.0
+      globby: 11.1.0
+      gzip-size: 6.0.0
+      immer: 9.0.21
+      is-root: 2.1.0
+      loader-utils: 3.2.1
+      open: 8.4.2
+      pkg-up: 3.1.0
+      prompts: 2.4.2
+      react-error-overlay: 6.0.11
+      recursive-readdir: 2.2.3
+      shell-quote: 1.8.1
+      strip-ansi: 6.0.1
+      text-table: 0.2.0
+      typescript: 5.1.3
+      webpack: 5.91.0
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - vue-template-compiler
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /react-dom@15.7.0(react@15.7.0):
     resolution: {integrity: sha512-mpjXqC2t1FuYsILOLCj0kg6pbg460byZkVA/80VtDmKU/pYmoTdHOtaMcTRIDiyXLz4sIur0cQ04nOC6iGndJg==}
     peerDependencies:
@@ -24299,6 +25009,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   react-shallow-renderer@16.15.0(react@18.3.1):
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.91.0):
@@ -24315,6 +25026,23 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825(react@18.2.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-JyCjbp6ZvkH/T0EuVPdceYlC8u5WqWDSJr2KxDvc81H2eJ+7zYUN++IcEycnR2F+HmER8QVgxfotnIx352zi+w==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      react: 0.0.0-experimental-c8b778b7f-20220825 || 18
+      webpack: ^5.59.0
+    dependencies:
+      acorn: 6.4.2
+      loose-envify: 1.4.0
+      neo-async: 2.6.2
+      react: 18.2.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /react-shallow-renderer@16.15.0(react@18.2.0):
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
     peerDependencies:
@@ -24917,7 +25645,18 @@ snapshots:
 
   semver@6.3.1: {}
 
+<<<<<<< HEAD
   semver@7.6.3: {}
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /semver@6.3.1:
+    resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
+    hasBin: true
+    dev: false
+=======
+  /semver@6.3.1:
+    resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
+    hasBin: true
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
 
   send@0.18.0:
     dependencies:
@@ -25387,6 +26126,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   style-to-object@0.4.4:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /style-loader@2.0.0(webpack@5.91.0):
@@ -25400,6 +26140,20 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /style-loader@2.0.0(webpack@5.91.0):
+    resolution: {integrity: sha512-Z0gYUJmzZ6ZdRUqpg1r8GsaFKypE+3xAzuFeMuoHgjc9KZv3wMyCRjQIWEbhoFSq7+7yoHXySDJyyWQaPajeiQ==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /style-to-object@0.4.1:
     resolution: {integrity: sha512-HFpbb5gr2ypci7Qw+IOhnP2zOU7e77b+rzM+wTzXzfi1PrtBCX0E7Pk4wL4iTLnhzZ+JgEGAhX81ebTg/aYjQw==}
 =======
@@ -25654,6 +26408,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   terser@5.36.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
@@ -25683,6 +26438,33 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /terser-webpack-plugin@5.3.9(webpack@5.91.0):
+    resolution: {integrity: sha512-ZuXsqE07EcggTWQjXUj+Aot/OMcD0bMKGgF63f7UxYcu5/AJF53aIpK1YoP5xR9l6s/Hy2b+t1AM0bLNPRuhwA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@swc/core': '*'
+      esbuild: '*'
+      uglify-js: '*'
+      webpack: ^5.1.0
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      esbuild:
+        optional: true
+      uglify-js:
+        optional: true
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.25
+      jest-worker: 27.5.1
+      schema-utils: 3.3.0
+      serialize-javascript: 6.0.1
+      terser: 5.30.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /terser@5.17.7:
     resolution: {integrity: sha512-/bi0Zm2C6VAexlGgLlVxA0P2lru/sdLyfCVaRMfKVo9nWxbmz7f/sD8VPybPeSUJaJcwmCJis9pBIhcVcG1QcQ==}
     engines: {node: '>=10'}
@@ -26400,6 +27182,7 @@ snapshots:
       file-loader: 6.2.0(webpack@5.88.2)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   url-parse@1.5.10:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /url-loader@4.1.1(file-loader@6.2.0)(webpack@5.91.0):
@@ -26419,6 +27202,26 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /url-loader@4.1.1(file-loader@6.2.0)(webpack@5.91.0):
+    resolution: {integrity: sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      file-loader: '*'
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
+    dependencies:
+      file-loader: 6.2.0(webpack@5.91.0)
+      loader-utils: 2.0.4
+      mime-types: 2.1.35
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
 =======
@@ -26540,6 +27343,7 @@ snapshots:
       webpack: 5.88.2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   webpack-merge@5.9.0:
 ||||||| parent of bceb4359 (chore(deps): bump react-test-renderer and @types/react-test-renderer)
   /webpack-dev-middleware@4.3.0(webpack@5.91.0):
@@ -26557,6 +27361,24 @@ snapshots:
       webpack: 5.91.0
     dev: true
 
+||||||| parent of cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
+  /webpack-dev-middleware@4.3.0(webpack@5.91.0):
+    resolution: {integrity: sha512-PjwyVY95/bhBh6VUqt6z4THplYcsvQ8YNNBTBM873xLVmw8FLeALn0qurHbs9EmcfhzQis/eoqypSnZeuUz26w==}
+    engines: {node: '>= v10.23.3'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      colorette: 1.4.0
+      mem: 8.1.1
+      memfs: 3.5.3
+      mime-types: 2.1.35
+      range-parser: 1.2.1
+      schema-utils: 3.3.0
+      webpack: 5.91.0
+    dev: true
+
+=======
+>>>>>>> cf8a16b5 (chore(deps-dev): bump @babel/register from 7.23.7 to 7.24.6)
   /webpack-merge@5.9.0:
     resolution: {integrity: sha512-6NbRQw4+Sy50vYNTw7EyOn41OZItPiXB8GNv3INSoe3PSFaHJEz3SHTrYVaRm2LilNGnFUzh0FAwqPEmU/CwDg==}
     engines: {node: '>=10.0.0'}
