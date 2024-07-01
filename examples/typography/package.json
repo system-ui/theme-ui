@@ -28,7 +28,7 @@
     "@types/react": "^18.2.12",
     "babel-eslint": "^10",
     "eslint": "^8.56.0",
-    "graphql": "^15",
+    "graphql": "^16",
     "typescript": "^5"
   }
 }
