@@ -19,15 +19,15 @@ jobs:
       matrix:
         containers: [1] # todo: change to [1, 2] - there's only 1 test file now
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
         with:
           version: 7
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 20.x
           cache: 'pnpm'
 
       - name: Install
@@ -36,7 +36,7 @@ jobs:
       - run: pnpm build:docs
       - run: cd packages/e2e && pnpm cypress install
 
-      - uses: cypress-io/github-action@v5.0.0
+      - uses: cypress-io/github-action@v6
         with:
           record: true
           parallel: true
