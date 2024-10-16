@@ -15,29 +15,29 @@ importers:
   .:
     dependencies:
       '@auto-it/all-contributors':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/conventional-commits':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/core':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/first-time-contributor':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/magic-zero':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/npm':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/omit-commits':
-        specifier: ^11.0.4
+        specifier: ^11.2.1
         version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@auto-it/released':
-        specifier: ^10.46.0
-        version: 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+        specifier: ^11.2.1
+        version: 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@babel/cli':
         specifier: ^7.22.5
         version: 7.25.7(@babel/core@7.22.5)
@@ -1451,28 +1451,15 @@ packages:
     peerDependencies:
       graphql: '*'
 
-  '@auto-it/all-contributors@10.46.0':
-    resolution: {integrity: sha512-VxLWXB+mRkXTQBO4YsbFJIKhAry4O28sYlbDQWCZwWBz2Ku9r2R26FrQ79LwBNqAjD/BiugcikVgItP6yoz+5A==}
-
-  '@auto-it/bot-list@10.46.0':
-    resolution: {integrity: sha512-QkkBgQVi1g/1Tpxcs3Hm3zTzaaM0xjiIRt5xEA6TRM/ULdgEqY+Jk/w1fJZe9GVF+53mwRfqGtQeJirilMBH6g==}
-    engines: {node: '>=10.x'}
+  '@auto-it/all-contributors@11.2.1':
+    resolution: {integrity: sha512-9mRN3q6GssrvkTsXTfEWQ2RRcZTJqkynANZMV0GU6XP5OIV97rkxPFHcmAE8CwasEOEgO5Gnv1OdOkmOrqUVOQ==}
 
   '@auto-it/bot-list@11.2.1':
     resolution: {integrity: sha512-hZpdV0Bzd6mxSVlYZtw0k/Qog3tT4NOQSYViQ/wsabZXNa2GoRr0t6aid7TuJItpMvLG9+g2TMZwjF+Q4JdGPA==}
     engines: {node: '>=10.x'}
 
-  '@auto-it/conventional-commits@10.46.0':
-    resolution: {integrity: sha512-hMtGTkumjZSY31T/t2zI5lHyKjNbZy/fpeE0NukRbi7+UJu4RM2cH/dTj3hoGv43ohMn54hwqfNjJipHu8TETA==}
-
-  '@auto-it/core@10.46.0':
-    resolution: {integrity: sha512-68jWcUuQBFCjgUvEWa64ENeRPULFYiaFpo37H6SUuLcZ2XBD+Bt4Y0yqHWjs6F5g19S7pzOYe25SxWf+U0J4LQ==}
-    peerDependencies:
-      '@types/node': '*'
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
+  '@auto-it/conventional-commits@11.2.1':
+    resolution: {integrity: sha512-q/XzVFVMMK4qW6V67h5sB+MRBtwMQghieW7+0TgvIsHtvPbNxol8a8rYt+uxqLA+R7KRYOUIRrvTHjI/pNdlJQ==}
 
   '@auto-it/core@11.2.1':
     resolution: {integrity: sha512-lF8rHKNiFI9XTYxh1S+kw3xZfN239y54/GBzJ3tqdkNSMsE+SbpFYctG/HTTx8NLYXYTBpiQCftBL+WcXYS9UA==}
@@ -1483,14 +1470,11 @@ packages:
       '@types/node':
         optional: true
 
-  '@auto-it/first-time-contributor@10.46.0':
-    resolution: {integrity: sha512-P/taTwvrFSOtCu1FOTzVx7iSMBSFroW5NZEZ6oLttEWoGsiGI9VYBY7yGIh47g7dreS1Y+xA1iTfUMCHIcyrmg==}
+  '@auto-it/first-time-contributor@11.2.1':
+    resolution: {integrity: sha512-HltQXmSpDbxCKRuT6U890h/ZLdsK4VCnKsjnTswoH0aNKMmVfJaSiocJJ6JGj+T1rJDikGCU43Osdxxj9nZvwQ==}
 
-  '@auto-it/magic-zero@10.46.0':
-    resolution: {integrity: sha512-uofIfttVcExW5AxvxIIg/EZEBF8bIZYfq1C/IegF4YbLb/9kfO4agHM+4vMEYRP/aLDxbO8xrgqtF/NxZqLtHg==}
-
-  '@auto-it/npm@10.46.0':
-    resolution: {integrity: sha512-hvwXxRJE70ay4/CMEDtILZvefXqmo+jp/w8FEu4Bo1Kq96AREfH9cO+mgj1nPon5yg353SCcupGV3OyoZt18iw==}
+  '@auto-it/magic-zero@11.2.1':
+    resolution: {integrity: sha512-+O580LYIQupsmPpU/yqbUu2+BLTWaTP5js5euNKlFVJf3zUDFFe9VLq0i+uVr6sMZ8C7FGdRIeN27mtlDDJluA==}
 
   '@auto-it/npm@11.2.1':
     resolution: {integrity: sha512-rJXfodzQ9BxeM0xbLfoVgp8m07YXoTcrr8fPLPhlBlYK7lDZazE7AS7r8KpolNMEi0jUBXg7c6UKOVBpMzFUPA==}
@@ -1498,16 +1482,9 @@ packages:
   '@auto-it/omit-commits@11.2.1':
     resolution: {integrity: sha512-lbN9FHIJ+peOpswaMUClblJdA4h0ANtB/V9bibboA7wzpch9deNt1NNYheugJMwyQi+8baqE4wf7weixQ1Vivw==}
 
-  '@auto-it/package-json-utils@10.46.0':
-    resolution: {integrity: sha512-dl0VW3oJ/JfyuXlVucLlsBaQH69GTkTXLSq9JZ723hT55/owcywDpSlD4YH158hm7Lv5CdHw2u3z60XUlqa6xQ==}
-    engines: {node: '>=10.x'}
-
   '@auto-it/package-json-utils@11.2.1':
     resolution: {integrity: sha512-iyjTymHIXuhCwMIHeoMa2+NwkEMFY4iD3pBNFL19CXOrsdma2QAj1HGUOo9cl4lGIOYoA7OMPlPaijUcfJatYA==}
     engines: {node: '>=10.x'}
-
-  '@auto-it/released@10.46.0':
-    resolution: {integrity: sha512-U0XYvkcPoO4c4WiJz6PQ8jUOMEH1EjxXRGyvaaZWfZOtr2vquvGDIAs6ntekURcNs75H780K49es18mTLgz9/g==}
 
   '@auto-it/released@11.2.1':
     resolution: {integrity: sha512-5Z5++Ov5H1+1+74ogkGldO9FIRCwJsDC06oAfwAhqg3S2VTv1uO29iUR/zTMk8uw/UuC9XZ9fBraY7CBT6myEw==}
@@ -4507,10 +4484,6 @@ packages:
     resolution: {integrity: sha512-PLWJN3Xo/rycNkx+mp8iBDMTm3FeWe4VmYaZDSqL5QQB9sLsQkG5k8n+LNDFnhh9kdq2K+egL/icpctOmDHwig==}
     hasBin: true
 
-  available-typed-arrays@1.0.5:
-    resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
-    engines: {node: '>= 0.4'}
-
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
@@ -6500,10 +6473,6 @@ packages:
   fast-fifo@1.3.2:
     resolution: {integrity: sha512-/d9sfos4yxzpwkDkuN7k2SqFKtYNmCTzgfEpz82x34IM9/zc8KGxQoXg1liNC/izpRM/MBdt44Nmx41ZWqk+FQ==}
 
-  fast-glob@3.2.12:
-    resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
-    engines: {node: '>=8.6.0'}
-
   fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
@@ -6696,9 +6665,6 @@ packages:
   forwarded@0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
-
-  fp-ts@2.16.0:
-    resolution: {integrity: sha512-bLq+KgbiXdTEoT1zcARrWEpa5z6A/8b7PcDW7Gef3NSisQ+VS7ll2Xbf1E+xsgik0rWub/8u0qP/iTTjj+PhxQ==}
 
   fp-ts@2.16.9:
     resolution: {integrity: sha512-+I2+FnVB+tVaxcYyQkHUq7ZdKScaBlX53A41mxQtpIccsfyv8PzdzP7fzp2AY832T4aoK6UZ5WRX/ebGd8uZuQ==}
@@ -7454,11 +7420,6 @@ packages:
 
   invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
-
-  io-ts@2.2.20:
-    resolution: {integrity: sha512-Rq2BsYmtwS5vVttie4rqrOCIfHCS9TgpRLFpKQCM1wZBBRY9nWVGmEvm2FnDbSE2un1UE39DvFpTR5UL47YDcA==}
-    peerDependencies:
-      fp-ts: ^2.5.0
 
   io-ts@2.2.21:
     resolution: {integrity: sha512-zz2Z69v9ZIC3mMLYWIeoUcwWD6f+O7yP92FMVVaXEOSZH1jnVBmET/urd/uoarD1WGBY4rCj8TAyMPzsGNzMFQ==}
@@ -9071,9 +9032,6 @@ packages:
   object-hash@3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
-
-  object-inspect@1.12.3:
-    resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
 
   object-inspect@1.13.2:
     resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
@@ -11287,9 +11245,6 @@ packages:
   tslib@2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
 
-  tslib@2.5.3:
-    resolution: {integrity: sha512-mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w==}
-
   tslib@2.8.0:
     resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
 
@@ -11865,10 +11820,6 @@ packages:
     resolution: {integrity: sha512-oV0jmFtUky6CXfkqehVvBP/LSWJ2sy4vWMioiENyJLePrBO/yKyV9OyJySfAKosh+RYkIl5zJCNZ8/4JncrpdA==}
     engines: {node: '>= 0.4'}
 
-  which-typed-array@1.1.9:
-    resolution: {integrity: sha512-w9c4xkx6mPidwp7180ckYWfMmvxpjlZuIudNtDf4N/tTAUB8VJbX25qZoAsrtGuYNnGw3pa0AXgbGKRB8/EceA==}
-    engines: {node: '>= 0.4'}
-
   which@1.3.1:
     resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
     hasBin: true
@@ -12082,10 +12033,10 @@ snapshots:
       - encoding
       - supports-color
 
-  '@auto-it/all-contributors@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
+  '@auto-it/all-contributors@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
-      '@auto-it/bot-list': 10.46.0
-      '@auto-it/core': 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+      '@auto-it/bot-list': 11.2.1
+      '@auto-it/core': 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       '@octokit/rest': 18.12.0(encoding@0.1.13)
       all-contributors-cli: 6.19.0(encoding@0.1.13)
       anymatch: 3.1.3
@@ -12104,13 +12055,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@auto-it/bot-list@10.46.0': {}
-
   '@auto-it/bot-list@11.2.1': {}
 
-  '@auto-it/conventional-commits@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
+  '@auto-it/conventional-commits@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
-      '@auto-it/core': 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+      '@auto-it/core': 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       array.prototype.flatmap: 1.3.1
       conventional-changelog-core: 4.2.4
       conventional-changelog-preset-loader: 2.3.4
@@ -12127,9 +12076,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@auto-it/core@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
+  '@auto-it/core@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
-      '@auto-it/bot-list': 10.46.0
+      '@auto-it/bot-list': 11.2.1
       '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2(cosmiconfig@7.0.0)(typescript@5.6.3)
       '@octokit/core': 3.6.0(encoding@0.1.13)
       '@octokit/plugin-enterprise-compatibility': 1.3.0
@@ -12178,61 +12127,10 @@ snapshots:
       - encoding
       - supports-color
 
-  '@auto-it/core@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
+  '@auto-it/first-time-contributor@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
       '@auto-it/bot-list': 11.2.1
-      '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2(cosmiconfig@7.0.0)(typescript@5.6.3)
-      '@octokit/core': 3.6.0(encoding@0.1.13)
-      '@octokit/plugin-enterprise-compatibility': 1.3.0
-      '@octokit/plugin-retry': 3.0.9
-      '@octokit/plugin-throttling': 3.7.0(@octokit/core@3.6.0(encoding@0.1.13))
-      '@octokit/rest': 18.12.0(encoding@0.1.13)
-      await-to-js: 3.0.0
-      chalk: 4.1.2
-      cosmiconfig: 7.0.0
-      deepmerge: 4.3.1
-      dotenv: 8.6.0
-      endent: 2.1.0
-      enquirer: 2.4.1
-      env-ci: 5.5.0
-      fast-glob: 3.2.12
-      fp-ts: 2.16.0
-      fromentries: 1.3.2
-      gitlog: 4.0.8
-      https-proxy-agent: 5.0.1
-      import-cwd: 3.0.0
-      import-from: 3.0.0
-      io-ts: 2.2.20(fp-ts@2.16.0)
-      lodash.chunk: 4.2.0
-      log-symbols: 4.1.0
-      node-fetch: 2.6.7(encoding@0.1.13)
-      parse-author: 2.0.0
-      parse-github-url: 1.0.2
-      pretty-ms: 7.0.1
-      requireg: 0.2.2
-      semver: 7.6.3
-      signale: 1.4.0
-      tapable: 2.2.1
-      terminal-link: 2.1.1
-      tinycolor2: 1.6.0
-      ts-node: 10.9.1(@types/node@20.16.11)(typescript@5.6.3)
-      tslib: 2.1.0
-      type-fest: 0.21.3
-      typescript: 5.6.3
-      typescript-memoize: 1.1.1
-      url-join: 4.0.1
-    optionalDependencies:
-      '@types/node': 20.16.11
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - encoding
-      - supports-color
-
-  '@auto-it/first-time-contributor@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
-    dependencies:
-      '@auto-it/bot-list': 10.46.0
-      '@auto-it/core': 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+      '@auto-it/core': 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       array.prototype.flatmap: 1.3.1
       endent: 2.1.0
       tslib: 2.1.0
@@ -12245,37 +12143,13 @@ snapshots:
       - supports-color
       - typescript
 
-  '@auto-it/magic-zero@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
+  '@auto-it/magic-zero@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
-      '@auto-it/core': 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
+      '@auto-it/core': 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
       fp-ts: 2.16.9
       io-ts: 2.2.21(fp-ts@2.16.9)
       semver: 7.6.3
       tslib: 2.1.0
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - encoding
-      - supports-color
-      - typescript
-
-  '@auto-it/npm@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
-    dependencies:
-      '@auto-it/core': 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
-      '@auto-it/package-json-utils': 10.46.0
-      await-to-js: 3.0.0
-      endent: 2.1.0
-      env-ci: 5.5.0
-      fp-ts: 2.16.9
-      get-monorepo-packages: 1.2.0
-      io-ts: 2.2.21(fp-ts@2.16.9)
-      registry-url: 5.1.0
-      semver: 7.6.3
-      tslib: 2.1.0
-      typescript-memoize: 1.1.1
-      url-join: 4.0.1
-      user-home: 2.0.0
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -12311,32 +12185,6 @@ snapshots:
   '@auto-it/omit-commits@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
       '@auto-it/core': 11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
-      fp-ts: 2.16.0
-      io-ts: 2.2.20(fp-ts@2.16.0)
-      tslib: 2.1.0
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - encoding
-      - supports-color
-      - typescript
-
-  '@auto-it/package-json-utils@10.46.0':
-    dependencies:
-      parse-author: 2.0.0
-      parse-github-url: 1.0.2
-
-  '@auto-it/package-json-utils@11.2.1':
-    dependencies:
-      parse-author: 2.0.0
-      parse-github-url: 1.0.2
-
-  '@auto-it/released@10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
-    dependencies:
-      '@auto-it/bot-list': 10.46.0
-      '@auto-it/core': 10.46.0(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)
-      deepmerge: 4.3.1
       fp-ts: 2.16.9
       io-ts: 2.2.21(fp-ts@2.16.9)
       tslib: 2.1.0
@@ -12347,6 +12195,11 @@ snapshots:
       - encoding
       - supports-color
       - typescript
+
+  '@auto-it/package-json-utils@11.2.1':
+    dependencies:
+      parse-author: 2.0.0
+      parse-github-url: 1.0.2
 
   '@auto-it/released@11.2.1(@types/node@20.16.11)(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
@@ -16179,8 +16032,6 @@ snapshots:
       postcss: 6.0.23
       postcss-value-parser: 3.3.1
 
-  available-typed-arrays@1.0.5: {}
-
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.0.0
@@ -18219,7 +18070,7 @@ snapshots:
   es-abstract@1.21.2:
     dependencies:
       array-buffer-byte-length: 1.0.0
-      available-typed-arrays: 1.0.5
+      available-typed-arrays: 1.0.7
       call-bind: 1.0.7
       es-set-tostringtag: 2.0.1
       es-to-primitive: 1.2.1
@@ -18244,14 +18095,14 @@ snapshots:
       object-inspect: 1.13.2
       object-keys: 1.1.1
       object.assign: 4.1.5
-      regexp.prototype.flags: 1.5.0
+      regexp.prototype.flags: 1.5.3
       safe-regex-test: 1.0.0
       string.prototype.trim: 1.2.7
       string.prototype.trimend: 1.0.6
       string.prototype.trimstart: 1.0.6
       typed-array-length: 1.0.4
       unbox-primitive: 1.0.2
-      which-typed-array: 1.1.9
+      which-typed-array: 1.1.15
 
   es-define-property@1.0.0:
     dependencies:
@@ -18277,7 +18128,7 @@ snapshots:
     dependencies:
       get-intrinsic: 1.2.4
       has: 1.0.3
-      has-tostringtag: 1.0.0
+      has-tostringtag: 1.0.2
 
   es-shim-unscopables@1.0.0:
     dependencies:
@@ -19322,14 +19173,6 @@ snapshots:
 
   fast-fifo@1.3.2: {}
 
-  fast-glob@3.2.12:
-    dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
-      glob-parent: 5.1.2
-      merge2: 1.4.1
-      micromatch: 4.0.5
-
   fast-glob@3.3.2:
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -19601,8 +19444,6 @@ snapshots:
       mime-types: 2.1.35
 
   forwarded@0.2.0: {}
-
-  fp-ts@2.16.0: {}
 
   fp-ts@2.16.9: {}
 
@@ -21489,10 +21330,6 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  io-ts@2.2.20(fp-ts@2.16.0):
-    dependencies:
-      fp-ts: 2.16.0
-
   io-ts@2.2.21(fp-ts@2.16.9):
     dependencies:
       fp-ts: 2.16.9
@@ -21562,7 +21399,7 @@ snapshots:
   is-boolean-object@1.1.2:
     dependencies:
       call-bind: 1.0.7
-      has-tostringtag: 1.0.0
+      has-tostringtag: 1.0.2
 
   is-buffer@2.0.5: {}
 
@@ -21655,7 +21492,7 @@ snapshots:
 
   is-number-object@1.0.7:
     dependencies:
-      has-tostringtag: 1.0.0
+      has-tostringtag: 1.0.2
 
   is-number@4.0.0: {}
 
@@ -21744,11 +21581,11 @@ snapshots:
 
   is-typed-array@1.1.10:
     dependencies:
-      available-typed-arrays: 1.0.5
+      available-typed-arrays: 1.0.7
       call-bind: 1.0.7
       for-each: 0.3.3
       gopd: 1.0.1
-      has-tostringtag: 1.0.0
+      has-tostringtag: 1.0.2
 
   is-typedarray@1.0.0: {}
 
@@ -23611,8 +23448,6 @@ snapshots:
   object-assign@4.1.1: {}
 
   object-hash@3.0.0: {}
-
-  object-inspect@1.12.3: {}
 
   object-inspect@1.13.2: {}
 
@@ -25752,7 +25587,7 @@ snapshots:
     dependencies:
       call-bind: 1.0.7
       get-intrinsic: 1.2.4
-      object-inspect: 1.12.3
+      object-inspect: 1.13.2
 
   side-channel@1.0.6:
     dependencies:
@@ -26717,8 +26552,6 @@ snapshots:
 
   tslib@2.4.1: {}
 
-  tslib@2.5.3: {}
-
   tslib@2.8.0: {}
 
   tsutils@3.21.0(typescript@5.6.3):
@@ -26741,7 +26574,7 @@ snapshots:
       fast-glob: 3.3.2
       minimatch: 5.1.0
       normalize-path: 3.0.0
-      tslib: 2.5.3
+      tslib: 2.8.0
       tsutils: 3.21.0(typescript@5.6.3)
       typescript: 5.6.3
 
@@ -27488,15 +27321,6 @@ snapshots:
       for-each: 0.3.3
       gopd: 1.0.1
       has-tostringtag: 1.0.2
-
-  which-typed-array@1.1.9:
-    dependencies:
-      available-typed-arrays: 1.0.5
-      call-bind: 1.0.7
-      for-each: 0.3.3
-      gopd: 1.0.1
-      has-tostringtag: 1.0.0
-      is-typed-array: 1.1.10
 
   which@1.3.1:
     dependencies:
