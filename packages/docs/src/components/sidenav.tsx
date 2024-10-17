@@ -123,7 +123,7 @@ export const AccordionButton = (props: {
   onClick: EventHandler<MouseEvent<HTMLButtonElement>>
 }) => {
   const transform = props.open ? 'rotate(-180 8 8)' : 'rotate(0 8 8)'
-  const disabled = props.pathname ? props.pathname.includes(props.href) : false
+  const disabled = props.pathname ? props.pathname === props.href : false
 
   return (
     <button
