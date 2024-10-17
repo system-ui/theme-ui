@@ -540,17 +540,18 @@ test('raw color values are passed to theme-ui context when custom properties are
 })
 
 test('warns when localStorage is disabled', () => {
+  const spy = jest
+    .spyOn(Storage.prototype, 'getItem')
+    .mockImplementation(() => {
+      throw new Error('SecurityError: The operation is insecure.')
+    })
+
   const restore = mockConsole()
   window.matchMedia = jest.fn().mockImplementation((query) => {
     return {
       matches: false,
       media: query,
     }
-  })
-  Object.defineProperty(window, 'localStorage', {
-    get: jest.fn(() => {
-      throw 'SecurityError: The operation is insecure.'
-    }),
   })
 
   let mode
@@ -569,4 +570,5 @@ test('warns when localStorage is disabled', () => {
   expect(mode).toBe(undefined)
   expect(console.warn).toHaveBeenCalled()
   restore()
+  spy.mockClear()
 })
