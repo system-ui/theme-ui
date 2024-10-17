@@ -23,7 +23,7 @@
     "@types/mdx": "^2.0.5",
     "@types/react": "^18.2.12",
     "react": "^18.1.0",
-    "remark-gfm-3": "npm:remark-gfm@^3.0.1"
+    "remark-gfm-3": "npm:remark-gfm@3.0.1"
   },
   "author": "Brent Jackson",
   "repository": "system-ui/theme-ui",
