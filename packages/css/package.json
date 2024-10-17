@@ -35,7 +35,7 @@
     "access": "public"
   },
   "dependencies": {
-    "csstype": "^3.0.10"
+    "csstype": "3.0.10"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1"

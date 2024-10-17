@@ -23,7 +23,7 @@
     "@theme-ui/preset-tosh": "develop",
     "@theme-ui/css": "develop",
     "theme-ui": "develop",
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "react": "^18",
     "typescript": ">=5"
   },

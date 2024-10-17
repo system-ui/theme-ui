@@ -18,9 +18,9 @@
     "icon": "npx repng src/components/logo.js -d static -f icon.png -w=32 -h=32 --props='{\"size\":32}'"
   },
   "dependencies": {
-    "unist-util-visit-2": "npm:unist-util-visit@^2.0.2",
+    "unist-util-visit-2": "npm:unist-util-visit@2.0.3",
     "@babel/helper-string-parser": "^7.22.5",
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@theme-ui/color": "workspace:^",
@@ -58,7 +58,7 @@
     "react-dom": "^18",
     "react-helmet": "^6.1.0",
     "react-live": "^2.1.2",
-    "remark-gfm-1": "npm:remark-gfm@^1.0.0",
+    "remark-gfm-1": "npm:remark-gfm@1.0.0",
     "remark-slug": "^6",
     "stringify-object": "^3",
     "theme-ui": "workspace:^",

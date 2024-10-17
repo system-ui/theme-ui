@@ -20,7 +20,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "peerDependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "@mdx-js/react": "^1 || ^2",
     "@theme-ui/css": "workspace:^",
     "@theme-ui/mdx": "workspace:^",
@@ -29,7 +29,7 @@
     "theme-ui": "workspace:^"
   },
   "devDependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "@mdx-js/react": "^2.3.0",
     "@theme-ui/css": "workspace:^",
     "@theme-ui/mdx": "workspace:^",

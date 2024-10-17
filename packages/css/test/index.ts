@@ -728,8 +728,11 @@ test('supports vendor properties', () => {
 test('omits empty values', () => {
   expect(
     css({
+      // @ts-ignore TS2873
       color: false && 'blue',
+      // @ts-ignore TS2873
       backgroundColor: undefined && 'whitesmoke',
+      // @ts-ignore TS2873
       textDecoration: null && 'underline',
       border: '1px solid black',
     })(theme)
