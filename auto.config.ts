@@ -13,7 +13,7 @@ const conventionalCommitsOptions: ConventionalCommitsOptions = {
   defaultReleaseType: 'none',
 }
 
-const allContributorsOptions: IAllContributorsPluginOptions = {
+const _allContributorsOptions: IAllContributorsPluginOptions = {
   exclude: [
     'dependabot',
     'dependabot[bot]',
@@ -61,7 +61,7 @@ export default function config(): AutoRc {
       ['conventional-commits', conventionalCommitsOptions],
       'first-time-contributor',
       'released',
-      ['all-contributors', allContributorsOptions],
+      // ['all-contributors', allContributorsOptions],
       ['omit-commits', omitCommitsOptions],
       // 'magic-zero',
     ],

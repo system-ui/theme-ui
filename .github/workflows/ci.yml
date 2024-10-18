@@ -17,7 +17,7 @@ jobs:
 
       - uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9.12.1
 
       - uses: actions/setup-node@v3
         with:
@@ -81,7 +81,7 @@ jobs:
 
       - uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9.12.1
 
       - uses: actions/setup-node@v3
         with:
@@ -90,7 +90,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install
-        run: pnpm install --no-optional --no-frozen-lockfile
+        run: pnpm install --no-optional
 
       - name: Queue in release turnstile
         id: turnstyle
@@ -98,6 +98,9 @@ jobs:
         uses: softprops/turnstyle@v1
         with:
           abort-after-seconds: 600
+
+      - name: Fetch
+        run: git fetch --all
 
       - name: Create release
         if: steps.turnstyle.outcome == 'success'

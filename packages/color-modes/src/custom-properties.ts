@@ -1,4 +1,10 @@
-import { ColorMode, ColorModesScale, css, Theme } from '@theme-ui/css'
+import {
+  ColorMode,
+  ColorModesScale,
+  css,
+  Theme,
+  ThemeUICSSObject,
+} from '@theme-ui/css'
 
 const toVarName = (key: string) => `--theme-ui-${key.replace('-__default', '')}`
 const toVarValue = (key: string) => `var(${toVarName(key)})`
@@ -75,40 +81,43 @@ export const __createColorStyles = (theme: Theme = {}) => {
   } = theme.config || theme || {}
   const colors = theme.rawColors || theme.colors
 
-  if (!colors || useRootStyles === false) return {}
-  if (useCustomProperties === false) {
-    return css({
-      color: 'text',
-      bg: 'background',
-    })(theme)
-  }
+  if (!colors) return {}
 
-  const modes = colors.modes || {}
+  const res: ThemeUICSSObject = {}
 
-  const styles = __createColorProperties(colors, modes)
-
-  if (printColorModeName) {
-    let printMode = modes[printColorModeName]
-    if (!printMode && printColorModeName === initialColorModeName)
-      printMode = colors
-
-    if (printMode) {
-      styles['@media print'] = __objectToVars('colors', printMode)
+  if (useRootStyles !== false) {
+    if (useCustomProperties === false) {
+      res.color = 'text'
+      res.bg = 'background'
     } else {
-      console.error(
-        `Theme UI \`printColorModeName\` was not found in colors scale`,
-        { colors, printColorModeName }
-      )
+      res.color = toVarValue('colors-text')
+      res.bg = toVarValue('colors-background')
     }
   }
 
-  const colorToVarValue = (color: string) => toVarValue(`colors-${color}`)
+  if (useCustomProperties !== false) {
+    const modes = colors.modes || {}
+    const styles = __createColorProperties(colors, modes)
 
-  return css({
-    ...styles,
-    color: colorToVarValue('text'),
-    bg: colorToVarValue('background'),
-  })(theme)
+    if (printColorModeName) {
+      let printMode = modes[printColorModeName]
+      if (!printMode && printColorModeName === initialColorModeName)
+        printMode = colors
+
+      if (printMode) {
+        styles['@media print'] = __objectToVars('colors', printMode)
+      } else {
+        console.error(
+          `Theme UI \`printColorModeName\` was not found in colors scale`,
+          { colors, printColorModeName }
+        )
+      }
+    }
+
+    Object.assign(res, styles)
+  }
+
+  return css(res)(theme)
 }
 
 /**

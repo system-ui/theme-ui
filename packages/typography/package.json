@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/typography",
-  "version": "0.16.2",
+  "version": "0.17.0-develop.0",
   "main": "dist/theme-ui-typography.cjs.js",
   "module": "dist/theme-ui-typography.esm.js",
   "source": "src/index.ts",
@@ -13,7 +13,7 @@
     "@types/modularscale": "^2.0.0",
     "@types/typography": "^0.16.4",
     "compass-vertical-rhythm": "^1.4.5",
-    "csstype": "^3.0.10",
+    "csstype": "3.0.10",
     "modularscale": "^2.0.1",
     "type-fest": "^2.18.0"
   },

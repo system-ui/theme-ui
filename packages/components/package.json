@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/components",
-  "version": "0.16.2",
+  "version": "0.17.0-develop.0",
   "main": "dist/theme-ui-components.cjs.js",
   "module": "dist/theme-ui-components.esm.js",
   "types": "dist/theme-ui-components.cjs.d.ts",
@@ -15,12 +15,12 @@
     "@types/styled-system": "^5.1.13"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "@theme-ui/theme-provider": "workspace:^",
     "react": ">=18"
   },
   "devDependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "@theme-ui/test-utils": "workspace:^",
     "@types/react": "^18.2.12",
     "react": "^18.1.0"

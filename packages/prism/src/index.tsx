@@ -131,12 +131,17 @@ export default function ThemeUIPrism({
               }
               return (
                 <div {...lineProps}>
-                  {line.map((token, key) => (
-                    <span
-                      {...getTokenProps({ token, key })}
-                      sx={token.empty ? { display: 'inline-block' } : undefined}
-                    />
-                  ))}
+                  {line.map((token, key) => {
+                    return (
+                      <span
+                        {...getTokenProps({ token, key })}
+                        key={key}
+                        sx={
+                          token.empty ? { display: 'inline-block' } : undefined
+                        }
+                      />
+                    )
+                  })}
                 </div>
               )
             })}

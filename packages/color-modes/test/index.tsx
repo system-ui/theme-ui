@@ -903,12 +903,11 @@ test('colorMode accepts function from previous state to new one', () => {
 test('warns when localStorage is disabled', () => {
   const restoreConsole = mockConsole()
 
-  const localStorage = window.localStorage
-  Object.defineProperty(window, 'localStorage', {
-    get: jest.fn(() => {
+  const spy = jest
+    .spyOn(Storage.prototype, 'getItem')
+    .mockImplementation(() => {
       throw new Error('SecurityError: The operation is insecure.')
-    }),
-  })
+    })
 
   let mode = ''
   const Consumer = () => {
@@ -927,8 +926,6 @@ test('warns when localStorage is disabled', () => {
 
   expect(mode).toBe(undefined)
 
-  Object.defineProperty(window, 'localStorage', { value: localStorage })
-
   expect((console.warn as jest.Mock).mock.calls[0]).toMatchInlineSnapshot(`
     [
       "localStorage is disabled and color mode might not work as expected.",
@@ -937,6 +934,7 @@ test('warns when localStorage is disabled', () => {
     ]
   `)
 
+  spy.mockClear()
   restoreConsole()
 })
 

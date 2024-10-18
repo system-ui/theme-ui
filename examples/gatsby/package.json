@@ -12,7 +12,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.13.3",
     "@mdx-js/react": "^2.3.0",
     "@theme-ui/mdx": "workspace:^",
     "gatsby": "^5",
