@@ -34,7 +34,7 @@
   "devDependencies": {
     "@theme-ui/mdx": "workspace:^",
     "@types/react": "^18.2.12",
-    "param-case": "^3.0.4",
+    "param-case": "^4.0.0",
     "postcss": "^8.1.10",
     "postcss-js": "^3.0.3",
     "react": "^18.1.0",
