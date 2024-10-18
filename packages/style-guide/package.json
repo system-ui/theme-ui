@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/style-guide",
-  "version": "0.16.2-develop.5",
+  "version": "0.17.0-develop.0",
   "main": "dist/theme-ui-style-guide.cjs.js",
   "module": "dist/theme-ui-style-guide.esm.js",
   "types": "dist/theme-ui-style-guide.cjs.d.ts",
