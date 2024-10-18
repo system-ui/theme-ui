@@ -1,3 +1,16 @@
+# v0.17.0 (Fri Oct 18 2024)
+
+#### 🚀 Enhancement
+
+- fix(color-modes): make useRootStyles=false work with useCustomProperties [#2519](https://github.com/system-ui/theme-ui/pull/2519) ([@hasparus](https://github.com/hasparus) [@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.16.2 (Mon Feb 19 2024)
 
 :tada: This release contains work from new contributors! :tada:
