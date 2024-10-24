@@ -1,3 +1,15 @@
+# v0.17.1 (Thu Oct 24 2024)
+
+#### 🐛 Bug Fix
+
+- fix(types): don't lock csstype version ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.17.0 (Fri Oct 18 2024)
 
 #### 🚀 Enhancement
