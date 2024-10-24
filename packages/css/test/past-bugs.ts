@@ -32,3 +32,10 @@ describe('theme scales, get and default object property (#1439)', () => {
     expect(actual).toStrictEqual({ zIndex: 1 })
   })
 })
+
+// https://github.com/system-ui/theme-ui/issues/2520
+it('accepts number as aspect ratio', () => {
+  const actual = css({ aspectRatio: 0.5 })({})
+
+  expect(actual).toStrictEqual({ aspectRatio: 0.5 })
+})

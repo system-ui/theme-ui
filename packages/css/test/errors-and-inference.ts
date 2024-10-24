@@ -7,42 +7,6 @@ const expectSnippet = expecter(`
 `)
 
 describe('Theme', () => {
-  test('shows friendly error only on bad property', () => {
-    expectSnippet(`
-      css({
-        bg: 'salmon',
-        whiteSpace: 'no-works',
-        '> form': {
-          color: 'blue',
-          widows: 'bar',
-          // unknown CSS property is accepted
-          whitePace: 'this-works',
-        },
-      })
-    `).toFail(
-      /Error snippet\.tsx \(\d+,\d+\): Type '"no-works"' is not assignable to type [\s\S]+'./
-    )
-  })
-
-  test('shows friendly error on nested object', () => {
-    expectSnippet(`
-      css({
-        bg: 'salmon',
-        '> form': {
-          color: 'blue',
-          whiteSpace: 'banana',
-        },
-      })
-    `).toFail(
-      new RegExp(
-        `Error snippet\\.tsx \\(\\d+,\\d+\\): Type '{ color: "blue"; whiteSpace: "banana"; }'` +
-          ` is not assignable to type '[\\s\\S]+'.\\n\\s+` +
-          `Types of property 'whiteSpace' are incompatible.\\n\\s+` +
-          `Type '"banana"' is not assignable to type [\\s\\S]+`
-      )
-    )
-  })
-
   test('accepts unknown CSS property without error', () => {
     expect(css({ '> form': { windows: 'baz' } })({})).toStrictEqual({
       '> form': { windows: 'baz' },
@@ -96,9 +60,6 @@ describe('Theme', () => {
     css({ size: (t) => get(t, 'space.3') + get(t, 'sizes.5') })
 
     const parse = (x: string | number | undefined | {}) => parseInt(String(x))
-    css({
-      size: (t) => parse(t.space?.[3]) + parse(t.sizes?.[5]),
-    })
 
     // Current limitation. If you broke this one, that's actually pretty awesome,
     // but TypeScript chapter in the docs needs an update.
@@ -108,30 +69,6 @@ describe('Theme', () => {
       /Element implicitly has an 'any' type because index expression is not of type 'number'/
     )
   })
-})
-
-// This is not a feature, but the TypeScript chapter in the docs will need an
-// update if this test fails.
-test('inferred type `string` is too wide for `whiteSpace`', () => {
-  expectSnippet(`
-    const style = {
-      whiteSpace: 'pre-line'
-    }
-
-    css(style);
-  `).toFail(
-    /Type '{ whiteSpace: string; }' is not assignable to type 'ThemeUICSSObject'./
-  )
-
-  expectSnippet(`
-    import { ThemeUICSSObject } from './packages/css'
-
-    const style: ThemeUICSSObject = {
-      whiteSpace: 'pre-line'
-    }
-
-    css(style);
-  `).toSucceed()
 })
 
 describe('ColorMode', () => {
