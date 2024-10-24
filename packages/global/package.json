@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/global",
-  "version": "0.17.0-develop.1",
+  "version": "0.17.1-develop.0",
   "repository": "system-ui/theme-ui",
   "main": "dist/theme-ui-global.cjs.js",
   "module": "dist/theme-ui-global.esm.js",
