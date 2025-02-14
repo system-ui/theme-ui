@@ -57,7 +57,7 @@
     "react": "^18.1.0",
     "react-dom": "^18",
     "react-helmet": "^6.1.0",
-    "react-live": "^2.1.2",
+    "react-live": "^4.1.8",
     "remark-gfm-1": "npm:remark-gfm@1.0.0",
     "remark-slug": "^6",
     "stringify-object": "^3",
