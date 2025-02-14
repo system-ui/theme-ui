@@ -1,3 +1,15 @@
+# v0.17.2 (Fri Feb 14 2025)
+
+#### 🐛 Bug Fix
+
+- Handle derived sx in Flex.tsx [#2535](https://github.com/system-ui/theme-ui/pull/2535) ([@rtturner](https://github.com/rtturner))
+
+#### Authors: 1
+
+- Ryan Turner ([@rtturner](https://github.com/rtturner))
+
+---
+
 # v0.17.1 (Thu Oct 24 2024)
 
 #### 🐛 Bug Fix
