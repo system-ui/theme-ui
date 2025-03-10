@@ -53,7 +53,7 @@
     "is-absolute-url": "^4.0.1",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.30.0",
     "react": "^18.1.0",
     "react-dom": "^18",
     "react-helmet": "^6.1.0",
