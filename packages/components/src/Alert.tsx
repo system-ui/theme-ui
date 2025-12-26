@@ -18,6 +18,7 @@ export const Alert: ForwardRef<HTMLDivElement, AlertProps> = React.forwardRef(
       <Box
         ref={ref}
         variant="primary"
+        role="alert"
         {...props}
         {...__internalProps({
           __themeKey: 'alerts',
