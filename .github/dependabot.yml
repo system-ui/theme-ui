@@ -7,7 +7,6 @@ updates:
       interval: monthly
     open-pull-requests-limit: 10
     ignore:
-      - dependency-name: '@codechecks/client'
       - dependency-name: '*'
         update-types: ['version-update:semver-patch']
       - dependency-name: 'gatsby-plugin-mdx' # pinned to 2.4
