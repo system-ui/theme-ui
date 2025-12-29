@@ -25,6 +25,7 @@ exports[`Alert renders 1`] = `
 
 <div
   className="emotion-0"
+  role="alert"
 />
 `;
 
