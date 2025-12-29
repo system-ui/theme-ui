@@ -90,7 +90,6 @@
     "@emotion/jest": "^11.14.2",
     "@jest/types": "^29.6.3",
     "@preconstruct/cli": "^2.8.12",
-    "@size-limit/preset-big-lib": "^11.1.6",
     "@testing-library/react": "^14.2.1",
     "@types/eslint": "8.56.2",
     "@types/jest": "^29.5.13",
@@ -117,11 +116,12 @@
     "react-test-renderer": "^18.3.1",
     "rimraf": "^5.0.1",
     "semver": "^7.7.3",
-    "size-limit": "^11.1.6",
     "ts-jest": "^29.4.6",
     "ts-toolbelt": "^9.6.0",
     "typecov": "^0.2.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "@size-limit/preset-big-lib": "12.0.0",
+    "size-limit": "12.0.0"
   },
   "packageManager": "pnpm@10.26.2"
 }
