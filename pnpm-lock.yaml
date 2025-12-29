@@ -556,8 +556,8 @@ importers:
         specifier: ^1.2.10
         version: 1.2.10(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
       gatsby-plugin-react-helmet:
-        specifier: ^6.10.0
-        version: 6.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(react-helmet@6.1.0(react@18.3.1))
+        specifier: ^6.15.0
+        version: 6.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(react-helmet@6.1.0(react@18.3.1))
       gatsby-plugin-theme-ui:
         specifier: workspace:^
         version: link:../gatsby-plugin-theme-ui
@@ -6898,8 +6898,8 @@ packages:
     peerDependencies:
       gatsby: ~2.x.x || ~3.x.x || ~4.x.x
 
-  gatsby-plugin-react-helmet@6.13.1:
-    resolution: {integrity: sha512-Fwgf2UDOo1LQgw1vUmGmDMK5hXVrIXDR92URzu4DylQWgyfycfQ3D9FdU2JZ8jB6F3OI6Yx6YHC7zL3OAL7iOw==}
+  gatsby-plugin-react-helmet@6.15.0:
+    resolution: {integrity: sha512-mznXJHiRJ8qQ7lROZEmNsmhRNhxMolcJmLlnSVyfqQrik+9sjRbrzdpZtDD3MJA+/UDDtEedXyXcK4F2HorWmQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
@@ -12129,6 +12129,7 @@ packages:
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-fetch@3.6.2:
     resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
@@ -19971,7 +19972,7 @@ snapshots:
       lodash.get: 4.4.2
       lodash.uniq: 4.5.0
 
-  gatsby-plugin-react-helmet@6.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(react-helmet@6.1.0(react@18.3.1)):
+  gatsby-plugin-react-helmet@6.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(react-helmet@6.1.0(react@18.3.1)):
     dependencies:
       '@babel/runtime': 7.28.4
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)

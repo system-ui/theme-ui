@@ -50,7 +50,7 @@
     "gatsby-plugin-compile-es6-packages": "^2.1.1",
     "gatsby-plugin-mdx": "^5",
     "gatsby-plugin-pnpm": "^1.2.10",
-    "gatsby-plugin-react-helmet": "^6.10.0",
+    "gatsby-plugin-react-helmet": "^6.15.0",
     "gatsby-plugin-theme-ui": "workspace:^",
     "gatsby-source-filesystem": "^5.10.0",
     "gatsby-theme-style-guide": "workspace:^",
