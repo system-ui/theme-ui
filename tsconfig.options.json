@@ -9,7 +9,7 @@
     "noEmit": true,
     "module": "ES2022",
     "isolatedModules": true,
-    "target": "ES2024",
+    "target": "ES2023",
     // @types/reactcss required by @types/react-color is broken
     "skipLibCheck": true
   },
