@@ -15,4 +15,8 @@ module.exports = withMDX({
 
     return config
   },
+  // don't typecheck the packages in the example build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 })
