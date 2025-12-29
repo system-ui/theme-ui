@@ -6,10 +6,14 @@
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
   "repository": "system-ui/theme-ui",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "start": "gatsby develop",
     "dev": "gatsby develop",
     "build": "gatsby build",
+    "ci:build": "cd ../../ && pnpm build && pnpm run --filter docs build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "logo": "node ./scripts/svg-logo.js",

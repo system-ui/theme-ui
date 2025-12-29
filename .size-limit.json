@@ -1,0 +1,16 @@
+[
+  { "path": "./packages/color/dist/theme-ui-color.esm.js", "gzip": true },
+  { "path": "./packages/color-modes/dist/theme-ui-color-modes.esm.js", "gzip": true },
+  { "path": "./packages/components/dist/theme-ui-components.esm.js", "gzip": true },
+  { "path": "./packages/core/dist/theme-ui-core.esm.js", "gzip": true },
+  { "path": "./packages/css/dist/theme-ui-css.esm.js", "gzip": true },
+  { "path": "./packages/custom-properties/dist/theme-ui-custom-properties.esm.js", "gzip": true },
+  { "path": "./packages/gatsby-plugin-theme-ui/dist/gatsby-plugin-theme-ui.cjs.js", "gzip": true },
+  { "path": "./packages/match-media/dist/theme-ui-match-media.esm.js", "gzip": true },
+  { "path": "./packages/mdx/dist/theme-ui-mdx.esm.js", "gzip": true },
+  { "path": "./packages/parse-props/dist/theme-ui-parse-props.esm.js", "gzip": true },
+  { "path": "./packages/prism/dist/theme-ui-prism.esm.js", "gzip": true },
+  { "path": "./packages/theme-provider/dist/theme-ui-theme-provider.esm.js", "gzip": true },
+  { "path": "./packages/theme-ui/dist/theme-ui.esm.js", "gzip": true },
+  { "path": "./packages/typography/dist/theme-ui-typography.esm.js", "gzip": true }
+]
