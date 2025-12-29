@@ -35,6 +35,7 @@ export const Textarea: ForwardRef<HTMLTextAreaElement, TextareaProps> =
             borderRadius: 4,
             color: 'inherit',
             bg: 'transparent',
+            fieldSizing: 'content',
           },
         })}
       />
