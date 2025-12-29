@@ -86,7 +86,7 @@ export const expecter = (
       // same settings as our root tsconfig
       resolveJsonModule: true,
       esModuleInterop: true,
-      moduleResolution: 'node',
+      moduleResolution: 'Bundler',
       strict: true,
       jsx: 'react-jsx',
       jsxImportSource: '@theme-ui/core',
