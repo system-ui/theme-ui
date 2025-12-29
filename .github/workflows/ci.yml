@@ -42,6 +42,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_step: build
+          package_manager: pnpm
 
   # Dependabot and PRs from forks should not release canaries,
   # but secrets and env vars cannot be read in `job.if`, so we check if

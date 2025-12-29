@@ -90,7 +90,7 @@
     "@emotion/jest": "^11.14.2",
     "@jest/types": "^29.6.3",
     "@preconstruct/cli": "^2.8.12",
-    "@size-limit/file": "^11.1.6",
+    "@size-limit/preset-big-lib": "^11.1.6",
     "@testing-library/react": "^14.2.1",
     "@types/eslint": "8.56.2",
     "@types/jest": "^29.5.13",
