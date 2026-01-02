@@ -1,3 +1,32 @@
+# v0.17.3 (Fri Jan 02 2026)
+
+#### 🐛 Bug Fix
+
+- Update Textarea snapshot for field-sizing: content [#2555](https://github.com/system-ui/theme-ui/pull/2555) ([@Copilot](https://github.com/Copilot))
+- Update Alert snapshot for role="alert" attribute [#2554](https://github.com/system-ui/theme-ui/pull/2554) ([@Copilot](https://github.com/Copilot))
+
+#### 👨‍💻 Minor changes
+
+- Update package.json to 0.17.3-develop.9 ([@hasparus](https://github.com/hasparus))
+- Bump version to 0.17.3-develop.8 ([@hasparus](https://github.com/hasparus))
+- Bump version to 0.17.3-develop.4 ([@hasparus](https://github.com/hasparus))
+- Merge stable into develop for release preparation ([@hasparus](https://github.com/hasparus))
+- Trigger CI ([@hasparus](https://github.com/hasparus))
+- docs: Update Resources links ([@lachlanjc](https://github.com/lachlanjc))
+
+#### 🏠 Internal
+
+- components: [Textarea] Add field-sizing: content [#2553](https://github.com/system-ui/theme-ui/pull/2553) ([@lachlanjc](https://github.com/lachlanjc) [@Copilot](https://github.com/Copilot) [@hasparus](https://github.com/hasparus))
+- components: [Alert] Add ARIA role [#2552](https://github.com/system-ui/theme-ui/pull/2552) ([@lachlanjc](https://github.com/lachlanjc) [@Copilot](https://github.com/Copilot) [@hasparus](https://github.com/hasparus))
+
+#### Authors: 3
+
+- [@Copilot](https://github.com/Copilot)
+- Lachlan Campbell ([@lachlanjc](https://github.com/lachlanjc))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
 # v0.17.2 (Fri Feb 14 2025)
 
 #### 🐛 Bug Fix
