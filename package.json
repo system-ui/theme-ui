@@ -1,6 +1,6 @@
 {
   "name": "@theme-ui/monorepo",
-  "version": "0.17.3-develop.8",
+  "version": "0.17.3-develop.9",
   "private": true,
   "scripts": {
     "build": "preconstruct build",
