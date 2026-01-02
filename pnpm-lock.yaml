@@ -184,7 +184,7 @@ importers:
         version: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-plugin-mdx:
         specifier: ^5
-        version: 5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-source-filesystem:
         specifier: latest
         version: 5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
@@ -205,8 +205,8 @@ importers:
         specifier: ^10
         version: 10.1.0(eslint@8.57.1)
       graphql:
-        specifier: ^15
-        version: 15.9.0
+        specifier: ^16
+        version: 16.12.0
       typescript:
         specifier: ^5
         version: 5.6.3
@@ -221,7 +221,7 @@ importers:
         version: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-plugin-mdx:
         specifier: ^5
-        version: 5.13.1(@mdx-js/react@3.0.1(@types/react@18.3.11)(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.13.1(@mdx-js/react@3.0.1(@types/react@18.3.11)(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-plugin-theme-ui:
         specifier: workspace:^
         version: link:../../packages/gatsby-plugin-theme-ui
@@ -298,7 +298,7 @@ importers:
         version: 1.0.1
       gatsby-plugin-mdx:
         specifier: ^5
-        version: 5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-source-filesystem:
         specifier: ^5.10.0
         version: 5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
@@ -334,8 +334,8 @@ importers:
         specifier: ^8.56.0
         version: 8.57.1
       graphql:
-        specifier: ^15
-        version: 15.9.0
+        specifier: ^16
+        version: 16.12.0
       typescript:
         specifier: ^5
         version: 5.6.3
@@ -551,7 +551,7 @@ importers:
         version: 2.1.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
       gatsby-plugin-mdx:
         specifier: ^5
-        version: 5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-plugin-pnpm:
         specifier: ^1.2.10
         version: 1.2.10(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
@@ -7200,12 +7200,8 @@ packages:
     peerDependencies:
       graphql: '>=0.8.0'
 
-  graphql@15.9.0:
-    resolution: {integrity: sha512-GCOQdvm7XxV1S4U4CGrsdlEN37245eC8P9zaYCMr6K1BG0IPGy5lUwmJsEOGyl1GD6HXjOtl2keCP9asRBwNvA==}
-    engines: {node: '>= 10.x'}
-
-  graphql@16.9.0:
-    resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
+  graphql@16.12.0:
+    resolution: {integrity: sha512-DKKrynuQRne0PNpEbzuEdHlYOMksHSUI8Zc9Unei5gTsMNA2/vMpoMz/yKba50pejK56qj98qM0SjYxAKi13gQ==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   gray-matter@4.0.3:
@@ -12371,7 +12367,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
 
-  '@ardatan/relay-compiler@12.0.0(encoding@0.1.13)(graphql@16.9.0)':
+  '@ardatan/relay-compiler@12.0.0(encoding@0.1.13)(graphql@16.12.0)':
     dependencies:
       '@babel/core': 7.22.5
       '@babel/generator': 7.28.5
@@ -12384,7 +12380,7 @@ snapshots:
       fb-watchman: 2.0.2
       fbjs: 3.0.4(encoding@0.1.13)
       glob: 7.2.3
-      graphql: 16.9.0
+      graphql: 16.12.0
       immutable: 3.7.6
       invariant: 2.2.4
       nullthrows: 1.1.1
@@ -14101,164 +14097,164 @@ snapshots:
       html-entities: 2.3.6
       strip-ansi: 6.0.1
 
-  '@graphql-codegen/add@3.2.3(graphql@16.9.0)':
+  '@graphql-codegen/add@3.2.3(graphql@16.12.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.4.1
 
-  '@graphql-codegen/core@2.6.8(graphql@16.9.0)':
+  '@graphql-codegen/core@2.6.8(graphql@16.12.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.9.0)
-      '@graphql-tools/schema': 9.0.19(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.12.0)
+      '@graphql-tools/schema': 9.0.19(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@2.7.2(graphql@16.9.0)':
+  '@graphql-codegen/plugin-helpers@2.7.2(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/utils': 8.13.1(graphql@16.9.0)
+      '@graphql-tools/utils': 8.13.1(graphql@16.12.0)
       change-case-all: 1.0.14
       common-tags: 1.8.2
-      graphql: 16.9.0
+      graphql: 16.12.0
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@3.1.2(graphql@16.9.0)':
+  '@graphql-codegen/plugin-helpers@3.1.2(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
       change-case-all: 1.0.15
       common-tags: 1.8.2
-      graphql: 16.9.0
+      graphql: 16.12.0
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.1
 
-  '@graphql-codegen/schema-ast@2.6.1(graphql@16.9.0)':
+  '@graphql-codegen/schema-ast@2.6.1(graphql@16.12.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.4.1
 
-  '@graphql-codegen/typescript-operations@2.5.13(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/typescript-operations@2.5.13(encoding@0.1.13)(graphql@16.12.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.9.0)
-      '@graphql-codegen/typescript': 2.8.8(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 2.13.8(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.12.0)
+      '@graphql-codegen/typescript': 2.8.8(encoding@0.1.13)(graphql@16.12.0)
+      '@graphql-codegen/visitor-plugin-common': 2.13.8(encoding@0.1.13)(graphql@16.12.0)
       auto-bind: 4.0.0
-      graphql: 16.9.0
+      graphql: 16.12.0
       tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript@2.8.8(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/typescript@2.8.8(encoding@0.1.13)(graphql@16.12.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.9.0)
-      '@graphql-codegen/schema-ast': 2.6.1(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 2.13.8(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.12.0)
+      '@graphql-codegen/schema-ast': 2.6.1(graphql@16.12.0)
+      '@graphql-codegen/visitor-plugin-common': 2.13.8(encoding@0.1.13)(graphql@16.12.0)
       auto-bind: 4.0.0
-      graphql: 16.9.0
+      graphql: 16.12.0
       tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/visitor-plugin-common@2.13.8(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/visitor-plugin-common@2.13.8(encoding@0.1.13)(graphql@16.12.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.9.0)
-      '@graphql-tools/optimize': 1.4.0(graphql@16.9.0)
-      '@graphql-tools/relay-operation-optimizer': 6.5.18(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@16.12.0)
+      '@graphql-tools/optimize': 1.4.0(graphql@16.12.0)
+      '@graphql-tools/relay-operation-optimizer': 6.5.18(encoding@0.1.13)(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
-      graphql: 16.9.0
-      graphql-tag: 2.12.6(graphql@16.9.0)
+      graphql: 16.12.0
+      graphql-tag: 2.12.6(graphql@16.12.0)
       parse-filepath: 1.0.2
       tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-tools/code-file-loader@7.3.23(@babel/core@7.22.5)(graphql@16.9.0)':
+  '@graphql-tools/code-file-loader@7.3.23(@babel/core@7.22.5)(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/graphql-tag-pluck': 7.5.2(@babel/core@7.22.5)(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
+      '@graphql-tools/graphql-tag-pluck': 7.5.2(@babel/core@7.22.5)(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
       globby: 11.1.0
-      graphql: 16.9.0
+      graphql: 16.12.0
       tslib: 2.8.1
       unixify: 1.0.0
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
 
-  '@graphql-tools/graphql-tag-pluck@7.5.2(@babel/core@7.22.5)(graphql@16.9.0)':
+  '@graphql-tools/graphql-tag-pluck@7.5.2(@babel/core@7.22.5)(graphql@16.12.0)':
     dependencies:
       '@babel/parser': 7.22.5
       '@babel/plugin-syntax-import-assertions': 7.27.1(@babel/core@7.22.5)
       '@babel/traverse': 7.22.5
       '@babel/types': 7.22.5
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
 
-  '@graphql-tools/load@7.8.14(graphql@16.9.0)':
+  '@graphql-tools/load@7.8.14(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/schema': 9.0.19(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-tools/schema': 9.0.19(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       p-limit: 3.1.0
       tslib: 2.8.1
 
-  '@graphql-tools/merge@8.4.2(graphql@16.9.0)':
+  '@graphql-tools/merge@8.4.2(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.8.1
 
-  '@graphql-tools/optimize@1.4.0(graphql@16.9.0)':
+  '@graphql-tools/optimize@1.4.0(graphql@16.12.0)':
     dependencies:
-      graphql: 16.9.0
+      graphql: 16.12.0
       tslib: 2.8.1
 
-  '@graphql-tools/relay-operation-optimizer@6.5.18(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-tools/relay-operation-optimizer@6.5.18(encoding@0.1.13)(graphql@16.12.0)':
     dependencies:
-      '@ardatan/relay-compiler': 12.0.0(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@ardatan/relay-compiler': 12.0.0(encoding@0.1.13)(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-tools/schema@9.0.19(graphql@16.9.0)':
+  '@graphql-tools/schema@9.0.19(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/merge': 8.4.2(graphql@16.9.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-tools/merge': 8.4.2(graphql@16.12.0)
+      '@graphql-tools/utils': 9.2.1(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.8.1
       value-or-promise: 1.0.12
 
-  '@graphql-tools/utils@8.13.1(graphql@16.9.0)':
+  '@graphql-tools/utils@8.13.1(graphql@16.12.0)':
     dependencies:
-      graphql: 16.9.0
+      graphql: 16.12.0
       tslib: 2.8.1
 
-  '@graphql-tools/utils@9.2.1(graphql@16.9.0)':
+  '@graphql-tools/utils@9.2.1(graphql@16.12.0)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
-      graphql: 16.9.0
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
+      graphql: 16.12.0
       tslib: 2.8.1
 
-  '@graphql-typed-document-node/core@3.2.0(graphql@16.9.0)':
+  '@graphql-typed-document-node/core@3.2.0(graphql@16.12.0)':
     dependencies:
-      graphql: 16.9.0
+      graphql: 16.12.0
 
   '@hapi/hoek@9.3.0': {}
 
@@ -19831,7 +19827,7 @@ snapshots:
 
   gatsby-plugin-google-fonts@1.0.1: {}
 
-  gatsby-plugin-mdx@5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  gatsby-plugin-mdx@5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.3.1)
@@ -19843,7 +19839,7 @@ snapshots:
       fs-extra: 11.2.0
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-core-utils: 4.13.1
-      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0)
+      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)
       gatsby-source-filesystem: 5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
       gray-matter: 4.0.3
       mdast-util-mdx: 2.0.1
@@ -19862,7 +19858,7 @@ snapshots:
       - graphql
       - supports-color
 
-  gatsby-plugin-mdx@5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  gatsby-plugin-mdx@5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.3.1)
@@ -19874,38 +19870,7 @@ snapshots:
       fs-extra: 11.2.0
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-core-utils: 4.13.1
-      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)
-      gatsby-source-filesystem: 5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
-      gray-matter: 4.0.3
-      mdast-util-mdx: 2.0.1
-      mdast-util-to-hast: 10.2.0
-      mdast-util-to-markdown: 1.5.0
-      mdast-util-toc: 6.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      rehype-infer-description-meta: 1.1.0
-      remark-unwrap-images: 3.0.1
-      unified: 10.1.2
-      unist-util-visit: 4.1.2
-      vfile: 5.3.7
-    transitivePeerDependencies:
-      - bare-abort-controller
-      - graphql
-      - supports-color
-
-  gatsby-plugin-mdx@5.13.1(@mdx-js/react@2.3.0(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      '@mdx-js/mdx': 2.3.0
-      '@mdx-js/react': 2.3.0(react@18.3.1)
-      acorn: 8.13.0
-      acorn-jsx: 5.3.2(acorn@8.13.0)
-      astring: 1.8.6
-      deepmerge: 4.3.1
-      estree-util-build-jsx: 2.2.2
-      fs-extra: 11.2.0
-      gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
-      gatsby-core-utils: 4.13.1
-      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0)
+      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)
       gatsby-source-filesystem: 5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
       gray-matter: 4.0.3
       mdast-util-mdx: 2.0.1
@@ -19924,7 +19889,7 @@ snapshots:
       - graphql
       - supports-color
 
-  gatsby-plugin-mdx@5.13.1(@mdx-js/react@3.0.1(@types/react@18.3.11)(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  gatsby-plugin-mdx@5.13.1(@mdx-js/react@3.0.1(@types/react@18.3.11)(react@18.3.1))(gatsby-source-filesystem@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 3.0.1(@types/react@18.3.11)(react@18.3.1)
@@ -19936,7 +19901,7 @@ snapshots:
       fs-extra: 11.2.0
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-core-utils: 4.13.1
-      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)
+      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)
       gatsby-source-filesystem: 5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
       gray-matter: 4.0.3
       mdast-util-mdx: 2.0.1
@@ -19955,7 +19920,7 @@ snapshots:
       - graphql
       - supports-color
 
-  gatsby-plugin-page-creator@5.13.1(encoding@0.1.13)(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0):
+  gatsby-plugin-page-creator@5.13.1(encoding@0.1.13)(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0):
     dependencies:
       '@babel/runtime': 7.28.4
       '@babel/traverse': 7.22.5
@@ -19966,7 +19931,7 @@ snapshots:
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-core-utils: 4.13.1
       gatsby-page-utils: 3.13.1
-      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)
+      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)
       gatsby-telemetry: 4.13.1(encoding@0.1.13)
       globby: 11.1.0
       lodash: 4.17.21
@@ -20001,7 +19966,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  gatsby-plugin-utils@4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@15.9.0):
+  gatsby-plugin-utils@4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0):
     dependencies:
       '@babel/runtime': 7.28.4
       fastq: 1.15.0
@@ -20009,24 +19974,8 @@ snapshots:
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
       gatsby-core-utils: 4.13.1
       gatsby-sharp: 1.13.0
-      graphql: 15.9.0
-      graphql-compose: 9.0.10(graphql@15.9.0)
-      import-from: 4.0.0
-      joi: 17.13.3
-      mime: 3.0.0
-    transitivePeerDependencies:
-      - bare-abort-controller
-
-  gatsby-plugin-utils@4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0):
-    dependencies:
-      '@babel/runtime': 7.28.4
-      fastq: 1.15.0
-      fs-extra: 11.2.0
-      gatsby: 5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3)
-      gatsby-core-utils: 4.13.1
-      gatsby-sharp: 1.13.0
-      graphql: 16.9.0
-      graphql-compose: 9.0.10(graphql@16.9.0)
+      graphql: 16.12.0
+      graphql-compose: 9.0.10(graphql@16.12.0)
       import-from: 4.0.0
       joi: 17.13.3
       mime: 3.0.0
@@ -20118,13 +20067,13 @@ snapshots:
       '@builder.io/partytown': 0.7.6
       '@gatsbyjs/reach-router': 2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@gatsbyjs/webpack-hot-middleware': 2.25.3
-      '@graphql-codegen/add': 3.2.3(graphql@16.9.0)
-      '@graphql-codegen/core': 2.6.8(graphql@16.9.0)
-      '@graphql-codegen/plugin-helpers': 2.7.2(graphql@16.9.0)
-      '@graphql-codegen/typescript': 2.8.8(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-codegen/typescript-operations': 2.5.13(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-tools/code-file-loader': 7.3.23(@babel/core@7.22.5)(graphql@16.9.0)
-      '@graphql-tools/load': 7.8.14(graphql@16.9.0)
+      '@graphql-codegen/add': 3.2.3(graphql@16.12.0)
+      '@graphql-codegen/core': 2.6.8(graphql@16.12.0)
+      '@graphql-codegen/plugin-helpers': 2.7.2(graphql@16.12.0)
+      '@graphql-codegen/typescript': 2.8.8(encoding@0.1.13)(graphql@16.12.0)
+      '@graphql-codegen/typescript-operations': 2.5.13(encoding@0.1.13)(graphql@16.12.0)
+      '@graphql-tools/code-file-loader': 7.3.23(@babel/core@7.22.5)(graphql@16.12.0)
+      '@graphql-tools/load': 7.8.14(graphql@16.12.0)
       '@jridgewell/trace-mapping': 0.3.18
       '@nodelib/fs.walk': 1.2.8
       '@parcel/cache': 2.8.3(@parcel/core@2.8.3)
@@ -20195,9 +20144,9 @@ snapshots:
       gatsby-link: 5.13.1(@gatsbyjs/reach-router@2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-page-utils: 3.13.1
       gatsby-parcel-config: 1.13.1(@parcel/core@2.8.3)
-      gatsby-plugin-page-creator: 5.13.1(encoding@0.1.13)(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)
+      gatsby-plugin-page-creator: 5.13.1(encoding@0.1.13)(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)
       gatsby-plugin-typescript: 5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))
-      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.9.0)
+      gatsby-plugin-utils: 4.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@8.57.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.6.3))(graphql@16.12.0)
       gatsby-react-router-scroll: 6.13.1(@gatsbyjs/reach-router@2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-script: 2.13.0(@gatsbyjs/reach-router@2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-telemetry: 4.13.1(encoding@0.1.13)
@@ -20205,10 +20154,10 @@ snapshots:
       glob: 7.2.3
       globby: 11.1.0
       got: 11.8.6
-      graphql: 16.9.0
-      graphql-compose: 9.0.10(graphql@16.9.0)
-      graphql-http: 1.19.0(graphql@16.9.0)
-      graphql-tag: 2.12.6(graphql@16.9.0)
+      graphql: 16.12.0
+      graphql-compose: 9.0.10(graphql@16.12.0)
+      graphql-http: 1.19.0(graphql@16.12.0)
+      graphql-tag: 2.12.6(graphql@16.12.0)
       hasha: 5.2.2
       invariant: 2.2.4
       is-relative: 1.0.0
@@ -20579,36 +20528,25 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql-compose@9.0.10(graphql@15.9.0):
+  graphql-compose@9.0.10(graphql@16.12.0):
     dependencies:
-      graphql: 15.9.0
-      graphql-type-json: 0.3.2(graphql@15.9.0)
+      graphql: 16.12.0
+      graphql-type-json: 0.3.2(graphql@16.12.0)
 
-  graphql-compose@9.0.10(graphql@16.9.0):
+  graphql-http@1.19.0(graphql@16.12.0):
     dependencies:
-      graphql: 16.9.0
-      graphql-type-json: 0.3.2(graphql@16.9.0)
+      graphql: 16.12.0
 
-  graphql-http@1.19.0(graphql@16.9.0):
+  graphql-tag@2.12.6(graphql@16.12.0):
     dependencies:
-      graphql: 16.9.0
-
-  graphql-tag@2.12.6(graphql@16.9.0):
-    dependencies:
-      graphql: 16.9.0
+      graphql: 16.12.0
       tslib: 2.8.1
 
-  graphql-type-json@0.3.2(graphql@15.9.0):
+  graphql-type-json@0.3.2(graphql@16.12.0):
     dependencies:
-      graphql: 15.9.0
+      graphql: 16.12.0
 
-  graphql-type-json@0.3.2(graphql@16.9.0):
-    dependencies:
-      graphql: 16.9.0
-
-  graphql@15.9.0: {}
-
-  graphql@16.9.0: {}
+  graphql@16.12.0: {}
 
   gray-matter@4.0.3:
     dependencies:
