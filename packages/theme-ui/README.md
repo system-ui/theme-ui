@@ -387,6 +387,7 @@ Thanks goes to these wonderful people
   </tr>
   <tr>
     <td align="center"><a href="https://devcj.in/"><img src="https://avatars.githubusercontent.com/u/47112778?v=4?s=63" width="63px;" alt=""/><br /><sub><b>CJ</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=dev-cj" title="Documentation">📖</a> <a href="https://github.com/system-ui/theme-ui/commits?author=dev-cj" title="Code">💻</a></td>
+    <td align="center"><a href="https://sammarxz.co/"><img src="https://avatars.githubusercontent.com/u/19997815?v=4?s=63" width="63px;" alt=""/><br /><sub><b>Sam Marxz</b></sub></a><br /><a href="https://github.com/system-ui/theme-ui/commits?author=sammarxz" title="Documentation">📖</a></td>
   </tr>
 </table>
 

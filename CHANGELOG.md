@@ -1,3 +1,79 @@
+# v0.17.2 (Fri Feb 14 2025)
+
+#### 🐛 Bug Fix
+
+- Handle derived sx in Flex.tsx [#2535](https://github.com/system-ui/theme-ui/pull/2535) ([@rtturner](https://github.com/rtturner))
+
+#### Authors: 1
+
+- Ryan Turner ([@rtturner](https://github.com/rtturner))
+
+---
+
+# v0.17.1 (Thu Oct 24 2024)
+
+#### 🐛 Bug Fix
+
+- fix(types): don't lock csstype version ([@hasparus](https://github.com/hasparus))
+
+#### Authors: 1
+
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.17.0 (Fri Oct 18 2024)
+
+#### 🚀 Enhancement
+
+- fix(color-modes): make useRootStyles=false work with useCustomProperties [#2519](https://github.com/system-ui/theme-ui/pull/2519) ([@hasparus](https://github.com/hasparus) [@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+
+---
+
+# v0.16.2 (Mon Feb 19 2024)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Arun Sathiya ([@arunsathiya](https://github.com/arunsathiya))
+
+:heart: Jeff Bell ([@jhbell](https://github.com/jhbell))
+
+:heart: Paweł Kowalewski ([@pawkow](https://github.com/pawkow))
+
+:heart: Sam Marxz ([@sammarxz](https://github.com/sammarxz))
+
+#### 🐛 Bug Fix
+
+- fix(theme-ui): generate missing exports field ([@hasparus](https://github.com/hasparus))
+- Filter scale tuples in Theme type inside .sx prop [#2457](https://github.com/system-ui/theme-ui/pull/2457) ([@hasparus](https://github.com/hasparus))
+- (chore) upload logo dark version [#2446](https://github.com/system-ui/theme-ui/pull/2446) ([@sammarxz](https://github.com/sammarxz))
+- (chore) Update logo.svg to use currentColor [#2446](https://github.com/system-ui/theme-ui/pull/2446) ([@sammarxz](https://github.com/sammarxz))
+
+#### 👨‍💻 Minor changes
+
+- Bump version ([@hasparus](https://github.com/hasparus))
+
+#### 🏠 Internal
+
+- docs: Fix incorrect config sample [#2467](https://github.com/system-ui/theme-ui/pull/2467) ([@pawkow](https://github.com/pawkow))
+
+#### Authors: 5
+
+- Arun Sathiya ([@arunsathiya](https://github.com/arunsathiya))
+- Jeff Bell ([@jhbell](https://github.com/jhbell))
+- Paweł Kowalewski ([@pawkow](https://github.com/pawkow))
+- Piotr Monwid-Olechnowicz ([@hasparus](https://github.com/hasparus))
+- Sam Marxz ([@sammarxz](https://github.com/sammarxz))
+
+---
+
 # v0.16.1 (Thu Sep 07 2023)
 
 #### 🐛 Bug Fix
