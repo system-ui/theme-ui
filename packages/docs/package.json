@@ -108,7 +108,7 @@
   "devDependencies": {
     "@babel/register": "^7.24.6",
     "babel-eslint": "^10",
-    "eslint": "^8.56.0",
+    "eslint": "^9.26.0",
     "typescript": "^5"
   }
 }
