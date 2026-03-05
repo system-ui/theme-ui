@@ -2,7 +2,7 @@
 import { exec } from 'egzek'
 import { readFile, writeFile } from 'fs/promises'
 import semver from 'semver'
-import packageJson from '../package.json' assert { type: 'json' }
+import packageJson from '../package.json'
 
 {
   const DRY_RUN = false

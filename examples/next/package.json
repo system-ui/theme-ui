@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "cd ../.. && pnpm build && cd examples/next && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.12",
-    "typescript": "^5",
-    "webpack": "^5.104.1"
+    "typescript": "^5"
   }
 }
