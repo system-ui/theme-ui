@@ -98,7 +98,7 @@
     "@types/react-test-renderer": "^18.3.0",
     "@types/semver": "^7.7.1",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
-    "@typescript-eslint/parser": "^5.59.11",
+    "@typescript-eslint/parser": "^8.51.0",
     "auto": "^11.3.6",
     "babel-jest": "^29.7.0",
     "babel-preset-gatsby": "^3.15.0",
