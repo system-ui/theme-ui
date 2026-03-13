@@ -31,6 +31,17 @@ describe('theme scales, get and default object property (#1439)', () => {
 
     expect(actual).toStrictEqual({ zIndex: 1 })
   })
+
+  // https://github.com/system-ui/theme-ui/issues/2166
+  test('size property works inside at page', () => {
+    const actual = css({ size: '2rem', '@page': { size: 'A4' } })({})
+
+    expect(actual).toStrictEqual({
+      width: '2rem',
+      height: '2rem',
+      '@page': { size: 'A4' },
+    })
+  })
 })
 
 // https://github.com/system-ui/theme-ui/issues/2520
